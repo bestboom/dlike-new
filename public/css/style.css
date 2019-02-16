@@ -2508,8 +2508,27 @@ sub.transmoney-value {
 
 .post-style-two {
   margin-bottom: 60px; }
+  .post-style-two .dlike-hov{
+    margin-top: -50px;
+    margin-bottom: 15px;
+    margin-left: 40%;
+    border-radius: 50%;
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 2px 0px rgba(1, 1, 1, 1); }
   .post-style-two .post-contnet-wrap {
-    padding: 22px 30px 18px 30px;
+    padding: 20px 20px 16px 20px; 
+    background-color: #fff;
+    border: 1px solid #e8e9eb;
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    -webkit-box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.05);
+      box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.05);  }
+      .post-style-two .post-contnet-wrap-top {
+    padding: 10px 20px 8px 20px;
     background-color: #fff;
     border: 1px solid #e8e9eb;
     transition: all 0.3s ease-in;
@@ -2528,13 +2547,15 @@ sub.transmoney-value {
     display: block;
     margin-bottom: 5px; }
   .post-style-two .post-title {
-    margin-bottom: 25px; }
+    margin-bottom: 10px; }
     .post-style-two .post-title a {
       color: #1c2437;
       font-size: 18px;
       font-weight: 700; }
   .post-style-two .post-entry {
-    margin-bottom: 35px; }
+    margin-bottom: 10px; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee; }
   .post-style-two .post-footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2552,6 +2573,7 @@ sub.transmoney-value {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
     display: block;
+    width: 32px;
     margin-right: 12px; }
   .post-style-two .post-comments,
   .post-style-two .post-author-block,
@@ -2570,6 +2592,10 @@ sub.transmoney-value {
     font-weight: 700; }
   .post-style-two .post-comments img {
     margin-right: 9px; }
+  .post-style-two .time {
+    padding-top: 4px;
+    font-weight: 600;
+    font-size: 10px; }  
 
 /*---------------------------------------------
 	14 Blog Details Style
