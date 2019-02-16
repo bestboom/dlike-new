@@ -278,7 +278,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 |----------------------------------------------------------------------------
 */
 .navbar {
-  min-height: 110px;
+  min-height: 80px;
   position: absolute;
   top: 0;
   left: 0;
@@ -814,7 +814,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 |----------------------------------------------------------------------------
 */
 .banner-block {
-  padding: 310px 0 43px 0;
+  padding: 270px 0 43px 0;
   position: relative;
   background: url("../images/bg/1.jpg") no-repeat center center;
   background-size: cover; }
