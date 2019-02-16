@@ -1,7 +1,7 @@
 {
-  "name": "dLike",
+  "name": "dlike",
   "version": "1.0.0",
-  "description": "",
+  "description": "dlike web",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
