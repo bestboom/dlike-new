@@ -1,0 +1,19 @@
+{
+  "name": "dLike",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bestboom/dlike.git"
+  },
+  "author": "AzMausa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bestboom/dlike/issues"
+  },
+  "homepage": "https://github.com/bestboom/dlike#readme"
+}
