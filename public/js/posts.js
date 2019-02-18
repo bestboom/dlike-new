@@ -7,8 +7,6 @@ $(document).ready(function(){
     };
 
     steem.api.getDiscussionsByCreated(query, function (err, res) {
-
-    	console.log(res);
     	res.forEach(($post, i) => {
 
     		let metadata;
@@ -52,7 +50,6 @@ $(document).ready(function(){
                         body = body.replace(/#([^\s]*)/g,'');
                         //body = $post.body.replace(/<(.|\n)*?>/g, '');
                     }catch(err) {
-                        console.log($post.body);
                         body = "";
                     }
                 }else{
@@ -94,7 +91,6 @@ $(document).ready(function(){
                             		totalDlikeComments +=1;    
                         		}
                 		});
-                		console.log(totalDlikeComments);
            				$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
         			});  
     			}
