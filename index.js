@@ -1,5 +1,9 @@
+var cors = require('cors');
 var express = require('express')
 var app = express()
+
+app.use(cors());
+app.options('*', cors());
 
 app.set('port', (process.env.PORT || 3000))
 app.use(express.static(__dirname + '/public'))
