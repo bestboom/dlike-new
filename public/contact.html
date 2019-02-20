@@ -103,29 +103,15 @@
             <div class="row">
                 <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-9">
                     <div class="contact-form-wrap">
-                        <form class="contact-form">
+                        <form class="contact-form" action="#" method="get">
                             <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+                            <div class="row justify-content-center">
+                                <button type="submit" class="btn btn-default" id="share"><i class="fas fa-spinner fa-spin loader" style="display:none;"></i><span id="plus">Share</span></button>
                             </div>
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <div class="custom-checkbox-wrap">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck55" name="example1">
-                                        <label class="custom-control-label" for="customCheck55">I’m not a robot</label>
-                                        
-                                    </div>
-                                    <img src="./images/others/28.png" alt="img" class="img-responsive">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-default">Send Message</button>
                         </form><!-- contact-form -->
                     </div>
                 </div>
@@ -298,75 +284,14 @@
             </div>
         </div>
     </footer>
-    <script src="./assets/js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
     <script src="./assets/js/jquery.peity.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
-    <script src="./assets/js/gmap3.js"></script>
     <script src="./assets/js/jquery.slimscroll.min.js"></script>
     <script src="./js/custom.js"></script>
-    <script>
-            $('#map_block')
-                .gmap3({
-                center:[48.8620722, 2.352047],
-                zoom:4,
-                    styles: [
-                        {elementType: 'geometry', stylers: [{color: '#eeeeee'}]},
-                        {
-                        featureType: 'road',
-                        elementType: 'geometry',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'road',
-                        elementType: 'geometry.stroke',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'road',
-                        elementType: 'labels.text.fill',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'road.highway',
-                        elementType: 'geometry',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'road.highway',
-                        elementType: 'geometry.stroke',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'road.highway',
-                        elementType: 'labels.text.fill',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'transit',
-                        elementType: 'geometry',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'transit.station',
-                        elementType: 'labels.text.fill',
-                        stylers: [{color: '#eeeeee'}]
-                        },
-                        {
-                        featureType: 'water',
-                        elementType: 'geometry',
-                        stylers: [{color: '#e2e2e2'}]
-                        }
-                    ]
-                })
-                .marker([
-                {address:"66000 France", icon: "./images/others/29.png"}
-                ])
-                .on('click', function (marker) {
-                marker.setIcon("./images/others/29.png")
-            });
-    </script>
+    <script src="./js/mint.js"></script>
+    
 </body>
 </html>

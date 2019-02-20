@@ -8,22 +8,15 @@ var api = sc2.Initialize({
 });
 
 
-var steemconnect = {};
-steemconnect.user = null;
-steemconnect.metadata = null;
-steemconnect.profile_image = null;
-
 
 if ($.cookie("access_token") != null) {
-  api.setAccessToken($.cookie("access_token"));
-  api.me(function (err, result) {
-    if (!err) {
-      // Fill the steemconnect placeholder with results
-      steemconnect.user = result.name;
-      console.log(steemconnect.user);
-      steemconnect.metadata = JSON.stringify(result.user_metadata, null, 2);
-      steemconnect.profile_image = JSON.parse(steemconnect.user.json_metadata)['profile']['profile_image'];
-    }
-  });
+var username = $.cookie("username");
+var profile_image = "https://steemitimages.com/u/" + username + "/avatar";
+$('#user_log').html(username);
+$("#user_img").attr("src","https://steemitimages.com/u/" + username + "/avatar");
 };
+
+
+
+var username = $.cookie("username");
 var link = api.getLoginURL();
