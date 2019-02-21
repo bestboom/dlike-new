@@ -25,10 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
 
-                        <li class="nav-item"><a class="nav-link" href="chart.html">Chart</a></li>
-                        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="share.php">SHARE</a></li>
+                        
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">Support</a>
+                            <a class="nav-link" href="#">About</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item"><a class="nav-link" href="support.html">Support Default</a></li>
                                 <li class="nav-item"><a class="nav-link" href="support-details.html">Support Details</a></li>
@@ -41,14 +41,7 @@
                                 <li class="nav-item"><a class="nav-link" href="news-details.html">News Details</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">More</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="faq.html">Faq</a></li>
-                                <li class="nav-item"><a class="nav-link" href="how-work.html">How Work</a></li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                            </ul>
-                        </li>
+                        
                         <li class="nav-item button active">
                             <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
                         </li>

@@ -28,7 +28,7 @@ $(document).ready(function(){
 	function _fetch(apiUrl,webUrl) {
         $.post(apiUrl,{url:webUrl},function(response){
             let res = JSON.parse(response);
-            window.location.replace("share.php?url="+encodeURIComponent(res.url)+"&title="+encodeURIComponent(res.title)+"&imgUrl="+encodeURIComponent(res.imgUrl)+"&details="+encodeURIComponent(res.des));
+            window.location.replace("editDetails.php?url="+encodeURIComponent(res.url)+"&title="+encodeURIComponent(res.title)+"&imgUrl="+encodeURIComponent(res.imgUrl)+"&details="+encodeURIComponent(res.des));
             console.log("Response array: "+res.url);
         });
     }
