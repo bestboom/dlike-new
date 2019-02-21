@@ -91,7 +91,7 @@ class DataGraber{
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
 			    $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
 			    $imglt ="data:image/jpeg;base64,$screenshot";
-			    define('UPLOAD_DIR', 'https://dlike.io/upload/');
+			    define('UPLOAD_DIR', 'helper/');
                 $img = $imglt;
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
@@ -234,7 +234,7 @@ $url = $_POST['url'];
 $grab = new DataGraber($url);
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
-    $grab->copyImage($grab->getThumbnail(),"upload");
+    $grab->copyImage($grab->getThumbnail(),"helper");
     if (empty($grab->getError())){
         $response["success"] = true;
         $response["url"] = $url;
