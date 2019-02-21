@@ -96,7 +96,7 @@ class DataGraber{
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
                 $file = UPLOAD_DIR . uniqid() . '.png';
-                $success = file_put_contents($file, $data);
+                //$success = file_put_contents($file, $data);
 			    
 			    $thumbnail = $file;
 			    
