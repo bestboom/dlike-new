@@ -1,7 +1,7 @@
 {
   "require": {
     "php": "^7.1.0",
-    "ext-memcached": "*",
+    "ext-mbstring": "*",
     "ext-mongo": "*"
   }
 }
