@@ -1,7 +1,7 @@
 //var sc = require('steemconnect');
 
 var api = sc2.Initialize({
-  app: 'techdev',
+  app: 'dlike.app',
   callbackURL: 'https://dlike.herokuapp.com/steemconnect',
   accessToken: 'access_token',
   scope: [ 'login', 'vote', 'comment', 'delete_comment', 'comment_options', 'custom_json' ],
