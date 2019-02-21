@@ -234,7 +234,7 @@ $url = $_POST['url'];
 $grab = new DataGraber($url);
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
-    $grab->copyImage($grab->getThumbnail(),"./upload");
+    $grab->copyImage($grab->getThumbnail(),"upload");
     if (empty($grab->getError())){
         $response["success"] = true;
         $response["url"] = $url;
