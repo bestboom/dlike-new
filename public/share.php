@@ -1,5 +1,5 @@
 <?php include('template/header.php'); ?>
-    <div class="contact-form-section">
+    <div class="contact-form-section shareForm">
         <div class="container">
             <div class="row">
                 <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-9">
