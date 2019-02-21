@@ -69,24 +69,8 @@ $categorires = [];
                                 <div class="w3_info"
                                      style="flex-basis: 100%; -webkit-flex-basis: 100%; padding-top: 0px;">
                                     <div class="ui form">
-                                        <div class="field">
-                                            <label>Description</label>
-                                            <textarea class="_b" rows="2" name="post" id="description_editor"
-                                                      placeholder="Enter Description"><?php print $des; ?></textarea>
-                                        </div>
-                                        <div class="field" style="width: 50%; margin-top: 20px;">
-                                            <label>Reward</label>
-                                            <div class="ui transparent input category_field">
-                                                <input type="text" name="category" list="rewards" value="" id='cat'
-                                                       placeholder="Reward Options">
-                                                <datalist id="rewards">
-                                                    <option value="50% SBD and 50% SP">
-                                                    <option value="100% Steem Power">
-                                                    <option value="Declined">
-                                                </datalist>
-                                            </div>
-                                            <div class="ui inverted divider"></div>
-                                        </div>
+                                       
+
                                         <div class="field ui clearing">
                                             <div class="ui">
 
@@ -250,11 +234,10 @@ $categorires = [];
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <select class="form-control form-control-lg">
-                                                    <option>Reward Option</option>
-                                                    <option>USA</option>
-                                                    <option>UK</option>
-                                                    <option>UAE</option>
+                                                <select class="form-control form-control-lg" id="rewards">
+                                                    <option value="50% SBD and 50% SP">
+                                                    <option value="100% Steem Power">
+                                                    <option value="Declined">
                                                 </select>
                                             </div>
                                         </div>
@@ -262,7 +245,7 @@ $categorires = [];
                                         	<input type="text" class="form-control" name="tags" value="" placeholder="Enter tags with spaces">
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" id="comment" placeholder="Description"></textarea>
+                                            <textarea class="form-control" rows="5" id="description_editor" placeholder="Description"><?php print $des; ?></textarea>
                                         </div>
                                     </form>
                                 </div><!-- create-account-block -->
@@ -279,6 +262,9 @@ $categorires = [];
                                 </div>
                             </div>
                         </div>
+
+<button type="submit" class="btn btn-default">Sign Up</button>
+                        
                     </div>
                 </div>
             </div>
