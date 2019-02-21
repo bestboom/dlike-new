@@ -85,16 +85,3 @@
             </div>
             <!-- Modal -->
         </nav><!-- main-nav-block -->
-              <div class="container">
-            <div class="offset-md-2 col-md-8">
-                <div class="banner-content">
-                    <h2>Welcome To Dlike</h2>
-                    <p>
-                        Share What you like with community <br>
-                         Get rewarded if community likes your shares
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </div><!-- sub-header -->

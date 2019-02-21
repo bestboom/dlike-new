@@ -3,6 +3,7 @@ $(document).ready(function(){
 	let $urlfield,
 		$add_data,$loader,$add_data_f;
 		$urlfield=_("#url_field");
+        $editPost=_(".contact-info-outer");
 		$add_data=_("#share");
         $add_data_f=_("#plus");
         $loader = _(".loader");
@@ -25,6 +26,7 @@ $(document).ready(function(){
         $.post(apiUrl,{url:webUrl},function(response){
             console.log(response);
             _hide($loader);
+            _show($editPost);
             let res = JSON.parse(response);
             window.location.replace("share.php?url="+encodeURIComponent(res.url)+"&title="+encodeURIComponent(res.title)+"&imgUrl="+encodeURIComponent(res.imgUrl)+"&details="+encodeURIComponent(res.des));
             console.log("Response array: "+res.url);
