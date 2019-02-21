@@ -21,7 +21,6 @@ $(document).ready(function(){
         	}
     	}
     });    
-
 	function _fetch(apiUrl,webUrl) {
         $.post(apiUrl,{url:webUrl},function(response){
             console.log(response);
