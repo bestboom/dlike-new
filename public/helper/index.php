@@ -233,13 +233,13 @@ $url = $_POST['url'];
 //$url = "https://www.dougheyed.com/classic-berry-trifle/";
 $grab = new DataGraber($url);
 
-if (!empty($grab->getTitle()){
-    //$grab->copyImage($grab->getThumbnail(),"helper");
+if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
+    //$grab->copyImage($grab->getThumbnail(),"hel");
     if (empty($grab->getError())){
         $response["success"] = true;
         $response["url"] = $url;
         $response["title"] = $grab->getTitle();
-        $response["imgUrl"] = $grab->getThumbnail();
+        $response["imgUrl"] = "https://dlike.io/images/default-img.jpg";
         $response["des"] = $grab->getDescription();
     }else{
         $response["success"] = false;
