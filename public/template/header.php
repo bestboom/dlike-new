@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
@@ -11,28 +10,21 @@
   <link rel="stylesheet" href="./assets/css/slick.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/responsive.css">
-  <title>Dlike - Share What You like</title>
+  <title>Dlike</title>
 </head>
 <body>
-    <div class="subheader">
+    <div class="banner-block">
         <nav class="navbar main-nav navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img class="navbar-logo" src="images/logo.png" alt="dLike"/>
+                <a class="navbar-brand" href="index.html">
+                    <img class="navbar-logo" src="images/logo.png" alt="..."/>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="exchange-one.html">Exchange </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="exchange-one.html">Exchange Default</a></li>
-                                <li class="nav-item"><a class="nav-link" href="exchange-two.html">Exchange Full</a></li>
-                                <li class="nav-item"><a class="nav-link" href="exchange-three.html">Exchange Dark</a></li>
-                            </ul>
-                        </li>
+
                         <li class="nav-item"><a class="nav-link" href="chart.html">Chart</a></li>
                         <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
                         <li class="nav-item dropdown">
@@ -57,28 +49,8 @@
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown language-option">
-                            <a class="nav-link" href="#">
-                                <i class="fas fa-globe"></i> EN
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                            <i class="fab fa-buysellads"></i> US
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        <i class="fas fa-lira-sign"></i> UK
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item button">
-                            <a class="btn nav-link" href="login.html">Login</a>
-                        </li>
                         <li class="nav-item button active">
-                            <a class="btn nav-link" href="signup.html">Sign Up</a>
+                            <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
                         </li>
                     </ul>
                 </div>
