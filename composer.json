@@ -1,15 +1,7 @@
 {
-  "require" : {
-    "silex/silex": "^2.0.4",
-    "monolog/monolog": "^1.22",
-    "twig/twig": "^2.0",
-    "fabpot/goutte": "^3.2",
-     "guzzlehttp/guzzle": "^6.2",
-     "paquettg/php-html-parser": "^1.7",
-     "ext-mbstring": "*",
-    "symfony/twig-bridge": "^3"
-  },
-  "require-dev": {
-    "heroku/heroku-buildpack-php": "*"
+  "require": {
+    "php": "5.5.12",
+    "ext-memcached": "*",
+    "ext-mongo": "*"
   }
 }
