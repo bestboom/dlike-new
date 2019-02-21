@@ -16,8 +16,8 @@
     <div class="banner-block">
         <nav class="navbar main-nav navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img class="navbar-logo" src="images/logo.png" alt="..."/>
+                <a class="navbar-brand" href="/">
+                    <img class="navbar-logo" src="images/logo.png" alt="Dlike"/>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

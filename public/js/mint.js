@@ -27,14 +27,9 @@ $(document).ready(function(){
     });    
 	function _fetch(apiUrl,webUrl) {
         $.post(apiUrl,{url:webUrl},function(response){
-            console.log(response);
-            
             let res = JSON.parse(response);
             window.location.replace("share.php?url="+encodeURIComponent(res.url)+"&title="+encodeURIComponent(res.title)+"&imgUrl="+encodeURIComponent(res.imgUrl)+"&details="+encodeURIComponent(res.des));
-            _hide($sharePost);
-            _show($editPost);
             console.log("Response array: "+res.url);
-
         });
     }
 	function isValidURL(url){
