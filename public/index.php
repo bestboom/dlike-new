@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('template/header.php'); ?>
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">
