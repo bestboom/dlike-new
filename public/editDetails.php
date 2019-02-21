@@ -60,21 +60,6 @@ $categorires = [];
                                     </div>
                                     <div class="ui inverted divider"></div>
                                 </div>
-                                <div class="field">
-                                    <label>Tags</label>
-                                    <div class="ui transparent input tags_field">
-                                        <input type="text" name="tags" value="" placeholder="Enter tags with spaces">
-                                    </div>
-                                    <div class="ui inverted divider"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w3_info col-md-6">
-                            <div class="right_grid_info">
-                    <span><img class="img-responsive wdt100 imght"
-                               src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg";
-                               print $imgUrl; ?>" alt="dlike"/>
-                                    </span>
                             </div>
                         </div>
 
@@ -274,7 +259,7 @@ $categorires = [];
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Tags">
+                                        	<input type="text" name="tags" value="" placeholder="Enter tags with spaces">
                                         </div>
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" id="comment" placeholder="Description"></textarea>
