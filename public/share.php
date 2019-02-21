@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
@@ -10,10 +11,10 @@
   <link rel="stylesheet" href="./assets/css/slick.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/responsive.css">
-  <title>Dlike</title>
+  <title>Excoin cryptowatch</title>
 </head>
 <body>
-    <div class="banner-block">
+    <div class="subheader">
         <nav class="navbar main-nav navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
@@ -24,7 +25,14 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="exchange-one.html">Exchange </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="exchange-one.html">Exchange Default</a></li>
+                                <li class="nav-item"><a class="nav-link" href="exchange-two.html">Exchange Full</a></li>
+                                <li class="nav-item"><a class="nav-link" href="exchange-three.html">Exchange Dark</a></li>
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="chart.html">Chart</a></li>
                         <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
                         <li class="nav-item dropdown">
@@ -49,75 +57,110 @@
                                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown language-option">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-globe"></i> EN
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                            <i class="fab fa-buysellads"></i> US
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="fas fa-lira-sign"></i> UK
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item button">
+                            <a class="btn nav-link" href="login.html">Login</a>
+                        </li>
                         <li class="nav-item button active">
-                            <a class="btn nav-link" href="#"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
+                            <a class="btn nav-link" href="signup.html">Sign Up</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <!-- Modal -->
         </nav><!-- main-nav-block -->
-              <div class="container">
-            <div class="offset-md-2 col-md-8">
-                <div class="banner-content">
-                    <h2>Welcome To Dlike</h2>
-                    <p>
-                        Share What you like with community <br>
-                         Get rewarded if community likes your shares
-                    </p>
-
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="subheader-wrapper">
+                        <h3>Contact Us</h3>
+                        <p>
+                            Many desktop publishing packages and web page editors now use <br>
+                            Lorem Ipsum as their default model text
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div><!-- sub-header -->
-    <div class="latest-post-section">
+    <div class="contact-form-section">
         <div class="container">
-            <article class="post-style-two post-full-width">
-                <div class="post-thumb">
-                    <a href="#">
-                        <img src="./images/post/1.jpg" alt="img" class="img-responsive">
-                    </a>
-                </div>
-                <div class="post-contnet-wrap">
-                    <span class="post-meta">30 NOV, 2019</span>
-                    <h4 class="post-title">
-                        <a href="#">
-                            Publish what you think
-                        </a>
-                    </h4>
-                    <p class="post-entry">
-                        No third party can freeze or lose your funds! With enterprise-level 
-                        security superior to most other t is a long established fact that a 
-                        reader will be distracted by the readable content of a page when l
-                        ooking at its layout. The point of using...
-                    </p>
-                    <div class="post-footer">
-                        <div class="post-author-block">
-                            <div class="author-thumb">
-                                <a href="#">
-                                    <img src="./images/post/authors/1.png" alt="img" class="img-responsive">
-                                </a>
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-9">
+                    <div class="contact-form-wrap">
+                        <form class="contact-form" action="#" method="get">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL">
+                                </div>
                             </div>
-                            <div class="author-info">
-                                <h5>
-                                    <a href="#">
-                                        Nayn e Castro
-                                    </a>
-                                </h5>
-                                <a href="#">@excoin</a>
+                            <div class="row justify-content-center">
+                                <button type="submit" class="btn btn-default" id="share"><i class="fas fa-spinner fa-spin loader" style="display:none;"></i><span id="plus">Share</span></button>
+                            </div>
+                        </form><!-- contact-form -->
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info-outer">
+                <div class="contact-info-wrap">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="map-block" id="map_block"></div>
                             </div>
                         </div>
-                        <div class="post-comments">
-                            <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                            <a href="#">03 Comments</a>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="contact-info-block">
+                                    <div class="contact-info-inner">
+                                        <h4>Contact Info</h4>
+                                        <ul class="contact-info-list">
+                                            <li>
+                                                <img src="./images/others/25.png" alt="img" class="img-responsive">
+                                                <p>
+                                                    558 Rathdowne Road Miracel Carlton, 
+                                                    Victoria 4500
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/others/26.png" alt="img" class="img-responsive">
+                                                <p>
+                                                    supportexcoin@gmail.com
+                                                    excoincompany@yourmail.com
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <img src="./images/others/27.png" alt="img" class="img-responsive">
+                                                <p>
+                                                    +33 08 5584 566 88
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </article><!-- post-style-two -->
-            <div class="row" id="content">
             </div>
         </div>
-    </div>
+    </div><!-- contact-section -->
     <div class="colto-section">
         <div class="container">
             <div class="colto-content-wrap">
@@ -133,7 +176,6 @@
             </div>
         </div>
     </div><!-- colto-section -->
-    <!-- Call to Action End -->
     <footer class="footer">
         <div class="footer-upper-section">
             <div class="container">
@@ -237,24 +279,20 @@
                         </ul>
                     </div>
                     <div class="copyright-text">
-                        © 2019 <a href="#">DLike</a>. All Rights Reserved
+                        © 2019 <a href="#">Excoin</a>. All Rights Reserved
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="./assets/js/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="./assets/js/popper.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
     <script src="./assets/js/jquery.peity.min.js"></script>
     <script src="./assets/js/jquery.slimscroll.min.js"></script>
     <script src="./js/custom.js"></script>
-    <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
-    <script src="https://momentjs.com/downloads/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-    <script src="./js/posts.js"></script>
-    <script src="./js/steemconnect.js"></script>
+    <script src="./js/mint.js"></script>
+    
 </body>
 </html>
