@@ -19,9 +19,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-4">
                         <div class="footer-logo">
-                            <a href="#">
-                                <img src="./images/logo.png" alt="img" class="img-responsive"/>
-                            </a>
+                            <a href="/"><img src="./images/logo.png" alt="img" class="img-responsive"/></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-4">
@@ -108,15 +106,12 @@
                     <div class="trade-volume-block">
                         <ul>
                             <li>
-                                <span>39151</span> Active Traders
-                            </li>
-                            <li>
-                                <span>4191 BTC</span> 24h Volume
+                                <span>Made with <i class="fas fa-heart"></i> By Dlike</span>
                             </li>
                         </ul>
                     </div>
                     <div class="copyright-text">
-                        © 2019 <a href="#">Excoin</a>. All Rights Reserved
+                        <a href="/"><img src="./images/logo.png" alt="img" class="img-responsive"/></a> &nbsp; © 2019 <a href="#">DLike</a>. All Rights Reserved
                     </div>
                 </div>
             </div>

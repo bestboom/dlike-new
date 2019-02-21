@@ -2,8 +2,8 @@
 </div>
     <div class="contact-form-section">
         <div class="container">
-            <div class="row">
-			<div class="contact-info-outer">
+            
+            <div class="contact-info-outer">
                 <div class="contact-info-wrap">
                     <div class="row">
                         <div class="col-md-6">
