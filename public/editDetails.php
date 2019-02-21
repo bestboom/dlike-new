@@ -153,13 +153,15 @@ $categorires = [];
                                         <div class="row form-group">
                                             <div class="col">
                                                 <select class="form-control form-control-lg" id="cats">
-                                                	<?php foreach ($categories as $category){ ?>
-                                            		<option value="<?php echo $category; ?>"><?php echo $category; ?></option>
-                                                	<?php } ?>
+                                                	<option>Category</option>
+                                                	<option>News</option>
+                                                    <option>Cryptocurrency</option>
+                                                    <option>Food</option>
                                                 </select>
                                             </div>
                                             <div class="col">
                                                 <select class="form-control form-control-lg" id="rewards">
+                                                	<option>Reward Option</option>
                                                 	<option>50% SBD and 50% SP</option>
                                                     <option>100% Steem Power</option>
                                                     <option>Declined</option>
