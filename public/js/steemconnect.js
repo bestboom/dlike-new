@@ -2,7 +2,7 @@
 
 var api = sc2.Initialize({
   app: 'techdev',
-  callbackURL: 'http://localhost:8000/steemconnect/',
+  callbackURL: 'steemconnect',
   accessToken: 'access_token',
   scope: [ 'login', 'vote', 'comment', 'delete_comment', 'comment_options', 'custom_json' ],
 });

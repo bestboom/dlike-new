@@ -143,7 +143,7 @@ $categorires = [];
 
                                 <div class="user-connected-form-block">
                                     <form class="user-connected-from user-signup-form">
-                                    	<input type="hidden" name="image" value="<?php print  $img; ?>">
+                                    	<input type="hidden" name="image" value="<?php print $img; ?>">
                                         <div class="form-group">
                                             <input type="text" class="form-control" name="title" value="<?php print $title; ?>">
                                         </div>
@@ -184,7 +184,6 @@ $categorires = [];
                             <div class="row">
                                 <div class="contact-info-block">
                                     <div class="contact-info-inner">
-                                    	<?php echo $img; ?>
                                         <img class="img-fluid" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
                                     </div>
                                 </div>
