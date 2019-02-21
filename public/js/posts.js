@@ -69,11 +69,11 @@ $(document).ready(function(){
 							for (i in query){
 								let splited = query[i].split('=');
 								if(splited[0] == 'v'){
-									thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" frameborder="0" allowfullscreen></iframe>';
+									thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
 								}
 							}
 						}else{
-							thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top img-fluid" frameborder="0" allowfullscreen></iframe>';
+							thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
 						}
 					} 
 
