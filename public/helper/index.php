@@ -91,7 +91,7 @@ class DataGraber{
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
 			    $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
 			    $imglt ="data:image/jpeg;base64,$screenshot";
-			    define('UPLOAD_DIR', 'upload/');
+			    define('UPLOAD_DIR', 'https://dlike.io/upload/');
                 $img = $imglt;
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
