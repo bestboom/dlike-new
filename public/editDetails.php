@@ -44,9 +44,7 @@ $categorires = [];
                                         <input type="text" name="category" list="cats" value="" id='cat'
                                                placeholder="Like food, news, sports, do not write dlike">
                                         <datalist id="cats">
-                                            <?php foreach ($categories
-
-                                            as $category){ ?>
+                                            <?php foreach ($categories as $category){ ?>
                                             <option value="<?php echo $category; ?>">
                                                 <?php } ?>
                                         </datalist>
@@ -154,11 +152,10 @@ $categorires = [];
                                         </div>
                                         <div class="row form-group">
                                             <div class="col">
-                                                <select class="form-control form-control-lg">
-                                                    <option>Select Category</option>
-                                                    <option>USA</option>
-                                                    <option>UK</option>
-                                                    <option>UAE</option>
+                                                <select class="form-control form-control-lg" id="cats">
+                                                	<?php foreach ($categories as $category){ ?>
+                                            		<option value="<?php echo $category; ?>"><?php echo $category; ?></option>
+                                                	<?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col">

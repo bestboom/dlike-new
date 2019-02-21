@@ -239,7 +239,7 @@ if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
         $response["success"] = true;
         $response["url"] = $url;
         $response["title"] = $grab->getTitle();
-        $response["imgUrl"] = "https://dlike.io/images/default-img.jpg";
+        $response["imgUrl"] = $grab->getThumbnail();
         $response["des"] = $grab->getDescription();
     }else{
         $response["success"] = false;
