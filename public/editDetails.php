@@ -235,10 +235,10 @@ $categorires = [];
                                     <form class="user-connected-from user-signup-form">
                                     	<input type="hidden" name="image" value="<?php print  $img; ?>">
                                         <div class="form-group">
-                                            <input type="text" name="title" value="<?php print $title; ?>">
+                                            <input type="text" class="form-control" name="title" value="<?php print $title; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="exturl" id="exturl" value="<?php print $url; ?>">
+                                            <input type="text" class="form-control" name="exturl" id="exturl" value="<?php print $url; ?>">
                                         </div>
                                         <div class="row form-group">
                                             <div class="col">
@@ -259,7 +259,7 @@ $categorires = [];
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                        	<input type="text" name="tags" value="" placeholder="Enter tags with spaces">
+                                        	<input type="text" class="form-control" name="tags" value="" placeholder="Enter tags with spaces">
                                         </div>
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" id="comment" placeholder="Description"></textarea>
@@ -273,6 +273,7 @@ $categorires = [];
                             <div class="row">
                                 <div class="contact-info-block">
                                     <div class="contact-info-inner">
+                                    	<?php echo $img; ?>
                                         <img class="img-fluid" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
                                     </div>
                                 </div>
