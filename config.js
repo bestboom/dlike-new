@@ -1,1 +1,0 @@
-var aq = 'this is good';
