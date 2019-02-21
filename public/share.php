@@ -11,13 +11,13 @@
                                 </div>
                             </div>
                             <div class="row justify-content-center">
-                                <button type="submit" class="btn btn-default" id="share"><i class="fas fa-spinner fa-spin loader" style="display:none;"></i><span id="plus">Share</span></button>
+                                <button type="button" class="btn btn-default" id="share"><i class="fas fa-spinner fa-spin loader" style="display:none;"></i><span id="plus">Share</span></button>
                             </div>
                         </form><!-- contact-form -->
                     </div>
                 </div>
             </div>
-            <div class="contact-info-outer">
+            <div class="contact-info-outer" style="display: none;">
                 <div class="contact-info-wrap">
                     <div class="row">
                         <div class="col-md-6">
