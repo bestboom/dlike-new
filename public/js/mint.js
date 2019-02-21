@@ -17,7 +17,7 @@ $(document).ready(function(){
         let verifyUrl = getDomain(url);
         	if(isValidURL(url)){ 
         		if(verifyUrl.match(/steemit.com/g)) { 
-        		alert('steem url not allowed'); } else{ _fetch("home.html",url); return; }
+        		alert('steem url not allowed'); } else{ _fetch("maker",url); return; }
         	}
     	}
     });    
