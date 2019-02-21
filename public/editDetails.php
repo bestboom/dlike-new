@@ -35,14 +35,7 @@ $categorires = [];
             background: #eeeeee36;
         }
     </style>
-    <div class="main-container fixed-top-padding cont-sec" style="background:#e4e4e4;">
-        <div class="container" style="margin-top: 0.1%;position:relative;">
-            <div id="man-cont">
 
-                <form class="form_wrap" method="post" action="submit_post.php" style="margin-top: 0px;">
-                    <div class="agile_info row">
-                        <div class="w3_info contact-form col-md-6" style="padding-bottom: 0px;">
-                            <div class="ui form">
                                 
 
                                 <div class="field">
@@ -60,37 +53,7 @@ $categorires = [];
                                     </div>
                                     <div class="ui inverted divider"></div>
                                 </div>
-                            </div>
-                        </div>
 
-
-                        <div class="col-md-12">
-                            <div class="agile_info">
-                                <div class="w3_info"
-                                     style="flex-basis: 100%; -webkit-flex-basis: 100%; padding-top: 0px;">
-                                    <div class="ui form">
-                                       
-
-                                        <div class="field ui clearing">
-                                            <div class="ui">
-
-                                                <button class="ui right floated medium orange button submit btn-primary"
-                                                        type="submit" style="background:rgb(173, 31, 35);">Submit
-                                                </button>
-
-                                            </div>
-                                            <div class="clear"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
     <!-- Modal -->
     <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -235,9 +198,9 @@ $categorires = [];
                                             </div>
                                             <div class="col">
                                                 <select class="form-control form-control-lg" id="rewards">
-                                                    <option value="50% SBD and 50% SP">
-                                                    <option value="100% Steem Power">
-                                                    <option value="Declined">
+                                                	<option>50% SBD and 50% SP</option>
+                                                    <option>100% Steem Power</option>
+                                                    <option>Declined</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -247,6 +210,7 @@ $categorires = [];
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" id="description_editor" placeholder="Description"><?php print $des; ?></textarea>
                                         </div>
+                                        <button type="submit" class="btn btn-default">Sign Up</button>
                                     </form>
                                 </div><!-- create-account-block -->
 
@@ -263,8 +227,6 @@ $categorires = [];
                             </div>
                         </div>
 
-<button type="submit" class="btn btn-default">Sign Up</button>
-                        
                     </div>
                 </div>
             </div>
