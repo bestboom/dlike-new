@@ -11,14 +11,14 @@
   <link rel="stylesheet" href="./assets/css/slick.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/responsive.css">
-  <title>Excoin cryptowatch</title>
+  <title>Dlike - Share What You like</title>
 </head>
 <body>
     <div class="subheader">
         <nav class="navbar main-nav navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <img class="navbar-logo" src="images/logo.png" alt="..."/>
+                <a class="navbar-brand" href="/">
+                    <img class="navbar-logo" src="images/logo.png" alt="dLike"/>
                 </a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
