@@ -230,7 +230,7 @@ class DataGraber{
 
 $response = [];
 //$url = $_POST['url'];
-$url = "https://www.dougheyed.com/classic-berry-trifle/";
+$url = "https://www.google.com/";
 $grab = new DataGraber($url);
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
