@@ -54,42 +54,7 @@ $categorires = [];
                                     <div class="ui inverted divider"></div>
                                 </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="scheduleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" style="color: black; font-size: 16px; ">Schedule Post</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p style="font-size: 13px;">A scheduled post will be automatically published after the specified interval.</p>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <span style="font-size: 14px;">Select Date:</span>
-                        <input type="date" min="<?=date("Y-m-d");?>" class="select_date" style="width: 100%;">
-                    </div>
-                    <div class="col-md-6">
-                        <span style="font-size: 14px;">Select Time:</span>
-                        <input type="time" min="<?=date("H:i")?>" class="select_time" style="width: 100%;">
-                    </div>
-                </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-                type="submit" data-dismiss="modal" style="background:rgb(173, 31, 35);  background-color: #DDDDDD; border: 1px solid #DDDDDD; border-radius: 5px; padding: 6px 16px; cursor: pointer;"><i class="fas fa-times"></i> CANCEL
-            </button>
-            <button
-                    type="button" class="btn_schedule" style="background:rgb(173, 31, 35); border-radius: 5px; padding: 6px 16px; cursor: pointer;"><i class="far fa-calendar-alt"></i> SCHEDULE
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+ 
     <script>
         $('.submit').click(function () {
             if ($('div.right_grid_info img').attr('src') == 'https://dlike.io/images/default-img.jpg' || '') {
@@ -210,7 +175,7 @@ $categorires = [];
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" id="description_editor" placeholder="Description"><?php print $des; ?></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-default">Sign Up</button>
+                                        <button type="submit" class="btn btn-default">SUBMIT</button>
                                     </form>
                                 </div><!-- create-account-block -->
 
