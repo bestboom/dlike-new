@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include('./functions/main.php');
+include('../functions/main.php');
 	echo $url = $_POST['exturl'];
 	echo '<br>';
 	echo $urlImage = $_POST["image"];
