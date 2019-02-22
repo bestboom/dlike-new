@@ -231,6 +231,7 @@ class DataGraber{
 $response = [];
 $url = $_POST['url'];
 //$url = "https://www.dougheyed.com/classic-berry-trifle/";
+//http://www.reelsilvercharters.com/lake-ontario-game-fish.htm
 $grab = new DataGraber($url);
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){

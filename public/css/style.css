@@ -1272,7 +1272,11 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .map-block {
   height: 400px;
   width: 100%; }
-
+.mb-deck {
+  color: #fff;
+  font-weight: 600;
+  background: #1652f0;
+}
 .contact-info-block {
   padding: 0 50px 0 30px;
   display: -webkit-box;

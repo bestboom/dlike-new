@@ -15,7 +15,7 @@ if (isset($_GET["url"])) {
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
 } else { die('Not Allowed');}
 
-$categorires = [];
+$categorires = array("News", "Cryptocurrencygreen", "Food", "LifeStyle"); 
 ?>
     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
     <style>
@@ -145,18 +145,27 @@ $categorires = [];
                                     <form class="user-connected-from user-signup-form">
                                     	<input type="hidden" name="image" value="<?php print $img; ?>">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="title" value="<?php print $title; ?>">
+                                        	<div class="input-group mb-3">
+                                        		<div class="input-group-prepend">
+                                            		<div class="input-group-text mb-deck"> Title</div>
+                                        		</div>
+                                            	<input type="text" class="form-control" name="title" value="<?php print $title; ?>">
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="exturl" id="exturl" value="<?php print $url; ?>">
+                                        	<div class="input-group mb-3">
+                                        		<div class="input-group-prepend">
+                                            		<div class="input-group-text mb-deck"> Link</div>
+                                        		</div>
+                                            	<input type="text" class="form-control" disabled="true" name="exturl" id="exturl" value="<?php print $url; ?>">
+                                            </div>
                                         </div>
                                         <div class="row form-group">
                                             <div class="col">
                                                 <select class="form-control form-control-lg" id="cats">
-                                                	<option>Category</option>
-                                                	<option>News</option>
-                                                    <option>Cryptocurrency</option>
-                                                    <option>Food</option>
+                                            	<?php foreach ($categories as $category){ ?>
+                                                	<option><?php echo $category; ?></option>	
+                                                <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col">
@@ -169,7 +178,12 @@ $categorires = [];
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                        	<input type="text" class="form-control" name="tags" value="" placeholder="Enter tags with spaces">
+                                        	<div class="input-group mb-3">
+                                        		<div class="input-group-prepend">
+                                            		<div class="input-group-text mb-deck"> Tags</div>
+                                        		</div>
+                                        		<input type="text" class="form-control" name="tags" value="" placeholder="Enter tags with spaces">
+                                        	</div>
                                         </div>
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" id="description_editor" placeholder="Description"><?php print $des; ?></textarea>

@@ -6,9 +6,35 @@
                     <p>We provide professional and secure trading services for investors</p>
                 </div>
                 <div class="colto-btn-group">
-                    <button class="btn callto-btn">Log In</button>
-                    <span>or</span>
-                    <button class="btn callto-btn">Create Account</button>
+                    <div class="footer-info-list">
+                        <ul class="social-style-two">
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
