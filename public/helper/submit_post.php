@@ -12,7 +12,7 @@ include ('functions/main.php');
 	echo '<br>';
 	echo $cat = $_POST['category'];
 	echo '<br>';
-	$_POST['tags'] = "dlike," . 'dlike-' . $cat . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
+	echo $_POST['tags'] = "dlike," . 'dlike-' . $cat . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 	$max_accepted_payout = '900.000 SBD';
 	$percent_steem_dollars =10000;
 
