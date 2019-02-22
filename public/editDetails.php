@@ -14,8 +14,7 @@ if (isset($_GET["url"])) {
     $title = strip_tags(htmlspecialchars(trim($decode($title))));
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
 } else { die('Not Allowed');}
-
-$categorires = array("News", "Cryptocurrencygreen", "Food", "LifeStyle"); 
+$categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle"); 
 ?>
     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
     <style>
@@ -164,7 +163,7 @@ $categorires = array("News", "Cryptocurrencygreen", "Food", "LifeStyle");
                                             <div class="col">
                                                 <select class="form-control form-control-lg" id="cats">
                                             	<?php foreach ($categories as $category){ ?>
-                                                	<option><?php echo $category; ?></option>	
+                                                	<option value="<?php echo $category;?>"><?php echo $category;?></option>	
                                                 <?php } ?>
                                                 </select>
                                             </div>
