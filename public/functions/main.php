@@ -51,3 +51,12 @@ function getMaxPayout($user_status, $user_score) {
     }
     return $max_accepted_payout;
 }
+
+
+function clean($string)
+{
+    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+    $string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+    $string = str_replace('--', '-', $string); // Replaces all spaces with hyphens.
+    return strtolower($string);
+}
