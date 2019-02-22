@@ -140,7 +140,7 @@ $categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle");
                                         		<div class="input-group-prepend">
                                             		<div class="input-group-text mb-deck"> Link</div>
                                         		</div>
-                                            	<input type="text" class="form-control" disabled="true" name="exturl" id="exturl" value="<?php print $url; ?>">
+                                            	<input type="text" class="form-control" name="exturl" value="<?php print $url; ?>">
                                             </div>
                                         </div>
                                         <div class="row form-group">
@@ -152,7 +152,7 @@ $categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle");
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <select class="form-control form-control-lg" name="reward_option" id="rewards"><option>Reward Option</option>
+                                                <select class="form-control form-control-lg" name="reward_option" id="rewards">
                                                 	<option value="1">50% SBD and 50% SP</option>
                                                     <option value="2">100% Steem Power</option>
                                                     <option value="3">Declined</option>
