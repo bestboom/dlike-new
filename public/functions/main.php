@@ -67,3 +67,5 @@ function validationData($data)
     $data = htmlspecialchars(strip_tags(nl2br(trim($data))));
     return $data;
 }
+
+?>

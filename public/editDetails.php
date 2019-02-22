@@ -139,12 +139,13 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         		<div class="input-group-prepend">
                                             		<div class="input-group-text mb-deck"> Link</div>
                                         		</div>
-                                            	<input type="text" class="form-control" name="exturl" value="<?php print $url; ?>">
+                                            	<input type="text" readonly="readonly" class="form-control" name="exturl" value="<?php print $url; ?>">
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <div class="col">
                                                 <select class="form-control form-control-lg" name="category" id="cats">
+                                                	<option>Select Category</option>
                                             	<?php foreach ($categories as $category){ ?>
                                                 	<option value="<?php echo $category;?>"><?php echo $category;?></option>	
                                                 <?php } ?>
@@ -152,6 +153,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                             </div>
                                             <div class="col">
                                                 <select class="form-control form-control-lg" name="reward_option" id="rewards">
+                                                	<option>Reward Options</option>
                                                 	<option value="1">50% SBD and 50% SP</option>
                                                     <option value="2">100% Steem Power</option>
                                                     <option value="3">Declined</option>
