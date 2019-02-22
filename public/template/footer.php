@@ -14,92 +14,6 @@
         </div>
     </div><!-- colto-section -->
     <footer class="footer">
-        <div class="footer-upper-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="footer-logo">
-                            <a href="/"><img src="./images/logo.png" alt="img" class="img-responsive"/></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Our Company</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Token Listing</a></li>
-                                <li><a href="#">Join Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>Learn</h4>
-                            <ul>
-                                <li><a href="#">Legal</a></li>
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">AML&CFT</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>Help</h4>
-                            <ul>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">API Support</a></li>
-                                <li><a href="#">Coin/Token Listing</a></li>
-                                <li><a href="#">Partnership</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>Contact Us</h4>
-                            <ul class="contact-info">
-                                <li>Email:  <span>info.excoin@gmail.com</span></li>
-                                <li>Phone:   <span>+99 5589 54789</span></li>
-                            </ul>
-                            <ul class="social-style-two">
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-icon-wrap">
-                <a href="#">
-                    <img src="./images/others/31.png" alt="img" class="img-responsive">
-                </a>
-            </div>
-        </div>
         <div class="footer-bottom">
             <div class="container">
                 <div class="footer-bottom-wrap">
@@ -110,8 +24,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="copyright-text">
-                        <a href="/"><img src="./images/logo.png" alt="img" class="img-responsive"/></a> &nbsp; © 2019 <a href="#">DLike</a>. All Rights Reserved
+                    <div class="row copyright-text">
+                        <div><a href="/"><img src="./images/logo.png" alt="img" class="img-responsive"/></a></div>&nbsp;<div><p>  © 2019 <a href="#">DLike</a>. All Rights Reserved</p></div>
                     </div>
                 </div>
             </div>
@@ -133,4 +47,3 @@
     <script src="./js/steemconnect.js"></script>
 </body>
 </html>
-
