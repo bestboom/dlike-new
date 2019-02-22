@@ -35,23 +35,7 @@ $categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle");
         }
     </style>
 
-                                
-
-                                <div class="field">
-                                    <label>Add To Community</label>
-                                    <div class="ui transparent input category_field">
-                                        <input type="text" name="category" list="cats" value="" id='cat'
-                                               placeholder="Like food, news, sports, do not write dlike">
-                                        <datalist id="cats">
-                                            <?php foreach ($categories as $category){ ?>
-                                            <option value="<?php echo $category; ?>">
-                                                <?php } ?>
-                                        </datalist>
-                                    </div>
-                                    <div class="ui inverted divider"></div>
-                                </div>
-
- 
+                               
     <script>
         $('.submit').click(function () {
             if ($('div.right_grid_info img').attr('src') == 'https://dlike.io/images/default-img.jpg' || '') {
