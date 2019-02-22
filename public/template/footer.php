@@ -18,11 +18,7 @@
             <div class="container">
                 <div class="footer-bottom-wrap">
                     <div class="trade-volume-block">
-                        <ul>
-                            <li>
-                                <span>Made with <i class="fas fa-heart"></i> By Dlike</span>
-                            </li>
-                        </ul>
+                        <span>Made with <i class="fas fa-heart"></i> By Dlike</span>
                     </div>
                     <div class="row copyright-text">
                         <div><a href="/"><img src="./images/logo.png" alt="img" class="img-responsive"/></a></div>&nbsp;<div><p>  © 2019 <a href="#">DLike</a>. All Rights Reserved</p></div>

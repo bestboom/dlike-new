@@ -184,7 +184,7 @@ $categorires = [];
                             <div class="row">
                                 <div class="contact-info-block">
                                     <div class="contact-info-inner">
-                                        <img class="img-fluid" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
+                                        <img class="img-fluid d-flex h-100 flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
                                     </div>
                                 </div>
                             </div>
