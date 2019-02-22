@@ -14,7 +14,7 @@ if (isset($_GET["url"])) {
     $title = strip_tags(htmlspecialchars(trim($decode($title))));
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
 } else { die('Not Allowed');}
-$categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle"); 
+$categories  = array("News", "Cryptocurrency", "Food", "LifeStyle"); 
 ?>
     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
     <style>
@@ -100,21 +100,20 @@ $categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle");
         });
     </script>
 
-
 <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="subheader-wrapper">
-                        <h3>Contact Us</h3>
-                        <p>
-                            Many desktop publishing packages and web page editors now use <br>
-                            Lorem Ipsum as their default model text
-                        </p>
-                    </div>
+            <div class="offset-md-2 col-md-8">
+                <div class="banner-content">
+                    <h2>Share For Community</h2>
+                    <p>
+                        Share only useful content for community <br>
+                            Selfies and personal spamming not allowed
+                    </p>
+
                 </div>
             </div>
         </div>
     </div><!-- sub-header -->
+
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
             

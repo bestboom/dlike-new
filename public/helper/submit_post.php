@@ -1,5 +1,5 @@
 <?php
-include ('functions/main.php');
+include ('./functions/main.php');
 	echo $url = $_POST['exturl'];
 	echo '<br>';
 	echo $urlImage = $_POST["image"];
@@ -13,6 +13,7 @@ include ('functions/main.php');
 	echo $cat = $_POST['category'];
 	echo '<br>';
 	echo $_POST['tags'] = "dlike," . 'dlike-' . $cat . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
+	echo '<br>';
 	$max_accepted_payout = '900.000 SBD';
 	$percent_steem_dollars =10000;
 
