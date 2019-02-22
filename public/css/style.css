@@ -1274,7 +1274,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   width: 100%; }
 
 .contact-info-block {
-  padding: 0 160px 0 130px;
+  padding: 0 50px 0 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
