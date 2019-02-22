@@ -145,18 +145,17 @@ $categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle");
                                         </div>
                                         <div class="row form-group">
                                             <div class="col">
-                                                <select class="form-control form-control-lg" id="cats">
+                                                <select class="form-control form-control-lg" name="category" id="cats">
                                             	<?php foreach ($categories as $category){ ?>
                                                 	<option value="<?php echo $category;?>"><?php echo $category;?></option>	
                                                 <?php } ?>
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <select class="form-control form-control-lg" id="rewards">
-                                                	<option>Reward Option</option>
-                                                	<option>50% SBD and 50% SP</option>
-                                                    <option>100% Steem Power</option>
-                                                    <option>Declined</option>
+                                                <select class="form-control form-control-lg" name="reward_option" id="rewards"><option>Reward Option</option>
+                                                	<option value="1">50% SBD and 50% SP</option>
+                                                    <option value="2">100% Steem Power</option>
+                                                    <option value="3">Declined</option>
                                                 </select>
                                             </div>
                                         </div>
