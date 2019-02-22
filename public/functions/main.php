@@ -60,3 +60,10 @@ function clean($string)
     $string = str_replace('--', '-', $string); // Replaces all spaces with hyphens.
     return strtolower($string);
 }
+
+
+function validationData($data)
+{
+    $data = htmlspecialchars(strip_tags(nl2br(trim($data))));
+    return $data;
+}

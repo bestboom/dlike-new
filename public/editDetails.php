@@ -169,7 +169,7 @@ $categories  = array("News", "Cryptocurrencygreen", "Food", "LifeStyle");
                                         	</div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" id="description_editor" placeholder="Description"><?php print $des; ?></textarea>
+                                            <textarea class="form-control" rows="5" id="description_editor" name="post" placeholder="Description"><?php print $des; ?></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default">SUBMIT</button>
                                     </form>
