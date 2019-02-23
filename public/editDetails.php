@@ -54,7 +54,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         </div>
                                         <div class="row form-group">
                                             <div class="col">
-                                                <select class="form-control form-control-lg" name="category" id="catg">
+                                                <select class="form-control form-control-lg catg" name="category">
                                                 	<option value="0">Select Category</option>
                                             	<?php foreach ($categories as $category){ ?>
                                                 	<option value="<?php echo $category;?>"><?php echo $category;?></option>	
@@ -95,7 +95,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
