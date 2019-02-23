@@ -81,5 +81,58 @@ $(document).ready(function(){
             return null;
         }
     }
+    $('.shareme').click(function () {
+        let text_words = $.trim($('[name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
+        if(text_words < 20){
+            showModalError(
+                "Make Sure..",
+                "Write minimum 30 words to explain how this share is useful for community.",
+                ""
+                );
+            return false;  
+        }
+        if($('.catg').val() == "0"){
+            $('.catg').css("border-color", "RED");
+            showModalError(
+                "uh-oh..",
+                "You must Select an appropriate Category",
+                ""
+                );
+            return false;  
+        }
+        if ($('.tags').val().length === 0) {
+            $('.tags').css("border-color", "RED");
+            showModalError(
+                "uh-oh..",
+                "You must add related tags",
+                ""
+                );
+            return false; 
+        }
+        if ($('.title_field').val() == "") {
+            showModalError(
+                "uh-oh..",
+                "Title Should not be empty!",
+                ""
+                );
+            return false;
+        }
+    });
 
+    function showModalError(title, content, callback) {
+    $("#alert-title-error").text(title);
+    $("#alert-content-error").html(content);
+    $("#alert-modal-error").modal("show");
+    $("#alert-modal-error").on("hidden.bs.modal", function(e) {
+        callback();
+    });
+    }
+      function showModalSuccess(title, content, callback) {
+    $("#alert-title-success").text(title);
+    $("#alert-content-success").html(content);
+    $("#alert-modal-success").modal("show");
+    $("#alert-modal-success").on("hidden.bs.modal", function(e) {
+        callback();
+    });
+    }
 });

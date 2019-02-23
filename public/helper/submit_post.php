@@ -34,6 +34,7 @@ include('../functions/main.php');
 	echo '<br>';
 	echo $permlink = validationData(clean($_POST['title']));
 	echo '<br>';
+	
 	$json_metadata = [
     "community" => "dlike",
     "app" => "dlike/1",
@@ -44,7 +45,7 @@ include('../functions/main.php');
     "category" => $_POST['category'],
     "scheduled_at" => $_POST['scheduled'],
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
-];
+	];
 	
 
 ?>

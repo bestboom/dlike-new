@@ -16,107 +16,17 @@ if (isset($_GET["url"])) {
 } else { die('Not Allowed');}
 $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle"); 
 ?>
-    <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
-    <style>
-        .ck-editor__editable {
-            min-height: 200px;
-        }
-
-        .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-            border-color: #eee;
-        }
-
-        .ck.ck-editor__main > .ck-editor__editable {
-            background: #eee;
-        }
-
-        .ck.ck-toolbar {
-            background: #eeeeee36;
-        }
-    </style>
-
-                               
-    <script>
-        $('.submit').click(function () {
-            if ($('div.right_grid_info img').attr('src') == 'https://dlike.io/images/default-img.jpg' || '') {
-                $("#freeow").freeow("Hello..", "<span style='color:#fff;'>Sorry! Image could not be captured!</span>", {
-                    classes: ["smokey", "error"],
-                    autoHide: true
-                });
-                return false;
-            }
-            if ($('.tags_field input').val().length === 0) {
-                $("#freeow").freeow("Hello..", "<span style='color:#fff;'>Please enter related tags</span>", {
-                    classes: ["smokey", "error"],
-                    autoHide: true
-                });
-                return false;
-            }
-            if ($('.category_field input').val().length === 0) {
-                $("#freeow").freeow("Hello..", "<span style='color:#fff;'>Please enter related category</span>", {
-                    classes: ["smokey", "error"],
-                    autoHide: true
-                });
-                return false;
-            }
-            var categories = $.trim($('.category_field input').val()).split(' ');
-            if (categories.length > 1) {
-                $("#freeow").freeow("Hello..", "<span style='color:#fff;'>Please enter only one category</span>", {
-                    classes: ["smokey", "error"],
-                    autoHide: true
-                });
-                return false;
-            }
-            if ($('.title_field input').val().length === 0) {
-                $("#freeow").freeow("Hello..", "<span style='color:#fff;'>Please check title of the post</span>", {
-                    classes: ["smokey", "error"],
-                    autoHide: true
-                });
-                return false;
-            }
-
-        });
-        ClassicEditor
-            .create( document.querySelector( '#description_editor' ), {ckfinder: { uploadUrl: 'ck_uploader.php?command=QuickUpload&type=Files&responseType=json'}} )
-            .then(editor => {
-            //console.log( editor );
-        }
-        )
-        .catch(error => {
-            console.error(error);
-        } );
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('.form_wrap #exturl').prop("readonly", true);
-
-            var categoryField = document.getElementById("cat");
-            categoryField.addEventListener('keypress', function ( event ) {
-                var key = event.which;
-                if (key === 32) {
-                    event.preventDefault();
-                }
-            });
-        });
-    </script>
-
 <div class="container">
             <div class="offset-md-2 col-md-8">
                 <div class="banner-content">
                     <h2>Share For Community</h2>
-                    <p>
-                        Share only useful content for community <br>
-                            Selfies and personal spamming not allowed
-                    </p>
-
+                    <p>Share only useful content for community <br>Selfies and personal spamming not allowed</p>
                 </div>
             </div>
         </div>
     </div><!-- sub-header -->
-
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
-            
             <div class="contact-info-outer">
                 <div class="contact-info-wrap">
                     <div class="row align-items-center h-100">
@@ -145,7 +55,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         <div class="row form-group">
                                             <div class="col">
                                                 <select class="form-control form-control-lg" name="category" id="cats">
-                                                	<option>Select Category</option>
+                                                	<option value="0">Select Category</option>
                                             	<?php foreach ($categories as $category){ ?>
                                                 	<option value="<?php echo $category;?>"><?php echo $category;?></option>	
                                                 <?php } ?>
@@ -171,10 +81,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" id="description_editor" name="post" placeholder="Description"><?php print $des; ?></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-default">SUBMIT</button>
+                                        <button type="submit" class="btn btn-default shareme">SUBMIT</button>
                                     </form>
                                 </div><!-- create-account-block -->
-
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -192,4 +101,17 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
             </div>
         </div>
     </div><!-- contact-section -->
+    <!-- modal error -->
+    <div class="modal fade" id="alert-modal-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
+            <div class="modal-content modal-custom">
+                <div class="modal-body ">
+                	<div class="mdStatusTitle sttError"><div class="iconTitle"><i class="fas fa-frown"></i></div></div>
+                    <div class="mdStatusContent"><h3 id="alert-title-error"></h3><p id="alert-content-error"></p>
+                    	<div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Ok.. Let Me Do!</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
 <?php include('template/footer.php'); ?>

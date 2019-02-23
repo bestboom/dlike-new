@@ -1633,6 +1633,51 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 
 /*
 |----------------------------------------------------------------------------
+| 10. success and error modals
+|----------------------------------------------------------------------------
+*/
+
+.iconTitle{
+  text-align: center;
+  font-size: 90px;
+  color: #fff;
+  padding: 80px 15px;
+}
+.sttSuccess{
+  background: #6fc573;
+}
+.sttError{
+  background: #ff5722;
+}
+.modalStatus .modal-content .modal-body{
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  padding: 0;
+}
+.mdStatusContent{
+  text-align: center;
+  padding: 30px 24px;
+}
+.mdStatusContent >h3{
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
+.mdStatusContent >p {
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+}
+.mdStatusContent .actBtn {
+  margin-top: 25px;
+}
+
+
+/*
+|----------------------------------------------------------------------------
 | 10. Currency Dashboard Style
 |----------------------------------------------------------------------------
 */
