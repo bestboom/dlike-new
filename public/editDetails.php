@@ -41,7 +41,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         		<div class="input-group-prepend">
                                             		<div class="input-group-text mb-deck"> Title</div>
                                         		</div>
-                                            	<input type="text" class="form-control" name="title" value="<?php print $title; ?>">
+                                            	<input type="text" class="form-control title_field" name="title" value="<?php print $title; ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -54,7 +54,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         </div>
                                         <div class="row form-group">
                                             <div class="col">
-                                                <select class="form-control form-control-lg" name="category" id="cats">
+                                                <select class="form-control form-control-lg" name="category" id="catg">
                                                 	<option value="0">Select Category</option>
                                             	<?php foreach ($categories as $category){ ?>
                                                 	<option value="<?php echo $category;?>"><?php echo $category;?></option>	
@@ -75,11 +75,11 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         		<div class="input-group-prepend">
                                             		<div class="input-group-text mb-deck"> Tags</div>
                                         		</div>
-                                        		<input type="text" class="form-control" name="tags" value="" placeholder="Enter tags with spaces">
+                                        		<input type="text" class="form-control tags" name="tags" value="" placeholder="Enter tags with spaces">
                                         	</div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" id="description_editor" name="post" placeholder="Description"><?php print $des; ?></textarea>
+                                            <textarea class="form-control" rows="5" name="description" name="post" placeholder="Description"><?php print $des; ?></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default shareme">SUBMIT</button>
                                     </form>
