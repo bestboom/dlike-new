@@ -31,5 +31,16 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
+
+$sql = "INSERT INTO MyLikes (username, likes, stars, userip)
+VALUES ('John', 12 , 4, 12323423412)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+
 $conn->close();
 ?>
