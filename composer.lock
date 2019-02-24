@@ -306,7 +306,7 @@
             ],
             "description": "List of all countries with names and ISO 3166-1 codes in all languages and data formats.",
             "time": "2015-02-02T18:18:35+00:00"
-        }
+        },
         {
             "name": "mongodb/mongodb",
             "version": "1.1.2",
