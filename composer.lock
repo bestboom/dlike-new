@@ -60,7 +60,7 @@
     "platform": {
         "php": "^7.1.0",
         "ext-mbstring": "*",
-        "ext-mongodb": "*",
+        "ext-mongo": "*",
         "ext-mysqli": "*",
         "ext-gettext": "*"
     },
