@@ -1675,6 +1675,51 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   margin-top: 25px;
 }
 
+.dvd-account-title{
+  background: #4149a2;
+  color: #fff;
+  padding: 30px 60px 15px;
+  border-radius: 5px;
+  text-align:center !important;
+}
+.dvd-account-title h3 {
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.md-account-banner {
+    padding: 30px 60px;
+    background: #e4e4e4;
+    text-align:center !important;
+}
+.dvd-account-content{
+  padding: 60px;
+  background: #fff; 
+}
+.modal-likes {
+  background: #e4e4e4;
+  padding: 60px;
+  padding-top: 30px;
+}
+.modal-likes .letter {
+color: #4c3d3d;
+  text-align: left;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.ratings_stars {
+    background: url('images/star_empty.png') no-repeat;
+    float:      left;
+    height:     28px;
+    padding:    2px;
+    width:      32px;
+}
+.ratings_vote {
+    background: url('images/star_full.png') no-repeat;
+}
+.ratings_over {
+    background: url('images/star_highlight.png') no-repeat;
+}
 
 /*
 |----------------------------------------------------------------------------

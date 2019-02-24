@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+$privkey=getenv('privkey');
+$hashkey=getenv('hashkey');
+
 //Test if it is a shared client
 if (!empty($_SERVER['HTTP_CLIENT_IP'])){
   $ip=$_SERVER['HTTP_CLIENT_IP'];
