@@ -17,5 +17,13 @@ $config = array(
     'pw' => $password,
     'db' => $db 
 );
+
+$con = mysqli_connect("$server","$username","$password","$db");
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
 echo 'looks its working';
 ?>
