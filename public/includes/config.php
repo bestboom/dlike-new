@@ -10,6 +10,8 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
   $ip=$_SERVER['REMOTE_ADDR'];
 }
 echo $ip = ip2long($ip);
+echo '<br>';
+echo $ip = sprintf('%u', ip2long($_SERVER['REMOTE_ADDR']));
 
 
 ?>
