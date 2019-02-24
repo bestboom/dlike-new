@@ -12,6 +12,8 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
 echo $ip = ip2long($ip);
 echo '<br>';
 echo $ip = sprintf('%u', ip2long($_SERVER['REMOTE_ADDR']));
+echo '<br>';
+echo $ip = long2ip('3065685839');
 
 
 ?>
