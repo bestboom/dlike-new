@@ -11,19 +11,19 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-$config = array(
-    'host' => $server ,
-    'user' => $username ,
-    'pw' => $password,
-    'db' => $db 
-);
+$conn = new mysqli($server, $username, $password, $db);
 
-$con = mysqli_connect("$server","$username","$password","$db");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
 
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-echo 'looks its working';
+// Create database
+$sql = "CREATE DATABASE myDB";
+if ($conn->query($sql) === TRUE) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . $conn->error;
+}
+
+$conn->close();
 ?>
