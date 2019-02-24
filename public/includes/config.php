@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 //Test if it is a shared client
 if (!empty($_SERVER['HTTP_CLIENT_IP'])){
@@ -11,9 +11,25 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
 }
 echo $ip = ip2long($ip);
 echo '<br>';
-echo $ip = sprintf('%u', ip2long($_SERVER['REMOTE_ADDR']));
+echo $ips = sprintf('%u', ip2long($_SERVER['REMOTE_ADDR']));
 echo '<br>';
-echo $ip = long2ip('3065685839');
+echo $ipst = long2ip('3065685839');
+echo '<br>';
+echo $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+echo '<br>';
+echo $_SESSION['token'] = sha1(time() . rand() . $ip);
+setcookie('$token', $_SESSION['token'], time() + (86400 * 30), "/");
+echo '<br>';
+
+
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie named '" . $token . "' is not set!";
+} else {
+    echo "Cookie '" . $token . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$token];
+}
+
+
 
 
 ?>
