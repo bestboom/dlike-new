@@ -11,13 +11,9 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
 }
 echo $ip = ip2long($ip);
 echo '<br>';
-echo $ips = sprintf('%u', ip2long($_SERVER['REMOTE_ADDR']));
+echo $ipst = long2ip($ip);
 echo '<br>';
-echo $ipst = long2ip('3065685839');
-echo '<br>';
-echo $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-echo '<br>';
-echo $_SESSION['token'] = sha1(time() . rand() . $ip);
+echo $_SESSION['token'] = sha1($ip);
 setcookie('token', $_SESSION['token'], time() + (86400 * 30), "/");
 echo '<br>';
 
