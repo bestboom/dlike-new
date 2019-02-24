@@ -3,7 +3,7 @@
     "php": "^7.1.0",
     "ext-mbstring": "*",
     "ext-mongodb": "*",
-    "ext-mysql": "*",
+    "ext-mysqli": "*",
     "ext-gettext": "*"
   },
   "require-dev": {
