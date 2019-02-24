@@ -2566,13 +2566,31 @@ sub.transmoney-value {
       font-size: 24px; }
   .post-style-two.post-full-width .post-entry {
     margin-bottom: 60px; }
-
+.hov-txt{
+    position: absolute;
+    top: 0;
+    color:#f00;
+    background-color:rgba(255,255,255,0.8);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.hov-txt:hover {
+opacity:1;	
+}
 .post-style-two {
   margin-bottom: 60px; }
   .post-style-two .dlike-hov{
     margin-top: -65px;
     margin-bottom: 15px;
     margin-left: 40%;
+    z-index:1;	  
     /* border-radius: 50%;
     -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
