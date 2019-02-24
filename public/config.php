@@ -17,14 +17,20 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO MyLikes (username, likes, stars, userip)
-VALUES ('John', 12 , 4, 12323423412)";
 
-if (mysqli_query($conn, $sql)) {
-    echo "New record created successfully";
+
+$sql = "SELECT id, username, likes, stars, userip FROM MyLikes";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["likes"]. . " " . $row["stars"]. . " " . $row["userip"]. "<br>";
+    }
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "0 results";
 }
+
 
 
 $conn->close();
