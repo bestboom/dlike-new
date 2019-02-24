@@ -127,7 +127,7 @@ $(document).ready(function(){
                         '\n' +
                         '<div class="post-contnet-wrap">\n' +
                         	'\n' +
-                            '<div class="row"><div class="hov-txt">14</div><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
+                            '<div class="hov-wrap"><div class="hov-txt">14</div><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
                             '\n' +
                             '<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
                             '\n' +
