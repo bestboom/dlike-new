@@ -154,6 +154,6 @@ function postToControll() {
                 break;
             }
         }
-        alert(ratingValue);
+        //alert(ratingValue);
         $('#myRatingz').val(ratingValue);
 };

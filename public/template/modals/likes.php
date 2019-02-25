@@ -22,7 +22,7 @@
                             </div>
                             <div class="form-group">
                                 <label><b>Rate this post if you want</b></label>
-                                <input type="text" name="ratingz" id="myRatingz" value="0" />
+                                <input type="hidden" name="ratingz" id="myRatingz" value="0" />
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
                                     <label class="star star-5" for="star-5"></label>
