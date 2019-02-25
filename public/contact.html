@@ -146,30 +146,32 @@
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label for=""><b>Enter Some username </b></label>
-                              <div class="input-group mb-3">
-                                <input type="text" class="form-control" name="" id="pool_value_dividend" aria-describedby="helpId" placeholder="">
-                              <div class="input-group-append">
-                                <div class="input-group-text" id="basic-addon"> TRX</div>
-                              </div>
-                             </div>
+                                <label for=""><b>Enter Some username </b></label>
+                                        <input type="text" class="form-control" name="" id="likes_name" value="">
                             </div>
                             <div class="form-group">
-                              <label for="">Rate this post if you want   </label>
-                              <div class="input-group mb-3">
-                              <input type="text" class="form-control" name="" id="pool_dividend" aria-describedby="helpId" placeholder="">
-                              <div class="input-group-append">
-                                <div class="input-group-text" id="basic-addon"> TRX</div>
-                              </div>
-                             </div>
+                                <label><b>Rate this post if you want</b></label>
+                                <input type="text" name="myRate1" id="myRate1" value="0" />
+                                <div class="stars">
+                                    <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
+                                    <label class="star star-5" for="star-5"></label>
+                                    <input class="star star-4" id="star-4" type="radio" name="star" onclick="postToControll();" value="4" />
+                                    <label class="star star-4" for="star-4"></label>
+                                    <input class="star star-3" id="star-3" type="radio" name="star" onclick="postToControll();" value="3" />
+                                    <label class="star star-3" for="star-3"></label>
+                                    <input class="star star-2" id="star-2" type="radio" name="star" onclick="postToControll();" value="2" />
+                                    <label class="star star-2" for="star-2"></label>
+                                    <input class="star star-1" id="star-1" type="radio" name="star" onclick="postToControll();" value="1" />
+                                    <label class="star star-1" for="star-1"></label>
+                                </div>
                             </div>
                           </div>
                       </div>
                     </div>
                     <div class="modal-likes">
                       <h3>Rules For Likes</h3>
-                      <div class="row">
-                        <span class="letter"><i class="fas fa-exclamation-triangle"></i>  Self promotion not allowed</span><br>
+                      <div class="">
+                        <span class="letter"><i class="fas fa-exclamation-triangle"></i>  Self promotion not allowed</span>
                         <span class="letter"><i class="fas fa-exclamation-triangle"></i>  Make sure to upvote quality posts and do not promote spam</span>
                       </div>
                     </div>
@@ -177,6 +179,17 @@
               </div>
             </div>
         </div>
+
+
+    <?php
+$rate = 0;
+for ($x = 0; $x < $rate; $x++) {
+    echo '<i class="material-icons md-18">star</i>';
+}
+for ($x = 0; $x < 5-$rate; $x++) {
+    echo '<i class="material-icons md-18">star_border</i>';
+}
+?>
 
 
     <div class="d-flex justify-content-center my-4 pt-3">
@@ -189,92 +202,6 @@
 
 <input type="range" id="slider1" class="span2 slider" value="80" data-slider-min="50" data-slider-max="90" data-slider-step="0.1" data-slider-value="83"  data-slider-selection="after" data-slider-tooltip="hide">
 
-
-
-<style>
-            .rating {
-                overflow: hidden;
-                display: inline-block;
-                position: relative;
-                font-size:20px;
-                color: #FFCA00;
-            }
-            .rating-star {
-                padding: 0 5px;
-                margin: 0;
-                cursor: pointer;
-                display: block;
-                float: right;
-            }
-            .rating-star:after {
-                position: relative;
-                font-family: FontAwesome;
-                content:'\f006';
-            }
-            
-            .rating-star.checked ~ .rating-star:after,
-            .rating-star.checked:after {
-                content:'\f005';
-            }
-            
-            .rating:hover .rating-star:after {content:'\f006';}
-            
-            .rating-star:hover ~ .rating-star:after, 
-            .rating-star:hover:after {
-                content:'\f005' !important;
-            }
-            
-            
-            /* Just for the demo */
-            body {
-                margin: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="rating">
-            <span class="rating-star" data-value="5"></span>
-            <span class="rating-star" data-value="4"></span>
-            <span class="rating-star" data-value="3"></span>
-            <span class="rating-star" data-value="2"></span>
-            <span class="rating-star" data-value="1"></span>
-        </div>
-        
-        <br/>
-        
-        <div class="rating">
-            <span class="rating-star" data-value="5"></span>
-            <span class="rating-star" data-value="4"></span>
-            <span class="rating-star" data-value="3"></span>
-            <span class="rating-star" data-value="2"></span>
-            <span class="rating-star" data-value="1"></span>
-        </div>
-        
-        <br/>
-        
-        <div class="rating">
-            <span class="rating-star" data-value="5"></span>
-            <span class="rating-star" data-value="4"></span>
-            <span class="rating-star" data-value="3"></span>
-            <span class="rating-star" data-value="2"></span>
-            <span class="rating-star" data-value="1"></span>
-        </div>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script>
-        $('.rating-star').click(function() {
-            $(this).parents('.rating').find('.rating-star').removeClass('checked');
-            $(this).addClass('checked');
-                
-            var submitStars = $(this).attr('data-value');
-            alert(submitStars);
-        });
-        </script>
-
-
-
-        
-    
 
 
         <div class="colto-section">

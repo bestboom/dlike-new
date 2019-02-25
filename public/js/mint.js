@@ -136,3 +136,14 @@ $(document).ready(function(){
     });
     }
 });
+// star ratings
+function postToControll() {
+    for (i = 0; i < document.getElementsByName('star').length; i++) {
+        if(document.getElementsByName('star')[i].checked == true) {
+            var ratingValue = document.getElementsByName('star')[i].value;
+                break;
+            }
+        }
+        //alert(ratingValue);
+        $('#myRate1').val(ratingValue);
+};
