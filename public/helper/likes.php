@@ -16,4 +16,19 @@ if (mysqli_query($conn, $sqlm)) {
 }
 
 
+
+$sql = "SELECT id, username, likes, stars, userip FROM MyLikes";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["likes"]. " " . $row["stars"]. " " . $row["userip"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+
+
 ?>

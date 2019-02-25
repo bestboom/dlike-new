@@ -23,7 +23,7 @@ if (mysqli_query($conn, $sqlm)) {
 } else {
     echo "Error: " . $sqlm . "<br>" . mysqli_error($conn);
 }
-
+*/
 
 
 $sql = "SELECT id, username, likes, stars, userip FROM MyLikes";
@@ -37,7 +37,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-*/
+
 
 
 $conn->close();
