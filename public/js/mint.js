@@ -155,5 +155,5 @@ function postToControll() {
             }
         }
         alert(ratingValue);
-        $('#myRate').val(ratingValue);
+        $('#myRatingz').val(ratingValue);
 };
