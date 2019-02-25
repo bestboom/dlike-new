@@ -136,7 +136,7 @@ $(document).ready(function(){
     });
     }
 });
-// solve submit
+// solve me
     var options = {
         target: '#output-msg',
         url: 'helper/solve.php',
@@ -157,3 +157,12 @@ function postToControll() {
         //alert(ratingValue);
         $('#myRatingz').val(ratingValue);
 };
+//dvd modal
+$('.hov-txt').click(function() {
+   //alert('called');
+    // we want to copy the 'id' from the button to the modal
+    var mypermlink = $(this).attr("data-permlink");
+    var authorname = $(this).attr("data-author");
+    $("#author_rate").val(authorname);
+    $("#permlink_rate").val(mypermlink);
+});
