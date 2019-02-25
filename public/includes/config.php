@@ -25,7 +25,7 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
   $ip=$_SERVER['REMOTE_ADDR'];
 }
 $ip = ip2long($ip);
-echo $_SESSION['usertoken'] = $ip;
+$_SESSION['usertoken'] = $ip;
 
 if(!isset($_COOKIE['usertoken'])) {
   setcookie('usertoken', $_SESSION['usertoken'], time() + (86400 * 30), "/");

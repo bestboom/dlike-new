@@ -14,17 +14,27 @@ if ($conn->query($sql) === TRUE) {
     echo "Error deleting record: " . $conn->error;
 }
 
-/*
-$sqlm = "INSERT INTO MyLikes (username, likes, stars, userip)
-VALUES ('certseek', 9 , 2, 33323423412)";
+echo '<br>';
+
+$sqlm = "ALTER TABLE `MyLikes` ADD `author` varchar(255) NULL";
 
 if (mysqli_query($conn, $sqlm)) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sqlm . "<br>" . mysqli_error($conn);
 }
-*/
 
+echo '<br>';
+
+$sqlmt = "ALTER TABLE `MyLikes` ADD `permlink` varchar(255) NULL";
+
+if (mysqli_query($conn, $sqlmt)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sqlmt . "<br>" . mysqli_error($conn);
+}
+
+echo '<br>';
 
 $sql = "SELECT id, username, likes, stars, userip FROM MyLikes";
 $result = $conn->query($sql);
@@ -38,7 +48,22 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 
+echo '<br>';
 
+$sqlmp = "ALTER MyLikes DROP COLUMN likes";
+
+if (mysqli_query($conn, $sqlmp)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sqlmp . "<br>" . mysqli_error($conn);
+}
+
+echo '<br>';
+
+$q = $conn->query('DESCRIBE MyLikes');
+while($row = mysql_fetch_array($q)) {
+    echo "{$row['Field']} - {$row['Type']}\n";
+}
 
 $conn->close();
 ?>
