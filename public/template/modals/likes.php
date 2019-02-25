@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for=""><b>Enter Some username </b></label>
+                                <label id="user_label"><b>Enter Some username </b></label>
                                 <input type="text" class="form-control" name="" id="likes_name" value="">
                             </div>
                             <div class="form-group">
