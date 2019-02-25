@@ -9,13 +9,10 @@ error_reporting(E_ALL);
 
 
 			
-		echo $_POST['ratingz'];
-		echo '<br>';
-		echo $_POST['likes_user'];
-		echo '<br>';
-		echo $_POST['rated_author'];
-		echo '<br>';
-		echo $_POST['rated_permlink'];
+		$rating = $_POST['ratingz'];
+		$userval = $_POST['likes_user'];
+		$author = $_POST['rated_author'];
+		$permlink =  $_POST['rated_permlink'];
 
 
 	if($_POST)
@@ -24,6 +21,17 @@ error_reporting(E_ALL);
 			$_POST["adcopy_challenge"],$_POST["adcopy_response"],$hashkey);
 			if(!$solvemedia_response->is_valid)
 				{ echo '<div class="alert alert-danger">Captcha Enter is Incorrect!</div>'; }
-			else { echo 'its ok';}
+			else { 
+				$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
+						VALUES ('".$userval."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
+
+						if (mysqli_query($conn, $sqlm)) {
+    					echo '<div class="alert alert-success">Your Upvote is Added</div>';
+					} else {
+    				echo "Error: " . $sqlm . "<br>" . mysqli_error($conn);
+					}
+
+
+			}
 		}
 ?>
