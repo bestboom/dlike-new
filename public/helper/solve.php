@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 			$solvemedia_response=solvemedia_check_answer($privkey,$_SERVER["REMOTE_ADDR"],
 			$_POST["adcopy_challenge"],$_POST["adcopy_response"],$hashkey);
 			if(!$solvemedia_response->is_valid)
-				{ echo 'captcha not solved'; }
+				{ echo '<div class="alert alert-danger">Captcha Enter is Incorrect!</div>'; }
 			else { echo 'its ok';}
 		}
 ?>
