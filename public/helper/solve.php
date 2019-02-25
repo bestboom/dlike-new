@@ -14,6 +14,11 @@ error_reporting(E_ALL);
 		$author = $_POST['rated_author'];
 		$permlink =  $_POST['rated_permlink'];
 
+		$checkupvote = "SELECT * from MyLikes where userip ='$ip' and author = '$author' and permlink = '$permlink'";
+		$result = $conn->query($checkupvote);
+		if(mysqli_num_rows($result) > 0) {
+			echo 'exist'; 
+		} else {  echo "Doesn't exist"; }
 
 	if($_POST)
 		{ 
@@ -32,7 +37,7 @@ error_reporting(E_ALL);
 					} else {
     				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 					}
-
+					$conn->close();
 
 			}
 		}
