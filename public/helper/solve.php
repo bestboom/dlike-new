@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 		echo '<br>';
 		echo $_POST['likes_user'];
 
-
+require '../includes/config.php';
 	if($_POST)
 		{ 
 			$solvemedia_response=solvemedia_check_answer($privkey,$_SERVER["REMOTE_ADDR"],
