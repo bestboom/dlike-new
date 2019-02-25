@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 
 	require '../lib/solvemedialib.php';
-	
+	require '../includes/config.php';
 
 
 			
@@ -17,7 +17,7 @@ error_reporting(E_ALL);
 		echo '<br>';
 		echo $_POST['rated_permlink'];
 
-require '../includes/config.php';
+
 	if($_POST)
 		{ 
 			$solvemedia_response=solvemedia_check_answer($privkey,$_SERVER["REMOTE_ADDR"],
