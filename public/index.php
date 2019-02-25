@@ -1,4 +1,7 @@
-<?php include('template/header.php'); ?>
+<?php 
+    include('template/header.php'); 
+    require ('lib/solvemedialib.php');
+?>
         <div class="container">
             <div class="offset-md-2 col-md-8">
                 <div class="banner-content">

@@ -1747,13 +1747,18 @@ label.star:before{
 }
 .modal-likes {
   background: #e4e4e4;
-  padding: 60px;
+  padding: 30px 30px;
   padding-top: 30px;
+}
+.modal-likes ul{
+  list-style: none;
+}
+.modal-likes h3{
+  margin-bottom: 20px;
 }
 .modal-likes .letter {
 color: #4c3d3d;
   text-align: left;
-  padding-top: 20px;
   font-size: 0.9rem;
   font-weight: 600;
 }
