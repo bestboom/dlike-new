@@ -147,3 +147,13 @@ function postToControll() {
         //alert(ratingValue);
         $('#myRate1').val(ratingValue);
 };
+// solve submit
+    var options = {
+        target: '#output-msg',
+        url: 'helper/solve.php',
+        success: function() {},
+    }
+    $('#logsubmit').submit(function() {
+        $(this).ajaxSubmit(options)
+        return !
+    });

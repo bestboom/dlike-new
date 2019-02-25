@@ -14,7 +14,6 @@
                                 <div class="row justify-content-center form-group">
                                 	<span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
                                 </div>
-                            </form>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
