@@ -14,19 +14,17 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
 }
 echo $ip = ip2long($ip);
 echo '<br>';
-echo $ipst = long2ip($ip);
-echo '<br>';
-echo $_SESSION['token'] = sha1($ip);
+echo $_SESSION['usertoken'] = $ip;
 
 echo '<br>';
 
 
-if(!isset($_COOKIE[token])) {
-    echo "Cookie named '" . token . "' is not set!";
-  setcookie('token', $_SESSION['token'], time() + (86400 * 30), "/");
+if(!isset($_COOKIE[usertoken])) {
+	echo 'not set';
+  setcookie('usertoken', $_SESSION['usertoken'], time() + (86400 * 30), "/");
 } else {
-    echo "Cookie '" . token . "' is set!<br>";
-    echo "Value is: " . $_COOKIE[token];
+    echo "Cookie is set";
+    echo $_COOKIE[usertoken];
 }
 
 
