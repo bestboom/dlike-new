@@ -19,7 +19,6 @@ include('../functions/main.php');
 	echo '<br>';
 	$max_accepted_payout = '900.000 SBD';
 	$percent_steem_dollars =10000;
-
 	if(isset($_POST['reward_option'])){
     	if($_POST['reward_option']=='2'){
         	$max_accepted_payout = "900.000 SBD";

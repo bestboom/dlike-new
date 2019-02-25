@@ -8,21 +8,22 @@
                         </div>
                     </div>                    
                     <div class="dvd-account-content">
-                      <div class="row">
+                    <div class="row">
+                    <form action="helper/solve.php" method="post" id="logsubmit">
                         <div class="col-md-6">
-                            <form action="solve.php" method="post" id="logsubmit">
-                                <div class="row justify-content-center form-group"><span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
+                                <div class="row justify-content-center form-group">
+                                	<span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
                                 </div>
                             </form>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="user_label"><b>Enter Some username </b></label>
-                                <input type="text" class="form-control" name="" id="likes_name" value="">
+                                <input type="text" class="form-control" name="likes_user" id="likes_name" value="">
                             </div>
                             <div class="form-group">
                                 <label><b>Rate this post if you want</b></label>
-                                <input type="hidden" name="myRate1" id="myRate1" value="0" />
+                                <input type="hidden" name="myRate" id="myRate1" value="0" />
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
                                     <label class="star star-5" for="star-5"></label>
@@ -39,8 +40,10 @@
                         </div>
                     </div>
                     <div class="contact-form btn-sub">
+                    	<div id="output-msg"></div>
                     	<button type="submit" class="btn btn-default">UPVOTE</button>
                     </div>
+                	</form>
                     </div>
                     <div class="modal-likes">
                       	<h3>Rules For Likes</h3>
