@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
 }
 
 echo '<br>';
-
+/*
 $sqlmp = "ALTER TABLE `MyLikes` DROP COLUMN `likes`";
 
 if (mysqli_query($conn, $sqlmp)) {
@@ -59,11 +59,17 @@ if (mysqli_query($conn, $sqlmp)) {
 }
 
 echo '<br>';
-
+*/
 $q = $conn->query('DESCRIBE MyLikes');
-while($row = mysql_fetch_array($q)) {
-    echo "{$row['Field']} - {$row['Type']}\n";
+if ($q->num_rows > 0) {
+    // output data of each row
+    while($row = $q->fetch_assoc()) {
+       echo "{$row['Field']} - {$row['Type']}\n";
+    }
+} else {
+    echo "0 results";
 }
+
 
 $conn->close();
 ?>
