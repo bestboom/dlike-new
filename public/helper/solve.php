@@ -12,6 +12,10 @@ error_reporting(E_ALL);
 		echo $_POST['ratingz'];
 		echo '<br>';
 		echo $_POST['likes_user'];
+		echo '<br>';
+		echo $_POST['rated_author'];
+		echo '<br>';
+		echo $_POST['rated_permlink'];
 
 require '../includes/config.php';
 	if($_POST)

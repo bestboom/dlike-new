@@ -158,7 +158,7 @@ function postToControll() {
         $('#myRatingz').val(ratingValue);
 };
 //dvd modal
-$('.hov-txt').click(function() {
+$('#content').on("click", ".hov-txt", function() {
    //alert('called');
     // we want to copy the 'id' from the button to the modal
     var mypermlink = $(this).attr("data-permlink");
