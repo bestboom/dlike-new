@@ -22,13 +22,15 @@ error_reporting(E_ALL);
 			if(!$solvemedia_response->is_valid)
 				{ echo '<div class="alert alert-danger">Captcha Enter is Incorrect!</div>'; }
 			else { 
+				$("#upvote").html("upvoting ...").prop("disabled",true);
 				$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
 						VALUES ('".$userval."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
 
 						if (mysqli_query($conn, $sqlm)) {
     					echo '<div class="alert alert-success">Your Upvote is Added</div>';
+    					echo '<script>document.getElementById("logsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
 					} else {
-    				echo "Error: " . $sqlm . "<br>" . mysqli_error($conn);
+    				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 					}
 
 

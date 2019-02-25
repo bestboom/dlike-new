@@ -42,7 +42,7 @@
                     </div>
                     <div class="contact-form btn-sub">
                     	<div id="output-msg"></div>
-                    	<button type="submit" class="btn btn-default">UPVOTE</button>
+                    	<button type="submit" class="btn btn-default" id="upvote">UPVOTE</button>
                     </div>
                 	</form>
                     </div>

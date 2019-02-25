@@ -10,7 +10,7 @@ require '../includes/config.php';
 
 
 
-$sql = "SELECT id, username, stars, userip, author, permlink FROM MyLikes";
+$sql = "SELECT id, username, stars, userip, author, permlink, like_date FROM MyLikes";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
