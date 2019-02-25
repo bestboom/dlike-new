@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 
 
 			
-		echo $_POST['myRate1'];
+		echo $_POST['myRate'];
 		echo '<br>';
 		echo $_POST['likes_user'];
 
