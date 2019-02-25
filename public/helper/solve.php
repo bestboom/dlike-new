@@ -22,7 +22,7 @@ error_reporting(E_ALL);
 			if(!$solvemedia_response->is_valid)
 				{ echo '<div class="alert alert-danger">Captcha Enter is Incorrect!</div>'; }
 			else { 
-				$("#upvote").html("upvoting ...").prop("disabled",true);
+				echo '<script>$("#upvote").html("upvoting ...").prop("disabled",true);</script>';
 				$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
 						VALUES ('".$userval."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
 
