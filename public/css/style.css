@@ -1742,7 +1742,7 @@ label.star:before{
     text-align:center !important;
 }
 .dvd-account-content{
-  padding: 60px;
+  padding: 60px 60px 50px 60px;
   background: #fff; 
 }
 .modal-likes {
@@ -1762,18 +1762,9 @@ color: #4c3d3d;
   font-size: 0.9rem;
   font-weight: 600;
 }
-.ratings_stars {
-    background: url('images/star_empty.png') no-repeat;
-    float:      left;
-    height:     28px;
-    padding:    2px;
-    width:      32px;
-}
-.ratings_vote {
-    background: url('images/star_full.png') no-repeat;
-}
-.ratings_over {
-    background: url('images/star_highlight.png') no-repeat;
+.dvd-account-content .btn-sub {
+  margin-top: 30px;
+  text-align: center;
 }
 
 /*

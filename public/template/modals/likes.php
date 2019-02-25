@@ -9,21 +9,21 @@
                     </div>                    
                     <div class="dvd-account-content">
                       <div class="row">
-                          <div class="col-md-6">
+                        <div class="col-md-6">
                             <form action="solve.php" method="post" id="logsubmit">
                                 <div class="row justify-content-center form-group"><span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
                                 </div>
                                 <div class="row justify-content-center mod-bt"><button id="verify" type="submit" class="btn callto-btn">CLAIM</button></div>
-                             </form>
-                          </div>
-                          <div class="col-md-6">
+                            </form>
+                        </div>
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for=""><b>Enter Some username </b></label>
-                                        <input type="text" class="form-control" name="" id="likes_name" value="">
+                                <input type="text" class="form-control" name="" id="likes_name" value="">
                             </div>
                             <div class="form-group">
                                 <label><b>Rate this post if you want</b></label>
-                                <input type="text" name="myRate1" id="myRate1" value="0" />
+                                <input type="hidden" name="myRate1" id="myRate1" value="0" />
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
                                     <label class="star star-5" for="star-5"></label>
@@ -37,14 +37,19 @@
                                     <label class="star star-1" for="star-1"></label>
                                 </div>
                             </div>
-                          </div>
-                      </div>
+                        </div>
+                    </div>
+                    <div class="contact-form btn-sub">
+                    	<button type="submit" class="btn btn-default">UPVOTE</button>
+                    </div>
                     </div>
                     <div class="modal-likes">
-                      <h3>Rules For Likes</h3>
-                      <div class="">
-                        <span class="letter"><i class="fas fa-exclamation-triangle"></i>  Self promotion not allowed</span>
-                        <span class="letter"><i class="fas fa-exclamation-triangle"></i>  Make sure to upvote quality posts and do not promote spam</span>
-                      </div>
+                      	<h3>Rules For Likes</h3>
+                    	<div class="row">
+                            <ul>
+                                <li class="letter"><i class="fas fa-exclamation-triangle"></i>  Self promotion not allowed</li>
+                                <li class="letter"><i class="fas fa-exclamation-triangle"></i>  Make sure to upvote quality posts and do not promote spam</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
