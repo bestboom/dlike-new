@@ -50,7 +50,7 @@ if ($result->num_rows > 0) {
 
 echo '<br>';
 
-$sqlmp = "ALTER MyLikes DROP COLUMN likes";
+$sqlmp = "ALTER TABLE `MyLikes` DROP COLUMN `likes`";
 
 if (mysqli_query($conn, $sqlmp)) {
     echo "New record created successfully";
