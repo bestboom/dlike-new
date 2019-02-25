@@ -60,4 +60,13 @@
             </div>
         </div>
     </div>
+    <?php
+$rate = 0;
+for ($x = 0; $x < $rate; $x++) {
+    echo '<i class="material-icons md-18">star</i>';
+}
+for ($x = 0; $x < 5-$rate; $x++) {
+    echo '<i class="material-icons md-18">star_border</i>';
+}
+?>
 <?php include('template/footer.php'); ?>
