@@ -4,20 +4,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require 'includes/config.php';
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
+$sql = "DELETE FROM MyLikes";
 
-$conn = new mysqli($server, $username, $password, $db);
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
-
+/*
 $sqlm = "INSERT INTO MyLikes (username, likes, stars, userip)
 VALUES ('certseek', 9 , 2, 33323423412)";
 
@@ -40,7 +37,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
+*/
 
 
 $conn->close();
