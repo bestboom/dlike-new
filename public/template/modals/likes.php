@@ -1,15 +1,15 @@
 <div class="dvd-account-title">
-                       <h3>Do You Like this Share?</h3>
-                      <p><span>Total Votes:  --  Ratings: </span></p>
-                    </div>  
-                    <div class="md-account-banner">
-                      <div class="row justify-content-center">
-                          <div style="height:60px;width:470px;border:1px solid #000;"></div>
-                        </div>
-                    </div>                    
-                    <div class="dvd-account-content">
-                    <div class="row">
+    <h3>Do You Like this Share?</h3>
+    <p><span>Total Votes:  --  Ratings: </span></p>
+</div>  
+<div class="md-account-banner">
+    <div class="row justify-content-center">
+        <div style="height:60px;width:470px;border:1px solid #000;"></div>
+    </div>
+</div>                    
+                <div class="dvd-account-content">
                     <form action="helper/solve.php" method="post" id="logsubmit">
+                    <div class="row">
                         <div class="col-md-6">
                                 <div class="row justify-content-center form-group">
                                 	<span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
