@@ -13,7 +13,6 @@
                             <form action="solve.php" method="post" id="logsubmit">
                                 <div class="row justify-content-center form-group"><span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
                                 </div>
-                                <div class="row justify-content-center mod-bt"><button id="verify" type="submit" class="btn callto-btn">CLAIM</button></div>
                             </form>
                         </div>
                         <div class="col-md-6">
