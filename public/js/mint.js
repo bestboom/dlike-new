@@ -176,27 +176,21 @@ $('#content').on("click", ".hov-txt", function() {
                 data: datat,
                 success: function(data) {
                         try {
-
-        var response = JSON.parse(data)
-
-        if(response.error == true) {
-            showModalError(
-                "Oh No..",
-                "You already Upvoted.",
-                ""
-                );
-        } else {
-            $('#likes').modal('show');
-        }
-
-    } catch (err) {
-        alert('Sorry. Server response is malformed.')
-    }
-
-
-                }
+                            var response = JSON.parse(data)
+                            if(response.error == true) {
+                                showModalError(
+                                    "Oh No..",
+                                    "You already Upvoted.",
+                                    ""
+                                    );
+                            } else {
+                                    $('#likes').modal('show');
+                            }
+                        } catch (err) {
+                            alert('Sorry. Server response is malformed.')
+                        }
+                    }
             });
-
 
     $("#author_rate").val(authorname);
     $("#permlink_rate").val(mypermlink);

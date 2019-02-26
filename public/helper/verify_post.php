@@ -14,11 +14,16 @@
 
 		if ($result->num_rows > 0) {
 			    die(json_encode([
-            		'error' => false
+			    	'error' => true,
+            		'message' => 'Sorry', 
+            		'data' => 'Already Upvoted'
+            		
         		]));
 		} else { 
 			    die(json_encode([
-            		'error' => true
+            		'error' => false,
+            		'message' => 'Thank You', 
+            		'data' => 'Lets Upvote'
         		]));
 		}
 ?>
