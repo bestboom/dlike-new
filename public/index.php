@@ -13,6 +13,10 @@
             <article class="post-style-two post-full-width">
                 <?php include('helper/top_post.php'); ?>
             </article><!-- post-style-two -->
+            <div class="row  align-items-center h-100 post_select">
+                <div class="row col-md-3 justify-content-center"><h4 class="lab_post">Latest</h4><h4 class="lab_post">Top Rated</h4></div>
+                <div class="col-md-9 lay">&nbsp;</div>
+            </div>
             <div class="row" id="content">
             </div>
         </div>
