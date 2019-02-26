@@ -165,7 +165,7 @@ $('#content').on("click", ".hov-txt", function() {
     var authorname = $(this).attr("data-author");
 
     function passVal(){
-        var data = {
+        var datat = {
             ath: authorname,
             plink: mypermlink
         };
@@ -173,7 +173,7 @@ $('#content').on("click", ".hov-txt", function() {
         $.ajax({
                 type: "POST",
                 url: "helper/verify_post.php",
-                data: data,
+                data: datat,
                 success: function(data) {
                     alert(data); // apple
                 }

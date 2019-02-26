@@ -3,7 +3,7 @@ $(document).ready(function(){
 	let $tag, $limit, content = "#content";
     let query = {
         tag: "dlike",
-        limit: 44,
+        limit: 84,
     };
 
     steem.api.getDiscussionsByCreated(query, function (err, res) {
