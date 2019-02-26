@@ -4,7 +4,35 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
 require 'includes/config.php';
+
+$sql = "CREATE TABLE `PostsLikes` (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+author VARCHAR(255) NOT NULL,
+permlink VARCHAR(255) NOT NULL,
+likes INT(50),
+rating INT(50),
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$q = $conn->query('DESCRIBE PostsLikes');
+if ($q->num_rows > 0) {
+    // output data of each row
+    while($row = $q->fetch_assoc()) {
+       echo "{$row['Field']} - {$row['Type']}\n";
+    }
+} else {
+    echo "0 results";
+}
+
+
 /*
 $sql = "DELETE FROM MyLikes";
 
@@ -61,30 +89,7 @@ if (mysqli_query($conn, $sqlmp)) {
 echo '<br>';
 */
 
-$sql = "CREATE TABLE `PostsLikes` (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-author VARCHAR(255) NOT NULL,
-permlink VARCHAR(255) NOT NULL,
-likes INT(50),
-rating INT(50),
-)";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Table MyGuests created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-
-$q = $conn->query('DESCRIBE PostsLikes');
-if ($q->num_rows > 0) {
-    // output data of each row
-    while($row = $q->fetch_assoc()) {
-       echo "{$row['Field']} - {$row['Type']}\n";
-    }
-} else {
-    echo "0 results";
-}
 
 
 $conn->close();
