@@ -19,10 +19,10 @@
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">
-                <div class="post-thumb">
+                <div class="col-md-6 post-thumb">
                     <a href="#"><img src="" alt="img" class="img-responsive" id="top_img"></a>
                 </div>
-                <div class="post-contnet-wrap">
+                <div class="col-md-6 post-contnet-wrap">
                     <span class="post-meta">30 NOV, 2019</span>
                     <h4 class="post-title">
                         <a href="#"><span id="top_title"></span></a>
@@ -69,9 +69,6 @@ if ($result->num_rows > 0) {
         <script>
             let topauthor = <?php echo json_encode($top_auth); ?>;
             let toppermlink = <?php echo json_encode($top_permlink); ?>;
-
-            steem.api.getContent(topauthor , toppermlink, function(err, res) {
-                console.log(res);
 
             steem.api.getContent(topauthor , toppermlink, function(err, res) {
                 console.log(res);
