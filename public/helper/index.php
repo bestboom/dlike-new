@@ -91,14 +91,14 @@ class DataGraber{
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
 			    $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
 			    $imglt ="data:image/jpeg;base64,$screenshot";
-			    define('UPLOAD_DIR', 'helper/');
+			  //  define('UPLOAD_DIR', 'helper/');
                 $img = $imglt;
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
-                $file = UPLOAD_DIR . uniqid() . '.png';
-                $success = file_put_contents($file, $data);
+               // $file = UPLOAD_DIR . uniqid() . '.png';
+               // $success = file_put_contents($file, $data);
 			    
-			    $thumbnail = $file;
+			    $thumbnail = $data;
 			    
 				//preg_match('/(?<=img ).*?(?=>)/',$html,$imgSrc);
 				//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
@@ -233,7 +233,32 @@ $url = $_POST['url'];
 //$url = "https://www.dougheyed.com/classic-berry-trifle/";
 //http://www.reelsilvercharters.com/lake-ontario-game-fish.htm
 $grab = new DataGraber($url);
+
+
+/* testing */
 print_r($grab);
+echo '<BR/><BR/>';
+$siteURL = $this->websiteAddress;
+$googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$siteURL&screenshot=true");
+$googlePagespeedData = json_decode($googlePagespeedData, true);
+echo $googlePagespeedData ;
+echo '<BR/><BR/>';
+$screenshot = $googlePagespeedData['screenshot']['data'];
+$screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
+echo $screenshot ;
+echo '<BR/><BR/>';
+$imglt ="data:image/jpeg;base64,$screenshot";
+//  define('UPLOAD_DIR', 'helper/');
+$img = $imglt;
+$img = str_replace('data:image/jpeg;base64,', '', $img);
+echo $img ;
+echo '<BR/><BR/>';
+$data = base64_decode($img);
+// $file = UPLOAD_DIR . uniqid() . '.png';
+// $success = file_put_contents($file, $data);
+			    
+print_r($data);
+/* testing end */
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
     //$grab->copyImage($grab->getThumbnail(),"hel");
