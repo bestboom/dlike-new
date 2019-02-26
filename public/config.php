@@ -15,7 +15,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 echo '<br>';
-
+/*
 $sqlm = "ALTER TABLE `MyLikes` ADD `author` varchar(255) NULL";
 
 if (mysqli_query($conn, $sqlm)) {
@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
 }
 
 echo '<br>';
-/*
+
 $sqlmp = "ALTER TABLE `MyLikes` DROP COLUMN `likes`";
 
 if (mysqli_query($conn, $sqlmp)) {
@@ -60,7 +60,23 @@ if (mysqli_query($conn, $sqlmp)) {
 
 echo '<br>';
 */
-$q = $conn->query('DESCRIBE MyLikes');
+
+$sql = "CREATE TABLE PostsLikes (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+author VARCHAR(255) NOT NULL,
+permlink VARCHAR(255) NOT NULL,
+likes INT(50),
+rating INT(50),
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table MyGuests created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$q = $conn->query('DESCRIBE PostsLikes');
 if ($q->num_rows > 0) {
     // output data of each row
     while($row = $q->fetch_assoc()) {
