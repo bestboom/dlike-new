@@ -1,28 +1,24 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 
 	require '../lib/solvemedialib.php';
 	require '../includes/config.php';
 
-
-			
+		$saved_ip = $_COOKIE['usertoken'];	
 		$rating = $_POST['ratingz'];
 		$userval = $_POST['likes_user'];
 		$author = $_POST['rated_author'];
 		$permlink =  $_POST['rated_permlink'];
 		$newLike = '1';
 
-		$checkupvote = "SELECT * from MyLikes where userip ='$ip' and author = '$author' and permlink = '$permlink'";
+		$checkupvote = "SELECT * from MyLikes where userip ='$saved_ip' and author = '$author' and permlink = '$permlink'";
 		$result = $conn->query($checkupvote);
 		if(mysqli_num_rows($result) > 0) {
 			echo 'exist'; 
 		} else {  echo "Doesn't exist"; }
 
-
-		
 
 	if($_POST)
 		{ 
@@ -33,7 +29,7 @@ error_reporting(E_ALL);
 			else { 
 				echo '<script>$("#upvote").html("upvoting ...").prop("disabled",true);</script>';
 				$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
-						VALUES ('".$userval."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
+						VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
 
 						if (mysqli_query($conn, $sqlm)) {
 
