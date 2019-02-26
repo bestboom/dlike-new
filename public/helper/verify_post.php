@@ -7,4 +7,11 @@
 
 	echo $req_author = $_POST['ath'];
 	echo $req_permlink = $_POST['plink'];
+
+	$verifyPost = "SELECT * FROM myLikes where userip = '$ip' and permlink = '$req_permlink' and author = '$req_author'";
+		$result = $conn->query($verifyPost);
+
+		if ($result->num_rows > 0) {
+			echo 'already exist';
+		} else { echo '#likes'; }
 ?>
