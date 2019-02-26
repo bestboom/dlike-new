@@ -19,8 +19,9 @@
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">
+                <?php include('helper/top_post.php');
                 <div class="col-md-6 post-thumb">
-                    <a href="#"><img src="" alt="img" class="img-responsive" id="top_img"></a>
+                    <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
                     <span class="post-meta">30 NOV, 2019</span>
@@ -55,28 +56,5 @@
             </div>
         </div>
     </div>
-<?
-    $sqlt = "SELECT * FROM PostsLikes ORDER BY likes DESC LIMIT 1";
-$result = $conn->query($sqlt);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $top_auth = $row["author"];
-        $top_permlink = $row["permlink"];
-
-        ?>
-        <script>
-            let topauthor = <?php echo json_encode($top_auth); ?>;
-            let toppermlink = <?php echo json_encode($top_permlink); ?>;
-
-
-        </script>
-
-    <? }
-} else {
-    echo "0 results";
-}
-?>
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer.php'); ?>
