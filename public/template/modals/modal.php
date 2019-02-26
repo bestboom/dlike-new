@@ -14,3 +14,11 @@
         </div>
     </div>
 </div>
+
+<div class="modal" id="postModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
+        <div class="modal-content">
+            <?php include('template/modals/postmodal.php'); ?>
+        </div>
+    </div>
+</div>
