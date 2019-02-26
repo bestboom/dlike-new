@@ -164,7 +164,7 @@ $('#content').on("click", ".hov-txt", function() {
     var mypermlink = $(this).attr("data-permlink");
     var authorname = $(this).attr("data-author");
 
-    function passVal(){
+
         var datat = {
             ath: authorname,
             plink: mypermlink
@@ -177,8 +177,8 @@ $('#content').on("click", ".hov-txt", function() {
                 success: function(data) {
                     alert(data); // apple
                 }
-            })
-    }
+            });
+
 
     $("#author_rate").val(authorname);
     $("#permlink_rate").val(mypermlink);
