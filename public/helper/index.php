@@ -91,14 +91,14 @@ class DataGraber{
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
 			    $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
 			    $imglt ="data:image/jpeg;base64,$screenshot";
-			    //define('UPLOAD_DIR', 'helper/');
+			    define('UPLOAD_DIR', 'helper/');
                 $img = $imglt;
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
-                //$file = UPLOAD_DIR . uniqid() . '.png';
-                //$success = file_put_contents($file, $data);
+                $file = UPLOAD_DIR . uniqid() . '.png';
+                $success = file_put_contents($file, $data);
 			    
-			    $thumbnail = $data;
+			    $thumbnail = $file;
 			    
 				//preg_match('/(?<=img ).*?(?=>)/',$html,$imgSrc);
 				//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
