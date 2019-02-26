@@ -234,9 +234,6 @@ $url = $_POST['url'];
 //http://www.reelsilvercharters.com/lake-ontario-game-fish.htm
 $grab = new DataGraber($url);
 print_r($grab);
-echo "<br/>";
-$googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$siteURL&screenshot=true");
-print_r($googlePagespeedData);
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
     //$grab->copyImage($grab->getThumbnail(),"hel");
