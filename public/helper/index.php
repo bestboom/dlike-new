@@ -91,14 +91,14 @@ class DataGraber{
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
 			    $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
 			    $imglt ="data:image/jpeg;base64,$screenshot";
-			  //  define('UPLOAD_DIR', 'helper/');
+			    define('UPLOAD_DIR', 'upload/');
                 $img = $imglt;
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
-               // $file = UPLOAD_DIR . uniqid() . '.png';
-               // $success = file_put_contents($file, $data);
+                $file = UPLOAD_DIR . uniqid() . '.png';
+                $success = file_put_contents($file, $data);
 			    
-			    $thumbnail = $data;
+			    $thumbnail = $file;
 			    
 				//preg_match('/(?<=img ).*?(?=>)/',$html,$imgSrc);
 				//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
@@ -235,7 +235,7 @@ $url = $_POST['url'];
 $grab = new DataGraber($url);
 
 
-/* testing */
+/* testing 
 //print_r($grab);
 //echo '<BR/><BR/>';
 $googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=https://google.com&screenshot=true");
@@ -258,7 +258,7 @@ print_r($data);
 $success = file_put_contents($file, $data);
 			    
 print_r($file);
-/* testing end */
+testing end */
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
     //$grab->copyImage($grab->getThumbnail(),"hel");
