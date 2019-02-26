@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 
 echo '<br>';
 
-$sqlt = "SELECT id, author, permlink, likes, rating FROM PostsLikes";
+$sqlt = "SELECT * FROM PostsLikes ORDER BY likes DESC LIMIT 1";
 $result = $conn->query($sqlt);
 
 if ($result->num_rows > 0) {
