@@ -5,15 +5,20 @@
 
 	require '../includes/config.php';
 
-	echo $req_author = $_POST['ath'];
-	echo $req_permlink = $_POST['plink'];
-	echo  $ip;
-	echo $user_check = $_COOKIE['usertoken'];
+	$req_author = $_POST['ath'];
+	$req_permlink = $_POST['plink'];
+	$user_check = $_COOKIE['usertoken'];
 
 	$verifyPost = "SELECT * FROM myLikes where userip = '$user_check' and permlink = '$req_permlink' and author = '$req_author'";
 		$result = $conn->query($verifyPost);
 
 		if ($result->num_rows > 0) {
-			echo 'already exist';
-		} else { echo '#likes'; }
+			    die(json_encode([
+            		'error' => false
+        		]));
+		} else { 
+			    die(json_encode([
+            		'error' => true
+        		]));
+		}
 ?>

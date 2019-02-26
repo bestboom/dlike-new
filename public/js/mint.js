@@ -175,7 +175,25 @@ $('#content').on("click", ".hov-txt", function() {
                 url: "helper/verify_post.php",
                 data: datat,
                 success: function(data) {
-                    alert(data); // apple
+                        try {
+
+        var response = JSON.parse(data)
+
+        if(response.error == true) {
+            showModalError(
+                "Oh No..",
+                "You already Upvoted.",
+                ""
+                );
+        } else {
+            $('#likes').modal('show');
+        }
+
+    } catch (err) {
+        alert('Sorry. Server response is malformed.')
+    }
+
+
                 }
             });
 
