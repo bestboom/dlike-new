@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require 'includes/config.php';
-
+/*
 $sql = "DELETE FROM MyLikes";
 
 if ($conn->query($sql) === TRUE) {
@@ -15,7 +15,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 echo '<br>';
-/*
+
 $sqlm = "ALTER TABLE `MyLikes` ADD `author` varchar(255) NULL";
 
 if (mysqli_query($conn, $sqlm)) {
