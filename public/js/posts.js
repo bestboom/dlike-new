@@ -3,7 +3,7 @@ $(document).ready(function(){
 	let $tag, $limit, content = "#content";
     let query = {
         tag: "dlike",
-        limit: 24,
+        limit: 44,
     };
 
     steem.api.getDiscussionsByCreated(query, function (err, res) {
@@ -163,7 +163,7 @@ $(document).ready(function(){
 
                     $('#top_title').html(title);
                     $('.post-entry').html(category);
-                    $("#top_img").attr("src", img.src);
+                    $("#top_img").attr("src", img.src).show();
 
             });
 });

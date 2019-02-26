@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
             let toppermlink = <?php echo json_encode($top_permlink); ?>;
         </script>
 <div class="col-md-6 post-thumb">
-                    <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img"></a>
+                    <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
                     <span class="post-meta">30 NOV, 2019</span>
