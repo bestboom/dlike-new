@@ -61,7 +61,7 @@ if (mysqli_query($conn, $sqlmp)) {
 echo '<br>';
 */
 
-$sql = "CREATE TABLE PostsLikes (
+$sql = "CREATE TABLE `PostsLikes` (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 author VARCHAR(255) NOT NULL,
 permlink VARCHAR(255) NOT NULL,
