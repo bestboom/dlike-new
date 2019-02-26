@@ -65,6 +65,7 @@ $(document).ready(function(){
 		catch(err) {
 		  a.href = new URL(window.location.href);
 		}
+			console.log(a.href);
                 let url = a.href;
                 	var youtubeAnchorTagVariableClass = '';
 					if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
