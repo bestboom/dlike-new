@@ -236,27 +236,27 @@ $grab = new DataGraber($url);
 
 
 /* testing */
-print_r($grab);
-echo '<BR/><BR/>';
+//print_r($grab);
+//echo '<BR/><BR/>';
 $googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=https://google.com&screenshot=true");
 $googlePagespeedData = json_decode($googlePagespeedData, true);
-print_r($googlePagespeedData) ;
-echo '<BR/> googlePagespeedData <BR/>';
+//print_r($googlePagespeedData) ;
+//echo '<BR/> googlePagespeedData <BR/>';
 $screenshot = $googlePagespeedData['screenshot']['data'];
 $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
-print_r($screenshot) ;
-echo '<BR/>screenshot<BR/>';
+//print_r($screenshot) ;
+//echo '<BR/>screenshot<BR/>';
 $imglt ="data:image/jpeg;base64,$screenshot";
-//  define('UPLOAD_DIR', 'helper/');
+define('UPLOAD_DIR', 'helper/');
 $img = $imglt;
 $img = str_replace('data:image/jpeg;base64,', '', $img);
-print_r($img) ;
-echo '<BR/>img<BR/>';
+//print_r($img) ;
+//echo '<BR/>img<BR/>';
 $data = base64_decode($img);
-// $file = UPLOAD_DIR . uniqid() . '.png';
-// $success = file_put_contents($file, $data);
+$file = UPLOAD_DIR . uniqid() . '.png';
+$success = file_put_contents($file, $data);
 			    
-print_r($data);
+print_r($file);
 /* testing end */
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
