@@ -13,6 +13,7 @@ error_reporting(E_ALL);
 		$userval = $_POST['likes_user'];
 		$author = $_POST['rated_author'];
 		$permlink =  $_POST['rated_permlink'];
+		$newLike = '1';
 
 		$checkupvote = "SELECT * from MyLikes where userip ='$ip' and author = '$author' and permlink = '$permlink'";
 		$result = $conn->query($checkupvote);
@@ -42,7 +43,7 @@ error_reporting(E_ALL);
 										$updatePost = "UPDATE PostsLikes SET likes = likes + 1 and rating = rating + 1 WHERE author = '$author' and permlink = '$permlink'";
     								} else {
     									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating)
-													VALUES ('".$author."', '".$permlink."', 1 , '".$rating."')";
+													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."')";
 									}
 
     					echo '<div class="alert alert-success">Your Upvote is Added</div>';
