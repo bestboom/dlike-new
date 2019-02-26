@@ -7,6 +7,7 @@
 
 	echo $req_author = $_POST['ath'];
 	echo $req_permlink = $_POST['plink'];
+	echo $ip;
 
 	$verifyPost = "SELECT * FROM myLikes where userip = '$ip' and permlink = '$req_permlink' and author = '$req_author'";
 		$result = $conn->query($verifyPost);
