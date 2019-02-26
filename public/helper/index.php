@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-define('UPLOAD_DIR', 'images/');
+//define('UPLOAD_DIR', '../images/');
 class DataGraber{
     private $title;
     private $thumbnail;
@@ -86,7 +86,7 @@ class DataGraber{
 				}
 			}else{
 			    $siteURL = $this->websiteAddress;
-			    $googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$siteURL&screenshot=true");
+			   $googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$siteURL&screenshot=true");
 			    $googlePagespeedData = json_decode($googlePagespeedData, true);
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
 			    $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
@@ -95,17 +95,16 @@ class DataGraber{
                 $img = $imglt;
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
-                $file = UPLOAD_DIR . uniqid() . '.png';
-		$myfile = fopen($file, "w");
-                $success = file_put_contents($file, $data);
-			    
-			    $thumbnail = $file;
-			    
-				//preg_match('/(?<=img ).*?(?=>)/',$html,$imgSrc);
-				//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
-				//preg_match('/(?<=src=").*?(?=")/',$thumbnail,$imgSrc);
-				//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
-				
+               // $file = UPLOAD_DIR . uniqid() . '.png';
+		//$myfile = fopen($file, "w");
+              //  $success = file_put_contents($file, $data);			    
+	        $thumbnail = $data;
+		//preg_match('/(?<=img ).*?(?=>)/',$html,$imgSrc);
+		//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
+		//preg_match('/(?<=src=").*?(?=")/',$thumbnail,$imgSrc);
+		//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
+		*/
+		$thumbnail='https://dlike.io/images/defailt-image.png';	
 			return $thumbnail;
 			}
 	
