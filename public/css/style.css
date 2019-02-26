@@ -1680,6 +1680,7 @@ label.star:before{
   content:'\f005';
   font-family: 'Font Awesome\ 5 Free';
 }
+.post_detail{cursor: pointer;}
 
 /*
 |----------------------------------------------------------------------------
