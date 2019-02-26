@@ -20,7 +20,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
+/*
 
 $q = $conn->query('DESCRIBE PostsLikes');
 if ($q->num_rows > 0) {
@@ -33,7 +33,7 @@ if ($q->num_rows > 0) {
 }
 
 
-/*
+
 $sql = "DELETE FROM MyLikes";
 
 if ($conn->query($sql) === TRUE) {
