@@ -19,7 +19,7 @@
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">
-                <?php include('helper/top_post.php');
+                <?php include('helper/top_post.php'); ?>
                 <div class="col-md-6 post-thumb">
                     <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img"></a>
                 </div>

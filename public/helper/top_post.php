@@ -13,5 +13,5 @@ if ($result->num_rows > 0) {
             let toppermlink = <?php echo json_encode($top_permlink); ?>;
         </script>
     <? }
-}
+} 
 ?>
