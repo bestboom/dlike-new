@@ -193,5 +193,5 @@ $('#content').on("click", ".hov-txt", function() {
 });
 
 $('.post_detail').click(function () {
-    $('#upvotefail').modal('show');
+    $('#postModal').modal('show');
 });
