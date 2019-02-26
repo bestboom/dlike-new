@@ -58,7 +58,7 @@ $(document).ready(function(){
 
                 //image or youtube
                 let thumbnail = '<img src="' + img.src + '" alt="' + $post.title + '" class="card-img-top img-fluid">';
-		let a = document.createElement('a');
+		/*let a = document.createElement('a');
 		try {
 			a.href = new URL(metadata.url);
 			console.log(a.href);
@@ -66,7 +66,15 @@ $(document).ready(function(){
 		catch(err) {
 		  a.href = new URL(window.location.href);
 		}
-                let url = a.href;
+                let url = a.href;*/
+		/* test start*/		
+		var getLocation = function(href) {
+		    var l = document.createElement("a");
+		    l.href = href;
+		    return l;
+		};
+		var url = getLocation(metadata.url);
+		/*test end */
 		var youtubeAnchorTagVariableClass = '';
 				if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
 					//alert(url);
