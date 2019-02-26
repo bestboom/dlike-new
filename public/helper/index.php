@@ -238,8 +238,7 @@ $grab = new DataGraber($url);
 /* testing */
 print_r($grab);
 echo '<BR/><BR/>';
-$siteURL = $this->websiteAddress;
-$googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$siteURL&screenshot=true");
+$googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=https://google.com&screenshot=true");
 $googlePagespeedData = json_decode($googlePagespeedData, true);
 echo $googlePagespeedData ;
 echo '<BR/><BR/>';
