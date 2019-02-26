@@ -3,7 +3,6 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-//define('UPLOAD_DIR', '../images/');
 class DataGraber{
     private $title;
     private $thumbnail;
@@ -85,7 +84,7 @@ class DataGraber{
 			return $thumbnail;
 				}
 			}else{
-			    $siteURL = $this->websiteAddress;
+			    /*$siteURL = $this->websiteAddress;
 			   $googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=$siteURL&screenshot=true");
 			    $googlePagespeedData = json_decode($googlePagespeedData, true);
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
@@ -103,8 +102,8 @@ class DataGraber{
 		//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
 		//preg_match('/(?<=src=").*?(?=")/',$thumbnail,$imgSrc);
 		//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
-		
-		$thumbnail='https://dlike.io/images/default-img.jpg';	
+		*/
+			$thumbnail='https://dlike.io/images/default-img.jpg';	
 			return $thumbnail;
 			}
 	
@@ -233,32 +232,6 @@ $url = $_POST['url'];
 //$url = "https://www.dougheyed.com/classic-berry-trifle/";
 //http://www.reelsilvercharters.com/lake-ontario-game-fish.htm
 $grab = new DataGraber($url);
-
-
-/* testing 
-//print_r($grab);
-//echo '<BR/><BR/>';
-$googlePagespeedData = file_get_contents("https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=https://google.com&screenshot=true");
-$googlePagespeedData = json_decode($googlePagespeedData, true);
-//print_r($googlePagespeedData) ;
-//echo '<BR/> googlePagespeedData <BR/>';
-$screenshot = $googlePagespeedData['screenshot']['data'];
-$screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
-//print_r($screenshot) ;
-//echo '<BR/>screenshot<BR/>';
-$imglt ="data:image/jpeg;base64,$screenshot";
-define('UPLOAD_DIR', 'upload/');
-$img = $imglt;
-$img = str_replace('data:image/jpeg;base64,', '', $img);
-//print_r($img) ;
-//echo '<BR/>img<BR/>';
-$data = base64_decode($img);
-$file = UPLOAD_DIR . uniqid() . '.png';
-print_r($data);
-$success = file_put_contents($file, $data);
-			    
-print_r($file);
-testing end */
 
 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
     //$grab->copyImage($grab->getThumbnail(),"hel");
