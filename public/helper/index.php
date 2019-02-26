@@ -254,6 +254,7 @@ $img = str_replace('data:image/jpeg;base64,', '', $img);
 //echo '<BR/>img<BR/>';
 $data = base64_decode($img);
 $file = UPLOAD_DIR . uniqid() . '.png';
+print_r($data);
 $success = file_put_contents($file, $data);
 			    
 print_r($file);
