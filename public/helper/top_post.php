@@ -12,9 +12,6 @@ if ($result->num_rows > 0) {
             let topauthor = <?php echo json_encode($top_auth); ?>;
             let toppermlink = <?php echo json_encode($top_permlink); ?>;
         </script>
-    <? }
-} 
-?>
 <div class="col-md-6 post-thumb">
                     <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img"></a>
                 </div>
@@ -46,3 +43,6 @@ if ($result->num_rows > 0) {
                         </div>
                     </div>
                 </div>
+    <? }
+} 
+?>
