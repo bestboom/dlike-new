@@ -55,6 +55,10 @@
             </div>
         </div>
     </div>
+<?php include('template/modals/modal.php'); ?>    
+<?php include('template/footer.php'); ?>
+
+
     <?
     $sqlt = "SELECT * FROM PostsLikes ORDER BY likes DESC LIMIT 1";
 $result = $conn->query($sqlt);
@@ -95,5 +99,3 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 ?>
-<?php include('template/modals/modal.php'); ?>    
-<?php include('template/footer.php'); ?>
