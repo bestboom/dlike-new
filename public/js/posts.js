@@ -139,7 +139,7 @@ $(document).ready(function(){
                             '\n' +
                         '</div>\n' + 
                         '\n' +
-                        '<div class="post-thumb"><a href="#">' + thumbnail + '</a></div>\n' + 
+                        '<div class="post-thumb post_detail"><a href="#">' + thumbnail + '</a></div>\n' + 
                         '\n' +
                         '<div class="post-contnet-wrap">\n' +
                         	'\n' +

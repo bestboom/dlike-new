@@ -191,3 +191,7 @@ $('#content').on("click", ".hov-txt", function() {
     $("#author_rate").val(authorname);
     $("#permlink_rate").val(mypermlink);
 });
+
+$('.post_detail').click(function () {
+    $('#upvotefail').modal('show');
+});
