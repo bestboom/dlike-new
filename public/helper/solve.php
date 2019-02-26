@@ -43,7 +43,7 @@ error_reporting(E_ALL);
     								} else {
     									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating)
 													VALUES ('".$author."', '".$permlink."', 1 , '".$rating."')";
-
+									}
 
     					echo '<div class="alert alert-success">Your Upvote is Added</div>';
     					echo '<script>document.getElementById("logsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
