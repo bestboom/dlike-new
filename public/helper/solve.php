@@ -40,10 +40,17 @@ error_reporting(E_ALL);
 							$checkPost = "SELECT author, permlink FROM PostsLikes";
 								$result = mysqli_query($conn, $checkPost);
 									if (mysqli_num_rows($result) > 0) {
+										echo "post exists";
 										$updatePost = "UPDATE PostsLikes SET likes = likes + 1 and rating = rating + '$rating' WHERE author = '$author' and permlink = '$permlink'";
+											if ($conn->query($updatePost) === TRUE) {
+   													echo "Record updated successfully"; } else { echo "Record could not updated some error"; }
     								} else {
+    									echo "post not exists";
     									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating)
 													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."')";
+													if ($conn->query($addPost) === TRUE) {
+   													echo "new Record added successfully"; } else { echo "new Record could not added"; }
+
 									}
 
     					echo '<div class="alert alert-success">Your Upvote is Added</div>';
