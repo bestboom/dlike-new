@@ -163,6 +163,17 @@ $('#content').on("click", ".hov-txt", function() {
     // we want to copy the 'id' from the button to the modal
     var mypermlink = $(this).attr("data-permlink");
     var authorname = $(this).attr("data-author");
+
+     function passVal(){
+        var data = {
+            ath: mypermlink,
+            plink: authorname
+        };
+
+        $.post("helper/verify_post.php", data);
+    }
+    passVal();
+
     $("#author_rate").val(authorname);
     $("#permlink_rate").val(mypermlink);
 });
