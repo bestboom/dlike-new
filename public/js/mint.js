@@ -178,11 +178,7 @@ $('#content').on("click", ".hov-txt", function() {
                         try {
                             var response = JSON.parse(data)
                             if(response.error == true) {
-                                showModalError(
-                                    "Oh No..",
-                                    "You already Upvoted.",
-                                    ""
-                                    );
+                                $('#upvotefail').modal('show');
                             } else {
                                     $('#likes').modal('show');
                             }

@@ -6,3 +6,11 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+        	<?php include('template/modals/upvotefail.php'); ?>
+        </div>
+    </div>
+</div>
