@@ -22,6 +22,18 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 
+echo '<br>';
 
+$sqlt = "SELECT id, author, permlink, likes, rating FROM PostsLikes";
+$result = $conn->query($sqlt);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["author"]. " " . $row["permlink"]. " " . $row["likes"]. " " . $row["rating"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
 
 ?>

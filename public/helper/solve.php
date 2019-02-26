@@ -20,6 +20,9 @@ error_reporting(E_ALL);
 			echo 'exist'; 
 		} else {  echo "Doesn't exist"; }
 
+
+		
+
 	if($_POST)
 		{ 
 			$solvemedia_response=solvemedia_check_answer($privkey,$_SERVER["REMOTE_ADDR"],
@@ -32,6 +35,16 @@ error_reporting(E_ALL);
 						VALUES ('".$userval."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
 
 						if (mysqli_query($conn, $sqlm)) {
+
+							$checkPost = "SELECT author, firstname, lastname FROM PostsLikes";
+			$result = mysqli_query($conn, $checkPost);
+		if (mysqli_num_rows($result) > 0) {
+			$updatePost = "UPDATE PostsLikes SET likes = likes + 1 and rating = rating + 1 WHERE author = '$author' and permlink = '$permlink'";
+    	} else {
+    		$addPost = "INSERT INTO PostsLikes (author, permlinks, likes, rating)
+						VALUES ('".$author."', '".$permlink."', 1 , '".$rating."')";
+
+						
     					echo '<div class="alert alert-success">Your Upvote is Added</div>';
     					echo '<script>document.getElementById("logsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
 					} else {

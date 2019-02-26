@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 require 'includes/config.php';
 
-
+/*
 
 $sql = "CREATE TABLE `PostsLikes` (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -34,7 +34,7 @@ if ($q->num_rows > 0) {
     echo "0 results";
 }
 
-/*
+
 
 $sql = "DELETE FROM MyLikes";
 
