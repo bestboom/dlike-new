@@ -165,15 +165,15 @@ $('#content').on("click", ".hov-txt", function() {
     var authorname = $(this).attr("data-author");
 
     function passVal(){
-        var datat = {
-            ath: mypermlink,
-            plink: authorname
+        var data = {
+            ath: authorname,
+            plink: mypermlink
         };
-
+        
         $.ajax({
                 type: "POST",
                 url: "helper/verify_post.php",
-                data: datat;
+                data: data;
                 success: function(data) {
                     alert(data); // apple
                 }
