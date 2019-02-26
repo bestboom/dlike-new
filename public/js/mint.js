@@ -169,11 +169,11 @@ $('#content').on("click", ".hov-txt", function() {
             ath: authorname,
             plink: mypermlink
         };
-        
+
         $.ajax({
                 type: "POST",
                 url: "helper/verify_post.php",
-                data: data;
+                data: data,
                 success: function(data) {
                     alert(data); // apple
                 }
