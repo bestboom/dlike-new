@@ -1,6 +1,7 @@
 <?php 
     include('template/header.php'); 
     require ('lib/solvemedialib.php');
+    include('helper/likes.php');
 ?>
         <div class="container">
             <div class="offset-md-2 col-md-8">
@@ -19,30 +20,21 @@
         <div class="container">
             <article class="post-style-two post-full-width">
                 <div class="post-thumb">
-                    <a href="#">
-                        <img src="./images/post/1.jpg" alt="img" class="img-responsive">
-                    </a>
+                    <a href="#"><img src="" alt="img" class="img-responsive" id="top_img"></a>
                 </div>
                 <div class="post-contnet-wrap">
                     <span class="post-meta">30 NOV, 2019</span>
                     <h4 class="post-title">
-                        <a href="#">
-                            Publish what you think
-                        </a>
+                        <a href="#"><span id="top_title"></span></a>
                     </h4>
-                    <p class="post-entry">
-                        No third party can freeze or lose your funds! With enterprise-level 
-                        security superior to most other t is a long established fact that a 
-                        reader will be distracted by the readable content of a page when l
-                        ooking at its layout. The point of using...
-                    </p>
+                    <p class="post-entry"></p>
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div class="author-thumb">
                                 <a href="#">
                                     <img src="./images/post/authors/1.png" alt="img" class="img-responsive">
                                 </a>
-                            </div>
+                            </div>.
                             <div class="author-info">
                                 <h5>
                                     <a href="#">

@@ -69,30 +69,50 @@
         <div class="container">
             <article class="post-style-two post-full-width">
 
+
+    <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<script>
+            let topauthor = 'iyanpol12';
+            let toppermlink = 'eminem-says-hes-always-been-chasing-the-marshall-mathers-lp';
+
+            steem.api.getContent(topauthor , toppermlink, function(err, res) {
+                console.log(res);
+                let metadata = JSON.parse(res.json_metadata);
+                let img = new Image();
+                if (typeof metadata.image === "string"){
+                    img.src = metadata.image.replace("?","?");
+                    }else img.src = metadata.image[0];
+                    json_metadata = metadata;
+                    let category = metadata.category;
+                    if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
+                    let post_description = metadata.body;
+                    let title = res.title;
+
+                    $('#top_title').html(title);
+                    $('.post-entry').html(category);
+                    $("#top_img").attr("src", img.src);
+
+            });
+        </script>
+
+
                 <div class="post-thumb">
                     <a href="#">
-                        <img src="./images/post/1.jpg" alt="img" class="img-responsive">
+                        <img src="" alt="img" class="img-responsive" id="top_img">
                     </a>
                 </div>
                 <div class="post-contnet-wrap">
                     <span class="post-meta">30 NOV, 2019</span>
                     <h4 class="post-title">
-                        <a href="#">
-                            Publish what you think
-                        </a>
+                        <a href="#"><span id="top_title"></span></a>
                     </h4>
-                    <p class="post-entry">
-                        No third party can freeze or lose your funds! With enterprise-level 
-                        security superior to most other t is a long established fact that a 
-                        reader will be distracted by the readable content of a page when l
-                        ooking at its layout. The point of using...
-                    </p>
+                    <p class="post-entry"></p>
                     <div class="post-footer">
                         <div class="post-author-block">
                             
                                 <div class="author-thumb">
                                     <a href="#">
-                                    <img src="./images/post/authors/1.png" alt="img" class="img-responsive">
+                                    <img src="" alt="img" class="img-responsive">
                                     </a>
                                 </div>
                             
@@ -112,6 +132,8 @@
                     </div>
                 </div>
             </article><!-- post-style-two -->
+
+
             <div class="row" id="content">
             </div>
         </div>
@@ -276,7 +298,6 @@ for ($x = 0; $x < 5-$rate; $x++) {
     <script src="./assets/js/jquery.slimscroll.min.js"></script>
     <script src="./js/custom.js"></script>
     <script src="./js/mint.js"></script>
-    <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
