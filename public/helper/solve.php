@@ -40,7 +40,7 @@ error_reporting(E_ALL);
 							$checkPost = "SELECT author, permlink FROM PostsLikes";
 								$result = mysqli_query($conn, $checkPost);
 									if (mysqli_num_rows($result) > 0) {
-										$updatePost = "UPDATE PostsLikes SET likes = likes + 1 and rating = rating + 1 WHERE author = '$author' and permlink = '$permlink'";
+										$updatePost = "UPDATE PostsLikes SET likes = likes + 1 and rating = rating + '$rating' WHERE author = '$author' and permlink = '$permlink'";
     								} else {
     									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating)
 													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."')";
