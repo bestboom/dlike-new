@@ -58,6 +58,7 @@ $(document).ready(function(){
 
                 //image or youtube
                 let thumbnail = '<img src="' + img.src + '" alt="' + $post.title + '" class="card-img-top img-fluid">';
+			console.log(metadata.url);
                 let url = new URL(metadata.url);
                 	var youtubeAnchorTagVariableClass = '';
 					if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
