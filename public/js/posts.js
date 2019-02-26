@@ -3,7 +3,7 @@ $(document).ready(function(){
 	let $tag, $limit, content = "#content";
     let query = {
         tag: "dlike",
-        limit: 98,
+        limit: 24,
     };
 
     steem.api.getDiscussionsByCreated(query, function (err, res) {
@@ -139,7 +139,7 @@ $(document).ready(function(){
                             '\n' +
                         '</div>\n' + 
                         '\n' +
-                        '<div class="post-thumb post_detail"><a href="#">' + thumbnail + '</a></div>\n' + 
+                        '<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '">' + thumbnail + '</a></div>\n' + 
                         '\n' +
                         '<div class="post-contnet-wrap">\n' +
                         	'\n' +
