@@ -7,6 +7,8 @@ error_reporting(E_ALL);
 
 require 'includes/config.php';
 
+
+/*
 $sql = "CREATE TABLE `PostsLikes` (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 author VARCHAR(255) NOT NULL,
@@ -20,7 +22,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-/*
+
 
 $q = $conn->query('DESCRIBE PostsLikes');
 if ($q->num_rows > 0) {
