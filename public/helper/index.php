@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+define('UPLOAD_DIR', 'images/');
 class DataGraber{
     private $title;
     private $thumbnail;
@@ -91,11 +91,12 @@ class DataGraber{
 			    $screenshot = $googlePagespeedData['screenshot']['data'];
 			    $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot); 
 			    $imglt ="data:image/jpeg;base64,$screenshot";
-			    define('UPLOAD_DIR', 'upload/');
+			    
                 $img = $imglt;
                 $img = str_replace('data:image/jpeg;base64,', '', $img);
                 $data = base64_decode($img);
                 $file = UPLOAD_DIR . uniqid() . '.png';
+		$myfile = fopen($file, "w");
                 $success = file_put_contents($file, $data);
 			    
 			    $thumbnail = $file;
