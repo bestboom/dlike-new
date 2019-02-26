@@ -37,7 +37,7 @@ error_reporting(E_ALL);
 
 						if (mysqli_query($conn, $sqlm)) {
 
-							$checkPost = "SELECT author, permlink, likes, rating FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
+							$checkPost = "SELECT * FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
 								$result = mysqli_query($conn, $checkPost);
 									if (mysqli_num_rows($result) > 0) {
 										echo "post exists";
