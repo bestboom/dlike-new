@@ -59,7 +59,12 @@ $(document).ready(function(){
                 //image or youtube
                 let thumbnail = '<img src="' + img.src + '" alt="' + $post.title + '" class="card-img-top img-fluid">';
 		let a = document.createElement('a');
-		a.href = metadata.url;
+		try {
+		  a.href = new URL(metadata.url);
+		}
+		catch(err) {
+		  a.href = new URL(window.location.href);
+		}
                 let url = a.href;
                 	var youtubeAnchorTagVariableClass = '';
 					if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
