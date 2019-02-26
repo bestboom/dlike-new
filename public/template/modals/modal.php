@@ -7,9 +7,9 @@
 </div>
 
 
-<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
+<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
+        <div class="modal-content modal-custom">
         	<?php include('template/modals/upvotefail.php'); ?>
         </div>
     </div>

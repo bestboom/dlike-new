@@ -1,14 +1,10 @@
-<div class="dvd-account-title">
-    <h3>You ahve already upvoted</h3>
-    <p><span>Total Votes:  --  Ratings: </span></p>
-</div>  
-<div class="md-account-banner">
-    <div class="row justify-content-center">
-        <div style="height:60px;width:470px;border:1px solid #000;"></div>
-    </div>
-</div>                    
-                <div class="dvd-account-content">
-                    
-                    <h2>Sorry</h2>
-                    
+<div class="modal-body ">
+    <div class="mdStatusTitle sttError"><div class="iconTitle"><i class="fas fa-frown"></i></div></div>
+        <div class="mdStatusContent">
+            <h3 id="alert-title-error">Uh ho....</h3>
+                <p id="alert-content-error">You have already Upvoted This Post!</p>
+                <div class="actBtn">
+                	<button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Ok.. I Understand!</span></button>
                 </div>
+        </div>
+</div>
