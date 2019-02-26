@@ -247,7 +247,7 @@ $screenshot = str_replace(array('_','-'),array('/','+'),$screenshot);
 //print_r($screenshot) ;
 //echo '<BR/>screenshot<BR/>';
 $imglt ="data:image/jpeg;base64,$screenshot";
-define('UPLOAD_DIR', 'helper/');
+define('UPLOAD_DIR', 'upload/');
 $img = $imglt;
 $img = str_replace('data:image/jpeg;base64,', '', $img);
 //print_r($img) ;
