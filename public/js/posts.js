@@ -118,7 +118,9 @@ $(document).ready(function(){
 				url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
 				dataType: 'json',
 				success: function(data) {
-					return data.name;							
+					$.each(data, function(index, element) {           
+                				return element.name            
+        				});							
 				},
 				error: function() {
 					console.log('Error occured');
