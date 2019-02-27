@@ -195,3 +195,16 @@ $('#content').on("click", ".hov-txt", function() {
 $('.post_detail').click(function () {
     $('#postModal').modal('show');
 });
+
+//upvote
+var rangeSlider = document.getElementById("rs-range-line");
+var rangeBullet = document.getElementById("rs-bullet");
+rangeSlider.addEventListener("input", showSliderValue, false);
+
+function showSliderValue() {
+  rangeBullet.innerHTML = rangeSlider.value;
+}
+$('.upme').click(function() {
+    let upvoteValue = $('#rs-range-line').val();
+    alert(upvoteValue)
+})

@@ -298,7 +298,7 @@
                                             <span class="date">28 Dec 2019</span>
                                         </div>
                                         <div class="reply">
-                                            <button type="button" class="reply-button" data-toggle="modal" data-target="#modal-mdst">Reply</button>
+                                            <button type="button" class="reply-button" data-toggle="modal" data-target="#upvoteModal">Reply</button>
                                             <div class="modal fade" id="modal-skill25" tabindex="-1" role="dialog" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
@@ -666,36 +666,38 @@
   margin-top: -2px;
 }
 .mybody .close{ color: white; opacity: 1; }
-.mybody .upCircle{color: white; font-size: 30px;}
+.mybody .upme{color: white; font-size: 30px;cursor: pointer;}
 .nopadding {
    padding-left: 1PX !important;
    padding-right: 1PX !important;
 }
+#upvoteModal{top: 35%;}
 
         </style>
 
 
-        <div class="modal fade" id="modal-mdst" tabindex="-1" role="dialog" aria-hidden="true">
-                                                <div class="modal-dialog modal-sm" role="document">
-                                                    <div class="modal-content mybody">
-                                                    <div class="modal-body">
-                                                        <div class="container">
-                                                            
-                                                            <div class="row d-flex justify-content-around">
-                                                            <div class="col-sm-2 nopadding"><i class="fas fa-chevron-circle-up upCircle"></i></div>    
+                                    <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm" role="document">
+                                            <div class="modal-content mybody">
+                                                <div class="modal-body">
+                                                    <div class="container">
+                                                        <div class="row d-flex justify-content-around">
+                                                            <div class="col-sm-2 nopadding"><i class="fas fa-chevron-circle-up upme"></i></div>    
                                                             <div class="col-sm-8 nopadding">
-                                                                    <div class="row d-flex justify-content-around">
-                                                                        <div class="col-sm-9"><input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="100"></div>
-                                                                        <div class="col-sm-2 nopadding"><span id="rs-bullet" class="rs-label">0</span></div>
-                                                                    </div>
-                                                                                                            
-                                                             </div>
-                                                             <div class="col-sm-2 nopadding">
-                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+                                                                <div class="row d-flex justify-content-around">
+                                                                    <div class="col-sm-9"><input id="rs-range-line" class="rs-range" type="range" value="0" min="0" max="100"></div>
+                                                                    <div class="col-sm-2 nopadding"><span id="rs-bullet" class="rs-label">0</span></div>
+                                                                </div>                                       
+                                                            </div>
+                                                            <div class="col-sm-2 nopadding">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
     </footer>
@@ -710,7 +712,7 @@
 </html>
 
 <script type="text/javascript">
-    var rangeSlider = document.getElementById("rs-range-line");
+var rangeSlider = document.getElementById("rs-range-line");
 var rangeBullet = document.getElementById("rs-bullet");
 
 rangeSlider.addEventListener("input", showSliderValue, false);
@@ -718,4 +720,8 @@ rangeSlider.addEventListener("input", showSliderValue, false);
 function showSliderValue() {
   rangeBullet.innerHTML = rangeSlider.value;
 }
+$('.upme').click(function() {
+    let upvoteValue = $('#rs-range-line').val();
+    alert(upvoteValue)
+})
 </script>
