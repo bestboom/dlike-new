@@ -8,13 +8,21 @@
             </div>
         </div>
     </div><!-- sub-header -->
+    <style>
+            .activeOrderBy {
+                    text-decoration: underline;
+            }
+    </style>
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">
                 <?php include('helper/top_post.php'); ?>
             </article><!-- post-style-two -->
             <div class="row  align-items-center h-100 post_select">
-                <div class="row col-md-3 justify-content-center"><h4 class="lab_post orderByLatest">Latest</h4><h4 class="lab_post orderByTopRated">Top Rated</h4></div>
+                <div class="row col-md-3 justify-content-center">
+                        <h4 class="lab_post orderByLatest activeOrderBy">Latest</h4>
+                        <h4 class="lab_post orderByTopRated">Top Rated</h4>
+                </div>
                 <div class="col-md-9 lay">&nbsp;</div>
             </div>
             <div class="row" id="content">
