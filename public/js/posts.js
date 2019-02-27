@@ -190,10 +190,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 		dataType: 'json',
 		success: function(response) {
 			console.log(response);
-			var obj = JSON.parse(response);
-			console.log(currentLikesDivElement);
-			console.log(obj);
-			$('.' + currentLikesDivElement).html(obj.likes);
+			$('.' + currentLikesDivElement).html(response.likes);
 		},
 		error: function() {
 			console.log('Error occured');
