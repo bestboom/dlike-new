@@ -111,7 +111,7 @@ $(document).ready(function(){
 		}
 
                 //start posts here
-                $(content).append('<div class="col-lg-4 col-md-6">\n' +
+                $(content).append('<div class="col-lg-4 col-md-6'+ currentLikesDivElement +'">\n' +
                 	'\n' +
                 	'<article class="post-style-two">\n' +
                 	'\n' +
