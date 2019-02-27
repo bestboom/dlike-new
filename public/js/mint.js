@@ -210,5 +210,5 @@ $('.upme').click(function() {
 })
 
 $('.upvoting').click(function() {
-    $('#upvotetModal').modal('show');
+    $('#posttModal').modal('show');
 })
