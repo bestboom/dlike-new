@@ -5,7 +5,7 @@ $(document).ready(function(){
 		showPostSortedByLikes();
 	});
 	
-	$(".orderByTopLatest").click(function(){
+	$(".orderByLatest").click(function(){
 		$( ".orderByLatest" ).last().addClass( "activeOrderBy" );
 		$( ".orderByTopRated" ).removeClass( "activeOrderBy" );
 		showPostSortedByLatest();
