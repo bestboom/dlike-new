@@ -1876,6 +1876,7 @@ color: #4c3d3d;
    padding-right: 1PX !important;
 }
 #upvoteModal{top: 35%;}
+.upvoting{cursor: pointer;}
 
 /*
 |----------------------------------------------------------------------------
