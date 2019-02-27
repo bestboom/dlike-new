@@ -12,11 +12,9 @@
 	} else {
 		$author = isset($_GET["author"]) ? $_GET["author"] : "";
 		$author = stripslashes( $author );
-		$author = mysql_real_escape_string( $author ); 
 		
 		$permlink = isset($_GET["permlink"]) ? $_GET["permlink"] : "";
 		$permlink = stripslashes( $permlink );
-		$permlink = mysql_real_escape_string( $permlink ); 
 		
 		$sql = "SELECT * FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink' LIMIT 1";
 		$result = $conn->query($sql);
