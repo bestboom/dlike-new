@@ -10,6 +10,7 @@
 		$strReturn['status'] = 'Failed';
 		$strReturn['reason'] = 'Required parameters not passed';
 	} else {
+		$strReturn['status'] = 'OK';
 		$author = isset($_GET["author"]) ? $_GET["author"] : "";
 		$author = stripslashes( $author );
 		
