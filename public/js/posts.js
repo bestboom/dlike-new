@@ -196,7 +196,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 
 			var sortedDivs = jQuery("#content").find(".postsMainDiv").toArray().reverse(sorter);
 			jQuery.each(sortedDivs, function(index, value) {
-			  jQuery(".players").append(value);
+			  jQuery("#content").append(value);
 			});
 		},
 		error: function() {
