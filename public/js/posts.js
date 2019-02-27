@@ -111,7 +111,7 @@ $(document).ready(function(){
 		}
 
                 //start posts here
-                $(content).append('<div class="col-lg-4 col-md-6 mainDiv'+ currentLikesDivElement +'">\n' +
+                $(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0">\n' +
                 	'\n' +
                 	'<article class="post-style-two">\n' +
                 	'\n' +
@@ -193,9 +193,18 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log(response);
 			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
 			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
+
+			var sortedDivs = jQuery("#content").find(".postsMainDiv").toArray().reverse(sorter);
+			jQuery.each(sortedDivs, function(index, value) {
+			  jQuery(".players").append(value);
+			});
 		},
 		error: function() {
 			console.log('Error occured');
 		}
 	});
 }
+
+function sorter(a, b) {
+  return a.getAttribute('postLikes') - b.getAttribute('postLikes');
+};
