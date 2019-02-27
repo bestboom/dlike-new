@@ -8,14 +8,13 @@ $(document).ready(function(){
 
     steem.api.getDiscussionsByCreated(query, function (err, res) {
     	res.forEach(($post, i) => {
-
     		let metadata;
     		if ($post.json_metadata && $post.json_metadata.length > 0){
     			metadata = JSON.parse($post.json_metadata);
     		}
 
+		var currentLikesDivElement = 'postLike_' + i;
     		if(metadata && metadata.community == "dlike"){
-			var numlikes=getTotalLikes($post.author,$post.permlink);
     			getTotalcomments($post.author,$post.permlink);
 
     			// get image here
@@ -109,25 +108,7 @@ $(document).ready(function(){
 				});
 				$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
 			});
-			
 		}
-		//check likes
-		function getTotalLikes(thisAutor,thisPermlink){    			
-		 $.ajax({
-				type: "POST",
-				url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
-				dataType: 'json',
-				success: function(data) {
-					$.each(data, function(index, element) {           
-                				return element.likes            
-        				});							
-				},
-				error: function() {
-					console.log('Error occured');
-				}
-			});
-		}
-	
 
                 //start posts here
                 $(content).append('<div class="col-lg-4 col-md-6">\n' +
@@ -160,7 +141,7 @@ $(document).ready(function(){
                         '\n' +
                         '<div class="post-contnet-wrap">\n' +
                         	'\n' +
-                            '<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num">'+numlikes+'</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
+                            '<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
                             '\n' +
                             '<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
                             '\n' +
@@ -176,7 +157,7 @@ $(document).ready(function(){
                 '</article></div>');
 
     		}
-
+		getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
     	});
 
     });
@@ -200,3 +181,20 @@ $(document).ready(function(){
 
             });
 });
+
+//check likes
+function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+	$.ajax({
+		type: "POST",
+		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
+		dataType: 'json',
+		success: function(data) {
+			$.each(data, function(index, element) {
+				$('.' + currentLikesDivElement).htm(element.likes);
+			});
+		},
+		error: function() {
+			console.log('Error occured');
+		}
+	});
+}
