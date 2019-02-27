@@ -4,12 +4,11 @@
 </div>  
 <div class="md-account-banner">
     <div class="row justify-content-center">
-        <div style="height:60px;width:470px;border:1px solid #000;"></div>
+        <div style="height:60px;width:470px;"></div>
     </div>
 </div>                    
                 <div class="dvd-account-content">
                     <form action="helper/solve.php" method="post" id="logsubmit">
-                    	<?php echo $ip; ?>
                     <div class="row">
                         <div class="col-md-6">
                                 <div class="row justify-content-center form-group">
