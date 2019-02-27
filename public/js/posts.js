@@ -189,6 +189,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
 		dataType: 'json',
 		success: function(response) {
+			console.log(currentLikesDivElement);
 			console.log(response);
 			$('.' + currentLikesDivElement).html(response.likes);
 		},
