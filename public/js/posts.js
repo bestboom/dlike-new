@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
 	let $tag, $limit, content = "#content";
-    let query = {
-        tag: "dlike",
-        limit: 24,
-    };
+	let query = {
+		tag: "dlike",
+		limit: 24,
+	};
 
     steem.api.getDiscussionsByCreated(query, function (err, res) {
     	res.forEach(($post, i) => {
@@ -13,7 +13,7 @@ $(document).ready(function(){
     			metadata = JSON.parse($post.json_metadata);
     		}
 
-		var currentLikesDivElement = 'postLike_' + i;
+			var currentLikesDivElement = 'postLike_' + i;
     		if(metadata && metadata.community == "dlike"){
     			getTotalcomments($post.author,$post.permlink);
 
@@ -155,11 +155,9 @@ $(document).ready(function(){
                             '</div>\n' +
                         '</div>\n' +
                 '</article></div>');
-
     		}
-		getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
+			getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
     	});
-
     });
 
             steem.api.getContent(topauthor , toppermlink, function(err, res) {
@@ -178,7 +176,6 @@ $(document).ready(function(){
                     $('#top_title').html(title);
                     $('.post-entry').html(category);
                     $("#top_img").attr("src", img.src).show();
-
             });
 });
 
@@ -193,11 +190,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log(response);
 			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
 			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
-
-			var sortedDivs = jQuery("#content").find(".postsMainDiv").toArray().reverse(sorter);
-			jQuery.each(sortedDivs, function(index, value) {
-			  jQuery("#content").append(value);
-			});
+			showPostSortedByLikes();
 		},
 		error: function() {
 			console.log('Error occured');
@@ -206,5 +199,12 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 }
 
 function sorter(a, b) {
-  return a.getAttribute('postLikes') - b.getAttribute('postLikes');
+	return a.getAttribute('postLikes') - b.getAttribute('postLikes');
 };
+
+function showPostSortedByLikes() {
+	var sortedDivs = jQuery("#content").find(".postsMainDiv").toArray().reverse(sorter);
+	jQuery.each(sortedDivs, function(index, value) {
+		jQuery("#content").append(value);
+	});	
+}
