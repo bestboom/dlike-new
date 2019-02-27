@@ -190,7 +190,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 		dataType: 'json',
 		success: function(data) {
 			$.each(data, function(index, element) {
-				$('.' + currentLikesDivElement).htm(element.likes);
+				$('.' + currentLikesDivElement).html(element.likes);
 			});
 		},
 		error: function() {
