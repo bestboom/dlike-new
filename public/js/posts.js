@@ -188,14 +188,10 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	});
 }
 
-function sorter(a, b) {
-	return a.getAttribute('postLikes') - b.getAttribute('postLikes');
-};
-
 function showPostSortedByLikes() {
-	var sortedDivs = jQuery("#content").find(".postsMainDiv").toArray().reverse(sorter);
-	jQuery.each(sortedDivs, function(index, value) {
-		console.log(value);
-		jQuery("#content").append(value);
-	});	
+	var divList = $(".postsMainDiv");
+	divList.sort(function(a, b){
+		return $(b).attr("postLikes") - $(a).attr("postLikes")
+	});
+	$("#content").html(divList);
 }
