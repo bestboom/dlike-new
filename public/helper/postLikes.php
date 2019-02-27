@@ -7,5 +7,10 @@
 
     $sql = "SELECT * FROM PostsLikes LIMIT 10";
     $result = $conn->query($sql);
-    var_dump($result);
+    
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            var_dump($row);
+        }
+    }
 ?>
