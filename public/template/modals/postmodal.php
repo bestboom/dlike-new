@@ -1,4 +1,4 @@
-            <div class="modal-header">
+<div class="modal-header">
                 <h5 class="modal-title">Modal</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
@@ -382,3 +382,6 @@
                 </div>
             </div>
         </div>
+    </div>     
+            </div>
+            
