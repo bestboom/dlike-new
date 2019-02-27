@@ -205,6 +205,7 @@ function sorter(a, b) {
 function showPostSortedByLikes() {
 	var sortedDivs = jQuery("#content").find(".postsMainDiv").toArray().reverse(sorter);
 	jQuery.each(sortedDivs, function(index, value) {
+		console.log(value);
 		jQuery("#content").append(value);
 	});	
 }
