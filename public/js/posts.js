@@ -89,46 +89,45 @@ $(document).ready(function(){
 			'<article class="post-style-two">\n' +
 			'\n' +
 			'<div class="post-contnet-wrap-top">\n' +
-				'\n' +
-			    '<div class="post-footer">\n' +
-			    '\n' +
-				'<div class="post-author-block">\n' +
-				'\n' +
-				    '<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
-				    '\n' +
-				    '<div class="author-info">\n' +
-				    '\n' +
-					'<h5><a href="#">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
-				    '\n' +    
-				    '</div>\n' +
-				'\n' + 
-				'</div>\n' +
-				'\n' +
-				'<div class="post-comments"><span class="post-meta">Cryptocurrency</span></div>\n' +
-				'\n' +
-			    '</div>\n' +
-			    '\n' +
+			'\n' +
+			'<div class="post-footer">\n' +
+			'\n' +
+			'<div class="post-author-block">\n' +
+			'\n' +
+			'<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+			'\n' +
+			'<div class="author-info">\n' +
+			'\n' +
+			'<h5><a href="#">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
+			'\n' +    
+			'</div>\n' +
+			'\n' + 
+			'</div>\n' +
+			'\n' +
+			'<div class="post-comments"><span class="post-meta">Cryptocurrency</span></div>\n' +
+			'\n' +
+			'</div>\n' +
+			'\n' +
 			'</div>\n' + 
 			'\n' +
 			'<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '">' + thumbnail + '</a></div>\n' + 
 			'\n' +
 			'<div class="post-contnet-wrap">\n' +
-				'\n' +
-			    '<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
-			    '\n' +
-			    '<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
-			    '\n' +
-			    '<p class="post-entry post-tags">' + metatags + '</p>\n' +
-			    '\n' +
-			    '<div class="post-footer">\n' +
-				'<div class="post-author-block">\n' +
-				    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
-				'</div>\n' +
-				'<div class="post-comments"><i class="fas fa-chevron-circle-up"></i><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
-			    '</div>\n' +
+			'\n' +
+			'<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
+			'\n' +
+			'<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
+			'\n' +
+			'<p class="post-entry post-tags">' + metatags + '</p>\n' +
+			'\n' +
+			'<div class="post-footer">\n' +
+			'<div class="post-author-block">\n' +
+			'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 			'</div>\n' +
-			'</article></div>');
-		}
+			'<div class="post-comments"><i class="fas fa-chevron-circle-up"></i><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+			'</div>\n' +
+			'</div>\n' +
+		'</article></div>');
 		getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 		});
 	});
