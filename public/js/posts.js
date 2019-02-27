@@ -111,7 +111,7 @@ $(document).ready(function(){
 		}
 
                 //start posts here
-                $(content).append('<div class="col-lg-4 col-md-6'+ currentLikesDivElement +'">\n' +
+                $(content).append('<div class="col-lg-4 col-md-6 mainDiv'+ currentLikesDivElement +'">\n' +
                 	'\n' +
                 	'<article class="post-style-two">\n' +
                 	'\n' +
@@ -141,7 +141,7 @@ $(document).ready(function(){
                         '\n' +
                         '<div class="post-contnet-wrap">\n' +
                         	'\n' +
-                            '<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
+                            '<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
                             '\n' +
                             '<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
                             '\n' +
@@ -191,7 +191,8 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 		success: function(response) {
 			console.log(currentLikesDivElement);
 			console.log(response);
-			$('.' + currentLikesDivElement).html(response.likes);
+			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
+			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
 		},
 		error: function() {
 			console.log('Error occured');
