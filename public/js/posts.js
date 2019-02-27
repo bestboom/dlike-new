@@ -119,7 +119,7 @@ $(document).ready(function(){
 				dataType: 'json',
 				success: function(data) {
 					$.each(data, function(index, element) {           
-                				return element.name            
+                				return element.likes            
         				});							
 				},
 				error: function() {
