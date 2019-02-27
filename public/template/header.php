@@ -25,29 +25,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-
-                        <li class="nav-item"><a class="nav-link" href="share.php">SHARE</a></li>
-                        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">About</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="support.html">Support Default</a></li>
-                                <li class="nav-item"><a class="nav-link" href="support-details.html">Support Details</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">News</a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="latest-news.html">Latest News</a></li>
-                                <li class="nav-item"><a class="nav-link" href="news-details.html">News Details</a></li>
-                            </ul>
-                        </li>
-                        
-                        <li class="nav-item button active">
-                            <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
-                        </li>
+                      <li class="nav-item"><a class="nav-link" href="share.php">SHARE</a></li>
+                      <li class="nav-item button active">
+                          <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
+                      </li>
                     </ul>
                 </div>
             </div>
-            <!-- Modal -->
         </nav><!-- main-nav-block -->

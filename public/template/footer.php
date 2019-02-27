@@ -2,37 +2,16 @@
         <div class="container">
             <div class="colto-content-wrap">
                 <div class="colto-content">
-                    <h3>Getting started</h3>
-                    <p>We provide professional and secure trading services for investors</p>
+                    <h3>DLike</h3>
+                    <p>Share What You Like - Get Rewarded If Community Likes</p>
                 </div>
                 <div class="colto-btn-group">
                     <div class="footer-info-list">
                         <ul class="social-style-two">
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
+                            <li><a href="#"><i class="fab fa-discord"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-telegram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-github"></i></a></li>
                         </ul>
                     </div>
                 </div>
