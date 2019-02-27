@@ -208,3 +208,7 @@ $('.upme').click(function() {
     let upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
 })
+
+$('.upvoting').click(function() {
+    $('#upvotetModal').modal('show');
+})
