@@ -115,7 +115,7 @@ $(document).ready(function(){
 		function getTotalLikes(thisAutor,thisPermlink){    			
 		 $.ajax({
 				type: "POST",
-				url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink',
+				url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
 				dataType: 'json',
 				success: function(data) {
 					return data.name;							
