@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	$(".orderByTopRated").click(function(){
+		showPostSortedByLikes();
+	});
 	let $tag, $limit, content = "#content";
 	let query = {
 		tag: "dlike",
@@ -180,7 +183,6 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log(response);
 			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
 			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
-			showPostSortedByLikes();
 		},
 		error: function() {
 			console.log('Error occured');
