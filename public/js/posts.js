@@ -4,6 +4,13 @@ $(document).ready(function(){
 		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
 		showPostSortedByLikes();
 	});
+	
+	$(".orderByTopLatest").click(function(){
+		$( ".orderByLatest" ).last().addClass( "activeOrderBy" );
+		$( ".orderByTopRated" ).removeClass( "activeOrderBy" );
+		showPostSortedByLatest();
+	});
+	
 	let $tag, $limit, content = "#content";
 	let query = {
 		tag: "dlike",
@@ -17,7 +24,8 @@ $(document).ready(function(){
 			if ($post.json_metadata && $post.json_metadata.length > 0){
 				metadata = JSON.parse($post.json_metadata);
 			}
-
+			
+			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
 			if(metadata && metadata.community == "dlike"){
 				getTotalcomments($post.author,$post.permlink);
@@ -106,7 +114,7 @@ $(document).ready(function(){
 				}
 
 				//start posts here
-				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0">\n' +
+				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
 					'\n' +
@@ -195,6 +203,14 @@ function showPostSortedByLikes() {
 	var divList = $(".postsMainDiv");
 	divList.sort(function(a, b){
 		return $(b).attr("postLikes") - $(a).attr("postLikes")
+	});
+	$("#content").html(divList);
+}
+
+function showPostSortedByLatest() {
+	var divList = $(".postsMainDiv");
+	divList.sort(function(a, b){
+		return $(a).attr("postNumber") - $(b).attr("postNumber")
 	});
 	$("#content").html(divList);
 }
