@@ -192,8 +192,13 @@ $('#content').on("click", ".hov-txt", function() {
     $("#permlink_rate").val(mypermlink);
 });
 
+$('.upvoting').click(function() {
+    alert('goodnow');
+    $('#posttModal').modal('show');
+})
+
 $('.post_detail').click(function () {
-    $('#postModal').modal('show');
+    $('#posttModal').modal('show');
 });
 
 //upvote
@@ -209,7 +214,4 @@ $('.upme').click(function() {
     alert(upvoteValue)
 });
 
-$('.upvoting').click(function() {
-    alert('goodnow');
-    $('#posttModal').modal('show');
-})
+
