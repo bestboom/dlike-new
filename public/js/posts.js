@@ -182,7 +182,8 @@ $(document).ready(function(){
 
 		$('#auth_name').html(author);
         $('#top_title').html(title);
-        $('#post-catg').html(category);
+        $('#post_catg').html(category);
+        $('#post_date').html(created_time);
 		$('.post-entry').html(post_description);
 		$("#top_img").attr("src", img.src).show();
         $(".author-thumb").attr("src", auth_img);
