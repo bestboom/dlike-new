@@ -176,9 +176,12 @@ $(document).ready(function(){
 		if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
 		let post_description = metadata.body;
 		let title = res.title;
+        let created_time = res.created;
+        let author = res.author;
 
 		$('#top_title').html(title);
-		$('.post-entry').html(category);
+        $('#post-catg').html(category);
+		$('.post-entry').html(post_description);
 		$("#top_img").attr("src", img.src).show();
 	});
 });
