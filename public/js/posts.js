@@ -185,7 +185,7 @@ $(document).ready(function(){
 		$('.auth_name').html(author);
         $('#top_title').html(title);
         $('#post_catg').html(category);
-        $('.post_date').html(created_time);
+        $('.post-date').html(created_time);
 		$('.post-entry').html(post_description);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
@@ -225,12 +225,12 @@ function showPostSortedByLatest() {
 }
 
 $(".post-entry").each(function() {
-  var words_all = 28;  
+  var textMaxChar = $(this).attr('max');
   var text = $(this).text();
 
     length = text.split(' ').length;
-    if(length > words_all) {
-    var lastWord = text.split(' ')[post-entry];
+    if(length > textMaxChar) {
+    var lastWord = text.split(' ')[textMaxChar];
     var lastWordIndex = text.indexOf(lastWord);
         $(this).text(text.substr(0, lastWordIndex) + '...');
     }
