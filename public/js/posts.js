@@ -174,6 +174,7 @@ $(document).ready(function(){
 		json_metadata = metadata;
 		let category = metadata.category;
 		if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
+        let posttags = metadata.tags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
 		let post_description = metadata.body;
 		let title = res.title;
         let created = res.created;
@@ -187,6 +188,7 @@ $(document).ready(function(){
         $('#post_catg').html(category);
         $('.post-date').html(created_time);
 		$('.post-entry').html(post_description);
+        $('.tags').html(posttags);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
 	});

@@ -26,10 +26,9 @@ if ($result->num_rows > 0) {
                         <div class="post-date"></div><div id="post_catg"></div>
                     </div>
                     
-                    <h4 class="post-title">
-                        <a href="#"><span id="top_title"></span></a>
-                    </h4>
+                    <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
                     <p class="post-entry max="27""></p>
+                    <div class="tags"></div>
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div class="author-thumb">
