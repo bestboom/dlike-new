@@ -198,7 +198,7 @@ $('.upvoting').click(function() {
 })
 
 $('.post_detail').click(function () {
-    $('#posttModal').modal('show');
+    $('#upvoteModal').modal('show');
 });
 
 //upvote
