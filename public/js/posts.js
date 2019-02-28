@@ -221,3 +221,15 @@ function showPostSortedByLatest() {
 	});
 	$("#content").html(divList);
 }
+
+$(".post-entry").each(function() {
+  var words_all = 28;  
+  var text = $(this).text();
+
+    length = text.split(' ').length;
+    if(length > words_all) {
+    var lastWord = text.split(' ')[textMaxChar];
+    var lastWordIndex = text.indexOf(lastWord);
+        $(this).text(text.substr(0, lastWordIndex) + '...');
+    }
+});
