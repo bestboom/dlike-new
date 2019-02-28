@@ -823,7 +823,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     max-height: 20px;
     width: 20px; }
 .banner-block {
-  padding: 170px 0 43px 0;
+  padding: 230px 0 15px 0;
   position: relative;
   background: url("../images/bg/1.jpg") no-repeat center center;
   background-size: cover; }
@@ -834,7 +834,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   .banner-content h2 {
     font-weight: 700;
     color: #fff;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    font-size: 250%; }
   .banner-content p {
     color: #fff;
     font-size: 17px;
