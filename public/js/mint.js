@@ -210,5 +210,6 @@ $('.upme').click(function() {
 })
 
 $('.upvoting').click(function() {
+    alert('goodnow')
     $('#posttModal').modal('show');
 })
