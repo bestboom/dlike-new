@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
                     <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
-                    <?php echo $top_likes;  echo '<br>'; echo $top_rating; echo '<br>'; echo $avg_star = round($top_rating/$top_likes, 2); echo '<br>'; echo $star_score = round($avg_star * 20, 2); $set_star = 'width:34%'; ?>
+                    <?php echo $top_likes;  echo '<br>'; echo $top_rating; echo '<br>'; echo $avg_star = round($top_rating/$top_likes, 2); echo '<br>'; echo $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
 
 <div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
                     <div class="star-ratings-sprite"><span style="<?php echo $set_star; ?>" class="star-ratings-sprite-rating"></span></div>
