@@ -827,10 +827,13 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   position: relative;
   background: url("../images/bg/1.jpg") no-repeat center center;
   background-size: cover; }
-
+@keyframes blinker {
+  50% { opacity: 0;}
+}
 .banner-content {
   text-align: center;
   margin-bottom: 100px; }
+  .banner-content .annc { padding-top: 20px; animation: blinker 1.7s cubic-bezier(.5, 0, 1, 1) infinite alternate; }
   .banner-content h5 {
     color: #fff;
     font-weight: 700; }

@@ -12,7 +12,7 @@
                         <p>Share What you like with community <br>Get rewarded if community likes your shares</p>
                         <h5>Daily Top Recommended Post (most dlikes) is Rewarded By Dlike</h5>
                         <h5>Anyone can recommend a post for which steem account is not compulsory</h5>
-                        <h2>Starting 11th March</h2>
+                        <h2 class="annc">Starting 11th March</h2>
                     </div>
                 </div>
                 <div class="col-md-3 main_offer">
