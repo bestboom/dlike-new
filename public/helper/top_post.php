@@ -33,17 +33,13 @@ if ($result->num_rows > 0) {
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div class="author-thumb">
-                                <a href="#">
-                                    <img src="./images/post/authors/1.png" alt="img" class="img-responsive">
-                                </a>
+                                <a href="#"><img src="" alt="img" class="img-responsive"></a>
                             </div>.
                             <div class="author-info">
                                 <h5>
-                                    <a href="#">
-                                        Nayn e Castro
-                                    </a>
+                                    <a href="#" class="auth_name"></a>
                                 </h5>
-                                <a href="#">@excoin</a>
+                                
                             </div>
                         </div>
                         <div class="post-comments">

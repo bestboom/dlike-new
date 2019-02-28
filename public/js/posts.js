@@ -178,11 +178,14 @@ $(document).ready(function(){
 		let title = res.title;
         let created_time = res.created;
         let author = res.author;
+        let auth_img = "https://steemitimages.com/u/' + res.author + '/avatar";
 
-		$('#top_title').html(title);
+		$('#auth_name').html(author);
+        $('#top_title').html(title);
         $('#post-catg').html(category);
 		$('.post-entry').html(post_description);
 		$("#top_img").attr("src", img.src).show();
+        $(".author-thumb").attr("src", auth_img);
 	});
 });
 
