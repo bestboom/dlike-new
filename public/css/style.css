@@ -823,7 +823,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     max-height: 20px;
     width: 20px; }
 .banner-block {
-  padding: 230px 0 15px 0;
+  padding: 210px 0 15px 0;
   position: relative;
   background: url("../images/bg/1.jpg") no-repeat center center;
   background-size: cover; }
@@ -843,7 +843,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     color: #fff;
     font-size: 17px;
     line-height: 28px;
-    margin-bottom: 5px; }
+    margin-bottom: 15px; }
   .banner-content .subs-form .input-box {
     max-width: 570px;
     position: relative;
@@ -1882,7 +1882,7 @@ color: #4c3d3d;
 #upvoteModal{top: 35%;}
 .upvoting{cursor: pointer;}
 
-.main_offer{margin-top: -64px;}
+.main_offer{margin-top: -40px;}
 .main_offer .daily{ max-height: 50%; width:100%;
   border-radius:50%;
   text-align:center;
