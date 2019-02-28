@@ -10,8 +10,8 @@
                     <div class="banner-content">
                         <h2>Dlike - Where You Get Liked</h2>
                         <p>Share What you like with community <br>Get rewarded if community likes your shares</p>
-                        <h3>Daily Top Recomended Post (most dlikes) is Rewarded By Dlike</h3>
-                        <h3>Anyone can recomend a post for which steem accoutn is not compulsory</h3>
+                        <h3>Daily Top Recommended Post (most dlikes) is Rewarded By Dlike</h3>
+                        <h3>Anyone can recommend a post for which steem account is not compulsory</h3>
                     </div>
                 </div>
                 <div class="col-md-3 main_offer">

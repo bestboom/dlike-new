@@ -831,6 +831,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .banner-content {
   text-align: center;
   margin-bottom: 100px; }
+  .banner-content h5 {
+    color: #fff;
+    font-weight: 700; }
   .banner-content h2 {
     font-weight: 700;
     color: #fff;
@@ -840,7 +843,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     color: #fff;
     font-size: 17px;
     line-height: 28px;
-    margin-bottom: 57px; }
+    margin-bottom: 5px; }
   .banner-content .subs-form .input-box {
     max-width: 570px;
     position: relative;
