@@ -192,14 +192,6 @@ $('#content').on("click", ".hov-txt", function() {
     $("#permlink_rate").val(mypermlink);
 });
 
-$('.upvoting').click(function() {
-    alert('goodnow');
-    $('#upvoteModal').modal('show');
-})
-
-$('.post_detail').click(function () {
-    $('#postModal').modal('show');
-});
 
 //upvote
 var rangeSlider = document.getElementById("rs-range-line");
