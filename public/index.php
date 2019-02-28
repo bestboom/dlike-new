@@ -1,9 +1,21 @@
 <?php include('template/header.php'); require ('lib/solvemedialib.php'); ?>
         <div class="container">
-            <div class="offset-md-2 col-md-8">
-                <div class="banner-content">
-                    <h2>Welcome To Dlike</h2>
-                    <p>Share What you like with community <br>Get rewarded if community likes your shares</p>
+            <div class="row">
+                <div class="col-md-3 main main_offer">
+                    <div class="daily">
+                        <div class="daily_box"><p class="daily_start">10</p><p class="daily_mid">STEEM</p><p class="daily_end">Daily</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="banner-content">
+                        <h2>Dlike - Where You Get Liked</h2>
+                        <p>Share What you like with community <br>Get rewarded if community likes your shares</p>
+                    </div>
+                </div>
+                <div class="col-md-3 main_offer">
+                    <div class="daily">
+                        <div class="daily_box"><p class="daily_start">2500</p><p class="daily_mid">DLike Tokens</p><p class="daily_end">Daily</p></div>
+                    </div>
                 </div>
             </div>
         </div>

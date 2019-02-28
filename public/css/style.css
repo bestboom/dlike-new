@@ -1878,6 +1878,20 @@ color: #4c3d3d;
 #upvoteModal{top: 35%;}
 .upvoting{cursor: pointer;}
 
+.main_offer{margin-top: -64px;}
+.main_offer .daily{ max-height: 50%; width:100%;
+  border-radius:50%;
+  text-align:center;
+  font-size: 48px;
+  padding:50% 0;
+  line-height:0;
+  position:relative;
+  background: radial-gradient(#4147a1 40%, #25296f);border: 1px solid #1b1e63;color: white;}
+.main_offer .daily_box{margin-top: -56px;margin-left: 10px;}  
+.main_offer .daily_start{font-size:80%;font-weight: 700;}
+.main_offer .daily_mid{font-size:45%;font-weight: 700;}
+.main_offer .daily_end{font-size:70%;font-weight: 600;}
+
 /*
 |----------------------------------------------------------------------------
 | 10. Currency Dashboard Style
