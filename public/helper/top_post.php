@@ -31,12 +31,8 @@ if ($result->num_rows > 0) {
                     <div class="post-tag-block"><div class="tags"></div></div>
                     <div class="post-footer">
                         <div class="post-author-block">
-                            <div class="author-thumb">
-                                <a href="#"><img src="" alt="img" class="img-responsive authThumb"></a>
-                            </div>.
-                            <div class="author-info">
-                                <h5><a href="#" class="auth_name"></a></h5>
-                            </div>
+                            <div class="author-thumb"><a href="#"><img src="" alt="img" class="img-responsive authThumb"></a></div>
+                            <div class="author-info"> <h5><a href="#" class="auth_name"></a></h5></div>
                         </div>
                         <div class="post-comments">
                             <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
