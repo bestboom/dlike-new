@@ -177,15 +177,15 @@ $(document).ready(function(){
 		let post_description = metadata.body;
 		let title = res.title;
         let created = res.created;
-        console.log(created);
-        let created_time = moment.utc(res.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+        let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/' + author + '/avatar";
+        console.log(auth_img);
 
 		$('.auth_name').html(author);
         $('#top_title').html(title);
         $('#post_catg').html(category);
-        $('#post_date').html(created_time);
+        $('.post_date').html(created_time);
 		$('.post-entry').html(post_description);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
@@ -230,7 +230,7 @@ $(".post-entry").each(function() {
 
     length = text.split(' ').length;
     if(length > words_all) {
-    var lastWord = text.split(' ')[words_all];
+    var lastWord = text.split(' ')[post-entry];
     var lastWordIndex = text.indexOf(lastWord);
         $(this).text(text.substr(0, lastWordIndex) + '...');
     }
