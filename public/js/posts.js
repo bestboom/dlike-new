@@ -180,7 +180,7 @@ $(document).ready(function(){
         let created = res.created;
         let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
         let author = res.author;
-        let auth_img = "https://steemitimages.com/u/' + author + '/avatar";
+        let auth_img = "https://steemitimages.com/u/"' + author + '"/avatar";
         console.log(auth_img);
 
 		$('.auth_name').html(author);
@@ -228,9 +228,11 @@ function showPostSortedByLatest() {
 
 $(".post-entry").each(function() {
   var textMaxChar = $(this).attr('max');
+  console.log(textMaxChar);
   var text = $(this).text();
 
     length = text.split(' ').length;
+    console.log(length);
     if(length > textMaxChar) {
     var lastWord = text.split(' ')[textMaxChar];
     var lastWordIndex = text.indexOf(lastWord);
