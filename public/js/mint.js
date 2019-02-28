@@ -207,9 +207,9 @@ function showSliderValue() {
 $('.upme').click(function() {
     let upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
-})
+});
 
 $('.upvoting').click(function() {
-    alert('goodnow')
+    alert('goodnow');
     $('#posttModal').modal('show');
 })
