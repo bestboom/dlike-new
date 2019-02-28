@@ -176,9 +176,11 @@ $(document).ready(function(){
 		if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
 		let post_description = metadata.body;
 		let title = res.title;
+        let created = res.created;
+        console.log(created);
         let created_time = moment.utc(res.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
         let author = res.author;
-        let auth_img = "https://steemitimages.com/u/' + res.author + '/avatar";
+        let auth_img = "https://steemitimages.com/u/' + author + '/avatar";
 
 		$('.auth_name').html(author);
         $('#top_title').html(title);
@@ -228,7 +230,7 @@ $(".post-entry").each(function() {
 
     length = text.split(' ').length;
     if(length > words_all) {
-    var lastWord = text.split(' ')[textMaxChar];
+    var lastWord = text.split(' ')[words_all];
     var lastWordIndex = text.indexOf(lastWord);
         $(this).text(text.substr(0, lastWordIndex) + '...');
     }
