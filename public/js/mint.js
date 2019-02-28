@@ -194,7 +194,7 @@ $('#content').on("click", ".hov-txt", function() {
 
 $('.upvoting').click(function() {
     alert('goodnow');
-    $('#posttModal').modal('show');
+    $('#upvoteModal').modal('show');
 })
 
 $('.post_detail').click(function () {
