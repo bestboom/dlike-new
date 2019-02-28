@@ -16,6 +16,7 @@ if ($result->num_rows > 0) {
                     <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
+                    <div class="star-ratings-sprite"><span style="width:34%" class="star-ratings-sprite-rating"></span></div>
                     <span class="post-meta">30 NOV, 2019</span>
                     <h4 class="post-title">
                         <a href="#"><span id="top_title"></span></a>

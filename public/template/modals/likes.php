@@ -1,6 +1,6 @@
 <div class="dvd-account-title">
     <h3>Do You Like this Share?</h3>
-    <p><span>Total Votes:  --  Ratings: </span></p>
+    <p><span>Total Votes:  --  <div class="star-ratings-sprite">Ratings: <span style="width:14%" class="star-ratings-sprite-rating"></span></div> </span></p>
 </div>  
 <div class="md-account-banner">
     <div class="row justify-content-center">

@@ -1899,6 +1899,24 @@ color: #4c3d3d;
 .main_offer .daily_mid{font-size:45%;font-weight: 700;}
 .main_offer .daily_end{font-size:70%;font-weight: 600;}
 
+.star-ratings-sprite {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  font-size: 0;
+  height: 21px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 110px;
+  margin: 0 auto;
+}
+.star-ratings-sprite-rating {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  background-position: 0 100%;
+  float: left;
+  height: 21px;
+  display: block;
+}
+
 /*
 |----------------------------------------------------------------------------
 | 10. Currency Dashboard Style
