@@ -195,10 +195,13 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
     // dlike-hov
     $('.hov-item').hover(function() {
-        $('.hov-title').fadeIn(200);
+        $(this).find('.hov-title').fadeIn(200);
     }, function() {
-    $('.hov-title').fadeOut(100);
-    });    
+    $(this).find('.hov-title').fadeOut(100);
+
+    });
+
+
 
 //upvote
 var rangeSlider = document.getElementById("rs-range-line");
