@@ -27,8 +27,8 @@ if ($result->num_rows > 0) {
                     </div>
                     
                     <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
-                    <p class="post-entry"></p>
-                    <div class="post-tag-block-main"><div class="tags"></div></div>
+                    <p class="post-entry" max="27"></p>
+                    <div class="post-tag-block tags_b"><div class="tags"></div></div>
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div class="author-thumb"><a href="#"><img src="" alt="img" class="img-responsive authThumb"></a></div>
