@@ -227,8 +227,8 @@ function showPostSortedByLatest() {
 	$("#content").html(divList);
 }
 
-$(".post-entry").function() {
-  var textMaxChar = $(this).attr('data-max');
+$(".post-entry").each(function() {
+  var textMaxChar = $(this).attr('max');
   console.log(textMaxChar);
   var text = $(this).text();
 
@@ -239,4 +239,4 @@ $(".post-entry").function() {
     var lastWordIndex = text.indexOf(lastWord);
         $(this).text(text.substr(0, lastWordIndex) + '...');
     }
-};
+});
