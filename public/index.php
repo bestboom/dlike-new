@@ -23,11 +23,6 @@
             </div>
         </div>
     </div><!-- sub-header -->
-    <style>
-            .activeOrderBy {
-                    text-decoration: underline;
-            }
-    </style>
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">

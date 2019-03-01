@@ -2959,7 +2959,9 @@ opacity:1;
     .lab_post{
     padding-right:20px;
     font-weight: 700;
-    padding-top: 7px;}     
+    padding-top: 7px;
+    cursor: pointer;}  
+    .activeOrderBy { text-decoration: underline;}   
 
 /*---------------------------------------------
 	14 Blog Details Style

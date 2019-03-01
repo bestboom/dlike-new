@@ -181,7 +181,6 @@ $(document).ready(function(){
         let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        console.log(auth_img);
         let post_body = $(post_description).text();
 
 
@@ -189,7 +188,7 @@ $(document).ready(function(){
         $('#top_title').html(title);
         $('.post_catg').html(category);
         $('.post-date').html(created_time);
-		$('.post-entry').text((post_body.split(' ')).substr(0,27)+'...');
+		$('.post-entry').text(post_body.substr(0,350)+'...');
         $('.tags').html(posttags);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
@@ -228,23 +227,3 @@ function showPostSortedByLatest() {
 	$("#content").html(divList);
 };
 
-function wordMint() {
-    var text = $(".post-entry").text();
-    console.log(text);
-    length = text.split(' ').length;
-    console.log(length);
-};
-
-$(function(){
-  var textMaxChar = $('.post-entry').attr('max');
-  console.log(textMaxChar);
-  var text = $('.post-entry').text();
-
-    length = text.split(' ').length;
-    console.log(length);
-    if(length > textMaxChar) {
-    var lastWord = text.split(' ')[textMaxChar];
-    var lastWordIndex = text.indexOf(lastWord);
-        $('.post-entry').text(text.substr(0, lastWordIndex) + '...');
-    }
-});
