@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
                     <?php $top_likes; $top_rating; $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
                     <div>
                     <figure class="hov-item">
-                        <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov">
+                        <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
                         <figcaption class="hov-title">
                             <h5>6</h5>
                         </figcaption>

@@ -135,6 +135,15 @@ $(document).ready(function(){
         callback();
     });
     }
+
+    // dlike-hov
+    $('.hov-item').hover(function() {
+        $(this).find('.hov-title').fadeIn(300);
+    }, function() {
+    $(this).find('.hov-title').fadeOut(100);
+    });
+
+
 });
 // solve me
     var options = {
@@ -203,11 +212,4 @@ function showSliderValue() {
 $('.upme').click(function() {
     let upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
-});
-
-// dlike-hov
-$('.hov-item').hover(function() {
-    $(this).find('.hov-title').fadeIn(300);
-  }, function() {
-$(this).find('.hov-title').fadeOut(100);
 });
