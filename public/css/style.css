@@ -2801,13 +2801,14 @@ sub.transmoney-value {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%; }
   .post-style-two.post-full-width .post-meta {
-    margin-bottom: 8px; }
+    margin-bottom: 8px; 
+    padding: 15px;}
   .post-style-two.post-full-width .post-title {
     margin-bottom: 26px; }
     .post-style-two.post-full-width .post-title a {
       font-size: 24px; }
   .post-style-two.post-full-width .post-entry {
-    margin-bottom: 60px; }
+    margin-bottom: 15px; }
 .hov-wrap{
     position: relative;
     padding: 0;
@@ -2907,8 +2908,7 @@ opacity:1;
       font-weight: 700; }
   .post-style-two .post-entry {
     margin-bottom: 10px; 
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee; }
+    padding-bottom: 10px;}
   .post-style-two .post-footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3015,7 +3015,7 @@ opacity:1;
       align-items: center; }
       .blog-details-wrapper .info .post-comments img {
         margin: 0 15px 0 0; }
-
+.post-tag-block-main{margin-bottom: 40px;}
 .details-post-meta-block {
   padding: 50px 0;
   background: #fff;

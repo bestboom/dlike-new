@@ -227,19 +227,16 @@ function showPostSortedByLatest() {
 	$("#content").html(divList);
 }
 
-
-
-function trimWords() {
-
-  var textMaxChar = $('.post-entry').attr('data-max');
+$(".post-entry").function() {
+  var textMaxChar = $(this).attr('data-max');
   console.log(textMaxChar);
-  var text = $('.post-entry').text();
+  var text = $(this).text();
 
     length = text.split(' ').length;
     console.log(length);
     if(length > textMaxChar) {
     var lastWord = text.split(' ')[textMaxChar];
     var lastWordIndex = text.indexOf(lastWord);
-        $('.post-entry').text(text.substr(0, lastWordIndex) + '...');
+        $(this).text(text.substr(0, lastWordIndex) + '...');
     }
 };
