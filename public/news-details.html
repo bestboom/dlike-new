@@ -662,12 +662,12 @@ $('.upme').click(function() {
 
 <script type="text/javascript">
 //$(document).ready(function() {
-$(function() {
+$.each(function() {
     $('.hov-item').hover(function() {
-          $(this).find('.hov-title').fadeIn('slow');
+          $('.hov-title').fadeIn('slow');
       },
       function(){
-          $(this).find('.hov-title').fadeOut('slow');
+          $('.hov-title').fadeOut('slow');
       }
    );
 });
