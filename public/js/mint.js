@@ -136,6 +136,15 @@ $(document).ready(function(){
     });
     }
 
+    // dlike-hov
+    $('.hov-item').each(function() {
+        $(this).hover(function() {
+        $(this).find('.hov-title').fadeIn(200);
+    }, function() {
+    $(this).find('.hov-title').fadeOut(100);
+    });
+    });      
+
 });
 // solve me
     var options = {
@@ -191,14 +200,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
     $("#author_rate").val(authorname);
     $("#permlink_rate").val(mypermlink);
 });
-// dlike-hov
-$('.hov-item').each(function() {
-        $(this).hover(function() {
-        $(this).find('.hov-title').fadeIn(200);
-    }, function() {
-    $(this).find('.hov-title').fadeOut(100);
-    });
-});  
+
 
 
 //upvote
