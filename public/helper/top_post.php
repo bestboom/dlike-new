@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
             let toppermlink = <?php echo json_encode($top_permlink); ?>;
         </script>
                 <div class="col-md-6 post-thumb">
-                    <a href="#"><img src="./images/post/authors/1.png" onerror="this.src='./images/post/authors/1.png'" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
+                    <a href="#"><img src="./images/post/authors/1.png"  onError="this.onerror=null;this.src='./images/post/authors/1.png';" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
                     <?php $top_likes; $top_rating; $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
                     <div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><?php $top_likes; ?></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>
                     <div class="star-ratings-sprite"><span style="<?php echo $set_star; ?>" class="star-ratings-sprite-rating"></span></div>
                     <div class="row d-flex justify-content-between post-meta">
-                        <div><i class="far fa-clock icon-pad"></i><span class="post-date icon-pad"></span></div><div><i class="fas fa-th"></i><span class="post_catg"></span></div>
+                        <div><i class="far fa-clock icon-pad"></i><span class="post-date"></span></div><div><i class="fas fa-th icon-pad"></i><span class="post_catg"></span></div>
                     </div>
                     
                     <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
