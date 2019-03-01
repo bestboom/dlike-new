@@ -23,11 +23,10 @@ if ($result->num_rows > 0) {
                     <figure class="hov-item">
                         <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
                         <figcaption class="hov-title">
-                            <h5>6</h5>
+                            <a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><h5><?php $top_likes; ?></h5></a>
                         </figcaption>
                     </figure>
                     </div>
-                    <div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><?php $top_likes; ?></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>
                     <div class="star-ratings-sprite"><span style="<?php echo $set_star; ?>" class="star-ratings-sprite-rating"></span></div>
                     <div class="row d-flex justify-content-between post-meta">
                         <div><i class="far fa-clock icon-pad"></i><span class="post-date"></span></div><div><i class="fas fa-th icon-pad"></i><span class="post_catg"></span></div>
