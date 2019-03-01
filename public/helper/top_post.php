@@ -19,11 +19,11 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
                     <?php $top_likes; $top_rating; $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
-                    <div class="">
+                    <div class="row d-flex hustify-content-center">
                     <figure class="hov-item">
                         <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
                         <figcaption class="hov-title">
-                            <a class="" data-toggle="modal" data-target="" data-permlink="toppermlink" data-author="topauthor"><h5><?php echo $top_likes; ?></h5></a>
+                            <a class="hov_me" data-toggle="modal" data-target="" data-permlink="toppermlink" data-author="topauthor"><h5><?php echo $top_likes; ?></h5></a>
                         </figcaption>
                     </figure>
                     </div>
