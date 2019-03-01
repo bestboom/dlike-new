@@ -121,7 +121,6 @@
 
 
 
-</div>
                         <div class="blog-details-wrapper">
                             <div class="info">
                                 <div class="post-author-block">
@@ -659,7 +658,15 @@ $('.upme').click(function() {
 
 
 <script type="text/javascript">
+$(document).ready(function() {
 
+  $('.hov-item').hover(function() {
+    $(this).find('.hov-title').fadeIn(300);
+  }, function() {
+    $(this).find('.hov-title').fadeOut(100);
+  });
+
+});
 
 </script>
 
