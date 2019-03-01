@@ -185,7 +185,7 @@ $(document).ready(function(){
         let post_body = $(post_description).text();
 
             let body_len = post_body.length;
-            cosole.log(body_len);
+            console.log(body_len);
             if(body_len > 27) {
                 let post_body = $(this).text($(this).text().substr(0,27)+'...');
             }
