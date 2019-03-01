@@ -244,4 +244,4 @@ $(".post-entry").each(function() {
     var lastWordIndex = text.indexOf(lastWord);
         $(this).text(text.substr(0, lastWordIndex) + '...');
     }
-};
+});
