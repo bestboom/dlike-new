@@ -136,15 +136,6 @@ $(document).ready(function(){
     });
     }
 
-    // dlike-hov
-    $('.hov-item').each(function() {
-        $(this).hover(function() {
-        $(this).find('.hov-title').fadeIn(200);
-    }, function() {
-    $(this).find('.hov-title').fadeOut(100);
-    });
-    });    
-
 });
 // solve me
     var options = {

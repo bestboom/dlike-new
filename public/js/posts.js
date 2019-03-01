@@ -194,6 +194,16 @@ $(document).ready(function(){
         $('.authThumb').attr("src", auth_img);
         $('#top_post_votes').html(res.pending_payout_value.substr(0, 4));
 	});
+
+        // dlike-hov
+    $('.hov-item').each(function() {
+        $(this).hover(function() {
+        $(this).find('.hov-title').fadeIn(200);
+    }, function() {
+    $(this).find('.hov-title').fadeOut(100);
+    });
+    });    
+    
 });
 
 //check likes
