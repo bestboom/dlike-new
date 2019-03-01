@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
                     </div>
                     
                     <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
-                    <p class="post-entry top_post" max="27"></p>
+                    <p class="post-entry" max="27"></p>
                     <div class="post-tag-block tags_b"><div class="tags"></div></div>
                     <div class="post-footer">
                         <div class="post-author-block">
@@ -35,8 +35,10 @@ if ($result->num_rows > 0) {
                             <div class="author-info"> <h5><a href="#" class="auth_name"></a></h5></div>
                         </div>
                         <div class="post-comments">
-                            <i class="fas fa-comments icon-pad"></i>
-                            <a href="#">03 Comments</a>
+                            <i class="fas fa-comments icon-pad"></i><a href="#">03 Comments</a>
+                        </div>
+                        <div>
+                            <i class="fas fa-chevron-circle-up"></i>&nbsp; | <span id="top_post_votes"></span>
                         </div>
                     </div>
                 </div>
