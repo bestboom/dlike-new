@@ -136,13 +136,6 @@ $(document).ready(function(){
     });
     }
 
-    // dlike-hov
-    $('.hov-item').hover(function() {
-        $('.hov-title').fadeIn(200);
-    }, function() {
-    $('.hov-title').fadeOut(100);
-    });    
-
 });
 // solve me
     var options = {
@@ -201,14 +194,11 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
 
     // dlike-hov
-    $('.hov-item').each(function() {
-        $(this).find('.hov-title').fadeIn(200);
+    $('.hov-item').hover(function() {
+        $('.hov-title').fadeIn(200);
     }, function() {
-    $(this).find('.hov-title').fadeOut(100);
-
-    });
-
-
+    $('.hov-title').fadeOut(100);
+    });    
 
 //upvote
 var rangeSlider = document.getElementById("rs-range-line");
