@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
                     <div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><?php $top_likes; ?></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>
                     <div class="star-ratings-sprite"><span style="<?php echo $set_star; ?>" class="star-ratings-sprite-rating"></span></div>
                     <div class="row d-flex justify-content-between post-meta">
-                        <div><i class="far fa_clock"></i><span class="post-date"></span></div><div><i class="fas fa_th"></i><span class="post_catg"></span></div>
+                        <div><i class="far fa-clock"></i><span class="post-date"></span></div><div><i class="fas fa-th"></i><span class="post_catg"></span></div>
                     </div>
                     
                     <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
                             <div class="author-info"> <h5><a href="#" class="auth_name"></a></h5></div>
                         </div>
                         <div class="post-comments">
-                            <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
+                            <i class="fas fa-comments"></i>
                             <a href="#">03 Comments</a>
                         </div>
                     </div>
