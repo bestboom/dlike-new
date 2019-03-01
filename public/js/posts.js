@@ -184,7 +184,8 @@ $(document).ready(function(){
         console.log(auth_img);
         let post_body = $(post_description).text();
 
-            let body_len = $(post_body).text().length;
+            let body_len = post_body.length;
+            cosole.log(body_len);
             if(body_len > 27) {
                 let post_body = $(this).text($(this).text().substr(0,27)+'...');
             }
@@ -194,6 +195,7 @@ $(document).ready(function(){
         $('.post_catg').html(category);
         $('.post-date').html(created_time);
 		$('.post-entry').html(post_body);
+        $('.aqs').html(post_body);
         $('.tags').html(posttags);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
