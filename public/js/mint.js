@@ -126,7 +126,7 @@ $(document).ready(function(){
     $("#alert-modal-error").on("hidden.bs.modal", function(e) {
         callback();
     });
-    }
+    };
       function showModalSuccess(title, content, callback) {
     $("#alert-title-success").text(title);
     $("#alert-content-success").html(content);
@@ -134,7 +134,20 @@ $(document).ready(function(){
     $("#alert-modal-success").on("hidden.bs.modal", function(e) {
         callback();
     });
-    }
+    };
+
+    
+    // dlike-hov
+$.each(function() {
+    $('.hov-item').hover(function() {
+          $('.hov-title').fadeIn('slow');
+      },
+      function(){
+          $('.hov-title').fadeOut('slow');
+      }
+   );
+});
+
 
 });
 // solve me
@@ -192,17 +205,6 @@ $('.latest-post-section').on("click", ".hov_me", function() {
     $("#permlink_rate").val(mypermlink);
 });
 
-
-    // dlike-hov
-$.each(function() {
-    $('.hov-item').hover(function() {
-          $('.hov-title').fadeIn('slow');
-      },
-      function(){
-          $('.hov-title').fadeOut('slow');
-      }
-   );
-});
 
 
 
