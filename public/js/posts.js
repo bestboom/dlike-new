@@ -227,6 +227,11 @@ function showPostSortedByLatest() {
 	$("#content").html(divList);
 }
 
+function wordMint() {
+    var text = $(".post-entry").text();
+    length = text.split(' ').length;
+    console.log(length);
+}
 $(".post-entry").each(function() {
   var textMaxChar = $(this).attr('max');
   console.log(textMaxChar);
