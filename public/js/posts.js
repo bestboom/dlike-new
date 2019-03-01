@@ -234,3 +234,16 @@ function wordMint() {
     console.log(length);
 };
 
+$(function(){
+  var textMaxChar = $('.post-entry').attr('max');
+  console.log(textMaxChar);
+  var text = $('.post-entry').text();
+
+    length = text.split(' ').length;
+    console.log(length);
+    if(length > textMaxChar) {
+    var lastWord = text.split(' ')[textMaxChar];
+    var lastWordIndex = text.indexOf(lastWord);
+        $('.post-entry').text(text.substr(0, lastWordIndex) + '...');
+    }
+});

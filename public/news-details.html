@@ -578,27 +578,14 @@
         </div>
 <style type="text/css">
    
-.star-ratings-sprite {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
-  font-size: 0;
-  height: 21px;
-  line-height: 0;
-  overflow: hidden;
-  text-indent: -999em;
-  width: 110px;
-  margin: 0 auto;
-}
-.star-ratings-sprite-rating {
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
-  background-position: 0 100%;
-  float: left;
-  height: 21px;
-  display: block;
-}
+
 
 </style>
 
 <div class="star-ratings-sprite"><span style="width:14%" class="star-ratings-sprite-rating"></span></div>
+<div class="your-div" max="8">
+    How are you it looks some thing bad in this manner
+</div>
 
 
                                     <div class="modal fade" id="upvoteModal2" tabindex="-1" role="dialog" aria-hidden="true">
@@ -650,4 +637,24 @@ $('.upme').click(function() {
     let upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
 })
+</script>
+
+
+
+<script type="text/javascript">
+
+$(function(){
+  var textMaxChar = $('.your-div').attr('max');
+  console.log(textMaxChar);
+  var text = $('.your-div').text();
+
+    length = text.split(' ').length;
+    console.log(length);
+    if(length > textMaxChar) {
+    var lastWord = text.split(' ')[textMaxChar];
+    var lastWordIndex = text.indexOf(lastWord);
+        $('.your-div').text(text.substr(0, lastWordIndex) + '...');
+    }
+});
+
 </script>
