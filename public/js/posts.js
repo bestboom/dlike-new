@@ -184,6 +184,11 @@ $(document).ready(function(){
         console.log(auth_img);
         let post_body = $(post_description).text();
 
+            let body_len = $(post_body).text().length;
+            if(body_len > 27) {
+                let post_body = $(this).text($(this).text().substr(0,27)+'...');
+            }
+
 		$('.auth_name').html(author);
         $('#top_title').html(title);
         $('.post_catg').html(category);
