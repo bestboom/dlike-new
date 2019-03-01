@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
                     <figure class="hov-item">
                         <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
                         <figcaption class="hov-title">
-                            <a class="" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><h5><?php echo $top_likes; ?></h5></a>
+                            <a class="" data-toggle="modal" data-target="" data-permlink="toppermlink" data-author="topauthor"><h5><?php echo $top_likes; ?></h5></a>
                         </figcaption>
                     </figure>
                     </div>
@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
                             <i class="fas fa-comments icon-pad"></i><a href="#">03 Comments</a>
                         </div>
                         <div>
-                            <i class="fas fa-chevron-circle-up"></i>&nbsp; | <i class="fas fa-dollar-sig"></i><span id="top_post_votes"></span>
+                            <a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="toppermlink" data-author="topauthor"><i class="fas fa-chevron-circle-up"></i></a>&nbsp; | <i class="fas fa-dollar-sig"></i><span id="top_post_votes"></span>
                         </div>
                     </div>
                 </div>
