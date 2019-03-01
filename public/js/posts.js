@@ -182,14 +182,16 @@ $(document).ready(function(){
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         console.log(auth_img);
-        let post_body = $(post_description).text();
+        let post_body = $(post_description).text().split(' ');
+        var post_text = $(post_body).text().split(' ');
+        console.log(post_text);
 
 
 		$('.auth_name').html(author);
         $('#top_title').html(title);
         $('.post_catg').html(category);
         $('.post-date').html(created_time);
-		$('.post-entry').text(post_body.text().substr(0,27)+'...');
+		$('.post-entry').text(post_body.substr(0,27)+'...');
         $('.tags').html(posttags);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
