@@ -186,7 +186,7 @@ $(document).ready(function(){
 
 		$('.auth_name').html(author);
         $('#top_title').html(title);
-        $('#post_catg').html(category);
+        $('.post_catg').html(category);
         $('.post-date').html(created_time);
 		$('.post-entry').html(post_body);
         $('.tags').html(posttags);
@@ -229,10 +229,11 @@ function showPostSortedByLatest() {
 
 function wordMint() {
     var text = $(".post-entry").text();
+    console.log(text);
     length = text.split(' ').length;
     console.log(length);
 }
-$(".top_post").each(function() {
+$(".top_post").this(function() {
   var textMaxChar = $(this).attr('max');
   console.log(textMaxChar);
   var text = $(this).text();
