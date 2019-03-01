@@ -189,7 +189,7 @@ $(document).ready(function(){
         $('#top_title').html(title);
         $('.post_catg').html(category);
         $('.post-date').html(created_time);
-		$('.post-entry').text(post_body.substr(0,27)+'...');
+		$('.post-entry').text(post_body.text().substr(0,27)+'...');
         $('.tags').html(posttags);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
