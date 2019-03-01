@@ -137,13 +137,11 @@ $(document).ready(function(){
     }
 
     // dlike-hov
-    $('.hov-item_in').each(function() {
-        $(this).hover(function() {
+    $('.hov-item_in').hover(function() {
         $(this).find('.hov-title_in').fadeIn(200);
     }, function() {
     $(this).find('.hov-title_in').fadeOut(100);
-    });
-    });      
+    });    
 
 });
 // solve me
@@ -204,11 +202,9 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
     // dlike-hov
     $('.hov-item').each(function() {
-        $(this).hover(function() {
         $(this).find('.hov-title').fadeIn(200);
     }, function() {
     $(this).find('.hov-title').fadeOut(100);
-    });
     });
 
 
