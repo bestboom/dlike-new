@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
             let toppermlink = <?php echo json_encode($top_permlink); ?>;
         </script>
                 <div class="col-md-6 post-thumb">
-                    <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
+                    <a href="#"><img src="./images/post/authors/1.png" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
                     <?php $top_likes; $top_rating; $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
                     </div>
                     
                     <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
-                    <p class="post-entry" max="27"></p>
+                    <p class="post-entry top_post" max="27"></p>
                     <div class="post-tag-block tags_b"><div class="tags"></div></div>
                     <div class="post-footer">
                         <div class="post-author-block">

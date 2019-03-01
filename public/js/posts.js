@@ -232,7 +232,7 @@ function wordMint() {
     length = text.split(' ').length;
     console.log(length);
 }
-$(".post-entry").each(function() {
+$(".top_post").each(function() {
   var textMaxChar = $(this).attr('max');
   console.log(textMaxChar);
   var text = $(this).text();
