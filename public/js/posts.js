@@ -227,7 +227,7 @@ function showPostSortedByLatest() {
 	$("#content").html(divList);
 }
 
-$(".post-entry").function() {
+$(".post-entry").each(function() {
   var textMaxChar = $(this).attr('max');
   console.log(textMaxChar);
   var text = $(this).text();
