@@ -2867,6 +2867,36 @@ opacity:1;
   position: relative;}
 .hov-item img {width: 100%;}
 .hov-item:hover .hov-title {}
+.hov-title_in {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: none;
+  border-radius: 50%;
+  background-color: #333;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.hov-title_in h5 {
+  position: absolute;
+  color: #fff;
+  top: 35%;
+  width: 100%;
+  font-size: 150%;
+  font-weight: 800;
+  text-align: center;
+}
+.hov-item_in {
+  height: auto;
+  float: left;
+  margin-bottom: 2em;
+  position: relative;}
+.hov-item_in img {width: 100%;}
+.hov-item_in:hover .hov-title_in {}
 .post-style-two {
   margin-bottom: 60px; }
   .post-style-two .dlike-hov{
