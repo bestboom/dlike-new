@@ -109,7 +109,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    
+
 <div>
 
   <figure class="hov-item">
@@ -647,6 +647,9 @@ $('.upme').click(function() {
     let upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
 })
+
+
+
 </script>
 <style>
     
@@ -658,15 +661,18 @@ $('.upme').click(function() {
 
 
 <script type="text/javascript">
-$(document).ready(function() {
-
-  $('.hov-item').hover(function() {
-    $(this).find('.hov-title').fadeIn(300);
-  }, function() {
-    $(this).find('.hov-title').fadeOut(100);
-  });
-
+//$(document).ready(function() {
+$(function() {
+    $('.hov-item').hover(function() {
+          $(this).find('.hov-title').fadeIn('slow');
+      },
+      function(){
+          $(this).find('.hov-title').fadeOut('slow');
+      }
+   );
 });
+
+//});
 
 </script>
 

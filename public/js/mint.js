@@ -194,13 +194,15 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
 
     // dlike-hov
+$(function() {
     $('.hov-item').hover(function() {
-        $('.hov-title').fadeIn(200);
-    }, function() {
-    $('.hov-title').fadeOut(100);
-
-    });
-
+          $(this).find('.hov-title').fadeIn('slow');
+      },
+      function(){
+          $(this).find('.hov-title').fadeOut('slow');
+      }
+   );
+});
 
 
 //upvote
