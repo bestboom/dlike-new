@@ -180,14 +180,15 @@ $(document).ready(function(){
         let created = res.created;
         let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
         let author = res.author;
-        let auth_img = "https://steemitimages.com/u/' + author + '/avatar";
+        let auth_img = "https://steemitimages.com/u/' author '/avatar";
         console.log(auth_img);
+        let post_body = $(post_description).text();
 
 		$('.auth_name').html(author);
         $('#top_title').html(title);
         $('#post_catg').html(category);
         $('.post-date').html(created_time);
-		$('.post-entry').html(post_description);
+		$('.post-entry').html(post_body);
         $('.tags').html(posttags);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
