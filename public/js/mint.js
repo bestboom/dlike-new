@@ -168,7 +168,7 @@ function postToControll() {
 };
 //dvd modal
 $('#content').on("click", ".hov_me", function() {
-   //alert('called');
+   alert('called');
     // we want to copy the 'id' from the button to the modal
     var mypermlink = $(this).attr("data-permlink");
     var authorname = $(this).attr("data-author");
