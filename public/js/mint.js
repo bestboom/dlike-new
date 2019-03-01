@@ -138,7 +138,7 @@ $(document).ready(function(){
 
     // dlike-hov
     $('.hov-item').hover(function() {
-        $(this).find('.hov-title').fadeIn(300);
+        $(this).find('.hov-title').fadeIn(200);
     }, function() {
     $(this).find('.hov-title').fadeOut(100);
     });

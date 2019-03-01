@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
                     <figure class="hov-item">
                         <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
                         <figcaption class="hov-title">
-                            <a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><h5><?php $top_likes; ?></h5></a>
+                            <a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><h5><?php echo $top_likes; ?></h5></a>
                         </figcaption>
                     </figure>
                     </div>
