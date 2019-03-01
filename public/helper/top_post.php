@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
                             <i class="fas fa-comments icon-pad"></i><a href="#">03 Comments</a>
                         </div>
                         <div>
-                            <i class="fas fa-chevron-circle-up"></i>&nbsp; | <span id="top_post_votes"></span>
+                            <i class="fas fa-chevron-circle-up"></i>&nbsp; | <i class="fas fa-dollar-sig"></i><span id="top_post_votes"></span>
                         </div>
                     </div>
                 </div>
