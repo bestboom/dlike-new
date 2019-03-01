@@ -2961,7 +2961,7 @@ opacity:1;
     font-weight: 700;
     padding-top: 7px;
     cursor: pointer;}  
-    .activeOrderBy { text-decoration: underline;}   
+    .activeOrderBy {color: #c51d24;}   
 
 /*---------------------------------------------
 	14 Blog Details Style
