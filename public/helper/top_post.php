@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
             let toppermlink = <?php echo json_encode($top_permlink); ?>;
         </script>
                 <div class="col-md-6 post-thumb">
-                    <a href="#"><img src="./images/post/authors/1.png"  onError="this.onerror=null;this.src='./images/post/authors/1.png';" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
+                    <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
                     <?php $top_likes; $top_rating; $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
@@ -31,7 +31,7 @@ if ($result->num_rows > 0) {
                     <div class="post-tag-block tags_b"><div class="tags"></div></div>
                     <div class="post-footer">
                         <div class="post-author-block">
-                            <div class="author-thumb"><a href="#"><img src="" alt="img" class="img-responsive authThumb"></a></div>
+                            <div class="author-thumb"><a href="#"><img src="./images/post/authors/1.png" onerror="this.src='./images/post/authors/1.png'" alt="img" class="img-responsive authThumb"></a></div>
                             <div class="author-info"> <h5><a href="#" class="auth_name"></a></h5></div>
                         </div>
                         <div class="post-comments">
