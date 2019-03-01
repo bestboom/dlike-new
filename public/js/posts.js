@@ -182,13 +182,13 @@ $(document).ready(function(){
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         console.log(auth_img);
-        let post_body = $(post_description).text();
+        //let post_body = $(post_description).text();
 
 		$('.auth_name').html(author);
         $('#top_title').html(title);
         $('.post_catg').html(category);
         $('.post-date').html(created_time);
-		$('.post-entry').html(post_body);
+		$('.post-entry').html(post_description);
         $('.tags').html(posttags);
 		$('#top_img').attr("src", img.src).show();
         $('.authThumb').attr("src", auth_img);
@@ -209,7 +209,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log('Error occured');
 		}
 	});
-}
+};
 
 function showPostSortedByLikes() {
 	var divList = $(".postsMainDiv");
@@ -217,7 +217,7 @@ function showPostSortedByLikes() {
 		return $(b).attr("postLikes") - $(a).attr("postLikes")
 	});
 	$("#content").html(divList);
-}
+};
 
 function showPostSortedByLatest() {
 	var divList = $(".postsMainDiv");
@@ -225,24 +225,12 @@ function showPostSortedByLatest() {
 		return $(a).attr("postNumber") - $(b).attr("postNumber")
 	});
 	$("#content").html(divList);
-}
+};
 
 function wordMint() {
     var text = $(".post-entry").text();
     console.log(text);
     length = text.split(' ').length;
     console.log(length);
-}
-$(".top_post").this(function() {
-  var textMaxChar = $(this).attr('max');
-  console.log(textMaxChar);
-  var text = $(this).text();
+};
 
-    length = text.split(' ').length;
-    console.log(length);
-    if(length > textMaxChar) {
-    var lastWord = text.split(' ')[textMaxChar];
-    var lastWordIndex = text.indexOf(lastWord);
-        $(this).text(text.substr(0, lastWordIndex) + '...');
-    }
-});
