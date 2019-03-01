@@ -2836,6 +2836,36 @@ sub.transmoney-value {
 .hov-txt:hover {
 opacity:1;	
 }
+.hov-title {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: none;
+  border-radius: 50%;
+  background-color: #333;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.hov-title h5 {
+  position: absolute;
+  color: #fff;
+  top: 35%;
+  width: 100%;
+  font-size: 150%;
+  font-weight: 800;
+  text-align: center;
+}
+.hov-item {
+  height: auto;
+  float: left;
+  margin-bottom: 2em;
+  position: relative;}
+.hov-item img {width: 100%;}
+.hov-item:hover .hov-title {}
 .post-style-two {
   margin-bottom: 60px; }
   .post-style-two .dlike-hov{

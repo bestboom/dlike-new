@@ -164,7 +164,6 @@ $('#content').on("click", ".hov-txt", function() {
     var mypermlink = $(this).attr("data-permlink");
     var authorname = $(this).attr("data-author");
 
-
         var datat = {
             ath: authorname,
             plink: mypermlink
@@ -206,4 +205,9 @@ $('.upme').click(function() {
     alert(upvoteValue)
 });
 
-
+// dlike-hov
+$('.hov-item').hover(function() {
+    $(this).find('.hov-title').fadeIn(300);
+  }, function() {
+$(this).find('.hov-title').fadeOut(100);
+});

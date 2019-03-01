@@ -19,7 +19,14 @@ if ($result->num_rows > 0) {
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
                     <?php $top_likes; $top_rating; $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
-
+                    <div>
+                    <figure class="hov-item">
+                        <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov">
+                        <figcaption class="hov-title">
+                            <h5>6</h5>
+                        </figcaption>
+                    </figure>
+                    </div>
                     <div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><?php $top_likes; ?></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>
                     <div class="star-ratings-sprite"><span style="<?php echo $set_star; ?>" class="star-ratings-sprite-rating"></span></div>
                     <div class="row d-flex justify-content-between post-meta">
@@ -27,7 +34,7 @@ if ($result->num_rows > 0) {
                     </div>
                     
                     <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
-                    <p class="post-entry" max="27"></p>
+                    <p class="post-entry top_post"></p>
                     <div class="post-tag-block tags_b"><div class="tags"></div></div>
                     <div class="post-footer">
                         <div class="post-author-block">

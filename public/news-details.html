@@ -636,31 +636,34 @@ $('.upme').click(function() {
     alert(upvoteValue)
 })
 </script>
+<style>
+    
 
+
+
+
+
+</style>
 
 
 <script type="text/javascript">
-    $(document).ready(function(){
-    var texts = $('.aqs').text().split(' ');
-    console.log(texts)
+$(document).ready(function() {
 
-});
 
-$(function(){
-  var textMaxChar = $('.your-div').attr('max');
-  console.log(textMaxChar);
-  var text = $('.your-div').text();
 
-    length = text.split(' ').length;
-    console.log(length);
-    if(length > textMaxChar) {
-    var lastWord = text.split(' ')[textMaxChar];
-    var lastWordIndex = text.indexOf(lastWord);
-        $('.your-div').text(text.substr(0, lastWordIndex) + '...');
-    }
 });
 
 </script>
 
-<div class="aqs">this is it
+<div>
+
+  <figure class="hov-item">
+    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov">
+    <figcaption class="hov-title">
+      <h5>6</h5>
+    </figcaption>
+  </figure>
+
+
+
 </div>
