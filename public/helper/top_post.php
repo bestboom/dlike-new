@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
                     </div>
                     
                     <h4 class="post-title"><a href="#"><span id="top_title"></span></a> </h4>
-                    <p class="post-entry max="27"></p>
+                    <p class="post-entry data-max='27'></p>
                     <div class="post-tag-block"><div class="tags"></div></div>
                     <div class="post-footer">
                         <div class="post-author-block">
