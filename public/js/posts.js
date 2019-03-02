@@ -98,7 +98,7 @@ function getLatestPosts() {
 		success: function(response) {
 			if(response.records != 0) {
 				for(var i = 0; i < response.data.length; i++) {
-					getAPIContent(response.data[i].author, response.data[i].permlink);
+					getAPIContent(response.data[i].author, response.data[i].permlink, i);
 				}
 			}
 		},
@@ -108,21 +108,22 @@ function getLatestPosts() {
 	});
 }
 
-function getAPIContent(author, permlink) {
+function getAPIContent(author, permlink, counter) {
 	steem.api.getContent(author , permlink, function(err, res) {
 		console.log('JAGDISH');
 		console.log(res);
-		apiActionFunction(res);
+		apiActionFunction(res, counter);
 	});
 }
 
-function apiActionFunction(res) {
+function apiActionFunction(res, counter) {
 	console.log(res);
 	//res.forEach(($post, i) => {
-	getResponse = res;
-	var res[] = getResponse;
-	for(var i = 0; i < res.length; i++) {
-		$post = res[i];
+	//getResponse = res;
+	//var res[] = getResponse;
+	//for(var i = 0; i < res.length; i++) {
+		$post = res;
+		var i = counter;
 		let metadata;
 		if ($post.json_metadata && $post.json_metadata.length > 0){
 			metadata = JSON.parse($post.json_metadata);
@@ -265,5 +266,5 @@ function apiActionFunction(res) {
 			getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 		}
 	//});
-	}
+	//}
 }
