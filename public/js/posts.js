@@ -144,8 +144,8 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
-					'<div class="row d-flex justify-content-center hov-it"><figure class="hov-item_in"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><a class="hov_me" data-toggle="modal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><figcaption class="hov-title_in"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</span></h5></figcaption></a></figure></div>\n' +
-					'\n' +
+					'<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
+                    '\n' +
 					'<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
 					'\n' +
 					'<p class="post-entry post-tags">' + metatags + '</p>\n' +
