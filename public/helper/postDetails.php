@@ -12,13 +12,8 @@
 
 
 	<script>
- $(document).ready(function(){
     let postauthor = <?php echo json_encode($postauthor); ?>;
     let poatpermlink = <?php echo json_encode($postpermlink); ?>;
 
 
-steem.api.getContent(topauthor , toppermlink, function(err, res) {
-	console.log(res);
-});
-});
 </script>
