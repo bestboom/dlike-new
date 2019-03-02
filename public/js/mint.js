@@ -207,7 +207,7 @@ $('.latest-post-section').on("click", ".post_detail", function() {
         
         $.ajax({
                 type: "POST",
-                url: "template/modals/postmodal.php",
+                url: "helper/postDetails.php",
                 data: datav,
                 success: function(data) {
                     console.log('post showing');

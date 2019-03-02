@@ -1,4 +1,6 @@
-<?php include('template/header.php'); ?>
+<?php include('template/header.php'); 
+include('helper/postDetails.php');
+?>
     <div class="contact-form-section">
         <div class="container">
             <div class="row">
