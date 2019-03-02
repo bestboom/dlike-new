@@ -15,10 +15,7 @@ echo  $post_permlink;
     let postauthor = <?php echo json_encode($post_author); ?>;
     let poatpermlink = <?php echo json_encode($post_permlink); ?>;
 
-steem.api.getContent(postauthor , poatpermlink, function(err, res) {
-    console.log(res);
 
-});
 
 
 </script>
