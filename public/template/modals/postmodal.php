@@ -7,7 +7,7 @@
    $post_permlink = isset($_POST["postplink"]) ? $_POST["postplink"] : "";
 echo $post_author;
 echo '<br />';
-echo  $post_permlink
+echo  $post_permlink;
 ?>
 <div class="modal-body p-4" id="result">
     <div class="section-padding-bottom">
