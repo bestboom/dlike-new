@@ -11,7 +11,7 @@ echo  $post_permlink;
 
 ?>
 <script>
-$(document).ready(function(){    
+ 
     let postauthor = <?php echo json_encode($post_author); ?>;
     let poatpermlink = <?php echo json_encode($post_permlink); ?>;
 
@@ -20,8 +20,6 @@ steem.api.getContent(postauthor , poatpermlink, function(err, res) {
 
 });
 
-
-});
 
 </script>
 <div class="modal-body p-4" id="result">
