@@ -1,6 +1,10 @@
 <?php
-    echo $post_author = stripslashes($_POST['postath']);
-    echo $post_permlink = stripslashes($_POST['postplink']);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    echo $post_author = $_POST['postath'];
+    echo $post_permlink = $_POST['postplink'];
 ?>
 <div class="modal-body p-4" id="result">
     <div class="section-padding-bottom">

@@ -195,7 +195,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
 //post modal
 $('.latest-post-section').on("click", ".post_detail", function() {
-   //alert('called');
+   alert('called');
     // we want to copy the 'id' from the button to the modal
     var postpermlink = $(this).attr("data-permlink");
     var postauthor = $(this).attr("data-author");
@@ -204,15 +204,15 @@ $('.latest-post-section').on("click", ".post_detail", function() {
             postath: postauthor,
             postplink: postpermlink
         };
-
+        
         $.ajax({
                 type: "POST",
                 url: "template/modals/postmodal.php",
                 data: datav,
                 success: function(data) {
-                        console.log('post showing');
-                    }
-            });
+                    console.log('post showing');
+                }
+        });
 });
 
 

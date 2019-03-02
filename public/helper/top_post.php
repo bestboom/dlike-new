@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
                     <div class="row d-flex justify-content-center">
                     <figure class="hov-item">
                         <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
-                        <span class="hov_me" data-toggle="modal" data-permlink='<?php echo json_encode($top_permlink); ?>' data-author=<?php echo json_encode($top_auth); ?>>
+                        <span class="hov_me" data-toggle="modal" data-permlink=<?php echo json_encode($top_permlink); ?> data-author=<?php echo json_encode($top_auth); ?>>
                         <figcaption class="hov-title">
                             <h5><?php echo $top_likes; ?></h5>
                         </figcaption>
@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
                             <i class="fas fa-comments icon-pad"></i><a href="#">03</a> Comments
                         </div>
                         <div>
-                            <a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + toppermlink + '" data-author="' + topauthor + '"><i class="fas fa-chevron-circle-up"></i></a>&nbsp; | <i class="fas fa-dollar-sign dollar-pad"></i><span id="top_post_votes"></span>
+                            <a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink=<?php echo json_encode($top_permlink); ?> data-author=<?php echo json_encode($top_auth); ?>><i class="fas fa-chevron-circle-up"></i></a>&nbsp; | <i class="fas fa-dollar-sign dollar-pad"></i><span id="top_post_votes"></span>
                         </div>
                     </div>
                 </div>
