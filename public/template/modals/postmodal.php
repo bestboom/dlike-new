@@ -1,15 +1,12 @@
-<div class="modal-header">
-                <h5 class="modal-title">Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-            </div>
-            <div class="modal-body p-4" id="result">
-               <div class="section-padding-bottom">
+
+<div class="modal-body p-4" id="result">
+    <div class="section-padding-bottom">
         <div class="container">
             <div class="row">
                 <div class="col">
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                                 <h3 class="post-title">Expound the actual teachings</h3>
                                 <div class="post-thumb-block">
                                     <img src="./images/post/8.png" alt="img" class="img-responsive">

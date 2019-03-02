@@ -3043,7 +3043,7 @@ opacity:0.9;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 120px 0 40px 0; }
+  padding: 20px 0 40px 0; }
   .blog-details-wrapper .info {
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
@@ -3143,6 +3143,9 @@ opacity:0.9;
     .details-post-meta-block-wrap .post-author-block .author-info h5 {
       font-weight: 700;
       margin-bottom: 0; }
+
+.single_close{margin-bottom: 20px;
+    justify-content: flex-end;}      
 
 .single-post-block .post-thumb-block {
   margin-bottom: 40px; }
