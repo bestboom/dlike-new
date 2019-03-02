@@ -3,8 +3,11 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     
-   echo $post_author = isset($_POST["postath"]) ? $_POST["postath"] : "";    
-   echo  $post_permlink = isset($_POST["postplink"]) ? $_POST["postplink"] : "";
+   $post_author = isset($_POST["postath"]) ? $_POST["postath"] : "";    
+   $post_permlink = isset($_POST["postplink"]) ? $_POST["postplink"] : "";
+echo $post_author;
+echo '<br />';
+echo  $post_permlink
 ?>
 <div class="modal-body p-4" id="result">
     <div class="section-padding-bottom">
