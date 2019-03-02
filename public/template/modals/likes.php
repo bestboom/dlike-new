@@ -20,10 +20,11 @@
     <h3>Do You Recomend this Share?</h3>
     <p><span>Total Votes:  <!--<?php echo $likes; ?> -->  <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p>
 </div>  
+<!--
 <? }
 } 
 
-?>
+?> -->
 <div class="md-account-banner">
     <div class="row justify-content-center">
         <div style="height:60px;width:470px;"></div>
@@ -48,6 +49,7 @@
                                 <input type="text" name="rated_author" id="author_rate" value="" />
                                 <input type="text" name="rated_permlink" id="permlink_rate" value="" />
                                 <?php echo  $_GET['rated_author']; ?>
+                                <?php echo  $_POST['rated_author']; ?>
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
                                     <label class="star star-5" for="star-5"></label>
