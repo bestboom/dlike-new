@@ -46,6 +46,7 @@
 													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."')";
 													/*if ($conn->query($addPost) === TRUE) {
    													echo "new Record added successfully"; } else { echo "new Record could not added"; }*/
+										echo $addPost;
 									}
 
     					echo '<div class="alert alert-success">Your Recomendation is Added</div>';
