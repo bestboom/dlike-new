@@ -23,6 +23,7 @@
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) {
 				$strReturn['likes'] = $row['likes'];
+				$strReturn['lastUpdatedDate'] = $row['lastUpdatedDate'];
 			}
 		} else {
 			$strReturn['likes'] = 0;
