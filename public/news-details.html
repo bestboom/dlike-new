@@ -661,10 +661,10 @@ $('.upme').click(function() {
 
 
 <script type="text/javascript">
-//$(document).ready(function() {
-$.each(function() {
+$(document).ready(function() {
+
     $('.hov-item').hover(function() {
-          $('.hov-title').fadeIn('slow');
+          $(this).find('.hov-title').fadeIn('slow');
       },
       function(){
           $('.hov-title').fadeOut('slow');
@@ -672,14 +672,14 @@ $.each(function() {
    );
 });
 
-//});
+
 
 </script>
 
 <div>
 
   <figure class="hov-item">
-    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov">
+    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
     <figcaption class="hov-title">
       <h5>6</h5>
     </figcaption>
@@ -691,15 +691,11 @@ $.each(function() {
 
 
 <div>
-
   <figure class="hov-item">
-    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov">
+    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
     <figcaption class="hov-title">
       <h5>6</h5>
     </figcaption>
   </figure>
-
-
-
 </div>
 
