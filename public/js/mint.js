@@ -187,6 +187,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
                 data: datat,
                 success: function(data) {
                 }
+                                    });
                             }
                         } catch (err) {
                             alert('Sorry. Server response is malformed.')
