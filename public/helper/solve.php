@@ -38,13 +38,15 @@
 								$result = mysqli_query($conn, $checkPost);
 									if (mysqli_num_rows($result) > 0) {
 										$updatePost = "UPDATE PostsLikes SET likes = likes + 1, rating = rating + '$rating' WHERE author = '$author' and permlink = '$permlink'";
-											/*if ($conn->query($updatePost) === TRUE) {
+										$updatePostQuery = $conn->query($updatePost);
+											/*if ($updatePostQuery === TRUE) {
    													echo "Record updated successfully"; } else { echo "Record could not updated some error"; }*/
     								} else {
     									/*echo "post not exists";*/
     									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating)
 													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."')";
-													/*if ($conn->query($addPost) === TRUE) {
+										$addPostQuery = $conn->query($addPost);
+													/*if ($addPostQuery === TRUE) {
    													echo "new Record added successfully"; } else { echo "new Record could not added"; }*/
 									}
 
