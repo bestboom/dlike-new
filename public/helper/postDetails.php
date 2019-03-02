@@ -3,9 +3,9 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
-	echo $postauthor = $_POST['ath'];
-	echo $postpermlink = $_POST['plink'];
+	echo $postauthor = $_POST['postath'];
+	echo $postpermlink = $_POST['postplink'];
 
-	
+
 
 	?>
