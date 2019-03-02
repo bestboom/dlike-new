@@ -1,5 +1,5 @@
 $(document).ready(function(){;
-	getLatestPosts()
+	getLatestPosts();
 	$(".orderByTopRated").click(function(){
 		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
 		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
