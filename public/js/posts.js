@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$(".orderByTopRated").click(function(){
-		//$( ".orderByLatest" ).removeClass( "activeOrderBy" );
-		//$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
+		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
+		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
 		//showPostSortedByLikes();
 		getLatestPosts();
 	});
