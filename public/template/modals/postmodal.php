@@ -1,13 +1,16 @@
-
-<div class="modal-body p-4" id="result">
-    <div class="section-padding-bottom">
+<div class="modal-header">
+                <h5 class="modal-title">Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body p-4" id="result">
+               <div class="section-padding-bottom">
         <div class="container">
             <div class="row">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <div class="col">
                         <div class="blog-details-wrapper">
-                            <h3 class="post-title">Expound the actual teachings</h3>
                             <div class="single-post-block">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <h3 class="post-title">Expound the actual teachings</h3>
                                 <div class="post-thumb-block">
                                     <img src="./images/post/8.png" alt="img" class="img-responsive">
                                 </div>
@@ -24,31 +27,6 @@
                                     But who has any right to find fault with a man who chooses to enjoy a pleasure that 
                                     has no annoying consequences. 
                                 </p>
-                                <p class="post-entry entry-three">
-                                    Expound the actual teachings of the great explorer of the truth, the master-builder of 
-                                    human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is 
-                                    pleasure, but because those who do not know how to pursue pleasure rationally encounter 
-                                    consequences that are extremely painful. Nor again is there anyone who loves or pursues 
-                                    or desires to obtain pain of itself, because it is pain, but because occasionally 
-                                    circumstances occur in which toil and pain can procure him some great pleasure. 
-                                    To take a trivial example, which of us ever undertakes laborious  physical exercise.
-                                </p>
-                                <blockquote>
-                                    “It was popularised in the 1960s with the release  circumstances occur in which toil <br>
-                                    and pain can procure him some great pleasure.”
-                                </blockquote>
-                                <p class="post-entry entry-four">
-                                    Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but 
-                                    because occasionally circumstances occur in which toil and pain can procure him some great pleasure. 
-                                    To take a trivial example, which of us ever undertakes laborious  some great physical exercise, except to.
-                                </p>
-                                <ul class="list-post-entry">
-                                    <li><i class="fas fa-check-circle"></i> But because those who do not know how to pursue pleasure</li>
-                                    <li><i class="fas fa-check-circle"></i> Nor again is there anyone who loves or pursues</li>
-                                    <li><i class="fas fa-check-circle"></i> Except to obtain some advantage from it?</li>
-                                    <li><i class="fas fa-check-circle"></i> who avoids a pain that produces no resultant pleasure.</li>
-                                    <li><i class="fas fa-check-circle"></i> I will give you a complete account of the system.</li>
-                                </ul>
                                 <p class="post-entry entry-five">
                                         Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
                                         but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.

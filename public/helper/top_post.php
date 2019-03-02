@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
                     <div class="row d-flex justify-content-center">
                     <figure class="hov-item">
                         <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
-                        <span class="hov_me" data-toggle="modal" data-permlink="'<?php echo json_encode($top_permlink); ?>'" data-author="'<?php echo json_encode($top_auth); ?>'">
+                        <span class="hov_me" data-toggle="modal" data-permlink='<?php echo json_encode($top_permlink); ?>' data-author=<?php echo json_encode($top_auth); ?>>
                         <figcaption class="hov-title">
                             <h5><?php echo $top_likes; ?></h5>
                         </figcaption>
