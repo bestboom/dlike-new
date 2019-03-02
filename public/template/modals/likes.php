@@ -1,6 +1,22 @@
+<?php 
+        $author = isset($_GET["author"]) ? $_GET["author"] : "";
+        $author = stripslashes( $author );
+        
+        $permlink = isset($_GET["permlink"]) ? $_GET["permlink"] : "";
+        $permlink = stripslashes( $permlink );
+        
+        $sql = "SELECT * FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink' LIMIT 1";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $likes = $row['likes'];
+                $rating = $row['rating'];
+            }
+?>
 <div class="dvd-account-title">
-    <h3>Do You Like this Share?</h3>
-    <p><span>Total Votes:  --  <div class="star-ratings-sprite">Ratings: <span style="width:14%" class="star-ratings-sprite-rating"></span></div> </span></p>
+    <h3>Do You Recomend this Share?</h3>
+    <p><span>Total Votes:  <?php echo $likes; ?>  <div class="star-ratings-sprite">Ratings: <span style="width:14%" class="star-ratings-sprite-rating"></span></div> </span></p>
 </div>  
 <div class="md-account-banner">
     <div class="row justify-content-center">
@@ -11,9 +27,9 @@
                     <form action="helper/solve.php" method="post" id="logsubmit">
                     <div class="row">
                         <div class="col-md-6">
-                                <div class="row justify-content-center form-group">
-                                	<span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
-                                </div>
+                            <div class="row justify-content-center form-group">
+                                <span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -47,7 +63,7 @@
                 	</form>
                     </div>
                     <div class="modal-likes">
-                      	<h3>Rules For Likes</h3>
+                      	<h3>Rules For Recomendation</h3>
                     	<div class="row">
                             <ul>
                                 <li class="letter"><i class="fas fa-exclamation-triangle"></i>  Self promotion not allowed</li>
