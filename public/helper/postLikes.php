@@ -1,11 +1,9 @@
  <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    
-    require '../includes/config.php';
-	$testQuery = 'ALTER TABLE PostsLikes ADD COLUMN lastUpdatedDate VARCHAR(255)';
-	$result = $conn->query($testQuery);
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
+    	require '../includes/config.php';
 	
 	$strReturn = [];
 	if(!isset($_GET['author']) || !isset($_GET['permlink'])) {
