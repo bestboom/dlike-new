@@ -3029,6 +3029,9 @@ opacity:0.9;
     padding-top: 7px;
     cursor: pointer;}  
     .activeOrderBy {color: #c51d24;}   
+.dollar-pad{font-weight: 600;
+    padding-left: 7px;
+    padding-right: 2px;}    
 
 /*---------------------------------------------
 	14 Blog Details Style
