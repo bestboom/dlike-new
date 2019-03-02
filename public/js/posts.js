@@ -50,7 +50,7 @@ $(document).ready(function(){
 				let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 
 				//get meta tags
-				let metatags = metadata.tags.map(function (meta) { if (meta) return '<a href="https://dlike.io/search/' + meta + '" target="_self"> #' + meta + ' </a>' });
+				let metatags = metadata.tags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
 
 				//Get the body
 				let body;
@@ -144,7 +144,7 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
-					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><div class="hov-txt"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><h5 id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</h5></span></div></div></div>\n' +
+					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
                     '\n' +
 					'<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
 					'\n' +
