@@ -10,9 +10,10 @@
         $strReturn['records'] = $result->num_rows;
         if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                        $strReturn[]['author'] = $row['author'];
-                        $strReturn[]['permlink'] = $row['permlink'];
-                        $strReturn[]['lastUpdatedDate'] = $row['lastUpdatedDate'];
+                        $temp['author'] = $row['author'];
+                        $temp['permlink'] = $row['permlink'];
+                        $temp['lastUpdatedDate'] = $row['lastUpdatedDate'];
+			$strReturn[] = $temp;
                 }
         }
 	
