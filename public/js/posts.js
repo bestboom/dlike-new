@@ -214,6 +214,20 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	});
 };
 
+function uplLikes(thisAutor, thisPermlink){
+    $.ajax({
+        type: "POST",
+        url: '/template/modals/likes.php?author='+thisAutor+'&permlink='+thisPermlink,
+        dataType: 'json',
+        success: function(response) {
+            console.log('Recomendations');
+        },
+        error: function() {
+            console.log('Error occured');
+        }
+    });
+};
+
 function showPostSortedByLikes() {
 	var divList = $(".postsMainDiv");
 	divList.sort(function(a, b){
