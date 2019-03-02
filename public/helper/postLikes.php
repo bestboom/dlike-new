@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
     
     require '../includes/config.php';
-	$testQuery = 'ALTER TABLE PostsLikes ADD COLUMN lastUpdatedDate VARCHAR(255);'
+	$testQuery = 'ALTER TABLE PostsLikes ADD COLUMN lastUpdatedDate VARCHAR(255)';
 	$result = $conn->query($testQuery);
 	
 	$strReturn = [];
