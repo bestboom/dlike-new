@@ -136,6 +136,12 @@ $(document).ready(function(){
     });
     }
 
+
+
+        steem.api.getContent(postauthor , postpermlink, function(err, res) {
+            console.log(res);
+        });
+
 });
 // solve me
     var options = {
