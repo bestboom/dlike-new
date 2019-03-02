@@ -197,11 +197,10 @@ $(document).ready(function() {
 
     $('.hov-item_in').mouseover(function() {
           $('.hov-title_in').fadeIn('200');
-      },
+      }),
       $('.hov-item_in').mouseout(function() {
           $('.hov-title_in').fadeOut('100');
-      }
-   );
+      });
 });
 
 
