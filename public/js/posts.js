@@ -164,6 +164,7 @@ $(document).ready(function(){
 	});
 
 	steem.api.getContent(topauthor , toppermlink, function(err, res) {
+		console.log('JAGDISH');
 		let metadata = JSON.parse(res.json_metadata);
 		let img = new Image();
 		if (typeof metadata.image === "string"){
@@ -173,29 +174,31 @@ $(document).ready(function(){
 		}
 		json_metadata = metadata;
 		let category = metadata.category;
-		if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
-        let posttags = metadata.tags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
+		if (category === undefined) {
+			category = "dlike";
+		} else {
+			category = metadata.category;
+	     	}
+		let posttags = metadata.tags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
 		let post_description = metadata.body;
 		let title = res.title;
-        let created = res.created;
-        let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-        let author = res.author;
-        let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        let post_body = $(post_description).text();
-
+		let created = res.created;
+		let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+		let author = res.author;
+		let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
+		let post_body = $(post_description).text();
 
 		$('.auth_name').html(author);
-        $('#top_title').html(title);
-        $('.post_catg').html(category);
-        $('.post-date').html(created_time);
-		$('.top_post').text(post_body.substr(0,150)+'...');
-        $('.tags').html(posttags);
-		$('#top_img').attr("src", img.src).show();
-        $('.authThumb').attr("src", auth_img);
-        $('#top_post_votes').html(res.pending_payout_value.substr(0, 4));
+		$('#top_title').html(title);
+		$('.post_catg').html(category);
+		$('.post-date').html(created_time);
+			$('.top_post').text(post_body.substr(0,150)+'...');
+		$('.tags').html(posttags);
+			$('#top_img').attr("src", img.src).show();
+		$('.authThumb').attr("src", auth_img);
+		$('#top_post_votes').html(res.pending_payout_value.substr(0, 4));
+		});
 	});
-
-});
 
 //check likes
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
