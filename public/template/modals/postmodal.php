@@ -1,39 +1,12 @@
-<div class="modal-header">
-                <h5 class="modal-title">Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body p-4" id="result">
-               <div class="section-padding-bottom">
+
+<div class="modal-body p-4" id="result">
+    <div class="section-padding-bottom">
         <div class="container">
             <div class="row">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <div class="col">
                         <div class="blog-details-wrapper">
-                            <div class="info">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/8.png" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
-                                        </h5>
-                                        <a href="#">@excoin</a>
-                                    </div>
-                                </div>    
-                                <div class="post-meta-block">
-                                    <span class="post-meta">30 NOV, 2019</span>
-                                    <div class="post-comments">
-                                        <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                                        <a href="#">03 Comments</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3 class="post-title">Expound the actual teachings</h3>
                             <div class="single-post-block">
                                 <div class="post-thumb-block">
                                     <img src="./images/post/8.png" alt="img" class="img-responsive">
