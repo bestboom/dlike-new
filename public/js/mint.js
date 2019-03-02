@@ -180,7 +180,14 @@ $('.latest-post-section').on("click", ".hov_me", function() {
                             if(response.error == true) {
                                 $('#upvotefail').modal('show');
                             } else {
+                                        $.ajax({
+                type: "POST",
+                url: "template/modals/likes.php",
+                data: 'perml=' + mypermlink,
+                success: function(data) {console.log('Recomendation')}
+                        });
                                     $('#likes').modal('show');
+
                             }
                         } catch (err) {
                             alert('Sorry. Server response is malformed.')

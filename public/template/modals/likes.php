@@ -1,35 +1,10 @@
- <?php
+<?php
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    
-    require '../includes/config.php';
-    
-    $strReturn = [];
-    if(!isset($_GET['author']) || !isset($_GET['permlink'])) {
-        $strReturn['status'] = 'Failed';
-        $strReturn['reason'] = 'Required parameters not passed';
-    } else {
-        $strReturn['status'] = 'OK';
-        $author = isset($_GET["author"]) ? $_GET["author"] : "";
-        $author = stripslashes( $author );
-        
-        $permlink = isset($_GET["permlink"]) ? $_GET["permlink"] : "";
-        $permlink = stripslashes( $permlink );
-        
-        $sql = "SELECT * FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink' LIMIT 1";
-        $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $strReturn['likes'] = $row['likes'];
-            }
-        } else {
-            $strReturn['likes'] = 0;
-        }
-    }
-    
-    echo json_encode($strReturn);
+echo $permlink = $_posT['perml'];
+
 ?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
@@ -59,6 +34,7 @@
                                 <input type="hidden" name="ratingz" id="myRatingz" value="0" />
                                 <input type="text" name="rated_author" id="author_rate" value="" />
                                 <input type="text" name="rated_permlink" id="permlink_rate" value="" />
+                                <?php echo  $_POST['rated_author']; ?>
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
                                     <label class="star star-5" for="star-5"></label>
