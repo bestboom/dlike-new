@@ -2,8 +2,8 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-
-    $uthor = $_POST['ath'];
+/*
+    $author = $_POST['ath'];
     $permlink = $_POST['plink'];
         
         $sql = "SELECT likes, rating FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink'";
@@ -14,11 +14,11 @@
                 $likes = $row['likes'];
                 $rating = $row['rating'];
 
-        $avg_star = round($rating/$likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
+        $avg_star = round($rating/$likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?> */
 ?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
-    <p><span>Total Votes:  <?php echo $likes; ?>  <div class="star-ratings-sprite">Ratings: <span style="<?php echo $set_star; ?>" class="star-ratings-sprite-rating"></span></div> </span></p>
+    <p><span>Total Votes:  <!--<?php echo $likes; ?> -->  <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p>
 </div>  
 <? }
 } 
@@ -45,8 +45,9 @@
                             <div class="form-group">
                                 <label><b>Rate this post if you want</b></label>
                                 <input type="hidden" name="ratingz" id="myRatingz" value="0" />
-                                <input type="hidden" name="rated_author" id="author_rate" value="" />
-                                <input type="hidden" name="rated_permlink" id="permlink_rate" value="" />
+                                <input type="text" name="rated_author" id="author_rate" value="" />
+                                <input type="text" name="rated_permlink" id="permlink_rate" value="" />
+                                <?php echo  $_GET['rated_author']; ?>
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
                                     <label class="star star-5" for="star-5"></label>
