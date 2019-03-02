@@ -7,8 +7,8 @@
 	require '../includes/config.php';
 
 		$saved_ip = $_COOKIE['usertoken'];	
-		$rating = stripslashes($_POST['ratingz']);
-		$userval = stripslashes($_POST['likes_user']);
+		$rating = $_POST['ratingz'];
+		$userval = $_POST['likes_user'];
 		$author =  $_POST['rated_author'];
 		$permlink =  $_POST['rated_permlink'];
 		$newLike = '1';
@@ -53,7 +53,6 @@
 					} else {
     				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 					}
-					$conn->close();
 			}
 		}
 ?>

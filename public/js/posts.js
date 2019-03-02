@@ -194,22 +194,6 @@ $(document).ready(function(){
         $('.authThumb').attr("src", auth_img);
         $('#top_post_votes').html(res.pending_payout_value.substr(0, 4));
 	});
-  
-
-function uplLikes(thisAutor, thisPermlink){
-    $.ajax({
-        type: "POST",
-        url: '/template/modals/likes.php?author='+thisAutor+'&permlink='+thisPermlink,
-        dataType: 'json',
-        success: function(response) {
-            console.log('Recomendations');
-        },
-        error: function() {
-            console.log('Error occured');
-        }
-    });
-};
-
 
 });
 
