@@ -3,6 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
+var_dump($_POST);
     $post_author = $_POST['postath'];
     $post_permlink = $_POST['postplink'];
 ?>
