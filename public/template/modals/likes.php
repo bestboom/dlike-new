@@ -1,4 +1,8 @@
 <?php 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
         $author = isset($_GET["author"]) ? $_GET["author"] : "";
         $author = stripslashes( $author );
         
@@ -13,6 +17,7 @@
                 $likes = $row['likes'];
                 $rating = $row['rating'];
             }
+        }
 ?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
