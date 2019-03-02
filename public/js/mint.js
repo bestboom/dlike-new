@@ -195,11 +195,11 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
 $(document).ready(function() {
 
-    $('.hov-item').hover(function() {
-          $(this).find('.hov-title').fadeIn('slow');
+    $('.hov-item_in').hover(function() {
+          $(this).find('.hov-title_in').fadeIn('200');
       },
       function(){
-          $('.hov-title').fadeOut('slow');
+          $('.hov-title_in').fadeOut('100');
       }
    );
 });
