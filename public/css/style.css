@@ -2823,8 +2823,7 @@ sub.transmoney-value {
     width: 100%;
     height: 100%;
     cursor: pointer;
-    color: #060606;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #333;
     text-align: center;
     opacity: 0;
     -webkit-transition: all 0.5s ease;
@@ -2834,7 +2833,7 @@ sub.transmoney-value {
 }
 .hov-txt h5{
     position: absolute;
-    color: #0a0a0a;
+    color: #fff;
     top: 34%;
     width: 100%;
     font-size: 150%;

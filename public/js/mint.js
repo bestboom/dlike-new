@@ -160,7 +160,7 @@ function postToControll() {
 };
 //dvd modal
 $('.latest-post-section').on("click", ".hov_me", function() {
-   alert('called');
+   //alert('called');
     // we want to copy the 'id' from the button to the modal
     var mypermlink = $(this).attr("data-permlink");
     var authorname = $(this).attr("data-author");
@@ -193,17 +193,13 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 });
 
 
-    // dlike-hov
-    $(document).ready(function() {
-    $('.hov-item').hover(function() {
-        $(this).find('.hov-title').fadeIn(200);
-    }, function() {
-    $(this).find('.hov-title').fadeOut(100);
+// hov element
+$('.hov-item').hover(function() {
+     $(this).find('.hov-title').fadeIn(200);
+}, function() {
+$(this).find('.hov-title').fadeOut(100);
 
-    });
-    });
-
-
+});
 
 //upvote
 var rangeSlider = document.getElementById("rs-range-line");
