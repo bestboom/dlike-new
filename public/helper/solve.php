@@ -37,14 +37,14 @@
 							$checkPost = "SELECT author, permlink, likes, rating FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
 								$result = mysqli_query($conn, $checkPost);
 									if (mysqli_num_rows($result) > 0) {
-										$updatePost = "UPDATE PostsLikes SET likes = likes + 1, rating = rating + '$rating' WHERE author = '$author' and permlink = '$permlink'";
+										$updatePost = "UPDATE PostsLikes SET likes = likes + 1, rating = rating + '$rating' WHERE author = '$author' AND permlink = '$permlink' AND lastUpdatedDate = '".date("Y-m-d h:m:s")."'";
 										$updatePostQuery = $conn->query($updatePost);
 											/*if ($updatePostQuery === TRUE) {
    													echo "Record updated successfully"; } else { echo "Record could not updated some error"; }*/
     								} else {
     									/*echo "post not exists";*/
-    									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating)
-													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."')";
+    									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
+													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."', '".date("Y-m-d h:m:s")."')";
 										$addPostQuery = $conn->query($addPost);
 													/*if ($addPostQuery === TRUE) {
    													echo "new Record added successfully"; } else { echo "new Record could not added"; }*/
