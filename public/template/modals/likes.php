@@ -4,11 +4,12 @@
     error_reporting(E_ALL);
 
 
-        $author = isset($_GET["author"]) ? $_GET["author"] : "";
-        $author = stripslashes( $author );
-        
-        $permlink = isset($_GET["permlink"]) ? $_GET["permlink"] : "";
-        $permlink = stripslashes( $permlink );
+        echo $author =  $_POST['rated_author'];
+        echo $permlink =  $_POST['rated_permlink'];
+
+
+        echo $author =  $_GET['rated_author'];
+        echo $permlink =  $_GET['rated_permlink'];
         
         $sql = "SELECT likes, rating FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink'";
         $result = $conn->query($sql);
