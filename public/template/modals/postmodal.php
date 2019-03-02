@@ -21,7 +21,7 @@ steem.api.getContent(postauthor , poatpermlink, function(err, res) {
 });
 
 
-
+});
 
 </script>
 <div class="modal-body p-4" id="result">
