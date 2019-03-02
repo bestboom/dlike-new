@@ -21,8 +21,6 @@ $(document).ready(function(){
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
 		console.log(res);
 		res.forEach(($post, i) => {
-			$post = res;
-			var i = counter;
 			let metadata;
 			if ($post.json_metadata && $post.json_metadata.length > 0){
 				metadata = JSON.parse($post.json_metadata);
