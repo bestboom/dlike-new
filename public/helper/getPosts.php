@@ -13,7 +13,7 @@
                         $temp['author'] = $row['author'];
                         $temp['permlink'] = $row['permlink'];
                         $temp['lastUpdatedDate'] = $row['lastUpdatedDate'];
-			$strReturn[] = $temp;
+			$strReturn['data'][] = $temp;
                 }
         }
 	
