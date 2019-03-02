@@ -16,13 +16,17 @@
             while($row = $result->fetch_assoc()) {
                 $likes = $row['likes'];
                 $rating = $row['rating'];
-            }
-        }
+
+        $avg_star = round($rating/$likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
 ?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
-    <p><span>Total Votes:  <?php echo $likes; ?>  <div class="star-ratings-sprite">Ratings: <span style="width:14%" class="star-ratings-sprite-rating"></span></div> </span></p>
+    <p><span>Total Votes:  <?php echo $likes; ?>  <div class="star-ratings-sprite">Ratings: <span style="<?php echo $set_star; ?>" class="star-ratings-sprite-rating"></span></div> </span></p>
 </div>  
+<? }
+} 
+$conn->close();
+?>
 <div class="md-account-banner">
     <div class="row justify-content-center">
         <div style="height:60px;width:470px;"></div>

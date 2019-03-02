@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
                     <a href="#"><img src="" alt="img" class="card-img-top2 img-fluid" id="top_img" style="display: none;"></a>
                 </div>
                 <div class="col-md-6 post-contnet-wrap">
-                    <?php $top_likes; $top_rating; $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
+                    <?php $avg_star = round($top_rating/$top_likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?>
                     <div class="row d-flex justify-content-center">
                     <figure class="hov-item">
                         <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
@@ -52,4 +52,5 @@ if ($result->num_rows > 0) {
                 </div>
     <? }
 } 
+$conn->close();
 ?>

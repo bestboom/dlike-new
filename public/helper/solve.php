@@ -9,8 +9,8 @@
 		$saved_ip = $_COOKIE['usertoken'];	
 		$rating = stripslashes($_POST['ratingz']);
 		$userval = stripslashes($_POST['likes_user']);
-		$author = stripslashes($_POST['rated_author']);
-		$permlink =  stripslashes($_POST['rated_permlink']);
+		$author =  $_POST['rated_author'];
+		$permlink =  $_POST['rated_permlink'];
 		$newLike = '1';
 
 		/*$checkupvote = "SELECT * from MyLikes where userip ='$saved_ip' and author = '$author' and permlink = '$permlink'";
