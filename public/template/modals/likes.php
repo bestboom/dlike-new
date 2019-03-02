@@ -3,7 +3,6 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    require 'includes/config.php';
 
         $author = isset($_GET["author"]) ? $_GET["author"] : "";
         $author = stripslashes( $author );
@@ -27,7 +26,7 @@
 </div>  
 <? }
 } 
-$conn->close();
+
 ?>
 <div class="md-account-banner">
     <div class="row justify-content-center">
