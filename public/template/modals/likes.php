@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-echo $permlink = $_POST['perml'];
+echo $permlink = $_GET['perml'];
 
 ?>
 <div class="dvd-account-title">
