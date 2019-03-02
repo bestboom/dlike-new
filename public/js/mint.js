@@ -181,6 +181,12 @@ $('.latest-post-section').on("click", ".hov_me", function() {
                                 $('#upvotefail').modal('show');
                             } else {
                                     $('#likes').modal('show');
+                                    $.ajax({
+                type: "POST",
+                url: "template/modals/likes.php",
+                data: datat,
+                success: function(data) {
+                }
                             }
                         } catch (err) {
                             alert('Sorry. Server response is malformed.')
