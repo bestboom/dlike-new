@@ -1,30 +1,8 @@
-<?php 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-/*
-    $author = $_POST['ath'];
-    $permlink = $_POST['plink'];
-        
-        $sql = "SELECT likes, rating FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink'";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                $likes = $row['likes'];
-                $rating = $row['rating'];
-
-        $avg_star = round($rating/$likes, 2); $star_score = round($avg_star * 20, 2); $set_star = 'width:'.$star_score.'%'; ?> */
-?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
     <p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p>
 </div>  
-<!--
-<? }
-} 
 
-?> -->
 <div class="md-account-banner">
     <div class="row justify-content-center">
         <div style="height:60px;width:470px;"></div>
@@ -48,7 +26,8 @@
                                 <input type="hidden" name="ratingz" id="myRatingz" value="0" />
                                 <input type="text" name="rated_author" id="author_rate" value="" />
                                 <input type="text" name="rated_permlink" id="permlink_rate" value="" />
-                                
+                                <?php echo  $_GET['rated_author']; ?>
+                                <?php echo  $_POST['rated_author']; ?>
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />
                                     <label class="star star-5" for="star-5"></label>
