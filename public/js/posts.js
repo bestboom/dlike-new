@@ -118,7 +118,9 @@ function getAPIContent(author, permlink) {
 
 function apiActionFunction(res) {
 	console.log(res);
-	res.forEach(($post, i) => {
+	//res.forEach(($post, i) => {
+	for(var i = 0; i < res.length; i++) {
+		$post = res[i];
 		let metadata;
 		if ($post.json_metadata && $post.json_metadata.length > 0){
 			metadata = JSON.parse($post.json_metadata);
@@ -213,7 +215,7 @@ function apiActionFunction(res) {
 			}
 
 			//start posts here
-			$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
+			$("#content").append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 				'\n' +
 				'<article class="post-style-two">\n' +
 				'\n' +
@@ -244,7 +246,7 @@ function apiActionFunction(res) {
 				'<div class="post-contnet-wrap">\n' +
 				'\n' +
 				'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
-	    '\n' +
+	    			'\n' +
 				'<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
 				'\n' +
 				'<p class="post-entry post-tags">' + metatags + '</p>\n' +
@@ -259,5 +261,6 @@ function apiActionFunction(res) {
 			'</article></div>');
 			getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 		}
-	});	
+	//});
+	}
 }
