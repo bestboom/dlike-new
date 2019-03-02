@@ -5,8 +5,8 @@ $result = $conn->query($sqlt);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $top_auth = $row["author"];
-        $top_permlink = $row["permlink"];
+        $top_auth = stripslashes($row["author"]);
+        $top_permlink = stripslashes($row["permlink"]);
         $top_likes = $row["likes"];
         $top_rating = $row["rating"];
         ?>

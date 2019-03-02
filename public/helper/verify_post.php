@@ -5,8 +5,8 @@
 
 	require '../includes/config.php';
 
-	$req_author = $_POST['ath'];
-	$req_permlink = $_POST['plink'];
+	$req_author = stripslashes($_POST['ath']);
+	$req_permlink = stripslashes($_POST['plink']);
 	$user_check = $_COOKIE['usertoken'];
 
 	$verifyPost = "SELECT * FROM myLikes where userip = '$user_check' and permlink = '$req_permlink' and author = '$req_author'";
@@ -26,4 +26,5 @@
             		'data' => 'Lets Upvote'
         		]));
 		}
+		$conn->close();
 ?>
