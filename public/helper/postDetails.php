@@ -13,7 +13,7 @@
 
 	<script>
     let postauthor = <?php echo json_encode($postauthor); ?>;
-    let poatpermlink = <?php echo json_encode($postpermlink); ?>;
+    let postpermlink = <?php echo json_encode($postpermlink); ?>;
 
 
 </script>
