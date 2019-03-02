@@ -193,15 +193,15 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 });
 
 
-$(document).ready(function() {
+    // dlike-hov
+    $(document).ready(function() {
+    $('.hov-item_in').hover(function() {
+        $(this).find('.hov-title_in').fadeIn(200);
+    }, function() {
+    $(this).find('.hov-title_in').fadeOut(100);
 
-    $('.hov-item_in').mouseover(function() {
-          $('.hov-title_in').fadeIn('200');
-      }),
-      $('.hov-item_in').mouseout(function() {
-          $('.hov-title_in').fadeOut('100');
-      });
-});
+    });
+    });
 
 
 
