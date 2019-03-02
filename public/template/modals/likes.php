@@ -18,7 +18,7 @@
 ?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
-    <p><span>Total Votes:  <!--<?php echo $likes; ?> -->  <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p>
+    <p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p>
 </div>  
 <!--
 <? }
