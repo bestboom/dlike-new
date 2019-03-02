@@ -215,7 +215,7 @@ function apiActionFunction(res) {
 			}
 
 			//start posts here
-			$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
+			$("#content").append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 				'\n' +
 				'<article class="post-style-two">\n' +
 				'\n' +
