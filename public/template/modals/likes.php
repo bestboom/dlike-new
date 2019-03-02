@@ -1,11 +1,4 @@
-<?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-echo $permlink = $_GET['perml'];
-
-?>
+<div><span id="authorly"></span></div>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
     <p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p>
