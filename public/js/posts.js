@@ -164,8 +164,8 @@ $(document).ready(function(){
 	});
 
 	steem.api.getContent(topauthor , toppermlink, function(err, res) {
-		alert(123);
 		console.log('JAGDISH');
+		console.log(res);
 		let metadata = JSON.parse(res.json_metadata);
 		let img = new Image();
 		if (typeof metadata.image === "string"){
