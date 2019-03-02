@@ -4,12 +4,8 @@
     error_reporting(E_ALL);
 
 
-        echo $author =  '<script>var authorname;</script>';
-        echo $permlink =  $_POST['rated_permlink'];
+        echo $author =  '<script>$(document).ready(function() { var authorname;</script> });';
 
-
-        echo $author =  $_GET['rated_author'];
-        echo $permlink =  $_GET['rated_permlink'];
         
         $sql = "SELECT likes, rating FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink'";
         $result = $conn->query($sql);
