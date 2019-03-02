@@ -1,4 +1,7 @@
-
+<?php
+    echo $post_author = stripslashes($_POST['postath']);
+    echo $post_permlink = stripslashes($_POST['postplink']);
+?>
 <div class="modal-body p-4" id="result">
     <div class="section-padding-bottom">
         <div class="container">

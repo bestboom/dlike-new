@@ -193,6 +193,29 @@ $('.latest-post-section').on("click", ".hov_me", function() {
     $("#permlink_rate").val(mypermlink);
 });
 
+//post modal
+$('.latest-post-section').on("click", ".post_detail", function() {
+   //alert('called');
+    // we want to copy the 'id' from the button to the modal
+    var postpermlink = $(this).attr("data-permlink");
+    var postauthor = $(this).attr("data-author");
+
+        var datav = {
+            postath: postauthor,
+            postplink: postpermlink
+        };
+
+        $.ajax({
+                type: "POST",
+                url: "template/modals/postmodal.php",
+                data: datav,
+                success: function(data) {
+                        console.log('post showing');
+                    }
+            });
+});
+
+
 
 // hov element
 $('.hov-item').hover(function() {
