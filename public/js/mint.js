@@ -195,10 +195,10 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
     // dlike-hov
     $(document).ready(function() {
-    $('.hov-item_in').hover(function() {
-        $(this).find('.hov-title_in').fadeIn(200);
+    $('.hov-item').hover(function() {
+        $(this).find('.hov-title').fadeIn(200);
     }, function() {
-    $(this).find('.hov-title_in').fadeOut(100);
+    $(this).find('.hov-title').fadeOut(100);
 
     });
     });
