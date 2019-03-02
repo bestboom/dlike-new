@@ -2,8 +2,9 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+    ?>
     <input type="text" name="authorname" id="author" value="">
-
+<?
         echo $author =  $_GET['authorname'];
         echo $permlink =  '<script>$(document).ready(function() { var mypermlink; });</script>';
 
