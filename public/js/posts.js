@@ -119,6 +119,8 @@ function getAPIContent(author, permlink) {
 function apiActionFunction(res) {
 	console.log(res);
 	//res.forEach(($post, i) => {
+	getResponse = res;
+	var res[] = getResponse;
 	for(var i = 0; i < res.length; i++) {
 		$post = res[i];
 		let metadata;
@@ -128,9 +130,10 @@ function apiActionFunction(res) {
 
 		var currentPostNumber = i;
 		var currentLikesDivElement = 'postLike_' + i;
+		alert(1);
 		if(metadata && metadata.community == "dlike"){
 			getTotalcomments($post.author,$post.permlink);
-
+			alert(2);
 			// get image here
 			let img = new Image();
 			if (typeof metadata.image === "string") {
@@ -180,7 +183,6 @@ function apiActionFunction(res) {
 			var url = getLocation(metadata.url);
 			var youtubeAnchorTagVariableClass = '';
 			if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
-				//alert(url);
 				youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_' + i;
 				if(url.search != ''){
 					let query = url.search.substr(1); //remove ? from begning
@@ -215,6 +217,7 @@ function apiActionFunction(res) {
 			}
 
 			//start posts here
+			alert(123);
 			$("#content").append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 				'\n' +
 				'<article class="post-style-two">\n' +
