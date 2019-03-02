@@ -118,7 +118,9 @@ function getAPIContent(author, permlink) {
 
 function apiActionFunction(res) {
 	console.log(res);
-	res.forEach(($post, i) => {
+	//res.forEach(($post, i) => {
+	for(var i = 0; i < res.length; i++) {
+		$post = res[i];
 		let metadata;
 		if ($post.json_metadata && $post.json_metadata.length > 0){
 			metadata = JSON.parse($post.json_metadata);
@@ -259,5 +261,6 @@ function apiActionFunction(res) {
 			'</article></div>');
 			getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 		}
-	});	
+	//});
+	}
 }
