@@ -144,7 +144,7 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
-					'<div class="hov-wrap"><a class="hov-txt" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '">0</span></a><div><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive dlike-hov"></div></div>\n' +
+					'<div class="row d-flex justify-content-center"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-title"><h5 id="hov-num" class="commentsDivpostLike_17">0</h5></div></span><div><div>\n' +
                     '\n' +
 					'<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
 					'\n' +
