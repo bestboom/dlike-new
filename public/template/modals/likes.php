@@ -4,7 +4,8 @@
     error_reporting(E_ALL);
 
 
-        echo $author =  '<script>$(document).ready(function() { var authorname;</script> });';
+        echo $author =  '<script>$(document).ready(function() { var authorname;  });</script>';
+        echo $permlink =  '<script>$(document).ready(function() { var mypermlink;  });</script>';
 
         
         $sql = "SELECT likes, rating FROM PostsLikes WHERE author = '$author' AND permlink = '$permlink'";
