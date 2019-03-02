@@ -39,5 +39,14 @@
             </div>
         </div>
     </div>
+    <div>
+  <figure class="hov-item_in">
+    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
+    <figcaption class="hov-title_in">
+      <h5>6</h5>
+    </figcaption>
+  </figure>
+</div>
+
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer.php'); ?>
