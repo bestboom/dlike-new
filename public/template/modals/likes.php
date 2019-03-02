@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
 
 
-        echo $author =  $_POST['rated_author'];
+        echo $author =  '<script>var authorname;</script>';
         echo $permlink =  $_POST['rated_permlink'];
 
 
