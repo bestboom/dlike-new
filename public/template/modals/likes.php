@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    require '../../includes/config.php';
+    require './../includes/config.php';
 
         $author = isset($_GET["author"]) ? $_GET["author"] : "";
         $author = stripslashes( $author );
