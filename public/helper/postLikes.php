@@ -4,7 +4,7 @@
 	error_reporting(E_ALL);
 
     	require '../includes/config.php';
-	echo date("Y-m-d,h:m:s");
+	echo date("Y-m-d h:m:s");
 	$strReturn = [];
 	if(!isset($_GET['author']) || !isset($_GET['permlink'])) {
 		$strReturn['status'] = 'Failed';
