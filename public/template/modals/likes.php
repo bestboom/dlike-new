@@ -1,13 +1,6 @@
-<div><span id="authorly"></span></div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        var zak = $('#myDiv').html();
-    });
-</script>
-<?php echo '<script>var zak;</script>'; ?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
-    <p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p>
+    <!--<p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p> -->
 </div>  
 
 <div class="md-account-banner">
@@ -31,8 +24,8 @@
                             <div class="form-group">
                                 <label><b>Rate this post if you want</b></label>
                                 <input type="hidden" name="ratingz" id="myRatingz" value="0" />
-                                <input type="text" name="rated_author" id="author_rate" value="" />
-                                <input type="text" name="rated_permlink" id="permlink_rate" value="" />
+                                <input type="hidden" name="rated_author" id="author_rate" value="" />
+                                <input type="hidden" name="rated_permlink" id="permlink_rate" value="" />
                                 <?php echo  $_POST['rated_author']; ?>
                                 <div class="stars">
                                     <input class="star star-5" id="star-5" type="radio" name="star" onclick="postToControll();" value="5" />

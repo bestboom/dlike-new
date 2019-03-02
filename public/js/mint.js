@@ -191,8 +191,6 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 
     $("#author_rate").val(authorname);
     $("#permlink_rate").val(mypermlink);
-    $("#authorly").text(authorname);
-    $("#permlinkly").text(mypermlink);
 });
 
 

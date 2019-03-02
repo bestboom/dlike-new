@@ -196,6 +196,21 @@ $(document).ready(function(){
 	});
   
 
+function uplLikes(thisAutor, thisPermlink){
+    $.ajax({
+        type: "POST",
+        url: '/template/modals/likes.php?author='+thisAutor+'&permlink='+thisPermlink,
+        dataType: 'json',
+        success: function(response) {
+            console.log('Recomendations');
+        },
+        error: function() {
+            console.log('Error occured');
+        }
+    });
+};
+
+
 });
 
 //check likes
@@ -212,20 +227,6 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log('Error occured');
 		}
 	});
-};
-
-function uplLikes(thisAutor, thisPermlink){
-    $.ajax({
-        type: "POST",
-        url: '/template/modals/likes.php?author='+thisAutor+'&permlink='+thisPermlink,
-        dataType: 'json',
-        success: function(response) {
-            console.log('Recomendations');
-        },
-        error: function() {
-            console.log('Error occured');
-        }
-    });
 };
 
 function showPostSortedByLikes() {
