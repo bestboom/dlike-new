@@ -59,8 +59,8 @@
                                 <h4>Leave A Comment</h4>
                                 <form action="helper/comment.php" method="POST" class="comment-form">
                                     <div class="row">
-                                <input type="text" name="rated_author" id="postauthor" value="" />
-                                <input type="text" name="rated_permlink" id="postpermlink" value="" />
+                                <input type="text" name="post_author" id="postauthor" value="" />
+                                <input type="text" name="post_permlink" id="postpermlink" value="" />
 
                                         <div class="col-md-12">
                                             <div class="form-group">

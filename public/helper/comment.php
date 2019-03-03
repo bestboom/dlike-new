@@ -6,11 +6,11 @@ error_reporting(E_ALL);
 
 echo 'coment';
 
-if (isset($_POST["permlink"]) && isset($_POST["author"])){
+if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
 
-	echo $_POST["permlink"];
+	echo $_POST["post_permlink"];
 	echo '<br>';
-	echo $_POST["author"];
+	echo $_POST["post_author"];
  echo 'good';
-}
+} else {die('Some error');}
 ?>
