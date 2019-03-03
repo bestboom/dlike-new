@@ -47,5 +47,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
     <script src="./js/posts.js"></script>
     <script src="./js/steemconnect.js"></script>
+    <script src="./js/toaster.js"></script>
 </body>
 </html>

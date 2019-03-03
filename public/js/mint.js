@@ -136,15 +136,30 @@ $(document).ready(function(){
     });
     }
 
+    toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": true,
+      "positionClass": "toast-bottom-center",
+      "preventDuplicates": true,
+      "onclick": null,
+      "showDuration": "300",
+      "hideDuration": "500",
+      "timeOut": "2000",
+      "extendedTimeOut": "500",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
+
     //comt
     $('.cmt_bt').click(function () {
         if(username != null) {
             if (!$.trim($('[name="cmt_body"]').val())) {
-                showModalError(
-                    "uh-oh..",
-                    "It seems you forgot to write comment!",
-                    ""
-                    );
+                toastr.info('Are you the 6 fingered man?')
                 return false;  
             }
         } 
