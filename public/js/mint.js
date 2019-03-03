@@ -294,8 +294,10 @@ $('.upme').click(function() {
     var votepermlink = $(this).attr("data-permlink");
     var voteauthor = $(this).attr("data-author");
     
-    $.post("helper/vote.php",{v_permlink:votepermlink,v_author:voteauthor,author:username,weight:upvoteValue},function (data, success) {
-
-        console.log(data);
+    if(username != null) {
+    api.vote(username, voteauthor, votepermlink, upvoteValue, function (err, res) {
+        console.log(err, res)
+        
     });
+    };
 });

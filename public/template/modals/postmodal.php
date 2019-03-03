@@ -145,17 +145,4 @@
             </div>
         </div>
     </div>     
-            </div>
- 
-    <div class="modal fade" id="alert-modal-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
-            <div class="modal-content modal-custom">
-                <div class="modal-body ">
-                    <div class="mdStatusTitle sttError"><div class="iconTitle"><i class="fas fa-frown"></i></div></div>
-                    <div class="mdStatusContent"><h3 id="alert-title-error"></h3><p id="alert-content-error"></p>
-                        <div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Ok.. Let Me Do!</span></button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>              
+            </div>           
