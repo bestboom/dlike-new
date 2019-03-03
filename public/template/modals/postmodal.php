@@ -57,7 +57,7 @@
                         <div class="post-comment-block">
                             <div class="comment-respond">
                                 <h4>Leave A Comment</h4>
-                                <form action="#" class="comment-form">
+                                <form action="helper/coment.php" class="comment-form">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -65,7 +65,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="btn btn-default">Submit</button>
+                                    <button class="btn btn-default cmt_bt">Submit</button>
                                 </form>
                             </div>
                             <div class="comment-area">
