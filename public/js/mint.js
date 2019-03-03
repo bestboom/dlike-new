@@ -205,11 +205,28 @@ $('#content').on("click", ".post_detail", function() {
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
         console.log(res);
 
+        let metadata = JSON.parse(res.json_metadata);
+        let img = new Image();
+        if (typeof metadata.image === "string"){
+            img.src = metadata.image.replace("?","?");
+        } else {
+            img.src = metadata.image[0];
+        }
+        json_metadata = metadata;
+        let category = metadata.category;
+        if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
+        let posttags = metadata.tags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
         let title = res.title;
         let author = res.author;
+        let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
+        $('.mod-thumb').attr("src", img.src);
+        $('.mod-authThumb').attr("src", auth_img);
+        $('.mod-tags').html(posttags);
+
+
 
 
         });

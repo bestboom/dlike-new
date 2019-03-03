@@ -6,26 +6,12 @@
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
                                 <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                <h3 class="post-title">Expound the actual teachings</h3>
-                                <div class="post-thumb-block">
+                                <h3 class="post-title mod-title"></h3>
+                                <div class="post-thumb-block mod-thumb">
                                     <img src="./images/post/8.png" alt="img" class="img-responsive">
                                 </div>
-                                <h3 class="post-title mod-title"></h3>
-                                <p class="post-entry entry-one">
-                                    It is a long established fact that a reader will be distracted by the readable content 
-                                    of a page when looking at its layout.  but also the leap into electronic typesetting, 
-                                    remaining essentially unchanged. It was popularised in the 1960s with the release  
-                                    circumstances occur in which toil and pain can procure him some great pleasure. 
-                                    To take a trivial example, which of us.
-                                </p>
-                                <p class="post-entry entry-two">
-                                    Ever undertakes laborious physical exercise, except to obtain some advantage from it? 
-                                    But who has any right to find fault with a man who chooses to enjoy a pleasure that 
-                                    has no annoying consequences. 
-                                </p>
-                                <p class="post-entry entry-five">
-                                        Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, 
-                                        but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.
+                                <h3 class="post-title"></h3>
+                                <p class="post-entry mod-post">
                                 </p>
                             </div>
                         </div>
@@ -40,23 +26,16 @@
                                 <div class="post-author-block">
                                     <div class="author-thumb">
                                         <a href="#">
-                                            <img src="./images/post/authors/8.png" alt="img" class="img-responsive">
+                                            <img src="./images/post/authors/8.png" alt="img" class="img-responsive mod-authThumb">
                                         </a>
                                     </div>
                                     <div class="author-info">
-                                        <span>Post By: </span>
-                                        <h5>
-                                            <a href="#" class="mod-auth"></a>
-                                        </h5>
+                                        <h5> <a href="#" class="mod-auth"></a></h5>
                                     </div>
                                 </div>
                                 <div class="post-tag-block">
                                     <h5>Post Tag</h5>
-                                    <div class="tags">
-                                        <a href="#">Design</a>
-                                        <a href="#">Career</a>
-                                        <a href="#">Guideline</a>
-                                        <a href="#">Tech</a>
+                                    <div class="tags mod-tags">
                                     </div>
                                 </div><!-- post-tag-block -->
                                 <div class="post-share-block">

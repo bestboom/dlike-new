@@ -43,7 +43,7 @@ if ($result->num_rows > 0) {
                             <div class="author-info"> <h5><a href="#" class="auth_name"></a></h5></div>
                         </div>
                         <div class="post-comments">
-                            <i class="fas fa-comments icon-pad"></i><a href="#">03</a> Comments
+                            <i class="fas fa-comments icon-pad"></i><a href="#">0 </a> Comments
                         </div>
                         <div>
                             <a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink=<?php echo json_encode($top_permlink); ?> data-author=<?php echo json_encode($top_auth); ?>><i class="fas fa-chevron-circle-up"></i></a>&nbsp; | <i class="fas fa-dollar-sign dollar-pad"></i><span id="top_post_votes"></span>
