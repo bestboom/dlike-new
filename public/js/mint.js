@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    if(username != null) {console.log(username)} else {console.log('not login')};
 
 	let $urlfield,
         $editPost,
@@ -258,4 +257,13 @@ function showSliderValue() {
 $('.upme').click(function() {
     let upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
+});
+
+//comt
+$('.cmt_bt').click(function () {
+    if(username != null) {
+        console.log(username)} 
+    else {alert('not login')
+    };
+
 });
