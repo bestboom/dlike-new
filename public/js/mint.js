@@ -203,23 +203,17 @@ $('#content').on("click", ".post_detail", function() {
 
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
-            console.log(res);
-        });
+        console.log(res);
+
+        let title = res.title;
+        let author = res.author;
+
+        $('.mod-auth').html(author);
+        $('.mod-title').html(title);
 
 
-        var datav = {
-            postath: postauthor,
-            postplink: postpermlink
-        };
-        
-        $.ajax({
-                type: "POST",
-                url: "helper/postDetails.php",
-                data: datav,
-                success: function(data) {
-                    console.log('post showing');
-                }
         });
+
 });
 
 

@@ -1,24 +1,3 @@
-<?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    
-   $post_author = isset($_POST["postath"]) ? $_POST["postath"] : "";    
-   $post_permlink = isset($_POST["postplink"]) ? $_POST["postplink"] : "";
-echo $post_author;
-echo '<br />';
-echo  $post_permlink;
-
-?>
-<script>
- 
-    let postauthor = <?php echo json_encode($post_author); ?>;
-    let postpermlink = <?php echo json_encode($post_permlink); ?>;
-
-
-
-
-</script>
 <div class="modal-body p-4" id="result">
     <div class="section-padding-bottom">
         <div class="container">
@@ -31,7 +10,7 @@ echo  $post_permlink;
                                 <div class="post-thumb-block">
                                     <img src="./images/post/8.png" alt="img" class="img-responsive">
                                 </div>
-                                <h3 class="post-title">Expound the actual teachings</h3>
+                                <h3 class="post-title mod-title"></h3>
                                 <p class="post-entry entry-one">
                                     It is a long established fact that a reader will be distracted by the readable content 
                                     of a page when looking at its layout.  but also the leap into electronic typesetting, 
@@ -67,9 +46,7 @@ echo  $post_permlink;
                                     <div class="author-info">
                                         <span>Post By: </span>
                                         <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
+                                            <a href="#" class="mod-auth"></a>
                                         </h5>
                                     </div>
                                 </div>
