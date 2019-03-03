@@ -8,7 +8,7 @@
                                 <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="mod-close">×</span></button></div>
                                 <h3 class="post-title mod-title"></h3>
                                 <div class="post-thumb-block">
-                                    <img src="./images/post/8.png" alt="img" class="img-responsive mod-thumb">
+                                    <img src="" onerror="this.src='./images/post/8.png'" alt="img" class="img-responsive mod-thumb">
                                 </div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
@@ -24,7 +24,7 @@
                             <div class="details-post-meta-block-wrap">
                                 <div class="post-author-block">
                                     <div class="author-thumb">
-                                        <a href="#"><img src="./images/post/authors/8.png" alt="img" class="img-responsive mod-authThumb"></a>
+                                        <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
                                     </div>
                                     <div class="author-info">
                                         <h5> <a href="#" class="mod-auth"></a></h5>
@@ -130,129 +130,9 @@
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     </div>
                                 </div>
-                                <ul class="comments child-comment">
-                                    <li class="comment">
-                                    <div class="comment-wrap">
-                                        <div class="comment-info">
-                                        <div class="commenter-thumb">
-                                            <img src="./images/post/authors/10.png" class="img-fluid" alt="">
-                                        </div>
-                                        <div class="commenter-info">
-                                            <span class="commenter-name">Ethel N. Myers</span>
-                                            <span class="date">28 Dec 2019</span>
-                                        </div>
-                                        <div class="reply">
-                                            <button type="button" class="reply-button" data-toggle="modal" data-target="#modal-skill26">Reply</button>
-                                            <div class="modal fade" id="modal-skill26" tabindex="-1" role="dialog" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <div class="comment-respond">
-                                                    <h4>Write A Comment</h4>
-                                                    <form action="#">
-                                                        <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                            <input type="text" placeholder="Name" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                            <input type="email" placeholder="Email address" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <div class="form-group">
-                                                                    <textarea placeholder="Comment" class="form-control"></textarea>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <div class="custom-control custom-checkbox">
-                                                                        <div class="custom-checkbox-wrap">
-                                                                            <input type="checkbox" class="custom-control-input" id="customCheck5" name="example1">
-                                                                            <label class="custom-control-label" for="customCheck5">Notify me of follow-up comments by email</label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <button class="btn btn-default">Submit</button>
-                                                    </form>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="comment-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                    </li>
-                                </ul>
+                                
                                 </li>
-                                <li class="comment">
-                                <div class="comment-wrap">
-                                    <div class="comment-info">
-                                    <div class="commenter-thumb">
-                                        <img src="./images/post/authors/11.png" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="commenter-info">
-                                        <span class="commenter-name">Rovert Carlos</span>
-                                        <span class="date">28 Dec 2019</span>
-                                    </div>
-                                    <div class="reply">
-                                        <button type="button" class="reply-button" data-toggle="modal" data-target="#modal-skill27">Reply</button>
-                                        <div class="modal fade" id="modal-skill27" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                            <div class="modal-body">
-                                                <div class="comment-respond">
-                                                <h4>Write A Comment</h4>
-                                                <form action="#">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                            <input type="text" placeholder="Name" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                            <input type="email" placeholder="Email address" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <textarea placeholder="Comment" class="form-control"></textarea>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <div class="custom-control custom-checkbox">
-                                                                    <div class="custom-checkbox-wrap">
-                                                                        <input type="checkbox" class="custom-control-input" id="customCheck6" name="example1">
-                                                                        <label class="custom-control-label" for="customCheck6">Notify me of follow-up comments by email</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <button class="btn btn-default">Submit</button>
-                                                </form>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <div class="comment-body">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                                </li>
+                                
                             </ul>
                         </div>
                         </div>
