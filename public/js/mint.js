@@ -270,10 +270,10 @@ $('.upme').click(function() {
 $('.cmt_bt').click(function () {
     if(username != null) {
         console.log(username)
-        if($('.cmt_body').val() == "0"){
+        if (!$.trim($(".cmt").val())) {
             showModalError(
                 "uh-oh..",
-                "You must Select an appropriate Category",
+                "It seems you forgot to write comment!",
                 ""
                 );
             return false;  
