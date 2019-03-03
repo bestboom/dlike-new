@@ -269,7 +269,7 @@ $('.upme').click(function() {
 //comt
 $('.cmt_bt').click(function () {
     if(username != null) {
-        if (!$.trim($(".cmt").val())) {
+        if (!$.trim($('[name="cmt_body"]').val())) {
             showModalError(
                 "uh-oh..",
                 "It seems you forgot to write comment!",
