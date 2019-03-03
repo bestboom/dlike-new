@@ -39,31 +39,11 @@
                                     <h5>Share this</h5>
                                     <ul class="social-share-list">
                                         <li><a href="#" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li>
-                                            <a href="#" class="twitter">
-                                                <i class="fab fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="google-plus">
-                                                <i class="fab fa-google-plus-g"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="linkdin">
-                                                <i class="fab fa-linkedin-in"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="pinterest">
-                                                <i class="fab fa-pinterest"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="instagram">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                        </li>
+                                        <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#" class="google-plus"> <i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="#" class="linkdin"> <i class="fab fa-linkedin-in"></i></a></li>
+                                        <li> <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a></li>
+                                        <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div><!-- post-share-block -->
                             </div>
@@ -79,29 +59,9 @@
                                 <h4>Leave A Comment</h4>
                                 <form action="#" class="comment-form">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" placeholder="Name" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                            <input type="email" placeholder="Email address" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <textarea placeholder="Comment" class="form-control"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="custom-control custom-checkbox">
-                                                    <div class="custom-checkbox-wrap">
-                                                        <input type="checkbox" class="custom-control-input" id="customCheck3" name="example1">
-                                                        <label class="custom-control-label" for="customCheck3">Notify me of follow-up comments by email</label>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +69,7 @@
                                 </form>
                             </div>
                             <div class="comment-area">
-                                <h4>03 Comments</h4>
+                                <h4>Comments</h4>
                                 <ul class="comments">
                                     <li class="comment">
                                     <div class="comment-wrap">
