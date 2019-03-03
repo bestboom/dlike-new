@@ -219,12 +219,15 @@ $('#content').on("click", ".post_detail", function() {
         let title = res.title;
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
+        let post_description = metadata.body;
+        let post_body = $(post_description).text();
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
         $('.mod-thumb').attr("src", img.src);
         $('.mod-authThumb').attr("src", auth_img);
         $('.mod-tags').html(posttags);
+        $('.mod-post').text(post_body);
 
 
 
