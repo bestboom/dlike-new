@@ -162,6 +162,7 @@ $(document).ready(function(){
                 toastr.error('It seems you forgot to post comment');
                 return false;  
             }
+            
         } 
         else {
             toastr.error('hmm... You must be login!'); 
