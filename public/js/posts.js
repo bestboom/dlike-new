@@ -262,7 +262,7 @@ function apiActionFunction(res, counter) {
 	//}
 }
 
-function getLatestPosts() {
+/*function getLatestPosts() {
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
 		res.forEach(($post, i) => {
 			let metadata;
@@ -406,3 +406,4 @@ function getLatestPosts() {
 		});
 	});
 }
+*/
