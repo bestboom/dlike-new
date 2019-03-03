@@ -7,10 +7,6 @@
                             <div class="single-post-block">
                                 <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="mod-close">×</span></button></div>
                                 <h3 class="post-title mod-title"></h3>
-
-                                <input type="text" name="rated_author" id="postauthor" value="" />
-                                <input type="text" name="rated_permlink" id="postpermlink" value="" />
-
                                 <div class="post-thumb-block">
                                     <img src="" onerror="this.src='./images/post/8.png'" alt="img" class="img-responsive mod-thumb">
                                 </div>
@@ -61,8 +57,11 @@
                         <div class="post-comment-block">
                             <div class="comment-respond">
                                 <h4>Leave A Comment</h4>
-                                <form action="helper/coment.php" class="comment-form">
+                                <form action="helper/comment.php" class="comment-form">
                                     <div class="row">
+                                <input type="text" name="rated_author" id="postauthor" value="" />
+                                <input type="text" name="rated_permlink" id="postpermlink" value="" />
+
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <textarea placeholder="Comment" class="form-control"></textarea>
