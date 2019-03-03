@@ -201,8 +201,11 @@ $('#content').on("click", ".post_detail", function() {
     var postpermlink = $(this).attr("data-permlink");
     var postauthor = $(this).attr("data-author");
 
+    var permlinkD = steem.formatter.commentPermlink(postauthor, postpermlink);
+    console.log(permlinkD);
     $("#postauthor").val(postauthor);
     $("#postpermlink").val(postpermlink);
+
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
         console.log(res);
