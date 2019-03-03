@@ -57,7 +57,7 @@
                         <div class="post-comment-block">
                             <div class="comment-respond">
                                 <h4>Leave A Comment</h4>
-                                <form action="helper/comment.php" class="comment-form">
+                                <form action="helper/comment.php" method="POST" class="comment-form">
                                     <div class="row">
                                 <input type="text" name="rated_author" id="postauthor" value="" />
                                 <input type="text" name="rated_permlink" id="postpermlink" value="" />
