@@ -1,5 +1,5 @@
 $(document).ready(function(){;
-	getLatestPosts();
+	/*getLatestPosts();
 	$(".orderByTopRated").click(function(){
 		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
 		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
@@ -12,7 +12,7 @@ $(document).ready(function(){;
 		$( ".orderByTopRated" ).removeClass( "activeOrderBy" );
 		//showPostSortedByLatest();
 		getLatestPosts();
-	});
+	}); */
 	
 	let $tag, $limit, content = "#content";
 	let query = {
