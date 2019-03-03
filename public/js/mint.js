@@ -136,7 +136,22 @@ $(document).ready(function(){
     });
     }
 
+    //comt
+    $('.cmt_bt').click(function () {
+        if(username != null) {
+            if (!$.trim($('[name="cmt_body"]').val())) {
+                showModalError(
+                    "uh-oh..",
+                    "It seems you forgot to write comment!",
+                    ""
+                    );
+                return false;  
+            }
+        } 
+        else {alert('not login'); return false;
+        };
 
+    });
 });
 // solve me
     var options = {
@@ -264,22 +279,4 @@ function showSliderValue() {
 $('.upme').click(function() {
     let upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
-});
-
-//comt
-$('.cmt_bt').click(function () {
-    if(username != null) {
-        if (!$.trim($('[name="cmt_body"]').val())) {
-            showModalError(
-                "uh-oh..",
-                "It seems you forgot to write comment!",
-                ""
-                );
-            return false;  
-        }
-
-    } 
-    else {alert('not login'); return false;
-    };
-
 });
