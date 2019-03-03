@@ -159,11 +159,13 @@ $(document).ready(function(){
     $('.cmt_bt').click(function () {
         if(username != null) {
             if (!$.trim($('[name="cmt_body"]').val())) {
-                toastr.info('Are you the 6 fingered man?')
+                toastr.error('It seems you forgot to post comment');
                 return false;  
             }
         } 
-        else {alert('not login'); return false;
+        else {
+            toastr.error('hmm... You must be login!'); 
+            return false;
         };
 
     });
