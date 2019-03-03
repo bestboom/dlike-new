@@ -201,6 +201,8 @@ $('#content').on("click", ".post_detail", function() {
     var postpermlink = $(this).attr("data-permlink");
     var postauthor = $(this).attr("data-author");
 
+    $("#postauthor").val(authorname);
+    $("#postpermlink").val(mypermlink);
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
         console.log(res);
@@ -263,7 +265,7 @@ $('.upme').click(function() {
 $('.cmt_bt').click(function () {
     if(username != null) {
         console.log(username)} 
-    else {alert('not login')
+    else {alert('not login'); return false;
     };
 
 });
