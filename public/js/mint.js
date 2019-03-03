@@ -27,11 +27,11 @@ $(document).ready(function(){
     });    
 	function _fetch(apiUrl,webUrl) {
         $.post(apiUrl,{url:webUrl},function(response){
-            console.log(response);
+            //console.log(response);
             
             let res = JSON.parse(response);
             window.location.replace("editDetails.php?url="+encodeURIComponent(res.url)+"&title="+encodeURIComponent(res.title)+"&imgUrl="+encodeURIComponent(res.imgUrl)+"&details="+encodeURIComponent(res.des));
-            console.log("Response array: "+res.imgUrl);
+            //console.log("Response array: "+res.imgUrl);
 
         });
     }
@@ -202,7 +202,6 @@ $('.latest-post-section').on("click", ".hov_me", function() {
             ath: authorname,
             plink: mypermlink
         };
-
         $.ajax({
                 type: "POST",
                 url: "helper/verify_post.php",
@@ -214,7 +213,6 @@ $('.latest-post-section').on("click", ".hov_me", function() {
                                 $('#upvotefail').modal('show');
                             } else {
                                     $('#likes').modal('show');
-
                             }
                         } catch (err) {
                             alert('Sorry. Server response is malformed.')
@@ -242,7 +240,7 @@ $('#content').on("click", ".post_detail", function() {
 
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
-        console.log(res);
+        //console.log(res);
 
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
@@ -268,11 +266,7 @@ $('#content').on("click", ".post_detail", function() {
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_body);
 
-
-
-
         });
-
 });
 
 
@@ -294,6 +288,14 @@ function showSliderValue() {
   rangeBullet.innerHTML = rangeSlider.value;
 }
 $('.upme').click(function() {
-    let upvoteValue = $('#rs-range-line').val();
+    var upvoteValue = $('#rs-range-line').val();
     alert(upvoteValue)
+
+    var votepermlink = $(this).attr("data-permlink");
+    var voteauthor = $(this).attr("data-author");
+    
+    $.post("helper/vote.php",{v_permlink:votepermlink,v_author:voteauthor,author:username,weight:upvoteValue},function (data, success) {
+
+        console.log(data);
+
 });

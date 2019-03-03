@@ -3883,8 +3883,8 @@ button.toast-close-button {
   color: #ffffff;
   font-weight: 800;
   opacity: 0.8;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  filter: alpha(opacity=80);
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=99);
+  filter: alpha(opacity=99);
 }
 #toast-container > div:hover {
   -moz-box-shadow: 0 0 12px #000000;
