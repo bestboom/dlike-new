@@ -289,13 +289,15 @@ function showSliderValue() {
 }
 $('.upme').click(function() {
     var upvoteValue = $('#rs-range-line').val();
+    var weight = parseInt(upvoteValue);
     alert(upvoteValue)
 
     var votepermlink = $(this).attr("data-permlink");
     var voteauthor = $(this).attr("data-author");
-    
+    var voter = username;
+
     if(username != null) {
-    api.vote(username, voteauthor, votepermlink, upvoteValue, function (err, res) {
+    api.vote(voter, voteauthor, votepermlink, weight, function (err, res) {
         console.log(err, res)
         
     });
