@@ -162,7 +162,7 @@ $(document).ready(function(){
                 toastr.error('It seems you forgot to post comment');
                 return false;  
             }
-            
+
         } 
         else {
             toastr.error('hmm... You must be login!'); 
@@ -235,7 +235,7 @@ $('#content').on("click", ".post_detail", function() {
 
     $("#postauthor").val(postauthor);
     $("#postpermlink").val(postpermlink);
-
+    $("#userauth").val(user_auth);
     $("#c_author").val(username);
     $("#c_permlink").val(permlinkD);
 

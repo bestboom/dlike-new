@@ -63,6 +63,8 @@
                                 <input type="hidden" name="post_permlink" id="postpermlink" value="" />
                                 <input type="hidden" name="cmt_author" id="c_author" value="" />
                                 <input type="hidden" name="cmt_permlink" id="c_permlink" value="" />
+                                <input type="hidden" name="user_at" id="userauth" value="" />
+                                
 
                                         <div class="col-md-12">
                                             <div class="form-group">

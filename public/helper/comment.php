@@ -4,12 +4,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-echo  $myCode = '<script>$.cookie("access_token");</script>';
-
-echo 'coment';
-
 if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
 
+	echo $_POST["user_at"];
+	echo '<br>';
 	echo $_POST["post_permlink"];
 	echo '<br>';
 	echo $_POST["post_author"];
