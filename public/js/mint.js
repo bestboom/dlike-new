@@ -200,7 +200,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
 });
 
 //post modal
-$('.latest-post-section').on("click", ".post_detail", function() {
+$('#content').on("click", ".post_detail", function() {
    //alert('called');
     // we want to copy the 'id' from the button to the modal
     var postpermlink = $(this).attr("data-permlink");
