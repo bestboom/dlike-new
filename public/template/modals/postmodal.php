@@ -64,7 +64,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea placeholder="Comment" class="form-control"></textarea>
+                                                <textarea placeholder="Comment" class="form-control" name="cmt_body"></textarea>
                                             </div>
                                         </div>
                                     </div>
