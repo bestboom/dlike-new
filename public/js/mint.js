@@ -297,5 +297,5 @@ $('.upme').click(function() {
     $.post("helper/vote.php",{v_permlink:votepermlink,v_author:voteauthor,author:username,weight:upvoteValue},function (data, success) {
 
         console.log(data);
-
+    });
 });
