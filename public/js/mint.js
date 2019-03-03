@@ -269,7 +269,17 @@ $('.upme').click(function() {
 //comt
 $('.cmt_bt').click(function () {
     if(username != null) {
-        console.log(username)} 
+        console.log(username)
+        if($('.cmt_body').val() == "0"){
+            showModalError(
+                "uh-oh..",
+                "You must Select an appropriate Category",
+                ""
+                );
+            return false;  
+        }
+
+    } 
     else {alert('not login'); return false;
     };
 
