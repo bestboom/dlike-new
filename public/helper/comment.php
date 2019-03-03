@@ -13,5 +13,9 @@ if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
 	echo $_POST["post_author"];
  	echo '<br>';
  	echo $_POST["cmt_body"];
+ 	echo '<br>';
+	echo $_POST["cmt_author"];
+ 	echo '<br>';
+ 	echo $_POST["cmt_permlink"];
 } else {die('Some error');}
 ?>

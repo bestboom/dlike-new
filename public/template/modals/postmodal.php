@@ -61,6 +61,8 @@
                                     <div class="row">
                                 <input type="text" name="post_author" id="postauthor" value="" />
                                 <input type="text" name="post_permlink" id="postpermlink" value="" />
+                                <input type="text" name="cmt_author" id="c_author" value="" />
+                                <input type="text" name="cmt_permlink" id="c_permlink" value="" />
 
                                         <div class="col-md-12">
                                             <div class="form-group">

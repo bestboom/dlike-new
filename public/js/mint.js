@@ -200,11 +200,13 @@ $('#content').on("click", ".post_detail", function() {
     // we want to copy the 'id' from the button to the modal
     var postpermlink = $(this).attr("data-permlink");
     var postauthor = $(this).attr("data-author");
-
     var permlinkD = steem.formatter.commentPermlink(postauthor, postpermlink);
-    console.log(permlinkD);
+
     $("#postauthor").val(postauthor);
     $("#postpermlink").val(postpermlink);
+
+    $("#c_author").val(username);
+    $("#c_permlink").val(permlinkD);
 
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
