@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    if(username != null) {console.log(username)} else {console.log('not login')};
 
 	let $urlfield,
         $editPost,
