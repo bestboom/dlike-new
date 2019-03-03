@@ -137,11 +137,6 @@ $(document).ready(function(){
     }
 
 
-
-        steem.api.getContent(postauthor , postpermlink, function(err, res) {
-            console.log(res);
-        });
-
 });
 // solve me
     var options = {
@@ -205,6 +200,12 @@ $('#content').on("click", ".post_detail", function() {
     // we want to copy the 'id' from the button to the modal
     var postpermlink = $(this).attr("data-permlink");
     var postauthor = $(this).attr("data-author");
+
+
+    steem.api.getContent(postauthor , postpermlink, function(err, res) {
+            console.log(res);
+        });
+
 
         var datav = {
             postath: postauthor,
