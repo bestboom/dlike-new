@@ -269,7 +269,6 @@ $('.upme').click(function() {
 //comt
 $('.cmt_bt').click(function () {
     if(username != null) {
-        console.log(username)
         if (!$.trim($(".cmt").val())) {
             showModalError(
                 "uh-oh..",
