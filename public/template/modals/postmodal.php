@@ -5,14 +5,13 @@
                 <div class="col">
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
-                                <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="mod-close">×</span></button></div>
                                 <h3 class="post-title mod-title"></h3>
-                                <div class="post-thumb-block mod-thumb">
-                                    <img src="./images/post/8.png" alt="img" class="img-responsive">
+                                <div class="post-thumb-block">
+                                    <img src="./images/post/8.png" alt="img" class="img-responsive mod-thumb">
                                 </div>
                                 <h3 class="post-title"></h3>
-                                <p class="post-entry mod-post">
-                                </p>
+                                <p class="post-entry mod-post"></p>
                             </div>
                         </div>
                     </div>
@@ -25,9 +24,7 @@
                             <div class="details-post-meta-block-wrap">
                                 <div class="post-author-block">
                                     <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/8.png" alt="img" class="img-responsive mod-authThumb">
-                                        </a>
+                                        <a href="#"><img src="./images/post/authors/8.png" alt="img" class="img-responsive mod-authThumb"></a>
                                     </div>
                                     <div class="author-info">
                                         <h5> <a href="#" class="mod-auth"></a></h5>
@@ -41,11 +38,7 @@
                                 <div class="post-share-block">
                                     <h5>Share this</h5>
                                     <ul class="social-share-list">
-                                        <li>
-                                            <a href="#" class="faceboox">
-                                                <i class="fab fa-facebook-f"></i>
-                                            </a>
-                                        </li>
+                                        <li><a href="#" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
                                         <li>
                                             <a href="#" class="twitter">
                                                 <i class="fab fa-twitter"></i>
