@@ -16,5 +16,6 @@ if (isset($_POST["permlink"]) && isset($_POST["author"])){
     $response["success"] = true;
     $response["message"] = "data Successfully";
 }
+print json_encode($response);
 
 ?>
