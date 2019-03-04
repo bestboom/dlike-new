@@ -47,7 +47,7 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 	
 	$body = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
-		/*
+		
         $json_php_array = $json_metadata;
         $json_meta = json_encode($json_php_array);
         $postOptions = [
@@ -90,10 +90,10 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 <? 	} else {
 		echo $state->error_description;
 	} 
-	*/
+	
 
 
-
+/*
 	if (empty($errors)) {
     $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $category, $max_accepted_payout, $percent_steem_dollars);
     $state = $postGenerator->broadcast($publish);
@@ -106,5 +106,5 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 <? 	} else {
 		echo $state->error_description;
 	} 
-	
+	*/
 ?>

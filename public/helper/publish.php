@@ -4,11 +4,11 @@ namespace snaddyvitch_dispenser\operations;
 
 class makePost
 {
-    /*public $postFields = [];
+    public $postFields = [];
     public function publish($publishOptions){
         $this->postFields = $publishOptions;
-    }*/
-
+    }
+    /*
     public function createPost($title, $body, $json_php_array, $permalink, $beneficiaries,$category,$max_accepted_payout)
     {
         $json_meta = json_encode($json_php_array);
@@ -43,8 +43,8 @@ class makePost
         //print($fixed_str);
         return $fixed_str;
     }
-    
-    public function broadcast($post)
+    */
+    public function broadcast($postFields)
     {
 
         $curl = curl_init();
@@ -55,7 +55,7 @@ class makePost
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
-            CURLOPT_POSTFIELDS => $post,
+            CURLOPT_POSTFIELDS => json_encode($postFields),
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_HTTPHEADER => array(
