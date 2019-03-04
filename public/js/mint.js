@@ -320,14 +320,21 @@ $('.upme').click(function() {
                         if(response.error == true) {
                             toastr.error('There is some issue!'); 
                             $('#upvoteModal').modal('hide');
+                            $('#upvoting-status').hide(); 
+                            $('#upvoting-bar').show();
                             return false;
                         } else {
                             //$('#vote_icon').css("color", "RED");
                             toastr.success('upVote done successfully!'); 
                             $('#upvoteModal').modal('hide');
+                            $('#upvoting-status').hide(); 
+                            $('#upvoting-bar').show();
                             }
                         } catch (err) {
                             toastr.error('Sorry. Server response is malformed.');
+                            $('#upvoteModal').modal('hide');
+                            $('#upvoting-status').hide(); 
+                            $('#upvoting-bar').show();
                     }
                 },
                 //error: function(xhr, textStatus, error){

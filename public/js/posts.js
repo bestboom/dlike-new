@@ -118,7 +118,7 @@ $(document).ready(function(){
 				let voterList = $post.active_votes;
 				console.log(voterlist);
 				for (let j = 0; j < voterList.length; j++) {
-					if (voterList[j].voter == username) { console.log('this username ahs upvoted this post');}
+					//if (voterList[j].voter == username) { console.log('this username ahs upvoted this post');}
 				}
 
 				//start posts here
