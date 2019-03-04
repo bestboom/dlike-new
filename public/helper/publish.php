@@ -1,11 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-if(isset($_COOKIE['access_token'])){
-$myval = $_COOKIE['access_token'];
-    }
 
 namespace snaddyvitch_dispenser\operations;
 
@@ -63,7 +56,7 @@ class makePost
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_HTTPHEADER => array(
                 "accept: application/json",
-                "authorization: " . $myval,
+                "authorization: " . $_COOKIE['access_token'],
                 "cache-control: no-cache",
                 "content-type: application/json",
             ),

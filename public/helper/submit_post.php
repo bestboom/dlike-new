@@ -1,26 +1,22 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once "helper/publish.php";
 include('../functions/main.php');
 
 $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-	echo $url = $_POST['exturl'];
-	echo '<br>';
-	echo $urlImage = $_POST["image"];
-	echo '<br>';
-	echo $title = $_POST['title'];
-	echo '<br>';
+
+	$url = $_POST['exturl'];
+	$urlImage = $_POST["image"];
+	$title = $_POST['title'];
 	$_POST['benefactor'] = "dlike:9,dlike.fund:1";
+	$cat = $_POST['category'];
+	$_POST['tags'] = "dlike," . 'dlike-' . $cat . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
-	echo $cat = $_POST['category'];
-	echo '<br>';
-	echo $_POST['tags'] = "dlike," . 'dlike-' . $cat . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
-	echo '<br>';
 	$max_accepted_payout = '900.000 SBD';
 	$percent_steem_dollars =10000;
 	if(isset($_POST['reward_option'])){
@@ -32,11 +28,10 @@ error_reporting(E_ALL);
         	$percent_steem_dollars = 10000;
     	}
 	}
-	echo $max_accepted_payout;
-	echo $title = validationData($title);
-	echo '<br>';
-	echo $permlink = validationData(clean($_POST['title']));
-	echo '<br>';
+
+	$max_accepted_payout;
+	$title = validationData($title);
+	$permlink = validationData(clean($_POST['title']));
 	
 	$json_metadata = [
     "community" => "dlike",
