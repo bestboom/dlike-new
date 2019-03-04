@@ -18,7 +18,7 @@ class makeVote
             ]
         ];
 
-        $fixed_str = str_replace(json_encode($post));
+        $fixed_str = json_encode($post);
         //print($fixed_str);
         return $fixed_str;
     }
