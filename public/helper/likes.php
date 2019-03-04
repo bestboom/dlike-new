@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
 
 echo '<br>';
 */
-$sqlt = "SELECT id, author, permlink, likes, rating FROM PostLikes";
+$sqlt = "SELECT id, author, permlink, likes, rating FROM PostsLikes";
 $result = $conn->query($sqlt);
 
 if ($result->num_rows > 0) {
