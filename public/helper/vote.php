@@ -9,30 +9,16 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-$response = [];
-if (isset($_POST["permlink"]) && isset($_POST["author"])){
 
-	$v_weight = validator($_POST["weight"]);
-    $p_author = validator($_POST["v_author"]);
-    $p_permlink = validator($_POST["v_permlink"]);
-    $user = validator($_POST["author"]);
+if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
+
+	echo $v_weight = validator($_POST["vote_value"]);
+    echo $v_author = validator($_POST["v_author"]);
+    echo $v_permlink = validator($_POST["v_permlink"]);
     echo $v_weight = (int) $v_weight;
-
-    if (!empty($user)){
-
-    	$voteOptions = [
-            "operations"=> [
-                ["vote", [
-                    "voter"=> $user,
-                    "author"=> $p_author,
-                    "permlink"=> $p_permlink,
-                    "weight"=> $v_weight
-                ]]
-            ]
-        ];
 
 
 }
-print json_encode($response);
+
 
 ?>

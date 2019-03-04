@@ -1,6 +1,10 @@
                                                 <div class="modal-body">
                                                     <div class="container">
                                                         <div class="row d-flex justify-content-around">
+                                                            <form action="helper/vote.php" method="POST">
+                                                                <input type="hidden" name="v_author" id="vote_author" value="" />
+                                                                <input type="hidden" name="v_permlink" id="vote_permlink" value="" />
+                                                                <input type="hidden" name="vote_value" id="vote_weight" value="" />
                                                             <div class="col-sm-2 nopadding"><i class="fas fa-chevron-circle-up upme"></i></div>    
                                                             <div class="col-sm-8 nopadding">
                                                                 <div class="row d-flex justify-content-around">
@@ -11,6 +15,8 @@
                                                             <div class="col-sm-2 nopadding">
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
                                                             </div>
+
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>

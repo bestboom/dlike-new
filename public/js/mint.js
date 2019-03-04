@@ -154,7 +154,6 @@ $(document).ready(function(){
       "hideMethod": "fadeOut"
     }
 
-
     //comt
     $('.cmt_bt').click(function () {
         if(username != null) {
@@ -163,8 +162,7 @@ $(document).ready(function(){
                 return false;  
             }
 
-        } 
-        else {
+        } else {
             toastr.error('hmm... You must be login!'); 
             return false;
         };
@@ -270,8 +268,6 @@ $('#content').on("click", ".post_detail", function() {
         });
 });
 
-
-
 // hov element
 $('.hov-item').hover(function() {
      $(this).find('.hov-title').fadeIn(200);
@@ -291,16 +287,17 @@ function showSliderValue() {
 $('.upme').click(function() {
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
-    alert(upvoteValue)
-
+    //alert(upvoteValue)
     var votepermlink = $(this).attr("data-permlink");
     var voteauthor = $(this).attr("data-author");
-    var voter = username;
+
+    $("#vote_author").val(voteauthor);
+    $("#vote_permlink").val(votepermlink);
+    $("#vote_weight").val(weight);
 
     if(username != null) {
-    api.vote(voter, voteauthor, votepermlink, weight, function (err, res) {
-        console.log(err, res)
-        
-    });
+    } else {
+        toastr.error('hmm... You must be login!'); 
+        return false;
     };
 });
