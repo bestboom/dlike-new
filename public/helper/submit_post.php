@@ -14,7 +14,7 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 	$urlImage = $_POST["image"];
 	$title = $_POST['title'];
 	$_POST['benefactor'] = "dlike:9,dlike.fund:1";
-	echo $category = $_POST['category'];
+	$category = strtolower($_POST['category']);
 	$_POST['tags'] = "dlike," . 'dlike-' . $category . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
 	$max_accepted_payout = '900.000 SBD';
@@ -30,7 +30,7 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 	}
 
 	$title = validationData($title);
-	echo $permlink = validationData(clean($_POST['title']));
+	$permlink = validationData(clean($_POST['title']));
 
 	
 	$json_metadata = [
