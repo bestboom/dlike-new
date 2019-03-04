@@ -116,7 +116,7 @@ $(document).ready(function(){
                 ""
                 );
             return false;
-        }
+        } else { _show($loader);}
     });
 
     function showModalError(title, content, callback) {
@@ -297,7 +297,7 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 $('.upme').click(function() {
 
     if(username != null) {
-    $('#upvoting-bar').replaceWith('');
+    $('#upvoting-bar').replaceWith($('#upvoting-status');
     //$('#upvoting-status').show();
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
