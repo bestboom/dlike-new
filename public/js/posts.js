@@ -117,9 +117,9 @@ $(document).ready(function(){
 				//voterlist
 				let voterList = $post.active_votes;
 				console.log(voterlist);
-				for (let j = 0; j < voterList.length; j++) {
+				//for (let j = 0; j < voterList.length; j++) {
 					//if (voterList[j].voter == username) { console.log('this username ahs upvoted this post');}
-				}
+				//}
 
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
