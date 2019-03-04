@@ -14,7 +14,7 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 	$urlImage = $_POST["image"];
 	$title = $_POST['title'];
 	$_POST['benefactor'] = "dlike:9,dlike.fund:1";
-	$cat = $_POST['category'];
+	$category = $_POST['category'];
 	$_POST['tags'] = "dlike," . 'dlike-' . $cat . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
 	$max_accepted_payout = '900.000 SBD';

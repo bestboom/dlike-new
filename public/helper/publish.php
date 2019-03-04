@@ -16,11 +16,11 @@ class makePost
                     "title" => $title,
                     "body" => $body,
                     "json_metadata" => $json_meta,
-                    "author" => $_SESSION['user'],
+                    "author" => $_COOKIE['username'],
                     "permlink" => $permalink
                 ]],
                 ["comment_options", [
-                    "author" => $_SESSION['user'],
+                    "author" => $_COOKIE['username'],
                     "permlink" => $permalink,
                     "max_accepted_payout" => $max_accepted_payout,
                     "percent_steem_dollars" => 10000,
