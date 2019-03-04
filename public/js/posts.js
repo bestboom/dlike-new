@@ -163,12 +163,13 @@ $(document).ready(function(){
 			
 			let author = $post.author;
 			let permlink = $post.permlink;
+			let json_metadata, comment;
 			let comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
       		showMainComment(0, result);
     		});
 
-
+    		//check if voted
     		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
                 //console.log(result);
                     if(result === Array) {
@@ -188,7 +189,7 @@ $(document).ready(function(){
                 	}
                 }                        
     		});
-
+    		// comments section
 			function showMainComment(i, commentsArray) {
 				$comment = commentsArray[i];
 				//console.log($comment);
