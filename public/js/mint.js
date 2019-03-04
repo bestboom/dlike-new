@@ -116,7 +116,7 @@ $(document).ready(function(){
                 ""
                 );
             return false;
-        } else { _show($loader);}
+        } 
     });
 
     function showModalError(title, content, callback) {

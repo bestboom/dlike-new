@@ -36,11 +36,15 @@
 
 							$checkPost = "SELECT author, permlink, likes, rating FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
 								$result = mysqli_query($conn, $checkPost);
-									if (mysqli_num_rows($result) > 0) {
-										$updatePost = "UPDATE PostsLikes SET likes = likes + 1, rating = rating + '$rating' WHERE author = '$author' AND permlink = '$permlink' AND lastUpdatedDate = '".date("Y-m-d h:m:s")."'";
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											$old_likes = $row['likes'];
+											$old_rating = $row['rating'];
+										$updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$old_rating' + '$rating' WHERE author = '$author' AND permlink = '$permlink' AND lastUpdatedDate = '".date("Y-m-d h:m:s")."'";
 										$updatePostQuery = $conn->query($updatePost);
 											/*if ($updatePostQuery === TRUE) {
    													echo "Record updated successfully"; } else { echo "Record could not updated some error"; }*/
+   										}			
     								} else {
     									/*echo "post not exists";*/
     									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
