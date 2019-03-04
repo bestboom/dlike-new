@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if(isset($_COOKIE['access_token'])){
-echo $myval = $_COOKIE['access_token']);
+echo $myval = $_COOKIE['access_token'];
 	}
 
 if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
