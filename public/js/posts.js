@@ -18,7 +18,7 @@ $(document).ready(function(){
 	};
 
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
-		console.log(res);
+		//console.log(res);
 		res.forEach(($post, i) => {
 			let metadata;
 			if ($post.json_metadata && $post.json_metadata.length > 0){
@@ -112,6 +112,13 @@ $(document).ready(function(){
 						});
 						$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
 					});
+				}
+
+				//voterlist
+				let voterList = $post.active_votes;
+				console.log(voterlist);
+				for (let j = 0; j < voterList.length; j++) {
+					if (voterList[j].voter == username { console.log('this username ahs upvoted this post');}
 				}
 
 				//start posts here
