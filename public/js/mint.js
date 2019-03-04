@@ -297,7 +297,7 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 $('.upme').click(function() {
 
     if(username != null) {
-    $('#upvoting-bar').replaceWith($('#upvoting-status'));
+    $('#upvoting-bar').replaceWith('');
     //$('#upvoting-status').show();
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
@@ -340,12 +340,4 @@ $('.upme').click(function() {
         toastr.error('hmm... You must be login!'); 
         return false;
     };
-});
-
-//share me
-$('#share').click(function() {
-  if(username != null) {
-    console.log('sharing')
-  } else {  toastr.error('hmm... You must be login!'); 
-            return false;};  
 });
