@@ -321,7 +321,7 @@ $('.upme').click(function() {
                             $('#upvoteModal').modal('hide');
                             return false;
                         } else {
-                            $('#vote_icon' + v_permlink + v_authorname).css("color", "RED");
+                            $('#vote_icon').css("color", "RED");
                             toastr.success('upVote done successfully!'); 
                             $('#upvoteModal').modal('hide');
                             }
