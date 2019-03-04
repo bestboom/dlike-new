@@ -165,14 +165,24 @@ $(document).ready(function(){
 			let permlink = $post.permlink;
 			let comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
-      		//console.log("commentsArray: ");
       		console.log(result);
     		});
 
 
     		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
-    			console.log('voterListresult');
                 console.log(result);
+                    if(result === Array) {
+                    	var voterList = result;
+                   	} else {
+                       	var voterList = [];
+                    }
+                    if(!(voterList === Array)) {
+                       	voterList = [];
+                    }
+                    var voterList = result;
+                for (let j = 0; j < voterList.length; j++) {
+                	if (voterList[j].voter == username) {console.log('this username has upvoted this post')}
+                }                        
     		});
 
 			//voterlist
