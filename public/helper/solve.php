@@ -38,8 +38,8 @@
 								$result = mysqli_query($conn, $checkPost);
 									if ($result->num_rows > 0) {
 										while($row = $result->fetch_assoc()) {
-											$old_likes = $row['likes'];
-											$old_rating = $row['rating'];
+											echo $old_likes = $row['likes'];
+											echo $old_rating = $row['rating'];
 										$updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$old_rating' + '$rating' WHERE author = '$author' AND permlink = '$permlink' AND lastUpdatedDate = '".date("Y-m-d h:m:s")."'";
 										$updatePostQuery = $conn->query($updatePost);
 											/*if ($updatePostQuery === TRUE) {
