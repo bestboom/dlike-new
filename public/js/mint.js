@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     _click($add_data, function() {
     	let url = $("#url_field").val();
-    	if(url == '') { $("#url_field").css("border-color", "RED"); } else {
+    	if(url == '') { $("#url_field").css("border-color", "RED"); toastr.error('phew... You forgot to enter URL');} else {
 
     	_hide($add_data_f);
         _show($loader);
@@ -21,7 +21,7 @@ $(document).ready(function(){
         let verifyUrl = getDomain(url);
         	if(isValidURL(url)){ 
         		if(verifyUrl.match(/steemit.com/g)) { 
-        		alert('steem url not allowed'); } else{ _fetch("helper/index.php",url); return; }
+        		 toastr.error('phew... Steem URL not allowed'); } else{ _fetch("helper/index.php",url); return; }
         	}
     	}
     });    
@@ -40,6 +40,7 @@ $(document).ready(function(){
         if(RegExp.test(url)) {
             return true;
         } else {
+            toastr.error('phew... Enter a valid url');
             return false;
         }
     }
