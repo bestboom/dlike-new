@@ -166,7 +166,6 @@ $(document).ready(function(){
             toastr.error('hmm... You must be login!'); 
             return false;
         };
-
     });
 });
 // solve me
