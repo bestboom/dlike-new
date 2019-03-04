@@ -88,7 +88,10 @@
                                             <span class="commenter-name">Lisa Parsons</span>
                                             <span class="date">28 Dec 2019</span>
                                         </div>
-                                        
+                                        <div class="reply">
+                                            <button type="button" class="reply-button">Reply</button>
+                                            
+                                        </div>
                                     </div>
                                     </div>
                                     <div class="comment-body">

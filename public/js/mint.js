@@ -204,7 +204,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
             $.ajax({
                 type: "POST",
                 url: "helper/verify_post.php",
-                data: datat
+                data: datat,
                 success: function(data) {
                         try {
                             var response = JSON.parse(data)
@@ -311,7 +311,7 @@ $('.upme').click(function() {
             $.ajax({
                 type: "POST",
                 url: "helper/vote.php",
-                data: datav
+                data: datav,
                 success: function(data) {
                     console.log(data);
                     try {
