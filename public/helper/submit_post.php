@@ -1,8 +1,14 @@
 <?php
+
+require_once "helper/publish.php";
+include('../functions/main.php');
+
+$postGenerator = new snaddyvitch_dispenser\operations\makePost();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-include('../functions/main.php');
+
 	echo $url = $_POST['exturl'];
 	echo '<br>';
 	echo $urlImage = $_POST["image"];
@@ -10,9 +16,7 @@ include('../functions/main.php');
 	echo $title = $_POST['title'];
 	echo '<br>';
 	$_POST['benefactor'] = "dlike:9,dlike.fund:1";
-	echo '<br>';
-	echo $post = "<center><img src='" . $urlImage . "' alt='share-with-dlike' /></center>  \n\n#####\n\n " . $_POST['post'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/special/dlike-logo.jpg'></a></center>";
-	echo '<br>';
+
 	echo $cat = $_POST['category'];
 	echo '<br>';
 	echo $_POST['tags'] = "dlike," . 'dlike-' . $cat . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
@@ -46,5 +50,7 @@ include('../functions/main.php');
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
 	];
 	
+	echo $post = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['post'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
+echo $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 ?>
