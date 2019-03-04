@@ -39,13 +39,12 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
     "format" => "html",
     "image" => $urlImage,
     "url" => $url,
-    "body" => $_POST["post"],    
+    "body" => $_POST["description"],    
     "category" => $_POST['category'],
-    "scheduled_at" => $_POST['scheduled'],
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
 	];
 	
-	echo $post = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['post'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+	echo $post = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
 echo $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 ?>

@@ -79,7 +79,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "LifeStyle");
                                         	</div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" name="description" name="post" placeholder="Description"><?php print $des; ?></textarea>
+                                            <textarea class="form-control" rows="5" name="description" placeholder="Description"><?php print $des; ?></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-default shareme">SUBMIT</button>
                                     </form>
