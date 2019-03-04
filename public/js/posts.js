@@ -18,7 +18,7 @@ $(document).ready(function(){
 	};
 
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
-		console.log(res);
+		//console.log(res);
 		res.forEach(($post, i) => {
 			let metadata;
 			if ($post.json_metadata && $post.json_metadata.length > 0){
@@ -51,6 +51,7 @@ $(document).ready(function(){
 
 				//get meta tags
 				let metatags = metadata.tags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
+				let category = metadata.category;
 
 				//Get the body
 				let body;
@@ -134,7 +135,7 @@ $(document).ready(function(){
 					'\n' + 
 					'</div>\n' +
 					'\n' +
-					'<div class="post-comments"><span class="post-meta">Cryptocurrency</span></div>\n' +
+					'<div class="post-comments"><span class="post-meta">' + category + '</span></div>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +

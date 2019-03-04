@@ -1884,6 +1884,10 @@ color: #4c3d3d;
 }
 #upvoteModal{top: 35%;}
 .upvoting{cursor: pointer;}
+#upvoting-statu{color: #fff;
+    display: none;
+    font-weight: 800;
+    justify-content: center;}
 
 .main_offer{margin-top: -40px;}
 .main_offer .daily{ max-height: 50%; width:100%;

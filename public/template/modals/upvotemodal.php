@@ -15,6 +15,6 @@
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
                                                             </div>
                                                         </div>
-                                                        <div class="row d-flex justify-content-center" id="upvoting-status" style="display: none;"><h4>UPVOTING ....</h4></div>
+                                                        <div class="row" id="upvoting-status"><h4>UPVOTING ........    </h4></div>
                                                     </div>
                                                 </div>
