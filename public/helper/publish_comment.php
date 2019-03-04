@@ -25,7 +25,7 @@ class makeComment
                 ]],
                 ["comment_options", [
                     "author" => $_COOKIE['username'],
-                    "permlink" => $permalink,
+                    "permlink" => $permlink,
                     "max_accepted_payout" => $max_accepted_payout,
                     "percent_steem_dollars" => 10000,
                     "allow_votes" => true,
