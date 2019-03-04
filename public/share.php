@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-9">
                     <div class="contact-form-wrap">
-                        <form class="contact-form">
+                        <form class="contact-form share-form">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL">
