@@ -295,10 +295,7 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 });
 
 $('.upme').click(function() {
-    if(username != null) {
-    $('#upvoting-bar').replaceWith('');
-    $('#upvoting-status').show();
-    var upvoteValue = $('#rs-range-line').val();
+        var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
     //alert(upvoteValue)
     var v_authorname = $("#vote_author").val();
@@ -307,7 +304,9 @@ $('.upme').click(function() {
         v_permlink: v_permlink,
         v_author: v_authorname,
         vote_value: upvoteValue
-    };        
+    };
+    
+    if(username != null) {        
             $.ajax({
                 type: "POST",
                 url: "helper/vote.php",
