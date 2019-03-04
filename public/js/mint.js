@@ -307,7 +307,7 @@ $('.upme').click(function() {
     };
 
     if(username != null) { 
-    $('#upvoting-bar').replaceWith('');
+    $('#upvoting-bar').hide();
     $('#upvoting-status').show();         
             $.ajax({
                 type: "POST",
@@ -345,6 +345,7 @@ $('.upme').click(function() {
             });
     } else {
         toastr.error('hmm... You must be login!'); 
+        $('#upvoteModal').modal('hide');
         return false;
     };
 });

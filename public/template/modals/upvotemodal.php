@@ -1,6 +1,7 @@
                                                 <div class="modal-body">
                                                     <div class="container">
-                                                        <div class="row d-flex justify-content-around" id="upvoting-bar">
+                                                        <div id="upvoting-bar">
+                                                        <div class="row d-flex justify-content-around">
                                                                 <input type="hidden" name="v_author" id="vote_author" value="" />
                                                                 <input type="hidden" name="v_permlink" id="vote_permlink" value="" />
                                                                 <input type="hidden" name="vote_value" id="vote_weight" value="" />
@@ -14,6 +15,7 @@
                                                             <div class="col-sm-2 nopadding">
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
                                                             </div>
+                                                        </div>
                                                         </div>
                                                         <div class="row" id="upvoting-status"><h4>UPVOTING ........    </h4></div>
                                                     </div>
