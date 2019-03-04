@@ -343,8 +343,9 @@ $('.upme').click(function() {
 });
 
 //share me
-$('.upme').click(function() {
+$('#share').click(function() {
   if(username != null) {
+    console.log('sharing')
   } else {  toastr.error('hmm... You must be login!'); 
             return false;};  
 });
