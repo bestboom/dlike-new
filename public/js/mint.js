@@ -314,13 +314,13 @@ $('.upme').click(function() {
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
-                            toastr.error('There is soem issue!'); 
+                            toastr.error('There is some issue!'); 
                             return false;
                         } else {
-                            toastr.success('upVte done successfully!'); 
+                            toastr.success('upVote done successfully!'); 
                             }
                         } catch (err) {
-                            alert('Sorry. Server response is malformed.')
+                            toastr.error('Sorry. Server response is malformed.');
                     }
                 }
             });
