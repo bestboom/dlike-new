@@ -241,7 +241,7 @@ $('#content').on("click", ".post_detail", function() {
 
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
-        console.log(res);
+        //console.log(res);
 
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
