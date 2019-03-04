@@ -9,14 +9,14 @@ class makePost
         $this->postFields = $publishOptions;
     }*/
 
-    public function createPost($title, $body, $json_php_array, $permalink, $beneficiaries,$category,$max_accepted_payout)
+    public function createPost($title, $body, $json_php_array, $permalink, $beneficiaries,$parent_category,$max_accepted_payout, $percent_steem_dollars)
     {
         $json_meta = json_encode($json_php_array);
         $post = [
             "operations" => [
                 ["comment", [
                     "parent_author" => "",
-                    "parent_permlink" => $category,
+                    "parent_permlink" => $parent_category,
                     "title" => $title,
                     "body" => $body,
                     "json_metadata" => $json_meta,
@@ -27,7 +27,7 @@ class makePost
                     "author" => $_COOKIE['username'],
                     "permlink" => $permalink,
                     "max_accepted_payout" => $max_accepted_payout,
-                    "percent_steem_dollars" => 10000,
+                    "percent_steem_dollars" => $percent_steem_dollars,
                     "allow_votes" => true,
                     "allow_curation_rewards" => true,
                     "extensions" => []
