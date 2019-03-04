@@ -162,6 +162,7 @@ $(document).ready(function(){
 				getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 			
 			let author = $post.author;
+			console.log(author);
 			let permlink = $post.permlink;
 			//let _comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
@@ -169,7 +170,7 @@ $(document).ready(function(){
       		console.log(result);
     		});
 
-    		
+
 
     		}
 		});
