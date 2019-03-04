@@ -58,11 +58,11 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
                     "body" => $body,
                     "json_metadata" => $json_meta,
                     "author" => $_COOKIE['username'],
-                    "permlink" => $permalink
+                    "permlink" => $permlink
                 ]],
                 ["comment_options", [
                     "author" => $_COOKIE['username'],
-                    "permlink" => $permalink,
+                    "permlink" => $permlink,
                     "max_accepted_payout" => $max_accepted_payout,
                     "percent_steem_dollars" => $percent_steem_dollars,
                     "allow_votes" => true,
@@ -73,7 +73,7 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
         ];
 
         if ($beneficiaries != []) {
-            $post["operations"][1][1]["extensions"] = [[0, ["beneficiaries" => $beneficiaries]]];
+            $postOptions["operations"][1][1]["extensions"] = [[0, ["beneficiaries" => $beneficiaries]]];
         }
 
 
