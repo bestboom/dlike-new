@@ -311,6 +311,7 @@ $('.upme').click(function() {
                 url: "helper/vote.php",
                 data: datav,
                 success: function(data) {
+                    console.log(data);
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
@@ -322,6 +323,9 @@ $('.upme').click(function() {
                         } catch (err) {
                             toastr.error('Sorry. Server response is malformed.');
                     }
+                }
+                error: function(){
+                    alert("Error detected");
                 }
             });
 
