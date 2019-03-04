@@ -165,8 +165,8 @@ $(document).ready(function(){
 			let permlink = $post.permlink;
 			let comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
-      		console.log("commentsArray: ");
-      		//console.log(result);
+      		//console.log("commentsArray: ");
+      		console.log(result);
     		});
 
 
