@@ -42,9 +42,6 @@ if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
 <? 	} else {
 		echo $state->error_description;
 	} 
-	
-?>
-
 
 } else {die('Some error');}
 ?>
