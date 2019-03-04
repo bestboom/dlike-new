@@ -295,7 +295,6 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 });
 
 $('.upme').click(function() {
-
     if(username != null) {
     $('#upvoting-bar').replaceWith('');
     $('#upvoting-status').show();
