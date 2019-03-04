@@ -208,6 +208,9 @@ $(document).ready(function(){
 					'<div class="comment-wrap">\n' +
 					'<div class="comment-info">\n' +
 					'<div class="commenter-thumb"><img src="./images/post/authors/9.png" class="img-fluid" alt=""></div>\n' +
+					'<div class="commenter-info">\n' +
+					'<span class="commenter-name">Lisa Parsons</span>'
+					'</div>\n' +
 					'</div>\n' +
 					'<div class="comment-body">'+$commentbody+'</div>\n' +
 					'</div>\n' +
