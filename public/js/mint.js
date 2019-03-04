@@ -337,7 +337,15 @@ $('.upme').click(function() {
                 //}
             });
     } else {
+
+    };
+});
         toastr.error('hmm... You must be login!'); 
         return false;
-    };
+//share me
+$('.upme').click(function() {
+  if(username != null) {
+    console.log('sharing')
+  } else {  toastr.error('hmm... You must be login!'); 
+            return false;}  ;
 });

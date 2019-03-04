@@ -884,6 +884,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
       outline: 0;
       -webkit-box-shadow: none;
       box-shadow: none; }
+.share-form{padding-top: 50px !important;}    
 
 /*
 |----------------------------------------------------------------------------
@@ -2962,14 +2963,16 @@ opacity:0.9;
     color: #1652f0;
     display: block;
     margin-bottom: 5px; }
-  .post-style-two .post-tags {+
+  .post-style-two .post-tags {
     font-size: 14px;
     color: #1652f0;
     display: block;
     margin-bottom: 5px; 
     white-space: nowrap;
     overflow: hidden;
+    border-bottom: 1px solid #eee;
     text-overflow: ellipsis;}  
+    .post-style-two .post-tags a {padding-right: 4px;}
   .post-style-two .post-title {
     margin-bottom: 10px; 
     white-space: nowrap;
