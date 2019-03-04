@@ -10,7 +10,7 @@ function validator($data){
 }
 
 
-if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
+//if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
 
 	echo $v_weight = validator($_POST["vote_value"]);
     echo $v_author = validator($_POST["v_author"]);
@@ -33,7 +33,6 @@ if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
         		]));
 		}
 
-}
-
+//
 
 ?>
