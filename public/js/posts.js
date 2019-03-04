@@ -190,7 +190,7 @@ $(document).ready(function(){
                 }                        
     		});
     		// comments section
-    		let json_metadata;
+    		let json_metadata = metadata;
 			function showMainComment(i, commentsArray) {
 				$comment = commentsArray[i];
 				//console.log($comment);
