@@ -324,8 +324,10 @@ $('.upme').click(function() {
                             toastr.error('Sorry. Server response is malformed.');
                     }
                 }
-                error: function(){
-                    alert("Error detected");
+                error: function(xhr, textStatus, error){
+                        console.log(xhr.statusText);
+                        console.log(textStatus);
+                        console.log(error);
                 }
             });
 
