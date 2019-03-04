@@ -160,18 +160,18 @@ $(document).ready(function(){
 					'</div>\n' +
 				'</article></div>');
 				getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
-			}
+			
 			let author = $post.author;
 			let permlink = $post.permlink;
-			let _comment = [];
+			//let _comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
-      		console.log("commentsArray: ");
+      		//console.log("commentsArray: ");
       		console.log(result);
-        	showMainComment(0, result);
-        	console.log(result);
     		});
 
+    		
 
+    		}
 		});
 	});
 
