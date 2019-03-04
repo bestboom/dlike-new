@@ -170,11 +170,14 @@ $(document).ready(function(){
     		});
 
 
-
+    		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
+    			console.log('voterListresult');
+                console.log(result);
+    		});
 
 			//voterlist
-			let voterList = $post.active_votes;
-			console.log(voterlist);
+			//let voterList = $post.active_votes;
+			//console.log(voterlist);
 			//for (let j = 0; j < voterList.length; j++) {
 			//if (voterList[j].voter == username) { console.log('this username ahs upvoted this post');}
 			//}
