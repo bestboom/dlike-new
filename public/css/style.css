@@ -1799,6 +1799,7 @@ color: #4c3d3d;
 
 .rs-range {
   -webkit-appearance: none;
+  height: 1px;
 }
 .rs-range:focus {
   outline: none;
@@ -1884,7 +1885,7 @@ color: #4c3d3d;
 }
 #upvoteModal{top: 35%;}
 .upvoting{cursor: pointer;}
-#upvoting-statu{color: #fff;
+#upvoting-status{color: #fff;
     display: none;
     font-weight: 800;
     justify-content: center;}
