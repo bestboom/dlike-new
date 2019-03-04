@@ -90,10 +90,10 @@
                                                     <button type="button" class="reply-button">Reply</button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="comment-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
+                                            <div class="comment-body">
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            </div>
+                                        </div>    
                                     </li>
                                 </ul>
                             </div>
