@@ -1,7 +1,6 @@
                                                 <div class="modal-body">
                                                     <div class="container">
-                                                        <form action="helper/vote.php" method="POST">
-                                                        <div class="row d-flex justify-content-around">
+                                                        <div class="row d-flex justify-content-around" id="upvoting-bar">
                                                                 <input type="hidden" name="v_author" id="vote_author" value="" />
                                                                 <input type="hidden" name="v_permlink" id="vote_permlink" value="" />
                                                                 <input type="hidden" name="vote_value" id="vote_weight" value="" />
@@ -16,7 +15,6 @@
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
                                                             </div>
                                                         </div>
-
-                                                        </form>
+                                                        <div class="row d-flex justify-content-center" id="upvoting-status" style="display: none;"><h4>UPVOTING ....</h4></div>
                                                     </div>
                                                 </div>

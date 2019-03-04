@@ -295,6 +295,10 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 });
 
 $('.upme').click(function() {
+
+    if(username != null) {
+    $('#upvoting-bar').hide();
+    $('#upvoting-status').show();
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
     //alert(upvoteValue)
@@ -304,14 +308,13 @@ $('.upme').click(function() {
         v_permlink: v_permlink,
         v_author: v_authorname,
         vote_value: upvoteValue
-    };
-    if(username != null) {
+    };        
             $.ajax({
                 type: "POST",
                 url: "helper/vote.php",
                 data: datav,
                 success: function(data) {
-                    console.log(data);
+                    //console.log(data);
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
@@ -319,7 +322,7 @@ $('.upme').click(function() {
                             $('#upvoteModal').modal('hide');
                             return false;
                         } else {
-                            $('.vote_icon').css("color", "RED");
+                            $('#vote_icon + v_permlink + v_authorname').css("color", "RED");
                             toastr.success('upVote done successfully!'); 
                             $('#upvoteModal').modal('hide');
                             }
@@ -327,11 +330,11 @@ $('.upme').click(function() {
                             toastr.error('Sorry. Server response is malformed.');
                     }
                 },
-                error: function(xhr, textStatus, error){
-                        console.log(xhr.statusText);
-                        console.log(textStatus);
-                        console.log(error);
-                }
+                //error: function(xhr, textStatus, error){
+                //        console.log(xhr.statusText);
+                //        console.log(textStatus);
+                //        console.log(error);
+                //}
             });
 
     } else {
