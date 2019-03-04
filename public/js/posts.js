@@ -190,7 +190,7 @@ $(document).ready(function(){
                 }                        
     		});
     		// comments section
-    		let json_metadata = metadata;
+    		let json_metadata;
 			function showMainComment(i, commentsArray) {
 				$comment = commentsArray[i];
 				//console.log($comment);
@@ -201,9 +201,14 @@ $(document).ready(function(){
 				}
 				if(metadata && metadata.community == "dlike"){
 					let a_p = "https://dlike.io/@"+$comment.author;
-					console.log(a_p);
 					let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 					console.log($commentbody);
+
+				$(".cmt_section").append('<li class="comment">\n' +
+					'<div class="comment-wrap">\n' +
+					'	</div>\n' +
+					'	</li>');
+					
 				}
 			}
 

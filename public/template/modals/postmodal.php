@@ -78,7 +78,7 @@
                             <div class="comment-area">
                                 <h4>Comments</h4>
                                 <ul class="comments cmt_section">
-                                    <li class="comment">
+                                    
                                         <div class="comment-wrap">
                                             <div class="comment-info">
                                                 <div class="commenter-thumb">
@@ -96,7 +96,7 @@
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                             </div>
                                         </div>    
-                                    </li>
+                                    
                                 </ul>
                             </div>
                         
