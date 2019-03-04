@@ -24,7 +24,7 @@ if ($result->num_rows > 0) {
 echo '<br>';
 */
 $sqlt = "SELECT id, author, permlink, likes, rating FROM PostLikes";
-$result = $conn->query($sql);
+$result = $conn->query($sqlt);
 
 if ($result->num_rows > 0) {
     // output data of each row
