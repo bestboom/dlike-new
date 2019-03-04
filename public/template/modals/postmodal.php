@@ -79,33 +79,28 @@
                                 <h4>Comments</h4>
                                 <ul class="comments">
                                     <li class="comment">
-                                    <div class="comment-wrap">
-                                        <div class="comment-info">
-                                        <div class="commenter-thumb">
-                                            <img src="./images/post/authors/9.png" class="img-fluid" alt="">
+                                        <div class="comment-wrap">
+                                            <div class="comment-info">
+                                                <div class="commenter-thumb"><img src="./images/post/authors/9.png" class="img-fluid" alt=""></div>
+                                                <div class="commenter-info">
+                                                    <span class="commenter-name">Lisa Parsons</span>
+                                                    <span class="date">28 Dec 2019</span>
+                                                </div>
+                                                <div class="reply">
+                                                    <button type="button" class="reply-button">Reply</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="commenter-info">
-                                            <span class="commenter-name">Lisa Parsons</span>
-                                            <span class="date">28 Dec 2019</span>
+                                        <div class="comment-body">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                         </div>
-                                        <div class="reply">
-                                            <button type="button" class="reply-button">Reply</button>
-                                            
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <div class="comment-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    </div>
-                                </div>
-                                
-                                </li>
-                                
-                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        
                         </div>
-                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>     
             </div>           
