@@ -320,7 +320,7 @@ $('.upme').click(function() {
                         if(response.error == true) {
                             toastr.error('There is some issue!'); 
                             $('#upvoteModal').modal('hide');
-                            $('#upvoting-status').hide(); 
+                            $('#upvoting-status').hide();
                             $('#upvoting-bar').show();
                             return false;
                         } else {
