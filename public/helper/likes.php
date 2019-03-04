@@ -7,8 +7,7 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-
-
+/*
 
 $sql = "SELECT id, username, stars, userip, author, permlink, like_date FROM MyLikes";
 $result = $conn->query($sql);
@@ -23,14 +22,14 @@ if ($result->num_rows > 0) {
 }
 
 echo '<br>';
-
-$sqlt = "SELECT id, username, stars, userip, author, permlink, like_date FROM MyLikes";
+*/
+$sqlt = "SELECT id, author, permlink, likes, rating FROM PostLikes";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["stars"]. " " . $row["userip"]. " " . $row["author"]. " " . $row["permlink"]. " " . $row["like_date"]. "<br>";
+        echo "id: " . $row["id"]. " - Name: " . $row["author"]. " " . $row["permlink"]. " " . $row["likes"]. " " . $row["rating"]. "<br>";
     }
 } else {
     echo "0 results";

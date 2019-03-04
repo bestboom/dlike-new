@@ -314,7 +314,7 @@ $('.upme').click(function() {
                 url: "helper/vote.php",
                 data: datav,
                 success: function(data) {
-                    console.log(data);
+                    //console.log(data);
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
@@ -322,7 +322,7 @@ $('.upme').click(function() {
                             $('#upvoteModal').modal('hide');
                             return false;
                         } else {
-                            $('#vote_icon').css("color", "RED");
+                            //$('#vote_icon').css("color", "RED");
                             toastr.success('upVote done successfully!'); 
                             $('#upvoteModal').modal('hide');
                             }
@@ -330,11 +330,11 @@ $('.upme').click(function() {
                             toastr.error('Sorry. Server response is malformed.');
                     }
                 },
-                error: function(xhr, textStatus, error){
-                      console.log(xhr.statusText);
-                       console.log(textStatus);
-                        console.log(error);
-                }
+                //error: function(xhr, textStatus, error){
+                //      console.log(xhr.statusText);
+                //       console.log(textStatus);
+                //        console.log(error);
+                //}
             });
     } else {
         toastr.error('hmm... You must be login!'); 
