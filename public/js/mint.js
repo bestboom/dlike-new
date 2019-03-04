@@ -297,8 +297,8 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 $('.upme').click(function() {
 
     if(username != null) {
-    $('#upvoting-bar').hide();
-    $('#upvoting-status').show();
+    $('#upvoting-bar').replaceWith('#upvoting-status');
+    //$('#upvoting-status').show();
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
     //alert(upvoteValue)
@@ -322,7 +322,7 @@ $('.upme').click(function() {
                             $('#upvoteModal').modal('hide');
                             return false;
                         } else {
-                            $('#vote_icon + v_permlink + v_authorname').css("color", "RED");
+                            $('#vote_icon' + v_permlink + v_authorname).css("color", "RED");
                             toastr.success('upVote done successfully!'); 
                             $('#upvoteModal').modal('hide');
                             }
@@ -336,7 +336,6 @@ $('.upme').click(function() {
                 //        console.log(error);
                 //}
             });
-
     } else {
         toastr.error('hmm... You must be login!'); 
         return false;

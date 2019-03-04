@@ -20,4 +20,5 @@
             
         </div>
     </div><!-- contact-section -->
+</div>    
 <?php include('template/footer.php'); ?>
