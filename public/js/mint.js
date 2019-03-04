@@ -241,7 +241,7 @@ $('#content').on("click", ".post_detail", function() {
 
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
-        //console.log(res);
+        console.log(res);
 
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
@@ -258,14 +258,14 @@ $('#content').on("click", ".post_detail", function() {
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         let post_description = metadata.body;
-        let post_body = $(post_description).text();
+        //let post_body = $(post_description).text();
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
         $('.mod-thumb').attr("src", img.src);
         $('.mod-authThumb').attr("src", auth_img);
         $('.mod-tags').html(posttags);
-        $('.mod-post').text(post_body);
+        $('.mod-post').text(post_description);
 
         });
 });
