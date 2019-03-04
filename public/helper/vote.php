@@ -18,6 +18,21 @@ if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
     echo $v_weight = (int) $v_weight;
 
 
+		if (empty($v_permlink)) {
+			    die(json_encode([
+			    	'error' => true,
+            		'message' => 'Sorry', 
+            		'data' => 'Already Upvoted'
+            		
+        		]));
+		} else { 
+			    die(json_encode([
+            		'error' => false,
+            		'message' => 'Thank You', 
+            		'data' => 'Lets Upvote'
+        		]));
+		}
+
 }
 
 

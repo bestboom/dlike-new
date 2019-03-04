@@ -201,7 +201,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
             ath: authorname,
             plink: mypermlink
         };
-        $.ajax({
+            $.ajax({
                 type: "POST",
                 url: "helper/verify_post.php",
                 data: datat,
@@ -298,10 +298,33 @@ $('.upme').click(function() {
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
     //alert(upvoteValue)
-
-    $("#vote_weight").val(weight);
-
+    var v_authorname = $("#vote_author").val();
+    var v_permlink = $("#vote_permlink").val();
+    var datav = {
+        v_permlink: v_permlink,
+        v_author: v_authorname,
+        vote_value: upvoteValue
+    };
     if(username != null) {
+            $.ajax({
+                type: "POST",
+                url: "helper/vote.php",
+                data: datav,
+                success: function(data) {
+                    try {
+                        var response = JSON.parse(data)
+                        if(response.error == true) {
+                            toastr.error('There is soem issue!'); 
+                            return false;
+                        } else {
+                            toastr.success('upVte done successfully!'); 
+                            }
+                        } catch (err) {
+                            alert('Sorry. Server response is malformed.')
+                    }
+                }
+            });
+
     } else {
         toastr.error('hmm... You must be login!'); 
         return false;
