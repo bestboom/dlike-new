@@ -44,7 +44,7 @@ class makePost
         return $fixed_str;
     }
     
-    public function broadcast($postit)
+    public function broadcast($post)
     {
 
         $curl = curl_init();
