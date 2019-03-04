@@ -294,8 +294,7 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 });
 
 $('.upme').click(function() {
-    $('#upvoting-bar').replaceWith('');
-    $('#upvoting-status').show();    
+  
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
     //alert(upvoteValue)
@@ -307,7 +306,9 @@ $('.upme').click(function() {
         vote_value: upvoteValue
     };
 
-    if(username != null) {        
+    if(username != null) { 
+    $('#upvoting-bar').replaceWith('');
+    $('#upvoting-status').show();         
             $.ajax({
                 type: "POST",
                 url: "helper/vote.php",
