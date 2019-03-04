@@ -12,6 +12,7 @@ $(document).ready(function(){
         $loader = _(".loader");
 
     _click($add_data, function() {
+    if(username != null) {
     	let url = $("#url_field").val();
     	if(url == '') { $("#url_field").css("border-color", "RED"); toastr.error('phew... You forgot to enter URL');} else {
 
@@ -21,9 +22,10 @@ $(document).ready(function(){
         let verifyUrl = getDomain(url);
         	if(isValidURL(url)){ 
         		if(verifyUrl.match(/steemit.com/g)) { 
-        		 toastr.error('phew... Steem URL not allowed'); } else{ _fetch("helper/index.php",url); return; }
+        		 toastr.error('phew... Steem URL not allowed'); return false;} else{ _fetch("helper/index.php",url); return; }
         	}
     	}
+    }   else {  toastr.error('hmm... You must be login!'); return false; }     
     });    
 	function _fetch(apiUrl,webUrl) {
         $.post(apiUrl,{url:webUrl},function(response){
