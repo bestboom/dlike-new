@@ -2,9 +2,9 @@
                                                     <div class="container">
                                                         <div class="row d-flex justify-content-around">
                                                             <form action="helper/vote.php" method="POST">
-                                                                <input type="text" name="v_author" id="vote_author" value="" />
-                                                                <input type="text" name="v_permlink" id="vote_permlink" value="" />
-                                                                <input type="text" name="vote_value" id="vote_weight" value="" />
+                                                                <input type="hidden" name="v_author" id="vote_author" value="" />
+                                                                <input type="hidden" name="v_permlink" id="vote_permlink" value="" />
+                                                                <input type="hidden" name="vote_value" id="vote_weight" value="" />
                                                             <div class="col-sm-2 nopadding"><button><i class="fas fa-chevron-circle-up upme"></i></button></div>    
                                                             <div class="col-sm-8 nopadding">
                                                                 <div class="row d-flex justify-content-around">
