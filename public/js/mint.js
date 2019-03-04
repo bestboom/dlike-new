@@ -297,7 +297,7 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 $('.upme').click(function() {
 
     if(username != null) {
-    $('#upvoting-bar').replaceWith($('#upvoting-status');
+    $('#upvoting-bar').replaceWith($('#upvoting-status'));
     //$('#upvoting-status').show();
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
