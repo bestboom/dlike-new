@@ -284,15 +284,21 @@ rangeSlider.addEventListener("input", showSliderValue, false);
 function showSliderValue() {
   rangeBullet.innerHTML = rangeSlider.value;
 }
-$('.upme').click(function() {
-    var upvoteValue = $('#rs-range-line').val();
-    var weight = parseInt(upvoteValue);
-    //alert(upvoteValue)
+
+$('.latest-post-section').on("click", ".upvoting", function() {
     var votepermlink = $(this).attr("data-permlink");
     var voteauthor = $(this).attr("data-author");
 
     $("#vote_author").val(voteauthor);
     $("#vote_permlink").val(votepermlink);
+
+});
+
+$('.upme').click(function() {
+    var upvoteValue = $('#rs-range-line').val();
+    var weight = parseInt(upvoteValue);
+    //alert(upvoteValue)
+
     $("#vote_weight").val(weight);
 
     if(username != null) {
