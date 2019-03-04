@@ -165,9 +165,7 @@ $(document).ready(function(){
 			let permlink = $post.permlink;
 			let comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
-      		
       		showMainComment(0, result);
-      		console.log(result);
     		});
 
 
@@ -192,9 +190,19 @@ $(document).ready(function(){
     		});
 
 			function showMainComment(i, commentsArray) {
-				console.log("U showMainComment: " + i);
 				$comment = commentsArray[i];
-				console.log($comment);
+				//console.log($comment);
+
+				let metadata;
+				if ($comment.json_metadata && $comment.json_metadata.length > 0){
+					metadata = JSON.parse($comment.json_metadata);
+				}
+				if(metadata && metadata.community == "dlike"){
+					let a_p = "https://dlike.io/@"+$comment.author;
+					console.log(a_p);
+					let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
+					console.log($commentbody);
+				}
 			}
 
 
