@@ -165,7 +165,7 @@ $(document).ready(function(){
 			let permlink = $post.permlink;
 			let comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
-      		console.log(result);
+      		console.log(result[].body);
     		});
 
 
@@ -183,8 +183,8 @@ $(document).ready(function(){
                 for (let j = 0; j < voterList.length; j++) {
                 	if (voterList[j].voter == username) { 
                 		$("#vote_icon" + permlink + author).css("color", "RED"); 
-                		$('#vote_icon').click(function(){return false;});
-                		$('#vote_icon').hover(function() {toastr.error('hmm... Already Upvoted');})
+                		$('#vote_icon' + permlink + author).click(function(){return false;});
+                		$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
                 	}
                 }                        
     		});
