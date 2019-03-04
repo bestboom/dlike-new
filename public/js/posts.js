@@ -18,7 +18,7 @@ $(document).ready(function(){
 	};
 
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
-		console.log(res);
+		//console.log(res);
 		res.forEach(($post, i) => {
 			let metadata;
 			if ($post.json_metadata && $post.json_metadata.length > 0){
@@ -165,9 +165,9 @@ $(document).ready(function(){
 			let permlink = $post.permlink;
 			let comment = [];
     		steem.api.getContentReplies(author, permlink, function(err, result) {
-    		if(result.length > 0) {
-      		console.log(result.body);
-      		}
+    		//if(result.length > 0) {
+      		console.log(result);
+      		//}
     		});
 
 
