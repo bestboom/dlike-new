@@ -206,8 +206,12 @@ $(document).ready(function(){
 
 				$(".cmt_section").append('<li class="comment">\n' +
 					'<div class="comment-wrap">\n' +
-					'	</div>\n' +
-					'	</li>');
+					'<div class="comment-info">\n' +
+					'<div class="commenter-thumb"><img src="./images/post/authors/9.png" class="img-fluid" alt=""></div>\n' +
+					'</div>\n' +
+					'<div class="comment-body">'+$commentbody+'</div>\n' +
+					'</div>\n' +
+					'</li>');
 					
 				}
 			}

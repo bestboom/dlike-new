@@ -79,8 +79,8 @@
                                 <h4>Comments</h4>
                                 <ul class="comments cmt_section">
                                     
-                                        <div class="comment-wrap">
-                                            <div class="comment-info">
+                                        
+                                            
                                                 <div class="commenter-thumb">
                                                     <img src="./images/post/authors/9.png" class="img-fluid" alt="">
                                                 </div>
@@ -91,11 +91,9 @@
                                                 <div class="reply">
                                                     <button type="button" class="reply-button">Reply</button>
                                                 </div>
-                                            </div>
-                                            <div class="comment-body">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </div>
-                                        </div>    
+                                            
+                                            
+                                          
                                     
                                 </ul>
                             </div>
