@@ -26,16 +26,16 @@ if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
 
 	if (isset($state->result)) { 
 			    die(json_encode([
-			    	'error' => true,
-            		'message' => 'Sorry', 
-            		'data' => 'Already Upvoted'
+			    	'error' => false,
+            		'message' => 'Thankk You', 
+            		'data' => 'Upvoting'
             		
         		]));
 	} else {
 			    die(json_encode([
-            		'error' => false,
-            		'message' => 'Thank You', 
-            		'data' => 'upvoting'
+            		'error' => true,
+            		'message' => 'Sorry', 
+            		'data' => 'Already Upvoted'
         		]));
 	} 
 

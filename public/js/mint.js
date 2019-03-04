@@ -316,9 +316,12 @@ $('.upme').click(function() {
                         var response = JSON.parse(data)
                         if(response.error == true) {
                             toastr.error('There is some issue!'); 
+                            $('#upvoteModal').modal('hide');
                             return false;
                         } else {
+                            $('.vote_icon').css("color", "RED");
                             toastr.success('upVote done successfully!'); 
+                            $('#upvoteModal').modal('hide');
                             }
                         } catch (err) {
                             toastr.error('Sorry. Server response is malformed.');
