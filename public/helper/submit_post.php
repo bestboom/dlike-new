@@ -32,6 +32,7 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 	$title = validationData($title);
 	$permlink = validationData(clean($_POST['title']));
 
+	$beneficiaries = genBeneficiaries($_POST['benefactor']);
 	
 	$json_metadata = [
     "community" => "dlike",
