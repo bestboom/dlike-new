@@ -183,7 +183,7 @@ $(document).ready(function(){
                 for (let j = 0; j < voterList.length; j++) {
                 	if (voterList[j].voter == username) { 
                 		$("#vote_icon" + permlink + author).css("color", "RED").prop('disabled', true); 
-                		$('#vote_icon').hover(function() {$(this)..prop('title', 'Already Upvoted');}
+                		$('#vote_icon').hover(function() {$(this).prop('title', 'Already Upvoted');}
                 	}
                 }                        
     		});
