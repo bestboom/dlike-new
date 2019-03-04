@@ -8,8 +8,6 @@ include('../functions/main.php');
 
 $postGenerator = new dlike\post\makePost();
 
-
-
 	$url = $_POST['exturl'];
 	$urlImage = $_POST["image"];
 	$title = $_POST['title'];
@@ -96,7 +94,7 @@ $postGenerator = new dlike\post\makePost();
 
 
 	if (empty($errors)) {
-    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $category, $max_accepted_payout, $percent_steem_dollars);
+    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
     $state = $postGenerator->broadcast($publish);
 	}
 
