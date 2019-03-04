@@ -44,8 +44,55 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
 	];
 	
-	$post = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+	$body = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
+
+        $json_php_array = $json_metadata;
+        $json_meta = json_encode($json_php_array);
+        $postOptions = [
+            "operations" => [
+                ["comment", [
+                    "parent_author" => "",
+                    "parent_permlink" => $category,
+                    "title" => $title,
+                    "body" => $body,
+                    "json_metadata" => $json_meta,
+                    "author" => $_COOKIE['username'],
+                    "permlink" => $permalink
+                ]],
+                ["comment_options", [
+                    "author" => $_COOKIE['username'],
+                    "permlink" => $permalink,
+                    "max_accepted_payout" => $max_accepted_payout,
+                    "percent_steem_dollars" => $percent_steem_dollars,
+                    "allow_votes" => true,
+                    "allow_curation_rewards" => true,
+                    "extensions" => []
+                ]]
+            ]
+        ];
+
+        if ($beneficiaries != []) {
+            $post["operations"][1][1]["extensions"] = [[0, ["beneficiaries" => $beneficiaries]]];
+        }
+
+
+	if (empty($errors)) {
+    $post = $postGenerator->publish($postOptions);
+    $state = $postGenerator->broadcast($post);
+	}
+
+	if (isset($state->result)) { ?>
+    <script type="text/javascript">
+        window.location = "https://dlike.io/";
+    </script>
+<? 	} else {
+		echo $state->error_description;
+	} 
+	
+
+
+/*
 	if (empty($errors)) {
     $post = $postGenerator->createPost($title, $post, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $category, $max_accepted_payout, $percent_steem_dollars);
     $state = $postGenerator->broadcast($post);
@@ -58,4 +105,5 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
 <? 	} else {
 		echo $state->error_description;
 	} 
+	*/
 ?>
