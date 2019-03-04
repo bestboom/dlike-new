@@ -29,7 +29,6 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
     	}
 	}
 
-	$max_accepted_payout;
 	$title = validationData($title);
 	$permlink = validationData(clean($_POST['title']));
 	
@@ -44,7 +43,18 @@ $postGenerator = new snaddyvitch_dispenser\operations\makePost();
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
 	];
 	
-	echo $post = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+	$post = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
-echo $postGenerator = new snaddyvitch_dispenser\operations\makePost();
+	if (empty($errors)) {
+    $post = $postGenerator->createPost($title, $post, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $category, $max_accepted_payout, $percent_steem_dollars);
+    $state = $postGenerator->broadcast($post);
+	}
+
+	if (isset($state->result)) { ?>
+    <script type="text/javascript">
+        window.location = "https://dlike.io/";
+    </script>
+<? 	} else {
+		echo $state->error_description;
+	} 
 ?>
