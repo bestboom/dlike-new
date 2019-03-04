@@ -209,8 +209,10 @@ $(document).ready(function(){
 					'<div class="comment-info">\n' +
 					'<div class="commenter-thumb"><img src="./images/post/authors/9.png" class="img-fluid" alt=""></div>\n' +
 					'<div class="commenter-info">\n' +
-					'<span class="commenter-name">Lisa Parsons</span>'
+					'<span class="commenter-name">Lisa Parsons</span>\n' +
+					'<span class="date">28 Dec 2019</span>\n' +
 					'</div>\n' +
+					'<div class="reply"><button type="button" class="reply-button">Reply</button></div>\n' +
 					'</div>\n' +
 					'<div class="comment-body">'+$commentbody+'</div>\n' +
 					'</div>\n' +
