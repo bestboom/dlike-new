@@ -297,8 +297,8 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 $('.upme').click(function() {
 
     if(username != null) {
-    $('#upvoting-bar').hide();
-    $('#upvoting-status').show();
+    $('#upvoting-bar').replaceWith($('#upvoting-status'));
+    //$('#upvoting-status').show();
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
     //alert(upvoteValue)
