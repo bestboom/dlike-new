@@ -297,8 +297,8 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 $('.upme').click(function() {
 
     if(username != null) {
-    $('#upvoting-bar').replaceWith('#upvoting-status');
-    //$('#upvoting-status').show();
+    $('#upvoting-bar').hide();
+    $('#upvoting-status').show();
     var upvoteValue = $('#rs-range-line').val();
     var weight = parseInt(upvoteValue);
     //alert(upvoteValue)
@@ -314,7 +314,7 @@ $('.upme').click(function() {
                 url: "helper/vote.php",
                 data: datav,
                 success: function(data) {
-                    //console.log(data);
+                    console.log(data);
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
@@ -330,11 +330,11 @@ $('.upme').click(function() {
                             toastr.error('Sorry. Server response is malformed.');
                     }
                 },
-                //error: function(xhr, textStatus, error){
-                //        console.log(xhr.statusText);
-                //        console.log(textStatus);
-                //        console.log(error);
-                //}
+                error: function(xhr, textStatus, error){
+                      console.log(xhr.statusText);
+                       console.log(textStatus);
+                        console.log(error);
+                }
             });
     } else {
         toastr.error('hmm... You must be login!'); 
