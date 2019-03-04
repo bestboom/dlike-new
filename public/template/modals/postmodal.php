@@ -77,11 +77,13 @@
                             </div>
                             <div class="comment-area">
                                 <h4>Comments</h4>
-                                <ul class="comments">
+                                <ul class="comments cmt_section">
                                     <li class="comment">
                                         <div class="comment-wrap">
                                             <div class="comment-info">
-                                                <div class="commenter-thumb"><img src="./images/post/authors/9.png" class="img-fluid" alt=""></div>
+                                                <div class="commenter-thumb">
+                                                    <img src="./images/post/authors/9.png" class="img-fluid" alt="">
+                                                </div>
                                                 <div class="commenter-info">
                                                     <span class="commenter-name">Lisa Parsons</span>
                                                     <span class="date">28 Dec 2019</span>
