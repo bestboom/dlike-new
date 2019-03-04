@@ -4,35 +4,40 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once "../helper/publish_comment.php";
 
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
+$voteGenerator = new dlike\vote\makeVote();
 
-//if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
+if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
 
-	echo $v_weight = validator($_POST["vote_value"]);
-    echo $v_author = validator($_POST["v_author"]);
-    echo $v_permlink = validator($_POST["v_permlink"]);
-    echo $v_weight = (int) $v_weight;
+	$v_weight = validator($_POST["vote_value"]);
+    $v_author = validator($_POST["v_author"]);
+    $v_permlink = validator($_POST["v_permlink"]);
+    $v_weight = (int) $v_weight;
 
+	if (empty($errors)) {
+    $publish = $voteGenerator->createVote($v_weight, $v_author, $v_permlink);
+    $state = $voteGenerator->broadcast($publish);
+	}
 
-		if (empty($v_permlink)) {
+	if (isset($state->result)) { 
 			    die(json_encode([
 			    	'error' => true,
             		'message' => 'Sorry', 
             		'data' => 'Already Upvoted'
             		
         		]));
-		} else { 
+	} else {
 			    die(json_encode([
             		'error' => false,
             		'message' => 'Thank You', 
-            		'data' => 'Lets Upvote'
+            		'data' => 'upvoting'
         		]));
-		}
+	} 
 
-//
-
+} else {die('Some error');}
 ?>
