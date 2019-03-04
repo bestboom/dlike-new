@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once "../helper/publish_comment.php";
+require_once "../helper/publish_vote.php";
 
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
