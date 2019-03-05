@@ -170,7 +170,9 @@ $(document).ready(function(){
 
     //post modal data
     $('#postModal').on('hidden.bs.modal', function(e) {
-        $(this).find(".cmt_section").remove();
+        //$(this).find(".cmt_section").remove();
+            location.reload();
+            $('#postModal').show();
     });
 });
 // solve me
@@ -183,6 +185,7 @@ $(document).ready(function(){
         $(this).ajaxSubmit(options)
         return !1
     });
+
 // star ratings
 function postToControll() {
     for (i = 0; i < document.getElementsByName('star').length; i++) {
@@ -194,6 +197,7 @@ function postToControll() {
         //alert(ratingValue);
         $('#myRatingz').val(ratingValue);
 };
+
 //dvd modal
 $('.latest-post-section').on("click", ".hov_me", function() {
    //alert('called');
@@ -274,19 +278,14 @@ $('#content').on("click", ".post_detail", function() {
         steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
              for (var i = 0; i < result.length; i++) {
         
-           
-            //function showMainComment(i, commentsArray) {
                 $comment = result[i];
                 let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
-                    //if ($comment.json_metadata !== undefined){
                     metadata = JSON.parse($comment.json_metadata);
-                    //}
                 }
                 if(metadata && metadata.community == "dlike"){
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
-                    //console.log($commentbody);
 
                 $(".cmt_section").append('<li class="comment">\n' +
                     '<div class="comment-wrap">\n' +
