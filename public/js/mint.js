@@ -281,14 +281,14 @@ $('#content').on("click", ".post_detail", function() {
         });    
              //for (var i = 0; i < result.length; i++) {
         function showMainComment(i, commentsArray) {
-                $comment = commentsArray[i];
-                console.log($comment);
-                //if($comment.author > 0){
-                let metadata;
+            $comment = commentsArray[i];
+            console.log($comment);
+            if($comment.author > 0){
+            let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
                 }
-                if(metadata && metadata.community == "dlike"){
+            if(metadata && metadata.community == "dlike"){
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 
@@ -305,9 +305,9 @@ $('#content').on("click", ".post_detail", function() {
                     '<div class="comment-body">'+$commentbody+'</div>\n' +
                     '</div>\n' +
                     '</li>');
-                    
-                }
+            }        
             }
+        }
        
 
 });
