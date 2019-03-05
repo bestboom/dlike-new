@@ -169,7 +169,7 @@ $(document).ready(function(){
     });
 
     //post modal data
-    $('#likes').on('hidden.bs.modal', function(e) {
+    $('#postModal').on('hidden.bs.modal', function(e) {
         $(".modal-body").html("");
     });
 });
