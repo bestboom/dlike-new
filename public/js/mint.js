@@ -171,7 +171,7 @@ $(document).ready(function(){
     //post modal data
     $('#postModal').on('hidden.bs.modal', function(e) {
         //$(".modal-body").html("");
-        $(this).removeData();
+        callback();
     });
 });
 // solve me
