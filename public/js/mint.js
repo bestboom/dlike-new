@@ -275,7 +275,6 @@ $('#content').on("click", ".post_detail", function() {
          });   
 
             // comments section
-            let json_metadata;
             function showMainComment(i, commentsArray) {
                 $comment = commentsArray[i];
                 //console.log($comment);
