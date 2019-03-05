@@ -280,7 +280,8 @@ $('#content').on("click", ".post_detail", function() {
              for (var i = 0; i < result.length; i++) {
         
                 $comment = result[i];
-                console.log($comment);
+                console.log($comment.length);
+                if($comment.length > 0){
                 let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
@@ -304,6 +305,7 @@ $('#content').on("click", ".post_detail", function() {
                     '</li>');
                     
                 }
+            }
             }    
          });         
     });    
