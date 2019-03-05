@@ -204,10 +204,10 @@ $(document).ready(function(){
 					let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 					console.log($commentbody);
 
-				$(".cmt_section").append('<li class="comment">\n' +
+				$(".cmt_section").append('<li class="comment prml-'+$comment.permlink+'">\n' +
 					'<div class="comment-wrap">\n' +
 					'<div class="comment-info">\n' +
-					'<div class="commenter-thumb"><img src="https://steemitimages.com/u/'+$comment.author+'/avatar" onerror="this.src='./images/post/authors/9.png" class="img-fluid'" alt=""></div>\n' +
+					'<div class="commenter-thumb"><img src="https://steemitimages.com/u/'+$comment.author+'/avatar" onerror="this.src='" class="img-fluid'" alt=""></div>\n' +
 					'<div class="commenter-info">\n' +
 					'<span class="commenter-name">'+$comment.author+'</span>\n' +
 					'<span class="date">'+moment.utc($comment.created + "Z", "YYYY-MM-DD  h:mm:ss").fromNow()+'</span>\n' +
