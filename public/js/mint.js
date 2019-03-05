@@ -280,6 +280,7 @@ $('#content').on("click", ".post_detail", function() {
              for (var i = 0; i < result.length; i++) {
         
                 $comment = result[i];
+                console.log($comment);
                 let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
