@@ -17,6 +17,7 @@ if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
 	$v_weight = validator($_POST["vote_value"]);
     $v_author = validator($_POST["v_author"]);
     $v_permlink = validator($_POST["v_permlink"]);
+    $v_weight = $v_weight*100
     $v_weight = (int) $v_weight;
 
 	if (empty($errors)) {
