@@ -170,9 +170,10 @@ $(document).ready(function(){
 
     //post modal data
     $('#postModal').on('hidden.bs.modal', function(e) {
+        $(this).html("");
         //$(this).find(".cmt_section").remove();
-            location.reload();
-            $('#postModal').show();
+            //location.reload();
+            
     });
 });
 // solve me
@@ -245,6 +246,7 @@ $('#content').on("click", ".post_detail", function() {
     $("#c_author").val(username);
     $("#c_permlink").val(permlinkD);
 
+    $('#postModal').show();
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
         //console.log(res);
