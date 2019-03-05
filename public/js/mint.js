@@ -170,8 +170,7 @@ $(document).ready(function(){
 
     //post modal data
     $('#postModal').on('hidden.bs.modal', function(e) {
-        //$(".modal-body").html("");
-        callback();
+        $(this).find(".cmt_section").remove();
     });
 });
 // solve me
