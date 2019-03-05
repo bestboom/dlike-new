@@ -270,16 +270,16 @@ $('#content').on("click", ".post_detail", function() {
         let permlink = postpermlink;
         let comment = []    
         steem.api.getContentReplies(author, permlink, function(err, result) {
-            showMainComment(0, result);
-        });
+             for (var i = 0; i < result.length; i++) {
+        
            
-            function showMainComment(i, commentsArray) {
-                $comment = commentsArray[i];
+            //function showMainComment(i, commentsArray) {
+                $comment = result[i];
                 let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
-                    if ($comment.json_metadata !== undefined){
+                    //if ($comment.json_metadata !== undefined){
                     metadata = JSON.parse($comment.json_metadata);
-                    }
+                    //}
                 }
                 if(metadata && metadata.community == "dlike"){
                     let a_p = "https://dlike.io/@"+$comment.author;
@@ -302,7 +302,7 @@ $('#content').on("click", ".post_detail", function() {
                     
                 }
             }    
-                  
+         });         
 
 
 });
