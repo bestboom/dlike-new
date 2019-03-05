@@ -264,7 +264,7 @@ $('#content').on("click", ".post_detail", function() {
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        });
+        
 
         let author = postauthor;
         let permlink = postpermlink;
@@ -303,7 +303,7 @@ $('#content').on("click", ".post_detail", function() {
                 }
             }    
          });         
-
+    });    
 
 });
 
