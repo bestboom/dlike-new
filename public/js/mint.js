@@ -270,10 +270,11 @@ $('#content').on("click", ".post_detail", function() {
         let permlink = postpermlink;
         let comment = []    
         steem.api.getContentReplies(author, permlink, function(err, result) {
+            showMainComment(0, result);
+        });
            
-            $comment = commentsArray[i];
-
-
+            function showMainComment(i, commentsArray) {
+                $comment = commentsArray[i];
                 let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
@@ -298,7 +299,8 @@ $('#content').on("click", ".post_detail", function() {
                     '</li>');
                     
                 }
-        });          
+            }    
+                  
 
 
 });
