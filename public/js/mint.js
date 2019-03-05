@@ -282,10 +282,10 @@ $('#content').on("click", ".post_detail", function() {
         });    
              //for (var i = 0; i < result.length; i++) {
         function showMainComment(i, commentsArray) {
+            console.log(commentsArray.length);
             $comment = commentsArray[i];
 
             console.log($comment);
-            if($comment != undefined ){
             let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
@@ -308,7 +308,7 @@ $('#content').on("click", ".post_detail", function() {
                     '</div>\n' +
                     '</li>');
             }        
-            }
+            
         }
        
 
