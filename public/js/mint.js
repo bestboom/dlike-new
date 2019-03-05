@@ -342,7 +342,10 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 $('.upme').click(function() {
   
     var upvoteValue = $('#rs-range-line').val();
+    var upvoteValue = upvoteValue*1000;
+    console.log(upvoteValue);
     var weight = parseInt(upvoteValue);
+    console.log(weight);
     //alert(upvoteValue)
     var v_authorname = $("#vote_author").val();
     var v_permlink = $("#vote_permlink").val();
