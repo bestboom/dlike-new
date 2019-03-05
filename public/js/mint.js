@@ -169,12 +169,12 @@ $(document).ready(function(){
     });
 
     //post modal data
-    $('#postModal').on('hidden.bs.modal', function(e) {
+    //$('#postModal').on('hidden.bs.modal', function(e) {
         //$('#result').html("");
         //$(this).find(".cmt_section").remove();
             //location.reload();
             
-    });
+    //});
 });
 // solve me
     var options = {
@@ -246,6 +246,7 @@ $('#content').on("click", ".post_detail", function() {
     $("#c_author").val(username);
     $("#c_permlink").val(permlinkD);
 
+
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
         //console.log(res);
 
@@ -287,7 +288,7 @@ $('#content').on("click", ".post_detail", function() {
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 
-                $(".cmt_section").append('<li class="comment'+$comment.permlink+'">\n' +
+                $(".cmt_section").append('<li class="comment'+$post.permlink +$post.author +'">\n' +
                     '<div class="comment-wrap">\n' +
                     '<div class="comment-info">\n' +
                     '<div class="commenter-thumb"><img src="https://steemitimages.com/u/'+$comment.author+'/avatar" class="img-fluid" alt=""></div>\n' +
