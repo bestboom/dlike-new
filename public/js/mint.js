@@ -277,7 +277,7 @@ $('#content').on("click", ".post_detail", function() {
     
         let comment = []    
         steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
-            showMainComment(i, result);
+            showMainComment(0, result);
             console.log(showMainComment());
         });    
              //for (var i = 0; i < result.length; i++) {
