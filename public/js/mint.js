@@ -283,7 +283,7 @@ $('#content').on("click", ".post_detail", function() {
         function showMainComment(i, commentsArray) {
             $comment = commentsArray[i];
             console.log($comment);
-            if($comment.author > 0){
+            if($comment !=null ){
             let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
