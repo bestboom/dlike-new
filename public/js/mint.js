@@ -264,12 +264,9 @@ $('#content').on("click", ".post_detail", function() {
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        
-
-        let author = postauthor;
-        let permlink = postpermlink;
+    
         let comment = []    
-        steem.api.getContentReplies(author, permlink, function(err, result) {
+        steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
              for (var i = 0; i < result.length; i++) {
         
            
