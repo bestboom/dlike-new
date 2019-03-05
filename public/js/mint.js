@@ -289,7 +289,7 @@ $('#content').on("click", ".post_detail", function() {
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 
-                $(".cmt_section").append('<li class="comment">\n' +
+                $(".cmt_section").append('<li class="comment prml-'+$comment.permlink+'">\n' +
                     '<div class="comment-wrap">\n' +
                     '<div class="comment-info">\n' +
                     '<div class="commenter-thumb"><img src="https://steemitimages.com/u/'+$comment.author+'/avatar" class="img-fluid" alt=""></div>\n' +
