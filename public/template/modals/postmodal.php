@@ -64,28 +64,22 @@
                                 <input type="hidden" name="cmt_author" id="c_author" value="" />
                                 <input type="hidden" name="cmt_permlink" id="c_permlink" value="" />
                                 <input type="hidden" name="user_at" id="userauth" value="" />
-                                
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <textarea placeholder="Comment" class="form-control cmt" name="cmt_body"></textarea>
-                                            </div>
-                                        </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea placeholder="Comment" class="form-control cmt" name="cmt_body"></textarea>
                                     </div>
-                                    <button class="btn btn-default cmt_bt">Submit</button>
-                                </form>
+                                </div>
+                            </div>
+                            <button class="btn btn-default cmt_bt">Submit</button>
+                             </form>
                             </div>
                             <div class="comment-area">
                                 <h4>Comments</h4>
-                                <ul class="comments cmt_section">
-                                          
-                                    
-                                </ul>
+                                <ul class="comments cmt_section"></ul>
                             </div>
-                        
                         </div>
                     </div>
                 </div>
             </div>
     </div>     
-            </div>           
+</div>           
