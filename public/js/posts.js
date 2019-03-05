@@ -161,6 +161,9 @@ $(document).ready(function(){
 				'</article></div>');
 				getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 
+        		let author = $post.author;
+        		let permlink = $post.permlink;				
+
     		//check if voted
     		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
                 //console.log(result);

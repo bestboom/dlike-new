@@ -266,7 +266,7 @@ $('#content').on("click", ".post_detail", function() {
 
         });
 
-        let author = postpermlink;
+        let author = postauthor;
         let permlink = postpermlink;
             
         let comment = [];
