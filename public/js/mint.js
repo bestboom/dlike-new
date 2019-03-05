@@ -277,7 +277,9 @@ $('#content').on("click", ".post_detail", function() {
                 $comment = commentsArray[i];
                 let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
+                    if ($comment.json_metadata !== undefined){}
                     metadata = JSON.parse($comment.json_metadata);
+                    }
                 }
                 if(metadata && metadata.community == "dlike"){
                     let a_p = "https://dlike.io/@"+$comment.author;
