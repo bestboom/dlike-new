@@ -170,7 +170,8 @@ $(document).ready(function(){
 
     //post modal data
     $('#postModal').on('hidden.bs.modal', function(e) {
-        $(".modal-body").html("");
+        //$(".modal-body").html("");
+        $(this).removeData();
     });
 });
 // solve me
@@ -243,7 +244,7 @@ $('#content').on("click", ".post_detail", function() {
 
 
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
-        console.log(res);
+        //console.log(res);
 
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
@@ -286,7 +287,7 @@ $('#content').on("click", ".post_detail", function() {
                 if(metadata && metadata.community == "dlike"){
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
-                    console.log($commentbody);
+                    //console.log($commentbody);
 
                 $(".cmt_section").append('<li class="comment">\n' +
                     '<div class="comment-wrap">\n' +
