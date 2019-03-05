@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row justify-content-center form-group">
-                                <span id="capt"><?php echo solvemedia_get_html("pJG21ZGjcE3uBoChKLz3AFUQTeHgcEir", null, true); ?></span>
+                                <span id="capt"><?php echo solvemedia_get_html("BfToDp5vD08jAZ5DEYb1rCvpuHlKv2H7", null, true); ?></span>
                             </div>
                         </div>
                         <div class="col-md-6">
