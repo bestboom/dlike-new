@@ -278,11 +278,10 @@ $('#content').on("click", ".post_detail", function() {
         let comment = []    
         steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
             showMainComment(0, result);
-            console.log(showMainComment());
         });    
              //for (var i = 0; i < result.length; i++) {
         function showMainComment(i, commentsArray) {
-            console.log(commentsArray.length);
+            //console.log(commentsArray.length);
             $comment = commentsArray[i];
 
             console.log($comment);
@@ -294,7 +293,7 @@ $('#content').on("click", ".post_detail", function() {
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 
-                $(".cmt_section").append('<li class="comment prml-'+$comment.permlink+'">\n' +
+                $(".cmt_section").append('<li class="comment">\n' +
                     '<div class="comment-wrap">\n' +
                     '<div class="comment-info">\n' +
                     '<div class="commenter-thumb"><img src="https://steemitimages.com/u/'+$comment.author+'/avatar" class="img-fluid" alt=""></div>\n' +
