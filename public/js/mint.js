@@ -167,6 +167,11 @@ $(document).ready(function(){
             return false;
         };
     });
+
+    //post modal data
+    $('#likes').on('hidden.bs.modal', function(e) {
+        $(".modal-body").html("");
+    });
 });
 // solve me
     var options = {
