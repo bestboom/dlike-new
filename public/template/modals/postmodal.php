@@ -78,14 +78,6 @@
                             <div class="comment-area">
                                 <h4>Comments</h4>
                                 <ul class="comments cmt_section">
-                                             
-                                                    
-                                                
-                                                <div class="reply">
-                                                    <button type="button" class="reply-button">Reply</button>
-                                                </div>
-                                            
-                                            
                                           
                                     
                                 </ul>
