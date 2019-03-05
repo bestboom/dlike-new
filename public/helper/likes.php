@@ -6,8 +6,16 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$author = 'pillsjee';
+$permlink = 'neymar-says-2-injuries-not-1-affected-world-cup-displays';
+
+
+$updatePost = "UPDATE PostsLikes SET likes = 13, rating = 53 WHERE author = '$author' AND permlink = '$permlink'";
+$updatePostQuery = $conn->query($updatePost);
+if ($updatePostQuery === TRUE) {}
 
 /*
+
 
 $sql = "SELECT id, username, stars, userip, author, permlink, like_date FROM MyLikes";
 $result = $conn->query($sql);
@@ -22,7 +30,7 @@ if ($result->num_rows > 0) {
 }
 
 echo '<br>';
-*/
+
 $sqlt = "SELECT id, author, permlink, likes, rating FROM PostsLikes";
 $result = $conn->query($sqlt);
 
@@ -34,5 +42,5 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
+*/
 ?>
