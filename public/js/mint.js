@@ -246,8 +246,6 @@ $('#content').on("click", ".post_detail", function() {
     $("#c_author").val(username);
     $("#c_permlink").val(permlinkD);
 
-    $('#postModal').show();
-
     steem.api.getContent(postauthor , postpermlink, function(err, res) {
         //console.log(res);
 
@@ -289,7 +287,7 @@ $('#content').on("click", ".post_detail", function() {
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 
-                $(".cmt_section").append('<li class="comment prml-'+$comment.permlink+'">\n' +
+                $(".cmt_section").append('<li class="comment'+$comment.permlink+'">\n' +
                     '<div class="comment-wrap">\n' +
                     '<div class="comment-info">\n' +
                     '<div class="commenter-thumb"><img src="https://steemitimages.com/u/'+$comment.author+'/avatar" class="img-fluid" alt=""></div>\n' +
