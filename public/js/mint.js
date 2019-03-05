@@ -278,12 +278,14 @@ $('#content').on("click", ".post_detail", function() {
         let comment = []    
         steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
             showMainComment(0, result);
+            console.log(showMainComment());
         });    
              //for (var i = 0; i < result.length; i++) {
         function showMainComment(i, commentsArray) {
             $comment = commentsArray[i];
+
             console.log($comment);
-            if($comment !=null ){
+            if($comment != undefined ){
             let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
