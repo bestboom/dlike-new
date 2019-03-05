@@ -263,7 +263,7 @@ $('#content').on("click", ".post_detail", function() {
         let title = res.title;
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        let post_description = metadata.body;
+        let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         //let post_body = $(post_description).text();
 
         $('.mod-auth').html(author);
