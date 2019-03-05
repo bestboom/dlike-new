@@ -277,14 +277,14 @@ $('#content').on("click", ".post_detail", function() {
     
         let comment = []    
         steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
-            showMainComment(0, result);
-        });    
-             //for (var i = 0; i < result.length; i++) {
-        function showMainComment(i, commentsArray) {
+            //showMainComment(0, result);
+            
+            for (var i = 0; i < result.length; i++) {
+            //function showMainComment(i, commentsArray) {
             //console.log(commentsArray.length);
-            $comment = commentsArray[i];
+            $comment = result[i];
 
-            console.log($comment);
+            //console.log($comment);
             let metadata;
                 if ($comment.json_metadata && $comment.json_metadata.length > 0){
                     metadata = JSON.parse($comment.json_metadata);
@@ -309,7 +309,7 @@ $('#content').on("click", ".post_detail", function() {
             }        
             
         }
-       
+    });   
 
 });
 
