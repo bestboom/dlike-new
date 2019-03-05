@@ -268,21 +268,11 @@ $('#content').on("click", ".post_detail", function() {
 
         let author = postauthor;
         let permlink = postpermlink;
-            
-        let comment = [];
+        //let comment = [];    
         steem.api.getContentReplies(author, permlink, function(err, result) {
-            showMainComment(0, result);
-         });   
+           console.log(result);
+            let metadata = JSON.parse(result.json_metadata);
 
-            // comments section
-            function showMainComment(i, commentsArray) {
-                $comment = commentsArray[i];
-                //console.log($comment);
-
-                let metadata;
-                if ($comment.json_metadata && $comment.json_metadata.length > 0){
-                    metadata = JSON.parse($comment.json_metadata);
-                }
                 if(metadata && metadata.community == "dlike"){
                     let a_p = "https://dlike.io/@"+$comment.author;
                     let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
@@ -303,7 +293,7 @@ $('#content').on("click", ".post_detail", function() {
                     '</li>');
                     
                 }
-            }          
+        });          
 
 
 });
