@@ -170,7 +170,7 @@ $(document).ready(function(){
 
     //post modal data
     $('#postModal').on('hidden.bs.modal', function(e) {
-        $(this).html("");
+        $('#result').html("");
         //$(this).find(".cmt_section").remove();
             //location.reload();
             
