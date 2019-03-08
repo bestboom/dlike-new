@@ -10,7 +10,7 @@ $author = 'pillsjee';
 $permlink = 'neymar-says-2-injuries-not-1-affected-world-cup-displays';
 
 
-$updatePost = "UPDATE PostsLikes SET likes = 6, rating = 56 WHERE author = '$author' AND permlink = '$permlink'";
+$updatePost = "UPDATE PostsLikes SET likes = 8, rating = 56 WHERE author = '$author' AND permlink = '$permlink'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {}
 
