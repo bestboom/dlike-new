@@ -52,6 +52,7 @@ $(document).ready(function(){
 				//get meta tags
 				let metatags = metadata.tags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
 				let category = metadata.category;
+				let exturl = metadata.url;
 
 				//Get the body
 				let body;
@@ -147,7 +148,7 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
                     '\n' +
-					'<h4 class="post-title"><a href="#">' + $post.title + '</a></h4>\n' +
+					'<h4 class="post-title"><a href="' + exturl + '" target="_blank">' + $post.title + '</a></h4>\n' +
 					'\n' +
 					'<p class="post-entry post-tags">' + metatags + '</p>\n' +
 					'\n' +
