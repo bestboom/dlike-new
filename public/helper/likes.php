@@ -5,18 +5,18 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-/*
+
 $author = 'pillsjee';
 $permlink = 'neymar-says-2-injuries-not-1-affected-world-cup-displays';
 
 
-$updatePost = "UPDATE PostsLikes SET likes = 13, rating = 53 WHERE author = '$author' AND permlink = '$permlink'";
+$updatePost = "UPDATE PostsLikes SET likes = 6, rating = 56 WHERE author = '$author' AND permlink = '$permlink'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {}
 
 
 
-
+/*
 $sql = "SELECT id, username, stars, userip, author, permlink, like_date FROM MyLikes";
 $result = $conn->query($sql);
 
