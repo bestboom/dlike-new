@@ -6,11 +6,11 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$author = 'joetunex';
-$permlink = 'survey-shows-consumers-and-investors-remain-bullish-on-the-future-of-cryptos--bitcoin-news';
+$author = 'pillsjee';
+$permlink = 'neymar-says-2-injuries-not-1-affected-world-cup-displays';
 
 
-$updatePost = "UPDATE PostsLikes SET likes = 4, rating = 42 WHERE author = '$author' AND permlink = '$permlink'";
+$updatePost = "UPDATE PostsLikes SET likes = 2, rating = 10 WHERE author = '$author' AND permlink = '$permlink'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {}
 
