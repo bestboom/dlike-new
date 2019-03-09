@@ -50,8 +50,8 @@ $(document).ready(function(){
 				let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 
 				//get meta tags
+				console.log(metadata.tags);
 				let metatags = metadata.tags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
-				console.log(metatags);
 				let category = metadata.category;
 				let exturl = metadata.url;
 
