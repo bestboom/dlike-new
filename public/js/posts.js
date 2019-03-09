@@ -204,8 +204,10 @@ $(document).ready(function(){
 		}
 		json_metadata = metadata;
 		let category = metadata.category;
-		if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
-        let posttags = metadata.tags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
+		if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
+		let steemTags = metadata.tags;
+        let dlikeTags = steemTags.slice(2);
+        let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
 		let post_description = metadata.body;
 		let title = res.title;
         let created = res.created;
