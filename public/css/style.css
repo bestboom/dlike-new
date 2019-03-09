@@ -543,7 +543,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   .navbar-nav > li.button > a {
     margin: 0 5px 5px;
     background-color: #009efd;
-    color: #ffffff;
+    color: #000;
+    font-weight: 600;
     border-radius: 0; }
   .navbar-white .navbar-toggler span:before,
   .navbar-white .navbar-toggler span:after {
