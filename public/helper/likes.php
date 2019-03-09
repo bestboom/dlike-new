@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$author = 'dinshatech';
-$permlink = 'samsung-galaxy-s11-5g-may-be-slimmer-last-longer-thanks-to-qualcomm--cnet';
+$author = 'sweden2023';
+$permlink = 'pentagon-ran-secret-multi-million-dollar-ufo-programme--bbc-news';
 
 
 $updatePost = "UPDATE PostsLikes SET likes = 2, rating = 10 WHERE author = '$author' AND permlink = '$permlink'";
