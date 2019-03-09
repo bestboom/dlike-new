@@ -6,7 +6,7 @@
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
                                 <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="mod-close">×</span></button></div>
-                                <h3 class="post-title mod-title"></h3>
+                                <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
                                 <div class="post-thumb-block">
                                     <img src="" onerror="this.src='./images/post/8.png'" alt="img" class="img-responsive mod-thumb">
                                 </div>
@@ -16,6 +16,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="details-post-meta-block">
                 <div class="container">
