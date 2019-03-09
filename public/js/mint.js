@@ -260,7 +260,9 @@ $('#content').on("click", ".post_detail", function() {
         json_metadata = metadata;
         let category = metadata.category;
         if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
-        let posttags = metadata.tags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
+        let steemTags = metadata.tags;
+        let dlikeTags = steemTags.slice(2);
+        let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
         let title = res.title;
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
