@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$author = 'pillsjee';
-$permlink = 'neymar-says-2-injuries-not-1-affected-world-cup-displays';
+$author = 'dinshatech';
+$permlink = 'samsung-galaxy-s11-5g-may-be-slimmer-last-longer-thanks-to-qualcomm--cnet';
 
 
 $updatePost = "UPDATE PostsLikes SET likes = 2, rating = 10 WHERE author = '$author' AND permlink = '$permlink'";
