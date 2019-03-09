@@ -10,7 +10,7 @@ $author = 'joetunex';
 $permlink = 'survey-shows-consumers-and-investors-remain-bullish-on-the-future-of-cryptos--bitcoin-news';
 
 
-$updatePost = "UPDATE PostsLikes SET likes = 9, rating = 42 WHERE author = '$author' AND permlink = '$permlink'";
+$updatePost = "UPDATE PostsLikes SET likes = 4, rating = 42 WHERE author = '$author' AND permlink = '$permlink'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {}
 
