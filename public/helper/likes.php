@@ -10,7 +10,7 @@ $author = 'sweden2023';
 $permlink = 'pentagon-ran-secret-multi-million-dollar-ufo-programme--bbc-news';
 
 
-$updatePost = "UPDATE PostsLikes SET likes = 2, rating = 10 WHERE author = '$author' AND permlink = '$permlink'";
+$updatePost = "UPDATE PostsLikes SET likes = 6, rating = 28 WHERE author = '$author' AND permlink = '$permlink'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {}
 
