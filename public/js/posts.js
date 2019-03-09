@@ -51,6 +51,7 @@ $(document).ready(function(){
 
 				//get meta tags
 				let metatags = metadata.tags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
+				console.log(metatags);
 				let category = metadata.category;
 				let exturl = metadata.url;
 
@@ -211,7 +212,6 @@ $(document).ready(function(){
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         //let post_body = $(post_description).text();
-
 
 		$('.auth_name').html(author);
         $('#top_title').html(title);
