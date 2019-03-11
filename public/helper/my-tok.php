@@ -1,5 +1,5 @@
 <?php
-include('template/header.php');
+include('../template/header.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -34,4 +34,4 @@ if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
                                     <button class="btn btn-default">Submit</button>
                                 </form>
                             </div>
-<?php include('template/footer.php'); ?>
+<?php include('../template/footer.php'); ?>
