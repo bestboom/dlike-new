@@ -34,7 +34,7 @@ error_reporting(E_ALL);
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
-                                        <button class="btn btn-default">Submit</button>
+                                        <button type="submit" class="btn btn-default">Submit</button>
                                     </div>
                                 </form>
                     </div>

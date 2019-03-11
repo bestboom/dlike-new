@@ -3,15 +3,45 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
+
+
 if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"])){
 
 	echo $username = $_POST["name"];
 	echo $amount = $_POST["amount"];
 	echo $reason = stripslashes($_POST["reason"]);
 
+/*
+	$sqlm = "INSERT INTO transactions (username, amount, reason)
+			VALUES ('".$username."', '".$amount."', '".$reason."')";
+
+			if (mysqli_query($conn, $sqlm)) {
+
+				$checkWallett = "SELECT username, amount FROM wallet WHERE username = '$username'";
+					$result = mysqli_query($conn, $checkWallet);
+
+					if ($result->num_rows > 0) {
+
+						while($row = $result->fetch_assoc()) {
+							$old_amount = $row['amount'];
+
+							$updateWallet = "UPDATE wallet SET amount = '$old_amount' + '$amount' WHERE username = '$username'";
+								$updateWalletQuery = $conn->query($updateWallet);
+									if ($updateWalletQuery === TRUE) {} 
+						}
+
+					} else {
+
+						$addWallet = "INSERT INTO wallet (username, amount)
+													VALUES ('".$username."', '".$amount."')";
+										$addWalletQuery = $conn->query($addWallet);
+					}
+
+			}
 
 
 
+*/
 }
 
 ?>
