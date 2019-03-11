@@ -1,5 +1,4 @@
-<?php include('template/header.php'); 
-?>
+<?php include('template/header.php'); ?>
         <div class="container explorer-top">
             <div class="col-md-12">
                 <div class="banner-content explorer-form">
@@ -32,9 +31,14 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <?php
+                        $sql = "SELECT sum(amount) as total FROM wallet";
+                        $result = $conn->query($sql);
+                            while($row = $result->fetch_assoc()) { ?>
                     <div class="support-category-block">
                         <h4>Total Distributed</h4>
-                        <h5>230,456,23</h5>
+                        <h5><?php echo (number_format($row['total'])); ?></h5>
+                    <? } ?>
                         <hr>
                         <h4>Total Token holders</h4>
                         <h5>230,456,23</h5>
