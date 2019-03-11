@@ -832,7 +832,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   position: relative;
   background: url("../images/bg/1.jpg") no-repeat center center;
   background-size: cover; }
-.explorer{padding: 120px 0 15px 0; }
+.explorer-top{margin-top: -100px; }
 .explorer-form{margin-bottom: 20px !important;}
 .explorer-section{background-color: #f8f9fa!important;}
 @keyframes blinker {

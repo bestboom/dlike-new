@@ -1,5 +1,18 @@
-<?php include('template/header.php'); ?>
-        <div class="container">
+<?php include('template/header.php'); 
+
+$sqlt = "SELECT username, amount, reason FROM transactions";
+$result = $conn->query($sqlt);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["amount"]. " " . $row["reason"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}
+?>
+        <div class="container explorer-top">
             <div class="col-md-12">
                 <div class="banner-content explorer-form">
                     <form action="#" method="get" class="subs-form">
