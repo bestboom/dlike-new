@@ -17,19 +17,19 @@ error_reporting(E_ALL);
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" placeholder="UserName" class="form-control" name="user">
+                                                <input type="text" placeholder="UserName" class="form-control" name="user" required />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                            <input type="number" placeholder="Amount" class="form-control" name="amount">
+                                            <input type="number" placeholder="Amount" class="form-control" name="amount" required />
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" placeholder="Reason" class="form-control" name="reason">
+                                                <input type="text" placeholder="Reason" class="form-control" name="reason" required />
                                             </div>
                                         </div>
                                     </div>
