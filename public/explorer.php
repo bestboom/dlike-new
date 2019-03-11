@@ -1,17 +1,4 @@
-<?php include('template/header.php'); 
-
-$sqlt = "SELECT username, amount, reason FROM transactions";
-$result = $conn->query($sqlt);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["amount"]. " " . $row["reason"]. "<br>";
-    }
-} else {
-    echo "0 results";
-}
-?>
+<?php include('template/header.php'); ?>
         <div class="container explorer-top">
             <div class="col-md-12">
                 <div class="banner-content explorer-form">
@@ -106,20 +93,28 @@ if ($result->num_rows > 0) {
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title"><h4>Latest Transactions</h4></div>
                         </div>
+                        <?php
+                        $sqlt = "SELECT username, amount, reason FROM transactions";
+                        $result = $conn->query($sqlt);
+
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) { ?>
                         <div class="activity-block">
                             <div class="row my-entry">
                                 <div class="col-sm-8">
                                     <div class="row">
                                         <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
-                                        <div class="exp-user">freedom</div>
-                                        <div class="exp-user">For <span>delegation</span></div>
+                                        <div class="exp-user"><?php echo $row["username"]; ?></div>
+                                        <div class="exp-user">For <span><?php echo $row["reason"]; ?></span></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="exp-amt"><span id="tk-amt">2342342</span> Dlikes</div>
+                                    <div class="exp-amt"><span id="tk-amt"><?php echo $row["amount"]php; ?></span> Dlikes</div>
                                 </div>
                             </div>
                         </div>
+                        <? }
+                        } ?>
                     </div>
                 </div>
             </div>
