@@ -15,3 +15,5 @@ if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 
 
 }
+
+?>
