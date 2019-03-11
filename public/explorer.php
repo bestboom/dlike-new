@@ -71,7 +71,7 @@
                             <div class="row my-entry">
                                 <div class="col-sm-6">
                                     <div class="row">
-                                        <div><img src="./images/post/authors/2.png" alt="img" class="img-responsive"></div>
+                                        <div><img src="https://steemitimages.com/u/"<?php echo $row["username"]; ?>"/avatar" alt="img" class="img-responsive"></div>
                                         <div class="exp-user"><?php echo $row["username"]; ?></div>
                                     </div>
                                 </div>
