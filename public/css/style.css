@@ -716,23 +716,27 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 |----------------------------------------------------------------------------
 */
 .activity-section {
-  padding: 120px 0 90px 0; }
-
+  padding: 10px 0 90px 0; }
+.activity-section .card-header { background: #fff; border-bottom: 1px solid #e7eaf3;}  
+.activity-section h4 {font-weight: 700;color: #111;margin: 0px;}
 .activity-block {
-  margin-bottom: 30px;
-  padding: 40px 30px;
-  background: #fff;
-  -webkit-box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.05); }
+  padding: 5px 20px;
+  background: #fff; }
   .activity-block img {
-    margin-bottom: 25px; }
+    width: 32px; }
   .activity-block h4 {
     font-weight: 700;
     margin-bottom: 20px;
     color: #0b132d; }
   .activity-block p {
     margin-bottom: 0; }
-
+  .my-entry{padding: 15px;border-bottom: 1px solid #eee;}  
+  .exp-user{font-weight: 600;
+    padding: 4px;
+    margin-left: 10px;}
+  .exp-amt{text-align: right;padding: 4px;font-weight: 600;} 
+  #tk-amt{color: #1652f0;padding-right: 5px;} 
+  .btn-exp{background: #eee;}
 /*
 |----------------------------------------------------------------------------
 | 5. Wallets Style
@@ -828,9 +832,13 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   position: relative;
   background: url("../images/bg/1.jpg") no-repeat center center;
   background-size: cover; }
+.explorer{padding: 120px 0 15px 0; }
+.explorer-form{margin-bottom: 20px !important;}
+.explorer-section{background-color: #f8f9fa!important;}
 @keyframes blinker {
   50% { opacity: 0;}
 }
+.explorer-form{margin-bottom: 20px !important;}
 .banner-content {
   text-align: center;
   margin-bottom: 100px; }
@@ -852,6 +860,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     max-width: 570px;
     position: relative;
     margin: 0 auto; }
+   .expl {
+        max-width: 90% !important;
+   }
   .banner-content .subs-form input {
     border: none;
     height: 55px;
@@ -1544,10 +1555,12 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   font-size: 15px; }
 
 .support-category-section {
-  padding: 120px 0 50px 0; }
+  padding: 50px 0 20px 0; }
+.sup-icon{margin-bottom: 10px;}  
 
 .support-category-block {
-  padding: 40px 0;
+  background: #fff;
+  padding: 15px 10px 20px;
   border: 1px solid #e8e9eb;
   text-align: center;
   border-radius: 5px;
@@ -1562,8 +1575,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   .support-category-block h4 {
     font-weight: 700;
     margin-bottom: 0;
-    color: #1c2437; }
-
+    color: #1c2437; 
+    padding-top: 10px;}
+.support-category-block h5 {padding-top: 8px; font-weight: 600;}
 .support-list-section {
   border-top: 1px solid #e8e9eb;
   padding: 80px 0 40px 0; }
