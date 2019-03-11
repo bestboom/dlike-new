@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="exp-amt"><span id="tk-amt"><?php echo $row["amount"]; ?></span> Dlikes</div>
+                                    <div class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</div>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
-                                    <div class="exp-amt"><span id="tk-amt"><?php echo $row["amount"]; ?></span> Dlikes</div>
+                                    <div class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</div>
                                 </div>
                             </div>
                         </div>
