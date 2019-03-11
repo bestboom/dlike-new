@@ -189,7 +189,7 @@ $(document).ready(function(){
 // Add me
     var options = {
         target: '#add-msg',
-        url: 'helper/tokad.php',
+        url: 'helper/tkad.php',
         success: function() {},
     }
     $('#toksubmit').submit(function() {
