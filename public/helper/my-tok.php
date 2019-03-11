@@ -10,7 +10,7 @@ if (isset($_POST["user"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 	echo $amount = $_POST["amount"];
 	echo $reason = stripslashes($_POST["reason"]);
 
-/*
+
 	$sqlm = "INSERT INTO transactions (username, amount, reason)
 			VALUES ('".$username."', '".$amount."', '".$reason."')";
 
@@ -40,7 +40,7 @@ if (isset($_POST["user"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 
 
 
-*/
+
 }
 
 ?>
