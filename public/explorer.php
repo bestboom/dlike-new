@@ -62,30 +62,26 @@
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title"><h4>Top Token Holders</h4></div>
                         </div>
+                        <?php
+                        $sqlm = "SELECT username, amount FROM wallet ORDER BY amount DESC LIMIT 10";
+                        $resultWallet = $conn->query($sqlm);
+                        if ($resultWallet->num_rows > 0) {
+                            while($row = $resultWallet->fetch_assoc()) { ?>
                         <div class="activity-block">
                             <div class="row my-entry">
                                 <div class="col-sm-6">
                                     <div class="row">
                                         <div><img src="./images/post/authors/2.png" alt="img" class="img-responsive"></div>
-                                        <div class="exp-user">freedom</div>
+                                        <div class="exp-user"><?php echo $row["username"]; ?></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <div class="exp-amt"><span id="tk-amt">2342342123</span> Dlikes</div>
-                                </div>
-                            </div>
-                            <div class="row my-entry">
-                                <div class="col-sm-6">
-                                    <div class="row">
-                                        <div><img src="./images/post/authors/2.png" alt="img" class="img-responsive"></div>
-                                        <div class="exp-user">freedom</div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="exp-amt"><span id="tk-amt">2342342123</span> Dlikes</div>
+                                    <div class="exp-amt"><span id="tk-amt"><?php echo $row["amount"]; ?></span> Dlikes</div>
                                 </div>
                             </div>
                         </div>
+                        <? }
+                        } ?>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -94,7 +90,7 @@
                             <div class="card-header-title"><h4>Latest Transactions</h4></div>
                         </div>
                         <?php
-                        $sqlt = "SELECT username, amount, reason FROM transactions";
+                        $sqlt = "SELECT username, amount, reason FROM transactions ORDER BY trx_time DESC LIMIT 10";
                         $result = $conn->query($sqlt);
 
                         if ($result->num_rows > 0) {
