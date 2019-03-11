@@ -1,4 +1,5 @@
-<?php include('template/header.php'); ?>
+<?php include('template/header.php'); 
+?>
         <div class="container explorer-top">
             <div class="col-md-12">
                 <div class="banner-content explorer-form">
@@ -71,7 +72,7 @@
                             <div class="row my-entry">
                                 <div class="col-sm-6">
                                     <div class="row">
-                                        <div><img src="https://steemitimages.com/u/"<?php echo $row["username"]; ?>"/avatar" alt="img" class="img-responsive"></div>
+                                        <div><img src="https://steemitimages.com/u/<?php echo $row["username"]; ?>/avatar" alt="img" class="img-responsive"></div>
                                         <div class="exp-user"><?php echo $row["username"]; ?></div>
                                     </div>
                                 </div>
