@@ -4,10 +4,9 @@
 	error_reporting(E_ALL);
 
 
+if (isset($_POST["user"]) && isset($_POST["amount"]) && isset($_POST["reason"])){
 
-if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"])){
-
-	echo $username = $_POST["name"];
+	echo $username = $_POST["user"];
 	echo $amount = $_POST["amount"];
 	echo $reason = stripslashes($_POST["reason"]);
 
