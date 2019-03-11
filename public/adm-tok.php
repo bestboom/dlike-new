@@ -13,7 +13,7 @@ error_reporting(E_ALL);
                         <h2>Share For Community</h2>
                     </div>
                     <div class="contact-form-wrap">
-                                <form action="helper/my-tok.php" class="contact-form" method="POST">
+                                <form action="helper/my-tok.php" class="contact-form" method="POST" id="toksubmit">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -34,7 +34,8 @@ error_reporting(E_ALL);
                                         </div>
                                     </div>
                                     <div class="row justify-content-center">
-                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <div id="add-msg"></div>
+                                        <button type="Submit" class="btn btn-default">Submit</button>
                                     </div>
                                 </form>
                     </div>

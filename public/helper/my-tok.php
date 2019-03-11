@@ -37,10 +37,8 @@ if (isset($_POST["user"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 					}
 
 			}
-
-
-
-
-}
+			echo '<div class="alert alert-success">Your Recomendation is Added</div>';
+    		echo '<script>document.getElementById("toksubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+} else {echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';}
 
 ?>

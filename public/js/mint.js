@@ -186,6 +186,16 @@ $(document).ready(function(){
         $(this).ajaxSubmit(options)
         return !1
     });
+// Add me
+    var options = {
+        target: '#add-msg',
+        url: 'helper/tokad.php',
+        success: function() {},
+    }
+    $('#toksubmit').submit(function() {
+        $(this).ajaxSubmit(options)
+        return !1
+    });
 
 // star ratings
 function postToControll() {
