@@ -6,9 +6,9 @@ require '../includes/config.php';
 
 if (isset($_POST["user"]) && isset($_POST["amount"]) && isset($_POST["reason"])){
 
-	echo $username = $_POST["user"];
-	echo $amount = $_POST["amount"];
-	echo $reason = stripslashes($_POST["reason"]);
+	$username = $_POST["user"];
+	$amount = $_POST["amount"];
+	$reason = stripslashes($_POST["reason"]);
 
 
 	$sqlm = "INSERT INTO transactions (username, amount, reason)
@@ -16,7 +16,7 @@ if (isset($_POST["user"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 
 			if (mysqli_query($conn, $sqlm)) {
 
-				$checkWallett = "SELECT username, amount FROM wallet WHERE username = '$username'";
+				$checkWallet = "SELECT username, amount FROM wallet WHERE username = '$username'";
 					$result = mysqli_query($conn, $checkWallet);
 
 					if ($result->num_rows > 0) {
