@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+/*
 $sql = "CREATE TABLE wallet (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
@@ -33,7 +34,7 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-/*
+
 $author = 'sweden2023';
 $permlink = 'pentagon-ran-secret-multi-million-dollar-ufo-programme--bbc-news';
 
