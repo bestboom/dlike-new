@@ -1,5 +1,5 @@
 <?php
-include('../template/header.php');
+include('template/header.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -10,7 +10,7 @@ if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 }
 ?>
 <div class="comment-respond">
-                                <h4>Add Me</h4>
+                            <h4>Add Me</h4>
                                 <form action="" class="comment-form" method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -34,4 +34,4 @@ if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
                                     <button class="btn btn-default">Submit</button>
                                 </form>
                             </div>
-<?php include('../template/footer.php'); ?>
+<?php include('template/footer.php'); ?>
