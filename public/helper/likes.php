@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-
+/*
 $sqlm = "DELETE FROM PostsLikes";
 
 if ($conn->query($sqlm) === TRUE) {
@@ -16,7 +16,7 @@ if ($conn->query($sqlm) === TRUE) {
 }
 
 
-/*
+
 $sql = "CREATE TABLE wallet (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
