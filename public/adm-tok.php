@@ -9,8 +9,12 @@ if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 
 }
 ?>
-<div class="comment-respond">
-                            <h4>Add Me</h4>
+    <div class="contact-form-section">
+        <div class="container">
+            <div class="row">
+                <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-9">
+                    <h2>Share For Community</h2>
+                    <div class="contact-form-wrap">
                                 <form action="" class="comment-form" method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -33,5 +37,12 @@ if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
                                     </div>
                                     <button class="btn btn-default">Submit</button>
                                 </form>
-                            </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div><!-- contact-section -->
+</div>    
+
 <?php include('template/footer.php'); ?>
