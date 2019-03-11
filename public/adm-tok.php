@@ -4,10 +4,6 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"])){
-
-
-}
 ?>
     <div class="contact-form-section">
         <div class="container">
@@ -17,7 +13,7 @@ if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
                         <h2>Share For Community</h2>
                     </div>
                     <div class="contact-form-wrap">
-                                <form action="" class="contact-form" method="POST">
+                                <form action="helper/my-tok.php" class="contact-form" method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
