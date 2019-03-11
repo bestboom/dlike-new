@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"])){
 
 
-
+}
 ?>
 <div class="comment-respond">
                                 <h4>Add Me</h4>
