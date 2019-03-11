@@ -40,8 +40,13 @@
                         <h5><?php echo (number_format($row['total'])); ?></h5>
                     <? } ?>
                         <hr>
+                    <?php
+                        $sqlu = "SELECT COUNT(username) as users FROM wallet";
+                        $resultIt = $conn->query($sqlu);
+                            while($row = $resultIt->fetch_assoc()) { ?>
                         <h4>Total Token holders</h4>
-                        <h5>230,456,23</h5>
+                        <h5><?php echo (number_format($row['users'])); ?></h5>
+                    <? } ?>
                     </div>
                 </div>
                 <div class="col-md-4">
