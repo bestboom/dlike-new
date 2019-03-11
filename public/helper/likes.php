@@ -6,8 +6,8 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-/*
-$sqlm = "DELETE FROM PostsLikes";
+
+$sqlm = "DELETE FROM transactions";
 
 if ($conn->query($sqlm) === TRUE) {
     echo "Table DELETED successfully";
@@ -15,7 +15,7 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-
+/*
 
 $sql = "CREATE TABLE wallet (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
