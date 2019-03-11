@@ -36,7 +36,7 @@ if (isset($_POST["user"]) && isset($_POST["amount"]) && isset($_POST["reason"]))
 										$addWalletQuery = $conn->query($addWallet);
 					}
 			echo '<div class="alert alert-success">Added Successfully!</div>';
-    		echo '<script>document.getElementById("toksubmit").reset();</script>';
+    		echo '<script>document.getElementById("toksubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
 			}
 } else {echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';}
 

@@ -33,8 +33,8 @@ error_reporting(E_ALL);
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="add-msg"></div>
                                     <div class="row justify-content-center">
-                                        <div id="add-msg"></div>
                                         <button type="Submit" class="btn btn-default">Submit</button>
                                     </div>
                                 </form>

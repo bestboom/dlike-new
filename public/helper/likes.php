@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-/*
+
 $sqlm = "DELETE FROM transactions";
 
 if ($conn->query($sqlm) === TRUE) {
@@ -15,8 +15,16 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
+$sqlw = "DELETE FROM wallet";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Table DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 
+/*
 $sql = "CREATE TABLE wallet (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
