@@ -5,11 +5,9 @@
 
 if (isset($_POST["name"]) && isset($_POST["amount"]) && isset($_POST["reason"])){
 
-	echo $username = stripslashes($_POST["name"]);
-	echo $amount = stripslashes($_POST["amount"]);
+	echo $username = $_POST["name"];
+	echo $amount = $_POST["amount"];
 	echo $reason = stripslashes($_POST["reason"]);
-
-
 
 
 
