@@ -15,7 +15,10 @@ if (isset($_GET['user'])) {
                     </form>
                 </div>
             <? } else { ?>
-                <div class="row wallet-profile"><h4><?php echo $user_wallet; ?></h4></div>
+                <div class="row wallet-profile">
+                    <span><img src="/images/post/authors/8.png" alt="img" class="img-responsive"></span><h4><?php echo $user_wallet; ?></h4>
+                    <span></span>
+                </div>
             <? } ?>
             </div>
         </div>
@@ -26,52 +29,7 @@ if (isset($_GET['user'])) {
         </div>
     </div><!-- banner-block -->
 <div class="explorer-section">
-    <div class="support-category-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="support-category-block">
-                        <h4>Max Tokens Supply</h4>
-                        <h5>800M</h5>
-                        <hr>
-                        <h4>Available Tokens Supply</h4>
-                        <h5>400M</h5>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <?php
-                        $sql = "SELECT sum(amount) as total FROM wallet";
-                        $result = $conn->query($sql);
-                            while($row = $result->fetch_assoc()) { ?>
-                    <div class="support-category-block">
-                        <h4>Total Distributed</h4>
-                        <h5><?php echo (number_format($row['total'])); ?></h5>
-                    <? } ?>
-                        <hr>
-                    <?php
-                        $sqlu = "SELECT COUNT(username) as users FROM wallet";
-                        $resultIt = $conn->query($sqlu);
-                            while($row = $resultIt->fetch_assoc()) { ?>
-                        <h4>Total Token holders</h4>
-                        <h5><?php echo (number_format($row['users'])); ?></h5>
-                    <? } ?>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="support-category-block">
-                        <h4>Looking For Free Tokens</h4>
-                        <h5>Promote Dlike</h5>
-                        <h5></h5>
-                        <h5>Contact With Support</h5>
-                        <a class="sup-icon" href="https://discord.gg/JYSkBFk"><i class="fab fa-discord"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-
-    
     <div class="activity-section">
         <div class="container">
             <div class="row">
