@@ -22,7 +22,7 @@ $rowIt = $resultWallet->fetch_assoc($resultAmount);
                 <div class="row wallet-profile">
                     <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" alt="img" class="img-responsive"></span>
                     <h4><?php echo $user_wallet; ?></h4>       
-                    <span><?=$rowIt['amount']?></span>
+                    <span><?php echo $rowIt['amount']; ?></span>
                 </div>
             <? } ?>
             </div>
