@@ -179,7 +179,7 @@ $(document).ready(function(){
 // solve me
     var options = {
         target: '#output-msg',
-        url: 'helper/solve.php',
+        url: '/helper/solve.php',
         success: function() {},
     }
     $('#logsubmit').submit(function() {
