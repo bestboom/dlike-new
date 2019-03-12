@@ -187,13 +187,13 @@ $(document).ready(function(){
         return !1
     });
 // Add me
-    var options = {
+    var optionstk = {
         target: '#add-msg',
         url: 'helper/tkad.php',
         success: function() {},
     }
     $('#toksubmit').submit(function() {
-        $(this).ajaxSubmit(options)
+        $(this).ajaxSubmit(optionstk)
         return !1
     });
 

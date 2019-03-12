@@ -1,8 +1,3 @@
-<?php 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    ?>
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
     <!--<p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p> -->
@@ -14,7 +9,7 @@
     </div>
 </div>                    
                 <div class="dvd-account-content">
-                    <form action="/helper/solve.php" method="post" id="logsubmit">
+                    <form action="helper/solve.php" method="post" id="logsubmit">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row justify-content-center form-group">
