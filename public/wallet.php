@@ -4,7 +4,7 @@ if (isset($_GET['user'])) {
 }
 $sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
 $resultAmount = $conn->query($sqls);
-$rowIt = $resultWallet->fetch_assoc($resultAmount);
+$rowIt = $resultAmount->fetch_assoc();
 
 ?>
         <div class="container explorer-top">
