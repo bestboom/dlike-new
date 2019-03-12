@@ -9,7 +9,7 @@
     </div>
 </div>                    
                 <div class="dvd-account-content">
-                    <form action="helper/solve.php" method="post" id="logsubmit">
+                    <form action="/helper/solve.php" method="post" id="logsubmit">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="row justify-content-center form-group">
