@@ -20,9 +20,13 @@ $rowIt = $resultAmount->fetch_assoc();
                 </div>
             <? } else { ?>
                 <div class="row wallet-profile">
-                    <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" alt="img" class="img-responsive"></span>
-                    <h4><?php echo $user_wallet; ?></h4>       
-                    <span><?php echo $rowIt['amount']; ?></span>
+                    <div>
+                        <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" alt="img" class="img-responsive img-wallet"></span>
+                        <h4><?php echo $user_wallet; ?></h4>  
+                    </div>     
+                    <div>
+                        <h4>Token Balance: &nbsp;<?php echo (number_format($rowIt['amount'])); ?>&nbsp;Dlikes</h4>
+                    </div>
                 </div>
             <? } ?>
             </div>
