@@ -5,7 +5,7 @@
                     <form action="" method="POST" class="subs-form">
                         <div class="input-box expl">
                             <input type="text" value="" required="" name="s" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions">
-                            <button class="wallet-search">Search</button>
+                            <button type="button" class="wallet-search">Search</button>
                         </div>
                     </form>
                 </div>
