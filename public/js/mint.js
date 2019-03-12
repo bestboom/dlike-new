@@ -201,7 +201,7 @@ $(document).ready(function(){
     $('.wallet-search').click(function () {
         let user_wallet = $('#exp_search').val();
         let wallet_url = "https://dlike.io/wallet/"+user_wallet;
-        window.open(wallet_url,"_self");
+        window.open(wallet_url, "_self");
     });
 
 // star ratings
