@@ -9,4 +9,9 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !https
 #If neither above conditions are met, redirect to https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-RewriteRule ^explorer/$ ./explorer.php [L,NC]
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+
+RewriteRule ^explorer/$ ./explorer.php [L]
