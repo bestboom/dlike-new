@@ -2,6 +2,10 @@
 if (isset($_GET['user'])) {
      $user_wallet = $_GET['user'];
 }
+$sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
+$resultAmount = $conn->query($sqls);
+$rowIt = $resultWallet->fetch_assoc($resultAmount);
+
 ?>
         <div class="container explorer-top">
             <div class="col-md-12">
@@ -17,12 +21,7 @@ if (isset($_GET['user'])) {
             <? } else { ?>
                 <div class="row wallet-profile">
                     <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" alt="img" class="img-responsive"></span>
-                    <h4><?php echo $user_wallet; ?></h4>
-            <?php
-            $sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
-            $resultAmount = $conn->query($sqls);
-            $rowIt = $resultWallet->fetch_assoc($resultAmount);
-            ?>        
+                    <h4><?php echo $user_wallet; ?></h4>       
                     <span><?=$rowIt['amount']?></span>
                 </div>
             <? } ?>
