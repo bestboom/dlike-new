@@ -16,8 +16,14 @@ if (isset($_GET['user'])) {
                 </div>
             <? } else { ?>
                 <div class="row wallet-profile">
-                    <span><img src="/images/post/authors/8.png" alt="img" class="img-responsive"></span><h4><?php echo $user_wallet; ?></h4>
-                    <span></span>
+                    <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" alt="img" class="img-responsive"></span>
+                    <h4><?php echo $user_wallet; ?></h4>
+            <?php
+            $sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
+            $resultAmount = $conn->query($sqls);
+            $rowIt = $resultWallet->fetch_assoc($resultAmount);
+            ?>        
+                    <span><?=$rowIt['amount']?></span>
                 </div>
             <? } ?>
             </div>
