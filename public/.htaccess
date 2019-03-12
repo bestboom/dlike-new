@@ -15,7 +15,7 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.php -f
 
 RewriteRule ^explorer$ ./explorer.php 
-RewriteRule ^wallet/(.*)$ ./wallet.php?user=$1 [L]
+RewriteRule ^wallet/(.*)$ ./wallet.php?user=$1
+RewriteRule ^@/?(.*)$ ./profile.php?user=$1
