@@ -1,10 +1,11 @@
 <?php include('template/header.php'); 
 if (isset($_GET['user'])) {
-    echo $_GET['user'];
+     $user_wallet = $_GET['user'];
 }
 ?>
         <div class="container explorer-top">
             <div class="col-md-12">
+            <?php if(empty($user_wallet)) { ?>
                 <div class="banner-content explorer-form">
                     <form action="#" method="get" class="subs-form">
                         <div class="input-box expl">
@@ -13,6 +14,9 @@ if (isset($_GET['user'])) {
                         </div>
                     </form>
                 </div>
+            <? } else { ?>
+                <div><?php echo $user_wallet; ?></div>
+            <? } ?>
             </div>
         </div>
                         </div>
