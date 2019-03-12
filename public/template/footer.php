@@ -26,7 +26,7 @@
                         <ul><li><span>Made with <i class="fas fa-heart"></i> By Dlike</span></li></ul>
                     </div>
                     <div class="row copyright-text">
-                        <div><a href="/"><img src="./images/logo.png" alt="img" class="img-responsive"/></a></div>&nbsp;<div><p>  © 2019 <a href="#">DLike</a>. All Rights Reserved</p></div>
+                        <div><a href="/"><img src="/images/logo.png" alt="img" class="img-responsive"/></a></div>&nbsp;<div><p>  © 2019 <a href="#">DLike</a>. All Rights Reserved</p></div>
                     </div>
                 </div>
             </div>
