@@ -19,7 +19,7 @@ $rowIt = $resultAmount->fetch_assoc();
                     </form>
                 </div>
             <? } else { ?>
-                <div class="row wallet-profile">
+                <div class="row d-flex justify-content-around wallet-profile">
                     <div class="row">
                         <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" alt="img" class="img-responsive img-wallet"></span>
                         <h4><?php echo $user_wallet; ?></h4>  
