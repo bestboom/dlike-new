@@ -14,4 +14,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.php -f
 
-RewriteRule ^explorer/$ ./explorer.php [L]
+RewriteRule ^explorer$ ./explorer.php 
+RewriteRule ^wallet/?(.*)$ ./wallet.php?user=$1 [L,R=301]
