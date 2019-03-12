@@ -835,6 +835,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .explorer-top{margin-top: -100px; }
 .explorer-form{margin-bottom: 20px !important;}
 .explorer-section{background-color: #f8f9fa!important;}
+.wallet-profile{padding: 25px;margin-left: 40px;}
+.wallet-profile h4{color: #fff;font-weight: 600;}
 @keyframes blinker {
   50% { opacity: 0;}
 }

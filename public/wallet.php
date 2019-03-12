@@ -7,15 +7,15 @@ if (isset($_GET['user'])) {
             <div class="col-md-12">
             <?php if(empty($user_wallet)) { ?>
                 <div class="banner-content explorer-form">
-                    <form action="#" method="get" class="subs-form">
+                    <form class="subs-form">
                         <div class="input-box expl">
-                            <input type="text" value="" required="" name="s" class="form-control" placeholder="Search by steem username for token / transactions">
-                            <button type="submit">Search</button>
+                            <input type="text" value="" name="s" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions" required />
+                            <button type="button" class="wallet-search">Search</button>
                         </div>
                     </form>
                 </div>
             <? } else { ?>
-                <div><?php echo $user_wallet; ?></div>
+                <div class="row wallet-profile"><h4><?php echo $user_wallet; ?></h4></div>
             <? } ?>
             </div>
         </div>
