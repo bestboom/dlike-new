@@ -2,9 +2,9 @@
         <div class="container explorer-top">
             <div class="col-md-12">
                 <div class="banner-content explorer-form">
-                    <form action="" method="POST" class="subs-form">
+                    <form class="subs-form">
                         <div class="input-box expl">
-                            <input type="text" value="" required="" name="s" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions">
+                            <input type="text" value="" name="s" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions" required />
                             <button type="button" class="wallet-search">Search</button>
                         </div>
                     </form>
