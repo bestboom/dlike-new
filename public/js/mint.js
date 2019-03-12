@@ -197,6 +197,13 @@ $(document).ready(function(){
         return !1
     });
 
+// Wallet
+    $('.wallet-search').click(function () {
+        let user_wallet = $('#exp_search').val();
+        let wallet_url = "https://dlike.io/wallet/"+user_wallet;
+        window.open(wallet_url);
+    });
+
 // star ratings
 function postToControll() {
     for (i = 0; i < document.getElementsByName('star').length; i++) {
