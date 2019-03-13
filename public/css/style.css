@@ -843,6 +843,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   50% { opacity: 0;}
 }
 .explorer-form{margin-bottom: 20px !important;}
+.home-connect {margin-top: -70px;margin-bottom: 2px;}
 .banner-content {
   text-align: center;
   margin-bottom: 100px; }

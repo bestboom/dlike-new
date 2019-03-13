@@ -1,6 +1,6 @@
 <?php include('template/header.php'); require ('lib/solvemedialib.php'); ?>
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
             <?php if($_COOKIE['username'] == ''){ ?>
                 <div class="col-md-3 main main_offer">
                     <div class="daily">
@@ -22,8 +22,9 @@
                     </div>
                 </div>
             <? } else { ?>
-                <div class="banner-content">
-                    <h2>Dlike - Informative Face Of Internet</h2> 
+                <div class="banner-content home-connect">
+                    <h2>An Informative Face Of Internet</h2> 
+                    <h5>Share For Community - Get rewarded By Community</h5>
                 </div>
             <? } ?>
             </div>
