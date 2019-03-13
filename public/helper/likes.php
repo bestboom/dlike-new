@@ -5,10 +5,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-$username = 'mobileothers';
-$updateWallet = "UPDATE wallet SET amount = 1950 WHERE username = '$username'";
-                                $updateWalletQuery = $conn->query($updateWallet);
-                                    if ($updateWalletQuery === TRUE) {}
 
 /*
 $sqlw = "DELETE FROM PostsLikes";
