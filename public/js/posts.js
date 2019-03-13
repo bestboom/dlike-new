@@ -14,7 +14,7 @@ $(document).ready(function(){
 	let $tag, $limit, content = "#content";
 	let query = {
 		tag: "dlike",
-		limit: 60,
+		limit: 72,
 	};
 
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
