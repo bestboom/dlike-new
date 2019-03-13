@@ -83,7 +83,7 @@ $(document).ready(function(){
     }
     $('.shareme').click(function () {
         let text_words = $.trim($('[name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-        if(text_words < 40){
+        if(text_words < 30){
             showModalError(
                 "Make Sure..",
                 "Write minimum 40 words to explain how this share is useful for community.",
