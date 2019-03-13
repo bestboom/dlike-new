@@ -838,6 +838,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .wallet-profile{padding: 25px;margin-left: 40px;}
 .wallet-profile h4{color: #fff;font-weight: 600;padding: 16px;}
 .img-wallet{width: 54px;border-radius: 50%;}
+.wallet-trx{margin-top: 60px;}
 @keyframes blinker {
   50% { opacity: 0;}
 }

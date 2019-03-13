@@ -43,13 +43,13 @@ $rowIt = $resultAmount->fetch_assoc();
         <div class="container">
             <div class="row">
 
-                <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-9">
+                <div class="offset-lg-1 col-lg-10 offset-md-1 col-md-10">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title"><h4>Latest Transactions</h4></div>
                         </div>
                         <?php
-                        $sqlt = "SELECT username, amount, reason FROM transactions ORDER BY trx_time DESC LIMIT 10";
+                        $sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
                         $result = $conn->query($sqlt);
 
                         if ($result->num_rows > 0) {
