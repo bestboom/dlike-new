@@ -3,14 +3,14 @@ include('template/header.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+echo $_COOKIE['username'];
 ?>
     <div class="contact-form-section">
         <div class="container">
             <div class="row">
                 <div class="offset-lg-3 col-lg-6 offset-md-1 col-md-9">
                     <div class="banner-content">
-                        <h2>Share For Community</h2>
+                        <h2>Dlike Admin</h2>
                     </div>
                     <div class="contact-form-wrap">
                                 <form action="helper/my-tok.php" class="contact-form" method="POST" id="toksubmit">
