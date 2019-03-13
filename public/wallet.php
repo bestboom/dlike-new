@@ -10,9 +10,9 @@ $rowIt = $resultAmount->fetch_assoc();
             <div class="col-md-12">
             <?php if(empty($user_wallet)) { ?>
                 <div class="banner-content explorer-form">
-                    <form class="subs-form">
+                    <form action="/wallet.php" class="subs-form">
                         <div class="input-box expl">
-                            <input type="text" value="" name="s" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions" required />
+                            <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions" required />
                             <button type="button" class="wallet-search">Search</button>
                         </div>
                     </form>
@@ -21,7 +21,7 @@ $rowIt = $resultAmount->fetch_assoc();
                 <div class="row d-flex justify-content-around wallet-profile">
                     <div class="row">
                         <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/8.png'" alt="img" class="img-responsive img-wallet"></span>
-                        <h4></h4>  
+                        <h4><?php echo $user_wallet; ?></h4>  
                     </div>     
                     <div>
                         <h4>Token Balance: &nbsp;<?php echo (number_format($rowIt['amount'])); ?>&nbsp;Dlikes</h4>
@@ -58,7 +58,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                 <div class="col-sm-8">
                                     <div class="row">
                                         <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
-                                        <div class="exp-user"><?php echo $row["username"]; ?></div>
+                                        <div class="exp-user"></div>
                                         <div class="exp-user">For <span><?php echo $row["reason"]; ?></span></div>
                                     </div>
                                 </div>
