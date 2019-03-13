@@ -1563,7 +1563,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .sup-icon{margin-bottom: 10px;color: #fff;}  
 
 .support-category-block {
-  background: #191d5d;
+  background: #6747c7;
   padding: 15px 10px 20px;
   border: 1px solid #e8e9eb;
   text-align: center;
