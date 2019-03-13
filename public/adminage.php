@@ -3,7 +3,7 @@ include('template/header.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-if($_COOKIE['username'] != 'dlike'){die('<script>window.location(https://dlike.io,"_self")</script>');};
+if($_COOKIE['username'] != 'dlike'){die('<script>window.location.replace("https://dlike.io","_self")</script>');};
 ?>
     <div class="contact-form-section">
         <div class="container">
