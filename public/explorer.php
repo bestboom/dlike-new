@@ -38,7 +38,7 @@
                     <div class="support-category-block">
                         <h4>Total Distributed</h4>
                         <h5><?php echo (number_format($row['total'])); ?></h5>
-                    <? } ?>
+                    <? } $conn->close(); ?>
                         <hr>
                     <?php
                         $sqlu = "SELECT COUNT(username) as users FROM wallet";
@@ -46,7 +46,7 @@
                             while($row = $resultIt->fetch_assoc()) { ?>
                         <h4>Total Token holders</h4>
                         <h5><?php echo (number_format($row['users'])); ?></h5>
-                    <? } ?>
+                    <? } $conn->close(); ?>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                         <? }
-                        } ?>
+                        } $conn->close(); ?>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -120,7 +120,7 @@
                             </div>
                         </div>
                         <? }
-                        } ?>
+                        } $conn->close(); ?>
                     </div>
                 </div>
             </div>

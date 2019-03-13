@@ -5,7 +5,7 @@ if (isset($_GET['user'])) {
 $sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
 $resultAmount = $conn->query($sqls);
 $rowIt = $resultAmount->fetch_assoc();
-
+$conn->close();
 ?>
         <div class="container explorer-top">
             <div class="col-md-12">
@@ -28,7 +28,7 @@ $rowIt = $resultAmount->fetch_assoc();
                         <h4>Token Balance: &nbsp;<?php echo (number_format($rowIt['amount'])); ?>&nbsp;Dlikes</h4>
                     </div>
                 </div>
-            <? } ?>
+            <? } $conn->close(); ?>
             </div>
         </div>
                         </div>
