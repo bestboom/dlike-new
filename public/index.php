@@ -1,6 +1,7 @@
 <?php include('template/header.php'); require ('lib/solvemedialib.php'); ?>
         <div class="container">
             <div class="row">
+            <?php if($_COOKIE['username'] == ''){ ?>
                 <div class="col-md-3 main main_offer">
                     <div class="daily">
                         <div class="daily_box"><p class="daily_start">10</p><p class="daily_mid">STEEM</p><p class="daily_end">Daily</p></div>
@@ -20,6 +21,11 @@
                         <div class="daily_box"><p class="daily_start">2500</p><p class="daily_mid">DLike Tokens</p><p class="daily_end">Daily</p></div>
                     </div>
                 </div>
+            <? } else { ?>
+                <div class="banner-content">
+                    <h2>Dlike - Informative Face Of Internet</h2> 
+                </div>
+            <? } ?>
             </div>
         </div>
     </div><!-- sub-header -->
