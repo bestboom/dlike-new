@@ -21,7 +21,7 @@ $conn->close();
             <? } else { ?>
                 <div class="row d-flex justify-content-around wallet-profile">
                     <div class="row">
-                        <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='./images/post/8.png'" alt="img" class="img-responsive img-wallet"></span>
+                        <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/8.png'" alt="img" class="img-responsive img-wallet"></span>
                         <h4><?php echo $user_wallet; ?></h4>  
                     </div>     
                     <div>
