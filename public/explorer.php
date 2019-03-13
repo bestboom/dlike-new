@@ -46,7 +46,7 @@
                             while($row = $resultIt->fetch_assoc()) { ?>
                         <h4>Total Token holders</h4>
                         <h5><?php echo (number_format($row['users'])); ?></h5>
-                    <? } $conn->close(); ?>
+                    <? } ?>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                         <? }
-                        } $conn->close(); ?>
+                        } ?>
                     </div>
                 </div>
                 <div class="col-md-6">

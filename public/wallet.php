@@ -5,7 +5,6 @@ if (isset($_GET['user'])) {
 $sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
 $resultAmount = $conn->query($sqls);
 $rowIt = $resultAmount->fetch_assoc();
-$conn->close();
 ?>
         <div class="container explorer-top">
             <div class="col-md-12">
@@ -28,7 +27,7 @@ $conn->close();
                         <h4>Token Balance: &nbsp;<?php echo (number_format($rowIt['amount'])); ?>&nbsp;Dlikes</h4>
                     </div>
                 </div>
-            <? } $conn->close(); ?>
+            <? } ?>
             </div>
         </div>
                         </div>
@@ -41,7 +40,7 @@ $conn->close();
 
     <div class="activity-section">
         <div class="container">
-            <div class="row">
+            <div class="row wallet-trx">
 
                 <div class="offset-lg-1 col-lg-10 offset-md-1 col-md-10">
                     <div class="card h-100">
@@ -69,13 +68,12 @@ $conn->close();
                             </div>
                         </div>
                         <? }
-                        } ?>
+                        } $conn->close(); ?>
                     </div>
                 </div>
             </div>
         </div>
     </div><!-- activity-section -->
-
-                            
+          
 </div><!-- explorer-section -->
 <?php include('template/footer.php'); ?>
