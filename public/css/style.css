@@ -290,7 +290,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #c51d24; }
-
+.nav-tok {background-color: transparent !important;border-bottom: 1px solid #2d3572 !important;}
 .navbar-expand-lg .navbar-nav .nav-link,
 .navbar-nav > li > a {
   color: #ffffff;
@@ -844,6 +844,15 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 }
 .explorer-form{margin-bottom: 20px !important;}
 .home-connect {margin-top: -90px;margin-bottom: 20px !important;}
+.token-content{margin-top: 20px;}
+.token-content h1{color: #fff;font-size: 500%;margin-bottom: 15px;}
+.tk-bt{justify-content: space-evenly;margin-top: 45px;}
+.tk-stats{margin: 40px;}
+.number_text p {margin-bottom: 2px;font-weight: 600;}
+.number_text h2 {color: #262c6a;font-weight: 600;}
+.token-content h2{font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;font-size: 200% !important;}
 .banner-content {
   text-align: center;
   margin-bottom: 100px; }
