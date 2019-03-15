@@ -137,1383 +137,268 @@
   </div>
 
 
-
-
-
-    <div class="new-ticker-block new-ticker-block-section">
-        <div class="container">
-            <div class="new-ticker-block-wrap">
-                <div class="ticker-head">
-                    <ul class="nav nav-tabs ticker-nav" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#favorite_ticker" role="tab" data-toggle="tab">
-                                <h5>Favorites</h5>
-                                <i class="fa fa-stroopwafel"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#BNB_markets" role="tab" data-toggle="tab">BNB Markets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#BTC_markets" role="tab" data-toggle="tab">BTC Markets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#ETH_markets" role="tab" data-toggle="tab">ETH Markets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#USDT_markets" role="tab" data-toggle="tab">USDT Markets</a>
-                        </li>
-                        <li class="nav-item nav-item-last">
-                            <form action="#" method="get" class="search-form">
-                                <div class="input-box">
-                                    <input type="text" value="" required="" name="s" class="form-control" placeholder="Search...">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
-                        </li>
-                    </ul>
+    <div class="activity-section tk-abt">
+        <div class="container" style="height:100vh;">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="sticky-top" style="color: #fff;">This is menu</div>
                 </div>
-                <div class="market-ticker-block">
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active show" id="favorite_ticker">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ONT/BTC</td>
-                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
-                                        <td><span class="color-buy">+8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ETH/BTC</td>
-                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
-                                        <td><span class="color-buy">+2.76%</span></td>
-                                        <td>0.05723</td>
-                                        <td>0.05550</td>
-                                        <td>5,523.15018959</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>IOST/BTC</td>
-                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td>
-                                        <td><span class="color-sell">-2.73%</span></td>
-                                        <td>0.0000051</td>
-                                        <td>0.0000046</td>
-                                        <td>5,300.71861161</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>POA / BTC</td>
-                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
-                                        <td><span class="color-buy">+2.70%</span></td>
-                                        <td>0.0000055</td>
-                                        <td>0.0000052</td>
-                                        <td>4,683.61663443</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                </tbody>
-                            </table><!-- coin-list table -->
+                <div class="col-md-9 tk-ab-content">
+                    <h2>About Dlike</h2>
+                    <p>Dlike is a blockchain based dapp (decentralized application) built on top of steem blockchain which offers sharing of content on the blockchain and rewarding its contributors in the form of STEEM cryptocurrency and Dlike tokens. With an earning modal for users, entire focus of Dlike is to build social interaction among community members to keep each other updated through link sharing with latest happening in the world and on top of that we are building a token based economy for the participating community to get rewarded for their efforts to develop a real informative face of internet.</p>
+                    <h2></h2>
+                    <div class="abt-features">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./images/others/1.png" alt="img" class="mx-auto d-block"/> 
+                            <h4>Share What You Like</h4>
+                            <p>Dlike give its contributors utmost freedom of expression and allow users to share what they like within the required parameters of useful and informative link sharing for community.</p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="BNB_markets">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ONT/BTC</td>
-                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
-                                        <td><span class="color-buy">+8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ETH/BTC</td>
-                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
-                                        <td><span class="color-buy">+2.76%</span></td>
-                                        <td>0.05723</td>
-                                        <td>0.05550</td>
-                                        <td>5,523.15018959</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>IOST/BTC</td>
-                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td>
-                                        <td><span class="color-sell">-2.73%</span></td>
-                                        <td>0.0000051</td>
-                                        <td>0.0000046</td>
-                                        <td>5,300.71861161</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>POA / BTC</td>
-                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
-                                        <td><span class="color-buy">+2.70%</span></td>
-                                        <td>0.0000055</td>
-                                        <td>0.0000052</td>
-                                        <td>4,683.61663443</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                </tbody>
-                            </table><!-- coin-list table -->
+                        <div class="col-md-6">
+                            <img src="./images/others/2.png" alt="img" class="mx-auto d-block"/>
+                            <h4>No Censorship</h4>
+                            <p>As compared to any other social media platform, Dlike ensures no censorship is being done on platform as link being shared on network is copied to blockchain and is non-editable.</p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="BTC_markets">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ONT/BTC</td>
-                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
-                                        <td><span class="color-buy">+8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ETH/BTC</td>
-                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
-                                        <td><span class="color-buy">+2.76%</span></td>
-                                        <td>0.05723</td>
-                                        <td>0.05550</td>
-                                        <td>5,523.15018959</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>IOST/BTC</td>
-                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td>
-                                        <td><span class="color-sell">-2.73%</span></td>
-                                        <td>0.0000051</td>
-                                        <td>0.0000046</td>
-                                        <td>5,300.71861161</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>POA / BTC</td>
-                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
-                                        <td><span class="color-buy">+2.70%</span></td>
-                                        <td>0.0000055</td>
-                                        <td>0.0000052</td>
-                                        <td>4,683.61663443</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                </tbody>
-                            </table><!-- coin-list table -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./images/others/3.png" alt="img" class="mx-auto d-block"/>
+                            <h4>Proof Of Brain Rewards</h4>
+                            <p>Being on steem blockchain, Dlike follows the Proof of brain mechanism of its parent blockchain for rewarding its contributors who perform content finsind and sharing activities.</p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="ETH_markets">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ONT/BTC</td>
-                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
-                                        <td><span class="color-buy">+8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ETH/BTC</td>
-                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
-                                        <td><span class="color-buy">+2.76%</span></td>
-                                        <td>0.05723</td>
-                                        <td>0.05550</td>
-                                        <td>5,523.15018959</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>IOST/BTC</td>
-                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td>
-                                        <td><span class="color-sell">-2.73%</span></td>
-                                        <td>0.0000051</td>
-                                        <td>0.0000046</td>
-                                        <td>5,300.71861161</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>POA / BTC</td>
-                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
-                                        <td><span class="color-buy">+2.70%</span></td>
-                                        <td>0.0000055</td>
-                                        <td>0.0000052</td>
-                                        <td>4,683.61663443</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                </tbody>
-                            </table><!-- coin-list table -->
+                        <div class="col-md-6">
+                            <img src="./images/others/4.png" alt="img" class="mx-auto d-block"/>
+                            <h4>Community Driven Dapp</h4> 
+                            <p>With a complete beleif in decentralization, Dlike is run by its community managers in the form of moderators and curators who are responsible for ensuring the quality of link sharing.</p>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="USDT_markets">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ONT/BTC</td>
-                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
-                                        <td><span class="color-buy">+8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ETH/BTC</td>
-                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
-                                        <td><span class="color-buy">+2.76%</span></td>
-                                        <td>0.05723</td>
-                                        <td>0.05550</td>
-                                        <td>5,523.15018959</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>IOST/BTC</td>
-                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td>
-                                        <td><span class="color-sell">-2.73%</span></td>
-                                        <td>0.0000051</td>
-                                        <td>0.0000046</td>
-                                        <td>5,300.71861161</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>POA / BTC</td>
-                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
-                                        <td><span class="color-buy">+2.70%</span></td>
-                                        <td>0.0000055</td>
-                                        <td>0.0000052</td>
-                                        <td>4,683.61663443</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>NCASH/BTC</td>
-                                        <td>0.00050900 / $3.55</td>
-                                        <td><span class="color-sell">-8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>BNB/BTC</td>
-                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ICX/BTC</td>
-                                        <td>0.0000093 / $12.1</td>
-                                        <td><span class="color-sell">+7.59%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>XVG/BTC</td>
-                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
-                                        <td><span class="color-buy">-2.44%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ADA/BTC</td>
-                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
-                                        <td><span class="color-sell">+5.74%</span></td>
-                                        <td>0.00551478</td>
-                                        <td>0.00478963</td>
-                                        <td>92.76872852</td>
-                                    </tr>
-                                </tbody>
-                            </table><!-- coin-list table -->
-                        </div><!-- market-ticker-block -->
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!-- new-ticker-block -->
-    <div class="activity-section">
+    </div>
+
+    <div class="graph-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="activity-block">
-                        <img src="./images/others/1.png" alt="img" class="img-responsive"/>
-                        <h4>
-                            Safe and secure
-                        </h4>
-                        <p>
-                            It uses a dictionary of over 200 Latin words, combined with 
-                            a handful of model sentence structures, to generate Lorem 
-                            Ipsum which looks reasonable therefore always
+                    <div class="section-title-one">
+                        <h3>Dlike Token Economy</h3>
+                        <p>Dlike tokens are utility tokens that various participants can hold or consume within the platform, and thus derive their entire value from Dlike Platform. <br>
+                        The most important KSF (Key Successful Factor) of the Dlike platform is to build the real user base and amplify our community activities, rather than just focusing on the future token values. So, right from the very start we we are running a unique way to distribute our tokens - ecosystem and community building bounty programs.
                         </p>
+                    </div>
+                    <div>
+                        <table class="token-distribution">
+      <tbody><tr>
+        <td>Ecosystem and community building</td>
+        <td class="right">50%</td>
+      </tr>
+      <tr>
+        <td class="grey">Token swaps for Steem delegations</td>
+        <td class="right grey">5.06%</td>
+      </tr>
+      <tr>
+        <td class="grey">Airdrops to Steem holders</td>
+        <td class="right grey">3.63%</td>
+      </tr>
+      <tr>
+        <td class="grey">Role and promotion contributions</td>
+        <td class="right grey">3.82%</td>
+      </tr>
+      <tr>
+        <td class="grey">Bounties for community participations</td>
+        <td class="right grey">3.42%</td>
+      </tr>
+      <tr>
+        <td class="grey">Standby tokens for further distributions</td>
+        <td class="right grey">34.07%</td>
+      </tr>
+      <tr>
+        <td>Reserve for future business development</td>
+        <td class="right">20%</td>
+      </tr>
+      <tr>
+        <td>Team members (2 year vesting)</td>
+        <td class="right">10%</td>
+      </tr>
+      <tr>
+        <td>Token sales via IEO (Initial Exchange Offering)</td>
+        <td class="right">10%</td>
+      </tr>
+      <tr>
+        <td>2nd round funding</td>
+        <td class="right">10%https://www.lition.io/?utm_source=icobench</td>
+      </tr>
+    </tbody></table>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="activity-block">
-                        <img src="./images/others/2.png" alt="img" class="img-responsive"/>
-                        <h4>
-                            High Exchange Limits
-                        </h4>
-                        <p>
-                            It uses a dictionary of over 200 Latin words, combined with 
-                            a handful of model sentence structures, to generate Lorem 
-                            Ipsum which looks reasonable therefore always
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="activity-block">
-                        <img src="./images/others/3.png" alt="img" class="img-responsive"/>
-                        <h4>
-                            24/7 Live Support
-                        </h4>
-                        <p>
-                            It uses a dictionary of over 200 Latin words, combined with 
-                            a handful of model sentence structures, to generate Lorem 
-                            Ipsum which looks reasonable therefore always
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="activity-block">
-                        <img src="./images/others/4.png" alt="img" class="img-responsive"/>
-                        <h4>
-                            Fast and Reliable
-                        </h4>
-                        <p>
-                            It uses a dictionary of over 200 Latin words, combined with 
-                            a handful of model sentence structures, to generate Lorem 
-                            Ipsum which looks reasonable therefore always
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- activity-section -->
-    <div class="catagori-section">
-        <div class="section-title-one">
-            <h3>Categories of Wallets</h3>
-            <p>
-                If you are going to use a passage of Lorem Ipsum, 
-                you need to be sure there isn't <br> anything 
-                embarrassing hidden in the middle of text.
-            </p>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-12">
-                    <div class="catagori-content-block">
-                        <nav class="catagori-list">
-                            <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#nav_wallet" role="tab" data-toggle="tab">
-                                        <h4>Bread Wallet</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_mycelium" role="tab" data-toggle="tab">
-                                        <h4>Mycelium</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_exodus" role="tab" data-toggle="tab">
-                                        <h4>Exodus</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_copay" role="tab" data-toggle="tab">
-                                        <h4>Copay</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_nano" role="tab" data-toggle="tab">
-                                        <h4>Ledger Nano</h4>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="tab-content catagoritab-content" id="nav-tabContent">
-                            <div role="tabpanel" class="tab-pane fade show active" id="nav_wallet">
-                                <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive"/>
-                                    <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
-                                    </p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="cp_level">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
-                                        </div>
-                                        <div class="cons-block">
-                                            <h5 class="cp_level">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
-                                        </div>
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="nav_mycelium">
-                                <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive"/>
-                                    <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
-                                    </p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
-                                        </div>
-                                        <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
-                                        </div>
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
-                                <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive"/>
-                                    <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
-                                    </p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
-                                        </div>
-                                        <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
-                                        </div>
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
-                                <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive"/>
-                                    <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
-                                    </p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
-                                        </div>
-                                        <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
-                                        </div>
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="nav_nano">
-                                <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive"/>
-                                    <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
-                                    </p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
-                                        </div>
-                                        <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
-                                        </div>
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                        </div>
-                    </div><!-- catagori-content-block -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="catagori-vintage">
-                        <img src="./images/others/7.png" alt="img" class="img-responsive"/>
-                    </div>
+                    <div class="row"><img src="./images/post/pie-1.png" alt="img" class="mx-auto d-block tk-graph"/></div>
+                    <div class="row"><img src="./images/post/pie-4.png" alt="img" class="mx-auto d-block tk-graph"/></div>
                 </div>
             </div>
         </div>
     </div><!-- catagori-section -->
+
+        <div class="activity-section tk-abt">
+        <div class="container">
+            <div class="row justify-content-center road">
+                <h2>Dlike RoadMap</h2>
+
+
+<ul class="timeline" id="timeline">
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">Q1</span>
+      <span class="date">2018<span>
+    </div>
+    <div class="status">
+      <h4> Idea And Planning of Dlike </h4>
+    </div>
+  </li>
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">Q2</span>
+      <span class="date">2018<span>
+    </div>
+    <div class="status">
+      <h4> Dlike Website Launched</h4>
+    </div>
+  </li>
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">Q3</span>
+      <span class="date">2018<span>
+    </div>
+    <div class="status">
+      <h4> Dlike Token Economy Revelead </h4>
+    </div>
+  </li>
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">Q4</span>
+      <span class="date">2018<span>
+    </div>
+    <div class="status">
+      <h4> Beta Andrid App Launched </h4>
+    </div>
+  </li>
+ </ul> 
+
+ <ul class="timeline" id="timeline">
+  <li class="li complete">
+    <div class="timestamp">
+      <span class="author">Q1</span>
+      <span class="date">2019<span>
+    </div>
+    <div class="status">
+      <h4> Token Launch and IEO </h4>
+    </div>
+  </li>
+  <li class="li">
+    <div class="timestamp">
+      <span class="author">Q2</span>
+      <span class="date">2019<span>
+    </div>
+    <div class="status">
+      <h4> Dlike Website Launched</h4>
+    </div>
+  </li>
+  <li class="li">
+    <div class="timestamp">
+      <span class="author">Q3</span>
+      <span class="date">2019<span>
+    </div>
+    <div class="status">
+      <h4> Dlike Token Economy Revelead </h4>
+    </div>
+  </li>
+  <li class="li">
+    <div class="timestamp">
+      <span class="author">Q4</span>
+      <span class="date">2019<span>
+    </div>
+    <div class="status">
+      <h4> Beta Andrid App Launched </h4>
+    </div>
+  </li>
+ </ul>      
+            </div>
+        </div>
+    </div>
+
+
     <div class="wallets-section">
         <div class="container">
-            <div class="setion-title-two">
-                <h5>Our Wallets</h5>
-            </div>
             <div class="row">
-                <div class="offset-lg-3 col-lg-6 offset-md-2 col-md-8">
+                <div class="col-md-12">
                     <div class="wallets-block">
-                        <img src="./images/others/5.png" alt="img" class="img-responsive"/>
-                        <h5>Fully compatible with iOS, Android, Mac & Windows</h5>
-                        <h5 class="base-color">Select one & Download</h5>
+                        <h2 class="base-color">Dlike Team</h2>
+                        <h5>Dlike Is a community Driven Dapp With 50+ Team Members</h5>
+                        <br>
                         <div class="download-option-block">
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
-                                    <input type="radio" id="iPhone" name="radio" class="input-hidden">
-                                    <label for="iPhone" class="download-option">
-                                        <i class="fab fa-apple"></i>
-                                    </label>
+                                        <img src="./images/post/authors/abdul.jpg" alt="img" class="img-responsive img-team">
                                 </div>
-                                <h4>iPhone</h4>
+                                <h4>Abdul</h4>
+                                <h4>Founder, CEO</h4>
                             </div>
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
-                                    <input type="radio" id="Android" name="radio" class="input-hidden">
-                                    <label for="Android" class="download-option">
-                                        <i class="fab fa-android"></i>
-                                    </label>
+                                        <img src="https://steemitimages.com/u/hightouch/avatar" alt="img" class="img-responsive img-team">
                                 </div>
-                                <h4>Android</h4>
+                                <h4>Abdul</h4>
+                                <h4>Founder, CEO</h4>
                             </div>
                             <div class="download-wrap">
-                                    <div class="download-wrap-inner">
-                                    <input type="radio" id="Windows" name="radio" class="input-hidden">
-                                    <label for="Windows" class="download-option">
-                                        <i class="fab fa-windows"></i>
-                                    </label>
+                                <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/tabris/avatar" alt="img" class="img-responsive img-team">
                                 </div>
-                                <h4>Windows</h4>
+                                <h4>@tabris</h4>
+                                <h4>steemhunt.io</h4>
                             </div>
                             <div class="download-wrap">
-                                    <div class="download-wrap-inner">
-                                    <input type="radio" id="iMac" name="radio" class="input-hidden">
-                                    <label for="iMac" class="download-option">
-                                        <i class="fab fa-apple"></i>
-                                    </label>
+                                <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/tabris/avatar" alt="img" class="img-responsive img-team">
                                 </div>
-                                <h4>iMac</h4>
+                                <h4>@tabris</h4>
+                                <h4>steemhunt.io</h4>
                             </div>
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/ehiboss/avatar" alt="img" class="img-responsive img-team">
+                                </div>
+                                <h4>@ehiboss</h4>
+                                <h4>steemhunt.io</h4>
+                            </div>
+                            
                         </div>
-                        <div class="text-center">
-                            <button class="btn download-btn">Download Now</button>
+                        <h5 class="base-color">Advisors</h5>
+                        <div class="download-option-block">
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/lukestokes/avatar" alt="img" class="img-responsive img-team">
+                                </div>
+                                <h4>@lukestokes</h4>
+                                <h4>fundition.io</h4>
+                            </div>
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/hightouch/avatar" alt="img" class="img-responsive img-team">
+                                </div>
+                                <h4>@hightouch</h4>
+                                <h4>fundition.io</h4>
+                            </div>
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="./images/post/authors/sebastian.jpg" alt="img" class="img-responsive img-team">
+                                </div>
+                                <h4>@tabris</h4>
+                                <h4>steemhunt.io</h4>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -1523,193 +408,47 @@
     <div class="lattest-news-section">
         <div class="container">
             <div class="setion-title-two">
-                <h5>Latest News</h5>
+                <h5>Downloads</h5>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <article class="post-style-one">
-                        <span class="post-metat-date">02 DEC, 2019</span>
-                        <h4 class="post-title">
-                            <a href="./news-details.html">
-                                It is a long established fact
-                            </a>
-                        </h4>
-                        <p class="post-entry">
-                            It is a long established fact that a reader will be distracted by 
-                            the readable content of a page when looking
-                        </p>
-                        <a href="./news-details.html" class="post-link" >
-                            Read More
+                        <div class="row d-flex justify-content-center paper">
+                            <img src="./images/post/paper.jpg" alt="img" class="img-responsive img-paper">
+                        </div>
+                        <div class="row justify-content-center"
+                        <a href="./news-details.html">
+                            <button type="submit" class="btn btn-primary">DLIKE WhitePaper</button>
                         </a>
+                        </div>
                     </article>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <article class="post-style-one">
-                        <span class="post-metat-date">20 NOV, 2019</span>
-                        <h4 class="post-title">
-                            <a href="./news-details.html">
-                                here are many variations
-                            </a>
-                        </h4>
-                        <p class="post-entry">
-                            It is a long established fact that a reader will be distracted by 
-                            the readable content of a page when looking
-                        </p>
-                        <a href="./news-details.html" class="post-link" >
-                            Read More
+                        <div class="row d-flex justify-content-center paper">
+                            <img src="./images/post/steem-paper.jpg" alt="img" class="img-responsive img-paper">
+                        </div>
+                        <div class="row justify-content-center"
+                        <a href="./news-details.html">
+                            <button type="submit" class="btn btn-primary">STEEM WhitePaper</button>
                         </a>
+                        </div>
                     </article>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <article class="post-style-one">
-                        <span class="post-metat-date">30 NOV, 2019</span>
-                        <h4 class="post-title">
-                            <a href="./news-details.html">
-                                The standard chunk of Lorem
-                            </a>
-                        </h4>
-                        <p class="post-entry">
-                            It is a long established fact that a reader will be distracted by 
-                            the readable content of a page when looking
-                        </p>
-                        <a href="./news-details.html" class="post-link" >
-                            Read More
+                        <div class="row d-flex justify-content-center paper">
+                            <img src="./images/post/audit-report.jpg" alt="img" class="img-responsive img-paper">
+                        </div>
+                        <div class="row justify-content-center"
+                        <a href="./news-details.html">
+                            <button type="submit" class="btn btn-primary">Security Audit Report</button>
                         </a>
+                        </div>
                     </article>
                 </div>
             </div>
         </div>
     </div><!-- lattest-news-section -->
-    <div class="colto-section">
-        <div class="container">
-            <div class="colto-content-wrap">
-                <div class="colto-content">
-                    <h3>Getting started</h3>
-                    <p>We provide professional and secure trading services for investors</p>
-                </div>
-                <div class="colto-btn-group">
-                    <button class="btn callto-btn">Log In</button>
-                    <span>or</span>
-                    <button class="btn callto-btn">Create Account</button>
-                </div>
-            </div>
-        </div>
-    </div><!-- colto-section -->
-    <footer class="footer">
-        <div class="footer-upper-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-4">
-                        <div class="footer-logo">
-                            <a href="#">
-                                <img src="./images/logo.png" alt="img" class="img-responsive"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Our Company</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Token Listing</a></li>
-                                <li><a href="#">Join Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>Learn</h4>
-                            <ul>
-                                <li><a href="#">Legal</a></li>
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">AML&CFT</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>Help</h4>
-                            <ul>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">API Support</a></li>
-                                <li><a href="#">Coin/Token Listing</a></li>
-                                <li><a href="#">Partnership</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4">
-                        <div class="footer-info-list">
-                            <h4>Contact Us</h4>
-                            <ul class="contact-info">
-                                <li>Email:  <span>info.excoin@gmail.com</span></li>
-                                <li>Phone:   <span>+99 5589 54789</span></li>
-                            </ul>
-                            <ul class="social-style-two">
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-icon-wrap">
-                <a href="#">
-                    <img src="./images/others/31.png" alt="img" class="img-responsive">
-                </a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-wrap">
-                    <div class="trade-volume-block">
-                        <ul>
-                            <li>
-                                <span>39151</span> Active Traders
-                            </li>
-                            <li>
-                                <span>4191 BTC</span> 24h Volume
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="copyright-text">
-                        © 2019 <a href="#">Excoin</a>. All Rights Reserved
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="./assets/js/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/jquery.peity.min.js"></script>
-    <script src="./assets/js/jquery.slimscroll.min.js"></script>
-    <script src="./js/custom.js"></script>
-</body>
-</html>
+
+<?php include('/template/footer.php'); ?>
