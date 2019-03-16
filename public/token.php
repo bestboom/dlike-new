@@ -338,7 +338,7 @@
                             <img src="./images/post/paper.jpg" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center"
-                        <a href="./news-details.html">
+                        <a href="#">
                             <button type="submit" class="btn btn-primary">DLIKE WhitePaper</button>
                         </a>
                         </div>
@@ -347,7 +347,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="">
                         <div class="row d-flex justify-content-center paper">
-                            <img src="#" alt="img" class="img-responsive img-paper">
+                            <img src="./images/post/steem-paper.png" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center"
                         <a href="https://steem.com/wp-content/uploads/2018/10/steem-whitepaper.pdf">
@@ -372,8 +372,7 @@
         </div>
     </div><!-- lattest-news-section -->
 
-    
-
+<?php include('template/footer.php'); ?>
 
 <script src='https://www.lition.io/wp-content/cache/wpfc-minified/d7u00mir/c05tu.js' type="text/javascript"></script>
 <script src='https://www.lition.io/wp-content/cache/wpfc-minified/kqbn7mmu/c05tu.js' type="text/javascript"></script>
@@ -407,4 +406,3 @@ $('.delay-35s').attr("data-wow-delay", "3.5s");
 $('.line, .animation-container, .chart-text span, .pyramid, .ts__distribution, .ts__use').viewportChecker();
 });
 </script>
-<?php include('template/footer.php'); ?>
