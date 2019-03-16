@@ -337,7 +337,7 @@
                         <div class="row d-flex justify-content-center paper">
                             <img src="./images/post/paper.jpg" alt="img" class="img-responsive img-paper">
                         </div>
-                        <div class="row justify-content-center"
+                        <div class="row justify-content-center">
                         <a href="#">
                             <button type="submit" class="btn btn-primary">DLIKE WhitePaper</button>
                         </a>
@@ -349,8 +349,8 @@
                         <div class="row d-flex justify-content-center paper">
                             <img src="./images/post/steem-paper.png" alt="img" class="img-responsive img-paper">
                         </div>
-                        <div class="row justify-content-center"
-                        <a href="https://steem.com/wp-content/uploads/2018/10/steem-whitepaper.pdf">
+                        <div class="row justify-content-center">
+                        <a href="https://steem.com/wp-content/uploads/2018/10/steem-whitepaper.pdf" target="_blank">
                             <button type="submit" class="btn btn-primary">STEEM WhitePaper</button>
                         </a>
                         </div>
@@ -361,7 +361,7 @@
                         <div class="row d-flex justify-content-center paper">
                             <img src="./images/post/audit-report.png" alt="img" class="img-responsive img-paper">
                         </div>
-                        <div class="row justify-content-center"
+                        <div class="row justify-content-center">
                         <a href="#">
                             <button type="submit" class="btn btn-primary">Security Audit Report</button>
                         </a>
