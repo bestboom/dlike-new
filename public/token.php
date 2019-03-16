@@ -257,6 +257,13 @@
                                 <h4>Yogesh Padsala</h4>
                                 <h4>Security Analyst</h4>
                             </div>
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="./images/post/authors/chao-han.png" alt="img" class="img-responsive img-team mx-auto mx-auto">
+                                </div>
+                                <h4>Chao Han</h4>
+                                <h4>Senior Developer</h4>
+                            </div>
                             
                         </div>
                         <h3 style="font-weight: 600;padding-bottom: 30px;">Advisors</h3>
@@ -318,7 +325,12 @@
                                 </div>
                                 <h4>@onetin84</h4>
                             </div>
-                            
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/carlpei/avatar" alt="img" class="img-responsive img-team mx-auto ">
+                                </div>
+                                <h4>@carlpei</h4>
+                            </div>
                         </div>
 
                     </div>
