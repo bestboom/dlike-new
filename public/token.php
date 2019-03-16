@@ -347,10 +347,10 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="">
                         <div class="row d-flex justify-content-center paper">
-                            <img src="./images/post/steem-paper.png" alt="img" class="img-responsive img-paper">
+                            <img src="#" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center"
-                        <a href="./news-details.html">
+                        <a href="https://steem.com/wp-content/uploads/2018/10/steem-whitepaper.pdf">
                             <button type="submit" class="btn btn-primary">STEEM WhitePaper</button>
                         </a>
                         </div>
@@ -362,7 +362,7 @@
                             <img src="./images/post/audit-report.png" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center"
-                        <a href="./news-details.html">
+                        <a href="#">
                             <button type="submit" class="btn btn-primary">Security Audit Report</button>
                         </a>
                         </div>
