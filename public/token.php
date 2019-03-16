@@ -347,7 +347,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="">
                         <div class="row d-flex justify-content-center paper">
-                            <img src="./images/post/steem-paper.jpg" alt="img" class="img-responsive img-paper">
+                            <img src="./images/post/steem-paper.png" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center"
                         <a href="./news-details.html">
@@ -359,7 +359,7 @@
                 <div class="col-lg-4 col-md-6">
                     <article class="">
                         <div class="row d-flex justify-content-center paper">
-                            <img src="./images/post/audit-report.jpg" alt="img" class="img-responsive img-paper">
+                            <img src="./images/post/audit-report.png" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center"
                         <a href="./news-details.html">
