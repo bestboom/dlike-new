@@ -264,7 +264,13 @@
                                 <h4>Chao Han</h4>
                                 <h4>Senior Developer</h4>
                             </div>
-                            
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="./images/post/authors/talip.jpg" alt="img" class="img-responsive img-team mx-auto mx-auto">
+                                </div>
+                                <h4>@pillsjee</h4>
+                                <h4>Senior Developer</h4>
+                            </div>
                         </div>
                         <h3 style="font-weight: 600;padding-bottom: 30px;">Advisors</h3>
                         <div class="download-option-block">
@@ -332,7 +338,12 @@
                                 <h4>@carlpei</h4>
                             </div>
                         </div>
-
+                        <div class="download-wrap">
+                            <div class="download-wrap-inner">
+                                <img src="https://steemitimages.com/u/joetunex/avatar" alt="img" class="img-responsive img-team mx-auto ">
+                             </div>
+                             <h4>@joetunex</h4>
+                        </div>
                     </div>
                 </div>
             </div>
