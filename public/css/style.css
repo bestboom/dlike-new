@@ -752,7 +752,6 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 */
 .wallets-section {
   padding-bottom: 10px; }
-
 .wallets-block {
   text-align: center; }
   .wallets-block > img {
