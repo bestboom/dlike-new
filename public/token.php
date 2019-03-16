@@ -407,4 +407,4 @@ $('.delay-35s').attr("data-wow-delay", "3.5s");
 $('.line, .animation-container, .chart-text span, .pyramid, .ts__distribution, .ts__use').viewportChecker();
 });
 </script>
-<?php include('/template/footer.php'); ?>
+<?php include('template/footer.php'); ?>
