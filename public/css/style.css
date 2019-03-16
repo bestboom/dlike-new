@@ -238,7 +238,15 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   .section-title-one p {
     line-height: 24px;
     margin-bottom: 0; }
-
+.adv:before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    z-index: 2;
+    background: #e8e9eb; }
 .setion-title-two {
   text-align: center;
   position: relative;
@@ -743,7 +751,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 |----------------------------------------------------------------------------
 */
 .wallets-section {
-  padding-bottom: 120px; }
+  padding-bottom: 10px; }
 
 .wallets-block {
   text-align: center; }
@@ -838,7 +846,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .wallet-profile{padding: 25px;margin-left: 40px;}
 .wallet-profile h4{color: #fff;font-weight: 600;padding: 16px;}
 .img-wallet{width: 54px;border-radius: 50%;border: 1px solid #2664a27d;}
-.img-team{border-radius: 50%;border: 1px solid #2664a27d;width: 130px;}
+.img-team{border-radius: 50%;border: 1px solid #2664a27d;width: 100px;}
 .wallet-trx{margin-top: 60px;}
 @keyframes blinker {
   50% { opacity: 0;}
@@ -861,7 +869,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .img-paper{height: 250px;}
 .paper{padding-bottom: 25px;}
 .road{margin: 20px;}
-.road h2{color: #fff;padding: 25px;margin-bottom: 20px;}
+.road h3{color: #fff;padding: 25px;margin-bottom: 40px;}
 .timeline {
   list-style-type: none;
   display: flex;
@@ -921,6 +929,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   line-height: 26px;
     text-align: center;
 }
+
+
+
 .token-content h2{font-weight: 700;
     color: #fff;
     margin-bottom: 30px;font-size: 200% !important;}
