@@ -238,7 +238,7 @@
                             </div>
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
-                                        <img src="https://steemitimages.com/u/taskmaster4450/avatar" alt="img" class="img-responsive img-team mx-auto">
+                                        <img src="./images/post/authors/taskmaster.jpg" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
                                 <h4>@taskmaster4450</h4>
                                 <h4>Media Relations</h4>
