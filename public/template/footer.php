@@ -1,6 +1,6 @@
     <div class="colto-section">
         <div class="container">
-            <div class="colto-content-wrap">
+            <div class="colto-content-in">
                 <div class="colto-content">
                     <h3>DLike</h3>
                     <p>Share What You Like - Get Rewarded If Community Likes</p>
@@ -21,7 +21,7 @@
     <footer class="footer">
         <div class="footer-bottom">
             <div class="container">
-                <div class="footer-bottom-wrap">
+                <div class="footer-bottom-in">
                     <div class="trade-volume-block">
                         <ul><li><span>Made with <i class="fas fa-heart"></i> By Dlike</span></li></ul>
                     </div>

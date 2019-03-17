@@ -1476,6 +1476,16 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
   background-size: cover;
   padding: 90px 0; }
 
+.colto-content-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 .colto-content-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3841,6 +3851,16 @@ opacity:0.9;
 .footer-bottom {
   padding: 45px 0 10px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08); }
+  .footer-bottom-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .footer-bottom-wrap {
   display: -webkit-box;
