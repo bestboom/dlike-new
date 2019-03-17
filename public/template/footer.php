@@ -9,9 +9,8 @@
                     <div class="footer-info-list">
                         <ul class="social-style-two">
                             <li><a href="https://discord.gg/JYSkBFk"><i class="fab fa-discord"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://twitter.com/dlike_official"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="https://t.me/dlike_io"><i class="fab fa-telegram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-github"></i></a></li>
                         </ul>
                     </div>
                 </div>

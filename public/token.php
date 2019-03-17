@@ -218,7 +218,7 @@
                                 <div class="download-wrap-inner">
                                         <img src="./images/post/authors/Shivani.jpg" alt="img" class="img-responsive img-team mx-auto mx-auto">
                                 </div>
-                                <h4>Shivani</h4>
+                                <h4>@tophash</h4>
                                 <h4>Designer</h4>
                             </div>
                         </div>
