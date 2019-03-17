@@ -48,8 +48,12 @@
                     </p>                    
                     <form class="contact-form">
                     <div class="row tk-bt">
-                        <button type="submit" class="btn btn-default">WhitePaper</button>
-                        <button type="submit" class="btn btn-default">Live Product</button>
+                    	<a href="https://dlike.io/docs/dlike-paper.pdf" target="_blank">
+                        	<button type="submit" class="btn btn-default">WhitePaper</button>
+                        </a>
+                        <a href="https://dlike.io/" target="_blank">
+                        	<button type="submit" class="btn btn-default">Live Product</button>
+                    	</a>
                     </div>
                     </form>
                 </div>
