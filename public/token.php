@@ -361,7 +361,7 @@
                             <img src="./images/post/paper.jpg" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center">
-                        <a href="#">
+                        <a href="https://dlike.io/docs/dlike-paper.pdf" target="_blank">
                             <button type="submit" class="btn btn-primary">DLIKE WhitePaper</button>
                         </a>
                         </div>
@@ -385,7 +385,7 @@
                             <img src="./images/post/audit-report.png" alt="img" class="img-responsive img-paper">
                         </div>
                         <div class="row justify-content-center">
-                        <a href="#">
+                        <a href="https://dlike.io/docs/audit-report.pdf" target="_blank">
                             <button type="submit" class="btn btn-primary">Security Audit Report</button>
                         </a>
                         </div>
