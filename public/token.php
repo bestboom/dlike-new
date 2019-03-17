@@ -224,7 +224,6 @@
                     <div class="wallets-block">
                         <h2 style="font-weight: 600;">Dlike Team</h2>
                         <h5>Dlike Is a community Driven Dapp With 50+ Team Members</h5>
-                        <br>
                         <div class="download-option-block">
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
@@ -283,7 +282,7 @@
                                 <h4>Senior Developer</h4>
                             </div>
                         </div>
-                        <h3 style="font-weight: 600;padding-bottom: 30px;">Advisors</h3>
+                        <h3 style="font-weight: 600;padding-bottom: 5px;">Advisors</h3>
                         <div class="download-option-block">
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">

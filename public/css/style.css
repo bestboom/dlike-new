@@ -778,6 +778,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     font-size: 15px; }
 
 .download-wrap {
+  margin-top: 20px;
   position: relative;
   display: inline-block;
   margin-right: 50px; }
