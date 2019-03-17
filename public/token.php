@@ -57,7 +57,7 @@
                     </div>
                     </form>
                 </div>
-            </div>
+            /</div>
             <div class="col-md-6">
                 <span class="base"></span>
                 <span></span>
@@ -144,82 +144,7 @@
         <div class="container">
             <div class="row justify-content-center road">
                 <div><h3>Dlike RoadMap</h3></div>
-<ul class="timeline" id="timeline">
-  <li class="li complete">
-    <div class="timestamp">
-      <span class="author">Q1</span>
-      <span class="date">2018<span>
-    </div>
-    <div class="status">
-      <h4> Idea And Planning of Dlike </h4>
-    </div>
-  </li>
-  <li class="li complete">
-    <div class="timestamp">
-      <span class="author">Q2</span>
-      <span class="date">2018<span>
-    </div>
-    <div class="status">
-      <h4> Dlike Website Launched</h4>
-    </div>
-  </li>
-  <li class="li complete">
-    <div class="timestamp">
-      <span class="author">Q3</span>
-      <span class="date">2018<span>
-    </div>
-    <div class="status">
-      <h4> Dlike Token Economy Revelead </h4>
-    </div>
-  </li>
-  <li class="li complete">
-    <div class="timestamp">
-      <span class="author">Q4</span>
-      <span class="date">2018<span>
-    </div>
-    <div class="status">
-      <h4> Beta Andrid App Launched </h4>
-    </div>
-  </li>
- </ul> 
- <ul class="timeline" id="timeline">
-  <li class="li complete">
-    <div class="timestamp">
-      <span class="author">Q1</span>
-      <span class="date">2019<span>
-    </div>
-    <div class="status">
-      <h4> Initiate wallet and IEO Process </h4>
-    </div>
-  </li>
-  <li class="li">
-    <div class="timestamp">
-      <span class="author">Q2</span>
-      <span class="date">2019<span>
-    </div>
-    <div class="status">
-      <h4> Initiate Token isting On Exchanges</h4>
-    </div>
-  </li>
-  <li class="li">
-    <div class="timestamp">
-      <span class="author">Q3</span>
-      <span class="date">2019<span>
-    </div>
-    <div class="status">
-      <h4> Launch Of Mobile Apps (Android + IOS)  </h4>
-    </div>
-  </li>
-  <li class="li">
-    <div class="timestamp">
-      <span class="author">Q4</span>
-      <span class="date">2019<span>
-    </div>
-    <div class="status">
-      <h4>Launch Extensions and Extended Features</h4>
-    </div>
-  </li>
- </ul>      
+				<img src="./images/roadmap.png" alt="img" class="img-responsive mx-auto">    
             </div>
         </div>
     </div>
