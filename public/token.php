@@ -18,18 +18,6 @@
   <title>Dlike</title>
 </head>
 <body>
-	<!-- New Header -->
-	<div>
-	<span class="base"></span>
-	<span></span>
-	<span class="pulse"></span>
-		<span class="box"></span>
-		<span class="box2"></span>
-		<span class="box3"></span>
-
-	</div>
-</div>
-  
     <div class="banner-block">
         <nav class="navbar main-nav navbar-expand-lg nav-tok">
             <div class="container">
