@@ -58,6 +58,14 @@
                     </form>
                 </div>
             </div>
+            <div class="col-md-6">
+                <span class="base"></span>
+                <span></span>
+                <span class="pulse"></span>
+                <span class="box"></span>
+                <span class="box2"></span>
+                <span class="box3"></span>
+            </div>
         </div>
                         </div>
                     </div>
