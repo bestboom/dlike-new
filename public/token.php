@@ -289,7 +289,7 @@
                                         <img src="https://steemitimages.com/u/lukestokes/avatar" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
                                 <h4>@lukestokes</h4>
-                                <h4></h4>
+                                <h4>STEEM Witness</h4>
                             </div>
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
