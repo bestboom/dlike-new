@@ -249,7 +249,6 @@ to{width:149px;}
 from{opacity:0;}
 to{opacity:1;}
 }
-<<<<<<< HEAD
 .box
 {
 	z-index: 3;
@@ -260,7 +259,7 @@ to{opacity:1;}
 	left: 55%;
 	width: 210px;
 	height: 270px;
-	background: url(Mackbook.jpg);
+	background: url(./images/Mackbook.jpg);
 	background-size: cover;
 	border: 5px solid #141E30;
 	border-radius: 8px;
@@ -292,7 +291,7 @@ to{opacity:1;}
 	left: 83%;
 	width: 190px;
 	height: 141px;
-	background: url(Notepad.jpg);
+	background: url(./images/Notepad.jpg);
 	background-size: cover;
 	border: 4px solid #141E30;
 	border-radius: 8px;
@@ -324,7 +323,7 @@ to{opacity:1;}
 	left: 43%;
 	width: 100px;
 	height: 190px;
-	background: url(mobile.jpg);
+	background: url(./images/mobile.jpg);
 	background-size: cover;
 	border: 4px solid #141E30;
 	border-radius: 8px;
@@ -394,5 +393,3 @@ to{opacity:1;}
 		box-shadow: 0 0 0 0 rgba(74, 88, 255,0), 0 0 0 30px rgba(74, 88, 255,0)
 	}
 }
-=======
->>>>>>> 872d219ab6fd8d8960904ba5e86e943b16a725f4
