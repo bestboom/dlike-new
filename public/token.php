@@ -205,7 +205,7 @@
                                         <img src="./images/post/authors/chao-han.png" alt="img" class="img-responsive img-team mx-auto mx-auto">
                                 </div>
                                 <h4>Chao Han</h4>
-                                <h4>Senior Developer</h4>
+                                <h4>Blockchain Developer</h4>
                             </div>
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
@@ -213,6 +213,13 @@
                                 </div>
                                 <h4>@pillsjee</h4>
                                 <h4>Senior Developer</h4>
+                            </div>
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="./images/post/authors/Shivani.jpg" alt="img" class="img-responsive img-team mx-auto mx-auto">
+                                </div>
+                                <h4>Shivani</h4>
+                                <h4>Designer</h4>
                             </div>
                         </div>
                         <h3 style="font-weight: 600;padding-bottom: 5px;">Advisors</h3>
