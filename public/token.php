@@ -234,7 +234,7 @@
                             </div>
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
-                                        <img src="https://steemitimages.com/u/ehiboss/avatar" alt="img" class="img-responsive img-team mx-auto">
+                                        <img src="./images/post/authors/ehiboss.jpg" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
                                 <h4>@ehiboss</h4>
                                 <h4>Manager Operations</h4>
@@ -347,12 +347,6 @@
                                 </div>
                                 <h4>@carlpei</h4>
                             </div>
-                        </div>
-                        <div class="download-wrap">
-                            <div class="download-wrap-inner">
-                                <img src="https://steemitimages.com/u/joetunex/avatar" alt="img" class="img-responsive img-team mx-auto ">
-                             </div>
-                             <h4>@joetunex</h4>
                         </div>
                     </div>
                 </div>
