@@ -187,7 +187,7 @@ input[name="subscribe"]:hover{background-color:#0047a3;}
 
 
 .pyramid{position:relative;height:700px;width:500px;}
-.pyramid .layer-1{position:absolute;width:760px;height:600px;background-image:url(https://www.lition.io/wp-content/uploads/2019/03/pyramid-1.png);background-repeat:no-repeat;background-position:center top;background-size:contain;left:-190px;top:50px;z-index:3;}
+.pyramid .layer-1{position:absolute;width:760px;height:600px;background-image:url(../images/pyramid-1.png);background-repeat:no-repeat;background-position:center top;background-size:contain;left:-190px;top:50px;z-index:3;}
 .pyramid .layer-2{z-index:2;position:absolute;width:960px;height:500px;background-image:url(https://www.lition.io/wp-content/uploads/2019/02/lines.png);background-repeat:no-repeat;background-position:center top;background-size:100%;left:-267px;top:300px;}
 .pyramid .layer-3{position:absolute;z-index:4;width:6px;height:6px;border:1px solid #40d572;border-radius:4px;top:160px;left:140px;opacity:0;}
 .pyramid.visible .layer-3{-webkit-animation:golayer3 0.2s 1 both;animation:golayer3 0.2s 1 both;-webkit-animation-delay:1s;animation-delay:1s;}
