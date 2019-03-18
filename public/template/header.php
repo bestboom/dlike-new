@@ -28,6 +28,7 @@
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item"><a class="nav-link" href="/share.php">SHARE</a></li>
                       <li class="nav-item"><a class="nav-link" href="/explorer">Explorer</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/token">Token</a></li>
                       <li class="nav-item button active">
                           <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
                       </li>
