@@ -40,6 +40,7 @@
             </div>
         </nav><!-- main-nav-block -->
         <div class="container">
+        	<div class="row">
             <div class="col-md-6">
                 <div class="banner-content token-content">
                     <h1>DLIKE</h1>
@@ -66,6 +67,7 @@
                 <span class="box2"></span>
                 <span class="box3"></span>
             </div>
+        </div>
         </div>
                         </div>
                     </div>
