@@ -245,7 +245,7 @@
                                         <img src="./images/post/authors/sebastian.jpg" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
                                 <h4>@tabris</h4>
-                                <h4>steemhunt.io</h4>
+                                <h4>steemhunt.com</h4>
                             </div>
                             
                         </div>
