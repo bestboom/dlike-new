@@ -146,6 +146,8 @@
         <div class="container">
             <div class="row justify-content-center road">
                 <div><h3>Dlike RoadMap</h3></div>
+            </div>
+            <div class="row d-flex justify-content-center">
 				<img src="./images/roadmap.png" alt="img" class="img-responsive mx-auto">    
             </div>
         </div>
