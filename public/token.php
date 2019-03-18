@@ -296,7 +296,7 @@
     <div class="lattest-news-section" style="background: #1b286e;">
         <div class="container">
             <div class="row d-flex justify-content-center" style="margin-top: 40px;margin-bottom: 50px;">
-            <p class="subheader-lition wow fadeInUp"><span class="subheader-text" style="color: #fff;font-weight: 600;font-size: 24px;">DOWNLOADS <br></span></p>
+            <p class="subheader-lition wow fadeInUp"><span class="" style="color: #fff;font-weight: 600;font-size: 24px;">DOWNLOADS <br></span></p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
