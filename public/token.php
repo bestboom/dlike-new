@@ -99,7 +99,7 @@
       <div class="col-md-3 col-sm-6">
         <div class="number_text">
           <p>TOTAL POSTS</p>
-          <h2>10,534+</h2>
+          <h2>23,534+</h2>
         </div>
       </div>
     </div>
