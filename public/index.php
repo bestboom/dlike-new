@@ -1,6 +1,6 @@
 <?php include('template/header.php'); require ('lib/solvemedialib.php'); ?>
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row">
             <?php if($_COOKIE['username'] == ''){ ?>
                 <div class="col-md-3 main main_offer">
                     <div class="daily">
