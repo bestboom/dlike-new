@@ -40,7 +40,7 @@
             </div>
         </nav><!-- main-nav-block -->
         <div class="container">
-        	<div class="row">
+        	<div class="row home-banner">
             <div class="col-md-6">
                 <div class="banner-content token-content">
                     <h1>DLIKE</h1>
