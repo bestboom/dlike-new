@@ -47,5 +47,7 @@
     <script src="/js/posts.js"></script>
     <script src="/js/steemconnect.js"></script>
     <script src="/js/toaster.js"></script>
+    <script src="./js/jquery.ticker.js"></script>
+    <script type="text/javascript"> $(function (){ $('.ticker').ticker(); });</script>
 </body>
 </html>

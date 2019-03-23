@@ -23,8 +23,26 @@
                 </div>
             <? } else { ?>
                 <div class="banner-content home-connect">
-                    <h2>An Informative Face Of Internet</h2> 
-                    <h5>Share For Community - Get rewarded By Community</h5>
+                    <div class="news-headline-block">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-2">
+                                <i class="fas fa-volume-up vol"></i>
+                            </div>
+                            <div class="col-lg-11 col-md-10">
+                                <div class="news-headlines-block">
+                                    <div class="news-headlines-slider ticker">
+                                        <ul>
+                                            <li>Dlike loyalty tokens and bonus reward of 2000 tokens paid to dlikers.</li>
+                                            <li>Dlike bounty program for YouTube and Articles Live on BitcoinTalk Forum.</li>
+                                            <li>Dlike free signup will be added soon.</li>
+                                        </ul>
+                                    </div><!-- news-headlines-slider -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             <? } ?>
             </div>
