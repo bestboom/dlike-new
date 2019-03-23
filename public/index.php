@@ -1,8 +1,7 @@
 <?php include('template/header.php'); require ('lib/solvemedialib.php'); ?>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
-            <div class="row">
-            
+            <div class="row home-banner">
                 <div class="col-md-3 main main_offer">
                     <div class="daily">
                         <div class="daily_box"><p class="daily_start">10</p><p class="daily_mid">STEEM</p><p class="daily_end">Daily</p></div>
