@@ -14,7 +14,7 @@ if (isset($_GET["url"])) {
     $title = strip_tags(htmlspecialchars(trim($decode($title))));
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
 } else { die('Not Allowed');}
-$categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos","General"); 
+$categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
 <div class="container">
             <div class="offset-md-2 col-md-8">
