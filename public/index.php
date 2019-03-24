@@ -37,7 +37,6 @@
                                         <ul>
                                             <li>Dlike loyalty tokens and bonus reward of 2000 tokens paid to dlikers.</li>
                                             <li>Dlike bounty program for YouTube and Articles Live on BitcoinTalk Forum.</li>
-                                            <li>Dlike free signup will be added soon.</li>
                                         </ul>
                                     </div><!-- news-headlines-slider -->
                                 </div>
