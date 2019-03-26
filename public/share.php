@@ -14,6 +14,13 @@
                                 <button type="button" class="btn btn-default" id="share"><i class="fas fa-spinner fa-spin loader" style="display:none;"></i><span id="plus">Share</span></button>
                             </div>
                         </form><!-- contact-form -->
+                        <div class="row d-flex justify-content-center share-pack">
+                            <p>*Maximum 3 link shares allowed per user in 24 hours</p>
+                            <p>*Do not share same link shared by someone else</p>
+                            <p>*Do not share links which are not informative and useless</p>
+                            <p>*We prefer English Langugae based articles to be shared</p>
+                            <p>*Violation of rules will reuslt in negative votes</p>
+                        </div>
                     </div>
                 </div>
             </div>

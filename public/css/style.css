@@ -1032,7 +1032,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
       outline: 0;
       -webkit-box-shadow: none;
       box-shadow: none; }
-.share-form{padding-top: 50px !important;}    
+.share-form{padding-top: 50px !important;}   
+.share-pack{margin-top: 50px;} 
+.share-pack p {margin-bottom: : 2px;color: #ffffffb8;} 
 
 /*
 |----------------------------------------------------------------------------
@@ -1332,7 +1334,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     color: #fff; }
 
 .contact-form-wrap {
-  padding: 120px 0; }
+  padding: 120px 0; 
+  padding-bottom: 60px;}
 
 .contact-form .form-row {
   margin-right: -15px;
