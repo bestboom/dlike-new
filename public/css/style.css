@@ -1034,7 +1034,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
       box-shadow: none; }
 .share-form{padding-top: 50px !important;}   
 .share-pack{margin-top: 50px;} 
-.share-pack p {margin-bottom: : 2px !important;color: #ffffffb8;} 
+.share-pack p {margin-bottom: 2px !important;color: #ffffffb8;} 
 
 /*
 |----------------------------------------------------------------------------
