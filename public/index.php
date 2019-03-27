@@ -35,7 +35,7 @@
                                 <div class="news-headlines-block">
                                     <div class="news-headlines-slider ticker">
                                         <ul>
-                                            <li>Dlike loyalty tokens and bonus reward of 2000 tokens paid to dlikers.</li>
+                                            <li>250 tokens for resteeming dlike post have been paid into wallets.</li>
                                             <li>Dlike bounty program for YouTube and Articles Live on BitcoinTalk Forum.</li>
                                         </ul>
                                     </div><!-- news-headlines-slider -->
