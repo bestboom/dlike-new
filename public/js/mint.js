@@ -276,6 +276,7 @@ $('#content').on("click", ".post_detail", function() {
         }
         json_metadata = metadata;
         let category = metadata.category;
+        let exturl = metadata.url;
         if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
         let steemTags = metadata.tags;
         let dlikeTags = steemTags.slice(2);
