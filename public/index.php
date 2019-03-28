@@ -35,7 +35,7 @@
                                 <div class="news-headlines-block">
                                     <div class="news-headlines-slider ticker">
                                         <ul>
-                                            <li>250 tokens for resteeming dlike post have been paid into wallets.</li>
+                                            <li>Dlike celebrating 4th year of STEEM blockchain success with 1 Million tokens giveaway.</li>
                                             <li>Dlike bounty program for YouTube and Articles Live on BitcoinTalk Forum.</li>
                                         </ul>
                                     </div><!-- news-headlines-slider -->
