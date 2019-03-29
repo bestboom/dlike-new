@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-
+/*
 $sqlw = "DELETE FROM PostsLikes";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -14,7 +14,7 @@ if ($conn->query($sqlw) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-/*
+
 
 $sqlm = "DELETE FROM transactions";
 
