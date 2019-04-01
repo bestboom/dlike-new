@@ -14,7 +14,6 @@ if ($conn->query($sqlw) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
 /*
 $sqlm = "DELETE FROM transactions";
 
