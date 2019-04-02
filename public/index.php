@@ -47,7 +47,7 @@
             </div>
         </div>
     </div><!-- sub-header -->
-    <div class="row d-flex justify-content-center"><a href="https://idcmkorea.io/news/announcement_details?keywords=040219"><img src="images/premium-coin-sale-2.png" style="margin-top: -90px;padding-bottom: 30px;" class="img-responsive"></a></div>
+    <div class="row d-flex justify-content-center"><a href="https://idcmkorea.io/news/announcement_details?keywords=040219" target="_blank"><img src="images/premium-coin-sale-2.png" style="margin-top: 10px;padding-bottom: 30px;" class="img-responsive"></a></div>
     <div class="latest-post-section">
         <div class="container">
             <!--  <article class="post-style-two post-full-width">
