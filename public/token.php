@@ -133,7 +133,7 @@
                     <div class="section-title-one h-100" style="margin-bottom: 40px;">
                         <h4 style="margin-top:45px;color: #fff; font-weight: 600;">Dlike - A Utility Token</h4>
                         <p style="text-align:justify;color: #fff;padding: 15px;line-height: 28px;font-weight: 300;font-size: 13px;">Dlike tokens are utility tokens that various participants can hold or consume within the platform, and thus derive their entire value from Dlike Platform. <br>
-                        The most important KSF (Key Successful Factor) of the Dlike platform is to build the real user base and amplify our community activities, rather than just focusing on the future token values. So, right from the very start we we are running a unique way to distribute our tokens - ecosystem and community building bounty programs.
+                        The most important KSF (Key Successful Factor) of the Dlike platform is to build the real user base and amplify our community activities, rather than just focusing on the future token values. So, right from the very start we are running a unique way to distribute our tokens - ecosystem and community building bounty programs.
                         </p>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
                             
                         </div>
 
-                        <h3 style="font-weight: 600;padding-bottom: 5px;">Deelgators</h3>
+                        <h3 style="font-weight: 600;padding-bottom: 5px;">Delegators</h3>
                         <h5 style="padding-bottom: 30px;">With 100+ delegators, Dlike has $95,000+ SP Deelgation</h5>
                         <div class="download-option-block">
                             <div class="download-wrap">

@@ -35,8 +35,10 @@
                                 <div class="news-headlines-block">
                                     <div class="news-headlines-slider ticker">
                                         <ul>
-                                            <li>Dlike celebrating 4th year of STEEM blockchain success with 1 Million tokens giveaway.</li>
-                                            <li>Dlike bounty program for YouTube and Articles Live on BitcoinTalk Forum.</li>
+                                            <li>Dlike IEO on IDCM KOREA on 8th April with price of $0.025</li>
+                                            <li>Dlike IEO bonus offer for top 15 buyers and first 75 buyers ($100)</li>
+                                            <li>Register on idcmkorea.io to participate in IEO</li>
+                                            <li>DLIKE twitetr bounty live on BitcoinTalk</li>
                                         </ul>
                                     </div><!-- news-headlines-slider -->
                                 </div>
@@ -47,9 +49,10 @@
             </div>
         </div>
     </div><!-- sub-header -->
-    <div class="row d-flex justify-content-center" style="background: #eeeeee94;"><a href="https://idcmkorea.io/news/announcement_details?keywords=040219" target="_blank"><img src="images/premium-coin-sale-2.png" style="margin-top: 10px;padding-bottom: 3px;" class="img-responsive"></a></div>
+    <div class="row d-flex justify-content-center" style="background: #eeeeee94;"><a href="https://idcmkorea.io/news/announcement_details?keywords=040219" target="_blank"><img src="images/premium-coin-sale-2.png" style="margin-top: 10px;padding-bottom: 3px;margin-bottom:-95px;" class="img-responsive"></a></div>
     <div class="latest-post-section">
         <div class="container">
+            <div style="border: 1px dashed;border-radius: 7px;padding: 15px;margin-bottom: 25px;"><h4 style="font-weight: 600;line-height: 1.5;">Write an article about Dlike IEO promotion on (steemit, busy, medium, steempeak) to earn 1000 -3000 DLIKE tokens. Articles must include promotional banners and IDCM KOREA official ANN.</h4></div>
             <!--  <article class="post-style-two post-full-width">
                 <?php //include('helper/top_post.php'); ?>
             </article> --><!-- post-style-two -->
