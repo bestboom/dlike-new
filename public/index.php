@@ -49,11 +49,11 @@
             </div>
         </div>
     </div><!-- sub-header -->
-    <div class="row d-flex justify-content-center" style="background: #eeeeee94;"><a href="https://idcmkorea.io/news/announcement_details?keywords=040219" target="_blank"><img src="images/premium-coin-sale-2.png" style="margin-top: 10px;padding-bottom: 3px;margin-bottom:-95px;" class="img-responsive"></a></div>
+    <div class="row d-flex justify-content-center" style="background: #eeeeee94;"><a href="https://www.idcmkorea.io/coinsale/home" target="_blank"><img src="images/dlike-coin-sale-ban.png" style="margin-top: 10px;padding-bottom: 3px;margin-bottom:-95px;" class="img-responsive"></a></div>
     <div class="latest-post-section">
         <div class="container">
-            <div style="border: 1px dashed;border-radius: 7px;padding: 15px;margin-bottom: 25px;"><h4 style="font-weight: 600;line-height: 1.5;">Write an article about Dlike IEO promotion on (steemit, busy, medium, steempeak) to earn 1000 -3000 DLIKE tokens. Articles must include promotional banners and IDCM KOREA official ANN.</h4></div>
-            <!--  <article class="post-style-two post-full-width">
+            <!-- <div style="border: 1px dashed;border-radius: 7px;padding: 15px;margin-bottom: 25px;"><h4 style="font-weight: 600;line-height: 1.5;">Write an article about Dlike IEO promotion on (steemit, busy, medium, steempeak) to earn 1000 -3000 DLIKE tokens. Articles must include promotional banners and IDCM KOREA official ANN.</h4></div>
+             <article class="post-style-two post-full-width">
                 <?php //include('helper/top_post.php'); ?>
             </article> --><!-- post-style-two -->
             <div class="row  align-items-center h-100 post_select">
