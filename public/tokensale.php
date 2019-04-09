@@ -68,7 +68,7 @@
                     <h3 style="font-weight: 600;">How to Buy?</h3>
                     <h4 style="font-weight: 500;line-height: 1.8;">After making payment, send your ETH wallet address <br>on <b>discord/telegram</b> support for instant token transfer</h4>
                     <h4 style="font-weight: 500;background: #0d94ff;border-radius: 4px;padding:5px;"><b>Are you a potential buyer?</b> Get in touch with us for <b>Extra Bonus</b></h4>
-                    <h4 style="font-weight: 500;">Expected Exchnage Listings By End fo May</h4>
+                    <h4 style="font-weight: 500;">Expected Exchange Listings By End fo May</h4>
                 </div>
                 <hr style="background-color: #fff;width: 70%;"> 
                 <div style="padding-top: 10px;">
