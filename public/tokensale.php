@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="DLIKE token sale is live for limited time. Buy Dlike tokens with 60% bonus. Invest more get more bonus to untill IEO, this private sale ICO will continue.">
+  <meta property="og:title" content="DLIKE Token Private Sale - 60% Bonus">
+<meta property="og:image" content="https://dlike.io/images/pre-sale-dlike-token.png">
+<meta property="og:description" content="DLIKE token sale is live for limited time. Buy Dlike tokens with 60% bonus. Invest more get more bonus to untill IEO, this private sale ICO will continue.">
+<meta property="og:url" content="https://dlike.io/tokensale">
   <link rel='favicon icon' type=image/x-icon href=images/favicon.ico />
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://www.lition.io/wp-content/cache/wpfc-minified/7bk9mmx3/c05tt.css" media="all"/>
