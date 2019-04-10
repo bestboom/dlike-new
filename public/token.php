@@ -164,7 +164,7 @@
                         <div class="download-option-block">
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
-                                        <img src="./images/post/authors/abdul-quddoos.jpg" alt="img" class="img-responsive img-team mx-auto">
+                                        <img src="./images/post/authors/abdul.jpg" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
                                 <h4>Abdul</h4>
                                 <h4>Founder, CEO</h4>
