@@ -102,7 +102,7 @@
                     <h3 style="font-weight: 600;">Buy DLIKE with ETH</h3>
                     <h2 style="font-weight: 600;font-size: 36px;">60% Bonus</h2>
                     <h5 style="font-weight: 600;">Send ETH: <b>0xc5eb536732435a3103b02ea0b6ffffdfb4c8e4f5</b></h5>
-                    <h5 style="font-weight: 600;">Min Purchase 1 ETH</h5>
+                    <h5 style="font-weight: 600;">Min Purchase 0.2 ETH</h5>
                 </div>
                 <hr style="background-color: #fff;width: 70%;">  
                 <div style="padding-top: 10px;padding-bottom: 10px;">  
