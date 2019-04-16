@@ -35,10 +35,7 @@
                                 <div class="news-headlines-block">
                                     <div class="news-headlines-slider ticker">
                                         <ul>
-                                            <li>Dlike IEO on IDCM KOREA on 8th April with price of $0.025</li>
-                                            <li>Dlike IEO bonus offer for top 15 buyers and first 75 buyers ($100)</li>
-                                            <li>Register on idcmkorea.io to participate in IEO</li>
-                                            <li>DLIKE twitetr bounty live on BitcoinTalk</li>
+                                            <li>Dlike will soon start token sale for steemians with huge bonus.</li>
                                         </ul>
                                     </div><!-- news-headlines-slider -->
                                 </div>
