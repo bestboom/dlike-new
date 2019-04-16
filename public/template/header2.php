@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
   <link rel="stylesheet" href="/assets/css/themify-icons.css">
   <link rel="stylesheet" href="/assets/css/slick.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style2.css">
   <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
