@@ -46,13 +46,13 @@ require('lib/solvemedialib.php'); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
     <style>
-        .slick-list.draggable{
-            min-height: 563px !important;
+        .slick-list.draggable {
+            min-height: 368px !important;
             margin-bottom: 100px;
         }
 
-        .testimonial-block>img{
-            height: 35.1rem;
+        .testimonial-block > img {
+            height: 25.1rem;
             width: 62.2rem;
         }
 
@@ -61,7 +61,7 @@ require('lib/solvemedialib.php'); ?>
             z-index: 2222;
         }
 
-        .testimonial-slider button.slick-next{
+        .testimonial-slider button.slick-next {
             right: 0px;
         }
 
@@ -69,27 +69,27 @@ require('lib/solvemedialib.php'); ?>
             color: white;
         }
 
-        .slick-next.slick-arrow{
+        .slick-next.slick-arrow {
             padding-left: 15px;
             background: transparent;
         }
 
-        .slick-prev.slick-arrow{
+        .slick-prev.slick-arrow {
             padding-left: 15px;
             background: transparent;
         }
 
-        .testimonial-slider button.slick-next, .testimonial-slider button.slick-prev{
+        .testimonial-slider button.slick-next, .testimonial-slider button.slick-prev {
             width: 35px;
             height: 56px;
             background: transparent;
         }
 
-        .post_block{
+        .post_block {
             position: relative;
         }
 
-        .post_title{
+        .post_title {
             position: absolute;
             top: 80%;
             left: 8.5%;
@@ -97,11 +97,11 @@ require('lib/solvemedialib.php'); ?>
             font-size: 27px;
         }
 
-        .testimonial-slider .slick-dots{
+        .testimonial-slider .slick-dots {
             bottom: 24px;
         }
 
-        .testimonial-slider .slick-dots li button{
+        .testimonial-slider .slick-dots li button {
             background: #666666;
         }
 
@@ -189,34 +189,53 @@ require('lib/solvemedialib.php'); ?>
 
                 <div class="col-lg-4 col-md-6 postsMainDiv mainDivpostLike_2">
 
-                            <article class="post-style-two">
+                    <article class="post-style-two">
 
 
-                                <div class="post-thumb">
-                                    <a class="post_detail text-center" data-toggle="modal"
-                                       data-target="#postModal"
-                                       data-permlink="london-spitfire-signs-quatermain-dot-esports"
-                                       data-author="miercoles">
-                                        <img
-                                                src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg"
-                                                alt="London Spitfire signs Quatermain | Dot Esports"
-                                                style="height: 250px;"
-                                                class="card-img-top img-fluid">
-                                    </a>
+                        <div class="post-thumb" style="border: none;background: white">
+                            <div class="row">
+                                <div class="col-4 p-2 pl-4" style="height: 95px;">
+                                    <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg"
+                                         alt="London Spitfire signs Quatermain | Dot Esports"
+                                         style="height: 100%;" class="card-img-top img-fluid">
                                 </div>
 
+                                <div class="col-8">
+                                    <a style="color: black;font-size: 12px;">The mysterious Imperial Treasures Of Japan</a>
+                                    <div class="row mt-2">
+                                        <div class="col-1 pt-1">
+                                            <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/AAywGC0.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;u=t&amp;o=t&amp;l=f&amp;f=png"
+                                                 class="loaded">
+                                        </div>
 
-                            </article>
-
-                            <article class="post-style-two" style="height: 250px;background: #6b2525;margin-bottom: 40px;">
-
-
-                                <div class="post-thumb">
+                                        <div class="col-4">
+                                             <span class="sourcename">CNN</span>
+                                        </div>
+                                    </div>
 
                                 </div>
+                            </div>
+                            <!-- <a class="post_detail text-center" data-toggle="modal"
+                                data-target="#postModal"
+                                data-permlink="london-spitfire-signs-quatermain-dot-esports"
+                                data-author="miercoles">
+                                 <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg" alt="London Spitfire signs Quatermain | Dot Esports"
+                                      style="height: 135px;" class="card-img-top img-fluid">
+                             </a>-->
+                        </div>
 
 
-                            </article>
+                    </article>
+
+                    <article class="post-style-two" style="height: 250px;background: #6b2525;margin-bottom: 40px;">
+
+
+                        <div class="post-thumb">
+
+                        </div>
+
+
+                    </article>
 
                 </div>
             </div>
@@ -226,33 +245,33 @@ require('lib/solvemedialib.php'); ?>
         <script>
             $(document).ready(function () {
 
-                setTimeout(function(){
+                setTimeout(function () {
 
-                    $( ".slick-next" ).hover(function () {
+                    $(".slick-next").hover(function () {
                         $(this).css("background", "#303030");
                     })
 
-                    $( ".slick-prev" ).hover(function () {
+                    $(".slick-prev").hover(function () {
                         $(this).css("background", "#303030");
                     })
 
-                    $( ".testimonials-wrap" )
-                        .on( "mouseleave", function() {
+                    $(".testimonials-wrap")
+                        .on("mouseleave", function () {
                             $(".slick-next").css("background", "transparent");
                             $(".slick-prev").css("background", "transparent");
                         });
 
-                    setInterval(function(){
-                        $( ".slick-next" ).click();
-                        }, 5000);
-                  /*  $( ".testimonials-wrap" )
-                        .on( "mouseenter", function() {
-                            $(this).css("background", "#white");
-                        })
-                        .on( "mouseleave", function() {
-                            $(this).css("background", "transparent");
-                        });*/
-                    }, 2000);
+                    setInterval(function () {
+                        $(".slick-next").click();
+                    }, 5000);
+                    /*  $( ".testimonials-wrap" )
+                          .on( "mouseenter", function() {
+                              $(this).css("background", "#white");
+                          })
+                          .on( "mouseleave", function() {
+                              $(this).css("background", "transparent");
+                          });*/
+                }, 2000);
 
             });
         </script>
