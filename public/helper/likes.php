@@ -7,20 +7,6 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$sql = "CREATE TABLE UserStatus (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
-username VARCHAR(255) NOT NULL,
-status VARCHAR(255) NOT NULL,
-set_by VARCHAR(255) NOT NULL,
-set_time TIMESTAMP
-)";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Table UserStatus created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
 
 /*
 
@@ -38,6 +24,22 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
+------------
+$sql = "CREATE TABLE UserStatus (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+status VARCHAR(255) NOT NULL,
+set_by VARCHAR(255) NOT NULL,
+set_time TIMESTAMP
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table UserStatus created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+--------------
 
 $sqlw = "DELETE FROM PostsLikes";
 
