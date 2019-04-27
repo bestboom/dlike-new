@@ -1,7 +1,6 @@
 <?php include('template/header2.php');
 require('lib/solvemedialib.php'); ?>
-    <!-- --><?php /*if($_COOKIE['username'] == ''){ */ ?>
-<?php if (1) { ?>
+    <?php if($_COOKIE['username'] == ''){  ?>
     <div class="banner-content home-connect">
     <div class="news-headline-block">
     <div class="container">
