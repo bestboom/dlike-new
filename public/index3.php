@@ -121,7 +121,7 @@ require('lib/solvemedialib.php'); ?>
         <div class="container">
             <div class="row" id="content">
 
-                <div class="row" style="background: #c5c8cc;padding-top: 31px;margin-bottom: 20px;">
+                <div class="row" style="background: #eeeeee94;padding-top: 31px;margin-bottom: 20px;">
                     <div class="col-lg-8 col-md-6 postsMainDiv mainDivpostLike_2">
                         <div class=" p-0">
                             <div class="container p-0">
