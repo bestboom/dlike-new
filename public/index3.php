@@ -56,6 +56,18 @@ require('lib/solvemedialib.php'); ?>
             width: 62.2rem;
         }
 
+        @media (max-width: 768px) {
+            .testimonial-block > img {
+                height: 17.1rem;
+                width: 62.2rem;
+            }
+
+            .slick-list.draggable {
+                min-height: 274px !important;
+                margin-bottom: 40px;
+            }
+        }
+
         .testimonial-slider button.slick-prev {
             left: 0px;
             z-index: 2222;
@@ -92,7 +104,7 @@ require('lib/solvemedialib.php'); ?>
 
         .post_title {
             position: absolute;
-            top: 80%;
+            top: 74%;
             left: 8.5%;
             color: white;
             font-size: 27px;
@@ -112,7 +124,7 @@ require('lib/solvemedialib.php'); ?>
             background: #FFFFFF;
         }
 
-        .post-style-two {
+        .col-md-6.postsMainDiv.mainDivpostLike_2>.post-style-two {
             margin-bottom: 3px;
         }
 
