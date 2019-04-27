@@ -294,14 +294,19 @@ require('lib/solvemedialib.php'); ?>
                     })
 
                     $(".testimonials-wrap")
+                        .on( "mouseenter", function() {
+                            $(this).css("opacity", "0.8");
+                        })
                         .on("mouseleave", function () {
+                            $(this).css("opacity", "1");
+
                             $(".slick-next").css("background", "transparent");
                             $(".slick-prev").css("background", "transparent");
                         });
 
                     setInterval(function () {
                         $(".slick-next").click();
-                    }, 5000);
+                    }, 50000);
                     /*  $( ".testimonials-wrap" )
                           .on( "mouseenter", function() {
                               $(this).css("background", "#white");
