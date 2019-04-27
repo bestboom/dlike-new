@@ -5,6 +5,24 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
+
+
+$sql = "CREATE TABLE PostStatus (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+category VARCHAR(255) NOT NULL,
+permlink VARCHAR(255) NOT NULL,
+status VARCHAR(255) NOT NULL,
+check_time TIMESTAMP
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table PostStatus created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
 /*
 
 $sqlw = "DELETE FROM PostsLikes";
