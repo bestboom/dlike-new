@@ -47,12 +47,12 @@ require('lib/solvemedialib.php'); ?>
 
     <style>
         .slick-list.draggable {
-            min-height: 368px !important;
+            min-height: 403px !important;
             margin-bottom: 40px;
         }
 
         .testimonial-block > img {
-            height: 23rem;
+            height: 25.1rem;
             width: 62.2rem;
         }
 
@@ -197,7 +197,7 @@ require('lib/solvemedialib.php'); ?>
                                     <span>Top Rated</span>
                                 </div>
                                 <div class="col-8 pl-0">
-                                    <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 6px solid #7F7F7F;">
+                                    <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 2px solid #7F7F7F;">
                                 </div>
                             </div>
                         </div>
@@ -243,7 +243,7 @@ require('lib/solvemedialib.php'); ?>
                                 <span>Advertiseme</span>
                             </div>
                             <div class="col-8 pl-0">
-                                <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 6px solid #7F7F7F;">
+                                <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 2px solid #7F7F7F;">
                             </div>
                         </div>
                     </div>
