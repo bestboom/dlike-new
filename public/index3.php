@@ -1,6 +1,7 @@
 <?php include('template/header2.php');
 require('lib/solvemedialib.php'); ?>
-    <?php if($_COOKIE['username'] == ''){  ?>
+    <!-- --><?php /*if($_COOKIE['username'] == ''){ */ ?>
+<?php if ($_COOKIE['username'] == '') { ?>
     <div class="banner-content home-connect">
     <div class="news-headline-block">
     <div class="container">
@@ -42,6 +43,7 @@ require('lib/solvemedialib.php'); ?>
     </div>
     </div>
     </div><!-- sub-header -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
     <style>
         .slick-list.draggable{
@@ -69,18 +71,18 @@ require('lib/solvemedialib.php'); ?>
 
         .slick-next.slick-arrow{
             padding-left: 15px;
-            background: #303030 !important;
+            background: transparent;
         }
 
         .slick-prev.slick-arrow{
             padding-left: 15px;
-            background: #303030 !important;
+            background: transparent;
         }
 
         .testimonial-slider button.slick-next, .testimonial-slider button.slick-prev{
             width: 35px;
             height: 56px;
-            background: red;
+            background: transparent;
         }
 
         .post_block{
@@ -109,13 +111,17 @@ require('lib/solvemedialib.php'); ?>
             background: #FFFFFF;
         }
 
+        .post-style-two {
+            margin-bottom: 20px;
+        }
+
     </style>
     <div class="latest-post-section">
         <div class="container">
             <div class="row" id="content">
-                <div class="col-12 col-lg-8">
+                <div class="col-lg-8 col-md-6 postsMainDiv mainDivpostLike_2">
                     <div class=" p-0">
-                        <div class="container">
+                        <div class="container p-0">
                             <div class="row">
                                 <div class="offset-md-0 col-md-12">
                                     <div class="testimonials-wrap">
@@ -181,10 +187,7 @@ require('lib/solvemedialib.php'); ?>
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-12 col-lg-4 pl-5 pr-5">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 postsMainDiv mainDivpostLike_1 p-0" postlikes="0"
-                             postnumber="1">
+                <div class="col-lg-4 col-md-6 postsMainDiv mainDivpostLike_2">
 
                             <article class="post-style-two">
 
@@ -204,16 +207,55 @@ require('lib/solvemedialib.php'); ?>
 
 
                             </article>
-                        </div>
-                    </div>
 
-                    <div class="row" style="height: 250px;background: #6b2525;margin-bottom: 40px;">
+                            <article class="post-style-two" style="height: 250px;background: #6b2525;margin-bottom: 40px;">
 
-                    </div>
+
+                                <div class="post-thumb">
+
+                                </div>
+
+
+                            </article>
+
                 </div>
             </div>
 
         </div>
+
+        <script>
+            $(document).ready(function () {
+
+                setTimeout(function(){
+
+                    $( ".slick-next" ).hover(function () {
+                        $(this).css("background", "#303030");
+                    })
+
+                    $( ".slick-prev" ).hover(function () {
+                        $(this).css("background", "#303030");
+                    })
+
+                    $( ".testimonials-wrap" )
+                        .on( "mouseleave", function() {
+                            $(".slick-next").css("background", "transparent");
+                            $(".slick-prev").css("background", "transparent");
+                        });
+
+                    setInterval(function(){
+                        $( ".slick-next" ).click();
+                        }, 5000);
+                  /*  $( ".testimonials-wrap" )
+                        .on( "mouseenter", function() {
+                            $(this).css("background", "#white");
+                        })
+                        .on( "mouseleave", function() {
+                            $(this).css("background", "transparent");
+                        });*/
+                    }, 2000);
+
+            });
+        </script>
     </div>
 
     <div class="latest-post-section pt-0">
