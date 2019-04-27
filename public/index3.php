@@ -113,7 +113,7 @@ require('lib/solvemedialib.php'); ?>
         }
 
         .post-style-two {
-            margin-bottom: 20px;
+            margin-bottom: 3px;
         }
 
     </style>
@@ -193,9 +193,19 @@ require('lib/solvemedialib.php'); ?>
                     <div class="col-lg-4 col-md-6 postsMainDiv mainDivpostLike_2">
 
                         <article class="post-style-two">
-
+                            <div class="post-thumb" style="border: none;">
+                                <div class="row pl-3">
+                                    <div class="col-4">
+                                        <span>Top Rated</span>
+                                    </div>
+                                    <div class="col-8 pl-0">
+                                        <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 6px solid #7F7F7F;">
+                                    </div>
+                                </div>
+                            </div>
 
                             <div class="post-thumb" style="border: none;background: white">
+
                                 <div class="row">
                                     <div class="col-4 p-2 pl-4" style="height: 95px;">
                                         <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg"
@@ -227,8 +237,18 @@ require('lib/solvemedialib.php'); ?>
                                  </a>-->
                             </div>
 
-
                         </article>
+
+                        <div class="post-thumb" style="border: none;">
+                            <div class="row pl-3">
+                                <div class="col-4">
+                                    <span>Advertiseme</span>
+                                </div>
+                                <div class="col-8 pl-0">
+                                    <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 6px solid #7F7F7F;">
+                                </div>
+                            </div>
+                        </div>
 
                         <article class="post-style-two" style="height: 250px;background: #6b2525;margin-bottom: 40px;">
 
