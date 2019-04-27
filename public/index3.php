@@ -128,10 +128,151 @@ require('lib/solvemedialib.php'); ?>
             margin-bottom: 3px;
         }
 
+        .nav-link{
+            color: black !important;
+        }
+
+        /* CSS used here will be applied after bootstrap.css */
+        .closeBtn:focus {
+            outline: none;
+        }
+        .close{
+            color: gray;
+        }
+
+        .wrapper {
+            position:relative;
+            margin:0 auto;
+            overflow:hidden;
+            padding:5px;
+            height:50px;
+        }
+
+        .list {
+            position:absolute;
+            left:0px;
+            top:0px;
+            min-width:3500px;
+
+            margin-top:0px;
+        }
+
+        .list li{
+            display:table-cell;
+            position:relative;
+            text-align:center;
+            cursor:grab;
+            cursor:-webkit-grab;
+            color:#efefef;
+            vertical-align:middle;
+        }
+
+        .scroller {
+            text-align:center;
+            cursor:pointer;
+            display:none;
+            padding:7px;
+            padding-top:11px;
+            white-space: no-wrap;
+            vertical-align:middle;
+            background-color:#fff;
+        }
+
+        .scroller-right{
+            float:right;
+        }
+
+        .scroller-left {
+            float:left;
+        }
+
+        .nav.nav-tabs.list>a{
+            font-size: 11px !important;
+        }
+        .navbar-nav>li>a{
+            font-size: 11px !important;
+        }
+        .navbar{
+            min-height: 30px !important;
+            border: none;
+            margin-bottom: 20px;
+        }
+
     </style>
     <div class="latest-post-section"  style="padding-top: 40px !important;">
         <div class="container">
             <div class="row" style="background: #eeeeee94;padding-top: 31px;margin-bottom: 20px;">
+
+                <div class="col-lg-12 col-md-12 postsMainDiv mainDivpostLike_2" style="margin-bottom: 10px">
+                    <div class="p-0">
+                        <div class="container p-0">
+                            <div class="row">
+                                <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
+                                    <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
+                                    <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
+                                    <div class="wrapper">
+                                        <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
+                                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">FAISALABAD / 26 ° C  </a>
+                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab" style="color: #579BCD !important;">Make
+                                                MSN my home page&nbsp;  | <button type="button" class="close closeBtn"
+                                                                              aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">AFRICA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">EUROPE&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">LATIN
+                                                AMERICA&nbsp;<button type="button" class="close closeBtn"
+                                                                     aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div><!-- testimonial-section -->
+                </div>
+
                 <div class="col-lg-8 col-md-6 postsMainDiv mainDivpostLike_2">
                     <div class=" p-0">
                         <div class="container p-0">
@@ -271,6 +412,66 @@ require('lib/solvemedialib.php'); ?>
                     </article>
 
                 </div>
+
+                <div class="col-lg-12 col-md-12 postsMainDiv mainDivpostLike_2" style="margin-bottom: 40px">
+                    <div class=" p-0">
+                        <div class="container p-0">
+                            <div class="row">
+                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#" style="font-weight: 900">Trending now > </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">US</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">WORLD</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">POLITICS</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">FACT CHECK</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">OPTION</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">GOOD NEWS</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">CRIME</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">LOCAL</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">TECH</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">VIDEO</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">PHOTOS</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#">MY TOPICS</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+
+
+                            </div>
+                        </div>
+                    </div><!-- testimonial-section -->
+                </div>
             </div>
 
             <div class="row" id="content">
@@ -282,6 +483,69 @@ require('lib/solvemedialib.php'); ?>
 
         <script>
             $(document).ready(function () {
+
+                var hidWidth;
+                var scrollBarWidths = 40;
+
+                var widthOfList = function(){
+                    var itemsWidth = 0;
+                    $('.list a').each(function(){
+                        var itemWidth = $(this).outerWidth();
+                        itemsWidth+=itemWidth;
+                    });
+                    return itemsWidth;
+                };
+
+                var widthOfHidden = function(){
+                    return (($('.wrapper').outerWidth())-widthOfList()-getLeftPosi())-scrollBarWidths;
+                };
+
+                var getLeftPosi = function(){
+                    return $('.list').position().left;
+                };
+
+                var reAdjust = function(){
+                    if (($('.wrapper').outerWidth()) < widthOfList()) {
+                        $('.scroller-right').show().css('display', 'flex');
+                    }
+                    else {
+                        $('.scroller-right').hide();
+                    }
+
+                    if (getLeftPosi()<0) {
+                        $('.scroller-left').show().css('display', 'flex');
+                    }
+                    else {
+                        $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
+                        $('.scroller-left').hide();
+                    }
+                }
+
+                reAdjust();
+
+                $(window).on('resize',function(e){
+                    reAdjust();
+                });
+
+                $('.scroller-right').click(function() {
+
+                    $('.scroller-left').fadeIn('slow');
+                    $('.scroller-right').fadeOut('slow');
+
+                    $('.list').animate({left:"+="+widthOfHidden()+"px"},'slow',function(){
+
+                    });
+                });
+
+                $('.scroller-left').click(function() {
+
+                    $('.scroller-right').fadeIn('slow');
+                    $('.scroller-left').fadeOut('slow');
+
+                    $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){
+
+                    });
+                });
 
                 setTimeout(function () {
 
