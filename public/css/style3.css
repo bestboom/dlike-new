@@ -4250,6 +4250,10 @@ button.toast-close-button {
   color: black !important;
 }
 
+.navbar-nav>.nav-item>.nav-link{
+  color: black !important;
+}
+
 /* CSS used here will be applied after bootstrap.css */
 .closeBtn:focus {
   outline: none;

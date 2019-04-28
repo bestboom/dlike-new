@@ -45,11 +45,11 @@ require('lib/solvemedialib.php'); ?>
     </div><!-- sub-header -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-    <div class="latest-post-section"  style="padding-top: 40px !important;padding-bottom: 20px !important;">
+    <div class="latest-post-section_"  style="padding-top: 40px !important;padding-bottom: 20px !important;">
         <div class="container">
             <div class="row" style="background: #eeeeee94;padding-top: 31px;margin-bottom: 20px;">
 
-                <div class="col-lg-12 col-md-12 postsMainDiv mainDivpostLike_2" style="margin-bottom: 10px">
+                <div class="col-lg-12 col-md-12 "" style="margin-bottom: 10px">
                     <div class="p-0">
                         <div class="container p-0">
                             <div class="row">
@@ -119,7 +119,7 @@ require('lib/solvemedialib.php'); ?>
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-lg-8 col-md-6 postsMainDiv mainDivpostLike_2">
+                <div class="col-lg-8 col-md-6 "">
                     <div class=" p-0">
                         <div class="container p-0">
                             <div class="row">
@@ -193,7 +193,7 @@ require('lib/solvemedialib.php'); ?>
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-lg-4 col-md-6 postsMainDiv mainDivpostLike_2">
+                <div class="col-lg-4 col-md-6 "">
 
                     <article class="post-style-two">
                         <div class="post-thumb" style="border: none;">
@@ -265,7 +265,7 @@ require('lib/solvemedialib.php'); ?>
 
                 </div>
 
-                <div class="col-lg-12 col-md-12 postsMainDiv mainDivpostLike_2" style="margin-bottom: 40px">
+                <div class="col-lg-12 col-md-12 "" style="margin-bottom: 40px">
                     <div class=" p-0">
                         <div class="container p-0">
                             <div class="row">
@@ -325,7 +325,7 @@ require('lib/solvemedialib.php'); ?>
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-lg-4 col-md-4 postsMainDiv mainDivpostLike_2">
+                <div class="col-lg-4 col-md-4 "">
 
                     <article class="post-style-two mb-2 mt-1">
 
@@ -366,7 +366,7 @@ require('lib/solvemedialib.php'); ?>
 
                 </div>
 
-                <div class="col-lg-4 col-md-4 postsMainDiv mainDivpostLike_2">
+                <div class="col-lg-4 col-md-4 "">
 
                     <article class="post-style-two mb-2 mt-1">
 
@@ -407,7 +407,7 @@ require('lib/solvemedialib.php'); ?>
 
                 </div>
 
-                <div class="col-lg-4 col-md-4 postsMainDiv mainDivpostLike_2">
+                <div class="col-lg-4 col-md-4 "">
 
                     <article class="post-style-two mb-2 mt-1">
 
