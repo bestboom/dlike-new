@@ -2951,7 +2951,7 @@ sub.transmoney-value {
 |----------------------------------------------------------------------------
 */
 .latest-post-section {
-  background: #f3f4f5;
+  background: #eeeeee94;
   padding: 120px 0 60px 0; }
 
 .post-style-two.post-full-width {
@@ -4214,6 +4214,18 @@ button.toast-close-button {
   font-size: 27px;
 }
 
+.shadow_bottom {
+  position: absolute;
+  top: 74%;
+  left: 0%;
+  color: white;
+  font-size: 27px;
+  height: 100px;
+  width: 100%;
+  background: -webkit-linear-gradient(bottom,rgba(0,0,0,.95) 0,transparent 100%);
+  background: linear-gradient(0deg,rgba(0,0,0,.95) 0,transparent 100%);
+}
+
 .testimonial-slider .slick-dots {
   bottom: 24px;
 }
@@ -4232,7 +4244,7 @@ button.toast-close-button {
   margin-bottom: 3px;
 }
 
-.nav-link{
+.nav-tabs>.nav-link{
   color: black !important;
 }
 
@@ -4321,7 +4333,7 @@ button.toast-close-button {
 }
 
 .scroller{
-  padding-top: 15px;
+  padding-top: 10px;
   background: transparent  !important;
 }
 

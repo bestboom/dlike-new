@@ -1,4 +1,4 @@
-<?php include('template/header3.php');
+<?php include('template/header3__.php');
 require('lib/solvemedialib.php'); ?>
     <!-- --><?php /*if($_COOKIE['username'] == ''){ */ ?>
 <?php if ($_COOKIE['username'] == '') { ?>
@@ -45,10 +45,7 @@ require('lib/solvemedialib.php'); ?>
     </div><!-- sub-header -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-    <style>
-
-    </style>
-    <div class="latest-post-section"  style="padding-top: 40px !important;">
+    <div class="latest-post-section"  style="padding-top: 40px !important;padding-bottom: 20px !important;">
         <div class="container">
             <div class="row" style="background: #eeeeee94;padding-top: 31px;margin-bottom: 20px;">
 
@@ -135,6 +132,7 @@ require('lib/solvemedialib.php'); ?>
                                                          class="card-img-top img-fluid" style="margin: 0 !important;">
 
                                                     <a class="post_title">Top takeaways</a>
+                                                    <div class="shadow_bottom"></div>
                                                 </div>
                                             </div>
 
@@ -144,6 +142,7 @@ require('lib/solvemedialib.php'); ?>
                                                          class="card-img-top img-fluid" style="margin: 0 !important;">
 
                                                     <a class="post_title">Top takeaways</a>
+                                                    <div class="shadow_bottom"></div>
                                                 </div>
                                             </div>
 
@@ -153,6 +152,7 @@ require('lib/solvemedialib.php'); ?>
                                                          class="card-img-top img-fluid" style="margin: 0 !important;">
 
                                                     <a class="post_title">Top takeaways</a>
+                                                    <div class="shadow_bottom"></div>
                                                 </div>
                                             </div>
 
@@ -162,6 +162,7 @@ require('lib/solvemedialib.php'); ?>
                                                          class="card-img-top img-fluid" style="margin: 0 !important;">
 
                                                     <a class="post_title">Top takeaways</a>
+                                                    <div class="shadow_bottom"></div>
                                                 </div>
                                             </div>
 
@@ -171,6 +172,7 @@ require('lib/solvemedialib.php'); ?>
                                                          class="card-img-top img-fluid" style="margin: 0 !important;">
 
                                                     <a class="post_title">Top takeaways</a>
+                                                    <div class="shadow_bottom"></div>
                                                 </div>
                                             </div>
 
@@ -180,6 +182,7 @@ require('lib/solvemedialib.php'); ?>
                                                          class="card-img-top img-fluid" style="margin: 0 !important;">
 
                                                     <a class="post_title">Top takeaways</a>
+                                                    <div class="shadow_bottom"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -446,11 +449,6 @@ require('lib/solvemedialib.php'); ?>
                 </div>
             </div>
 
-            <div class="row" id="content">
-
-
-            </div>
-
         </div>
 
         <script>
@@ -556,7 +554,7 @@ require('lib/solvemedialib.php'); ?>
         </script>
     </div>
 
-    <div class="latest-post-section pt-0">
+    <div class="latest-post-section pt-0" style="margin-top: -5px !important;">
         <div class="container">
             <div class="row  align-items-center h-100 post_select">
                 <div class="row col-md-3 justify-content-center">
