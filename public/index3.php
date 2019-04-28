@@ -45,7 +45,7 @@ require('lib/solvemedialib.php'); ?>
     </div><!-- sub-header -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
-    <div class="latest-post-section_"  style="padding-top: 40px !important;padding-bottom: 20px !important;">
+    <div class="latest-post-section"  style="padding-top: 40px !important;padding-bottom: 20px !important;">
         <div class="container">
             <div class="row" style="background: #eeeeee94;padding-top: 31px;margin-bottom: 20px;">
 
@@ -274,7 +274,7 @@ require('lib/solvemedialib.php'); ?>
                                         <span class="navbar-toggler-icon"></span>
                                     </button>
                                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                        <ul class="navbar-nav">
+                                        <ul class="navbar-nav black_word">
                                             <li class="nav-item">
                                                 <a class="nav-link" href="" style="font-weight: 900">Trending now > </a>
                                             </li>
