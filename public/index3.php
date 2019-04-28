@@ -492,7 +492,7 @@ require('lib/solvemedialib.php'); ?>
                                         <div class="col-1 pt-1">
                                             <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/AAywGC0.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;u=t&amp;o=t&amp;l=f&amp;f=png"
                                                  class="loaded">
-                                        </div>
+                                        </div> 
 
                                         <div class="col-4">
                                             <span class="sourcename">CNN</span>
