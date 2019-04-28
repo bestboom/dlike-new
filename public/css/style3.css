@@ -4218,14 +4218,14 @@ button.toast-close-button {
 
 .shadow_bottom {
   position: absolute;
-  top: 17%;
+  top: 0%;
   left: 0%;
   color: white;
   font-size: 27px;
-  height: 350px;
+  height: 402px;
   width: 100%;
-  background: -webkit-linear-gradient(bottom,rgba(0,0,0,.95) 0,transparent 100%);
-  background: linear-gradient(0deg,rgba(0,0,0,.95) 0,transparent 100%);
+  background: -webkit-linear-gradient(bottom,rgba(0,0,0,1) 0,transparent 100%);
+  background: linear-gradient(0deg,rgba(0,0,0,1) 0,transparent 100%);
 }
 
 .testimonial-slider .slick-dots {
