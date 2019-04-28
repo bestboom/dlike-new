@@ -567,7 +567,7 @@ require('lib/solvemedialib.php'); ?>
                                          alt="London Spitfire signs Quatermain | Dot Esports"
                                          style="height: 100%;" class="card-img-top img-fluid">
                                 </div>
-
+ 
                                 <div class="col-8">
                                     <a style="color: black;font-size: 12px;">The mysterious Imperial Treasures Of Japan</a>
                                     <div class="row mt-2">
