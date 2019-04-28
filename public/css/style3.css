@@ -4212,16 +4212,17 @@ button.toast-close-button {
   left: 8.5%;
   color: white;
   font-size: 27px;
+  z-index: 222;
 }
 
 
 .shadow_bottom {
   position: absolute;
-  top: 74%;
+  top: 50%;
   left: 0%;
   color: white;
   font-size: 27px;
-  height: 100px;
+  height: 300px;
   width: 100%;
   background: -webkit-linear-gradient(bottom,rgba(0,0,0,.95) 0,transparent 100%);
   background: linear-gradient(0deg,rgba(0,0,0,.95) 0,transparent 100%);
