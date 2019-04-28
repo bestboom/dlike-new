@@ -276,44 +276,44 @@ require('lib/solvemedialib.php'); ?>
                                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#" style="font-weight: 900">Trending now > </a>
+                                                <a class="nav-link" href="" style="font-weight: 900">Trending now > </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">US</a>
+                                                <a class="nav-link" href="">US</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">WORLD</a>
+                                                <a class="nav-link" href="">WORLD</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">POLITICS</a>
+                                                <a class="nav-link" href="">POLITICS</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">FACT CHECK</a>
+                                                <a class="nav-link" href="">FACT CHECK</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">OPTION</a>
+                                                <a class="nav-link" href="">OPTION</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">GOOD NEWS</a>
+                                                <a class="nav-link" href="">GOOD NEWS</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">CRIME</a>
+                                                <a class="nav-link" href="">CRIME</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">LOCAL</a>
+                                                <a class="nav-link" href="">LOCAL</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">TECH</a>
+                                                <a class="nav-link" href="">TECH</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">VIDEO</a>
+                                                <a class="nav-link" href="">VIDEO</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">PHOTOS</a>
+                                                <a class="nav-link" href="">PHOTOS</a>
                                             </li>
 
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#">MY TOPICS</a>
+                                                <a class="nav-link" href="">MY TOPICS</a>
                                             </li>
                                         </ul>
                                     </div>
