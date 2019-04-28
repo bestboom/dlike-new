@@ -201,7 +201,7 @@ require('lib/solvemedialib.php'); ?>
     </style>
     <div class="latest-post-section"  style="padding-top: 40px !important;">
         <div class="container">
-            <div class="row" style="background: #eeeeee94;padding-top: 31px;margin-bottom: 20px;">
+            <div class="row" style="background: #f3f4f54;padding-top: 31px;margin-bottom: 20px;">
 
                 <div class="col-lg-12 col-md-12 postsMainDiv mainDivpostLike_2" style="margin-bottom: 10px">
                     <div class="p-0">
