@@ -4293,10 +4293,10 @@ button.toast-close-button {
 .nav.nav-tabs.list>a{
   font-size: 11px !important;
 }
-.navbar-nav>li>a{
+#navbarNavDropdown>.navbar-nav>li>a{
   font-size: 11px !important;
 }
-.navbar {
+.row>.navbar {
   min-height: 30px !important;
   border: none;
   margin-bottom: 20px;
