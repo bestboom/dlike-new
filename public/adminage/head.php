@@ -1,2 +1,2 @@
-<?php include('includes/config.php'); ?>
-<?php include('/template/header.php'); ?>
+<?php include('../includes/config.php'); ?>
+<?php include('../template/header.php'); ?>
