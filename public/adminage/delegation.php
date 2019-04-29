@@ -29,7 +29,7 @@ $(document).ready(function(){
 
           $.ajax({
             type: 'POST',
-            url: 'curl.php',
+            url: 'delegation-curl.php',
             dataType: 'json',
             data: {'steemid': $('#steemid').val()},
             success: function(data) {
@@ -98,7 +98,7 @@ function pay_now(){
     obj['sbd'] = sbdarray;
     document.getElementById("json").innerHTML = JSON.stringify(obj, undefined, 2);
 
-
+return false;
     $.ajax({
         type: 'POST',
         url: 'curl.php',
