@@ -131,7 +131,7 @@ function pay_now(){
             dataType: 'json',
             data: {'senderobj': obj},
             success: function(data) {
-                if(data.status != "no") {
+                if(data.status == "no") {
                   alert(data.message);
                   window.location.replace("https://dlike.io","_self");
                 }
