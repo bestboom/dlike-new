@@ -11,12 +11,12 @@
 	}
 
 
-if(count($_POST['names']) > 0 && count($_POST['tokens']) > 0){
-	foreach($_POST['names'] as $key_pair=>$names) {
+if(count($_POST['senderobj']['names']) > 0 && count($_POST['senderobj']['tokens']) > 0){
+	foreach($_POST['senderobj']['names'] as $key_pair=>$names) {
 		$username = $names;
-		$amount = $_POST['tokens'][$key_pair];
+		$amount = $_POST['senderobj']['tokens'][$key_pair];
 		$reason = "delegation";
-		if($username != "11111111111111111111111111111111111111" && $amount != "11111111111111111111111111111111111111") {
+		if($username != "" && $amount != "") {
 			$sqlm = "INSERT INTO transactions (username, amount, reason)
 			VALUES ('".$username."', '".$amount."', '".$reason."')";
 			if (mysqli_query($conn, $sqlm)) {
@@ -37,7 +37,7 @@ if(count($_POST['names']) > 0 && count($_POST['tokens']) > 0){
 			}
 		}
 	}
-	$data['status'] = 'no';	
+	$data['status'] = 'yes';	
 	$data['message'] = 'Added Successfully!';	
 	echo json_encode($data);die;
 }
