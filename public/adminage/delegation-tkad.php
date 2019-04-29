@@ -3,7 +3,14 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	require '../includes/config.php';
-  echo 'ok';die;
+
+	if($_COOKIE['username'] != 'dlike') {
+		$data['status'] = 'no';	
+		$data['message'] = 'only admin can pay.';	
+		echo json_encode($data);die;
+	}
+
+die;
 if(count($_POST['names']) > 0 && count($_POST['tokens']) > 0){
 	foreach($_POST['names'] as $key_pair=>$names) {
 		$username = $names;
