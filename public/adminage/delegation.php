@@ -124,14 +124,13 @@ function pay_now(){
         obj['sbd'] = sbdarray;
         document.getElementById("json").innerHTML = JSON.stringify(obj, undefined, 2);
 
-        return false;
         $.ajax({
             type: 'POST',
-            url: 'curl.php',
+            url: 'delegation-tkad.php',
             dataType: 'json',
-            data: {'steemid': $('#steemid').val()},
+            data: {'senderobj': obj},
             success: function(data) {
-              
+              alert(data)
             }
           });
     });
