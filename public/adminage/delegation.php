@@ -131,7 +131,13 @@ function pay_now(){
             dataType: 'json',
             data: {'senderobj': obj},
             success: function(data) {
-              alert(data)
+                if(data.status != "no") {
+                  alert(data.message);
+                  window.location.replace("https://dlike.io","_self");
+                }
+                else {
+                    alert(data.message);
+                }
             }
           });
     });
