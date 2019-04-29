@@ -1,7 +1,5 @@
 <?php include('head.php'); ?>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="container">
@@ -17,9 +15,32 @@
 
 
 
+
+<div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Pay</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure?
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-primary" id="payme">Confirm Pay</button>
+        <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
    
 </div>
-</body>
+
 <script>
     
 $(document).ready(function(){
@@ -68,48 +89,52 @@ $(document).ready(function(){
 });
 
 function pay_now(){
-    var myamount_total_data = $('#total_data').val();
+    $('#confirm').modal({
+        backdrop: 'static',
+        keyboard: false
+    })
+    .on('click', '#payme', function(e) {
+        var myamount_total_data = $('#total_data').val();
 
 
-    var namesarray = [];
-    var amountarray = [];
-    var pencentagearray = [];
-    var tokensarray = [];
-    var steemsarray = [];
-    var sbdarray = [];
-    
-    for(i=0;i<myamount_total_data;i++){
-        if($('tr#row_'+i).length){
-            namesarray.push($('#row_name_'+i).html());
-            amountarray.push($('#row_data_'+i).val());
-            pencentagearray.push($('#row_percentage_'+i).html());
-            tokensarray.push($('#row_token_'+i).html());
-            steemsarray.push($('#row_steem_'+i).html());
-            sbdarray.push($('#row_sbd_'+i).html()); 
+        var namesarray = [];
+        var amountarray = [];
+        var pencentagearray = [];
+        var tokensarray = [];
+        var steemsarray = [];
+        var sbdarray = [];
+        
+        for(i=0;i<myamount_total_data;i++){
+            if($('tr#row_'+i).length){
+                namesarray.push($('#row_name_'+i).html());
+                amountarray.push($('#row_data_'+i).val());
+                pencentagearray.push($('#row_percentage_'+i).html());
+                tokensarray.push($('#row_token_'+i).html());
+                steemsarray.push($('#row_steem_'+i).html());
+                sbdarray.push($('#row_sbd_'+i).html()); 
+            }
         }
-    }
 
-    var obj = {};
-    obj['names'] = namesarray;
-    obj['amount'] = amountarray;
-    obj['percentage'] = pencentagearray;
-    obj['tokens'] = tokensarray;
-    obj['steem'] = steemsarray;
-    obj['sbd'] = sbdarray;
-    document.getElementById("json").innerHTML = JSON.stringify(obj, undefined, 2);
+        var obj = {};
+        obj['names'] = namesarray;
+        obj['amount'] = amountarray;
+        obj['percentage'] = pencentagearray;
+        obj['tokens'] = tokensarray;
+        obj['steem'] = steemsarray;
+        obj['sbd'] = sbdarray;
+        document.getElementById("json").innerHTML = JSON.stringify(obj, undefined, 2);
 
-return false;
-    $.ajax({
-        type: 'POST',
-        url: 'curl.php',
-        dataType: 'json',
-        data: {'steemid': $('#steemid').val()},
-        success: function(data) {
-          
-        }
-      });
-
-          
+        return false;
+        $.ajax({
+            type: 'POST',
+            url: 'curl.php',
+            dataType: 'json',
+            data: {'steemid': $('#steemid').val()},
+            success: function(data) {
+              
+            }
+          });
+    });
 }
 
 function callinputedit(thisvar,id){
@@ -249,5 +274,7 @@ function callonefunction(thisvalue,type){
 }
   
 </script>
+
+
 
 <?php include('../template/footer.php'); ?>
