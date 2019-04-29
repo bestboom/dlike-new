@@ -9,8 +9,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="support-category-block">
-                        <img src="../images/others/22.png" alt="img" class="img-responsive">
-                        <h4>Contact Support</h4>
+                    	<a href="delegation.php">
+                        	<img src="../images/others/22.png" alt="img" class="img-responsive">
+                        	<h4>Contact Support</h4>
+                    	</a>
                     </div>
                 </div>
                 <div class="col-md-4">
