@@ -5,7 +5,7 @@
 
 <div class="container">
   <h2>&nbsp;</h2>
-  <pre id="json"></pre>
+
   <input type="hidden" id="amount_data" />
   <input type="hidden" id="amount_total_check" />
   <input type="hidden" id="total_data" />
@@ -14,7 +14,7 @@
   <div id="show_results">
   </div>
 
-
+<h2>&nbsp;</h2>
 
 
 <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -123,7 +123,7 @@ function pay_now(){
         obj['tokens'] = tokensarray;
         obj['steem'] = steemsarray;
         obj['sbd'] = sbdarray;
-        document.getElementById("json").innerHTML = JSON.stringify(obj, undefined, 2);
+ 
 
         $.ajax({
             type: 'POST',
