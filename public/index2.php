@@ -119,7 +119,7 @@
 	    var p_username = $("#p_username").val();
 	    var p_permlink = $("#p_permlink").val();
 	    var p_category = $("#p_category").val();
-	    var p_status = $("p_status_select").val();
+	    var p_status = $("#p_status_select").val();
 	    
 	    $.ajax({
 		    type: "POST",
