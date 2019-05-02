@@ -308,11 +308,14 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a onclick="return openmodal_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments"><a class="all_posts_status" onclick="return openmodal_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
 				getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
+
+
+				
 
         		let author = $post.author;
         		let permlink = $post.permlink;				
@@ -342,6 +345,28 @@
 
     		}
 		});
+
+
+		$.ajax({
+			type: "POST",
+			url: '/helper/getpoststatus.php',
+			dataType: 'json',
+			success: function(response) {
+			    if(reponse.permlink != "0") {
+				var all_perma = reponse.permlink;
+				$('.all_posts_status').each(function(){
+				    
+				    var permlink_check = $(this).data('permlink');
+				    if($.inArray(permlink_check, all_perma) !== -1) {
+					$(this).children('i').css('color','red !important');
+				    }
+
+				});
+			    }
+			}
+		});
+	    
+		
 	});
 
 	steem.api.getContent(topauthor , toppermlink, function(err, res) {
