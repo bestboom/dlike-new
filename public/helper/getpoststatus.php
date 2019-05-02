@@ -14,6 +14,6 @@
 		} else {
 			$strReturn['permlink'] = 0;
 		}
-    $strReturn['status'] = 'OK';
+
   	echo json_encode($strReturn);die;
 ?>
