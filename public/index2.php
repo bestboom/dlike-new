@@ -76,7 +76,7 @@
 				<option value="Low Level">Low Level</option>
 				<option value="High Level">High Level</option>
 			    </select>
-			    <br><br>
+			    <br>
 			    <p><input type="button" id="savepoststatus" class="btn btn-primary" value="Save it"/></p>
 				    
 			</div>
@@ -155,11 +155,13 @@
 				
 			}
 			else {
+			    $('#PostStatusModal').modal('hide');
 			    toastr.error(response.message);
 			    return false;
 			}
 		    },
 		    error: function() {
+			$('#PostStatusModal').modal('hide');
 			 toastr.error('Error occured');
 			    return false;
 		    }
