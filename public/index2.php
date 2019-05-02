@@ -61,24 +61,31 @@
 		
 		
 		  <div class="modal fade" id="PostStatusModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+			<div class="modal-body">
+			    <input type="text" id="p_username" />
+			    <input type="text" id="p_permlink" />
+			    <input type="text" id="p_category" />
+			    <p>What would you think about this post?</p>
+			    <select class="form-control" id="status_select">
+				<option value="">Please select</option>
+				<option value="Rejected">Rejected</option>
+				<option value="Low Level">Low Level</option>
+				<option value="High Level">High Level</option>
+			    </select>
+			    <input type="button" id="savepoststatus" class="btn btn-primary" value="Save it"/>
+				    
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		      </div>
+		      
+		    </div>
+		  </div>
 		
 		
         </div>
@@ -89,6 +96,23 @@
 <script>
     
     	$(document).ready(function(){
+
+	var PostStatus=$('.PostStatus');
+
+	show_btn.click(function(){
+	    var permlink = $(this).data('permlink');
+	    var author = $(this).data('author');
+	    var category = $(this).data('category');
+	    
+	    $("#p_username").val(author);
+	    $("#p_permlink").val(permlink);
+	    $("#p_category").val(category);
+	    
+	    $("#PostStatusModal").modal('show');
+	})
+
+
+  
 	$(".orderByTopRated").click(function(){
 		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
 		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
@@ -248,7 +272,7 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a class="PostStatus" data-toggle="modal" data-target="#PostStatusModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments"><a class="PostStatus" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
