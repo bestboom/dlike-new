@@ -351,17 +351,17 @@
 			    if(response.status == "OK") {
 				var all_status = response.setstatus;
 				if(all_status == "Rejected") {
-				    var colorset = 'red !important';
+				    var colorset = 'red';
 				    $('#status_icon' + permlink + author).css({"color": colorset});
 				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
 				else if(all_status == "Low Level") {
-				    var colorset = 'blue !important';
+				    var colorset = 'blue';
 				   $('#status_icon' + permlink + author).css({"color": colorset});
 				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
 				else if(all_status == "High Level") {
-				    var colorset = 'green !important';
+				    var colorset = 'green';
 				    $('#status_icon' + permlink + author).css({"color": colorset});
 				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
