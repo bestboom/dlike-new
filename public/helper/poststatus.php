@@ -16,7 +16,8 @@ if($_COOKIE['username'] != 'dlike') {
 
 	if(!isset($_POST['p_username']) || !isset($_POST['p_permlink']) || !isset($_POST['p_category'])) {
 		$strReturn['status'] = 'Failed';
-		$strReturn['reason'] = 'Required parameters not passed';
+		$strReturn['message'] = 'Required parameters not passed';
+		echo json_encode($strReturn);die;
 	} else {
 		$strReturn['status'] = 'OK';
 		$username = isset($_POST["p_username"]) ? $_POST["p_username"] : "";
@@ -37,8 +38,8 @@ if($_COOKIE['username'] != 'dlike') {
 										$addWalletQuery = $conn->query($addWallet);
                     
     $strReturn['message'] = 'Added Successfully!';	
-  
+  echo json_encode($strReturn);die;
 	}
 	
-	echo json_encode($strReturn);die;
+	
 ?>
