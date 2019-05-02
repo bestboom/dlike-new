@@ -122,7 +122,7 @@
 	    $.ajax({
 		    type: "POST",
 		    url: '/helper/poststatus.php',
-		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status}
+		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
 		    dataType: 'json',
 		    success: function(response) {
 			if(reponse.status == "OK") {
