@@ -132,7 +132,7 @@
 		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
 		    dataType: 'json',
 		    success: function(response) {
-			if(reponse.status == "OK") {
+			if(response.status == "OK") {
 			    toastr.success(response.message);
 			    $('#PostStatusModal').modal('hide');
 			    
@@ -155,7 +155,7 @@
 				
 			}
 			else {
-			    toastr.error(reponse.message);
+			    toastr.error(response.message);
 			    return false;
 			}
 		    },
