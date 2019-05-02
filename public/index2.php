@@ -65,10 +65,10 @@
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
-			<div class="modal-body">
-			    <input type="text" id="p_username" />
-			    <input type="text" id="p_permlink" />
-			    <input type="text" id="p_category" />
+			<div class="modal-body text-center">
+			    <input type="hidden" id="p_username" />
+			    <input type="hidden" id="p_permlink" />
+			    <input type="hidden" id="p_category" />
 			    <p>What would you think about this post?</p>
 			    <select class="form-control" id="status_select">
 				<option value="">Please select</option>
@@ -76,7 +76,7 @@
 				<option value="Low Level">Low Level</option>
 				<option value="High Level">High Level</option>
 			    </select>
-			    <input type="button" id="savepoststatus" class="btn btn-primary" value="Save it"/>
+			    <p><input type="button" id="savepoststatus" class="btn btn-primary" value="Save it"/></p>
 				    
 			</div>
 			<div class="modal-footer">
@@ -120,6 +120,10 @@
 	    var p_permlink = $("#p_permlink").val();
 	    var p_category = $("#p_category").val();
 	    var p_status = $("#p_status_select").val();
+	    if(p_status == ""){
+		alert("Please select status.");
+		return false;
+	    }
 	    
 	    $.ajax({
 		    type: "POST",
