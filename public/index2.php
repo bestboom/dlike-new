@@ -94,23 +94,25 @@
 <?php include('template/footer2.php'); ?>
 
 <script>
-    
+    function openmodal_popup(self){
+	var permlink = $(self).data('permlink');
+	var author = $(self).data('author');
+	var category = $(self).data('category');
+	
+	$("#p_username").val(author);
+	$("#p_permlink").val(permlink);
+	$("#p_category").val(category);
+	
+	$("#PostStatusModal").modal('show');
+    }
     	$(document).ready(function(){
 
-	var PostStatus=$('.PostStatus');
+
 	var savepoststatus=$('#savepoststatus');
 
-	PostStatus.click(function(){
-	    var permlink = $(this).data('permlink');
-	    var author = $(this).data('author');
-	    var category = $(this).data('category');
+	
 	    
-	    $("#p_username").val(author);
-	    $("#p_permlink").val(permlink);
-	    $("#p_category").val(category);
-	    
-	    $("#PostStatusModal").modal('show');
-	});
+	
 
 	savepoststatus.click(function(){
 
@@ -302,7 +304,7 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a class="PostStatus" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments"><a onclick="return openmodal_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
