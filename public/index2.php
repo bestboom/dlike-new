@@ -119,7 +119,7 @@
 	    var p_username = $("#p_username").val();
 	    var p_permlink = $("#p_permlink").val();
 	    var p_category = $("#p_category").val();
-	    var p_status = $("#p_status_select").val();
+	    var p_status = $("#status_select").val();
 	    if(p_status == ""){
 		alert("Please select status.");
 		return false;
@@ -352,14 +352,20 @@
 				var all_status = response.setstatus;
 				if(all_status == "Rejected") {
 				    var colorset = 'red !important';
+				    $('#status_icon' + permlink + author).css({"color": colorset});
+				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
 				else if(all_status == "Low Level") {
 				    var colorset = 'blue !important';
+				   $('#status_icon' + permlink + author).css({"color": colorset});
+				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
 				else if(all_status == "High Level") {
 				    var colorset = 'green !important';
+				    $('#status_icon' + permlink + author).css({"color": colorset});
+				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
-				$('#status_icon' + permlink + author).css('color',colorset);
+				
 				$('#status_icon' + permlink + author).hover(function() {toastr.error('hmm... '+all_status);})
 					
 			    }
