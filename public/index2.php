@@ -133,16 +133,34 @@
 		    dataType: 'json',
 		    success: function(response) {
 			if(reponse.status == "OK") {
-			    alert(reponse.message);
-			    window.location.replace("https://dlike.io","_self");
+			    toastr.success(response.message);
+			    $('#PostStatusModal').modal('hide');
+			    
+			    var all_status = p_status;
+			    if(all_status == "Rejected") {
+				var colorset = 'red';
+				$('#status_icon' + p_permlink + p_username).css({"color": colorset});
+				$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "Low Level") {
+				var colorset = 'blue';
+			       $('#status_icon' + p_permlink + p_username).css({"color": colorset});
+				$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "High Level") {
+				var colorset = 'green';
+				$('#status_icon' + p_permlink + p_username).css({"color": colorset});
+				$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+				
 			}
 			else {
-			    alert(reponse.reason);
+			    toastr.error(reponse.message);
 			    return false;
 			}
 		    },
 		    error: function() {
-			 alert('Error occured');
+			 toastr.error('Error occured');
 			    return false;
 		    }
 	    });
