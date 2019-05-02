@@ -4,7 +4,16 @@
 	error_reporting(0);
     	require '../includes/config.php';
 	
-	$strReturn = [];
+
+
+if($_COOKIE['username'] != 'dlike') {
+		$strReturn['status'] = 'no';	
+		$strReturn['message'] = 'only admin can enter.';	
+		echo json_encode($strReturn);die;
+	}
+
+
+
 	if(!isset($_POST['p_username']) || !isset($_POST['p_permlink']) || !isset($_POST['p_category'])) {
 		$strReturn['status'] = 'Failed';
 		$strReturn['reason'] = 'Required parameters not passed';
