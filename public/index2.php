@@ -352,13 +352,24 @@
 			url: '/helper/getpoststatus.php',
 			dataType: 'json',
 			success: function(response) {
-			    if(reponse.permlink != "0") {
-				var all_perma = reponse.permlink;
+			    if(response.permlink != "0") {
+				var all_perma = response.permlink;
+				var all_status = response.status;
 				$('.all_posts_status').each(function(){
 				    
 				    var permlink_check = $(this).data('permlink');
-				    if($.inArray(permlink_check, all_perma) !== -1) {
-					$(this).children('i').css('color','red !important');
+				    var checkindex = $.inArray(permlink_check, all_perma);
+				    if(checkindex !== -1) {
+					if(all_status[checkindex] == "Rejected") {
+					    var colorset = 'red !important';
+					}
+					else if(all_status[checkindex] == "Low Level") {
+					    var colorset = 'blue !important';
+					}
+					else if(all_status[checkindex] == "High Level") {
+					    var colorset = 'green !important';
+					}
+					$(this).children('i').css('color',colorset);
 				    }
 
 				});
