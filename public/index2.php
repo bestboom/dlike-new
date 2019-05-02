@@ -308,7 +308,7 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a class="all_posts_status" onclick="return openmodal_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments"><a id="status_icon'+$post.permlink +$post.author +'" onclick="return openmodal_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
@@ -342,40 +342,37 @@
     		});
 
 
+		$.ajax({
+			type: "POST",
+			url: '/helper/getpoststatus.php',
+			data:{'permlink':$post.permlink},
+			dataType: 'json',
+			success: function(response) {
+			    if(response.status == "OK") {
+				var all_status = response.setstatus;
+				if(all_status == "Rejected") {
+				    var colorset = 'red !important';
+				}
+				else if(all_status == "Low Level") {
+				    var colorset = 'blue !important';
+				}
+				else if(all_status == "High Level") {
+				    var colorset = 'green !important';
+				}
+				$('#status_icon' + permlink + author).css('color',colorset);
+				$('#status_icon' + permlink + author).hover(function() {toastr.error('hmm... '+all_status);})
+					
+			    }
+			}
+		});
+
+
 
     		}
 		});
 
 
-		$.ajax({
-			type: "POST",
-			url: '/helper/getpoststatus.php',
-			dataType: 'json',
-			success: function(response) {
-			    if(response.permlink != "0") {
-				var all_perma = response.permlink;
-				var all_status = response.status;
-				$('.all_posts_status').each(function(){
-				    
-				    var permlink_check = $(this).data('permlink');
-				    var checkindex = $.inArray(permlink_check, all_perma);
-				    if(checkindex !== -1) {
-					if(all_status[checkindex] == "Rejected") {
-					    var colorset = 'red !important';
-					}
-					else if(all_status[checkindex] == "Low Level") {
-					    var colorset = 'blue !important';
-					}
-					else if(all_status[checkindex] == "High Level") {
-					    var colorset = 'green !important';
-					}
-					$(this).children('i').css('color',colorset);
-				    }
-
-				});
-			    }
-			}
-		});
+		
 	    
 		
 	});
