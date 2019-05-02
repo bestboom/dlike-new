@@ -98,8 +98,9 @@
     	$(document).ready(function(){
 
 	var PostStatus=$('.PostStatus');
+	var savepoststatus=$('#savepoststatus');
 
-	show_btn.click(function(){
+	PostStatus.click(function(){
 	    var permlink = $(this).data('permlink');
 	    var author = $(this).data('author');
 	    var category = $(this).data('category');
@@ -109,7 +110,36 @@
 	    $("#p_category").val(category);
 	    
 	    $("#PostStatusModal").modal('show');
-	})
+	});
+
+	savepoststatus.click(function(){
+
+	    var p_username = $("#p_username").val();
+	    var p_permlink = $("#p_permlink").val();
+	    var p_category = $("#p_category").val();
+	    var p_status = $("p_status_select").val();
+	    
+	    $.ajax({
+		    type: "POST",
+		    url: '/helper/poststatus.php,
+		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status}
+		    dataType: 'json',
+		    success: function(response) {
+			if(reponse.status == "OK") {
+			    alert(reponse.message);
+			    window.location.replace("https://dlike.io","_self");
+			}
+			else {
+			    alert(reponse.reason);
+			    return false;
+			}
+		    },
+		    error: function() {
+			 alert('Error occured');
+			    return false;
+		    }
+	    });
+	});
 
 
   
