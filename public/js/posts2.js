@@ -259,4 +259,5 @@ function showPostSortedByLatest() {
 		return $(a).attr("postNumber") - $(b).attr("postNumber")
 	});
 	$("#content").html(divList);
+	
 };
