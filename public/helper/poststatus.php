@@ -19,8 +19,8 @@
     $p_category = isset($_POST["p_category"]) ? $_POST["p_category"] : "";
 		$p_category = stripslashes( $p_category );
     
-    $p_status = $_POST["p_status"];
-    $checked_by = $_COOKIE['username'];
+    $p_status = isset($_POST["p_status"])?$_POST["p_status"]:'';
+    $checked_by = isset($_COOKIE['username'])?$_COOKIE['username']:"";
     
 		
     $addWallet = "INSERT INTO poststatus (`username`, `category`, `permlink`, `status` , `checked_by` , `check_time` )
