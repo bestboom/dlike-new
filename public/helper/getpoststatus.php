@@ -4,16 +4,16 @@
 	error_reporting(0);
     	require '../includes/config.php';
 	  
-    $sql = "SELECT * FROM poststatus";
-		$result = $conn->query($sql);
-		if ($result->num_rows > 0) {
-			while($row = $result->fetch_assoc()) {
-				$strReturn['permlink'][] = $row['permlink'];
-				$strReturn['status'][] = $row['status'];
-			}
-		} else {
-			$strReturn['permlink'] = 0;
+    	$sql = "SELECT * FROM poststatus where permlink = '".$_POST['permlink']."'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) {
+			$strReturn['setstatus'] = $row['status'];
+			$strReturn['status'] = 'OK';
 		}
+	} else {
+		$strReturn['status'] = 'error';
+	}
 
   	echo json_encode($strReturn);die;
 ?>
