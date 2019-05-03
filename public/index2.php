@@ -134,14 +134,15 @@
     }
     	$(document).ready(function(){
 
-		$.ajax({
-			type: "POST",
-			url: '/helper/gettrending.php',
-			dataType: 'json',
-			success: function(response) {
-				//appendtrending
-				console.log(response);
-			}
+	    $.ajax({
+		type: "POST",
+		url: '/helper/gettrending.php',
+		dataType: 'json',
+		success: function(response) {
+		    if(response.status == "OK") {
+			$(".appendtrending").html(response.html);
+		    }
+		}
 	    });
 
 	    
