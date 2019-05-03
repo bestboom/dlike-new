@@ -99,7 +99,35 @@ $postGenerator = new dlike\post\makePost();
 	}
 
 	if (isset($state->result)) { 
-	
+	$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']),JSON_UNESCAPED_SLASHES);
+
+$addposts = "INSERT INTO steemposts (`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$title."', '".$_POST['description']."', '".json_encode($json_metadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$beneficiaries."', '".$parent_ctegory."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
+
+
+
+$addpostsquery = $conn->query($addposts);
+$post_id = mysqli_insert_id($conn);
+
+$posts_tags = array_unique(explode(",",$_POST['tags']));
+if(count($posts_tags)>0) {
+	foreach($posts_tags as $p_tag) {
+		$sql = "SELECT * FROM posttags WHERE tagname = '$p_tag' LIMIT 1";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$setcounter = $row['tagcount']+1;
+				$setpostids = $row['postid'].",".$post_id;
+				$main_id = $row['id'];
+			}
+			$update_posttagscounter = $conn->query("UPDATE posttags set `tagcount` = '".$setcounter."',`postid` = '".$setpostids."' where `id` = '".$main_id."'");
+		}
+		else {
+			$setcounter = 1;
+			$setpostids = $post_id;
+			$insert_posttagscounter = $conn->query("INSERT INTO posttags (`tagname`, `postid`, `tagcount`) VALUES ('".$p_tag."', '".$setpostids."', '".$setcounter."')");
+		}
+	}
+}
 		
 ?>
     <script type="text/javascript">
