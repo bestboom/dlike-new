@@ -4,7 +4,7 @@
 	error_reporting(0);
     	require '../includes/config.php';
 	  
-    	$sql = "SELECT * FROM posttags order by tagcount,id DESC";
+    	$sql = "SELECT * FROM posttags order by tagcount ASC, id DESC";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$html = '<div class="colxs-1 trendingword">Trending Now ></div>';
