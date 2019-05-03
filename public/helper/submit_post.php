@@ -108,7 +108,7 @@ $postGenerator = new dlike\post\makePost();
 		
 		
 	$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']),JSON_UNESCAPED_SLASHES);
-$addposts = "INSERT INTO steemposts (`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$title."', '".$_POST['description']."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '', '".$parent_ctegory."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
+$addposts = "INSERT INTO steemposts (`username`,`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".$_POST['description']."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$beneficiaries."', '".$parent_ctegory."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
 
 
 $addpostsquery = $conn->query($addposts);
