@@ -125,12 +125,12 @@ if(count($posts_tags)>0 && $post_id > 0) {
 				$setpostids = $row['postid'].",".$post_id;
 				$main_id = $row['id'];
 			}
-			$update_posttagscounter = $conn->query("UPDATE posttags set `tagcount` = '".$setcounter."',`postid` = '".$setpostids."' where `id` = '".$main_id."'");
+			$update_posttagscounter = $conn->query("UPDATE posttags set `tagcount` = '".$setcounter."',`postid` = '".$setpostids."', `updated_at` = '".date("Y-m-d H:i:s")."' where `id` = '".$main_id."'");
 		}
 		else {
 			$setcounter = 1;
 			$setpostids = $post_id;
-			$insert_posttagscounter = $conn->query("INSERT INTO posttags (`tagname`, `postid`, `tagcount`) VALUES ('".$p_tag."', '".$setpostids."', '".$setcounter."')");
+			$insert_posttagscounter = $conn->query("INSERT INTO posttags (`tagname`, `postid`, `tagcount`,`updated_at`) VALUES ('".$p_tag."', '".$setpostids."', '".$setcounter."','".date("Y-m-d H:i:s")."')");
 		}
 	}
 }
