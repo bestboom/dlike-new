@@ -47,22 +47,32 @@
         </div>
     </div><!-- sub-header -->
 
-    <div class="container">
-	<div class="row">
-	    <div class="col-xs-1">test 1</div>
-	    <div class="col-xs-1">test 2</div>
-	    <div class="col-xs-1">test 3</div>
-	    <div class="col-xs-1">test 4</div>
-	    <div class="col-xs-1">test 5</div>
-	    <div class="col-xs-1">test 6</div>
-	    <div class="col-xs-1">test 7</div>
-	    <div class="col-xs-1">test 8</div>
-	    <div class="col-xs-1">test 9</div>
-	    <div class="col-xs-1">test 10</div>
-	</div>
-    </div>
+    <style>
+    .trendingclass{text-align: center;    margin-bottom: 25px;}
+    .trendingclass .row{margin:0;}
+    .trendingclass .trendingword{font-weight: 900; width: 12%;}
+    .trendingclass .colxs-1{text-align: center;font-size: 12px !important;text-transform: capitalize;}
+    
+    </style>
     <div class="latest-post-section">
+	<div class="container trendingclass">
+	    <div class="row">
+		<div class="colxs-1 trendingword">Trending Now ></div>
+		<div class="colxs-1">test 1</div>
+		<div class="colxs-1">test 2</div>
+		<div class="colxs-1">test 3</div>
+		<div class="colxs-1">test 4</div>
+		<div class="colxs-1">test 5</div>
+		<div class="colxs-1">test 6</div>
+		<div class="colxs-1">test 7</div>
+		<div class="colxs-1">test 8</div>
+		<div class="colxs-1">test 9</div>
+		<div class="colxs-1">test 10</div>
+	    </div>
+	</div>
+    
         <div class="container">
+	    
             <div class="row  align-items-center h-100 post_select">
                 <div class="row col-md-3 justify-content-center">
                         <h4 class="lab_post orderByLatest activeOrderBy">Latest</h4>
