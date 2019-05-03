@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(0);
 require '../includes/config.php';
 require_once "../helper/publish_post.php";
 include('../functions/main.php');
@@ -99,7 +99,10 @@ $postGenerator = new dlike\post\makePost();
 	}
 
 	if (isset($state->result)) { 
-$addposts = "INSERT INTO steemposts (`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$title."', '".$body."', '".json_encode($json_metadata)."', '".$permlink."', '".genBeneficiaries($_POST['benefactor'])."', '".$parent_ctegory."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
+		
+		$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']));
+		
+$addposts = "INSERT INTO steemposts (`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$title."', '".$body."', '".json_encode($json_metadata)."', '".$permlink."', '".$beneficiaries."', '".$parent_ctegory."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
 $addpostsquery = $conn->query($addposts);
 $post_id = mysqli_insert_id($conn);
 
