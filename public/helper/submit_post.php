@@ -115,7 +115,7 @@ $addpostsquery = $conn->query($addposts);
 $post_id = mysqli_insert_id($conn);
 
 $posts_tags = array_unique(explode(",",$_POST['tags']));
-if(count($posts_tags)>0) {
+if(count($posts_tags)>0 && $post_id > 0) {
 	foreach($posts_tags as $p_tag) {
 		$sql = "SELECT * FROM posttags WHERE tagname = '$p_tag' LIMIT 1";
 		$result = $conn->query($sql);
