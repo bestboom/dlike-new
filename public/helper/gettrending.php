@@ -11,7 +11,7 @@
 		$counter = 0; 
 		while($row = $result->fetch_assoc()) {
 			if (strpos($row['tagname'], 'dlike') === false && $counter < 10) {
-				$html .= '<div class="colxs-1"><a href="'.$row['tagname'].'">'.$row['tagname'].'</a></div>';
+				$html .= '<div class="colxs-1"><a href="/tags/'.$row['tagname'].'">'.$row['tagname'].'</a></div>';
 				++$counter;
 			}
 			
