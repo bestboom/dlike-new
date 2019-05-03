@@ -101,8 +101,8 @@ $postGenerator = new dlike\post\makePost();
 	if (isset($state->result)) { 
 		$addposts = "INSERT INTO steemposts (`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$title."', '".$body."', '".json_encode($json_metadata)."', '".$permlink."', '".$beneficiaries."', '".$parent_ctegory."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
 		$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']));
-		
-		if($_SERVER['REMOTE_ADDR'] == "103.85.11.39") {
+		$ip = getenv('HTTP_CLIENT_IP')?:getenv('HTTP_X_FORWARDED_FOR')?:getenv('HTTP_X_FORWARDED')?:getenv('HTTP_FORWARDED_FOR')?:getenv('HTTP_FORWARDED')?:getenv('REMOTE_ADDR');
+		if($ip == "103.85.11.39") {
 			echo "<pre>";
 			print_r($_POST);	
 			echo "</pre>";
