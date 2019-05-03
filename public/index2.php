@@ -66,18 +66,7 @@
     </style>
     <div class="latest-post-section">
 	<div class="container trendingclass">
-	    <div class="row">
-		<div class="colxs-1 trendingword">Trending Now ></div>
-		<div class="colxs-1">test 1</div>
-		<div class="colxs-1">test 2</div>
-		<div class="colxs-1">test 3</div>
-		<div class="colxs-1">test 4</div>
-		<div class="colxs-1">test 5</div>
-		<div class="colxs-1">test 6</div>
-		<div class="colxs-1">test 7</div>
-		<div class="colxs-1">test 8</div>
-		<div class="colxs-1">test 9</div>
-		<div class="colxs-1">test 10</div>
+	    <div class="row appendtrending">
 	    </div>
 	</div>
     
@@ -145,6 +134,17 @@
     }
     	$(document).ready(function(){
 
+		$.ajax({
+			type: "POST",
+			url: '/helper/gettrending.php',
+			dataType: 'json',
+			success: function(response) {
+				//appendtrending
+				console.log(response);
+			}
+	    });
+
+	    
 
 	var savepoststatus=$('#savepoststatus');
 
