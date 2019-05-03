@@ -50,16 +50,17 @@
     <style>
     .trendingclass{text-align: center;    margin-bottom: 25px;}
     .trendingclass .row{margin:0;}
+    .trendingclass .colxs-1{text-align: center;font-size: 12px;text-transform: capitalize;display:flex;width:8.7%}
     .trendingclass .trendingword{font-weight: 900; width: 12%;}
-    .trendingclass .colxs-1{text-align: center;font-size: 12px;text-transform: capitalize;}
 
-    @media (min-width: 375px) {
-      .trendingclass .trendingword{width: 100%;}
-      .trendingclass .colxs-1 {	width: 33%;font-size: 13px;}
-    }
-    @media (min-width: 480px) {
-      .trendingclass .trendingword{width: 100%;}
+    
+    @media (max-width: 480px) {
       .trendingclass .colxs-1 {	width: 20%;font-size: 13px;}
+      .trendingclass .trendingword{width: 100%;}
+    }
+    @media (max-width: 375px) {
+      .trendingclass .colxs-1 {	width: 33%;font-size: 13px;}
+      .trendingclass .trendingword{width: 100%;}
     }
     
     </style>
