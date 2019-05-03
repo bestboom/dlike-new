@@ -50,7 +50,7 @@
     <style>
     .trendingclass{text-align: center;    margin-bottom: 25px;}
     .trendingclass .row{margin:0;}
-    .trendingclass .colxs-1{text-align: center;font-size: 12px;text-transform: capitalize;display:flex;width:8.7%}
+    .trendingclass .colxs-1{text-align: center;font-size: 12px;text-transform: capitalize;width:8.7%}
     .trendingclass .trendingword{font-weight: 900; width: 12%;}
 
     
