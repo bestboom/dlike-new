@@ -62,7 +62,7 @@
         </div>
     </div>
 <?php include('template/modals/modal.php'); ?>    
-<?php include('template/footer.php'); ?>
+<?php include('template/footer2.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
 </style>
