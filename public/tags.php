@@ -75,10 +75,12 @@
 				    var created_at = resulthtml[i]['created_at'];
 				    var category = resulthtml[i]['category'];
 				    var permlink = resulthtml[i]['permlink'];
-				    var thumbnail = resulthtml[i]['thumbnail'];
 				    var metatags =  resulthtml[i]['metatags'];
 				    var title =   resulthtml[i]['title'];
 				    var exturl =   resulthtml[i]['exturl'];
+
+				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
+					
 				    
 				    responsehtml += '<div class="col-lg-4 col-md-6 postNumber="'+ i +'">\n' +
 					    '\n' +
