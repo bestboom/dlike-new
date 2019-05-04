@@ -51,10 +51,16 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 				$result2 = $conn->query($select_meta);
 				if ($result2->num_rows > 0) {
 					$meta_array = '';
+					$counter = 0;
 					while($row2 = $result2->fetch_assoc()) {
-						$meta_array .= '<a href="#">';
-						$meta_array .= $row2['tagname'];
-						$meta_array .= '</a>';
+						if (strpos($row2['tagname'], 'dlike') == false) {
+							$meta_array .= '<a href="/#">';
+							$meta_array .= $row2['tagname'];
+							$meta_array .= '</a>';
+							if($counter>0 && $counter<$result2->num_rows) {
+								$meta_array .= ',';
+							}
+						}
 					}
 				}
 				
