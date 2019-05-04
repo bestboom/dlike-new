@@ -1,4 +1,5 @@
 <?php include('template/header2.php'); require ('lib/solvemedialib.php'); ?>
+<input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
             <div class="row home-banner">
@@ -89,24 +90,54 @@
 		    
 		      <!-- Modal content-->
 		      <div class="modal-content">
-			<div class="modal-body text-center">
-			    <input type="hidden" id="p_username" />
-			    <input type="hidden" id="p_permlink" />
-			    <input type="hidden" id="p_category" />
-			    <p>What would you think about this post?</p>
-			    <select class="form-control" id="status_select">
-				<option value="">Please select</option>
-				<option value="Rejected">Rejected</option>
-				<option value="Low Level">Low Level</option>
-				<option value="High Level">High Level</option>
-			    </select>
-			    <br>
-			    <p><input type="button" id="savepoststatus" class="btn btn-primary" value="Save it"/></p>
-				    
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
+				<div class="modal-body text-center">
+					<input type="hidden" id="p_username" />
+					<input type="hidden" id="p_permlink" />
+					<input type="hidden" id="p_category" />
+					<p>What would you think about this post?</p>
+					<select class="form-control" id="status_select">
+					<option value="">Please select</option>
+					<option value="Rejected">Rejected</option>
+					<option value="Low Level">Low Level</option>
+					<option value="High Level">High Level</option>
+					</select>
+					<br>
+					<p><input type="button" id="savepoststatus" class="btn btn-primary" value="Save it"/></p>
+						
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+		      </div>
+		      
+		    </div>
+		  </div>
+
+
+		  <div class="modal fade" id="userPostStatusModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+				<div class="modal-body text-center">
+					<input type="hidden" id="pu_username" />
+					<input type="hidden" id="pu_permlink" />
+					<input type="hidden" id="pu_category" />
+					<p>User Status</p>
+					<select class="form-control" id="userstatus_select">
+						<option value="">Please select</option>
+						<option value="Blacklisted">Blacklisted</option>
+						<option value="Greenlisted">Greenlisted</option>
+						<option value="Whitelisted">Whitelisted</option>
+						<option value="Pro">Pro</option>
+					</select>
+					<br>
+					<p><input type="button" id="saveuserpoststatus" class="btn btn-primary" value="Save it"/></p>
+						
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
 		      </div>
 		      
 		    </div>
@@ -122,16 +153,26 @@
 </style>
 <script>
     function openmodal_popup(self){
-	var permlink = $(self).data('permlink');
-	var author = $(self).data('author');
-	var category = $(self).data('category');
-	
-	$("#p_username").val(author);
-	$("#p_permlink").val(permlink);
-	$("#p_category").val(category);
-	
-	$("#PostStatusModal").modal('show');
+		var permlink = $(self).data('permlink');
+		var author = $(self).data('author');
+		var category = $(self).data('category');
+		
+		$("#p_username").val(author);
+		$("#p_permlink").val(permlink);
+		$("#p_category").val(category);
+		
+		$("#PostStatusModal").modal('show');
     }
+
+    function openuser_popup(self){
+		var author = $(self).data('author');
+		$("#pu_username").val(author);
+		$("#pu_permlink").val(permlink);
+		$("#pu_category").val(category);
+		
+		$("#userPostStatusModal").modal('show');
+    }
+    
     	$(document).ready(function(){
 
 	    $.ajax({
@@ -148,9 +189,69 @@
 	    
 
 	var savepoststatus=$('#savepoststatus');
-
+	var saveuserpoststatus=$('#saveuserpoststatus');
+	var c_username = $('#c_username').val();
 	
+
+	saveuserpoststatus.click(function(){
+
+	    var p_username = $("#pu_username").val();
+	    var p_permlink = $("#pu_permlink").val();
+	    var p_category = $("#pu_category").val();
+	    var p_status = $("#userstatus_select").val();
+	    if(p_status == ""){
+			alert("Please select user status.");
+			return false;
+	    }
 	    
+	    $.ajax({
+		    type: "POST",
+		    url: '/helper/userpoststatus.php',
+		    data:{'p_username':p_username,'p_status':p_status},
+		    dataType: 'json',
+		    success: function(response) {
+			if(response.status == "OK") {
+			    toastr.success(response.message);
+			    $('#userPostStatusModal').modal('hide');
+
+			    var all_status = p_status;
+			    if(all_status == "Blacklisted") {
+				var colorset = 'black';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "Greenlisted") {
+				var colorset = 'green';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "Whitelisted") {
+				var colorset = 'white';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "Pro") {
+				var colorset = 'red';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+				
+				$('.userstatus_icon' + permlink + author).hover(function() {toastr.error('User already Checked!');})
+				
+			}
+			else {
+			    $('#userPostStatusModal').modal('hide');
+			    toastr.error(response.message);
+			    return false;
+			}
+		    },
+		    error: function() {
+				$('#userPostStatusModal').modal('hide');
+				toastr.error('Error occured');
+			    return false;
+		    }
+	    });
+	});    
 	
 
 	savepoststatus.click(function(){
@@ -326,6 +427,12 @@
 					});
 				}
 
+				var adduserhtml = "";
+				if(c_username == "dlike") {
+					//adduserhtml += '<a id="userstatus_icon'+$post.permlink +$post.author +'" onclick="return openuser_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check" id="user_status'+$post.permlink +$post.author +'"></i></a>';
+				}
+				adduserhtml += '<a class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check" id="user_status'+$post.permlink +$post.author +'"></i></a>';
+				
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
@@ -341,7 +448,7 @@
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="#">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
+					'<h5><a href="#">' + $post.author + "&nbsp;" +adduserhtml +'</a><div class="time">' + activeDate + '</div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -430,6 +537,44 @@
 			    }
 			}
 		});
+
+
+		$.ajax({
+			type: "POST",
+			url: '/helper/getuserpoststatus.php',
+			data:{'author':author},
+			dataType: 'json',
+			success: function(response) {
+			    if(response.status == "OK") {
+				var all_status = response.setstatus;
+			    if(all_status == "Blacklisted") {
+				var colorset = 'black';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "Greenlisted") {
+				var colorset = 'green';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "Whitelisted") {
+				var colorset = 'white';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+			    else if(all_status == "Pro") {
+				var colorset = 'red';
+				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+			    }
+				
+				$('.userstatus_icon' + permlink + author).hover(function() {toastr.error('User already Checked!');})
+					
+			    }
+			}
+		});
+
+		
 
 
 
