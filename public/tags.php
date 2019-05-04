@@ -50,6 +50,7 @@
 	<div class="row" id="contentposts">
 	</div>
     </div>
+  
 <?php include('template/footer2.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
@@ -63,13 +64,63 @@
 		  return false;
 			$.ajax({
 			type: "POST",
-			url: '/helper/getposts.php',
+			url: '/helper/gettposts.php',
 			data:{'tagname':tagname},
 			dataType: 'json',
 			success: function(response) {
-				if(response.status == "OK") {
-				$(".appendtrending").html(response.html);
+			    if(response.status == "OK") {
+				var resulthtml = response.data_row;
+				var responsehtml = '';
+				for(i=0;i<resulthtml.length;i++) {
+				    var username = resulthtml[i]['username'];
+				    var created_at = resulthtml[i]['created_at'];
+				    var category = resulthtml[i]['category'];
+				    var permlink = resulthtml[i]['permlink'];
+				    var thumbnail = resulthtml[i]['thumbnail'];
+				    var metatags =  resulthtml[i]['metatags'];
+				    var title =   resulthtml[i]['title'];
+				    var exturl =   resulthtml[i]['exturl'];
+				    
+				    var responsehtml += '<div class="col-lg-4 col-md-6 postNumber="'+ i +'">\n' +
+					    '\n' +
+					    '<article class="post-style-two">\n' +
+					    '\n' +
+					    '<div class="post-contnet-wrap-top">\n' +
+					    '\n' +
+					    '<div class="post-footer">\n' +
+					    '\n' +
+					    '<div class="post-author-block">\n' +
+					    '\n' +
+					    '<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + username + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+					    '\n' +
+					    '<div class="author-info">\n' +
+					    '\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time">' + created_at + '</div></h5>\n' +
+					    '\n' +    
+					    '</div>\n' +
+					    '\n' + 
+					    '</div>\n' +
+					    '\n' +
+					    '<div class="post-comments"><span class="post-meta">' + category + '</span></div>\n' +
+					    '\n' +
+					    '</div>\n' +
+					    '\n' +
+					    '</div>\n' + 
+					    '\n' +
+					    '<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + permlink + '" data-author="' + username + '">' + thumbnail + '</a></div>\n' + 
+					    '\n' +
+					    '<div class="post-contnet-wrap">\n' +
+					    '\n' +
+					    '<h4 class="post-title"><a href="' + exturl + '" target="_blank">' + title + '</a></h4>\n' +
+					    '\n' +
+					    '<p class="post-entry post-tags">' + metatags + '</p>\n' +
+					    '\n' +
+					    '</div>\n' +
+				    '</article></div>';
 				}
+				
+				$("#contentposts").html(responsehtml);
+			    }
 			}
 			});
 
