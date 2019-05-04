@@ -432,9 +432,9 @@
 
 				var adduserhtml = "";
 				if(c_username == "dlike") {
-					//adduserhtml += '<a id="userstatus_icon'+$post.permlink +$post.author +'" onclick="return openuser_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check" id="user_status'+$post.permlink +$post.author +'"></i></a>';
+					adduserhtml += '<a class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-square" class="user_status'+$post.permlink +$post.author +'"></i></a>';
 				}
-				adduserhtml += '<a class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-square" class="user_status'+$post.permlink +$post.author +'"></i></a>';
+				
 				
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
