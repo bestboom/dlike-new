@@ -53,13 +53,16 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 					$meta_array = '';
 					$counter = 0;
 					while($row2 = $result2->fetch_assoc()) {
-						if (strpos($row2['tagname'], 'dlike') == false) {
-							$meta_array .= '<a href="/#">';
+						if (strpos($row2['tagname'], 'dlike') === false) {
+							$meta_array .= '<a href="/tags/';
+							$meta_array .= $row2['tagname'];
+							$meta_array .= '" style="color: #1652f0;">';
 							$meta_array .= $row2['tagname'];
 							$meta_array .= '</a>';
 							if($counter>0 && $counter<$result2->num_rows) {
 								$meta_array .= ',';
 							}
+							++$counter;
 						}
 					}
 				}
