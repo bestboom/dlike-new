@@ -80,7 +80,7 @@
 				    var title =   resulthtml[i]['title'];
 				    var exturl =   resulthtml[i]['exturl'];
 				    
-				    var responsehtml += '<div class="col-lg-4 col-md-6 postNumber="'+ i +'">\n' +
+				    responsehtml += '<div class="col-lg-4 col-md-6 postNumber="'+ i +'">\n' +
 					    '\n' +
 					    '<article class="post-style-two">\n' +
 					    '\n' +
