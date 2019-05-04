@@ -87,7 +87,7 @@
 
 				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
 				    
-				    responsehtml += '<div class="col-lg-4 col-md-6>\n' +
+				    responsehtml += '<div class="col-lg-4 col-md-6">\n' +
 					    '\n' +
 					    '<article class="post-style-two">\n' +
 					    '\n' +
