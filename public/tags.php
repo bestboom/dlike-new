@@ -46,11 +46,13 @@
             </div>
         </div>
     </div><!-- sub-header -->
-    <div class="container">
-	<div class="row col-md-3 justify-content-center">
-		<h4 class="total_posts"></h4>
-	</div>
-	<div class="row" id="contentposts">
+    <div class="latest-post-section">
+	<div class="container">
+	    <div class="row col-md-3 justify-content-center">
+		    <h4 class="total_posts"></h4>
+	    </div>
+	    <div class="row" id="contentposts">
+	    </div>
 	</div>
     </div>
   
@@ -85,7 +87,7 @@
 
 				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
 				    
-				    responsehtml += '<div class="col-lg-4 col-md-6 postNumber="'+ i +'">\n' +
+				    responsehtml += '<div class="col-lg-4 col-md-6>\n' +
 					    '\n' +
 					    '<article class="post-style-two">\n' +
 					    '\n' +
