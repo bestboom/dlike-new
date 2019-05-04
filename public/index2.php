@@ -230,6 +230,7 @@
 			    else if(all_status == "Whitelisted") {
 				var colorset = 'white';
 				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + p_permlink + p_username + ' i').css({"background": "black"});
 				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
 			    }
 			    else if(all_status == "Pro") {
@@ -238,7 +239,7 @@
 				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
 			    }
 				
-				$('.userstatus_icon' + permlink + author).hover(function() {toastr.error('User already Checked!');})
+				$('.userstatus_icon' + p_permlink + p_username).hover(function() {toastr.error('User already Checked!');})
 				
 			}
 			else {
@@ -551,23 +552,24 @@
 				var all_status = response.setstatus;
 			    if(all_status == "Blacklisted") {
 				var colorset = 'black';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
-				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				$('.userstatus_icon' + permlink + author).removeAttr('onclick');
 			    }
 			    else if(all_status == "Greenlisted") {
 				var colorset = 'green';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
-				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				$('.userstatus_icon' + permlink + author).removeAttr('onclick');
 			    }
 			    else if(all_status == "Whitelisted") {
 				var colorset = 'white';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
-				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				$('.userstatus_icon' + permlink + author + ' i').css({"background": "black"});
+				$('.userstatus_icon' + permlink + author).removeAttr('onclick');
 			    }
 			    else if(all_status == "Pro") {
 				var colorset = 'red';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
-				$('.userstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				$('.userstatus_icon' + permlink + author).removeAttr('onclick');
 			    }
 				
 				$('.userstatus_icon' + permlink + author).hover(function() {toastr.error('User already Checked!');})
