@@ -46,20 +46,9 @@
             </div>
         </div>
     </div><!-- sub-header -->
-    <div class="latest-post-section">
-        <div class="container">
-	    
-            <div class="row  align-items-center h-100 post_select">
-                <div class="row col-md-3 justify-content-center">
-                        <h4 class="lab_post">Posts</h4>
-                </div>
-                <div class="col-md-9 lay">&nbsp;</div>
-            </div>
-            
-            <div class="row" id="content">
-            </div>
-		
-        </div>
+    <div class="container">
+	<div class="row" id="contentposts">
+	</div>
     </div>
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer2.php'); ?>
@@ -75,7 +64,8 @@
 		  return false;
 			$.ajax({
 			type: "POST",
-			url: '/helper/gettrending.php',
+			url: '/helper/getposts.php',
+			data:{'tagname':tagname},
 			dataType: 'json',
 			success: function(response) {
 				if(response.status == "OK") {
