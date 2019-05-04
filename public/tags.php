@@ -75,7 +75,7 @@
 			    if(response.status == "OK") {
 				var resulthtml = response.data_row;
 				var responsehtml = '';
-				$(".total_posts").html(resulthtml.length+' posts found.');
+				$(".total_posts").html(resulthtml.length+' posts found, <a href="/tags/'+tagname+'">'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
 				    var username = resulthtml[i]['username'];
 				    var created_at = resulthtml[i]['created_at'];
