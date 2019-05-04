@@ -47,12 +47,14 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 		if ($result1->num_rows > 0) {
 			while($row1 = $result1->fetch_assoc()) {
 				
-				$select_meta = "SELECT tagname FROM posttags WHERE FIND_IN_SET($row1['id'], `postid`)";
+				$select_meta = "SELECT tagname FROM posttags WHERE FIND_IN_SET(".$row1['id'].", `postid`)";
 				$result2 = $conn->query($select_meta);
 				if ($result2->num_rows > 0) {
 					$meta_array = '';
 					while($row2 = $result2->fetch_assoc()) {
-						$meta_array .= '<a href="#">'.$row2['tagname'].'</a>';
+						$meta_array .= '<a href="#">';
+						$meta_array .= $row2['tagname'];
+						$meta_array .= '</a>';
 					}
 				}
 				
