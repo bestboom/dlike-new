@@ -47,6 +47,9 @@
         </div>
     </div><!-- sub-header -->
     <div class="container">
+	<div class="row col-md-3 justify-content-center">
+		<h4 class="total_posts"></h4>
+	</div>
 	<div class="row" id="contentposts">
 	</div>
     </div>
@@ -70,6 +73,7 @@
 			    if(response.status == "OK") {
 				var resulthtml = response.data_row;
 				var responsehtml = '';
+				$(".total_posts").html(resulthtml.length+' posts found.');
 				for(i=0;i<resulthtml.length;i++) {
 				    var username = resulthtml[i]['username'];
 				    var created_at = resulthtml[i]['created_at'];
@@ -80,7 +84,6 @@
 				    var exturl =   resulthtml[i]['exturl'];
 
 				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
-					
 				    
 				    responsehtml += '<div class="col-lg-4 col-md-6 postNumber="'+ i +'">\n' +
 					    '\n' +
