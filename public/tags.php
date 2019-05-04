@@ -1,4 +1,4 @@
-<?php include('template/header2.php'); require ('lib/solvemedialib.php'); ?>
+<?php include('template/header2.php'); ?>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
             <div class="row home-banner">
