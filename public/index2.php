@@ -165,7 +165,9 @@
     }
 
     function openuser_popup(self){
+	var permlink = $(self).data('permlink');
 		var author = $(self).data('author');
+		var category = $(self).data('category');
 		$("#pu_username").val(author);
 		$("#pu_permlink").val(permlink);
 		$("#pu_category").val(category);
