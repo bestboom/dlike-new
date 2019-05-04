@@ -56,7 +56,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 						if (strpos($row2['tagname'], 'dlike') === false) {
 							$meta_array .= '<a href="/tags/';
 							$meta_array .= $row2['tagname'];
-							$meta_array .= '" style="color: #1652f0;">';
+							$meta_array .= '" style="color: #1652f0;">#';
 							$meta_array .= $row2['tagname'];
 							$meta_array .= '</a>';
 							if($counter>0 && $counter<$result2->num_rows) {
