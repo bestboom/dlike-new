@@ -11,7 +11,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 		while($row = $result->fetch_assoc()) {
 			$postid = $row['postid'];
 		}
-		$sql1 = "SELECT postid FROM posttags where tagname = '".$_POST['tagname']."'";
+		$sql1 = "SELECT * FROM steemposts where id IN (".$postid.")";
 		$result1 = $conn->query($sql1);
 		if ($result1->num_rows > 0) {
 			while($row1 = $result1->fetch_assoc()) {
