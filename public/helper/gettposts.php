@@ -1,4 +1,33 @@
 <?php
+function time_elapsed_string($datetime, $full = false) {
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+
+    $string = array(
+        'y' => 'year',
+        'm' => 'month',
+        'w' => 'week',
+        'd' => 'day',
+        'h' => 'hour',
+        'i' => 'minute',
+        's' => 'second',
+    );
+    foreach ($string as $k => &$v) {
+        if ($diff->$k) {
+            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+        } else {
+            unset($string[$k]);
+        }
+    }
+
+    if (!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
+
 if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
@@ -16,15 +45,24 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 		if ($result1->num_rows > 0) {
 			while($row1 = $result1->fetch_assoc()) {
 				
+				$select_meta = "SELECT tagname FROM posttags WHERE FIND_IN_SET($row1['id'], `postid`)";
+				$result2 = $conn->query($select_meta);
+				if ($result2->num_rows > 0) {
+					$meta_array = '';
+					while($row2 = $result2->fetch_assoc()) {
+						$meta_array .= '<a href="#">'.$row2['tagname'].'</a>';
+					}
+				}
+				
 				$json_metadata = json_decode($row1['json_metadata'],true);
 				
 				
 				$data['username'] = $row1['username'];
-				$data['created_at'] = $row1['created_at'];
+				$data['created_at'] = time_elapsed_string($row1['created_at']);
 				$data['category'] = $json_metadata['category'];
 				$data['permlink'] = $row1['permlink'];
 				$data['thumbnail'] = $json_metadata['image'];
-				$data['metatags'] = $row1['username'];
+				$data['metatags'] = $meta_array;
 				$data['title'] = $row1['title'];
 				$data['exturl'] = $json_metadata['url'];
 				
