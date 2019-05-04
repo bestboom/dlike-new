@@ -59,11 +59,12 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 							$meta_array .= '" style="color: #1652f0;">#';
 							$meta_array .= $row2['tagname'];
 							$meta_array .= '</a>';
-							if($counter<($result2->num_rows-1)) {
+							if($counter<($result2->num_rows)) {
 								$meta_array .= ',';
 							}
-							++$counter;
+							
 						}
+						++$counter;
 					}
 				}
 				
