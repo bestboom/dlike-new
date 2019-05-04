@@ -48,7 +48,7 @@
     </div><!-- sub-header -->
     <div class="latest-post-section">
 	<div class="container">
-	    <div class="row col-md-3 justify-content-center">
+	    <div class="row col-md-3">
 		    <h4 class="total_posts"></h4>
 	    </div>
 	    <div class="row" id="contentposts">
