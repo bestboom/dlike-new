@@ -50,7 +50,6 @@
 	<div class="row" id="contentposts">
 	</div>
     </div>
-<?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer2.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
