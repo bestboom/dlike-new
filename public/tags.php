@@ -125,6 +125,9 @@
 				
 				$("#contentposts").html(responsehtml);
 			    }
+			    else {
+				$(".total_posts").html('no posts found.');
+			    }
 			}
 			});
 
