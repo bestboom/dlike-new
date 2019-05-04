@@ -1,4 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+    	require '../includes/config.php';
+
 function time_elapsed_string($datetime, $full = false) {
     $now = new DateTime;
     $ago = new DateTime($datetime);
@@ -29,10 +34,7 @@ function time_elapsed_string($datetime, $full = false) {
 }
 
 if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(0);
-    	require '../includes/config.php';
+	
 	  
     	$sql = "SELECT postid FROM posttags where tagname = '".$_POST['tagname']."'";
 	$result = $conn->query($sql);
