@@ -5,9 +5,9 @@
     	require '../includes/config.php';
 	
 if($_COOKIE['username'] != 'dlike') {
-		$strReturn['status'] = 'no';	
-		$strReturn['message'] = 'only admin can enter.';	
-		echo json_encode($strReturn);die;
+		//$strReturn['status'] = 'no';	
+		//$strReturn['message'] = 'only admin can enter.';	
+		//echo json_encode($strReturn);die;
 	}
 	if(!isset($_POST['p_username']) || !isset($_POST['p_status'])) {
 		$strReturn['status'] = 'Failed';
