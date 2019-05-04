@@ -62,7 +62,7 @@
         </div>
     </div>
 <?php include('template/modals/modal.php'); ?>    
-<?php include('template/footer2.php'); ?>
+<?php include('template/footer.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
 </style>
@@ -70,20 +70,20 @@
 
     	$(document).ready(function(){
       
-      var tagname = '<?php echo $_GET['tag'];?>';
-      alert(tagname);
-      return false;
-	    $.ajax({
-		type: "POST",
-		url: '/helper/gettrending.php',
-		dataType: 'json',
-		success: function(response) {
-		    if(response.status == "OK") {
-			$(".appendtrending").html(response.html);
-		    }
-		}
-	    });
+		  var tagname = '<?php echo $_GET['tag'];?>';
+		  alert(tagname);
+		  return false;
+			$.ajax({
+			type: "POST",
+			url: '/helper/gettrending.php',
+			dataType: 'json',
+			success: function(response) {
+				if(response.status == "OK") {
+				$(".appendtrending").html(response.html);
+				}
+			}
+			});
 
-	});
+		});
 
 </script>
