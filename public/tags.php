@@ -60,8 +60,7 @@
     	$(document).ready(function(){
       
 		  var tagname = '<?php echo $_GET['tag'];?>';
-		  alert(tagname);
-		  return false;
+	
 			$.ajax({
 			type: "POST",
 			url: '/helper/gettposts.php',
