@@ -479,7 +479,7 @@ require('lib/solvemedialib.php'); ?>
                         $('.scroller-right').show().css('display', 'flex');
                     }
                     else {
-                        $('.scroller-right').hide();
+                        //$('.scroller-right').hide();
                     }
 
                     if (getLeftPosi()<0) {
@@ -487,7 +487,7 @@ require('lib/solvemedialib.php'); ?>
                     }
                     else {
                         $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
-                        $('.scroller-left').hide();
+                        //$('.scroller-left').hide();
                     }
                 }
 
@@ -500,9 +500,13 @@ require('lib/solvemedialib.php'); ?>
                 $('.scroller-right').click(function() {
 
                     $('.scroller-left').fadeIn('slow');
-                    $('.scroller-right').fadeOut('slow');
+                    //$('.scroller-right').fadeOut('slow');
+                    console.log(getLeftPosi());
+                    if(getLeftPosi() < -672){
+                        $('.scroller-right').fadeOut('slow');
+                    }
 
-                    $('.list').animate({left:"+="+widthOfHidden()+"px"},'slow',function(){
+                    $('.list').animate({left:"+="+"-112px"},'slow',function(){
 
                     });
                 });
