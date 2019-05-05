@@ -1517,9 +1517,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     margin-bottom: 0; }
 
 .colto-section {
-  background: url("../images/bg/4.png") no-repeat center center;
+  background: black;
   background-size: cover;
-  padding: 90px 0; }
+  padding: 45px 0; }
 
 .colto-content-in {
   display: -webkit-box;
@@ -3950,7 +3950,7 @@ opacity:0.9;
   -ms-flex-order: 1;
   order: 1;
   color: #c6cbdb;
-  width: 60%;}
+  width: 40%;}
 .copyright-text p {
       padding-top: 9px;
 }
@@ -4446,4 +4446,12 @@ button.toast-close-button {
   #testimonial> button.slick-next {
      display: block!important;
   }
+}
+
+.colto-section>div>div>div>div>a{
+  color: white !important;
+}
+
+.footer-bottom>div>div>div>div>p{
+  color: white !important;
 }
