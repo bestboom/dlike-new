@@ -1,4 +1,4 @@
-<?php include('template/header3_.php');
+<?php include('template/header3.php');
 require('lib/solvemedialib.php'); ?>
     <!-- --><?php /*if($_COOKIE['username'] == ''){ */ ?>
 <?php if ($_COOKIE['username'] == '') { ?>
