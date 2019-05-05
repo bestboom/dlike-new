@@ -4258,7 +4258,7 @@ button.toast-close-button {
   color: black !important;
 }
 
-.navbar-nav>.nav-item>.nav-link{
+#navbarNavDropdown>.navbar-nav>.nav-item>.nav-link{
   color: black !important;
 }
 
@@ -4323,26 +4323,45 @@ button.toast-close-button {
   font-size: 11px !important;
 }
 .row>.navbar {
-  min-height: 30px !important;
+  min-height: 50px !important;
   border: none;
   margin-bottom: 20px;
 }
 
+
+.navbar_trending_now{
+  background-color: #f0f0f1;
+  padding-left: 20px;
+}
+
+.navbar_trending_now>a{
+  font-size: 13px;
+  color: black;
+}
+
+#nav-content>ul>li>a{
+  font-size: 11px;
+  padding-left: 20px;
+}
+
 @media (max-width: 991px){
   .navbar-toggler {
-    background: grey !important;
-    background: #b7272700;
-    position: absolute;
-    right: 0;
-    top: 50%;
+
     height: 26px !important;
-    width: 37px !important;
-    cursor: pointer;
-    -webkit-transform: translate(0%, -50%);
-    -ms-transform: translate(0%, -50%);
-    transform: translate(0%, -50%);
-    padding: 0;
-    border-radius: 5px;
+
+  }
+
+  .navbar_trending_now{
+    background-color: #1c276a;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 22px;
+    padding-left: 20px;
+    color: white;
+  }
+
+  #nav-content>ul>li>a{
+    padding-left: 20px;
   }
 }
 

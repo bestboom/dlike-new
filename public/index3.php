@@ -267,58 +267,58 @@ require('lib/solvemedialib.php'); ?>
 
                 <div class="col-lg-12 col-md-12 "" style="margin-bottom: 40px">
                     <div class=" p-0">
-                        <div class="container p-0">
+                        <div class="container p-4">
                             <div class="row">
-                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <nav class="navbar navbar-expand-sm navbar-light bg-faded navbar_trending_now font_11">
+                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
                                         <span class="navbar-toggler-icon"></span>
                                     </button>
-                                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                        <ul class="navbar-nav black_word">
+
+                                    <!-- Brand -->
+                                    <a class="navbar-item" >Trending now > </a>
+
+                                    <!-- Links -->
+                                    <div class="collapse navbar-collapse" id="nav-content">
+                                        <ul class="navbar-nav">
                                             <li class="nav-item">
-                                                <a class="nav-link" href="" style="font-weight: 900">Trending now > </a>
+                                                <a class="nav-link" >US</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">US</a>
+                                                <a class="nav-link" >WORLD</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">WORLD</a>
+                                                <a class="nav-link" >POLITICS</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">POLITICS</a>
+                                                <a class="nav-link" >FACT CHECK</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">FACT CHECK</a>
+                                                <a class="nav-link" >OPTION</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">OPTION</a>
+                                                <a class="nav-link" >GOOD NEWS</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">GOOD NEWS</a>
+                                                <a class="nav-link" >CRIME</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">CRIME</a>
+                                                <a class="nav-link" >LOCAL</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">LOCAL</a>
+                                                <a class="nav-link" >TECH</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">TECH</a>
+                                                <a class="nav-link" >VIDEO</a>
+                                            </li> <li class="nav-item">
+                                                <a class="nav-link" >PHOTOS</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="">VIDEO</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">PHOTOS</a>
+                                                <a class="nav-link" >MY TOPICS</a>
                                             </li>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">MY TOPICS</a>
-                                            </li>
                                         </ul>
                                     </div>
                                 </nav>
-
 
                             </div>
                         </div>
