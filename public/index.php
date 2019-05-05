@@ -35,7 +35,7 @@
                                 <div class="news-headlines-block">
                                     <div class="news-headlines-slider ticker">
                                         <ul>
-                                            <li>Dlike will soon start token sale for steemians with huge bonus.</li>
+                                            <li>DLIKE token sale for steemians will be held on 12-14 May with 250% bonus tokens.</li>
                                         </ul>
                                     </div><!-- news-headlines-slider -->
                                 </div>
