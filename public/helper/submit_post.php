@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+require '../includes/config.php';
 require_once "../helper/publish_post.php";
 include('../functions/main.php');
 
@@ -98,7 +98,44 @@ $postGenerator = new dlike\post\makePost();
     $state = $postGenerator->broadcast($publish);
 	}
 
-	if (isset($state->result)) { ?>
+	if (isset($state->result)) { 
+		
+		$jsonmetadata = [
+    "image" => $urlImage,
+    "url" => $url,   
+    "category" => $_POST['category']
+	];
+		
+		
+	$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']),JSON_UNESCAPED_SLASHES);
+$addposts = "INSERT INTO steemposts (`username`,`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".$_POST['description']."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$beneficiaries."', '".$parent_ctegory."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
+
+
+$addpostsquery = $conn->query($addposts);
+$post_id = mysqli_insert_id($conn);
+
+$posts_tags = array_unique(explode(",",$_POST['tags']));
+if(count($posts_tags)>0 && $post_id > 0) {
+	foreach($posts_tags as $p_tag) {
+		$sql = "SELECT * FROM posttags WHERE tagname = '$p_tag' LIMIT 1";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			while($row = $result->fetch_assoc()) {
+				$setcounter = $row['tagcount']+1;
+				$setpostids = $row['postid'].",".$post_id;
+				$main_id = $row['id'];
+			}
+			$update_posttagscounter = $conn->query("UPDATE posttags set `tagcount` = '".$setcounter."',`postid` = '".$setpostids."', `updated_at` = '".date("Y-m-d H:i:s")."' where `id` = '".$main_id."'");
+		}
+		else {
+			$setcounter = 1;
+			$setpostids = $post_id;
+			$insert_posttagscounter = $conn->query("INSERT INTO posttags (`tagname`, `postid`, `tagcount`,`updated_at`) VALUES ('".$p_tag."', '".$setpostids."', '".$setcounter."','".date("Y-m-d H:i:s")."')");
+		}
+	}
+}
+		
+?>
     <script type="text/javascript">
         window.location = "https://dlike.io/";
     </script>

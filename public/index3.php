@@ -47,9 +47,9 @@ require('lib/solvemedialib.php'); ?>
 
     <div class="latest-post-section"  style="padding-top: 40px !important;padding-bottom: 20px !important;">
         <div class="container">
-            <div class="row" style="background: #eeeeee94;padding-top: 31px;margin-bottom: 20px;">
+            <div class="row" style="background:  #f3f4f5;padding-top: 31px;margin-bottom: 20px;">
 
-                <div class="col-lg-12 col-md-12 "" style="margin-bottom: 10px">
+                <div class="col-lg-12 col-md-12 " style="margin-bottom: 10px">
                     <div class="p-0">
                         <div class="container p-0">
                             <div class="row">
@@ -119,7 +119,7 @@ require('lib/solvemedialib.php'); ?>
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-lg-8 col-md-6 "">
+                <div class="col-lg-8 col-md-6 ">
                     <div class=" p-0">
                         <div class="container p-0">
                             <div class="row">
@@ -193,7 +193,7 @@ require('lib/solvemedialib.php'); ?>
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-lg-4 col-md-6 "">
+                <div class="col-lg-4 col-md-6 ">
 
                     <article class="post-style-two">
                         <div class="post-thumb" style="border: none;">
@@ -265,60 +265,73 @@ require('lib/solvemedialib.php'); ?>
 
                 </div>
 
-                <div class="col-lg-12 col-md-12 "" style="margin-bottom: 40px">
-                    <div class=" p-0">
+                <div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
+                    <div class="p-0">
                         <div class="container p-0">
                             <div class="row">
-                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                    </button>
-                                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                        <ul class="navbar-nav black_word">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="" style="font-weight: 900">Trending now > </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">US</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">WORLD</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">POLITICS</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">FACT CHECK</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">OPTION</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">GOOD NEWS</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">CRIME</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">LOCAL</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">TECH</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">VIDEO</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">PHOTOS</a>
-                                            </li>
+                                <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
+                                    <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
+                                    <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
+                                    <div class="wrapper">
+                                        <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
+                                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>
 
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="">MY TOPICS</a>
-                                            </li>
-                                        </ul>
+                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">US&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">WORLD&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">POLITICS&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">FACT CHECK&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">OPTION&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">GOOD NEWS&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">CRIME&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">LOCAL
+                                                AMERICA&nbsp;<button type="button" class="close closeBtn"
+                                                                     aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">TECH&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">VIDEO&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">PHOTOS&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">MY TOPICS&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+
+                                        </nav>
                                     </div>
-                                </nav>
-
+                                </div>
 
                             </div>
                         </div>
@@ -479,7 +492,7 @@ require('lib/solvemedialib.php'); ?>
                         $('.scroller-right').show().css('display', 'flex');
                     }
                     else {
-                        $('.scroller-right').hide();
+                        //$('.scroller-right').hide();
                     }
 
                     if (getLeftPosi()<0) {
@@ -487,7 +500,7 @@ require('lib/solvemedialib.php'); ?>
                     }
                     else {
                         $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
-                        $('.scroller-left').hide();
+                        //$('.scroller-left').hide();
                     }
                 }
 
@@ -500,9 +513,13 @@ require('lib/solvemedialib.php'); ?>
                 $('.scroller-right').click(function() {
 
                     $('.scroller-left').fadeIn('slow');
-                    $('.scroller-right').fadeOut('slow');
+                    //$('.scroller-right').fadeOut('slow');
+                    console.log(getLeftPosi());
+                    if(getLeftPosi() < -672){
+                        $('.scroller-right').fadeOut('slow');
+                    }
 
-                    $('.list').animate({left:"+="+widthOfHidden()+"px"},'slow',function(){
+                    $('.list').animate({left:"+="+"-112px"},'slow',function(){
 
                     });
                 });
@@ -516,6 +533,77 @@ require('lib/solvemedialib.php'); ?>
 
                     });
                 });
+
+
+                ////////////////
+
+                var scrollBarWidths_2 = 40;
+
+                var widthOfList_2 = function(){
+                    var itemsWidth = 0;
+                    $('.list-2 a').each(function(){
+                        var itemWidth = $(this).outerWidth();
+                        itemsWidth+=itemWidth;
+                    });
+                    return itemsWidth;
+                };
+
+                var widthOfHidden_2 = function(){
+                    return (($('.wrapper').outerWidth())-widthOfList_2()-getLeftPosi_2())-scrollBarWidths_2;
+                };
+
+                var getLeftPosi_2 = function(){
+                    return $('.list-2').position().left;
+                };
+
+                var reAdjust_2 = function(){
+                    if (($('.wrapper').outerWidth()) < widthOfList_2()) {
+                        $('.scroller-right-2').show().css('display', 'flex');
+                    }
+                    else {
+                        //$('.scroller-right-2').hide();
+                    }
+
+                    if (getLeftPosi_2()<0) {
+                        $('.scroller-left-2').show().css('display', 'flex');
+                    }
+                    else {
+                        $('.item').animate({left:"-="+getLeftPosi_2()+"px"},'slow');
+                        //$('.scroller-left').hide();
+                    }
+                }
+
+                reAdjust_2();
+
+                $(window).on('resize',function(e){
+                    reAdjust_2();
+                });
+
+                $('.scroller-right-2').click(function() {
+
+                    $('.scroller-left-2').fadeIn('slow');
+                    //$('.scroller-right-2').fadeOut('slow');
+                    console.log(getLeftPosi_2());
+                    if(getLeftPosi_2() < -672){
+                        $('.scroller-right-2').fadeOut('slow');
+                    }
+
+                    $('.list-2').animate({left:"+="+"-112px"},'slow',function(){
+
+                    });
+                });
+
+                $('.scroller-left-2').click(function() {
+
+                    $('.scroller-right-2').fadeIn('slow');
+                    $('.scroller-left-2').fadeOut('slow');
+
+                    $('.list-2').animate({left:"-="+getLeftPosi_2()+"px"},'slow',function(){
+
+                    });
+                });
+
+
 
                 setTimeout(function () {
 
@@ -538,9 +626,7 @@ require('lib/solvemedialib.php'); ?>
                             $(".slick-prev").css("background", "transparent");
                         });
 
-                    setInterval(function () {
-                        $(".slick-next").click();
-                    }, 50000);
+
                     /*  $( ".testimonials-wrap" )
                           .on( "mouseenter", function() {
                               $(this).css("background", "#white");
@@ -549,6 +635,10 @@ require('lib/solvemedialib.php'); ?>
                               $(this).css("background", "transparent");
                           });*/
                 }, 2000);
+
+                setInterval(function () {
+                    $(".slick-next").click();
+                }, 5000);
 
             });
         </script>
