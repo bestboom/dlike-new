@@ -4287,7 +4287,26 @@ button.toast-close-button {
   margin-top:0px;
 }
 
+.list-2 {
+  position:absolute;
+  left:0px;
+  top:0px;
+  min-width:3500px;
+
+  margin-top:0px;
+}
+
 .list li{
+  display:table-cell;
+  position:relative;
+  text-align:center;
+  cursor:grab;
+  cursor:-webkit-grab;
+  color:#efefef;
+  vertical-align:middle;
+}
+
+.list-2 li{
   display:table-cell;
   position:relative;
   text-align:center;
@@ -4308,11 +4327,30 @@ button.toast-close-button {
   background-color:#fff;
 }
 
+.scroller-2 {
+  text-align:center;
+  cursor:pointer;
+  display:none;
+  padding:7px;
+  padding-top:11px;
+  white-space: no-wrap;
+  vertical-align:middle;
+  background-color:#fff;
+}
+
 .scroller-right{
   float:right;
 }
 
+.scroller-right-2{
+  float:right;
+}
+
 .scroller-left {
+  float:left;
+}
+
+.scroller-left-2 {
   float:left;
 }
 
@@ -4370,7 +4408,21 @@ button.toast-close-button {
   background: transparent  !important;
 }
 
+.scroller-2{
+  padding-top: 10px;
+  background: transparent  !important;
+}
+
 .scroller-right{
+  padding-top: 15px !important;
+  background: transparent  !important;
+}
+
+.list-2>a{
+  font-size: 11px;
+}
+
+.scroller-right-2{
   padding-top: 15px !important;
   background: transparent  !important;
 }
