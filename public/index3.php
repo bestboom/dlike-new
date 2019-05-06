@@ -620,6 +620,10 @@ require('lib/solvemedialib.php'); ?>
                         $(this).css("background", "white");
                         $(".fa-pencil-alt").css("color", "black");
                     });
+                
+                $("#btn_share").click(function () {
+                    window.location.href="/share.php";
+                })
 
                 setTimeout(function () {
 

@@ -18,6 +18,8 @@
 <body>
 <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/explorer">Explorer</a>
+    <a href="/token">Token</a>
     <a href="#">Welcome</a>
     <a href="#">FAQ</a>
     <a href="#">Explore</a>
@@ -26,7 +28,7 @@
     <a href="#">Stolen Accounts Recovery</a>
     <a href="#">Change Account Password</a>
     <a href="#">Vote for Witnesses</a>
-    <a href="#">.</a>
+    <a href="#"></a>
     <a href="#">Third-party exchanges:</a>
     <a href="#">Blocktrades</a>
     <a href="#">GOPAX</a>
@@ -42,31 +44,32 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="/share.php">SHARE</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/explorer">Explorer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/token">Token</a></li>
                     <li class="nav-item button active">
                         <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
 
-
                             <!--<button type="button" class="btn btn-default btn-circle btn-lg"><i class="fa fa-list"></i>
                             </button>-->
 
                             <div class="row">
+                                <!--  <div class="col-md-3 col-2">
+                                      <button type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fa fa-search"></i>
+                                      </button>
+                                  </div>
+  -->
                                 <div class="col-md-3 col-2">
-                                    <button type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fa fa-search"></i>
+                                    <button type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
                                     </button>
                                 </div>
 
-                                <div class="col-md-3 col-2">
-                                    <button type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
+                                <div class="col-md-4 col-2">
+                                    <button id="btn_share" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
                                     </button>
                                 </div>
 
-                                <div class="col-md-3 col-2">
+                                <div class="col-md-4 col-2">
                                     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
                                 </div>
 
