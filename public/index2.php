@@ -182,6 +182,10 @@
 		    if(response.status == "OK") {
 			var all_status = response.setstatus;
 			$("#userstatus_select").val(all_status);
+			$("#userPostStatusModal").modal('show');
+		    }
+		    else {
+			$("#userPostStatusModal").modal('show');
 		    }
 		    
 		}
@@ -189,7 +193,7 @@
 
 	    
 
-	$("#userPostStatusModal").modal('show');
+	
     }
     
     	$(document).ready(function(){
@@ -237,20 +241,24 @@
 			    if(all_status == "0") {
 				var colorset = 'black';
 				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				var erroset = "User is Blacklisted";
 			    }
 			    else if(all_status == "1") {
 				var colorset = 'orange';
 				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				var erroset = "User is Greenlisted";
 			    }
 			    else if(all_status == "2") {
 				var colorset = 'green';
 				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				var erroset = "User is Whitelisted";
 			    }
 			    else if(all_status == "3") {
 				var colorset = 'red';
 				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				var erroset = "User is Pro";
 			    }
-			    $('.userstatus_icon' + p_permlink + p_username).hover(function() {toastr.error('User already Checked!');})
+			    $('.userstatus_icon' + p_permlink + p_username).hover(function() {toastr.error(erroset);});
 				
 			}
 			else {
@@ -564,21 +572,25 @@
 			    if(all_status == "0") {
 				var colorset = 'black';
 				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				var erroset = "User is Blacklisted";
 			    }
 			    else if(all_status == "1") {
 				var colorset = 'orange';
 				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				var erroset = "User is Greenlisted";
 			    }
 			    else if(all_status == "2") {
 				var colorset = 'green';
 				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				var erroset = "User is Whitelisted";
 			    }
 			    else if(all_status == "3") {
 				var colorset = 'red';
 				$('.userstatus_icon' + permlink + author).css({"color": colorset});
+				var erroset = "User is Pro";
 			    }
 				
-				$('.userstatus_icon' + permlink + author).hover(function() {toastr.error('User already Checked!');})
+			    $('.userstatus_icon' + permlink + author).hover(function() {toastr.error(erroset);})
 					
 			    }
 			}

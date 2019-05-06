@@ -1,4 +1,4 @@
-<?php include('template/header2.php'); ?>
+<?php include('template/header2.php');  ?>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
             <div class="row home-banner">
@@ -58,7 +58,14 @@
 	    </div>
 	</div>
     </div>
-  
+
+<div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content mybody">
+            <?php include('template/modals/upvotemodal.php'); ?>
+        </div>
+    </div>
+</div> 
 <?php include('template/footer2.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
@@ -77,20 +84,50 @@
 			success: function(response) {
 			    if(response.status == "OK") {
 				var resulthtml = response.data_row;
-				var responsehtml = '';
+				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
-				    var username = resulthtml[i]['username'];
-				    var created_at = resulthtml[i]['created_at'];
-				    var category = resulthtml[i]['category'];
-				    var permlink = resulthtml[i]['permlink'];
-				    var metatags =  resulthtml[i]['metatags'];
-				    var title =   resulthtml[i]['title'];
-				    var exturl =   resulthtml[i]['exturl'];
+				    var responsehtml = '';
+				    var currentPostNumber = i;
+				    var currentLikesDivElement = 'postLike_' + i;
 
-				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
-				    
-				    responsehtml += '<div class="col-lg-4 col-md-6">\n' +
+			
+				   
+
+				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
+
+					let metadata = JSON.parse(res.json_metadata);
+					let img = new Image();
+					if (typeof metadata.image === "string"){
+						img.src = metadata.image.replace("?","?");
+					} else {
+						img.src = metadata.image[0];
+					}
+					json_metadata = metadata;
+					let category = metadata.category;
+					if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
+					let steemTags = metadata.tags;
+					let dlikeTags = steemTags.slice(2);
+					let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
+					let post_description = metadata.body;
+
+	
+					let title = res.title;
+					let created = res.created;
+					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+					let author = res.author;
+					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
+					
+					 var username = author;
+				    var created_at = created_time;
+				    var permlink = res.permlink;
+				    var metatags =  posttags;
+				    var exturl =   metadata.url;;
+
+				    var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
+
+
+					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					    '\n' +
 					    '<article class="post-style-two">\n' +
 					    '\n' +
@@ -104,7 +141,7 @@
 					    '\n' +
 					    '<div class="author-info">\n' +
 					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time">' + created_at + '</div></h5>\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time">' + created_time + '</div></h5>\n' +
 					    '\n' +    
 					    '</div>\n' +
 					    '\n' + 
@@ -124,11 +161,24 @@
 					    '\n' +
 					    '<p class="post-entry post-tags">' + metatags + '</p>\n' +
 					    '\n' +
+					    '<div class="post-footer">\n' +
+					    '<div class="post-author-block">\n' +
+					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + res.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
+					    '</div>\n' +
+					    '<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
+					    '</div>\n' +
 					    '</div>\n' +
 				    '</article></div>';
+
+					$("#contentposts").append(responsehtml);
+
+				    
+				    });
+				    
+				    
 				}
 				
-				$("#contentposts").html(responsehtml);
+				
 			    }
 			}
 			});
