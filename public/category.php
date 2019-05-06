@@ -240,4 +240,10 @@
     	}
 		});
 	});
+
+console.log(brackets('(3+{1-1)}')); // false
+console.log(brackets('{[(3+1)+2]+}')); //true
+console.log(brackets('[1+1]+(2*2)-{3/3}')); //true
+console.log(brackets('(({[(((1)-2)+3)-3]/3}-3)')); //false
+console.log(brackets('(((([[[[{{{3}}}]]]]))))')); //false
 </script>
