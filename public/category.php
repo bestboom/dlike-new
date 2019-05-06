@@ -48,6 +48,12 @@
     </div><!-- sub-header -->
     <div class="latest-post-section">
 		<div class="container">
+			<div class="row  align-items-center h-100">
+                <div class="row col-md-3 justify-content-center">
+                    <h4 class="lab_post"><?php echo $_GET['cat'];?></h4>
+                </div>
+                <div class="col-md-9 lay">&nbsp;</div>
+            </div>
 	    	<div class="row" id="catposts"></div>
 		</div>
     </div>
