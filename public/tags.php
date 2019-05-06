@@ -77,10 +77,10 @@
 			success: function(response) {
 			    if(response.status == "OK") {
 				var resulthtml = response.data_row;
-				var responsehtml = '';
+				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
-
+				    var responsehtml = '';
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
 
@@ -107,7 +107,7 @@
 
 
 
-					    responsehtml += '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
+					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					    '\n' +
 					    '<article class="post-style-two">\n' +
 					    '\n' +
