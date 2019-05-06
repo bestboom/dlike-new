@@ -182,6 +182,7 @@
 		    if(response.status == "OK") {
 			var all_status = response.setstatus;
 			$("#userstatus_select").val(all_status);
+			$("#userPostStatusModal").modal('show');
 		    }
 		    
 		}
@@ -189,7 +190,7 @@
 
 	    
 
-	$("#userPostStatusModal").modal('show');
+	
     }
     
     	$(document).ready(function(){
