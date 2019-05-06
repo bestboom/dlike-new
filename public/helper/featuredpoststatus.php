@@ -30,7 +30,7 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
     $p_category = isset($_POST["p_category"]) ? $_POST["p_category"] : "";
 		$p_category = stripslashes( $p_category );
     
-    $p_status = isset($_POST["p_status"])?$_POST["p_status"]:'';
+
     $checked_by = isset($_COOKIE['username'])?$_COOKIE['username']:"";
     
 		
