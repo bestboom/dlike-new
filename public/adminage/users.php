@@ -60,24 +60,28 @@ $(document).ready(function(){
 				var result_data = response.html_data;
 				var result_html = ' <table class="table table-bordered" id="user_table"><thead><tr><th>Username</th><th>Status</th><th>Action</th></tr></thead><tbody >';
 				for(i=0;i<result_data.length;i++){
+
+					var action_var = "Add Status";
 					var set_status = "";
-					var action_var = "Add";
 					if(result_data[i]['status'] == 0){
-						action_var = "Edit";
+						set_status = "Blacklisted";
 					}
 					else if(result_data[i]['status'] == 1){
-						action_var = "Edit";
+						set_status = "Greenlisted";
 					}
 					else if(result_data[i]['status'] == 2){
-						action_var = "Edit";
+						set_status = "Whitelisted";
 					}
 					else if(result_data[i]['status'] == 3){
-						action_var = "Edit";
+						set_status = "Pro";
+					}
+
+					if(result_data[i]['status'] !== null && result_data[i]['status'] !== undefined){
+						action_var = "Edit Status";
 					}
 					
 					
-					
-					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['status']+'</td><td><a href="javascript:" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+set_status+'</td><td><a href="javascript:" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
 
 				result_html += '</tbody></table>';
