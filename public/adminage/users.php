@@ -52,22 +52,6 @@
     
 $(document).ready(function(){
 
-	$('#user_table').DataTable({
-		//"ajax": {
-			//"url": "data.json",
-			//"type": "POST",
-			//"data": function ( d ) {
-				//d.data = 'users';
-			//},
-			//"dataSrc": function ( json ) {
-			  //for ( var i=0, ien=json.length ; i<ien ; i++ ) {
-				//json[i][0] = '<a href="/message/'+json[i][0]+'>View message</a>';
-			  //}
-			  //return json;
-			//}
-		  //}
-	});
-	
 	$.ajax({
 		type: "POST",
 		url: '/helper/getadmindata.php',
@@ -98,8 +82,9 @@ $(document).ready(function(){
 					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['status']+'</td><td><a href="javascript:" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
 
-				result_html += "</tbody></table><script>$('#user_table').DataTable({});</script>";
+				result_html += '</tbody></table>';
 				$("#show_results").html(result_html);
+				$('#user_table').DataTable();
 			}
 		}
 	});
