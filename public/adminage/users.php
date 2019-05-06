@@ -58,16 +58,16 @@ $(document).ready(function(){
 				for(i=0;i<result_data.length;i++){
 					var set_status = "";
 					var action_var = "";
-					if(result_data[i]['status'] == "0"){
+					if(result_data[i]['status'] == 0){
 						action_var = "Blacklisted";
 					}
-					else if(result_data[i]['status'] == "1"){
+					else if(result_data[i]['status'] == 1){
 						action_var = "Greenlisted";
 					}
-					else if(result_data[i]['status'] == "2"){
+					else if(result_data[i]['status'] == 2){
 						action_var = "Whitelisted";
 					}
-					else if(result_data[i]['status'] == "3"){
+					else if(result_data[i]['status'] == 3){
 						action_var = "Pro";
 					}
 					
