@@ -660,7 +660,7 @@ require('lib/solvemedialib.php'); ?>
 
                 setInterval(function () {
                     $(".slick-next").click();
-                }, 5000);
+                }, 50000);
 
             });
         </script>
