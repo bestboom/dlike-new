@@ -4455,3 +4455,7 @@ button.toast-close-button {
 .footer-bottom>div>div>div>div>p{
     color: white !important;
 }
+
+body{
+    overflow-x: hidden;
+}
