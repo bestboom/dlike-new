@@ -10,11 +10,37 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody id="show_results">
-		
-      
-    </tbody>
+    <tbody id="show_results"></tbody>
   </table>
+
+  <div class="modal fade" id="userPostStatusModal" role="dialog">
+	<div class="modal-dialog">
+	
+	  <!-- Modal content-->
+	  <div class="modal-content">
+		<div class="modal-body text-center">
+			<input type="hidden" id="pu_username" />
+			<input type="hidden" id="pu_permlink" />
+			<input type="hidden" id="pu_category" />
+			<p>User Status</p>
+			<select class="form-control" id="userstatus_select">
+				<option value="">Please select</option>
+				<option value="0">Blacklisted</option>
+				<option value="1">Greenlisted</option>
+				<option value="2">Whitelisted</option>
+				<option value="3">Pro</option>
+			</select>
+			<br>
+			<p><input type="button" id="saveuserpoststatus" class="btn btn-primary" value="Save it"/></p>
+				
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	  
+	</div>
+  </div>
 </div>
 <?php include('../template/footer2.php'); ?>
 <script>
@@ -31,6 +57,7 @@ $(document).ready(function(){
 				var result_html = '';
 				for(i=0;i<result_data.length;i++){
 					var set_status = "";
+					var action_var = "";
 					if(result_data[i]['status'] == "0"){
 						action_var = "Blacklisted";
 					}
