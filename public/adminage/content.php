@@ -21,6 +21,30 @@
                         <h4>Submit a request</h4>
                     </div>
                 </div>
+
+                <div class="col-md-4">
+                    <div class="support-users-block">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+
+                        <h4>Users</h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="support-post-block">
+                        <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+
+                        <h4>Posts</h4>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="support-fpost-block">
+                        <i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+
+                        <h4>Featured Posts</h4>
+                    </div>
+                </div>
             </div>
         </div>
     </div><!-- support-category-section -->
