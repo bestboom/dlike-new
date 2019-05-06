@@ -56,11 +56,11 @@
 <script>
 	$(document).ready(function(){
 		let catname = '<?php echo $_GET['cat'];?>';
-		console.log(catname);
+		
 		let $tag, $limit, content = "#catposts";
 		let query = {
 			tag: "dlike",
-			limit: 45,
+			limit: 95,
 		};
 
 		steem.api.getDiscussionsByCreated(query, function (err, res) {
@@ -80,6 +80,7 @@
 
 			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
+			console.log(catname);
 			if(metadata && metadata.category == "News" && metadata.community == "dlike" ){
 				getTotalcomments($post.author,$post.permlink);
 
