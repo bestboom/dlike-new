@@ -4,7 +4,7 @@
 	error_reporting(0);
     	require '../includes/config.php';
 	
-if($_COOKIE['username'] != 'dlike') {
+if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
 		$strReturn['status'] = 'no';	
 		$strReturn['message'] = 'only admin can enter.';	
 		echo json_encode($strReturn);die;
@@ -21,12 +21,19 @@ if($_COOKIE['username'] != 'dlike') {
     $p_status = isset($_POST["p_status"])?$_POST["p_status"]:'';
     $checked_by = isset($_COOKIE['username'])?$_COOKIE['username']:"";
     
+		$deleteuser = "DELETE FROM userstatus where `username` = '".$author."'";
+		$deleteuser_q = $conn->query($deleteuser);
+		$message = "Added Successfully!";	
 		
-    $adduserstatus = "INSERT INTO userstatus (`username`, `status`  , `set_by` , `set_time` )
+		if($deleteuser_q) {
+			$message = "Updated Successfully!";	
+		}
+    
+		$adduserstatus = "INSERT INTO userstatus (`username`, `status`  , `set_by` , `set_time` )
 													VALUES ('".$author."', '".$p_status."', '".$checked_by."', '".date("Y-m-d H:i:s")."')";
 										$adduserstatusQuery = $conn->query($adduserstatus);
                     
-    $strReturn['message'] = 'Added Successfully!';	
+    $strReturn['message'] = $message;	
   echo json_encode($strReturn);die;
 	}
 	

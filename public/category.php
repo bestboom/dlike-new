@@ -48,33 +48,28 @@
     </div><!-- sub-header -->
     <div class="latest-post-section">
 		<div class="container">
+			<div class="row  align-items-center h-100">
+                <div class="row col-md-3 justify-content-center">
+                    <h4 class="lab_post"><?php echo $_GET['cat'];?></h4>
+                </div>
+                <div class="col-md-9 lay">&nbsp;</div>
+            </div>
 	    	<div class="row" id="catposts"></div>
 		</div>
     </div>
   
 <?php include('template/footer2.php'); ?>
 <script>
-$(document).ready(function(){
-	var catname = '<?php echo $_GET['cat'];?>';
-	$(".orderByTopRated").click(function(){
-		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
-		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
-		showPostSortedByLikes();
-	});
-	
-	$(".orderByLatest").click(function(){
-		$( ".orderByLatest" ).last().addClass( "activeOrderBy" );
-		$( ".orderByTopRated" ).removeClass( "activeOrderBy" );
-		showPostSortedByLatest();
-	});
-	
-	let $tag, $limit, content = "#content";
-	let query = {
-		tag: "dlike",
-		limit: 92,
-	};
+	$(document).ready(function(){
+		let catname = '<?php echo $_GET['cat'];?>';
+		
+		let $tag, $limit, content = "#catposts";
+		let query = {
+			tag: "dlike",
+			limit: 92,
+		};
 
-	steem.api.getDiscussionsByCreated(query, function (err, res) {
+		steem.api.getDiscussionsByCreated(query, function (err, res) {
 		//console.log(res);
 		res.forEach(($post, i) => {
 			let metadata;
@@ -82,9 +77,18 @@ $(document).ready(function(){
 				metadata = JSON.parse($post.json_metadata);
 			}
 			
+		//get meta tags
+			let steemTags = metadata.tags;
+			let dlikeTags = steemTags.slice(2);
+			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
+			let category = metadata.category;
+			let dlikecat = category;
+			let exturl = metadata.url;
+
 			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
-			if(metadata && metadata.community == "dlike"){
+			console.log(catname);
+			if(metadata && dlikecat == catname && metadata.community == "dlike" ){
 				getTotalcomments($post.author,$post.permlink);
 
 				// get image here
@@ -105,13 +109,6 @@ $(document).ready(function(){
 
 				//get time
 				let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-
-				//get meta tags
-				let steemTags = metadata.tags;
-				let dlikeTags = steemTags.slice(2);
-				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
-				let category = metadata.category;
-				let exturl = metadata.url;
 
 				//Get the body
 				let body;
@@ -173,7 +170,6 @@ $(document).ready(function(){
 						$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
 					});
 				}
-
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
@@ -205,7 +201,7 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
-					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
+					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="/images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
                     '\n' +
 					'<h4 class="post-title"><a href="' + exturl + '" target="_blank">' + $post.title + '</a></h4>\n' +
 					'\n' +
@@ -245,9 +241,23 @@ $(document).ready(function(){
                 }                        
     		});
 
-
-
-    		}
+			}
 		});
+	});	
+
+function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+	$.ajax({
+		type: "POST",
+		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
+		dataType: 'json',
+		success: function(response) {
+			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
+			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
+		},
+		error: function() {
+			console.log('Error occured');
+		}
+	});
+};		
 	});
 </script>
