@@ -34,8 +34,8 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
     $checked_by = isset($_COOKIE['username'])?$_COOKIE['username']:"";
     
 		
-    $featuredposts = "INSERT INTO featuredposts (`username`, `category`,`title`,`img_link`, `permlink`, `status` , `add_time` )
-													VALUES ('".$author."', '".$p_category."', '".$title."', '".$img_link."', '".$permlink."', '".$p_status."', '".date("Y-m-d H:i:s")."')";
+    $featuredposts = "INSERT INTO featuredposts (`username`, `category`,`title`,`img_link`, `permlink`, `add_time` )
+													VALUES ('".$author."', '".$p_category."', '".$title."', '".$img_link."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
 										$featuredpostsQuery = $conn->query($featuredposts);
                     
     $strReturn['message'] = 'Added Successfully!';	
