@@ -1,4 +1,4 @@
-<?php include('template/header2.php'); require ('lib/solvemedialib.php'); ?>
+<?php include('template/header2.php');  ?>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
             <div class="row home-banner">
@@ -58,7 +58,13 @@
 	    </div>
 	</div>
     </div>
-  <?php include('template/modals/modal.php'); ?>  
+<div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content mybody">
+            <?php include('template/modals/upvotemodal.php'); ?>
+        </div>
+    </div>
+</div> 
 <?php include('template/footer2.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
