@@ -44,6 +44,34 @@
 </div>
 <?php include('../template/footer2.php'); ?>
 <script>
+
+	function openuser_popup(self){
+		var author = $(self).data('author');
+		var category = $(self).data('category');
+		$("#pu_username").val(author);
+		$("#pu_permlink").val(permlink);
+		$("#pu_category").val(category);
+
+		$.ajax({
+			type: "POST",
+			url: '/helper/getuserpoststatus.php',
+			data:{'author':author},
+			dataType: 'json',
+			success: function(response) {
+				if(response.status == "OK") {
+				var all_status = response.setstatus;
+				$("#userstatus_select").val(all_status);
+				$("#userPostStatusModal").modal('show');
+				}
+				else {
+				$("#userPostStatusModal").modal('show');
+				}
+				
+			}
+		});
+    }
+
+    
 $(document).ready(function(){
 
 	$.ajax({
@@ -57,23 +85,23 @@ $(document).ready(function(){
 				var result_html = '';
 				for(i=0;i<result_data.length;i++){
 					var set_status = "";
-					var action_var = "";
+					var action_var = "Add";
 					if(result_data[i]['status'] == 0){
-						action_var = "Blacklisted";
+						action_var = "Edit";
 					}
 					else if(result_data[i]['status'] == 1){
-						action_var = "Greenlisted";
+						action_var = "Edit";
 					}
 					else if(result_data[i]['status'] == 2){
-						action_var = "Whitelisted";
+						action_var = "Edit";
 					}
 					else if(result_data[i]['status'] == 3){
-						action_var = "Pro";
+						action_var = "Edit";
 					}
 					
 					
 					
-					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['status']+'</td><td><a href="return openmodel(this)" class="btn btn-small btn-primary" data-username="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['status']+'</td><td><a href="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
 				$("#show_results").html(result_html);
 			}
