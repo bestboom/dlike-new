@@ -142,6 +142,30 @@
 		      
 		    </div>
 		  </div>
+
+		  <div class="modal fade" id="featuredPostStatusModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+				<div class="modal-body text-center">
+					<input type="hidden" id="p_username" />
+					<input type="hidden" id="p_permlink" />
+					<input type="hidden" id="p_category" />
+					<p>What would you make this post featured?</p>
+					<label><input type="radio" name="featuredpost" value="1"/> Yes</label>
+					<label><input type="radio" name="featuredpost" value="0"/> No</label>
+					<br>
+					<p><input type="button" id="savefeaturedpoststatus" class="btn btn-primary" value="Save it"/></p>
+						
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+		      </div>
+		      
+		    </div>
+		  </div>
 		
 		
         </div>
@@ -190,10 +214,23 @@
 		    
 		}
 	});
+    }
 
-	    
+    function openfeaturedmodal_popup(self){
+	var permlink = $(self).data('permlink');
+	var author = $(self).data('author');
+	var category = $(self).data('category');
 
-	
+	var parent_article = $(self).parents().find('article.post-style-two');
+
+	var img_element = parent_article.children.find('img.card-img-top');
+	var img_url = img_element.attr('src');
+	alert(img_url);
+	$("#pf_username").val(author);
+	$("#pf_permlink").val(permlink);
+	$("#pf_category").val(category);
+
+	$("#featuredPostStatusModal").modal('show');
     }
     
     	$(document).ready(function(){
@@ -213,6 +250,8 @@
 
 	var savepoststatus=$('#savepoststatus');
 	var saveuserpoststatus=$('#saveuserpoststatus');
+	var savefeaturedpoststatus=$('#savefeaturedpoststatus');
+	
 	var c_username = $('#c_username').val();
 	
 
@@ -275,7 +314,46 @@
 	    });
 	});    
 	
+	savefeaturedpoststatus.click(function(){
 
+	    var p_username = $("#pf_username").val();
+	    var p_permlink = $("#pf_permlink").val();
+	    var p_category = $("#pf_category").val();
+	     var p_status = $("#input='featuredpost':checked").val();
+	    if(p_status == ""){
+		alert("Please select featuredpost status.");
+		return false;
+	    }
+	    
+	    $.ajax({
+		    type: "POST",
+		    url: '/helper/featuredpoststatus.php',
+		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
+		    dataType: 'json',
+		    success: function(response) {
+			if(response.status == "OK") {
+			    toastr.success(response.message);
+			    $('#featuredPostStatusModal').modal('hide');
+			    
+			    var all_status = p_status;
+			    $('#featuredstatus_icon' + p_permlink + p_username).removeAttr('onclick');
+				
+			}
+			else {
+			    $('#featuredPostStatusModal').modal('hide');
+			    toastr.error(response.message);
+			    return false;
+			}
+		    },
+		    error: function() {
+			$('#featuredPostStatusModal').modal('hide');
+			 toastr.error('Error occured');
+			    return false;
+		    }
+	    });
+	});
+
+	
 	savepoststatus.click(function(){
 
 	    var p_username = $("#p_username").val();
@@ -450,8 +528,11 @@
 				}
 
 				var adduserhtml = "";
+				var addfeaturedhtml = "";
 				if(c_username == "dlike" || c_username == "chirag-im") {
 					adduserhtml += '<a class="defaultcoloruser userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+$post.permlink +$post.author +'"></i></a>';
+					
+					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; |';
 				}
 				
 				
@@ -496,7 +577,7 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a id="status_icon'+$post.permlink +$post.author +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments">'+addfeaturedhtml+'<a id="status_icon'+$post.permlink +$post.author +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
