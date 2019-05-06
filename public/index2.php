@@ -527,10 +527,12 @@
 				var adduserhtml = "";
 				var addfeaturedhtml = "";
 				if(c_username == "dlike" || c_username == "chirag-im") {
-					adduserhtml += '<a style="color:gray;" class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+$post.permlink +$post.author +'"></i></a>';
+					
 					
 					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-imgurl="' + img.src + '" data-title="' + $post.title + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;';
 				}
+
+				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+$post.permlink +$post.author +'"></i></a>';
 				
 				
 				//start posts here
@@ -647,29 +649,34 @@
 			success: function(response) {
 			    if(response.status == "OK") {
 				var all_status = response.setstatus;
-			    if(all_status == "0") {
-				var colorset = 'black';
-				$('.userstatus_icon' + permlink + author).css({"color": colorset});
-				var erroset = "User is Blacklisted";
-			    }
-			    else if(all_status == "1") {
-				var colorset = 'orange';
-				$('.userstatus_icon' + permlink + author).css({"color": colorset});
-				var erroset = "User is Greenlisted";
-			    }
-			    else if(all_status == "2") {
-				var colorset = 'green';
-				$('.userstatus_icon' + permlink + author).css({"color": colorset});
-				var erroset = "User is Whitelisted";
-			    }
-			    else if(all_status == "3") {
-				var colorset = 'red';
-				$('.userstatus_icon' + permlink + author).css({"color": colorset});
-				var erroset = "User is Pro";
-			    }
-				
-			    $('.userstatus_icon' + permlink + author).hover(function() {toastr.error(erroset);})
+				if(all_status == "0") {
+				    var colorset = 'black';
+				    $('.userstatus_icon' + permlink + author).css({"color": colorset});
+				    var erroset = "User is Blacklisted";
+				}
+				else if(all_status == "1") {
+				    var colorset = 'orange';
+				    $('.userstatus_icon' + permlink + author).css({"color": colorset});
+				    var erroset = "User is Greenlisted";
+				}
+				else if(all_status == "2") {
+				    var colorset = 'green';
+				    $('.userstatus_icon' + permlink + author).css({"color": colorset});
+				    var erroset = "User is Whitelisted";
+				}
+				else if(all_status == "3") {
+				    var colorset = 'red';
+				    $('.userstatus_icon' + permlink + author).css({"color": colorset});
+				    var erroset = "User is Pro";
+				}
+				    
+				$('.userstatus_icon' + permlink + author).hover(function() {toastr.error(erroset);})
 					
+			    }
+			    else {
+				if(c_username != "dlike" && c_username != "chirag-im") {
+				    $('.userstatus_icon' + permlink + author).remove();
+				}
 			    }
 			}
 		});
