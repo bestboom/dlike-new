@@ -149,9 +149,12 @@
 		      <!-- Modal content-->
 		      <div class="modal-content">
 				<div class="modal-body text-center">
-					<input type="hidden" id="p_username" />
-					<input type="hidden" id="p_permlink" />
-					<input type="hidden" id="p_category" />
+					<input type="hidden" id="pf_username" />
+					<input type="hidden" id="pf_permlink" />
+					<input type="hidden" id="pf_category" />
+					<input type="hidden" id="pf_imgurl" />
+					<input type="hidden" id="pf_title" />
+					
 					<p>What would you make this post featured?</p>
 					<label><input type="radio" name="featuredpost" value="1"/> Yes</label>
 					<label><input type="radio" name="featuredpost" value="0"/> No</label>
@@ -220,15 +223,14 @@
 	var permlink = $(self).data('permlink');
 	var author = $(self).data('author');
 	var category = $(self).data('category');
+	var imgurl = $(self).data('imgurl');
+	var title = $(self).data('title');
 
-	var parent_article = $(self).parents().find('article.post-style-two');
-
-	var img_element = parent_article.children().find('img.card-img-top');
-	var img_url = img_element.attr('src');
-	alert(img_url);
 	$("#pf_username").val(author);
 	$("#pf_permlink").val(permlink);
 	$("#pf_category").val(category);
+	$("#pf_imgurl").val(imgurl);
+	$("#pf_title").val(title);
 
 	$("#featuredPostStatusModal").modal('show');
     }
@@ -319,6 +321,8 @@
 	    var p_username = $("#pf_username").val();
 	    var p_permlink = $("#pf_permlink").val();
 	    var p_category = $("#pf_category").val();
+	    var p_imgurl = $("#pf_imgurl").val();
+	    var p_title = $("#pf_title").val();
 	     var p_status = $("#input='featuredpost':checked").val();
 	    if(p_status == ""){
 		alert("Please select featuredpost status.");
@@ -328,7 +332,7 @@
 	    $.ajax({
 		    type: "POST",
 		    url: '/helper/featuredpoststatus.php',
-		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
+		    data:{'img_link':p_imgurl,'title':p_title,'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
 		    dataType: 'json',
 		    success: function(response) {
 			if(response.status == "OK") {
@@ -532,7 +536,7 @@
 				if(c_username == "dlike" || c_username == "chirag-im") {
 					adduserhtml += '<a class="defaultcoloruser userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+$post.permlink +$post.author +'"></i></a>';
 					
-					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; |';
+					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-imgurl="' + img.src + '" data-title="' + $post.title + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;';
 				}
 				
 				
