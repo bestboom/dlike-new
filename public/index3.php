@@ -605,10 +605,12 @@ require('lib/solvemedialib.php'); ?>
 
                 $(".search_btn_hover")
                     .on( "mouseenter", function() {
-                        $(this).css("background", "#06D6A9");
+                        $(this).css("background", "#171F24");
+                        $(".fa-user").css("color", "white");
                     })
                     .on("mouseleave", function () {
                         $(this).css("background", "white");
+                        $(".fa-user").css("color", "black");
                     });
 
                 $(".edit_btn_hover")
