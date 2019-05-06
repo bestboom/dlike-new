@@ -95,10 +95,10 @@ $(document).ready(function(){
 					
 					
 					
-					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['status']+'</td><td><a href="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['status']+'</td><td><a href="javascript:" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
 
-				result_html += '</tbody></table>';
+				result_html += '</tbody></table><script>$(/''#user_table/'').DataTable({});</script>';
 				$("#show_results").html(result_html);
 			}
 		}
