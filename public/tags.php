@@ -1,4 +1,4 @@
-<?php include('template/header2.php'); ?>
+<?php include('template/header2.php'); require ('lib/solvemedialib.php'); ?>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
             <div class="row home-banner">
@@ -58,7 +58,7 @@
 	    </div>
 	</div>
     </div>
-  
+  <?php include('template/modals/modal.php'); ?>  
 <?php include('template/footer2.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
@@ -96,6 +96,7 @@
 				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 				    steem.api.getContent(username , permlink, function(err, res) {
+
 					
 					let title = res.title;
 					let created = res.created;
@@ -149,13 +150,15 @@
 					    '</div>\n' +
 				    '</article></div>';
 
+					$("#contentposts").append(responsehtml);
+
 				    
 				    });
 				    
 				    
 				}
 				
-				$("#contentposts").html(responsehtml);
+				
 			    }
 			}
 			});
