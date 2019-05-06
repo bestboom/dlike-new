@@ -76,12 +76,13 @@
 			let dlikeTags = steemTags.slice(2);
 			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
 			let category = metadata.category;
+			let dlikecat = category.toLowerCase();
 			let exturl = metadata.url;
 
 			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
 			console.log(catname);
-			if(metadata && metadata.category == catname && metadata.community == "dlike" ){
+			if(metadata && dlikecat == catname && metadata.community == "dlike" ){
 				getTotalcomments($post.author,$post.permlink);
 
 				// get image here
