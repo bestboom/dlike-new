@@ -54,5 +54,7 @@
   
 <?php include('template/footer2.php'); ?>
 <script>
-	
+	$(document).ready(function(){
+		
+	});
 </script>
