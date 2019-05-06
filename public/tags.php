@@ -96,7 +96,7 @@
 				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 				    steem.api.getContent(username , permlink, function(err, res) {
-					console.log(res);
+					
 					let title = res.title;
 					let created = res.created;
 					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
@@ -120,7 +120,7 @@
 					    '\n' +
 					    '<div class="author-info">\n' +
 					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time">' + created_at + '</div></h5>\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time">' + created_time + '</div></h5>\n' +
 					    '\n' +    
 					    '</div>\n' +
 					    '\n' + 
@@ -144,7 +144,7 @@
 					    '<div class="post-author-block">\n' +
 					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + res.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
 					    '</div>\n' +
-					    '<div class="post-comments"><a id="status_icon'+$post.permlink +username +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
+					    '<div class="post-comments"><a id="status_icon'+permlink +username +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
 					    '</div>\n' +
 					    '</div>\n' +
 				    '</article></div>';
