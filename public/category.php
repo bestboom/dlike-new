@@ -57,9 +57,10 @@
 	$(document).ready(function(){
 		let catname = '<?php echo $_GET['cat'];?>';
 		
-		let $tag, content = "#catposts";
+		let $tag, $limit, content = "#catposts";
 		let query = {
 			tag: "dlike",
+			limit: 595,
 		};
 
 		steem.api.getDiscussionsByCreated(query, function (err, res) {
