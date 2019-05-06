@@ -1,17 +1,9 @@
 <?php include('head.php'); ?>
 <div class="container">
   <h2>Users</h2>
-  
-  <table class="table table-bordered" id="user_table">
-    <thead>
-      <tr>
-        <th>Username</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="show_results"></tbody>
-  </table>
+  <div id="show_results">
+ 
+  </div>
 
   <div class="modal fade" id="userPostStatusModal" role="dialog">
 	<div class="modal-dialog">
@@ -60,7 +52,21 @@
     
 $(document).ready(function(){
 
-	$('#user_table').DataTable();
+	$('#user_table').DataTable({
+		//"ajax": {
+			//"url": "data.json",
+			//"type": "POST",
+			//"data": function ( d ) {
+				//d.data = 'users';
+			//},
+			//"dataSrc": function ( json ) {
+			  //for ( var i=0, ien=json.length ; i<ien ; i++ ) {
+				//json[i][0] = '<a href="/message/'+json[i][0]+'>View message</a>';
+			  //}
+			  //return json;
+			//}
+		  //}
+	});
 	
 	$.ajax({
 		type: "POST",
@@ -70,7 +76,7 @@ $(document).ready(function(){
 		success: function(response) {
 			if(response.status == "OK") {
 				var result_data = response.html_data;
-				var result_html = '';
+				var result_html = ' <table class="table table-bordered" id="user_table"><thead><tr><th>Username</th><th>Status</th><th>Action</th></tr></thead><tbody >';
 				for(i=0;i<result_data.length;i++){
 					var set_status = "";
 					var action_var = "Add";
@@ -91,6 +97,8 @@ $(document).ready(function(){
 					
 					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['status']+'</td><td><a href="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
+
+				result_html += '</tbody></table>';
 				$("#show_results").html(result_html);
 			}
 		}
