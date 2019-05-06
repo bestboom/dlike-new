@@ -124,7 +124,7 @@
 				    var metatags =  posttags;
 				    var exturl =   metadata.url;;
 
-				    var thumbnail = '<img src="' + auth_img + '" alt="' + title + '" class="card-img-top img-fluid">';
+				    var thumbnail = '<img src="' + res.image + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 
 					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
