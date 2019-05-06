@@ -57,10 +57,9 @@
 	$(document).ready(function(){
 		let catname = '<?php echo $_GET['cat'];?>';
 		
-		let $tag, $limit, content = "#catposts";
+		let $tag, content = "#catposts";
 		let query = {
 			tag: "dlike",
-			limit: 95,
 		};
 
 		steem.api.getDiscussionsByCreated(query, function (err, res) {
@@ -76,7 +75,7 @@
 			let dlikeTags = steemTags.slice(2);
 			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
 			let category = metadata.category;
-			let dlikecat = category.toLowerCase();
+			let dlikecat = category;
 			let exturl = metadata.url;
 
 			var currentPostNumber = i;
