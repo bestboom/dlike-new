@@ -55,6 +55,11 @@
 <?php include('template/footer2.php'); ?>
 <script>
 	$(document).ready(function(){
-		
+		let $tag, $limit, content = "#catposts";
+		let query = {
+			tag: "dlike",
+			limit: 45,
+		};
+
 	});
 </script>
