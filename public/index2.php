@@ -156,9 +156,7 @@
 					<input type="hidden" id="pf_title" />
 					
 					<p>What would you make this post featured?</p>
-					<label><input type="radio" name="featuredpost" value="1"/> Yes</label>
-					<label><input type="radio" name="featuredpost" value="0"/> No</label>
-					<br>
+
 					<p><input type="button" id="savefeaturedpoststatus" class="btn btn-primary" value="Save it"/></p>
 						
 				</div>
@@ -323,16 +321,11 @@
 	    var p_category = $("#pf_category").val();
 	    var p_imgurl = $("#pf_imgurl").val();
 	    var p_title = $("#pf_title").val();
-	     var p_status = $("input[name='featuredpost']:checked").val();
-	    if(p_status == ""){
-		alert("Please select featuredpost status.");
-		return false;
-	    }
-	    
+
 	    $.ajax({
 		    type: "POST",
 		    url: '/helper/featuredpoststatus.php',
-		    data:{'img_link':p_imgurl,'title':p_title,'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
+		    data:{'img_link':p_imgurl,'title':p_title,'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category},
 		    dataType: 'json',
 		    success: function(response) {
 			if(response.status == "OK") {
