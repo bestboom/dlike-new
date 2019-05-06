@@ -5,8 +5,7 @@
   require '../includes/config.php';
 	
   if(isset($_POST['data']) && $_POST['data'] == "users"){
-	$table = "steemposts"; 
-	$sql = "SELECT DISTINCT(username) as author,status FROM $table";
+	$sql = "SELECT DISTINCT(sp.username) as author,ut.status FROM steemposts as sp left join userstatus as ut on ut.username=sp.username";
   }
   	
 	$result = $conn->query($sql);
