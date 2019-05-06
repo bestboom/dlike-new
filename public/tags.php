@@ -95,22 +95,35 @@
 
 				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
 
-					
-					//let title = res.title;
+					let metadata = JSON.parse(res.json_metadata);
+					let img = new Image();
+					if (typeof metadata.image === "string"){
+						img.src = metadata.image.replace("?","?");
+					} else {
+						img.src = metadata.image[0];
+					}
+					json_metadata = metadata;
+					let category = metadata.category;
+					if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
+					let steemTags = metadata.tags;
+					let dlikeTags = steemTags.slice(2);
+					let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
+					let post_description = metadata.body;
+
+	
+					let title = res.title;
 					let created = res.created;
 					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 					let author = res.author;
 					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
 					
-					 var username = resulthtml[i]['username'];
-				    var created_at = resulthtml[i]['created_at'];
-				    var category = resulthtml[i]['category'];
+					 var username = author;
+				    var created_at = created_time;
 				    var permlink = resulthtml[i]['permlink'];
-				    var metatags =  resulthtml[i]['metatags'];
-				    var title =   resulthtml[i]['title'];
-				    var exturl =   resulthtml[i]['exturl'];
+				    var metatags =  posttags;
+				    var exturl =   metadata.url;;
 
-				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
+				    var thumbnail = '<img src="' + auth_img + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 
 					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
