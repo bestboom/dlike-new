@@ -3,11 +3,11 @@
         <div class="col-6 col-md-4">
             <div class="row">
                 <div class="col-md-4 offset-md-8 col-6 offset-3">
-                    <a class="row">Token</a>
-                    <a class="row">Whitepaper</a>
-                    <a class="row">Pich Deck</a>
-                    <a class="row">Events</a>
-                    <a class="row">News</a>
+                    <a class="row" href="#">Token</a>
+                    <a class="row" href="#">Whitepaper</a>
+                    <a class="row" href="#">Pich Deck</a>
+                    <a class="row" href="#">Events</a>
+                    <a class="row" href="#">News</a>
                 </div>
             </div>
         </div>
@@ -15,13 +15,13 @@
         <div class="col-6 col-md-4">
             <div class="row">
                 <div class="col-md-4 offset-md-4 col-6 offset-2">
-                    <a class="row">Cryptocurrency</a>
-                    <a class="row">News</a>
-                    <a class="row">Health & Fitness</a>
-                    <a class="row">Sports</a>
-                    <a class="row">Lifestyle</a>
-                    <a class="row">Technology</a>
-                    <a class="row">Business</a>
+                    <a class="row" href="#">Cryptocurrency</a>
+                    <a class="row" href="#">News</a>
+                    <a class="row" href="#">Health & Fitness</a>
+                    <a class="row" href="#">Sports</a>
+                    <a class="row" href="#">Lifestyle</a>
+                    <a class="row" href="#">Technology</a>
+                    <a class="row" href="#">Business</a>
                 </div>
             </div>
         </div>
@@ -29,13 +29,13 @@
         <div class="col-12 col-md-4 pt-5">
             <div class="row">
                 <div class="col-md-4 offset-md-0 col-4 offset-3">
-                    <img class="" src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg" style="width: 155px">
+                    <img class="" src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg" style="width: 155px;cursor: pointer">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4 offset-md-0 col-4 offset-3" style="padding-left: 5px !important;">
-                    <img class="" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="width: 175px">
+                    <img class="" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="width: 175px;cursor: pointer">
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div class="col-6 offset-3 col-md-4 offset-md-0 pt-0">
+        <div class="col-5 offset-3 col-md-3 offset-md-0 pt-0">
             <div class="row">
                 <div class="footer-bottom-in">
                     <div class="trade-volume-block">
