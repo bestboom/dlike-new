@@ -5,15 +5,16 @@
   require '../includes/config.php';
 	
   if(isset($_POST['data']) && $_POST['data'] == "users"){
-    $table = "steemposts"; 
+	$table = "steemposts"; 
+	$sql = "SELECT DISTINCT(username) as author,status FROM $table";
   }
-  	$sql = "SELECT * FROM $table";
+  	
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 			if(isset($_POST['data']) && $_POST['data'] == "users"){
-				$dataset['username'] = $row['username'];
+				$dataset['username'] = $row['author'];
 				$dataset['status'] = $row['status'];
 				$strReturn['html_data'][] = $dataset;
 			}
