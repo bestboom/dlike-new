@@ -160,6 +160,77 @@
 						$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
 					});
 				}
+				//start posts here
+				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
+					'\n' +
+					'<article class="post-style-two">\n' +
+					'\n' +
+					'<div class="post-contnet-wrap-top">\n' +
+					'\n' +
+					'<div class="post-footer">\n' +
+					'\n' +
+					'<div class="post-author-block">\n' +
+					'\n' +
+					'<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+					'\n' +
+					'<div class="author-info">\n' +
+					'\n' +
+					'<h5><a href="#">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
+					'\n' +    
+					'</div>\n' +
+					'\n' + 
+					'</div>\n' +
+					'\n' +
+					'<div class="post-comments"><span class="post-meta">' + category + '</span></div>\n' +
+					'\n' +
+					'</div>\n' +
+					'\n' +
+					'</div>\n' + 
+					'\n' +
+					'<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '">' + thumbnail + '</a></div>\n' + 
+					'\n' +
+					'<div class="post-contnet-wrap">\n' +
+					'\n' +
+					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
+                    '\n' +
+					'<h4 class="post-title"><a href="' + exturl + '" target="_blank">' + $post.title + '</a></h4>\n' +
+					'\n' +
+					'<p class="post-entry post-tags">' + metatags + '</p>\n' +
+					'\n' +
+					'<div class="post-footer">\n' +
+					'<div class="post-author-block">\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
+					'</div>\n' +
+					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'</div>\n' +
+					'</div>\n' +
+				'</article></div>');
+				getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
+
+        		let author = $post.author;
+        		let permlink = $post.permlink;				
+
+    		//check if voted
+    		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
+                //console.log(result);
+                    if(result === Array) {
+                    	var voterList = result;
+                   	} else {
+                       	var voterList = [];
+                    }
+                    if(!(voterList === Array)) {
+                       	voterList = [];
+                    }
+                    var voterList = result;
+                for (let j = 0; j < voterList.length; j++) {
+                	if (voterList[j].voter == username) { 
+                		$("#vote_icon" + permlink + author).css("color", "RED"); 
+                		$('#vote_icon' + permlink + author).click(function(){return false;});
+                		$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+                	}
+                }                        
+    		});
+    						
 			}
 		});
 	});			
