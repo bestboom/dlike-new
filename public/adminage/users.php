@@ -1,7 +1,7 @@
 <?php include('head.php'); ?>
 <div class="container">
-  <h2>Bordered Table</h2>
-  <p>The .table-bordered class adds borders to a table:</p>            
+  <h2>Users</h2>
+  
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -23,7 +23,7 @@ $(document).ready(function(){
 	$.ajax({
 		type: "POST",
 		url: '/helper/getadmindata.php',
-		data:{'data':'users'},
+		data:{'data':'users'}
 		dataType: 'json',
 		success: function(response) {
 			if(response.status == "OK") {
