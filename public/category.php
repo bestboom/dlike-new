@@ -54,14 +54,25 @@
   
 <?php include('template/footer2.php'); ?>
 <script>
-	$(document).ready(function(){
-      	var catname = '<?php echo $_GET['cat'];?>';
-
-      	let $tag, $limit, catposts = "#catcontent";
-		let query = {
-			tag: "dlike",
-			limit: 48,
-		};
+$(document).ready(function(){
+	var catname = '<?php echo $_GET['cat'];?>';
+	$(".orderByTopRated").click(function(){
+		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
+		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
+		showPostSortedByLikes();
+	});
+	
+	$(".orderByLatest").click(function(){
+		$( ".orderByLatest" ).last().addClass( "activeOrderBy" );
+		$( ".orderByTopRated" ).removeClass( "activeOrderBy" );
+		showPostSortedByLatest();
+	});
+	
+	let $tag, $limit, content = "#content";
+	let query = {
+		tag: "dlike",
+		limit: 92,
+	};
 
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
 		//console.log(res);
@@ -70,16 +81,10 @@
 			if ($post.json_metadata && $post.json_metadata.length > 0){
 				metadata = JSON.parse($post.json_metadata);
 			}
-		//get meta tags
-			let steemTags = metadata.tags;
-			let dlikeTags = steemTags.slice(2);
-			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/'+meta+'"> #' + meta + ' </a>' });
-			let category = metadata.category;
-			let exturl = metadata.url;
-
+			
 			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
-			if(metadata && metadata.community == "dlike" && metadata.category == catname){
+			if(metadata && metadata.community == "dlike"){
 				getTotalcomments($post.author,$post.permlink);
 
 				// get image here
@@ -100,6 +105,13 @@
 
 				//get time
 				let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+
+				//get meta tags
+				let steemTags = metadata.tags;
+				let dlikeTags = steemTags.slice(2);
+				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
+				let category = metadata.category;
+				let exturl = metadata.url;
 
 				//Get the body
 				let body;
@@ -162,12 +174,8 @@
 					});
 				}
 
-				var adduserhtml = "";
-				if(c_username == "dlike") {
-					adduserhtml += '<a class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-square" class="user_status'+$post.permlink +$post.author +'"></i></a>';
-				}
-	
-		$(catcontent).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
+				//start posts here
+				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
 					'\n' +
@@ -211,7 +219,6 @@
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
-
 				getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 
         		let author = $post.author;
@@ -237,7 +244,10 @@
                 	}
                 }                        
     		});
-    	}
+
+
+
+    		}
 		});
 	});
 </script>
