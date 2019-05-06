@@ -2,7 +2,7 @@
 <div class="container">
   <h2>Users</h2>
   
-  <table class="table table-bordered">
+  <table class="table table-bordered" id="user_table">
     <thead>
       <tr>
         <th>Username</th>
@@ -42,6 +42,10 @@
   </div>
 </div>
 <?php include('../template/footer2.php'); ?>
+
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
 <script>
 
 	function openuser_popup(self){
@@ -56,6 +60,8 @@
     
 $(document).ready(function(){
 
+	$('#user_table').DataTable();
+	
 	$.ajax({
 		type: "POST",
 		url: '/helper/getadmindata.php',
