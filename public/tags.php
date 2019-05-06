@@ -85,17 +85,9 @@
 				    var currentLikesDivElement = 'postLike_' + i;
 
 			
-				    var username = resulthtml[i]['username'];
-				    var created_at = resulthtml[i]['created_at'];
-				    var category = resulthtml[i]['category'];
-				    var permlink = resulthtml[i]['permlink'];
-				    var metatags =  resulthtml[i]['metatags'];
-				    var title =   resulthtml[i]['title'];
-				    var exturl =   resulthtml[i]['exturl'];
+				   
 
-				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
-
-				    steem.api.getContent(username , permlink, function(err, res) {
+				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
 
 					
 					let title = res.title;
@@ -104,7 +96,15 @@
 					let author = res.author;
 					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
 					
+					 var username = resulthtml[i]['username'];
+				    var created_at = resulthtml[i]['created_at'];
+				    var category = resulthtml[i]['category'];
+				    var permlink = resulthtml[i]['permlink'];
+				    var metatags =  resulthtml[i]['metatags'];
+				    var title =   resulthtml[i]['title'];
+				    var exturl =   resulthtml[i]['exturl'];
 
+				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 
 					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
