@@ -55,6 +55,7 @@
 <?php include('template/footer2.php'); ?>
 <script>
 	$(document).ready(function(){
+		let catname = '<?php echo $_GET['cat'];?>';
 		let $tag, $limit, content = "#catposts";
 		let query = {
 			tag: "dlike",
@@ -69,9 +70,16 @@
 				metadata = JSON.parse($post.json_metadata);
 			}
 			
+		//get meta tags
+			let steemTags = metadata.tags;
+			let dlikeTags = steemTags.slice(2);
+			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
+			let category = metadata.category;
+			let exturl = metadata.url;		
+
 			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
-			if(metadata && metadata.community == "dlike"){
+			if(metadata && metadata.community == "dlike" && metadata.category == catname){
 				getTotalcomments($post.author,$post.permlink);
 
 				// get image here
@@ -92,13 +100,6 @@
 
 				//get time
 				let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-
-				//get meta tags
-				let steemTags = metadata.tags;
-				let dlikeTags = steemTags.slice(2);
-				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
-				let category = metadata.category;
-				let exturl = metadata.url;
 
 				//Get the body
 				let body;
