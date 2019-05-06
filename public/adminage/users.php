@@ -1,9 +1,7 @@
 <?php include('head.php'); ?>
-<div class="container">
+<div class="container" style="    margin: 20px auto;">
   <h2>Users</h2>
-  <div id="show_results">
- 
-  </div>
+  <div id="show_results"></div>
 
   <div class="modal fade" id="userPostStatusModal" role="dialog">
 	<div class="modal-dialog">
@@ -37,7 +35,7 @@
 
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
+<style>table.dataTable thead th{    border-bottom: 1px solid #dee2e6;}</style>
 <script>
 
 	function openuser_popup(self){
@@ -84,7 +82,7 @@ $(document).ready(function(){
 
 				result_html += '</tbody></table>';
 				$("#show_results").html(result_html);
-				$('#user_table').DataTable();
+				$('#user_table').DataTable({language: { search: '', searchPlaceholder: "Search..." }});
 			}
 		}
 	});
