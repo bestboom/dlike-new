@@ -80,6 +80,11 @@
 				var responsehtml = '';
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
+
+				    var currentPostNumber = i;
+				    var currentLikesDivElement = 'postLike_' + i;
+
+			
 				    var username = resulthtml[i]['username'];
 				    var created_at = resulthtml[i]['created_at'];
 				    var category = resulthtml[i]['category'];
@@ -91,20 +96,7 @@
 				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 				    steem.api.getContent(username , permlink, function(err, res) {
-					let metadata = JSON.parse(res.json_metadata);
-					let img = new Image();
-					if (typeof metadata.image === "string"){
-						img.src = metadata.image.replace("?","?");
-					} else {
-						img.src = metadata.image[0];
-					}
-					json_metadata = metadata;
-					let category = metadata.category;
-					if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
-					let steemTags = metadata.tags;
-					let dlikeTags = steemTags.slice(2);
-					let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
-					let post_description = metadata.body;
+					console.log(res);
 					let title = res.title;
 					let created = res.created;
 					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
