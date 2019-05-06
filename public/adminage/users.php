@@ -20,8 +20,7 @@
 	  <div class="modal-content">
 		<div class="modal-body text-center">
 			<input type="hidden" id="pu_username" />
-			<input type="hidden" id="pu_permlink" />
-			<input type="hidden" id="pu_category" />
+		
 			<p>User Status</p>
 			<select class="form-control" id="userstatus_select">
 				<option value="">Please select</option>
@@ -47,28 +46,11 @@
 
 	function openuser_popup(self){
 		var author = $(self).data('author');
-		var category = $(self).data('category');
+		var status = $(self).data('status');
+		
 		$("#pu_username").val(author);
-		$("#pu_permlink").val(permlink);
-		$("#pu_category").val(category);
-
-		$.ajax({
-			type: "POST",
-			url: '/helper/getuserpoststatus.php',
-			data:{'author':author},
-			dataType: 'json',
-			success: function(response) {
-				if(response.status == "OK") {
-				var all_status = response.setstatus;
-				$("#userstatus_select").val(all_status);
-				$("#userPostStatusModal").modal('show');
-				}
-				else {
-				$("#userPostStatusModal").modal('show');
-				}
-				
-			}
-		});
+		$("#userstatus_select").val(status);
+		$("#userPostStatusModal").modal('show');
     }
 
     
