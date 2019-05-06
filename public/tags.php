@@ -58,13 +58,7 @@
 	    </div>
 	</div>
     </div>
-    <div class="modal" id="postModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-full" role="document">
-        <div class="modal-content">
-            <?php include('template/modals/postmodal.php'); ?>
-        </div>
-    </div>
-</div>
+
 <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content mybody">
@@ -171,7 +165,7 @@
 					    '<div class="post-author-block">\n' +
 					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + res.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
 					    '</div>\n' +
-					    '<div class="post-comments"><a id="status_icon'+permlink +username +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
+					    '<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
 					    '</div>\n' +
 					    '</div>\n' +
 				    '</article></div>';
