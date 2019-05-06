@@ -86,8 +86,8 @@ $(document).ready(function(){
 
 				result_html += '</tbody></table>';
 				$("#show_results").html(result_html);
-				$('#user_table').DataTable({language: { search: '', searchPlaceholder: "Search..." },"sFilterInput": "form-control"});
-				//$('#user_table input').addClass('form-control');
+				$('#user_table').DataTable({language: { search: '', searchPlaceholder: "Search..." }});
+				$('#user_table input').addClass('form-control');
 			}
 		}
 	});
