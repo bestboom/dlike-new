@@ -669,8 +669,12 @@
 				    $('.userstatus_icon' + permlink + author).css({"color": colorset});
 				    var erroset = "User is Pro";
 				}
-				    
-				$('.userstatus_icon' + permlink + author).hover(function() {toastr.error(erroset);})
+				if(c_username != "dlike" && c_username != "chirag-im") {
+				    $('.userstatus_icon' + permlink + author).removeAttr('onclick');
+				}
+				else {    
+				    $('.userstatus_icon' + permlink + author).hover(function() {toastr.error(erroset);})
+				}
 					
 			    }
 			    else {
