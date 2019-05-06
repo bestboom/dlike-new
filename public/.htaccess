@@ -22,3 +22,4 @@ RewriteRule ^@/?(.*)$ ./profile.php?user=$1
 RewriteRule ^token$ ./token.php
 RewriteRule ^tokensale$ ./tokensale.php
 RewriteRule ^tags/(.*)$ ./tags.php?tag=$1
+RewriteRule ^category/(.*)$ ./category.php?cat=$1
