@@ -89,8 +89,32 @@
 				    var exturl =   resulthtml[i]['exturl'];
 
 				    var thumbnail = '<img src="' + resulthtml[i]['thumbnail'] + '" alt="' + title + '" class="card-img-top img-fluid">';
-				    
-				    responsehtml += '<div class="col-lg-4 col-md-6">\n' +
+
+				    steem.api.getContent(username , permlink, function(err, res) {
+					let metadata = JSON.parse(res.json_metadata);
+					let img = new Image();
+					if (typeof metadata.image === "string"){
+						img.src = metadata.image.replace("?","?");
+					} else {
+						img.src = metadata.image[0];
+					}
+					json_metadata = metadata;
+					let category = metadata.category;
+					if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
+					let steemTags = metadata.tags;
+					let dlikeTags = steemTags.slice(2);
+					let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
+					let post_description = metadata.body;
+					let title = res.title;
+					let created = res.created;
+					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+					let author = res.author;
+					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
+					
+
+
+
+					    responsehtml += '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					    '\n' +
 					    '<article class="post-style-two">\n' +
 					    '\n' +
@@ -124,8 +148,19 @@
 					    '\n' +
 					    '<p class="post-entry post-tags">' + metatags + '</p>\n' +
 					    '\n' +
+					    '<div class="post-footer">\n' +
+					    '<div class="post-author-block">\n' +
+					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + res.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
+					    '</div>\n' +
+					    '<div class="post-comments"><a id="status_icon'+$post.permlink +username +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
+					    '</div>\n' +
 					    '</div>\n' +
 				    '</article></div>';
+
+				    
+				    });
+				    
+				    
 				}
 				
 				$("#contentposts").html(responsehtml);
