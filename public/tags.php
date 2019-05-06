@@ -48,9 +48,12 @@
     </div><!-- sub-header -->
     <div class="latest-post-section">
 	<div class="container">
-	    <div class="row col-md-3">
-		    <h4 class="total_posts"></h4>
-	    </div>
+	    <div class="row  align-items-center h-100">
+                <div class="row col-md-3 justify-content-center">
+                        <h4 class="lab_post"><?php echo $_GET['tag'];?></h4>
+                </div>
+                <div class="col-md-9 lay">&nbsp;</div>
+            </div>
 	    <div class="row" id="contentposts">
 	    </div>
 	</div>
@@ -75,7 +78,7 @@
 			    if(response.status == "OK") {
 				var resulthtml = response.data_row;
 				var responsehtml = '';
-				$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
+				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
 				    var username = resulthtml[i]['username'];
 				    var created_at = resulthtml[i]['created_at'];
@@ -126,9 +129,6 @@
 				}
 				
 				$("#contentposts").html(responsehtml);
-			    }
-			    else {
-				$(".total_posts").html('no posts found.');
 			    }
 			}
 			});
