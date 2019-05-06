@@ -534,7 +534,7 @@
 				var adduserhtml = "";
 				var addfeaturedhtml = "";
 				if(c_username == "dlike" || c_username == "chirag-im") {
-					adduserhtml += '<a class="defaultcoloruser userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+$post.permlink +$post.author +'"></i></a>';
+					adduserhtml += '<a style="color:gray;" class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+$post.permlink +$post.author +'"></i></a>';
 					
 					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-imgurl="' + img.src + '" data-title="' + $post.title + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;';
 				}
