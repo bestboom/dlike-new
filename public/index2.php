@@ -431,7 +431,7 @@
 				}
 
 				var adduserhtml = "";
-				if(c_username == "dlike") {
+				if(c_username == "dlike" || c_username == "chirag-im") {
 					adduserhtml += '<a class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-square" class="user_status'+$post.permlink +$post.author +'"></i></a>';
 				}
 				
