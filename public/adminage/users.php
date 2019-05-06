@@ -16,14 +16,14 @@
     </tbody>
   </table>
 </div>
-<?php include('../template/footer.php'); ?>
+<?php include('../template/footer2.php'); ?>
 <script>
 $(document).ready(function(){
 
 	$.ajax({
 		type: "POST",
 		url: '/helper/getadmindata.php',
-		data:{'data':'users'}
+		data:{'data':'users'},
 		dataType: 'json',
 		success: function(response) {
 			if(response.status == "OK") {
