@@ -60,7 +60,7 @@
 		let $tag, $limit, content = "#catposts";
 		let query = {
 			tag: "dlike",
-			limit: 595,
+			limit: 96,
 		};
 
 		steem.api.getDiscussionsByCreated(query, function (err, res) {
