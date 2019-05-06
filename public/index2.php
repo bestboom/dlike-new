@@ -323,7 +323,7 @@
 	    var p_category = $("#pf_category").val();
 	    var p_imgurl = $("#pf_imgurl").val();
 	    var p_title = $("#pf_title").val();
-	     var p_status = $("input='featuredpost':checked").val();
+	     var p_status = $("input[name='featuredpost']:checked").val();
 	    if(p_status == ""){
 		alert("Please select featuredpost status.");
 		return false;
