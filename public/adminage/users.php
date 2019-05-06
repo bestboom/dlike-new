@@ -63,16 +63,16 @@ $(document).ready(function(){
 
 					var action_var = "Add Status";
 					var set_status = "";
-					if(result_data[i]['status'] == 0){
+					if(result_data[i]['status'] == 0 || result_data[i]['status'] == "Blacklisted"){
 						set_status = "Blacklisted";
 					}
-					else if(result_data[i]['status'] == 1){
+					else if(result_data[i]['status'] == 1 || result_data[i]['status'] == "Greenlisted"){
 						set_status = "Greenlisted";
 					}
-					else if(result_data[i]['status'] == 2){
+					else if(result_data[i]['status'] == 2 || result_data[i]['status'] == "Whitelisted"){
 						set_status = "Whitelisted";
 					}
-					else if(result_data[i]['status'] == 3){
+					else if(result_data[i]['status'] == 3 || result_data[i]['status'] == "Pro"){
 						set_status = "Pro";
 					}
 
