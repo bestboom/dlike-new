@@ -4531,10 +4531,10 @@ body {
 
 @media screen and (max-width: 720px){
     #btn_share{
-        background: gray;
+        background: gray !important;
     }
 
     .search_btn_hover{
-        background: gray;
+        background: gray !important;
     }
 }
