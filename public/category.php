@@ -61,5 +61,107 @@
 			limit: 45,
 		};
 
+		steem.api.getDiscussionsByCreated(query, function (err, res) {
+		//console.log(res);
+		res.forEach(($post, i) => {
+			let metadata;
+			if ($post.json_metadata && $post.json_metadata.length > 0){
+				metadata = JSON.parse($post.json_metadata);
+			}
+			
+			var currentPostNumber = i;
+			var currentLikesDivElement = 'postLike_' + i;
+			if(metadata && metadata.community == "dlike"){
+				getTotalcomments($post.author,$post.permlink);
+
+				// get image here
+				let img = new Image();
+				if (typeof metadata.image === "string") {
+					if (metadata.image.indexOf("https://dlike") >= 0){
+					img.src = metadata.image.replace("?","%3f");
+					}else{
+					 img.src = metadata.image;
+					}
+				} else {
+					if (!metadata.image || metadata.image[0] === undefined) {
+					img.src = "https://dlike.io/images/default-img.jpg";
+					} else {
+					img.src = metadata.image[0];
+					}
+				}
+
+				//get time
+				let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+
+				//get meta tags
+				let steemTags = metadata.tags;
+				let dlikeTags = steemTags.slice(2);
+				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
+				let category = metadata.category;
+				let exturl = metadata.url;
+
+				//Get the body
+				let body;
+				if($post && $post.body && $post.body != undefined){
+					try {
+					body = $post.body;
+					body = body.split(/\n\n#####\n\n/);
+					body = body[1];
+					body = body.replace(/#([^\s]*)/g,'');
+					//body = $post.body.replace(/<(.|\n)*?>/g, '');
+					}catch(err) {
+					body = "";
+					}
+				}else{
+					body = "";
+				}
+
+				//image or youtube
+				let thumbnail = '<img src="' + img.src + '" alt="' + $post.title + '" class="card-img-top img-fluid">';
+
+				var getLocation = function(href) {
+					var l = document.createElement("a");
+					l.href = href;
+					return l;
+				};
+				var url = getLocation(metadata.url);
+				var youtubeAnchorTagVariableClass = '';
+				if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
+					//alert(url);
+					youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_' + i;
+					if(url.search != ''){
+						let query = url.search.substr(1); //remove ? from begning
+						query = query.split('&')
+						for (i in query){
+							let splited = query[i].split('=');
+							if(splited[0] == 'v'){
+								thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+							}
+						}
+					}else{
+						thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+					}
+				}
+
+				//check comments
+				function getTotalcomments(thisAutor,thisPermlink){
+					//Conting the comments (just the dlike ones)
+					steem.api.getContentReplies(thisAutor,thisPermlink, function(err, result) {
+						let totalDlikeComments = 0;  
+						result.forEach(comment =>{
+						let metadata;
+							if (comment.json_metadata && comment.json_metadata.length > 0){
+								metadata = JSON.parse(comment.json_metadata);
+							}
+							if(metadata && metadata.community == "dlike"){
+								totalDlikeComments +=1;    
+							}
+						});
+						$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
+					});
+				}
+			}
+		}
+	});			
 	});
 </script>
