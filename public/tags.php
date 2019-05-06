@@ -48,7 +48,7 @@
     </div><!-- sub-header -->
     <div class="latest-post-section">
 	<div class="container">
-	    <div class="row  align-items-center h-100">
+	    <div class="row  align-items-center h-100" style="margin-bottom:30px;">
                 <div class="row col-md-3 justify-content-center">
                         <h4 class="lab_post"><?php echo $_GET['tag'];?></h4>
                 </div>
