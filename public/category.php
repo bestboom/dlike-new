@@ -81,7 +81,7 @@
 			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
 			console.log(catname);
-			if(metadata && metadata.category == "News" && metadata.community == "dlike" ){
+			if(metadata && metadata.category == catname && metadata.community == "dlike" ){
 				getTotalcomments($post.author,$post.permlink);
 
 				// get image here
