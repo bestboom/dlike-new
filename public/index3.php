@@ -603,7 +603,23 @@ require('lib/solvemedialib.php'); ?>
                     });
                 });
 
+                $(".search_btn_hover")
+                    .on( "mouseenter", function() {
+                        $(this).css("background", "#06D6A9");
+                    })
+                    .on("mouseleave", function () {
+                        $(this).css("background", "white");
+                    });
 
+                $(".edit_btn_hover")
+                    .on( "mouseenter", function() {
+                        $(this).css("background", "#171F24");
+                        $(".fa-pencil-alt").css("color", "white");
+                    })
+                    .on("mouseleave", function () {
+                        $(this).css("background", "white");
+                        $(".fa-pencil-alt").css("color", "black");
+                    });
 
                 setTimeout(function () {
 
@@ -642,6 +658,16 @@ require('lib/solvemedialib.php'); ?>
 
             });
         </script>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
     </div>
 
     <div class="latest-post-section pt-0" style="margin-top: -5px !important;">
