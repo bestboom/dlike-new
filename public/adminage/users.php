@@ -71,10 +71,27 @@ $(document).ready(function(){
 			if(response.status == "OK") {
 			    toastr.success(response.message);
 			    $('#userPostStatusModal').modal('hide');
+				var set_status = "";
+			    if(p_status == 0 || p_status == "Blacklisted"){
+					set_status = "Blacklisted";
+				}
+				else if(p_status == 1 || p_status == "Greenlisted"){
+					set_status = "Greenlisted";
+				}
+				else if(p_status == 2 || p_status == "Whitelisted"){
+					set_status = "Whitelisted";
+				}
+				else if(p_status == 3 || p_status == "Pro"){
+					set_status = "Pro";
+				}
+
+					
 
 			    var all_status = p_status;
 			    $("#user_"+p_username).text('Edit Status');
 			    $("#user_"+p_username).data('status',all_status);
+
+			    $("#user_s_"+p_username).html(set_status);
 				
 			}
 			else {
@@ -123,7 +140,7 @@ $(document).ready(function(){
 					}
 					
 					
-					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+set_status+'</td><td><a href="javascript:"  id="user_'+result_data[i]['username']+'" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['username']+'</td><td id="user_s_'+result_data[i]['username']+'">'+set_status+'</td><td><a href="javascript:"  id="user_'+result_data[i]['username']+'" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
 
 				result_html += '</tbody></table>';
