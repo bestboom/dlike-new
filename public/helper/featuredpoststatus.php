@@ -40,6 +40,8 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
 		$updatepost_status = "DELETE FROM featuredposts where permlink = '".$permlink."'";
 		$updatepost_statusq = $conn->query($updatepost_status);
 		$strReturn['message'] = 'Deleted Successfully!';
+		
+		$strReturn['insertid'] = "";	           
 	}
     	else {
     
