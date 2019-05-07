@@ -83,11 +83,12 @@ $(document).ready(function(){
 			if(response.status == "OK") {
 			    toastr.success(response.message);
 			    $('#featuredPostStatusModal').modal('hide');
-			    var setlabel = "Remove";
-			    if(p_status !== null && p_status !== undefined){
-				var setlabel = "Add";
-			    }
+			    var setlabel = "Add";
+			    
 			    var insertid = response.insertid;
+			    if(insertid !== null && insertid !== undefined){
+				var setlabel = "Remove";
+			    }
 			    $("#fpost_"+p_username).text(setlabel);
 			    $("#fpost_"+p_username).data('status',insertid);
 				
