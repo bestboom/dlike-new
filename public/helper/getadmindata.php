@@ -7,6 +7,9 @@
   if(isset($_POST['data']) && $_POST['data'] == "users"){
 	$sql = "SELECT DISTINCT(sp.username) as author,ut.status FROM steemposts as sp left join userstatus as ut on ut.username=sp.username";
   }
+  else if(isset($_POST['data']) && $_POST['data'] == "posts"){
+	$sql = "SELECT sp.username as author,ut.status,sp.json_metadata,sp.permlink FROM steemposts as sp left join poststatus as ut on ut.permlink=sp.permlink";
+  }
   	
 	$result = $conn->query($sql);
 
@@ -14,6 +17,14 @@
 		while($row = $result->fetch_assoc()) {
 			if(isset($_POST['data']) && $_POST['data'] == "users"){
 				$dataset['username'] = $row['author'];
+				$dataset['status'] = $row['status'];
+				$strReturn['html_data'][] = $dataset;
+			}
+			else if(isset($_POST['data']) && $_POST['data'] == "posts"){
+				$json_metadata = json_decode($row['json_metadata'],true);
+				$dataset['username'] = $row['author'];
+				$dataset['permlink'] = $row['permlink'];
+				$dataset['category'] = $json_metadata['category'];
 				$dataset['status'] = $row['status'];
 				$strReturn['html_data'][] = $dataset;
 			}
