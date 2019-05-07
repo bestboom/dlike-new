@@ -47,7 +47,7 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
     $featuredposts = "INSERT INTO featuredposts (`username`, `category`,`title`,`img_link`, `permlink`, `add_time` )
 													VALUES ('".$author."', '".$p_category."', '".$title."', '".$img_link."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
 										$featuredpostsQuery = $conn->query($featuredposts);
-                    
+    $strReturn['insertid'] = mysqli_insert_id($conn);	                
     $strReturn['message'] = 'Added Successfully!';	
 		
 	}
