@@ -49,6 +49,48 @@
 
     
 $(document).ready(function(){
+	var saveuserpoststatus=$('#saveuserpoststatus');
+
+	saveuserpoststatus.click(function(){
+
+	    var p_username = $("#pu_username").val();
+	    var p_status = $("#userstatus_select").val();
+
+	    
+	    if(p_status == ""){
+			alert("Please select user status.");
+			return false;
+	    }
+	    
+	    $.ajax({
+		    type: "POST",
+		    url: '/helper/userpoststatus.php',
+		    data:{'p_username':p_username,'p_status':p_status},
+		    dataType: 'json',
+		    success: function(response) {
+			if(response.status == "OK") {
+			    toastr.success(response.message);
+			    $('#userPostStatusModal').modal('hide');
+
+			    var all_status = p_status;
+			    $("#user_"+p_username).text('Edit Status');
+			    $("#user_"+p_username).data('status',all_status);
+				
+			}
+			else {
+			    $('#userPostStatusModal').modal('hide');
+			    toastr.error(response.message);
+			    return false;
+			}
+		    },
+		    error: function() {
+				$('#userPostStatusModal').modal('hide');
+				toastr.error('Error occured');
+			    return false;
+		    }
+	    });
+	});
+	
 
 	$.ajax({
 		type: "POST",
@@ -81,7 +123,7 @@ $(document).ready(function(){
 					}
 					
 					
-					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+set_status+'</td><td><a href="javascript:" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+set_status+'</td><td><a href="javascript:"  id="user_'+result_data[i]['username']+'" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
 
 				result_html += '</tbody></table>';
