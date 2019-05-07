@@ -84,10 +84,10 @@ $(document).ready(function(){
 			    toastr.success(response.message);
 			    $('#featuredPostStatusModal').modal('hide');
 			    var setlabel = "Remove";
-			    if(status !== null && status !== undefined){
+			    if(p_status !== null && p_status !== undefined){
 				var setlabel = "Add";
 			    }
-			    
+			    var insertid = response.insertid;
 			    $("#fpost_"+p_username).text(setlabel);
 			    $("#fpost_"+p_username).data('status',insertid);
 				
@@ -138,5 +138,4 @@ $(document).ready(function(){
 	});
 });
 </script>
-
 
