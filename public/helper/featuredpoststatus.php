@@ -41,7 +41,7 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
 		$updatepost_statusq = $conn->query($updatepost_status);
 		$strReturn['message'] = 'Deleted Successfully!';
 		
-		$strReturn['insertid'] = "";	           
+		$strReturn['insertid'] = null;	           
 	}
     	else {
     
