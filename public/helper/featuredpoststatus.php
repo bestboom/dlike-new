@@ -32,6 +32,16 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
     
 
     $checked_by = isset($_COOKIE['username'])?$_COOKIE['username']:"";
+		
+		$sql = "SELECT * FROM featuredposts where permlink = '".$permlink."'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		
+		$updatepost_status = "DELETE FROM featuredposts where permlink = '".$permlink."'";
+		$updatepost_statusq = $conn->query($updatepost_status);
+		$strReturn['message'] = 'Deleted Successfully!';
+	}
+    	else {
     
 		
     $featuredposts = "INSERT INTO featuredposts (`username`, `category`,`title`,`img_link`, `permlink`, `add_time` )
@@ -39,6 +49,8 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
 										$featuredpostsQuery = $conn->query($featuredposts);
                     
     $strReturn['message'] = 'Added Successfully!';	
+		
+	}
   echo json_encode($strReturn);die;
 	}
 	
