@@ -82,7 +82,7 @@ $(document).ready(function(){
 			    $("#post_"+p_username).text('Edit Status');
 			    $("#post_"+p_username).data('status',all_status);
 
-			    $("#post_s_"+p_username).html(set_status);
+			    $("#post_s_"+p_username).html(all_status);
 			    
 				
 			}
@@ -109,7 +109,7 @@ $(document).ready(function(){
 		success: function(response) {
 			if(response.status == "OK") {
 				var result_data = response.html_data;
-				var result_html = ' <table class="table table-bordered" id="post_table"><thead><tr><th>Username</th><th>Category</th><th>Permlink</th><th>Status</th><th>Action</th></tr></thead><tbody >';
+				var result_html = ' <table class="table table-bordered" id="post_table"><thead><tr><th>Title</th><th>Username</th><th>Category</th><th>Permlink</th><th>Status</th><th>Action</th></tr></thead><tbody >';
 				for(i=0;i<result_data.length;i++){
 
 					var action_var = "Add Status";
@@ -121,7 +121,7 @@ $(document).ready(function(){
 			    
 					
 					
-					result_html += '<tr><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['category']+'</td><td>'+result_data[i]['permlink']+'</td><td id="post_s_'+result_data[i]['username']+'">'+all_status+'</td><td><a href="javascript:"  id="post_'+result_data[i]['username']+'" onclick="return openpost_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-category="'+result_data[i]['category']+'" data-permlink="'+result_data[i]['permlink']+'" data-status="'+all_status+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['title']+'</td><td>'+result_data[i]['username']+'</td><td>'+result_data[i]['category']+'</td><td>'+result_data[i]['permlink']+'</td><td id="post_s_'+result_data[i]['username']+'">'+all_status+'</td><td><a href="javascript:"  id="post_'+result_data[i]['username']+'" onclick="return openpost_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-category="'+result_data[i]['category']+'" data-permlink="'+result_data[i]['permlink']+'" data-status="'+all_status+'" >'+action_var+'</a></td></tr>';
 				}
 
 				result_html += '</tbody></table>';
