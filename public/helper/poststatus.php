@@ -6,7 +6,7 @@
 	
 
 
-if($_COOKIE['username'] != 'dlike') {
+if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
 		$strReturn['status'] = 'no';	
 		$strReturn['message'] = 'only admin can enter.';	
 		echo json_encode($strReturn);die;
