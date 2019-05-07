@@ -31,13 +31,24 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
     
     $p_status = isset($_POST["p_status"])?$_POST["p_status"]:'';
     $checked_by = isset($_COOKIE['username'])?$_COOKIE['username']:"";
-    
 		
-    $addWallet = "INSERT INTO poststatus (`username`, `category`, `permlink`, `status` , `checked_by` , `check_time` )
-													VALUES ('".$author."', '".$p_category."', '".$permlink."', '".$p_status."', '".$checked_by."', '".date("Y-m-d H:i:s")."')";
-										$addWalletQuery = $conn->query($addWallet);
+		
+		$sql = "SELECT * FROM poststatus where permlink = '".$permlink."'";
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		
+		$updatepost_status = "UPDATE poststatus set `status` = '".$p_status."' where permlink = '".$permlink."'";
+		$updatepost_statusq = $conn->query($updatepost_status);
+		$strReturn['message'] = 'Updated Successfully!';
+	}
+    	else {
+		$addWallet = "INSERT INTO poststatus (`username`, `category`, `permlink`, `status` , `checked_by` , `check_time` ) VALUES ('".$author."', '".$p_category."', '".$permlink."', '".$p_status."', '".$checked_by."', '".date("Y-m-d H:i:s")."')";
+		$addWalletQuery = $conn->query($addWallet);
                     
-    $strReturn['message'] = 'Added Successfully!';	
+    		$strReturn['message'] = 'Added Successfully!';
+	}
+		
+   	
   echo json_encode($strReturn);die;
 	}
 	
