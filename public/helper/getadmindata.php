@@ -10,6 +10,9 @@
   else if(isset($_POST['data']) && $_POST['data'] == "posts"){
 	$sql = "SELECT sp.username as author,sp.title as title,ut.status,sp.json_metadata,sp.permlink FROM steemposts as sp left join poststatus as ut on ut.permlink=sp.permlink";
   }
+  else if(isset($_POST['data']) && $_POST['data'] == "fposts"){
+	$sql = "SELECT sp.username as author,sp.title as title,sp.json_metadata,sp.permlink,ut.id as fid FROM steemposts as sp left join featuredposts as ut on ut.permlink=sp.permlink";
+  }
   	
 	$result = $conn->query($sql);
 
@@ -27,6 +30,16 @@
 				$dataset['permlink'] = $row['permlink'];
 				$dataset['category'] = $json_metadata['category'];
 				$dataset['status'] = $row['status'];
+				$strReturn['html_data'][] = $dataset;
+			}
+			else if(isset($_POST['data']) && $_POST['data'] == "fposts"){
+				$json_metadata = json_decode($row['json_metadata'],true);
+				$dataset['title'] = $row['title'];
+				$dataset['username'] = $row['author'];
+				$dataset['permlink'] = $row['permlink'];
+				$dataset['category'] = $json_metadata['category'];
+				$dataset['imgurl'] = $json_metadata['image'];
+				$dataset['fid'] = $row['fid'];
 				$strReturn['html_data'][] = $dataset;
 			}
 		}
