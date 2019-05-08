@@ -232,6 +232,13 @@
 
 	$("#featuredPostStatusModal").modal('show');
     }
+
+
+    function jq( myid ) {
+ 
+    return "#" + myid.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
+ 
+}
     
     	$(document).ready(function(){
 
@@ -618,23 +625,27 @@
 			success: function(response) {
 			    if(response.status == "OK") {
 				var all_status = response.setstatus;
+
+				var setid_j  = jq( '#status_icon' + permlink + author );
+
+				
 				if(all_status == "Rejected") {
 				    var colorset = 'red';
-				    $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
+				    $(setid_j).css({"color": colorset});
+				    $(setid_j).removeAttr('onclick');
 				}
 				else if(all_status == "Low Level") {
 				    var colorset = 'blue';
-				   $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
+				   $(setid_j).css({"color": colorset});
+				    $(setid_j).removeAttr('onclick');
 				}
 				else if(all_status == "High Level") {
 				    var colorset = 'green';
-				    $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
+				    $(setid_j).css({"color": colorset});
+				    $(setid_j).removeAttr('onclick');
 				}
 				
-				$('#status_icon' + permlink + author).hover(function() {toastr.error('Post already Checked!');})
+				$(setid_j).hover(function() {toastr.error('Post already Checked!');})
 					
 			    }
 			}
