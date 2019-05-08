@@ -20,18 +20,8 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/explorer">Explorer</a>
     <a href="/token">Token</a>
-    <a href="#">Welcome</a>
-    <a href="#">FAQ</a>
-    <a href="#">Explore</a>
-    <a href="#">Currency Market</a>
-    <a href="#">Advertise</a>
-    <a href="#">Stolen Accounts Recovery</a>
-    <a href="#">Change Account Password</a>
-    <a href="#">Vote for Witnesses</a>
-    <a href="#"></a>
-    <a href="#">Third-party exchanges:</a>
-    <a href="#">Blocktrades</a>
-    <a href="#">GOPAX</a>
+    <a href="/docs/dlike-paper.pdf">Whitepaper</a>
+
 </div>
 <div class="banner-block">
     <nav class="navbar main-nav navbar-expand-lg">
