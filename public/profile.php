@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-md-9 lay">&nbsp;</div>
             </div>
-	    	<div class="row" id="catposts"></div>
+	    	<div class="row" id="profposts"></div>
 		</div>
     </div>
   
@@ -63,7 +63,7 @@
 	$(document).ready(function(){
 		let profname = '<?php echo $_GET['user'];?>';
 		
-		let $tag, $limit, content = "#catposts";
+		let $tag, $limit, content = "#profposts";
 		let query = {
 			tag: profname,
 			limit: 42,
