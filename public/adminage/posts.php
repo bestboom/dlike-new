@@ -1,6 +1,6 @@
 <?php include('head.php'); ?>
 <div class="container" style="    margin: 20px auto;">
-  <h2>Posts</h2>
+	<h2>Posts</h2><p id="total_result"></p>
   <div id="show_results"></div>
 
   <div class="modal fade" id="PostStatusModal" role="dialog">
@@ -109,6 +109,8 @@ $(document).ready(function(){
 		success: function(response) {
 			if(response.status == "OK") {
 				var result_data = response.html_data;
+				var total = response.total;
+				$("#total_result").html(total+" Users found.");
 				var result_html = ' <table class="table table-bordered" id="post_table"><thead><tr><th>Title</th><th>Username</th><th>Category</th><th>Permlink</th><th>Status</th><th>Action</th></tr></thead><tbody >';
 				for(i=0;i<result_data.length;i++){
 
