@@ -43,8 +43,10 @@
 				$strReturn['html_data'][] = $dataset;
 			}
 		}
+		$strReturn['total'] = $result->num_rows;
     		$strReturn['status'] = 'OK';
 	} else {
+		$strReturn['total'] = 0;
 		$strReturn['status'] = 'error';
 	}
   	echo json_encode($strReturn);die;
