@@ -110,7 +110,7 @@ $(document).ready(function(){
 			if(response.status == "OK") {
 				var result_data = response.html_data;
 				var total = response.total;
-				$("#total_result").html(total+" Users found.");
+				$("#total_result").html(total+" Posts found.");
 				var result_html = ' <table class="table table-bordered" id="post_table"><thead><tr><th>Title</th><th>Username</th><th>Category</th><th>Permlink</th><th>Status</th><th>Action</th></tr></thead><tbody >';
 				for(i=0;i<result_data.length;i++){
 
