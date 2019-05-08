@@ -50,7 +50,7 @@
 		<div class="container">
 			<div class="row  align-items-center h-100">
                 <div class="row col-md-3 justify-content-center">
-                    <h4 class="lab_post"><?php echo $_GET['cat'];?></h4>
+                    <h4 class="lab_post"><?php echo $_GET['user'];?></h4>
                 </div>
                 <div class="col-md-9 lay">&nbsp;</div>
             </div>
@@ -87,7 +87,6 @@
 
 			var currentPostNumber = i;
 			var currentLikesDivElement = 'postLike_' + i;
-			console.log(catname);
 			if(metadata && metadata.community == "dlike" ){
 				getTotalcomments($post.author,$post.permlink);
 
