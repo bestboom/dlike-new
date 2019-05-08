@@ -232,13 +232,8 @@
 
 	$("#featuredPostStatusModal").modal('show');
     }
-
-
-    function jq( myid ) {
- 
-    return "." + myid.replace( /(:|\.|\[|\]|,|=|@)/g, "\\$1" );
- 
-}
+    
+    
     
     	$(document).ready(function(){
 
@@ -538,9 +533,11 @@
 					
 					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-imgurl="' + img.src + '" data-title="' + $post.title + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;';
 				}
-				var setp_a = jq($post.permlink +$post.author);
-				
-				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+setp_a+'"></i></a>';
+				var mylabel = $post.permlink +$post.author;
+				var newValue = mylabel.replace('.', '');
+		
+
+				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+$post.permlink +$post.author +' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
 				
 				
 				//start posts here
@@ -626,27 +623,23 @@
 			success: function(response) {
 			    if(response.status == "OK") {
 				var all_status = response.setstatus;
-
-				var setid_j  = jq( '#status_icon' + permlink + author );
-
-				
 				if(all_status == "Rejected") {
 				    var colorset = 'red';
-				    $(setid_j).css({"color": colorset});
-				    $(setid_j).removeAttr('onclick');
+				    $('#status_icon' + permlink + author).css({"color": colorset});
+				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
 				else if(all_status == "Low Level") {
 				    var colorset = 'blue';
-				   $(setid_j).css({"color": colorset});
-				    $(setid_j).removeAttr('onclick');
+				   $('#status_icon' + permlink + author).css({"color": colorset});
+				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
 				else if(all_status == "High Level") {
 				    var colorset = 'green';
-				    $(setid_j).css({"color": colorset});
-				    $(setid_j).removeAttr('onclick');
+				    $('#status_icon' + permlink + author).css({"color": colorset});
+				    $('#status_icon' + permlink + author).removeAttr('onclick');
 				}
 				
-				$(setid_j).hover(function() {toastr.error('Post already Checked!');})
+				$('#status_icon' + permlink + author).hover(function() {toastr.error('Post already Checked!');})
 					
 			    }
 			}
@@ -659,43 +652,45 @@
 			data:{'author':author},
 			dataType: 'json',
 			success: function(response) {
+			    var mylabel = permlink +author;
+				var newValue = mylabel.replace('.', '');
 			    if(response.status == "OK") {
 				var all_status = response.setstatus;
 
-				var set_j  = jq( permlink + author );
+				
 
 				
 				if(all_status == "0") {
 				    var colorset = 'black';
-				    $('.userstatus_icon' + set_j).css({"color": colorset});
+				    $('.userstatus_icon' + newValue).css({"color": colorset});
 				    var erroset = "User is Blacklisted";
 				}
 				else if(all_status == "1") {
 				    var colorset = 'orange';
-				    $('.userstatus_icon' + set_j).css({"color": colorset});
+				    $('.userstatus_icon' + newValue).css({"color": colorset});
 				    var erroset = "User is Greenlisted";
 				}
 				else if(all_status == "2") {
 				    var colorset = 'green';
-				    $('.userstatus_icon' + set_j).css({"color": colorset});
+				    $('.userstatus_icon' + newValue).css({"color": colorset});
 				    var erroset = "User is Whitelisted";
 				}
 				else if(all_status == "3") {
 				    var colorset = 'red';
-				    $('.userstatus_icon' + set_j).css({"color": colorset});
+				    $('.userstatus_icon' + newValue).css({"color": colorset});
 				    var erroset = "User is Pro";
 				}
 				if(c_username != "dlike" && c_username != "chirag-im") {
-				    $('.userstatus_icon' + set_j).removeAttr('onclick');
+				    $('.userstatus_icon' + newValue).removeAttr('onclick');
 				}
 				else {    
-				    $('.userstatus_icon' + set_j).hover(function() {toastr.error(erroset);})
+				    $('.userstatus_icon' + newValue).hover(function() {toastr.error(erroset);})
 				}
 					
 			    }
 			    else {
 				if(c_username != "dlike" && c_username != "chirag-im") {
-				    $('.userstatus_icon' + set_j).remove();
+				    $('.userstatus_icon' + newValue).remove();
 				}
 			    }
 			}
