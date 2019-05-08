@@ -3,11 +3,9 @@
         <div class="col-6 col-md-4">
             <div class="row">
                 <div class="col-md-4 offset-md-8 col-6 offset-3">
-                    <a class="row" href="#">Token</a>
-                    <a class="row" href="#">Whitepaper</a>
-                    <a class="row" href="#">Pich Deck</a>
-                    <a class="row" href="#">Events</a>
-                    <a class="row" href="#">News</a>
+                    <a class="row" href="/token">Token</a>
+                    <a class="row" href="/docs/dlike-paper.pdf">Whitepaper</a>
+                    <a class="row" href="https://steemit.com/@dlike">News</a>
                 </div>
             </div>
         </div>
@@ -15,14 +13,13 @@
         <div class="col-6 col-md-4">
             <div class="row">
                 <div class="col-md-4 offset-md-4 col-6 offset-2">
-                    <a class="row" href="#">Cryptocurrency</a>
-                    <a class="row" href="#">News</a>
-                    <a class="row" href="#">Health & Fitness</a>
-                    <a class="row" href="#">Sports</a>
-                    <a class="row" href="#">Lifestyle</a>
-                    <a class="row" href="#">Technology</a>
-
-                    <a class="row" href="#">Business</a>
+                    <a class="row" href="/category/cryptocurrency">Cryptocurrency</a>
+                    <a class="row" href="/category/news">News</a>
+                    <a class="row" href="/category/health">Health & Fitness</a>
+                    <a class="row" href="/category/sports">Sports</a>
+                    <a class="row" href="/category/lifestyle">Lifestyle</a>
+                    <a class="row" href="/category/technology">Technology</a>
+                    <a class="row" href="/category/business">Business</a>
                 </div>
             </div>
         </div>
@@ -55,7 +52,7 @@
 
                 <div class="col-md-6 offset-md-1 col-7 offset-1 pt-2">
                     <div>
-                        <p>  © 2019 <a href="#">DLike</a>. All Rights Reserved</p>
+                        <p>  © 2019 <a href="#">DLike</a></p>
                     </div>
                 </div>
             </div>
@@ -71,9 +68,9 @@
                                 <li><a href="https://twitter.com/dlike_io"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="https://t.me/dlike_io"><i class="fab fa-telegram"></i></a></li>
 
-                                <li><a href="https://discord.gg/JYSkBFk"><i class="fab fa-discord"></i></a></li>
-                                <li><a href="https://twitter.com/dlike_io"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://t.me/dlike_io"><i class="fab fa-telegram"></i></a></li>
+                                <li><a href="https://facebook.com/dlike.io"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/dlike_io"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://medium.com/dlike"><i class="fab fa-medium"></i></a></li>
                             </ul>
                         </div>
                     </div>

@@ -1517,7 +1517,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     margin-bottom: 0; }
 
 .colto-section {
-    background: black;
+    background: #c51d24;
     background-size: cover;
     padding: 45px 0; }
 
@@ -3839,7 +3839,7 @@ sub.transmoney-value {
 |----------------------------------------------------------------------------
 */
 .footer {
-    background: #1f2738; }
+    background: #1a1c21; }
 
 .footer-upper-section {
     padding: 120px 0;
