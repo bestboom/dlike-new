@@ -279,27 +279,31 @@
 			    $('#userPostStatusModal').modal('hide');
 
 			    var all_status = p_status;
+
+			    var mylabel = p_permlink +p_username;
+				var newValue = mylabel.replace('.', '');
+				
 			    if(all_status == "0") {
 				var colorset = 'black';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + newValue).css({"color": colorset});
 				var erroset = "User is Blacklisted";
 			    }
 			    else if(all_status == "1") {
 				var colorset = 'orange';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + newValue).css({"color": colorset});
 				var erroset = "User is Greenlisted";
 			    }
 			    else if(all_status == "2") {
 				var colorset = 'green';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + newValue).css({"color": colorset});
 				var erroset = "User is Whitelisted";
 			    }
 			    else if(all_status == "3") {
 				var colorset = 'red';
-				$('.userstatus_icon' + p_permlink + p_username).css({"color": colorset});
+				$('.userstatus_icon' + newValue).css({"color": colorset});
 				var erroset = "User is Pro";
 			    }
-			    $('.userstatus_icon' + p_permlink + p_username).hover(function() {toastr.error(erroset);});
+			    $('.userstatus_icon' + newValue).hover(function() {toastr.error(erroset);});
 				
 			}
 			else {
@@ -528,10 +532,13 @@
 
 				var adduserhtml = "";
 				var addfeaturedhtml = "";
+				var addposthtml = "";
 				if(c_username == "dlike" || c_username == "chirag-im") {
 					
 					
 					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-imgurl="' + img.src + '" data-title="' + $post.title + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;';
+
+					addposthtml = '<a id="status_icon'+$post.permlink +$post.author +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; ';
 				}
 				var mylabel = $post.permlink +$post.author;
 				var newValue = mylabel.replace('.', '');
@@ -581,7 +588,7 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments">'+addfeaturedhtml+'<a id="status_icon'+$post.permlink +$post.author +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments">'+addfeaturedhtml+addposthtml'| &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
