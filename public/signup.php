@@ -1,5 +1,4 @@
 <?php include('template/header.php');  ?>
-    <?php if($_COOKIE['username'] == ''){ ?>
                 <div class="banner-content home-connect">
                     <div class="news-headline-block">
                     <div class="container">
@@ -18,7 +17,6 @@
                             </div>
                         </div>
                     </div>
-            <? } ?>
             </div>
         </div>
     </div><!-- sub-header -->
