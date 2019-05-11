@@ -64,6 +64,9 @@
 					$strReturn['main_event_status'] = $row_s['options'];
 				}
 			}
+			else {
+				$strReturn['main_event_status'] = 'enable';	
+			}
 		}
 		
 		$strReturn['total'] = $result->num_rows;
