@@ -42,8 +42,10 @@
 		<div class="modal-body text-center">
 			<input type="hidden" id="put_username" />
 		
-			<p>Tokens</p>
+			<p>How many tokens to pay and reason of sending?</p>
 			<input type="text" id="pu_token" class="form-data" />
+			<br><br>
+			<textarea id="pu_reason" class="form-data" ></textarea>
 			<br><br>
 		    <p><input type="button" id="pay_usertoken" class="btn btn-primary" value="Pay"/></p>
 				
@@ -96,38 +98,45 @@ $(document).ready(function(){
 	    $("#loader").show();
 	    var put_username = $("#put_username").val();
 	    var pu_token = $("#pu_token").val();
+	    var pu_reason = $("#pu_reason").val();
 
 	    
 	    if(pu_token == ""){
 			alert("Please enter tokens.");
 			return false;
 	    }
+
+	    var namesarray = [];
+	    var tokensarray = [];
+	    var reasonsarray = [];
 	    
-	    $.ajax({
-		    type: "POST",
-		    url: '/helper/usertokens.php',
-		    data:{'p_username':put_username,'pu_token':pu_token},
-		    dataType: 'json',
-		    success: function(response) {
-			$("#loader").hide();
-			if(response.status == "OK") {
-			    toastr.success(response.message);
-			    $('#tokenuserPostStatusModal').modal('hide');
-				
-			}
-			else {
-			    $('#tokenuserPostStatusModal').modal('hide');
-			    toastr.error(response.message);
-			    return false;
-			}
-		    },
-		    error: function() {
-			$("#loader").hide();
-				$('#tokenuserPostStatusModal').modal('hide');
-				toastr.error('Error occured');
+	    namesarray.push(put_username);
+	    tokensarray.push(pu_token);
+	    reasonsarray.push(pu_reason);
+
+	    var obj = {};
+	    obj['names'] = namesarray;
+	    obj['tokens'] = tokensarray;
+	    obj['reason'] = reasonsarray;
+
+
+	     $.ajax({
+		type: 'POST',
+		url: 'delegation-tkad.php',
+		dataType: 'json',
+		data: {'senderobj': obj},
+		success: function(data) {
+		    if(data.status == "no") {
+			$('#tokenuserPostStatusModal').modal('hide');
+			    toastr.error(data.message);
 			    return false;
 		    }
-	    });
+		    else {
+			toastr.success(data.message);
+			    $('#tokenuserPostStatusModal').modal('hide');
+		    }
+		}
+	      });
 	});
 
 	saveuserpoststatus.click(function(){
