@@ -390,7 +390,7 @@
 			$.ajax({
 			type: "POST",
 			url: '/helper/gettposts.php',
-			data:{'tagname':tagname},
+			data:{'catname':catname},
 			dataType: 'json',
 			success: function(response) {
 			    if(response.status == "OK") {
