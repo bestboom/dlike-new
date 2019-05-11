@@ -74,6 +74,7 @@ $(document).ready(function(){
 		$("#loader").show();
 		var option = $(this).data('option');
 		var setclass="bg-danger";
+		var r_class="bg-success";
 		var setoption="disable";
 		
 		$.ajax({
@@ -89,8 +90,10 @@ $(document).ready(function(){
 			    if(option == "disable") {
 					setclass = "bg-success";
 					setoption="enable";
+					r_class = "bg-danger";
 				}
-			    $(this).removeClass(setclass);
+			    $(this).addClass(setclass);
+			    $(this).removeClass(r_class);
 			    $(this).data('option',setoption);
 			    
 				
@@ -175,16 +178,16 @@ $(document).ready(function(){
 				var main_event_status = response.main_event_status
 
 				if(main_event_status == "disable") {
-					setclass = "bg-danger";
-					setoption="disable";
+					$("#events_show_status").removeClass("bg-success");
+					$("#events_show_status").addClass("bg-danger");
+					$("#events_show_status").data('option',main_event_status);
 				}
 				else {
-					setclass = "bg-success";
-					setoption="enable";
-					
+					$("#events_show_status").removeClass("bg-danger");
+					$("#events_show_status").addClass("bg-success");
+					$("#events_show_status").data('option',main_event_status);
 				}
-			    $("#events_show_status").removeClass(setclass);
-			    $("#events_show_status").data('option',setoption);
+			    
 
 			    
 				$("#show_results").html(result_html);
