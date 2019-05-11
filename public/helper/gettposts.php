@@ -44,6 +44,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 				$data['username'] = $row1['username'];
 				$data['permlink'] = $row1['permlink'];
 				$data['metatags'] = $meta_array;
+				$data['created_at'] = timeago($row1['created_at']);
 
 				$strReturn['data_row'][] = $data;
 			}
