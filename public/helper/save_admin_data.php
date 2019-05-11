@@ -15,8 +15,17 @@
         }
         if(isset($_POST['tag']) && $_POST['tag'] == "settings"){
                 if(isset($_POST['type']) && $_POST['type'] == "events"){
-                        $events = "INSERT INTO settings (`type`,`options`,`created_at`) VALUES ('".$_POST['type']."', '".$_POST['option']."','".date("Y-m-d H:i:s")."')";
-                        $events_q = $conn->query($events);  
+                        $s_sql = "SELECT * FROM `settings` where `type` = 'events'";
+			$result_s = $conn->query($s_sql);
+			if ($result_s->num_rows > 0) {
+                                $events = "UPDATE settings set `options`= '".$_POST['option']."' WHERE `type`= 'events'";
+                                $events_q = $conn->query($events);  
+                        }
+                        else {
+                                $events = "INSERT INTO settings (`type`,`options`,`created_at`) VALUES ('".$_POST['type']."', '".$_POST['option']."','".date("Y-m-d H:i:s")."')";
+                                $events_q = $conn->query($events);          
+                        }
+                        
                         $strReturn['status'] = 'OK';
                         $strReturn['message'] = 'successfully updated.';
                         
