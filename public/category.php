@@ -99,8 +99,55 @@
 				    var currentLikesDivElement = 'postLike_' + i;
 
 				   var timstamp = resulthtml[i]['created_at'];
+				   var permlink = resulthtml[i]['permlink'];
+				   var username = resulthtml[i]['username'];
 
-				   
+				   responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv '+currentLikesDivElement+'" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
+					    '\n' +
+					    '<article class="post-style-two">\n' +
+					    '\n' +
+					    '<div class="post-contnet-wrap-top">\n' +
+					    '\n' +
+					    '<div class="post-footer">\n' +
+					    '\n' +
+					    '<div class="post-author-block">\n' +
+					    '\n' +
+					    '<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + username + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+					    '\n' +
+					    '<div class="author-info">\n' +
+					    '\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
+					    '\n' +    
+					    '</div>\n' +
+					    '\n' + 
+					    '</div>\n' +
+					    '\n' +
+					    '<div class="post-comments"><span class="post-meta"></span></div>\n' +
+					    '\n' +
+					    '</div>\n' +
+					    '\n' +
+					    '</div>\n' + 
+					    '\n' +
+					    '<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + permlink + '" data-author="' + username + '"></a></div>\n' + 
+					    '\n' +
+					    '<div class="post-contnet-wrap">\n' +
+					    '\n' +
+					    '<h4 class="post-title"><a href="" target="_blank"></a></h4>\n' +
+					    '\n' +
+					    '<p class="post-entry post-tags"></p>\n' +
+					    '\n' +
+					    '<div class="post-footer">\n' +
+					    '<div class="post-author-block">\n' +
+					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span class="pending_payout_value"></span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
+					    '</div>\n' +
+					    '<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span class="active_votes">&nbsp; |  Votes</span></div>\n' +
+					    '</div>\n' +
+					    '</div>\n' +
+				    '</article></div>';
+
+
+
+				   $("#contentposts").append(responsehtml);
 
 				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
 
@@ -136,55 +183,16 @@
 				    var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 
-					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="" id="article_'+permlink+'">\n' +
-					    '\n' +
-					    '<article class="post-style-two">\n' +
-					    '\n' +
-					    '<div class="post-contnet-wrap-top">\n' +
-					    '\n' +
-					    '<div class="post-footer">\n' +
-					    '\n' +
-					    '<div class="post-author-block">\n' +
-					    '\n' +
-					    '<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + username + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
-					    '\n' +
-					    '<div class="author-info">\n' +
-					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time" id="articletime_'+permlink+'"></div></h5>\n' +
-					    '\n' +    
-					    '</div>\n' +
-					    '\n' + 
-					    '</div>\n' +
-					    '\n' +
-					    '<div class="post-comments"><span class="post-meta">' + category + '</span></div>\n' +
-					    '\n' +
-					    '</div>\n' +
-					    '\n' +
-					    '</div>\n' + 
-					    '\n' +
-					    '<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + permlink + '" data-author="' + username + '">' + thumbnail + '</a></div>\n' + 
-					    '\n' +
-					    '<div class="post-contnet-wrap">\n' +
-					    '\n' +
-					    '<h4 class="post-title"><a href="' + exturl + '" target="_blank">' + title + '</a></h4>\n' +
-					    '\n' +
-					    '<p class="post-entry post-tags">' + metatags + '</p>\n' +
-					    '\n' +
-					    '<div class="post-footer">\n' +
-					    '<div class="post-author-block">\n' +
-					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + res.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
-					    '</div>\n' +
-					    '<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
-					    '</div>\n' +
-					    '</div>\n' +
-				    '</article></div>';
+					    
+				   
+				    
 
+				    $('#article_'+permlink+' div.post-meta').html(category);
 				    
 				    
-				    $("#contentposts").append(responsehtml);
 				    
 				});
-				    $('#articletime_'+resulthtml[i]['permlink']).html(timstamp);
+				   
 				    
 				    
 				    
