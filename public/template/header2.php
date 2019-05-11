@@ -19,19 +19,23 @@
 /* Center the loader */
 #loader {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    margin: -60px 0 0 -60px;
+    border: 7px solid #4147a1;
+    border-radius: 50%;
+    border-top: 7px solid #4147a1;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s ease-in-out infinite; 
+    animation: spin 2s ease-in-out infinite;
+  
+      text-align: center;
+    font-size: 22px;
+    padding-top: 38px;
+    color: #c51d24;
+  
 }
 
 @-webkit-keyframes spin {
@@ -62,7 +66,7 @@
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
-    
+    .myloader{display:none;}
     .latest-post-section{position:relative;}
 </style>
 </head>
