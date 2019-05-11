@@ -1,9 +1,8 @@
-
 <?php include('head.php'); ?>
 <div class="container" style="    margin: 20px auto;">
   <h2>
 	  Events
-	  <a href="add_event.php" class="btn btn-primary">Create Event</a>
+	  <a href="add_event.php" class="btn btn-primary" style="float: right;">Create Event</a>
   </h2>
   <p id="total_result"></p>
   <div id="show_results"></div>
@@ -43,7 +42,7 @@
 <style>table.dataTable thead th{    border-bottom: 1px solid #dee2e6;}.dataTables_length{display:none !important;}.dataTables_wrapper .dataTables_filter input{    display: block;width: auto;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;color: #495057;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;}table.dataTable.no-footer{    border-bottom: 1px solid #dee2e6;}</style>
 <script>
 
-	function openpost_popup(self){
+	function openevent_popup(self){
 		var permlink = $(self).data('permlink');
 		var author = $(self).data('author');
 		var category = $(self).data('category');
@@ -115,7 +114,15 @@ $(document).ready(function(){
 			if(response.status == "OK") {
 				var result_data = response.html_data;
 				var total = response.total;
-				$("#total_result").html(total+" Events found.");
+				$("#total_result").html(total+" Posts found.");
+				var result_html = ' <table class="table table-bordered" id="event_table"><thead><tr><th>Title</th><th>Tags</th><th>Image</th><th>Action</th></tr></thead><tbody >';
+				for(i=0;i<result_data.length;i++){
+					var action_var = "Edit";
+					result_html += '<tr><td>'+result_data[i]['title']+'</td><td>'+result_data[i]['tags']+'</td><td><img src="'+result_data[i]['image']+'"/></td><td><a href="javascript:"  id="event_'+result_data[i]['id']+'" onclick="return openevent_popup(this)" class="btn btn-small btn-primary" data-title="'+result_data[i]['title']+'" data-image="'+result_data[i]['image']+'" data-tags="'+result_data[i]['tags']+'" >'+action_var+'</a></td></tr>';
+				}
+				result_html += '</tbody></table>';
+				$("#show_results").html(result_html);
+				$('#event_table').DataTable({language: { search: '', searchPlaceholder: "Search..." }});
 			}
 		}
 	});
