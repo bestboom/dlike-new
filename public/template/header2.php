@@ -34,7 +34,9 @@
       text-align: center;
     font-size: 22px;
     padding-top: 38px;
-    color: #c51d24;
+
+      background: #4147a1;
+    color: #ffffff;
   
 }
 
