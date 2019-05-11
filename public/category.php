@@ -578,6 +578,25 @@
 				});
 
 
+				steem.api.getActiveVotes(username , permlink, function(err, result) {
+				    if(result === Array) {
+					var voterList = result;
+					} else {
+					var voterList = [];
+				    }
+				    if(!(voterList === Array)) {
+					voterList = [];
+				    }
+				    var voterList = result;
+				for (let j = 0; j < voterList.length; j++) {
+					if (voterList[j].voter == username) { 
+						$("#vote_icon" + permlink + author).css("color", "RED"); 
+						$('#vote_icon' + permlink + author).click(function(){return false;});
+						$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+					}
+				}                        
+				});
+
 				
 					
 				    
