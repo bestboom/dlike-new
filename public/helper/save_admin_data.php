@@ -4,11 +4,10 @@
         error_reporting(0);
         require '../includes/config.php';
         if(isset($_POST['tag']) && $_POST['tag'] == "events"){
-            if(!is_dir("Uploads/events/")) {
-                $oldmask = umask(0);
-                mkdir("Uploads/events/", 0777);
-                umask($oldmask);
+            if(!is_dir("/Uploads/events/")) {
+                mkdir("/Uploads/events/", 0777);
             }
+                die;
 
             // Move the uploaded file
             move_uploaded_file($_FILES["upload"]["tmp_name"], "Uploads/events/". $_FILES["upload"]["name"]);
