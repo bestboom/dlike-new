@@ -2,6 +2,7 @@
 <div class="container" style="    margin: 20px auto;">
   <h2>
 	  Events
+	  <a href="javascript:" class="btn bg-success text-white" data-option="enable" id="events_show_status" style="float: right;margin-left: 5px;">Enable</a>
 	  <a href="add_event.php" class="btn btn-primary" style="float: right;">Create Event</a>
   </h2>
   <p id="total_result"></p>
@@ -67,6 +68,43 @@ $(document).ready(function(){
 
 	
 	var savepoststatus=$('#savepoststatus');
+	var events_show_status = $('#events_show_status');
+
+	events_show_status.click(function(){
+		$("#loader").show();
+		var option = $(this).data('option');
+		var setclass="bg-danger";
+		var setoption="disable";
+		
+		$.ajax({
+		    type: "POST",
+		    url: '/helper/poststatus.php',
+		    data:{'tag':'settings','type':'events','option':option},
+		    dataType: 'json',
+		    success: function(response) {
+			if(response.status == "OK") {
+				
+			    toastr.success(response.message);
+			    if(option == "disable") {
+					setclass = "bg-success";
+					setoption="enable";
+				}
+			    $(this).removeClass(setclass);
+			    $(this).data('option',setoption);
+			    
+				
+			}
+			else {
+			    toastr.error(response.message);
+			    return false;
+			}
+		    },
+		    error: function() {
+				toastr.error('Error occured');
+			    return false;
+		    }
+	    });
+	});
 
 	savepoststatus.click(function(){
 
@@ -129,6 +167,21 @@ $(document).ready(function(){
 					result_html += '<tr><td>'+result_data[i]['title']+'</td><td>'+result_data[i]['tags']+'</td><td><img src="'+result_data[i]['image']+'" style="    max-height: 100px;"/></td><td><a href="javascript:"  id="event_'+result_data[i]['id']+'" onclick="return openevent_popup(this)" class="btn btn-small btn-primary" data-title="'+result_data[i]['title']+'" data-image="'+result_data[i]['image']+'" data-tags="'+result_data[i]['tags']+'" >'+action_var+'</a></td></tr>';
 				}
 				result_html += '</tbody></table>';
+
+				var main_event_status = response.main_event_status
+
+				if(main_event_status == "disable") {
+					setclass = "bg-danger";
+					setoption="disable";
+				}
+				else {
+					setclass = "bg-success";
+					setoption="enable";
+				}
+			    $("#events_show_status").removeClass(setclass);
+			    $("#events_show_status").data('option',setoption);
+
+			    
 				$("#show_results").html(result_html);
 				$('#event_table').DataTable({language: { search: '', searchPlaceholder: "Search..." }});
 			}
