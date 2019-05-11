@@ -99,10 +99,10 @@ $(document).ready(function(){
 					r_class = "bg-success";
 					settoption = "Disable";
 				}
-			    $(this).addClass(setclass);
-			    $(this).removeClass(r_class);
-			    $(this).data('option',setoption);
-			    $(this).text(settoption);
+			    events_show_status.addClass(setclass);
+			    events_show_status.removeClass(r_class);
+			    events_show_status.data('option',setoption);
+			    events_show_status.text(settoption);
 			    
 				
 			}
