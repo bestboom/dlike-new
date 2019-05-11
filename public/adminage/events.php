@@ -82,6 +82,7 @@ $(document).ready(function(){
 		    data:{'tag':'settings','type':'events','option':option},
 		    dataType: 'json',
 		    success: function(response) {
+				$("#loader").hide();
 			if(response.status == "OK") {
 				
 			    toastr.success(response.message);
@@ -100,6 +101,7 @@ $(document).ready(function(){
 			}
 		    },
 		    error: function() {
+				$("#loader").hide();
 				toastr.error('Error occured');
 			    return false;
 		    }
@@ -107,7 +109,7 @@ $(document).ready(function(){
 	});
 
 	savepoststatus.click(function(){
-
+		$("#loader").show();
 	    var p_username = $("#p_username").val();
 	    var p_permlink = $("#p_permlink").val();
 	    var p_category = $("#p_category").val();
@@ -123,6 +125,7 @@ $(document).ready(function(){
 		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
 		    dataType: 'json',
 		    success: function(response) {
+				$("#loader").hide();
 			if(response.status == "OK") {
 			    toastr.success(response.message);
 			    $('#PostStatusModal').modal('hide');
@@ -142,6 +145,7 @@ $(document).ready(function(){
 			}
 		    },
 		    error: function() {
+				$("#loader").hide();
 			$('#PostStatusModal').modal('hide');
 			 toastr.error('Error occured');
 			    return false;
