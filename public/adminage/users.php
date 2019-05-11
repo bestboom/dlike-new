@@ -43,10 +43,12 @@
 			<input type="hidden" id="put_username" />
 		
 			<p>How many tokens to pay and reason of sending?</p>
-			<input type="text" id="pu_token" class="form-data" />
-			<br><br>
-			<textarea id="pu_reason" class="form-data" ></textarea>
-			<br><br>
+			<div class="text-left">
+			    <label>Token</label>
+			    <input type="text" id="pu_token" placeholder="Please enter token" class="form-control" />
+			    <label>Reason</label>
+			    <textarea id="pu_reason" class="form-control" placeholder="Please enter reason" ></textarea>
+			</div>
 		    <p><input type="button" id="pay_usertoken" class="btn btn-primary" value="Pay"/></p>
 				
 		</div>
