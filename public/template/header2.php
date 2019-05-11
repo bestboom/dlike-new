@@ -66,7 +66,6 @@
 </head>
 <body>
   
-  <div id="loader"></div>
   
     <div class="banner-block">
         <nav class="navbar main-nav navbar-expand-lg">
