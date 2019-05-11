@@ -46,10 +46,10 @@
 	  <!-- Modal content-->
 	  <div class="modal-content">
 	    <div class="modal-body text-center">
-		    <p>How many hours older posts you want to delete?</p>
+		    
 			<div class="text-left">
-			    <label>Hours</label>
-			    <input type="text" id="p_hours" class="form-control" placeholder="Please enter hours"/>
+			    <label>How many hours older posts you want to delete?</label>
+			    <input type="text" id="p_hours" class="form-control" placeholder="Please enter hours"/><br>
 			</div>
 		    <p><input type="button" id="deleteposts_status" class="btn btn-primary" value="Delete"/></p>
 			    
