@@ -38,7 +38,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 
 	
-	$sql1 = 'SELECT json_metadata FROM steemposts order by id DESC';
+	$sql1 = 'SELECT json_metadata,username,permlink FROM steemposts order by id DESC';
 	$result1 = $conn->query($sql1);
 	if ($result1->num_rows > 0) {
 		while($row1 = $result1->fetch_assoc()) {
@@ -51,8 +51,11 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 			}
 		}
 		$strReturn['status'] = 'OK';
-		print_r($strReturn);
 	}
+	else {
+		$strReturn['status'] = 'error';
+	}
+  	echo json_encode($strReturn);die;
 
 }
 ?>
