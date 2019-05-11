@@ -187,7 +187,7 @@
 				   
 				    
 
-				    $('#article_'+permlink+' div.post-meta').html(category);
+				    $('#article_'+permlink+' span.post-meta').html(category);
 				    
 				    
 				    
