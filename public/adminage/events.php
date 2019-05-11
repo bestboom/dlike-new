@@ -118,7 +118,7 @@ $(document).ready(function(){
 				var result_html = ' <table class="table table-bordered" id="event_table"><thead><tr><th>Title</th><th>Tags</th><th>Image</th><th>Action</th></tr></thead><tbody >';
 				for(i=0;i<result_data.length;i++){
 					var action_var = "Edit";
-					result_html += '<tr><td>'+result_data[i]['title']+'</td><td>'+result_data[i]['tags']+'</td><td><img src="'+result_data[i]['image']+'"/></td><td><a href="javascript:"  id="event_'+result_data[i]['id']+'" onclick="return openevent_popup(this)" class="btn btn-small btn-primary" data-title="'+result_data[i]['title']+'" data-image="'+result_data[i]['image']+'" data-tags="'+result_data[i]['tags']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['title']+'</td><td>'+result_data[i]['tags']+'</td><td><img src="'+result_data[i]['image']+'" style="    max-height: 100px;"/></td><td><a href="javascript:"  id="event_'+result_data[i]['id']+'" onclick="return openevent_popup(this)" class="btn btn-small btn-primary" data-title="'+result_data[i]['title']+'" data-image="'+result_data[i]['image']+'" data-tags="'+result_data[i]['tags']+'" >'+action_var+'</a></td></tr>';
 				}
 				result_html += '</tbody></table>';
 				$("#show_results").html(result_html);
