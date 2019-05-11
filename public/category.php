@@ -96,8 +96,8 @@
 				    var responsehtml = '';
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
-
-			
+				    var timstamp = resulthtml[i]['created_at'];
+				    console.log(timstamp);
 				   
 
 				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
@@ -120,6 +120,7 @@
 	
 					let title = res.title;
 					let created = res.created;
+					let created = timstamp;
 					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 					let author = res.author;
 					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
