@@ -47,7 +47,7 @@
         </div>
     </div><!-- sub-header -->
     
-    <div id="loader"></div>
+    
     <div class="latest-post-section">
 	<div class="container">
 	    <div class="row  align-items-center h-100" style="margin-bottom:30px;">
@@ -56,6 +56,7 @@
                 </div>
                 <div class="col-md-9 lay">&nbsp;</div>
             </div>
+	    <div id="loader"></div>
 	    <div class="row" id="contentposts">
 	    </div>
 	</div>
@@ -77,7 +78,7 @@
     	$(document).ready(function(){
 			
 		$("#loader").show();
-		$(".latest-post-section").hide();
+		
       
 		  var tagname = '<?php echo $_GET['tag'];?>';
 	
@@ -175,9 +176,9 @@
 					    '</div>\n' +
 				    '</article></div>';
 
-				    $("#contentposts").append(responsehtml);
+				    
 				    $("#loader").hide();
-				    $(".latest-post-section").show();
+				    $("#contentposts").append(responsehtml);
 				});
 				    
 				    
