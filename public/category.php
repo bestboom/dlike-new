@@ -149,7 +149,7 @@
 
 				   $("#contentposts").append(responsehtml);
 
-				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
+				    steem.api.getContent(username , permlink, function(err, res) {
 
 					let metadata = JSON.parse(res.json_metadata);
 					let img = new Image();
