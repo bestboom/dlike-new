@@ -126,6 +126,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		data: {'senderobj': obj},
 		success: function(data) {
+		    $("#loader").hide();
 		    if(data.status == "no") {
 			$('#tokenuserPostStatusModal').modal('hide');
 			    toastr.error(data.message);
@@ -140,7 +141,7 @@ $(document).ready(function(){
 	});
 
 	saveuserpoststatus.click(function(){
-
+	    $("#loader").show();
 	    var p_username = $("#pu_username").val();
 	    var p_status = $("#userstatus_select").val();
 
@@ -156,6 +157,7 @@ $(document).ready(function(){
 		    data:{'p_username':p_username,'p_status':p_status},
 		    dataType: 'json',
 		    success: function(response) {
+			$("#loader").hide();
 			if(response.status == "OK") {
 			    toastr.success(response.message);
 			    $('#userPostStatusModal').modal('hide');
@@ -189,6 +191,7 @@ $(document).ready(function(){
 			}
 		    },
 		    error: function() {
+			$("#loader").hide();
 				$('#userPostStatusModal').modal('hide');
 				toastr.error('Error occured');
 			    return false;
