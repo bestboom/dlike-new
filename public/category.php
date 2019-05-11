@@ -93,12 +93,12 @@
 				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
-				    var timstamp = '';
+
 				    var responsehtml = '';
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
 
-				    timstamp = resulthtml[i]['created_at'];
+				   var timstamp = resulthtml[i]['created_at'];
 
 				   
 
@@ -150,7 +150,7 @@
 					    '\n' +
 					    '<div class="author-info">\n' +
 					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time" id="article_'+permlink+'_time"></div></h5>\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time" id="articletime_'+permlink+'"></div></h5>\n' +
 					    '\n' +    
 					    '</div>\n' +
 					    '\n' + 
@@ -184,11 +184,13 @@
 				    $("#contentposts").append(responsehtml);
 				    
 				});
-				    $('#article_'+resulthtml[i]['permlink']+'_time').html(timstamp);
-				    $("#loader").hide();
-				    $(".myloader").css('display','flex');
+				    $('#articletime_'+resulthtml[i]['permlink']).html(timstamp);
+				    
+				    
 				    
 				}
+				$("#loader").hide();
+				$(".myloader").css('display','flex');
 				
 				
 			    }
