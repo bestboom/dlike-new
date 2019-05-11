@@ -54,6 +54,11 @@
 				$strReturn['html_data'][] = $dataset;
 			}
 		}
+		
+		if(isset($_POST['data']) && $_POST['data'] == "events"){
+			$s_sql = "SELECT * FROM `settings` where `type` = 'events' order by created_at DESC";
+		}
+		
 		$strReturn['total'] = $result->num_rows;
     		$strReturn['status'] = 'OK';
 	} else {
