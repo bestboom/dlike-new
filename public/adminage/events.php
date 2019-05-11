@@ -5,7 +5,10 @@
 	  <a href="add_event.php" class="btn btn-primary" style="float: right;">Create Event</a>
   </h2>
   <p id="total_result"></p>
-  <div id="show_results"></div>
+  <div class="latest-post-section">
+	  <div id="loader">Loading</div>
+	  <div id="show_results"></div>
+  </div>
 
   <div class="modal fade" id="PostStatusModal" role="dialog">
 	<div class="modal-dialog">
@@ -59,6 +62,10 @@
 
     
 $(document).ready(function(){
+
+	$("#loader").show();
+
+	
 	var savepoststatus=$('#savepoststatus');
 
 	savepoststatus.click(function(){
@@ -111,6 +118,7 @@ $(document).ready(function(){
 		data:{'data':'events'},
 		dataType: 'json',
 		success: function(response) {
+			$("#loader").hide();
 			if(response.status == "OK") {
 				var result_data = response.html_data;
 				var total = response.total;
