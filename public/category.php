@@ -93,10 +93,12 @@
 				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
+				    var timstamp = '';
 				    var responsehtml = '';
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
-				    var timstamp = resulthtml[i]['created_at'];
+
+				    timstamp = resulthtml[i]['created_at'];
 
 				   
 
