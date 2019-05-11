@@ -65,7 +65,7 @@
 				}
 			}
 			else {
-				$strReturn['main_event_status'] = 'enable';	
+				$strReturn['main_event_status'] = 'disable';	
 			}
 		}
 		
