@@ -442,7 +442,7 @@
 					    '\n' +
 					    '<div class="author-info">\n' +
 					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
+					    '<h5><a href="#">' + username + "&nbsp;" +adduserhtml +'</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
 					    '\n' +    
 					    '</div>\n' +
 					    '\n' + 
@@ -466,7 +466,7 @@
 					    '<div class="post-author-block">\n' +
 					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span class="pending_payout_value"></span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
 					    '</div>\n' +
-					    '<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span class="active_votes">&nbsp; |  Votes</span></div>\n' +
+					    '<div class="post-comments">'+addfeaturedhtml+addposthtml+'| &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span class="active_votes">&nbsp; |  Votes</span></div>\n' +
 					    '</div>\n' +
 					    '</div>\n' +
 				    '</article></div>';
