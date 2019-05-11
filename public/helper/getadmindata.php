@@ -13,6 +13,9 @@
   else if(isset($_POST['data']) && $_POST['data'] == "fposts"){
 	$sql = "SELECT sp.username as author,sp.title as title,sp.json_metadata,sp.permlink,ut.id as fid FROM steemposts as sp left join featuredposts as ut on ut.permlink=sp.permlink";
   }
+  else if(isset($_POST['data']) && $_POST['data'] == "events"){
+	$sql = "SELECT * FROM events order by created_at DESC";
+  }
   	
 	$result = $conn->query($sql);
 
@@ -40,6 +43,14 @@
 				$dataset['category'] = $json_metadata['category'];
 				$dataset['imgurl'] = $json_metadata['image'];
 				$dataset['fid'] = $row['fid'];
+				$strReturn['html_data'][] = $dataset;
+			}
+			else if(isset($_POST['data']) && $_POST['data'] == "events"){
+				$dataset['id'] = $row['id'];
+				$dataset['title'] = $row['title'];
+				$dataset['image'] = $row['image'];
+				$dataset['tags'] = $row['tags'];
+				
 				$strReturn['html_data'][] = $dataset;
 			}
 		}
