@@ -92,18 +92,17 @@
 				var resulthtml = response.data_row;
 				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
-				//for(i=0;i<resulthtml.length;i++) {
-				$.each(resulthtml, function(i, item) {
+				for(i=0;i<resulthtml.length;i++) {
 				    var timstamp = '';
 				    var responsehtml = '';
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
 
-				    timstamp = item.created_at;
+				    timstamp = resulthtml[i]['created_at'];
 
 				   
 
-				    steem.api.getContent(item.username , item.permlink, function(err, res) {
+				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
 
 					let metadata = JSON.parse(res.json_metadata);
 					let img = new Image();
@@ -122,8 +121,6 @@
 
 	
 					let title = res.title;
-					console.log("timstamp:"+timstamp);
-					console.log("restime:"+res.created);
 					//let created = res.created;
 					let created = timstamp;
 					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
@@ -139,7 +136,7 @@
 				    var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 
-					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
+					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="" id="article_'+permlink+'">\n' +
 					    '\n' +
 					    '<article class="post-style-two">\n' +
 					    '\n' +
@@ -153,7 +150,7 @@
 					    '\n' +
 					    '<div class="author-info">\n' +
 					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time">' + created_at + '</div></h5>\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time" id="article_'+permlink+'_time"></div></h5>\n' +
 					    '\n' +    
 					    '</div>\n' +
 					    '\n' + 
@@ -183,13 +180,15 @@
 				    '</article></div>';
 
 				    
+				    
+				    $("#contentposts").append(responsehtml);
+				    
+				});
+				    $('#article_'+resulthtml[i]['permlink']+'_time').(timstamp);
 				    $("#loader").hide();
 				    $(".myloader").css('display','flex');
-				    $("#contentposts").append(responsehtml);
-				});
 				    
-				    
-				});​
+				}
 				
 				
 			    }
