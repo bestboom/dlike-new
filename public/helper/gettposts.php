@@ -39,6 +39,27 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 		$result1 = $conn->query($sql1);
 		if ($result1->num_rows > 0) {
 			while($row1 = $result1->fetch_assoc()) {
+				
+				$userstatus = "SELECT * FROM userstatus where username = '".$_POST['author']."'";
+				$userstatusresult = $conn->query($userstatus);
+				if ($userstatusresult->num_rows > 0) {
+					while($row = $userstatusresult->fetch_assoc()) {
+						$data['userstatus'] = $row['status'];
+					}
+				} else {
+					$data['userstatus'] = '';
+				}
+				
+				$poststatus = "SELECT * FROM poststatus where permlink = '".$_POST['permlink']."'";
+				$resultpoststatus = $conn->query($poststatus);
+				if ($resultpoststatus->num_rows > 0) {
+					while($row = $resultpoststatus->fetch_assoc()) {
+						$data['poststatus'] = $row['status'];
+					}
+				} else {
+					$data['poststatus'] = 'error';
+				}
+				
 			    
 				$json_metadata = json_decode($row1['json_metadata'],true);
 				$data['username'] = $row1['username'];
@@ -70,6 +91,28 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 			
 			$json_metadata = json_decode($row1['json_metadata'],true);
 			if(strtolower($json_metadata['category']) == strtolower($_REQUEST['catname'])) {
+				
+				$userstatus = "SELECT * FROM userstatus where username = '".$_POST['author']."'";
+				$userstatusresult = $conn->query($userstatus);
+				if ($userstatusresult->num_rows > 0) {
+					while($row = $userstatusresult->fetch_assoc()) {
+						$data['userstatus'] = $row['status'];
+					}
+				} else {
+					$data['userstatus'] = '';
+				}
+				
+				$poststatus = "SELECT * FROM poststatus where permlink = '".$_POST['permlink']."'";
+				$resultpoststatus = $conn->query($poststatus);
+				if ($resultpoststatus->num_rows > 0) {
+					while($row = $resultpoststatus->fetch_assoc()) {
+						$data['poststatus'] = $row['status'];
+					}
+				} else {
+					$data['poststatus'] = 'error';
+				}
+				
+				
 				$data['username'] = $row1['username'];
 				$data['permlink'] = $row1['permlink'];
 				$data['title'] = $row1['title'];
