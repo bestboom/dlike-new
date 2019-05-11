@@ -1,0 +1,119 @@
+.signup-container {
+    padding: 5rem;
+}
+
+.signup {
+    background: #fff;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, .4);
+    border-radius: 3px;
+    display: flex;
+    margin: 0 auto;
+    width: 800px;
+}
+
+.signup h2 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.signup-signup,
+.signup-login {
+    width: 50%
+}
+
+/** SIGNUP
+ =============================== */
+
+.signup-signup {
+    padding: 3rem;
+    text-align: center;
+}
+
+.signup-signup-icon {
+    display: inline-block;
+    font-size: 3rem;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.signup-signup form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-signup form label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-signup form input {
+    border: 1px solid #d9d9d9;
+    border-radius: 0.25rem;
+    padding: 0.25rem 0.25rem 0.25rem 2rem;
+    width: 100%;
+}
+
+.signup-signup .input-username {
+    position: relative;
+}
+
+.signup-signup .input-username .fa {
+    left: 0;
+    line-height: 2.5rem;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 2rem;
+}
+
+.signup-signup .input-username .loader {
+    line-height: 2.5rem;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: -2px;
+    width: 2rem;
+}
+
+.signup-signup button {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.signup-signup button:disabled {
+    color: rgba(0, 0, 0, .25);
+    background-color: #f5f5f5;
+    border-color: #d9d9d9;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.signup-signup .message {
+    text-align: left;
+    width: 100%;
+}
+
+/** LOGIN
+ =============================== */
+
+.signup-login {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.signup-login a {
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: .375rem 2rem;
+}
+
+.signup-login-icon {
+    display: inline-block;
+    font-size: 3rem;
+    padding: 2rem 0;
+    text-align: center;
+    width: 100%;
+}
