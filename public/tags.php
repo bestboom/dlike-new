@@ -73,6 +73,8 @@
 <script>
 
     	$(document).ready(function(){
+			
+			$("#loader").show();
       
 		  var tagname = '<?php echo $_GET['tag'];?>';
 	
@@ -172,7 +174,7 @@
 
 					$("#contentposts").append(responsehtml);
 
-				    
+				    $("#loader").hide();
 				    });
 				    
 				    
