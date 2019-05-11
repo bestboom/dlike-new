@@ -181,13 +181,13 @@ $(document).ready(function(){
 				if(main_event_status == "disable") {
 					$("#events_show_status").removeClass("bg-success");
 					$("#events_show_status").addClass("bg-danger");
-					$("#events_show_status").data('option',main_event_status);
+					$("#events_show_status").data('option','enable');
 					$("#events_show_status").text(main_event_status);
 				}
 				else {
 					$("#events_show_status").removeClass("bg-danger");
 					$("#events_show_status").addClass("bg-success");
-					$("#events_show_status").data('option',main_event_status);
+					$("#events_show_status").data('option',"disable");
 					$("#events_show_status").text(main_event_status);
 				}
 			    
