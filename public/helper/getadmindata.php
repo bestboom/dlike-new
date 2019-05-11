@@ -56,7 +56,14 @@
 		}
 		
 		if(isset($_POST['data']) && $_POST['data'] == "events"){
-			$s_sql = "SELECT * FROM `settings` where `type` = 'events' order by created_at DESC";
+			$s_sql = "SELECT * FROM `settings` where `type` = 'events'";
+			$result_s = $conn->query($s_sql);
+
+			if ($result_s->num_rows > 0) {
+				while($row_s = $result_s->fetch_assoc()) {
+					$strReturn['main_event_status'] = $row_s['options'];
+				}
+			}
 		}
 		
 		$strReturn['total'] = $result->num_rows;
