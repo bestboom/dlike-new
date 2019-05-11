@@ -97,7 +97,7 @@
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
 				    var timstamp = resulthtml[i]['created_at'];
-				    console.log(timstamp);
+
 				   
 
 				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
