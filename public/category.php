@@ -184,7 +184,7 @@
 				    $("#contentposts").append(responsehtml);
 				    
 				});
-				    $('#article_'+resulthtml[i]['permlink']+'_time').(timstamp);
+				    $('#article_'+resulthtml[i]['permlink']+'_time').html(timstamp);
 				    $("#loader").hide();
 				    $(".myloader").css('display','flex');
 				    
