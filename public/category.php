@@ -47,15 +47,17 @@
         </div>
     </div><!-- sub-header -->
     <div class="latest-post-section">
-		<div class="container">
-			<div class="row  align-items-center h-100">
+	<div class="container">
+	    <div class="row  align-items-center h-100 myloader" style="margin-bottom:30px;">
                 <div class="row col-md-3 justify-content-center">
-                    <h4 class="lab_post"><?php echo $_GET['cat'];?></h4>
+                        <h4 class="lab_post"><?php echo $_GET['cat'];?></h4>
                 </div>
                 <div class="col-md-9 lay">&nbsp;</div>
             </div>
-	    	<div class="row" id="catposts"></div>
-		</div>
+	    <div id="loader">Loading</div>
+	    <div class="row" id="contentposts">
+	    </div>
+	</div>
     </div>
   
 <?php include('template/footer2.php'); ?>
@@ -63,7 +65,7 @@
 	$(document).ready(function(){
 		let catname = '<?php echo $_GET['cat'];?>';
 		
-		let $tag, $limit, content = "#catposts";
+		let $tag, $limit, content = "#contentposts";
 		let query = {
 			tag: "dlike",
 			limit: 92,
