@@ -194,6 +194,7 @@
 			$("#userPostStatusModal").modal('show');
 		    }
 		    else {
+			$("#userstatus_select").val('');
 			$("#userPostStatusModal").modal('show');
 		    }
 		    
