@@ -78,7 +78,7 @@ $(document).ready(function(){
 		
 		$.ajax({
 		    type: "POST",
-		    url: '/helper/poststatus.php',
+		    url: '/helper/save_admin_data.php',
 		    data:{'tag':'settings','type':'events','option':option},
 		    dataType: 'json',
 		    success: function(response) {
