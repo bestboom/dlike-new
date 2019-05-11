@@ -19,8 +19,9 @@
                         $events_q = $conn->query($events);  
                         $strReturn['status'] = 'OK';
                         $strReturn['message'] = 'successfully updated.';
+                        
                 }
-                
+                echo json_encode($strReturn);die;
         }
         
 ?>
