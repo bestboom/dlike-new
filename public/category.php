@@ -188,6 +188,16 @@
 				    
 
 				    $('#article_'+permlink+' span.post-meta').html(category);
+				    $('#article_'+permlink+' a.post_detail').html(thumbnail);
+				    $('#article_'+permlink+' h4.post-title a').attr('href',exturl);
+				    $('#article_'+permlink+' h4.post-title a').html(title);
+				    $('#article_'+permlink+' p.post-tags').html(metatags);
+				    $('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
+				    $('#article_'+permlink+' span.active_votes').html("&nbsp; | "+res.active_votes.length+" Votes");
+				    
+				    
+				    
+				    
 				    
 				    
 				    
