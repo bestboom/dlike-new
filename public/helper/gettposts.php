@@ -39,7 +39,7 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 
 	
 	$datasend = '"category":"[[:<:]]'.$_REQUEST['catname'].'[[:>:]]"';
-	$sql1 = 'SELECT id FROM steemposts WHERE json_metadata RLIKE '.$datasend.' order by created_at DESC';
+	echo $sql1 = 'SELECT id FROM steemposts WHERE json_metadata RLIKE '.$datasend.' order by created_at DESC';die;
 	$result1 = $conn->query($sql1);
 	if ($result1->num_rows > 0) {
 		while($row1 = $result1->fetch_assoc()) {
