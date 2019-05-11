@@ -385,7 +385,7 @@
 	});
 		
       
-		  var tagname = '<?php echo $_GET['tag'];?>';
+		  var catname = '<?php echo $_GET['cat'];?>';
 	
 			$.ajax({
 			type: "POST",
