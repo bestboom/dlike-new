@@ -171,12 +171,12 @@ $(document).ready(function(){
 				var main_event_status = response.main_event_status
 
 				if(main_event_status == "disable") {
-					setclass = "bg-success";
-					setoption="enable";
-				}
-				else {
 					setclass = "bg-danger";
 					setoption="disable";
+				}
+				else {
+					setclass = "bg-success";
+					setoption="enable";
 					
 				}
 			    $("#events_show_status").removeClass(setclass);
