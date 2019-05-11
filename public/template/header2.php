@@ -62,6 +62,8 @@
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
+    
+    .latest-post-section{position:relative;}
 </style>
 </head>
 <body>
