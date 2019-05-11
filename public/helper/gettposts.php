@@ -40,7 +40,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 		if ($result1->num_rows > 0) {
 			while($row1 = $result1->fetch_assoc()) {
 				
-				$userstatus = "SELECT * FROM userstatus where username = '".$_POST['author']."'";
+				$userstatus = "SELECT * FROM userstatus where username = '".$row1['username']."'";
 				$userstatusresult = $conn->query($userstatus);
 				if ($userstatusresult->num_rows > 0) {
 					while($row = $userstatusresult->fetch_assoc()) {
@@ -50,7 +50,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 					$data['userstatus'] = '';
 				}
 				
-				$poststatus = "SELECT * FROM poststatus where permlink = '".$_POST['permlink']."'";
+				$poststatus = "SELECT * FROM poststatus where permlink = '".$row1['permlink']."'";
 				$resultpoststatus = $conn->query($poststatus);
 				if ($resultpoststatus->num_rows > 0) {
 					while($row = $resultpoststatus->fetch_assoc()) {
@@ -92,7 +92,7 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 			$json_metadata = json_decode($row1['json_metadata'],true);
 			if(strtolower($json_metadata['category']) == strtolower($_REQUEST['catname'])) {
 				
-				$userstatus = "SELECT * FROM userstatus where username = '".$_POST['author']."'";
+				$userstatus = "SELECT * FROM userstatus where username = '".$row1['username']."'";
 				$userstatusresult = $conn->query($userstatus);
 				if ($userstatusresult->num_rows > 0) {
 					while($row = $userstatusresult->fetch_assoc()) {
@@ -102,7 +102,7 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 					$data['userstatus'] = '';
 				}
 				
-				$poststatus = "SELECT * FROM poststatus where permlink = '".$_POST['permlink']."'";
+				$poststatus = "SELECT * FROM poststatus where permlink = '".$row1['permlink']."'";
 				$resultpoststatus = $conn->query($poststatus);
 				if ($resultpoststatus->num_rows > 0) {
 					while($row = $resultpoststatus->fetch_assoc()) {
