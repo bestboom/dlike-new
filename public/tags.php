@@ -417,6 +417,7 @@
 				    var addposthtml = "";
 				    var add_onclick2 = '';
 				    var ucolorset = '';
+				    var show_status = '';
 				    
 				if(c_username == "dlike" || c_username == "chirag-im") {
 
@@ -444,6 +445,7 @@
 
 					add_onclick2 = 'onclick="return openuser_popup(this)"';
 					ucolorset = 'style="color:gray;"';
+					show_status = 'yes';
 				}
 				var mylabel = permlink +username;
 				var newValue = mylabel.replace('.', '');
@@ -452,19 +454,24 @@
 				
 				if(userstatus == "0") {
 				    ucolorset = 'style="color:black"';
+				    show_status = "yes";
 				}
 				else if(userstatus == "1") {
 				    ucolorset = 'style="color:orange"';
+				    show_status = "yes";
 				}
 				else if(userstatus == "2") {
 				    ucolorset = 'style="color:green"';
+				    show_status = "yes";
 				}
 				else if(userstatus == "3") {
 				    ucolorset = 'style="color:red"';
+				    show_status = "yes";
 				}
 		
-
-				adduserhtml += '<a '+ucolorset+' class="userstatus_icon'+newValue+' showcursor" '+add_onclick2+' data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
+				if(show_status == 'yes') {
+				    adduserhtml += '<a '+ucolorset+' class="userstatus_icon'+newValue+' showcursor" '+add_onclick2+' data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
+				}
 
 				
 
