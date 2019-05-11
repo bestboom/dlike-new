@@ -5,7 +5,7 @@
 	  <a href="add_event.php" class="btn btn-primary" style="float: right;">Create Event</a>
   </h2>
   <p id="total_result"></p>
-  <div class="latest-post-section">
+  <div class="admin-latest-post-section">
 	  <div id="loader">Loading</div>
 	  <div id="show_results"></div>
   </div>
