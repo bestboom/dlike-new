@@ -89,6 +89,46 @@ $(document).ready(function(){
 
        
 	var saveuserpoststatus=$('#saveuserpoststatus');
+	var pay_usertoken=$('#pay_usertoken');
+
+
+	pay_usertoken.click(function(){
+	    $("#loader").show();
+	    var put_username = $("#put_username").val();
+	    var pu_token = $("#pu_token").val();
+
+	    
+	    if(pu_token == ""){
+			alert("Please enter tokens.");
+			return false;
+	    }
+	    
+	    $.ajax({
+		    type: "POST",
+		    url: '/helper/usertokens.php',
+		    data:{'p_username':put_username,'pu_token':pu_token},
+		    dataType: 'json',
+		    success: function(response) {
+			$("#loader").hide();
+			if(response.status == "OK") {
+			    toastr.success(response.message);
+			    $('#tokenuserPostStatusModal').modal('hide');
+				
+			}
+			else {
+			    $('#tokenuserPostStatusModal').modal('hide');
+			    toastr.error(response.message);
+			    return false;
+			}
+		    },
+		    error: function() {
+			$("#loader").hide();
+				$('#tokenuserPostStatusModal').modal('hide');
+				toastr.error('Error occured');
+			    return false;
+		    }
+	    });
+	});
 
 	saveuserpoststatus.click(function(){
 
