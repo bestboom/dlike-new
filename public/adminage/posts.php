@@ -2,7 +2,7 @@
 <div class="container" style="    margin: 20px auto;">
 	<h2>
 	    Posts
-	    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteposts">Delete Posts</button>
+	    <button type="button" style="float:right" class="btn btn-danger" data-toggle="modal" data-target="#deleteposts">Delete Posts</button>
 	</h2>
 	<p id="total_result"></p>
 
@@ -48,7 +48,7 @@
 	    <div class="modal-body text-center">
 		    <p>How many hours older posts you want to delete?</p>
 			<input type="text" id="p_hours" class="form-data" />
-			<br>
+			<br><br>
 		    <p><input type="button" id="deleteposts_status" class="btn btn-primary" value="Delete"/></p>
 			    
 	    </div>
