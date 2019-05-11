@@ -4,6 +4,24 @@ ini_set('display_startup_errors', 1);
 error_reporting(0);
 require '../includes/config.php';
 
+function timeago($date) {
+   $timestamp = strtotime($date);	
+   
+   $strTime = array("second", "minute", "hour", "day", "month", "year");
+   $length = array("60","60","24","30","12","10");
+
+   $currentTime = time();
+   if($currentTime >= $timestamp) {
+		$diff     = time()- $timestamp;
+		for($i = 0; $diff >= $length[$i] && $i < count($length)-1; $i++) {
+		$diff = $diff / $length[$i];
+		}
+
+		$diff = round($diff);
+		return $diff . " " . $strTime[$i] . "(s) ago ";
+   }
+}
+	
 if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 	
 	  
@@ -47,7 +65,7 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 			if(strtolower($json_metadata['category']) == strtolower($_REQUEST['catname'])) {
 				$data['username'] = $row1['username'];
 				$data['permlink'] = $row1['permlink'];
-				$data['created_at'] = $row1['created_at'];
+				$data['created_at'] = timeago($row1['created_at']);
 				$strReturn['data_row'][] = $data;
 			}
 		}
