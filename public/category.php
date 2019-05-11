@@ -92,17 +92,18 @@
 				var resulthtml = response.data_row;
 				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
-				for(i=0;i<resulthtml.length;i++) {
+				//for(i=0;i<resulthtml.length;i++) {
+				$.each(resulthtml, function(i, item) {
 				    var timstamp = '';
 				    var responsehtml = '';
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
 
-				    timstamp = resulthtml[i]['created_at'];
+				    timstamp = item.created_at;
 
 				   
 
-				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
+				    steem.api.getContent(item.username , item.permlink, function(err, res) {
 
 					let metadata = JSON.parse(res.json_metadata);
 					let img = new Image();
@@ -121,6 +122,8 @@
 
 	
 					let title = res.title;
+					console.log("timstamp:"+timstamp);
+					console.log("restime:"+res.created);
 					//let created = res.created;
 					let created = timstamp;
 					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
@@ -186,7 +189,7 @@
 				});
 				    
 				    
-				}
+				});​
 				
 				
 			    }
