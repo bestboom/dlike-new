@@ -50,6 +50,6 @@
   to{ bottom:0; opacity:1 }
 }
     .myloader{display:none;}
-    .latest-post-section{position:relative;}
+    .admin-latest-post-section{position:relative;}
 </style>
 </div>
