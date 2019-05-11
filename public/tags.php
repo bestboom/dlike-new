@@ -178,7 +178,7 @@
 
 				    
 				    $("#loader").hide();
-				    $(".myloader").show();
+				    $(".myloader").css('display','flex');
 				    $("#contentposts").append(responsehtml);
 				});
 				    
