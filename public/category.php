@@ -67,7 +67,7 @@
 		
 		let $tag, $limit, content = "#contentposts";
 		let query = {
-			tag: "dlike",
+			tag: catname,
 			limit: 92,
 		};
 
