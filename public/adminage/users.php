@@ -1,7 +1,10 @@
 <?php include('head.php'); ?>
 <div class="container" style="    margin: 20px auto;">
   <h2>Users</h2><p id="total_result"></p>
-  <div id="show_results"></div>
+  <div class="admin-latest-post-section">
+	  <div id="loader">Loading</div>
+	  <div id="show_results"></div>
+  </div>
 
   <div class="modal fade" id="userPostStatusModal" role="dialog">
 	<div class="modal-dialog">
@@ -30,6 +33,30 @@
 	  
 	</div>
   </div>
+  
+  <div class="modal fade" id="tokenuserPostStatusModal" role="dialog">
+	<div class="modal-dialog">
+	
+	  <!-- Modal content-->
+	  <div class="modal-content">
+		<div class="modal-body text-center">
+			<input type="hidden" id="put_username" />
+		
+			<p>Tokens</p>
+			<input type="text" id="pu_token" class="form-data" />
+			<br><br>
+		    <p><input type="button" id="pay_usertoken" class="btn btn-primary" value="Pay"/></p>
+				
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</div>
+	  </div>
+	  
+	</div>
+  </div>
+
+  
 </div>
 <?php include('../template/footer2.php'); ?>
 
@@ -47,8 +74,20 @@
 		$("#userPostStatusModal").modal('show');
     }
 
+    function opentokenuser_popup(self){
+		var author = $(self).data('author');
+		var status = $(self).data('status');
+		
+		$("#put_username").val(author);
+		$("#tokenuserPostStatusModal").modal('show');
+    }
+
     
 $(document).ready(function(){
+
+       $("#loader").show();
+
+       
 	var saveuserpoststatus=$('#saveuserpoststatus');
 
 	saveuserpoststatus.click(function(){
@@ -115,6 +154,7 @@ $(document).ready(function(){
 		data:{'data':'users'},
 		dataType: 'json',
 		success: function(response) {
+		       $("#loader").hide();
 			if(response.status == "OK") {
 				var result_data = response.html_data;
 				var total = response.total;
@@ -142,7 +182,7 @@ $(document).ready(function(){
 					}
 					
 					
-					result_html += '<tr><td>'+result_data[i]['username']+'</td><td id="user_s_'+result_data[i]['username']+'">'+set_status+'</td><td><a href="javascript:"  id="user_'+result_data[i]['username']+'" onclick="return openuser_popup(this)" class="btn btn-small btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+result_data[i]['username']+'</td><td id="user_s_'+result_data[i]['username']+'">'+set_status+'</td><td><a href="javascript:"  id="user_'+result_data[i]['username']+'" onclick="return openuser_popup(this)" class="btn btn-sm btn-primary" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a>&nbsp;<a href="javascript:"  id="tokenuser_'+result_data[i]['username']+'" onclick="return opentokenuser_popup(this)" class="btn btn-sm btn-info" data-author="'+result_data[i]['username']+'" data-status="'+result_data[i]['status']+'" >Pay tokens</a></td></tr>';
 				}
 
 				result_html += '</tbody></table>';
