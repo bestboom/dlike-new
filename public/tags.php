@@ -97,7 +97,7 @@
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
 
-			
+				    var timstamp = resulthtml[i]['created_at'];
 				   
 
 				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
@@ -125,7 +125,7 @@
 					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
 					
 					 var username = author;
-				    var created_at = created_time;
+				    var created_at = timstamp;
 				    var permlink = res.permlink;
 				    var metatags =  posttags;
 				    var exturl =   metadata.url;;
@@ -147,7 +147,7 @@
 					    '\n' +
 					    '<div class="author-info">\n' +
 					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time">' + created_time + '</div></h5>\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time">' + created_at + '</div></h5>\n' +
 					    '\n' +    
 					    '</div>\n' +
 					    '\n' + 
