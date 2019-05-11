@@ -212,6 +212,11 @@
 				
 				
 			    }
+			    else {
+				$("#loader").hide();
+				$(".myloader").css('display','flex');
+				$("#contentposts").append("No posts found.");
+			    }
 			}
 			});
 
