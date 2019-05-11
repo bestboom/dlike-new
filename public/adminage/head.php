@@ -1,4 +1,4 @@
-<?php include('template/header2.php');  ?>
+<?php include('../template/header2.php');  ?>
 <style>
   .admin-latest-post-section {
     position: relative;
