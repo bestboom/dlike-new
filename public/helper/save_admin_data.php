@@ -10,7 +10,7 @@
                 
 
             // Move the uploaded file
-            move_uploaded_file($_FILES["upload"]["tmp_name"], "/image/others/". "e_".$_FILES["upload"]["name"]);
+            move_uploaded_file($_FILES["upload"]["tmp_name"], "/images/others/". "e_".$_FILES["upload"]["name"]);
 die;
             $file_name = "Uploads/events/". $_FILES["upload"]["name"];
             $title = $_POST['title'];
