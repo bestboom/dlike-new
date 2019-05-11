@@ -126,7 +126,7 @@
 					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
 					
 					 var username = author;
-				    var created_at = created_time;
+				    var created_at = created;
 				    var permlink = res.permlink;
 				    var metatags =  posttags;
 				    var exturl =   metadata.url;;
