@@ -148,7 +148,7 @@
 					    '\n' +
 					    '<div class="author-info">\n' +
 					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time">' + created_time + '</div></h5>\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time">' + created_at + '</div></h5>\n' +
 					    '\n' +    
 					    '</div>\n' +
 					    '\n' + 
