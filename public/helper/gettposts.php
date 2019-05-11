@@ -18,7 +18,11 @@ function timeago($date) {
 		}
 
 		$diff = round($diff);
-		return $diff . " " . $strTime[$i] . "(s) ago ";
+		$addif = "";
+		if($diff>1) {
+			$addif = "s";
+		}
+		return $diff . " " . $strTime[$i] . $addif." ago ";
    }
 }
 	
