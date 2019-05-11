@@ -4,7 +4,8 @@
 	Add Events
 	  <a href="events.php" class="btn btn-primary" style="float: right;">Back</a>
   </h2>
-  <form method="post" enctype="multipart/form-data">
+  <form method="post" action="/helper/save_admin_data.php" enctype="multipart/form-data">
+	<input type="hidden" name="tag" value="events"/>
     <div class="form-group">
       <label for="Title">Title:</label>
       <input type="text" class="form-control" id="Title" placeholder="Enter Title" name="title">
@@ -15,7 +16,7 @@
     </div>
     <div class="form-group">
       <label for="Image">Image:</label>
-      <input type="file" class="form-control" id="Image" name="file"/>
+      <input type="file" class="form-control" id="Image" name="upload"/>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
