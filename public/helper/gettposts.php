@@ -43,7 +43,10 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 				$json_metadata = json_decode($row1['json_metadata'],true);
 				$data['username'] = $row1['username'];
 				$data['permlink'] = $row1['permlink'];
+				$data['title'] = $row1['title'];
+				$data['category'] = $json_metadata['category'];
 				$data['created_at'] = timeago($row1['created_at']);
+				$data['imgsrc'] = $json_metadata['image'];
 
 				$strReturn['data_row'][] = $data;
 			}
@@ -69,6 +72,10 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 			if(strtolower($json_metadata['category']) == strtolower($_REQUEST['catname'])) {
 				$data['username'] = $row1['username'];
 				$data['permlink'] = $row1['permlink'];
+				$data['title'] = $row1['title'];
+				$data['category'] = $json_metadata['category'];
+				$data['imgsrc'] = $json_metadata['image'];
+				
 				$data['created_at'] = timeago($row1['created_at']);
 				$strReturn['data_row'][] = $data;
 			}
