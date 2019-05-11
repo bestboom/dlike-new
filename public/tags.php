@@ -408,23 +408,63 @@
 				   var imgsrc =  resulthtml[i]['imgsrc'];
 				   var categoryset = resulthtml[i]['category'];
 				   var titleset = resulthtml[i]['title'];
+				   var userstatus = resulthtml[i]['userstatus'];
+				   var poststatus = resulthtml[i]['poststatus'];
 
 				    var author = username;
-				   var adduserhtml = "";
-				var addfeaturedhtml = "";
-				var addposthtml = "";
+				    var adduserhtml = "";
+				    var addfeaturedhtml = "";
+				    var addposthtml = "";
+				    var add_onclick2 = '';
+				    var ucolorset = '';
+				    
 				if(c_username == "dlike" || c_username == "chirag-im") {
-					
-					
-					addfeaturedhtml += '<a id="featuredstatus_icon'+permlink +username +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-imgurl="' + imgsrc + '" data-title="' + titleset + '" data-category="' + categoryset + '"><i class="fa fa-plus" id="featuredpost_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;';
 
-					addposthtml = '<a id="status_icon'+permlink +username+'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fas fa-check-circle" id="post_status'+permlink +username +'"></i></a><span>&nbsp; ';
+					addfeaturedhtml += '<a id="featuredstatus_icon'+permlink +username +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-imgurl="' + imgsrc + '" data-title="' + titleset + '" data-category="' + categoryset + '"><i class="fa fa-plus" id="featuredpost_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;';
+					
+					var add_onclick = 'onclick="return openmodal_popup(this)"';
+					var colorset = '';
+					if(poststatus == "Rejected") {
+					    colorset = 'style="color:red"';
+					    add_onclick =  '';
+					   
+					}
+					else if(poststatus == "Low Level") {
+					    colorset = 'style="color:blue"';
+					    add_onclick =  '';
+					   
+					}
+					else if(poststatus == "High Level") {
+					    colorset = 'style="color:green"';
+					    add_onclick =  '';
+					    
+					}
+
+					addposthtml = '<a '+colorset+' id="status_icon'+permlink +username+'" '+add_onclick+' class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fas fa-check-circle" id="post_status'+permlink +username +'"></i></a><span>&nbsp; ';
+
+					add_onclick2 = 'onclick="return openuser_popup(this)"';
+					ucolorset = 'style="color:gray;"';
 				}
 				var mylabel = permlink +username;
 				var newValue = mylabel.replace('.', '');
+
+				
+				
+				if(userstatus == "0") {
+				    ucolorset = 'style="color:black"';
+				}
+				else if(userstatus == "1") {
+				    ucolorset = 'style="color:orange"';
+				}
+				else if(userstatus == "2") {
+				    ucolorset = 'style="color:green"';
+				}
+				else if(userstatus == "3") {
+				    ucolorset = 'style="color:red"';
+				}
 		
 
-				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+newValue+' showcursor" onclick="return openuser_popup(this)" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
+				adduserhtml += '<a '+ucolorset+' class="userstatus_icon'+newValue+' showcursor" '+add_onclick2+' data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
 
 				
 
@@ -530,88 +570,8 @@
 				});
 
 
-				$.ajax({
-			type: "POST",
-			url: '/helper/getpoststatus.php',
-			data:{'permlink':permlink},
-			dataType: 'json',
-			success: function(response) {
-			    if(response.status == "OK") {
-				var all_status = response.setstatus;
-				if(all_status == "Rejected") {
-				    var colorset = 'red';
-				    $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
-				}
-				else if(all_status == "Low Level") {
-				    var colorset = 'blue';
-				   $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
-				}
-				else if(all_status == "High Level") {
-				    var colorset = 'green';
-				    $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
-				}
 				
-				$('#status_icon' + permlink + author).hover(function() {toastr.error('Post already Checked!');})
 					
-			    }
-			}
-		});
-
-
-		$.ajax({
-			type: "POST",
-			url: '/helper/getuserpoststatus.php',
-			data:{'author':author},
-			dataType: 'json',
-			success: function(response) {
-			    var mylabel1 = permlink +author;
-				var newValue1 = mylabel1.replace('.', '');
-			    if(response.status == "OK") {
-				var all_status = response.setstatus;
-
-				
-
-				
-				if(all_status == "0") {
-				    var colorset = 'black';
-				    $('.userstatus_icon' + newValue1).css({"color": colorset});
-				    var erroset = "User is Blacklisted";
-				}
-				else if(all_status == "1") {
-				    var colorset = 'orange';
-				    $('.userstatus_icon' + newValue1).css({"color": colorset});
-				    var erroset = "User is Greenlisted";
-				}
-				else if(all_status == "2") {
-				    var colorset = 'green';
-				    $('.userstatus_icon' + newValue1).css({"color": colorset});
-				    var erroset = "User is Whitelisted";
-				}
-				else if(all_status == "3") {
-				    var colorset = 'red';
-				    $('.userstatus_icon' + newValue1).css({"color": colorset});
-				    var erroset = "User is Pro";
-				}
-				if(c_username != "dlike" && c_username != "chirag-im") {
-				    $('.userstatus_icon' + newValue1).removeAttr('onclick');
-				}
-				else {    
-				    $('.userstatus_icon' + newValue1).hover(function() {toastr.error(erroset);})
-				}
-					
-			    }
-			    else {
-				if(c_username != "dlike" && c_username != "chirag-im") {
-				    $('.userstatus_icon' + newValue1).remove();
-				}
-			    }
-			}
-		});
-				   
-				    
 				    
 				    
 				}
