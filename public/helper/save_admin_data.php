@@ -13,5 +13,14 @@
             header("Location:/adminage/events.php");
 
         }
+        if(isset($_POST['tag']) && $_POST['tag'] == "settings"){
+                if(isset($_POST['type']) && $_POST['type'] == "settings"){
+                        $events = "INSERT INTO settings (`type`,`options`,`created_at`) VALUES ('".$_POST['type']."', '".$_POST['option']."','".date("Y-m-d H:i:s")."')";
+                        $events_q = $conn->query($events);  
+                        $strReturn['status'] = 'OK';
+                        $strReturn['message'] = 'successfully updated.';
+                }
+                
+        }
         
 ?>
