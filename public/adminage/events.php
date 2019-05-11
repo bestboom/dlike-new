@@ -122,7 +122,7 @@ $(document).ready(function(){
 			if(response.status == "OK") {
 				var result_data = response.html_data;
 				var total = response.total;
-				$("#total_result").html(total+" Posts found.");
+				$("#total_result").html(total+" events found.");
 				var result_html = ' <table class="table table-bordered" id="event_table"><thead><tr><th>Title</th><th>Tags</th><th>Image</th><th>Action</th></tr></thead><tbody >';
 				for(i=0;i<result_data.length;i++){
 					var action_var = "Edit";
