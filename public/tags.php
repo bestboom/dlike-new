@@ -178,6 +178,7 @@
 
 				    
 				    $("#loader").hide();
+				    $(".myloader").show();
 				    $("#contentposts").append(responsehtml);
 				});
 				    
