@@ -93,14 +93,63 @@
 				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
+
 				    var responsehtml = '';
 				    var currentPostNumber = i;
 				    var currentLikesDivElement = 'postLike_' + i;
 
-				    var timstamp = resulthtml[i]['created_at'];
-				   
+				   var timstamp = resulthtml[i]['created_at'];
+				   var permlink = resulthtml[i]['permlink'];
+				   var username = resulthtml[i]['username'];
 
-				    steem.api.getContent(resulthtml[i]['username'] , resulthtml[i]['permlink'], function(err, res) {
+				   responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv '+currentLikesDivElement+'" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
+					    '\n' +
+					    '<article class="post-style-two">\n' +
+					    '\n' +
+					    '<div class="post-contnet-wrap-top">\n' +
+					    '\n' +
+					    '<div class="post-footer">\n' +
+					    '\n' +
+					    '<div class="post-author-block">\n' +
+					    '\n' +
+					    '<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + username + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+					    '\n' +
+					    '<div class="author-info">\n' +
+					    '\n' +
+					    '<h5><a href="#">' + username + '</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
+					    '\n' +    
+					    '</div>\n' +
+					    '\n' + 
+					    '</div>\n' +
+					    '\n' +
+					    '<div class="post-comments"><span class="post-meta"></span></div>\n' +
+					    '\n' +
+					    '</div>\n' +
+					    '\n' +
+					    '</div>\n' + 
+					    '\n' +
+					    '<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + permlink + '" data-author="' + username + '"></a></div>\n' + 
+					    '\n' +
+					    '<div class="post-contnet-wrap">\n' +
+					    '\n' +
+					    '<h4 class="post-title"><a href="" target="_blank"></a></h4>\n' +
+					    '\n' +
+					    '<p class="post-entry post-tags"></p>\n' +
+					    '\n' +
+					    '<div class="post-footer">\n' +
+					    '<div class="post-author-block">\n' +
+					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span class="pending_payout_value"></span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
+					    '</div>\n' +
+					    '<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span class="active_votes">&nbsp; |  Votes</span></div>\n' +
+					    '</div>\n' +
+					    '</div>\n' +
+				    '</article></div>';
+
+
+
+				   $("#contentposts").append(responsehtml);
+
+				    steem.api.getContent(username , permlink, function(err, res) {
 
 					let metadata = JSON.parse(res.json_metadata);
 					let img = new Image();
@@ -119,13 +168,14 @@
 
 	
 					let title = res.title;
-					let created = res.created;
+					//let created = res.created;
+					let created = timstamp;
 					let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 					let author = res.author;
 					let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
 					
 					 var username = author;
-				    var created_at = timstamp;
+				    var created_at = created;
 				    var permlink = res.permlink;
 				    var metatags =  posttags;
 				    var exturl =   metadata.url;;
@@ -133,59 +183,39 @@
 				    var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 
-					    responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
-					    '\n' +
-					    '<article class="post-style-two">\n' +
-					    '\n' +
-					    '<div class="post-contnet-wrap-top">\n' +
-					    '\n' +
-					    '<div class="post-footer">\n' +
-					    '\n' +
-					    '<div class="post-author-block">\n' +
-					    '\n' +
-					    '<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + username + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
-					    '\n' +
-					    '<div class="author-info">\n' +
-					    '\n' +
-					    '<h5><a href="#">' + username + '</a><div class="time">' + created_at + '</div></h5>\n' +
-					    '\n' +    
-					    '</div>\n' +
-					    '\n' + 
-					    '</div>\n' +
-					    '\n' +
-					    '<div class="post-comments"><span class="post-meta">' + category + '</span></div>\n' +
-					    '\n' +
-					    '</div>\n' +
-					    '\n' +
-					    '</div>\n' + 
-					    '\n' +
-					    '<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + permlink + '" data-author="' + username + '">' + thumbnail + '</a></div>\n' + 
-					    '\n' +
-					    '<div class="post-contnet-wrap">\n' +
-					    '\n' +
-					    '<h4 class="post-title"><a href="' + exturl + '" target="_blank">' + title + '</a></h4>\n' +
-					    '\n' +
-					    '<p class="post-entry post-tags">' + metatags + '</p>\n' +
-					    '\n' +
-					    '<div class="post-footer">\n' +
-					    '<div class="post-author-block">\n' +
-					    '<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + res.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
-					    '</div>\n' +
-					    '<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span>&nbsp; | ' + res.active_votes.length + ' Votes</span></div>\n' +
-					    '</div>\n' +
-					    '</div>\n' +
-				    '</article></div>';
-
+					    
+				   
 				    
-				    $("#loader").hide();
-				    $(".myloader").css('display','flex');
-				    $("#contentposts").append(responsehtml);
+
+				    $('#article_'+permlink+' span.post-meta').html(category);
+				    $('#article_'+permlink+' a.post_detail').html(thumbnail);
+				    $('#article_'+permlink+' h4.post-title a').attr('href',exturl);
+				    $('#article_'+permlink+' h4.post-title a').html(title);
+				    $('#article_'+permlink+' p.post-tags').html(metatags);
+				    $('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
+				    $('#article_'+permlink+' span.active_votes').html("&nbsp; | "+res.active_votes.length+" Votes");
+				    
+				    
+				    
+				    
+				    
+				    
+				    
 				});
+				   
+				    
 				    
 				    
 				}
+				$("#loader").hide();
+				$(".myloader").css('display','flex');
 				
 				
+			    }
+			    else {
+				$("#loader").hide();
+				$(".myloader").css('display','flex');
+				$("#contentposts").append("No posts found.");
 			    }
 			}
 			});
