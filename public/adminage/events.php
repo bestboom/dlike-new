@@ -91,11 +91,18 @@ $(document).ready(function(){
 					setclass = "bg-success";
 					setoption="enable";
 					r_class = "bg-danger";
+					settoption = "Enable";
+				}
+				else {
+					setclass = "bg-danger";
+					setoption="disable";
+					r_class = "bg-success";
+					settoption = "Disable";
 				}
 			    $(this).addClass(setclass);
 			    $(this).removeClass(r_class);
 			    $(this).data('option',setoption);
-			    $(this).text(option);
+			    $(this).text(settoption);
 			    
 				
 			}
@@ -182,13 +189,13 @@ $(document).ready(function(){
 					$("#events_show_status").removeClass("bg-success");
 					$("#events_show_status").addClass("bg-danger");
 					$("#events_show_status").data('option','enable');
-					$("#events_show_status").text(main_event_status);
+					$("#events_show_status").text('Enable');
 				}
 				else {
-					$("#events_show_status").removeClass("bg-danger");
-					$("#events_show_status").addClass("bg-success");
+					$("#events_show_status").removeClass("bg-success");
+					$("#events_show_status").addClass("bg-danger");
 					$("#events_show_status").data('option',"disable");
-					$("#events_show_status").text(main_event_status);
+					$("#events_show_status").text("Disable");
 				}
 			    
 
