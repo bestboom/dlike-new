@@ -38,7 +38,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 
 	
-	echo $sql1 = 'SELECT * FROM steemposts WHERE json_metadata RLIKE ''\"category":"[[:<:]]'.$_REQUEST['catname'].'[[:>:]]"'\' order by created_at DESC';die;
+	$sql1 = 'SELECT * FROM steemposts WHERE json_metadata RLIKE '\'"category":"[[:<:]]'.$_REQUEST['catname'].'[[:>:]]"'\' order by created_at DESC';
 	$result1 = $conn->query($sql1);
 	if ($result1->num_rows > 0) {
 		while($row1 = $result1->fetch_assoc()) {
