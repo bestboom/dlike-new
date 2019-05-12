@@ -31,6 +31,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/dsteem@^0.8.0/dist/dsteem.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>

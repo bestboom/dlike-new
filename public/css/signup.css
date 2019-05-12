@@ -8,6 +8,7 @@
     border-radius: 3px;
     display: flex;
     margin: 0 auto;
+    position: relative;
     width: 800px;
 }
 
@@ -30,8 +31,9 @@
 }
 
 .signup-signup-icon {
+    color: #ced4da;
     display: inline-block;
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 2rem 0;
     text-align: center;
     width: 100%;
@@ -40,6 +42,7 @@
 .signup-signup form {
     display: flex;
     flex-direction: column;
+    height: 80px;
     width: 100%;
 }
 
@@ -70,12 +73,21 @@
 }
 
 .signup-signup .input-username .loader {
+    left: initial;
     line-height: 2.5rem;
     position: absolute;
     right: 0;
     text-align: center;
     top: -2px;
     width: 2rem;
+}
+
+.signup-signup .input-username .fa-exclamation-circle {
+    color: #cd201f;
+}
+
+.signup-signup .input-username .fa-check {
+    color: #5eba00;
 }
 
 .signup-signup button {
@@ -92,28 +104,85 @@
 }
 
 .signup-signup .message {
+    display: block;
     text-align: left;
     width: 100%;
+}
+
+.signup-message-error {
+    color: #cd201f;
+}
+
+.signup-message-success {
+    color: #5eba00;
+}
+
+.signup-signup-steemit,
+.signup-signup-phone {
+    position: relative;
+    top: 0;
 }
 
 /** LOGIN
  =============================== */
 
 .signup-login {
+    display: flex;
+    flex-direction: column;
     padding: 3rem 0;
     text-align: center;
 }
 
 .signup-login a {
+    /*background-color: #45aaf2;*/
+    /*border-color: #45aaf2;*/
+    /*color: #fff;*/
     cursor: pointer;
     font-size: 0.85rem;
     padding: .375rem 2rem;
 }
 
 .signup-login-icon {
+    color: #ced4da;
     display: inline-block;
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 2rem 0;
     text-align: center;
     width: 100%;
+}
+
+.signup-login p {
+    flex-grow: 1;
+}
+
+.signup-login-footer {
+    height: 80px;
+}
+
+
+/** HELPER
+ =============================== */
+
+.btn-azure {
+    color: #fff;
+    background-color: #45aaf2;
+    border-color: #45aaf2;
+}
+
+.btn-azure:hover {
+    color: #fff;
+    background-color: #219af0;
+    border-color: #1594ef;
+}
+
+.btn-lime {
+    color: #fff;
+    background-color: #7bd235;
+    border-color: #7bd235;
+}
+
+.btn-lime:hover {
+    color: #fff;
+    background-color: #69b829;
+    border-color: #63ad27;
 }
