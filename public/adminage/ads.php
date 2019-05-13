@@ -90,10 +90,10 @@ $(document).ready(function(){
 				var ad1_html = '';
 				var ad2_html = '';
 				for(i=0;i<result_data.length;i++){
-				    if(result_data[i]['ad_html'] == "ad1"){
+				    if(result_data[i]['title'] == "ad1" && result_data[i]['ad_html'] != ""){
 					ad1_html = $.base64.decode(result_data[i]['ad_html']);
 				    }
-				    if(result_data[i]['ad_html'] == "ad2"){
+				    if(result_data[i]['title'] == "ad2" && result_data[i]['ad_html'] != ""){
 					ad2_html = $.base64.decode(result_data[i]['ad_html']);
 				    }
 				}
