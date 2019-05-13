@@ -229,7 +229,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
                         </div>
 
                     </article>
-
+                    <?php if($show_ads == "yes") { ?>
                     <div class="post-thumb" style="border: none;">
                         <div class="row pl-3">
                             <div class="col-4">
@@ -241,10 +241,10 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
                         </div>
                     </div>
 
-                    <?php if($show_ads == "yes") { echo $ad1_html; } ?>
+                    <?php  echo $ad1_html;  ?>
 
                 </div>
-
+                <?php } ?>
                 <div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
                     <div class="p-0">
                         <div class="container p-0">
