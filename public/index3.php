@@ -40,7 +40,7 @@ if ($result_s->num_rows > 0) {
             $f_tags = explode(",",$row['tags']);
             $events_html .= '<div class="col-lg-4 col-md-4"><article class="post-style-two mb-2 mt-1"><div class="post-thumb" style="border: none;background: white"><div class="row"><div class="col-4 p-2 pl-4" style="height: 95px;"><img src="'.$row['image'].'"alt="'.$row['title'].'" style="height: 100%;" class="card-img-top img-fluid"></div><div class="col-8"><a style="color: black;font-size: 12px;">'.$row['title'].'</a><div class="row mt-2">';
             foreach($f_tags as $tg_name) {
-                $events_html .= '<div class="col-4 text-center" style="padding-left:0;"><a href="/tags/'.$tg_name.'" class="sourcename">'.$tg_name.'</span></div>';
+                $events_html .= '<div class="col-4 text-center" style="padding-left:0;"><a href="/tags/'.$tg_name.'" class="sourcename">'.$tg_name.'</a></div>';
             }
             $events_html .= '</div></div></div></div></article></div>';
         }
