@@ -64,7 +64,7 @@ $(document).ready(function(){
 	saveadstatus.click(function(){
 	    $("#loader").show();
 	    var a_ad_html = $("#ad_html").val();
-	    var a_status = $("#status").val();
+	    var a_status = $("input[name='status']:checked").val();
 	    var a_id = $("#a_id").val();
 	    if(a_status == ""){
 		alert("Please select status.");
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
 			    $("#status_"+a_id).html(status);
 			    $("#ad_html_"+a_id).html(a_ad_html);
-			    $("#ad_"+a_id).data('adhtml',a_ad_html);
+			    $("#ad_"+a_id).data('adhtml',$.base64.encode(a_ad_html));
 			    $("#ad_"+a_id).data('status',a_status);
 			    
 			    
