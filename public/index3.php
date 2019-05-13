@@ -708,6 +708,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip . '/city/');
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
 		//console.log(res);
 		res.forEach(($post, i) => {
+            console.log(i);
 			let metadata;
 			if ($post.json_metadata && $post.json_metadata.length > 0){
 				metadata = JSON.parse($post.json_metadata);
