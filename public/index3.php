@@ -10,6 +10,21 @@ if ($result->num_rows > 0) {
     }
 }
 
+$posttags = "SELECT * FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) order by tagcount DESC";
+$posttags_r = $conn->query($posttags);
+if ($posttags_r->num_rows > 0) {
+    $trending_html = '';
+    $counter = 0; 
+    while($row = $posttags_r->fetch_assoc()) {
+        if (strpos($row['tagname'], 'dlike') === false && $counter < 10) {
+            $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tagname'].'" role="tab" data-toggle="tab">'.$row['tagname'].'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
+            ++$counter;
+        }
+        
+    }
+} else {
+    $trending_html = '';
+}
 
 
 ?>
@@ -231,58 +246,7 @@ if ($result->num_rows > 0) {
                                         <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
                                             <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>
 
-                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">US&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">WORLD&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">POLITICS&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">FACT CHECK&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">OPTION&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">GOOD NEWS&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">CRIME&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">LOCAL
-                                                AMERICA&nbsp;<button type="button" class="close closeBtn"
-                                                                     aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">TECH&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">VIDEO&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">PHOTOS&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">MY TOPICS&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
+                                            <?php echo $trending_html;?>
 
                                         </nav>
                                     </div>
