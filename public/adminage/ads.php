@@ -25,6 +25,7 @@
 
 </div>
 <?php include('../template/footer2.php'); ?>
+<script src="//rawgit.com/carlo/jquery-base64/master/jquery.base64.min.js"></script>
 <script>
 	
 $(document).ready(function(){
