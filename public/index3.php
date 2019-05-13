@@ -1,5 +1,18 @@
-<?php include('template/header3.php');
-require('lib/solvemedialib.php'); ?>
+<?php include('template/header3.php'); require('lib/solvemedialib.php');
+
+
+$sql = "SELECT sp.img_link,sp.title FROM featuredposts as sp order by sp.id DESC limit 10";
+$result = $conn->query($sql);
+$featuredposts_html = '';
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $featuredposts_html .= '<div><div class="testimonial-block post_block"><img src="'.$row['img_link'].'" class="card-img-top img-fluid" style="margin: 0 !important;"><div class="shadow_bottom"><a class="post_title">'.$row['title'].'</a></div></div></div>';
+    }
+}
+
+
+
+?>
     <!-- --><?php /*if($_COOKIE['username'] == ''){ */ ?>
 <?php if ($_COOKIE['username'] == '') { ?>
     <div class="banner-content home-connect">
@@ -126,7 +139,7 @@ require('lib/solvemedialib.php'); ?>
                                 <div class="offset-md-0 col-md-12">
                                     <div class="testimonials-wrap">
                                         <div id="testimonial" class="testimonial-slider p-0">
-                                            
+                                            <?php echo $featuredposts_html;?>
                                         </div>
                                     </div>
                                 </div>
