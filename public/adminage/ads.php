@@ -1,7 +1,7 @@
 <?php include('head.php'); ?>
 <div class="container" style="    margin: 20px auto;">
   <h2>
-	  Events
+	  Ads
 	  <a href="create_ad.php" class="btn btn-primary" style="float: right;">Create Ad</a>
   </h2>
   <p id="total_result"></p>
