@@ -16,6 +16,9 @@
   else if(isset($_POST['data']) && $_POST['data'] == "events"){
 	$sql = "SELECT * FROM events order by created_at DESC";
   }
+  else if(isset($_POST['data']) && $_POST['data'] == "ads"){
+	$sql = "SELECT * FROM ads order by created_at DESC";
+  }
   	
 	$result = $conn->query($sql);
 
@@ -50,6 +53,13 @@
 				$dataset['title'] = $row['title'];
 				$dataset['image'] = $row['image'];
 				$dataset['tags'] = $row['tags'];
+				
+				$strReturn['html_data'][] = $dataset;
+			}
+			else if(isset($_POST['data']) && $_POST['data'] == "ads"){
+				$dataset['id'] = $row['id'];
+				$dataset['ad_html'] = $row['ad_html'];
+				$dataset['status'] = $row['status'];
 				
 				$strReturn['html_data'][] = $dataset;
 			}
