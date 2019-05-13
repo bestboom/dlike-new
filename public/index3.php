@@ -10,6 +10,19 @@ if ($result->num_rows > 0) {
     }
 }
 
+$sql = "SELECT sp.json_metadata FROM steemposts";
+$result = $conn->query($sql);
+$featuredposts_html = '';
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $json_data = json_decode($row['json_metadata'],true);
+        $category_array[] = $json_data['category'];
+    }
+}
+$main_categories = array_values(array_unique($category_array));
+
+
+
 $posttags = "SELECT * FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) order by tagcount DESC";
 $posttags_r = $conn->query($posttags);
 if ($posttags_r->num_rows > 0) {
@@ -500,6 +513,9 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
             
         </div>
     </div>
+
+
+    
 <?php include('template/modals/modal.php'); ?>
 <?php include('template/footer3.php'); ?>
 
@@ -578,8 +594,24 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 	var savepoststatus=$('#savepoststatus');
 	var saveuserpoststatus=$('#saveuserpoststatus');
 	var savefeaturedpoststatus=$('#savefeaturedpoststatus');
-	
-	var c_username = $('#c_username').val();
+    var show_category=$('#show_category');
+    var c_username = $('#c_username').val();
+
+
+    show_category.click(function(){
+	    var p_username = $("#pu_username").val();
+	    var category_html = '<div class="col-sm-12" style=""display:block;overflow:hidden;>';
+        var category_value = '';
+        <?php foreach($main_categories as $category) { ?>
+            category_value = '<?php echo $category;?>';
+            category_html += '<div class="col-sm-3"><label><input type="checkbox" name="user_category[]" value="'+category_value+'"/> '+category_value+'</label></div>';
+        <?php } ?>
+        category_html += '<a href="javascript:" onclick="return call_save_category()" class="btn btn-primary">Save</a></div>';
+        
+	    $("#categoryStatusModal").modal('show');
+        $("#categoryStatusModal div.modal-body").append(category_html);
+	});
+    
 	
 	saveuserpoststatus.click(function(){
 	    var p_username = $("#pu_username").val();
