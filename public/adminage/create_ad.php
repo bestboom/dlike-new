@@ -2,7 +2,7 @@
 <div class="container" style="    margin: 20px auto;">
   <h2>
 	Create Ad
-	  <a href="events.php" class="btn btn-primary" style="float: right;">Back</a>
+	  <a href="ads.php" class="btn btn-primary" style="float: right;">Back</a>
   </h2>
   <form method="post" action="/helper/save_admin_data.php" enctype="multipart/form-data">
 	<input type="hidden" name="tag" value="ads"/>
