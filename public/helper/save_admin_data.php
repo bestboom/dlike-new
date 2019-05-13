@@ -3,6 +3,18 @@
         ini_set('display_startup_errors', 1);
         error_reporting(0);
         require '../includes/config.php';
+
+
+	if(isset($_POST['tag']) && $_POST['tag'] == "ads"){
+            $ad_html = $_POST['ad_html'];
+            $status = $_POST['status'];
+            
+            $ads = "INSERT INTO ads (`ad_html`,`status`,`created_at`) VALUES ('".$ad_html."', '".$status."','".date("Y-m-d H:i:s")."')";
+            $ads_q = $conn->query($ads);
+            header("Location:/adminage/ads.php");
+
+        }
+
         if(isset($_POST['tag']) && $_POST['tag'] == "events"){
             $file_name = $_POST['upload'];
             $title = $_POST['title'];
