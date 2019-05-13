@@ -126,15 +126,17 @@ require('lib/solvemedialib.php'); ?>
                                 <div class="offset-md-0 col-md-12">
                                     <div class="testimonials-wrap">
                                         <div id="testimonial" class="testimonial-slider p-0">
+                                            
                                             <div>
                                                 <div class="testimonial-block post_block">
                                                     <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/BBm5UN9.img?h=368&w=622&m=6&q=60&u=t&o=t&l=f&f=jpg&x=673&y=288"
                                                          class="card-img-top img-fluid" style="margin: 0 !important;">
-
+                                                    <div class="shadow_bottom">
                                                     <a class="post_title">Top takeaways</a>
-                                                    <div class="shadow_bottom"></div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -398,13 +400,6 @@ require('lib/solvemedialib.php'); ?>
 
                                 </div>
                             </div>
-                            <!-- <a class="post_detail text-center" data-toggle="modal"
-                                data-target="#postModal"
-                                data-permlink="london-spitfire-signs-quatermain-dot-esports"
-                                data-author="miercoles">
-                                 <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg" alt="London Spitfire signs Quatermain | Dot Esports"
-                                      style="height: 135px;" class="card-img-top img-fluid">
-                             </a>-->
                         </div>
 
                     </article>
