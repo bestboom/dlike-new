@@ -2,7 +2,6 @@
 <div class="container" style="    margin: 20px auto;">
   <h2>
 	  Events
-	  <a href="javascript:" class="btn bg-success text-white" data-option="enable" id="events_show_status" style="float: right;margin-left: 5px;">Enable</a>
 	  <a href="create_ad.php" class="btn btn-primary" style="float: right;">Create Ad</a>
   </h2>
   <p id="total_result"></p>
@@ -159,37 +158,25 @@ $(document).ready(function(){
 	$.ajax({
 		type: "POST",
 		url: '/helper/getadmindata.php',
-		data:{'data':'events'},
+		data:{'data':'ads'},
 		dataType: 'json',
 		success: function(response) {
 			$("#loader").hide();
 			if(response.status == "OK") {
 				var result_data = response.html_data;
 				var total = response.total;
-				$("#total_result").html(total+" events found.");
-				var result_html = ' <table class="table table-bordered" id="event_table"><thead><tr><th>Title</th><th>Tags</th><th>Image</th><th>Action</th></tr></thead><tbody >';
+				$("#total_result").html(total+" ads found.");
+				
+				var result_html = ' <table class="table table-bordered" id="ad_table"><thead><tr><th>Ad HTML</th><th>Status</th><th>Action</th></tr></thead><tbody >';
+				var ad_html = '';
 				for(i=0;i<result_data.length;i++){
+					ad_html = $.base64.decode(result_data[i]['ad_html']);
 					var action_var = "Edit";
-					result_html += '<tr><td>'+result_data[i]['title']+'</td><td>'+result_data[i]['tags']+'</td><td><img src="'+result_data[i]['image']+'" style="    max-height: 100px;"/></td><td><a href="javascript:"  id="event_'+result_data[i]['id']+'" onclick="return openevent_popup(this)" class="btn btn-small btn-primary" data-title="'+result_data[i]['title']+'" data-image="'+result_data[i]['image']+'" data-tags="'+result_data[i]['tags']+'" >'+action_var+'</a></td></tr>';
+					result_html += '<tr><td>'+ad_html+'</td><td>'+result_data[i]['status']+'</td><td><a href="javascript:"  id="ad_'+result_data[i]['id']+'" onclick="return openad_popup(this)" class="btn btn-small btn-primary"  data-adhtml="'+result_data[i]['ad_html']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
 				}
-				result_html += '</tbody></table>';
-				var main_event_status = response.main_event_status
-				if(main_event_status == "disable") {
-					$("#events_show_status").removeClass("bg-danger");
-					$("#events_show_status").addClass("bg-success");
-					$("#events_show_status").data('option','enable');
-					$("#events_show_status").text('Enable');
-				}
-				else {
-					$("#events_show_status").removeClass("bg-success");
-					$("#events_show_status").addClass("bg-danger");
-					$("#events_show_status").data('option',"disable");
-					$("#events_show_status").text("Disable");
-				}
-			    
-			    
+				result_html += '</tbody></table>';			    
 				$("#show_results").html(result_html);
-				$('#event_table').DataTable({language: { search: '', searchPlaceholder: "Search..." }});
+				$('#ad_table').DataTable({language: { search: '', searchPlaceholder: "Search..." }});
 			}
 		}
 	});
