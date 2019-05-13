@@ -599,8 +599,8 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 
 
     show_category.click(function(){
-	    var p_username = $("#pu_username").val();
-	    var category_html = '<div class="col-sm-12" style=""display:block;overflow:hidden;>';
+	    //var p_username = $("#pu_username").val();
+	    var category_html = '<div class="col-sm-12" style="display:block;overflow:hidden;">';
         var category_value = '';
         <?php foreach($main_categories as $category) { ?>
             category_value = '<?php echo $category;?>';
