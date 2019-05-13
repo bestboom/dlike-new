@@ -49,6 +49,7 @@
 			    <label>Reason</label>
 			    <textarea id="pu_reason" class="form-control" placeholder="Please enter reason" ></textarea>
 			</div>
+			<br>
 		    <p><input type="button" id="pay_usertoken" class="btn btn-primary" value="Pay"/></p>
 				
 		</div>
