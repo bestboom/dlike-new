@@ -47,7 +47,28 @@ if ($result_s->num_rows > 0) {
     }
 }
 
-function get_client_ip() {
+$a_sql = "SELECT * FROM `settings` where `type` = 'ads' && options = 'enable'";
+$result_a = $conn->query($a_sql);
+$show_ads = '';
+if ($result_a->num_rows > 0) {
+    $show_ads = "yes";
+    $ads = "SELECT * FROM ads order by id DESC";
+    $ads_r = $conn->query($ads);
+    $ad1_html = '';
+    $ad2_html = '';
+    if ($ads_r->num_rows > 0) {
+        while($row = $ads_r->fetch_assoc()) {
+            if($row['title'] == "ad1"){
+                $ad1_html = $row['ad_html'];
+            }
+            if($row['title'] == "ad2"){
+                $ad2_html = $row['ad_html'];
+            }
+        }
+    }
+}
+
+function getclientip() {
     $ipaddress = '';
     if (isset($_SERVER['HTTP_CLIENT_IP']))
         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
@@ -65,7 +86,7 @@ function get_client_ip() {
         $ipaddress = 'UNKNOWN';
     return $ipaddress;
 }
-echo $ip_set = get_client_ip();
+echo $ip_set = getclientip();
 $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
             
 
@@ -220,15 +241,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
                         </div>
                     </div>
 
-                    <article class="post-style-two" style="height: 250px;background: #6b2525;margin-bottom: 40px;">
-
-
-                        <div class="post-thumb">
-
-                        </div>
-
-
-                    </article>
+                    <?php if($show_ads == "yes") { echo $ad1_html; } ?>
 
                 </div>
 
@@ -480,6 +493,9 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
             <div id="loader">Loading</div>
             <div class="row" id="content">
             </div>
+
+            <?php if($show_ads == "yes") { echo $ad2_html; } ?>
+            
         </div>
     </div>
 <?php include('template/modals/modal.php'); ?>
