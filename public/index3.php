@@ -1,5 +1,5 @@
-<?php include('template/header3.php');
-require('lib/solvemedialib.php'); ?>
+<?php include('template/header2.php'); require ('lib/solvemedialib.php'); ?>
+<input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
     <!-- --><?php /*if($_COOKIE['username'] == ''){ */ ?>
 <?php if ($_COOKIE['username'] == '') { ?>
     <div class="banner-content home-connect">
@@ -126,16 +126,6 @@ require('lib/solvemedialib.php'); ?>
                                 <div class="offset-md-0 col-md-12">
                                     <div class="testimonials-wrap">
                                         <div id="testimonial" class="testimonial-slider p-0">
-                                            
-                                            <div>
-                                                <div class="testimonial-block post_block">
-                                                    <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/BBm5UN9.img?h=368&w=622&m=6&q=60&u=t&o=t&l=f&f=jpg&x=673&y=288"
-                                                         class="card-img-top img-fluid" style="margin: 0 !important;">
-                                                    <div class="shadow_bottom">
-                                                    <a class="post_title">Top takeaways</a>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             
                                         </div>
                                     </div>
@@ -411,6 +401,10 @@ require('lib/solvemedialib.php'); ?>
 
         <script>
             $(document).ready(function () {
+
+
+
+                
 
                 var hidWidth;
                 var scrollBarWidths = 40;
