@@ -10,13 +10,13 @@
 	<div class="col-sm-6" style="float:left;">
 	<div class="form-group">
 	  <label for="ad1_html">Ad1 HTML:</label>
-	  <textarea class="form-control" id="ad1_html" placeholder="Enter Ad1 html" name="ad1_html"></textarea>
+	  <textarea style="min-height:250px;" class="form-control" id="ad1_html" placeholder="Enter Ad1 html" name="ad1_html"></textarea>
 	</div>
 	 </div>
 	 <div class="col-sm-6" style="float:left;">
 	<div class="form-group">
 	  <label for="ad2_html">Ad2 HTML:</label>
-	  <textarea class="form-control" id="ad2_html" placeholder="Enter Ad2 html" name="ad2_html"></textarea>
+	  <textarea style="min-height:250px;" class="form-control" id="ad2_html" placeholder="Enter Ad2 html" name="ad2_html"></textarea>
 	</div>
 	  </div>
     <button type="submit" class="btn btn-default">Submit</button>
