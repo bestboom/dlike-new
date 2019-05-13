@@ -1,5 +1,5 @@
-<?php include('template/header2.php'); require ('lib/solvemedialib.php'); ?>
-<input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
+<?php include('template/header3.php');
+require('lib/solvemedialib.php'); ?>
     <!-- --><?php /*if($_COOKIE['username'] == ''){ */ ?>
 <?php if ($_COOKIE['username'] == '') { ?>
     <div class="banner-content home-connect">
