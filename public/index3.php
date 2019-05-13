@@ -49,7 +49,7 @@ if ($result_s->num_rows > 0) {
 
 
 
-
+$current_city = file_get_contents('https://ipapi.co/' . $ip . '/city/');
             
 
 
@@ -114,57 +114,16 @@ if ($result_s->num_rows > 0) {
                                     <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
                                     <div class="wrapper">
                                         <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
-                                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">FAISALABAD / 26 ° C  </a>
-                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab" style="color: #579BCD !important;">Make
-                                                MSN my home page&nbsp;  | <button type="button" class="close closeBtn"
-                                                                              aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
+                                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900"><?php echo strtoupper($current_city);?> / 26 ° C  </a>
+                                            <a class="nav-item nav-link" href="javascript:" role="tab" id="show_category"  style="color: #579BCD !important;"><i class="fa fa-cog" aria-hidden="true"></i>
                                             </a>
+                                            
                                             <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">AFRICA&nbsp;<button
                                                         type="button" class="close closeBtn" aria-label="Close">
                                                     <span aria-hidden="true"></span>
                                                 </button>
                                             </a>
-                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">EUROPE&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">LATIN
-                                                AMERICA&nbsp;<button type="button" class="close closeBtn"
-                                                                     aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
+                                            
 
                                         </nav>
                                     </div>
@@ -472,15 +431,6 @@ if ($result_s->num_rows > 0) {
                             $(".slick-next").css("background", "transparent");
                             $(".slick-prev").css("background", "transparent");
                         });
-
-
-                    /*  $( ".testimonials-wrap" )
-                          .on( "mouseenter", function() {
-                              $(this).css("background", "#white");
-                          })
-                          .on( "mouseleave", function() {
-                              $(this).css("background", "transparent");
-                          });*/
                 }, 2000);
 
                 setInterval(function () {
@@ -510,6 +460,7 @@ if ($result_s->num_rows > 0) {
                 </div>
                 <div class="col-md-9 lay">&nbsp;</div>
             </div>
+            <div id="loader">Loading</div>
             <div class="row" id="content">
             </div>
         </div>
