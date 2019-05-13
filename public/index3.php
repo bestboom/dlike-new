@@ -135,56 +135,6 @@ require('lib/solvemedialib.php'); ?>
                                                     <div class="shadow_bottom"></div>
                                                 </div>
                                             </div>
-
-                                            <div>
-                                                <div class="testimonial-block post_block">
-                                                    <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/BBm5UN9.img?h=368&w=622&m=6&q=60&u=t&o=t&l=f&f=jpg&x=673&y=288"
-                                                         class="card-img-top img-fluid" style="margin: 0 !important;">
-
-                                                    <a class="post_title">Top takeaways</a>
-                                                    <div class="shadow_bottom"></div>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="testimonial-block post_block">
-                                                    <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/BBm5UN9.img?h=368&w=622&m=6&q=60&u=t&o=t&l=f&f=jpg&x=673&y=288"
-                                                         class="card-img-top img-fluid" style="margin: 0 !important;">
-
-                                                    <a class="post_title">Top takeaways</a>
-                                                    <div class="shadow_bottom"></div>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="testimonial-block post_block">
-                                                    <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/BBm5UN9.img?h=368&w=622&m=6&q=60&u=t&o=t&l=f&f=jpg&x=673&y=288"
-                                                         class="card-img-top img-fluid" style="margin: 0 !important;">
-
-                                                    <a class="post_title">Top takeaways</a>
-                                                    <div class="shadow_bottom"></div>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="testimonial-block post_block">
-                                                    <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/BBm5UN9.img?h=368&w=622&m=6&q=60&u=t&o=t&l=f&f=jpg&x=673&y=288"
-                                                         class="card-img-top img-fluid" style="margin: 0 !important;">
-
-                                                    <a class="post_title">Top takeaways</a>
-                                                    <div class="shadow_bottom"></div>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <div class="testimonial-block post_block">
-                                                    <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/BBm5UN9.img?h=368&w=622&m=6&q=60&u=t&o=t&l=f&f=jpg&x=673&y=288"
-                                                         class="card-img-top img-fluid" style="margin: 0 !important;">
-
-                                                    <a class="post_title">Top takeaways</a>
-                                                    <div class="shadow_bottom"></div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
