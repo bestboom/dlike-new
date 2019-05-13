@@ -58,7 +58,7 @@
 $(document).ready(function(){
 	$("#loader").show();
 	
-	var saveadstatus=$('#savepoststatus');
+	var saveadstatus=$('#saveadstatus');
 
 	
 	saveadstatus.click(function(){
