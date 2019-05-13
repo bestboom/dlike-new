@@ -65,8 +65,8 @@ function get_client_ip() {
         $ipaddress = 'UNKNOWN';
     return $ipaddress;
 }
-echo $ip = get_client_ip();
-$current_city = file_get_contents('https://ipapi.co/' . $ip . '/city/');
+$ip_set = get_client_ip();
+$current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
             
 
 
