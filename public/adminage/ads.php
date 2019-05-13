@@ -2,7 +2,7 @@
 <div class="container" style="    margin: 20px auto;">
   <h2>
 	Ads
-	<a href="javascript:" class="btn text-white bg-success" data-option="enable" id="ads_show_status" style="float: right;margin-left: 5px;">Success</a>
+	<a href="javascript:" class="btn text-white bg-success" data-option="enable" id="ads_show_status" style="float: right;margin-left: 5px;">Enable</a>
   </h2>
   <div class="col-sm-12" style="display: block;    overflow: hidden;">
   <form method="post" action="/helper/save_admin_data.php" enctype="multipart/form-data">
