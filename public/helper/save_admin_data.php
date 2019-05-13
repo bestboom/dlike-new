@@ -6,7 +6,7 @@
 
 
 	if(isset($_POST['tag']) && $_POST['tag'] == "ads"){
-            $ad_html = $_POST['ad_html'];
+            $ad_html = base64_encode($_POST['ad_html']);
             $status = $_POST['status'];
             
             $ads = "INSERT INTO ads (`ad_html`,`status`,`created_at`) VALUES ('".$ad_html."', '".$status."','".date("Y-m-d H:i:s")."')";
