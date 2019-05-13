@@ -100,6 +100,22 @@ $(document).ready(function(){
 					    
 				$("#ad1_html").val(ad1_html);
 				$("#ad2_html").val(ad2_html);
+
+
+				var main_ad_status = response.main_ad_status;
+				if(main_ad_status == "disable") {
+					$("#ads_show_status").removeClass("bg-danger");
+					$("#ads_show_status").addClass("bg-success");
+					$("#ads_show_status").data('option','enable');
+					$("#ads_show_status").text('Enable');
+				}
+				else {
+					$("#ads_show_status").removeClass("bg-success");
+					$("#ads_show_status").addClass("bg-danger");
+					$("#ads_show_status").data('option',"disable");
+					$("#ads_show_status").text("Disable");
+				}
+				
 			}
 		}
 	});
