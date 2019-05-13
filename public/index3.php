@@ -16,8 +16,8 @@ if ($posttags_r->num_rows > 0) {
     $trending_html = '';
     $counter = 0; 
     while($row = $posttags_r->fetch_assoc()) {
-        if (strpos($row['tagname'], 'dlike') === false && $counter < 10) {
-            $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tagname'].'" role="tab" data-toggle="tab">'.$row['tagname'].'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
+        if (strpos($row['tagname'], 'dlike') === false && $counter < 12) {
+            $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tagname'].'" role="tab" data-toggle="tab">'.strtoupper($row['tagname']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
             ++$counter;
         }
         
@@ -25,6 +25,33 @@ if ($posttags_r->num_rows > 0) {
 } else {
     $trending_html = '';
 }
+
+
+$s_sql = "SELECT * FROM `settings` where `type` = 'events' && options = 'enable'";
+$result_s = $conn->query($s_sql);
+$events_html = '';
+$show_events = '';
+if ($result_s->num_rows > 0) {
+    $show_events = 'yes';
+    $events = "SELECT * FROM events order by created_at DESC limit 3";
+    $events_r = $conn->query($events);
+    if ($events_r->num_rows > 0) {
+        while($row = $events_r->fetch_assoc()) {
+            $f_tags = explode(",",$row['tags']);
+            $events_html .= '<div class="col-lg-4 col-md-4"><article class="post-style-two mb-2 mt-1"><div class="post-thumb" style="border: none;background: white"><div class="row"><div class="col-4 p-2 pl-4" style="height: 95px;"><img src="'.$row['img_link'].'"alt="'.$row['title'].'" style="height: 100%;" class="card-img-top img-fluid"></div><div class="col-8"><a style="color: black;font-size: 12px;">'.$row['title'].'</a><div class="row mt-2">';
+            foreach($f_tags as $tg_name) {
+                $events_html .= '<div class="col-4"><span class="sourcename">'.$tg_name.'</span></div>';
+            }
+            $events_html .= '</div></div></div></div></article></div>';
+        }
+    }
+}
+
+
+
+
+            
+
 
 
 ?>
@@ -257,121 +284,9 @@ if ($posttags_r->num_rows > 0) {
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-lg-4 col-md-4 "">
+                <?php if($show_events == "yes") { echo $events_html;  } ?>
 
-                    <article class="post-style-two mb-2 mt-1">
-
-                        <div class="post-thumb" style="border: none;background: white">
-
-                            <div class="row">
-                                <div class="col-4 p-2 pl-4" style="height: 95px;">
-                                    <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg"
-                                         alt="London Spitfire signs Quatermain | Dot Esports"
-                                         style="height: 100%;" class="card-img-top img-fluid">
-                                </div>
-
-                                <div class="col-8">
-                                    <a style="color: black;font-size: 12px;">The mysterious Imperial Treasures Of Japan</a>
-                                    <div class="row mt-2">
-                                        <div class="col-1 pt-1">
-                                            <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/AAywGC0.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;u=t&amp;o=t&amp;l=f&amp;f=png"
-                                                 class="loaded">
-                                        </div>
-
-                                        <div class="col-4">
-                                            <span class="sourcename">CNN</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- <a class="post_detail text-center" data-toggle="modal"
-                                data-target="#postModal"
-                                data-permlink="london-spitfire-signs-quatermain-dot-esports"
-                                data-author="miercoles">
-                                 <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg" alt="London Spitfire signs Quatermain | Dot Esports"
-                                      style="height: 135px;" class="card-img-top img-fluid">
-                             </a>-->
-                        </div>
-
-                    </article>
-
-                </div>
-
-                <div class="col-lg-4 col-md-4 "">
-
-                    <article class="post-style-two mb-2 mt-1">
-
-                        <div class="post-thumb" style="border: none;background: white">
-
-                            <div class="row">
-                                <div class="col-4 p-2 pl-4" style="height: 95px;">
-                                    <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg"
-                                         alt="London Spitfire signs Quatermain | Dot Esports"
-                                         style="height: 100%;" class="card-img-top img-fluid">
-                                </div>
-
-                                <div class="col-8">
-                                    <a style="color: black;font-size: 12px;">The mysterious Imperial Treasures Of Japan</a>
-                                    <div class="row mt-2">
-                                        <div class="col-1 pt-1">
-                                            <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/AAywGC0.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;u=t&amp;o=t&amp;l=f&amp;f=png"
-                                                 class="loaded">
-                                        </div>
-
-                                        <div class="col-4">
-                                            <span class="sourcename">CNN</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- <a class="post_detail text-center" data-toggle="modal"
-                                data-target="#postModal"
-                                data-permlink="london-spitfire-signs-quatermain-dot-esports"
-                                data-author="miercoles">
-                                 <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg" alt="London Spitfire signs Quatermain | Dot Esports"
-                                      style="height: 135px;" class="card-img-top img-fluid">
-                             </a>-->
-                        </div>
-
-                    </article>
-
-                </div>
-
-                <div class="col-lg-4 col-md-4 "">
-
-                    <article class="post-style-two mb-2 mt-1">
-
-                        <div class="post-thumb" style="border: none;background: white">
-
-                            <div class="row">
-                                <div class="col-4 p-2 pl-4" style="height: 95px;">
-                                    <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg"
-                                         alt="London Spitfire signs Quatermain | Dot Esports"
-                                         style="height: 100%;" class="card-img-top img-fluid">
-                                </div>
-
-                                <div class="col-8">
-                                    <a style="color: black;font-size: 12px;">The mysterious Imperial Treasures Of Japan</a>
-                                    <div class="row mt-2">
-                                        <div class="col-1 pt-1">
-                                            <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/AAywGC0.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;u=t&amp;o=t&amp;l=f&amp;f=png"
-                                                 class="loaded">
-                                        </div>
-
-                                        <div class="col-4">
-                                            <span class="sourcename">CNN</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </article>
-
-                </div>
+                
             </div>
 
         </div>
