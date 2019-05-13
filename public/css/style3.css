@@ -4212,24 +4212,24 @@ button.toast-close-button {
 
 .post_title {
     position: absolute;
-    top: 74%;
-    left: 8.5%;
+    left: 5%;
     color: white;
-    font-size: 27px;
+    font-size: 20px;
     z-index: 222;
 }
 
 
 .shadow_bottom {
     position: absolute;
-    top: 0%;
+    bottom: 0%;
     left: 0%;
     color: white;
     font-size: 27px;
-    height: 459px;
+    min-height: 65px;
     width: 100%;
-    background: -webkit-linear-gradient(bottom,rgba(0,0,0,1) 0,transparent 100%);
-    background: linear-gradient(0deg,rgba(0,0,0,1) 0,transparent 100%);
+    background: #000;
+    box-shadow: 0 0 55px 45px #000000;
+    
 }
 
 .col-lg-4.col-md-6>.post-style-two{
