@@ -74,7 +74,7 @@ $(document).ready(function(){
 	    $.ajax({
 		    type: "POST",
 		    url: '/helper/save_admin_data.php',
-		    data:{'tag':'ads','a_id':a_id,'a_status':a_status,'a_ad_html':a_ad_html},
+		    data:{'tag':'ads','a_id':a_id,'status':a_status,'ad_html':a_ad_html},
 		    dataType: 'json',
 		    success: function(response) {
 			$("#loader").hide();
