@@ -1652,7 +1652,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     padding: 0;
     text-align: center;
     left: 0;
-    bottom: -43px;
+    bottom: 0px !important;
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -1661,15 +1661,15 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     justify-content: center; }
 .testimonial-slider .slick-dots li {
     line-height: 100%;
-    margin: 8px 15px 0 0; }
+    margin: 10px 10px 0 0; }
 .testimonial-slider .slick-dots li:last-child {
     margin-right: 0px; }
 .testimonial-slider .slick-dots li button {
     color: transparent;
     border: none;
     outline: none;
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 6px;
     padding: 0;
     cursor: pointer;
     background: rgba(22, 82, 240, 0.5);
@@ -1678,11 +1678,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%; }
-.testimonial-slider .slick-dots li.slick-active {
-    margin-top: 5px !important; }
 .testimonial-slider .slick-dots li.slick-active button {
-    height: 14px;
-    width: 14px;
+    height: 7px;
+    width: 7px;
     background: #1652f0; }
 
 .testimonial-block {
