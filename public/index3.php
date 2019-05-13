@@ -59,10 +59,10 @@ if ($result_a->num_rows > 0) {
     if ($ads_r->num_rows > 0) {
         while($row = $ads_r->fetch_assoc()) {
             if($row['title'] == "ad1"){
-                $ad1_html = $row['ad_html'];
+                $ad1_html = base64_decode($row['ad_html']);
             }
             if($row['title'] == "ad2"){
-                $ad2_html = $row['ad_html'];
+                $ad2_html = base64_decode($row['ad_html']);
             }
         }
     }
