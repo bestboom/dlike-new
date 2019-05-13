@@ -1652,7 +1652,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     padding: 0;
     text-align: center;
     left: 0;
-    bottom: -43px;
+    bottom: 0px !important;
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
@@ -1661,15 +1661,15 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     justify-content: center; }
 .testimonial-slider .slick-dots li {
     line-height: 100%;
-    margin: 8px 15px 0 0; }
+    margin: 10px 10px 0 0; }
 .testimonial-slider .slick-dots li:last-child {
     margin-right: 0px; }
 .testimonial-slider .slick-dots li button {
     color: transparent;
     border: none;
     outline: none;
-    height: 8px;
-    width: 8px;
+    height: 6px;
+    width: 6px;
     padding: 0;
     cursor: pointer;
     background: rgba(22, 82, 240, 0.5);
@@ -1678,11 +1678,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%; }
-.testimonial-slider .slick-dots li.slick-active {
-    margin-top: 5px !important; }
 .testimonial-slider .slick-dots li.slick-active button {
-    height: 14px;
-    width: 14px;
+    height: 7px;
+    width: 7px;
     background: #1652f0; }
 
 .testimonial-block {
@@ -4212,24 +4210,24 @@ button.toast-close-button {
 
 .post_title {
     position: absolute;
-    top: 74%;
-    left: 8.5%;
+    left: 5%;
     color: white;
-    font-size: 27px;
+    font-size: 20px;
     z-index: 222;
 }
 
 
 .shadow_bottom {
     position: absolute;
-    top: 0%;
+    bottom: 0%;
     left: 0%;
     color: white;
     font-size: 27px;
-    height: 459px;
+    min-height: 65px;
     width: 100%;
-    background: -webkit-linear-gradient(bottom,rgba(0,0,0,1) 0,transparent 100%);
-    background: linear-gradient(0deg,rgba(0,0,0,1) 0,transparent 100%);
+    background: #000;
+    box-shadow: 0 0 55px 45px #000000;
+    
 }
 
 .col-lg-4.col-md-6>.post-style-two{
@@ -4546,3 +4544,57 @@ body {
         background: red !important;
     }
 }
+
+
+
+
+/* Center the loader */
+#loader {
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    margin: -60px 0 0 -60px;
+    border: 7px solid #4147a1;
+    border-radius: 50%;
+    border-top: 7px solid #4147a1;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s ease-in-out infinite; 
+    animation: spin 2s ease-in-out infinite;
+  
+      text-align: center;
+    font-size: 22px;
+    padding-top: 38px;
+      background: #4147a1;
+    color: #ffffff;
+  
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+    .myloader{display:none;}
+    .latest-post-section{position:relative;}
+
+

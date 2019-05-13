@@ -15,7 +15,13 @@ if(count($_POST['senderobj']['names']) > 0 && count($_POST['senderobj']['tokens'
 	foreach($_POST['senderobj']['names'] as $key_pair=>$names) {
 		$username = $names;
 		$amount = $_POST['senderobj']['tokens'][$key_pair];
-		$reason = "delegation";
+		if(isset($_POST['senderobj']['reason'])){
+			$reason = $_POST['senderobj']['reason'][$key_pair];
+		}
+		else {
+			$reason = "delegation";	
+		}
+		
 		if($username != "" && $amount != "") {
 			$sqlm = "INSERT INTO transactions (username, amount, reason)
 			VALUES ('".$username."', '".$amount."', '".$reason."')";

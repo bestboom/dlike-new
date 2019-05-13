@@ -1,6 +1,9 @@
-<?php include('../includes/config.php'); ?>
-<?php include('../template/header.php'); ?>
+<?php include('../template/header2.php');  ?>
 <style>
-  .support-category-block i{font-size:85px;color:white;}
+  .banner-block{background: transparent;}
+  .admin-latest-post-section {
+    position: relative;
+    display: block;
+    min-height: 100vh;
+}
 </style>
-</div>

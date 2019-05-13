@@ -338,7 +338,7 @@
 			    toastr.success(response.message);
 			    $('#featuredPostStatusModal').modal('hide');
 			    
-			    var all_status = p_status;
+
 			    $('#featuredstatus_icon' + p_permlink + p_username).removeAttr('onclick');
 				
 			}
