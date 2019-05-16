@@ -84,7 +84,7 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 
 	
-	$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts where parent_ctegory = '.$_REQUEST['catname'].' ORDER BY created_at DESC LIMIT 2";
+	$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts where parent_ctegory = '.$_REQUEST['catname'].' ORDER BY id DESC LIMIT 2";
 	$result1 = $conn->query($sql1);
 	if ($result1->num_rows > 0) {
 		while($row1 = $result1->fetch_assoc()) {
