@@ -257,6 +257,12 @@
                         <div class="download-option-block">
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/julialee66/avatar" alt="img" class="img-responsive img-team mx-auto">
+                                </div>
+                                <h4>@julialee66</h4>
+                            </div>
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
                                         <img src="https://steemitimages.com/u/freedom/avatar" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
                                 <h4>@freedom</h4>
