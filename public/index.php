@@ -35,7 +35,7 @@
                                 <div class="news-headlines-block">
                                     <div class="news-headlines-slider ticker">
                                         <ul>
-                                            <li>DLIKE user ranks added, Share only updated and informative links to get upvoted.</li>
+                                            <li>DLIKE user ranks added, Share only updated and informative links to get rewarded.</li>
                                         </ul>
                                     </div><!-- news-headlines-slider -->
                                 </div>
