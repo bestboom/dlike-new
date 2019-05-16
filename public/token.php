@@ -173,8 +173,8 @@
                                 <div class="download-wrap-inner">
                                         <img src="./images/post/authors/ehiboss.jpg" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
-                                <h4>@ehiboss</h4>
-                                <h4>Manager Operations</h4>
+                                <h4>Timo Trippler</h4>
+                                <h4>CBDO</h4>
                             </div>
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
@@ -194,7 +194,7 @@
                                 <div class="download-wrap-inner">
                                         <img src="./images/post/authors/mediahousent.jpg" alt="img" class="img-responsive img-team mx-auto mx-auto">
                                 </div>
-                                <h4>@mediahousent</h4>
+                                <h4>@mahadihasanzim</h4>
                                 <h4>Community Manager</h4>
                             </div>
                             <div class="download-wrap">
