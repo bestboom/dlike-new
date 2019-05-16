@@ -131,4 +131,5 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
   	echo json_encode($strReturn);die;
 
 }
+$conn->close();
 ?>

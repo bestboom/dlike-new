@@ -4,7 +4,7 @@
 	error_reporting(0);
     	require '../includes/config.php';
 	
-  if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
+  if($_COOKIE['username'] != 'dlike') {
 		$strReturn['status'] = 'no';	
 		$strReturn['message'] = 'only admin can delete.';	
 		echo json_encode($strReturn);die;
