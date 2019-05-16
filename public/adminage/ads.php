@@ -1,70 +1,36 @@
 <?php include('head.php'); ?>
 <div class="container" style="    margin: 20px auto;">
   <h2>
-	  Events
-	  <a href="create_ad.php" class="btn btn-primary" style="float: right;">Create Ad</a>
+	Ads
+	<a href="javascript:" class="btn text-white bg-success" data-option="enable" id="ads_show_status" style="float: right;margin-left: 5px;">Enable</a>
   </h2>
-  <p id="total_result"></p>
-  <div class="admin-latest-post-section">
-	  <div id="loader">Loading</div>
-	  <div id="show_results"></div>
-  </div>
-
-  <div class="modal fade" id="PostStatusModal" role="dialog">
-	<div class="modal-dialog">
-	
-	  <!-- Modal content-->
-	  <div class="modal-content">
-		    <div class="modal-body text-center">
-			    <input type="hidden" id="p_username" />
-			    <input type="hidden" id="p_permlink" />
-			    <input type="hidden" id="p_category" />
-			    <p>What would you think about this post?</p>
-			    <select class="form-control" id="status_select">
-			    <option value="">Please select</option>
-			    <option value="Rejected">Rejected</option>
-			    <option value="Low Level">Low Level</option>
-			    <option value="High Level">High Level</option>
-			    </select>
-			    <br>
-			    <p><input type="button" id="savepoststatus" class="btn btn-primary" value="Save it"/></p>
-				    
-		    </div>
-		    <div class="modal-footer">
-		      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		    </div>
-	  </div>
-	  
+  <div class="col-sm-12" style="display: block;    overflow: hidden;">
+  <form method="post" action="/helper/save_admin_data.php" enctype="multipart/form-data">
+	<input type="hidden" name="tag" value="ads"/>
+	<div class="col-sm-6" style="float:left;">
+	<div class="form-group">
+	  <label for="ad1_html">Ad1 HTML:</label>
+	  <textarea style="min-height:250px;" class="form-control" id="ad1_html" placeholder="Enter Ad1 html" name="ad1_html"></textarea>
 	</div>
-      </div>
+	 </div>
+	 <div class="col-sm-6" style="float:left;">
+	<div class="form-group">
+	  <label for="ad2_html">Ad2 HTML:</label>
+	  <textarea style="min-height:250px;" class="form-control" id="ad2_html" placeholder="Enter Ad2 html" name="ad2_html"></textarea>
+	</div>
+	  </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+
 </div>
 <?php include('../template/footer2.php'); ?>
-
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="//rawgit.com/carlo/jquery-base64/master/jquery.base64.min.js"></script>
-<style>table.dataTable thead th{    border-bottom: 1px solid #dee2e6;}.dataTables_length{display:none !important;}.dataTables_wrapper .dataTables_filter input{    display: block;width: auto;padding: .375rem .75rem;font-size: 1rem;line-height: 1.5;color: #495057;background-color: #fff;background-clip: padding-box;border: 1px solid #ced4da;border-radius: .25rem;transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;}table.dataTable.no-footer{    border-bottom: 1px solid #dee2e6;}</style>
 <script>
-	function openevent_popup(self){
-		var permlink = $(self).data('permlink');
-		var author = $(self).data('author');
-		var category = $(self).data('category');
-		var status = $(self).data('status');
-		
-		$("#p_username").val(author);
-		$("#p_permlink").val(permlink);
-		$("#p_category").val(category);
-		$("#status_select").val(status);
-		
-		$("#PostStatusModal").modal('show');
-    }
-    
-$(document).ready(function(){
-	$("#loader").show();
 	
-	var savepoststatus=$('#savepoststatus');
-	var events_show_status = $('#events_show_status');
-	events_show_status.click(function(){
+$(document).ready(function(){
+    var ads_show_status = $('#ads_show_status');
+    ads_show_status.click(function(){
 		$("#loader").show();
 		var option = $(this).data('option');
 		var setclass="bg-danger";
@@ -74,7 +40,7 @@ $(document).ready(function(){
 		$.ajax({
 		    type: "POST",
 		    url: '/helper/save_admin_data.php',
-		    data:{'tag':'settings','type':'events','option':option},
+		    data:{'tag':'settings','type':'ads','option':option},
 		    dataType: 'json',
 		    success: function(response) {
 				$("#loader").hide();
@@ -93,10 +59,10 @@ $(document).ready(function(){
 					r_class = "bg-success";
 					settoption = "Disable";
 				}
-			    events_show_status.addClass(setclass);
-			    events_show_status.removeClass(r_class);
-			    events_show_status.data('option',setoption);
-			    events_show_status.text(settoption);
+			    ads_show_status.addClass(setclass);
+			    ads_show_status.removeClass(r_class);
+			    ads_show_status.data('option',setoption);
+			    ads_show_status.text(settoption);
 			    
 				
 			}
@@ -112,50 +78,7 @@ $(document).ready(function(){
 		    }
 	    });
 	});
-	savepoststatus.click(function(){
-		$("#loader").show();
-	    var p_username = $("#p_username").val();
-	    var p_permlink = $("#p_permlink").val();
-	    var p_category = $("#p_category").val();
-	    var p_status = $("#status_select").val();
-	    if(p_status == ""){
-		alert("Please select status.");
-		return false;
-	    }
-	    
-	    $.ajax({
-		    type: "POST",
-		    url: '/helper/poststatus.php',
-		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
-		    dataType: 'json',
-		    success: function(response) {
-				$("#loader").hide();
-			if(response.status == "OK") {
-			    toastr.success(response.message);
-			    $('#PostStatusModal').modal('hide');
-			    
-			    var all_status = p_status;
-			    $("#post_"+p_username).text('Edit Status');
-			    $("#post_"+p_username).data('status',all_status);
-			    $("#post_s_"+p_username).html(all_status);
-			    
-				
-			}
-			else {
-			    $('#PostStatusModal').modal('hide');
-			    toastr.error(response.message);
-			    return false;
-			}
-		    },
-		    error: function() {
-				$("#loader").hide();
-			$('#PostStatusModal').modal('hide');
-			 toastr.error('Error occured');
-			    return false;
-		    }
-	    });
-	});
-	
+
 	$.ajax({
 		type: "POST",
 		url: '/helper/getadmindata.php',
@@ -165,21 +88,38 @@ $(document).ready(function(){
 			$("#loader").hide();
 			if(response.status == "OK") {
 				var result_data = response.html_data;
-				var total = response.total;
-				$("#total_result").html(total+" ads found.");
-				
-				var result_html = ' <table class="table table-bordered" id="ad_table"><thead><tr><th>Ad HTML</th><th>Status</th><th>Action</th></tr></thead><tbody >';
-				var ad_html = '';
+				var ad1_html = '';
+				var ad2_html = '';
 				for(i=0;i<result_data.length;i++){
-					ad_html = $.base64.decode(result_data[i]['ad_html']);
-					var action_var = "Edit";
-					result_html += '<tr><td>'+ad_html+'</td><td>'+result_data[i]['status']+'</td><td><a href="javascript:"  id="ad_'+result_data[i]['id']+'" onclick="return openad_popup(this)" class="btn btn-small btn-primary"  data-adhtml="'+result_data[i]['ad_html']+'" data-status="'+result_data[i]['status']+'" >'+action_var+'</a></td></tr>';
+				    if(result_data[i]['title'] == "ad1" && result_data[i]['ad_html'] != ""){
+					ad1_html = $.base64.decode(result_data[i]['ad_html']);
+				    }
+				    if(result_data[i]['title'] == "ad2" && result_data[i]['ad_html'] != ""){
+					ad2_html = $.base64.decode(result_data[i]['ad_html']);
+				    }
 				}
-				result_html += '</tbody></table>';			    
-				$("#show_results").html(result_html);
-				$('#ad_table').DataTable({language: { search: '', searchPlaceholder: "Search..." }});
+					    
+				$("#ad1_html").val(ad1_html);
+				$("#ad2_html").val(ad2_html);
+
+
+				var main_ad_status = response.main_ad_status;
+				if(main_ad_status == "disable") {
+					$("#ads_show_status").removeClass("bg-danger");
+					$("#ads_show_status").addClass("bg-success");
+					$("#ads_show_status").data('option','enable');
+					$("#ads_show_status").text('Enable');
+				}
+				else {
+					$("#ads_show_status").removeClass("bg-success");
+					$("#ads_show_status").addClass("bg-danger");
+					$("#ads_show_status").data('option',"disable");
+					$("#ads_show_status").text("Disable");
+				}
+				
 			}
 		}
 	});
+
 });
 </script>

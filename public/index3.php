@@ -10,6 +10,19 @@ if ($result->num_rows > 0) {
     }
 }
 
+$sql = "SELECT sp.json_metadata FROM steemposts";
+$result = $conn->query($sql);
+$featuredposts_html = '';
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $json_data = json_decode($row['json_metadata'],true);
+        $category_array[] = $json_data['category'];
+    }
+}
+$main_categories = array_values(array_unique($category_array));
+
+
+
 $posttags = "SELECT * FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) order by tagcount DESC";
 $posttags_r = $conn->query($posttags);
 if ($posttags_r->num_rows > 0) {
@@ -47,7 +60,28 @@ if ($result_s->num_rows > 0) {
     }
 }
 
-function get_client_ip() {
+$a_sql = "SELECT * FROM `settings` where `type` = 'ads' && options = 'enable'";
+$result_a = $conn->query($a_sql);
+$show_ads = '';
+if ($result_a->num_rows > 0) {
+    $show_ads = "yes";
+    $ads = "SELECT * FROM ads order by id DESC";
+    $ads_r = $conn->query($ads);
+    $ad1_html = '';
+    $ad2_html = '';
+    if ($ads_r->num_rows > 0) {
+        while($row = $ads_r->fetch_assoc()) {
+            if($row['title'] == "ad1"){
+                $ad1_html = base64_decode($row['ad_html']);
+            }
+            if($row['title'] == "ad2"){
+                $ad2_html = base64_decode($row['ad_html']);
+            }
+        }
+    }
+}
+
+function getclientip() {
     $ipaddress = '';
     if (isset($_SERVER['HTTP_CLIENT_IP']))
         $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
@@ -65,8 +99,10 @@ function get_client_ip() {
         $ipaddress = 'UNKNOWN';
     return $ipaddress;
 }
-echo $ip_set = get_client_ip();
-$current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
+$ip_set = getclientip();
+$main_ip = explode(",",$ip_set);
+$setip = $main_ip[0];
+$current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
             
 
 
@@ -208,7 +244,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
                         </div>
 
                     </article>
-
+                    <?php if($show_ads == "yes") { ?>
                     <div class="post-thumb" style="border: none;">
                         <div class="row pl-3">
                             <div class="col-4">
@@ -220,18 +256,10 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
                         </div>
                     </div>
 
-                    <article class="post-style-two" style="height: 250px;background: #6b2525;margin-bottom: 40px;">
-
-
-                        <div class="post-thumb">
-
-                        </div>
-
-
-                    </article>
+                    <?php  echo $ad1_html;  ?>
 
                 </div>
-
+                <?php } ?>
                 <div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
                     <div class="p-0">
                         <div class="container p-0">
@@ -480,8 +508,14 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
             <div id="loader">Loading</div>
             <div class="row" id="content">
             </div>
+
+            <?php if($show_ads == "yes") { echo $ad2_html; } ?>
+            
         </div>
     </div>
+
+
+    
 <?php include('template/modals/modal.php'); ?>
 <?php include('template/footer3.php'); ?>
 
@@ -560,8 +594,24 @@ $current_city = file_get_contents('https://ipapi.co/' . $ip_set . '/city/');
 	var savepoststatus=$('#savepoststatus');
 	var saveuserpoststatus=$('#saveuserpoststatus');
 	var savefeaturedpoststatus=$('#savefeaturedpoststatus');
-	
-	var c_username = $('#c_username').val();
+    var show_category=$('#show_category');
+    var c_username = $('#c_username').val();
+
+
+    show_category.click(function(){
+	    //var p_username = $("#pu_username").val();
+	    var category_html = '<div class="col-sm-12" style="display:block;overflow:hidden;">';
+        var category_value = '';
+        <?php foreach($main_categories as $category) { ?>
+            category_value = '<?php echo $category;?>';
+            category_html += '<div class="col-sm-3"><label><input type="checkbox" name="user_category[]" value="'+category_value+'"/> '+category_value+'</label></div>';
+        <?php } ?>
+        category_html += '<a href="javascript:" onclick="return call_save_category()" class="btn btn-primary">Save</a></div>';
+        
+	    $("#categoryStatusModal").modal('show');
+        $("#categoryStatusModal div.modal-body").append(category_html);
+	});
+    
 	
 	saveuserpoststatus.click(function(){
 	    var p_username = $("#pu_username").val();

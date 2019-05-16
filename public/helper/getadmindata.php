@@ -58,8 +58,8 @@
 			}
 			else if(isset($_POST['data']) && $_POST['data'] == "ads"){
 				$dataset['id'] = $row['id'];
+				$dataset['title'] = $row['title'];
 				$dataset['ad_html'] = $row['ad_html'];
-				$dataset['status'] = $row['status'];
 				
 				$strReturn['html_data'][] = $dataset;
 			}
@@ -76,6 +76,19 @@
 			}
 			else {
 				$strReturn['main_event_status'] = 'enable';	
+			}
+		}
+		
+		if(isset($_POST['data']) && $_POST['data'] == "ads"){
+			$s_sql = "SELECT * FROM `settings` where `type` = 'ads'";
+			$result_s = $conn->query($s_sql);
+			if ($result_s->num_rows > 0) {
+				while($row_s = $result_s->fetch_assoc()) {
+					$strReturn['main_ad_status'] = $row_s['options'];
+				}
+			}
+			else {
+				$strReturn['main_ad_status'] = 'enable';	
 			}
 		}
 		
