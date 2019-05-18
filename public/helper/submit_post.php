@@ -44,7 +44,7 @@ $postGenerator = new dlike\post\makePost();
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
 	];
 	
-	$body = "<center><img src='" . $urlImage . "' alt='Dhared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+	$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
 		/*
         $json_php_array = $json_metadata;
