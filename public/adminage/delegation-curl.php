@@ -3,7 +3,7 @@ if(!empty($_POST['steemid'])) {
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://helloacm.com/api/steemit/delegators/');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "id=".$_POST['steemid']."&hash=35f0812991a252dac37095e74546c0fb");
+curl_setopt($ch, CURLOPT_POSTFIELDS, "id=".$_POST['steemid']."&hash=a31bf2a391414e73720723c1bde0e9b8");
 curl_setopt($ch, CURLOPT_POST, 1);
 $headers = array();
 $headers[] = 'Content-Type: application/x-www-form-urlencoded';
