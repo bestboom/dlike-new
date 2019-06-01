@@ -29,7 +29,7 @@
     </div><!-- contact-section -->
 </div>    
 <?php
-$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts ORDER BY id DESC LIMIT 48";
+$sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 48";
 	$result1 = $conn->query($sql1);
 	if ($result1->num_rows > 0) {
 		while($row1 = $result1->fetch_assoc()) {
