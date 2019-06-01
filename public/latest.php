@@ -35,7 +35,7 @@ $sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts ORDER
 		while($row1 = $result1->fetch_assoc()) {
 			$json_metadata = json_decode($row1['json_metadata'],true);
 
-				$username = $row1['username'];
+				 echo  $username = $row1['username'];
 				$permlink = $row1['permlink'];
 				$title = $row1['title'];
 				$category = $json_metadata['category'];
