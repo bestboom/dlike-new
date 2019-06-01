@@ -35,11 +35,12 @@ $sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts ORDER
 		while($row1 = $result1->fetch_assoc()) {
 			$json_metadata = json_decode($row1['json_metadata'],true);
 
-				$username = $row1['username']."<br>";
-				$permlink = $row1['permlink'];
-				echo  $title = $row1['title']."<br>";
+				
+				echo $title = $row1['title']."<br>";
 				$category = $json_metadata['category'];
 				$imgsrc = $json_metadata['image'];
+				$username = $row1['username']."<br>";
+				$permlink = $row1['permlink'];
 		}
 	}
 ?>	
