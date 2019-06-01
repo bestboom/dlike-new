@@ -40,5 +40,7 @@ $sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts ORDER
 				$title = $row1['title'];
 				$category = $json_metadata['category'];
 				$imgsrc = $json_metadata['image'];
+		}
+	}
 ?>	
 <?php include('template/footer.php'); ?>
