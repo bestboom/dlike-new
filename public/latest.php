@@ -28,4 +28,17 @@
         </div>
     </div><!-- contact-section -->
 </div>    
+<?php
+$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts ORDER BY id DESC LIMIT 48";
+	$result1 = $conn->query($sql1);
+	if ($result1->num_rows > 0) {
+		while($row1 = $result1->fetch_assoc()) {
+			$json_metadata = json_decode($row1['json_metadata'],true);
+
+				$username = $row1['username'];
+				$permlink = $row1['permlink'];
+				$title = $row1['title'];
+				$category = $json_metadata['category'];
+				$imgsrc = $json_metadata['image'];
+?>	
 <?php include('template/footer.php'); ?>
