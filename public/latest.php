@@ -27,7 +27,9 @@
             
         </div>
     </div><!-- contact-section -->
-</div>    
+</div>  
+<div class="latest-post-section">
+        <div class="container">  
 <?php
 $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 48";
 	$result1 = $conn->query($sql1);
@@ -36,7 +38,7 @@ $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY i
 			$json_metadata = json_decode($row1['json_metadata'],true);
 
 				$imgsrc = $json_metadata['image'];
-				echo $title = "<img src='".$imgsrc."' style='width:50px;height:50px;'>".$row1['title']."<br>";
+				echo $title = "<img src='".$imgsrc."' style='width:50px;height:50px;padding-right:15px;'>".$row1['title']."<br>";
 				$category = $json_metadata['category'];
 				
 				$username = $row1['username']."<br>";
@@ -44,4 +46,5 @@ $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY i
 		}
 	}
 ?>	
+</div></div>
 <?php include('template/footer.php'); ?>
