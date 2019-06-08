@@ -10,7 +10,7 @@ $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY i
 			$json_metadata = json_decode($row1['json_metadata'],true);
 
 				$imgsrc = $json_metadata['image'];
-				echo $title = "<img src='".$imgsrc."' style='width:50px;height:50px;padding-right:15px;'>".$row1['title']."<br>";
+				echo $title = "<img src='".$imgsrc."' style='width:50px;height:50px;padding-right:15px;padding-bottom:5px;border-radius:7px;'>".$row1['title']."<br>";
 				$category = $json_metadata['category'];
 				
 				$username = $row1['username']."<br>";
