@@ -50,7 +50,7 @@ $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY i
 				$imgsrc = $json_metadata['image'];
 				$permlink = $row1['permlink'];
 				$username = $row1['username'];
-				echo $title = "<a href='"'./@'.$username.'/'.$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
+				echo $title = "<a href='/@'".$username."'/'".$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
 				$category = $json_metadata['category'];
 				
 				
