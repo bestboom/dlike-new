@@ -48,11 +48,12 @@ $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY i
 			$json_metadata = json_decode($row1['json_metadata'],true);
 
 				$imgsrc = $json_metadata['image'];
-				echo $title = "<img src='".$imgsrc."' style='width:50px;height:50px;padding-right:15px;padding-bottom:5px;'>".$row1['title']."<br>";
+				$permlink = $row1['permlink'];
+				echo $title = "<a href='".$permlink."'><img src='".$imgsrc."' style='width:50px;height:50px;padding-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
 				$category = $json_metadata['category'];
 				
 				$username = $row1['username']."<br>";
-				$permlink = $row1['permlink'];
+				
 		}
 	}
 ?>	
@@ -72,11 +73,7 @@ $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY i
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-    <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/slick.min.js"></script>
-    <script src="/assets/js/jquery.peity.min.js"></script>
-    <script src="/assets/js/jquery.slimscroll.min.js"></script>
     <script src="/js/custom.js"></script>
     <script src="/js/mint.js"></script>
     <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
