@@ -1,6 +1,6 @@
 <?php include('template/header.php'); 
-echo $link = $_GET['link'];
-echo $user = $_GET['user'];
+$link = $_GET['link'];
+$user = $_GET['user'];
 ?>
 </div>
         <div class="container">
@@ -87,8 +87,9 @@ echo $user = $_GET['user'];
             </div>  
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
-    
-    steem.api.getContent(postauthor , postpermlink, function(err, res) {
+    post_author = '<?php echo $user; ?>',
+    post_permlink = '<?php echo $link; ?>';
+    steem.api.getContent(post_author , post_permlink, function(err, res) {
         //console.log(res);
 
         let metadata = JSON.parse(res.json_metadata);
