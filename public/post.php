@@ -1,7 +1,8 @@
 <?php include('template/header.php'); 
-$link = $_GET['link'];
-$user = $_GET['user'];
+echo $link = $_GET['link'];
+echo $user = $_GET['user'];
 ?>
+</div>
         <div class="container">
             <div class="row">
                 <div class="col">
