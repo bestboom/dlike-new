@@ -1,6 +1,8 @@
 <?php include('template/header.php'); 
 $link = $_GET['link'];
 $user = $_GET['user'];
+$word = "@"; 
+echo auth($word,$user); 
 ?>
 </div>
         <div class="container">
@@ -87,7 +89,7 @@ $user = $_GET['user'];
             </div>  
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
-    post_author = '<?php echo $user; ?>',
+    post_author = '<?php echo $auth; ?>',
     post_permlink = '<?php echo $link; ?>';
     console.log(post_author);
     steem.api.getContent(post_author , post_permlink, function(err, res) {
