@@ -1,7 +1,7 @@
 <?php include('template/header.php'); 
 $link = $_GET['link'];
 $user = $_GET['user'];
-echo $auth = str_replace('@', '', $user);
+$auth = str_replace('@', '', $user);
 ?>
 </div>
         <div class="container">
@@ -9,10 +9,9 @@ echo $auth = str_replace('@', '', $user);
                 <div class="col">
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
-                                <div class="row d-flex single_close"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="mod-close">×</span></button></div>
                                 <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
                                 <div class="post-thumb-block">
-                                    <img src="" onerror="this.src='./images/post/8.png'" alt="img" class="img-responsive mod-thumb">
+                                    <img src="" onerror="this.src='/images/post/8.png'" alt="img" class="img-responsive mod-thumb">
                                 </div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
@@ -90,7 +89,6 @@ echo $auth = str_replace('@', '', $user);
 <script type="text/javascript">
     post_author = '<?php echo $auth; ?>',
     post_permlink = '<?php echo $link; ?>';
-    console.log(post_author);
     steem.api.getContent(post_author , post_permlink, function(err, res) {
         //console.log(res);
 
