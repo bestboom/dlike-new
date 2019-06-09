@@ -1,5 +1,7 @@
-<?php include('template/header.php'); ?>
-<div class="section-padding-bottom">
+<?php include('template/header.php'); 
+$link = $_GET['link'];
+$user = $_GET['user'];
+?>
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -81,6 +83,5 @@
                         </div>
                     </div>
                 </div>
-            </div>
-    </div>  
+            </div>  
 <?php include('template/footer.php'); ?>
