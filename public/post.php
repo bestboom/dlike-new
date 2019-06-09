@@ -1,8 +1,7 @@
 <?php include('template/header.php'); 
 $link = $_GET['link'];
 $user = $_GET['user'];
-$word = "@"; 
-echo auth($word,$user); 
+echo $auth = str_replace('@', '', $user);
 ?>
 </div>
         <div class="container">
