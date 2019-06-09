@@ -5,8 +5,10 @@ $auth = str_replace('@', '', $user);
 ?>
 </div>
         <div class="container">
+         <div class="row"><div class="col-md-9">
+            <div class="container">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col">
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
                                 <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
@@ -24,7 +26,7 @@ $auth = str_replace('@', '', $user);
             <div class="details-post-meta-block">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col">
                             <div class="details-post-meta-block-wrap">
                                 <div class="post-author-block">
                                     <div class="author-thumb">
@@ -55,6 +57,8 @@ $auth = str_replace('@', '', $user);
                     </div>
                 </div>
             </div>
+        </div><div class="col-md-3" style="background: #000;height: 100%;">ggggggggggggggggggggggggg</div>
+    </div></div>
             <div class="container">
                 <div class="row">
                     <div class="col">
