@@ -89,6 +89,7 @@ $user = $_GET['user'];
 <script type="text/javascript">
     post_author = '<?php echo $user; ?>',
     post_permlink = '<?php echo $link; ?>';
+    console.log(post_author);
     steem.api.getContent(post_author , post_permlink, function(err, res) {
         //console.log(res);
 
