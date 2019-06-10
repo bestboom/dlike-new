@@ -49,5 +49,6 @@
     <script src="/js/toaster.js"></script>
     <script src="./js/jquery.ticker.js"></script>
     <script type="text/javascript"> $(function (){ $('.ticker').ticker(); });</script>
+    <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
 </body>
 </html>
