@@ -13,7 +13,7 @@ $auth = str_replace('@', '', $user);
                             <div class="single-post-block">
                                 <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
 
-            <div class="details-post-meta-block">
+            <div class="details-post-meta-block-top">
                 <div class="container">
                     <div class="row">
                         <div class="col">
