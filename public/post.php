@@ -57,7 +57,7 @@ $auth = str_replace('@', '', $user);
                     </div>
                 </div>
             </div>
-        </div><div class="col-md-3" style="background: #000;height: 100%;">ggggggggggggggggggggggggg</div>
+        </div><div class="col-md-3" style="background: #000;height: 100%;">ggggggggggggggggfffffffffffffggggggggg</div>
     </div></div>
             <div class="container">
                 <div class="row">
