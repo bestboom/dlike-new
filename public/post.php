@@ -4,7 +4,7 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 ?>
 </div>
-        <div class="container">
+        <div class="container" style="padding-top: 40px;">
          <div class="row"><div class="col-md-9">
             <div class="container">
             <div class="row">
