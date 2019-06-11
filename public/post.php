@@ -95,21 +95,21 @@ $auth = str_replace('@', '', $user);
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div style="background:#000;height: 250px;"></div>
+                        <div style="background:#eee;height: 250px;padding: 0px !important;margin-bottom: 15px;"></div>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div style="background:#000;height: 250px;"></div>
+                        <div style="background:#eee;height: 250px;margin-bottom: 15px;"></div>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div style="background:#000;height: 250px;"></div>
+                        <div style="background:#eee;height: 250px;"></div>
                     </div>
                 </div>
             </div>
