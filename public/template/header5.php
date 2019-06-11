@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dlike - Earn By Sharing Your Article Links</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get paid if community likes your links with steem upvotes.">
-    <link rel='favicon icon' type=image/x-icon href=images/favicon.ico />
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="css/style3.css">
-    <link rel="stylesheet" href="css/responsive.css">
+  <title>Dlike - Share To Get Rewarded</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes.">
+  <link rel='favicon icon' type=image/x-icon href=images/favicon.ico />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/css/themify-icons.css">
+  <link rel="stylesheet" href="/assets/css/slick.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
 <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
@@ -23,7 +23,7 @@
     <a href="/docs/dlike-paper.pdf">Whitepaper</a>
 
 </div>
-<div class="banner-block">
+<div class="">
     <nav class="navbar main-nav navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/">
