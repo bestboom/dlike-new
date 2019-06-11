@@ -23,7 +23,7 @@
     <a href="/docs/dlike-paper.pdf">Whitepaper</a>
 
 </div>
-<div class="">
+<div class="banner-block">
     <nav class="navbar main-nav navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="/">
