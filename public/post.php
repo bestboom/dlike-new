@@ -122,7 +122,7 @@ $auth = str_replace('@', '', $user);
                     </div>
                 </div>
             </div>  
-<?php include('template/footer.php'); ?>
+<?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     post_author = '<?php echo $auth; ?>',
     post_permlink = '<?php echo $link; ?>';
