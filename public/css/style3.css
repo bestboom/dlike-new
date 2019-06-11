@@ -2951,7 +2951,10 @@ sub.transmoney-value {
 .latest-post-section {
     background: #eeeeee94;
     padding: 120px 0 60px 0; }
-
+ .card-img-post {
+    width: 100%;
+    height: auto;
+    object-fit: cover;} 
 .post-style-two.post-full-width {
     display: -webkit-box;
     display: -ms-flexbox;

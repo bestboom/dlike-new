@@ -46,7 +46,7 @@ $auth = str_replace('@', '', $user);
 
 
                                 <div class="post-thumb-block">
-                                    <img src="" onerror="this.src='/images/post/8.png'" alt="img" class="img-responsive mod-thumb">
+                                    <img src="" onerror="this.src='/images/post/8.png'" alt="img" class="card-img-post img-fluid mod-thumb">
                                 </div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
