@@ -91,7 +91,16 @@ $auth = str_replace('@', '', $user);
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3" style="margin-top: : 30px !important;">
+            <div class="container">
+                <div class="row">
+                    <div class="col" style="padding: 0px !important;">
+                        <div style="background:#eee;height: 250px;margin-bottom: 15px;">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col" style="padding: 0px !important;">
@@ -101,14 +110,7 @@ $auth = str_replace('@', '', $user);
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <div style="background:#eee;height: 250px;margin-bottom: 15px;"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
+                    <div class="col" style="padding: 0px !important;">
                         <div style="background:#eee;height: 250px;"></div>
                     </div>
                 </div>
