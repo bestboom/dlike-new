@@ -106,5 +106,14 @@
 
 <script src="/js/steemconnect.js"></script>
 <script src="/js/toaster.js"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 </html>
