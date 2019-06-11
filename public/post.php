@@ -94,8 +94,8 @@ $auth = str_replace('@', '', $user);
         <div class="col-md-3">
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <div style="background:#eee;height: 250px;padding: 0px !important;margin-bottom: 15px;"></div>
+                    <div class="col" style="padding: 0px !important;">
+                        <div style="background:#eee;height: 250px;margin-bottom: 15px;"></div>
                     </div>
                 </div>
             </div>
