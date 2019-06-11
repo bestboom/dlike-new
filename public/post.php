@@ -95,6 +95,7 @@ $auth = str_replace('@', '', $user);
             <div class="container">
                 <div class="row">
                     <div class="col">
+                        <div style="background:#000;height: 250px;"></div>
                     </div>
                 </div>
             </div>
