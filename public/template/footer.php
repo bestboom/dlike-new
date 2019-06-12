@@ -49,7 +49,13 @@
     <script src="/js/toaster.js"></script>
     <script src="./js/jquery.ticker.js"></script>
     <script type="text/javascript"> $(function (){ $('.ticker').ticker(); });</script>
-    <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script><br/>
+
+    <script type="text/javascript">
+        //chat
+function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}
+ChatbroLoader({encodedChatId: '938nz'});
+    </script><br>
+    <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
 
 </body>
 </html>
