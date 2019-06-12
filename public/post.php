@@ -65,12 +65,12 @@ $auth = str_replace('@', '', $user);
                         </div>
                         <div class="col">
                             <p>Tips are fre from DLIKE <br>
-                            Tip Author 60% - 40% to ME</p>
+                            Tip Author 60% - 40% to ME</p>+
                         </div>
                         <div class="col">
                             <form action="helper/addtips.php" method="post" id="tipsubmit">
                                 <input type="hidden" name="loguser" id="tipuser" value="" />
-                                <input type="hidden" name="tipauthor" value="<?php echo $user; ?>" />
+                                <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                 <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                 <center><button class="btn btn-default">TIP</button></center>
                             </form>
