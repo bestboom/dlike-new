@@ -7,7 +7,7 @@
 
 	$saved_ip = $_COOKIE['usertoken'];
 	$receiver =  $_POST['tipauthor'];	
-	$sender =  $_POST['loguser'];	
+	$sender =  $_COOKIE['username'];	
 	$permlink =  $_POST['tippermlink'];	
 
 	$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, userip, tip_time)
