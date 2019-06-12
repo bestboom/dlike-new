@@ -60,13 +60,14 @@ $auth = str_replace('@', '', $user);
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            DLIKE LOGO
+                            <img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px">
                         </div>
                         <div class="col">
-                            Tip Author 60% - 40% to ME
+                            <p>Tips are fre from DLIKE <br>
+                            Tip Author 60% - 40% to ME</p>
                         </div>
                         <div class="col">
-                            <button class="btn btn-default cmt_bt">TIP</button>
+                            <center><button class="btn btn-default cmt_bt">TIP</button></center>
                         </div>
                     </div>
                 </div>
