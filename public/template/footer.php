@@ -37,7 +37,6 @@
     <script src="/assets/js/slick.min.js"></script>
     <script src="/assets/js/jquery.peity.min.js"></script>
     <script src="/assets/js/jquery.slimscroll.min.js"></script>
-    <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
     <script src="/js/custom.js"></script>
     <script src="/js/mint.js"></script>
     <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
@@ -50,6 +49,6 @@
     <script src="/js/toaster.js"></script>
     <script src="./js/jquery.ticker.js"></script>
     <script type="text/javascript"> $(function (){ $('.ticker').ticker(); });</script>
-    
+    <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script><br/>
 </body>
 </html>
