@@ -1,3 +1,284 @@
+/* This css file is to override bootstarp4 css
+********************************************************* /
+* Theme Name: Ex-Coin
+* Theme URI:  http://themeforest.ne/user/uigigs
+* Author: uigigs
+* Author URI: http://uigigs.com
+* Description:  Ex-coin html5 template
+* Version: 1.0.0
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Tags: template,site template, html5, template
+*********************************************************** /
+
+/*
+|----------------------------------------------------------------------------
+| CSS INDEX
+|----------------------------------------------------------------------------
+
+1. General Style
+2. Navbar Style
+3. Coin List Style
+4. Activity Style
+5. Wallets Style
+6. Banner Style
+7. Live-graph Style
+8. Catagori Style
+9. Common Component Style
+10. Currency Dashboard Style
+11. Tranding Info Style
+12. Working-process Style
+13. Post Style
+14 Blog Details Style
+15. Support Details Style
+16. FAQ Style
+17. Footer Style
+
+*/
+/*
+ * Mixin printing a linear-gradient
+ * as well as a plain color fallback
+ * and the `-webkit-` prefixed declaration
+ * @access public
+ * @param {Keyword | Angle} $direction - Linear gradient direction
+ * @param {Arglist} $color-stops - List of color-stops composing the gradient
+ *
+ * @see https://www.sitepoint.com/building-linear-gradient-mixin-sass/
+ */
+/*
+|----------------------------------------------------------------------------
+| 1. General Style
+|----------------------------------------------------------------------------
+*/
+html, html a {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important; }
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  color: #5f5f5f;
+  font-weight: 400;
+  position: relative;
+  background: #fcfdff;
+  text-rendering: optimizeLegibility; }
+
+p {
+  line-height: 26px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  font-family: "Quicksand", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: "Quicksand", sans-serif; }
+
+h1 {
+  font-size: 42px; }
+
+h2 {
+  font-size: 50px; }
+
+h3 {
+  font-size: 30px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 15px; }
+
+h6 {
+  font-size: 12px; }
+
+img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: inline-block; }
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: 0.4s ease-in;
+  -o-transition: 0.4s ease-in;
+  transition: 0.4s ease-in; }
+  a:hover, a:focus {
+    text-decoration: none;
+    color: #797979;
+    outline: 0; }
+
+.faceboox {
+  background: #3b5998; }
+
+.twitter {
+  background: #1da1f2; }
+
+.google-plus {
+  background: #dd4b39; }
+
+.linkdin {
+  background: #0077b5; }
+
+.pinterest {
+  background: #bd081c; }
+
+.instagram {
+  background: #5851db; }
+
+button {
+  font-family: "Quicksand", sans-serif; }
+
+iframe {
+  border: 0; }
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.7); }
+
+.panel-heading-block {
+  padding: 10px 0 10px 15px;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0; }
+  .panel-heading-block h5 {
+    font-size: 14px;
+    color: #1c2437;
+    margin: 0; }
+
+/*** Form and inputs ***/
+input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:focus, textarea:focus {
+  outline: none; }
+
+.buy-btn {
+  height: 40px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: #00c162;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+  .buy-btn:focus, .buy-btn:active {
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.sell-btn {
+  height: 40px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: #dd1900;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+  .sell-btn:focus, .sell-btn:active {
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+.section-padding {
+  padding: 100px 0; }
+
+.section-padding-top {
+  padding-top: 100px; }
+
+.section-padding-bottom {
+  padding-bottom: 100px; }
+
+.section-padding-50 {
+  padding: 50px 0; }
+
+.section-padding-50-top {
+  padding-top: 50px; }
+
+.section-padding-80-top {
+  padding-top: 80px; }
+
+.section-padding-80-bottom {
+  padding-bottom: 80px; }
+
+.margin-balance {
+  margin-bottom: -30px;
+  zoom: 1;
+  position: relative;
+  overflow: hidden; }
+
+.white-bg {
+  background: #fff; }
+
+.dark-blue-bg {
+  background: #0b132d; }
+
+.base-color {
+  color: #1652f0; }
+
+.section-title-one {
+  text-align: center;
+  margin-bottom: 75px; }
+  .section-title-one h3 {
+    font-weight: 700;
+    font-size: 36px;
+    color: #0b132d;
+    margin-bottom: 33px; }
+  .section-title-one p {
+    line-height: 24px;
+    margin-bottom: 0; }
+.adv:before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    z-index: 2;
+    background: #e8e9eb; }
+.setion-title-two {
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px; }
+  .setion-title-two:before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    z-index: 2;
+    background: #e8e9eb; }
+  .setion-title-two h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 99;
+    max-width: 170px;
+    margin: 0 auto;
+    background: #fcfdff;
+    color: #5f5f5f;
+    text-transform: uppercase; }
+
+.section-title-three {
+  margin-bottom: 55px;
+  text-align: center; }
+  .section-title-three h3 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0b132d; }
 
 /*
 |----------------------------------------------------------------------------
