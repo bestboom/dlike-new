@@ -56,6 +56,15 @@ $auth = str_replace('@', '', $user);
                 </div>
 
             </div>
+            <div class="details-post-meta-tip">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="details-post-meta-block">
                 <div class="container">
                     <div class="row">
