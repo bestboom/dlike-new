@@ -5,7 +5,10 @@
 
 	require '../includes/config.php';
 
-	$saved_ip = $_COOKIE['usertoken'];	
+	$saved_ip = $_COOKIE['usertoken'];
+	$receiver =  $_POST['author'];	
+	$sender =  $_POST['loguser'];	
+	$permlink =  $_POST['permlink'];	
 
 	$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, userip, tip_time)
 						VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$saved_ip."', '".date("Y-m-d h:m:s")."')";

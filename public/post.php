@@ -199,7 +199,7 @@ $auth = str_replace('@', '', $user);
     }); 
 
     // tip me
-    var options = {
+    var tipoptions = {
         target: '#tip-msg',
         url: '/helper/addtips.php',
         success: function() {},
