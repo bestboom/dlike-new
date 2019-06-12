@@ -11,9 +11,9 @@
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="/assets/css/themify-icons.css">
-  <link rel="stylesheet" href="/assets/css/slick.css">
+
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/responsive.css">
   
 </head>
 <body>
