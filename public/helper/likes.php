@@ -7,6 +7,20 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$sql = "CREATE TABLE TipTop (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+sender VARCHAR(255) NOT NULL,
+receiver VARCHAR(255) NOT NULL,
+permlink VARCHAR(255) NOT NULL,
+userip VARCHAR(255) NOT NULL,
+tip_time TIMESTAMP
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table TipTop created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 /*
 
