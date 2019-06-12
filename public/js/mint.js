@@ -229,7 +229,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
         };
             $.ajax({
                 type: "POST",
-                url: "helper/verify_post.php",
+                url: "/helper/verify_post.php",
                 data: datat,
                 success: function(data) {
                         try {
