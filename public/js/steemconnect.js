@@ -12,6 +12,7 @@ var username = $.cookie("username");
 var user_auth = $.cookie("access_token");
 var profile_image = "https://steemitimages.com/u/" + username + "/avatar";
 $('#user_log').html(username);
+$('#tipuser').val(username);
 $("#user_img").attr("src","https://steemitimages.com/u/" + username + "/avatar").show();
 $("#likes_name").val(username).prop('readonly', true);
 $("#user_label").html('<b>Steem UserName is</b>');

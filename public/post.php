@@ -68,7 +68,12 @@ $auth = str_replace('@', '', $user);
                             Tip Author 60% - 40% to ME</p>
                         </div>
                         <div class="col">
-                            <center><button class="btn btn-default" id="tipsubmit">TIP</button></center>
+                            <form action="helper/addtips.php" method="post" id="tipsubmit">
+                                <input type="hidden" name="loguser" id="tipuser" value="" />
+                                <input type="hidden" name="tipauthor" value="<?php echo $user; ?>" />
+                                <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
+                                <center><button class="btn btn-default">TIP</button></center>
+                            </form>
                         </div>
                     </div>
                 </div>
