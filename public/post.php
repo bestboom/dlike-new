@@ -60,7 +60,13 @@ $auth = str_replace('@', '', $user);
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            
+                            DLIKE LOGO
+                        </div>
+                        <div class="col">
+                            Tip Author 60% - 40% to ME
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-default cmt_bt">TIP</button>
                         </div>
                     </div>
                 </div>
