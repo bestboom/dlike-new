@@ -9,6 +9,7 @@ $auth = str_replace('@', '', $user);
             <div class="container">
             <div class="row">
                 <div class="col">
+                    <div id="tip-msg"></div>
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
                                 <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
