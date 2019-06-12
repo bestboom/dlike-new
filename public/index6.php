@@ -9,6 +9,7 @@
   <link rel='favicon icon' type=image/x-icon href=images/favicon.ico />
 
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
