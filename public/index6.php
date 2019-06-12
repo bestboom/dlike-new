@@ -17,27 +17,6 @@
   <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
-    <div class="banner-block">
-        <nav class="navbar main-nav navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img class="navbar-logo" src="/images/logo.png" alt="Dlike"/>
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item"><a class="nav-link" href="/share.php">SHARE</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/explorer">Explorer</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/token">Token</a></li>
-                      <li class="nav-item button active">
-                          <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
-                      </li>
-                    </ul>
-                </div>
-            </div>
-        </nav><!-- main-nav-block -->
-    </div>    
+  
 
     <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
