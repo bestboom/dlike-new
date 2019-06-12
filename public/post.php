@@ -212,7 +212,7 @@ echo $sender =  $_COOKIE['username'];
         success: function() {},
     }
     $('#tipsubmit').submit(function() {
-        $(this).ajaxSubmit(options)
+        $(this).ajaxSubmit(tipoptions)
         return !1
     });
 </script>
