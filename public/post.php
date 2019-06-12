@@ -67,7 +67,7 @@ $auth = str_replace('@', '', $user);
                             Tip Author 60% - 40% to ME</p>
                         </div>
                         <div class="col">
-                            <center><button class="btn btn-default cmt_bt">TIP</button></center>
+                            <center><button class="btn btn-default" id="tipsubmit">TIP</button></center>
                         </div>
                     </div>
                 </div>
@@ -197,4 +197,15 @@ $auth = str_replace('@', '', $user);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
     }); 
+
+    // tip me
+    var options = {
+        target: '#tip-msg',
+        url: '/helper/addtips.php',
+        success: function() {},
+    }
+    $('#tipsubmit').submit(function() {
+        $(this).ajaxSubmit(options)
+        return !1
+    });
 </script>

@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-
+/*
 $sql = "CREATE TABLE TipTop (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 sender VARCHAR(255) NOT NULL,
@@ -22,7 +22,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-/*
+
 
 $sql = "CREATE TABLE PostStatus (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
