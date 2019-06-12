@@ -98,6 +98,18 @@ h6 {
 
 
 
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: 0.4s ease-in;
+  -o-transition: 0.4s ease-in;
+  transition: 0.4s ease-in; }
+  a:hover, a:focus {
+    text-decoration: none;
+    color: #797979;
+    outline: 0; }
+
 .faceboox {
   background: #3b5998; }
 
