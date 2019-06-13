@@ -16,8 +16,9 @@
 
 						if (mysqli_query($conn, $sqlm)) {
 
-						echo '<div class="alert alert-success">Your Tip is Added</div>';
+						
     					echo '<script>document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+    					echo '<div class="alert alert-success">Your Tip is Added</div>';
 						} else {
     					echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 						}
