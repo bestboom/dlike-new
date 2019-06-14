@@ -21,13 +21,13 @@ echo 'User Real IP - '.getUserIpAddr();
 echo '<br>';
 
 if (!empty($_SERVER['HTTP_CLIENT_IP'])){
-  $ip=$_SERVER['HTTP_CLIENT_IP'];
+  $myip=$_SERVER['HTTP_CLIENT_IP'];
 }elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+  $myip=$_SERVER['HTTP_X_FORWARDED_FOR'];
 }else{
-  $ip=$_SERVER['REMOTE_ADDR'];
+  $myip=$_SERVER['REMOTE_ADDR'];
 }
-echo $ip;
+echo $myip;
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
