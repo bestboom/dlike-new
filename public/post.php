@@ -19,6 +19,8 @@ function getUserIpAddr(){
 
 echo $ipadd = getUserIpAddr();
 echo '<br>';
+echo $thisip = ip2long($ipadd);
+   echo '<br>';     
 
 if (!empty($_SERVER['HTTP_CLIENT_IP'])){
   $myip=$_SERVER['HTTP_CLIENT_IP'];
