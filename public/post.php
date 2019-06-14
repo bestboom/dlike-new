@@ -4,35 +4,6 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
 
-function getUserIpAddr(){
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        //ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        //ip pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-}
-
-if (!empty($_SERVER['HTTP_CLIENT_IP'])){
-  $ip=$_SERVER['HTTP_CLIENT_IP'];
-}elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-}else{
-  $ip=$_SERVER['REMOTE_ADDR'];
-}
-
-echo $ipadd = getUserIpAddr();
-echo '<br>';
-echo $ips = explode(',', $ipadd);
-echo '<br>';
-$theip = $ips[0];
-echo $thisip2 = ip2long($theip);
-
-
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
