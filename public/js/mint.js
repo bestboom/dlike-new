@@ -82,15 +82,15 @@ $(document).ready(function(){
         }
     }
     $('.shareme').click(function () {
-        //let text_words = $.trim($('[name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-        //if(text_words < 30){
-        //    showModalError(
-        //        "Make Sure..",
-        //        "Write minimum 40 words to explain how this share is useful for community.",
-        //        ""
-        //        );
-        //    return false;  
-        //}
+        let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
+        if(text_words < 30){
+           showModalError(
+               "Make Sure..",
+               "Write minimum 40 words to explain how this share is useful for community.",
+               ""
+               );
+           return false;
+        }
         if($('.catg').val() == "0"){
             $('.catg').css("border-color", "RED");
             showModalError(
@@ -100,11 +100,17 @@ $(document).ready(function(){
                 );
             return false;  
         }
-        if ($('.tags').val().length === 0) {
+
+        // tag check
+        var tags = $('.tags').val();
+        tags = $.trim(tags);
+        tags = tags.split(' ');
+
+        if (tags.length < 2) {
             $('.tags').css("border-color", "RED");
             showModalError(
                 "uh-oh..",
-                "You must add related tags",
+                "Please add at least two related tags",
                 ""
                 );
             return false; 
