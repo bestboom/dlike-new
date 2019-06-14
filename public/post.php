@@ -1,4 +1,4 @@
-<?php include('template/header5.php'); 
+<?php 
 $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
