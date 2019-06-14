@@ -100,11 +100,17 @@ $(document).ready(function(){
                 );
             return false;  
         }
-        if ($('.tags').val().length === 0) {
+
+        // tag check
+        var tags = $('.tags').val();
+        tags = $.trim(tags);
+        tags = tags.split(' ');
+
+        if (tags.length < 2) {
             $('.tags').css("border-color", "RED");
             showModalError(
                 "uh-oh..",
-                "You must add related tags",
+                "Please add at least two related tags",
                 ""
                 );
             return false; 
