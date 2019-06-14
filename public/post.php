@@ -5,21 +5,20 @@ $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
 
 if (!empty($_SERVER['HTTP_CLIENT_IP'])){
-  $ip=$_SERVER['HTTP_CLIENT_IP'];
+ echo $ip=$_SERVER['HTTP_CLIENT_IP'];
 }elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
   $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
 }else{
-  $ip=$_SERVER['REMOTE_ADDR'];
+echo  $ip=$_SERVER['REMOTE_ADDR'];
 }
 echo $ip = ip2long($ip);
-$_SESSION['usertoken'] = $ip;
+echo $_SESSION['usertoken'] = $ip;
 
 if(!isset($_COOKIE['usertoken'])) {
   setcookie('usertoken', $_SESSION['usertoken'], time() + (86400 * 30), "/");
 } else {$_COOKIE['usertoken'];}
 
 
-?>
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
