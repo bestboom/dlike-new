@@ -70,7 +70,6 @@ echo $sender =  $_COOKIE['username'];
                         </div>
                         <div class="col">
                             <form action="helper/addtips.php" method="post" id="tipsubmit">
-                                <input type="hidden" name="loguser" value="<? $sender; ?>" />
                                 <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                 <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                 <center><button class="btn btn-default">TIP</button></center>
