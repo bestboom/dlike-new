@@ -66,7 +66,7 @@ echo $sender =  $_COOKIE['username'];
                         </div>
                         <div class="col">
                             <p>Tips are fre from DLIKE <br>
-                            Tip Author 60% - 40% to ME</p>+
+                            Tip Author 60% - 40% to ME</p>
                         </div>
                         <div class="col">
                             <form action="helper/addtips.php" method="post" id="tipsubmit">
