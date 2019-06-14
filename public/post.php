@@ -10,7 +10,6 @@ echo $sender =  $_COOKIE['username'];
             <div class="container">
             <div class="row">
                 <div class="col">
-                    <div id="tip-msg"></div>
                         <div class="blog-details-wrapper">
                             <div class="single-post-block">
                                 <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
@@ -59,14 +58,16 @@ echo $sender =  $_COOKIE['username'];
 
             </div>
             <div class="details-post-meta-tip">
+                <div id="tip-msg"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col">
                             <img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px">
                         </div>
                         <div class="col">
-                            <p>Tips are fre from DLIKE <br>
+                            <p class="tipratio">Tips are fre from DLIKE <br>
                             Tip Author 60% - 40% to ME</p>
+                            <p class="tipthnk" style="display: none;">Thanks for the tip. You need to wait before you cn do an other tip</p>
                         </div>
                         <div class="col">
                             <form action="helper/addtips.php" method="post" id="tipsubmit">
@@ -210,6 +211,8 @@ echo $sender =  $_COOKIE['username'];
         url: '/helper/addtips.php',
         success: function() {
             $('#tipsubmit').hide();
+            $('#tipratio').hide();
+            $('#tipthnk').show();
         },
     }
     $('#tipsubmit').submit(function() {
