@@ -30,6 +30,8 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
   $myip=$_SERVER['REMOTE_ADDR'];
 }
 echo $myip;
+echo '<br>';
+echo 'User IP - '.$_SERVER['REMOTE_ADDR'];
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
