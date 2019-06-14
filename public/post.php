@@ -18,8 +18,6 @@ function getUserIpAddr(){
 }
 
 echo 'User Real IP - '.getUserIpAddr();
-echo '<br>';
-echo $myip = $_SERVER['HTTP_CLIENT_IP']?$_SERVER['HTTP_CLIENT_IP']:($_SERVER['HTTP_X_FORWARDED_FOR']?$_SERVER['HTTP_X_FORWARDED_FOR']:$_SERVER['REMOTE_ADDR']);
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
