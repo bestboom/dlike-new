@@ -19,21 +19,11 @@ function getUserIpAddr(){
 
 echo $ipadd = getUserIpAddr();
 echo '<br>';
-echo $thisip = ip2long($ipadd);
-   echo '<br>';     
-
-if (!empty($_SERVER['HTTP_CLIENT_IP'])){
-  $myip=$_SERVER['HTTP_CLIENT_IP'];
-}elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-  $myip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-}else{
-  $myip=$_SERVER['REMOTE_ADDR'];
-}
-echo $myip;
+echo $ips = explode(',', $ipadd);
 echo '<br>';
-echo $thisipd = $_SERVER['REMOTE_ADDR'];
+echo $theip = $ips[0];
 echo '<br>';
-echo $thisip2 = ip2long($thisipd);
+echo $thisip2 = ip2long($theip);
 
 
 ?>
