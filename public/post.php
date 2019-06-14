@@ -208,7 +208,9 @@ echo $sender =  $_COOKIE['username'];
     var tipoptions = {
         target: '#tip-msg',
         url: '/helper/addtips.php',
-        success: function() {},
+        success: function() {
+            $('#tipsubmit').hide();
+        },
     }
     $('#tipsubmit').submit(function() {
         $(this).ajaxSubmit(tipoptions)
