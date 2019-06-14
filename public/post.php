@@ -31,7 +31,11 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])){
 }
 echo $myip;
 echo '<br>';
-echo 'User IP - '.$_SERVER['REMOTE_ADDR'];
+echo $thisipd = $_SERVER['REMOTE_ADDR'];
+echo '<br>';
+echo $thisip2 = ip2long($thisipd);
+
+
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
