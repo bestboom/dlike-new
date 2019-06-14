@@ -57,8 +57,8 @@ echo $sender =  $_COOKIE['username'];
                 </div>
 
             </div>
+            <div id="tip-msg"></div>
             <div class="details-post-meta-tip">
-                <div id="tip-msg"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col">
@@ -211,8 +211,8 @@ echo $sender =  $_COOKIE['username'];
         url: '/helper/addtips.php',
         success: function() {
             $('#tipsubmit').hide();
-            $('#tipratio').hide();
-            $('#tipthnk').show();
+            $('.tipratio').hide();
+            $('.tipthnk').show();
         },
     }
     $('#tipsubmit').submit(function() {
