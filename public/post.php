@@ -1,4 +1,4 @@
-<?php 
+<?php  include('template/header5.php');
 $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
@@ -17,12 +17,19 @@ function getUserIpAddr(){
     return $ip;
 }
 
+if (!empty($_SERVER['HTTP_CLIENT_IP'])){
+  $ip=$_SERVER['HTTP_CLIENT_IP'];
+}elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+  $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+}else{
+  $ip=$_SERVER['REMOTE_ADDR'];
+}
+
 echo $ipadd = getUserIpAddr();
 echo '<br>';
 echo $ips = explode(',', $ipadd);
 echo '<br>';
-echo $theip = $ips[0];
-echo '<br>';
+$theip = $ips[0];
 echo $thisip2 = ip2long($theip);
 
 
