@@ -3,7 +3,7 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
-	require '/includes/config.php';
+	require '/./includes/config.php';
 
 	$saved_ip = $_COOKIE['usertoken'];
 	$receiver =  $_POST['tipauthor'];	
