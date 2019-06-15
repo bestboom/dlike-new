@@ -33,7 +33,7 @@ $sender =  $_COOKIE['username'];
                                         $sqlm = "SELECT * FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
                                             $result = $conn->query($sqlm);
                                             $row = mysqli_fetch_assoc($result);
-                                            $likesofpost = $row["likes"];
+                                            echo $likesofpost = $row["likes"];
 
                                         $userips = $_COOKIE['usertoken'];                                    
                                             $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
@@ -47,7 +47,7 @@ $sender =  $_COOKIE['username'];
                                              </div>                        
                                 </div><!-- post-tag-block -->
 
-                                
+
                                 <div class="post-share-block">
                                     <h5>Tip Now</h5>
                                     <ul class="social-share-list">
