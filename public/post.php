@@ -40,7 +40,7 @@ $sender =  $_COOKIE['username'];
                                             $resultv = $conn->query($sqlv); 
                                         if ($resultv->num_rows > 0) { ?>
                                             <div class="post-comments-mid">
-                                                <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
+                                                <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes">0</span> 
                                         <? } else { ?>    
                                             <div class="post-comments-mid"><a class="upvoting" id="up_vote" data-toggle="modal" data-target="#upvoteModal" data-permlink="<?php echo $row["postid"]; ?>" data-likes="<?php echo $likesofpost; ?>">
                                                 <i class="fas fa-heart" id="vote_icon"></i></a>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? } ?>
