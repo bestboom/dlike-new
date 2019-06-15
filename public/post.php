@@ -183,6 +183,7 @@ $sender =  $_COOKIE['username'];
                     </div>
                 </div>
             </div>  
+<?php include('template/modals/modal.php'); ?>   
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     post_author = '<?php echo $auth; ?>',
