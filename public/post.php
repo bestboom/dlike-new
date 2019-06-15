@@ -30,17 +30,23 @@ $sender =  $_COOKIE['username'];
                                 </div>
                                 <div class="post-tag-block">
                                     <h5>Recomendations</h5>
-                                    
-
+<? 
+$userips = $_COOKIE['usertoken'];                                    
+$sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
+            $resultv = $conn->query($sqlv); 
+            if ($resultv->num_rows > 0) { ?>
 <div class="post-comments-mid">
-                    <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $row["likes"]; ?></span> 
+                    <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $row["likes"]; ?></span> <? } else { ?>    
+                    <div class="post-comments-mid"><a class="upvoting" id="up_vote" data-toggle="modal" data-target="#upvoteModal" data-permlink="<?php echo $row["postid"]; ?>" data-likes="<?php echo $row["likes"]; ?>">
+                    <i class="fas fa-heart" id="vote_icon"></i></a>&nbsp;&nbsp;<span id="total_likes"><?php echo $row["likes"]; ?></span> <? } ?>
                     </div>    
+</div>                    
 
 
 
 
 
-                                    
+
                                 </div><!-- post-tag-block -->
                                 <div class="post-share-block">
                                     <h5>Tip Now</h5>
