@@ -30,7 +30,7 @@ $sender =  $_COOKIE['username'];
                                 </div>
                                 <div class="post-tag-block"><!-- post-likes-block -->
                                     <?php
-                                        $sqlm = "SELECT * FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
+                                        $sqlm = "SELECT * FROM PostsLikes WHERE author = '$auth' and permlink = '$permlink'";
                                             $result = $conn->query($sqlm);
                                             $row = mysqli_fetch_assoc($result);
                                             echo $likesofpost = $row["likes"];
