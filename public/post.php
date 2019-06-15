@@ -34,7 +34,6 @@ $sender =  $_COOKIE['username'];
 
             $sqlm = "SELECT * FROM PostsLikes where permlink = '$link' and author = '$auth'";
             $result = $conn->query($sqlm);
-            if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) { 
                 //$authorname =  $row["username"]; 
 
@@ -49,7 +48,7 @@ $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and
                     <div class="post-comments-mid"><a class="upvoting" id="up_vote" data-toggle="modal" data-target="#upvoteModal" data-permlink="<?php echo $row["postid"]; ?>" data-likes="<?php echo $row["likes"]; ?>">
                     <i class="fas fa-heart" id="vote_icon"></i></a>&nbsp;&nbsp;<span id="total_likes"><?php echo $row["likes"]; ?></span> <? } ?>
                     </div>                        
-<? } }  ?>
+<? } ?>
 
 
 
