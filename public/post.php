@@ -42,8 +42,8 @@ $sender =  $_COOKIE['username'];
                                             <div class="post-comments-mid">
                                                 <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
                                         <? } else { ?>    
-                                            <div class="post-comments-mid"><a class="hov_me" id="up_vote" data-toggle="modal" data-target="" data-permlink="<?php echo $link; ?>" data-author="<?php echo $auth; ?>">
-                                                <i class="fas fa-heart" id="vote_icon"></i></a>&nbsp;&nbsp;<span id="total_likes">0</span> <? } ?>
+                                            <div class="post-comments-mid"><span class="hov_me" id="up_vote" data-toggle="modal" data-target="" data-permlink="<?php echo $link; ?>" data-author="<?php echo $auth; ?>">
+                                                <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes">0</span> <? } ?>
                                              </div>                        
                                 </div><!-- post-tag-block -->
 
