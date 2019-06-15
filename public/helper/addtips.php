@@ -5,7 +5,7 @@
 
 	require '../includes/config.php';
 
-	echo $saved_ip = $_COOKIE['usertoken'];
+	$saved_ip = $_COOKIE['usertoken'];
 	$receiver =  $_POST['tipauthor'];	
 	$sender =  $_COOKIE['username'];	
 	$permlink =  $_POST['tippermlink'];	

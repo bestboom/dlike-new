@@ -30,8 +30,19 @@ $sender =  $_COOKIE['username'];
                                 </div>
                                 <div class="post-tag-block">
                                     <h5>Recomendations</h5>
-                                    <div class="tags mod-tags">
-                                    </div>
+                                    
+
+<div class="post-comments-mid">
+                    <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $row["likes"]; ?></span> <? } else { ?>    
+                    <div class="post-comments-mid"><a class="upvoting" id="up_vote" data-toggle="modal" data-target="#upvoteModal" data-permlink="<?php echo $row["postid"]; ?>" data-likes="<?php echo $row["likes"]; ?>">
+                    <i class="fas fa-heart" id="vote_icon"></i></a>&nbsp;&nbsp;<span id="total_likes"><?php echo $row["likes"]; ?></span> <? } ?>
+                    </div>    
+
+
+
+
+
+                                    
                                 </div><!-- post-tag-block -->
                                 <div class="post-share-block">
                                     <h5>Tip Now</h5>
@@ -44,8 +55,6 @@ $sender =  $_COOKIE['username'];
                     </div>
                 </div>
             </div>
-
-
 
                                 <div class="post-thumb-block">
                                     <img src="" onerror="this.src='/images/post/8.png'" alt="img" class="card-img-post img-fluid mod-thumb">
@@ -66,8 +75,7 @@ $sender =  $_COOKIE['username'];
                             <img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px">
                         </div>
                         <div class="col">
-                            <p class="tipratio" style="margin-bottom: 3px;">Tips are fre from DLIKE <br>
-                            Tip Author 60% - 40% to ME</p>
+                            <p class="tipratio" style="margin-bottom: 3px;">Tips are fre from DLIKE <br>Tip Author 60% - 40% to ME</p>
                             <p class="tipthnk" style="display: none;margin-bottom: 3px;">Thanks for the tip. You need to wait before you cn do an other tip</p>
                         </div>
                         <div class="col">
