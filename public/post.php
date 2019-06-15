@@ -31,6 +31,15 @@ $sender =  $_COOKIE['username'];
                                 <div class="post-tag-block">
                                     <h5>Recomendations</h5>
 <? 
+
+            $sqlm = "SELECT * FROM PostsLikes where permlink = '$link' and author = '$auth'";
+            $result = $conn->query($sqlm);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) { 
+                //$authorname =  $row["username"]; 
+
+
+
 $userips = $_COOKIE['usertoken'];                                    
 $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
             $resultv = $conn->query($sqlv); 
@@ -39,9 +48,8 @@ $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and
                     <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $row["likes"]; ?></span> <? } else { ?>    
                     <div class="post-comments-mid"><a class="upvoting" id="up_vote" data-toggle="modal" data-target="#upvoteModal" data-permlink="<?php echo $row["postid"]; ?>" data-likes="<?php echo $row["likes"]; ?>">
                     <i class="fas fa-heart" id="vote_icon"></i></a>&nbsp;&nbsp;<span id="total_likes"><?php echo $row["likes"]; ?></span> <? } ?>
-                    </div>    
-</div>                    
-
+                    </div>                        
+<? } ?>
 
 
 
