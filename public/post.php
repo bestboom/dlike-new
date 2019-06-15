@@ -66,9 +66,9 @@ $sender =  $_COOKIE['username'];
                             <img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px">
                         </div>
                         <div class="col">
-                            <p class="tipratio">Tips are fre from DLIKE <br>
+                            <p class="tipratio" style="margin-bottom: 3px;">Tips are fre from DLIKE <br>
                             Tip Author 60% - 40% to ME</p>
-                            <p class="tipthnk" style="display: none;">Thanks for the tip. You need to wait before you cn do an other tip</p>
+                            <p class="tipthnk" style="display: none;margin-bottom: 3px;">Thanks for the tip. You need to wait before you cn do an other tip</p>
                         </div>
                         <div class="col">
                             <form action="helper/addtips.php" method="post" id="tipsubmit">
