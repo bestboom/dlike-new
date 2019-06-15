@@ -183,7 +183,13 @@ $sender =  $_COOKIE['username'];
                     </div>
                 </div>
             </div>  
-<?php include('template/modals/modal.php'); ?>   
+<div class="modal fade" id="likes" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <?php include('template/modals/likes.php'); ?>
+        </div>
+    </div>
+</div>  
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     post_author = '<?php echo $auth; ?>',
