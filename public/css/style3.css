@@ -2087,7 +2087,12 @@ label.star:before{
     height: 21px;
     display: block;
 }
-
+.not-active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: red;
+}
 /*
 |----------------------------------------------------------------------------
 | 10. Currency Dashboard Style
