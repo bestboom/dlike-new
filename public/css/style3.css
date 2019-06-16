@@ -2053,6 +2053,7 @@ label.star:before{
 #upvoteModal{top: 35%;}
 #recomendModal{top: 35%;}
 .upvoting{cursor: pointer;}
+.recomendation{cursor: pointer;}
 #upvoting-status{color: #fff;
     display: none;
     font-weight: 800;
