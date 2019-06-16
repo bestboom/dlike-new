@@ -260,14 +260,16 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
     };
     $('#recomend-bar').hide();
     $('#recomend-status').show();         
+
             $.ajax({
                 type: "POST",
                 url: "/helper/solve.php",
                 data: datavr,
                 success: function(data) {
-                    //console.log(data);
+                    console.log("success");
                     try {
                         var response = JSON.parse(data)
+                        console.log(response);
                         if(response.error == true) {
                             toastr.error('There is some issue!'); 
                             $('#recomendModal').modal('hide');
