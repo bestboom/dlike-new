@@ -34,14 +34,14 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                                                 die(json_encode([
                                                                 'error' => false,
                                                                 'message' => 'Thankk You', 
-                                                                'data' => 'Upvoting'
+                                                                'data' => 'Recomending'
                                                                 ]));
 
                                             } else {
                                                                 die(json_encode([
                                                                 'error' => true,
                                                                 'message' => 'Sorry', 
-                                                                'data' => 'Already Upvoted'
+                                                                'data' => 'Already Recomended'
                                                                 ]));
                                          
                                             }
