@@ -1,6 +1,6 @@
 <div class="modal-body">
     <div class="container">
-       <div id="upvoting-bar">
+       <div id="recomend-bar">
             <div class="row d-flex justify-content-around">
                 <input type="hidden" name="v_permlink" id="vote_permlink" value="" />
                 <input type="hidden" name="v_likes" id="vote_likes" value="" />   
@@ -11,6 +11,6 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="upvoting-status"><h4>UPVOTING ........    </h4></div>
+        <div class="row" id="recomend-status"><h4>Recomending ........    </h4></div>
     </div>
 </div>
