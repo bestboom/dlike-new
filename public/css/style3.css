@@ -2050,6 +2050,7 @@ label.star:before{
     padding-right: 1PX !important;
 }
 #upvoteModal{top: 35%;}
+#recomendModal{top: 35%;}
 .upvoting{cursor: pointer;}
 #upvoting-status{color: #fff;
     display: none;

@@ -5,7 +5,7 @@
                 <input type="hidden" name="v_permlink" id="vote_permlink" value="" />
                 <input type="hidden" name="v_likes" id="vote_likes" value="" />   
                 <div class="col-sm-2 nopadding"><i class="fas fa-heart upme"></i></div>
-                <div class="col-sm-8 nopadding love-it">I Love This SHOT...</div> 
+                <div class="col-sm-8 nopadding love-it">I Love This SHARE...</div> 
                 <div class="col-sm-2 nopadding">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
                 </div>
