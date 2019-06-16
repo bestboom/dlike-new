@@ -285,15 +285,13 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
                             $('#recomend-bar').show();
                             }
                         } catch (err) {
+                            console.log(err);
                             toastr.error('Sorry. Server response is malformed.');
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide(); 
                             $('#recomend-bar').show();
                     }
                 },
-                error: function(errorThrown){
-                alert(errorThrown);
-                }
             });
 });
 
