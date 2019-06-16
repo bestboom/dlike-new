@@ -258,15 +258,14 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
         rec_permlink: r_permlink,
         rec_author: r_author
     };
-    alert(r_author);
     $('#recomend-bar').hide();
     $('#recomend-status').show();         
             $.ajax({
                 type: "POST",
-                url: "/helper/solve.php",
+                url: "helper/solve.php",
                 data: datavr,
                 success: function(data) {
-                    //console.log(data);
+                    console.log(data);
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
