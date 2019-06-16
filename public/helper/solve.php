@@ -6,8 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-echo $author =  $_POST['rec_author'];
-		echo $permlink =  $_POST['rec_permlink'];
+
 
 if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 
@@ -15,7 +14,8 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 		$saved_ip = $_COOKIE['usertoken'];	
 		$rating = '5';
 		$userval = 'dlike';
-		
+		$author =  $_POST['rec_author'];
+		$permlink =  $_POST['rec_permlink'];
 		$newLike = '1';
 
 
