@@ -18,38 +18,36 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 		$newLike = '1';
 
 
-		$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
+
+				$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
 						VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
 
 						if (mysqli_query($conn, $sqlm)) {
 
-							$checkPost = "SELECT * FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
-                                $result = mysqli_query($conn, $checkPost);
-                                    if ($result->num_rows > 0) {
-                                        $row = $result->fetch_assoc();
-                                            $old_likes = $row['likes'];
+							$checkPost = "SELECT author, permlink, likes, rating FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
+								$result = mysqli_query($conn, $checkPost);
+									if ($result->num_rows > 0) {
+										while($row = $result->fetch_assoc()) {
+											$old_likes = $row['likes'];
+											$old_rating = $row['rating'];
+										$updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$old_rating' + '$rating' WHERE author = '$author' AND permlink = '$permlink'";
+										$updatePostQuery = $conn->query($updatePost);
+											if ($updatePostQuery === TRUE) {} 
+   										}			
+    								} else {
+    									/*echo "post not exists";*/
+    									$addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
+													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."', '".date("Y-m-d h:m:s")."')";
+										$addPostQuery = $conn->query($addPost);
+													/*if ($addPostQuery === TRUE) {
+   													echo "new Record added successfully"; } else { echo "new Record could not added"; }*/
+									}
 
-
-                                            $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1  WHERE author = '$author' and permlink = '$permlink'";
-                                        	$updatePostQuery = $conn->query($updatePost);
-
-                                            if ($updatePostQuery === TRUE) {
-                                                                die(json_encode([
-                                                                'error' => false,
-                                                                'message' => 'Thankk You', 
-                                                                'data' => 'Recomnding'
-                                                                ]));
-
-                                            } else {
-                                                                die(json_encode([
-                                                                'error' => true,
-                                                                'message' => 'Sorry', 
-                                                                'data' => 'SOme ISSUE'
-                                                                ]));
-                                         
-                                            }
-                                        }
-                                    } else {die('Some error');}
-};
-
+    					echo '<div class="alert alert-success">Your Recomendation is Added</div>';
+    					echo '<script>document.getElementById("logsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+					} else {
+    				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
+					}
+			}
+		
 ?>
