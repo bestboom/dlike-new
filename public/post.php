@@ -266,10 +266,9 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
                 url: "/helper/solve.php",
                 data: datavr,
                 success: function(data) {
-                    console.log("success");
+                    console.log(success);
                     try {
                         var response = JSON.parse(data)
-                        console.log(response);
                         if(response.error == true) {
                             toastr.error('There is some issue!'); 
                             $('#recomendModal').modal('hide');
