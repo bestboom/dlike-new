@@ -255,8 +255,8 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
     var r_permlink = $("#r_permlink").val();
     var r_author = $("#r_author").val();
     var datavr = {
-        r_permlink: r_permlink,
-        r_author: r_author
+        rec_permlink: r_permlink,
+        rec_author: r_author
     };
 
     $('#recomend-bar').hide();
