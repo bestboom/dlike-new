@@ -258,7 +258,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
         rec_permlink: r_permlink,
         rec_author: r_author
     };
-
+    alert(r_author);
     $('#recomend-bar').hide();
     $('#recomend-status').show();         
             $.ajax({
