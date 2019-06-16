@@ -291,11 +291,8 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
                             $('#recomend-bar').show();
                     }
                 },
-                error: function(xhr, textStatus, error){
-               console.log(xhr.statusText);
-                console.log(textStatus);
-                console.log(error);
-                }
+                error: function(errorThrown){
+                alert(errorThrown);
             });
 });
 
