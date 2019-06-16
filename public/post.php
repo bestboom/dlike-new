@@ -293,6 +293,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
                 },
                 error: function(errorThrown){
                 alert(errorThrown);
+                }
             });
 });
 
