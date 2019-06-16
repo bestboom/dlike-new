@@ -42,7 +42,7 @@ $sender =  $_COOKIE['username'];
                                             <div class="post-comments-mid">
                                                 <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
                                         <? } else { ?>    
-                                            <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-author="<?php echo $auth; ?>">
+                                            <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
                                                 <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? } ?>
                                              </div>                        
                                 </div><!-- post-tag-block -->
@@ -243,10 +243,10 @@ $sender =  $_COOKIE['username'];
 $('.post-comments-mid').on("click", ".recomendation", function() { 
     var recpermlink = $(this).attr("data-permlink");
     var recauthor = $(this).attr("data-author");
-
+    var reclikes = $(this).attr("data-likes");
     $("#r_author").val(recauthor);
     $("#r_permlink").val(recpermlink);
-
+    $("#r_likes").val(reclikes);
 });
 
 
@@ -254,6 +254,8 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
   
     var r_permlink = $("#r_permlink").val();
     var r_author = $("#r_author").val();
+    var r_likes = $("#r_likes").val();
+    var newlikes = parseInt(r_likes) + 1;
     var datavr = {
         rec_permlink: r_permlink,
         rec_author: r_author
