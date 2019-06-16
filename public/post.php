@@ -239,4 +239,54 @@ $sender =  $_COOKIE['username'];
         $(this).ajaxSubmit(tipoptions)
         return !1
     });
+
+
+    $('.recomendme').click(function() {
+  
+    var recomendValue = '1';
+    var recomendweight = parseInt(recomendValue);
+    //alert(upvoteValue)
+    var r_permlink = $("#r_permlink").val();
+    var r_likes = $("#r_likes").val();
+    var newrlikes = parseInt(r_likes) + 1;
+    var datavr = {
+        r_permlink: r_permlink,
+        recomend_value: recomendweight
+    };
+
+    $('#recomend-bar').hide();
+    $('#recomend-status').show();         
+            $.ajax({
+                type: "POST",
+                url: "helper/solve.php",
+                data: datavr,
+                success: function(data) {
+                    //console.log(data);
+                    try {
+                        var response = JSON.parse(data)
+                        if(response.error == true) {
+                            toastr.error('There is some issue!'); 
+                            $('#recomendModal').modal('hide');
+                            $('#recomend-status').hide();
+                            $('#recomend-bar').show();
+                            return false;
+                        } else {
+                            $('#up_vote').removeAttr('data-target');
+                            $('#vote_icon').addClass("not-active");
+                            toastr.success('Thanks for Recomendation!'); 
+                            $('#total_likes').html(newlikes);
+                            $('#recomendModal').modal('hide');
+                            $('#recomend-status').hide(); 
+                            $('#recomend-bar').show();
+                            }
+                        } catch (err) {
+                            toastr.error('Sorry. Server response is malformed.');
+                            $('#recomendModal').modal('hide');
+                            $('#recomend-status').hide(); 
+                            $('#recomend-bar').show();
+                    }
+                },
+            });
+});
+
 </script>
