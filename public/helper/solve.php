@@ -19,18 +19,19 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 		$newLike = '1';
 
 
-        $checkPost = "SELECT likes FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
-                                $result = mysqli_query($conn, $checkPost);
-                                    if ($result->num_rows > 0) {
-                                        while($row = $result->fetch_assoc()) {
-                                            $old_likes = $row['likes'];
+        //$checkPost = "SELECT likes FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
+                                //$result = mysqli_query($conn, $checkPost);
+                                    //if ($result->num_rows > 0) {
+                                        //while($row = $result->fetch_assoc()) {
+                                            //$old_likes = $row['likes'];
 
-                                        $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$rating' WHERE author = '$author' and permlink = '$permlink'";
-                                        $updatePostQuery = $conn->query($updatePost);
-                                            if ($updatePostQuery === TRUE) {
-                                                $addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
+                                        //$updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$rating' WHERE author = '$author' and permlink = '$permlink'";
+                                        //$updatePostQuery = $conn->query($updatePost);
+                                        $addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
 													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."', '".date("Y-m-d h:m:s")."')";
                                                      $addPostQuery = $conn->query($addPost);
+                                            if ($addPostQuery === TRUE) {
+                                                
                                                                 die(json_encode([
                                                                 'error' => false,
                                                                 'message' => 'Thankk You', 
@@ -45,7 +46,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                                                 ]));
                                          
                                             }
-                                        }
-                                    } else {die('Some error');}
+                                    //    }
+                                    //} else {die('Some error');}
 };
 ?>
