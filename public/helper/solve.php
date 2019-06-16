@@ -20,7 +20,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
         $checkPost = "SELECT * FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
                                 $result = mysqli_query($conn, $checkPost);
                                     if ($result->num_rows > 0) {
-                                        while($row = $result->fetch_assoc()) {
+                                        $row = $result->fetch_assoc();
                                             $old_likes = $row['likes'];
 
                                         $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1  WHERE author = '$author' and permlink = '$permlink'";
@@ -43,7 +43,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                                                 ]));
                                          
                                             }
-                                        }
+                                       // }
                                     } else {die('Some error');}
 };
 ?>
