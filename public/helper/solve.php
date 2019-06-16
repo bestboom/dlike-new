@@ -26,9 +26,9 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                         $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1  WHERE author = '$author' and permlink = '$permlink'";
                                         $updatePostQuery = $conn->query($updatePost);
                                             if ($updatePostQuery === TRUE) {
-                                                $addPost = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
-                                                    VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
-                                                     $addPostQuery = $conn->query($addPost);
+                                                //$addPost = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
+                                                    //VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
+                                                    // $addPostQuery = $conn->query($addPost);
                                                                 die(json_encode([
                                                                 'error' => false,
                                                                 'message' => 'Thankk You', 
