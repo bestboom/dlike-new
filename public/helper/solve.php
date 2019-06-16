@@ -7,10 +7,6 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-function validator($data){
-    return htmlspecialchars(strip_tags(trim($data)));
-}
-
 
 if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 
@@ -18,8 +14,8 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 		$saved_ip = $_COOKIE['usertoken'];	
 		$rating = '5';
 		$userval = 'dlike';
-		$author =  $_POST['rec_author'];
-		$permlink =  $_POST['rec_permlink'];
+		echo $author =  $_POST['rec_author'];
+		echo $permlink =  $_POST['rec_permlink'];
 		$newLike = '1';
 
 
@@ -29,7 +25,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                         while($row = $result->fetch_assoc()) {
                                             $old_likes = $row['likes'];
 
-                                        $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$rating'  WHERE author = '$author' and permlink = '$permlink'";
+                                        $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$old_rating' + '$rating' WHERE author = '$author' and permlink = '$permlink'";
                                         $updatePostQuery = $conn->query($updatePost);
                                             if ($updatePostQuery === TRUE) {
                                                 $addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
