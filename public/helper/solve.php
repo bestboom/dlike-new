@@ -1,4 +1,3 @@
-
 <?php
 
 ini_set('display_errors', 1);
@@ -18,40 +17,33 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 		$permlink =  $_POST['rec_permlink'];
 		$newLike = '1';
 
+        $checkPost = "SELECT * FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
+                                $result = mysqli_query($conn, $checkPost);
+                                    if ($result->num_rows > 0) {
+                                        while($row = $result->fetch_assoc()) {
+                                            $old_likes = $row['likes'];
 
-        //$checkPost = "SELECT likes FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
-                                //$result = mysqli_query($conn, $checkPost);
-                                    //if ($result->num_rows > 0) {
-                                        //while($row = $result->fetch_assoc()) {
-                                            //$old_likes = $row['likes'];
-
-                                        //$updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$rating' WHERE author = '$author' and permlink = '$permlink'";
-                                        //$updatePostQuery = $conn->query($updatePost);
-										$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
-													VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
-
-										if (mysqli_query($conn, $sqlm)) {	
-													
-                                        $addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
-													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."', '".date("Y-m-d h:m:s")."')";
+                                        $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1  WHERE author = '$author' and permlink = '$permlink'";
+                                        $updatePostQuery = $conn->query($updatePost);
+                                            if ($updatePostQuery === TRUE) {
+                                                $addPost = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
+                                                    VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
                                                      $addPostQuery = $conn->query($addPost);
-                                            if ($addPostQuery === TRUE) {
-                                                
                                                                 die(json_encode([
                                                                 'error' => false,
                                                                 'message' => 'Thankk You', 
-                                                                'data' => 'Recomending'
+                                                                'data' => 'Upvoting'
                                                                 ]));
 
                                             } else {
                                                                 die(json_encode([
                                                                 'error' => true,
                                                                 'message' => 'Sorry', 
-                                                                'data' => 'Already Recomended'
+                                                                'data' => 'Already Upvoted'
                                                                 ]));
                                          
                                             }
-                                    //    }
+                                        }
                                     } else {die('Some error');}
 };
 ?>
