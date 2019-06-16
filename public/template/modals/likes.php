@@ -1,12 +1,6 @@
 <div class="dvd-account-title">
     <h3>Do You Recomend this Share?</h3>
     <!--<p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p> -->
-</div>  
-
-<div class="md-account-banner">
-    <div class="row justify-content-center">
-        <div style="height:60px;width:470px;"></div>
-    </div>
 </div>                    
                 <div class="dvd-account-content">
                     <form action="helper/solve.php" method="post" id="logsubmit">
@@ -47,14 +41,5 @@
                     	<button type="submit" class="btn btn-default" id="upvote">UPVOTE</button>
                     </div>
                 	</form>
-                    </div>
-                    <div class="modal-likes">
-                      	<h3>Rules For Recomendation</h3>
-                    	<div class="row">
-                            <ul>
-                                <li class="letter"><i class="fas fa-exclamation-triangle"></i>  Self promotion not allowed</li>
-                                <li class="letter"><i class="fas fa-exclamation-triangle"></i>  Make sure to upvote quality posts and do not promote spam</li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
