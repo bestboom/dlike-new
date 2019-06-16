@@ -43,10 +43,17 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
    													echo "new Record added successfully"; } else { echo "new Record could not added"; }*/
 									}
 
-    					echo '<div class="alert alert-success">Your Recomendation is Added</div>';
-    					echo '<script>document.getElementById("logsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+    														die(json_encode([
+                                                                'error' => false,
+                                                                'message' => 'Thankk You', 
+                                                                'data' => 'Recomending'
+                                                                ]));
 					} else {
-    				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
+    														die(json_encode([
+                                                                'error' => true,
+                                                                'message' => 'Sorry', 
+                                                                'data' => 'Already Recomended'
+                                                                ]));
 					}
 			}
 		
