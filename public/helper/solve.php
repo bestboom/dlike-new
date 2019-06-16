@@ -27,6 +27,11 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 
                                         //$updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1, rating = '$rating' WHERE author = '$author' and permlink = '$permlink'";
                                         //$updatePostQuery = $conn->query($updatePost);
+										$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
+													VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
+
+										if (mysqli_query($conn, $sqlm)) {	
+													
                                         $addPost = "INSERT INTO PostsLikes (author, permlink, likes, rating, lastUpdatedDate)
 													VALUES ('".$author."', '".$permlink."', '".$newLike ."', '".$rating."', '".date("Y-m-d h:m:s")."')";
                                                      $addPostQuery = $conn->query($addPost);
@@ -47,6 +52,6 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                          
                                             }
                                     //    }
-                                    //} else {die('Some error');}
+                                    } else {die('Some error');}
 };
 ?>
