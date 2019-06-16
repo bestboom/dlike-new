@@ -23,7 +23,17 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 
 						if (mysqli_query($conn, $sqlm)) {
 
+							$checkPost = "SELECT * FROM PostsLikes WHERE author = '$author' and permlink = '$permlink'";
+                                $result = mysqli_query($conn, $checkPost);
+                                    if ($result->num_rows > 0) {
+                                        $row = $result->fetch_assoc();
+                                            $old_likes = $row['likes'];
 
+
+                                            $updatePost = "UPDATE PostsLikes SET likes = '$old_likes' + 1  WHERE author = '$author' and permlink = '$permlink'";
+                                        	$updatePostQuery = $conn->query($updatePost);
+
+                                            if ($updatePostQuery === TRUE) {
                                                                 die(json_encode([
                                                                 'error' => false,
                                                                 'message' => 'Thankk You', 
@@ -38,8 +48,8 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                                                 ]));
                                          
                                             }
-                                       // }
-                                    //} else {die('Some error');}
+                                        }
+                                    } else {die('Some error');}
 };
 
 ?>
