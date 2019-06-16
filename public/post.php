@@ -42,7 +42,7 @@ $sender =  $_COOKIE['username'];
                                             <div class="post-comments-mid">
                                                 <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
                                         <? } else { ?>    
-                                            <div class="post-comments-mid"><span class="hov_me" id="up_vote" data-toggle="modal" data-target="#upvoteModal" data-permlink="<?php echo $link; ?>" data-author="<?php echo $auth; ?>">
+                                            <div class="post-comments-mid"><span class="upvoting" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-author="<?php echo $auth; ?>">
                                                 <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes">0</span> <? } ?>
                                              </div>                        
                                 </div><!-- post-tag-block -->
@@ -183,10 +183,10 @@ $sender =  $_COOKIE['username'];
                     </div>
                 </div>
             </div>  
-<div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content mybody">
-            <?php include('template/modals/upvotemodal.php'); ?>
+            <?php include('template/modals/recomend.php'); ?>
         </div>
     </div>
 </div>
