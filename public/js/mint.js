@@ -368,6 +368,16 @@ $('.latest-post-section').on("click", ".upvoting", function() {
 
 $('.recomendme').click(function() {
   
+    var recomendValue = '1';
+    var recomendweight = parseInt(recomendValue);
+    //alert(upvoteValue)
+    var r_permlink = $("#r_permlink").val();
+    var r_likes = $("#r_likes").val();
+    var newrlikes = parseInt(r_likes) + 1;
+    var datavr = {
+        r_permlink: r_permlink,
+        recomend_value: recomendweight
+    };
 
     $('#recomend-bar').hide();
     $('#recomend-status').show();         
