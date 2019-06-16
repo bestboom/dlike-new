@@ -1,15 +1,8 @@
-<div class="dvd-account-title">
-    <h3>Do You Recomend this Share?</h3>
-    <!--<p><span>Total Votes:   <div class="star-ratings-sprite">Ratings: <span style="" class="star-ratings-sprite-rating"></span></div> </span></p> -->
-</div>                    
+                  
                 <div class="dvd-account-content">
                     <form action="helper/solve.php" method="post" id="logsubmit">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="row justify-content-center form-group">
-                                <span id="capt"><?php echo solvemedia_get_html("BfToDp5vD08jAZ5DEYb1rCvpuHlKv2H7", null, true); ?></span>
-                            </div>
-                        </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="user_label"><b>Enter Some username </b></label>
@@ -43,3 +36,20 @@
                 	</form>
                     </div>
                 </div>
+
+<div class="modal-body">
+    <div class="container">
+       <div id="upvoting-bar">
+            <div class="row d-flex justify-content-around">
+                <input type="hidden" name="v_permlink" id="vote_permlink" value="" />
+                <input type="hidden" name="v_likes" id="vote_likes" value="" />   
+                <div class="col-sm-2 nopadding"><i class="fas fa-heart upme"></i></div>
+                <div class="col-sm-8 nopadding love-it">I Love This SHOT...</div> 
+                <div class="col-sm-2 nopadding">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="upvoting-status"><h4>UPVOTING ........    </h4></div>
+    </div>
+</div>
