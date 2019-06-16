@@ -2087,6 +2087,12 @@ label.star:before{
     height: 21px;
     display: block;
 }
+.love-it{
+  color: #fff;
+  padding-top: 4px;
+  padding-left: 5px !important;
+  font-weight: 600;
+}
 .not-active {
   pointer-events: none;
   cursor: default;
