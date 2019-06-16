@@ -265,7 +265,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
                 url: "helper/solve.php",
                 data: datavr,
                 success: function(data) {
-                    console.log(data);
+                    //console.log(data);
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
