@@ -241,7 +241,6 @@ $sender =  $_COOKIE['username'];
     });
 // here start recomendations
 $('.post-comments-mid').on("click", ".recomendation", function() { 
-    alert('cut');
     var recpermlink = $(this).attr("data-permlink");
     var recauthor = $(this).attr("data-author");
 
@@ -253,15 +252,11 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
 
     $('.recomendme').click(function() {
   
-    var recomendValue = '1';
-    var recomendweight = parseInt(recomendValue);
-    //alert(upvoteValue)
     var r_permlink = $("#r_permlink").val();
-    var r_likes = $("#r_likes").val();
-    var newrlikes = parseInt(r_likes) + 1;
+    var r_author = $("#r_author").val();
     var datavr = {
         r_permlink: r_permlink,
-        recomend_value: recomendweight
+        r_author: r_author
     };
 
     $('#recomend-bar').hide();
