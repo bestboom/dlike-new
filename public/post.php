@@ -256,6 +256,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
     var r_author = $("#r_author").val();
     var r_likes = $("#r_likes").val();
     var newlikes = parseInt(r_likes) + 1;
+    alert(newlikes);
     var datavr = {
         rec_permlink: r_permlink,
         rec_author: r_author
