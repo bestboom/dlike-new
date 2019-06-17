@@ -33,7 +33,7 @@ $sender =  $_COOKIE['username'];
                                         $sqlm = "SELECT * FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
                                             $result = $conn->query($sqlm);
                                             $row = mysqli_fetch_assoc($result);
-                                            $likesofpost = $row["likes"];
+                                            echo $likesofpost = $row["likes"];
 
                                         $userips = $_COOKIE['usertoken'];                                    
                                             $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
