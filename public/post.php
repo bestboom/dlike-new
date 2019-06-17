@@ -244,6 +244,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
     var recpermlink = $(this).attr("data-permlink");
     var recauthor = $(this).attr("data-author");
     var reclikes = $(this).attr("data-likes");
+    alert(reclikes);
     $("#r_author").val(recauthor);
     $("#r_permlink").val(recpermlink);
     $("#r_likes").val(reclikes);
@@ -256,7 +257,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
     var r_author = $("#r_author").val();
     var r_likes = $("#r_likes").val();
     var newlikes = parseInt(r_likes) + 1;
-    alert(newlikes);
+    
     var datavr = {
         rec_permlink: r_permlink,
         rec_author: r_author
