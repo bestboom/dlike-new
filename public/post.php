@@ -32,7 +32,7 @@ $sender =  $_COOKIE['username'];
                                     <?php
                                         $sqlm = "SELECT * FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
                                             $result = $conn->query($sqlm);
-                                            $row = mysqli_fetch_assoc($result);
+                                            while($row = mysqli_fetch_assoc($result)){;
                                             $likesofpost = $row["likes"];
 
                                         $userips = $_COOKIE['usertoken'];                                    
@@ -43,7 +43,7 @@ $sender =  $_COOKIE['username'];
                                                 <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
                                         <? } else { ?>    
                                             <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
-                                                <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? } ?>
+                                                <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? } } ?>
                                              </div>                        
                                 </div><!-- post-tag-block -->
 
