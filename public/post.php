@@ -27,7 +27,6 @@ $views = '1';
 
             $sqlvsp = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
                 $resultvsp = $conn->query($sqlvsp);
-                    if ($resultvsp->num_rows > 0) { 
                     $rowviewp = mysqli_fetch_assoc($resultvsp); 
                     $totalpostviews = $rowviewp["totalviews"];
 
