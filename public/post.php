@@ -9,7 +9,7 @@ $views = '1';
 
         
 
-            $sqlvs = "SELECT userip FROM PostViews where permlink = '$link' and author = '$auth'";
+            $sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$userips'";
                 $resultvs = $conn->query($sqlvs);
                     if ($resultvs->num_rows > 0) {
                         $rowview = mysqli_fetch_assoc($resultvs); 
@@ -19,6 +19,10 @@ $views = '1';
                         $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
                         VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
                         mysqli_query($conn, $sqlview); 
+
+                        $updateview = "UPDATE TotalPostViews SET totalviews = '$postviews' + 1 WHERE permlink = '$link' and author = '$auth'";
+                        $updateviewQuery = $conn->query($updateview); 
+
                     }
 ?>
 </div>
