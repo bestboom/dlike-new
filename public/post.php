@@ -69,7 +69,7 @@ $views = '1';
 
                                 <!-- post-views-block -->
                                 <div class="post-share-block">
-                                    <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $totalpostviews; ?>
+                                    <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                 </div><!-- post-views-block -->
 
                                 <!-- post-income-block -->
