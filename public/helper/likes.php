@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+/*
+
 
 $sql = "CREATE TABLE TotalPostViews (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -21,7 +23,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 
-/*
+
 $sql = "CREATE TABLE PostViews (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 author VARCHAR(255) NOT NULL,

@@ -7,27 +7,14 @@ $userips = $_COOKIE['usertoken'];
 $views = '1'; 
 
 
+        $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
+                        VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
+        mysqli_query($conn, $sqlview);  
+
 $sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$userips'";
     $resultvs = $conn->query($sqlvs);
-    if ($resultvs->num_rows > 0) { 
         $rowview = mysqli_fetch_assoc($resultvs); 
-        $postviews = $rowview["views"];  
-        $userviewip = $rowview["userip"]; 
-        if ($userviewip != $userips) {
-            $updateview = "UPDATE PostViews SET views = '$postviews' + 1 WHERE permlink = '$link' and author = '$auth'";
-                $updateviewQuery = $conn->query($updateview);
-                    if ($updateWalletQuery === TRUE) {
-                        $postviews = $postviews + $views;
-                    } 
-        }
-         
-    } else { 
-        echo $postviews = '0';
-        echo $newviews = $postviews + $views;
-        $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
-                        VALUES ('".$auth."', '".$link."', '".$newviews."', '".$userips."', '".date("Y-m-d h:m:s")."')";
-        mysqli_query($conn, $sqlview);  
-    }
+        $postviews = $rowview["views"]; 
 
 ?>
 </div>
