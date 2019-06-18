@@ -30,10 +30,10 @@ $sender =  $_COOKIE['username'];
                                 </div>
                                 <div class="post-tag-block"><!-- post-likes-block -->
                                     <?php
-                                        $sqlm = "SELECT * FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
+                                        $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
                                             $result = $conn->query($sqlm);
-                                            while($row = mysqli_fetch_assoc($result)){;
-                                            $likesofpost = $row["likes"];
+                                            $row = mysqli_fetch_assoc($result);
+                                            if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
 
                                         $userips = $_COOKIE['usertoken'];                                    
                                             $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
@@ -43,9 +43,9 @@ $sender =  $_COOKIE['username'];
                                                 <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
                                         <? } else { ?>    
                                             <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
-                                                <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? } } ?>
+                                                <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? }?>
                                              </div>                        
-                                </div><!-- post-tag-block -->
+                                </div><!-- post-likes-block -->
 
 
                                 <div class="post-share-block">
