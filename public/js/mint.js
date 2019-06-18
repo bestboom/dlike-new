@@ -234,7 +234,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
                             if(response.error == true) {
                                 $('#upvotefail').modal('show');
                             } else {
-                                    $('#likes').modal('show');
+                                    $('#recomendModal').modal('show');
                             }
                         } catch (err) {
                             alert('Sorry. Server response is malformed.')
