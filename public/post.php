@@ -3,6 +3,21 @@ $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
+$views = '1';
+$userips = $_COOKIE['usertoken']; 
+
+
+$sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$userips'";
+    $resultvs = $conn->query($sqlvs);
+    if ($resultvs->num_rows > 0) { 
+    $rowview = mysqli_fetch_assoc($resultvs); 
+      $postviews = $rowview["views"];   
+    } else { 
+        $postviews = '0';
+        $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, tip_time)
+                        VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
+        mysqli_query($conn, $sqlview);  
+    }
 
 ?>
 </div>
@@ -34,7 +49,7 @@ $sender =  $_COOKIE['username'];
                                             $result = $conn->query($sqlm);
                                             $row = mysqli_fetch_assoc($result);
                                             if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
-                                        $userips = $_COOKIE['usertoken'];                                    
+                                                                           
                                             $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
                                             $resultv = $conn->query($sqlv); 
                                         if ($resultv->num_rows > 0) { ?>
@@ -48,7 +63,7 @@ $sender =  $_COOKIE['username'];
 
                                 <!-- post-views-block -->
                                 <div class="post-share-block">
-                                    <i class="fas fa-eye"></i>
+                                    <i class="fas fa-eye"></i><?php echo $postviews; ?>
                                 </div><!-- post-views-block -->
 
                                 <!-- post-income-block -->
