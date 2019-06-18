@@ -357,7 +357,6 @@ $('.recomendme').click(function() {
     var r_author = $("#r_author").val();
     var r_likes = $("#r_likes").val();
     var newlikes = parseInt(r_likes) + 1;
-    console.log(r_likes);
     var datavr = {
         rec_permlink: r_permlink,
         rec_author: r_author
