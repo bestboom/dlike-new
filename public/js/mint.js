@@ -219,6 +219,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
     // we want to copy the 'id' from the button to the modal
     var mypermlink = $(this).attr("data-permlink");
     var authorname = $(this).attr("data-author");
+    var postsrec = $(this).attr("data-likes");
 
         var datat = {
             ath: authorname,
@@ -242,8 +243,9 @@ $('.latest-post-section').on("click", ".hov_me", function() {
                     }
             });
 
-    $("#author_rate").val(authorname);
-    $("#permlink_rate").val(mypermlink);
+    $("#r_author").val(authorname);
+    $("#r_permlink").val(mypermlink);
+    $("#r_likes").val(postsrec);
 });
 
 //post modal
