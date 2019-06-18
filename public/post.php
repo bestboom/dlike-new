@@ -6,7 +6,7 @@ $sender =  $_COOKIE['username'];
 $userips = $_COOKIE['usertoken']; 
 
 
-$sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$userips'";
+$sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth'";
     $resultvs = $conn->query($sqlvs);
     if ($resultvs->num_rows > 0) { 
     $rowview = mysqli_fetch_assoc($resultvs); 
