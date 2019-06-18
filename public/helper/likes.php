@@ -8,7 +8,7 @@ require '../includes/config.php';
 
 
 
-$sql = "CREATE TABLE Postviews (
+$sql = "CREATE TABLE PostViews (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 author VARCHAR(255) NOT NULL,
 permlink VARCHAR(255) NOT NULL,
