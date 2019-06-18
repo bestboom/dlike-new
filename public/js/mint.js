@@ -220,7 +220,7 @@ $('.latest-post-section').on("click", ".hov_me", function() {
     var mypermlink = $(this).attr("data-permlink");
     var authorname = $(this).attr("data-author");
     var postsrec = $(this).attr("data-likes");
-    //alert(postsrec);
+    console.log(postsrec);
         var datat = {
             ath: authorname,
             plink: mypermlink
