@@ -21,6 +21,7 @@
 16. FAQ Style
 17. Footer Style
 
+
 */
 /*
  * Mixin printing a linear-gradient
@@ -2038,12 +2039,17 @@ color: #4c3d3d;
    padding-right: 1PX !important;
 }
 #upvoteModal{top: 35%;}
+#recomendModal{top: 35%;}
 .upvoting{cursor: pointer;}
+.recomendation{cursor: pointer;}
 #upvoting-status{color: #fff;
     display: none;
     font-weight: 800;
     text-align: center;}
-
+#recomend-status{color: #fff;
+    display: none;
+    font-weight: 800;
+    text-align: center;}
 .main_offer{margin-top: -40px;}
 .main_offer .daily{ max-height: 50%; width:100%;
   border-radius:50%;
