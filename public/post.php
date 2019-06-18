@@ -3,7 +3,6 @@ $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
-$views = '1';
 $userips = $_COOKIE['usertoken']; 
 
 
@@ -14,8 +13,9 @@ $sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' 
       $postviews = $rowview["views"];   
     } else { 
         $postviews = '0';
+        echo $newviews = $postviews + '1';
         $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
-                        VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
+                        VALUES ('".$auth."', '".$link."', '".$newviews."', '".$userips."', '".date("Y-m-d h:m:s")."')";
         mysqli_query($conn, $sqlview);  
     }
 
