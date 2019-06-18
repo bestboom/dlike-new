@@ -367,8 +367,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
     $("#r_likes").val(reclikes);
 });
 
-
-    $('.recomendme').click(function() {
+$('.recomendme').click(function() {
   
     var r_permlink = $("#r_permlink").val();
     var r_author = $("#r_author").val();
@@ -406,7 +405,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
                             $('#recomend-bar').show();
                             }
                         } catch (err) {
-                            console.log(err);
+                            //console.log(err);
                             toastr.error('Sorry. Server response is malformed.');
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide(); 
