@@ -6,8 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-
-
+/*
 $sql = "CREATE TABLE PostViews (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 author VARCHAR(255) NOT NULL,
@@ -25,7 +24,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 
-/*
+
 $sql = "CREATE TABLE TipTop (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 sender VARCHAR(255) NOT NULL,
