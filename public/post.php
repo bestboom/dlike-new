@@ -63,7 +63,7 @@ $sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' 
 
                                 <!-- post-views-block -->
                                 <div class="post-share-block">
-                                    <i class="fas fa-eye"></i><?php echo $postviews; ?>
+                                    <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                 </div><!-- post-views-block -->
 
                                 <!-- post-income-block -->
