@@ -16,13 +16,9 @@ $views = '1';
                         $postviews = $rowview["views"]; 
 
                     } else {
-                        $postviews = $postviews + $views;
                         $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
-                        VALUES ('".$auth."', '".$link."', '".$postviews."', '".$userips."', '".date("Y-m-d h:m:s")."')";
+                        VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
                         mysqli_query($conn, $sqlview); 
-
-                        
-
                     }
 
 ?>
