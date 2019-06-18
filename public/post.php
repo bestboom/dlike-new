@@ -10,7 +10,7 @@ $sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth'"
     $resultvs = $conn->query($sqlvs);
     if ($resultvs->num_rows > 0) { 
         $rowview = mysqli_fetch_assoc($resultvs); 
-        $postviews = $rowview["views"];  
+        echo $postviews = $rowview["views"];  
          
     } else { 
         echo $postviews;
