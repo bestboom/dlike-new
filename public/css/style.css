@@ -2039,6 +2039,18 @@ color: #4c3d3d;
    padding-left: 1PX !important;
    padding-right: 1PX !important;
 }
+.love-it{
+  color: #fff;
+  padding-top: 4px;
+  padding-left: 5px !important;
+  font-weight: 600;
+}
+.not-active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: red;
+}
 #upvoteModal{top: 35%;}
 #recomendModal{top: 35%;}
 .upvoting{cursor: pointer;}
