@@ -416,7 +416,6 @@ $('.recomendme').click(function() {
 });
 
 
-
 // here starts dlike-steem-upvote
 $('.latest-post-section').on("click", ".upvoting", function() {
     var votepermlink = $(this).attr("data-permlink");
