@@ -6,6 +6,25 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+
+$sql = "CREATE TABLE Postviews (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+author VARCHAR(255) NOT NULL,
+permlink VARCHAR(255) NOT NULL,
+views INT(11) NOT NULL,
+userip VARCHAR(255) NOT NULL,
+view_time TIMESTAMP
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table PostViews created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
 /*
 $sql = "CREATE TABLE TipTop (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
