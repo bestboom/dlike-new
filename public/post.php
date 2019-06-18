@@ -9,11 +9,11 @@ $userips = $_COOKIE['usertoken'];
 $sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth'";
     $resultvs = $conn->query($sqlvs);
     if ($resultvs->num_rows > 0) { 
-    $rowview = mysqli_fetch_assoc($resultvs); 
-      $postviews = $rowview["views"];   
+        $rowview = mysqli_fetch_assoc($resultvs); 
+        $postviews = $rowview["views"];  
+        echo $newviews = $postviews + 1; 
     } else { 
         $postviews = '0';
-        echo $newviews = $postviews + 1;
         $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
                         VALUES ('".$auth."', '".$link."', '".$newviews."', '".$userips."', '".date("Y-m-d h:m:s")."')";
         mysqli_query($conn, $sqlview);  
