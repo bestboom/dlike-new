@@ -383,7 +383,7 @@ $('.recomendme').click(function() {
 
             $.ajax({
                 type: "POST",
-                url: "/helper/solve.php",
+                url: "helper/solve.php",
                 data: datavr,
                 success: function(data) {
                     //console.log(success);
