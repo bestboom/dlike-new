@@ -13,7 +13,7 @@ $views = '1';
                 $resultvs = $conn->query($sqlvs);
                     if ($resultvs->num_rows > 0) {
                         $rowview = mysqli_fetch_assoc($resultvs); 
-                        $postviews = $rowview["totalviews"]; 
+                        $postviews = $rowview["views"]; 
 
                     } else {
                         $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
