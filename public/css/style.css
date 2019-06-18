@@ -2034,6 +2034,7 @@ color: #4c3d3d;
 }
 .mybody .close{ color: white; opacity: 1; }
 .mybody .upme{color: white; font-size: 30px;cursor: pointer;}
+.mybody .recomendme{color: white; font-size: 30px;cursor: pointer;}
 .nopadding {
    padding-left: 1PX !important;
    padding-right: 1PX !important;
