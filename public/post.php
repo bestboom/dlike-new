@@ -252,7 +252,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
 });
 
 $('.recomendme').click(function() {
-    alert(good);
+    //alert('good');
     var r_permlink = $("#r_permlink").val();
     var r_author = $("#r_author").val();
     var r_likes = $("#r_likes").val();
