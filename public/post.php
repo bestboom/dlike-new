@@ -24,6 +24,13 @@ $views = '1';
                         $updateviewQuery = $conn->query($updateview); 
 
                     }
+
+            $sqlvsp = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
+                $resultvsp = $conn->query($sqlvsp);
+                    if ($resultvsp->num_rows > 0) { 
+                    $rowviewp = mysqli_fetch_assoc($resultvsp); 
+                    $totalpostviews = $rowviewp["totalviews"];
+
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
@@ -68,7 +75,7 @@ $views = '1';
 
                                 <!-- post-views-block -->
                                 <div class="post-share-block">
-                                    <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
+                                    <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $totalpostviews; ?>
                                 </div><!-- post-views-block -->
 
                                 <!-- post-income-block -->
