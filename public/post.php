@@ -34,7 +34,6 @@ $sender =  $_COOKIE['username'];
                                             $result = $conn->query($sqlm);
                                             $row = mysqli_fetch_assoc($result);
                                             if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
-                                            echo $likesofpost;
                                         $userips = $_COOKIE['usertoken'];                                    
                                             $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
                                             $resultv = $conn->query($sqlv); 
@@ -239,64 +238,6 @@ $sender =  $_COOKIE['username'];
         $(this).ajaxSubmit(tipoptions)
         return !1
     });
-// here start recomendations
-$('.post-comments-mid').on("click", ".recomendation", function() { 
-    var recpermlink = $(this).attr("data-permlink");
-    var recauthor = $(this).attr("data-author");
-    var reclikes = $(this).attr("data-likes");
-    alert(reclikes);
-    $("#r_author").val(recauthor);
-    $("#r_permlink").val(recpermlink);
-    $("#r_likes").val(reclikes);
-});
 
-
-    $('.recomendme').click(function() {
-  
-    var r_permlink = $("#r_permlink").val();
-    var r_author = $("#r_author").val();
-    var r_likes = $("#r_likes").val();
-    var newlikes = parseInt(r_likes) + 1;
-    
-    var datavr = {
-        rec_permlink: r_permlink,
-        rec_author: r_author
-    };
-    $('#recomend-bar').hide();
-    $('#recomend-status').show();         
-
-            $.ajax({
-                type: "POST",
-                url: "/helper/solve.php",
-                data: datavr,
-                success: function(data) {
-                    //console.log(success);
-                    try {
-                        var response = JSON.parse(data)
-                        if(response.error == true) {
-                            toastr.error('There is some issue!'); 
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide();
-                            $('#recomend-bar').show();
-                            return false;
-                        } else {
-                            $('#up_vote').removeAttr('data-target');
-                            $('#vote_icon').addClass("not-active");
-                            toastr.success('Thanks for Recomendation!'); 
-                            $('#total_likes').html(newlikes);
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide(); 
-                            $('#recomend-bar').show();
-                            }
-                        } catch (err) {
-                            console.log(err);
-                            toastr.error('Sorry. Server response is malformed.');
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide(); 
-                            $('#recomend-bar').show();
-                    }
-                },
-            });
-});
 
 </script>
