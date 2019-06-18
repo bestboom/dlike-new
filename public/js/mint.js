@@ -182,16 +182,7 @@ $(document).ready(function(){
             
     //});
 });
-// solve me
-    var options = {
-        target: '#output-msg',
-        url: '/helper/solve.php',
-        success: function() {},
-    }
-    $('#logsubmit').submit(function() {
-        $(this).ajaxSubmit(options)
-        return !1
-    });
+
 // Add me
     var optionstk = {
         target: '#add-msg',
@@ -368,7 +359,7 @@ $('.post-comments-mid').on("click", ".recomendation", function() {
 });
 
 $('.recomendme').click(function() {
-  
+    alert(good);
     var r_permlink = $("#r_permlink").val();
     var r_author = $("#r_author").val();
     var r_likes = $("#r_likes").val();
@@ -383,7 +374,7 @@ $('.recomendme').click(function() {
 
             $.ajax({
                 type: "POST",
-                url: "helper/solve.php",
+                url: "/helper/solve.php",
                 data: datavr,
                 success: function(data) {
                     //console.log(success);
