@@ -13,7 +13,6 @@ $sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth'"
         $postviews = $rowview["views"];  
         echo $newviews = $postviews + 1; 
     } else { 
-        $postviews = '0';
         $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
                         VALUES ('".$auth."', '".$link."', '".$newviews."', '".$userips."', '".date("Y-m-d h:m:s")."')";
         mysqli_query($conn, $sqlview);  
