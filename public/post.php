@@ -34,7 +34,7 @@ $sender =  $_COOKIE['username'];
                                             $result = $conn->query($sqlm);
                                             $row = mysqli_fetch_assoc($result);
                                             if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
-
+                                            echo $likesofpost;
                                         $userips = $_COOKIE['usertoken'];                                    
                                             $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
                                             $resultv = $conn->query($sqlv); 
