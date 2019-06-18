@@ -9,13 +9,22 @@ $views = '1';
 
         $sqlview = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
                         VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
-        mysqli_query($conn, $sqlview);  
+        if (mysqli_query($conn, $sqlview)) { 
 
-$sqlvs = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$userips'";
-    $resultvs = $conn->query($sqlvs);
-        $rowview = mysqli_fetch_assoc($resultvs); 
-        $postviews = $rowview["views"]; 
+            $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
+                $resultvs = $conn->query($sqlvs);
+                    if ($resultvs->num_rows > 0) {
+                        $rowview = mysqli_fetch_assoc($resultvs); 
+                        $postviews = $rowview["totalviews"]; 
 
+                        $updateview = "UPDATE TotalPostViews SET totalviews = '$postviews' + 1 WHERE permlink = '$link' and author = '$auth'";
+                        $updateviewQuery = $conn->query($updateview);
+                    } else {
+                        $sqltotalview = "INSERT INTO TotalPostViews (author, permlink, totalviews)
+                        VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."')";
+                        mysqli_query($conn, $sqltotalview);  
+                    }    
+        }
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
