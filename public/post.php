@@ -46,13 +46,17 @@ $sender =  $_COOKIE['username'];
                                              </div>                        
                                 </div><!-- post-likes-block -->
 
-
+                                <!-- post-views-block -->
                                 <div class="post-share-block">
-                                    <h5>Tip Now</h5>
+                                    <i class="fas fa-eye"></i>
+                                </div><!-- post-views-block -->
+
+                                <!-- post-income-block -->
+                                <div class="post-share-block">
                                     <ul class="social-share-list">
                                         <li><a href="#" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
                                     </ul>
-                                </div><!-- post-share-block -->
+                                </div><!-- post-income-block -->
                             </div>
                         </div>
                     </div>
