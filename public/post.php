@@ -7,7 +7,6 @@ $userips = $_COOKIE['usertoken'];
 $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
 
-echo $ip;
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
                 $resultvs = $conn->query($sqlvs);
                 if ($resultvs->num_rows > 0) {

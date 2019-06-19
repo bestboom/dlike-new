@@ -46,8 +46,6 @@ function getUserIP()
 }
 
 $thisip = getUserIP();
-//$ips = explode(',', $thisip);
-//$theip = $ips[0];
 $ip = ip2long($thisip);
 
 $_SESSION['usertoken'] = $ip;
