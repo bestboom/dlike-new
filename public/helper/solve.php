@@ -49,6 +49,8 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                                                 'data' => 'Recomending'
                                                                 ]));
 					} else {
+						$verifyPost = "SELECT * FROM myLikes where userip = '$ip' and permlink = '$req_permlink' and author = '$req_author'";
+						$resultverify = $conn->query($verifyPost);
     														die(json_encode([
                                                                 'error' => true,
                                                                 'message' => 'Sorry', 
