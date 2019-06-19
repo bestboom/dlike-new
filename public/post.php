@@ -135,9 +135,7 @@ $views = '1';
                                     <ul class="social-share-list">
                                         <li><a href="#" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#" class="google-plus"> <i class="fab fa-google-plus-g"></i></a></li>
                                         <li><a href="#" class="linkdin"> <i class="fab fa-linkedin-in"></i></a></li>
-                                        <li> <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a></li>
                                         <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
                                     </ul>
                                 </div><!-- post-share-block -->
