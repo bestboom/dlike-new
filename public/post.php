@@ -7,6 +7,21 @@ echo $userips = $_COOKIE['usertoken'];
 echo $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
 
+
+function getUserIpAddrs(){
+        // durch proxy
+        if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+
+        if (isset($_SERVER['REMOTE_ADDR'])) {
+            return $_SERVER['REMOTE_ADDR'];
+        }
+
+        return '';
+}
+echo $thisipsssssss = getUserIpAddr();
+
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
                 $resultvs = $conn->query($sqlvs);
                 if ($resultvs->num_rows > 0) {
