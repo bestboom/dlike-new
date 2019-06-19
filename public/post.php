@@ -8,6 +8,8 @@ $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
 
 echo $thisip;
+echo '<br>';
+echo $ip;
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
                 $resultvs = $conn->query($sqlvs);
                 if ($resultvs->num_rows > 0) {
