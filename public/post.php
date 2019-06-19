@@ -20,7 +20,6 @@ $views = '1';
                         VALUES ('".$auth."', '".$link."', '".$views."')";
                     mysqli_query($conn, $sqlview); 
                 }    
-
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
