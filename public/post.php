@@ -111,9 +111,7 @@ $views = '1';
                             <p class="tipthnk" style="display: none;margin-bottom: 3px;">Thanks for the tip. You need to wait before you cn do an other tip</p>
                         </div>
                         <div class="col">
-                            <form action="helper/addtips.php" method="post" id="tipsubmit">
-                                <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
-                                <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
+                            
 <?php
     //check if this post is tipped by you
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
@@ -123,12 +121,16 @@ $views = '1';
                 $rowvtip = $resultvtip->fetch_assoc();
                 echo $tiptime = $rowtip['tip_time'];  
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
-            } else {
-                echo '<center><button class="btn btn-default">TIP</button></center>';
-            }    
+            } else { ?>
+                <form action="helper/addtips.php" method="post" id="tipsubmit">
+                                <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
+                                <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
+                                <center><button class="btn btn-default">TIP</button></center>
+                </form>                
+           <? }    
 ?>
                                 
-                            </form>
+                            
                         </div>
                     </div>
                 </div>
