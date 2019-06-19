@@ -119,8 +119,8 @@ $views = '1';
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
             if ($resultvtip->num_rows > 0) {
-                $resulttip = mysqli_query($conn, $checktip);
-                $rowtip = $resulttip->fetch_assoc();
+                $resultvtip = mysqli_query($conn, $verifytip);
+                $rowvtip = $resultvtip->fetch_assoc();
                 echo $tiptime = $rowtip['tip_time'];  
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
             } else {
