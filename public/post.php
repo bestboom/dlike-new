@@ -4,6 +4,7 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
 echo $userips = $_COOKIE['usertoken'];
+echo $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
 
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
