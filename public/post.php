@@ -24,13 +24,11 @@ $views = '1';
                         mysqli_query($conn, $sqlviewup);
 
                         }
-
                 } else {
                     $sqlview = "INSERT INTO TotalPostViews (author, permlink, totalviews)
                         VALUES ('".$auth."', '".$link."', '".$views."')";
                     mysqli_query($conn, $sqlview); 
-                    $postviews = '1';
-                     
+                    $postviews = '1';  
                 } 
 
 ?>
@@ -82,9 +80,7 @@ $views = '1';
 
                                 <!-- post-income-block -->
                                 <div class="post-share-block">
-                                    <ul class="social-share-list">
-                                        <li><a href="#" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
-                                    </ul>
+                                    <i class="fas fa-money"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                 </div><!-- post-income-block -->
                             </div>
                         </div>
