@@ -12,7 +12,10 @@
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 			$resulttip = $conn->query($checktip);
-			if ($resulttip->num_rows > 0) {	
+			if ($resulttip->num_rows > 0) {
+				$resulttip = mysqli_query($conn, $checktip);
+				$rowtip = $resulttip->fetch_assoc()
+				echo $tiptime = $rowtip['tip_time'];	
 				echo '<div class="alert alert-danger">You Have already tip this post</div>';
 			} else {
 			
