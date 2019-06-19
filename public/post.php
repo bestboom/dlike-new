@@ -120,7 +120,15 @@ $views = '1';
                 $resultvtip = mysqli_query($conn, $verifytip);
                 $rowvtip = $resultvtip->fetch_assoc();  
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
-            
+            } elseif { 
+
+                $verifytiptime = "SELECT * FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
+                    $resulttiptime = $conn->query($verifytiptime);
+                        if ($resulttiptime->num_rows > 0) {
+                            $resulttiptime = mysqli_query($conn, $verifytiptime);
+                            $rowtiptime = $resulttiptime->fetch_assoc();
+                                echo $tiptime = $rowtiptime['tip_time'];     
+                        }
             } else { ?>
                 <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                 <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
