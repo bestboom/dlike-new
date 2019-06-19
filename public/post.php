@@ -19,7 +19,7 @@ echo $ip;
                         if ($resultvip->num_rows > 0) { } else {
                         $updatePostviews = "UPDATE TotalPostViews SET totalviews = '$postviews' + 1 WHERE author = '$auth' AND permlink = '$link'";
                         $updatePostview = $conn->query($updatePostviews);
-
+                        $postviews = $postviews + '1';
                         $sqlviewup = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
                         VALUES ('".$auth."', '".$link."', '".$views."', '".$ip."', '".date("Y-m-d h:m:s")."')";
                         mysqli_query($conn, $sqlviewup);
