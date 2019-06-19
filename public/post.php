@@ -27,7 +27,8 @@ $views = '1';
                     $sqlviewup = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
                         VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
                     mysqli_query($conn, $sqlviewup); 
-                }    
+                } 
+                   
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
