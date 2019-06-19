@@ -80,7 +80,7 @@ $views = '1';
 
                                 <!-- post-income-block -->
                                 <div class="post-share-block">
-                                    <i class="fas fa-money"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
+                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                 </div><!-- post-income-block -->
                             </div>
                         </div>
