@@ -29,7 +29,7 @@ $views = '1';
                         VALUES ('".$auth."', '".$link."', '".$views."')";
                     mysqli_query($conn, $sqlview); 
                     $postviews = '1';  
-                } 
+                }           
 
 ?>
 </div>
@@ -114,7 +114,20 @@ $views = '1';
                             <form action="helper/addtips.php" method="post" id="tipsubmit">
                                 <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                 <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
-                                <center><button class="btn btn-default">TIP</button></center>
+<?php
+    //check if this post is tipped by you
+    $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
+            $resultvtip = $conn->query($verifytip);
+            if ($resultvtip->num_rows > 0) {
+                $resulttip = mysqli_query($conn, $checktip);
+                $rowtip = $resulttip->fetch_assoc();
+                echo $tiptime = $rowtip['tip_time'];  
+                echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
+            } else {
+                echo '<center><button class="btn btn-default">TIP</button></center>';
+            }    
+?>
+                                
                             </form>
                         </div>
                     </div>
