@@ -261,7 +261,7 @@ $views = '1';
     // tip me
     var tipoptions = {
         target: '#tip-msg',
-        url: '/helper/addtips.php',
+        url: 'helper/addtips.php',
         success: function() {
             $('#tipsubmit').hide();
             $('.tipratio').hide();
