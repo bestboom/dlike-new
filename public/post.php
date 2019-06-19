@@ -15,8 +15,8 @@ $views = '1';
                         $rowview = mysqli_fetch_assoc($resultvs); 
                         $postviews = $rowview["totalviews"];
                         $updatePostviews = "UPDATE TotalPostViews SET totalviews = '$postviews' + 1 WHERE author = '$auth' AND permlink = '$link'";
-                        $updatePostviews = $conn->query($updatePostviews);
-                        if ($updatePostviews === TRUE) {$rowviewup = mysqli_fetch_assoc($updatePostviews);
+                        $updatePostview = $conn->query($updatePostviews);
+                        if ($updatePostview === TRUE) {$rowviewup = mysqli_fetch_assoc($updatePostview);
                             echo $postviews = $rowviewup["totalviews"];
                             } 
 
