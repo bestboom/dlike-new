@@ -17,8 +17,15 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 		$permlink =  $_POST['rec_permlink'];
 		$newLike = '1';
 
-
-
+		$verifyPost = "SELECT * FROM myLikes where userip = '$ip' and permlink = '$permlink' and author = '$author'";
+			$resultverify = $conn->query($verifyPost);
+			if ($result->num_rows > 0) {
+																die(json_encode([
+                                                                'error' => true,
+                                                                'message' => 'Sorry', 
+                                                                'data' => 'Already Recomended'
+                                                                ]));
+			} else {													
 				$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
 						VALUES ('".$userval."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
 
@@ -47,15 +54,6 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                                                 'error' => false,
                                                                 'message' => 'Thankk You', 
                                                                 'data' => 'Recomending'
-                                                                ]));
-					} else {
-						$verifyPost = "SELECT * FROM myLikes where userip = '$ip' and permlink = '$permlink' and author = '$author'";
-						$resultverify = $conn->query($verifyPost);
-						
-    														die(json_encode([
-                                                                'error' => true,
-                                                                'message' => 'Sorry', 
-                                                                'data' => 'Already Recomended'
                                                                 ]));
 					}
 			}
