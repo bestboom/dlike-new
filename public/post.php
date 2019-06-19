@@ -5,7 +5,7 @@ $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
 $userips = $_COOKIE['usertoken'];
 $user_ip=$_SERVER['REMOTE_ADDR'];
-$views = '1'; 
+$views = '0'; 
 
 echo $ip;
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
@@ -30,7 +30,7 @@ echo $ip;
                     $sqlview = "INSERT INTO TotalPostViews (author, permlink, totalviews)
                         VALUES ('".$auth."', '".$link."', '".$views."')";
                     mysqli_query($conn, $sqlview); 
-                    $postviews = '0';
+                    $postviews = '1';
                      
                 } 
 
