@@ -119,10 +119,14 @@ $views = '1';
             if ($resultvtip->num_rows > 0) {
                 $resultvtip = mysqli_query($conn, $verifytip);
                 $rowvtip = $resultvtip->fetch_assoc();
-                echo $tiptime = $rowtip['tip_time'];  
+                echo $tiptime = $rowvtip['tip_time'];  
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
-            } else { ?>
-                <form action="helper/addtips.php" method="post" id="tipsubmit">
+            } else { 
+
+                $verifytiptime = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
+
+                ?>
+                <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                 <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                 <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                 <center><button class="btn btn-default">TIP</button></center>
@@ -261,7 +265,7 @@ $views = '1';
     // tip me
     var tipoptions = {
         target: '#tip-msg',
-        url: 'helper/addtips.php',
+        url: '/helper/addtips.php',
         success: function() {
             $('#tipsubmit').hide();
             $('.tipratio').hide();
