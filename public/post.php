@@ -1,4 +1,9 @@
 <?php  include('template/header5.php');
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
@@ -124,10 +129,7 @@ $views = '1';
 
                 $verifytiptime = "SELECT * FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
                     $resulttiptime = $conn->query($verifytiptime);
-                        if ($resulttiptime->num_rows > 0) {
-                            $resulttiptime = mysqli_query($conn, $verifytiptime);
-                            $rowtiptime = $resulttiptime->fetch_assoc();
-                               
+                        if ($resulttiptime->num_rows > 0) {    
                         } else { ?>
 
                 <form action="/helper/addtips.php" method="post" id="tipsubmit">
