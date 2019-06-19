@@ -10,7 +10,7 @@
 	$sender =  $_COOKIE['username'];	
 	$permlink =  $_POST['tippermlink'];
 
-	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$author' and sender = '$sender'";
+	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 			$resulttip = $conn->query($checktip);
 			if ($resulttip->num_rows > 0) {	
 				echo '<div class="alert alert-danger">You Have already tip this post</div>';
