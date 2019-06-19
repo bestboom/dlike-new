@@ -120,15 +120,15 @@ $views = '1';
                 $resultvtip = mysqli_query($conn, $verifytip);
                 $rowvtip = $resultvtip->fetch_assoc();  
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
-            } elseif { 
+            } elseif { ?>
 
-                
-            } else { ?>
-                <form action="/helper/addtips.php" method="post" id="tipsubmit">
+                 <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                 <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                 <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                 <center><button class="btn btn-default">TIP</button></center>
-                </form>                
+                </form>  
+         <?   } else { ?>
+                             
            <? }    
 ?>
                                 
