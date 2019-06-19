@@ -3,8 +3,8 @@ $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
-echo $userips = $_COOKIE['usertoken'];
-echo $user_ip=$_SERVER['REMOTE_ADDR'];
+$userips = $_COOKIE['usertoken'];
+$user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
 
 
