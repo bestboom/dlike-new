@@ -21,7 +21,7 @@ $views = '1';
                             } 
 
                     } else {
-                        $sqlview = "INSERT INTO TotalPostViews (author, permlink, views)
+                        $sqlview = "INSERT INTO TotalPostViews (author, permlink, totalviews)
                         VALUES ('".$auth."', '".$link."', '".$views."')";
                         mysqli_query($conn, $sqlview); 
                     }
