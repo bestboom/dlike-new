@@ -57,5 +57,5 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
                                                                 ]));
 					} 
 			}
-		
+	}	
 ?>
