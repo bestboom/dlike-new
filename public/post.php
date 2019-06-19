@@ -3,12 +3,10 @@ $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
-echo $userips = $_COOKIE['usertoken'];
+$userips = $_COOKIE['usertoken'];
 $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
 
-echo $thisip;
-echo '<br>';
 echo $ip;
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
                 $resultvs = $conn->query($sqlvs);
@@ -16,14 +14,14 @@ echo $ip;
                     $rowview = mysqli_fetch_assoc($resultvs); 
                     $postviews = $rowview["totalviews"];
 
-                    $sqlvip = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$userips'";
+                    $sqlvip = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$ip'";
                         $resultvip = $conn->query($sqlvip);
                         if ($resultvip->num_rows > 0) { } else {
                         $updatePostviews = "UPDATE TotalPostViews SET totalviews = '$postviews' + 1 WHERE author = '$auth' AND permlink = '$link'";
                         $updatePostview = $conn->query($updatePostviews);
 
                         $sqlviewup = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
-                        VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
+                        VALUES ('".$auth."', '".$link."', '".$views."', '".$ip."', '".date("Y-m-d h:m:s")."')";
                         mysqli_query($conn, $sqlviewup);
 
                         }
