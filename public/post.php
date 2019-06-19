@@ -3,7 +3,7 @@ $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 $sender =  $_COOKIE['username'];
-$userips = $_COOKIE['usertoken'];
+echo $userips = $_COOKIE['usertoken'];
 $views = '1'; 
 
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
@@ -28,7 +28,7 @@ $views = '1';
                         VALUES ('".$auth."', '".$link."', '".$views."', '".$userips."', '".date("Y-m-d h:m:s")."')";
                     mysqli_query($conn, $sqlviewup); 
                 } 
-                   
+
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
