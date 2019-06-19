@@ -129,14 +129,6 @@ $views = '1';
                     <div class="row">
                         <div class="col">
                             <div class="details-post-meta-block-wrap">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5> <a href="#" class="mod-auth"></a></h5>
-                                    </div>
-                                </div>
                                 <div class="post-tag-block">
                                     <h5>Post Tag</h5>
                                     <div class="tags mod-tags">

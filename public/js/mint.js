@@ -375,7 +375,7 @@ $('.recomendme').click(function() {
                     try {
                         var response = JSON.parse(data)
                         if(response.error == true) {
-                            toastr.error('Already Recomended!'); 
+                            toastr.error('There is some issue!'); 
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide();
                             $('#recomend-bar').show();
