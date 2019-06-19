@@ -120,7 +120,7 @@ $views = '1';
                 $resultvtip = mysqli_query($conn, $verifytip);
                 $rowvtip = $resultvtip->fetch_assoc();  
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
-            }   
+            } else { echo 'good'; }    
 ?>
                                 
                             
