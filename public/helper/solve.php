@@ -20,7 +20,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 
 
 				$sqlm = "INSERT INTO MyLikes (username, stars, userip, author, permlink)
-						VALUES ('".$userval."', '".$rating."', '".$saved_ip."', '".$author."', '".$permlink."')";
+						VALUES ('".$userval."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
 
 						if (mysqli_query($conn, $sqlm)) {
 

@@ -65,7 +65,7 @@ echo $ip;
                                             $row = mysqli_fetch_assoc($result);
                                             if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
                                                                            
-                                            $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$userips'";
+                                            $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$ip'";
                                             $resultv = $conn->query($sqlv); 
                                         if ($resultv->num_rows > 0) { ?>
                                             <div class="post-comments-mid">
