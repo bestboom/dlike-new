@@ -113,7 +113,7 @@ $views = '1';
                         </div>
                         <div class="col">
                             <p class="tipratio" style="margin-bottom: 3px;">Tips are fre from DLIKE <br>Tip Author 60% - 40% to ME</p>
-                            <p class="tipthnk" style="display: none;margin-bottom: 3px;">Thanks for the tip. You need to wait before you cn do an other tip</p>
+                            <p class="tipthnk" style="display: none;margin-bottom: 3px;">Thanks for the tip. You need to wait before you can do an other tip</p>
                         </div>
                         <div class="col">
                             
@@ -336,8 +336,9 @@ function UpdateTime() {
         $("#seconds").text(seconds < 10 ? "0" + seconds : seconds);
     } else {
         $("#countdown").hide();
-        setTimeout(function(){location.reload();}, 500);
-        //$("#aftercount").show();
+        //setTimeout(function(){location.reload();}, 500);
+        $("#tipratio").hide();
+        
         clearInterval(counter);
     }
 }
