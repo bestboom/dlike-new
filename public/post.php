@@ -127,12 +127,12 @@ $views = '1';
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
             } else {
 
-                $verifytiptime = "SELECT * FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
+                $verifytiptime = "SELECT Select TimeStampDiff(SECOND,time,Now()) AS timed FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
                     $resulttiptime = $conn->query($verifytiptime);
                         if ($resulttiptime->num_rows > 0) {
-                            $resulttiptime = mysqli_query($conn, $verifytiptime);
+                            echo $timerd = $resulttiptime->timed;
                             $rowtiptime = $resulttiptime->fetch_assoc();
-                                echo $tiptime = strtotime($rowtiptime['tip_time']); 
+                                $tiptime = strtotime($rowtiptime['tip_time']); 
                                 echo    '<div id="countdown" style="font-size:16px;float:center;color:#fff;">
                                         <div class="btn btn-md btn-default btn-block" ><span id="minutes" style="float:center">00</span>
                                         <span style="float:center">:</span>
@@ -294,7 +294,7 @@ $views = '1';
     });
 
 
-var directTime = <?=($tiptime)?>;
+var directTime = <?=($timerd)?>;
 var sTime = new Date().getTime();
 console.log(directTime);
 console.log(sTime);
