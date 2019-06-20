@@ -20,7 +20,7 @@
 			} else {
 			
 			$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, userip, tip_time)
-						VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$ip."', '".date("Y-m-d h:m:s")."')";
+						VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$ip."', now())";
 				
 				if (mysqli_query($conn, $sqlm)) {
 					//echo '<script>document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
