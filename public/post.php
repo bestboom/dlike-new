@@ -340,6 +340,7 @@ function UpdateTime() {
         $("#countdown").hide();
         $(".tipthnk").hide();
         $(".tipratio").show();
+        $(".aftercount").show();
         //setTimeout(function(){location.reload();}, 500);
         
         
