@@ -132,14 +132,21 @@ $views = '1';
                         if ($resulttiptime->num_rows > 0) {
                             $resulttiptime = mysqli_query($conn, $verifytiptime);
                             $rowtiptime = $resulttiptime->fetch_assoc();
-                                echo $tiptime = $rowtiptime['tip_time'];     
+                                echo $tiptime = $rowtiptime['tip_time']; 
+                                echo    '<div id="countdown" style="font-size:16px;float:center;color:#fff;">
+                                        <div class="btn btn-md btn-default btn-block" ><span id="minutes" style="float:center">00</span>
+                                        <span style="float:center">:</span>
+                                        <span id="seconds" style="float:center">00</span></div>
+                                        <br>
+                                        </div>';    
                         } else { ?>
-
+                <div id="aftercount">            
                 <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                 <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                 <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                 <center><button class="btn btn-default">TIP</button></center>
-                </form>                
+                </form>  
+                </div>              
            <? } }   
 ?>
                                 
@@ -285,6 +292,29 @@ $views = '1';
         $(this).ajaxSubmit(tipoptions)
         return !1
     });
+
+
+var directTime = <?=($tiptime)?>;
+var sTime = new Date().getTime();
+var countDown = 295 - directTime;
+
+function UpdateTime() {
+    var cTime = new Date().getTime();
+    var diff = cTime - sTime;
+    var seconds = countDown - Math.floor(diff / 1000);
+    if (seconds >= 0) {
+        var minutes = Math.floor(seconds / 60);
+        seconds -= minutes * 60;
+        $("#minutes").text(minutes < 10 ? "0" + minutes : minutes);
+        $("#seconds").text(seconds < 10 ? "0" + seconds : seconds);
+    } else {
+        $("#countdown").hide();
+        $("#aftercount").show();
+        clearInterval(counter);
+    }
+}
+UpdateTime();
+var counter = setInterval(UpdateTime, 500);
 
 
 </script>
