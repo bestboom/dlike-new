@@ -303,6 +303,7 @@ function UpdateTime() {
     var cTime = new Date().getTime();
     console.log(cTime);
     var diff = cTime - sTime;
+    console.log(diff);
     var seconds = countDown - Math.floor(diff / 1000);
     if (seconds >= 0) {
         var minutes = Math.floor(seconds / 60);
