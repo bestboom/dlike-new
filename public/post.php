@@ -130,7 +130,8 @@ $views = '1';
                 $verifytiptime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS timed FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
                     $resulttiptime = $conn->query($verifytiptime);
                         if ($resulttiptime->num_rows > 0) {
-                            echo $timerd = $resulttiptime->timed;
+                            $rowits = mysqli_fetch_row($resulttiptime)
+                            echo $timerd = $rowits['timed']);
                             $rowtiptime = $resulttiptime->fetch_assoc();
                                 $tiptime = strtotime($rowtiptime['tip_time']); 
                                 echo    '<div id="countdown" style="font-size:16px;float:center;color:#fff;">
