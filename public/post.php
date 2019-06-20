@@ -130,7 +130,7 @@ $views = '1';
                 $verifytiptime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS timed FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
                     $resulttiptime = $conn->query($verifytiptime);
                         if ($resulttiptime->num_rows > 0) {
-                            $rowits = mysqli_fetch_row($resulttiptime)
+                            $rowits = mysqli_fetch_row($resulttiptime);
                             echo $timerd = $rowits['timed']);
                             $rowtiptime = $resulttiptime->fetch_assoc();
                                 $tiptime = strtotime($rowtiptime['tip_time']); 
