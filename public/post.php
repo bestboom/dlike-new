@@ -296,10 +296,13 @@ $views = '1';
 
 var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
+console.log(directTime);
+console.log(sTime);
 var countDown = 295 - directTime;
 
 function UpdateTime() {
     var cTime = new Date().getTime();
+    console.log(cTime);
     var diff = cTime - sTime;
     var seconds = countDown - Math.floor(diff / 1000);
     if (seconds >= 0) {
