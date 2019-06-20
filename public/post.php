@@ -243,6 +243,32 @@ $views = '1';
         </div>
     </div>
 </div>
+
+
+<?php
+
+$sqlt = "SELECT sender, tip_time, permlink FROM TipTop ORDER BY tip_time DESC LIMIT 10";
+                        $resultkj = $conn->query($sqlt);
+
+                        if ($resultkj->num_rows > 0) {
+                            while($rowkj = $resultkj->fetch_assoc()) { ?>
+                        <div class="activity-block">
+                            <div class="row my-entry">
+                                <div class="col-sm-8">
+                                    <div class="row">
+                                        <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
+                                        <div class="exp-user"><?php echo $rowkj["sender"]; ?></div>
+                                        <div class="exp-user">For <span><?php echo $rowkj["tip_time"]; ?></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="exp-amt"><span id=""><?php echo $row["permlink"]; ?></span> Dlikes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <? }
+                        }
+?>                        
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     post_author = '<?php echo $auth; ?>',
