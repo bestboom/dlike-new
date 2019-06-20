@@ -139,15 +139,15 @@ $views = '1';
                                         <span style="float:center">:</span>
                                         <span id="seconds" style="background: #c51d24;border-radius: 5px;padding: 15px;">00</span></div>
                                         <br>
-                                        </div>';  
+                                        </div>'; 
+                                echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';          
                     } else {    ?>
-                <div id="aftercount">            
+                           
                 <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                 <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                 <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                 <center><button class="btn btn-default">TIP</button></center>
-                </form>  
-                </div>              
+                </form>             
            <? } }   }
 ?>
                                 
@@ -338,6 +338,8 @@ function UpdateTime() {
         $(".tipthnk").show();
     } else {
         $("#countdown").hide();
+        $(".tipthnk").hide();
+        $(".tipratio").show();
         //setTimeout(function(){location.reload();}, 500);
         
         
