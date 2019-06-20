@@ -5,7 +5,7 @@
 
 	require '../includes/config.php';
 
-	
+if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){	
 	$receiver =  $_POST['tipauthor'];	
 	$sender =  $_COOKIE['username'];	
 	$permlink =  $_POST['tippermlink'];
@@ -23,10 +23,11 @@
 						VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$ip."', now())";
 				
 				if (mysqli_query($conn, $sqlm)) {
-					//echo '<script>document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
-    				echo '<div class="alert alert-success">Your Tip is Added</div>';
+					echo '<script>document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+    				echo '<div class="alert alert-success">Tip is Successful</div>';
 				} else {
     				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 				}
 			}
+}			
 ?>
