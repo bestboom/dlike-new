@@ -294,7 +294,7 @@ $views = '1';
     });
 
 
-var directTime = <?=($tiptime)?>;
+//var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
 console.log(directTime);
 console.log(sTime);
