@@ -334,10 +334,12 @@ function UpdateTime() {
         seconds -= minutes * 60;
         $("#minutes").text(minutes < 10 ? "0" + minutes : minutes);
         $("#seconds").text(seconds < 10 ? "0" + seconds : seconds);
+        $("#tipratio").hide();
+        $("#tipthnk").show();
     } else {
         $("#countdown").hide();
         //setTimeout(function(){location.reload();}, 500);
-        $("#tipratio").hide();
+        
         
         clearInterval(counter);
     }
