@@ -296,7 +296,7 @@ $views = '1';
 
 //var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
-console.log(directTime);
+//console.log(directTime);
 console.log(sTime);
 var countDown = 295 - directTime;
 
