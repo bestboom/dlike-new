@@ -113,7 +113,7 @@ $views = '1';
                         </div>
                         <div class="col">
                             <p class="tipratio" style="margin-bottom: 3px;">Tips are fre from DLIKE <br>Tip Author 60% - 40% to ME</p>
-                            <p class="tipthnk" style="display: none;margin-bottom: 3px;">Thanks for the tip. You need to wait before you can do an other tip</p>
+                            <p class="tipthnk" style="display: none;margin-bottom: 3px;font-weight: 600;">You need to wait before you can TIP again.</p>
                         </div>
                         <div class="col">
                             
