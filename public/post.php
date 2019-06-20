@@ -131,7 +131,7 @@ $views = '1';
                     $resulttiptime = $conn->query($verifytiptime);
                         if ($resulttiptime->num_rows > 0) {
                             $rowits = mysqli_fetch_row($resulttiptime);
-                            echo $timerd = $rowits['timed']);
+                            echo $timerd = $rowits['timed'];
                             $rowtiptime = $resulttiptime->fetch_assoc();
                                 $tiptime = strtotime($rowtiptime['tip_time']); 
                                 echo    '<div id="countdown" style="font-size:16px;float:center;color:#fff;">
