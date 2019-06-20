@@ -127,7 +127,7 @@ $views = '1';
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
             } else {
 
-                $verifytiptime = "SELECT TimeStampDiff(SECOND,time,Now()) AS timed FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
+                $verifytiptime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS timed FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
                     $resulttiptime = $conn->query($verifytiptime);
                         if ($resulttiptime->num_rows > 0) {
                             echo $timerd = $resulttiptime->timed;
