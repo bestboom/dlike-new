@@ -151,6 +151,7 @@ $views = '1';
                         </div>
                     </div>
                 </div>
+                <div class="row">This tip is sponsored by DLIKE. Learn more about DLIKE here</div>
             </div>
             <div class="details-post-meta-block">
                 <div class="container">
