@@ -19,6 +19,14 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 				echo '<div class="alert alert-danger">You Have already tip this post</div>';
 			} else {
 
+				$veriftime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
+                    $resulttime = $conn->query($verifytime);
+                            $rowtime = $resulttime->fetch_assoc();
+                                $lasttip = $rowtime['lasttime']; 
+                                if($lasttip < 300) {
+                                	echo '<div class="alert alert-danger">There seems some issue</div>';
+                                	echo '<script>setTimeout(function(){location.reload();}',
+                                } else {
 			
 			$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, userip, tip_time)
 						VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$ip."', now())";
@@ -30,6 +38,6 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
     				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 				}
 			}
-			
+		}
 }			
 ?>
