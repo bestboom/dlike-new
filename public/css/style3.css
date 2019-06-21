@@ -2109,9 +2109,9 @@ label.star:before{
 }
 #minutes{background: #c51d24;border-radius: 5px;padding: 15px;}
 #seconds{background: #c51d24;border-radius: 5px;padding: 15px;}
-#countdown{font-size:16px;float:center;color:#fff;}
-.tipthnk{display: none;margin-bottom: 3px;}
-.tipratio{margin-bottom: 3px;}
+#countdown{font-size:16px;float:center;color:#fff;text-align: center;}
+.tipthnk{display: none;margin-bottom: 3px;margin-top: 0.5rem;}
+.tipratio{margin-bottom: 3px;margin-top: 0.5rem;}
 .mid-tip{text-align: center;font-weight: 600;}
 .not-active {
   pointer-events: none;
