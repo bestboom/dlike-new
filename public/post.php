@@ -132,7 +132,7 @@ $views = '1';
                     $resulttiptime = $conn->query($verifytiptime);
                         if ($resulttiptime->num_rows > 0) {
                             $rowtiptime = $resulttiptime->fetch_assoc();
-                                echo $tiptime = $rowtiptime['timed']; 
+                                $tiptime = $rowtiptime['timed']; 
                                 if($tiptime < 300) {
                                 echo    '<div id="countdown" style="font-size:16px;float:center;color:#fff;">
                                         <div class="btn btn-md btn-default btn-block" ><span id="minutes" style="background: #c51d24;border-radius: 5px;padding: 15px;">00</span>
