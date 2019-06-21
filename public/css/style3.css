@@ -2114,6 +2114,7 @@ label.star:before{
 .tipratio{margin-bottom: 3px;margin-top: 0px !important;}
 .mid-tip{text-align: center;font-weight: 600;}
 .tip-sponsor{margin-top: 20px;color: #c51920;font-weight: 600;font-size: 0.8rem;border-top: 1px solid #d8d8d8;}
+.tip-foot{text-align: center;}
 .not-active {
   pointer-events: none;
   cursor: default;
