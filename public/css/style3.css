@@ -2113,6 +2113,7 @@ label.star:before{
 .tipthnk{display: none;margin-bottom: 3px;margin-top: 0.5rem;}
 .tipratio{margin-bottom: 3px;margin-top: 0px !important;}
 .mid-tip{text-align: center;font-weight: 600;}
+.tip-sponsor{margin-top: 20px;color: #c51920;font-weight: 600;font-size: 0.8rem;border-top: 1px solid #d8d8d8;}
 .not-active {
   pointer-events: none;
   cursor: default;
@@ -3312,6 +3313,7 @@ sub.transmoney-value {
     border-color: #e8e9eb; }
 .details-post-meta-tip {
     padding: 25px 0;
+    padding-bottom: 1px;
     background: #eee;
     border: 1px solid;
     border-radius: 7px;
