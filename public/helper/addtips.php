@@ -25,7 +25,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
                                 $lasttip = $rowtime['lasttime']; 
                                 if($lasttip < 300) {
                                 	echo '<div class="alert alert-danger">There seems some issue</div>';
-                                	echo '<script>setTimeout(function(){location.reload();}',
+                                	echo '<script>setTimeout(function(){location.reload();}, 1000);</script>',
                                 } else {
 			
 								$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, userip, tip_time)
