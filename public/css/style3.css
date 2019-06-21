@@ -2100,6 +2100,19 @@ label.star:before{
   padding-left: 5px !important;
   font-weight: 600;
 }
+.btn-tip{
+    width: 170px;
+    height: 55px;
+    background: #1652f0;
+    font-weight: 700;
+    color: #fff;
+}
+#minutes{background: #c51d24;border-radius: 5px;padding: 15px;}
+#seconds{background: #c51d24;border-radius: 5px;padding: 15px;}
+#countdown{font-size:16px;float:center;color:#fff;}
+.tipthnk{display: none;margin-bottom: 3px;}
+.tipratio{margin-bottom: 3px;}
+.mid-tip{text-align: center;font-weight: 600;}
 .not-active {
   pointer-events: none;
   cursor: default;

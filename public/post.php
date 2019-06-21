@@ -108,14 +108,14 @@ $views = '1';
             <div class="details-post-meta-tip">
                 <div class="container">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-sm-3">
                             <img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px">
                         </div>
-                        <div class="col">
-                            <p class="tipratio" style="margin-bottom: 3px;">Tips are fre from DLIKE <br>Tip Author 60% - 40% to ME</p>
-                            <p class="tipthnk" style="display: none;margin-bottom: 3px;font-weight: 600;">You need to wait before you can TIP again.</p>
+                        <div class="col-sm-5 mid-tip">
+                            <p class="tipratio">Tips are fre from DLIKE <br>Tip Author 60% - 40% to ME</p>
+                            <p class="tipthnk">You need to wait before you can TIP again.</p>
                         </div>
-                        <div class="col">
+                        <div class="col-sm-4">
                             
 <?php
     //check if this post is tipped by you
@@ -134,22 +134,18 @@ $views = '1';
                             $rowtiptime = $resulttiptime->fetch_assoc();
                                 $tiptime = $rowtiptime['timed']; 
                                 if($tiptime < 300) {
-                                echo    '<div id="countdown" style="font-size:16px;float:center;color:#fff;">
-                                        <div class="btn btn-md btn-default btn-block" ><span id="minutes" style="background: #c51d24;border-radius: 5px;padding: 15px;">00</span>
-                                        <span style="float:center">:</span>
-                                        <span id="seconds" style="background: #c51d24;border-radius: 5px;padding: 15px;">00</span></div>
-                                        <br>
-                                        </div>'; 
+                                echo    '<div id="countdown">
+                                        <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
+                                        <span id="seconds">00</span></div></div>'; 
                                 echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';          
                     } else {    ?>
                            
-                <form action="/helper/addtips.php" method="post" id="tipsubmit">
-                                <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
-                                <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
-                                <center><button class="btn btn-default">TIP</button></center>
-                </form>             
-           <? } }   }
-?>
+                        <form action="/helper/addtips.php" method="post" id="tipsubmit">
+                            <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
+                            <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
+                            <center><button class="btn btn-default btn-tip">TIP</button></center>
+                        </form>             
+<?  }   }   }   ?>
                                 
                             
                         </div>
