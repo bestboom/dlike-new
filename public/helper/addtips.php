@@ -39,5 +39,6 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
     				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 				}
 			}
+		}
 }			
 ?>
