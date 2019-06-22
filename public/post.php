@@ -130,6 +130,12 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
+    $sql_status = "SELECT * FROM userstatus where username = '$sender'";
+        $result_st = $conn->query($sql_status);
+            $row_st = $result_st->fetch_assoc();
+            $sender_status = $row_st['status']; 
+                if($sender_status == 3){ echo 'pro user';} else {echo 'other status';}
+
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
             if ($resultvtip->num_rows > 0) {
