@@ -93,7 +93,7 @@ $views = '1';
 
                                 <!-- post-income-block -->
                                 <div class="post-share-block">
-                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;<?php echo $postincome; ?> + <?php echo $postincome2; ?>
+                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;(<?php echo $postincome; ?> DAI + <?php echo $postincome2; ?> DSC)
                                 </div><!-- post-income-block -->
                             </div>
                         </div>
