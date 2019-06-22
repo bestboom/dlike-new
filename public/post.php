@@ -40,8 +40,10 @@ $views = '1';
                     $result_inc = $conn->query($post_inc);
                         if ($result_inc->num_rows > 0) {
                             $rowinc = mysqli_fetch_assoc($result_inc);
-                            $postincome2 = number_format($rowinc["post_inc2"],4);
                             $postincome = number_format($rowinc["post_inc"],4);
+                            $postincome2 = number_format($rowinc["post_inc2"],4);
+                            $totalpost = $postincome + $postincome2;
+                            $totalpostincome = round(totalpost,2);
                         } else { $postincome = '0.00'; }
 
 ?>
@@ -93,7 +95,7 @@ $views = '1';
 
                                 <!-- post-income-block -->
                                 <div class="post-share-block">
-                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;(<?php echo $postincome; ?> DAI + <?php echo $postincome2; ?> DSC)
+                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;(<?php echo $postincome; ?> DAI + <?php echo $postincome2; ?> DSC)
                                 </div><!-- post-income-block -->
                             </div>
                         </div>
