@@ -38,14 +38,10 @@ $views = '1';
         //tip total income
                 $post_inc = "SELECT SUM(tip1) As post_inc FROM TipTop where permlink = '$link' and receiver = '$auth'";
                     $result_inc = $conn->query($post_inc);
-                        if ($result_inc->num_rows > 0) { 
-                //$sqli = "SELECT SUM(tip1) As post_inc FROM TipTop where permlink = '$link' and author = '$auth'";
-                //$resulti = $conn->query($sqli);
-                    //if ($resulti->num_rows > 0) {
-                           // echo 'incom';
-                        $rowinc = mysqli_fetch_assoc($result_inc);
-                        $postincome = $rowinc["post_inc"];
-                    }else{ $postincome = '0';}
+                        if ($result_inc->num_rows > 0) {
+                            $rowinc = mysqli_fetch_assoc($result_inc);
+                            $postincome = $rowinc["post_inc"];
+                        } else { $postincome = 0; }
 
 ?>
 </div>
