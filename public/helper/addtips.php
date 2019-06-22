@@ -9,6 +9,9 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	$receiver =  $_POST['tipauthor'];	
 	$sender =  $_COOKIE['username'];	
 	$permlink =  $_POST['tippermlink'];
+	$tip1 = '0.0025';
+	$tip2 = '0.0015';
+
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 			$resulttip = $conn->query($checktip);
@@ -28,8 +31,8 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
                                 	echo '<script>setTimeout(function(){location.reload();}, 1000);</script>';
                             } else {
 			
-								$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, userip, tip_time)
-											VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$ip."', now())";
+								$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, tip2, userip, tip_time)
+											VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$tip2."', '".$ip."', now())";
 				
 								if (mysqli_query($conn, $sqlm)) {
 									echo '<script>document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';

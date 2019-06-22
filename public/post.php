@@ -249,7 +249,7 @@ $views = '1';
 
 <?php
 
-$sqlt = "SELECT sender, tip_time, permlink FROM TipTop ORDER BY tip_time DESC LIMIT 10";
+$sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_time DESC LIMIT 10";
                         $resultkj = $conn->query($sqlt);
 
                         if ($resultkj->num_rows > 0) {
