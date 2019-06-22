@@ -261,6 +261,8 @@ $sqlt = "SELECT sender, tip_time, permlink FROM TipTop ORDER BY tip_time DESC LI
                                         <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
                                         <div class="exp-user"><?php echo $rowkj["sender"]; ?></div>
                                         <div class="exp-user">For <span><?php echo $rowkj["tip_time"]; ?></span></div>
+                                        <div class="exp-user"><?php echo $rowkj["tip1"]; ?></div>
+                                        <div class="exp-user"><?php echo $rowkj["tip2"]; ?></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
