@@ -38,7 +38,7 @@ $views = '1';
         //tip total income
                 $sqli = "SELECT SUM(tip1) As post_inc FROM TipTop where permlink = '$link' and author = '$auth'";
                 $resulti = $conn->query($sqli);
-                    if ($resultvs->num_rows > 0) {
+                    if ($resulti->num_rows > 0) {
                         $rowinc = mysqli_fetch_assoc($resulti);
                         $postincome = $rowinc["post_inc"];
                     }else{ $postincome = '0';}
