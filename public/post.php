@@ -112,7 +112,7 @@ $views = '1';
                             <img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px">
                         </div>
                         <div class="col-sm-5 mid-tip">
-                            <p class="tipratio">Tips are fre from DLIKE <br>Tip Author 60% - 40% to ME</p>
+                            <p class="tipratio">Tips are free from DLIKE <br>Tip Author 60% - 40% to ME</p>
                             <p class="tipthnk">You need to wait before you can TIP again.</p>
                         </div>
                         <div class="col-sm-4">

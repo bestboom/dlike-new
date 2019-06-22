@@ -6,6 +6,13 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+$sql = "ALTER TABLE TipTop ADD tip1 float(8) NOT NULL, ADD tip2 float(8) NOT NULL AFTER permlink";
+if ($conn->query($sql) === TRUE) {
+    echo "Table colms added";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 /*
 
 
