@@ -36,11 +36,11 @@ $views = '1';
                     $postviews = '1';  
                 }      
         //tip total income
-                $post_inc = "SELECT SUM(tip1) As post_inc FROM TipTop where permlink = '$link' and receiver = '$auth'";
+                $post_inc = "SELECT SUM(tip1) As post_inc, SUM(tip2) As post_inc2 FROM TipTop where permlink = '$link' and receiver = '$auth'";
                     $result_inc = $conn->query($post_inc);
                         if ($result_inc->num_rows > 0) {
                             $rowinc = mysqli_fetch_assoc($result_inc);
-                            $postincome2 = number_format($rowinc["SUM(tip2)"],4);
+                            $postincome2 = number_format($rowinc["post_inc2"],4);
                             $postincome = number_format($rowinc["post_inc"],4);
                         } else { $postincome = '0.00'; }
 
