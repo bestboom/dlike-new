@@ -43,7 +43,7 @@ $views = '1';
                             $postincome = number_format($rowinc["post_inc"],4);
                             $postincome2 = number_format($rowinc["post_inc2"],4);
                             $totalpost = $postincome + $postincome2;
-                            $totalpostincome = round($totalpost,2);
+                            $totalpostincome = round($totalpost,3);
                         } else { $postincome = '0.00'; }
 
 ?>
