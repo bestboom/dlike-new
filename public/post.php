@@ -134,7 +134,7 @@ $views = '1';
         $result_st = $conn->query($sql_status);
             $row_st = $result_st->fetch_assoc();
             $sender_status = $row_st['status']; 
-                if($sender_status == 3){ echo 'pro user';} else {echo 'other status';}
+                if($sender_status == 1){ echo 'green listed';} else {echo 'other status';}
 
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
