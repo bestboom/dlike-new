@@ -329,8 +329,10 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
         },
     }
     $('#tipsubmit').submit(function() {
-        $(this).ajaxSubmit(tipoptions)
-        return !1
+        if(username != null) {
+             $(this).ajaxSubmit(tipoptions)
+            return !1
+        } else {toastr.error('hmm... You must be login!');  return false;}    
     });
 
 
