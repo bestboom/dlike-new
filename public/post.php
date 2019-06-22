@@ -41,7 +41,7 @@ $views = '1';
                         if ($result_inc->num_rows > 0) {
                             $rowinc = mysqli_fetch_assoc($result_inc);
                             $postincome = number_format($rowinc["post_inc"],4);
-                        } else { $postincome = 'good'; }
+                        } else { $postincome = '0'; }
 
 ?>
 </div>
