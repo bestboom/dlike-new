@@ -11,7 +11,7 @@ $sender =  $_COOKIE['username'];
 $userips = $_COOKIE['usertoken'];
 $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
-
+        //post views
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
                 $resultvs = $conn->query($sqlvs);
                 if ($resultvs->num_rows > 0) {
@@ -34,7 +34,14 @@ $views = '1';
                         VALUES ('".$auth."', '".$link."', '".$views."')";
                     mysqli_query($conn, $sqlview); 
                     $postviews = '1';  
-                }           
+                }      
+        //tip total income
+                $sqli = "SELECT SUM(tip1) As post_inc FROM TipTop where permlink = '$link' and author = '$auth'";
+                $resulti = $conn->query($sqli);
+                    if ($resultvs->num_rows > 0) {
+                        $rowinc = mysqli_fetch_assoc($resulti);
+                        $postincome = $rowinc["post_inc"];
+                    }else{ $postincome = '0';}
 
 ?>
 </div>
@@ -85,7 +92,7 @@ $views = '1';
 
                                 <!-- post-income-block -->
                                 <div class="post-share-block">
-                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
+                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;<?php echo $postincome; ?>
                                 </div><!-- post-income-block -->
                             </div>
                         </div>
