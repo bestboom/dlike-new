@@ -43,7 +43,7 @@ $views = '1';
                 //$resulti = $conn->query($sqli);
                     //if ($resulti->num_rows > 0) {
                            // echo 'incom';
-                        $rowinc = mysqli_fetch_assoc($resulti);
+                        $rowinc = mysqli_fetch_assoc($result_inc);
                         $postincome = $rowinc["post_inc"];
                     }else{ $postincome = '0';}
 
