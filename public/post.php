@@ -40,8 +40,9 @@ $views = '1';
                     $result_inc = $conn->query($post_inc);
                         if ($result_inc->num_rows > 0) {
                             $rowinc = mysqli_fetch_assoc($result_inc);
+                            $postincome2 = number_format($rowinc["SUM(tip2)"],4);
                             $postincome = number_format($rowinc["post_inc"],4);
-                        } else { $postincome = '0'; }
+                        } else { $postincome = '0.00'; }
 
 ?>
 </div>
@@ -92,7 +93,7 @@ $views = '1';
 
                                 <!-- post-income-block -->
                                 <div class="post-share-block">
-                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;<?php echo $postincome; ?>
+                                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;<?php echo $postincome; ?> + <?php echo $postincome2; ?>
                                 </div><!-- post-income-block -->
                             </div>
                         </div>
