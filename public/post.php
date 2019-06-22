@@ -38,6 +38,7 @@ $views = '1';
         //tip total income
                 $post_inc = "SELECT * FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
                     $result_inc = $conn->query($post_inc);
+                    
                         if ($result_inc->num_rows > 0) { 
                 //$sqli = "SELECT SUM(tip1) As post_inc FROM TipTop where permlink = '$link' and author = '$auth'";
                 //$resulti = $conn->query($sqli);
