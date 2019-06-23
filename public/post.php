@@ -149,8 +149,8 @@ $views = '1';
                                         <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
                                         <span id="seconds">00</span></div></div>'; 
                                 echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';    
-                                } else {$tiptime = '0';}      
-                    } else {    ?>
+                                     
+                    } else {    echo $tiptime = '0'; ?>
                            
                         <form action="/helper/addtips.php" method="post" id="tipsubmit">
                             <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
@@ -340,7 +340,7 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
     });
 
 
-var directTime = <? echo $tiptime; ?>;
+var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
 var countDown = 295 - directTime;
 
