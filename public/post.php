@@ -134,7 +134,7 @@ $views = '1';
         $result_st = $conn->query($sql_status);
             $rowst = $result_st->fetch_assoc();
             echo $sender_status = $rowst['status']; 
-                if($sender_status == 2){ echo 'green listed';} else {echo 'other status';}
+                if($sender_status == "2"){ echo 'green listed';} else {echo 'other status';}
 
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
