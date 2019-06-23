@@ -47,5 +47,6 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 								}
 							}
 			}
-}	} else { echo '<script>alert("not pro");</script>';} 	
+	} else { echo '<script>alert("not pro");</script>';} 	
+}	
 ?>
