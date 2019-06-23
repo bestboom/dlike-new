@@ -134,7 +134,7 @@ $views = '1';
         $result_st = $conn->query($sql_status);
             $rowst = $result_st->fetch_assoc();
             echo $sender_status = $rowst['status']; 
-                if($sender_status == "2"){ echo 'green listed';} else {echo 'other status';}
+                if($sender_status == "2"){ 
 
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
@@ -161,8 +161,9 @@ $views = '1';
                             <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
-                        </form>             
-<?  }   }   }   ?>
+                        </form>
+                <? } else {echo '<center><button class="btn btn-danger">Only PRO users can TIP</button><br><p></p>What is PRO user?</center>';}                     
+      }   }   }   ?>
                                 
                             
                         </div>
