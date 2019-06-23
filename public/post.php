@@ -340,7 +340,7 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
     });
 
 
-var directTime = <?=($tiptime)?>;
+var directTime = <? echo $tiptime; ?>;
 var sTime = new Date().getTime();
 var countDown = 295 - directTime;
 
