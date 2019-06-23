@@ -16,7 +16,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
         $result_st = $conn->query($sql_status);
             $rowst = $result_st->fetch_assoc();
             echo $sender_status = $rowst['status']; 
-                if($sender_status == "2"){ 
+                if($sender_status != "2"){ echo '<script>alert("not pro");</script>'; } else {
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 			$resulttip = $conn->query($checktip);
@@ -47,6 +47,6 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 								}
 							}
 			}
-	} else { echo '<script>alert("not pro");</script>';} 	
+	} 
 }	
 ?>
