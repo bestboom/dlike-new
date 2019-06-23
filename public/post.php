@@ -132,6 +132,7 @@ $views = '1';
     //if ($auth === $sender) { echo 'Same user';} else {}
     $sql_status = "SELECT * FROM userstatus where username = '$auth'";
         $result_st = $conn->query($sql_status);
+        if ($result_st->num_rows > 0) {
             $rowst = $result_st->fetch_assoc();
             echo $sender_status = $rowst['status']; 
                 if($sender_status == "2"){ 
@@ -162,7 +163,7 @@ $views = '1';
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-                <? }   }   } } else {echo '<center><button class="btn btn-danger">Only PRO users can TIP</button></center>';}                     
+                <? }   }   } } else {echo '<center><button class="btn btn-danger">Only PRO users can TIP</button><br><p>What is PRO user</p></center>';}  }                   
          ?>
                                 
                             
