@@ -130,7 +130,7 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    $sql_status = "SELECT * FROM userstatus where username = '$sender'";
+    $sql_status = "SELECT * FROM userstatus where username = '$auth'";
         $result_st = $conn->query($sql_status);
             $rowst = $result_st->fetch_assoc();
             echo $sender_status = $rowst['status']; 
