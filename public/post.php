@@ -7,7 +7,8 @@ error_reporting(E_ALL);
 $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
-if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
+//if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
+$sender =  $_COOKIE['username']
 $userips = $_COOKIE['usertoken'];
 $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
@@ -157,7 +158,7 @@ $views = '1';
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-<? }   }   }  ?>               
+<? }   }   }   ?>               
          
                                 
                             
