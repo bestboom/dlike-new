@@ -145,12 +145,13 @@ $views = '1';
                     $resulttiptime = $conn->query($verifytiptime);
                         if ($resulttiptime->num_rows > 0) {
                             $rowtiptime = $resulttiptime->fetch_assoc();
-                                $tiptime = $rowtiptime['timed']; 
+                                echo $tiptime = $rowtiptime['timed']; 
                                 if($tiptime < 300) {
                                 echo    '<div id="countdown">
                                         <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
                                         <span id="seconds">00</span></div></div>'; 
-                                echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';          
+                                echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';    
+                                } else {echo $tiptime = '0';}      
                     } else {    ?>
                            
                         <form action="/helper/addtips.php" method="post" id="tipsubmit">
@@ -158,7 +159,7 @@ $views = '1';
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-<? }   }   }    ?>               
+<? }   }    ?>               
          
                                 
                             
