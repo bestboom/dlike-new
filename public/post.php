@@ -157,7 +157,7 @@ $views = '1';
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-<? }   }    ?>               
+<? }   }    }?>               
          
                                 
                             
