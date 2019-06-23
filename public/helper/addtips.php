@@ -12,7 +12,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	$tip1 = '0.0025';
 	$tip2 = '0.0015';
 
-    $sql_status = "SELECT * FROM userstatus where username = '$auth'";
+    $sql_status = "SELECT * FROM userstatus where username = '$receiver'";
         $result_st = $conn->query($sql_status);
             $rowst = $result_st->fetch_assoc();
             echo $sender_status = $rowst['status']; 
