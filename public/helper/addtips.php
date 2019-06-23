@@ -12,11 +12,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	$tip1 = '0.0025';
 	$tip2 = '0.0015';
 
-    $sql_status = "SELECT * FROM userstatus where username = '$receiver'";
-        $result_st = $conn->query($sql_status);
-            $rowst = $result_st->fetch_assoc();
-            echo $sender_status = $rowst['status']; 
-                if($sender_status != "2"){ echo 'bad way'; } else {
+
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 			$resulttip = $conn->query($checktip);
@@ -47,6 +43,6 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 								}
 							}
 			}
-	} 
+
 }	
 ?>
