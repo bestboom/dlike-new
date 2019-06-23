@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
-if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { echo $sender =  $_COOKIE['username']; } else{echo $sender = '';}
+if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
 $userips = $_COOKIE['usertoken'];
 $user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
@@ -130,7 +130,7 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    //if(empty($_COOKIE['username'])) { echo 'please login to TIP'; } else {
+    if(empty($_COOKIE['username'])) { echo 'please login to TIP'; } else {
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
             if ($resultvtip->num_rows > 0) {
@@ -157,7 +157,7 @@ $views = '1';
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-<? }   }   }   ?>               
+<? }   }   }   } ?>               
          
                                 
                             
