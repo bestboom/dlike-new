@@ -9,8 +9,6 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 //if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
 $sender =  $_COOKIE['username'];
-$userips = $_COOKIE['usertoken'];
-$user_ip=$_SERVER['REMOTE_ADDR'];
 $views = '1'; 
         //post views
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
@@ -151,7 +149,7 @@ $views = '1';
                                         <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
                                         <span id="seconds">00</span></div></div>'; 
                                 echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';    
-                                } else {echo $tiptime = '0';}      
+                                } else {$tiptime = '0';}      
                     } else {    ?>
                            
                         <form action="/helper/addtips.php" method="post" id="tipsubmit">
