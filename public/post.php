@@ -333,10 +333,9 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
     }
     $('#tipsubmit').submit(function() {
         if(username != null) {
-            if(username == post_author) {toastr.error('hmm... You can not tip tp your post!');  return false;} else{
+            //if(username == post_author) {toastr.error('hmm... You can not tip tp your post!');  return false;} else{}
              $(this).ajaxSubmit(tipoptions)
             return !1
-            }
         } else {toastr.error('hmm... You must be login!');  return false;}    
     });
 
