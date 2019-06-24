@@ -383,13 +383,13 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
-var author = '<?php echo $auth; ?>';
-console.log(author);
+var authors = 'pillsjee';
+console.log(authors);
 console.log(post_author);
 $.ajax({
     type: "POST",
     url: "/helper/getuserpoststatus.php",
-    data: {'author':author},
+    data: {'author':authors},
     dataType:'JSON', 
     success: function(response){
         console.log(response.status);
