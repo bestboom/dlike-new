@@ -299,7 +299,7 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
 ?>                        
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
-    post_author = '<?php echo $auth; ?>',
+    post_author = '<?php echo $auth; ?>';
     post_permlink = '<?php echo $link; ?>';
     steem.api.getContent(post_author , post_permlink, function(err, res) {
         //console.log(res);
@@ -383,7 +383,7 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
-var author = post_author;
+var author = '<?php echo $auth; ?>';
 console.log(author);
 $.ajax({
     type: "POST",
