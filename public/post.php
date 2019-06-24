@@ -49,7 +49,7 @@ $views = '1';
                     if ($result_status->num_rows > 0 ) { 
                             $row_status = $result_status->fetch_assoc();
                             $user_status = $row_status['status'];
-                        if($user_status = '2' ){ echo '<script>alert("PRO");</script>';
+                        if($user_status = '2' ){ echo '<script>alert("PRO");</script>'; $sender_status = "PRO";
                         } else { echo '<script>alert("NT PRO");</script>'; }
                     } else {  echo '<script>alert("Not pro");</script>'; }  
 
@@ -361,7 +361,8 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
         } else {toastr.error('hmm... You must be login!');  return false;}    
     });
 
-
+var send_status = <?=($sender_status)?>;
+console.log(send_status);
 var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
 var countDown = 295 - directTime;
