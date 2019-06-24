@@ -384,6 +384,7 @@ $('#aftercount').click(function () {
    location.reload(true); 
 });
 var author = post_author;
+console.log(author);
 $.ajax({
     type: "POST",
     url: "/helper/getuserpoststatus.php",
