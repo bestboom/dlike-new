@@ -128,7 +128,7 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    //if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>'; } else {
+    if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>';  $tiptime = '0'; } else {
     $verifysender = "SELECT * FROM TipTop where sender = '$sender'";
         $result_sender = $conn->query($verifysender);
         $row_sender = $result_sender->fetch_assoc(); 
@@ -146,7 +146,7 @@ $views = '1';
                     $resulttiptime = $conn->query($verifytiptime);
                     $rowtiptime = $resulttiptime->fetch_assoc();
                         if ($resulttiptime->num_rows > 0) {
-                                echo $tiptime = $rowtiptime['timed']; 
+                                $tiptime = $rowtiptime['timed']; 
                                 if($tiptime < 300) {
                                 echo    '<div id="countdown">
                                         <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
@@ -168,6 +168,7 @@ $views = '1';
                     <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                     <center><button class="btn btn-default btn-tip">TIP</button></center>
                 </form> <?
+    }   
     }   ?>           
                                 
                             
