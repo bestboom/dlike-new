@@ -46,11 +46,13 @@ $views = '1';
 
                 $sql_status = "SELECT * FROM userstatus where username = '$sender'";
                     $result_status = $conn->query($sql_status);
-                    if ($result_status->num_rows === 0 ) { echo '<script>alert("Nor pro");</script>'; } elseif($result_status->num_rows > 0 ) {
-                    $row_status = $result_status->fetch_assoc();
-                    $user_status = $row_status['status'];
-                    if($user_status !='2' ){ echo '<script>alert("Nor pro");</script>'; }
-                    } else { echo '<script>alert("PRO");</script>'; }
+                    if ($result_status->num_rows > 0 ) { 
+                            $row_status = $result_status->fetch_assoc();
+                            $user_status = $row_status['status'];
+                        if($user_status = '2' ){ echo '<script>alert("PRO");</script>'; }
+                        } else { echo '<script>alert("NT PRO");</script>'; }
+                    } else {  echo '<script>alert("Not pro");</script>'; }  
+
 
 
 
