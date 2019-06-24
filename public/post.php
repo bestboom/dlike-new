@@ -385,20 +385,21 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
-var authors = '<?=($sender)?>';
-console.log(authors);
+var sender = '<?=($sender)?>';
 $.ajax({
     type: "POST",
     url: "/helper/getuserpoststatus.php",
-    data: {'author':authors},
+    data: {'author':sender},
     dataType:'JSON', 
     success: function(response){
         console.log(response.status);
         if(response.status == "OK") {
             var user_status = response.setstatus;
             console.log(user_status);
-        }
+            if(user_status == "3"){var sender_status = 'pro';} else {var sender_status = '';}
+        } else {var sender_status = '';}
         // put on console what server sent back...
     }
 });
+console.log(sender_status);
 </script>
