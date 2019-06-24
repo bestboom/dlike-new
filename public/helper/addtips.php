@@ -53,6 +53,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 								
 							}
 						}	
-			}		
+			}
+	
 }	
 ?>

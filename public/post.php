@@ -44,6 +44,16 @@ $views = '1';
                             $totalpostincome = round($totalpost,3);
                         } else { $postincome = '0.00'; }
 
+                $sql_status = "SELECT * FROM userstatus where username = '$sender'";
+                    $result_status = $conn->query($sql_status);
+                    if ($result_status->num_rows === 0 ) { echo '<script>alert("Nor pro");</script>'; } elseif($result_status->num_rows > 0 ) {
+                    $row_status = $result_status->fetch_assoc();
+                    $user_status = $row_status['status'];
+                    if($user_status !='3' ){ echo '<script>alert("Nor pro");</script>'; }
+                    } else { echo '<script>alert("PRO");</script>'; }
+
+
+
 ?>
 </div>
         <div class="container" style="padding-top: 40px;">
@@ -390,7 +400,7 @@ $('#aftercount').click(function () {
                 success: function(response){
                     if(response.status == "OK") {
                         var user_status = response.setstatus;
-                    if(user_status == "2"){
+                    if(user_status == "2"){ var sender_status = "PRO"; $('.auth_status').html(sender_status);
                         console.log(user_status);
                     } else {alert('Not a pro user');}
                 }}
