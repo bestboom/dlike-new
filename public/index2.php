@@ -533,7 +533,7 @@
 				var adduserhtml = "";
 				var addfeaturedhtml = "";
 				var addposthtml = "";
-				if(c_username == "dlike" || c_username == "chirag-im") {
+				if(c_username == "dlike") {
 					
 					
 					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-imgurl="' + img.src + '" data-title="' + $post.title + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;';
@@ -687,7 +687,7 @@
 				    $('.userstatus_icon' + newValue).css({"color": colorset});
 				    var erroset = "User is Pro";
 				}
-				if(c_username != "dlike" && c_username != "chirag-im") {
+				if(c_username != "dlike") {
 				    $('.userstatus_icon' + newValue).removeAttr('onclick');
 				}
 				else {    
@@ -696,7 +696,7 @@
 					
 			    }
 			    else {
-				if(c_username != "dlike" && c_username != "chirag-im") {
+				if(c_username != "dlike") {
 				    $('.userstatus_icon' + newValue).remove();
 				}
 			    }

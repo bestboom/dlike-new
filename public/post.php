@@ -383,4 +383,16 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
+
+$.ajax({
+    type: "POST",
+    url: "/helper/getuserpoststatus.php",
+    data: {'author':post_author},
+    dataType:'JSON', 
+    success: function(response){
+        //if(response.status == "OK") {
+        console.log(response.status);
+        // put on console what server sent back...
+    }
+});
 </script>
