@@ -49,7 +49,7 @@ $views = '1';
                     if ($result_status->num_rows === 0 ) { echo '<script>alert("Nor pro");</script>'; } elseif($result_status->num_rows > 0 ) {
                     $row_status = $result_status->fetch_assoc();
                     $user_status = $row_status['status'];
-                    if($user_status !='3' ){ echo '<script>alert("Nor pro");</script>'; }
+                    if($user_status !='2' ){ echo '<script>alert("Nor pro");</script>'; }
                     } else { echo '<script>alert("PRO");</script>'; }
 
 
