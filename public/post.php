@@ -401,4 +401,7 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
+$('.prouser').click(function () {
+   window.open("/help/go.php","_self");
+});
 </script>
