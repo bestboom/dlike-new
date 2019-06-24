@@ -385,7 +385,7 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
-var authors = <?=($sender)?>;
+var authors = '<?=($sender)?>';
 console.log(authors);
 $.ajax({
     type: "POST",
