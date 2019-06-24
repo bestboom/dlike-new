@@ -354,10 +354,20 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
             $('.tipthnk').show();
         },
     }
+    //error modal
+    function showModalError(title, content, callback) {
+    $("#alert-title-error").text(title);
+    $("#alert-content-error").html(content);
+    $("#alert-modal-error").modal("show");
+    $("#alert-modal-error").on("hidden.bs.modal", function(e) {
+        callback();
+    });
+    }
     $('#tipsubmit').submit(function() {
         var sender_status = '<?=($sender_status)?>';
         if(username != null) {
-            if(sender_status !='PRO'){ showModalError(
+            if(sender_status !='PRO'){ 
+                showModalError(
                "Only PRO users can TIP",
                "<a href='/''>What is PRO user?</a>",
                ""
