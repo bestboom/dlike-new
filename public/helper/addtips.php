@@ -13,13 +13,21 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	$tip2 = '0.0015';
 
 
+$sql_status = "SELECT * FROM userstatus where username = '$sender'";
+	$result_status = $conn->query($sql_status);
+	if ($result_status->num_rows === 0 ) { echo '<script>alert("Nor pro");</script>'; } elseif {
+		$row_status = $result_status->fetch_assoc();
+		$user_status = $row_status['status'];
+		if($user_status !=3 ){ echo '<script>alert("Nor pro");</script>'; }
+	} else {
+
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 			$resulttip = $conn->query($checktip);
 			if ($resulttip->num_rows > 0) {
 				$resulttip = mysqli_query($conn, $checktip);
 				$rowtip = $resulttip->fetch_assoc();
-				echo $tiptime = $rowtip['tip_time'];	
+				$tiptime = $rowtip['tip_time'];	
 				echo '<div class="alert alert-danger">You Have already tip this post</div>';
 			} else {
 
@@ -55,6 +63,6 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 							}
 						}	
 			}
-
+	}		
 }	
 ?>
