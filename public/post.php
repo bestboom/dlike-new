@@ -7,8 +7,7 @@ error_reporting(E_ALL);
 $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
-//if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
-$sender =  $_COOKIE['username'];
+if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
 $views = '1'; 
         //post views
             $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
