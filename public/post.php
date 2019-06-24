@@ -344,24 +344,8 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
     }
     $('#tipsubmit').submit(function() {
         if(username != null) {
-
-            var sender = '<?=($sender)?>';
-            $.ajax({
-                    type: "POST",
-                    url: "/helper/getuserpoststatus.php",
-                    data: {'author':sender},
-                    dataType:'JSON', 
-                success: function(response){
-                    if(response.status == "OK") {
-                        var user_status = response.setstatus;
-                    if(user_status == "2"){
-                        console.log(user_status);
-                        $(this).ajaxSubmit(tipoptions)
-                        return !1
-                    } else {alert('Not a pro user');}
-                }}
-            });
-
+            $(this).ajaxSubmit(tipoptions)
+            return !1
         } else {toastr.error('hmm... You must be login!');  return false;}    
     });
 
@@ -397,4 +381,18 @@ $('#aftercount').click(function () {
    location.reload(true); 
 });
 
+    var sender = '<?=($sender)?>';
+        $.ajax({
+                    type: "POST",
+                    url: "/helper/getuserpoststatus.php",
+                    data: {'author':sender},
+                    dataType:'JSON', 
+                success: function(response){
+                    if(response.status == "OK") {
+                        var user_status = response.setstatus;
+                    if(user_status == "2"){
+                        console.log(user_status);
+                    } else {alert('Not a pro user');}
+                }}
+        });
 </script>
