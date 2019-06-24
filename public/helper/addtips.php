@@ -15,7 +15,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 
 $sql_status = "SELECT * FROM userstatus where username = '$sender'";
 	$result_status = $conn->query($sql_status);
-	if ($result_status->num_rows === 0 ) { echo '<script>alert("Nor pro");   return false;</script>'; } elseif($result_status->num_rows > 0 ) {
+	if ($result_status->num_rows === 0 ) { echo '<script>alert("Nor pro");</script>'; } elseif($result_status->num_rows > 0 ) {
 		$row_status = $result_status->fetch_assoc();
 		$user_status = $row_status['status'];
 		if($user_status !='3' ){ echo '<script>alert("Nor pro"); return false;</script>'; }
