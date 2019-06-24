@@ -367,9 +367,9 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
         var sender_status = '<?=($sender_status)?>';
         if(username != null) {
             if(sender_status !='PRO'){ 
-                showModalError(
-               "Only PRO users can TIP",
-               "<a href='/''>What is PRO user?</a>",
+               showModalError(
+               "Make Sure..",
+               "Write minimum 40 words to explain how this share is useful for community.",
                ""
                );
             return false;} else{
