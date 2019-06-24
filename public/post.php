@@ -355,13 +355,15 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
         },
     }
     $('#tipsubmit').submit(function() {
+        var sender_status = '<?=($sender_status)?>';
+        alert(sender_status);
         if(username != null) {
-            $(this).ajaxSubmit(tipoptions)
-            return !1
+            if(sender_status !='PRO'){ alert('bad guy');return false;} else{
+                $(this).ajaxSubmit(tipoptions)
+                return !1
+            }
         } else {toastr.error('hmm... You must be login!');  return false;}    
     });
-var sender_status = '<?=($sender_status)?>';
-console.log(sender_status);
 var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
 var countDown = 295 - directTime;
