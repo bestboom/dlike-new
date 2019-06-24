@@ -344,9 +344,23 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
     }
     $('#tipsubmit').submit(function() {
         if(username != null) {
-            //if(username == post_author) {toastr.error('hmm... You can not tip tp your post!');  return false;} else{}
-             $(this).ajaxSubmit(tipoptions)
-            return !1
+
+            var sender = '<?=($sender)?>';
+                $.ajax({
+    type: "POST",
+    url: "/helper/getuserpoststatus.php",
+    data: {'author':sender},
+    dataType:'JSON', 
+    success: function(response){
+        if(response.status == "OK") {
+            var user_status = response.setstatus;
+            if(user_status == "2"){
+                $(this).ajaxSubmit(tipoptions)
+                return !1
+        } else {alert('Not a pro user');}
+        }}
+    });
+
         } else {toastr.error('hmm... You must be login!');  return false;}    
     });
 
@@ -381,20 +395,5 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
-var sender = '<?=($sender)?>';
-var sender_status = 'green';
-$.ajax({
-    type: "POST",
-    url: "/helper/getuserpoststatus.php",
-    data: {'author':sender},
-    dataType:'JSON', 
-    success: function(response){
-        if(response.status == "OK") {
-            var user_status = response.setstatus;
-            if(user_status == "2"){var sender_status = 'pro';} else {var sender_status = '';}
-        } else {var sender_status = '';}
-        // put on console what server sent back...
-    }
-});
-console.log(sender_status);
+
 </script>
