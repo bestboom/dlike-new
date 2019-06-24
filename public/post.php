@@ -396,7 +396,7 @@ $.ajax({
         if(response.status == "OK") {
             var user_status = response.setstatus;
             console.log(user_status);
-            if(user_status == "3"){var sender_status = 'pro';} else {var sender_status = '';}
+            if(user_status == "2"){var sender_status = 'pro';} else {var sender_status = '';}
         } else {var sender_status = '';}
         // put on console what server sent back...
     }
