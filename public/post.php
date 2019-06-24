@@ -132,7 +132,7 @@ $views = '1';
     $verifysender = "SELECT * FROM TipTop where sender = '$sender'";
         $result_sender = $conn->query($verifysender);
         $row_sender = $result_sender->fetch_assoc(); 
-    if ($result_sender->num_rows > 0) {     echo 'user exist' }  else {  ?>
+    if ($result_sender->num_rows > 0) {     echo 'user exist'; }  else {  ?>
                            
                         <form action="/helper/addtips.php" method="post" id="tipsubmit">
                             <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
