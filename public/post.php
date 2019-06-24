@@ -43,15 +43,15 @@ $views = '1';
                             $totalpost = $postincome + $postincome2;
                             $totalpostincome = round($totalpost,3);
                         } else { $postincome = '0.00'; }
-
+        //check pro user
                 $sql_status = "SELECT * FROM userstatus where username = '$sender'";
                     $result_status = $conn->query($sql_status);
                     if ($result_status->num_rows > 0 ) { 
                             $row_status = $result_status->fetch_assoc();
                             $user_status = $row_status['status'];
                         if($user_status = '2' ){ $sender_status = "PRO";
-                        } else { echo '<script>alert("NT PRO");</script>'; $sender_status = "emoty";}
-                    } else {  echo '<script>alert("Not pro");</script>'; $sender_status = "not good";}  
+                        } else { $sender_status = "Not PRO";}
+                    } else { $sender_status = "NOT PRO";}  
 
 
 
@@ -360,9 +360,8 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
             return !1
         } else {toastr.error('hmm... You must be login!');  return false;}    
     });
-
-var send_status = '<?=($sender_status)?>';
-console.log(send_status);
+var sender_status = '<?=($sender_status)?>';
+console.log(sender_status);
 var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
 var countDown = 295 - directTime;
@@ -393,19 +392,4 @@ var counter = setInterval(UpdateTime, 500);
 $('#aftercount').click(function () {
    location.reload(true); 
 });
-
-    var sender = '<?=($sender)?>';
-        $.ajax({
-                    type: "POST",
-                    url: "/helper/getuserpoststatus.php",
-                    data: {'author':sender},
-                    dataType:'JSON', 
-                success: function(response){
-                    if(response.status == "OK") {
-                        var user_status = response.setstatus;
-                    if(user_status == "2"){ var sender_status = "PRO"; $('.auth_status').html(sender_status);
-                        console.log(user_status);
-                    } else {alert('Not a pro user');}
-                }}
-        });
 </script>
