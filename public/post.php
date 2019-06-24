@@ -359,6 +359,7 @@ function UpdateTime() {
     var cTime = new Date().getTime();
     var diff = cTime - sTime;
     var seconds = countDown - Math.floor(diff / 1000);
+    console.log(seconds);
     if (seconds >= 0) {
         var minutes = Math.floor(seconds / 60);
         seconds -= minutes * 60;
