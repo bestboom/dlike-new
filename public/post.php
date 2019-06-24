@@ -128,7 +128,7 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>';  $tiptime = '0'; } else {
+    if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>'; } else {
     $verifysender = "SELECT * FROM TipTop where sender = '$sender'";
         $result_sender = $conn->query($verifysender);
         $row_sender = $result_sender->fetch_assoc(); 
