@@ -390,6 +390,7 @@ $.ajax({
     data: {'author':post_author},
     dataType:'JSON', 
     success: function(response){
+        
         //if(response.status == "OK") {
         console.log(response.status);
         // put on console what server sent back...
