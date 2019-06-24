@@ -281,10 +281,10 @@ $views = '1';
         </div>
     </div>
 </div>
-<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="prouser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
         <div class="modal-content modal-custom">
-            <?php include('template/modals/upvotefail.php'); ?>
+            <?php include('template/modals/prouser.php'); ?>
         </div>
     </div>
 </div>
@@ -364,7 +364,7 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
     $('#tipsubmit').submit(function() {
         var sender_status = '<?=($sender_status)?>';
         if(username != null) {
-            if(sender_status !='PRO'){ $("#upvotefail").modal("show");
+            if(sender_status !='PRO'){ $("#prouser").modal("show");
             return false;} else{
                 $(this).ajaxSubmit(tipoptions)
                 return !1
