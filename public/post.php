@@ -356,9 +356,8 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
     }
     $('#tipsubmit').submit(function() {
         var sender_status = '<?=($sender_status)?>';
-        alert(sender_status);
         if(username != null) {
-            if(sender_status !='PRO'){ alert('bad guy');return false;} else{
+            if(sender_status !='PRO'){ alert('bad guy'); return false;} else{
                 $(this).ajaxSubmit(tipoptions)
                 return !1
             }
