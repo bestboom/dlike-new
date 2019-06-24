@@ -387,12 +387,14 @@ $('#aftercount').click(function () {
 $.ajax({
     type: "POST",
     url: "/helper/getuserpoststatus.php",
-    data: {'author':post_author},
+    data: {post_author:'author'},
     dataType:'JSON', 
     success: function(response){
-        
-        //if(response.status == "OK") {
         console.log(response.status);
+        if(response.status == "OK") {
+            var user_status = response.setstatus;
+            console.log(user_status);
+        }
         // put on console what server sent back...
     }
 });
