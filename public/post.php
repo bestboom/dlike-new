@@ -281,7 +281,13 @@ $views = '1';
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/upvotefail.php'); ?>
+        </div>
+    </div>
+</div>
 
 <?php
 
@@ -354,24 +360,11 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
             $('.tipthnk').show();
         },
     }
-    //error modal
-    function showModalError(title, content, callback) {
-    $("#alert-title-error").text(title);
-    $("#alert-content-error").html(content);
-    $("#alert-modal-error").modal("show");
-    $("#alert-modal-error").on("hidden.bs.modal", function(e) {
-        callback();
-    });
-    }
+
     $('#tipsubmit').submit(function() {
         var sender_status = '<?=($sender_status)?>';
         if(username != null) {
-            if(sender_status !='PRO'){ 
-               showModalError(
-               "Make Sure..",
-               "Write minimum 40 words to explain how this share is useful for community.",
-               ""
-               );
+            if(sender_status !='PRO'){ $("#upvotefail").modal("show");
             return false;} else{
                 $(this).ajaxSubmit(tipoptions)
                 return !1
