@@ -128,7 +128,7 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>';} else {
+    if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>'; echo $tiptime = '-1';} else {
     $verifysender = "SELECT * FROM TipTop where sender = '$sender'";
         $result_sender = $conn->query($verifysender);
         $row_sender = $result_sender->fetch_assoc(); 
@@ -371,9 +371,7 @@ function UpdateTime() {
         $(".tipthnk").hide();
         $(".tipratio").show();
         $("#aftercount").show();
-        //setTimeout(function(){location.reload();}, 500);
-        
-        
+
         clearInterval(counter);
     }
 }
