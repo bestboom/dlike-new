@@ -382,6 +382,7 @@ $('#aftercount').click(function () {
    location.reload(true); 
 });
 var sender = '<?=($sender)?>';
+var sender_status = 'green';
 $.ajax({
     type: "POST",
     url: "/helper/getuserpoststatus.php",
