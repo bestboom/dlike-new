@@ -128,7 +128,7 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    if(empty($_COOKIE['username'])) { echo 'please login to TIP'; } else { $tiptime = '0';
+    if(empty($_COOKIE['username'])) { echo 'please login to TIP';  $tiptime = '0'; } else {
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
             if ($resultvtip->num_rows > 0) {
