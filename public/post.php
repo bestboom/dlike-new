@@ -354,7 +354,6 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
 
 
 var directTime = <?=($tiptime)?>;
-console.log(directTime);
 var sTime = new Date().getTime();
 var countDown = 295 - directTime;
 
@@ -362,7 +361,6 @@ function UpdateTime() {
     var cTime = new Date().getTime();
     var diff = cTime - sTime;
     var seconds = countDown - Math.floor(diff / 1000);
-    console.log(seconds);
     if (seconds >= 0) {
         var minutes = Math.floor(seconds / 60);
         seconds -= minutes * 60;
@@ -392,11 +390,11 @@ $.ajax({
     data: {'author':sender},
     dataType:'JSON', 
     success: function(response){
-        console.log(response.status);
         if(response.status == "OK") {
             var user_status = response.setstatus;
-            console.log(user_status);
             if(user_status == "2"){var sender_status = 'pro';} else {var sender_status = '';}
+            
+        console.log(sender_status);
         } else {var sender_status = '';}
         // put on console what server sent back...
     }
