@@ -129,7 +129,7 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    //if(empty($_COOKIE['username'])) { echo 'please login to TIP'; } else {
+    if(empty($_COOKIE['username'])) { echo 'please login to TIP'; } else { $tiptime = '0';
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
             if ($resultvtip->num_rows > 0) {
@@ -150,14 +150,14 @@ $views = '1';
                                         <span id="seconds">00</span></div></div>'; 
                                 echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';    
                                      
-                    } else {    echo $tiptime = '0'; ?>
+                    } else {  ?>
                            
                         <form action="/helper/addtips.php" method="post" id="tipsubmit">
                             <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-<? }   }    }?>               
+<? }   }    }   }?>               
          
                                 
                             
