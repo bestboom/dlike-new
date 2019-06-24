@@ -12,7 +12,7 @@
 			$strReturn['status'] = 'OK';
 		}
 	} else {
-		$strReturn['status'] = 'error';
+		$strReturn['status'] = 'errors';
 	}
   	echo json_encode($strReturn);die;
 ?>
