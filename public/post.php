@@ -361,7 +361,7 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
         } else {toastr.error('hmm... You must be login!');  return false;}    
     });
 
-var send_status = <?=($sender_status)?>;
+var send_status = '<?=($sender_status)?>';
 console.log(send_status);
 var directTime = <?=($tiptime)?>;
 var sTime = new Date().getTime();
