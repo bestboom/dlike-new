@@ -162,7 +162,7 @@ $views = '1';
                                 }                
                         }   
             }   
-    }   else    {   $tiptime = '0'; ?>
+    }   else    {   $tiptime = '301'; ?>
                 <form action="/helper/addtips.php" method="post" id="tipsubmit">
                     <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                     <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
