@@ -387,7 +387,7 @@ $('#aftercount').click(function () {
 $.ajax({
     type: "POST",
     url: "/helper/getuserpoststatus.php",
-    data: {author:post_author},
+    data: {'author':post_author},
     dataType:'JSON', 
     success: function(response){
         console.log(response);
