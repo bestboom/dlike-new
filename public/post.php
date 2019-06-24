@@ -133,7 +133,7 @@ $views = '1';
         $result_sender = $conn->query($verifysender);
         $row_sender = $result_sender->fetch_assoc(); 
     if ($result_sender->num_rows > 0) { 
-        
+
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
             $rowvtip = $resultvtip->fetch_assoc(); 
@@ -160,7 +160,7 @@ $views = '1';
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-<? }   }    }   ?>               
+<? }   }    }   }   ?>               
          
                                 
                             
