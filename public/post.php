@@ -300,9 +300,7 @@ $sqlt = "SELECT sender, tip_time, permlink, tip1, tip2 FROM TipTop ORDER BY tip_
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     post_author = '<?php echo $auth; ?>';
-    console.log(post_author);
     post_permlink = '<?php echo $link; ?>';
-    console.log(post_permlink);
     steem.api.getContent(post_author , post_permlink, function(err, res) {
         //console.log(res);
 
@@ -393,8 +391,6 @@ $.ajax({
         if(response.status == "OK") {
             var user_status = response.setstatus;
             if(user_status == "2"){var sender_status = 'pro';} else {var sender_status = '';}
-            
-        console.log(sender_status);
         } else {var sender_status = '';}
         // put on console what server sent back...
     }
