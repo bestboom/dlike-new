@@ -128,12 +128,11 @@ $views = '1';
 <?php
     //check if this post is tipped by you
     //if ($auth === $sender) { echo 'Same user';} else {}
-    if(empty($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>';  $tiptime = '0'; } else {
+    //if(empty($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>';  $tiptime = '0'; } else {
     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
             $resultvtip = $conn->query($verifytip);
-            if ($resultvtip->num_rows > 0) {
-                $resultvtip = mysqli_query($conn, $verifytip);
-                $rowvtip = $resultvtip->fetch_assoc();  
+            $rowvtip = $resultvtip->fetch_assoc(); 
+            if ($resultvtip->num_rows > 0) { 
                 echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
                 $tiptime = '0';
             } else {
@@ -147,7 +146,7 @@ $views = '1';
                                 echo    '<div id="countdown">
                                         <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
                                         <span id="seconds">00</span></div></div>'; 
-                                echo  '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';    
+                                echo    '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';    
                                      
                     } else {  ?>
                            
@@ -156,7 +155,7 @@ $views = '1';
                             <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                             <center><button class="btn btn-default btn-tip">TIP</button></center>
                         </form>
-<? }   }    }   }?>               
+<? }   }    }   ?>               
          
                                 
                             
