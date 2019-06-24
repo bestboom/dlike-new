@@ -390,7 +390,7 @@ $.ajax({
     data: {'author':post_author},
     dataType:'JSON', 
     success: function(response){
-        console.log(response);
+        console.log(response.status);
         if(response.status == "OK") {
             var user_status = response.setstatus;
             console.log(user_status);
