@@ -68,7 +68,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                             </div>
                             <div class="form-group">
                                 <select class="form-control form-control-lg period" name="stake_option" id="stake">
-                                    <option>Staking Time</option>
+                                    <option value="0">Staking Time</option>
                                     <option value="1">90 Days</option>
                                     <option value="2">180 Days</option>
                                 </select>
