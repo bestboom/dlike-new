@@ -402,6 +402,6 @@ $('#aftercount').click(function () {
    location.reload(true); 
 });
 $('.prouser').click(function () {
-   window.open("/help/go.php","_self");
+   window.open("/help","_self");
 });
 </script>
