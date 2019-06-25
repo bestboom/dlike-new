@@ -46,6 +46,7 @@
                                         <li>Pro users get 3x upvote on all their posts</li>
                                         <li>Pro users can share more than 1 posts in 24 hours to earn more</li>
                                         <li>Pro users can tip on posts which also rewards 40% of the tip earning to them.</li>
+                                        <li>Pro users can earn DLIKE tokens from daily reward pool.</li>
                                     </div>
                                     </div>
                                 </div>
@@ -183,82 +184,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-                            <h4>About Features</h4>
-                            <div class="accordion style-2" id="accordion3Faq">
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading3One">
-                                    <h5 class="mb-0">
-                                        <button type="button" data-toggle="collapse" data-target="#collapse3One" aria-expanded="true" aria-controls="collapse3One">
-                                        Explorer of the truth the master?
-                                        </button>
-                                    </h5>
-                                    </div>
-    
-                                    <div id="collapse3One" class="collapse show" aria-labelledby="heading3One" data-parent="#accordion3Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading3Two">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3Two" aria-expanded="false" aria-controls="collapse3Two">
-                                        Pursues or desires to obtain pain of itself, because?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse3Two" class="collapse" aria-labelledby="heading3Two" data-parent="#accordion3Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading3Three">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3Three" aria-expanded="false" aria-controls="collapse3Three">
-                                        Sxpound the actual teachings of the great explorer?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse3Three" class="collapse" aria-labelledby="heading3Three" data-parent="#accordion3Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading3Four">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3Four" aria-expanded="false" aria-controls="collapse3Four">
-                                        I will give you a complete?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse3Four" class="collapse" aria-labelledby="heading3Four" data-parent="#accordion3Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading3Five">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3Five" aria-expanded="false" aria-controls="collapse3Five">
-                                        One who avoids a pain that produces no?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse3Five" class="collapse" aria-labelledby="heading3Five" data-parent="#accordion3Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                             <h4>Terms &amp; Conditions</h4>
                             <div class="accordion style-2" id="accordion4Faq">
@@ -266,14 +191,14 @@
                                     <div class="accordion-header" id="heading4One">
                                     <h5 class="mb-0">
                                         <button type="button" data-toggle="collapse" data-target="#collapse4One" aria-expanded="true" aria-controls="collapse4One">
-                                        Explorer of the truth the master?
+                                        How many links I can share?
                                         </button>
                                     </h5>
                                     </div>
     
                                     <div id="collapse4One" class="collapse show" aria-labelledby="heading4One" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        You can share 1 article per 24 hours. For pro user limit is 3 articles per 24 hours.
                                     </div>
                                     </div>
                                 </div>
@@ -281,13 +206,13 @@
                                     <div class="accordion-header" id="heading4Two">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Two" aria-expanded="false" aria-controls="collapse4Two">
-                                        Pursues or desires to obtain pain of itself, because?
+                                        What I can share?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse4Two" class="collapse" aria-labelledby="heading4Two" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        DLIKE is an informative face of internet which clearly means ehat can be shared. You can share any links which are informative, fresh and useful for community in the given categories.
                                     </div>
                                     </div>
                                 </div>
@@ -295,13 +220,13 @@
                                     <div class="accordion-header" id="heading4Three">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Three" aria-expanded="false" aria-controls="collapse4Three">
-                                        Sxpound the actual teachings of the great explorer?
+                                        Which languages are allowed?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse4Three" class="collapse" aria-labelledby="heading4Three" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        Right now we support English only and in future other languages will also be supported.
                                     </div>
                                     </div>
                                 </div>
@@ -309,29 +234,16 @@
                                     <div class="accordion-header" id="heading4Four">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Four" aria-expanded="false" aria-controls="collapse4Four">
-                                        I will give you a complete?
+                                        Why I get blacklisted and not getting upvotes?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse4Four" class="collapse" aria-labelledby="heading4Four" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        Anyone violating rules will be blacklited and will not get any upvotes. Do not share personal selfies or cats as we strongly recomend to share informative and useful links for the community.
                                     </div>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading4Five">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Five" aria-expanded="false" aria-controls="collapse4Five">
-                                        One who avoids a pain that produces no?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse4Five" class="collapse" aria-labelledby="heading4Five" data-parent="#accordion4Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
