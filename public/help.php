@@ -54,13 +54,13 @@
                                     <div class="accordion-header" id="heading1Two">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse1Two" aria-expanded="false" aria-controls="collapse1Two">
-                                        Pursues or desires to obtain pain of itself, because?
+                                        How to become PRO user?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse1Two" class="collapse" aria-labelledby="heading1Two" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        PRO users accounts will be started soon and link will be availble on every users profile.
                                     </div>
                                     </div>
                                 </div>
@@ -115,14 +115,14 @@
                                     <div class="accordion-header" id="heading2One">
                                     <h5 class="mb-0">
                                         <button type="button" data-toggle="collapse" data-target="#collapse2One" aria-expanded="true" aria-controls="collapse2One">
-                                        Explorer of the truth the master?
+                                        What is DLIKE Token?
                                         </button>
                                     </h5>
                                     </div>
     
                                     <div id="collapse2One" class="collapse show" aria-labelledby="heading2One" data-parent="#accordion2Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        DLIKE is the native token of DLIKE platform which is purely a utility token aimed to be used within the platform for availing DLIKE services.
                                     </div>
                                     </div>
                                 </div>
@@ -130,13 +130,16 @@
                                     <div class="accordion-header" id="heading2Two">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Two" aria-expanded="false" aria-controls="collapse2Two">
-                                        Pursues or desires to obtain pain of itself, because?
+                                        How I can earn DLIKE Tokens?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse2Two" class="collapse" aria-labelledby="heading2Two" data-parent="#accordion2Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        DLIKE tokens can be earned in many ways. Below are few of the ways to earn them.
+                                        <li>Become PRO user to earn daily DLIKE tokens from reward pool</li>
+                                        <li>Join DLIKE bounty programs to earn tokens</li>
+                                        <li>Promote DLIKE on other blogginf platforms to earn tokens.</li>
                                     </div>
                                     </div>
                                 </div>
