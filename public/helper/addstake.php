@@ -15,7 +15,7 @@ $resultAmount = $conn->query($sqls);
 if ($resultAmount->num_rows > 0) {
 $rowIt = $resultAmount->fetch_assoc();	
 echo (number_format($rowIt['amount']));
-} else {echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';}
+} else {echo '<div class="alert alert-danger">You are not in balance!</div>';}
 
 
 
