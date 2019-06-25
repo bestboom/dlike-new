@@ -238,7 +238,7 @@ $views = '1';
                 <div class='row'>
                     <div class='col' style='padding: 0px !important;'>
                         <div style='background:#eee;height: 250px;margin-bottom: 15px;'>
-                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' onerror='this.src="'./images/post/authors/8.png'"' style='width:100%;height:100%;'>".$row1['title']."</a>  
+                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:100%;height:100%;'>".$row1['title']."</a>  
                         </div>
                     </div>
                 </div>
