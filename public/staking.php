@@ -27,36 +27,32 @@ error_reporting(E_ALL);
                         <ul class="working-process-list">
                             <li>
                                 <div class="working-process-step">
-                                    <h4><span>#01.</span>  Create Account</h4>
+                                    <h4><span>#01.</span>  What is Staking?</h4>
                                     <div class="process-details">
                                         <p>
-                                            All the Lorem Ipsum generators on the Internet tend to 
-                                            repeat predefined chunks as necessary, making this the 
-                                            first true generator on the Internet.
+                                            Staking means to "lock up" your TRYBE tokens for a certain period of time.For locking your tokens, you earn bonus rewards.
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="working-process-step">
-                                    <h4><span>#02.</span>  Make Deposit</h4>
+                                    <h4><span>#02.</span>  Staking Rewards</h4>
                                     <div class="process-details">
                                         <p>
-                                            Making this the first true generator on the Internet. 
-                                            It uses a dictionary of over you need to be sure there 
-                                            isn't anything embarrassing.
+                                            We have 2 staking options
+                                            <li>Stake for <b>90 days</b> to earn <b>9% bonus</b> tokens</li>
+                                            <li>Stake for <b>180 days</b> to earn <b>25% bonus</b> tokens</li>
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="working-process-step">
-                                    <h4><span>#03.</span>  Buy and Sale Cryptocurrency</h4>
+                                    <h4><span>#03.</span>  Staking Terms</h4>
                                     <div class="process-details">
                                         <p>
-                                            Iternet tend to repeat predefined chunks as necessary, 
-                                            making this the first true generator on the Internet. 
-                                            It uses a dictionary of over you need to be sure
+                                            Tokens staked for bonus will not withdrawable for set period. You can continue staking after the maturity or can withdraw once staking period is over.
                                         </p>
                                     </div>
                                 </div>
