@@ -243,9 +243,7 @@ $views = '1';
                     </div>
                 </div>
             </div>";
-                
-                
-onerror="this.src='./images/post/authors/8.png'"  
+
         }
     }
     ?></div>
