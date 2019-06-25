@@ -216,6 +216,13 @@ $views = '1';
                 </div>
             </div>
         </div>
+
+        <div class="col-md-3" style="margin-top: 30px !important;">
+            
+
+
+
+
         <?
         $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 3";
     $result1 = $conn->query($sql1);
@@ -226,6 +233,17 @@ $views = '1';
                 $imgsrc = $json_metadata['image'];
                 $permlink = $row1['permlink'];
                 $username = $row1['username'];
+
+                echo '<div class="container" style="padding: 0px !important;">
+                <div class="row">
+                    <div class="col" style="padding: 0px !important;">
+                        <div style="background:#eee;height: 250px;margin-bottom: 15px;">
+                          <img src='".$imgsrc."' style="width:36px;height:36px;margin-right:15px;padding-bottom:5px;">  
+                        </div>
+                    </div>
+                </div>
+            </div>';
+        
                 echo $title = "<a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
                 $category = $json_metadata['category'];
                 
@@ -233,7 +251,10 @@ $views = '1';
                 
         }
     }
-    ?>
+    ?></div>
+
+
+
         <div class="col-md-3" style="margin-top: 30px !important;">
             <div class="container" style="padding: 0px !important;">
                 <div class="row">
