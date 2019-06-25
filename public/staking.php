@@ -63,19 +63,18 @@ error_reporting(E_ALL);
                 <div class="offset-lg-2 col-lg-5 col-md-6">
                     <div class="user-connected-form-block">
                         <h3>
-                            Create Your Account in <br>
-                            30 seconds!
+                            Stake DLIKE Tokens
                         </h3>
                         <form class="user-connected-from create-account-form">
                             <div class="form-group">
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
+                                <input type="text" class="form-control" id="stakemaount" placeholder="Amount to Stake">
                             </div>
                             <div class="form-group">
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-default">Create An Account</button>
                         </form>
-                        <p>By signing up you agree to the <a href="#">Terms of Service.</a></p>
+                        <p>By staking you agree to the Terms</a></p>
                     </div><!-- create-account-block -->
                 </div>
             </div>
