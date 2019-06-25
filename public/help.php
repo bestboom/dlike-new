@@ -1,6 +1,5 @@
 <?php  include('template/header5.php'); ?>
-
-    </div><!-- sub-header -->
+</div><!-- sub-header -->
     <div class="faq-section">
         <h3>Frequently Asked Questions</h3>
         <div class="container">
@@ -333,12 +332,11 @@
                     <div class="qs-answer-section">
                         <img src="./images/others/30.png" alt="img" class="img-responsive">
                         <h4>Don’t get Answer?</h4>
-                        <span>We have a record of answering everything in 3 hours of less.</span>
+                        <span>Get in touch on social channels.</span>
                         <div class="btn-group">
-                            <button class="btn btn-default active">E-mail Us</button>
-                            <button class="btn btn-default">Let’s Chat</button>
+                            <button class="btn btn-default active">Discord</button>
+                            <button class="btn btn-default">Telegram</button>
                         </div>
-                        <p>Or maybe you’d like to call us:  <span>(+7 (966) 552-88-46)</span></p>
                     </div><!-- qs-answer-section -->
                 </div>
             </div>
