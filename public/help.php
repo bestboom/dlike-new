@@ -1,7 +1,11 @@
 <?php  include('template/header5.php'); ?>
 </div><!-- sub-header -->
-    <div class="faq-section">
+<div class="container">
+    <div class="row">
         <h3>Frequently Asked Questions</h3>
+    </div>
+</div>
+    <div class="faq-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-5 col-12">
