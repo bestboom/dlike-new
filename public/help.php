@@ -108,7 +108,9 @@
                                     </div>
                                     <div id="collapse1Five" class="collapse" aria-labelledby="heading1Five" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        DLIKE has started staking of its token to give extra earning to token holders. Below are 2 of the available options for staking.
+                                        <li>Stake for 90 days to earn 9% tokens reward</li>
+                                        <li>Stake for 180 days to earn 25% tokens reward</li>
                                     </div>
                                     </div>
                                 </div>

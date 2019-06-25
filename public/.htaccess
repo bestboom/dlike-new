@@ -24,3 +24,4 @@ RewriteRule ^tokensale$ ./tokensale.php
 RewriteRule ^tags/(.*)$ ./tags.php?tag=$1
 RewriteRule ^category/(.*)$ ./category.php?cat=$1
 RewriteRule ^post/(.*)/(.*)$ ./post.php?user=$1&link=$2
+RewriteRule ^help$ ./help.php
