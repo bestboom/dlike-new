@@ -70,6 +70,13 @@ error_reporting(E_ALL);
                                 <input type="text" class="form-control" id="stakemaount" placeholder="Amount to Stake">
                             </div>
                             <div class="form-group">
+                                <select class="form-control form-control-lg" name="stake_option" id="stake">
+                                    <option>Staking Time</option>
+                                    <option value="1">90 Days</option>
+                                    <option value="2">180 Days</option>
+                                    </select>
+                            </div>
+                            <div class="form-group">
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
                             <button type="submit" class="btn btn-default">Create An Account</button>
