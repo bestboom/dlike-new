@@ -237,8 +237,7 @@ $views = '1';
                 echo '<div class="container" style="padding: 0px !important;">
                 <div class="row">
                     <div class="col" style="padding: 0px !important;">
-                        <div style="background:#eee;height: 250px;margin-bottom: 15px;">
-                          <img src='".$imgsrc."' style="width:36px;height:36px;margin-right:15px;padding-bottom:5px;">  
+                        <div style="background:#eee;height: 250px;margin-bottom: 15px;">  
                         </div>
                     </div>
                 </div>
