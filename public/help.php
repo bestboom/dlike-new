@@ -2,7 +2,7 @@
 </div><!-- sub-header -->
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
     <div class="row" style="padding: 50px;">
-        <div class="col">
+        <div class="col" style="text-align:center;color: #fff;">
             <h3>Frequently Asked Questions</h3>
         </div>
     </div>
