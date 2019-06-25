@@ -40,9 +40,9 @@ error_reporting(E_ALL);
                                     <h4><span>#02.</span>  Staking Rewards</h4>
                                     <div class="process-details">
                                         <p>
-                                            We have 2 staking options
-                                            <li>Stake for <b>90 days</b> to earn <b>9% bonus</b> tokens</li>
-                                            <li>Stake for <b>180 days</b> to earn <b>25% bonus</b> tokens</li>
+                                            We have 2 staking options.<br>
+                                            1. Stake for <b>90 days</b> to earn <b>9% bonus</b> tokens<br>
+                                            2. Stake for <b>180 days</b> to earn <b>25% bonus</b> tokens
                                         </p>
                                     </div>
                                 </div>
