@@ -5,20 +5,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 ?>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="subheader-wrapper">
-                        <h3>Get Started in 3 Steps</h3>
-                        <p>
-                            Many desktop publishing packages and web page editors now use <br>
-                            Lorem Ipsum as their default model text
-                        </p>
-                    </div>
-                </div>
-            </div>
+</div><!-- sub-header -->
+<div class="container" style="background: #191d5d;max-width: 100% !important;">
+    <div class="row" style="padding: 50px;">
+        <div class="col" style="text-align:center;color: #fff;">
+            <h3>DLIKE TOKENS STAKING</h3>
         </div>
-    </div><!-- sub-header -->
+    </div>
+</div>
     <div class="working-process-section">
         <div class="container">
             <div class="row">
