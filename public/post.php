@@ -53,23 +53,6 @@ $views = '1';
                         } else { $sender_status = "Not PRO";}
                     } else { $sender_status = "NOT PRO";}  
 
-$sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 3";
-    $result1 = $conn->query($sql1);
-    if ($result1->num_rows > 0) {
-        while($row1 = $result1->fetch_assoc()) {
-            $json_metadata = json_decode($row1['json_metadata'],true);
-
-                $imgsrc = $json_metadata['image'];
-                $permlink = $row1['permlink'];
-                $username = $row1['username'];
-                echo $title = "<a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
-                $category = $json_metadata['category'];
-                
-                
-                
-        }
-    }
-
 
 ?>
 </div>
@@ -233,6 +216,24 @@ $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY i
                 </div>
             </div>
         </div>
+        <?
+        $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 3";
+    $result1 = $conn->query($sql1);
+    if ($result1->num_rows > 0) {
+        while($row1 = $result1->fetch_assoc()) {
+            $json_metadata = json_decode($row1['json_metadata'],true);
+
+                $imgsrc = $json_metadata['image'];
+                $permlink = $row1['permlink'];
+                $username = $row1['username'];
+                echo $title = "<a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
+                $category = $json_metadata['category'];
+                
+                
+                
+        }
+    }
+    ?>
         <div class="col-md-3" style="margin-top: 30px !important;">
             <div class="container" style="padding: 0px !important;">
                 <div class="row">
