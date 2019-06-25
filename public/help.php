@@ -68,13 +68,19 @@
                                     <div class="accordion-header" id="heading1Three">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse1Three" aria-expanded="false" aria-controls="collapse1Three">
-                                        Sxpound the actual teachings of the great explorer?
+                                        What is reward pool?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse1Three" class="collapse" aria-labelledby="heading1Three" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        DLIKE reward pool is the daily DLIKE token disctribution system which is only available for PRO users. Every PRO users can earn the share of total reward tokens by making his posts more viral and being more active on the platform. Below are few of the basic things which emasure the share of any user in daily reward pool.
+                                        <li>How many likes a user get on his posts. (anyone can like a post even without having steem account)</li>
+                                        <li>How many unique views a users post get in 24 hours</li>
+                                        <li>How many comments a user gets on his posts</li>
+                                        <li>How much steem upvotes he gets on his posts</li>
+                                        <li>How many new referrals he bring in 24 hours.</li>
+                                        DLIKE team is working on reward pool and it will be availble soon.
                                     </div>
                                     </div>
                                 </div>
@@ -82,13 +88,13 @@
                                     <div class="accordion-header" id="heading1Four">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse1Four" aria-expanded="false" aria-controls="collapse1Four">
-                                        I will give you a complete?
+                                        What is TIP?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse1Four" class="collapse" aria-labelledby="heading1Four" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        DLIKE has an additional source of income for PRO users where they can tip any post which they like. 60% of the tip goes to author and 40% to the user. These tips are totally free from DLIKE and give better earning oppertunity for top quality articles shared on the platform. These tips are in the form on ERC-20 stable coins and are easily withdrawn to any ETH address.
                                     </div>
                                     </div>
                                 </div>
@@ -96,7 +102,7 @@
                                     <div class="accordion-header" id="heading1Five">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse1Five" aria-expanded="false" aria-controls="collapse1Five">
-                                        One who avoids a pain that produces no?
+                                        What is Staking?
                                         </button>
                                     </h5>
                                     </div>
@@ -109,7 +115,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                            <h4>Pricing</h4>
+                            <h4>DLIKE Tokens</h4>
                             <div class="accordion style-2" id="accordion2Faq">
                                 <div class="accordion-item">
                                     <div class="accordion-header" id="heading2One">
@@ -140,48 +146,6 @@
                                         <li>Become PRO user to earn daily DLIKE tokens from reward pool</li>
                                         <li>Join DLIKE bounty programs to earn tokens</li>
                                         <li>Promote DLIKE on other blogginf platforms to earn tokens.</li>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading2Three">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Three" aria-expanded="false" aria-controls="collapse2Three">
-                                        Sxpound the actual teachings of the great explorer?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse2Three" class="collapse" aria-labelledby="heading2Three" data-parent="#accordion2Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading2Four">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Four" aria-expanded="false" aria-controls="collapse2Four">
-                                        I will give you a complete?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse2Four" class="collapse" aria-labelledby="heading2Four" data-parent="#accordion2Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <div class="accordion-header" id="heading2Five">
-                                    <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Five" aria-expanded="false" aria-controls="collapse2Five">
-                                        One who avoids a pain that produces no?
-                                        </button>
-                                    </h5>
-                                    </div>
-                                    <div id="collapse2Five" class="collapse" aria-labelledby="heading2Five" data-parent="#accordion2Faq">
-                                    <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
                                     </div>
                                     </div>
                                 </div>
