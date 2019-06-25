@@ -3,6 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_COOKIE['username']; }
 
 ?>
 </div><!-- sub-header -->
@@ -59,9 +60,10 @@ error_reporting(E_ALL);
                         <h3>
                             Stake DLIKE Tokens
                         </h3>
-                        <form action="helper/stake_tok.php" class="user-connected-from create-account-form" method="POST" id="stake_sub">    
+                        <form action="helper/stake_tok.php" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
+                        <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                             <div class="form-group">
-                                <input type="text" class="form-control" id="stakemaount" placeholder="Amount to Stake">
+                                <input type="text" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
                             </div>
                             <div class="form-group">
                                 <select class="form-control form-control-lg" name="stake_option" id="stake">
@@ -117,4 +119,15 @@ error_reporting(E_ALL);
     </div><!-- app-download-section -->
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
+    var optionstak = {
+        target: '#stak-msg',
+        url: 'helper/addstake.php',
+        success: function() {},
+    }
+    $('#stake_sub').submit(function() {
+        if(username != null) {
+            $(this).ajaxSubmit(optionstak)
+            return !1
+        } else {toastr.error('hmm... You must be login!');  return false;} 
+    });
 </script>

@@ -1,0 +1,16 @@
+<?php 
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+require '../includes/config.php';
+
+if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POST["user"])){
+
+	echo $amount = $_POST["stakemaount"];
+	echo $period = $_POST["stake_option"];
+	echo $reason = stripslashes($_POST["reason"]);
+
+
+} else {echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';}
+
+?>
