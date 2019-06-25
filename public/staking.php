@@ -127,8 +127,12 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
     }
     $('#stake_sub').submit(function() {
         if(username != null) {
+            let stake_amt = $("#stakemaount").val();
+        if(stake_amt == '') { $("#stakemaount").css("border-color", "RED"); toastr.error('phew... Enter Tokens Amount to Stake');} else {
+
             $(this).ajaxSubmit(optionstak)
             return !1
+        }    
         } else {toastr.error('hmm... You must be login!');  return false;} 
     });
 </script>
