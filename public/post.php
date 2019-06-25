@@ -237,8 +237,8 @@ $views = '1';
                 echo "<div class='container' style='padding: 0px !important;'>
                 <div class='row'>
                     <div class='col' style='padding: 0px !important;'>
-                        <div style='background:#eee;height: 250px;'>
-                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:100%;height:100%;'  onerror='this.src=./images/post/8.png'></a>  
+                        <div style='background:#eee;'>
+                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' class='img-fluid' style='width:100%;height:100%;'  onerror='this.src=./images/post/8.png'></a>  
                         </div>
                         <h4 class='post-title' style='white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-bottom: 20px;margin-top: -50px;color: #fff;padding: 10px;'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
                     </div>
