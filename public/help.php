@@ -147,7 +147,7 @@
                                         DLIKE tokens can be earned in many ways. Below are few of the ways to earn them.
                                         <li>Become PRO user to earn daily DLIKE tokens from reward pool</li>
                                         <li>Join DLIKE bounty programs to earn tokens</li>
-                                        <li>Promote DLIKE on other blogginf platforms to earn tokens.</li>
+                                        <li>Promote DLIKE on other blogging platforms to earn tokens.</li>
                                     </div>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
                                     </div>
                                     <div id="collapse4Two" class="collapse" aria-labelledby="heading4Two" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        DLIKE is an informative face of internet which clearly means ehat can be shared. You can share any links which are informative, fresh and useful for community in the given categories.
+                                        DLIKE is an informative face of internet which clearly means what can be shared. You can share any links which are informative, fresh and useful for community in the given categories.
                                     </div>
                                     </div>
                                 </div>
@@ -209,7 +209,7 @@
                                     </div>
                                     <div id="collapse4Four" class="collapse" aria-labelledby="heading4Four" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        Anyone violating rules will be blacklited and will not get any upvotes. Do not share personal selfies or cats as we strongly recomend to share informative and useful links for the community.
+                                        Anyone violating rules will be blacklisted and will not get any upvotes. Do not share personal selfies or cats as we strongly recommend to share informative and useful links for the community.
                                     </div>
                                     </div>
                                 </div>
