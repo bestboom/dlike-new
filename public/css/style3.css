@@ -2823,7 +2823,7 @@ sub.transmoney-value {
     padding: 0;
     list-style: none; }
 .working-process-list li + li {
-    margin-top: 55px; }
+    margin-top: 35px; }
 
 .working-process-step h4 {
     font-weight: 700;

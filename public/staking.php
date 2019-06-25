@@ -59,7 +59,7 @@ error_reporting(E_ALL);
                         <h3>
                             Stake DLIKE Tokens
                         </h3>
-                        <form class="user-connected-from create-account-form">
+                        <form action="helper/stake_tok.php" class="user-connected-from create-account-form" method="POST" id="stake_sub">    
                             <div class="form-group">
                                 <input type="text" class="form-control" id="stakemaount" placeholder="Amount to Stake">
                             </div>
@@ -68,7 +68,7 @@ error_reporting(E_ALL);
                                     <option>Staking Time</option>
                                     <option value="1">90 Days</option>
                                     <option value="2">180 Days</option>
-                                    </select>
+                                </select>
                             </div>
                             <button type="submit" class="btn btn-default">STAKE NOW</button>
                         </form>
