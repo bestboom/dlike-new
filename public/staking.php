@@ -67,7 +67,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
                             </div>
                             <div class="form-group">
-                                <select class="form-control form-control-lg" name="stake_option" id="stake">
+                                <select class="form-control form-control-lg period" name="stake_option" id="stake">
                                     <option>Staking Time</option>
                                     <option value="1">90 Days</option>
                                     <option value="2">180 Days</option>
@@ -128,8 +128,9 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
     $('#stake_sub').submit(function() {
         if(username != null) {
             let stake_amt = $("#stakemaount").val();
-        if(stake_amt == '') { $("#stakemaount").css("border-color", "RED"); toastr.error('phew... Enter Tokens Amount to Stake');} else {
-
+            let stake_period = $("#stakemaount").val();
+        if(stake_amt == '') { $("#stakemaount").css("border-color", "RED"); toastr.error('phew... Enter Tokens Amount to Stake');} elseif ($('.period').val() == "0"){ toastr.error('phew... Select a staking period');
+        } else {
             $(this).ajaxSubmit(optionstak)
             return !1
         }    
