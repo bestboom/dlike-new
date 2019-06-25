@@ -243,12 +243,8 @@ $views = '1';
                     </div>
                 </div>
             </div>";
-        
-                echo $title = "<a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
-                $category = $json_metadata['category'];
                 
-                
-                
+                 
         }
     }
     ?></div>
