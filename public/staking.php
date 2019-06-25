@@ -78,39 +78,7 @@ error_reporting(E_ALL);
             </div>
         </div>
     </div><!-- working-process-section -->
-    <div class="counter-section counter-style-two">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="counter-block">
-                        <h3>20m</h3>
-                        <p>Worldwide potential clients</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="counter-block">
-                        <h3>100x</h3>
-                        <p>Faster transaction</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="counter-block">
-                        <h3>$90B+</h3>
-                        <p>Digital currency exchanged</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="counter-block">
-                        <h3>8x</h3>
-                        <p>Lower transaction costs</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="counter-vintage">
-            <img src="./images/others/24.png" alt="img" class="img-responsive">
-        </div>
-    </div><!-- counter-section -->
+
     <div class="app-download-section">
         <div class="container">
             <div class="section-title-three">
