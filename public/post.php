@@ -234,14 +234,15 @@ $views = '1';
                 $permlink = $row1['permlink'];
                 $username = $row1['username'];
 
-                echo '<div class="container" style="padding: 0px !important;">
-                <div class="row">
-                    <div class="col" style="padding: 0px !important;">
-                        <div style="background:#eee;height: 250px;margin-bottom: 15px;">  
+                echo "<div class='container' style='padding: 0px !important;'>
+                <div class='row'>
+                    <div class='col' style='padding: 0px !important;'>
+                        <div style='background:#eee;height: 250px;margin-bottom: 15px;'>
+                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a>  
                         </div>
                     </div>
                 </div>
-            </div>';
+            </div>";
         
                 echo $title = "<a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
                 $category = $json_metadata['category'];
@@ -254,31 +255,6 @@ $views = '1';
 
 
 
-        <div class="col-md-3" style="margin-top: 30px !important;">
-            <div class="container" style="padding: 0px !important;">
-                <div class="row">
-                    <div class="col" style="padding: 0px !important;">
-                        <div style="background:#eee;height: 250px;margin-bottom: 15px;">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container" style="padding: 0px !important;">
-                <div class="row">
-                    <div class="col" style="padding: 0px !important;">
-                        <div style="background:#eee;height: 250px;margin-bottom: 15px;"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="container" style="padding: 0px !important;">
-                <div class="row">
-                    <div class="col" style="padding: 0px !important;">
-                        <div style="background:#eee;height: 250px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div></div>
             <div class="container">
                 <div class="row">
