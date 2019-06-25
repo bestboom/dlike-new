@@ -60,7 +60,7 @@
                                     </div>
                                     <div id="collapse1Two" class="collapse" aria-labelledby="heading1Two" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        PRO users accounts will be started soon and link will be availble on every users profile.
+                                        PRO users accounts will be started soon and link will be available on every users profile.
                                     </div>
                                     </div>
                                 </div>
@@ -74,13 +74,13 @@
                                     </div>
                                     <div id="collapse1Three" class="collapse" aria-labelledby="heading1Three" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        DLIKE reward pool is the daily DLIKE token disctribution system which is only available for PRO users. Every PRO users can earn the share of total reward tokens by making his posts more viral and being more active on the platform. Below are few of the basic things which emasure the share of any user in daily reward pool.
+                                        DLIKE reward pool is the daily DLIKE token distribution system which is only available for PRO users. Every PRO users can earn the share of total reward tokens by making his posts more viral and being more active on the platform. Below are few of the basic parameters which enhance the share of any user in daily reward pool.
                                         <li>How many likes a user get on his posts. (anyone can like a post even without having steem account)</li>
                                         <li>How many unique views a users post get in 24 hours</li>
                                         <li>How many comments a user gets on his posts</li>
                                         <li>How much steem upvotes he gets on his posts</li>
                                         <li>How many new referrals he bring in 24 hours.</li>
-                                        DLIKE team is working on reward pool and it will be availble soon.
+                                        DLIKE team is working on reward pool and it will be available soon.
                                     </div>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div id="collapse1Four" class="collapse" aria-labelledby="heading1Four" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        DLIKE has an additional source of income for PRO users where they can tip any post which they like. 60% of the tip goes to author and 40% to the user. These tips are totally free from DLIKE and give better earning oppertunity for top quality articles shared on the platform. These tips are in the form on ERC-20 stable coins and are easily withdrawn to any ETH address.
+                                        DLIKE has an additional source of income for PRO users where they can tip any post which they like. 60% of the tip goes to author and 40% to the user. These tips are totally free from DLIKE and give better earning opportunity for top quality articles shared on the platform. These tips are in the form of ERC-20 stable coins and are easily withdrawn to any ETH address.
                                     </div>
                                     </div>
                                 </div>
