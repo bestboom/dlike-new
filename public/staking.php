@@ -61,7 +61,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                             Stake DLIKE Tokens
                         </h3>
                         <div id="stak-msg"></div>
-                        <form action="helper/stake_tok.php" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
+                        <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
                         <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                             <div class="form-group">
                                 <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
