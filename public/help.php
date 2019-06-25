@@ -1,19 +1,8 @@
 <?php  include('template/header5.php'); ?>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="subheader-wrapper">
-                        <h3>Frequently Asked Questions</h3>
-                        <p>
-                            Many desktop publishing packages and web page editors now use <br>
-                            Lorem Ipsum as their default model text
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div><!-- sub-header -->
     <div class="faq-section">
+        <h3>Frequently Asked Questions</h3>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-5 col-12">
