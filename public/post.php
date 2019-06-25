@@ -216,39 +216,34 @@ $views = '1';
                 </div>
             </div>
         </div>
-
+<!-- sidebar -posts -->
         <div class="col-md-3" style="margin-top: 30px !important;">
-            
-
-
-
-
-        <?
+        <?php
         $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 3";
-    $result1 = $conn->query($sql1);
-    if ($result1->num_rows > 0) {
-        while($row1 = $result1->fetch_assoc()) {
-            $json_metadata = json_decode($row1['json_metadata'],true);
+            $result1 = $conn->query($sql1);
+        if ($result1->num_rows > 0) {
+            while($row1 = $result1->fetch_assoc()) {
+                $json_metadata = json_decode($row1['json_metadata'],true);
 
                 $imgsrc = $json_metadata['image'];
                 $permlink = $row1['permlink'];
                 $username = $row1['username'];
 
                 echo "<div class='container' style='padding: 0px !important;'>
-                <div class='row'>
-                    <div class='col' style='padding: 0px !important;'>
-                        <div style='background:#eee;'>
-                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' class='img-fluid' style='width:100%;min-height:220px;'  onerror='this.src=./images/post/8.png'></a>  
+                        <div class='row'>
+                            <div class='col' style='padding: 0px !important;'>
+                                <div style='background:#eee;border-bottom:40px solid #111;'>
+                                    <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' class='img-fluid' style='width:100%;min-height:190px;'  onerror='this.src=./images/post/8.png'></a>  
+                                </div>
+                                    <h4 class='post-title' style='white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-bottom: 20px;margin-top: -40px;color: #fff;padding: 10px;'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
+                            </div>
                         </div>
-                        <h4 class='post-title' style='white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-bottom: 20px;margin-top: -40px;color: #fff;padding: 10px;'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
-                    </div>
-                </div>
-            </div>";
-
+                    </div>";
+            }
         }
-    }
-    ?></div>
-
+        ?>
+        </div>
+<!-- sidebar -posts -->
 
 
     </div></div>
