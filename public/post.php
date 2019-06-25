@@ -238,9 +238,9 @@ $views = '1';
                 <div class='row'>
                     <div class='col' style='padding: 0px !important;'>
                         <div style='background:#eee;height: 250px;margin-bottom: 15px;'>
-                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:100%;height:100%;'  onerror='this.src=./images/post/8.png'><h4 class='post-title'>".$row1['title']."</h4></a>  
+                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:100%;height:100%;'  onerror='this.src=./images/post/8.png'></a>  
                         </div>
-                        <h4 class='post-title'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
+                        <h4 class='post-title' style='white-space: nowrap;overflow: hidden;text-overflow: ellipsis;'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
                     </div>
                 </div>
             </div>";
