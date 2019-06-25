@@ -35,14 +35,17 @@
                                     <div class="accordion-header" id="heading1One">
                                     <h5 class="mb-0">
                                         <button type="button" data-toggle="collapse" data-target="#collapse1One" aria-expanded="true" aria-controls="collapse1One">
-                                        Explorer of the truth the master?
+                                        What is PRO user?
                                         </button>
                                     </h5>
                                     </div>
     
                                     <div id="collapse1One" class="collapse show" aria-labelledby="heading1One" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                                        DLIKE pro users is the apex status of users available on DLIKE platform. Anyone can become a pro user by vesting 10,000 DLIKE tokens. The vested tokens are burnt and PRO users enjoy following benefits.<br>
+                                        <li>Pro users get 3x upvote on all their posts</li>
+                                        <li>Pro users can share more than 1 posts in 24 hours to earn more</li>
+                                        <li>Pro users can tip on posts which also rewards 40% of the tip earning to them.</li>
                                     </div>
                                     </div>
                                 </div>
