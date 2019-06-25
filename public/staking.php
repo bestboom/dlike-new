@@ -129,7 +129,8 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
         if(username != null) {
             let stake_amt = $("#stakemaount").val();
             let stake_period = $("#stakemaount").val();
-        if(stake_amt == '') { $("#stakemaount").css("border-color", "RED"); toastr.error('phew... Enter Tokens Amount to Stake');} elseif ($('.period').val() == "0"){ toastr.error('phew... Select a staking period');
+        if(stake_amt == '') { $("#stakemaount").css("border-color", "RED"); toastr.error('phew... Enter Tokens Amount to Stake');return false;} 
+        elseif ($('.period').val() == "0"){ toastr.error('phew... Select a staking period'); return false;
         } else {
             $(this).ajaxSubmit(optionstak)
             return !1
