@@ -30,7 +30,7 @@ error_reporting(E_ALL);
                                     <h4><span>#01.</span>  What is Staking?</h4>
                                     <div class="process-details">
                                         <p>
-                                            Staking means to "lock up" your TRYBE tokens for a certain period of time.For locking your tokens, you earn bonus rewards.
+                                            Staking means to "lock up" your DLIKE tokens for a certain period of time.For locking your tokens, you earn bonus rewards.
                                         </p>
                                     </div>
                                 </div>
@@ -76,10 +76,7 @@ error_reporting(E_ALL);
                                     <option value="2">180 Days</option>
                                     </select>
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <button type="submit" class="btn btn-default">Create An Account</button>
+                            <button type="submit" class="btn btn-default">STAKE NOW</button>
                         </form>
                         <p>By staking you agree to the Terms</a></p>
                     </div><!-- create-account-block -->
