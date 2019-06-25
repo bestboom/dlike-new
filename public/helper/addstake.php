@@ -4,11 +4,11 @@
 	error_reporting(E_ALL);
 require '../includes/config.php';
 
-if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POST["user"])){
+if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POST["staker"])){
 
 	echo $amount = $_POST["stakemaount"];
 	echo $period = $_POST["stake_option"];
-	echo $reason = stripslashes($_POST["reason"]);
+	echo $user = $_POST["staker"];
 
 
 } else {echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';}
