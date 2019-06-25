@@ -240,6 +240,7 @@ $views = '1';
                         <div style='background:#eee;height: 250px;margin-bottom: 15px;'>
                         <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' style='width:100%;height:100%;'  onerror='this.src=./images/post/8.png'><h4 class='post-title'>".$row1['title']."</h4></a>  
                         </div>
+                        <h4 class='post-title'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
                     </div>
                 </div>
             </div>";
