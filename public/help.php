@@ -9,19 +9,15 @@
                     <div class="list-group" id="list-tab" role="tablist">
                         <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab">
                             <h5>General Question</h5>
-                            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam</p>
+                            <p>Basic Questions About DLIKE</p>
                         </a>
                         <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab">
-                            <h5>Pricing</h5>
-                            <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself.</p>
-                        </a>
-                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab">
-                            <h5>About Features</h5>
-                            <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore</p>
+                            <h5>DLIKE Tokens</h5>
+                            <p>All details regarding DLIKE Tokens</p>
                         </a>
                         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab">
                             <h5>Terms &amp; Conditions</h5>
-                            <p>Sed ut perspiciatis unde omnis iste natus error voluptatem</p>
+                            <p>How to use DLIKE? Basic Terms and Conditions.</p>
                         </a>
                     </div>
                 </div>
