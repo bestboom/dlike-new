@@ -22,7 +22,7 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 					VALUES ('".$user."', '".$amount."', '".$period."', now())";
 
 				if (mysqli_query($conn, $sqlm)) {echo '<div class="alert alert-success">Staking done successfully</div>';
-				echo '<script>document.getElementById("stake_sub").reset(); setTimeout(function(){location.reload();},2000);</script>';
+				echo '<script>$("#stake_me").attr("disabled","disabled"); document.getElementById("stake_sub").reset(); setTimeout(function(){location.reload();},1000);</script>';
 				}
 			}
 		} else {echo '<div class="alert alert-danger">Do not have token balance!</div>';}
