@@ -47,7 +47,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                     <h4><span>#03.</span>  Staking Terms</h4>
                                     <div class="process-details">
                                         <p>
-                                            Tokens staked for bonus will not withdrawable for set period. You can continue staking after the maturity or can withdraw once staking period is over.
+                                            Tokens staked for bonus will not be withdrawable for set period. You can continue staking after the maturity or can withdraw once staking period is over.
                                         </p>
                                     </div>
                                 </div>
