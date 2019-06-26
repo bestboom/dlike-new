@@ -87,28 +87,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
             <div class="section-title-three">
                 <h3>Download Our Apps</h3>
             </div>
-            <?php
-                        $sqlt = "SELECT username, amount, period FROM staking";
-                        $result_t = $conn->query($sqlt);
 
-                        if ($result_t->num_rows > 0) {
-                            while($row_t = $result_t->fetch_assoc()) { ?>
-                        <div class="activity-block">
-                            <div class="row my-entry">
-                                <div class="col-sm-8">
-                                    <div class="row">
-                                        <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
-                                        <div class="exp-user"><?php echo $row_t["username"]; ?></div>
-                                        <div class="exp-user">For <span><?php echo $row_t["period"]; ?></span></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="exp-amt"><span id="tk-amt"><?php echo $row_t["amount"]); ?></span> Dlikes</div>
-                                </div>
-                            </div>
-                        </div>
-                        <? }
-                        }?>
         </div>
     </div><!-- app-download-section -->
 <?php include('template/footer3.php'); ?>
