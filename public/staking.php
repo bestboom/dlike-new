@@ -109,16 +109,16 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 if ($result_t->num_rows > 0) {
                                     while($row_t = $result_t->fetch_assoc()) { 
                                     $period = $row_t["period"]; 
-                                    if($period == "2") {$period = '180 Days'; $bonus = '25%';}
-                                    else {$period = '90 Days';$bonus = '9%';}
+                                    if($period == "2") {$period = '180'; $bonus = '25%';}
+                                    else if($period == "1") {$period = '90';$bonus = '9%';}
                                     $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
                             ?> 
                             <tr>   
                                 <td><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></td>
                                 <td><?php echo $row_t["amount"]; ?></td>
-                                <td><?php echo $period; ?></td>
+                                <td><?php echo $period; ?> Days</td>
                                 <td><?php echo $bonus; ?></td>
-                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + 1 days')); ?></td>    
+                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + '.$period.' days')); ?></td>    
                             </tr>
                             <? } } ?>
                         </tbody>
