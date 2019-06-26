@@ -103,6 +103,8 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                         <div class="exp-amt"><?php echo $row_t["amount"]; ?></div>
                                         <div class="exp-user"><?php echo $time_period ?></div>
                                         <div class="exp-user"><?php echo $bonus ?></div>
+                                        <div class="exp-user"><?php echo date('Y-m-d', strtotime($row_t["start_time"]. ' + 1 
+                                        days')); ?></div>
                                     </div>
                                 </div>
                             </div>
