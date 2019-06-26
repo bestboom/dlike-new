@@ -98,7 +98,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 <div class="col-sm-8">
                                     <div class="row">
                                         <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
-                                        <div class="exp-user"><?php echo $row_t["username"]; ?></div>
+                                        <div class="exp-user"><?php echo $row_t["start_time"]; ?></div>
                                         <div class="exp-user">For <span><?php echo $row_t["period"]; ?></span></div>
                                     </div>
                                 </div>
