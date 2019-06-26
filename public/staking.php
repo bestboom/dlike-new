@@ -118,16 +118,16 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
             <div class="container">
                 <div class="latest-tranjections-block-inner">
                     <div class="panel-heading-block">
-                        <h5>Open Orders</h5>
+                        <h5>My Stakings</h5>
                     </div>
                     <table class="table coin-list latest-tranjections-table">
                         <thead>
                             <tr>
-                                <th scope="col">Size</th>
-                                <th scope="col">Filled(ETH)</th>
-                                <th scope="col">Price(BTC)</th>
-                                <th scope="col">Time</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Date Staked</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Period</th>
+                                <th scope="col">Bonus</th>
+                                <th scope="col">Maturity Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -136,34 +136,6 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 <td>8084.99</td>
                                 <td><span class="ex-color-sell">0.00008639</span></td>
                                 <td>17:54:59</td>
-                                <td>Open</td>
-                            </tr>
-                            <tr>
-                                <td>0.0563740</td>
-                                <td>6084.50</td>
-                                <td><span class="ex-color-buy">0.00008639</span></td>
-                                <td>17:59:52</td>
-                                <td><span class="ex-color-sell">Cancel</span></td>
-                            </tr>
-                            <tr>
-                                <td>0.0563740</td>
-                                <td>4784.21</td>
-                                <td><span class="ex-color-buy">0.05897090</span></td>
-                                <td>18:00:02</td>
-                                <td><span class="ex-color-buy">Filled</span></td>
-                            </tr>
-                            <tr>
-                                <td>0.0563740</td>
-                                <td>8084.99</td>
-                                <td><span class="ex-color-sell">0.05870</span></td>
-                                <td>18:00:09</td>
-                                <td><span class="ex-color-sell">Cancel</span></td>
-                            </tr>
-                            <tr>
-                                <td>0.0563740</td>
-                                <td>7894.89</td>
-                                <td>0.00005896</td>
-                                <td>18:00:09</td>
                                 <td>Open</td>
                             </tr>
                         </tbody>
