@@ -104,7 +104,6 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
                             <?php $sqlt = "SELECT * FROM staking ORDER BY start_time DESC";
                             $result_t = $conn->query($sqlt);
                                 if ($result_t->num_rows > 0) {
@@ -112,14 +111,15 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                     $period = $row_t["period"]; 
                                     if($period = "1") {$time_period = '90 Days'; $bonus = '9%';}else if($period = "2") {$time_period = '180 Days';$bonus = '25%';}
                                     $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
-                            ?>    
+                            ?> 
+                            <tr>   
                                 <td><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></td>
                                 <td><?php echo $row_t["amount"]; ?></td>
                                 <td><?php echo $time_period ?></td>
                                 <td><?php echo $bonus ?></td>
-                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + 1 days')); ?></td>
-                            <? } } ?>    
+                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + 1 days')); ?></td>    
                             </tr>
+                            <? } } ?>
                         </tbody>
                     </table>
                 </div><!-- order-history-block-inner -->
