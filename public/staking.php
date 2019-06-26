@@ -109,9 +109,8 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 if ($result_t->num_rows > 0) {
                                     while($row_t = $result_t->fetch_assoc()) { 
                                     $period = $row_t["period"]; 
-                                    if($period = "1") {$time_period = '90 Days'; $bonus = '9%';}
-                                    else if($period = "2") {$time_period = '180 Days';$bonus = '25%';}
-                                    else { $time_period = $period;}
+                                    if($period = "2") {$time_period = '180 Days'; $bonus = '25%';}
+                                    else {$time_period = '90 Days';$bonus = '9%';}
                                     $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
                             ?> 
                             <tr>   
