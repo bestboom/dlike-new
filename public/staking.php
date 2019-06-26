@@ -83,34 +83,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
     </div><!-- working-process-section -->
 
     <div class="app-download-section">
-        <div class="container">
-            <div class="section-title-three">
-                <h3>Download Our Apps</h3>
-            </div>
-            <?php
-                        $sqlt = "SELECT * FROM staking ORDER BY start_time DESC";
-                        $result_t = $conn->query($sqlt);
 
-                        if ($result_t->num_rows > 0) {
-                            while($row_t = $result_t->fetch_assoc()) { 
-                                $period = $row_t["period"]; 
-                                if($period = "1") {$time_period = '90 Days'; $bonus = '9%';}else if($period = "2") {$time_period = '180 Days';$bonus = '25%';}
-                                echo $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
-                        ?><div class="activity-block">
-                            <div class="row my-entry">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="exp-user"><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></div>
-                                        <div class="exp-amt"><?php echo $row_t["amount"]; ?></div>
-                                        <div class="exp-user"><?php echo $time_period ?></div>
-                                        <div class="exp-user"><?php echo $bonus ?></div>
-                                        <div class="exp-user"><?php echo date('Y-m-d', strtotime($entry_date. ' + 1 days')); ?></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <? } } ?>
-        </div>
     </div><!-- app-download-section -->
 
 <div class="latest-tranjections-area">
