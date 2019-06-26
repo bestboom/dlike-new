@@ -81,9 +81,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
             </div>
         </div>
     </div><!-- working-process-section -->
-
-    <div class="app-download-section">
-
+<? if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_COOKIE['username']; ?>
     <div class="latest-tranjections-area">
         <div class="latest-tranjections-block">
             <div class="container">
@@ -124,8 +122,8 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                 </div><!-- order-history-block-inner -->
             </div>
         </div>
-    </div>  
-    </div><!-- app-download-section -->  
+    </div>
+<? } ?>     
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     var optionstak = {
