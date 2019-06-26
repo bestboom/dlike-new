@@ -116,7 +116,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 <td><?php echo $bonus; ?></td>
                                 <td><?php echo date('Y-m-d', strtotime($entry_date. ' + '.$mature.' days')); ?></td>    
                             </tr>
-                            <? } } else { echo 'No staking yet by';}?>
+                            <? } }?>
                         </tbody>
                     </table>
                 </div><!-- order-history-block-inner -->
