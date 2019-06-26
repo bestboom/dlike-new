@@ -44,15 +44,16 @@
                             </button>-->
 
                             <div class="row">
-                                <!--  <div class="col-md-3 col-2">
+                                <!--  
+                                <div class="col-md-3 col-2">
                                       <button type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fa fa-search"></i>
                                       </button>
-                                  </div>
+                                </div>
   -->
-                                <div class="col-md-3 col-2">
+                                <!--<div class="col-md-3 col-2">
                                     <button type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
                                     </button>
-                                </div>
+                                </div> -->
 
                                 <div class="col-md-4 col-2">
                                     <button id="btn_share" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
