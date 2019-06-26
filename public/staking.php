@@ -142,9 +142,9 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                             ?>    
                                 <td><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></td>
                                 <td><?php echo $row_t["amount"]; ?></td>
-                                <td><span class="ex-color-sell">0.00008639</span></td>
-                                <td>17:54:59</td>
-                                <td>Open</td>
+                                <td><?php echo $time_period ?></td>
+                                <td><?php echo $bonus ?></td>
+                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + 1 days')); ?></td>
                             <? } } ?>    
                             </tr>
                         </tbody>
