@@ -87,35 +87,28 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
             <div class="section-title-three">
                 <h3>Download Our Apps</h3>
             </div>
-            <ul class="download-options-list">
-                <li>
-                    <div class="btn apps-download-btn signup-btn">
-                        <i class="fas fa-desktop"></i>
-                        <div class="btn-content">
-                            <span>SIGN UP ON</span>
-                            <p>DESKTOP APP</p>
+            <?php
+                        $sqlt = "SELECT username, amount, period FROM staking ORDER BY arttrx_time DESC";
+                        $result_t = $conn->query($sqlt);
+
+                        if ($result_t->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) { ?>
+                        <div class="activity-block">
+                            <div class="row my-entry">
+                                <div class="col-sm-8">
+                                    <div class="row">
+                                        <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
+                                        <div class="exp-user"><?php echo $row["username"]; ?></div>
+                                        <div class="exp-user">For <span><?php echo $row["period"]; ?></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="exp-amt"><span id="tk-amt"><?php echo $row["amount"]); ?></span> Dlikes</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="btn apps-download-btn googleplay-btn">
-                        <img src="./images/others/20.png" alt="img">
-                        <div class="btn-content">
-                            <span>GET IT ON</span>
-                            <p>Google Play</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="btn apps-download-btn googleplay-btn">
-                        <i class="fab fa-apple"></i>
-                        <div class="btn-content">
-                            <span>GET IT ON</span>
-                            <p>App Store</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                        <? }
+                        }?>
         </div>
     </div><!-- app-download-section -->
 <?php include('template/footer3.php'); ?>

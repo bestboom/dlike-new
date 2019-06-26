@@ -23,7 +23,7 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 
 				if (mysqli_query($conn, $sqlm)) {echo '<div class="alert alert-success">Staking done successfully</div>';}
 			}
-		} else {echo '<div class="alert alert-danger">You are not in balance!</div>';}
+		} else {echo '<div class="alert alert-danger">Do not have token balance!</div>';}
 
 
 
