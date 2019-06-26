@@ -118,7 +118,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 <td><?php echo $row_t["amount"]; ?></td>
                                 <td><?php echo $period; ?> Days</td>
                                 <td><?php echo $bonus; ?></td>
-                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + '.$period.' days')); ?></td>    
+                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + '.$period.' + 1  days')); ?></td>    
                             </tr>
                             <? } } ?>
                         </tbody>
