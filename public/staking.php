@@ -132,11 +132,20 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                         </thead>
                         <tbody>
                             <tr>
-                                <td>0.0563740</td>
-                                <td>8084.99</td>
+                            <?php $sqlt = "SELECT * FROM staking ORDER BY start_time DESC";
+                            $result_t = $conn->query($sqlt);
+                                if ($result_t->num_rows > 0) {
+                                    while($row_t = $result_t->fetch_assoc()) { 
+                                    $period = $row_t["period"]; 
+                                    if($period = "1") {$time_period = '90 Days'; $bonus = '9%';}else if($period = "2") {$time_period = '180 Days';$bonus = '25%';}
+                                    $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
+                            ?>    
+                                <td><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></td>
+                                <td><?php echo $row_t["amount"]; ?></td>
                                 <td><span class="ex-color-sell">0.00008639</span></td>
                                 <td>17:54:59</td>
                                 <td>Open</td>
+                            <? } } ?>    
                             </tr>
                         </tbody>
                     </table>
