@@ -95,6 +95,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                             while($row_t = $result_t->fetch_assoc()) { 
                                 $period = $row_t["period"]; 
                                 if($period = "1") {$time_period = '90 Days'; $bonus = '9%';}else if($period = "2") {$time_period = '180 Days';$bonus = '25%';}
+                                echo $entry_date = $row_t["start_time"];
                         ?><div class="activity-block">
                             <div class="row my-entry">
                                 <div class="col">
@@ -103,7 +104,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                         <div class="exp-amt"><?php echo $row_t["amount"]; ?></div>
                                         <div class="exp-user"><?php echo $time_period ?></div>
                                         <div class="exp-user"><?php echo $bonus ?></div>
-                                        <div class="exp-user"><?php echo date('Y-m-d', strtotime($row_t["start_time"]. ' + 1 
+                                        <div class="exp-user"><?php echo date('Y-m-d', strtotime($entry_date. ' + 1 
                                         days')); ?></div>
                                     </div>
                                 </div>
