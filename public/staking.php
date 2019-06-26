@@ -100,7 +100,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $sqlt = "SELECT * FROM staking ORDER BY start_time DESC";
+                            <?php $sqlt = "SELECT * FROM staking where username ='$staker' ORDER BY start_time DESC";
                             $result_t = $conn->query($sqlt);
                                 if ($result_t->num_rows > 0) {
                                     while($row_t = $result_t->fetch_assoc()) { 
