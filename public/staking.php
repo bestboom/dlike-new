@@ -107,7 +107,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 </div>
                             </div>
                         </div>
-                        <? } ?>
+                        <? } } ?>
         </div>
     </div><!-- app-download-section -->
 <?php include('template/footer3.php'); ?>
