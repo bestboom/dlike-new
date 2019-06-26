@@ -87,7 +87,11 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
             <div class="section-title-three">
                 <h3>Download Our Apps</h3>
             </div>
+            <?php
+                        $sqlt = "SELECT username, amount, period FROM staking ORDER BY start_time DESC";
+                        $result_t = $conn->query($sqlt);
 
+                        ?>
         </div>
     </div><!-- app-download-section -->
 <?php include('template/footer3.php'); ?>
