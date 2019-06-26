@@ -18,11 +18,10 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 			if ($amount > $user_bal){ echo '<div class="alert alert-danger">You do not have enough tokens!</div>';}
 			else {
 
-			$sqlm = "INSERT INTO staking (username, amount, period, start_time)
-			VALUES ('".$user."', '".$amount."', '".$period."', now())";
+				$sqlm = "INSERT INTO staking (username, amount, period, start_time)
+					VALUES ('".$user."', '".$amount."', '".$period."', now())";
 
-			if (mysqli_query($conn, $sqlm)) {
-				echo '<div class="alert alert-success">Staking done successfully</div>';
+				if (mysqli_query($conn, $sqlm)) {echo '<div class="alert alert-success">Staking done successfully</div>';}
 			}
 		} else {echo '<div class="alert alert-danger">You are not in balance!</div>';}
 
