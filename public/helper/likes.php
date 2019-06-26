@@ -7,6 +7,11 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+
+/*'
+
+
 $sqlw = "DELETE FROM staking";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -14,8 +19,6 @@ if ($conn->query($sqlw) === TRUE) {
 } else {
     echo "Error deleting table: " . $conn->error;
 }
-
-/*
 
 $sql = "CREATE TABLE staking (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
