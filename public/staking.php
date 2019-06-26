@@ -88,7 +88,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                 <h3>Download Our Apps</h3>
             </div>
             <?php
-                        $sqlt = "SELECT username, amount, period FROM staking ORDER BY start_time DESC";
+                        $sqlt = "SELECT username, amount, period FROM staking";
                         $result_t = $conn->query($sqlt);
 
                         if ($result_t->num_rows > 0) {
