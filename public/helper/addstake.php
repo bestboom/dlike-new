@@ -6,9 +6,9 @@ require '../includes/config.php';
 
 if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POST["staker"])){
 
-	echo $amount = $_POST["stakemaount"];
-	echo $period = $_POST["stake_option"];
-	echo $user = $_POST["staker"];
+	$amount = $_POST["stakemaount"];
+	$period = $_POST["stake_option"];
+	$user = $_POST["staker"];
 
 	$sqls = "SELECT amount FROM wallet where username='$user'"; 
 	$resultAmount = $conn->query($sqls);
@@ -21,8 +21,10 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 				$sqlm = "INSERT INTO staking (username, amount, period, start_time)
 					VALUES ('".$user."', '".$amount."', '".$period."', now())";
 
-				if (mysqli_query($conn, $sqlm)) {echo '<div class="alert alert-success">Staking done successfully</div>';
-				echo '<script>$("#stake_me").attr("disabled","disabled"); document.getElementById("stake_sub").reset(); setTimeout(function(){location.reload();},1000);</script>';
+				if (mysqli_query($conn, $sqlm)) {
+
+					echo '<div class="alert alert-success">Staking done successfully</div>';
+					echo '<script>$("#stake_me").attr("disabled","disabled"); document.getElementById("stake_sub").reset(); setTimeout(function(){location.reload();},1000);</script>';
 				}
 			}
 		} else {echo '<div class="alert alert-danger">Do not have token balance!</div>';}
