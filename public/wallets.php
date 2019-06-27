@@ -104,11 +104,11 @@ $rowIt = $resultAmount->fetch_assoc();
                                     <div class="pros-cons-block">
                                         <div class="pros-block">
                                             <h5 class="base-color">STEEM: </h5>
-                                            <p style="text-align: left>165 STEEM</p>
+                                            <p style="text-align: left">165 STEEM</p>
                                         </div>
                                         <div class="cons-block">
                                             <h5 class="base-color">STEM DOLLAR: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                            <p style="text-align: left">No web or desktop interface, hot wallet, not for beginners</p>
                                         </div>
                                     </div>
                                 </div><!-- catagori-content -->
