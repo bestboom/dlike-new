@@ -109,6 +109,9 @@ $rowIt = $resultAmount->fetch_assoc();
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
                                         </div>
+                                        <div class="text-center">
+                            				<button class="btn download-btn">Transfer</button>
+                        				</div>
                                     </div>
                                 </div><!-- catagori-content -->
                             </div>
