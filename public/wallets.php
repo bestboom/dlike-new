@@ -58,22 +58,22 @@ $rowIt = $resultAmount->fetch_assoc();
                             <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#nav_wallet" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>Bread Wallet</h4>
+                                        <h4>DLIKE</h4>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active show" href="#nav_mycelium" role="tab" data-toggle="tab" aria-selected="true">
-                                        <h4>Mycelium</h4>
+                                        <h4>STEEM/SBD</h4>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#nav_exodus" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>Exodus</h4>
+                                        <h4>Tips</h4>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#nav_copay" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>Copay</h4>
+                                        <h4>Become PRO</h4>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -208,7 +208,7 @@ $rowIt = $resultAmount->fetch_assoc();
 
 
 
-    
+
 <div class="explorer-section">
 
     <div class="activity-section">
