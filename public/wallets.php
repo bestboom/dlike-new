@@ -36,6 +36,179 @@ $rowIt = $resultAmount->fetch_assoc();
             </div>
         </div>
     </div><!-- banner-block -->
+
+
+
+<div class="catagori-section">
+        <div class="section-title-one">
+            <h3>Categories of Wallets</h3>
+            <p>
+                If you are going to use a passage of Lorem Ipsum, 
+                you need to be sure there isn't <br> anything 
+                embarrassing hidden in the middle of text.
+            </p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-12">
+                    <div class="catagori-content-block">
+                        <nav class="catagori-list" style="
+    background: #eee;
+">
+                            <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#nav_wallet" role="tab" data-toggle="tab" aria-selected="false">
+                                        <h4>Bread Wallet</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active show" href="#nav_mycelium" role="tab" data-toggle="tab" aria-selected="true">
+                                        <h4>Mycelium</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#nav_exodus" role="tab" data-toggle="tab" aria-selected="false">
+                                        <h4>Exodus</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#nav_copay" role="tab" data-toggle="tab" aria-selected="false">
+                                        <h4>Copay</h4>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#nav_nano" role="tab" data-toggle="tab" aria-selected="false">
+                                        <h4>Ledger Nano</h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="tab-content catagoritab-content" id="nav-tabContent">
+                            <div role="tabpanel" class="tab-pane fade" id="nav_wallet">
+                                <div class="catagori-content">
+                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
+                                    <p class="catagori-info">
+                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
+                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
+                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
+                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
+                                        an integrated QR-code scanner receive bitcoins and keep.
+                                    </p>
+                                    <div class="pros-cons-block">
+                                        <div class="pros-block">
+                                            <h5 class="cp_level">Pros: </h5>
+                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                        </div>
+                                        <div class="cons-block">
+                                            <h5 class="cp_level">Cons: </h5>
+                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                        </div>
+                                    </div>
+                                </div><!-- catagori-content -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
+                                <div class="catagori-content">
+                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
+                                    <p class="catagori-info">
+                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
+                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
+                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
+                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
+                                        an integrated QR-code scanner receive bitcoins and keep.
+                                    </p>
+                                    <div class="pros-cons-block">
+                                        <div class="pros-block">
+                                            <h5 class="base-color">Pros: </h5>
+                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                        </div>
+                                        <div class="cons-block">
+                                            <h5 class="base-color">Cons: </h5>
+                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                        </div>
+                                    </div>
+                                </div><!-- catagori-content -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
+                                <div class="catagori-content">
+                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
+                                    <p class="catagori-info">
+                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
+                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
+                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
+                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
+                                        an integrated QR-code scanner receive bitcoins and keep.
+                                    </p>
+                                    <div class="pros-cons-block">
+                                        <div class="pros-block">
+                                            <h5 class="base-color">Pros: </h5>
+                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                        </div>
+                                        <div class="cons-block">
+                                            <h5 class="base-color">Cons: </h5>
+                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                        </div>
+                                    </div>
+                                </div><!-- catagori-content -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
+                                <div class="catagori-content">
+                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
+                                    <p class="catagori-info">
+                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
+                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
+                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
+                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
+                                        an integrated QR-code scanner receive bitcoins and keep.
+                                    </p>
+                                    <div class="pros-cons-block">
+                                        <div class="pros-block">
+                                            <h5 class="base-color">Pros: </h5>
+                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                        </div>
+                                        <div class="cons-block">
+                                            <h5 class="base-color">Cons: </h5>
+                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                        </div>
+                                    </div>
+                                </div><!-- catagori-content -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="nav_nano">
+                                <div class="catagori-content">
+                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
+                                    <p class="catagori-info">
+                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
+                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
+                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
+                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
+                                        an integrated QR-code scanner receive bitcoins and keep.
+                                    </p>
+                                    <div class="pros-cons-block">
+                                        <div class="pros-block">
+                                            <h5 class="base-color">Pros: </h5>
+                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                        </div>
+                                        <div class="cons-block">
+                                            <h5 class="base-color">Cons: </h5>
+                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                        </div>
+                                    </div>
+                                </div><!-- catagori-content -->
+                            </div>
+                        </div>
+                    </div><!-- catagori-content-block -->
+                </div>
+                <div class="col-lg-3">
+                    <div class="catagori-vintage">
+                        <img src="./images/others/7.png" alt="img" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
 <div class="explorer-section">
 
     <div class="activity-section">
