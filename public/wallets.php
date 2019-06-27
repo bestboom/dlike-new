@@ -103,11 +103,11 @@ $rowIt = $resultAmount->fetch_assoc();
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                            <h5 class="base-color">STEEM: </h5>
+                                            <p style="text-align: left>165 STEEM</p>
                                         </div>
                                         <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
+                                            <h5 class="base-color">STEM DOLLAR: </h5>
                                             <p>No web or desktop interface, hot wallet, not for beginners</p>
                                         </div>
                                     </div>
