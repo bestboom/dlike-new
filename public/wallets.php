@@ -40,21 +40,11 @@ $rowIt = $resultAmount->fetch_assoc();
 
 
 <div class="catagori-section">
-        <div class="section-title-one">
-            <h3>Categories of Wallets</h3>
-            <p>
-                If you are going to use a passage of Lorem Ipsum, 
-                you need to be sure there isn't <br> anything 
-                embarrassing hidden in the middle of text.
-            </p>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-12">
                     <div class="catagori-content-block">
-                        <nav class="catagori-list" style="
-    background: #eee;
-">
+                        <nav class="catagori-list" style="background: #eee;">
                             <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link" href="#nav_wallet" role="tab" data-toggle="tab" aria-selected="false">
@@ -78,7 +68,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#nav_nano" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>Ledger Nano</h4>
+                                        <h4>Buy Tokens</h4>
                                     </a>
                                 </li>
                             </ul>
