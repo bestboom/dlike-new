@@ -98,17 +98,15 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
                                 <div class="catagori-content">
-                                	<div class="col-md-9">STEEM</div>
-                                	<div class="col-md-2">165 STEEM</div>
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
-                                        <div class="pros-block">
+                                        <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STEEM: </h5>
-                                            <p style="text-align: left">165 STEEM</p>
+                                            <p>165 STEEM</p>
                                         </div>
-                                        <div class="cons-block">
+                                        <div class="pros-block">
                                             <h5 class="base-color">STEM DOLLAR: </h5>
-                                            <p style="text-align: left">No web or desktop interface, hot wallet, not for beginners</p>
+                                            <p>312 SBD</p>
                                         </div>
                                     </div>
                                 </div><!-- catagori-content -->
