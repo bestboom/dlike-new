@@ -98,7 +98,7 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
                                 <div class="catagori-content">
-                                	<div>Pending Rewards: 0.228 SBD and 1.798 SP<button>Claim Rewards</button></div>
+                                	<div style="background: #eee;padding: 12px;display: flex;justify-content: space-between;border-radius: 4px;"">Pending Rewards: 0.228 SBD and 1.798 SP<button>Claim Rewards</button></div>
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block" style="justify-content: space-between;">
@@ -111,7 +111,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                             <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
                                         </div>
                                         <div class="text-center">
-                            				<button class="btn download-btn">Transfer</button>
+                            				<button class="btn download-btn" style="width: 150px;height: 50px;"">Transfer</button>
                         				</div>
                                     </div>
                                 </div><!-- catagori-content -->
