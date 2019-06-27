@@ -101,12 +101,13 @@ $rowIt = $resultAmount->fetch_assoc();
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block" style="justify-content: space-between;">
-                                            <h5 class="base-color">STEEM: </h5>
-                                            <p>165 STEEM</p>
+                                            <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
                                         </div>
-                                        <div class="pros-block">
-                                            <h5 class="base-color">STEM DOLLAR: </h5>
-                                            <p>312 SBD</p>
+                                        <div class="pros-block" style="justify-content: space-between;">
+                                            <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
+                                        </div>
+                                        <div class="pros-block" style="justify-content: space-between;">
+                                            <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
                                         </div>
                                     </div>
                                 </div><!-- catagori-content -->
