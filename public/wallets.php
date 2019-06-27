@@ -98,14 +98,9 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
                                 <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
-                                    <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
-                                    </p>
+                                	<div class="col-md-9">STEEM</div>
+                                	<div class="col-md-2">165 STEEM</div>
+                                    <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block">
                                             <h5 class="base-color">Pros: </h5>
