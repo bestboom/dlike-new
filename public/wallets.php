@@ -267,7 +267,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                 </tbody>
                             </table><!-- coin-list table -->
                         </div>
-                       <div role="tabpanel" class="tab-pane fade" id="ETH_markets">
+                       <div role="tabpanel" class="tab-pane fade" id="steem_trx">
                             <table class="table coin-list table-hover">
                                 <thead>
                                     <tr>
@@ -310,7 +310,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                 </tbody>
                             </table><!-- coin-list table -->
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="USDT_markets">
+                        <div role="tabpanel" class="tab-pane fade" id="tips_trx">
                             <table class="table coin-list table-hover">
                                 <thead>
                                     <tr>
