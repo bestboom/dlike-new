@@ -91,13 +91,16 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
                                 <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
+                                    <h3>TIP Rewards - Withdraw To ETH Address</h3>
                                     <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
+                                        <div class="form-group">
+                                        	<div class="input-group mb-3">
+                                        		<div class="input-group-prepend">
+                                            		<div class="input-group-text mb-deck"> ETH Addr</div>
+                                        		</div>
+                                            	<input type="text" class="form-control eth_field" name="title" value="" placeholder="Enter ETH Addr">
+                                            </div>
+                                        </div>
                                     </p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block">
