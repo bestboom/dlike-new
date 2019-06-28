@@ -136,8 +136,6 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
             let stake_amt = $("#stakemaount").val();
             let stake_period = $("#stakemaount").val();
         if(stake_amt == '') { $("#stakemaount").css("border-color", "RED"); toastr.error('phew... Enter Tokens Amount to Stake');return false;} 
-        else if ($('#stakemaount').val() < "500"){ toastr.error('phew... Minimum Stake Amount is 500 DLIKE'); return false;
-        }
         else if ($('.period').val() == "0"){ toastr.error('phew... Select a staking period'); return false;
         } else {
             $(this).ajaxSubmit(optionstak)
