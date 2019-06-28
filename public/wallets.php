@@ -224,14 +224,6 @@ $rowIt = $resultAmount->fetch_assoc();
                         <li class="nav-item">
                             <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">TIPS</a>
                         </li>
-                        <li class="nav-item nav-item-last">
-                            <form action="#" method="get" class="search-form">
-                                <div class="input-box">
-                                    <input type="text" value="" required="" name="s" class="form-control" placeholder="Search...">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
-                        </li>
                     </ul>
                 </div>
                 <div class="market-ticker-block">
