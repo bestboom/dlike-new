@@ -1091,7 +1091,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .catagori-section {
     margin-top: 100px; 
     margin-bottom: 80px; }
-
+.coins-detail {font-size: 0.7rem;margin-top: -12px;}
 .catagori-content-block {
     display: -webkit-box;
     display: -ms-flexbox;
