@@ -235,7 +235,6 @@
                             <table class="table coin-list table-hover">
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th scope="col">TX</th>
                                         <th scope="col">Reason</th>
                                         <th scope="col">Amount</th>
