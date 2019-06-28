@@ -142,7 +142,8 @@ $rowIt = $resultAmount->fetch_assoc();
                             <div role="tabpanel" class="tab-pane fade" id="nav_nano">
                                 <div class="catagori-content">
                                     <p class="catagori-info">
-                                        DLIKE is the native token of DLIKE platform which is purely a utility token. PRO users cane arn DLIKE tokens on daily basis through reward pool. To become PRO, users are required to burn 10,000 DLIKE tokens.<br/>
+                                        DLIKE is the native token of DLIKE platform which is purely a utility token. PRO users cane arn DLIKE tokens on daily basis through reward pool. To become PRO, users are required to burn 10,000 DLIKE tokens.</p>
+                                    <p>    
                                         DLIKE token is not yet listed on exchanges so it can be purchased here at a price of 0.025 USD.
                                     </p>
                                     <div class="pros-cons-block">
