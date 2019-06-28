@@ -1,10 +1,10 @@
 <?php include('template/header5.php'); 
-if (isset($_GET['user'])) {
-     $user_wallet = $_GET['user'];
-}
-$sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
-$resultAmount = $conn->query($sqls);
-$rowIt = $resultAmount->fetch_assoc();
+//if (isset($_GET['user'])) {
+//     $user_wallet = $_GET['user'];
+//}
+//$sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
+//$resultAmount = $conn->query($sqls);
+//$rowIt = $resultAmount->fetch_assoc();
 ?>
 </div><!-- banner-block -->
 
@@ -198,7 +198,7 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                         </div>
                         <? }
-                        } $conn->close(); ?>
+                        }  ?>
                     </div>
                 </div>
             </div>
@@ -223,6 +223,8 @@ $rowIt = $resultAmount->fetch_assoc();
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">TIPS</a>
+                        </li>
+                        <li class="nav-item nav-item-last">
                         </li>
                     </ul>
                 </div>
@@ -256,6 +258,29 @@ $rowIt = $resultAmount->fetch_assoc();
                                         <td>0.00005510</td>
                                         <td>7,522.88586112</td>
                                     </tr>
+                                    <?php
+                                    $user_wallet = 'pillsjee';
+                        $sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
+                        $result = $conn->query($sqlt);
+
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) { ?>
+                        <div class="activity-block">
+                            <div class="row my-entry">
+                                <div class="col-sm-8">
+                                    <div class="row">
+                                        <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
+                                        <div class="exp-user"></div>
+                                        <div class="exp-user">For <span><?php echo $row["reason"]; ?></span></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <? }
+                        }  ?>
                                 </tbody>
                             </table><!-- coin-list table -->
                         </div>
