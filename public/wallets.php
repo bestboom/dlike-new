@@ -242,19 +242,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
                                     <?php
                                     $user_wallet = 'pillsjee';
                         $sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
