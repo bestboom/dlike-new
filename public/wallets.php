@@ -65,7 +65,7 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
                                 <div class="catagori-content">
-                                	<div style="background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #333;">Claim Rewards</button></div>
+                                	<div style="background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #333;color: #fff;font-weight: 600;">Claim Rewards</button></div>
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block" style="justify-content: space-between;">
