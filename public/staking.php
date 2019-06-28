@@ -64,7 +64,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                         <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
                         <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                             <div class="form-group">
-                                <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake (Min 500)">
+                                <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
                             </div>
                             <div class="form-group">
                                 <select class="form-control form-control-lg period" name="stake_option" id="stake">
@@ -131,16 +131,33 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
         url: 'helper/addstake.php',
         success: function() {},
     }
-    $('#stake_sub').submit(function() {
-        if(username != null) {
-            let stake_amt = $("#stakemaount").val();
-            let stake_period = $("#stakemaount").val();
-        if(stake_amt == '') { $("#stakemaount").css("border-color", "RED"); toastr.error('phew... Enter Tokens Amount to Stake');return false;} 
-        else if ($('.period').val() == "0"){ toastr.error('phew... Select a staking period'); return false;
-        } else {
-            $(this).ajaxSubmit(optionstak)
-            return !1
-        }    
-        } else {toastr.error('hmm... You must be login!');  return false;} 
-    });
+$('#stake_sub').submit(function() {
+    if (username === null) {
+        toastr.error('hmm... You must be login!');
+        return false;
+    }
+
+    let stake_amt = parseInt($("#stakemaount").val());
+    let stake_period = parseInt($('.period').val());
+
+    if (!stake_amt) { 
+        $("#stakemaount").css("border-color", "RED"); 
+        toastr.error('phew... Enter Tokens Amount to Stake');
+        return false;
+    }
+
+    if (stake_amt < 500) { 
+        toastr.error('phew... Minimum Stake Amount is 500 DLIKE'); 
+        return false;
+    }
+
+    if (!stake_period) { 
+        toastr.error('phew... Select a staking period'); 
+        return false;
+    }
+
+    $(this).ajaxSubmit(optionstak);
+    return !1;
+});
+    
 </script>

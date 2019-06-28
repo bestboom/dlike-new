@@ -76,23 +76,21 @@ $rowIt = $resultAmount->fetch_assoc();
                         <div class="tab-content catagoritab-content" id="nav-tabContent">
                             <div role="tabpanel" class="tab-pane fade" id="nav_wallet">
                                 <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
-                                    <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
-                                    </p>
+                                	<div style="background: #eee;padding: 12px;display: flex;justify-content: space-between;border-radius: 4px;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #cff0db;">Claim Rewards</button></div>
+                                    <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="cp_level">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                        <div class="pros-block" style="justify-content: space-between;">
+                                            <h5 class="base-color">DLIKE: </h5><p>165 STEEM</p>
                                         </div>
-                                        <div class="cons-block">
-                                            <h5 class="cp_level">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                        <div class="pros-block" style="justify-content: space-between;">
+                                            <h5 class="base-color">STAKING: </h5><p>312 SBD</p>
                                         </div>
+                                        <div class="pros-block" style="justify-content: space-between;">
+                                            <h5 class="base-color">DSC: </h5><p>4523 STEEM</p>
+                                        </div>
+                                        <div class="text-center">
+                            				<button class="btn download-btn" style="width: 150px;height: 50px;">Transfer</button>
+                        				</div>
                                     </div>
                                 </div><!-- catagori-content -->
                             </div>
@@ -111,7 +109,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                             <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
                                         </div>
                                         <div class="text-center">
-                            				<button class="btn download-btn" style="width: 150px;height: 50px;"">Transfer</button>
+                            				<button class="btn download-btn" style="width: 150px;height: 50px;">Transfer</button>
                         				</div>
                                     </div>
                                 </div><!-- catagori-content -->
