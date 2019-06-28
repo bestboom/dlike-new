@@ -228,35 +228,35 @@
                         </li>
                     </ul>
                 </div>
-                <div class="market-ticker-block">
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active show" id="dlike_trx">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">TX</th>
-                                        <th scope="col">Reason</th>
-                                        <th scope="col">Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $user_wallet = 'pillsjee';
-                        $sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
-                        $result = $conn->query($sqlt);
+	                <div class="market-ticker-block">
+	                    <!-- Tab panes -->
+	                    <div class="tab-content">
+	                        <div role="tabpanel" class="tab-pane fade in active show" id="dlike_trx">
+	                            <table class="table coin-list table-hover">
+	                                <thead>
+	                                    <tr>
+	                                        <th scope="col">TX</th>
+	                                        <th scope="col">Reason</th>
+	                                        <th scope="col">Amount</th>
+	                                    </tr>
+	                                </thead>
+	                                <tbody>
+	                                    <?php
+	                                    $user_wallet = 'pillsjee';
+	                        			$sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
+	                        			$result = $conn->query($sqlt);
 
-                        if ($result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) { ?>
-                            	<tr>
-                                    <td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
-                                    <td class="exp-user">For <span><?php echo $row["reason"]; ?></span></td>
-                                    <td class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</td>
-                                </tr>
-                        <? 	} }  ?>
-                                </tbody>
-                            </table><!-- coin-list table -->
-                        </div>
+	                        			if ($result->num_rows > 0) {
+	                            		while($row = $result->fetch_assoc()) { ?>
+	                            	<tr>
+	                                    <td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
+	                                    <td class="exp-user">For <span><?php echo $row["reason"]; ?></span></td>
+	                                    <td class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</td>
+	                                </tr>
+	                        			<? 	} }  ?>
+	                                </tbody>
+	                            </table><!-- coin-list table -->
+	                        </div>
                        <div role="tabpanel" class="tab-pane fade" id="steem_trx">
                             <table class="table coin-list table-hover">
                                 <thead>
