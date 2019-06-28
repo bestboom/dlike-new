@@ -51,6 +51,8 @@ $rowIt = $resultAmount->fetch_assoc();
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
                                         </div>
+                                        <p style="font-size: 0.7rem;margin-top: -12px;">Native Token for DLIKE Platform</p>
+                                        <hr style="margin-top: 0.5rem;">
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STAKING: </h5><p>312 DLIKE</p>
                                         </div>
