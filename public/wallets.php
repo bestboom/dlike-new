@@ -6,38 +6,7 @@ $sqls = "SELECT amount FROM wallet where username='$user_wallet'";
 $resultAmount = $conn->query($sqls);
 $rowIt = $resultAmount->fetch_assoc();
 ?>
-        <div class="container explorer-top">
-            <div class="col-md-12">
-            <?php if(empty($user_wallet)) { ?>
-                <div class="banner-content explorer-form">
-                    <form action="/wallet.php" class="subs-form">
-                        <div class="input-box expl">
-                            <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions" required />
-                            <button type="button" class="wallet-search">Search</button>
-                        </div>
-                    </form>
-                </div>
-            <? } else { ?>
-                <div class="row d-flex justify-content-around wallet-profile">
-                    <div class="row">
-                        <span><img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet"></span>
-                        <h4><?php echo $user_wallet; ?></h4>  
-                    </div>     
-                    <div>
-                        <h4>Token Balance: &nbsp;<?php echo (number_format($rowIt['amount'])); ?>&nbsp;Dlikes</h4>
-                    </div>
-                </div>
-            <? } ?>
-            </div>
-        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- banner-block -->
-
-
+</div><!-- banner-block -->
 
 <div class="catagori-section" style="margin-top: 100px;"">
         <div class="container">
@@ -80,7 +49,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block" style="justify-content: space-between;">
-                                            <h5 class="base-color">DLIKE: </h5><p>165 DLIKE</p>
+                                            <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
                                         </div>
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STAKING: </h5><p>312 DLIKE</p>
