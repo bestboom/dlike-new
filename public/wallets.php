@@ -104,16 +104,16 @@ $rowIt = $resultAmount->fetch_assoc();
                                         </div>
 
                                     </p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
+                                    <div class="pros-block" style="justify-content: space-between;">
+                                            <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
                                         </div>
-                                        <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
+                                        <p style="font-size: 0.7rem;margin-top: -12px; flex;justify-content: space-between;">Native Token for STEEM Blockchain<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+                                        <hr style="margin-top: 0.2rem;">
+                                        <div class="pros-block" style="justify-content: space-between;">
+                                            <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
                                         </div>
-                                    </div>
+                                        <p style="font-size: 0.7rem;margin-top: -12px; flex;justify-content: space-between;">Basic STEEM token valued at dollar<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+                                        <hr style="margin-top: 0.2rem;">
                                 </div><!-- catagori-content -->
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="nav_copay">
