@@ -804,7 +804,7 @@ $rowIt = $resultAmount->fetch_assoc();
         </div>
     </div>
 
-
+<br>
 
 
 </div><!-- explorer-section -->
