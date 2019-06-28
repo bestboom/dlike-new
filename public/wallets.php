@@ -1,4 +1,4 @@
-<?php include('template/header.php'); 
+<?php include('template/header5.php'); 
 if (isset($_GET['user'])) {
      $user_wallet = $_GET['user'];
 }
@@ -235,4 +235,4 @@ $rowIt = $resultAmount->fetch_assoc();
     </div><!-- activity-section -->
           
 </div><!-- explorer-section -->
-<?php include('template/footer.php'); ?>
+<?php include('template/footer3.php'); ?>
