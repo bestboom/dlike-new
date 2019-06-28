@@ -582,7 +582,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 |----------------------------------------------------------------------------
 */
 .new-ticker-block-section {
-    padding: 120px 0 0 0; }
+    padding: 60px 0 0 0; }
 .new-ticker-block-section .coin-list th,
 .new-ticker-block-section .coin-list tr {
     font-size: 14px; }
@@ -1089,7 +1089,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 |----------------------------------------------------------------------------
 */
 .catagori-section {
-    margin-bottom: 120px; }
+    margin-top: 100px; 
+    margin-bottom: 80px; }
 
 .catagori-content-block {
     display: -webkit-box;

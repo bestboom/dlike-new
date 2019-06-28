@@ -8,7 +8,7 @@
 ?>
 </div><!-- banner-block -->
 
-<div class="catagori-section" style="margin-top: 100px;"">
+<div class="catagori-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-12">
