@@ -236,12 +236,9 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
+                                        <th scope="col">TX</th>
+                                        <th scope="col">Reason</th>
+                                        <th scope="col">Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -265,22 +262,12 @@
 
                         if ($result->num_rows > 0) {
                             while($row = $result->fetch_assoc()) { ?>
-                        <div class="activity-block">
-                            <div class="row my-entry">
-                                <div class="col-sm-8">
-                                    <div class="row">
-                                        <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
-                                        <div class="exp-user"></div>
-                                        <div class="exp-user">For <span><?php echo $row["reason"]; ?></span></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</div>
-                                </div>
-                            </div>
-                        </div>
-                        <? }
-                        }  ?>
+                            	<tr>
+                                    <td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
+                                    <td class="exp-user">For <span><?php echo $row["reason"]; ?></span></td>
+                                    <td class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</td>
+                                </tr>
+                        <? 	} }  ?>
                                 </tbody>
                             </table><!-- coin-list table -->
                         </div>
