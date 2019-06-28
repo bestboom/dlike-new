@@ -48,17 +48,17 @@
                                 	
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
-                                        <div class="pros-block" style="justify-content: space-between;">
+                                        <div class="pros-block">
                                             <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
                                         </div>
                                         <p class="coins-detail">Native Token for DLIKE Platform<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
                                         <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block" style="justify-content: space-between;">
+                                        <div class="pros-block">
                                             <h5 class="base-color">STAKING: </h5><p>312 DLIKE</p>
                                         </div>
                                         <p class="coins-detail">Earn bonus token by staking<span style="color: #1652f0;font-weight: 700;">Stake Now</span></p>
                                         <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block" style="justify-content: space-between;">
+                                        <div class="pros-block">
                                             <h5 class="base-color">DSC: </h5><p>0 DSC</p>
                                         </div>
                                         <p class="coins-detail">DLIKE Stable Coin (coming soon)</p>

@@ -1091,7 +1091,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .catagori-section {
     margin-top: 100px; 
     margin-bottom: 80px; }
-.coins-detail {font-size: 0.7rem;margin-top: -12px;display: flex;justify-content: space-between;}
+.coins-detail {font-size: 0.7rem;margin-top: -12px !important;display: flex;justify-content: space-between;}
 .catagori-content-block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1148,7 +1148,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     margin-top: -4px; }
 
 .pros-cons-block .pros-block {
-    margin-bottom: 15px; }
+    margin-bottom: 15px; 
+justify-content: space-between;}
 
 /*
 |----------------------------------------------------------------------------
