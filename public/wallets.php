@@ -120,23 +120,22 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="nav_copay">
                                 <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
+                                    <h4>Become PRO user - Enjoy Maximum Rewards</h4>
                                     <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
+                                        <h4>What is Pro user?</h4>
+                                        <p>PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards</p>
+                                        <h4>Advantages of PRO users</h4>
+                                        <p>
+                                        	<li>Allowed upto 3 post shares per day</li>
+                                        	<li>3X upvotes on all your posts</li>
+                                        	<li>Daily DLIKE token income through reward pool</li>
+                                        	<li>TIP to any post and earn 40% reward share</li>
+                                        </p>
+                                        <h4>How to become PRO?</h4>
+                                        <p>DLIKE PRO status is achieved by burning 10,000 DLIKE Tokens</p>
                                     </p>
                                     <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
-                                        </div>
-                                        <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
-                                        </div>
+                                        <button class="btn btn-primary">Become PRO</button>
                                     </div>
                                 </div><!-- catagori-content -->
                             </div>
