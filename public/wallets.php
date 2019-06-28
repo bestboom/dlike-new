@@ -141,23 +141,12 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="nav_nano">
                                 <div class="catagori-content">
-                                    <img src="./images/others/6.png" alt="img" class="img-responsive">
                                     <p class="catagori-info">
-                                        Advanced users searching for a Bitcoin mobile digital wallet, should look no further than mycelium. 
-                                        The Mycelium mobile wallet allows iPhone and Android users to send and receive bitcoins and keep 
-                                        complete control over bitcoins. No third party can freeze or lose your funds! With enterprise-level 
-                                        security superior to most other apps and features like cold storage and encrypted PDF backups, 
-                                        an integrated QR-code scanner receive bitcoins and keep.
+                                        DLIKE is the native token of DLIKE platform which is purely a utility token. PRO users cane arn DLIKE tokens on daily basis through reward pool. To become PRO, users are required to burn 10,000 DLIKE tokens.<br/>
+                                        DLIKE token is not yet listed on exchanges so it can be purchased here at a price of 0.025 USD.
                                     </p>
                                     <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Pros: </h5>
-                                            <p>Good privacy, advanced security, feature-rich, open source Software, free</p>
-                                        </div>
-                                        <div class="cons-block">
-                                            <h5 class="base-color">Cons: </h5>
-                                            <p>No web or desktop interface, hot wallet, not for beginners</p>
-                                        </div>
+                                        <button class="btn btn-primary">BUY DLIKE Tokens</button>
                                     </div>
                                 </div><!-- catagori-content -->
                             </div>
