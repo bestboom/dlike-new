@@ -77,12 +77,18 @@ $rowIt = $resultAmount->fetch_assoc();
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
                                         </div>
+                                        <p style="font-size: 0.7rem;margin-top: -12px;">Native Token for STEEM Blockchain</p>
+                                        <hr style="margin-top: 0.2rem;">
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
                                         </div>
+                                        <p style="font-size: 0.7rem;margin-top: -12px;">Basic STEEM token valued at dollar</p>
+                                        <hr style="margin-top: 0.2rem;">
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
                                         </div>
+                                        <p style="font-size: 0.7rem;margin-top: -12px;">STEEM Power is delegated STEEM amount</p>
+                                        <hr style="margin-top: 0.2rem;">
                                         <div class="text-center">
                             				<button class="btn download-btn" style="width: 150px;height: 50px;">Transfer</button>
                         				</div>
