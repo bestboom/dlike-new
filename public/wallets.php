@@ -91,15 +91,15 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
                                 <div class="catagori-content">
-                                    <h5>TIP Rewards - Withdraw To ETH Address</h5>
+                                    <h5>TIP Rewards - Withdrawable To ETH Address</h5>
                                     <p class="catagori-info">
                                         <div class="form-group">
                                         	<div class="input-group mb-3">
                                         		<div class="input-group-prepend">
                                             		<div class="input-group-text mb-deck"> ETH Addr</div>
                                         		</div>
-                                            	<input type="text" class="form-control eth_field" name="title" value="" placeholder="Enter ETH Addr">
-                                            <button type="submit" class="btn btn-default">ADD</button>	
+                                            	<input type="text" class="form-control eth_field" name="title" value="" placeholder="Enter ETH Addr">&nbsp;
+                                            <button type="submit" class="btn btn-primary">ADD</button>	
                                             </div>
                                         </div>
 
