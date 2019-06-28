@@ -91,7 +91,7 @@ $rowIt = $resultAmount->fetch_assoc();
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
                                 <div class="catagori-content">
-                                    <h3>TIP Rewards - Withdraw To ETH Address</h3>
+                                    <h5>TIP Rewards - Withdraw To ETH Address</h5>
                                     <p class="catagori-info">
                                         <div class="form-group">
                                         	<div class="input-group mb-3">
@@ -99,8 +99,10 @@ $rowIt = $resultAmount->fetch_assoc();
                                             		<div class="input-group-text mb-deck"> ETH Addr</div>
                                         		</div>
                                             	<input type="text" class="form-control eth_field" name="title" value="" placeholder="Enter ETH Addr">
+                                            <button type="submit" class="btn btn-default">ADD</button>	
                                             </div>
                                         </div>
+
                                     </p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block">
