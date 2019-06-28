@@ -237,7 +237,7 @@
 	                                    <tr>
 	                                        <th scope="col">TX</th>
 	                                        <th scope="col">Reason</th>
-	                                        <th scope="col">Amount</th>
+	                                        <th scope="col" style="text-align: right;padding-right: 40px;">Amount</th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
