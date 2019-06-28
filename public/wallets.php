@@ -71,20 +71,20 @@
                                 	<div style="background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #333;color: #fff;font-weight: 600;">Claim Rewards</button></div>
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
-                                        <div class="pros-block" style="justify-content: space-between;">
+                                        <div class="pros-block">
                                             <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px; display:flex;justify-content: space-between;">Native Token for STEEM Blockchain<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+                                        <p class="coins-detail">Native Token for STEEM Blockchain<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
                                         <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block" style="justify-content: space-between;">
+                                        <div class="pros-block">
                                             <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px; display:flex;justify-content: space-between;">Basic STEEM token valued at dollar<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+                                        <p class="coins-detail">Basic STEEM token valued at dollar<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
                                         <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block" style="justify-content: space-between;">
+                                        <div class="pros-block">
                                             <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px;">STEEM Power is delegated STEEM amount</p>
+                                        <p class="coins-detail">STEEM Power is delegated STEEM amount</p>
                                         <hr style="margin-top: 0.2rem;">
                                     </div>
                                 </div><!-- catagori-content -->
@@ -105,15 +105,15 @@
 
                                     </p>
                                     <div class="pros-cons-block">
-                                    <div class="pros-block" style="justify-content: space-between;">
+                                    <div class="pros-block">
                                             <h5 class="base-color">DAI: </h5><p>0.008 DAI</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px;display:flex;justify-content: space-between;">A stable coin by MakerDAO<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
+                                        <p class="coins-detail">A stable coin by MakerDAO<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
                                         <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block" style="justify-content: space-between;">
+                                        <div class="pros-block">
                                             <h5 class="base-color">Hydro: </h5><p>0.036 HYDRO</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px;display:flex;justify-content: space-between;">A token of project hydro<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
+                                        <p class="coins-detail">A token of project hydro<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
                                         <hr style="margin-top: 0.2rem;">
                                     </div>
                                 </div><!-- catagori-content -->
