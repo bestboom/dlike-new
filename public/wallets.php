@@ -213,22 +213,16 @@ $rowIt = $resultAmount->fetch_assoc();
                 <div class="ticker-head">
                     <ul class="nav nav-tabs ticker-nav" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active show" href="#favorite_ticker" role="tab" data-toggle="tab" aria-selected="true">
-                                <h5>Favorites</h5>
+                            <a class="nav-link active show" href="#dlike_trx" role="tab" data-toggle="tab" aria-selected="true">
+                                <h5>DLIKE</h5>
                                 <i class="fa fa-stroopwafel"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#BNB_markets" role="tab" data-toggle="tab" aria-selected="false">BNB Markets</a>
+                            <a class="nav-link" href="#steem_trx" role="tab" data-toggle="tab">STEEM</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#BTC_markets" role="tab" data-toggle="tab" aria-selected="false">BTC Markets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#ETH_markets" role="tab" data-toggle="tab">ETH Markets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#USDT_markets" role="tab" data-toggle="tab">USDT Markets</a>
+                            <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">TIPS</a>
                         </li>
                         <li class="nav-item nav-item-last">
                             <form action="#" method="get" class="search-form">
@@ -243,7 +237,7 @@ $rowIt = $resultAmount->fetch_assoc();
                 <div class="market-ticker-block">
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active show" id="favorite_ticker">
+                        <div role="tabpanel" class="tab-pane fade in active show" id="dlike_trx">
                             <table class="table coin-list table-hover">
                                 <thead>
                                     <tr>
@@ -270,33 +264,6 @@ $rowIt = $resultAmount->fetch_assoc();
                                         <td>0.00005510</td>
                                         <td>7,522.88586112</td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ONT/BTC</td>
-                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
-                                        <td><span class="color-buy">+8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td>ETH/BTC</td>
-                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
-                                        <td><span class="color-buy">+2.76%</span></td>
-                                        <td>0.05723</td>
-                                        <td>0.05550</td>
-                                        <td>5,523.15018959</td>
-                                    </tr>
-
                                 </tbody>
                             </table><!-- coin-list table -->
                         </div>
