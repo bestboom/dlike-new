@@ -56,16 +56,13 @@ $rowIt = $resultAmount->fetch_assoc();
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STAKING: </h5><p>312 DLIKE</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px;">Earn bonus token by staking</p>
+                                        <p style="font-size: 0.7rem;margin-top: -12px;">Earn bonus token by staking<span>Transfer</span></p>
                                         <hr style="margin-top: 0.2rem;">
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">DSC: </h5><p>0 DSC</p>
                                         </div>
                                         <p style="font-size: 0.7rem;margin-top: -12px;">DLIKE Stable Coin (coming soon)</p>
                                         <hr style="margin-top: 0.2rem;">
-                                        <div class="text-center">
-                            				<button class="btn download-btn" style="width: 150px;height: 50px;">Transfer</button>
-                        				</div>
                                     </div>
                                 </div><!-- catagori-content -->
                             </div>
@@ -89,9 +86,6 @@ $rowIt = $resultAmount->fetch_assoc();
                                         </div>
                                         <p style="font-size: 0.7rem;margin-top: -12px;">STEEM Power is delegated STEEM amount</p>
                                         <hr style="margin-top: 0.2rem;">
-                                        <div class="text-center">
-                            				<button class="btn download-btn" style="width: 150px;height: 50px;">Transfer</button>
-                        				</div>
                                     </div>
                                 </div><!-- catagori-content -->
                             </div>
