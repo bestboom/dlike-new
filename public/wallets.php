@@ -104,6 +104,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                         </div>
 
                                     </p>
+                                    <div class="pros-cons-block">
                                     <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
                                         </div>
@@ -114,6 +115,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                         </div>
                                         <p style="font-size: 0.7rem;margin-top: -12px; flex;justify-content: space-between;">Basic STEEM token valued at dollar<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
                                         <hr style="margin-top: 0.2rem;">
+                                    </div>
                                 </div><!-- catagori-content -->
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="nav_copay">
