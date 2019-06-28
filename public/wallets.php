@@ -51,17 +51,17 @@
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px;display: flex;justify-content: space-between;">Native Token for DLIKE Platform<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+                                        <p class="coins-detail">Native Token for DLIKE Platform<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
                                         <hr style="margin-top: 0.2rem;">
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">STAKING: </h5><p>312 DLIKE</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px;display: flex;justify-content: space-between;">Earn bonus token by staking<span style="color: #1652f0;font-weight: 700;">Stake Now</span></p>
+                                        <p class="coins-detail">Earn bonus token by staking<span style="color: #1652f0;font-weight: 700;">Stake Now</span></p>
                                         <hr style="margin-top: 0.2rem;">
                                         <div class="pros-block" style="justify-content: space-between;">
                                             <h5 class="base-color">DSC: </h5><p>0 DSC</p>
                                         </div>
-                                        <p style="font-size: 0.7rem;margin-top: -12px;">DLIKE Stable Coin (coming soon)</p>
+                                        <p class="coins-detail">DLIKE Stable Coin (coming soon)</p>
                                         <hr style="margin-top: 0.2rem;">
                                     </div>
                                 </div><!-- catagori-content -->
