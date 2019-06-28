@@ -76,17 +76,17 @@ $rowIt = $resultAmount->fetch_assoc();
                         <div class="tab-content catagoritab-content" id="nav-tabContent">
                             <div role="tabpanel" class="tab-pane fade" id="nav_wallet">
                                 <div class="catagori-content">
-                                	<div style="background: #eee;padding: 12px;display: flex;justify-content: space-between;border-radius: 4px;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #cff0db;">Claim Rewards</button></div>
+                                	
                                     <p class="catagori-info"></p>
                                     <div class="pros-cons-block">
                                         <div class="pros-block" style="justify-content: space-between;">
-                                            <h5 class="base-color">DLIKE: </h5><p>165 STEEM</p>
+                                            <h5 class="base-color">DLIKE: </h5><p>165 DLIKE</p>
                                         </div>
                                         <div class="pros-block" style="justify-content: space-between;">
-                                            <h5 class="base-color">STAKING: </h5><p>312 SBD</p>
+                                            <h5 class="base-color">STAKING: </h5><p>312 DLIKE</p>
                                         </div>
                                         <div class="pros-block" style="justify-content: space-between;">
-                                            <h5 class="base-color">DSC: </h5><p>4523 STEEM</p>
+                                            <h5 class="base-color">DSC: </h5><p>0 DSC</p>
                                         </div>
                                         <div class="text-center">
                             				<button class="btn download-btn" style="width: 150px;height: 50px;">Transfer</button>
