@@ -203,7 +203,7 @@
 	                                </thead>
 	                                <tbody>
 	                                    <?php
-	                                    $user_wallet = 'pillsjee';
+	                                    $user_wallet = 'freedom';
 	                        			$sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
 	                        			$result = $conn->query($sqlt);
 
