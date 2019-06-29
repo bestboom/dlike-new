@@ -125,8 +125,8 @@ $row_st = $result_st->fetch_assoc();
                             <div role="tabpanel" class="tab-pane fade" id="nav_copay">
                                 <div class="catagori-content">
                                     <h4 style="font-weight: 600;">Become PRO user - Enjoy Maximum Rewards</h4>
-                                    <p class="catagori-info"></p>
-                                        <h4>What is Pro user?</h4>
+                                    <p class="catagori-info">
+                                        <h4 style="font-weight: 600;">What is Pro user?</h4>
                                         <p>PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards</p>
                                         <h4 style="font-weight: 600;">Advantages of PRO users</h4>
                                         	<li>Allowed upto 3 post shares per day</li>
@@ -135,6 +135,7 @@ $row_st = $result_st->fetch_assoc();
                                         	<li>TIP to any post and earn 40% reward share</li>
                                         <h4 style="font-weight: 600;">How to become PRO?</h4>
                                         <p>DLIKE PRO status is achieved by burning 10,000 DLIKE Tokens</p>
+                                    </p>
                                     <div class="pros-cons-block">
                                         <button class="btn btn-primary">Become PRO</button>
                                     </div>
