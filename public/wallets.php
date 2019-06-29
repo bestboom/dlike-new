@@ -12,160 +12,165 @@ $row_st = $result_st->fetch_assoc();
 ?>
 </div><!-- banner-block -->
 
-<div class="catagori-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 col-md-12">
-                    <div class="catagori-content-block">
-                        <nav class="catagori-list" style="background: #eee;">
-                            <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_wallet" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>DLIKE</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active show" href="#nav_mycelium" role="tab" data-toggle="tab" aria-selected="true">
-                                        <h4>STEEM/SBD</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_exodus" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>Tips</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_copay" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>Become PRO</h4>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#nav_nano" role="tab" data-toggle="tab" aria-selected="false">
-                                        <h4>Buy Tokens</h4>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="tab-content catagoritab-content" id="nav-tabContent">
-                            <div role="tabpanel" class="tab-pane fade" id="nav_wallet">
-                                <div class="catagori-content">
-                                	
-                                    <p class="catagori-info"></p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
-                                        </div>
-                                        <p class="coins-detail">Native Token for DLIKE Platform<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
-                                        <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">STAKING: </h5><p><?php echo (number_format($row_st['stake_amt'])); ?> DLIKE</p>
-                                        </div>
-                                        <p class="coins-detail">Earn bonus token by staking<span style="color: #1652f0;font-weight: 700;">Stake Now</span></p>
-                                        <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">DSC: </h5><p>0 DSC</p>
-                                        </div>
-                                        <p class="coins-detail">DLIKE Stable Coin (coming soon)</p>
-                                        <hr style="margin-top: 0.2rem;">
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
-                                <div class="catagori-content">
-                                	<div style="background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #333;color: #fff;font-weight: 600;">Claim Rewards</button></div>
-                                    <p class="catagori-info"></p>
-                                    <div class="pros-cons-block">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
-                                        </div>
-                                        <p class="coins-detail">Native Token for STEEM Blockchain<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
-                                        <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
-                                        </div>
-                                        <p class="coins-detail">Basic STEEM token valued at dollar<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
-                                        <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
-                                        </div>
-                                        <p class="coins-detail">STEEM Power is delegated STEEM amount</p>
-                                        <hr style="margin-top: 0.2rem;">
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
-                                <div class="catagori-content">
-                                    <h5>TIP Rewards - Withdrawable To ETH Address</h5>
-                                    <p class="catagori-info">
-                                        <div class="form-group">
-                                        	<div class="input-group mb-3">
-                                        		<div class="input-group-prepend">
-                                            		<div class="input-group-text mb-deck"> ETH Addr</div>
-                                        		</div>
-                                            	<input type="text" class="form-control eth_field" name="title" value="" placeholder="Enter ETH Addr">&nbsp;
-                                            <button type="submit" class="btn btn-primary">ADD</button>	
-                                            </div>
-                                        </div>
+	<div class="catagori-section">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-9 col-md-12">
+	                    <div class="catagori-content-block">
+	                        <nav class="catagori-list" style="background: #eee;">
+	                            <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+	                                <li class="nav-item">
+	                                    <a class="nav-link" href="#nav_wallet" role="tab" data-toggle="tab" aria-selected="false">
+	                                        <h4>DLIKE</h4>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item">
+	                                    <a class="nav-link active show" href="#nav_mycelium" role="tab" data-toggle="tab" aria-selected="true">
+	                                        <h4>STEEM/SBD</h4>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item">
+	                                    <a class="nav-link" href="#nav_exodus" role="tab" data-toggle="tab" aria-selected="false">
+	                                        <h4>Tips</h4>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item">
+	                                    <a class="nav-link" href="#nav_copay" role="tab" data-toggle="tab" aria-selected="false">
+	                                        <h4>Become PRO</h4>
+	                                    </a>
+	                                </li>
+	                                <li class="nav-item">
+	                                    <a class="nav-link" href="#nav_nano" role="tab" data-toggle="tab" aria-selected="false">
+	                                        <h4>Buy Tokens</h4>
+	                                    </a>
+	                                </li>
+	                            </ul>
+	                        </nav>
+	                        <div class="tab-content catagoritab-content" id="nav-tabContent">
+	                            <div role="tabpanel" class="tab-pane fade" id="nav_wallet">
+	                                <div class="catagori-content">
+	                                	
+	                                    <p class="catagori-info"></p>
+	                                    <div class="pros-cons-block">
+	                                        <div class="pros-block">
+	                                            <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
+	                                        </div>
+	                                        <p class="coins-detail">Native Token for DLIKE Platform<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                        <div class="pros-block">
+	                                            <h5 class="base-color">STAKING: </h5><p><?php echo (number_format($row_st['stake_amt'])); ?> DLIKE</p>
+	                                        </div>
+	                                        <p class="coins-detail">Earn bonus token by staking<span style="color: #1652f0;font-weight: 700;">Stake Now</span></p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                        <div class="pros-block">
+	                                            <h5 class="base-color">DSC: </h5><p>0 DSC</p>
+	                                        </div>
+	                                        <p class="coins-detail">DLIKE Stable Coin (coming soon)</p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                    </div>
+	                                </div><!-- catagori-content -->
+	                            </div>
+	                            <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
+	                                <div class="catagori-content">
+	                                	<div style="background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #333;color: #fff;font-weight: 600;">Claim Rewards</button></div>
+	                                    <p class="catagori-info"></p>
+	                                    <div class="pros-cons-block">
+	                                        <div class="pros-block">
+	                                            <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
+	                                        </div>
+	                                        <p class="coins-detail">Native Token for STEEM Blockchain<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                        <div class="pros-block">
+	                                            <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
+	                                        </div>
+	                                        <p class="coins-detail">Basic STEEM token valued at dollar<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                        <div class="pros-block">
+	                                            <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
+	                                        </div>
+	                                        <p class="coins-detail">STEEM Power is delegated STEEM amount</p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                    </div>
+	                                </div><!-- catagori-content -->
+	                            </div>
+	                            <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
+	                                <div class="catagori-content">
+	                                    <h5>TIP Rewards - Withdrawable To ETH Address</h5>
+	                                    <p class="catagori-info">
+	                                        <div class="form-group">
+	                                        	<div class="input-group mb-3">
+	                                        		<div class="input-group-prepend">
+	                                            		<div class="input-group-text mb-deck"> ETH Addr</div>
+	                                        		</div>
+	                                            		<input type="text" class="form-control eth_field" name="title" value="" placeholder="Enter ETH Addr">&nbsp;
+	                                            		<button type="submit" class="btn btn-primary">ADD</button>	
+	                                            </div>
+	                                        </div>
 
-                                    </p>
-                                    <div class="pros-cons-block">
-                                    <div class="pros-block">
-                                            <h5 class="base-color">DAI: </h5><p>0.008 DAI</p>
-                                        </div>
-                                        <p class="coins-detail">A stable coin by MakerDAO<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
-                                        <hr style="margin-top: 0.2rem;">
-                                        <div class="pros-block">
-                                            <h5 class="base-color">Hydro: </h5><p>0.036 HYDRO</p>
-                                        </div>
-                                        <p class="coins-detail">A token of project hydro<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
-                                        <hr style="margin-top: 0.2rem;">
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
-                                <div class="catagori-content">
-                                    <h4 style="font-weight: 600;">Become PRO user - Enjoy Maximum Rewards</h4>
-                                    <p class="catagori-info">
-                                        <h4 style="font-weight: 600;">What is Pro user?</h4>
-                                        <p>PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards</p>
-                                        <h4 style="font-weight: 600;">Advantages for PRO users</h4>
-                                        <p>
-                                        	<li>Allowed upto 3 post shares per day</li>
-                                        	<li>3X upvotes on all your posts</li>
-                                        	<li>Daily DLIKE token income through reward pool</li>
-                                        	<li>TIP to any post and earn 40% reward share</li>
-                                        </p>
-                                        <h4 style="font-weight: 600;">How to become PRO?</h4>
-                                        <p>To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.</p>
-                                    </p>
-                                    <div class="pros-cons-block">
-                                        <button class="btn btn-primary">Become PRO</button>
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="nav_nano">
-                                <div class="catagori-content">
-                                    <p class="catagori-info">
-                                        DLIKE is the native token of DLIKE platform which is purely a utility token. PRO users cane arn DLIKE tokens on daily basis through reward pool. To become PRO, users are required to burn 10,000 DLIKE tokens.</p>
-                                    <p>    
-                                        DLIKE token is not yet listed on exchanges so it can be purchased here at a price of 0.025 USD.
-                                    </p>
-                                    <div class="pros-cons-block">
-                                        <button class="btn btn-primary">BUY DLIKE Tokens</button>
-                                    </div>
-                                </div><!-- catagori-content -->
-                            </div>
-                        </div>
-                    </div><!-- catagori-content-block -->
-                </div>
-                <div class="col-lg-3">
-                    <div class="catagori-vintage">
-                        <img src="./images/others/7.png" alt="img" class="img-responsive">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	                                    </p>
+	                                    <div class="pros-cons-block">
+	                                    <div class="pros-block">
+	                                            <h5 class="base-color">DAI: </h5><p>0.008 DAI</p>
+	                                        </div>
+	                                        <p class="coins-detail">A stable coin by MakerDAO<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                        <div class="pros-block">
+	                                            <h5 class="base-color">Hydro: </h5><p>0.036 HYDRO</p>
+	                                        </div>
+	                                        <p class="coins-detail">A token of project hydro<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
+	                                        <hr style="margin-top: 0.2rem;">
+	                                    </div>
+	                                </div><!-- catagori-content -->
+	                            </div>
+	                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
+	                                <div class="catagori-content">
+	                                    <h4 class="bell-bold">Become PRO user - Enjoy Maximum Rewards</h4>
+	                                    <p class="catagori-info">
+	                                        <h4 class="bell-bold">What is Pro user?</h4>
+	                                        <p>
+	                                        	PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards
+	                                        </p>
+	                                        <h4 class="bell-bold">Advantages for PRO users</h4>
+	                                        <p>
+	                                        	<li>Allowed upto 3 post shares per day</li>
+	                                        	<li>3X upvotes on all your posts</li>
+	                                        	<li>Daily DLIKE token income through reward pool</li>
+	                                        	<li>TIP to any post and earn 40% TIP share</li>
+	                                        </p>
+	                                        <h4 class="bell-bold">How to become PRO?</h4>
+	                                        <p>
+	                                        	To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.
+	                                        </p>
+	                                    </p>
+	                                    <div class="pros-cons-block">
+	                                        <button class="btn btn-primary">Become PRO</button>
+	                                    </div>
+	                                </div><!-- catagori-content -->
+	                            </div>
+	                            <div role="tabpanel" class="tab-pane fade" id="nav_nano">
+	                                <div class="catagori-content">
+	                                    <p class="catagori-info">
+	                                        DLIKE is the native token of DLIKE platform which is purely a utility token. PRO users cane arn DLIKE tokens on daily basis through reward pool. To become PRO, users are required to burn 10,000 DLIKE tokens.
+	                                    </p>
+	                                    <p>    
+	                                        DLIKE token is not yet listed on exchanges so it can be purchased here at a price of 0.025 USD.
+	                                    </p>
+	                                    <div class="pros-cons-block">
+	                                        <button class="btn btn-primary">BUY DLIKE Tokens</button>
+	                                    </div>
+	                                </div><!-- catagori-content -->
+	                            </div>
+	                        </div>
+	                    </div><!-- catagori-content-block -->
+	                </div>
+	                <div class="col-lg-3">
+	                    <div class="catagori-vintage">
+	                        <img src="./images/others/7.png" alt="img" class="img-responsive">
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 
 
 
