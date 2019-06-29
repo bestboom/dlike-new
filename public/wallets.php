@@ -1,10 +1,10 @@
 <?php include('template/header5.php'); 
-//if (isset($_GET['user'])) {
-//     $user_wallet = $_GET['user'];
-//}
-//$sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
-//$resultAmount = $conn->query($sqls);
-//$rowIt = $resultAmount->fetch_assoc();
+if(!$_COOKIE['username']){die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+else { $user_wallet = $_COOKIE['username']; }
+
+$sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
+$resultAmount = $conn->query($sqls);
+$rowIt = $resultAmount->fetch_assoc();
 ?>
 </div><!-- banner-block -->
 
@@ -203,7 +203,6 @@
 	                                </thead>
 	                                <tbody>
 	                                    <?php
-	                                    $user_wallet = 'freedom';
 	                        			$sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
 	                        			$result = $conn->query($sqlt);
 
