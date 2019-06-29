@@ -3,8 +3,8 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 require '../includes/config.php';
-echo $amount = '10000';
-if (isset($_POST["pro_user"]){
+
+if (isset($_POST["pro_user"])){
 	$user = $_POST["pro_user"];
 	$amount = '10000';
 	$sqls = "SELECT amount FROM wallet where username='$user'"; 
