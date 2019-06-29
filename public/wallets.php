@@ -334,6 +334,7 @@ $row_st = $result_st->fetch_assoc();
     }
     $('#pro_sub').submit(function() {
     	//e.preventDefault();	
+    	alert('go');
     	$(this).ajaxSubmit(optionspro);
     	return !1;
 	});
