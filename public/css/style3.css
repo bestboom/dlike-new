@@ -1092,6 +1092,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     margin-top: 100px; 
     margin-bottom: 80px; }
 .coins-detail {font-size: 0.7rem;margin-top: -12px !important;display: flex;justify-content: space-between;}
+.coins-match{color: #1652f0;font-weight: 700;}
 .catagori-content-block {
     display: -webkit-box;
     display: -ms-flexbox;

@@ -46,30 +46,29 @@ $row_st = $result_st->fetch_assoc();
 	                                </li>
 	                            </ul>
 	                        </nav>
-	                        <div class="tab-content catagoritab-content" id="nav-tabContent">
-	                            <div role="tabpanel" class="tab-pane fade" id="nav_wallet">
-	                                <div class="catagori-content">
-	                                	
-	                                    <p class="catagori-info"></p>
-	                                    <div class="pros-cons-block">
-	                                        <div class="pros-block">
-	                                            <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
-	                                        </div>
-	                                        <p class="coins-detail">Native Token for DLIKE Platform<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
-	                                        <hr style="margin-top: 0.2rem;">
-	                                        <div class="pros-block">
-	                                            <h5 class="base-color">STAKING: </h5><p><?php echo (number_format($row_st['stake_amt'])); ?> DLIKE</p>
-	                                        </div>
-	                                        <p class="coins-detail">Earn bonus token by staking<span style="color: #1652f0;font-weight: 700;">Stake Now</span></p>
-	                                        <hr style="margin-top: 0.2rem;">
-	                                        <div class="pros-block">
-	                                            <h5 class="base-color">DSC: </h5><p>0 DSC</p>
-	                                        </div>
-	                                        <p class="coins-detail">DLIKE Stable Coin (coming soon)</p>
-	                                        <hr style="margin-top: 0.2rem;">
-	                                    </div>
-	                                </div><!-- catagori-content -->
-	                            </div>
+		                        <div class="tab-content catagoritab-content" id="nav-tabContent">
+		                            <div role="tabpanel" class="tab-pane fade" id="nav_wallet">
+		                                <div class="catagori-content">
+		                                    <p class="catagori-info"></p>
+		                                    <div class="pros-cons-block">
+		                                        <div class="pros-block">
+		                                            <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
+		                                        </div>
+		                                        <p class="coins-detail">Native Token for DLIKE Platform<span class="coins-match">Transfer</span></p>
+		                                        <hr style="margin-top: 0.2rem;">
+		                                        <div class="pros-block">
+		                                            <h5 class="base-color">STAKING: </h5><p><?php echo (number_format($row_st['stake_amt'])); ?> DLIKE</p>
+		                                        </div>
+		                                        <p class="coins-detail">Earn bonus token by staking<span class="coins-match">Stake Now</span></p>
+		                                        <hr style="margin-top: 0.2rem;">
+		                                        <div class="pros-block">
+		                                            <h5 class="base-color">DSC: </h5><p>0 DSC</p>
+		                                        </div>
+		                                        <p class="coins-detail">DLIKE Stable Coin (coming soon)</p>
+		                                        <hr style="margin-top: 0.2rem;">
+		                                    </div>
+		                                </div><!-- catagori-content -->
+		                            </div>
 	                            <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
 	                                <div class="catagori-content">
 	                                	<div style="background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #333;color: #fff;font-weight: 600;">Claim Rewards</button></div>
@@ -78,12 +77,12 @@ $row_st = $result_st->fetch_assoc();
 	                                        <div class="pros-block">
 	                                            <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
 	                                        </div>
-	                                        <p class="coins-detail">Native Token for STEEM Blockchain<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+	                                        <p class="coins-detail">Native Token for STEEM Blockchain<span class="coins-match">Transfer</span></p>
 	                                        <hr style="margin-top: 0.2rem;">
 	                                        <div class="pros-block">
 	                                            <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
 	                                        </div>
-	                                        <p class="coins-detail">Basic STEEM token valued at dollar<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
+	                                        <p class="coins-detail">Basic STEEM token valued at dollar<span class="coins-match">Transfer</span></p>
 	                                        <hr style="margin-top: 0.2rem;">
 	                                        <div class="pros-block">
 	                                            <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
@@ -112,12 +111,12 @@ $row_st = $result_st->fetch_assoc();
 	                                    <div class="pros-block">
 	                                            <h5 class="base-color">DAI: </h5><p>0.008 DAI</p>
 	                                        </div>
-	                                        <p class="coins-detail">A stable coin by MakerDAO<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
+	                                        <p class="coins-detail">A stable coin by MakerDAO<span class="coins-match">Withdraw</span></p>
 	                                        <hr style="margin-top: 0.2rem;">
 	                                        <div class="pros-block">
 	                                            <h5 class="base-color">Hydro: </h5><p>0.036 HYDRO</p>
 	                                        </div>
-	                                        <p class="coins-detail">A token of project hydro<span style="color: #1652f0;font-weight: 700;">Withdraw</span></p>
+	                                        <p class="coins-detail">A token of project hydro<span class="coins-match">Withdraw</span></p>
 	                                        <hr style="margin-top: 0.2rem;">
 	                                    </div>
 	                                </div><!-- catagori-content -->
@@ -175,139 +174,134 @@ $row_st = $result_st->fetch_assoc();
 
 
 
-<div class="explorer-section">
-
-<div class="new-ticker-block new-ticker-block-section">
-        <div class="container">
-            <div class="new-ticker-block-wrap">
-                <div class="ticker-head">
-                    <ul class="nav nav-tabs ticker-nav" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active show" href="#dlike_trx" role="tab" data-toggle="tab" aria-selected="true">
-                                <h5>DLIKE</h5>
-                                <i class="fa fa-stroopwafel"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#steem_trx" role="tab" data-toggle="tab">STEEM</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">TIPS</a>
-                        </li>
-                        <li class="nav-item nav-item-last">
-                        </li>
-                    </ul>
-                </div>
-	                <div class="market-ticker-block">
-	                    <!-- Tab panes -->
-	                    <div class="tab-content">
-	                        <div role="tabpanel" class="tab-pane fade in active show" id="dlike_trx">
+	<div class="explorer-section">
+	<div class="new-ticker-block new-ticker-block-section">
+	        <div class="container">
+	            <div class="new-ticker-block-wrap">
+	                <div class="ticker-head">
+	                    <ul class="nav nav-tabs ticker-nav" role="tablist">
+	                        <li class="nav-item">
+	                            <a class="nav-link active show" href="#dlike_trx" role="tab" data-toggle="tab" aria-selected="true">
+	                                <h5>DLIKE</h5>
+	                                <i class="fa fa-stroopwafel"></i>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link" href="#steem_trx" role="tab" data-toggle="tab">STEEM</a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">TIPS</a>
+	                        </li>
+	                        <li class="nav-item nav-item-last">
+	                        </li>
+	                    </ul>
+	                </div>
+		                <div class="market-ticker-block">
+		                    <!-- Tab panes -->
+		                    <div class="tab-content">
+		                        <div role="tabpanel" class="tab-pane fade in active show" id="dlike_trx">
+		                            <table class="table coin-list table-hover">
+		                                <thead>
+		                                    <tr>
+		                                        <th scope="col">TX</th>
+		                                        <th scope="col">Reason</th>
+		                                        <th scope="col" style="text-align: right;padding-right: 40px;">Amount</th>
+		                                    </tr>
+		                                </thead>
+		                                <tbody>
+		                                    <?php
+		                        			$sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
+		                        			$result = $conn->query($sqlt);
+		                        			if ($result->num_rows > 0) {
+		                            		while($row = $result->fetch_assoc()) { ?>
+		                            	<tr>
+		                                    <td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
+		                                    <td class="exp-user">For <span><?php echo $row["reason"]; ?></span></td>
+		                                    <td class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> DLIKE</td>
+		                                </tr>
+		                        			<? 	} }  ?>
+		                                </tbody>
+		                            </table><!-- coin-list table -->
+		                        </div>
+	                       <div role="tabpanel" class="tab-pane fade" id="steem_trx">
 	                            <table class="table coin-list table-hover">
 	                                <thead>
 	                                    <tr>
-	                                        <th scope="col">TX</th>
-	                                        <th scope="col">Reason</th>
-	                                        <th scope="col" style="text-align: right;padding-right: 40px;">Amount</th>
+	                                        <th></th>
+	                                        <th scope="col">Pair</th>
+	                                        <th scope="col">Last Price</th>
+	                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
+	                                        <th scope="col">24h High</th>
+	                                        <th scope="col">24h Low</th>
+	                                        <th scope="col">24h Volume</th>
 	                                    </tr>
 	                                </thead>
 	                                <tbody>
-	                                    <?php
-	                        			$sqlt = "SELECT username, amount, reason FROM transactions where username='$user_wallet' ORDER BY trx_time DESC";
-	                        			$result = $conn->query($sqlt);
+	                                    <tr>
+	                                        <td>
+	                                            <div class="favorite-coin">
 
-	                        			if ($result->num_rows > 0) {
-	                            		while($row = $result->fetch_assoc()) { ?>
-	                            	<tr>
-	                                    <td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
-	                                    <td class="exp-user">For <span><?php echo $row["reason"]; ?></span></td>
-	                                    <td class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</td>
-	                                </tr>
-	                        			<? 	} }  ?>
+	                                            </div>
+	                                        </td>
+	                                        <td> POA / BTC</td>
+	                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
+	                                        <td><span class="color-sell">-23.80%</span></td>
+	                                        <td>0.00007300</td>
+	                                        <td>0.00005510</td>
+	                                        <td>7,522.88586112</td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <div class="favorite-coin">
+
+	                                            </div>
+	                                        </td>
+	                                        <td>ONT/BTC</td>
+	                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
+	                                        <td><span class="color-buy">+8.70%</span></td>
+	                                        <td>0.0005700</td>
+	                                        <td>0.0004910</td>
+	                                        <td>5,774.97192430</td>
+	                                    </tr>
 	                                </tbody>
 	                            </table><!-- coin-list table -->
 	                        </div>
-                       <div role="tabpanel" class="tab-pane fade" id="steem_trx">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
+	                        <div role="tabpanel" class="tab-pane fade" id="tips_trx">
+	                            <table class="table coin-list table-hover">
+	                                <thead>
+	                                    <tr>
+	                                        <th></th>
+	                                        <th scope="col">Pair</th>
+	                                        <th scope="col">Last Price</th>
+	                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
+	                                        <th scope="col">24h High</th>
+	                                        <th scope="col">24h Low</th>
+	                                        <th scope="col">24h Volume</th>
+	                                    </tr>
+	                                </thead>
+	                                <tbody>
+	                                    <tr>
+	                                        <td>
+	                                            <div class="favorite-coin">
 
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
+	                                            </div>
+	                                        </td>
+	                                        <td> POA / BTC</td>
+	                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
+	                                        <td><span class="color-sell">-23.80%</span></td>
+	                                        <td>0.00007300</td>
+	                                        <td>0.00005510</td>
+	                                        <td>7,522.88586112</td>
+	                                    </tr>
 
-                                            </div>
-                                        </td>
-                                        <td>ONT/BTC</td>
-                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
-                                        <td><span class="color-buy">+8.70%</span></td>
-                                        <td>0.0005700</td>
-                                        <td>0.0004910</td>
-                                        <td>5,774.97192430</td>
-                                    </tr>
-                                </tbody>
-                            </table><!-- coin-list table -->
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tips_trx">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
-
-                                </tbody>
-                            </table><!-- coin-list table -->
-                        </div><!-- market-ticker-block -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<br>
-
-
-</div><!-- explorer-section -->
+	                                </tbody>
+	                            </table><!-- coin-list table -->
+	                        </div><!-- market-ticker-block -->
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	<br>
+	</div><!-- explorer-section -->
 <?php include('template/footer3.php'); ?>
