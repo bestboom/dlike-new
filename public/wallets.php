@@ -128,13 +128,15 @@ $row_st = $result_st->fetch_assoc();
                                     <p class="catagori-info">
                                         <h4 style="font-weight: 600;">What is Pro user?</h4>
                                         <p>PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards</p>
-                                        <h4 style="font-weight: 600;">Advantages of PRO users</h4>
+                                        <h4 style="font-weight: 600;">Advantages for PRO users</h4>
+                                        <p>
                                         	<li>Allowed upto 3 post shares per day</li>
                                         	<li>3X upvotes on all your posts</li>
                                         	<li>Daily DLIKE token income through reward pool</li>
                                         	<li>TIP to any post and earn 40% reward share</li>
+                                        </p>
                                         <h4 style="font-weight: 600;">How to become PRO?</h4>
-                                        <p>DLIKE PRO status is achieved by burning 10,000 DLIKE Tokens</p>
+                                        <p>To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.</p>
                                     </p>
                                     <div class="pros-cons-block">
                                         <button class="btn btn-primary">Become PRO</button>
