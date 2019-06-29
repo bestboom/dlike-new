@@ -161,7 +161,7 @@ $row_st = $result_st->fetch_assoc();
 	                                    <div id="pro-msg"></div>
 	                                    <div class="pros-cons-block">
 	                                    	<form action="" class="" method="POST" id="pro_sub">   
-                        						<input type="hidden" name="pro_user" id="pro_user" value="<? echo $user_wallet; ?>" /> 
+                        						<input type="hidden" name="pro_user" value="<? echo $user_wallet; ?>" /> 
 	                                        	<button type="button" class="btn btn-primary">Become PRO</button>
 	                                        </form>
 	                                    </div>
@@ -338,7 +338,7 @@ $row_st = $result_st->fetch_assoc();
         	toastr.error('hmm... You must be login!');
         	return false;
     	}	
-    	$(this).ajaxSubmit(optionpro);
+    	$(this).ajaxSubmit(optionspro);
     	return !1;
 	});
 </script>
