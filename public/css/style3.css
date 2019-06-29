@@ -1146,7 +1146,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 
 .pros-cons-block p {
     margin-top: -4px; }
-
+.bell-bold{font-weight: 600;}
 .pros-cons-block .pros-block {
     margin-bottom: 15px; 
 justify-content: space-between;}
