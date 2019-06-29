@@ -158,8 +158,12 @@ $row_st = $result_st->fetch_assoc();
 	                                        	To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.
 	                                        </p>
 	                                    </p>
+	                                    <div id="pro-msg"></div>
 	                                    <div class="pros-cons-block">
-	                                        <button class="btn btn-primary">Become PRO</button>
+	                                    	<form action="" class="" method="POST" id="pro_sub">   
+                        						<input type="hidden" name="staker" id="staking_user" value="10000" /> 
+	                                        	<button class="btn btn-primary">Become PRO</button>
+	                                        </form>
 	                                    </div>
 	                                </div><!-- catagori-content -->
 	                            </div>
@@ -322,3 +326,18 @@ $row_st = $result_st->fetch_assoc();
 	<br>
 	</div><!-- explorer-section -->
 <?php include('template/footer3.php'); ?>
+<script type="text/javascript">
+	var optionspro = {
+        target: '#pro-msg',
+        url: 'helper/addpro.php',
+        success: function() {},
+    }
+    $('#pro_sub').submit(function() {
+    if (username === null) {
+        toastr.error('hmm... You must be login!');
+        return false;
+    }
+    $(this).ajaxSubmit(optionpro);
+    return !1;
+});
+</script>
