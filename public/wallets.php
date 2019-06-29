@@ -332,9 +332,8 @@ $row_st = $result_st->fetch_assoc();
         url: 'helper/addpro.php',
         success: function() {},
     }
-    $('#pro_sub').submit(function() {
-    	//e.preventDefault();	
-    	alert('go');
+    $('#pro_sub').submit(function(e) {
+    	e.preventDefault();	
     	$(this).ajaxSubmit(optionspro);
     	return !1;
 	});
