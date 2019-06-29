@@ -162,7 +162,7 @@ $row_st = $result_st->fetch_assoc();
 	                                    <div class="pros-cons-block">
 	                                    	<form action="" class="" method="POST" id="pro_sub">   
                         						<input type="hidden" name="pro_user" value="<? echo $user_wallet; ?>" /> 
-	                                        	<button type="button" class="btn btn-primary">Become PRO</button>
+	                                        	<button type="submit" class="btn btn-primary">Become PRO</button>
 	                                        </form>
 	                                    </div>
 	                                </div><!-- catagori-content -->
@@ -176,7 +176,7 @@ $row_st = $result_st->fetch_assoc();
 	                                        DLIKE token is not yet listed on exchanges so it can be purchased here at a price of 0.025 USD.
 	                                    </p>
 	                                    <div class="pros-cons-block">
-	                                        <button class="btn btn-primary">BUY DLIKE Tokens</button>
+	                                        <button type="submit" class="btn btn-primary">BUY DLIKE Tokens</button>
 	                                    </div>
 	                                </div><!-- catagori-content -->
 	                            </div>
