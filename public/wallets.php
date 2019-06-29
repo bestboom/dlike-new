@@ -162,7 +162,7 @@ $row_st = $result_st->fetch_assoc();
 	                                    <div class="pros-cons-block">
 	                                    	<form action="" class="" method="POST" id="pro_sub">   
                         						<input type="hidden" name="pro_user" id="pro_user" value="<? echo $user_wallet; ?>" /> 
-	                                        	<button class="btn btn-primary">Become PRO</button>
+	                                        	<button type="button" class="btn btn-primary">Become PRO</button>
 	                                        </form>
 	                                    </div>
 	                                </div><!-- catagori-content -->
@@ -332,12 +332,13 @@ $row_st = $result_st->fetch_assoc();
         url: 'helper/addpro.php',
         success: function() {},
     }
-    $('#pro_sub').submit(function() {
-    if (username === null) {
-        toastr.error('hmm... You must be login!');
-        return false;
-    }
-    $(this).ajaxSubmit(optionpro);
-    return !1;
-});
+    $('#pro_sub').submit(function(e) {
+    	e.preventDefault();
+    	if (username === null) {
+        	toastr.error('hmm... You must be login!');
+        	return false;
+    	}	
+    	$(this).ajaxSubmit(optionpro);
+    	return !1;
+	});
 </script>
