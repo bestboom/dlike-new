@@ -1093,6 +1093,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     margin-bottom: 80px; }
 .coins-detail {font-size: 0.7rem;margin-top: -12px !important;display: flex;justify-content: space-between;}
 .coins-match{color: #1652f0;font-weight: 700;}
+.st_rewards{background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;}
+.cl_rewards{background: #333;color: #fff;font-weight: 600;}
+.wal_hr{margin-top: 0.2rem;}
 .catagori-content-block {
     display: -webkit-box;
     display: -ms-flexbox;

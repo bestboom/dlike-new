@@ -52,43 +52,60 @@ $row_st = $result_st->fetch_assoc();
 		                                    <p class="catagori-info"></p>
 		                                    <div class="pros-cons-block">
 		                                        <div class="pros-block">
-		                                            <h5 class="base-color">DLIKE: </h5><p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
+		                                            <h5 class="base-color">DLIKE: </h5>
+		                                            <p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
 		                                        </div>
-		                                        <p class="coins-detail">Native Token for DLIKE Platform<span class="coins-match">Transfer</span></p>
-		                                        <hr style="margin-top: 0.2rem;">
+		                                        	<p class="coins-detail">
+		                                        		Native Token for DLIKE Platform
+		                                        		<span class="coins-match">Transfer</span>
+		                                        	</p>
+		                                        <hr class="wal_hr">
 		                                        <div class="pros-block">
-		                                            <h5 class="base-color">STAKING: </h5><p><?php echo (number_format($row_st['stake_amt'])); ?> DLIKE</p>
+		                                            <h5 class="base-color">STAKING: </h5>
+		                                            <p>
+		                                            	<?php echo (number_format($row_st['stake_amt'])); ?> DLIKE
+		                                            </p>
 		                                        </div>
-		                                        <p class="coins-detail">Earn bonus token by staking<span class="coins-match">Stake Now</span></p>
-		                                        <hr style="margin-top: 0.2rem;">
+		                                        	<p class="coins-detail">
+		                                        		Earn bonus token by staking
+		                                        		<span class="coins-match">Stake Now</span>
+		                                        	</p>
+		                                        <hr class="wal_hr">
 		                                        <div class="pros-block">
-		                                            <h5 class="base-color">DSC: </h5><p>0 DSC</p>
+		                                            <h5 class="base-color">DLIKE Stable Coin: </h5><p>0 DLIKE</p>
 		                                        </div>
-		                                        <p class="coins-detail">DLIKE Stable Coin (coming soon)</p>
-		                                        <hr style="margin-top: 0.2rem;">
+		                                        	<p class="coins-detail">
+		                                        		DLIKE Stable Coin (coming soon)
+		                                        	</p>
+		                                        	<hr class="wal_hr">
 		                                    </div>
 		                                </div><!-- catagori-content -->
 		                            </div>
 	                            <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
 	                                <div class="catagori-content">
-	                                	<div style="background: #f3faf0;padding: 12px;display: flex;justify-content: space-between;border-radius: 6px;border-color: 1px solid #eee;"><b>Pending Rewards:</b> 0.228 SBD and 1.798 SP<button class="btn btn-default" style="background: #333;color: #fff;font-weight: 600;">Claim Rewards</button></div>
+	                                	<div class="st_rewards">
+	                                		<b>Pending Rewards:</b> 0.228 SBD and 1.798 SP
+	                                		<button class="btn btn-default cl_rewards">Claim Rewards</button>
+	                                	</div>
 	                                    <p class="catagori-info"></p>
 	                                    <div class="pros-cons-block">
 	                                        <div class="pros-block">
-	                                            <h5 class="base-color">STEEM: </h5><p>165 STEEM</p>
+	                                            <h5 class="base-color">STEEM: </h5>
+	                                            <p>165 STEEM</p>
 	                                        </div>
 	                                        <p class="coins-detail">Native Token for STEEM Blockchain<span class="coins-match">Transfer</span></p>
-	                                        <hr style="margin-top: 0.2rem;">
+	                                        <hr class="wal_hr">
 	                                        <div class="pros-block">
-	                                            <h5 class="base-color">STEM DOLLAR: </h5><p>312 SBD</p>
+	                                            <h5 class="base-color">STEM DOLLAR: </h5>
+	                                            <p>312 SBD</p>
 	                                        </div>
 	                                        <p class="coins-detail">Basic STEEM token valued at dollar<span class="coins-match">Transfer</span></p>
-	                                        <hr style="margin-top: 0.2rem;">
+	                                        <hr class="wal_hr">
 	                                        <div class="pros-block">
 	                                            <h5 class="base-color">STEM POWER: </h5><p>4523 STEEM</p>
 	                                        </div>
 	                                        <p class="coins-detail">STEEM Power is delegated STEEM amount</p>
-	                                        <hr style="margin-top: 0.2rem;">
+	                                        <hr class="wal_hr">
 	                                    </div>
 	                                </div><!-- catagori-content -->
 	                            </div>
@@ -112,12 +129,12 @@ $row_st = $result_st->fetch_assoc();
 	                                            <h5 class="base-color">DAI: </h5><p>0.008 DAI</p>
 	                                        </div>
 	                                        <p class="coins-detail">A stable coin by MakerDAO<span class="coins-match">Withdraw</span></p>
-	                                        <hr style="margin-top: 0.2rem;">
+	                                        <hr class="wal_hr">
 	                                        <div class="pros-block">
 	                                            <h5 class="base-color">Hydro: </h5><p>0.036 HYDRO</p>
 	                                        </div>
 	                                        <p class="coins-detail">A token of project hydro<span class="coins-match">Withdraw</span></p>
-	                                        <hr style="margin-top: 0.2rem;">
+	                                        <hr class="wal_hr">
 	                                    </div>
 	                                </div><!-- catagori-content -->
 	                            </div>
