@@ -161,7 +161,7 @@ $row_st = $result_st->fetch_assoc();
 	                                    <div id="pro-msg"></div>
 	                                    <div class="pros-cons-block">
 	                                    	<form action="" class="" method="POST" id="pro_sub">   
-                        						<input type="hidden" name="staker" id="staking_user" value="10000" /> 
+                        						<input type="hidden" name="pro_user" id="pro_user" value="<? echo $user_wallet; ?>" /> 
 	                                        	<button class="btn btn-primary">Become PRO</button>
 	                                        </form>
 	                                    </div>

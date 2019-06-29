@@ -4,7 +4,8 @@
 	error_reporting(E_ALL);
 require '../includes/config.php';
 
-if (isset($_POST["pro_amt"]){
+if (isset($_POST["pro_user"]){
+	$user = $_POST["pro_user"];
 	$amount = '10000';
 	$sqls = "SELECT amount FROM wallet where username='$user'"; 
 	$resultAmount = $conn->query($sqls);
