@@ -5,6 +5,10 @@ else { $user_wallet = $_COOKIE['username']; }
 $sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
 $resultAmount = $conn->query($sqls);
 $rowIt = $resultAmount->fetch_assoc();
+
+$sql_st = "SELECT SUM(amount) As stake_amt FROM staking where username='$user_wallet'"; 
+$result_st = $conn->query($sql_st);
+$row_st = $result_st->fetch_assoc();
 ?>
 </div><!-- banner-block -->
 
@@ -54,7 +58,7 @@ $rowIt = $resultAmount->fetch_assoc();
                                         <p class="coins-detail">Native Token for DLIKE Platform<span style="color: #1652f0;font-weight: 700;">Transfer</span></p>
                                         <hr style="margin-top: 0.2rem;">
                                         <div class="pros-block">
-                                            <h5 class="base-color">STAKING: </h5><p>312 DLIKE</p>
+                                            <h5 class="base-color">STAKING: </h5><p><?php echo (number_format($row_st['stake_amt'])); ?> DLIKE</p>
                                         </div>
                                         <p class="coins-detail">Earn bonus token by staking<span style="color: #1652f0;font-weight: 700;">Stake Now</span></p>
                                         <hr style="margin-top: 0.2rem;">
