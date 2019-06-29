@@ -332,8 +332,8 @@ $row_st = $result_st->fetch_assoc();
         url: 'helper/addpro.php',
         success: function() {},
     }
-    $('#pro_sub').submit(function(e) {
-    	e.preventDefault();
+    $('#pro_sub').submit(function() {
+    	//e.preventDefault();
     	if (username === null) {
         	toastr.error('hmm... You must be login!');
         	return false;
