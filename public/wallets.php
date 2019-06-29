@@ -333,11 +333,7 @@ $row_st = $result_st->fetch_assoc();
         success: function() {},
     }
     $('#pro_sub').submit(function() {
-    	//e.preventDefault();
-    	if (username === null) {
-        	toastr.error('hmm... You must be login!');
-        	return false;
-    	}	
+    	//e.preventDefault();	
     	$(this).ajaxSubmit(optionspro);
     	return !1;
 	});
