@@ -14,8 +14,8 @@ $row_st = $result_st->fetch_assoc();
 $sqlp = "SELECT * FROM prousers where username='$user_wallet'";
 $resultp = $conn->query($sqlp);
 if ($resultp->num_rows > 0) 
-{ $prouser = 'PRO';
-echo "<script> $( document ).ready(function() { $('.pro_form').hide(); $('.pro-top').hide(); });</script>";}
+{ echo $prouser = 'PRO';
+echo "<script>$(document).ready(function(){ $('.pro_form').hide(); $('.pro-top').hide(); });</script>";}
 
 ?>
 </div><!-- banner-block -->
