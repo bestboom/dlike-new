@@ -6,11 +6,11 @@ require '../includes/config.php';
 
 if (isset($_POST["pro_user"])){
 	$user = $_POST["pro_user"];
-	echo $amount = '10000';
+	$amount = '70500';
 	$sqls = "SELECT amount FROM wallet where username='$user'"; 
 	$resultAmount = $conn->query($sqls);
 		$rowIt = $resultAmount->fetch_assoc();	
-		echo $user_bal = $rowIt['amount'];
+		$user_bal = $rowIt['amount'];
 	if ($amount > $user_bal){ echo '<div class="alert alert-danger">You do not have enough tokens!</div>';}
 	else {echo '<div class="alert alert-success">Looks Good</div>';}
 
