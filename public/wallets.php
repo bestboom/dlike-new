@@ -342,7 +342,7 @@ if ($resultp->num_rows > 0)
 	</div><!-- explorer-section -->
 <?php
 
-$sqlt = "SELECT username FROM userstatus ORDER BY set_time DESC LIMIT 10";
+$sqlt = "SELECT username, status FROM userstatus ORDER BY set_time DESC LIMIT 10";
                         $resultkj = $conn->query($sqlt);
 
                         if ($resultkj->num_rows > 0) {
@@ -353,6 +353,7 @@ $sqlt = "SELECT username FROM userstatus ORDER BY set_time DESC LIMIT 10";
                                     <div class="row">
                                         <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
                                         <div class="exp-user"><?php echo $rowkj["username"]; ?></div>
+                                        <div class="exp-user"><?php echo $rowkj["status"]; ?></div>
                                     </div>
                                 </div>
                             </div>
