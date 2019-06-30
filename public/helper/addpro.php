@@ -6,7 +6,7 @@ require '../includes/config.php';
 
 if (isset($_POST["pro_user"])){
 	$user = $_POST["pro_user"];
-	$amount = '70500';
+	$amount = '70501';
 	$sqls = "SELECT amount FROM wallet where username='$user'"; 
 	$resultAmount = $conn->query($sqls);
 		$rowIt = $resultAmount->fetch_assoc();	
