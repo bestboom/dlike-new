@@ -367,7 +367,7 @@ $sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC 
 <script type="text/javascript">
 	if(thisuser == 'PRO') 
 		{
-			$('.pro_data').hide();
+			$('.pro-data').hide();
 			$('.pro-img').show();
 		}
 	var optionspro = {
