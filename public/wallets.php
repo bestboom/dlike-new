@@ -14,7 +14,7 @@ $row_st = $result_st->fetch_assoc();
 $sqlp = "SELECT * FROM prousers where username='$user_wallet'";
 $resultp = $conn->query($sqlp);
 if ($resultp->num_rows > 0) 
-{ echo "<script>$('.pro_form').hide();</script>"; }
+{ echo "<script>$('.pro_form').hide(); $('.pro-top').hide();</script>";}
 
 ?>
 </div><!-- banner-block -->
@@ -148,11 +148,12 @@ if ($resultp->num_rows > 0)
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
 	                                <div class="catagori-content">
 	                                    <h4 class="bell-bold">Become PRO user - Enjoy Maximum Rewards</h4>
-	                                    <p class="catagori-info">
+	                                    <p class="catagori-info pro-top">
 	                                        <h4 class="bell-bold">What is Pro user?</h4>
 	                                        <p>
 	                                        	PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards
 	                                        </p>
+	                                    </p>
 	                                        <h4 class="bell-bold">Advantages for PRO users</h4>
 	                                        <p>
 	                                        	<li>Allowed upto 3 post shares per day</li>
@@ -164,7 +165,6 @@ if ($resultp->num_rows > 0)
 	                                        <p>
 	                                        	To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.
 	                                        </p>
-	                                    </p>
 	                                    <div id="pro-msg"></div>
 	                                    <div class="pros-cons-block pro_form">
 	                                    	<form action="" class="" method="POST" id="pro_sub">   
