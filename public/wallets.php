@@ -15,7 +15,7 @@ $sqlp = "SELECT * FROM prousers where username='$user_wallet'";
 $resultp = $conn->query($sqlp);
 if ($resultp->num_rows > 0) 
 { echo $prouser = 'PRO';
-echo "<script>$(document).ready(function(){ $('.pro_form').hide(); $('.pro-top').hide(); });</script>";}
+echo "<script>let thisuser = 'PRO';</script>";}
 
 ?>
 </div><!-- banner-block -->
@@ -358,6 +358,7 @@ $sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC 
 
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">	
+	console.log(thisuser);
 	var optionspro = {
         target: '#pro-msg',
         url: 'helper/addpro.php',
