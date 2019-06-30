@@ -6,6 +6,16 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+$sqlw = "DELETE FROM prousers";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Table DELETED successfully";
+} else {
+    echo "Error deleting table: " . $conn->error;
+}
+
+
 /*'
 $sql = "CREATE TABLE prousers (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
