@@ -153,7 +153,7 @@ if ($resultp->num_rows > 0)
 												<div style="background: #003f7f;color: #fff;width: 40%;text-align:center;padding: 18px 10px 10px 10px;border-radius: 9px;margin-top: -15px;margin-bottom: 40px;">PRO</div>
 											</center>
 										</div>
-	                                	<div class="pro-top">
+	                                	<div class="pro-data">
 	                                    	<h4 class="bell-bold">Become PRO user - Enjoy Maximum Rewards</h4>
 	                                    	<p class="catagori-info">
 	                                        	<h4 class="bell-bold">What is Pro user?</h4>
@@ -161,7 +161,6 @@ if ($resultp->num_rows > 0)
 	                                        		PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards
 	                                        	</p>
 	                                    	</p>
-	                                	</div>
 	                                        <h4 class="bell-bold">Advantages for PRO users</h4>
 	                                        <p>
 	                                        	<li>Allowed upto 3 post shares per day</li>
@@ -169,7 +168,6 @@ if ($resultp->num_rows > 0)
 	                                        	<li>Daily DLIKE token income through reward pool</li>
 	                                        	<li>TIP to any post and earn 40% TIP share</li>
 	                                        </p>
-	                                    <div class="pro_form">
 	                                        <h4 class="bell-bold">How to become PRO?</h4>
 	                                        <p>
 	                                        	To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.
@@ -366,12 +364,10 @@ $sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC 
 ?>  
 
 <?php include('template/footer3.php'); ?>
-<script type="text/javascript">	
-	console.log(thisuser);
+<script type="text/javascript">
 	if(thisuser == 'PRO') 
 		{
-			$('.pro_form').hide();
-			$('.pro-top').hide();
+			$('.pro_data').hide();
 			$('.pro-img').show();
 		}
 	var optionspro = {
