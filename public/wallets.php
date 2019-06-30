@@ -359,6 +359,7 @@ $sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC 
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">	
 	console.log(thisuser);
+	if(thisuser == 'PRO') {$('#pro_form').hide();}
 	var optionspro = {
         target: '#pro-msg',
         url: 'helper/addpro.php',
