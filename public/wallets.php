@@ -148,9 +148,9 @@ echo "<script>let thisuser = 'PRO';</script>";}
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
 	                                <div class="catagori-content">
-	                                	<div class="pro-img">
+	                                	<div class="pro-img" style="display: none;">
 	                                		<center>
-	                                			<img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet" style="width: 120px;margin-bottom: 0px !important;">
+	                                			<img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet" style="width: 120px;margin-bottom: 0px !important;border: 20px solid #003f7f !important;">
 												<div style="background: #003f7f;color: #fff;width: 40%;text-align:center;padding: 18px 10px 10px 10px;border-radius: 9px;margin-top: -15px;margin-bottom: 40px;">PRO</div>
 											</center>
 										</div>
@@ -373,6 +373,7 @@ $sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC 
 		{
 			$('.pro_form').hide();
 			$('.pro-top').hide();
+			$('.pro-img').show();
 		}
 	var optionspro = {
         target: '#pro-msg',
