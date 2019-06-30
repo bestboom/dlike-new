@@ -148,7 +148,12 @@ echo "<script>let thisuser = 'PRO';</script>";}
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
 	                                <div class="catagori-content">
-	                                	<span><img src="https://steemitimages.com/u/pillsjee/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet"></span>
+	                                	<div class="pro-img">
+	                                		<center>
+	                                			<img src="https://steemitimages.com/u/pillsjee/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet">
+												<div style="background: #003f7f;color: #fff;width: 40%;text-align:center;padding: 18px 10px 10px 10px;border-radius: 9px;margin-top: -15px;margin-bottom: 40px;">PRO</div>
+											</center>
+										</div>
 	                                	<div class="pro-top">
 	                                    	<h4 class="bell-bold">Become PRO user - Enjoy Maximum Rewards</h4>
 	                                    	<p class="catagori-info">
