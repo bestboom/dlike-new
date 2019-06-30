@@ -150,7 +150,7 @@ echo "<script>let thisuser = 'PRO';</script>";}
 	                                <div class="catagori-content">
 	                                	<div class="pro-img">
 	                                		<center>
-	                                			<img src="https://steemitimages.com/u/pillsjee/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet">
+	                                			<img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet" style="width: 120px;margin-bottom: 0px !important;">
 												<div style="background: #003f7f;color: #fff;width: 40%;text-align:center;padding: 18px 10px 10px 10px;border-radius: 9px;margin-top: -15px;margin-bottom: 40px;">PRO</div>
 											</center>
 										</div>
