@@ -148,13 +148,15 @@ echo "<script>let thisuser = 'PRO';</script>";}
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
 	                                <div class="catagori-content">
-	                                    <h4 class="bell-bold">Become PRO user - Enjoy Maximum Rewards</h4>
-	                                    <p class="catagori-info pro-top">
-	                                        <h4 class="bell-bold">What is Pro user?</h4>
-	                                        <p>
-	                                        	PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards
-	                                        </p>
-	                                    </p>
+	                                	<div class="pro-top">
+	                                    	<h4 class="bell-bold">Become PRO user - Enjoy Maximum Rewards</h4>
+	                                    	<p class="catagori-info">
+	                                        	<h4 class="bell-bold">What is Pro user?</h4>
+	                                        	<p>
+	                                        		PRO user is the apex user status on DLIKE platform which enjoys maximum available rewards
+	                                        	</p>
+	                                    	</p>
+	                                	</div>
 	                                        <h4 class="bell-bold">Advantages for PRO users</h4>
 	                                        <p>
 	                                        	<li>Allowed upto 3 post shares per day</li>
@@ -162,17 +164,19 @@ echo "<script>let thisuser = 'PRO';</script>";}
 	                                        	<li>Daily DLIKE token income through reward pool</li>
 	                                        	<li>TIP to any post and earn 40% TIP share</li>
 	                                        </p>
+	                                    <div class="pro_form">
 	                                        <h4 class="bell-bold">How to become PRO?</h4>
 	                                        <p>
 	                                        	To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.
 	                                        </p>
-	                                    <div id="pro-msg"></div>
-	                                    <div class="pros-cons-block pro_form">
-	                                    	<form action="" class="" method="POST" id="pro_sub">   
-                        						<input type="hidden" name="pro_user" value="<? echo $user_wallet; ?>" /> 
-	                                        	<button type="submit" class="btn btn-primary">Become PRO</button>
-	                                        </form>
-	                                    </div>
+	                                    	<div id="pro-msg"></div>
+	                                    	<div class="pros-cons-block">
+	                                    		<form action="" class="" method="POST" id="pro_sub">   
+                        							<input type="hidden" name="pro_user" value="<? echo $user_wallet; ?>" /> 
+	                                        		<button type="submit" class="btn btn-primary">Become PRO</button>
+	                                        	</form>
+	                                    	</div>
+	                                	</div>
 	                                </div><!-- catagori-content -->
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_nano">
