@@ -9,6 +9,13 @@ $rowIt = $resultAmount->fetch_assoc();
 $sql_st = "SELECT SUM(amount) As stake_amt FROM staking where username='$user_wallet'"; 
 $result_st = $conn->query($sql_st);
 $row_st = $result_st->fetch_assoc();
+
+
+$sqlp = "SELECT * FROM prousers where username='$user_wallet'";
+$resultp = $conn->query($sqlp);
+if ($resultp->num_rows > 0) 
+{ echo "<script>$('.pro_form').hide();</script>"; }
+
 ?>
 </div><!-- banner-block -->
 
@@ -159,7 +166,7 @@ $row_st = $result_st->fetch_assoc();
 	                                        </p>
 	                                    </p>
 	                                    <div id="pro-msg"></div>
-	                                    <div class="pros-cons-block">
+	                                    <div class="pros-cons-block pro_form">
 	                                    	<form action="" class="" method="POST" id="pro_sub">   
                         						<input type="hidden" name="pro_user" value="<? echo $user_wallet; ?>" /> 
 	                                        	<button type="submit" class="btn btn-primary">Become PRO</button>
