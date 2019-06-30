@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-
+/*'
 $sql = "CREATE TABLE prousers (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
@@ -23,7 +23,7 @@ if ($conn->query($sql) === TRUE) {
 
 
 
-/*'
+
 
 
 $sqlw = "DELETE FROM staking";
