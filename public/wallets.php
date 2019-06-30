@@ -342,7 +342,7 @@ if ($resultp->num_rows > 0)
 	</div><!-- explorer-section -->
 <?php
 
-$sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC LIMIT 10";
+$sqlt = "SELECT username FROM userstatus ORDER BY set_time DESC LIMIT 10";
                         $resultkj = $conn->query($sqlt);
 
                         if ($resultkj->num_rows > 0) {
@@ -353,8 +353,6 @@ $sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC 
                                     <div class="row">
                                         <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
                                         <div class="exp-user"><?php echo $rowkj["username"]; ?></div>
-                                        <div class="exp-user">For <span><?php echo $rowkj["buy_time"]; ?></span></div>
-                                        <div class="exp-user"><?php echo $rowkj["amount"]; ?></div>
                                     </div>
                                 </div>
                             </div>
