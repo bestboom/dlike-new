@@ -176,7 +176,7 @@ if ($resultp->num_rows > 0)
 	                                    	<div class="pros-cons-block">
 	                                    		<form action="" class="" method="POST" id="pro_sub">   
                         							<input type="hidden" name="pro_user" value="<? echo $user_wallet; ?>" /> 
-	                                        		<button type="submit" class="btn btn-primary">Become PRO</button>
+	                                        		<button type="submit" class="btn btn-primary pro-bt">Become PRO</button>
 	                                        	</form>
 	                                    	</div>
 	                                	</div>
