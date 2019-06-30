@@ -32,10 +32,6 @@ if ($conn->query($sql) === TRUE) {
 
 
 
-
-
-
-
 $sqlw = "DELETE FROM staking";
 
 if ($conn->query($sqlw) === TRUE) {

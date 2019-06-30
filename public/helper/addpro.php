@@ -25,7 +25,8 @@ if (isset($_POST["pro_user"]))
 
 		if (mysqli_query($conn, $sqlm))
 		{
-			echo '<div class="alert alert-success">Looks Good</div>';
+			echo '<div class="alert alert-success">PRO status Added</div>';
+			echo '<script>$(".pro-bt").attr("disabled","disabled"); document.getElementById("pro_sub").reset(); setTimeout(function(){location.reload();},2000);</script>';
 		}
 	}
 
