@@ -14,8 +14,7 @@ $row_st = $result_st->fetch_assoc();
 $sqlp = "SELECT * FROM prousers where username='$user_wallet'";
 $resultp = $conn->query($sqlp);
 if ($resultp->num_rows > 0) 
-{ echo $prouser = 'PRO';
-echo "<script>let thisuser = 'PRO';</script>";}
+{echo "<script>let thisuser = 'PRO';</script>";} else{echo "<script>let thisuser = '';</script>";}
 
 ?>
 </div><!-- banner-block -->
