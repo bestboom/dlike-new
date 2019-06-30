@@ -325,6 +325,29 @@ $row_st = $result_st->fetch_assoc();
 	    </div>
 	<br>
 	</div><!-- explorer-section -->
+<?php
+
+$sqlt = "SELECT username, buy_time, amount FROM prousers ORDER BY buy_time DESC LIMIT 10";
+                        $resultkj = $conn->query($sqlt);
+
+                        if ($resultkj->num_rows > 0) {
+                            while($rowkj = $resultkj->fetch_assoc()) { ?>
+                        <div class="activity-block">
+                            <div class="row my-entry">
+                                <div class="col-sm-8">
+                                    <div class="row">
+                                        <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
+                                        <div class="exp-user"><?php echo $rowkj["username"]; ?></div>
+                                        <div class="exp-user">For <span><?php echo $rowkj["buy_time"]; ?></span></div>
+                                        <div class="exp-user"><?php echo $rowkj["amount"]; ?></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <? }
+                        }
+?>  
+
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
 	var optionspro = {
