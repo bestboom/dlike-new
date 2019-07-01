@@ -120,6 +120,7 @@ if ($resultp->num_rows > 0)
 	                                <div class="catagori-content"><!-- TIPS-content-ends -->
 	                                    <h5>TIP Rewards - Withdrawable To ETH Address</h5>
 	                                    <p class="catagori-info">
+	                                    	<div id="eth-msg"></div>
 	                                    	<form action="" class="" method="POST" id="eth_sub">
 	                                        <div class="form-group">
 	                                        	<div class="input-group mb-3">
