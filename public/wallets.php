@@ -127,7 +127,9 @@ if ($resultp->num_rows > 0)
 	                                        		<div class="input-group-prepend">
 	                                            		<div class="input-group-text mb-deck"> ETH Addr</div>
 	                                        		</div>
+	                                        		<div class="form-group">
 	                                        			<input type="text" class="form-control" name="eth_add" id="eth_field" placeholder="Enter ETH Addr">&nbsp;
+	                                        		</div>
 	                                            		<button type="submit" class="btn btn-primary">ADD</button>	
 	                                            </div>
 	                                        </div>
