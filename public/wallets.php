@@ -357,7 +357,7 @@ if ($resultp->num_rows > 0)
     	return !1;
 	});
 
-    let ethadd = $.trim("#eth_field").val();
+    let ethadd = $("#eth_field").val();
 	var optionseth = {
         target: '#eth-msg',
         url: 'helper/addeth.php',
