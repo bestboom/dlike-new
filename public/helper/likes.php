@@ -7,6 +7,18 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+
+$sql = "ALTER TABLE wallet ADD eth VARCHAR(255) NOT NULL AFTER amount";
+if ($conn->query($sql) === TRUE) {
+    echo "Table colms added";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
+/*'
+
+
 $sqlw = "DELETE FROM prousers";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -16,7 +28,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-/*'
+
 $sql = "CREATE TABLE prousers (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
