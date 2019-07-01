@@ -120,16 +120,17 @@ if ($resultp->num_rows > 0)
 	                                <div class="catagori-content"><!-- TIPS-content-ends -->
 	                                    <h5>TIP Rewards - Withdrawable To ETH Address</h5>
 	                                    <p class="catagori-info">
+	                                    	<form action="" class="" method="POST" id="eth_sub">
 	                                        <div class="form-group">
 	                                        	<div class="input-group mb-3">
 	                                        		<div class="input-group-prepend">
 	                                            		<div class="input-group-text mb-deck"> ETH Addr</div>
 	                                        		</div>
-	                                            		<input type="text" class="form-control eth_field" name="title" value="" placeholder="Enter ETH Addr">&nbsp;
+	                                            		<input type="text" class="form-control eth_field" name="eth_add" value="" placeholder="Enter ETH Addr">&nbsp;
 	                                            		<button type="submit" class="btn btn-primary">ADD</button>	
 	                                            </div>
 	                                        </div>
-
+	                                    	</form>
 	                                    </p>
 	                                    <div class="pros-cons-block">
 	                                    <div class="pros-block">
@@ -354,4 +355,23 @@ if ($resultp->num_rows > 0)
     	$(this).ajaxSubmit(optionspro);
     	return !1;
 	});
+
+    let ethadd = $(".eth_field").val();
+	var optionseth = {
+        target: '#eth-msg',
+        url: 'helper/addeth.php',
+        success: function() {},
+    }
+    $('#eth_sub').submit(function(e) {
+    	e.preventDefault();	
+
+    	if (!ethadd) 
+    	{ 
+        	toastr.error('phew... Enter ETH Address');
+        	return false;
+    	}
+
+    	$(this).ajaxSubmit(optionseth);
+    	return !1;
+	});	
 </script>

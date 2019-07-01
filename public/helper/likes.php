@@ -9,14 +9,17 @@ require '../includes/config.php';
 
 
 
+
+/*'
+
+
+
 $sql = "ALTER TABLE wallet ADD eth VARCHAR(255) NOT NULL AFTER amount";
 if ($conn->query($sql) === TRUE) {
     echo "Table colms added";
 } else {
     echo "Error updating table: " . $conn->error;
 }
-
-/*'
 
 
 $sqlw = "DELETE FROM prousers";
