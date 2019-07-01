@@ -117,7 +117,7 @@ if ($resultp->num_rows > 0)
 	                                </div><!-- catagori-content -->
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_exodus">
-	                                <div class="catagori-content">
+	                                <div class="catagori-content"><!-- TIPS-content-ends -->
 	                                    <h5>TIP Rewards - Withdrawable To ETH Address</h5>
 	                                    <p class="catagori-info">
 	                                        <div class="form-group">
@@ -143,14 +143,14 @@ if ($resultp->num_rows > 0)
 	                                        <p class="coins-detail">A token of project hydro<span class="coins-match">Withdraw</span></p>
 	                                        <hr class="wal_hr">
 	                                    </div>
-	                                </div><!-- catagori-content -->
+	                                </div><!-- tips-content-end -->
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_copay">
-	                                <div class="catagori-content">
+	                                <div class="catagori-content"><!-- PRO-content-starts -->
 	                                	<div class="pro-img" style="display: none;">
 	                                		<center>
-	                                			<img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallet" style="width: 120px;margin-bottom: 0px !important;border: 20px solid #003f7f !important;">
-												<div style="background: #003f7f;color: #fff;width: 40%;text-align:center;padding: 18px 10px 10px 10px;border-radius: 9px;margin-top: -15px;margin-bottom: 40px;">PRO</div>
+	                                			<img src="https://steemitimages.com/u/<?php echo $user_wallet; ?>/avatar" onerror="this.src='/images/post/authors/8.png'" alt="img" class="img-responsive img-wallets">
+												<div class="img-pro">PRO</div>
 											</center>
 										</div>
 	                                	<div class="pro-data">
@@ -180,7 +180,7 @@ if ($resultp->num_rows > 0)
 	                                        	</form>
 	                                    	</div>
 	                                	</div>
-	                                </div><!-- catagori-content -->
+	                                </div><!-- PRO-content-ends -->
 	                            </div>
 	                            <div role="tabpanel" class="tab-pane fade" id="nav_nano">
 	                                <div class="catagori-content">
@@ -206,9 +206,6 @@ if ($resultp->num_rows > 0)
 	            </div>
 	        </div>
 	    </div>
-
-
-
 
 	<div class="explorer-section">
 	<div class="new-ticker-block new-ticker-block-section">
@@ -340,28 +337,6 @@ if ($resultp->num_rows > 0)
 	    </div>
 	<br>
 	</div><!-- explorer-section -->
-<?php
-
-$sqlt = "SELECT username, status FROM userstatus ORDER BY set_time DESC LIMIT 10";
-                        $resultkj = $conn->query($sqlt);
-
-                        if ($resultkj->num_rows > 0) {
-                            while($rowkj = $resultkj->fetch_assoc()) { ?>
-                        <div class="activity-block">
-                            <div class="row my-entry">
-                                <div class="col-sm-8">
-                                    <div class="row">
-                                        <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
-                                        <div class="exp-user"><?php echo $rowkj["username"]; ?></div>
-                                        <div class="exp-user"><?php echo $rowkj["status"]; ?></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <? }
-                        }
-?>  
-
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
 	if(thisuser == 'PRO') 
