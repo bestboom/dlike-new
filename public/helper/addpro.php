@@ -27,22 +27,31 @@ if (isset($_POST["pro_user"]))
 
 		if (mysqli_query($conn, $sqlm))
 		{
-			$sqlu = "SELECT * FROM userstatus where username='$user'"; 
-			$resultu = $conn->query($sqlu);
 
-			if($resultu->num_rows > 0)
-			{
-				$updat_u = "UPDATE userstatus SET status = '$pro_status', set_by = '$set_by' WHERE username = '$user'";
-					$updateUserQuery = $conn->query($updat_u);
-					if ($updateUserQuery === TRUE) {}
-			} else 
-			{
-				$adduserstatus = "INSERT INTO userstatus (`username`, `status`  , `set_by` , `set_time` )
-						VALUES ('".$user."', '".$pro_status."', '".$set_by."', now())";
-				$adduserstatusQuery = $conn->query($adduserstatus);		
-			}
-			echo '<div class="alert alert-success">PRO status Added</div>';
-			echo '<script>$(".pro-bt").attr("disabled","disabled"); document.getElementById("pro_sub").reset(); setTimeout(function(){location.reload();},2000);</script>';
+			$updateWallet = "UPDATE wallet SET amount = '$user_bal' - '$amount' WHERE username = '$user'";
+						$updateWalletQuery = $conn->query($updateWallet);
+									if ($updateWalletQuery === TRUE) 
+									{
+										$sqlu = "SELECT * FROM userstatus where username='$user'"; 
+										$resultu = $conn->query($sqlu);
+
+										if($resultu->num_rows > 0)
+										{
+											$updat_u = "UPDATE userstatus SET status = '$pro_status', set_by = '$set_by' WHERE username = '$user'";
+											$updateUserQuery = $conn->query($updat_u);
+											if ($updateUserQuery === TRUE) {}
+										} 
+										else 
+										{
+											$adduserstatus = "INSERT INTO userstatus (`username`, `status`  , `set_by` , `set_time` )
+												VALUES ('".$user."', '".$pro_status."', '".$set_by."', now())";
+											$adduserstatusQuery = $conn->query($adduserstatus);		
+										}
+
+										echo '<div class="alert alert-success">PRO status Added</div>';
+										echo '<script>$(".pro-bt").attr("disabled","disabled"); document.getElementById("pro_sub").reset(); setTimeout(function(){location.reload();},2000);</script>';
+									}
+
 		}
 	}
 
