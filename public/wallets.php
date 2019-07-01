@@ -365,7 +365,7 @@ if ($resultp->num_rows > 0)
     }
     $('#eth_sub').submit(function(e) {
     	e.preventDefault();	
-
+    	console.log(ethadd);
     	if (!ethadd) 
     	{ 
         	toastr.error('phew... Enter ETH Address');
