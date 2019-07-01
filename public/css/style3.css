@@ -846,6 +846,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .wallet-profile{padding: 25px;margin-left: 40px;}
 .wallet-profile h4{color: #fff;font-weight: 600;padding: 16px;}
 .img-wallet{width: 54px;border-radius: 50%;border: 1px solid #2664a27d;}
+.img-wallets{border-radius: 50%;width: 120px;margin-bottom: 0px !important;border: 20px solid #003f7f !important;}
 .img-team{border-radius: 50%;border: 1px solid #2664a27d;width: 100px;}
 .sale-block {padding: 80px 0 0px 0;}
 .wallet-trx{margin-top: 60px;}
