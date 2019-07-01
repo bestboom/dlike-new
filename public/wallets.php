@@ -75,7 +75,7 @@ if ($resultp->num_rows > 0)
 		                                        </div>
 		                                        	<p class="coins-detail">
 		                                        		Earn bonus token by staking
-		                                        		<span class="coins-match">Stake Now</span>
+		                                        		<span class="coins-match"><a href="/staking">Stake Now</a></span>
 		                                        	</p>
 		                                        <hr class="wal_hr">
 		                                        <div class="pros-block">
