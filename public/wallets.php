@@ -357,7 +357,6 @@ if ($resultp->num_rows > 0)
     	return !1;
 	});
 
-    let ethadd = $("#eth_field").val();
 	var optionseth = {
         target: '#eth-msg',
         url: 'helper/addeth.php',
@@ -365,8 +364,10 @@ if ($resultp->num_rows > 0)
     }
     $('#eth_sub').submit(function(e) {
     	e.preventDefault();	
+    	let ethadd = $("#eth_field").val();
     	console.log(ethadd);
-    	if ($("#eth_field").val() == '') 
+    	if (!ethadd)
+    		//($("#eth_field").val() == '') 
     	{ 
         	toastr.error('phew... Enter ETH Address');
         	return false;
