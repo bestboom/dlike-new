@@ -187,7 +187,7 @@ $views = '1';
                 </div>
                 <div class="container tip-sponsor">
                     <div class="row">
-                        <div class="col tip-foot">This tip is sponsored by DLIKE. Learn more about DLIKE here</div>
+                        <div class="col tip-foot">This tip is sponsored by Bitfinex. Learn more about Bitfinex here</div>
                     </div>
                 </div>
             </div>
