@@ -127,7 +127,7 @@ $views = '1';
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px">
+                            <img src="/images/bitfinex-logo.jpg" alt="img" class="img-responsive" style="">
                         </div>
                         <div class="col-sm-5 mid-tip">
                             <p class="tipratio">Tips are free from DLIKE <br>Tip Author 60% - 40% to ME</p>
