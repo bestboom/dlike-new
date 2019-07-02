@@ -385,7 +385,7 @@ function isChecksumAddress($address) {
     return true;
 }
 echo $address = 'aq';
-echo isChecksumAddress($address);
+echo isChecksumAddress('aaaa');
 ?>
 
 
