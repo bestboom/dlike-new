@@ -385,7 +385,7 @@ function isChecksumAddress($address) {
     return true;
 }
 echo $address = 'aq';
-var_dump(isAddress("0x939523C1Be1547cd716EB5C7A70c2225c249f642"));
+var_dump(isAddress("0x939523C1Be1547cd716EB5C7A70c2225c249f643"));
 echo $checkaddr = isChecksumAddress('aaaa');
 echo $checkaddre = 'abd';
 ?>
