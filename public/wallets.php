@@ -141,16 +141,11 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 	                                        </div>
 	                                    	</form>
 	                                    </p>
-	                                    <div class="pros-cons-block">
+	                                    <div class="pros-cons-block" style="padding-top: 20px;">
 	                                    <div class="pros-block">
 	                                            <h5 class="base-color">DAI: </h5><p>0.008 DAI</p>
 	                                        </div>
 	                                        <p class="coins-detail">A stable coin by MakerDAO<span class="coins-match">Withdraw</span></p>
-	                                        <hr class="wal_hr">
-	                                        <div class="pros-block">
-	                                            <h5 class="base-color">Hydro: </h5><p>0.036 HYDRO</p>
-	                                        </div>
-	                                        <p class="coins-detail">A token of project hydro<span class="coins-match">Withdraw</span></p>
 	                                        <hr class="wal_hr">
 	                                    </div>
 	                                </div><!-- tips-content-end -->
