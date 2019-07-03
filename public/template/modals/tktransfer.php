@@ -1,8 +1,8 @@
 <div class="modal-body ">
-	<div class="comment-respond">
-		<h4>Write A Comment</h4>
+	<div class="transfer-respond">
+		<h4 style="padding-bottom: 20px;font-weight: 600;">Transfer DLIKE Tokens</h4>
 		<form action="#">
-			<div class="row">
+			<div class="row line">
 				<div class="col-md-6">
 					<div class="form-group">
 						<input type="text" placeholder="Name" class="form-control">
@@ -10,14 +10,14 @@
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<input type="email" placeholder="Email address" class="form-control">
+						<input type="number" placeholder="Email address" class="form-control">
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row line">
 				<div class="col-md-12">
 					<div class="form-group">
-						<textarea placeholder="Comment" class="form-control"></textarea>
+						<input type="text" placeholder="Email address" class="form-control">
 					</div>
 					<div class="form-group">
 						<div class="custom-control custom-checkbox">

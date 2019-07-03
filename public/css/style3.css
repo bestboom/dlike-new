@@ -3414,6 +3414,8 @@ sub.transmoney-value {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+.transfer-respond{padding: 30px 20px;}   
+.transfer-respond .line{padding-bottom: 20px;} 
 .post-comment-block .comment-respond,
 .post-comment-block .comment-area {
     -webkit-box-flex: 1;
