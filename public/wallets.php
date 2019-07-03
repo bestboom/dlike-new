@@ -143,9 +143,9 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 	                                    </p>
 	                                    <div class="pros-cons-block" style="padding-top: 20px;">
 	                                    <div class="pros-block">
-	                                            <h5 class="base-color">DAI: </h5><p>0.008 DAI</p>
+	                                            <h5 class="base-color">USDT: </h5><p>0.008 USDT</p>
 	                                        </div>
-	                                        <p class="coins-detail">A stable coin by MakerDAO<span class="coins-match">Withdraw</span></p>
+	                                        <p class="coins-detail">A stable coin by Bitfinex<span class="coins-match">Withdraw</span></p>
 	                                        <hr class="wal_hr">
 	                                    </div>
 	                                </div><!-- tips-content-end -->
