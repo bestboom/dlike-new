@@ -71,7 +71,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 		                                        </div>
 		                                        	<p class="coins-detail">
 		                                        		Native Token for DLIKE Platform
-		                                        		<span class="coins-match">Transfer</span>
+		                                        		<span class="coins-match"><a href="" data-toggle="modal" data-target="#prouser">Transfer</a></span>
 		                                        	</p>
 		                                        <hr class="wal_hr">
 		                                        <div class="pros-block">
@@ -345,7 +345,13 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 
 
 
-
+<div class="modal fade" id="prouser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/prouser.php'); ?>
+        </div>
+    </div>
+</div>
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
 	if(thisuser == 'PRO') 
