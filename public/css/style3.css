@@ -3553,6 +3553,17 @@ sub.transmoney-value {
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px; }
+.transfer-respond .btn-default {
+    width: 170px;
+    height: 55px;
+    background: #1652f0;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px; }    
 .comment-respond .btn-default:hover, .comment-respond .btn-default:active, .comment-respond .btn-default:active:focus {
     outline: none;
     -webkit-box-shadow: none;
