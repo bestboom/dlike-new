@@ -21,7 +21,7 @@ $sqlu = "SELECT * FROM wallet where username='$user_wallet'";
 $resultu = $conn->query($sqlu);
 $rowU = $resultu->fetch_assoc();	
 $user_eth = $rowU['eth'];
-if($user_eth === '') {echo "<script>let user_eth = '';</script>";} else{echo "<script>let user_eth = 'Exist'; let eth_address = '$user_eth'; console.log(eth_address);</script>";}
+if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<script>let user_eth = 'Exist'; let eth_address = '$user_eth'; console.log(eth_address);</script>";}
 
 ?>
 </div><!-- banner-block -->
