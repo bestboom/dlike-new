@@ -45,7 +45,7 @@ require '../includes/config.php';
 					$sqlu = "SELECT * FROM wallet where username='$user'"; 
 						$resultu = $conn->query($sqlu);
 						$rowU = $resultu->fetch_assoc();	
-						$user_eth = $rowU['wallet'];
+						$user_eth = $rowU['eth'];
 
 						if($user_eth == '') 
 						{
