@@ -48,8 +48,13 @@ require '../includes/config.php';
 						$user_eth = $rowU['eth'];
 
 						if($user_eth == '') 
-						{
-							echo '<div class="alert alert-success">Add Address</div>';
+						{	
+							$updateWallet = "UPDATE wallet SET eth = '$eth_add' WHERE username = '$user'";
+							$updateWalletQuery = $conn->query($updateWallet);
+							if ($updateWalletQuery === TRUE) 
+							{
+								echo '<div class="alert alert-success">Address Added Successfully</div>';
+							}
 						} 
 						else 
 						{
