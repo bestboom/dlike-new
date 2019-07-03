@@ -54,6 +54,7 @@ require '../includes/config.php';
 							if ($updateWalletQuery === TRUE) 
 							{
 								echo '<div class="alert alert-success">Address Added Successfully</div>';
+								echo '<script>$(".eth_add").attr("disabled","disabled"); document.getElementById("eth_sub").reset(); setTimeout(function(){location.reload();},2000);</script>';
 							}
 						} 
 						else 
