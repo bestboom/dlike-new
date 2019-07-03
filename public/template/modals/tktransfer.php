@@ -5,19 +5,22 @@
 			<div class="row line">
 				<div class="col-md-6">
 					<div class="form-group">
-						<input type="text" placeholder="Name" class="form-control">
+						<div class="input-group-prepend">
+							<div class="input-group-text mb-deck"> To</div>
+						</div>
+						<input type="text" class="form-control">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<input type="number" placeholder="Email address" class="form-control">
+						<input type="number" class="form-control">
 					</div>
 				</div>
 			</div>
 			<div class="row line">
 				<div class="col-md-12">
 					<div class="form-group">
-						<input type="text" placeholder="Email address" class="form-control">
+						<input type="text" class="form-control">
 					</div>
 					<div class="form-group">
 						<div class="custom-control custom-checkbox">
