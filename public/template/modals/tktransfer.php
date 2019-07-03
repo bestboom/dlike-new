@@ -13,13 +13,16 @@
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<input type="number" class="form-control">
+						<input type="number" class="form-control" min="0">
 					</div>
 				</div>
 			</div>
 			<div class="row line">
 				<div class="col-md-12">
 					<div class="form-group">
+						<div class="input-group-prepend">
+							<div class="input-group-text mb-deck"> Memo</div>
+						</div>
 						<input type="text" class="form-control">
 					</div>
 					<div class="form-group">
