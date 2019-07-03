@@ -18,7 +18,7 @@
 						<div class="input-group mb-3">
 							<input type="number" class="form-control" min="0">
 							<div class="input-group-append">
-								<div class="input-group-text mb-deck"> Amount</div>
+								<div class="input-group-text mb-deck"> DLIKE</div>
 							</div>
 						</div>
 					</div>
