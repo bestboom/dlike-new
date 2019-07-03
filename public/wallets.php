@@ -16,6 +16,13 @@ $resultp = $conn->query($sqlp);
 if ($resultp->num_rows > 0) 
 {echo "<script>let thisuser = 'PRO';</script>";} else{echo "<script>let thisuser = '';</script>";}
 
+
+$sqlu = "SELECT * FROM wallet where username='$user'"; 
+$resultu = $conn->query($sqlu);
+$rowU = $resultu->fetch_assoc();	
+$user_eth = $rowU['eth'];
+if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<script>let user_eth = 'Exist'; let eth_address = <?$user_eth?></script>";}
+
 ?>
 </div><!-- banner-block -->
 
@@ -129,7 +136,7 @@ if ($resultp->num_rows > 0)
 	                                        		</div>
 	                                        			<input type="hidden" name="eth_user" value="<? echo $user_wallet; ?>" />
 	                                        			<input type="text" class="form-control" name="eth_add" id="eth_field" placeholder="Enter ETH Addr" value="" />&nbsp;
-	                                            		<button type="submit" class="btn btn-primary">ADD</button>	
+	                                            		<button type="submit" class="btn btn-primary eth_add">ADD</button>	
 	                                            </div>
 	                                        </div>
 	                                    	</form>
@@ -347,10 +354,15 @@ if ($resultp->num_rows > 0)
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
 	if(thisuser == 'PRO') 
-		{
-			$('.pro-data').hide();
-			$('.pro-img').show();
-		}
+	{
+		$('.pro-data').hide();
+		$('.pro-img').show();
+	}
+	if(user_eth == 'Exist') 
+	{
+		$('.eth_add').hide();
+		//$('.pro-img').show();
+	}
 	var optionspro = {
         target: '#pro-msg',
         url: 'helper/addpro.php',
@@ -370,9 +382,8 @@ if ($resultp->num_rows > 0)
     $('#eth_sub').submit(function(e) {
     	e.preventDefault();	
     	let ethadd = $("#eth_field").val();
-    	console.log(ethadd);
-    	if (!ethadd)
-    		//($("#eth_field").val() == '') 
+
+    	if (!ethadd) 
     	{ 
         	toastr.error('phew... Enter ETH Address');
         	return false;
