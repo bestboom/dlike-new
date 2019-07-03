@@ -4,9 +4,12 @@
 	error_reporting(E_ALL);
 require '../includes/config.php';
 
-		if (isset($_POST["eth_add"]))
+		if (isset($_POST["eth_add"]) && isset($_POST["eth_user"]))
 		{
+
 			$eth_add = $_POST["eth_add"];
+			$user = $_POST["eth_user"];
+
 			function isAddress($address) {
 			    if (!preg_match('/^(0x)?[0-9a-f]{40}$/i',$address)) {
 			        // check if it has the basic requirements of an address
@@ -39,7 +42,20 @@ require '../includes/config.php';
 
 			if($checkaddr === true)
 				{ 
-					echo '<div class="alert alert-success">Looks Good</div>';
+					$sqlu = "SELECT * FROM wallet where username='$user'"; 
+						$resultu = $conn->query($sqlu);
+						$rowU = $resultu->fetch_assoc();	
+						$user_eth = $rowU['wallet'];
+
+						if($user_eth == '') 
+						{
+							echo '<div class="alert alert-success">Add Address</div>';
+						} 
+						else 
+						{
+							echo '<div class="alert alert-danger">Address Already Exists</div>';
+						}
+					
 				} 
 				else 
 				{ 
