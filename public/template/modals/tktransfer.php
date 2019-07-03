@@ -44,7 +44,7 @@
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-default">Transfer</button>
+			<center><button class="btn btn-default">Transfer</button></center>
 		</form>
 	</div>
 
