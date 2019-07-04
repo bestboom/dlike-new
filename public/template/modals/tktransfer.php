@@ -10,14 +10,14 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> To</div>
 							</div>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control reciever" value="" />
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<div class="input-group mb-3">
-							<input type="number" class="form-control" min="0">
+							<input type="number" class="form-control send_amt" min="0" value="" />
 							<div class="input-group-append">
 								<div class="input-group-text mb-deck"> DLIKE</div>
 							</div>

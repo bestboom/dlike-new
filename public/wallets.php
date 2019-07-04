@@ -401,11 +401,18 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 		}
 		$('#tsf_sub').submit(function(e) {
 			e.preventDefault();	
-			let ethadd = $("#eth_field").val();
+			let reciever = $(".reciever").val();
+			let send_amt = $(".send_amt").val();
 
-			if (!ethadd) 
+			if (!reciever) 
 			{ 
-				toastr.error('phew... Enter ETH Address');
+				toastr.error('phew... Enter Reciever Name');
+				return false;
+			}
+
+			if (!send_amt) 
+			{ 
+				toastr.error('phew... Enter Amount To Send');
 				return false;
 			}
 
