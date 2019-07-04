@@ -253,7 +253,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 									$result = $conn->query($sqlt);
 									if ($result->num_rows > 0) {
 										while($row = $result->fetch_assoc()) { 
-											if($row["receiver"]=$user_wallet){$row["reason"]='my good';}
+											if($row["receiver"]=$user_wallet){$row["reason"]='my good';}else{$row["reason"]=$row["reason"];}
 											?>
 											<tr>
 												<td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
