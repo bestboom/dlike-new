@@ -423,7 +423,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 				return false;
 			}
 
-			$(this).ajaxSubmit(optionseth);
+			$(this).ajaxSubmit(optionstsf);
 			return !1;
 		});
 	</script>
