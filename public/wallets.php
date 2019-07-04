@@ -402,7 +402,8 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 		$('#tsf_sub').submit(function(e) {
 			e.preventDefault();	
 			let reciever = $(".reciever").val();
-			let send_amt = $(".send_amt").val();
+			let send_amt = parseInt($(".send_amt").val());
+			let user_bal = parseInt($("#user_bal").val());
 
 			if (!reciever) 
 			{ 
@@ -413,6 +414,12 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 			if (!send_amt) 
 			{ 
 				toastr.error('phew... Enter Amount To Send');
+				return false;
+			}
+
+			if (send_amt > user_bal) 
+			{ 
+				toastr.error('phew... Not Enough Balance');
 				return false;
 			}
 

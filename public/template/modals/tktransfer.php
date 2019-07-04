@@ -36,7 +36,8 @@
 						</div>
 					</div>
 					<div class="form-group">
-								<label class="custom-control-label">Balance: <?php echo (number_format($rowIt['amount'])); ?> DLIKE</label>
+						<input type="hidden" name="user_bal" id="user_bal" value="<? echo $user_wallet; ?>" />
+						<label class="custom-control-label">Balance: <?php echo (number_format($rowIt['amount'])); ?> DLIKE</label>
 					</div>
 				</div>
 			</div>
