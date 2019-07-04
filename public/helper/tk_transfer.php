@@ -8,9 +8,20 @@ require '../includes/config.php';
 	{
 		echo $reciever = $_POST["reciever"];
 		echo $amount = $_POST["send_amt"];
-		echo $user_bal = $_POST["user_bal"];
+		echo $total_bal = $_POST["user_bal"];
 		echo $user = $_POST["user_name"];
-		echo '<div class="alert alert-success">Looks Good</div>';
+
+		$sqls = "SELECT amount FROM wallet where username='$user'"; 
+		$resultAmount = $conn->query($sqls);
+		if ($resultAmount->num_rows > 0) {
+				$rowIt = $resultAmount->fetch_assoc();	
+				$user_bal = $rowIt['amount'];
+			if ($amount > $user_bal){ echo '<div class="alert alert-danger">You do not have enough tokens!</div>';}
+			else 
+			{
+				echo '<div class="alert alert-success">Looks Good</div>';
+			}
+		}
 	}
 	else 
 	{
