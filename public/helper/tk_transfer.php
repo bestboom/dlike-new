@@ -6,10 +6,15 @@ require '../includes/config.php';
 
 	if (isset($_POST["reciever"]) && isset($_POST["send_amt"]) && isset($_POST["user_bal"]) && isset($_POST["user_name"]))
 	{
-		echo $reciever = $_POST["reciever"];
-		echo $amount = $_POST["send_amt"];
-		echo $total_bal = $_POST["user_bal"];
-		echo $user = $_POST["user_name"];
+		$reciever = $_POST["reciever"];
+		$amount = $_POST["send_amt"];
+		$total_bal = $_POST["user_bal"];
+		$user = $_POST["user_name"];
+		$reason = 'Transfer From';
+		$sqlR = "SELECT amount FROM wallet where username='$reciever'";
+		$resultR = $conn->query($sqlR);
+		$rowR = $resultR->fetch_assoc();
+		$reciever_bal = $rowR['amount'];
 
 		$sqls = "SELECT amount FROM wallet where username='$user'"; 
 		$resultAmount = $conn->query($sqls);
@@ -19,7 +24,20 @@ require '../includes/config.php';
 			if ($amount > $user_bal){ echo '<div class="alert alert-danger">You do not have enough tokens!</div>'; die();}
 			else 
 			{
-				echo '<div class="alert alert-success">Looks Good</div>';
+				$updateWallet = "UPDATE wallet SET amount = '$user_bal' - '$amount' WHERE username = '$user'";
+				$updateWalletQuery = $conn->query($updateWallet);
+					if ($updateWalletQuery === TRUE) 
+					{
+						$updateRec = "UPDATE wallet SET amount = '$reciever_bal' + '$amount' WHERE username = '$reciever'";
+						$updateRecQuery = $conn->query($updateRec);
+						if ($updateRecQuery === TRUE) {
+							$sqlj = "INSERT INTO transactions (username, amount, reason)
+										VALUES ('".$user."', '".$amount."', '".$reason."')";
+							if (mysqli_query($conn, $sqlj)) {
+								echo '<div class="alert alert-success">Transfer Successful</div>';
+							}
+						}
+					}
 			}
 		}
 	}
