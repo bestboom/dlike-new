@@ -402,6 +402,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 			let reciever = $(".reciever").val();
 			let send_amt = parseInt($(".send_amt").val());
 			let user_bal = parseInt($("#user_bal").val());
+			console.log(user_bal);
 
 			if (!reciever) 
 			{ 
