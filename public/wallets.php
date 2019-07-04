@@ -252,7 +252,9 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 									$sqlt = "SELECT * FROM transactions where username='$user_wallet' OR receiver='$user_wallet' ORDER BY trx_time DESC";
 									$result = $conn->query($sqlt);
 									if ($result->num_rows > 0) {
-										while($row = $result->fetch_assoc()) { ?>
+										while($row = $result->fetch_assoc()) { 
+											if($row["receiver"]=$user_wallet){$row["reason"]='my good';}
+											?>
 											<tr>
 												<td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
 												<td class="exp-user">For <span><?php echo $row["reason"]; ?></span></td>
