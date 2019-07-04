@@ -417,7 +417,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 				return false;
 			}
 
-			if (send_amt > user_bal || user_bal < '1') 
+			if (send_amt > user_bal || user_bal < '1' || user_bal == NaN) 
 			{ 
 				toastr.error('phew... Not Enough Balance');
 				return false;
