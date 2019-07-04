@@ -402,7 +402,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 			e.preventDefault();	
 			let reciever = $(".reciever").val();
 			let send_amt = parseInt($(".send_amt").val());
-			let user_bal = parseInt($("#user_bal").val());
+			let user_bal = parseInt($("#user_bal").val()) || 0;
 			console.log(user_bal);
 
 			if (!reciever) 
@@ -417,7 +417,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 				return false;
 			}
 
-			if (send_amt > user_bal || user_bal < '1' || user_bal == NaN) 
+			if (send_amt > user_bal || user_bal < '1') 
 			{ 
 				toastr.error('phew... Not Enough Balance');
 				return false;
