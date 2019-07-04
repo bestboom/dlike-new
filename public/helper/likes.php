@@ -8,9 +8,9 @@ require '../includes/config.php';
 
 
 
-$sql = "ALTER TABLE transactions ADD receiver VARCHAR(255) NOT NULL AFTER reason";
+$sql = "ALTER TABLE transactions ADD memo VARCHAR(255) NOT NULL AFTER receiver";
 if ($conn->query($sql) === TRUE) {
-    echo "Table receiver added";
+    echo "colm memo added";
 } else {
     echo "Error updating table: " . $conn->error;
 }
