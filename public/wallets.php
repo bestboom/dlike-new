@@ -343,11 +343,6 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 		<br>
 	</div><!-- explorer-section -->
 
-
-<?
-$master = 'aq';
-echo $reason = "Transfer From ".$master."";
-?>
 	<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content modal-custom">

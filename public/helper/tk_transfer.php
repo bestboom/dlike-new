@@ -10,7 +10,8 @@ require '../includes/config.php';
 		$amount = $_POST["send_amt"];
 		$total_bal = $_POST["user_bal"];
 		$user = $_POST["user_name"];
-		$reason = 'Transfer From';
+		$reason = "Transfer From ".$reciever."";
+
 		$sqlR = "SELECT amount FROM wallet where username='$reciever'";
 		$resultR = $conn->query($sqlR);
 		$rowR = $resultR->fetch_assoc();
@@ -18,18 +19,22 @@ require '../includes/config.php';
 
 		$sqls = "SELECT amount FROM wallet where username='$user'"; 
 		$resultAmount = $conn->query($sqls);
+
 		if ($resultAmount->num_rows > 0) {
 				$rowIt = $resultAmount->fetch_assoc();	
 				$user_bal = $rowIt['amount'];
+
 			if ($amount > $user_bal){ echo '<div class="alert alert-danger">You do not have enough tokens!</div>'; die();}
 			else 
 			{
 				$updateWallet = "UPDATE wallet SET amount = '$user_bal' - '$amount' WHERE username = '$user'";
 				$updateWalletQuery = $conn->query($updateWallet);
+
 					if ($updateWalletQuery === TRUE) 
 					{
 						$updateRec = "UPDATE wallet SET amount = '$reciever_bal' + '$amount' WHERE username = '$reciever'";
 						$updateRecQuery = $conn->query($updateRec);
+						
 						if ($updateRecQuery === TRUE) {
 							$sqlj = "INSERT INTO transactions (username, amount, reason)
 										VALUES ('".$user."', '".$amount."', '".$reason."')";
