@@ -36,7 +36,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-								<label class="custom-control-label" for="customCheck5">Balance: <?php echo (number_format($rowIt['amount'])); ?> DLIKE</label>
+								<label class="custom-control-label">Balance: <?php echo (number_format($rowIt['amount'])); ?> DLIKE</label>
 					</div>
 				</div>
 			</div>
