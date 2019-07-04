@@ -10,7 +10,7 @@ require '../includes/config.php';
 		$amount = $_POST["send_amt"];
 		$total_bal = $_POST["user_bal"];
 		$user = $_POST["user_name"];
-		$reason = "Transfer From ".$reciever."";
+		$reason = "Transfer To ".$reciever."";
 
 		$sqlR = "SELECT amount FROM wallet where username='$reciever'";
 		$resultR = $conn->query($sqlR);
@@ -34,7 +34,7 @@ require '../includes/config.php';
 					{
 						$updateRec = "UPDATE wallet SET amount = '$reciever_bal' + '$amount' WHERE username = '$reciever'";
 						$updateRecQuery = $conn->query($updateRec);
-						
+
 						if ($updateRecQuery === TRUE) {
 							$sqlj = "INSERT INTO transactions (username, amount, reason)
 										VALUES ('".$user."', '".$amount."', '".$reason."')";
