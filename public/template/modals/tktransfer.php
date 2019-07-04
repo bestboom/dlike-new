@@ -10,14 +10,14 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> To</div>
 							</div>
-							<input type="text" class="form-control reciever" value="" />
+							<input type="text" class="form-control reciever" name="reciever" value="" />
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
 						<div class="input-group mb-3">
-							<input type="number" class="form-control send_amt" min="0" value="" />
+							<input type="number" class="form-control send_amt" name="send_amt" min="0" value="" />
 							<div class="input-group-append">
 								<div class="input-group-text mb-deck"> DLIKE</div>
 							</div>
@@ -32,11 +32,12 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Memo</div>
 							</div>
-							<input type="text" class="form-control">
+							<input type="text" class="form-control" name="memo">
 						</div>
 					</div>
 					<div class="form-group">
-						<input type="hidden" name="user_bal" id="user_bal" value="<? echo $user_wallet; ?>" />
+						<input type="hidden" name="user_bal" id="user_bal" value="<? echo $rowIt['amount']; ?>" />
+						<input type="hidden" name="user_name" id="user_name" value="<? echo $user_wallet; ?>" />
 						<label class="custom-control-label">Balance: <?php echo (number_format($rowIt['amount'])); ?> DLIKE</label>
 					</div>
 				</div>

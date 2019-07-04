@@ -4,9 +4,9 @@
 	error_reporting(E_ALL);
 require '../includes/config.php';
 
-	if (isset($_POST["eth_add"]) && isset($_POST["eth_user"]))
+	if (isset($_POST["eth_add"]) && isset($_POST["eth_user"]) && isset($_POST["eth_user"]) && isset($_POST["eth_user"]))
 	{
-		
+		echo '<div class="alert alert-success">Looks Good</div>';
 	}
 
 ?>
