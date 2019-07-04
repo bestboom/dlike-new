@@ -36,7 +36,7 @@ require '../includes/config.php';
 						$updateRecQuery = $conn->query($updateRec);
 
 						if ($updateRecQuery === TRUE) {
-							$sqlj = "INSERT INTO transactions (username, amount, reason, reciever)
+							$sqlj = "INSERT INTO transactions (username, amount, reason, receiver)
 										VALUES ('".$user."', '".$amount."', '".$reason."', '".$reciever."')";
 							if (mysqli_query($conn, $sqlj)) {
 								echo '<div class="alert alert-success">Transfer Successful</div>';
