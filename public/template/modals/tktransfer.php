@@ -37,8 +37,7 @@
 					<div class="form-group">
 						<div class="custom-control custom-checkbox">
 							<div class="custom-checkbox-wrap">
-								<input type="checkbox" class="custom-control-input" id="customCheck5" name="example1">
-								<label class="custom-control-label" for="customCheck5">Notify me of follow-up comments by email</label>
+								<label class="custom-control-label" for="customCheck5">Balance: <?php echo (number_format($rowIt['amount'])); ?> DLIKE</label>
 							</div>
 						</div>
 					</div>
