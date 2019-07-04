@@ -7,6 +7,9 @@ require '../includes/config.php';
 	if (isset($_POST["reciever"]) && isset($_POST["send_amt"]) && isset($_POST["user_bal"]) && isset($_POST["user_name"]))
 	{
 		echo $reciever = $_POST["reciever"];
+		echo $amount = $_POST["send_amt"];
+		echo $user_bal = $_POST["user_bal"];
+		echo $user = $_POST["user_name"];
 		echo '<div class="alert alert-success">Looks Good</div>';
 	}
 	else 
