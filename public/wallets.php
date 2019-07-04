@@ -5,6 +5,7 @@ else { $user_wallet = $_COOKIE['username']; }
 $sqls = "SELECT amount FROM wallet where username='$user_wallet'"; 
 $resultAmount = $conn->query($sqls);
 $rowIt = $resultAmount->fetch_assoc();
+$dlike_bal = $rowIt['amount'];
 
 $sql_st = "SELECT SUM(amount) As stake_amt FROM staking where username='$user_wallet'"; 
 $result_st = $conn->query($sql_st);
@@ -67,7 +68,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 								<div class="pros-cons-block">
 									<div class="pros-block">
 										<h5 class="base-color">DLIKE: </h5>
-										<p><?php echo (number_format($rowIt['amount'])); ?> DLIKE</p>
+										<p><?php echo (number_format($dlike_bal)); ?> DLIKE</p>
 									</div>
 									<p class="coins-detail">
 										Native Token for DLIKE Platform
@@ -416,7 +417,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 				return false;
 			}
 
-			if (send_amt > user_bal) 
+			if (send_amt > user_bal || user_bal < '1') 
 			{ 
 				toastr.error('phew... Not Enough Balance');
 				return false;
