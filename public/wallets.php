@@ -249,7 +249,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 								</thead>
 								<tbody>
 									<?php
-									$sqlt = "SELECT * FROM transactions where reciever='$user_wallet' ORDER BY trx_time DESC";
+									$sqlt = "SELECT * FROM transactions where username='$user_wallet' OR reciever='$user_wallet' ORDER BY trx_time DESC";
 									$result = $conn->query($sqlt);
 									if ($result->num_rows > 0) {
 										while($row = $result->fetch_assoc()) { ?>
@@ -417,7 +417,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 				return false;
 			}
 
-			if (send_amt > user_bal || user_bal < '1') 
+			if (send_amt > user_bal) 
 			{ 
 				toastr.error('phew... Not Enough Balance');
 				return false;
