@@ -8,14 +8,15 @@ require '../includes/config.php';
 
 
 
+
+/*'
+
 $sql = "ALTER TABLE transactions ADD memo VARCHAR(255) NOT NULL AFTER receiver";
 if ($conn->query($sql) === TRUE) {
     echo "colm memo added";
 } else {
     echo "Error updating table: " . $conn->error;
 }
-
-/*'
 
 
 
