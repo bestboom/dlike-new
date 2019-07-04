@@ -35,11 +35,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="custom-control custom-checkbox">
-							<div class="custom-checkbox-wrap">
 								<label class="custom-control-label" for="customCheck5">Balance: <?php echo (number_format($rowIt['amount'])); ?> DLIKE</label>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
