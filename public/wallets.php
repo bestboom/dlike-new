@@ -393,4 +393,23 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 			$(this).ajaxSubmit(optionseth);
 			return !1;
 		});	
+
+		var optionstsf = {
+			target: '#tsf-msg',
+			url: 'helper/tk_transfer.php',
+			success: function() {},
+		}
+		$('#tsf_sub').submit(function(e) {
+			e.preventDefault();	
+			let ethadd = $("#eth_field").val();
+
+			if (!ethadd) 
+			{ 
+				toastr.error('phew... Enter ETH Address');
+				return false;
+			}
+
+			$(this).ajaxSubmit(optionseth);
+			return !1;
+		});
 	</script>
