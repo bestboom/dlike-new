@@ -42,7 +42,7 @@
 					</div>
 				</div>
 			</div>
-			<center><button  type="submit" class="btn btn-default tsf_sub">Transfer</button></center>
+			<center><button  type="submit" class="btn btn-default tsf_btn">Transfer</button></center>
 		</form>
 	</div>
 

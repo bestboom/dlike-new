@@ -292,19 +292,6 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 											<td>0.00005510</td>
 											<td>7,522.88586112</td>
 										</tr>
-										<tr>
-											<td>
-												<div class="favorite-coin">
-
-												</div>
-											</td>
-											<td>ONT/BTC</td>
-											<td><span class="color-buy">0.00050900 / $3.55</span></td>
-											<td><span class="color-buy">+8.70%</span></td>
-											<td>0.0005700</td>
-											<td>0.0004910</td>
-											<td>5,774.97192430</td>
-										</tr>
 									</tbody>
 								</table><!-- coin-list table -->
 							</div>

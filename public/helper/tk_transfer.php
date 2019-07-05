@@ -40,6 +40,7 @@ require '../includes/config.php';
 										VALUES ('".$user."', '".$amount."', '".$reason."', '".$reciever."')";
 							if (mysqli_query($conn, $sqlj)) {
 								echo '<div class="alert alert-success">Transfer Successful</div>';
+								echo '<script>$(".tsf_btn").attr("disabled","disabled"); document.getElementById("tsf_sub").reset(); setTimeout(function(){location.reload();},2000);</script>';
 							}
 						}
 					}
