@@ -253,11 +253,12 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 									$result = $conn->query($sqlt);
 									if ($result->num_rows > 0) {
 										while($row = $result->fetch_assoc()) { 
-											if($row["receiver"]=$user_wallet){$row["reason"]='my good';}else{$row["reason"]=$row["reason"];}
+											$trx_status = $row["reason"];
+											if($row["receiver"]=$user_wallet){$trx_stat='my good';}else{$trx_stat=$trx_status;}
 											?>
 											<tr>
 												<td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
-												<td class="exp-user">For <span><?php echo $row["reason"]; ?></span></td>
+												<td class="exp-user">For <span><?php echo $trx_status; ?></span></td>
 												<td class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> DLIKE</td>
 											</tr>
 										<? 	} }  ?>
