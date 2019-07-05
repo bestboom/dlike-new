@@ -6,7 +6,7 @@ $sqls = "SELECT amount FROM wallet where username='$user_wallet'";
 $resultAmount = $conn->query($sqls);
 if ($resultAmount->num_rows > 0) {
 $rowIt = $resultAmount->fetch_assoc();
-}
+}else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 ?>
         <div class="container explorer-top">
             <div class="col-md-12">
