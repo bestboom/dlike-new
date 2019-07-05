@@ -146,7 +146,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 									<div class="pros-block">
 										<h5 class="base-color">USDT: </h5><p>0.008 USDT</p>
 									</div>
-									<p class="coins-detail">A stable coin by Bitfinex<span class="coins-match">Withdraw</span></p>
+									<p class="coins-detail">A stable coin by Bitfinex<span class="coins-match"><a href="" data-toggle="modal" data-target="#tk_withdraw">Withdraw</a></span></p>
 									<hr class="wal_hr">
 								</div>
 							</div><!-- tips-content-end -->
@@ -335,6 +335,13 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 	</div><!-- explorer-section -->
 
 	<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content modal-custom">
+				<?php include('template/modals/tktransfer.php'); ?>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="tk_withdraw" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content modal-custom">
 				<?php include('template/modals/tktransfer.php'); ?>
