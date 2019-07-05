@@ -7,16 +7,15 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-
-
 /*'
-
-$sql = "ALTER TABLE transactions ADD memo VARCHAR(255) NOT NULL AFTER receiver";
+$sql = "ALTER TABLE transactions ADD receiver VARCHAR(255) NOT NULL AFTER reason";
 if ($conn->query($sql) === TRUE) {
-    echo "colm memo added";
+    echo "Table rece added";
 } else {
     echo "Error updating table: " . $conn->error;
 }
+
+
 
 
 
