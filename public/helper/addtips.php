@@ -25,32 +25,31 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 		$verifytime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
 		$resulttime = $conn->query($verifytime);
 		$rowtime = $resulttime->fetch_assoc();
-		if ($resulttime->num_rows  === 0) {
-			$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
-			VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$ip."', now())";
-
-			if (mysqli_query($conn, $sqlm)) 
+		if ($resulttime->num_rows  > 0) 
+		{
+			echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
+		} 
+		else
+		{		
+			$lasttip = $rowtime['lasttime']; 
+			if($lasttip < 300) 
 			{
-				echo '<script>document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
-				echo '<div class="alert alert-success">Tip is Successful</div>';
+				echo '<div class="alert alert-danger">There seems some issue</div>';
+				echo '<script>setTimeout(function(){location.reload();}, 1000);</script>'; 
 			} 
 			else 
 			{
-				echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
-			}
-		} else {		
-			$lasttip = $rowtime['lasttime']; 
-			if($lasttip < 300) {
-				echo '<div class="alert alert-danger">There seems some issue</div>';
-				echo '<script>setTimeout(function(){location.reload();}, 1000);</script>'; 
-			} else {
 				$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
 				VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$ip."', now())";
 				
-				if (mysqli_query($conn, $sqlm)) {
-					echo '<script>document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+				if (mysqli_query($conn, $sqlm)) 
+				{	
+					
 					echo '<div class="alert alert-success">Tip is Successful</div>';
-				} else {
+					echo '<script>$(".btn-tip").attr("disabled","disabled"); document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+				} 
+				else 
+				{
 					echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 				}
 
