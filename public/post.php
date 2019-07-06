@@ -32,8 +32,9 @@ if ($resultvs->num_rows > 0) {
     VALUES ('".$auth."', '".$link."', '".$views."')";
     mysqli_query($conn, $sqlview); 
     $postviews = '1';  
-}      
-        //tip total income
+} 
+     
+//tip total income
 $post_inc = "SELECT SUM(tip1) As post_inc, SUM(tip2) As post_inc2 FROM TipTop where permlink = '$link' and receiver = '$auth'";
 $result_inc = $conn->query($post_inc);
 if ($result_inc->num_rows > 0) {
@@ -43,15 +44,23 @@ if ($result_inc->num_rows > 0) {
     //$totalpost = $postincome + $postincome2;
     $totalpostincome = round($postincome,3);
 } else { $postincome = '0.00'; }
-        //check pro user
+
+//check pro user
 $sql_status = "SELECT * FROM userstatus where username = '$sender'";
 $result_status = $conn->query($sql_status);
-if ($result_status->num_rows > 0 ) { 
+if ($result_status->num_rows > 0 ) 
+{ 
     $row_status = $result_status->fetch_assoc();
     $user_status = $row_status['status'];
-    if($user_status = '2' ){ $sender_status = "PRO";
-} else { $sender_status = "Not PRO";}
-} else { $sender_status = "NOT PRO";}  
+    if($user_status = '3' )
+    { 
+        $sender_status = "PRO";
+    } 
+    else 
+    { $sender_status = "Not PRO";}
+} 
+else 
+{ $sender_status = "NOT PRO";}  
 
 
 ?>
