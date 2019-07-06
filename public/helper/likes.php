@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$updatePost = "UPDATE wallet SET amount = 7000 WHERE username = 'lays'";
+$updatePost = "UPDATE wallet SET amount = 102533 WHERE username = 'leadent360'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {}
 
