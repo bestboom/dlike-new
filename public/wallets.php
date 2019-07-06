@@ -318,7 +318,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 											<tr>
 												<td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
 												<td class="exp-user"><span><?php echo $row_tip["sender"]; ?></span></td>
-												<td class="exp-amt"><span><?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?></span></td>
+												<td class="exp-amt"><span class="color-sell"><?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?></span></td>
 												<td class="exp-amt"><span><?php echo $row_tip["tip_time"]; ?></span></td>
 												<td class="exp-amt"><span><?php echo $row_tip["tip1"]; ?></span> USDT</td>
 											</tr>
