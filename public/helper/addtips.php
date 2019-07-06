@@ -42,6 +42,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 						$result_s = $conn->query($sqls);
 
 						if($result_s->num_rows > 0) {
+							echo 'user exist';
 							$row_s = $result_s->fetch_assoc();	
 							$sender_bal = $row_s['tip1'];
 							$updat_u = "UPDATE TipsWallet SET tip1 = '$sender_bal' + '$sender_amount' WHERE username = '$sender'";
@@ -50,6 +51,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 						}
 						else
 						{
+							echo 'user not exist';
 							$sql_s = "INSERT INTO TipsWallet (username, tip1)
 								VALUES ('".$sender."', '".$sender_amount."'";
 							if(mysqli_query($conn, $sql_s)){echo 'entry made';}else{echo 'entry not made';}
