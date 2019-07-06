@@ -7,6 +7,12 @@ $resultAmount = $conn->query($sqls);
 $rowIt = $resultAmount->fetch_assoc();
 $dlike_bal = $rowIt['amount'];
 
+$sqlTip = "SELECT * FROM TipWallet where username='$user_wallet'"; 
+$resultTip = $conn->query($sqlTip);
+if ($resultTip->num_rows > 0) {
+$rowTip = $resultTip->fetch_assoc();
+$tip_bal = $rowTip['tip1']; } else {$tip_bal = '0';}
+
 $sql_st = "SELECT SUM(amount) As stake_amt FROM staking where username='$user_wallet'"; 
 $result_st = $conn->query($sql_st);
 $row_st = $result_st->fetch_assoc();
@@ -14,8 +20,7 @@ $row_st = $result_st->fetch_assoc();
 
 $sqlp = "SELECT * FROM prousers where username='$user_wallet'";
 $resultp = $conn->query($sqlp);
-if ($resultp->num_rows > 0) 
-	{echo "<script>let thisuser = 'PRO';</script>";} else{echo "<script>let thisuser = '';</script>";}
+if ($resultp->num_rows > 0) {echo "<script>let thisuser = 'PRO';</script>";} else{echo "<script>let thisuser = '';</script>";}
 
 
 $sqlu = "SELECT * FROM wallet where username='$user_wallet'"; 
@@ -144,7 +149,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 								</p>
 								<div class="pros-cons-block" style="padding-top: 20px;">
 									<div class="pros-block">
-										<h5 class="base-color">USDT: </h5><p>0.008 USDT</p>
+										<h5 class="base-color">USDT: </h5><p><?php echo $tip_bal; ?> USDT</p>
 									</div>
 									<p class="coins-detail">A stable coin by Bitfinex<span class="coins-match"><a href="" data-toggle="modal" data-target="#tk_withdraw">Withdraw</a></span></p>
 									<hr class="wal_hr">
