@@ -27,6 +27,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 		$rowtime = $resulttime->fetch_assoc();
 		if ($resulttime->num_rows  > 0) 
 		{
+			echo $lasttip = $rowtime['lasttime']; 
 			echo '<div class="alert alert-danger">There is some issue. Lets Try Later!</div>';
 			echo '<script>$(".tipthnk").hide(); $(".tipratio").show();</script>';
 		} 
