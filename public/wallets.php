@@ -344,7 +344,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 	<div class="modal fade" id="tk_withdraw" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content modal-custom">
-				<?php include('template/modals/tktransfer.php'); ?>
+				<?php include('template/modals/tipswithdraw.php'); ?>
 			</div>
 		</div>
 	</div>
