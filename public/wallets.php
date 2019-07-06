@@ -20,9 +20,7 @@ $row_st = $result_st->fetch_assoc();
 
 $sqlp = "SELECT * FROM prousers where username='$user_wallet'";
 $resultp = $conn->query($sqlp);
-$row_p = $resultp->fetch_assoc();
-    $user_status = $row_p['status'];
-if ($resultp->num_rows > 0) {echo "<script>let thisuser = 'PRO';</script>"; echo $user_status;} else{echo "<script>let thisuser = '';</script>";}
+if ($resultp->num_rows > 0) {echo "<script>let thisuser = 'PRO';</script>";} else{echo "<script>let thisuser = '';</script>";}
 
 
 $sqlu = "SELECT * FROM wallet where username='$user_wallet'"; 

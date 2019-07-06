@@ -47,6 +47,10 @@ if ($result_inc->num_rows > 0)
 } else { $postincome = '0.00'; }
 
 //check pro user
+$sqlp = "SELECT * FROM prousers where username='$sender'";
+$resultp = $conn->query($sqlp);
+if ($resultp->num_rows > 0) {echo "<script>let thisuser = 'PRO';</script>";} else{echo "<script>let thisuser = '';</script>";}
+
 $sql_status = "SELECT * FROM userstatus where username = '$sender'";
 $result_status = $conn->query($sql_status);
 if ($result_status->num_rows > 0 ) 
@@ -375,15 +379,18 @@ else
     }
 
     $('#tipsubmit').submit(function() {
-        var sender_status = '<?=($sender_status)?>';
-        console.log(sender_status);
-        if(username != null) {
-            if(sender_status !='PRO'){ $("#prouser").modal("show");
-            return false;} else{
-                $(this).ajaxSubmit(tipoptions)
-                return !1
-            }
-        } else {toastr.error('hmm... You must be login!');  return false;}    
+        if (username === null) 
+        {
+            toastr.error('hmm... You must be login!');
+            return false;
+        }
+        if (thisuser !='PRO') {
+            $("#prouser").modal("show");
+            return false;
+        }
+
+        $(this).ajaxSubmit(tipoptions)
+        return !1 
     });
     var directTime = <?=($tiptime)?>;
     var sTime = new Date().getTime();
