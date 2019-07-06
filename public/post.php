@@ -331,18 +331,16 @@ else
         <?php include('template/footer3.php'); ?>
         <script type="text/javascript">
             post_author = '<?php echo $auth; ?>';
-            console.log(post_author);
             post_permlink = '<?php echo $link; ?>';
-            console.log(post_permlink);
             steem.api.getContent(post_author , post_permlink, function(err, res) {
-        console.log(res);
+        //console.log(res);
 
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
         if (typeof metadata.image === "string"){
             img.src = metadata.image.replace("?","?");
         } else {
-            img.src = metadata.image;
+            img.src = metadata.image[0];
         }
         json_metadata = metadata;
         let category = metadata.category;
