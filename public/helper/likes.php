@@ -7,6 +7,10 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$updatePost = "UPDATE wallet SET amount = 7000 WHERE username = 'lays'";
+$updatePostQuery = $conn->query($updatePost);
+if ($updatePostQuery === TRUE) {}
+
 /*'
 $sql = "ALTER TABLE transactions ADD receiver VARCHAR(255) NOT NULL AFTER reason";
 if ($conn->query($sql) === TRUE) {
