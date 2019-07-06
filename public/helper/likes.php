@@ -8,6 +8,13 @@ require '../includes/config.php';
 
 
 
+$sqlw = "DELETE FROM TipTop";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Table DELETED successfully";
+} else {
+    echo "Error deleting table: " . $conn->error;
+}
 
 
 /*'
