@@ -258,9 +258,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 									$result = $conn->query($sqlt);
 									if ($result->num_rows > 0) {
 										while($row = $result->fetch_assoc()) { 
-											$trx_status = $row["reason"];
-											if($row["receiver"]=$user_wallet){$trx_stat='my good';}else{$trx_stat=$trx_status;}
-											?>
+											$trx_status = $row["reason"]; ?>
 											<tr>
 												<td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
 												<td class="exp-user">For <span><?php echo $trx_status; ?></span></td>
@@ -304,30 +302,27 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 								<table class="table coin-list table-hover">
 									<thead>
 										<tr>
-											<th></th>
-											<th scope="col">Pair</th>
-											<th scope="col">Last Price</th>
-											<th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-											<th scope="col">24h High</th>
-											<th scope="col">24h Low</th>
-											<th scope="col">24h Volume</th>
+											<th scope="col">Tip</th>
+											<th scope="col">By</th>
+											<th scope="col">For</th>
+											<th scope="col">Time</th>
+											<th scope="col">Amount</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>
-												<div class="favorite-coin">
-
-												</div>
-											</td>
-											<td> POA / BTC</td>
-											<td><span class="color-buy">0.00006822 </span>/$0.48</td>
-											<td><span class="color-sell">-23.80%</span></td>
-											<td>0.00007300</td>
-											<td>0.00005510</td>
-											<td>7,522.88586112</td>
-										</tr>
-
+										<?php
+									$sql_tip = "SELECT * FROM TipTop where receiver='$user_wallet' ORDER BY tip_time DESC LIMIT 20";
+									$result_tip = $conn->query($sql_tip);
+									if ($result_tip->num_rows > 0) {
+										while($row_tip = $result_tip->fetch_assoc()) { ?>
+											<tr>
+												<td><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></td>
+												<td class="exp-user"><span><?php echo $row_tip["sender"]; ?></span></td>
+												<td class="exp-amt"><span><?php echo $row_tip["permlink"]; ?></span></td>
+												<td class="exp-amt"><span><?php echo $row_tip["tip_time"]; ?></span></td>
+												<td class="exp-amt"><span><?php echo $row_tip["tip1"]; ?></span> USDT</td>
+											</tr>
+										<? 	} }  ?>
 									</tbody>
 								</table><!-- coin-list table -->
 							</div><!-- market-ticker-block -->
