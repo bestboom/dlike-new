@@ -11,7 +11,7 @@ $sqlTip = "SELECT * FROM TipsWallet where username='$user_wallet'";
 $resultTip = $conn->query($sqlTip);
 if ($resultTip->num_rows > 0) {
 $rowTip = $resultTip->fetch_assoc();
-$tip_bal = $rowTip['tip1']; } else {$tip_bal = '20';}
+$tip_bal = $rowTip['tip1']; } else {$tip_bal = '0';}
 
 $sql_st = "SELECT SUM(amount) As stake_amt FROM staking where username='$user_wallet'"; 
 $result_st = $conn->query($sql_st);
@@ -350,8 +350,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 	</div>
 	<?php include('template/footer3.php'); ?>
 	<script type="text/javascript">
-		if(thisuser == 'PRO') 
-			console.log(thisuser);
+		if(thisuser == 'PRO')
 		{
 			$('.pro-data').hide();
 			$('.pro-img').show();

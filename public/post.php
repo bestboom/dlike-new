@@ -376,6 +376,7 @@ else
 
     $('#tipsubmit').submit(function() {
         var sender_status = '<?=($sender_status)?>';
+        console.log(sender_status);
         if(username != null) {
             if(sender_status !='PRO'){ $("#prouser").modal("show");
             return false;} else{
