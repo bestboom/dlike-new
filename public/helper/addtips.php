@@ -52,7 +52,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 						{
 							$sql_s = "INSERT INTO TipsWallet (userame, tip1)
 								VALUES ('".$sender."', '".$sender_amount."'";
-							mysqli_query($conn, $sql_s);
+							if(mysqli_query($conn, $sql_s)){echo 'entry made';}else{echo 'entry not made';}
 						}
 
 						$sqlR = "SELECT * FROM TipsWallet where username='$receiver'"; 
