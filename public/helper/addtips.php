@@ -15,7 +15,9 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 	$resulttip = $conn->query($checktip);
-	if ($resulttip->num_rows > 0) {
+
+	if ($resulttip->num_rows > 0) 
+	{
 		$resulttip = mysqli_query($conn, $checktip);
 		$rowtip = $resulttip->fetch_assoc();
 		$tiptime = $rowtip['tip_time'];	
@@ -23,39 +25,50 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	} 
 	else 
 	{
-		$check_u = "SELECT * FROM TipTop where sender = '$sender'";
-		$result_u = $conn->query($check_u);
-			if ($result_u->num_rows > 0) 
-			{
 
-				$verifytime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
-				$resulttime = $conn->query($verifytime);
-				$rowtime = $resulttime->fetch_assoc();
-				$lasttip = $rowtime['lasttime'];
+		$verifytime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
+		$resulttime = $conn->query($verifytime);
+		$rowtime = $resulttime->fetch_assoc();
+
+			if ($resulttime->num_rows  === 0) 
+			{
+				$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
+					VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$ip."', now())";
+
+					if (mysqli_query($conn, $sqlm)) 
+					{
+						echo '<div class="alert alert-success">Tip is Successful</div>';
+						echo '<script>$(".btn-tip").attr("disabled","disabled"); document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+					} 
+					else 
+					{
+						echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
+					}
+			} 
+			else 
+			{		
+				$lasttip = $rowtime['lasttime']; 
 
 					if($lasttip < 300) 
 					{
-						echo $lasttip;
 						echo '<div class="alert alert-danger">There seems some issue</div>';
 						echo '<script>setTimeout(function(){location.reload();}, 1000);</script>'; 
-					}
-			} 
-			else
-			{		
-				$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
-				VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$ip."', now())";
+					} 
+					else 
+					{
+						$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
+							VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$ip."', now())";
 				
-				if (mysqli_query($conn, $sqlm)) 
-				{	
-
-					echo '<div class="alert alert-success">Tip is Successful</div>';
-					echo '<script>$(".btn-tip").attr("disabled","disabled"); document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
-				} 
-				else 
-				{
-					echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
-				}
-
+							if (mysqli_query($conn, $sqlm)) 
+							{
+								echo '<div class="alert alert-success">Tip is Successful</div>';
+								echo '<script>$(".btn-tip").attr("disabled","disabled"); document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
+							} 
+							else 
+							{
+								echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
+							}
+					}
 			}	
 	}
 	
