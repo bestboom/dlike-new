@@ -351,6 +351,7 @@ if($user_eth == '') {echo "<script>let user_eth = '';</script>";} else{echo "<sc
 	<?php include('template/footer3.php'); ?>
 	<script type="text/javascript">
 		if(thisuser == 'PRO') 
+			console.log(thisuser);
 		{
 			$('.pro-data').hide();
 			$('.pro-img').show();
