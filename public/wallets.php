@@ -11,7 +11,7 @@ $sqlTip = "SELECT * FROM TipsWallet where username='$user_wallet'";
 $resultTip = $conn->query($sqlTip);
 if ($resultTip->num_rows > 0) {
 $rowTip = $resultTip->fetch_assoc();
-$tip_bal = $rowTip['tip1']; } else {$tip_bal = '10';}
+$tip_bal = $rowTip['tip1']; } else {$tip_bal = '0';}
 
 $sql_st = "SELECT SUM(amount) As stake_amt FROM staking where username='$user_wallet'"; 
 $result_st = $conn->query($sql_st);
