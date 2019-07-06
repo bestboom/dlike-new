@@ -28,6 +28,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 		if ($resulttime->num_rows  > 0) 
 		{
 			echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
+			echo '<script>$(".tipthnk").hide(); $(".tipratio").show();</script>';
 		} 
 		else
 		{		
@@ -44,7 +45,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 				
 				if (mysqli_query($conn, $sqlm)) 
 				{	
-					
+
 					echo '<div class="alert alert-success">Tip is Successful</div>';
 					echo '<script>$(".btn-tip").attr("disabled","disabled"); document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
 				} 
