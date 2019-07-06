@@ -28,7 +28,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 		$resulttime = $conn->query($verifytime);
 		$rowtime = $resulttime->fetch_assoc();
 		$lasttip = $rowtime['lasttime'];
-		
+
 			if($lasttip < 300) 
 			{
 				echo '<div class="alert alert-danger">There seems some issue</div>';
@@ -50,8 +50,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 					echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 				}
 
-			}
-		}	
+			}	
 	}
 	
 }	
