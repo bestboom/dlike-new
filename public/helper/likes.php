@@ -7,9 +7,22 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$updatePost = "UPDATE transactions SET amount = 0 WHERE username = 'leadent360' and reason='Sponsorship'";
+$sql = "CREATE TABLE TipsWallet (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+tip1 float(8) NOT NULL
+)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Table TipsWallet created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$updatePost = "DELETE FROM transactions WHERE username = 'leadent360' and reason='Sponsorship'";
 $updatePostQuery = $conn->query($updatePost);
-if ($updatePostQuery === TRUE) {}
+if ($updatePostQuery === TRUE) {echo "Row DELETED successfully";}
 
 /*'
 $sql = "ALTER TABLE transactions ADD receiver VARCHAR(255) NOT NULL AFTER reason";
