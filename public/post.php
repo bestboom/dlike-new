@@ -9,7 +9,7 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
 $views = '1'; 
-        //post views
+//post views
 $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
 $resultvs = $conn->query($sqlvs);
 if ($resultvs->num_rows > 0) {
@@ -58,7 +58,9 @@ if ($result_status->num_rows > 0 )
         $sender_status = "PRO";
     } 
     else 
-    { $sender_status = "Not PRO";}
+    { 
+        $sender_status = "Not PRO";
+    }
 } 
 else 
 { $sender_status = "NOT PRO";}  
@@ -338,7 +340,7 @@ else
         if (typeof metadata.image === "string"){
             img.src = metadata.image.replace("?","?");
         } else {
-            img.src = metadata.image[0];
+            img.src = metadata.image;
         }
         json_metadata = metadata;
         let category = metadata.category;
