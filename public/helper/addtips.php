@@ -52,6 +52,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 						{
 							$sql_s = "INSERT INTO TipsWallet (userame, tip1)
 								VALUES ('".$sender."', '".$sender_amount."'";
+							mysqli_query($conn, $sql_s);
 						}
 
 						$sqlR = "SELECT * FROM TipsWallet where username='$receiver'"; 
@@ -66,8 +67,9 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 						}
 						else
 						{
-							$sql_s = "INSERT INTO TipsWallet (userame, tip1)
+							$sql_R = "INSERT INTO TipsWallet (userame, tip1)
 								VALUES ('".$receiver."', '".$tip1."'";
+							mysqli_query($conn, $sql_R);	
 						}
 
 						echo '<div class="alert alert-success">Tip is Successful</div>';
