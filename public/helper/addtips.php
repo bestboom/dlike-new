@@ -54,8 +54,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 							echo 'user not exist';
 							$sqlsender = "INSERT INTO TipsWallet (`username`, `tip1`)
 								VALUES ('".$sender."', '".$sender_amount."')";
-								$addSendertip = $conn->query($sqlsender);	
-							if($addSendertip){echo 'entry made';}else{echo 'entry not made';trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error(), E_USER_ERROR);}
+								$addSendertip = $conn->query($sqlsender);
 						}
 
 						$sqlR = "SELECT * FROM TipsWallet where username='$receiver'"; 
