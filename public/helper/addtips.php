@@ -25,7 +25,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 		$verifytime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
 		$resulttime = $conn->query($verifytime);
 		$rowtime = $resulttime->fetch_assoc();
-		if ($resulttime->num_rows  > 0) 
+		if ($resulttime->num_rows  >= 0) 
 		{
 			echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 			echo '<script>$(".tipthnk").hide(); $(".tipratio").show();</script>';
