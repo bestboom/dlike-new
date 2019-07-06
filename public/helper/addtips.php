@@ -11,6 +11,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	$permlink =  $_POST['tippermlink'];
 	$tip1 = '0.002';
 	$tip2 = '0.0015';
+	$sender_amount = '0.003';
 
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
@@ -37,6 +38,38 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 
 					if (mysqli_query($conn, $sqlm)) 
 					{
+						$sqls = "SELECT * FROM TipWallet where username='$sender'"; 
+						$result_s = $conn->query($sqls);
+
+						if($result_s->num_rows > 0) {
+							$row_s = $result_s->fetch_assoc();	
+							$sender_bal = $row_s['tip1'];
+							$updat_u = "UPDATE TipWallet SET tip1 = '$sender_bal' + '$sender_amount' WHERE username = '$sender'";
+								$updateSenderQuery = $conn->query($updat_u);
+								if ($updateSenderQuery === TRUE) {}
+						}
+						else
+						{
+							$sql_s = "INSERT INTO TipWallet (userame, tip1)
+								VALUES ('".$sender."', '".$sender_amount."'";
+						}
+
+						$sqlR = "SELECT * FROM TipWallet where username='$receiver'"; 
+						$result_R = $conn->query($sqlR);
+
+						if($result_R->num_rows > 0) {
+							$row_R = $result_R->fetch_assoc();	
+							$receiver_bal = $row_R['tip1'];
+							$updat_R = "UPDATE TipWallet SET tip1 = '$receiver_bal' + '$tip1' WHERE username = '$receiver'";
+								$updatereceiverQuery = $conn->query($updat_R);
+								if ($updatereceiverQuery === TRUE) {}
+						}
+						else
+						{
+							$sql_s = "INSERT INTO TipWallet (userame, tip1)
+								VALUES ('".$receiver."', '".$tip1."'";
+						}
+
 						echo '<div class="alert alert-success">Tip is Successful</div>';
 						echo '<script>$(".btn-tip").attr("disabled","disabled"); document.getElementById("tipsubmit").reset(); setTimeout(function(){location.reload();}, 1000);</script>';
 					} 
