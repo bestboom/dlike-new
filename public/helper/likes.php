@@ -8,6 +8,11 @@ require '../includes/config.php';
 
 
 
+
+
+/*'
+
+
 $sqlw = "DELETE FROM TipTop";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -17,7 +22,6 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-/*'
 
 $updatePost = "UPDATE transactions SET amount = 7000 WHERE username = 'lays' and reason='delegation'";
 $updatePostQuery = $conn->query($updatePost);

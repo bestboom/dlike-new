@@ -31,6 +31,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 
 			if($lasttip < 300) 
 			{
+				echo $lasttip;
 				echo '<div class="alert alert-danger">There seems some issue</div>';
 				echo '<script>setTimeout(function(){location.reload();}, 1000);</script>'; 
 			} 
