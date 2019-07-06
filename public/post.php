@@ -33,14 +33,15 @@ if ($resultvs->num_rows > 0) {
     mysqli_query($conn, $sqlview); 
     $postviews = '1';  
 } 
-     
+
 //tip total income
 $post_inc = "SELECT SUM(tip1) As post_inc, SUM(tip2) As post_inc2 FROM TipTop where permlink = '$link' and receiver = '$auth'";
 $result_inc = $conn->query($post_inc);
-if ($result_inc->num_rows > 0) {
+if ($result_inc->num_rows > 0) 
+{
     $rowinc = mysqli_fetch_assoc($result_inc);
-    $postincome = number_format($rowinc["post_inc"],4);
-    //$postincome2 = number_format($rowinc["post_inc2"],4);
+    $postincome = number_format($rowinc["post_inc"],3);
+    //$postincome2 = number_format($rowinc["post_inc2"],3);
     //$totalpost = $postincome + $postincome2;
     $totalpostincome = round($postincome,3);
 } else { $postincome = '0.00'; }
