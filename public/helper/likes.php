@@ -9,11 +9,12 @@ require '../includes/config.php';
 
 
 
+
+/*'
+
 $updatePost = "UPDATE transactions SET amount = 7000 WHERE username = 'lays' and reason='delegation'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {}
-
-/*'
 
 
 
