@@ -7,7 +7,7 @@ $resultAmount = $conn->query($sqls);
 $rowIt = $resultAmount->fetch_assoc();
 $dlike_bal = $rowIt['amount'];
 
-$sqlTip = "SELECT * FROM TipWallet where username='$user_wallet'"; 
+$sqlTip = "SELECT * FROM TipsWallet where username='$user_wallet'"; 
 $resultTip = $conn->query($sqlTip);
 if ($resultTip->num_rows > 0) {
 $rowTip = $resultTip->fetch_assoc();

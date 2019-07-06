@@ -38,35 +38,35 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 
 					if (mysqli_query($conn, $sqlm)) 
 					{
-						$sqls = "SELECT * FROM TipWallet where username='$sender'"; 
+						$sqls = "SELECT * FROM TipsWallet where username='$sender'"; 
 						$result_s = $conn->query($sqls);
 
 						if($result_s->num_rows > 0) {
 							$row_s = $result_s->fetch_assoc();	
 							$sender_bal = $row_s['tip1'];
-							$updat_u = "UPDATE TipWallet SET tip1 = '$sender_bal' + '$sender_amount' WHERE username = '$sender'";
+							$updat_u = "UPDATE TipsWallet SET tip1 = '$sender_bal' + '$sender_amount' WHERE username = '$sender'";
 								$updateSenderQuery = $conn->query($updat_u);
 								if ($updateSenderQuery === TRUE) {}
 						}
 						else
 						{
-							$sql_s = "INSERT INTO TipWallet (userame, tip1)
+							$sql_s = "INSERT INTO TipsWallet (userame, tip1)
 								VALUES ('".$sender."', '".$sender_amount."'";
 						}
 
-						$sqlR = "SELECT * FROM TipWallet where username='$receiver'"; 
+						$sqlR = "SELECT * FROM TipsWallet where username='$receiver'"; 
 						$result_R = $conn->query($sqlR);
 
 						if($result_R->num_rows > 0) {
 							$row_R = $result_R->fetch_assoc();	
 							$receiver_bal = $row_R['tip1'];
-							$updat_R = "UPDATE TipWallet SET tip1 = '$receiver_bal' + '$tip1' WHERE username = '$receiver'";
+							$updat_R = "UPDATE TipsWallet SET tip1 = '$receiver_bal' + '$tip1' WHERE username = '$receiver'";
 								$updatereceiverQuery = $conn->query($updat_R);
 								if ($updatereceiverQuery === TRUE) {}
 						}
 						else
 						{
-							$sql_s = "INSERT INTO TipWallet (userame, tip1)
+							$sql_s = "INSERT INTO TipsWallet (userame, tip1)
 								VALUES ('".$receiver."', '".$tip1."'";
 						}
 
