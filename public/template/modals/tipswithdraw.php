@@ -5,7 +5,7 @@
 			Balance: <?php echo $tip_bal; ?> USDT
 		</p>
 		<?php
-			if($tip_bal < $min_tip_withdraw;)
+			if($tip_bal < $min_tip_withdraw)
 			{
 				echo '<li>Minimum Withdraw is <?php echo $min_tip_withdraw; ?> USDT</li>
 					<li>You must add ETH address to withdraw</li>
