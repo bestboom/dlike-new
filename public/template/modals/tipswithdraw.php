@@ -28,7 +28,7 @@
 						</div>
 					</form>
 					</div>';
-				echo '* All withdrawls are processed within 24 hours.';	
+				echo '<p>* All withdrawls are processed within 24 hours.</p>';	
 			}
 		?>
 	</div>
