@@ -599,7 +599,7 @@ if ($user_eth == '') {
         document.querySelector('a[href="#steem_trx"]').addEventListener('click', function () {
             TX_Body.innerHTML = `<tr><td colspan="3" style="text-align: center"><span class="fas fa-circle-notch fa-spin"></span></td></tr>`;
 
-            Steem.database.call('get_account_history', [USERNAME, -1, 20]).then(function (result) {
+            Steem.database.call('get_account_history', [USERNAME, -1, 200]).then(function (result) {
                 let html = '';
 
                 result = result.reverse();
