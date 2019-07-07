@@ -4,7 +4,7 @@ var api = steemconnect.Initialize({
   app: 'dlike.app',
   callbackURL: 'https://dlike.io/steemconnect',
   accessToken: 'access_token',
-  scope: [ 'login', 'vote', 'comment', 'delete_comment', 'comment_options', 'custom_json' ],
+  scope: [ 'login', 'vote', 'comment', 'delete_comment', 'comment_options', 'custom_json', 'claim_reward_balance' ],
 });
 
 if ($.cookie("access_token") != null) {
