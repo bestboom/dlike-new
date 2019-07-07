@@ -13,7 +13,8 @@
 			}
 			else
 			{
-				echo '<div id="eth-msg"></div>
+				echo '<div id="tok-msg"></div>
+					<div style="padding: 40px 5px;">
 					<form action="" class="" method="POST" id="tok_out">
 						<div class="form-group">
 							<div class="input-group mb-3">
@@ -25,7 +26,9 @@
 								<button type="submit" class="btn btn-primary tk_out_btn">WITHDRAW</button>	
 							</div>
 						</div>
-					</form>';
+					</form>
+					</div>';
+				echo '* All withdrawls are processed within 24 hours.';	
 			}
 		?>
 	</div>
