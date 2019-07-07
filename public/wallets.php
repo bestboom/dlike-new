@@ -142,7 +142,7 @@ if ($user_eth == '') {
                                     <div class="pros-cons-block">
                                         <div class="pros-block">
                                             <h5 class="base-color">STEEM: </h5>
-                                            <p>165 STEEM</p>
+                                            <p class="balance-steem"></p>
                                         </div>
                                         <p class="coins-detail">Native Token for STEEM Blockchain<span
                                                     class="coins-match">Transfer</span>
@@ -150,7 +150,7 @@ if ($user_eth == '') {
                                         <hr class="wal_hr">
                                         <div class="pros-block">
                                             <h5 class="base-color">STEEM DOLLAR: </h5>
-                                            <p>312 SBD</p>
+                                            <p class="balance-sbd"></p>
                                         </div>
                                         <p class="coins-detail">Basic STEEM token valued at dollar<span
                                                     class="coins-match">Transfer</span>
@@ -158,7 +158,7 @@ if ($user_eth == '') {
                                         <hr class="wal_hr">
                                         <div class="pros-block">
                                             <h5 class="base-color">STEEM POWER: </h5>
-                                            <p>4523 STEEM</p>
+                                            <p class="balance-sp"></p>
                                         </div>
                                         <p class="coins-detail">STEEM Power is delegated STEEM amount</p>
                                         <hr class="wal_hr">
@@ -341,29 +341,12 @@ if ($user_eth == '') {
                                 <table class="table coin-list table-hover">
                                     <thead>
                                     <tr>
-                                        <th></th>
-                                        <th scope="col">Pair</th>
-                                        <th scope="col">Last Price</th>
-                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
-                                        <th scope="col">24h High</th>
-                                        <th scope="col">24h Low</th>
-                                        <th scope="col">24h Volume</th>
+                                        <th scope="col" style="width: 200px;">Date</th>
+                                        <th scope="col" style="width: 400px; max-width: 50%">Action</th>
+                                        <th scope="col" style="max-width: 500px"></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="favorite-coin">
-
-                                            </div>
-                                        </td>
-                                        <td> POA / BTC</td>
-                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
-                                        <td><span class="color-sell">-23.80%</span></td>
-                                        <td>0.00007300</td>
-                                        <td>0.00005510</td>
-                                        <td>7,522.88586112</td>
-                                    </tr>
                                     </tbody>
                                 </table><!-- coin-list table -->
                             </div>
@@ -536,10 +519,21 @@ if ($user_eth == '') {
             RewardInfos.innerHTML = '';
 
             Steem.database.call('get_accounts', [[USERNAME]]).then(function (result) {
-                const reward_steem = result[0].reward_steem_balance.split(' ')[0];
-                const reward_sbd   = result[0].reward_sbd_balance.split(' ')[0];
-                const reward_sp    = result[0].reward_vesting_steem.split(' ')[0];
-                const reward_vests = result[0].reward_vesting_balance.split(' ')[0];
+                const account = result[0];
+
+                const reward_steem = account.reward_steem_balance.split(' ')[0];
+                const reward_sbd   = account.reward_sbd_balance.split(' ')[0];
+                const reward_sp    = account.reward_vesting_steem.split(' ')[0];
+                const reward_vests = account.reward_vesting_balance.split(' ')[0];
+
+                // balance
+                document.querySelector('.balance-steem').innerHTML = result[0].balance;
+                document.querySelector('.balance-sbd').innerHTML   = result[0].sbd_balance;
+
+                // steem power
+                document.querySelector('.balance-sp').innerHTML = parseFloat(account.voting_power) / 50;
+
+                console.log(result[0]);
 
                 if (reward_steem <= 0 &&
                     reward_sbd <= 0 &&
@@ -553,7 +547,7 @@ if ($user_eth == '') {
                 RewardInfos.innerHTML = `${reward_sbd} SBD and ${reward_sp} SP`;
             });
 
-            // button
+            // claim button
             ClaimRewards.addEventListener('click', function () {
                 ClaimRewards.innerHTML = '<span class="fas fa-circle-notch fa-spin"></span>';
 
@@ -603,11 +597,31 @@ if ($user_eth == '') {
             const TX_Body = TX_List.querySelector('tbody');
 
             document.querySelector('a[href="#steem_trx"]').addEventListener('click', function () {
-                //TX_Body.innerHTML = `<tr><td colspan="7" style="text-align: center"><span class="fas fa-circle-notch fa-spin"></span></td></tr>`;
+                TX_Body.innerHTML = `<tr><td colspan="3" style="text-align: center"><span class="fas fa-circle-notch fa-spin"></span></td></tr>`;
 
                 Steem.database.call('get_account_history', [USERNAME, -1, 20]).then(function (result) {
+                    let html = '';
 
-                    console.log(result);
+                    result = result.reverse();
+
+                    for (let i = 0, len = result.length; i < len; i++) {
+                        let data = result[i][1];
+
+                        let op = '';
+
+                        for (let n in data.op[1]) {
+                            op = op + n + ': ' + data.op[1][n] + '<br />';
+                        }
+
+                        html = html + `
+                            <tr>
+                                <td>${data.timestamp}</td>
+                                <td>${data.op[0]}</td>
+                                <td><div style="overflow: auto; max-width: 500px">${op}</div></td>
+                            </tr>`;
+                    }
+
+                    TX_Body.innerHTML = html;
 
                 });
             });
