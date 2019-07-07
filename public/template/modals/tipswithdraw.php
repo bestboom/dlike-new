@@ -13,11 +13,20 @@
 			}
 			else
 			{
-				echo 'show form';
+				echo '<div id="eth-msg"></div>
+					<form action="" class="" method="POST" id="tok_out">
+						<div class="form-group">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<div class="input-group-text mb-deck"> Amount</div>
+								</div>
+								<input type="hidden" name="tok_user" value="<? echo $user_wallet; ?>" />
+								<input type="number" class="form-control" name="tok_amt" id="tok_field" min="'.$min_tip_withdraw.'" value="" />&nbsp;
+								<button type="submit" class="btn btn-primary tk_out_btn">WITHDRAW</button>	
+							</div>
+						</div>
+					</form>';
 			}
 		?>
-		
-
 	</div>
-
 </div>
