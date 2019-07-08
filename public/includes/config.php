@@ -54,7 +54,7 @@ if(!isset($_COOKIE['usertoken'])) {
   setcookie('usertoken', $_SESSION['usertoken'], time() + (86400 * 30), "/");
 } else {$_COOKIE['usertoken'];}
 
-$min_tip_withdraw = '0.001';
+$min_tip_withdraw = '0';
 
 
 ?>
