@@ -10,6 +10,7 @@ var api = steemconnect.Initialize({
 if ($.cookie("access_token") != null) {
 var username = $.cookie("username");
 var user_auth = $.cookie("access_token");
+console.log(user_auth);
 var profile_image = "https://steemitimages.com/u/" + username + "/avatar";
 $('#user_log').html(username);
 $("#user_img").attr("src","https://steemitimages.com/u/" + username + "/avatar").show();
