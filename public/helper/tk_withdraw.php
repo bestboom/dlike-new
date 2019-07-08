@@ -4,8 +4,15 @@
 	error_reporting(E_ALL);
 require '../includes/config.php';
 
-	if (isset($_POST["reciever"]) && isset($_POST["send_amt"]) && isset($_POST["user_bal"]) && isset($_POST["user_name"]))
+	if (isset($_POST["tok_amt"]) && isset($_POST["tok_user"]) && isset($_POST["tok_eth"]))
 	{
+		echo $tok_user =  $_POST['tok_user'];	
+		echo $user =  $_COOKIE['username'];
+		echo $tok_amt =  $_POST['tok_amt'];
 
+	}
+	else 
+	{
+		echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
 	}
 ?>
