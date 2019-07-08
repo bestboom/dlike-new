@@ -7,7 +7,7 @@
 		<?php
 			if($tip_bal < $min_tip_withdraw)
 			{
-				echo '<li>Minimum Withdraw is <?php echo $min_tip_withdraw; ?> USDT</li>
+				echo '<li>Minimum Withdraw is '.$min_tip_withdraw.' USDT</li>
 					<li>You must add ETH address to withdraw</li>
 					<li>Withdrawls are processed daily</li>';
 			}
