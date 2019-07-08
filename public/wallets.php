@@ -607,6 +607,10 @@ if ($user_eth == '') {
                 for (let i = 0, len = result.length; i < len; i++) {
                     let data = result[i][1];
 
+                    if (data.op[0] !== 'claim_reward_balance' && data.op[0] !== 'transfer') {
+                        continue;
+                    }
+
                     let op = '';
 
                     for (let n in data.op[1]) {
