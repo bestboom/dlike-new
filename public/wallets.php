@@ -511,9 +511,7 @@ if ($user_eth == '') {
     $('#tok_out').submit(function (e) {
         e.preventDefault();
         let tok_amt = $("#tok_field").val();
-        console.log(tok_amt);
         let eth_assress = $("#eth_field").val();
-        console.log(eth_assress);
 
         if (!tok_amt) {
             toastr.error('phew... Enter Token Amount');
