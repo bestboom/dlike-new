@@ -17,6 +17,12 @@ paid BOOLEAN,
 with_time TIMESTAMP
 )";
 
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table TokWithdraw created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
 /*'
 
 
