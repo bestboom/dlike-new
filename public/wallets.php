@@ -500,6 +500,26 @@ if ($user_eth == '') {
         $(this).ajaxSubmit(optionstsf);
         return !1;
     });
+
+    var optionstkw = {
+        target : '#tok-msg',
+        url    : 'helper/tk_withdraw.php',
+        success: function () {
+        },
+    };
+
+    $('#tok_out').submit(function (e) {
+        e.preventDefault();
+        let tok_amt = $("#tok_field").val();
+
+        if (!tok_amt) {
+            toastr.error('phew... Enter Token Amount');
+            return false;
+        }
+
+        $(this).ajaxSubmit(optionstkw);
+        return !1;
+    });
 </script>
 
 
