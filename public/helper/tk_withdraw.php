@@ -21,19 +21,37 @@ require '../includes/config.php';
 		else
 		{
 
-			$sqls = "SELECT * FROM wallet where username='$user'"; 
+			$sqls = "SELECT eth FROM wallet where username='$user'"; 
 			$resultAmount = $conn->query($sqls);
 			if ($resultAmount->num_rows > 0) 
 			{
-				$rowIt = $resultAmount->fetch_assoc();	
-				$user_bal = $rowIt['amount'];
+				$rowIt = $resultAmount->fetch_assoc();
 				$user_eth = $rowIt['eth'];
+
+				$sqlT = "SELECT tip1 FROM TipsWallet where username='$user'"; 
+				$resultTip = $conn->query($sqlT);
+
+				if ($resultTip->num_rows > 0) 
+				{
+					$rowT = $resultTip->fetch_assoc();
+					$tok_bal = $rowT['tip1'];
+
+					if($tok_amt > $tok_bal)
+					{
+						echo '<div class="alert alert-danger">Balance is not enough!</div>';
+					}
+
+				}
+				else 
+				{
+					echo '<div class="alert alert-danger">There is balance issue. Please Try Later!</div>';
+				}
 
 				
 			} 
 			else 
 			{
-				echo '<div class="alert alert-danger">User Does not exist!</div>';
+				echo '<div class="alert alert-danger">ETH Address does not exist!</div>';
 			}
 
 		}
