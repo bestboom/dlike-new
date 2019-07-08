@@ -533,36 +533,42 @@ if ($user_eth == '') {
 
         RewardInfos.innerHTML = '';
 
-        Steem.database.call('get_accounts', [[USERNAME]]).then(function (result) {
-            const account = result[0];
+	var refreshWalletData = function() {
+            Steem.database.call('get_accounts', [[USERNAME]]).then(function (result) {
+            	const account = result[0];
 
-            const reward_steem = account.reward_steem_balance.split(' ')[0];
-            const reward_sbd   = account.reward_sbd_balance.split(' ')[0];
-            const reward_sp    = account.reward_vesting_steem.split(' ')[0];
-            const reward_vests = account.reward_vesting_balance.split(' ')[0];
+            	const reward_steem = account.reward_steem_balance.split(' ')[0];
+            	const reward_sbd   = account.reward_sbd_balance.split(' ')[0];
+            	const reward_sp    = account.reward_vesting_steem.split(' ')[0];
+            	const reward_vests = account.reward_vesting_balance.split(' ')[0];
 
-            // balance
-            document.querySelector('.balance-steem').innerHTML = result[0].balance;
-            document.querySelector('.balance-sbd').innerHTML   = result[0].sbd_balance;
+            	// balance
+            	document.querySelector('.balance-steem').innerHTML = result[0].balance;
+            	document.querySelector('.balance-sbd').innerHTML   = result[0].sbd_balance;
 
-            // steem power
-            document.querySelector('.balance-sp').innerHTML = parseFloat(account.voting_power) / 50;
+            	// steem power
+            	document.querySelector('.balance-sp').innerHTML = parseFloat(account.voting_power) / 50;
 
-            console.log(result[0]);
+		ClaimRewards.innerHTML = 'Claim Rewards';
 
-            if (reward_steem <= 0 &&
-                reward_sbd <= 0 &&
-                reward_sp <= 0 &&
-                reward_vests <= 0
-            ) {
-                RewardInfos.innerHTML = '0 SBD and 0 SP';
-                return;
-            }
+		if (reward_steem <= 0 &&
+                    reward_sbd <= 0 &&
+                    reward_sp <= 0 &&
+                    reward_vests <= 0
+            	) {
+                    RewardInfos.innerHTML = '0 SBD and 0 SP';
+		    ClaimRewards.disabled  = true;
+                    return;
+            	}
 
-            RewardInfos.innerHTML = `${reward_sbd} SBD and ${reward_sp} SP`;
-        });
+                RewardInfos.innerHTML = `${reward_sbd} SBD and ${reward_sp} SP`;
+	    	ClaimRewards.disabled = false;
+            });
+	}
 
-        // claim button
+	refreshWalletData();
+
+	// claim button
         ClaimRewards.addEventListener('click', function () {
             ClaimRewards.innerHTML = '<span class="fas fa-circle-notch fa-spin"></span>';
 
@@ -582,28 +588,8 @@ if ($user_eth == '') {
                     return;
                 }
 
-                // const PRIVATE_KEY = dsteem.PrivateKey.fromString(WIF);
-
-                // claim rewards
-                // let op = ['claim_reward_balance', {
-                //     account     : USERNAME,
-                //     reward_steem: reward_steem + ' STEEM',
-                //     reward_sbd  : reward_sbd + ' SBD',
-                //     reward_vests: reward_vests + ' VESTS',
-                // }];
-
-                // Steem.broadcast.sendOperations([op], PRIVATE_KEY).then(function () {
-                //     ClaimRewards.innerHTML = 'Claim Rewards';
-                //     ClaimRewards.disabled  = true;
-                // }, function (error) {
-                //     ClaimRewards.innerHTML = 'Claim Rewards';
-                //     ClaimRewards.disabled  = true;
-                // });
-
-
 		window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-		     ClaimRewards.innerHTML = 'Claim Rewards';
-                     ClaimRewards.disabled  = true;
+		    refreshWalletData();
 		});
             });
         });
