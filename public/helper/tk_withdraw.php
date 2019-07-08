@@ -10,6 +10,26 @@ require '../includes/config.php';
 		echo $user =  $_COOKIE['username'];
 		echo $tok_amt =  $_POST['tok_amt'];
 
+		if($user != $tok_user)
+		{
+			echo '<div class="alert alert-danger">There is login issue. Please Try Later!</div>';
+		}
+		else
+		{
+
+			$sqls = "SELECT * FROM wallet where username='$user'"; 
+			$resultAmount = $conn->query($sqls);
+			if ($resultAmount->num_rows > 0) 
+			{
+
+			} 
+			else 
+			{
+				echo '<div class="alert alert-danger">User Does not exist!</div>';
+			}
+
+		}
+
 	}
 	else 
 	{
