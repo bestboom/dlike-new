@@ -611,17 +611,44 @@ if ($user_eth == '') {
                         continue;
                     }
 
-                    let op = '';
+                    let detail    = '';
+                    let timestamp = data.timestamp;
+                    let action    = data.op[0];
+                    let transfer  = data.op[1];
 
-                    for (let n in data.op[1]) {
-                        op = op + n + ': ' + data.op[1][n] + '<br />';
+                    if (data.op[0] === 'transfer') {
+                        detail = transfer.memo;
+                        action = `Received ${transfer.amount} from ${transfer.from}`;
                     }
+
+                    if (data.op[0] === 'claim_reward_balance') {
+                        let rewards = [];
+
+                        if (parseFloat(transfer.reward_sbd) > 0) {
+                            rewards.push(transfer.reward_sbd);
+                        }
+
+                        if (parseFloat(transfer.reward_steem) > 0) {
+                            rewards.push(transfer.reward_steem);
+                        }
+
+                        if (parseFloat(transfer.reward_vests) > 0) {
+                            rewards.push(transfer.reward_vests);
+                        }
+
+                        action = `Claim Rewards ` + rewards.join(' and ');
+
+                        // for (let n in data.op[1]) {
+                        //     detail = detail + n + ': ' + data.op[1][n] + '<br />';
+                        // }
+                    }
+
 
                     html = html + `
                             <tr>
-                                <td>${data.timestamp}</td>
-                                <td>${data.op[0]}</td>
-                                <td><div style="overflow: auto; max-width: 500px">${op}</div></td>
+                                <td>${timestamp}</td>
+                                <td>${action}</td>
+                                <td><div style="overflow: auto; max-width: 500px">${detail}</div></td>
                             </tr>`;
                 }
 
