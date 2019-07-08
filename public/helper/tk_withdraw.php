@@ -6,10 +6,12 @@ require '../includes/config.php';
 
 	if (isset($_POST["tok_amt"]) && isset($_POST["tok_user"]) && isset($_POST["tok_eth"]) && isset($_POST["tok_type"]))
 	{
-		 echo $tok_user =  $_POST['tok_user'];	
-		echo $user =  $_COOKIE['username'];
-		echo $tok_amt =  $_POST['tok_amt'];
-		echo $tok_type =  $_POST['tok_type'];
+		$tok_user =  $_POST['tok_user'];	
+		$user =  $_COOKIE['username'];
+		$tok_amt =  $_POST['tok_amt'];
+		$tok_type =  $_POST['tok_type'];
+		if($tok_type == '1'){$tok_type = 'USDT';}else{$tok_type = 'unknown';}
+		echo $tok_type;
 		$paid = '0';
 
 		if($user != $tok_user)
@@ -26,6 +28,8 @@ require '../includes/config.php';
 				$rowIt = $resultAmount->fetch_assoc();	
 				$user_bal = $rowIt['amount'];
 				$user_eth = $rowIt['eth'];
+
+				
 			} 
 			else 
 			{
