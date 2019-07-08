@@ -6,7 +6,7 @@ require '../includes/config.php';
 
 	if (isset($_POST["tok_amt"]) && isset($_POST["tok_user"]) && isset($_POST["tok_eth"]))
 	{
-		echo $tok_user =  $_POST['tok_user'];	
+		 $tok_user =  $_POST['tok_user'];	
 		echo $user =  $_COOKIE['username'];
 		echo $tok_amt =  $_POST['tok_amt'];
 
@@ -21,7 +21,10 @@ require '../includes/config.php';
 			$resultAmount = $conn->query($sqls);
 			if ($resultAmount->num_rows > 0) 
 			{
-
+				$rowIt = $resultAmount->fetch_assoc();	
+				$user_bal = $rowIt['amount'];
+				$user_eth = $rowIt['eth'];
+				$user_bal = $rowIt['amount'];
 			} 
 			else 
 			{
