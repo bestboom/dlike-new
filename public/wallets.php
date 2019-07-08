@@ -222,18 +222,18 @@ if ($user_eth == '') {
                                     <li>Allowed upto 3 post shares per day</li>
                                     <li>3X upvotes on all your posts</li>
                                     <li>Daily DLIKE token income through reward pool</li>
-                                    <li>TIP to any post and earn 40% TIP share</li>
+                                    <li>TIP any post to earn 60% TIP share</li>
                                     </p>
                                     <h4 class="bell-bold">How to become PRO?</h4>
                                     <p>
-                                        To become PRO user, you need to pay 10,000 DLIKE tokens which will be burnt.
+                                        To become PRO user, you need to pay <b>10,000 DLIKE</b> tokens which will be burnt.
                                     </p>
                                     <div id="pro-msg"></div>
                                     <div class="pros-cons-block">
                                         <form action="" class="" method="POST" id="pro_sub">
                                             <input type="hidden" name="pro_user"
                                                    value="<?php echo $user_wallet; ?>"/>
-                                            <button type="submit" class="btn btn-primary pro-bt">Become PRO</button>
+                                            <button type="submit" class="btn btn-primary pro-bt">I Agree To Become PRO</button>
                                         </form>
                                     </div>
                                 </div>
@@ -242,15 +242,10 @@ if ($user_eth == '') {
                         <div role="tabpanel" class="tab-pane fade" id="nav_nano">
                             <div class="catagori-content">
                                 <p class="catagori-info">
-                                    DLIKE is the native token of DLIKE platform which is purely a utility token. PRO
-                                    users cane arn DLIKE tokens on daily basis through reward pool. To become PRO,
-                                    users
-                                    are required to burn 10,000 DLIKE tokens.
+                                    DLIKE (ETH based ERC-20 Token) is the native token of DLIKE platform. It can be purchased or earned through daily reward pool (only PRO users). 
                                 </p>
                                 <p>
-                                    DLIKE token is not yet listed on exchanges so it can be purchased here at a
-                                    price of
-                                    0.025 USD.
+                                    DLIKE token will be listed on exchanges soon. Till then, DLIKE tokens can be purchased from other users through private deals or directly from DLIKE platform.
                                 </p>
                                 <div class="pros-cons-block">
                                     <button type="submit" class="btn btn-primary">BUY DLIKE Tokens</button>
