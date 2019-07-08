@@ -21,6 +21,7 @@
 								<div class="input-group-prepend">
 									<div class="input-group-text mb-deck"> Amount</div>
 								</div>
+								<input type="hidden" name="tok_eth" value="<? echo $user_eth; ?>" />
 								<input type="hidden" name="tok_user" value="<? echo $user_wallet; ?>" />
 								<input type="number" class="form-control" name="tok_amt" id="tok_field" min="'.$min_tip_withdraw.'" value="" />&nbsp;
 								<button type="submit" class="btn btn-primary tk_out_btn">WITHDRAW</button>	
