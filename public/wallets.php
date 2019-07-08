@@ -588,7 +588,7 @@ if ($user_eth == '') {
                     ClaimRewards.disabled  = true;
                     return;
                 }
-
+                console.log(api);
 		window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
 		    if (err) {
 			console.error(err);
