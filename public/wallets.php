@@ -618,7 +618,13 @@ if ($user_eth == '') {
 
                     if (data.op[0] === 'transfer') {
                         detail = transfer.memo;
-                        action = `Received ${transfer.amount} from ${transfer.from}`;
+
+                        if (transfer.from === USERNAME) {
+                            action = `Send ${transfer.amount} to ${transfer.to}`;
+                        } else {
+                            action = `Received ${transfer.amount} from ${transfer.from}`;
+                        }
+
                     }
 
                     if (data.op[0] === 'claim_reward_balance') {
