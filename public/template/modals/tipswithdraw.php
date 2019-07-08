@@ -14,7 +14,7 @@
 			else
 			{
 				echo '<div id="tok-msg"></div>
-					<div style="padding: 40px 5px;">
+					<div style="padding: 40px 5px;padding-bottom:15px;">
 					<form action="" class="" method="POST" id="tok_out">
 						<div class="form-group">
 							<div class="input-group mb-3">
@@ -28,7 +28,7 @@
 						</div>
 					</form>
 					</div>';
-				echo '<p>* All withdrawls are processed within 24 hours.</p>';	
+				echo '<p style="padding-right:10px;font-weight:600;">* All withdrawls are processed within 24 hours.</p>';	
 			}
 		?>
 	</div>
