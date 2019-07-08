@@ -580,10 +580,11 @@ if ($user_eth == '') {
                 //     ClaimRewards.disabled  = true;
                 // });
 
-                // via steem connect
-                const link = `https://steemconnect.com/sign/claim-reward-balance?account=${USERNAME}&reward_steem=${reward_steem}&reward_sbd=${reward_sbd}&reward_vests=${reward_vests}`;
 
-                window.open(link);
+		window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
+		     ClaimRewards.innerHTML = 'Claim Rewards';
+                     ClaimRewards.disabled  = true;
+		});
             });
         });
 
