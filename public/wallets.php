@@ -425,6 +425,7 @@ if ($user_eth == '') {
 <?php include('template/footer3.php'); ?>
 
 <script type="text/javascript">
+    console.log(user_auth);
     if (thisuser === 'PRO') {
         $('.pro-data').hide();
         $('.pro-img').show();
