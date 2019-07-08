@@ -7,6 +7,18 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$sqlm = "CREATE TABLE TokWithdraw (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+amount float(8) NOT NULL,
+token VARCHAR(250) NOT NULL,
+eth_addr VARCHAR(250) NOT NULL,
+paid BOOLEAN,
+with_time TIMESTAMP
+)";
+
+/*'
+
 
 $sqlw = "DELETE FROM TipTop";
 
@@ -17,7 +29,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-/*'
+
 
 $updatePost = "UPDATE transactions SET amount = 7000 WHERE username = 'lays' and reason='delegation'";
 $updatePostQuery = $conn->query($updatePost);
