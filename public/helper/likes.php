@@ -7,6 +7,11 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+
+/*'
+
+
 $sqlm = "CREATE TABLE TokWithdraw (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
@@ -22,8 +27,6 @@ if ($conn->query($sqlm) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
-/*'
 
 
 $sqlw = "DELETE FROM TipTop";
