@@ -40,6 +40,10 @@ require '../includes/config.php';
 					{
 						echo '<div class="alert alert-danger">Balance is not enough!</div>';
 					}
+					else 
+					{
+						echo '<div class="alert alert-success">Looks good!</div>';
+					}
 
 				}
 				else 
