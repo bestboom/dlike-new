@@ -188,7 +188,7 @@ if ($user_eth == '') {
                                 <div class="pros-cons-block" style="padding-top: 20px;">
                                     <div class="pros-block">
                                         <h5 class="base-color">USDT: </h5>
-                                        <p><?php echo $tip_bal; ?> USDT</p>
+                                        <p><span class="tip_bal"><?php echo $tip_bal; ?></span> USDT</p>
                                     </div>
                                     <p class="coins-detail">A stable coin by Bitfinex<span class="coins-match"><a
                                                     href="" data-toggle="modal"
@@ -512,6 +512,8 @@ if ($user_eth == '') {
         e.preventDefault();
         let tok_amt = $("#tok_field").val();
         let eth_assress = $("#eth_field").val();
+        let tip_bal = $(".tip_bal").html();
+        console.log(tip_bal);
 
         if (!tok_amt) {
             toastr.error('phew... Enter Token Amount');
