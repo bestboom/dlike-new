@@ -128,7 +128,6 @@ else
                                 </div>
 
                                 <div class="post-thumb-block">
-                                    <img src="" onerror="this.src='/images/post/8.png'" alt="img" class="card-img-post img-fluid mod-thumb">
                                 </div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
@@ -362,7 +361,7 @@ else
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
-        $('.mod-thumb').attr("src", thumbnail);
+        $('.post-thumb-block').html(thumbnail);
         $('.mod-authThumb').attr("src", auth_img);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
