@@ -330,16 +330,14 @@ else
                 var youtubeAnchorTagVariableClass = '';
                 if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
                     //alert(url);
-                    youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_' + i;
+                    youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_';
                     if(url.search != ''){
                         let query = url.search.substr(1); //remove ? from begning
                         query = query.split('&')
-                        for (i in query){
-                            let splited = query[i].split('=');
+                            let splited = query.split('=');
                             if(splited[0] == 'v'){
                                 thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
                             }
-                        }
                     }else{
                         thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
                     }
