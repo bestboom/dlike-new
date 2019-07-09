@@ -29,19 +29,17 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 
 		$verifytime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
 		$resulttime = $conn->query($verifytime);
-			if ($resulttime->num_rows  > 0) {
-				$rowtime = $resulttime->fetch_assoc();
-				$lasttip = $rowtime['lasttime'];
+		$rowtime = $resulttime->fetch_assoc();
+		$lasttip = $rowtime['lasttime'];
 				
 				if($lasttip < 300) 
 					{
 						echo '<div class="alert alert-danger">There seems some issue</div>';
 						echo '<script>setTimeout(function(){location.reload();}, 1000);</script>'; 
 					} 
-			}
+			
 
-			if ($resulttime->num_rows  === 0) 
-			{
+			
 				$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
 					VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$ip."', now())";
 
@@ -89,12 +87,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 					else 
 					{
 						echo '<div class="alert alert-danger">There is some issue. Please Try Later!</div>';
-					}
-			} 
-			else 
-			{		
-				echo '<div class="alert alert-danger">There seems an error. Please Try Later!</div>';
-			}	
+					}	
 	}
 	
 }	
