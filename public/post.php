@@ -319,7 +319,7 @@ else
         }
 
         //image or youtube
-        let thumbnail = '<img src="' + img.src + '" alt="' + $post.title + '" class="card-img-top img-fluid">';
+        let thumbnail = '<img src="' + img.src + '" alt="' + res.title + '" class="card-img-top img-fluid">';
 
             var getLocation = function(href) {
                     var l = document.createElement("a");
