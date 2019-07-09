@@ -32,7 +32,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 		$rowtime = $resulttime->fetch_assoc();
 		$lasttip = $rowtime['lasttime'];
 				
-				if(!empty($lasttip) && $lasttip < 300)
+				if(!empty($lasttip) && $lasttip < 600)
 				{	
 					echo '<div class="alert alert-danger">There seems some issue</div>';
 					echo die(); 

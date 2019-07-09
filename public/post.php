@@ -152,13 +152,11 @@ else
                         <div class="col-sm-4">
 
                             <?php
-    //check if this post is tipped by you
-    //if ($auth === $sender) { echo 'Same user';} else {}
-                            if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>'; $tiptime = '301';} else {
+                            if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>'; $tiptime = '601';} else {
                                 $verifysender = "SELECT * FROM TipTop where sender = '$sender'";
                                 $result_sender = $conn->query($verifysender);
-                                $row_sender = $result_sender->fetch_assoc(); 
-                                if ($result_sender->num_rows > 0) { 
+                                if ($result_sender->num_rows > 0) {
+                                $row_sender = $result_sender->fetch_assoc();   
 
                                     $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
                                     $resultvtip = $conn->query($verifytip);
@@ -188,7 +186,7 @@ else
                                                 }                
                                             }   
                                         }   
-                                    }   else    {   $tiptime = '301'; ?>
+                                    }   else    {   $tiptime = '601'; ?>
                                     <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                         <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                         <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
@@ -399,7 +397,7 @@ else
     });
     var directTime = <?=($tiptime)?>;
     var sTime = new Date().getTime();
-    var countDown = 295 - directTime;
+    var countDown = 595 - directTime;
 
     function UpdateTime() {
         var cTime = new Date().getTime();
