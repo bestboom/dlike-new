@@ -362,7 +362,7 @@ else
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
-        $('.mod-thumb').attr("src", img.src);
+        $('.mod-thumb').attr("src", thumbnail);
         $('.mod-authThumb').attr("src", auth_img);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
