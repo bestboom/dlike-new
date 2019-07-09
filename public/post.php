@@ -336,6 +336,7 @@ else
                         alert(query);
                         //query = query.split('&')
                             let splited = query.split('=');
+                            alert(splited);
                             if(splited[0] == 'v'){
                                 thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
                             }
