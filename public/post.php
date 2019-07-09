@@ -333,6 +333,7 @@ else
                     youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_' + '';
                     if(url.search != ''){
                         let query = url.search.substr(1); //remove ? from begning
+                        alert(query);
                         query = query.split('&')
                             let splited = query.split('=');
                             if(splited[0] == 'v'){
