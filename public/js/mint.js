@@ -293,41 +293,7 @@ $('#content').on("click", ".post_detail", function() {
         $('.mod-post').text(post_description);
     });    
     
-        let comment = []    
-        steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
-            //showMainComment(0, result);
-            
-            for (var i = 0; i < result.length; i++) {
-            //function showMainComment(i, commentsArray) {
-            //console.log(commentsArray.length);
-            $comment = result[i];
-
-            //console.log($comment);
-            let metadata;
-                if ($comment.json_metadata && $comment.json_metadata.length > 0){
-                    metadata = JSON.parse($comment.json_metadata);
-                }
-            if(metadata && metadata.community == "dlike"){
-                    let a_p = "https://dlike.io/@"+$comment.author;
-                    let $commentbody = $comment.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
-
-                $(".cmt_section").append('<li class="comment">\n' +
-                    '<div class="comment-wrap">\n' +
-                    '<div class="comment-info">\n' +
-                    '<div class="commenter-thumb"><img src="https://steemitimages.com/u/'+$comment.author+'/avatar" class="img-fluid" alt=""></div>\n' +
-                    '<div class="commenter-info">\n' +
-                    '<span class="commenter-name">'+$comment.author+'</span>\n' +
-                    '<span class="date">'+moment.utc($comment.created + "Z", "YYYY-MM-DD  h:mm:ss").fromNow()+'</span>\n' +
-                    '</div>\n' +
-                    '<div class="reply"><button type="button" class="reply-button">Reply</button></div>\n' +
-                    '</div>\n' +
-                    '<div class="comment-body">'+$commentbody+'</div>\n' +
-                    '</div>\n' +
-                    '</li>');
-            }        
-            
-        }
-    });   
+       
 
 });
 
