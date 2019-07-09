@@ -271,7 +271,6 @@ else
                                     <input type="hidden" name="post_permlink" id="postpermlink" value="" />
                                     <input type="hidden" name="cmt_author" id="c_author" value="" />
                                     <input type="hidden" name="cmt_permlink" id="c_permlink" value="" />
-                                    <input type="hidden" name="user_at" id="userauth" value="" />
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <textarea placeholder="Comment" class="form-control cmt" name="cmt_body"></textarea>
@@ -331,10 +330,10 @@ else
         }
         ?>                        
         <?php include('template/footer3.php'); ?>
-        <script type="text/javascript">
-            post_author = '<?php echo $auth; ?>';
-            post_permlink = '<?php echo $link; ?>';
-            steem.api.getContent(post_author , post_permlink, function(err, res) {
+    <script type="text/javascript">
+        post_author = '<?php echo $auth; ?>';
+        post_permlink = '<?php echo $link; ?>';
+        steem.api.getContent(post_author , post_permlink, function(err, res) {
         //console.log(res);
 
         let metadata = JSON.parse(res.json_metadata);
@@ -364,6 +363,27 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
     }); 
+
+    //comments
+    $('.comt_bt').click(function () {
+        if (username === null) 
+        {
+            toastr.error('hmm... You must be login!');
+            return false;
+        }
+        if (!$.trim($('[name="cmt_body"]').val())) {
+            toastr.error('It seems you forgot to post comment');
+            return false;  
+        }
+        
+        var permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);
+        $("#postauthor").val(post_author);
+        $("#postpermlink").val(post_permlink);
+        $("#c_author").val(username);
+        $("#c_permlink").val(permlinkD);
+    });     
+        
+
 
     // tip me
     var tipoptions = {
@@ -428,17 +448,5 @@ else
     $('.prouser').click(function () {
      window.open("/help","_self");
  });
-
-//comments
-    $('.comt_bt').click(function () {
-        if (username === null) 
-        {
-            toastr.error('hmm... You must be login!');
-            return false;
-        }
-        if (!$.trim($('[name="cmt_body"]').val())) {
-            toastr.error('It seems you forgot to post comment');
-            return false;  
-        }
-    });    
+   
 </script>
