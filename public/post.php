@@ -278,7 +278,7 @@ else
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-default cmt_bt">Submit</button>
+                                <button class="btn btn-default comt_bt">Submit</button>
                             </form>
                         </div>
                         <div class="comment-area">
@@ -428,4 +428,17 @@ else
     $('.prouser').click(function () {
      window.open("/help","_self");
  });
+
+//comments
+    $('.comt_bt').click(function () {
+        if (username === null) 
+        {
+            toastr.error('hmm... You must be login!');
+            return false;
+        }
+        if (!$.trim($('[name="cmt_body"]').val())) {
+            toastr.error('It seems you forgot to post comment');
+            return false;  
+        }
+    });    
 </script>
