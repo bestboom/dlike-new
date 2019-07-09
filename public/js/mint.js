@@ -160,27 +160,6 @@ $(document).ready(function(){
       "hideMethod": "fadeOut"
     }
 
-    //comt
-    $('.cmt_bt').click(function () {
-        if(username != null) {
-            if (!$.trim($('[name="cmt_body"]').val())) {
-                toastr.error('It seems you forgot to post comment');
-                return false;  
-            }
-
-        } else {
-            toastr.error('hmm... You must be login!'); 
-            return false;
-        };
-    });
-
-    //post modal data
-    //$('#postModal').on('hidden.bs.modal', function(e) {
-        //$('#result').html("");
-        //$(this).find(".cmt_section").remove();
-            //location.reload();
-            
-    //});
 });
 
 // Add me
@@ -248,54 +227,6 @@ $('.latest-post-section').on("click", ".hov_me", function() {
     $("#r_likes").val(postsrec);
 });
 
-//post modal
-$('#content').on("click", ".post_detail", function() {
-   //alert('called');
-    // we want to copy the 'id' from the button to the modal
-    var postpermlink = $(this).attr("data-permlink");
-    var postauthor = $(this).attr("data-author");
-    //var permlinkD = steem.formatter.commentPermlink(postauthor, postpermlink);
-
-    //$("#postauthor").val(postauthor);
-    //$("#postpermlink").val(postpermlink);
-    //$("#userauth").val(user_auth);
-    //$("#c_author").val(username);
-    //$("#c_permlink").val(permlinkD);
-
-    steem.api.getContent(postauthor , postpermlink, function(err, res) {
-        //console.log(res);
-
-        let metadata = JSON.parse(res.json_metadata);
-        let img = new Image();
-        if (typeof metadata.image === "string"){
-            img.src = metadata.image.replace("?","?");
-        } else {
-            img.src = metadata.image[0];
-        }
-        json_metadata = metadata;
-        let category = metadata.category;
-        let exturl = metadata.url;
-        if (category === undefined) { category = "dlike"; } else {category = metadata.category;}
-        let steemTags = metadata.tags;
-        let dlikeTags = steemTags.slice(2);
-        let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
-        let title = res.title;
-        let author = res.author;
-        let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
-        //let post_body = $(post_description).text();
-
-        $('.mod-auth').html(author);
-        $('.mod-title').html(title);
-        $('.mod-thumb').attr("src", img.src);
-        $('.mod-authThumb').attr("src", auth_img);
-        $('.mod-tags').html(posttags);
-        $('.mod-post').text(post_description);
-    });    
-    
-       
-
-});
 
 // hov element
 $('.hov-item').hover(function() {
