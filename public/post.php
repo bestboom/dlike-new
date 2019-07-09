@@ -318,7 +318,7 @@ else
         }
 
         //image or youtube
-        let thumbnail = '<img src="' + img.src + '" alt="' + res.title + '" class="card-img-post img-fluid">';
+        let thumbnail = '<img src="' + img.src + '" alt="' + res.title + '" onerror="this.src="/images/post/8.png" class="card-img-post img-fluid">';
 
             var getLocation = function(href) {
                     var l = document.createElement("a");
