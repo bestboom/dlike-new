@@ -384,6 +384,11 @@ else
             toastr.error('hmm... You must be login!');
             return false;
         }
+        if (username == post_author) 
+        {
+            toastr.error('Sorry... You cant tip your own post!');
+            return false;
+        }
         if (thisuser !='PRO') {
             $("#prouser").modal("show");
             return false;
