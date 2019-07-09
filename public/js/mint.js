@@ -1,97 +1,97 @@
-$(document).ready(function(){
+    $(document).ready(function(){
 
-	let $urlfield,
+    	let $urlfield,
         $editPost,
         $sharePost,
-		$add_data,$loader,$add_data_f;
-		$urlfield=_("#url_field");
+        $add_data,$loader,$add_data_f;
+        $urlfield=_("#url_field");
         $editPost=_(".contact-info-outer");
         $sharePost=_(".shareForm");
-		$add_data=_("#share");
+        $add_data=_("#share");
         $add_data_f=_("#plus");
         $loader = _(".loader");
 
-    _click($add_data, function() {
-    if(username != null) {
-    	let url = $("#url_field").val();
-    	if(url == '') { $("#url_field").css("border-color", "RED"); toastr.error('phew... You forgot to enter URL');} else {
+        _click($add_data, function() {
+            if(username != null) {
+               let url = $("#url_field").val();
+               if(url == '') { $("#url_field").css("border-color", "RED"); toastr.error('phew... You forgot to enter URL');} else {
 
-        let verifyUrl = getDomain(url);
-        	if(isValidURL(url)){ 
-        		if(verifyUrl.match(/steemit.com/g)) { 
-        		 toastr.error('phew... Steem URL not allowed'); return false;} else{ _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return; }
-        	}
-    	}
-    }   else {  toastr.error('hmm... You must be login!'); return false; }     
-    });    
-	function _fetch(apiUrl,webUrl) {
-        $.post(apiUrl,{url:webUrl},function(response){
-            //console.log(response);
-            
-            let res = JSON.parse(response);
-            window.location.replace("editDetails.php?url="+encodeURIComponent(res.url)+"&title="+encodeURIComponent(res.title)+"&imgUrl="+encodeURIComponent(res.imgUrl)+"&details="+encodeURIComponent(res.des));
-            //console.log("Response array: "+res.imgUrl);
+                let verifyUrl = getDomain(url);
+                if(isValidURL(url)){ 
+                  if(verifyUrl.match(/steemit.com/g)) { 
+                     toastr.error('phew... Steem URL not allowed'); return false;} else{ _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return; }
+                 }
+             }
+         }   else {  toastr.error('hmm... You must be login!'); return false; }     
+     });    
+        function _fetch(apiUrl,webUrl) {
+            $.post(apiUrl,{url:webUrl},function(response){
+                //console.log(response);
+                
+                let res = JSON.parse(response);
+                window.location.replace("editDetails.php?url="+encodeURIComponent(res.url)+"&title="+encodeURIComponent(res.title)+"&imgUrl="+encodeURIComponent(res.imgUrl)+"&details="+encodeURIComponent(res.des));
+                //console.log("Response array: "+res.imgUrl);
 
-        });
-    }
-	function isValidURL(url){
-        var RegExp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-        if(RegExp.test(url)) {
-            return true;
-        } else {
-            toastr.error('phew... Enter a valid url');
-            return false;
+            });
         }
-    }
-    function _click(se,callback) {
-        _(se).click(function (e) {
-            callback(e);
-        });
-    }
-    function _show(e) {
-        e.css('display','block');
-    }
-    function _hide(e) {
-        e.css('display','none');
-    }
-    function _(e) {
-        return $(e);
-    }
-	function getDomain(url) {
-        let hostName = getHostName(url);
-        let domain = hostName;
-
-        if (hostName != null) {
-            let parts = hostName.split('.').reverse();
-            if (parts != null && parts.length > 1) {
-                domain = parts[1] + '.' + parts[0];
-                if (hostName.toLowerCase().indexOf('.co.uk') != -1 && parts.length > 2) {
-                    domain = parts[2] + '.' + domain;
-                }
+        function isValidURL(url){
+            var RegExp = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+            if(RegExp.test(url)) {
+                return true;
+            } else {
+                toastr.error('phew... Enter a valid url');
+                return false;
             }
         }
-        return domain;
-    }
-    function getHostName(url) {
-        var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
-        if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
-            return match[2];
+        function _click(se,callback) {
+            _(se).click(function (e) {
+                callback(e);
+            });
         }
-        else {
-            return null;
+        function _show(e) {
+            e.css('display','block');
         }
-    }
-    $('.shareme').click(function () {
-        let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-        if(text_words < 30){
-           showModalError(
-               "Make Sure..",
-               "Write minimum 40 words to explain how this share is useful for community.",
-               ""
-               );
-           return false;
+        function _hide(e) {
+            e.css('display','none');
         }
-        if($('.catg').val() == "0"){
+        function _(e) {
+            return $(e);
+        }
+        function getDomain(url) {
+            let hostName = getHostName(url);
+            let domain = hostName;
+
+            if (hostName != null) {
+                let parts = hostName.split('.').reverse();
+                if (parts != null && parts.length > 1) {
+                    domain = parts[1] + '.' + parts[0];
+                    if (hostName.toLowerCase().indexOf('.co.uk') != -1 && parts.length > 2) {
+                        domain = parts[2] + '.' + domain;
+                    }
+                }
+            }
+            return domain;
+        }
+        function getHostName(url) {
+            var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+            if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
+                return match[2];
+            }
+            else {
+                return null;
+            }
+        }
+        $('.shareme').click(function () {
+            let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
+            if(text_words < 30){
+             showModalError(
+                 "Make Sure..",
+                 "Write minimum 40 words to explain how this share is useful for community.",
+                 ""
+                 );
+             return false;
+         }
+         if($('.catg').val() == "0"){
             $('.catg').css("border-color", "RED");
             showModalError(
                 "uh-oh..",
@@ -101,68 +101,68 @@ $(document).ready(function(){
             return false;  
         }
 
-        // tag check
-        var tags = $('.tags').val();
-        tags = $.trim(tags);
-        tags = tags.split(' ');
+            // tag check
+            var tags = $('.tags').val();
+            tags = $.trim(tags);
+            tags = tags.split(' ');
 
-        if (tags.length < 2) {
-            $('.tags').css("border-color", "RED");
-            showModalError(
-                "uh-oh..",
-                "Please add at least two related tags",
-                ""
-                );
-            return false; 
+            if (tags.length < 2) {
+                $('.tags').css("border-color", "RED");
+                showModalError(
+                    "uh-oh..",
+                    "Please add at least two related tags",
+                    ""
+                    );
+                return false; 
+            }
+            if ($('.title_field').val() == "") {
+                showModalError(
+                    "uh-oh..",
+                    "Title Should not be empty!",
+                    ""
+                    );
+                return false;
+            } 
+        });
+
+        function showModalError(title, content, callback) {
+            $("#alert-title-error").text(title);
+            $("#alert-content-error").html(content);
+            $("#alert-modal-error").modal("show");
+            $("#alert-modal-error").on("hidden.bs.modal", function(e) {
+                callback();
+            });
         }
-        if ($('.title_field').val() == "") {
-            showModalError(
-                "uh-oh..",
-                "Title Should not be empty!",
-                ""
-                );
-            return false;
-        } 
+        function showModalSuccess(title, content, callback) {
+            $("#alert-title-success").text(title);
+            $("#alert-content-success").html(content);
+            $("#alert-modal-success").modal("show");
+            $("#alert-modal-success").on("hidden.bs.modal", function(e) {
+                callback();
+            });
+        }
+
+        toastr.options = {
+          "closeButton": false,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": true,
+          "positionClass": "toast-bottom-center",
+          "preventDuplicates": true,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "500",
+          "timeOut": "2000",
+          "extendedTimeOut": "500",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+      }
+
     });
 
-    function showModalError(title, content, callback) {
-    $("#alert-title-error").text(title);
-    $("#alert-content-error").html(content);
-    $("#alert-modal-error").modal("show");
-    $("#alert-modal-error").on("hidden.bs.modal", function(e) {
-        callback();
-    });
-    }
-      function showModalSuccess(title, content, callback) {
-    $("#alert-title-success").text(title);
-    $("#alert-content-success").html(content);
-    $("#alert-modal-success").modal("show");
-    $("#alert-modal-success").on("hidden.bs.modal", function(e) {
-        callback();
-    });
-    }
-
-    toastr.options = {
-      "closeButton": false,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": true,
-      "positionClass": "toast-bottom-center",
-      "preventDuplicates": true,
-      "onclick": null,
-      "showDuration": "300",
-      "hideDuration": "500",
-      "timeOut": "2000",
-      "extendedTimeOut": "500",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
-    }
-
-});
-
-// Add me
+    // Add me
     var optionstk = {
         target: '#add-msg',
         url: 'helper/tkad.php',
@@ -173,209 +173,206 @@ $(document).ready(function(){
         return !1
     });
 
-// Wallet
+    // Wallet
     $('.wallet-search').click(function () {
         let user_wallet = $('#exp_search').val();
         let wallet_url = "https://dlike.io/wallet/"+user_wallet;
         window.open(wallet_url, "_self");
     });
 
-// star ratings
-function postToControll() {
-    for (i = 0; i < document.getElementsByName('star').length; i++) {
-        if(document.getElementsByName('star')[i].checked == true) {
-            var ratingValue = document.getElementsByName('star')[i].value;
+    // star ratings
+    function postToControll() {
+        for (i = 0; i < document.getElementsByName('star').length; i++) {
+            if(document.getElementsByName('star')[i].checked == true) {
+                var ratingValue = document.getElementsByName('star')[i].value;
                 break;
             }
         }
-        //alert(ratingValue);
-        $('#myRatingz').val(ratingValue);
-};
+            //alert(ratingValue);
+            $('#myRatingz').val(ratingValue);
+        };
 
-//dvd modal
-$('.latest-post-section').on("click", ".hov_me", function() {
-   //alert('called');
-    // we want to copy the 'id' from the button to the modal
-    var mypermlink = $(this).attr("data-permlink");
-    var authorname = $(this).attr("data-author");
-    var postsrec = $(this).attr("data-likes");
-    //console.log(postsrec);
+    //dvd modal
+    $('.latest-post-section').on("click", ".hov_me", function() {
+       //alert('called');
+        // we want to copy the 'id' from the button to the modal
+        var mypermlink = $(this).attr("data-permlink");
+        var authorname = $(this).attr("data-author");
+        var postsrec = $(this).attr("data-likes");
+        //console.log(postsrec);
         var datat = {
             ath: authorname,
             plink: mypermlink
         };
-            $.ajax({
-                type: "POST",
-                url: "/helper/verify_post.php",
-                data: datat,
-                success: function(data) {
+        $.ajax({
+            type: "POST",
+            url: "/helper/verify_post.php",
+            data: datat,
+            success: function(data) {
+                try {
+                    var response = JSON.parse(data)
+                    if(response.error == true) {
+                        $('#upvotefail').modal('show');
+                    } else {
+                        $('#recomendModal').modal('show');
+                    }
+                } catch (err) {
+                    alert('Sorry. Server response is malformed.')
+                }
+            }
+        });
+
+        $("#r_author").val(authorname);
+        $("#r_permlink").val(mypermlink);
+        $("#r_likes").val(postsrec);
+    });
+
+
+    // hov element
+    $('.hov-item').hover(function() {
+       $(this).find('.hov-title').fadeIn(200);
+    }, function() {
+        $(this).find('.hov-title').fadeOut(100);
+
+    });
+
+    // here start recomendations
+    $('.post-comments-mid').on("click", ".recomendation", function() { 
+        var recpermlink = $(this).attr("data-permlink");
+        var recauthor = $(this).attr("data-author");
+        var reclikes = $(this).attr("data-likes");
+        $("#r_author").val(recauthor);
+        $("#r_permlink").val(recpermlink);
+        $("#r_likes").val(reclikes);
+    });
+
+    $('.recomendme').click(function() {
+        //alert('good');
+        var r_permlink = $("#r_permlink").val();
+        var r_author = $("#r_author").val();
+        var r_likes = $("#r_likes").val();
+        var newlikes = parseInt(r_likes) + 1;
+        var datavr = {
+            rec_permlink: r_permlink,
+            rec_author: r_author
+        };
+        $('#recomend-bar').hide();
+        $('#recomend-status').show();         
+
+        $.ajax({
+            type: "POST",
+            url: "/helper/solve.php",
+            data: datavr,
+            success: function(data) {
+                        //console.log(success);
                         try {
                             var response = JSON.parse(data)
                             if(response.error == true) {
-                                $('#upvotefail').modal('show');
+                                toastr.error('There is some issue!'); 
+                                $('#recomendModal').modal('hide');
+                                $('#recomend-status').hide();
+                                $('#recomend-bar').show();
+                                return false;
                             } else {
-                                    $('#recomendModal').modal('show');
+                                $('#up_vote').removeAttr('data-target');
+                                $('#vote_icon').addClass("not-active");
+                                toastr.success('Thanks for Recomendation!'); 
+                                $('#total_likes').html(newlikes);
+                                $('#recomendModal').modal('hide');
+                                $('#recomend-status').hide(); 
+                                $('#recomend-bar').show();
                             }
                         } catch (err) {
-                            alert('Sorry. Server response is malformed.')
-                        }
-                    }
-            });
-
-    $("#r_author").val(authorname);
-    $("#r_permlink").val(mypermlink);
-    $("#r_likes").val(postsrec);
-});
-
-
-// hov element
-$('.hov-item').hover(function() {
-     $(this).find('.hov-title').fadeIn(200);
-}, function() {
-$(this).find('.hov-title').fadeOut(100);
-
-});
-
-
-
-
-// here start recomendations
-$('.post-comments-mid').on("click", ".recomendation", function() { 
-    var recpermlink = $(this).attr("data-permlink");
-    var recauthor = $(this).attr("data-author");
-    var reclikes = $(this).attr("data-likes");
-    $("#r_author").val(recauthor);
-    $("#r_permlink").val(recpermlink);
-    $("#r_likes").val(reclikes);
-});
-
-$('.recomendme').click(function() {
-    //alert('good');
-    var r_permlink = $("#r_permlink").val();
-    var r_author = $("#r_author").val();
-    var r_likes = $("#r_likes").val();
-    var newlikes = parseInt(r_likes) + 1;
-    var datavr = {
-        rec_permlink: r_permlink,
-        rec_author: r_author
-    };
-    $('#recomend-bar').hide();
-    $('#recomend-status').show();         
-
-            $.ajax({
-                type: "POST",
-                url: "/helper/solve.php",
-                data: datavr,
-                success: function(data) {
-                    //console.log(success);
-                    try {
-                        var response = JSON.parse(data)
-                        if(response.error == true) {
-                            toastr.error('There is some issue!'); 
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide();
-                            $('#recomend-bar').show();
-                            return false;
-                        } else {
-                            $('#up_vote').removeAttr('data-target');
-                            $('#vote_icon').addClass("not-active");
-                            toastr.success('Thanks for Recomendation!'); 
-                            $('#total_likes').html(newlikes);
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide(); 
-                            $('#recomend-bar').show();
+                                //console.log(err);
+                                toastr.error('Sorry. Server response is malformed.');
+                                $('#recomendModal').modal('hide');
+                                $('#recomend-status').hide(); 
+                                $('#recomend-bar').show();
                             }
-                        } catch (err) {
-                            //console.log(err);
-                            toastr.error('Sorry. Server response is malformed.');
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide(); 
-                            $('#recomend-bar').show();
-                    }
-                },
-            });
-});
+                        },
+                    });
+    });
 
 
-//upvote
-var rangeSlider = document.getElementById("rs-range-line");
-var rangeBullet = document.getElementById("rs-bullet");
-rangeSlider.addEventListener("input", showSliderValue, false);
+    //upvote
+    var rangeSlider = document.getElementById("rs-range-line");
+    var rangeBullet = document.getElementById("rs-bullet");
+    rangeSlider.addEventListener("input", showSliderValue, false);
 
-function showSliderValue() {
-  rangeBullet.innerHTML = rangeSlider.value;
-}
+    function showSliderValue() {
+      rangeBullet.innerHTML = rangeSlider.value;
+    }
 
 
 
-// here starts dlike-steem-upvote
-$('.latest-post-section').on("click", ".upvoting", function() {
-    var votepermlink = $(this).attr("data-permlink");
-    var voteauthor = $(this).attr("data-author");
+    // here starts dlike-steem-upvote
+    $('.latest-post-section').on("click", ".upvoting", function() {
+        var votepermlink = $(this).attr("data-permlink");
+        var voteauthor = $(this).attr("data-author");
 
-    $("#vote_author").val(voteauthor);
-    $("#vote_permlink").val(votepermlink);
+        $("#vote_author").val(voteauthor);
+        $("#vote_permlink").val(votepermlink);
 
-});
+    });
 
-$('.upme').click(function() {
-  
-    var upvoteValue = $('#rs-range-line').val();
-    var upvoteValue = upvoteValue*100;
-    var weight = parseInt(upvoteValue);
-    //alert(upvoteValue)
-    var v_authorname = $("#vote_author").val();
-    var v_permlink = $("#vote_permlink").val();
-    var datav = {
-        v_permlink: v_permlink,
-        v_author: v_authorname,
-        vote_value: upvoteValue
-    };
+    $('.upme').click(function() {
+      
+        var upvoteValue = $('#rs-range-line').val();
+        var upvoteValue = upvoteValue*100;
+        var weight = parseInt(upvoteValue);
+        //alert(upvoteValue)
+        var v_authorname = $("#vote_author").val();
+        var v_permlink = $("#vote_permlink").val();
+        var datav = {
+            v_permlink: v_permlink,
+            v_author: v_authorname,
+            vote_value: upvoteValue
+        };
 
-    if(username != null) { 
-    $('#upvoting-bar').hide();
-    $('#upvoting-status').show();         
+        if(username != null) { 
+            $('#upvoting-bar').hide();
+            $('#upvoting-status').show();         
             $.ajax({
                 type: "POST",
                 url: "helper/vote.php",
                 data: datav,
                 success: function(data) {
-                    //console.log(data);
-                    try {
-                        var response = JSON.parse(data)
-                        if(response.error == true) {
-                            toastr.error('There is some issue!'); 
-                            $('#upvoteModal').modal('hide');
-                            $('#upvoting-status').hide();
-                            $('#upvoting-bar').show();
-                            return false;
-                        } else {
-                            //$('#vote_icon').css("color", "RED");
-                            toastr.success('upVote done successfully!'); 
-                            $('#upvoteModal').modal('hide');
-                            $('#upvoting-status').hide(); 
-                            $('#upvoting-bar').show();
+                        //console.log(data);
+                        try {
+                            var response = JSON.parse(data)
+                            if(response.error == true) {
+                                toastr.error('There is some issue!'); 
+                                $('#upvoteModal').modal('hide');
+                                $('#upvoting-status').hide();
+                                $('#upvoting-bar').show();
+                                return false;
+                            } else {
+                                //$('#vote_icon').css("color", "RED");
+                                toastr.success('upVote done successfully!'); 
+                                $('#upvoteModal').modal('hide');
+                                $('#upvoting-status').hide(); 
+                                $('#upvoting-bar').show();
                             }
                         } catch (err) {
                             toastr.error('Sorry. Server response is malformed.');
                             $('#upvoteModal').modal('hide');
                             $('#upvoting-status').hide(); 
                             $('#upvoting-bar').show();
-                    }
-                },
-                //error: function(xhr, textStatus, error){
-                //      console.log(xhr.statusText);
-                //       console.log(textStatus);
-                //        console.log(error);
-                //}
-            });
-    } else {
-        toastr.error('hmm... You must be login!'); 
-        $('#upvoteModal').modal('hide');
-        return false;
-    };
-});
+                        }
+                    },
+                    //error: function(xhr, textStatus, error){
+                    //      console.log(xhr.statusText);
+                    //       console.log(textStatus);
+                    //        console.log(error);
+                    //}
+                });
+        } else {
+            toastr.error('hmm... You must be login!'); 
+            $('#upvoteModal').modal('hide');
+            return false;
+        };
+    });
 
-//chat
-function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}
-ChatbroLoader({encodedChatId: '938nz'});
+    //chat
+    function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}
+    ChatbroLoader({encodedChatId: '938nz'});
