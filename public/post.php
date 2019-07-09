@@ -126,9 +126,7 @@ else
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="post-thumb-block">
-                                </div>
+                                <div class="post-thumb-block" style="background: url('/images/post/8.png')"></div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
                             </div>
@@ -318,7 +316,7 @@ else
         }
 
         //image or youtube
-        let thumbnail = '<img src="' + img.src + '" alt="' + res.title + '" onerror="this.src="/images/post/8.png" class="card-img-post img-fluid">';
+        let thumbnail = '<img src="' + img.src + '" alt="' + res.title + '" onerror="this.src='"/images/post/8.png"' class="card-img-post img-fluid">';
 
             var getLocation = function(href) {
                     var l = document.createElement("a");
@@ -328,20 +326,17 @@ else
                 var url = getLocation(metadata.url);
                 var youtubeAnchorTagVariableClass = '';
                 if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
-                    alert(url);
+                    //alert(url);
                     youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_' + '';
                     if(url.search != ''){
                         let query = url.search.substr(1); //remove ? from begning
-                        alert(query);
                         //query = query.split('&')
                             let splited = query.split('=');
-                            alert(splited);
                             if(splited[0] == 'v'){
-                                thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-post img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
-                                alert(thumbnail);
+                                thumbnail = '<span class="embed-responsive embed-responsive-16by9"><iframe src="https://www.youtube.com/embed/' + splited[1] + '" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe></span>'
                             }
                     }else{
-                        thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-post img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+                        thumbnail = '<span class="embed-responsive embed-responsive-16by9"><iframe src="https://www.youtube.com/embed/' + url.pathname + '" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe></span>';
                     }
                 }
 
