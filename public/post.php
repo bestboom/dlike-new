@@ -384,7 +384,7 @@ else
     });     
         
     let comment = []    
-    steem.api.getContentReplies(postauthor, postpermlink, function(err, result) {
+    steem.api.getContentReplies(post_author, post_permlink, function(err, result) {
             //showMainComment(0, result);
             
             for (var i = 0; i < result.length; i++) {
