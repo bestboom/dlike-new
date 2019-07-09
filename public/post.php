@@ -337,11 +337,11 @@ else
                             let splited = query.split('=');
                             alert(splited);
                             if(splited[0] == 'v'){
-                                thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+                                thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-post img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
                                 alert(thumbnail);
                             }
                     }else{
-                        thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+                        thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-post img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
                     }
                 }
 
