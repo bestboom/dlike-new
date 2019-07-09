@@ -49,16 +49,12 @@ require '../includes/config.php';
 				{
 					echo '<div class="alert alert-danger">There is balance issue. Please Try Later!</div>';
 				}
-
-				
 			} 
 			else 
 			{
 				echo '<div class="alert alert-danger">ETH Address does not exist!</div>';
 			}
-
 		}
-
 	}
 	else 
 	{
