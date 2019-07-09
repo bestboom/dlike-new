@@ -9,9 +9,9 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	$receiver =  $_POST['tipauthor'];	
 	$sender =  $_COOKIE['username'];	
 	$permlink =  $_POST['tippermlink'];
-	$tip1 = '0.002';
+	$tip1 = '0.004';
 	$tip2 = '0.0015';
-	$sender_amount = '0.003';
+	$sender_amount = '0.006';
 
 
 	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
@@ -34,11 +34,15 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 				
 				if(!empty($lasttip) && $lasttip < 300)
 				{	
-					echo 'empty';
 					echo '<div class="alert alert-danger">There seems some issue</div>';
 					echo die(); 
-				} 
-			
+				}
+
+				if(!empty($lasttip) && $lasttip < 3600)
+				{
+					$tip1 = '0.002';
+					$sender_amount = '0.003';
+				}
 
 			
 				$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
