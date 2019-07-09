@@ -334,7 +334,7 @@ else
                     if(url.search != ''){
                         let query = url.search.substr(1); //remove ? from begning
                         alert(query);
-                        query = query.split('&')
+                        //query = query.split('&')
                             let splited = query.split('=');
                             if(splited[0] == 'v'){
                                 thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
