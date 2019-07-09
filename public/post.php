@@ -329,7 +329,7 @@ else
                 var url = getLocation(metadata.url);
                 var youtubeAnchorTagVariableClass = '';
                 if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
-                    //alert(url);
+                    alert(url);
                     youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_';
                     if(url.search != ''){
                         let query = url.search.substr(1); //remove ? from begning
