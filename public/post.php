@@ -126,7 +126,9 @@ else
                                         </div>
                                     </div>
                                 </div>
-                                <div class="post-thumb-block" style="background: url('/images/post/8.png')"></div>
+                                <div class="post-thumb-block">
+                                    <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
+                                </div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
                             </div>
