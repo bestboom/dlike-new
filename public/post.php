@@ -171,7 +171,7 @@ else
                                         $rowtiptime = $resulttiptime->fetch_assoc();
                                         if ($resulttiptime->num_rows > 0) {
                                             $tiptime = $rowtiptime['timed']; 
-                                            if($tiptime < 300) {
+                                            if($tiptime < 600) {
                                                 echo    '<div id="countdown">
                                                 <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
                                                 <span id="seconds">00</span></div></div>'; 
