@@ -617,8 +617,8 @@ console.log(account.reward_steem_balance);
                     ClaimRewards.disabled  = true;
                     return;
                 }
-                //const key = '5JB4cTUygmDLo7Bxv539pxs3hanuV4Q2dh5NPrbKG6rAFob8xyQ';
-                steem.broadcast.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
+                //const key = '';
+                steem.broadcast.claimRewardBalance(key, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
                     console.log(resty);
 
                     if (err) {
