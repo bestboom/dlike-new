@@ -99,12 +99,12 @@
 <script src="/js/custom.js"></script>
 <script src="/js/mint.js"></script>
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/steemconnect"></script>
+<script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 <script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
-<script src="/js/sc.js"></script>
+<script src="/js/steemconnect.js"></script>
 <script src="/js/toaster.js"></script>
     <script>
         function openNav() {
