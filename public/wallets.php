@@ -614,8 +614,8 @@ if ($user_eth == '') {
                     return;
                 }
 
-                window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-                    console.log(USERNAME);
+                window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
+                    console.log(resty);
 
                     if (err) {
                         console.error(err);
