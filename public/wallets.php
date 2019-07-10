@@ -550,7 +550,7 @@ if ($user_eth == '') {
             ]).then(function (result) {
                 const account = result[0][0];
                 const global  = result[1];
-console.log(account.reward_steem_balance);
+
                 const reward_steem = account.reward_steem_balance.split(' ')[0];
                 const reward_sbd   = account.reward_sbd_balance.split(' ')[0];
                 const reward_sp    = account.reward_vesting_steem.split(' ')[0];
