@@ -226,14 +226,16 @@ if ($user_eth == '') {
                                     </p>
                                     <h4 class="bell-bold">How to become PRO?</h4>
                                     <p>
-                                        To become PRO user, you need to pay <b>10,000 DLIKE</b> tokens which will be burnt.
+                                        To become PRO user, you need to pay <b>10,000 DLIKE</b> tokens which will be
+                                        burnt.
                                     </p>
                                     <div id="pro-msg"></div>
                                     <div class="pros-cons-block">
                                         <form action="" class="" method="POST" id="pro_sub">
                                             <input type="hidden" name="pro_user"
                                                    value="<?php echo $user_wallet; ?>"/>
-                                            <button type="submit" class="btn btn-primary pro-bt">I Agree To Become PRO</button>
+                                            <button type="submit" class="btn btn-primary pro-bt">I Agree To Become PRO
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
@@ -242,10 +244,12 @@ if ($user_eth == '') {
                         <div role="tabpanel" class="tab-pane fade" id="nav_nano">
                             <div class="catagori-content">
                                 <p class="catagori-info">
-                                    DLIKE (ETH based ERC-20 Token) is the native token of DLIKE platform. It can be purchased or earned through daily reward pool (only PRO users). 
+                                    DLIKE (ETH based ERC-20 Token) is the native token of DLIKE platform. It can be
+                                    purchased or earned through daily reward pool (only PRO users).
                                 </p>
                                 <p>
-                                    DLIKE token will be listed on exchanges soon. Till then, DLIKE tokens can be purchased from other users through private deals or directly from DLIKE platform.
+                                    DLIKE token will be listed on exchanges soon. Till then, DLIKE tokens can be
+                                    purchased from other users through private deals or directly from DLIKE platform.
                                 </p>
                                 <div class="pros-cons-block">
                                     <button type="submit" class="btn btn-primary">BUY DLIKE Tokens</button>
@@ -510,9 +514,9 @@ if ($user_eth == '') {
 
     $('#tok_out').submit(function (e) {
         e.preventDefault();
-        let tok_amt = $("#tok_field").val();
+        let tok_amt     = $("#tok_field").val();
         let eth_assress = $("#eth_field").val();
-        let tip_bal = $(".tip_bal").html();
+        let tip_bal     = $(".tip_bal").html();
         console.log(tip_bal);
 
         if (!tok_amt) {
@@ -539,42 +543,58 @@ if ($user_eth == '') {
 
         RewardInfos.innerHTML = '';
 
-	var refreshWalletData = function() {
-            Steem.database.call('get_accounts', [[USERNAME]]).then(function (result) {
-            	const account = result[0];
+        var refreshWalletData = function () {
+            Promise.all([
+                Steem.database.call('get_accounts', [[USERNAME]]),
+                Steem.database.getDynamicGlobalProperties(),
+            ]).then(function (result) {
+                const account = result[0][0];
+                const global  = result[1];
 
-            	const reward_steem = account.reward_steem_balance.split(' ')[0];
-            	const reward_sbd   = account.reward_sbd_balance.split(' ')[0];
-            	const reward_sp    = account.reward_vesting_steem.split(' ')[0];
-            	const reward_vests = account.reward_vesting_balance.split(' ')[0];
+                const reward_steem = account.reward_steem_balance.split(' ')[0];
+                const reward_sbd   = account.reward_sbd_balance.split(' ')[0];
+                const reward_sp    = account.reward_vesting_steem.split(' ')[0];
+                const reward_vests = account.reward_vesting_balance.split(' ')[0];
 
-            	// balance
-            	document.querySelector('.balance-steem').innerHTML = result[0].balance;
-            	document.querySelector('.balance-sbd').innerHTML   = result[0].sbd_balance;
+                // balance
+                document.querySelector('.balance-steem').innerHTML = account.balance;
+                document.querySelector('.balance-sbd').innerHTML   = account.sbd_balance;
 
-            	// steem power
-            	document.querySelector('.balance-sp').innerHTML = parseFloat(account.voting_power) / 50;
+                // steem power
+                var vestingSharesParts   = parseFloat(account.vesting_shares);
+                var receivedSharesParts  = parseFloat(account.received_vesting_shares);
+                var delegatedSharesParts = parseFloat(account.delegated_vesting_shares);
 
-		ClaimRewards.innerHTML = 'Claim Rewards';
+                var totalVests = parseFloat(vestingSharesParts)
+                    + parseFloat(receivedSharesParts)
+                    - parseFloat(delegatedSharesParts);
 
-		if (reward_steem <= 0 &&
+                var steempower = (parseFloat(global.total_vesting_fund_steem) * totalVests) / parseFloat(global.total_vesting_shares);
+                steempower     = Math.round(steempower);
+
+                document.querySelector('.balance-sp').innerHTML = steempower;
+
+
+                ClaimRewards.innerHTML = 'Claim Rewards';
+
+                if (reward_steem <= 0 &&
                     reward_sbd <= 0 &&
                     reward_sp <= 0 &&
                     reward_vests <= 0
-            	) {
+                ) {
                     RewardInfos.innerHTML = '0 SBD and 0 SP';
-		    ClaimRewards.disabled  = true;
+                    ClaimRewards.disabled = true;
                     return;
-            	}
+                }
 
                 RewardInfos.innerHTML = `${reward_sbd} SBD and ${reward_sp} SP`;
-	    	ClaimRewards.disabled = false;
+                ClaimRewards.disabled = false;
             });
-	}
+        };
 
-	refreshWalletData();
+        refreshWalletData();
 
-	// claim button
+        // claim button
         ClaimRewards.addEventListener('click', function () {
             ClaimRewards.innerHTML = '<span class="fas fa-circle-notch fa-spin"></span>';
 
@@ -593,15 +613,16 @@ if ($user_eth == '') {
                     ClaimRewards.disabled  = true;
                     return;
                 }
-                console.log(api);
-		window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-            console.log(res);
-		    if (err) {
-			console.error(err);
-	            }
 
-		    refreshWalletData();
-		});
+                window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
+                    console.log(res);
+
+                    if (err) {
+                        console.error(err);
+                    }
+
+                    refreshWalletData();
+                });
             });
         });
 
