@@ -104,7 +104,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 <script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
-<script src="/js/steemconnect.js"></script>
+<script src="/js/sc.js"></script>
 <script src="/js/toaster.js"></script>
     <script>
         function openNav() {
