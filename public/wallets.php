@@ -618,7 +618,7 @@ console.log(account.reward_steem_balance);
                     return;
                 }
                 //const key = '';
-                steem.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
+                window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
                     console.log(resty);
 
                     if (err) {
