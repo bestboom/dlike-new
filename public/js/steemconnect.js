@@ -7,6 +7,7 @@ var api = steemconnect.Client({
     scope      : ['login', 'vote', 'comment', 'delete_comment', 'comment_options', 'custom_json', 'claim_reward_balance'],
 });
 
+
 if ($.cookie("access_token") != null) {
     var username  = $.cookie("username");
     var user_auth = $.cookie("access_token");
