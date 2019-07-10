@@ -600,6 +600,8 @@ console.log(account.reward_steem_balance);
 
             Steem.database.call('get_accounts', [[USERNAME]]).then(function (result) {
                 const reward_steem = result[0].reward_steem_balance.split(' ')[0];
+                console.log(reward_steem);
+                console.log(result[0].reward_steem_balance);
                 const reward_sbd   = result[0].reward_sbd_balance.split(' ')[0];
                 const reward_sp    = result[0].reward_vesting_steem.split(' ')[0];
                 const reward_vests = result[0].reward_vesting_balance.split(' ')[0];
