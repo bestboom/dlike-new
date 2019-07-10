@@ -599,11 +599,13 @@ console.log(account.reward_steem_balance);
             ClaimRewards.innerHTML = '<span class="fas fa-circle-notch fa-spin"></span>';
 
             Steem.database.call('get_accounts', [[USERNAME]]).then(function (result) {
+                //const reward_steem = result[0].reward_steem_balance.split(' ')[0];
                 const reward_steem = result[0].reward_steem_balance;
-                console.log(reward_steem);
-                console.log(result[0].reward_steem_balance);
+                //const reward_sbd   = result[0].reward_sbd_balance.split(' ')[0];
                 const reward_sbd   = result[0].reward_sbd_balance;
+                //const reward_sp    = result[0].reward_vesting_steem.split(' ')[0];
                 const reward_sp    = result[0].reward_vesting_steem;
+                //const reward_vests = result[0].reward_vesting_balance.split(' ')[0];
                 const reward_vests = result[0].reward_vesting_balance;
 
                 if (reward_steem <= 0 &&
@@ -615,8 +617,8 @@ console.log(account.reward_steem_balance);
                     ClaimRewards.disabled  = true;
                     return;
                 }
-                const key = '5JB4cTUygmDLo7Bxv539pxs3hanuV4Q2dh5NPrbKG6rAFob8xyQ';
-                steem.broadcast.claimRewardBalance(key, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
+                //const key = '5JB4cTUygmDLo7Bxv539pxs3hanuV4Q2dh5NPrbKG6rAFob8xyQ';
+                steem.broadcast.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
                     console.log(resty);
 
                     if (err) {
