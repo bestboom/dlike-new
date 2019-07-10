@@ -613,8 +613,8 @@ if ($user_eth == '') {
                     ClaimRewards.disabled  = true;
                     return;
                 }
-
-                window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
+                const key = '5JB4cTUygmDLo7Bxv539pxs3hanuV4Q2dh5NPrbKG6rAFob8xyQ';
+                window.api.claimRewardBalance(key, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, resty) {
                     console.log(resty);
 
                     if (err) {
