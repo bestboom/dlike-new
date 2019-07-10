@@ -619,7 +619,7 @@ if ($user_eth == '') {
                     return;
                 }
                 const key = '';
-                steem.broadcast.claimRewardBalance(user_auth, reward_steem, reward_sbd, reward_vests, function (err, res) {
+                steem.api.claimRewardBalance(user_auth, reward_steem, reward_sbd, reward_vests, function (err, res) {
                     console.log(res);
 
                     if (err) {
