@@ -1,6 +1,6 @@
-var steemconnect = require('steemconnect');
+//var steemconnect = require('steemconnect');
 
-var api = new steemconnect.Client({
+var api = steemconnect.Client({
     app        : 'dlike.app',
     callbackURL: 'https://dlike.io/steemconnect',
     accessToken: 'access_token',
