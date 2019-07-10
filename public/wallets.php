@@ -619,8 +619,8 @@ if ($user_eth == '') {
                     return;
                 }
                 //const key = '';
-                //steem.broadcast.claimRewardBalance(key, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-                window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
+                steem.broadcast.claimRewardBalance(user_auth, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
+                //window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
                     console.log(res);
 
                     if (err) {
