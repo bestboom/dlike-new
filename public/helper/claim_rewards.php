@@ -13,8 +13,8 @@ if (isset($_POST["user"])){
 
 
 	if (empty($errors)) {
-    echo $state = $rewards->claim_all();
-    echo $rewards->get_reward_balances($rewards->me());
+    echo $state = $rewardGenerator->claim_all();
+    //echo $rewards->get_reward_balances($rewards->me());
 	}
 
 	if (isset($state)) { 
