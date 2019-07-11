@@ -276,7 +276,7 @@ else
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-default comt_bt">Submit</button>
+                                <button type="submit" class="btn btn-default comt_bt">Submit</button>
                             </form>
                         </div>
                         <div class="comment-area">
