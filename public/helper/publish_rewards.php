@@ -2,20 +2,7 @@
 namespace dlike\rewards;
 class claim_rewards
 {
-    public function claim_all() {
-        $get = $this->get_reward_balances($this->me());
-        if ($get != null) {
-            $claim = $this->raw_claim($get);
-            $ret = $this->broadcast($claim);
-            if (isset($ret->error_description) and $ret->error_description == "reward_steem.amount > 0 || reward_sbd.amount > 0 || reward_sbd.amount > 0 || reward_sp.amount > 0: Must claim something.") {
-                return [true, $get];
-            } else {
-                return [!isset($ret->error), $get];
-            }
-        } else {
-            return [false, []];
-        }
-    }
+    
     public function raw_claim($claimobject)
     {
         $post = [
