@@ -20,7 +20,7 @@ if (isset($_POST["user"])){
 			    die(json_encode([
 			    	'error' => false,
             		'message' => 'Thankk You', 
-            		'data' => 'Claiming'
+            		'data' => $rewards->get_reward_balances($rewards->me());
             		
         		]));
 	} else {
