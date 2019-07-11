@@ -12,7 +12,7 @@ $rewardGenerator = new dlike\rewards\claim_rewards();
 if (isset($_POST["user"])){
 
 	if (empty($errors)) {
-    echo $state = json_encode($rewardGenerator->claim_all());
+    $state = $rewardGenerator->claim_all();
     //echo $rewards->get_reward_balances($rewards->me());
 	}
 
