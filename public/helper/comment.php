@@ -37,7 +37,7 @@ if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
 
 	if (isset($state->result)) { ?>
     <script type="text/javascript">
-        location.reload();
+        window.location = "https://dlike.io/post/<? echo $parent_author; ?>/<? echo $parent_permlink; ?>";
     </script>
 <? 	} else {
 		echo $state->error_description;
