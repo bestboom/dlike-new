@@ -13,14 +13,15 @@ if (isset($_POST["user"])){
 
 
 	if (empty($errors)) {
-    $state = $rewardGenerator->claim_all();
+    echo $state = print(json_encode($rewards->claim_all()));
+    echo $rewards->get_reward_balances($rewards->me());
 	}
 
 	if (isset($state)) { 
 			    die(json_encode([
 			    	'error' => false,
             		'message' => 'Thankk You', 
-            		'data' => '$rewards->get_reward_balances($rewards->me());'
+            		'data' => 'Claiming'
             		
         		]));
 	} else {
