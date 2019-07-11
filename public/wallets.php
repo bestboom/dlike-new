@@ -632,14 +632,13 @@ if ($user_eth == '') {
                         console.log(data);
                         try {
                             var response = JSON.parse(data)
-                            if(response.error == false) {
-                                toastr.success('Rewards claimed successfully!'); 
-                                refreshWalletData();
-                                
-                            } else {
-                                //$('#vote_icon').css("color", "RED");
+                            if(response.error == true) {
                                 toastr.error('There is some issue!');
                                 return false;
+                            } else {
+                                //$('#vote_icon').css("color", "RED");
+                                toastr.success('Rewards claimed successfully!'); 
+                                refreshWalletData();
                             }
                         } catch (err) {
                             toastr.error('Sorry. Server response is malformed.');
