@@ -53,7 +53,7 @@ require '../includes/config.php';
 							if ($updateTipWalletQuery === TRUE) 
 							{
 								echo '<div class="alert alert-success">Withdrawl Request Successful!</div>';
-								echo '<script>$(".tsf_btn").attr("disabled","disabled"); document.getElementById("tsf_sub").reset(); setTimeout(function(){location.reload();},1000);</script>';
+								echo '<script>$(".tk_out_btn").attr("disabled","disabled"); document.getElementById("tok_out").reset(); setTimeout(function(){location.reload();},1000);</script>';
 							}	
 						}
 					}
