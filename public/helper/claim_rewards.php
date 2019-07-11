@@ -16,7 +16,7 @@ if (isset($_POST["user"])){
     //echo $rewards->get_reward_balances($rewards->me());
 	}
 
-	if ($state->result) { 
+	if ($state) { 
 			    die(json_encode([
 			    	'error' => false,
             		'message' => 'Thankk You', 
