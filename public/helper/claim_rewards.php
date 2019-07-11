@@ -16,7 +16,7 @@ if (isset($_POST["user"])){
     $state = $rewardGenerator->claim_all();
 	}
 
-	if (isset($state->result)) { 
+	if ($state) { 
 			    die(json_encode([
 			    	'error' => false,
             		'message' => 'Thankk You', 
