@@ -13,7 +13,7 @@ if (isset($_POST["user"])){
 
 
 	if (empty($errors)) {
-    echo $state = print(json_encode($rewards->claim_all()));
+    echo $state = $rewards->claim_all();
     echo $rewards->get_reward_balances($rewards->me());
 	}
 
