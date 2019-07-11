@@ -7,7 +7,7 @@ class claim_rewards
         if ($get != null) {
             $claim = $this->raw_claim($get);
             $ret = $this->broadcast($claim);
-            if (isset($ret->error_description) and $ret->error_description == "reward_steem.amount > 0 || reward_sbd.amount > 0 || reward_vests.amount > 0: Must claim something.") {
+            if (isset($ret->error_description) and $ret->error_description == "reward_steem.amount > 0 || reward_sbd.amount > 0 || reward_sbd.amount > 0 || reward_sp.amount > 0: Must claim something.") {
                 return [true, $get];
             } else {
                 return [!isset($ret->error), $get];
@@ -33,7 +33,8 @@ class claim_rewards
                 "account" => $me->user,
                 "reward_steem" => $me->account->reward_steem_balance,
                 "reward_sbd" => $me->account->reward_sbd_balance,
-                "reward_vests" => $me->account->reward_vesting_balance
+                "reward_vests" => $me->account->reward_vesting_balance,
+                "reward_sp" => $me->account->reward_vesting_steem
             ];
         }
         return null;
