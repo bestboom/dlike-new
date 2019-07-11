@@ -629,26 +629,27 @@ if ($user_eth == '') {
                 url: "helper/claim_rewards.php",
                 data: dataR,
                 success: function(data) {
-                        //console.log(data);
+                        console.log(data);
                         try {
                             var response = JSON.parse(data)
-                            if(response.error == true) {
-                                toastr.error('There is some issue!');
-                                return false;
-                            } else {
-                                //$('#vote_icon').css("color", "RED");
+                            if(response.error == false) {
                                 toastr.success('Rewards claimed successfully!'); 
                                 refreshWalletData();
+                                
+                            } else {
+                                //$('#vote_icon').css("color", "RED");
+                                toastr.error('There is some issue!');
+                                return false;
                             }
                         } catch (err) {
                             toastr.error('Sorry. Server response is malformed.');
                         }
                     },
-                    //error: function(xhr, textStatus, error){
-                    //      console.log(xhr.statusText);
-                    //       console.log(textStatus);
-                    //        console.log(error);
-                    //}
+                    error: function(xhr, textStatus, error){
+                          console.log(xhr.statusText);
+                           console.log(textStatus);
+                            console.log(error);
+                    }
                 });
             });
         });
