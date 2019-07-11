@@ -9,6 +9,7 @@ require '../includes/config.php';
 		$tok_user 	=  $_POST['tok_user'];	
 		$user 		=  $_COOKIE['username'];
 		$tok_amt 	=  $_POST['tok_amt'];
+		$tok_eth 	=  $_POST['tok_eth'];
 		$tok_type 	=  $_POST['tok_type'];
 		if($tok_type == '1'){$tok_type = 'USDT';}else{$tok_type = 'unknown';}
 		$paid = '0';
@@ -41,7 +42,19 @@ require '../includes/config.php';
 					}
 					else 
 					{
-						echo '<div class="alert alert-success">Looks good!</div>';
+						$sqlm = "INSERT INTO TokWithdraw (username, amount, token, eth_addr, paid, with_time)
+							VALUES ('".$user."', '".$tok_amt."', '".$tok_type."', '".$tok_eth."', '".$paid."',  now())";
+
+						if (mysqli_query($conn, $sqlm)) {
+
+							$updateTipWallet = "UPDATE TipsWallet SET tip1 = '$tok_bal' - '$tok_amt' WHERE username = '$user'";
+							$updateTipWalletQuery = $conn->query($updateTipWallet);
+							
+							if ($updateTipWalletQuery === TRUE) 
+							{
+								echo '<div class="alert alert-success">Withdrawl Request Successful!</div>';
+							}	
+						}
 					}
 
 				}
