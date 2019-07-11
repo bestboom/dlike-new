@@ -134,6 +134,7 @@ if ($user_eth == '') {
                                     <span class="pending-rewards">
                                             <span class="fas fa-circle-notch fa-spin"></span>
                                         </span>
+
                                     <button class="btn btn-default cl_rewards claim-rewards-button" disabled>
                                         Claim Rewards
                                     </button>
@@ -620,14 +621,34 @@ if ($user_eth == '') {
                 }
                 //const key = '';
                 //steem.broadcast.claimRewardBalance(key, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-                window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-                    console.log(res);
-
-                    if (err) {
-                        console.error(err);
-                    }
-
-                    refreshWalletData();
+                //window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
+                    //console.log(res);
+                var dataR = {user: USERNAME,};    
+            $.ajax({
+                type: "POST",
+                url: "helper/claim_rewards.php",
+                data: dataR,
+                success: function(data) {
+                        //console.log(data);
+                        try {
+                            var response = JSON.parse(data)
+                            if(response.error == true) {
+                                toastr.error('There is some issue!');
+                                return false;
+                            } else {
+                                //$('#vote_icon').css("color", "RED");
+                                toastr.success('Rewards claimed successfully!'); 
+                                refreshWalletData();
+                            }
+                        } catch (err) {
+                            toastr.error('Sorry. Server response is malformed.');
+                        }
+                    },
+                    //error: function(xhr, textStatus, error){
+                    //      console.log(xhr.statusText);
+                    //       console.log(textStatus);
+                    //        console.log(error);
+                    //}
                 });
             });
         });
