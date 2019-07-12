@@ -217,7 +217,7 @@ else
                                     <div class="post-share-block">
                                         <h5>Share this</h5>
                                         <ul class="social-share-list">
-                                            <li><a href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/'+res.author+'/'+res.permlink+'\')" class="twitter"><i class="fab fa-twitter"></i></a></li>
                                             <li><a class="linkdin" style="line-height: 1.8;" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')"><i class="fab fa-linkedin-in"></i></a></li>
                                             <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
