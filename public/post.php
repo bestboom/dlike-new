@@ -490,7 +490,7 @@ else
      window.open("/help","_self");
  });
  $(document).ready(function(){
-    let post_title = $('.mod-title').html();
+    let post_title = $('.mod-title').text();
     console.log(post_title);
     $(document).attr("title", post_title); 
     //$("meta[property='og\:title']").attr("content", title);
