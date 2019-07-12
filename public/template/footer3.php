@@ -114,6 +114,9 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+        $("#btn_share").click(function () {
+                    window.location.href="/share.php";
+        })
     </script>
 </body>
 </html>
