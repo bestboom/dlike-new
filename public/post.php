@@ -217,7 +217,7 @@ else
                                     <div class="post-share-block">
                                         <h5>Share this</h5>
                                         <ul class="social-share-list">
-                                            <li><a href="#" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\') class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
                                             <li><a href="#" class="linkdin"> <i class="fab fa-linkedin-in"></i></a></li>
                                             <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
