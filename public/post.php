@@ -385,17 +385,7 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        
-        let page_description = post_description.substr(0,90)
-        $(document).attr("title", title);
-        $('meta[name=description]').attr('content', page_description);
-        $('meta[property="og:title"]').remove();
-        $("head").append('<meta property="og:title" content="'+title+'">');
-        //$("meta[property='og\:title']").attr("content", title);
-        $("meta[property='og\:description']").attr("content", page_description);
-        console.log(page_description);
-
-        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li>');
+        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="page-social-icons fb-button fa fa-facebook" style="line-height: 1.8;" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')"></a></li>');
 
      
 
