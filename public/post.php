@@ -354,6 +354,7 @@ else
         let author = res.author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
+        $(document).attr("title", "New Title");
         //let post_body = $(post_description).text();
         //$("meta[property='og\:title']").attr("content", title);
         //$("meta[property='og\:description']").attr("content", post_description);
