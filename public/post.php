@@ -8,6 +8,26 @@ $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
+
+echo $post_url = "https://api.steemjs.com/get_content?author={$auth}&permlink={$link}";
+echo $response = file_get_contents($post_url);
+echo $result = json_decode($response);
+echo $og_description = explode("\n\n#####\n\n",$result->body);
+echo $og_description = $og_description[1];
+echo $og_title = $result->title;
+function removeTags($str) {  
+    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
+    return $str;
+}
+$og_description = removeTags($og_description);
+$meta_data = json_decode($result->json_metadata);
+$og_image = $meta_data->image;
+$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+$uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$og_url = $uri;
+
+
+
 $views = '1'; 
 //post views
 $sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
