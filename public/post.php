@@ -375,6 +375,8 @@ else
         $("meta[property='og\:description']").attr("content", page_description);
         console.log(page_description);
 
+        $(".social-share-list").html('<a class="page-social-icons twitter-button fa fa-twitter" style="line-height: 1.8;" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"></a>');
+
      
 
     $(".faceboox").click(function() {
