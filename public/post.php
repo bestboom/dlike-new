@@ -364,12 +364,13 @@ else
         $('.mod-authThumb').attr("src", auth_img);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
-    }); 
+     
 
     $(".faceboox").click(function() {
                     window.open("http://www.facebook.com/share.php?u=https://dlike.io/post/'"+author+"'/'"+post_permlink+"'&title='"+title+"'");
     });
-
+    
+    });
     //comments
     $('.comt_bt').click(function () {
         if (username === null) 
