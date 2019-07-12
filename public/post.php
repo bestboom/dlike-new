@@ -364,6 +364,8 @@ else
         $('.mod-authThumb').attr("src", auth_img);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
+
+        $(document).attr("title", title);
      
 
     $(".faceboox").click(function() {
@@ -492,7 +494,7 @@ else
  $(document).ready(function(){
     let post_title = $('.mod-title').text();
     console.log(post_title);
-    $(document).attr("title", post_title); 
+     
     //$("meta[property='og\:title']").attr("content", title);
     //$("meta[property='og\:description']").attr("content", post_description);
 });  
