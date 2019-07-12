@@ -366,9 +366,11 @@ else
         $('.mod-post').text(post_description);
 
         
-        let page_description = post_description.substr(0,70)
+        let page_description = post_description.substr(0,90)
         $(document).attr("title", title);
-        $(document).attr("description", page_description);
+        $('meta[name=description]').attr('content', page_description);
+        $("meta[property='og\:title']").attr("content", title);
+        $("meta[property='og\:description']").attr("content", page_description);
         console.log(page_description);
 
      
