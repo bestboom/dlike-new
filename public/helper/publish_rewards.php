@@ -1,5 +1,5 @@
 <?php
-namespace dlike\rewards;
+namespace SnaddyvitchDispenser\rewards;
 class claim_rewards
 {
     public function claim_all() {

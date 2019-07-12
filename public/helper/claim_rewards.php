@@ -7,13 +7,12 @@ error_reporting(E_ALL);
 require_once "../helper/publish_rewards.php";
 
 
-$rewardGenerator = new dlike\rewards\claim_rewards();
+$rewardGenerator = new SnaddyvitchDispenser\rewards\claim_rewards();
 
 if (isset($_POST["user"])){
 
 	if (empty($errors)) {
     $state = $rewardGenerator->claim_all();
-    //echo $rewards->get_reward_balances($rewards->me());
 	}
 
 	if ($state) { 
