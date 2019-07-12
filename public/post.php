@@ -365,9 +365,10 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        let page_description = post_description;
-        if (post_description.length > 50) {
-        let page_description = post_description.substring(0,50);}
+        //let page_description = post_description;
+        //if (post_description.length > 50) {
+        //let page_description = post_description.substring(0,50);}
+        let page_description = post_description.substr(0,10)
         $(document).attr("title", title);
         console.log(page_description);
 
