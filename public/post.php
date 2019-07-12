@@ -20,7 +20,7 @@ function removeTags($str) {
 }
 $og_description = removeTags($og_description);
 $meta_data = json_decode($result->json_metadata);
-echo $og_image = $meta_data->image;
+$og_image = $meta_data->image;
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
@@ -394,7 +394,7 @@ else
         //$("meta[property='og\:description']").attr("content", page_description);
         //console.log(page_description);
 
-        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'\')"><i class="fab fa-facebook-f"></i></a></li>');
+        $(".social-share-list").html('<li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'\')"><i class="fab fa-facebook-f"></i></a></li>');
 
 
 
