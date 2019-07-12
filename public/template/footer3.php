@@ -50,7 +50,7 @@
                         </div>&nbsp;
                 </div>
 
-                <div class="col-md-6 offset-md-1 col-7 offset-1 pt-2">
+                <div class="col-md-6 offset-md-1 col-7 offset-1">
                     <div style="padding:0px !important">
                         <p>  © 2019 <a href="#">DLike</a></p>
                     </div>
