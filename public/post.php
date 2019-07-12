@@ -356,8 +356,7 @@ else
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 
         //let post_body = $(post_description).text();
-        //$("meta[property='og\:title']").attr("content", title);
-        //$("meta[property='og\:description']").attr("content", post_description);
+        
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
@@ -491,6 +490,10 @@ else
      window.open("/help","_self");
  });
  $(document).ready(function(){
-    $(document).attr("title", "New Title"); 
+    let post_title = $('.mod-title').html(title);
+    console.log(post_title);
+    $(document).attr("title", post_title); 
+    //$("meta[property='og\:title']").attr("content", title);
+    //$("meta[property='og\:description']").attr("content", post_description);
 });  
 </script>
