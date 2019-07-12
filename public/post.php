@@ -367,7 +367,7 @@ else
     }); 
 
     $(".faceboox").click(function() {
-            window.open('https://www.facebook.com/sharer/sharer.php?u=' + loc, '_blank');
+            window.open("http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+" '_blank');
     });
 
     //comments
