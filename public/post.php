@@ -246,7 +246,7 @@ else
                         <div class='row'>
                         <div class='col' style='padding: 0px !important;'>
                         <div style='background:#eee;border-bottom:40px solid #111;'>
-                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' class='img-fluid' style='width:100%;min-height:190px;'  onerror='this.src='/images/post/8.png''></a>  
+                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' class='img-fluid' style='width:100%;min-height:190px;'onerror='this.src="'./images/post/authors/8.png.'"'></a>  
                         </div>
                         <h4 class='post-title' style='white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-bottom: 20px;margin-top: -40px;color: #fff;padding: 10px;'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
                         </div>
@@ -365,11 +365,10 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        //let page_description = post_description;
-        //if (post_description.length > 50) {
-        //let page_description = post_description.substring(0,50);}
+        
         let page_description = post_description.substr(0,70)
         $(document).attr("title", title);
+        $(document).attr("description", page_description);
         console.log(page_description);
 
      
@@ -496,12 +495,5 @@ else
  });
     $('.prouser').click(function () {
      window.open("/help","_self");
- });
- $(document).ready(function(){
-    //let post_title = $('.mod-title').text();
-    //console.log(post_title);
-     
-    //$("meta[property='og\:title']").attr("content", title);
-    //$("meta[property='og\:description']").attr("content", post_description);
-});  
+ });  
 </script>
