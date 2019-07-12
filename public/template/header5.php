@@ -9,7 +9,7 @@
   <!--Facebook Meta Tags -->
     <meta property="og:url" content="https://dlike.io" />
     <meta property="og:title" content="Dlike - Share To Get Rewarded" />
-    <meta property="og:description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes." />
+    <meta property="og:description" content="Dlike." />
     <meta property="og:image" content="/images/dlike-main.jpg" />
 <!--End Facebook Meta Tags-->
     <link rel='favicon icon' type=image/x-icon href=images/favicon.ico />
