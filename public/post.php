@@ -366,6 +366,10 @@ else
         $('.mod-post').text(post_description);
     }); 
 
+    $(".faceboox").click(function() {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + loc, '_blank');
+    });
+
     //comments
     $('.comt_bt').click(function () {
         if (username === null) 
