@@ -119,7 +119,7 @@ else
 
                                                     <!-- post-income-block -->
                                                     <div class="post-share-block">
-                                                        <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;(<?php echo $postincome; ?> USDT <!--+ <?php echo $postincome2; ?> DSC-->)
+                                                        <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp; Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->)
                                                     </div><!-- post-income-block -->
                                                 </div>
                                             </div>

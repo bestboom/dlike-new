@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col-md-3 offset-md-2 col-4 offset-0">
                         <div>
-                            <a href="/"><img src="images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px"/></a>
+                            <a href="/"><img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px"/></a>
                         </div>&nbsp;
                 </div>
 
