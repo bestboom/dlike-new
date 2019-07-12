@@ -217,9 +217,9 @@ else
                                     <div class="post-share-block">
                                         <h5>Share this</h5>
                                         <ul class="social-share-list">
-                                            <li><a href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/)" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
-                                            <li><a href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/)"></i></a></li>
-                                            <li><a class="linkdin" style="line-height: 1.8;" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/)"><i class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="#" class="faceboox"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#" class="linkdin"> <i class="fab fa-linkedin-in"></i></a></li>
                                             <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
                                         </ul>
                                     </div><!-- post-share-block -->
@@ -355,8 +355,8 @@ else
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         //let post_body = $(post_description).text();
-        //$("meta[property='og\:title']").attr("content", title);
-        //$("meta[property='og\:description']").attr("content", post_description);
+        $("meta[property='og\:title']").attr("content", title);
+        $("meta[property='og\:description']").attr("content", post_description);
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
