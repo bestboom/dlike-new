@@ -41,17 +41,17 @@
 </div><!-- colto-section -->
 
 <footer class="footer">
-    <div class="row footer-bottom">
+    <div class="row footer-bottom" style="justify-content: center;">
         <div class="col-12 col-md-4">
-            <div class="row" style="justify-content: center;">
+            <div class="row">
                 <div class="col-md-3 offset-md-2 col-4 offset-0">
                         <div>
-                            <a href="/"><img src="/images/logo.png" alt="img" class="img-responsive" style="width: 150px;max-width: 1110px"/></a>
+                            <a href="/"><img src="/images/logo.png" alt="img" class="img-responsive" /></a>
                         </div>&nbsp;
                 </div>
 
                 <div class="col-md-6 offset-md-1 col-7 offset-1 pt-2">
-                    <div>
+                    <div style="padding:0px !important">
                         <p>  © 2019 <a href="#">DLike</a></p>
                     </div>
                 </div>
