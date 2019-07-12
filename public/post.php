@@ -237,8 +237,8 @@ else
                                     <div class="post-share-block">
                                         <h5>Share this</h5>
                                         <ul class="social-share-list">
-                                            <li class="faceboox"><i class="fab fa-facebook-f"></i></li>
-                                            <li><a href="" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <!-- <li class="faceboox"><i class="fab fa-facebook-f"></i></li>
+                                            <li><a href="" class="twitter"><i class="fab fa-twitter"></i></a></li>-->
                                             <li><a href="" class="linkdin"> <i class="fab fa-linkedin-in"></i></a></li>
                                             <li><a href="" class="instagram"><i class="fab fa-instagram"></i></a></li>
                                         </ul>
@@ -385,13 +385,7 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="page-social-icons fb-button fa fa-facebook" style="line-height: 1.8;" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')"></a></li>');
-
-     
-
-    $(".faceboox").click(function() {
-                    window.open("http://www.facebook.com/share.php?u=https://dlike.io/post/"+author+"/"+post_permlink+"&title="+title+"");
-    });
+        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" style="line-height: 1.8;" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')"></a></li>');
 
     });
     //comments
