@@ -237,8 +237,8 @@ else
                                     <div class="post-share-block">
                                         <h5>Share this</h5>
                                         <ul class="social-share-list">
-                                            <!-- <li class="faceboox"><i class="fab fa-facebook-f"></i></li>
-                                            <li><a href="" class="twitter"><i class="fab fa-twitter"></i></a></li>-->
+                                            <li class="faceboox"><i class="fab fa-facebook-f"></i></li>
+                                            <li><a href="" class="twitter"><i class="fab fa-twitter"></i></a></li>
                                             <li><a href="" class="linkdin"> <i class="fab fa-linkedin-in"></i></a></li>
                                             <li><a href="" class="instagram"><i class="fab fa-instagram"></i></a></li>
                                         </ul>
@@ -385,7 +385,19 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')"><i class="fab fa-facebook-f"></i></a></li>');
+        
+        //let page_description = post_description.substr(0,90)
+        $(document).attr("title", title);
+        $('meta[name=description]').attr('content', page_description);
+        $('meta[property="og:title"]').remove();
+        $("head").append('<meta property="og:title" content="'+title+'">');
+        //$("meta[property='og\:title']").attr("content", title);
+        $("meta[property='og\:description']").attr("content", page_description);
+        console.log(page_description);
+
+        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li>');
+
+
 
     });
     //comments
