@@ -370,7 +370,7 @@ else
         $(document).attr("title", title);
         $('meta[name=description]').attr('content', page_description);
         $('meta[property="og:title"]').remove();
-        $("head").append('<meta property="og:title" content="title">');
+        $("head").append('<meta property="og:title" content="'+title+'">');
         //$("meta[property='og\:title']").attr("content", title);
         $("meta[property='og\:description']").attr("content", page_description);
         console.log(page_description);
