@@ -366,8 +366,8 @@ else
         $('.mod-post').text(post_description);
 
         let page_description = post_description;
-        if ((post_description).length > 50) {
-        let page_description = $(post_description).substring(0,50);}
+        if (post_description.length > 50) {
+        let page_description = post_description.substring(0,50);}
         $(document).attr("title", title);
         console.log(page_description);
 
@@ -497,8 +497,8 @@ else
      window.open("/help","_self");
  });
  $(document).ready(function(){
-    let post_title = $('.mod-title').text();
-    console.log(post_title);
+    //let post_title = $('.mod-title').text();
+    //console.log(post_title);
      
     //$("meta[property='og\:title']").attr("content", title);
     //$("meta[property='og\:description']").attr("content", post_description);
