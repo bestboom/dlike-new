@@ -385,7 +385,7 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" style="line-height: 1.8;" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')"></a></li>');
+        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?status=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+res.author+'/'+res.permlink+'&title='+res.title+'\')"><i class="fab fa-facebook-f"></i></a></li>');
 
     });
     //comments
