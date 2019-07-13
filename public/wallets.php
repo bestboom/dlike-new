@@ -654,6 +654,7 @@ if ($user_eth == '') {
 
                     let detail    = '';
                     let timestamp = data.timestamp;
+                    let activeDate = moment.utc(timestamp + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
                     let action    = data.op[0];
                     let transfer  = data.op[1];
 
