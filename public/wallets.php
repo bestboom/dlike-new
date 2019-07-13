@@ -158,7 +158,7 @@ if ($user_eth == '') {
                                     <hr class="wal_hr">
                                     <div class="pros-block">
                                         <h5 class="base-color">STEEM POWER: </h5>
-                                        <p><span class="balance-sp"></span>SP</p>
+                                        <p><span class="balance-sp"></span> SP</p>
                                     </div>
                                     <p class="coins-detail">STEEM Power is delegated STEEM amount</p>
                                     <hr class="wal_hr">
