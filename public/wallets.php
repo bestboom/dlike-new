@@ -623,12 +623,16 @@ if ($user_eth == '') {
                 //steem.broadcast.claimRewardBalance(key, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
                 //window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
                     //console.log(res);
-                var dataR = {user: USERNAME,};    
-            $.ajax({
-                type: "POST",
-                url: "helper/claim_rewards.php",
-                data: dataR,
-                success: function(data) {
+                //var dataR = {user: USERNAME,};    
+            //$.ajax({
+                //type: "POST",
+                //url: "helper/claim_rewards.php",
+                //data: dataR,
+                //success: function(data) {
+
+                $.get(   
+                        "helper/claim_rewards.php","",
+                        function(data) { 
                         console.log(data);
                         try {
                             var response = JSON.parse(data)
