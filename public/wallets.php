@@ -679,8 +679,8 @@ if ($user_eth == '') {
                             rewards.push(transfer.reward_steem);
                         }
 
-                        if (parseFloat(transfer.reward_vests) > 0) {
-                            rewards.push(transfer.reward_vests);
+                        if (parseFloat(transfer.reward_sp) > 0) {
+                            rewards.push(transfer.reward_sp);
                         }
 
                         action = `Claim Rewards ` + rewards.join(' and ');
