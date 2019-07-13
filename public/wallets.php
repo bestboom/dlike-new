@@ -1,5 +1,4 @@
 <?php
-
 include('template/header5.php');
 
 if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
@@ -575,8 +574,6 @@ if ($user_eth == '') {
                 steempower     = Math.round(steempower);
 
                 document.querySelector('.balance-sp').innerHTML = steempower;
-
-
                 ClaimRewards.innerHTML = 'Claim Rewards';
 
                 if (reward_steem <= 0 &&
@@ -601,13 +598,9 @@ if ($user_eth == '') {
             ClaimRewards.innerHTML = '<span class="fas fa-circle-notch fa-spin"></span>';
 
             Steem.database.call('get_accounts', [[USERNAME]]).then(function (result) {
-                //const reward_steem = result[0].reward_steem_balance.split(' ')[0];
                 const reward_steem = result[0].reward_steem_balance;
-                //const reward_sbd   = result[0].reward_sbd_balance.split(' ')[0];
                 const reward_sbd   = result[0].reward_sbd_balance;
-                //const reward_sp    = result[0].reward_vesting_steem.split(' ')[0];
                 const reward_sp    = result[0].reward_vesting_steem;
-                //const reward_vests = result[0].reward_vesting_balance.split(' ')[0];
                 const reward_vests = result[0].reward_vesting_balance;
 
                 if (reward_steem <= 0 &&
@@ -619,21 +612,10 @@ if ($user_eth == '') {
                     ClaimRewards.disabled  = true;
                     return;
                 }
-                //const key = '';
-                //steem.broadcast.claimRewardBalance(key, USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-                //window.api.claimRewardBalance(USERNAME, reward_steem, reward_sbd, reward_vests, function (err, res) {
-                    //console.log(res);
-                //var dataR = {user: USERNAME,};    
-            //$.ajax({
-                //type: "POST",
-                //url: "helper/claim_rewards.php",
-                //data: dataR,
-                //success: function(data) {
-
                 $.get(   
                         "helper/claim_rewards.php","",
                         function(data) { 
-                        console.log(data);
+                        //console.log(data);
                         try {
                             var response = JSON.parse(data)
                             if(response.error == true) {
@@ -648,7 +630,7 @@ if ($user_eth == '') {
                             toastr.error('Sorry. Server response is malformed.');
                         }
                     }
-                    );
+                );
             });
         });
 
@@ -663,7 +645,6 @@ if ($user_eth == '') {
                 let html = '';
 
                 result = result.reverse();
-
                 for (let i = 0, len = result.length; i < len; i++) {
                     let data = result[i][1];
 
@@ -708,8 +689,6 @@ if ($user_eth == '') {
                         //     detail = detail + n + ': ' + data.op[1][n] + '<br />';
                         // }
                     }
-
-
                     html = html + `
                             <tr>
                                 <td>${timestamp}</td>
@@ -719,7 +698,6 @@ if ($user_eth == '') {
                 }
 
                 TX_Body.innerHTML = html;
-
             });
         });
     })();
