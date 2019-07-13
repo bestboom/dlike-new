@@ -7,7 +7,7 @@ class claim_rewards
         if ($get != null) {
             $claim = $this->raw_claim($get);
             $ret = $this->broadcast($claim);
-            if (isset($ret->error_description) and $ret->error_description == "reward_steem.amount > 0 || reward_sbd.amount > 0 || reward_sbd.amount > 0 || reward_sp.amount > 0: Must claim something.") {
+            if (isset($ret->error_description) and $ret->error_description == "reward_steem.amount > 0 || reward_sbd.amount > 0 || reward_vests.amount > 0: Must claim something.") {
                 return [true, $get];
             } else {
                 return [!isset($ret->error), $get];
