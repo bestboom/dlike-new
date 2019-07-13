@@ -361,7 +361,6 @@ else
                     }
                 }
 
-
         json_metadata = metadata;
         let category = metadata.category;
         let exturl = metadata.url;
@@ -375,7 +374,6 @@ else
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
 
         //let post_body = $(post_description).text();
-        
 
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
@@ -384,19 +382,9 @@ else
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
 
-        
         let page_description = post_description.substr(0,90)
-        //$(document).attr("title", title);
-        //$('meta[name=description]').attr('content', page_description);
-        //$('meta[property="og:title"]').remove();
-        //$("head").append('<meta property="og:title" content="'+title+'">');
-        //$("meta[property='og\:title']").attr("content", title);
-        //$("meta[property='og\:description']").attr("content", page_description);
-        //console.log(page_description);
 
-        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?url=https://dlike.io/post/@'+author+'/'+post_permlink+'&text='+page_description+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'\')"><i class="fab fa-facebook-f"></i></a></li><li><a class="linkdin" href="javascript:void(0);" onclick="popup(\'https://www.linkedin.com/shareArticle?mini=true&url=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'&sumary=dlike.io\')"><i class="fab fa-linkedin-in"></i></a></li>');
-
-
+        $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'http://twitter.com/home?text='+page_description+'&url=https://dlike.io/post/@'+author+'/'+post_permlink+'\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'http://www.facebook.com/share.php?u=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'\')"><i class="fab fa-facebook-f"></i></a></li><li><a class="linkdin" href="javascript:void(0);" onclick="popup(\'https://www.linkedin.com/shareArticle?mini=true&url=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'&sumary=dlike.io\')"><i class="fab fa-linkedin-in"></i></a></li>');
 
     });
     //comments
