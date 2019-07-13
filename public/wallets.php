@@ -666,9 +666,7 @@ if ($user_eth == '') {
                         } else {
                             action = `Received ${transfer.amount} from ${transfer.from}`;
                         }
-
                     }
-
                     if (data.op[0] === 'claim_reward_balance') {
                         let rewards = [];
 
