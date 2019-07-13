@@ -647,12 +647,8 @@ if ($user_eth == '') {
                         } catch (err) {
                             toastr.error('Sorry. Server response is malformed.');
                         }
-                    },
-                    error: function(xhr, textStatus, error){
-                          console.log(xhr.statusText);
-                           console.log(textStatus);
-                            console.log(error);
                     }
+                    );
                 });
             });
         });
