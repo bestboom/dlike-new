@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 $link = $_GET['link'];
 $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
-if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; }
+if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender=''}
 
 $post_url = "https://api.steemjs.com/get_content?author={$auth}&permlink={$link}";
 $response = file_get_contents($post_url);
