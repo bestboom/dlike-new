@@ -399,7 +399,7 @@ else
     var datac = {
             p_permlink: post_author,
             p_author: post_permlink,
-            cmt_body: comment_body,
+            comt_body: comment_body,
             cmt_permlink: permlinkD
         };    
     $.ajax({
@@ -407,7 +407,7 @@ else
         url: "/helper/comment.php",
         data: datac,
             success: function(data) {
-            console.log(data);
+            //console.log(data);
             try {
                 var response = JSON.parse(data)
                     if(response.error == true) {
