@@ -14,8 +14,8 @@ function validator($data){
 
 if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 
-	echo $parent_permlink = validator($_POST["p_permlink"]);
-
+	$parent_permlink = validator($_POST["p_permlink"]);
+	echo $_COOKIE['username'];
 	$parent_author = validator($_POST["p_author"]);
 
 	$permlink = $_POST["cmt_permlink"];
