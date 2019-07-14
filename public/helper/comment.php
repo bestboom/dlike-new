@@ -12,10 +12,10 @@ function validator($data){
     return htmlspecialchars(strip_tags($data));
 }
 
-if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
+if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 
-	$parent_permlink = validator($_POST["post_permlink"]);
-	$parent_author = validator($_POST["post_author"]);
+	$parent_permlink = validator($_POST["p_permlink"]);
+	$parent_author = validator($_POST["p_author"]);
 
 	$permlink = validator($_POST["cmt_permlink"]);
 	$body = $_POST["cmt_body"];
@@ -35,13 +35,19 @@ if (isset($_POST["post_permlink"]) && isset($_POST["post_author"])){
     $state = $cmtGenerator->broadcast($publish);
 	}
 
-	if (isset($state->result)) { ?>
-    <script type="text/javascript">
-        window.location = "https://dlike.io/post/<? echo $parent_author; ?>/<? echo $parent_permlink; ?>";
-    </script>
-<? 	} else {
-		echo $state->error_description;
-	} 
+	if (isset($state->result)) { 
+		die(json_encode([
+			'error' => false,
+            'message' => 'All fine', 
+            'data' => 'Commenting'
+        ]));  				
+	} else {
+			    die(json_encode([
+            		'error' => true,
+            		'message' => 'Sorry', 
+            		'data' => 'Already Upvoted'
+        		]));
+	} 	
 
 } else {die('Some error');}
 ?>

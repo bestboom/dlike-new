@@ -278,12 +278,12 @@ else
                     <div class="post-comment-block">
                         <div class="comment-respond">
                             <h4>Leave A Comment</h4>
-                            <form action="/helper/comment.php" method="POST" class="comment-form">
+                            <form action="" method="POST" class="comment-form">
                                 <div class="row">
-                                    <input type="hidden" name="post_author" id="postauthor" value="" />
+                                  <!--  <input type="hidden" name="post_author" id="postauthor" value="" />
                                     <input type="hidden" name="post_permlink" id="postpermlink" value="" />
                                     <input type="hidden" name="cmt_author" id="c_author" value="" />
-                                    <input type="hidden" name="cmt_permlink" id="c_permlink" value="" />
+                                    <input type="hidden" name="cmt_permlink" id="c_permlink" value="" /> -->
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <textarea placeholder="Comment" class="form-control cmt" name="cmt_body"></textarea>
@@ -393,13 +393,39 @@ else
             toastr.error('It seems you forgot to post comment');
             return false;  
         }
-        
-        var permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);
-        $("#postauthor").val(post_author);
-        $("#postpermlink").val(post_permlink);
-        $("#c_author").val(username);
-        $("#c_permlink").val(permlinkD);
-    });     
+    let comment_body = $(".cmt").val();  
+    let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
+    var datac = {
+            p_permlink: post_author,
+            p_author: post_permlink,
+            cmt_body: comment_body,
+            cmt_permlink: permlinkD
+        };    
+    $.ajax({
+        type: "POST",
+        url: "/helper/comment.php",
+        data: datac,
+            success: function(data) {
+            //console.log(data);
+            try {
+                var response = JSON.parse(data)
+                    if(response.error == true) {
+                        toastr.error('There is some issue!'); 
+                        return false;
+                    } else {
+                        toastr.success('Comment posted successfully!'); 
+                            }
+                } catch (err) {
+                    toastr.error('Sorry. Server response is malformed.');
+                }
+            },
+        });    
+        //$("#postauthor").val(post_author);
+        //$("#postpermlink").val(post_permlink);
+        //$("#c_author").val(username);
+        //$("#c_permlink").val(permlinkD);
+    });    
+
         
     let comment = []    
     steem.api.getContentReplies(post_author, post_permlink, function(err, result) {

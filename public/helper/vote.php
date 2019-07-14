@@ -9,7 +9,6 @@ require_once "../helper/publish_vote.php";
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
-
 $voteGenerator = new dlike\vote\makeVote();
 
 if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
