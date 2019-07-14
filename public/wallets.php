@@ -429,9 +429,9 @@ if ($user_eth == '') {
                                         ?>
                                         <tr>
                                             <td>
-                                                    <span class="btn btn-icon btn-exp">
-                                                        <span class="text-dark">Tx</span>
-                                                    </span>
+                                                <span class="btn btn-icon btn-exp">
+                                                    <span class="text-dark">Tx</span>
+                                                </span>
                                             </td>
                                             <td class="exp-user">
                                                 <span><?php echo $row_D["token"]; ?></span>
@@ -484,12 +484,12 @@ if ($user_eth == '') {
 <?php include('template/footer3.php'); ?>
 
 <script type="text/javascript">
-    if (thisuser === 'PRO') {
+    if (thisuser == 'PRO') {
         $('.pro-data').hide();
         $('.pro-img').show();
     }
 
-    if (user_eth === 'Exist') {
+    if (user_eth == 'Exist') {
         $('.eth_add').hide();
         $('#eth_field').val(eth_address).prop('readonly', true);
     }

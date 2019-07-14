@@ -449,7 +449,7 @@ else
     }
 
     $('#tipsubmit').submit(function() {
-        if (username === null) 
+        if (username == null) 
         {
             toastr.error('hmm... You must be login!');
             return false;
