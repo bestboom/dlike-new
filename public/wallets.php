@@ -410,21 +410,21 @@ if ($user_eth == '') {
                             <table class="table coin-list table-hover">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Tip</th>
-                                    <th scope="col">By</th>
-                                    <th scope="col">For</th>
-                                    <th scope="col">Time</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Token</th>
                                     <th scope="col">Amount</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
 
-                                $sql_tip    = "SELECT * FROM TipTop where receiver='$user_wallet' ORDER BY tip_time DESC LIMIT 20";
-                                $result_tip = $conn->query($sql_tip);
+                                $sql_D    = "SELECT * FROM TokWithdraw where username='$user_wallet' ORDER BY with_time DESC LIMIT 20";
+                                $result_D = $conn->query($sql_D);
 
-                                if ($result_tip && $result_tip->num_rows > 0) {
-                                    while ($row_tip = $result_tip->fetch_assoc()) {
+                                if ($result_D && $result_D->num_rows > 0) {
+                                    while ($row_D = $result_D->fetch_assoc()) {
 
                                         ?>
                                         <tr>
@@ -434,22 +434,20 @@ if ($user_eth == '') {
                                                     </span>
                                             </td>
                                             <td class="exp-user">
-                                                <span><?php echo $row_tip["sender"]; ?></span>
+                                                <span><?php echo $row_D["token"]; ?></span>
                                             </td>
                                             <td class="exp-amt">
-                                                    <span class="color-sell">
-                                                        <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
+                                                    <span><?php echo $row_D["amount"]; ?></span>
+                                            </td>
+                                            <td class="exp-amt">
+                                                    <span>
+                                                        <?php echo $row_D["paid"]; ?>
                                                     </span>
                                             </td>
                                             <td class="exp-amt">
                                                     <span>
-                                                        <?php echo $row_tip["tip_time"]; ?>
+                                                        <?php echo $row_D["with_time"]; ?>
                                                     </span>
-                                            </td>
-                                            <td class="exp-amt">
-                                                    <span>
-                                                        <?php echo $row_tip["tip1"]; ?>
-                                                    </span> USDT
                                             </td>
                                         </tr>
                                         <?php
