@@ -45,7 +45,7 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 			    die(json_encode([
             		'error' => true,
             		'message' => 'Sorry', 
-            		'data' => 'There is some issue'
+            		'data' => 'There is some issue'. $state->error_description .'
         		]));
 	} 	
 
