@@ -45,7 +45,7 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 			    die(json_encode([
             		'error' => true,
             		'message' => 'Sorry', 
-            		'data' => 'Already Upvoted'
+            		'data' => 'There is some issue'
         		]));
 	} 	
 

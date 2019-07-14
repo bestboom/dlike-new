@@ -278,7 +278,7 @@ else
                     <div class="post-comment-block">
                         <div class="comment-respond">
                             <h4>Leave A Comment</h4>
-                            <form action="" method="POST" class="comment-form">
+                            <!--  <form action="" method="POST" class="comment-form"> -->
                                 <div class="row">
                                   <!--  <input type="hidden" name="post_author" id="postauthor" value="" />
                                     <input type="hidden" name="post_permlink" id="postpermlink" value="" />
@@ -290,8 +290,8 @@ else
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-default comt_bt">Submit</button>
-                            </form>
+                                <button class="btn btn-default comt_bt">Submit</button>
+                        <!--    </form>  -->
                         </div>
                         <div class="comment-area">
                             <h4>Comments</h4>
@@ -393,7 +393,8 @@ else
             toastr.error('It seems you forgot to post comment');
             return false;  
         }
-    let comment_body = $(".cmt").val();  
+    let comment_body= $(".cmt").val(); 
+    console.log(comment_body); 
     let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
     var datac = {
             p_permlink: post_author,
@@ -406,7 +407,7 @@ else
         url: "/helper/comment.php",
         data: datac,
             success: function(data) {
-            //console.log(data);
+            console.log(data);
             try {
                 var response = JSON.parse(data)
                     if(response.error == true) {
