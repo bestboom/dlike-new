@@ -287,6 +287,9 @@ if ($user_eth == '') {
                         <li class="nav-item">
                             <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">TIPS</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#with_draw" role="tab" data-toggle="tab">WITHDRWLS</a>
+                        </li>
                         <li class="nav-item nav-item-last">
                         </li>
                     </ul>
@@ -350,6 +353,60 @@ if ($user_eth == '') {
                             </table><!-- coin-list table -->
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="tips_trx">
+                            <table class="table coin-list table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Tip</th>
+                                    <th scope="col">By</th>
+                                    <th scope="col">For</th>
+                                    <th scope="col">Time</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+
+                                $sql_tip    = "SELECT * FROM TipTop where receiver='$user_wallet' ORDER BY tip_time DESC LIMIT 20";
+                                $result_tip = $conn->query($sql_tip);
+
+                                if ($result_tip && $result_tip->num_rows > 0) {
+                                    while ($row_tip = $result_tip->fetch_assoc()) {
+
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                    <span class="btn btn-icon btn-exp">
+                                                        <span class="text-dark">Tx</span>
+                                                    </span>
+                                            </td>
+                                            <td class="exp-user">
+                                                <span><?php echo $row_tip["sender"]; ?></span>
+                                            </td>
+                                            <td class="exp-amt">
+                                                    <span class="color-sell">
+                                                        <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
+                                                    </span>
+                                            </td>
+                                            <td class="exp-amt">
+                                                    <span>
+                                                        <?php echo $row_tip["tip_time"]; ?>
+                                                    </span>
+                                            </td>
+                                            <td class="exp-amt">
+                                                    <span>
+                                                        <?php echo $row_tip["tip1"]; ?>
+                                                    </span> USDT
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+
+                                ?>
+                                </tbody>
+                            </table><!-- coin-list table -->
+                        </div><!-- market-ticker-block -->
+                        <div role="tabpanel" class="tab-pane fade" id="with_draw">
                             <table class="table coin-list table-hover">
                                 <thead>
                                 <tr>
