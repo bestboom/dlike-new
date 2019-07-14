@@ -22,7 +22,7 @@ echo '<br/>';
 	echo '<br/>';
 	echo $body = $_POST["comt_body"];
 	echo '<br/>';
-	echo $userrr= $_COOKIE['username'],
+	echo $userrr= $_COOKIE['username'];
 	$max_accepted_payout = '900.000 SBD';
 	$_POST['benefactor'] = "dlike:9,dlike.fund:1";
 
