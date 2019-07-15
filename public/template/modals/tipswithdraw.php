@@ -1,7 +1,7 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
-		<h4 style="padding-bottom: 20px;font-weight: 600;text-align: center;">Withdraw</h4>
-		<p class="base-color" style="padding: 0px;margin-bottom:0px;font-weight: 600;text-align: center;">
+		<h4>Withdraw</h4>
+		<p class="base-color respond_top">
 			Balance: <?php echo $tip_bal; ?> USDT
 		</p>
 		<?php

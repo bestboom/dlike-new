@@ -1,6 +1,6 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
-		<h4 style="padding-bottom: 20px;font-weight: 600;">Transfer DLIKE Tokens</h4>
+		<h4>Transfer DLIKE Tokens</h4>
 		<div id="tsf-msg"></div>
 		<form action="" id="tsf_sub" method="POST">
 			<div class="row line">

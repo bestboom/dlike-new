@@ -3418,6 +3418,8 @@ sub.transmoney-value {
     display: flex; }
 .transfer-respond{padding: 30px 20px;}   
 .transfer-respond .line{padding-bottom: 20px;} 
+.transfer-respond h4 {padding-bottom: 20px;font-weight: 600;text-align: center;}
+.respond_top{padding: 0px;margin-bottom:0px;font-weight: 600;text-align: center;}
 .post-comment-block .comment-respond,
 .post-comment-block .comment-area {
     -webkit-box-flex: 1;
