@@ -420,7 +420,7 @@ var refreashComments = function () {
             
         }
     });
-},
+};
     refreashComments();
     //new-comment    
     $('.comt_bt').click(function () {
