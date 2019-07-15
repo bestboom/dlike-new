@@ -441,7 +441,10 @@ if ($user_eth == '') {
                                             </td>
                                             <td class="exp-amt">
                                                     <span>
-                                                        <?php echo $row_D["paid"]; ?>
+                                                        <?php 
+                                                            if($row_D["paid"] = '0'){echo '<span class="color-sell">Pending</span>';}
+                                                            elseif($row_D["paid"] = '1'){echo '<span class="color-buy">Paid</span>';}
+                                                        ?>
                                                     </span>
                                             </td>
                                             <td class="exp-amt">
