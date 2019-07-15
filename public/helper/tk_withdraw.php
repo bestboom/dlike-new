@@ -18,6 +18,10 @@ require '../includes/config.php';
 		{
 			echo '<div class="alert alert-danger">There is login issue. Please Try Later!</div>';
 		}
+		if($tok_amt < $min_tip_withdraw)
+		{
+			echo '<div class="alert alert-danger">Token Amount entered is less than minimum !</div>';
+		}
 		else
 		{
 
