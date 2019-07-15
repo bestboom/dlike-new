@@ -379,11 +379,11 @@ function time_ago($timestamp)
                             <table class="table coin-list table-hover">
                                 <thead>
                                 <tr style="text-align: center;">
-                                    <th scope="col">Tip</th>
-                                    <th scope="col" style="width: 20%">Amount</th>
-                                    <th scope="col" style="width: 20%">For</th>
-                                    <th scope="col" style="width: 20%">By</th>
-                                    <th scope="col" style="width: 20%">Time</th>
+                                    <th scope="col cent_me wid_2">Tip</th>
+                                    <th scope="col cent_me wid_2">Amount</th>
+                                    <th scope="col cent_me wid_2">For</th>
+                                    <th scope="col cent_me wid_2">By</th>
+                                    <th scope="col cent_me wid_2">Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -394,7 +394,6 @@ function time_ago($timestamp)
 
                                 if ($result_tip && $result_tip->num_rows > 0) {
                                     while ($row_tip = $result_tip->fetch_assoc()) {
-
                                         ?>
                                         <tr>
                                             <td>
@@ -424,7 +423,6 @@ function time_ago($timestamp)
                                         <?php
                                     }
                                 }
-
                                 ?>
                                 </tbody>
                             </table><!-- coin-list table -->
