@@ -357,7 +357,7 @@ if ($user_eth == '') {
                         <div role="tabpanel" class="tab-pane fade" id="tips_trx">
                             <table class="table coin-list table-hover">
                                 <thead>
-                                <tr>
+                                <tr style="text-align: center;">
                                     <th scope="col">Tip</th>
                                     <th scope="col" style="width: 20%">Amount</th>
                                     <th scope="col" style="width: 20%">For</th>
@@ -375,7 +375,7 @@ if ($user_eth == '') {
                                     while ($row_tip = $result_tip->fetch_assoc()) {
 
                                         ?>
-                                        <tr>
+                                        <tr style="text-align: center;">
                                             <td>
                                                     <span class="btn btn-icon btn-exp">
                                                         <span class="text-dark">Tx</span>
