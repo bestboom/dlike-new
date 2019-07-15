@@ -343,9 +343,9 @@ if ($user_eth == '') {
                             <table class="table coin-list table-hover">
                                 <thead>
                                 <tr>
-                                    <th scope="col" style="width: 200px;">Date</th>
+                                    <th scope="col" style="width: 200px;">Time</th>
                                     <th scope="col" style="width: 400px; max-width: 50%">Action</th>
-                                    <th scope="col" style="max-width: 500px"></th>
+                                    <th scope="col" style="max-width: 500px">Memo</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -576,6 +576,10 @@ if ($user_eth == '') {
 
         if (!tok_amt) {
             toastr.error('phew... Enter Token Amount');
+            return false;
+        }
+        if (tok_amt <= 0) {
+            toastr.error('phew... Enter Vaid Amount');
             return false;
         }
         if (!eth_assress) {
