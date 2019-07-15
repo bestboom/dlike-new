@@ -34,7 +34,7 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 
 	if (empty($errors)) {
     $publish = $cmtGenerator->createComment($parent_author, $parent_permlink, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $max_accepted_payout);
-    echo $state = $cmtGenerator->broadcast($publish);
+    echo $state = json_encode($cmtGenerator->broadcast($publish));
 	}
 
 	if (isset($state->result)) { 
