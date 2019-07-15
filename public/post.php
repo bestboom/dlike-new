@@ -294,9 +294,9 @@ else
                                 <button class="btn btn-default comt_bt">Submit</button>
                         <!--    </form>  -->
                         </div>
-                        <div class="comment-area" id="comment_sec">
+                        <div class="comment-area">
                             <h4>Comments</h4>
-                            <ul class="comments cmt_section"></ul>
+                            <ul class="comments cmt_section" id="comment_sec"></ul>
                         </div>
                     </div>
                 </div>
