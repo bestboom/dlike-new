@@ -8,7 +8,6 @@ class makeComment
     public function publish($publishOptions){
         $this->postFields = $publishOptions;
     }*/
-
     public function createComment($parent_author,$parent_permlink,$body,$json_php_array, $permlink, $beneficiaries,$max_accepted_payout)
     {
         $json_meta = json_encode($json_php_array);
@@ -62,7 +61,7 @@ class makeComment
                 "accept: application/json",
                 "authorization: " . $_COOKIE['access_token'],
                 "cache-control: no-cache",
-                "content-type: application/json",
+                "content-type: text/html; charset=utf-8",
             ),
         ));
 
