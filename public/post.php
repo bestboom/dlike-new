@@ -455,6 +455,7 @@ var refreashComments = function () {
                         $(".cmt_section").html('');
                         $(".cmt").val('');
                         refreashComments();
+                        toastr.success('Comment posted successfully!');
                         $(".comt_bt").html('Comment');
                     } else { 
                         toastr.error('There is some issue!'); 
