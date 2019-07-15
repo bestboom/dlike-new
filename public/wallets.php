@@ -612,7 +612,8 @@ function time_ago($timestamp)
         let tok_amt     = $("#tok_field").val();
         let eth_assress = $("#eth_field").val();
         let tip_bal     = $(".tip_bal").html();
-        console.log(tip_bal);
+        let min_withdraw = $(".min_tip").html();
+        console.log(min_withdraw);
 
         if (!tok_amt) {
             toastr.error('phew... Enter Token Amount');
@@ -620,6 +621,10 @@ function time_ago($timestamp)
         }
         if (tok_amt <= 0) {
             toastr.error('phew... Enter Vaid Amount');
+            return false;
+        }
+        if (tok_amt < min_withdraw) {
+            toastr.error('phew... Amount is Less than minimum limit');
             return false;
         }
         if (!eth_assress) {
