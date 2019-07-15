@@ -150,6 +150,7 @@ else
                                 </div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
+                                <p>Source of shared article</p>
                             </div>
                         </div>
                     </div>
