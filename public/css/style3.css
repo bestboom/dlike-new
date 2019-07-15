@@ -3389,10 +3389,11 @@ sub.transmoney-value {
     margin-bottom: 40px; }
 
 .single-post-block .post-title {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: #0b132d;
-    margin-bottom: 20px; }
+    margin-bottom: 20px; 
+    line-height: 1.8rem !important;}
 
 .single-post-block blockquote {
     padding: 15px 30px;
