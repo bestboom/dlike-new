@@ -34,21 +34,17 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 
 	if (empty($errors)) {
     $publish = $cmtGenerator->createComment($parent_author, $parent_permlink, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $max_accepted_payout);
-    $state = $cmtGenerator->broadcast($publish);
+    echo $state = $cmtGenerator->broadcast($publish);
 	}
 
 	if (isset($state->result)) { 
-		die(json_encode([
-			'error' => false,
-            'message' => 'All fine', 
-            'data' => 'Commenting'
-        ]));  				
+		?>
+    <script type="text/javascript">
+        window.location = "https://dlike.io/post/<? echo $parent_author; ?>/<? echo $parent_permlink; ?>";
+    </script>
+<?				
 	} else {
-			    die(json_encode([
-            		'error' => true,
-            		'message' => 'Sorry', 
-            		'data' => 'There is some issue '. $state->error_description
-        		]));
+		echo $state->error_description;
 	} 	
 
 } else {die('Some error');}
