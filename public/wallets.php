@@ -396,7 +396,7 @@ function time_ago($timestamp)
                                         $tip_time = strtotime($row_tip["tip_time"]);
                                 ?>
                                         <tr>
-                                            <td class-"cent_me wid_2">
+                                            <td class="cent_me wid_2">
                                                 <span class="btn btn-icon btn-exp">
                                                     <span class="text-dark">Tx</span>
                                                 </span>
