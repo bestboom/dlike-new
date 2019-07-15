@@ -41,10 +41,10 @@
 </div><!-- colto-section -->
 
 <footer class="footer">
-    <div class="row footer-bottom" style="justify-content: center;">
+    <div class="row footer-bottom" style="justify-content: center;margin: 0px !important;">
         <div class="col-12 col-md-4">
             <div class="row">
-                <div class="col-md-3 offset-md-2 col-4 offset-0">
+                <div class="col-md-3 offset-md-2 col-4 offset-3">
                         <div>
                             <a href="/"><img src="/images/logo.png" alt="img" class="img-responsive" /></a>
                         </div>&nbsp;
@@ -78,7 +78,7 @@
             </div>
         </div>
 
-        <div class="col-5 offset-3 col-md-3 offset-md-0 pt-0">
+        <div class="col-5 offset-0 col-md-3 offset-md-0 pt-0">
             <div class="row">
                 <div class="footer-bottom-in">
                     <div class="trade-volume-block">
