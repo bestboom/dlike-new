@@ -46,7 +46,6 @@ if ($user_eth == '') {
     echo "<script>let user_eth = 'Exist'; let eth_address = '$user_eth';</script>";
 }
 //time ago
-<?php
 function get_timeago( $ptime )
 {
     $etime = time() - $ptime;
@@ -75,7 +74,6 @@ function get_timeago( $ptime )
         }
     }
 }
-?>
 ?>
 </div><!-- banner-block -->
 
