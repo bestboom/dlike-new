@@ -409,8 +409,8 @@ else
             success: function(data) {
             console.log(data);
             try {
-                var response = JSON.parse(data)
-                    if(response.error == true) {
+                //var response = JSON.parse(data)
+                    if(data.status == 'success') {
                         toastr.error('There is some issue!'); 
                         return false;
                     } else {

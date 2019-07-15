@@ -38,10 +38,11 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 	}
 
 	if (isset($state->result)) { 
-		
+		 $response_array['status'] = 'success'; 
 		 				
 	} else {
-			echo $state->error_description;
+		$response_array['status'] = 'error'; 
+			//echo $state->error_description;
 	} 	
 
 } else {die('Some error');}
