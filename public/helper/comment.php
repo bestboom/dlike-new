@@ -16,9 +16,7 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 
 	$parent_permlink = $_POST["p_permlink"];
 	$parent_author = $_POST["p_author"];
-
 	$permlink = $_POST["cmt_permlink"];
-
 	$body = $_POST["comt_body"];
 
 	$max_accepted_payout = '900.000 SBD';
@@ -30,7 +28,6 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
     "format" => "html",
     "tags" => "dlike"
 	];
-
 
 	if (empty($errors)) {
     $publish = $cmtGenerator->createComment($parent_author, $parent_permlink, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $max_accepted_payout);

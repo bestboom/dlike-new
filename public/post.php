@@ -395,7 +395,7 @@ else
             return false;  
         }
     let comment_body= $(".cmt").val(); 
-    console.log(comment_body); 
+    //console.log(comment_body); 
     let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
     var datac = {
             p_author: post_author,
@@ -408,15 +408,16 @@ else
         url: "/helper/comment.php",
         data: datac,
             success: function(data) {
-            console.log(data);
+            //console.log(data);
             try {
                 var response = JSON.parse(data)
-                    if(response.error == true) {
+                    if(response.error == false) {
+                        $(".comments cmt_section").load(" .comments cmt_section");
+                        toastr.success('Comment posted successfully!');
+                    } else { 
                         toastr.error('There is some issue!'); 
-                        return false;
-                    } else {
-                        toastr.success('Comment posted successfully!'); 
-                            }
+                        return false;   
+                    }
                 } catch (err) {
                     toastr.error('Sorry. Server response is malformed.');
                 }
