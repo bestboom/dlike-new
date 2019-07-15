@@ -974,7 +974,6 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 }
 .cent_me{text-align: center;}
 .wid_2{width: 20%;}
-
 .token-content h2{font-weight: 700;
     color: #fff;
     margin-bottom: 30px;font-size: 200% !important;}
