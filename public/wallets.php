@@ -431,6 +431,7 @@ if ($user_eth == '') {
                                     <script>
                                         let with_time = <?=($with_time)?>;
                                         let with_time_ago = moment.utc(with_time + "Z", "YYYY-MM-DD  h:mm:ss").fromNow();
+                                        console.log(with_time_ago);
                                     </script>
                                         <tr>
                                             <td>
@@ -455,7 +456,7 @@ if ($user_eth == '') {
                                                     </span>
                                             </td>
                                             <td class="exp-amt">
-                                                <?php echo '<script>with_time_ago;</script>'; ?>  
+                                                <script></script>
                                             </td>
                                         </tr>
                                         <?php
