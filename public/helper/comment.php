@@ -38,17 +38,10 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 	}
 
 	if (isset($state->result)) { 
-		die(json_encode([
-			'error' => false,
-            'message' => 'All fine', 
-            'data' => 'Commenting'
-        ]));  				
+		
+		 				
 	} else {
-			    die(json_encode([
-            		'error' => true,
-            		'message' => 'Sorry', 
-            		'data' => 'There is some issue '. $state->error_description
-        		]));
+			echo $state->error_description;
 	} 	
 
 } else {die('Some error');}
