@@ -453,7 +453,9 @@ if ($user_eth == '') {
                                             </td>
                                             <td class="exp-amt">
                                                     <span>
-                                                        <?php echo $row_D["with_time"]; ?>
+                                                        <?php $with_time = $row_D["with_time"]; ?>
+                                                        <script>let with_time = <?=($with_time)?>;</script>
+                                                        <?php echo '<script>let with_time_ago = moment.utc(with_time + "Z", "YYYY-MM-DD  h:mm:ss").fromNow();</script>'; ?>
                                                     </span>
                                             </td>
                                         </tr>
