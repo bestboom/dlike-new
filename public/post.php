@@ -412,7 +412,7 @@ else
             try {
                 var response = JSON.parse(data)
                     if(response.error == false) {
-                        $(".comments cmt_section").load(" .comments cmt_section");
+                        $(".cmt_section").load(" .cmt_section");
                         toastr.success('Comment posted successfully!');
                     } else { 
                         toastr.error('There is some issue!'); 
