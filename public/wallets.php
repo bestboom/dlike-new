@@ -427,8 +427,11 @@ if ($user_eth == '') {
 
                                 if ($result_D && $result_D->num_rows > 0) {
                                     while ($row_D = $result_D->fetch_assoc()) {
-
-                                        ?>
+                                        $with_time = $row_D["with_time"]; ?>
+                                    <script>
+                                        let with_time = <?=($with_time)?>;
+                                        let with_time_ago = moment.utc(with_time + "Z", "YYYY-MM-DD  h:mm:ss").fromNow();
+                                    </script>
                                         <tr>
                                             <td>
                                                 <span class="btn btn-icon btn-exp">
@@ -452,11 +455,7 @@ if ($user_eth == '') {
                                                     </span>
                                             </td>
                                             <td class="exp-amt">
-                                                    <span>
-                                                        <?php $with_time = $row_D["with_time"]; ?>
-                                                        <script>let with_time = <?=($with_time)?>;</script>
-                                                        <?php echo '<script>let with_time_ago = moment.utc(with_time + "Z", "YYYY-MM-DD  h:mm:ss").fromNow();</script>'; ?>
-                                                    </span>
+                                                <?php echo '<script>with_time_ago;</script>'; ?>  
                                             </td>
                                         </tr>
                                         <?php
