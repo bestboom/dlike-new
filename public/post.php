@@ -291,7 +291,7 @@ else
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn btn-default comt_bt">Submit</button>
+                                <button class="btn btn-default comt_bt">Comment</button>
                         <!--    </form>  -->
                         </div>
                         <div class="comment-area">
@@ -451,11 +451,11 @@ var refreashComments = function () {
             try {
                 var response = JSON.parse(data)
                     if(response.error == false) {
-                        $(".cmt").val(''); 
-                        //$(".cmt_section").load(" .cmt_section");
-                        //$("#comment_sec").load(location.href + " #comment_sec");
+                        $(".comt_bt").html('commenting...');
+                        $(".cmt").val('');
                         refreashComments();
                         toastr.success('Comment posted successfully!');
+                        $(".comt_bt").html('Comment');
                     } else { 
                         toastr.error('There is some issue!'); 
                         return false;   
@@ -465,10 +465,6 @@ var refreashComments = function () {
                 }
             },
         });    
-        //$("#postauthor").val(post_author);
-        //$("#postpermlink").val(post_permlink);
-        //$("#c_author").val(username);
-        //$("#c_permlink").val(permlinkD);
     });    
 
     // tip me
