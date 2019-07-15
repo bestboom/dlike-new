@@ -398,27 +398,27 @@ function time_ago($timestamp)
                                         ?>
                                         <tr>
                                             <td>
-                                                    <span class="btn btn-icon btn-exp">
-                                                        <span class="text-dark">Tx</span>
-                                                    </span>
+                                                <span class="btn btn-icon btn-exp">
+                                                    <span class="text-dark">Tx</span>
+                                                </span>
                                             </td>
-                                            <td class="exp-amt cent_me" style="width: 20%">
-                                                    <span>
-                                                        <?php echo $row_tip["tip1"]; ?>
-                                                    </span> USDT
+                                            <td class="exp-amt cent_me wid_2">
+                                                <span>
+                                                    <?php echo $row_tip["tip1"]; ?>
+                                                </span> USDT
                                             </td>
-                                            <td class="exp-amt cent_me" style="width: 20%">
-                                                    <span class="color-sell">
-                                                        <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
-                                                    </span>
+                                            <td class="exp-amt cent_me wid_2">
+                                                <span class="color-sell">
+                                                    <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
+                                                </span>
                                             </td>
-                                            <td class="exp-user cent_me" style="width: 20%">
+                                            <td class="exp-user cent_me wid_2">
                                                 <span><?php echo $row_tip["sender"]; ?></span>
                                             </td>
-                                            <td class="exp-amt cent_me" style="width: 20%">
-                                                    <span>
-                                                        <?php echo $row_tip["tip_time"]; ?>
-                                                    </span>
+                                            <td class="exp-amt cent_me wid_2">
+                                                <span>
+                                                    <?php echo $row_tip["tip_time"]; ?>
+                                                </span>
                                             </td>
                                         </tr>
                                         <?php
