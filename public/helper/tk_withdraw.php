@@ -12,7 +12,7 @@ require '../includes/config.php';
 		$tok_eth 	=  $_POST['tok_eth'];
 		$tok_type 	=  $_POST['tok_type'];
 		if($tok_type == '1'){$tok_type = 'USDT';}else{$tok_type = 'unknown';}
-		$paid = '0';
+		$paid = '1';
 
 		if($user != $tok_user)
 		{
