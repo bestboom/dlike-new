@@ -338,26 +338,25 @@ function time_ago($timestamp)
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
                                         $trx_status = $row["reason"];
-
                                         ?>
                                         <tr>
-                                            <td><span class="btn btn-icon btn-exp">
-                                                    <span class="text-dark">Tx</span></span>
+                                            <td>
+                                                <span class="btn btn-icon btn-exp">
+                                                    <span class="text-dark">Tx</span>
+                                                </span>
                                             </td>
                                             <td class="exp-user">
                                                 For <span><?php echo $trx_status; ?></span>
                                             </td>
                                             <td class="exp-amt">
-                                                    <span id="tk-amt">
-                                                        <?php echo(number_format($row["amount"])); ?>
-                                                    </span>
-                                                DLIKE
+                                                <span id="tk-amt">
+                                                    <?php echo(number_format($row["amount"])); ?>
+                                                </span> DLIKE
                                             </td>
                                         </tr>
                                         <?php
                                     }
                                 }
-
                                 ?>
                                 </tbody>
                             </table><!-- coin-list table -->
@@ -379,11 +378,11 @@ function time_ago($timestamp)
                             <table class="table coin-list table-hover">
                                 <thead>
                                 <tr style="text-align: center;">
-                                    <th scope="col cent_me wid_2">Tip</th>
-                                    <th scope="col cent_me wid_2">Amount</th>
-                                    <th scope="col cent_me wid_2">For</th>
-                                    <th scope="col cent_me wid_2">By</th>
-                                    <th scope="col cent_me wid_2">Time</th>
+                                    <th scope="col" class="cent_me wid_2">Tip</th>
+                                    <th scope="col" class="cent_me wid_2">Amount</th>
+                                    <th scope="col" class="cent_me wid_2">For</th>
+                                    <th scope="col" class="cent_me wid_2">By</th>
+                                    <th scope="col" class="cent_me wid_2">Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -432,11 +431,11 @@ function time_ago($timestamp)
                             <table class="table coin-list table-hover">
                                 <thead>
                                 <tr>
-                                    <th scope="col cent_me wid_2"></th>
-                                    <th scope="col cent_me wid_2">Token</th>
-                                    <th scope="col cent_me wid_2">Amount</th>
-                                    <th scope="col cent_me wid_2">Status</th>
-                                    <th scope="col cent_me wid_2">Time</th>
+                                    <th scope="col" class="cent_me wid_2"></th>
+                                    <th scope="col" class="cent_me wid_2">Token</th>
+                                    <th scope="col" class="cent_me wid_2">Amount</th>
+                                    <th scope="col" class="cent_me wid_2">Status</th>
+                                    <th scope="col" class="cent_me wid_2">Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -450,7 +449,7 @@ function time_ago($timestamp)
                                         $with_time = strtotime($row_D["with_time"]); 
                                 ?>
                                         <tr>
-                                            <td>
+                                            <td class="cent_me wid_2"">
                                                 <span class="btn btn-icon btn-exp">
                                                     <span class="text-dark">Tx</span>
                                                 </span>
@@ -464,10 +463,10 @@ function time_ago($timestamp)
                                             <td class="exp-amt cent_me wid_2">
                                                 <span>
                                                     <?php
-                                                        if($row_D["paid"] == '0')
-                                                            {echo '<span class="color-sell">Pending</span>';}
-                                                        elseif($row_D["paid"] == '1')
-                                                            {echo '<span class="color-buy">Paid</span>';}
+                                                    if($row_D["paid"] == '0')
+                                                        {echo '<span class="color-sell">Pending</span>';}
+                                                    elseif($row_D["paid"] == '1')
+                                                        {echo '<span class="color-buy">Paid</span>';}
                                                     ?>
                                                 </span>
                                             </td>
