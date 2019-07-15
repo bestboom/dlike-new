@@ -359,10 +359,10 @@ if ($user_eth == '') {
                                 <thead>
                                 <tr>
                                     <th scope="col">Tip</th>
-                                    <th scope="col">By</th>
-                                    <th scope="col">For</th>
-                                    <th scope="col">Time</th>
-                                    <th scope="col">Amount</th>
+                                    <th scope="col" style="width: 20%">Amount</th>
+                                    <th scope="col" style="width: 20%">For</th>
+                                    <th scope="col" style="width: 20%">By</th>
+                                    <th scope="col" style="width: 20%">Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -381,23 +381,23 @@ if ($user_eth == '') {
                                                         <span class="text-dark">Tx</span>
                                                     </span>
                                             </td>
-                                            <td class="exp-user">
-                                                <span><?php echo $row_tip["sender"]; ?></span>
+                                            <td class="exp-amt">
+                                                    <span>
+                                                        <?php echo $row_tip["tip1"]; ?>
+                                                    </span> USDT
                                             </td>
                                             <td class="exp-amt">
                                                     <span class="color-sell">
                                                         <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
                                                     </span>
                                             </td>
+                                            <td class="exp-user">
+                                                <span><?php echo $row_tip["sender"]; ?></span>
+                                            </td>
                                             <td class="exp-amt">
                                                     <span>
                                                         <?php echo $row_tip["tip_time"]; ?>
                                                     </span>
-                                            </td>
-                                            <td class="exp-amt">
-                                                    <span>
-                                                        <?php echo $row_tip["tip1"]; ?>
-                                                    </span> USDT
                                             </td>
                                         </tr>
                                         <?php
@@ -444,8 +444,10 @@ if ($user_eth == '') {
                                             <td class="exp-amt">
                                                     <span>
                                                         <?php
-                                                            if($row_D["paid"] == '0'){echo '<span class="color-sell">Pending</span>';}
-                                                            elseif($row_D["paid"] == '1'){echo '<span class="color-buy">Paid</span>';}
+                                                            if($row_D["paid"] == '0')
+                                                                {echo '<span class="color-sell">Pending</span>';}
+                                                            elseif($row_D["paid"] == '1')
+                                                                {echo '<span class="color-buy">Paid</span>';}
                                                         ?>
                                                     </span>
                                             </td>
