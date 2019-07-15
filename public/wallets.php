@@ -394,9 +394,10 @@ function time_ago($timestamp)
 
                                 if ($result_tip && $result_tip->num_rows > 0) {
                                     while ($row_tip = $result_tip->fetch_assoc()) {
-                                        ?>
+                                        $tip_time = strtotime($row_tip["tip_time"]);
+                                ?>
                                         <tr>
-                                            <td>
+                                            <td class-"cent_me wid_2">
                                                 <span class="btn btn-icon btn-exp">
                                                     <span class="text-dark">Tx</span>
                                                 </span>
@@ -408,7 +409,7 @@ function time_ago($timestamp)
                                             </td>
                                             <td class="exp-amt cent_me wid_2">
                                                 <span class="color-sell">
-                                                    <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
+                                                <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
                                                 </span>
                                             </td>
                                             <td class="exp-user cent_me wid_2">
@@ -416,7 +417,7 @@ function time_ago($timestamp)
                                             </td>
                                             <td class="exp-amt cent_me wid_2">
                                                 <span>
-                                                    <?php echo $row_tip["tip_time"]; ?>
+                                                    <?php echo time_ago($tip_time); ?>
                                                 </span>
                                             </td>
                                         </tr>
@@ -431,52 +432,52 @@ function time_ago($timestamp)
                             <table class="table coin-list table-hover">
                                 <thead>
                                 <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Token</th>
-                                    <th scope="col">Amount</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Time</th>
+                                    <th scope="col cent_me wid_2"></th>
+                                    <th scope="col cent_me wid_2">Token</th>
+                                    <th scope="col cent_me wid_2">Amount</th>
+                                    <th scope="col cent_me wid_2">Status</th>
+                                    <th scope="col cent_me wid_2">Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
 
-                                $sql_D    = "SELECT * FROM TokWithdraw where username='$user_wallet' ORDER BY with_time DESC LIMIT 20";
+                                $sql_D = "SELECT * FROM TokWithdraw where username='$user_wallet' ORDER BY with_time DESC LIMIT 20";
                                 $result_D = $conn->query($sql_D);
 
                                 if ($result_D && $result_D->num_rows > 0) {
                                     while ($row_D = $result_D->fetch_assoc()) {
-                                        $with_time = strtotime($row_D["with_time"]); ?>
+                                        $with_time = strtotime($row_D["with_time"]); 
+                                ?>
                                         <tr>
                                             <td>
                                                 <span class="btn btn-icon btn-exp">
                                                     <span class="text-dark">Tx</span>
                                                 </span>
                                             </td>
-                                            <td class="exp-user">
+                                            <td class="exp-user cent_me wid_2">
                                                 <span><?php echo $row_D["token"]; ?></span>
                                             </td>
-                                            <td class="exp-amt">
-                                                    <span><?php echo $row_D["amount"]; ?></span>
+                                            <td class="exp-amt cent_me wid_2">
+                                                <span><?php echo $row_D["amount"]; ?></span>
                                             </td>
-                                            <td class="exp-amt">
-                                                    <span>
-                                                        <?php
-                                                            if($row_D["paid"] == '0')
-                                                                {echo '<span class="color-sell">Pending</span>';}
-                                                            elseif($row_D["paid"] == '1')
-                                                                {echo '<span class="color-buy">Paid</span>';}
-                                                        ?>
-                                                    </span>
+                                            <td class="exp-amt cent_me wid_2">
+                                                <span>
+                                                    <?php
+                                                        if($row_D["paid"] == '0')
+                                                            {echo '<span class="color-sell">Pending</span>';}
+                                                        elseif($row_D["paid"] == '1')
+                                                            {echo '<span class="color-buy">Paid</span>';}
+                                                    ?>
+                                                </span>
                                             </td>
-                                            <td class="exp-amt">
+                                            <td class="exp-amt cent_me wid_2">
                                                 <?php echo time_ago($with_time); ?>
                                             </td>
                                         </tr>
                                         <?php
                                     }
                                 }
-
                                 ?>
                                 </tbody>
                             </table><!-- coin-list table -->
