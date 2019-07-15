@@ -190,9 +190,11 @@ if ($user_eth == '') {
                                         <h5 class="base-color">USDT: </h5>
                                         <p><span class="tip_bal"><?php echo $tip_bal; ?></span> USDT</p>
                                     </div>
-                                    <p class="coins-detail">A stable coin by Bitfinex<span class="coins-match"><a
-                                                    href="" data-toggle="modal"
-                                                    data-target="#tk_withdraw">Withdraw</a></span>
+                                    <p class="coins-detail">
+                                        A stable coin by Bitfinex
+                                        <span class="coins-match">
+                                            <a href="" data-toggle="modal" data-target="#tk_withdraw">Withdraw</a>
+                                        </span>
                                     </p>
                                     <hr class="wal_hr">
                                 </div>
@@ -252,7 +254,7 @@ if ($user_eth == '') {
                                     purchased from other users through private deals or directly from DLIKE platform.
                                 </p>
                                 <div class="pros-cons-block">
-                                    <button type="submit" class="btn btn-primary">BUY DLIKE Tokens</button>
+                                    <button type="submit" class="btn btn-primary tok_buy">BUY DLIKE Tokens</button>
                                 </div>
                             </div><!-- catagori-content -->
                         </div>
@@ -483,6 +485,13 @@ if ($user_eth == '') {
         </div>
     </div>
 </div>
+<div class="modal fade" id="tk_buy" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/tipswithdraw.php'); ?>
+        </div>
+    </div>
+</div>
 
 <?php include('template/footer3.php'); ?>
 
@@ -591,6 +600,10 @@ if ($user_eth == '') {
         }
         $(this).ajaxSubmit(optionstkw);
         return !1;
+    });
+
+    $('.tok_buy').click(function () {
+        $("#yk_buy").modal("show");
     });
 </script>
 
