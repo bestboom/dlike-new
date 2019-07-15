@@ -450,6 +450,7 @@ else
             try {
                 var response = JSON.parse(data)
                     if(response.error == false) {
+                        $(".cmt").val(''); 
                         //$(".cmt_section").load(" .cmt_section");
                         $("#comment_sec").load(location.href + " #comment_sec");
                         toastr.success('Comment posted successfully!');
