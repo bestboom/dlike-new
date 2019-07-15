@@ -294,7 +294,7 @@ else
                                 <button class="btn btn-default comt_bt">Submit</button>
                         <!--    </form>  -->
                         </div>
-                        <div class="comment-area">
+                        <div class="comment-area" id="comment_sec">
                             <h4>Comments</h4>
                             <ul class="comments cmt_section"></ul>
                         </div>
@@ -451,7 +451,7 @@ else
                 var response = JSON.parse(data)
                     if(response.error == false) {
                         //$(".cmt_section").load(" .cmt_section");
-                        $(".cmt_section").load(location.href + " .cmt_section");
+                        $("#comment_sec").load(location.href + " #comment_sec");
                         toastr.success('Comment posted successfully!');
                     } else { 
                         toastr.error('There is some issue!'); 
