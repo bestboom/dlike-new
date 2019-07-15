@@ -24,7 +24,7 @@
 								<input type="hidden" name="tok_type" value="1" />
 								<input type="hidden" name="tok_eth" value="'.$user_eth.'" />
 								<input type="hidden" name="tok_user" value="'.$user_wallet.'" />
-								<input type="number" class="form-control" name="tok_amt" id="tok_field" min="'.$min_tip_withdraw.'" value="" />&nbsp;
+								<input type="number" class="form-control" name="tok_amt" id="tok_field" value="" />&nbsp;
 								<button type="submit" class="btn btn-primary tk_out_btn">WITHDRAW</button>	
 							</div>
 						</div>
