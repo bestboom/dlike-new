@@ -254,7 +254,7 @@ if ($user_eth == '') {
                                     purchased from other users through private deals or directly from DLIKE platform.
                                 </p>
                                 <div class="pros-cons-block">
-                                    <button type="submit" class="btn btn-primary tok_buy">BUY DLIKE Tokens</button>
+                                    <button class="btn btn-primary tok_buy">BUY DLIKE Tokens</button>
                                 </div>
                             </div><!-- catagori-content -->
                         </div>
@@ -603,7 +603,7 @@ if ($user_eth == '') {
     });
 
     $('.tok_buy').click(function () {
-        $("#yk_buy").modal("show");
+        $("#tk_buy").modal("show");
     });
 </script>
 
