@@ -972,7 +972,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     line-height: 26px;
     text-align: center;
 }
-
+.cent_me{text-align: center;}
 
 
 .token-content h2{font-weight: 700;
