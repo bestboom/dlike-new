@@ -58,7 +58,7 @@ class makeComment
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_HTTPHEADER => array(
-                "accept: application/json",
+                "accept: application/json; charset=utf-8",
                 "authorization: " . $_COOKIE['access_token'],
                 "cache-control: no-cache",
                 "content-type: application/json; charset=utf-8",
