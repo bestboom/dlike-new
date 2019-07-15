@@ -338,6 +338,8 @@ function time_ago($timestamp)
                                 if ($result->num_rows > 0) {
                                     while ($row = $result->fetch_assoc()) {
                                         $trx_status = $row["reason"];
+                                        $rec_person = $row["receiver"];
+                                        $send_person = $row["username"];
                                         ?>
                                         <tr>
                                             <td>
@@ -346,7 +348,13 @@ function time_ago($timestamp)
                                                 </span>
                                             </td>
                                             <td class="exp-user">
-                                                For <span><?php echo $trx_status; ?></span>
+                                                <span>
+                                                    <?php 
+                                                    if($rec_person == $user_wallet)
+                                                        {echo 'Receieved From '.$send_person;}
+                                                    else{echo $trx_status; }
+                                                    ?>
+                                                </span>
                                             </td>
                                             <td class="exp-amt">
                                                 <span id="tk-amt">
