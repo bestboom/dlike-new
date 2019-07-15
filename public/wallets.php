@@ -612,7 +612,7 @@ function time_ago($timestamp)
         let tok_amt     = $("#tok_field").val();
         let eth_assress = $("#eth_field").val();
         let tip_bal     = $(".tip_bal").html();
-        let min_withdraw = $(".min_tip").html();
+        let min_withdraw = $("#tok_min").val();
         console.log(min_withdraw);
 
         if (!tok_amt) {
