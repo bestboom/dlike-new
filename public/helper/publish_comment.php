@@ -61,7 +61,7 @@ class makeComment
                 "accept: application/json",
                 "authorization: " . $_COOKIE['access_token'],
                 "cache-control: no-cache",
-                "content-type: text/html; charset=utf-8",
+                "content-type: application/json; charset=utf-8",
             ),
         ));
 
