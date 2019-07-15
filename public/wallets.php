@@ -351,8 +351,9 @@ function time_ago($timestamp)
                                                 <span>
                                                     <?php 
                                                     if($rec_person == $user_wallet)
-                                                        {echo 'Receieved From '.$send_person;}
-                                                    else{echo $trx_status; }
+                                                        {echo '<span class="color-buy">Receieved From '.$send_person.'</span>';}
+                                                    else
+                                                        {echo '<span class="color-sell">'.$trx_status.'</span>'; }
                                                     ?>
                                                 </span>
                                             </td>
