@@ -479,9 +479,7 @@ function get_timeago( $ptime )
                                                     </span>
                                             </td>
                                             <td class="exp-amt">
-                                                <?php $dt = Carbon::parse($with_time);
-                                                    echo $dt->diffForHumans();
-                                                 //echo get_timeago( $with_time ); ?>
+                                                <?php echo get_timeago( $with_time ); ?>
                                             </td>
                                         </tr>
                                         <?php
