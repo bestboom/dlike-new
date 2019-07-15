@@ -398,8 +398,8 @@ else
     console.log(comment_body); 
     let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
     var datac = {
-            p_permlink: post_author,
-            p_author: post_permlink,
+            p_author: post_author,
+            p_permlink: post_permlink,
             comt_body: comment_body,
             cmt_permlink: permlinkD
         };    
