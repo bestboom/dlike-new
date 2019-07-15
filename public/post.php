@@ -384,52 +384,7 @@ else
 
     });
     //comments
-    $('.comt_bt').click(function () {
-        if (username == null) 
-        {
-            toastr.error('hmm... You must be login!');
-            return false;
-        }
-        if (!$.trim($('[name="cmt_body"]').val())) {
-            toastr.error('It seems you forgot to post comment');
-            return false;  
-        }
-    let comment_body= $(".cmt").val(); 
-    //console.log(comment_body); 
-    let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
-    var datac = {
-            p_author: post_author,
-            p_permlink: post_permlink,
-            comt_body: comment_body,
-            cmt_permlink: permlinkD
-        };    
-    $.ajax({
-        type: "POST",
-        url: "/helper/comment.php",
-        data: datac,
-            success: function(data) {
-            //console.log(data);
-            try {
-                var response = JSON.parse(data)
-                    if(response.error == false) {
-                        $(".cmt_section").load(" .cmt_section");
-                        toastr.success('Comment posted successfully!');
-                    } else { 
-                        toastr.error('There is some issue!'); 
-                        return false;   
-                    }
-                } catch (err) {
-                    toastr.error('Sorry. Server response is malformed.');
-                }
-            },
-        });    
-        //$("#postauthor").val(post_author);
-        //$("#postpermlink").val(post_permlink);
-        //$("#c_author").val(username);
-        //$("#c_permlink").val(permlinkD);
-    });    
 
-        
     let comment = []    
     steem.api.getContentReplies(post_author, post_permlink, function(err, result) {
             //showMainComment(0, result);
@@ -465,6 +420,53 @@ else
             
         }
     });
+
+    //new-comment    
+    $('.comt_bt').click(function () {
+        if (username == null) 
+        {
+            toastr.error('hmm... You must be login!');
+            return false;
+        }
+        if (!$.trim($('[name="cmt_body"]').val())) {
+            toastr.error('It seems you forgot to post comment');
+            return false;  
+        }
+    let comment_body= $(".cmt").val(); 
+    //console.log(comment_body); 
+    let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
+    var datac = {
+            p_author: post_author,
+            p_permlink: post_permlink,
+            comt_body: comment_body,
+            cmt_permlink: permlinkD
+        };    
+    $.ajax({
+        type: "POST",
+        url: "/helper/comment.php",
+        data: datac,
+            success: function(data) {
+            //console.log(data);
+            try {
+                var response = JSON.parse(data)
+                    if(response.error == false) {
+                        //$(".cmt_section").load(" .cmt_section");
+                        $(".cmt_section").load(location.href + " .cmt_section");
+                        toastr.success('Comment posted successfully!');
+                    } else { 
+                        toastr.error('There is some issue!'); 
+                        return false;   
+                    }
+                } catch (err) {
+                    toastr.error('Sorry. Server response is malformed.');
+                }
+            },
+        });    
+        //$("#postauthor").val(post_author);
+        //$("#postpermlink").val(post_permlink);
+        //$("#c_author").val(username);
+        //$("#c_permlink").val(permlinkD);
+    });    
 
     // tip me
     var tipoptions = {
