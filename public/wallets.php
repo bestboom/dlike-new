@@ -46,31 +46,24 @@ if ($user_eth == '') {
     echo "<script>let user_eth = 'Exist'; let eth_address = '$user_eth';</script>";
 }
 //time ago
-function get_timeago( $ptime )
+function time_ago($timestamp)
 {
-    $etime = time() - $ptime;
-
-    if( $etime < 1 )
+    $etime = time() - $timestamp;
+ 
+    if ($etime < 1)
     {
-        return 'less than 1 second ago';
+        return 'just now';
     }
-
-    $a = array( 12 * 30 * 24 * 60 * 60  =>  'year',
-                30 * 24 * 60 * 60       =>  'month',
-                24 * 60 * 60            =>  'day',
-                60 * 60             =>  'hour',
-                60                  =>  'minute',
-                1                   =>  'second'
-    );
-
-    foreach( $a as $secs => $str )
+ 
+    $a = array(12 * 30 * 24 * 60 * 60  =>  'year', 30 * 24 * 60 * 60 => 'month', 24 * 60 * 60 => 'day', 60 * 60 => 'hour', 60 => 'minute', 1 => 'second');
+ 
+    foreach ($a as $secs => $str)
     {
         $d = $etime / $secs;
-
-        if( $d >= 1 )
+        if ($d >= 1)
         {
-            $r = round( $d );
-            return 'about ' . $r . ' ' . $str . ( $r > 1 ? 's' : '' ) . ' ago';
+            $r = round($d);
+            return $r . ' ' . $str . ($r > 1 ? 's' : '') . ' ago';
         }
     }
 }
@@ -455,7 +448,7 @@ function get_timeago( $ptime )
 
                                 if ($result_D && $result_D->num_rows > 0) {
                                     while ($row_D = $result_D->fetch_assoc()) {
-                                        $with_time = $row_D["with_time"]; ?>
+                                        $with_time = strtotime($row_D["with_time"]); ?>
                                         <tr>
                                             <td>
                                                 <span class="btn btn-icon btn-exp">
@@ -479,7 +472,7 @@ function get_timeago( $ptime )
                                                     </span>
                                             </td>
                                             <td class="exp-amt">
-                                                <?php echo get_timeago( $with_time ); ?>
+                                                <?php echo time_ago($with_time); ?>
                                             </td>
                                         </tr>
                                         <?php
