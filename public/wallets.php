@@ -149,7 +149,7 @@ function time_ago($timestamp)
                         </div>
                         <div role="tabpanel" class="tab-pane fade active show" id="nav_mycelium">
                             <div class="catagori-content">
-                                <div class="st_rewards">
+                                <div class="st_rewards" style="display: flex; align-items: center;">
                                     <b>Pending Rewards:</b>
                                     <span class="pending-rewards">
                                             <span class="fas fa-circle-notch fa-spin"></span>
