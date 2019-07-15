@@ -3384,7 +3384,8 @@ sub.transmoney-value {
 .mod-authThumb{
     width: 36px;
     border-radius: 50%;}
-.post_link{text-align: right;color: #1652f0;font-weight: 600;}    
+.post_link{text-align: right;color: #1652f0;font-weight: 600;}  
+.make_link{color: #1652f0;font-weight: 600;}    
 .single-post-block .post-thumb-block {
     margin-bottom: 40px; }
 
