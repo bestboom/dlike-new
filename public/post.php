@@ -433,6 +433,7 @@ var refreashComments = function () {
             toastr.error('It seems you forgot to post comment');
             return false;  
         }
+    $(".comt_bt").html('commenting...');    
     let comment_body= $(".cmt").val(); 
     //console.log(comment_body); 
     let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
@@ -451,13 +452,14 @@ var refreashComments = function () {
             try {
                 var response = JSON.parse(data)
                     if(response.error == false) {
-                        $(".comt_bt").html('commenting...');
+                        
                         $(".cmt").val('');
                         refreashComments();
                         toastr.success('Comment posted successfully!');
                         $(".comt_bt").html('Comment');
                     } else { 
                         toastr.error('There is some issue!'); 
+                        $(".comt_bt").html('Comment');
                         return false;   
                     }
                 } catch (err) {
