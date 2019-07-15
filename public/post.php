@@ -384,7 +384,7 @@ else
 
     });
     //comments
-
+var refreashComments = function () {
     let comment = []    
     steem.api.getContentReplies(post_author, post_permlink, function(err, result) {
             //showMainComment(0, result);
@@ -420,7 +420,8 @@ else
             
         }
     });
-
+},
+    refreashComments();
     //new-comment    
     $('.comt_bt').click(function () {
         if (username == null) 
@@ -452,7 +453,8 @@ else
                     if(response.error == false) {
                         $(".cmt").val(''); 
                         //$(".cmt_section").load(" .cmt_section");
-                        $("#comment_sec").load(location.href + " #comment_sec");
+                        //$("#comment_sec").load(location.href + " #comment_sec");
+                        refreashComments();
                         toastr.success('Comment posted successfully!');
                     } else { 
                         toastr.error('There is some issue!'); 
