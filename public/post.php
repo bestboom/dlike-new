@@ -410,7 +410,7 @@ else
             console.log(data);
             try {
                 //var response = JSON.parse(data)
-                    if(data.status == 'success') {
+                    if(data.status == 'error') {
                         toastr.error('There is some issue!'); 
                         return false;
                     } else {
