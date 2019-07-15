@@ -150,7 +150,7 @@ else
                                 </div>
                                 <h3 class="post-title"></h3>
                                 <p class="post-entry mod-post"></p>
-                                <p class="post_link" style="text-align: right;"></p>
+                                <p class="post_link"></p>
                             </div>
                         </div>
                     </div>
