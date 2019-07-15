@@ -452,10 +452,9 @@ var refreashComments = function () {
             try {
                 var response = JSON.parse(data)
                     if(response.error == false) {
-                        
+                        $(".cmt_section").html('');
                         $(".cmt").val('');
                         refreashComments();
-                        toastr.success('Comment posted successfully!');
                         $(".comt_bt").html('Comment');
                     } else { 
                         toastr.error('There is some issue!'); 
