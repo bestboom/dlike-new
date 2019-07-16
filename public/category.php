@@ -2,20 +2,20 @@
 <input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
 </div><!-- sub-header -->
     
-    
-    <div class="latest-post-section">
+<div class="latest-post-section">
 	<div class="container">
 	    <div class="row  align-items-center h-100 myloader" style="margin-bottom:30px;">
-                <div class="row col-md-3 justify-content-center">
-                        <h4 class="lab_post"><?php echo $_GET['cat'];?></h4>
-                </div>
-                <div class="col-md-9 lay">&nbsp;</div>
+            <div class="row col-md-3 justify-content-center">
+                <h4 class="lab_post">
+                	<?php echo $_GET['cat'];?>
+                </h4>
             </div>
-	    <div id="loader">Loading</div>
-	    <div class="row" id="contentposts">
-	    </div>
+            <div class="col-md-9 lay">&nbsp;</div>
+        </div>
+	    <!--  <div id="loader">Loading</div> -->
+	    <div class="row" id="contentposts"></div>
 	</div>
-    </div>
+</div>
 
 <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
@@ -173,18 +173,15 @@
     }
 
     
-    	$(document).ready(function(){
+    $(document).ready(function(){
 			
-		$("#loader").show();
-
-
-		var savepoststatus=$('#savepoststatus');
+	//$("#loader").show();
+	var savepoststatus=$('#savepoststatus');
 	var saveuserpoststatus=$('#saveuserpoststatus');
 	var savefeaturedpoststatus=$('#savefeaturedpoststatus');
 	
 	var c_username = $('#c_username').val();
 	
-
 	saveuserpoststatus.click(function(){
 
 	    var p_username = $("#pu_username").val();
