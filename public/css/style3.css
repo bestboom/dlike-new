@@ -2060,6 +2060,7 @@ label.star:before{
 #upvoteModal{top: 35%;}
 #recomendModal{top: 35%;}
 .upvoting{cursor: pointer;}
+.up_steem{cursor: pointer;}
 .recomendation{cursor: pointer;}
 
 #upvoting-status{color: #fff;
