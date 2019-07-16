@@ -193,7 +193,7 @@ $(document).ready(function(){
     		}
 		});
 	});
-
+/*
 	steem.api.getContent(topauthor , toppermlink, function(err, res) {
 		let metadata = JSON.parse(res.json_metadata);
 		let img = new Image();
@@ -228,7 +228,7 @@ $(document).ready(function(){
 	});
 
 });
-
+*/
 //check likes
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
