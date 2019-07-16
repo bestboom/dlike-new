@@ -225,7 +225,7 @@
                         <span>Get in touch on social channels.</span>
                         <div class="btn-group">
                             <button class="btn btn-default active">Discord</button>
-                            <button class="btn btn-default">Telegram</button>
+                            <button type="button" onclick="location.href='https://t.me/dlike', '_blank'" class="btn btn-default">Telegram</button>
                         </div>
                     </div><!-- qs-answer-section -->
                 </div>
