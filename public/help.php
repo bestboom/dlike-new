@@ -224,7 +224,7 @@
                         <h4>Don’t get Answer?</h4>
                         <span>Get in touch on social channels.</span>
                         <div class="btn-group">
-                            <button class="btn btn-default active">Discord</button>
+                            <a href="https://discord.gg/JYSkBFk" target="_blank"><button class="btn btn-default active">Discord</button></a>
                             <a href="https://t.me/dlike" target="_blank"><button type="button" class="btn btn-default">Telegram</button></a>
                         </div>
                     </div><!-- qs-answer-section -->

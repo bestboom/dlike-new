@@ -4578,6 +4578,7 @@ body{
     color: #c5bebe;
     display: block;
     transition: 0.3s;
+    font-weight: 600;
 }
 
 .sidenav a:hover {
