@@ -417,6 +417,7 @@ else
                     if (voterList[j].voter == username) { 
                         $("#steem_vote_icon").css("color", "RED"); 
                         $('#steem_vote_icon').click(function(){return false;});
+                        $('.post-share-block').removeClass('up_steem');
                         $('#steem_vote_icon').hover(function() {toastr.error('hmm... Already Upvoted');})
                     }
                 }                        
