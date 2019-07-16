@@ -106,12 +106,12 @@ else
         <div class="row">
                 
                     <div class="col-sm-3">
-                        <div class="post-author-block">
+                        <div class="post-author-block" style="display: flex;">
                             <div class="author-thumb">
                                 <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
                             </div>
                             <div class="author-info">
-                                <h5> <a href="#" class="mod-auth"></a></h5>
+                                <h5> <a href="#" class="mod-auth" style="padding: 10px;"></a></h5>
                             </div>
                         </div>
                     </div>
