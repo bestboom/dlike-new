@@ -170,7 +170,7 @@ else
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
-                            <center><img src="/images/bitfinex-logo.jpg" alt="img" class="img-responsive"></center>
+                            <center><img src="/images/bitfinex-logo.png" alt="img" class="img-responsive"></center>
                         </div>
                         <div class="col-sm-5 mid-tip">
                             <p class="tipratio">Tips are free from DLIKE <br>Tip Author 40% - 60% to ME</p>
