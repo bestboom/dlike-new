@@ -141,7 +141,7 @@ else
                                                 </div>
                                                 <div class="col auth_info">
                                                     <div class="post-share-block">
-                                                        <i class="fas fa-chevron-circle-up up_steem" id="steem_vote_icon"></i>&nbsp;| $<span class="pending_payout">0.00</span>
+                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span>
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
@@ -417,7 +417,7 @@ else
                     if (voterList[j].voter == username) { 
                         $("#steem_vote_icon").css("color", "RED"); 
                         $('#steem_vote_icon').click(function(){return false;});
-                        $('i').removeClass('up_steem');
+                        $('a').removeClass('up_steem');
                         $('#steem_vote_icon').hover(function() {toastr.error('hmm... Already Upvoted');})
                     }
                 }                        
