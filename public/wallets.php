@@ -787,7 +787,7 @@ function time_ago($timestamp)
                         }
 
                         if (parseFloat(transfer.reward_vests) > 0) {
-                            rewards.push(transfer.reward_vests);
+                            rewards.push((transfer.reward_vests)/2000);
                         }
 
                         action = `Claim Rewards ` + rewards.join(' and ');
