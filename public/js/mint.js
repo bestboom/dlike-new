@@ -295,11 +295,11 @@
 
 
     //upvote
-    if(rangeSlider != null){
+    //if(rangeSlider != null){
         var rangeSlider = document.getElementById("rs-range-line");
         var rangeBullet = document.getElementById("rs-bullet");
         rangeSlider.addEventListener("input", showSliderValue, false);
-    }
+    //}
     function showSliderValue() {
       rangeBullet.innerHTML = rangeSlider.value;
     }
