@@ -336,7 +336,7 @@
                 type: "POST",
                 url: "/helper/vote.php",
                 data: datav,
-                console.log(data);
+                
                 success: function(data) {
                         console.log(data);
                         try {
