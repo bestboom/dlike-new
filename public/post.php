@@ -13,7 +13,7 @@ $response = file_get_contents($post_url);
 $result = json_decode($response);
 $og_description = explode("\n\n#####\n\n",$result->body);
 $og_description = $og_description[1];
-echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 50));
+echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 35));
 $og_title = $result->title;
 function removeTags($str) {  
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
