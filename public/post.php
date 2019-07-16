@@ -103,10 +103,10 @@ else
 
                         <div class="details-post-meta-block-top">
                             <div class="container">
-                                <div class="row">
-                                    <div class="col">
+                                <div class="row" style="display: flex;">
+                                    <div class="">
                                         <div class="details-post-meta-block-wrap">
-                                            <div class="post-author-block">
+                                            <div class="col">
                                                 <div class="author-thumb">
                                                     <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
                                                 </div>
@@ -114,7 +114,7 @@ else
                                                     <h5> <a href="#" class="mod-auth"></a></h5>
                                                 </div>
                                             </div>
-                                            <div class="post-tag-block"><!-- post-likes-block -->
+                                            <div class="col"><!-- post-likes-block -->
                                                 <?php
                                                 $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
                                                 $result = $conn->query($sqlm);
@@ -133,12 +133,12 @@ else
                                                     </div><!-- post-likes-block -->
 
                                                     <!-- post-views-block -->
-                                                    <div class="post-share-block">
+                                                    <div class="col">
                                                         <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                                     </div><!-- post-views-block -->
 
                                                     <!-- post-income-block -->
-                                                    <div class="post-share-block">
+                                                    <div class="col">
                                                         <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp; Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
                                                     </div><!-- post-income-block -->
                                                 </div>
