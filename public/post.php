@@ -115,7 +115,7 @@ else
                             </div>
                         </div>
                     </div>
-                    <div class="col" style="padding: 10px;">
+                    <div class="col" style="padding: 8px;">
                         <div class="post-tag-block"><!-- post-likes-block -->
                             <?php
                             $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
@@ -135,15 +135,15 @@ else
                         </div><!-- post-likes-block -->
                     </div>
                     <!-- post-views-block -->
-                    <div class="col" style="padding: 10px;">
+                    <div class="col" style="padding: 8px;">
                         <div class="post-share-block">
                             <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                         </div><!-- post-views-block -->
                     </div>
                     <!-- post-income-block -->
-                    <div class="col-sm-4" style="padding: 10px;text-align: center;max-width: 45%;">
+                    <div class="col-sm-4" style="padding: 8px;text-align: center;max-width: 45%;">
                         <div class="post-share-block">
-                            <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp; Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
+                            <i class="far fa-money-bill-alt"></i>&nbsp;$<?php echo $totalpostincome; ?>Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
                         </div>
                     </div>
                     <!-- post-income-block -->
