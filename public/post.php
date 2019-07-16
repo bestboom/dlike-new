@@ -135,13 +135,13 @@ else
                         </div><!-- post-likes-block -->
                     </div>
                     <!-- post-views-block -->
-                    <div class="col">
+                    <div class="col" style="padding: 10px;">
                         <div class="post-share-block">
                             <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                         </div><!-- post-views-block -->
                     </div>
                     <!-- post-income-block -->
-                    <div class="col">
+                    <div class="col" style="padding: 10px;text-align: center;max-width: 45%;">
                         <div class="post-share-block">
                             <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp; Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
                         </div>
