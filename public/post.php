@@ -392,6 +392,27 @@ else
 
         $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'https://www.twitter.com/share?text='+page_description+'&url=https://dlike.io/post/@'+author+'/'+post_permlink+'&hashtags=dlike\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'https://www.facebook.com/share.php?u=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'\')"><i class="fab fa-facebook-f"></i></a></li><li><a class="linkdin" href="javascript:void(0);" onclick="popup(\'https://www.linkedin.com/shareArticle?mini=true&url=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'&sumary=dlike.io\')"><i class="fab fa-linkedin-in"></i></a></li>');
 
+                    //check if voted
+            steem.api.getActiveVotes(author, post_permlink, function(err, result) {
+                //console.log(result);
+                    if(result === Array) {
+                        var voterList = result;
+                    } else {
+                        var voterList = [];
+                    }
+                    if(!(voterList === Array)) {
+                        voterList = [];
+                    }
+                    var voterList = result;
+                for (let j = 0; j < voterList.length; j++) {
+                    if (voterList[j].voter == username) { 
+                        $("#vote_icon" + permlink + author).css("color", "RED"); 
+                        $('#vote_icon' + permlink + author).click(function(){return false;});
+                        $('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+                    }
+                }                        
+            });
+
     });
     //comments
 var refreashComments = function () {
