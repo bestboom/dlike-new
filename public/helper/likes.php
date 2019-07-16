@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$sqlw = "DELETE FROM TipTop";
+$sqlw = "DELETE FROM TipsWallet";
 
 if ($conn->query($sqlw) === TRUE) {
     echo "Table DELETED successfully";
@@ -15,6 +15,10 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error deleting table: " . $conn->error;
 }
 
+
+
+
+/*'
 
 $sqlw = "DELETE FROM TokWithdraw";
 
@@ -24,8 +28,6 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error deleting table: " . $conn->error;
 }
 
-
-/*'
 
 
 $sqlm = "CREATE TABLE TokWithdraw (
