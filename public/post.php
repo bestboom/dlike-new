@@ -92,31 +92,28 @@ else
 
 ?>
 </div>
-    <div class="container" style="padding-top: 40px;">
-     <div class="row">
-        <div class="col-md-9">
-            <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="blog-details-wrapper">
-                        <div class="single-post-block">
-                            <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
+<div class="container" style="padding-top: 40px;">
+   <div class="row"><div class="col-md-9">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="blog-details-wrapper">
+                    <div class="single-post-block">
+                        <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
 
-                            <div class="details-post-meta-block-top">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col">
-                                            <!-- <div class="details-post-meta-block-wrap"> -->
-                                                <div class="post-author-block">
-                                                    <div class="author-thumb">
-                                                        <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h5> <a href="#" class="mod-auth"></a></h5>
-                                                    </div>
+                        <div class="details-post-meta-block-top">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="details-post-meta-block-wrap">
+                                            <div class="post-author-block">
+                                                <div class="author-thumb">
+                                                    <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
                                                 </div>
-                                        </div>
-                                        <div class="col">
+                                                <div class="author-info">
+                                                    <h5> <a href="#" class="mod-auth"></a></h5>
+                                                </div>
+                                            </div>
                                             <div class="post-tag-block"><!-- post-likes-block -->
                                                 <?php
                                                 $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
@@ -128,63 +125,39 @@ else
                                                 $resultv = $conn->query($sqlv); 
                                                 if ($resultv->num_rows > 0) { ?>
                                                     <div class="post-comments-mid">
-                                                        <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;
-                                                        <span id="tot_likes"><?php echo $likesofpost; ?></span> 
-                                                <? } else { ?>    
-                                                        <div class="post-comments-mid">
-                                                            <span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
-                                                            <i class="fas fa-heart" id="vote_icon"></i>
-                                                            </span>&nbsp;&nbsp;
-                                                            <span id="total_likes">
-                                                                <?php echo $likesofpost; ?>
-                                                            </span> 
-                                                <? } ?>
+                                                        <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
+                                                    <? } else { ?>    
+                                                        <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
+                                                            <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? }?>
                                                         </div>                        
                                                     </div><!-- post-likes-block -->
-                                            
-                                        </div>
-                                        <!-- post-views-block -->
-                                        <div class="col">
-                                            <div class="post-share-block">
-                                                <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
+
+                                                    <!-- post-views-block -->
+                                                    <div class="post-share-block">
+                                                        <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
+                                                    </div><!-- post-views-block -->
+
+                                                    <!-- post-income-block -->
+                                                    <div class="post-share-block">
+                                                        <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp; Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
+                                                    </div><!-- post-income-block -->
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- post-views-block -->
-                                        <!-- post-income-block -->
-                                        <div class="col">
-                                            <div class="post-share-block">
-                                                <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;
-                                                $<?php echo $totalpostincome; ?>&nbsp; Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
-                                            </div>
-                                        </div>
-                                        <!-- post-income-block -->
                                     </div>
                                 </div>
-                            </div>
+                                <div class="post-thumb-block">
+                                    <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
+                                </div>
+                                <h3 class="post-title"></h3>
+                                <p class="post-entry mod-post"></p>
+                                <p class="post_link"></p>
                             </div>
                         </div>
-                        <div class="post-thumb-block">
-                            <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
-                        </div>
-                        <h3 class="post-title"></h3>
-                        <p class="post-entry mod-post"></p>
-                        <p class="post_link"></p>
                     </div>
                 </div>
+
             </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
             <div id="tip-msg"></div>
             <div class="details-post-meta-tip">
                 <div class="container">
