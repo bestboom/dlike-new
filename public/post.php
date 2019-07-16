@@ -104,8 +104,8 @@ else
 <div class="details-post-meta-block-top">
     <div class="container">
         <div class="row">
-                
-                    <div class="col">
+                <div class="details-post-meta-block-wrap">
+                    <div class="col-sm-3">
                         <div class="post-author-block">
                             <div class="author-thumb">
                                 <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
@@ -147,7 +147,7 @@ else
                         </div>
                     </div>
                     <!-- post-income-block -->
-                
+                </div>
             
         </div>
     </div>
