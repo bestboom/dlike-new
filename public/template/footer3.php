@@ -106,6 +106,7 @@
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
 <script src="/js/steemconnect.js"></script>
 <script src="/js/toaster.js"></script>
+<script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
