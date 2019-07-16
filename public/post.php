@@ -115,7 +115,7 @@ else
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col" style="padding: 10px;">
                         <div class="post-tag-block"><!-- post-likes-block -->
                             <?php
                             $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
