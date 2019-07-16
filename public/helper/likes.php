@@ -7,6 +7,12 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+
+/*'
+
+
+
 $sqlw = "DELETE FROM TipsWallet";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -17,8 +23,6 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-
-/*'
 
 $sqlw = "DELETE FROM TokWithdraw";
 
