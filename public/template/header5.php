@@ -40,6 +40,9 @@
 <body>
 <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/wallet">Wallet</a>
+    <a href="/help">FAQ</a>
+    <a href="/staking">Staking</a>
     <a href="/explorer">Explorer</a>
     <a href="/token">Token</a>
     <a href="/docs/dlike-paper.pdf">Whitepaper</a>
