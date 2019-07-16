@@ -241,7 +241,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
 		},
 		error: function() {
-			console.log('Error occured');
+			//console.log('Error occured');
 		}
 	});
 };
