@@ -105,7 +105,7 @@ else
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <div class="post-author-block" style="display: flex;">
+                                            <div class="post-author-block" style="display: flex;align-items: center;">
                                                 <div class="author-thumb">
                                                     <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="mod-authThumb"></a>
                                                 </div>
