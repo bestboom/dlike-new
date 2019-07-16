@@ -141,7 +141,7 @@ else
                                                 </div>
                                                 <div class="col auth_info">
                                                     <div class="post-share-block">
-                                                        <i class="fas fa-chevron-circle-up" id="steem_vote_icon up_steem"></i>&nbsp;| $<span class="pending_payout">0.00</span>
+                                                        <i class="fas fa-chevron-circle-up up_steem" id="steem_vote_icon"></i>&nbsp;| $<span class="pending_payout">0.00</span>
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
@@ -574,7 +574,7 @@ var refreashComments = function () {
  });  
 
 //steem-upvote
-$('#up_steem').click(function () {
+$('.up_steem').click(function () {
 
     $("#upvoteModal").modal("show");
 
