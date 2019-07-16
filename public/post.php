@@ -576,8 +576,8 @@ var refreashComments = function () {
 
 //steem-upvote
 $('.up_steem').click(function () {
-
+    $("#vote_author").val(post_author);
+    $("#vote_permlink").val(post_permlink);
     $("#upvoteModal").modal("show");
-
 });    
 </script>
