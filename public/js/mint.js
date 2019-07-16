@@ -293,7 +293,6 @@
                     });
     });
 
-
     //upvote
     //if(rangeSlider != null){
         var rangeSlider = document.getElementById("rs-range-line");
