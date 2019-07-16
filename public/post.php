@@ -104,7 +104,7 @@ else
                         <div class="details-post-meta-block-top">
                             <div class="container">
                                 <div class="row" style="display: flex;">
-                                    <div class="">
+                                    
                                         <div class="details-post-meta-block-wrap">
                                             <div class="col">
                                                 <div class="author-thumb">
@@ -144,7 +144,7 @@ else
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="post-thumb-block">
                                     <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
