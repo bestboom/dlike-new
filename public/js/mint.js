@@ -318,11 +318,14 @@
     $('.upme').click(function() {
       
         var upvoteValue = $('#rs-range-line').val();
+        console.log(upvoteValue);
         var upvoteValue = upvoteValue*100;
         var weight = parseInt(upvoteValue);
         //alert(upvoteValue)
         var v_authorname = $("#vote_author").val();
+        console.log(v_authorname);
         var v_permlink = $("#vote_permlink").val();
+        console.log(v_permlink);
         var datav = {
             v_permlink: v_permlink,
             v_author: v_authorname,
