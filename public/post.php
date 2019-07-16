@@ -141,7 +141,7 @@ else
                                                 </div>
                                                 <div class="col auth_info">
                                                     <div class="post-share-block">
-                                                        <i class="fas -chevron-circle-up"></i>&nbsp;| $0.00
+                                                        <i class="fas fa-chevron-circle-up"></i>&nbsp;| $0.00
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
