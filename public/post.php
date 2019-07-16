@@ -141,7 +141,7 @@ else
                                                 <? } ?>
                                                         </div>                        
                                                     </div><!-- post-likes-block -->
-                                            </div>
+                                            
                                         </div>
                                         <!-- post-views-block -->
                                         <div class="col">
@@ -160,7 +160,7 @@ else
                                         <!-- post-income-block -->
                                     </div>
                                 </div>
-                                <!-- </div> -->
+                            </div>
                             </div>
                         </div>
                         <div class="post-thumb-block">
