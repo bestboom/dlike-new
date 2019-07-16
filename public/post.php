@@ -129,7 +129,7 @@ else
                                                         <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
                                                     <? } else { ?>    
                                                         <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
-                                                            <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? }?>
+                                                            <i class="fas fa-heart" id="steem_vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? }?>
                                                         </div>                        
                                                     </div><!-- post-likes-block -->
                                                 </div>
@@ -406,9 +406,9 @@ else
                     var voterList = result;
                 for (let j = 0; j < voterList.length; j++) {
                     if (voterList[j].voter == username) { 
-                        $("#vote_icon" + permlink + author).css("color", "RED"); 
-                        $('#vote_icon' + permlink + author).click(function(){return false;});
-                        $('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+                        $("#steem_vote_icon").css("color", "RED"); 
+                        $('#steem_vote_icon').click(function(){return false;});
+                        $('#steem_vote_icon').hover(function() {toastr.error('hmm... Already Upvoted');})
                     }
                 }                        
             });
