@@ -60,7 +60,7 @@
                                     </div>
                                     <div id="collapse1Two" class="collapse" aria-labelledby="heading1Two" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        PRO users accounts will be started soon and link will be available on every users profile.
+                                        To become PRO users, check PRO user option under your wallet. You need to pay 10,000 DLIKE tokens to become PRO as these tokens are burnt from DLIKE total supply.
                                     </div>
                                     </div>
                                 </div>
