@@ -15,6 +15,16 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error deleting table: " . $conn->error;
 }
 
+
+$sqlw = "DELETE FROM TokWithdraw";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Table DELETED successfully";
+} else {
+    echo "Error deleting table: " . $conn->error;
+}
+
+
 /*'
 
 
