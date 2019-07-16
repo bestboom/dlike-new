@@ -141,7 +141,7 @@ else
                                                 </div>
                                                 <div class="col auth_info">
                                                     <div class="post-share-block">
-                                                        <i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i>&nbsp;| $<span class="pending_payout">0.00</span>
+                                                        <i class="fas fa-chevron-circle-up" id="steem_vote_icon upme"></i>&nbsp;| $<span class="pending_payout">0.00</span>
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
