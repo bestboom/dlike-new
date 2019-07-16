@@ -226,7 +226,6 @@ $(document).ready(function(){
         $('.authThumb').attr("src", auth_img);
         $('#top_post_votes').html(res.pending_payout_value.substr(0, 4));
 	});
-
 });
 */
 //check likes
