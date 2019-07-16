@@ -3712,6 +3712,7 @@ sub.transmoney-value {
 .social-share-list li:last-child {
     margin-right: 0; }
 .social-share-list li a {
+    display: inline-block;
     height: 26px;
     width: 26px;
     line-height: 26px;
