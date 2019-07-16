@@ -109,11 +109,9 @@
 		var permlink = $(self).data('permlink');
 		var author = $(self).data('author');
 		var category = $(self).data('category');
-
 		$("#p_username").val(author);
 		$("#p_permlink").val(permlink);
 		$("#p_category").val(category);
-
 		$("#PostStatusModal").modal('show');
 	}
 
@@ -124,7 +122,6 @@
 		$("#pu_username").val(author);
 		$("#pu_permlink").val(permlink);
 		$("#pu_category").val(category);
-
 		$.ajax({
 			type: "POST",
 			url: '/helper/getuserpoststatus.php',
@@ -142,7 +139,6 @@
 					$("#userstatus_select").val('');
 					$("#userPostStatusModal").modal('show');
 				}
-
 			}
 		});
 	}
@@ -153,7 +149,6 @@
 		var category = $(self).data('category');
 		var imgurl = $(self).data('imgurl');
 		var title = $(self).data('title');
-
 		$("#pf_username").val(author);
 		$("#pf_permlink").val(permlink);
 		$("#pf_category").val(category);
@@ -163,15 +158,12 @@
 	}
 
 	$(document).ready(function(){
-
 	//$("#loader").show();
 	var savepoststatus=$('#savepoststatus');
 	var saveuserpoststatus=$('#saveuserpoststatus');
 	var savefeaturedpoststatus=$('#savefeaturedpoststatus');
-	
 	//var c_username = $('#c_username').val();
 	var c_username = '<?php echo $_COOKIE['username']; ?>';
-	
 	saveuserpoststatus.click(function(){
 
 		var p_username = $("#pu_username").val();
