@@ -679,6 +679,7 @@ function time_ago($timestamp)
                     - parseFloat(delegatedSharesParts);
 
                 var steempower = (parseFloat(global.total_vesting_fund_steem) * totalVests) / parseFloat(global.total_vesting_shares);
+                //steempower     = Math.round(steempower);
                 steempower     = steempower.toFixed(3);
 
                 document.querySelector('.balance-sp').innerHTML = steempower;
