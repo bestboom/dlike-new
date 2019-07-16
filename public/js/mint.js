@@ -318,14 +318,11 @@
     $('.upme').click(function() {
       
         var upvoteValue = $('#rs-range-line').val();
-        console.log(upvoteValue);
         var upvoteValue = upvoteValue*100;
         var weight = parseInt(upvoteValue);
         //alert(upvoteValue)
         var v_authorname = $("#vote_author").val();
-        console.log(v_authorname);
         var v_permlink = $("#vote_permlink").val();
-        console.log(v_permlink);
         var datav = {
             v_permlink: v_permlink,
             v_author: v_authorname,
@@ -340,7 +337,7 @@
                 url: "helper/vote.php",
                 data: datav,
                 success: function(data) {
-                        //console.log(data);
+                        console.log(data);
                         try {
                             var response = JSON.parse(data)
                             if(response.error == true) {
@@ -363,11 +360,11 @@
                             $('#upvoting-bar').show();
                         }
                     },
-                    //error: function(xhr, textStatus, error){
-                    //      console.log(xhr.statusText);
-                    //       console.log(textStatus);
-                    //        console.log(error);
-                    //}
+                    error: function(xhr, textStatus, error){
+                          console.log(xhr.statusText);
+                           console.log(textStatus);
+                            console.log(error);
+                    }
                 });
         } else {
             toastr.error('hmm... You must be login!'); 
