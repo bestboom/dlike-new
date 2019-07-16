@@ -93,77 +93,73 @@ else
 ?>
 </div>
 <div class="container" style="padding-top: 40px;">
-   <div class="row"><div class="col-md-9">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="blog-details-wrapper">
-                    <div class="single-post-block">
-                        <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
+   <div class="row">
+    <div class="col-md-9">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="blog-details-wrapper">
+                        <div class="single-post-block">
+                            <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
+                            <div class="details-post-meta-block-top">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="post-author-block" style="display: flex;">
+                                                <div class="author-thumb">
+                                                    <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="mod-authThumb"></a>
+                                                </div>
+                                                <div class="author-info">
+                                                    <h5> <a href="#" class="mod-auth" style="padding: 10px;"></a></h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col auth_info">
+                                            <div class="post-tag-block"><!-- post-likes-block -->
+                                                <?php
+                                                $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
+                                                $result = $conn->query($sqlm);
+                                                $row = mysqli_fetch_assoc($result);
+                                                if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
 
-<div class="details-post-meta-block-top">
-    <div class="container">
-        <div class="row">
-                
-                    <div class="col-sm-3">
-                        <div class="post-author-block" style="display: flex;">
-                            <div class="author-thumb">
-                                <a href="#"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="img-responsive mod-authThumb"></a>
-                            </div>
-                            <div class="author-info">
-                                <h5> <a href="#" class="mod-auth" style="padding: 10px;"></a></h5>
+                                                $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$ip'";
+                                                $resultv = $conn->query($sqlv); 
+                                                if ($resultv->num_rows > 0) { ?>
+                                                    <div class="post-comments-mid">
+                                                        <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
+                                                    <? } else { ?>    
+                                                        <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
+                                                            <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? }?>
+                                                        </div>                        
+                                                    </div><!-- post-likes-block -->
+                                                </div>
+                                                <!-- post-views-block -->
+                                                <div class="col auth_info">
+                                                    <div class="post-share-block">
+                                                        <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
+                                                    </div><!-- post-views-block -->
+                                                </div>
+                                                <!-- post-income-block -->
+                                                <div class="col-sm-4 auth_info" style="max-width: 45%;">
+                                                    <div class="post-share-block">
+                                                        <i class="far fa-money-bill-alt"></i>&nbsp;$<?php echo $totalpostincome; ?>Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
+                                                    </div>
+                                                </div>
+                                                <!-- post-income-block -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-thumb-block">
+                                        <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
+                                    </div>
+                                    <h3 class="post-title"></h3>
+                                    <p class="post-entry mod-post"></p>
+                                    <p class="post_link"></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col" style="padding: 5px;">
-                        <div class="post-tag-block"><!-- post-likes-block -->
-                            <?php
-                            $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
-                            $result = $conn->query($sqlm);
-                            $row = mysqli_fetch_assoc($result);
-                            if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
-
-                            $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$ip'";
-                            $resultv = $conn->query($sqlv); 
-                            if ($resultv->num_rows > 0) { ?>
-                                <div class="post-comments-mid">
-                                    <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
-                                <? } else { ?>    
-                                    <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
-                                        <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? }?>
-                                </div>                        
-                        </div><!-- post-likes-block -->
-                    </div>
-                    <!-- post-views-block -->
-                    <div class="col" style="padding: 5px;">
-                        <div class="post-share-block">
-                            <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
-                        </div><!-- post-views-block -->
-                    </div>
-                    <!-- post-income-block -->
-                    <div class="col-sm-4" style="padding: 5px;text-align: center;max-width: 45%;">
-                        <div class="post-share-block">
-                            <i class="far fa-money-bill-alt"></i>&nbsp;$<?php echo $totalpostincome; ?>Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
-                        </div>
-                    </div>
-                    <!-- post-income-block -->
-                
-            
-        </div>
-    </div>
-</div>
-<div class="post-thumb-block">
-    <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
-</div>
-<h3 class="post-title"></h3>
-<p class="post-entry mod-post"></p>
-<p class="post_link"></p>
-</div>
-</div>
                     </div>
                 </div>
-
-            </div>
             <div id="tip-msg"></div>
             <div class="details-post-meta-tip">
                 <div class="container">
@@ -221,6 +217,7 @@ else
                                     }   
                                 }   ?>           
                                 
+
                             </div>
                         </div>
                     </div>
