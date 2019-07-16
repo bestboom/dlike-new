@@ -28,7 +28,7 @@
     <meta property="og:image" content="/images/dlike-main.jpg" />
 <!--End Facebook Meta Tags-->
 <? } ?>
-    <link rel='favicon icon' type=image/x-icon href=images/favicon.ico />
+    <link rel='favicon icon' type=image/x-icon href=/images/favicon.ico />
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
