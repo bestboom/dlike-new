@@ -104,7 +104,6 @@ else
 <div class="details-post-meta-block-top">
     <div class="container">
         <div class="row">
-            <div class="col">
                 <div class="details-post-meta-block-wrap">
                     <div class="col">
                         <div class="post-author-block">
@@ -149,7 +148,7 @@ else
                     </div>
                     <!-- post-income-block -->
                 </div>
-            </div>
+            
         </div>
     </div>
 </div>
