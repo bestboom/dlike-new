@@ -142,7 +142,7 @@ else
                                                 <!-- post-income-block -->
                                                 <div class="col-sm-4 auth_info" style="max-width: 45%;">
                                                     <div class="post-share-block">
-                                                        <i class="far fa-money-bill-alt"></i>&nbsp;$<?php echo $totalpostincome; ?>Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
+                                                        <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
                                                     </div>
                                                 </div>
                                                 <!-- post-income-block -->
@@ -250,7 +250,7 @@ else
             <!-- sidebar -posts -->
             <div class="col-md-3" style="margin-top: 30px !important;">
                 <?php
-                $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 3";
+                $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 4";
                 $result1 = $conn->query($sql1);
                 if ($result1->num_rows > 0) {
                     while($row1 = $result1->fetch_assoc()) {
