@@ -18,6 +18,7 @@
     <meta name="twitter:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
     <meta name="twitter:image" content="<?php echo $og_image; ?>">
     <meta name="twitter:domain" content="<?php echo $og_url; ?>">
+    <link rel="canonical" href="<?php echo $og_url; ?>" />
 <?php } else { ?>
       <title>Dlike - Share To Get Rewarded</title>
   <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes.">
