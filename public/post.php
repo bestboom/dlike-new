@@ -139,6 +139,11 @@ else
                                                         <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                                     </div><!-- post-views-block -->
                                                 </div>
+                                                <div class="col auth_info">
+                                                    <div class="post-share-block">
+                                                        <i class="fas -chevron-circle-up"></i>&nbsp;| $0.00
+                                                    </div><!-- post-views-block -->
+                                                </div>
                                                 <!-- post-income-block -->
                                                 <div class="col-sm-4 auth_info" style="max-width: 45%;">
                                                     <div class="post-share-block">
