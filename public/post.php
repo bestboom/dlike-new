@@ -115,7 +115,7 @@ else
                             </div>
                         </div>
                     </div>
-                    <div class="col" style="padding: 8px;">
+                    <div class="col" style="padding: 5px;">
                         <div class="post-tag-block"><!-- post-likes-block -->
                             <?php
                             $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
@@ -135,13 +135,13 @@ else
                         </div><!-- post-likes-block -->
                     </div>
                     <!-- post-views-block -->
-                    <div class="col" style="padding: 8px;">
+                    <div class="col" style="padding: 5px;">
                         <div class="post-share-block">
                             <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                         </div><!-- post-views-block -->
                     </div>
                     <!-- post-income-block -->
-                    <div class="col-sm-4" style="padding: 8px;text-align: center;max-width: 45%;">
+                    <div class="col-sm-4" style="padding: 5px;text-align: center;max-width: 45%;">
                         <div class="post-share-block">
                             <i class="far fa-money-bill-alt"></i>&nbsp;$<?php echo $totalpostincome; ?>Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
                         </div>
@@ -268,7 +268,7 @@ else
                         <div class='row'>
                         <div class='col' style='padding: 0px !important;'>
                         <div style='background:#eee;border-bottom:40px solid #111;'>
-                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' class='img-fluid' style='width:100%;min-height:190px;' 'onerror='this.src='/images/post/authors/8.png''></a>  
+                        <a href='/post/@".$username."/".$permlink."'><img src='".$imgsrc."' class='img-fluid' style='width:100%;min-height:8rem;' 'onerror='this.src='/images/post/authors/8.png''></a>  
                         </div>
                         <h4 class='post-title' style='white-space: nowrap;overflow: hidden;text-overflow: ellipsis;margin-bottom: 20px;margin-top: -40px;color: #fff;padding: 10px;'><a href='/post/@".$username."/".$permlink."'>".$row1['title']."</a></h4> 
                         </div>
