@@ -155,7 +155,7 @@
 		  </div>
 
 		  
-<?php include('template/footer2.php'); ?>
+<?php include('template/footer.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
 .defaultcoloruser{color:gray;}
