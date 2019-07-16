@@ -180,7 +180,8 @@
 	var saveuserpoststatus=$('#saveuserpoststatus');
 	var savefeaturedpoststatus=$('#savefeaturedpoststatus');
 	
-	var c_username = $('#c_username').val();
+	//var c_username = $('#c_username').val();
+	var c_username = '<?php echo $_COOKIE['username']; ?>';
 	
 	saveuserpoststatus.click(function(){
 
