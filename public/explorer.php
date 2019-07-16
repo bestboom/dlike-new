@@ -2,7 +2,7 @@
         <div class="container explorer-top">
             <div class="col-md-12">
                 <div class="banner-content explorer-form">
-                    <form action="/wallet.php" class="subs-form">
+                    <form action="/wallets.php" class="subs-form">
                         <div class="input-box expl">
                             <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by steem username for token / transactions" required />
                             <button type="button" class="wallet-search">Search</button>
