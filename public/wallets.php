@@ -679,7 +679,7 @@ function time_ago($timestamp)
                     - parseFloat(delegatedSharesParts);
 
                 var steempower = (parseFloat(global.total_vesting_fund_steem) * totalVests) / parseFloat(global.total_vesting_shares);
-                steempower     = Math.round(steempower);
+                steempower     = Math.round(steempower).toFixed(3);
 
                 document.querySelector('.balance-sp').innerHTML = steempower;
                 ClaimRewards.innerHTML = 'Claim Rewards';
@@ -787,7 +787,7 @@ function time_ago($timestamp)
                         }
 
                         if (parseFloat(transfer.reward_vests) > 0) {
-                            rewards.push((transfer.reward_vests)/2000);
+                            rewards.push(transfer.reward_vests);
                         }
 
                         action = `Claim Rewards ` + rewards.join(' and ');
