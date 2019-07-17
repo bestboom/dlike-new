@@ -144,7 +144,7 @@ $(document).ready(function(){
 					'\n' +
 					'</div>\n' + 
 					'\n' +
-					'<div class="post-thumb"><a class="post_detail" data-toggle="modal" data-target="#postModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '">' + thumbnail + '</a></div>\n' + 
+					'<div class="post-thumb"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + thumbnail + '</a></div>\n' + 
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
