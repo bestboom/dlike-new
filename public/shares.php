@@ -1,7 +1,7 @@
 <?php include('template/header5.php'); ?>
 </div>
-<div class="contact-form-section">
-    <div class="container">
+<div style="background: #6747c7;">
+    <div class="container" style="margin-top: 10rem;">
         <div class="user-login-signup-form-wrap">
             <div class="modal-content">
                 <h3>User Login</h3>
