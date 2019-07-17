@@ -6,7 +6,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="modal-info-block">
-                        <p style="font-size: 1.2rem;color: #c51d24;padding: 8px;">Share To Get Rewarded</p>
+                        <p style="font-size: 1.2rem;color: #c51d24;padding: 8px;font-weight: 600;text-align: center;margin-bottom: 2px;">Share To Get Rewarded</p>
                     </div>
                     <div class="user-connected-form-block">
                         <form class="user-connected-from user-login-form">
