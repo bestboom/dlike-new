@@ -4,10 +4,9 @@
     <div class="container">
         <div class="user-login-signup-form-wrap"  style="padding: 7rem 0rem;">
             <div class="modal-content">
-                <h3>User Login</h3>
                 <div class="modal-body">
                     <div class="modal-info-block">
-                        <p>Share To Get Rewarded</p>
+                        <p style="font-size: 1.2rem;color: #c51d24;padding: 8px;">Share To Get Rewarded</p>
                     </div>
                     <div class="user-connected-form-block">
                         <form class="user-connected-from user-login-form">
