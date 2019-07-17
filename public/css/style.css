@@ -21,7 +21,6 @@
 16. FAQ Style
 17. Footer Style
 
-
 */
 /*
  * Mixin printing a linear-gradient
@@ -1143,6 +1142,10 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 */
 .modal-backdrop {
   background: #1b1e63; }
+.modal-container .modal-info-block {
+    text-align: center;
+    padding-top: 30px;
+}
 
 .modal-container .modal-content {
   background: transparent;
