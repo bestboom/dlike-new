@@ -1,14 +1,13 @@
 <?php include('template/header5.php'); ?>
 </div>
-<div style="background: #1b1e63;">
     <div class="container">
         <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">
-            <div class="modal-content">
+            <div class="modal-content" style="background: #1b1e63;">
                 <div class="modal-body">
                     <div class="share-block">
                         <p>Share To Get Rewarded</p>
                     </div>
-                    <div class="user-connected-form-block">
+                    <div class="user-connected-form-block" style="background: #1b1e63;">
                         <form class="user-connected-from share-form">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL" style="border-radius: 20px;">
@@ -27,6 +26,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>   
+    </div>  
 <?php include('template/footer3.php'); ?>
