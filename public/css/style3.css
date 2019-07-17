@@ -4089,7 +4089,7 @@ button.toast-close-button {
     width: 100%;
 }
 .toast-bottom-center {
-    bottom: 10px;
+    bottom: 25px;
     right: 0;
     width: 100%;
 }
