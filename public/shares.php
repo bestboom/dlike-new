@@ -11,7 +11,7 @@
                     <div class="user-connected-form-block">
                         <form class="user-connected-from share-form">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL">
+                                <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL" style="border-radius: 20px;">
                             </div>
                             <center>
                                 <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;"  id="share">
