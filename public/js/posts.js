@@ -188,8 +188,6 @@ $(document).ready(function(){
                 }                        
     		});
 
-
-
     		}
 		});
 	});
