@@ -2,7 +2,7 @@
 </div>
     <div class="container">
         <div class="user-login-signup-form-wrap" style="padding: 6rem 0rem;">
-            <div class="modal-content" style="background: #1b1e63;">
+            <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
                 <div class="modal-body">
                     <div class="share-block">
                         <p>Share To Get Rewarded</p>
