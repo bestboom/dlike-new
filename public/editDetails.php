@@ -1,4 +1,4 @@
-<?php include('template/header.php'); 
+<?php include('template/header5.php'); 
 
 $link = $_GET['link'];
 if (isset($_GET["url"])) {
@@ -113,4 +113,4 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             </div>
         </div>
     </div>    
-<?php include('template/footer.php'); ?>
+<?php include('template/footer3.php'); ?>
