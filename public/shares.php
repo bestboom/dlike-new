@@ -9,11 +9,18 @@
                         <p>Share To Get Rewarded</p>
                     </div>
                     <div class="user-connected-form-block">
-                        <form class="user-connected-from user-login-form">
+                        <form class="user-connected-from share-form">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL">
                             </div>
-                            <center><button type="submit" class="btn btn-default" style="width: 40%;padding-top: 5px;">Share</button></center>
+                            <center>
+                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;"  id="share">
+                                    <i class="fas fa-spinner fa-spin loader" style="display:none;"></i>
+                                    <span id="plus">
+                                        Share
+                                    </span>
+                                </button>
+                            </center>
                         </form>
                         <p>Must read  <a href="/help"> Terms &amp; Conditions</a> for sharing!</p>
                     </div>
