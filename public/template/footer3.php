@@ -116,7 +116,7 @@
             document.getElementById("mySidenav").style.width = "0";
         }
         $("#btn_share").click(function () {
-                    window.location.href="/share.php";
+                    window.location.href="/share";
         })
         function popup(e){var t=700;var n=400;var r=(screen.width-t)/2;var i=(screen.height-n)/2;var s="width="+t+", height="+n;s+=", top="+i+", left="+r;s+=", directories=no";s+=", location=no";s+=", menubar=no";s+=", resizable=no";s+=", scrollbars=no";s+=", status=no";s+=", toolbar=no";newwin=window.open(e,"windowname5",s);if(window.focus){newwin.focus()}return false}
     </script>
