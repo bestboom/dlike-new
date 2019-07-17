@@ -1,22 +1,13 @@
 <?php include('template/header5.php'); ?>
 </div>
-<div>
-    <div class="container" style="background: #1b1e63;">
-        <div class="user-login-signup-form-wrap"  style="padding: 10rem 0rem;">
+<div style="background: #1b1e63;">
+    <div class="container">
+        <div class="user-login-signup-form-wrap"  style="padding: 7rem 0rem;">
             <div class="modal-content">
                 <h3>User Login</h3>
                 <div class="modal-body">
                     <div class="modal-info-block">
-                        <p>Always ensure you're on the correct website</p>
-                        <div class="block-inner">
-                            <p>
-                                <span>
-                                    <i class="fas fa-lock"></i>
-                                    https://
-                                </span>
-                                www.excoin.com
-                            </p>
-                        </div>
+                        <p>Share To Get Rewarded</p>
                     </div>
                     <div class="user-connected-form-block">
                         <form class="user-connected-from user-login-form">
