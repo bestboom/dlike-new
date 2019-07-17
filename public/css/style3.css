@@ -1035,7 +1035,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none; }
-.share-form{padding-top: 50px !important;}
+.share-form{padding-top: 0px !important;}
 .share-pack{margin-top: 50px;}
 .share-pack p {margin-bottom: 2px !important;color: #ffffffb8;}
 
@@ -2853,7 +2853,7 @@ sub.transmoney-value {
     position: absolute;
     left: 0;
     top: 9px; }
-.share-block p {font-size: 1.2rem;color: #fff;padding-top: 18px;font-weight: 600;text-align: center;margin-bottom: 2px;}    
+.share-block p {font-size: 1.2rem;color: #fff;padding-top: 25px;font-weight: 600;text-align: center;margin-bottom: 2px;}    
 
 .user-connected-form-block {
     padding: 40px 40px 45px 40px;

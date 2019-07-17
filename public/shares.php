@@ -1,7 +1,7 @@
 <?php include('template/header5.php'); ?>
 </div>
     <div class="container">
-        <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">
+        <div class="user-login-signup-form-wrap" style="padding: 6rem 0rem;">
             <div class="modal-content" style="background: #1b1e63;">
                 <div class="modal-body">
                     <div class="share-block">
@@ -21,7 +21,7 @@
                                 </button>
                             </center>
                         </form>
-                        <p>Must read  <a href="/help"> Terms &amp; Conditions</a> for sharing!</p>
+                        <p style="color: #fff;">Must read  <a href="/help"> Terms &amp; Conditions</a> for sharing!</p>
                     </div>
                 </div>
             </div>
