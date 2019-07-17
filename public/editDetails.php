@@ -16,15 +16,7 @@ if (isset($_GET["url"])) {
 } else { die('Not Allowed');}
 $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
-<div class="container">
-            <div class="offset-md-2 col-md-8">
-                <div class="banner-content">
-                    <h2>Share For Community</h2>
-                    <p>Share only useful content for community <br>Selfies and personal spamming not allowed</p>
-                </div>
-            </div>
-        </div>
-    </div><!-- sub-header -->
+</div><!-- sub-header -->
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
             <div class="contact-info-outer">
