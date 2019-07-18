@@ -39,9 +39,15 @@
 </div>  
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
-    var out = api.revokeToken();
+    //var out = api.revokeToken();
     //console.log(out);
     $('.signup_btn').click(function () {
-        api.revokeToken();
+        api.revokeToken(function(err, res) {
+        if (res && res.success) {
+            console.log('good');
+
+            document.location.href = '/';
+        }
+    });
     });
 </script>
