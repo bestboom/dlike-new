@@ -1,7 +1,7 @@
 <?php include('template/header5.php'); ?>
 </div>
 <div class="container">
-    <div class="contact-info-outer">
+    <div class="contact-info-outer" style="padding: 7rem 0rem;">
         <div class="contact-info-wrap">
             <div class="row">
                 <div class="col-md-6">
@@ -9,7 +9,7 @@
                         <div class="map-block" id="map_block" style="background: #1b1e63;"></div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="background: #eeeeee57;">
                     <div class="row">
                         <div class="contact-info-block">
                             <div class="contact-info-inner">
