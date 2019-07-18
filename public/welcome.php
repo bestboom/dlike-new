@@ -6,13 +6,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="map-block" id="map_block" style="background: #1b1e63;">
-                            <div class="contact-info-inner" style="text-align: right;">
-                                <h4>Existing User</h4>
-                                <p>
+                        <div class="map-block" style="background: #1b1e63;padding: 0 10px 0 30px;display: flex;-webkit-box-align: center;align-items: center;">
+                            <div class="contact-info-inner" style="text-align: right;width: 90%;">
+                                <h4 style="color: #ffffffe3;font-size: 24px;font-weight: 700;margin-bottom: 25px;">Existing User</h4>
+                                <p style="color: #ffffffe3;">
                                     If you already have a steem account, login with your steem username through steemconnect.
                                 </p>
-                                <button>Login</button>
+                                <button class="btn btn-default" style="">Login</button>
                             </div>
                         </div>
                     </div>

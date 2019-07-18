@@ -13,7 +13,7 @@
                                 <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL" style="border-radius: 20px;">
                             </div>
                             <center>
-                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;"  id="share">
+                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;" id="share">
                                     <i class="fas fa-spinner fa-spin loader" style="display:none;"></i>
                                     <span id="plus">
                                         Share
