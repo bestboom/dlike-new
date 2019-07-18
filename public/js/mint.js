@@ -176,7 +176,7 @@
     // Wallet
     $('.wallet-search').click(function () {
         let user_wallet = $('#exp_search').val();
-        let wallet_url = "https://dlike.io/wallet/"+user_wallet;
+        let wallet_url = "https://dlike.io/wallets/"+user_wallet;
         window.open(wallet_url, "_self");
     });
 
@@ -293,8 +293,7 @@
                     });
     });
 //logout
-    $('.signup_btn').click(function () {
-        alert('look');
+    $('.logout_btn').click(function () {
         api.revokeToken(function(err_log, result_log) {
             if (result_log && result_log.success) {   
                 $.removeCookie('username', { path: '/' });
