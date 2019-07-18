@@ -17,15 +17,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" style="background: #eeeeee57;">
+                <div class="col-md-6 signup_sec">
                     <div class="row">
-                        <div class="contact-info-block" style="width: 100%;justify-content: center;padding: 0px;">
-                            <div class="contact-info-inner" style="text-align: center;width: 60%;">
-                                <h4 style="color: #1b1e63;margin: 25px 0px;">Create Account</h4>
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4 class="sign_head">Create Account</h4>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 12px;width: 100%;border-color: #1b1e6347;">
+                                    <input type="text" class="form-control" required="true" placeholder="username">
                                 </div>
-                                <button type="button" class="btn btn-default" style="margin-top: 15px;border-radius: 9px;background: #1b1e63;color: #fff;width: 40%;">
+                                <button type="button" class="btn btn-default signup_btn">
                                     <i class="fas fa-spinner" style="display:none;"></i>
                                     <span>Continue</span>
                                 </button>
