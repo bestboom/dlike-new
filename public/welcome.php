@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-md-6" style="background: #eeeeee57;">
                     <div class="row">
-                        <div class="contact-info-block">
+                        <div class="contact-info-block" style="width: 100%;justify-content: center;padding: 0px;">
                             <div class="contact-info-inner" style="text-align: center;">
                                 <h4 style="color: #1b1e63;">Create Account</h4>
                                 <div class="form-group">
