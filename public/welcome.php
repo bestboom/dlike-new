@@ -38,3 +38,7 @@
     </div>
 </div>  
 <?php include('template/footer3.php'); ?>
+<script type="text/javascript">
+    var out = api..revokeToken();
+    console.log(out);
+</script>
