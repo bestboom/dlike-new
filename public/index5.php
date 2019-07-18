@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-9 lay">&nbsp;</div>
         </div>
-        <div id="loader">Loading</div>
+        <div id="loadings"><img src="/images/loader.svg" width="100"></div>
         <div class="row" id="content">
         </div>
     </div>
@@ -18,6 +18,6 @@
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     $( document ).ready(function() {    
-    $('#loader').delay(5000).fadeOut('slow');
+    $('#loadings').delay(7000).fadeOut('slow');
 });
 </script>
