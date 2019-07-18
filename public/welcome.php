@@ -6,14 +6,22 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="map-block" id="map_block" style="background: #1b1e63;"></div>
+                        <div class="map-block" id="map_block" style="background: #1b1e63;">
+                            <div class="contact-info-inner" style="text-align: right;">
+                                <h4>Existing User</h4>
+                                <p>
+                                    If you already have a steem account, login with your steem username through steemconnect.
+                                </p>
+                                <button>Login</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6" style="background: #eeeeee57;">
                     <div class="row">
                         <div class="contact-info-block">
-                            <div class="contact-info-inner">
-                                <h4>Contact Info</h4>
+                            <div class="contact-info-inner" style="text-align: center;">
+                                <h4>Create Account</h4>
                                 <ul class="contact-info-list">
                                     <li>
                                         <img src="./images/others/25.png" alt="img" class="img-responsive">
