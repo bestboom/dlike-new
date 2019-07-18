@@ -375,8 +375,8 @@
     });
 //logout
     $('.signup_btn').click(function () {
-        api.revokeToken(function(err, res) {
-            if (res && res.success) {   
+        api.revokeToken(function(err_log, result_log) {
+            if (result_log && result_log.success) {   
                 $.removeCookie('username', { path: '/' });
                 $.removeCookie('access_token', { path: '/' });
                 document.location.href = '/';
