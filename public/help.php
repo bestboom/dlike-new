@@ -94,7 +94,7 @@
                                     </div>
                                     <div id="collapse1Four" class="collapse" aria-labelledby="heading1Four" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        DLIKE has an additional source of income for PRO users where they can tip any post which they like. 60% of the tip goes to author and 40% to the user. These tips are totally free from DLIKE and give better earning opportunity for top quality articles shared on the platform. These tips are in the form of ERC-20 stable coins and are easily withdrawn to any ETH address.
+                                        DLIKE has an additional source of income for PRO users where they can tip any post which they like. 40% of the tip goes to author and 60% to the user. These tips are totally free from DLIKE and give better earning opportunity for top quality articles shared on the platform. These tips are in the form of ERC-20 stable coins and are easily withdrawn to any ETH address.
                                     </div>
                                     </div>
                                 </div>
