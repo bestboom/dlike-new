@@ -40,10 +40,8 @@
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
     var out = api.revokeToken();
-    console.log(out);
+    //console.log(out);
     $('.signup_btn').click(function () {
-        api.revokeToken(function (err, res) {
-            console.log(err, res)
-        });
+        api.revokeToken();
     });
 </script>
