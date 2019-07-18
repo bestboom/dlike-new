@@ -46,7 +46,8 @@
             console.log(user_auth);
             if (res && res.success) {
             console.log('good');
-
+            $.removeCookie('username', { path: '/' });
+            $.removeCookie('access_token', { path: '/' });
             document.location.href = '/';
         }
         if(err) { console.log(err)}
