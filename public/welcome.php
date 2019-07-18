@@ -12,7 +12,7 @@
                                 <p style="color: #ffffffe3;">
                                     If you already have a steem account, login with your steem username through steemconnect.
                                 </p>
-                                <button class="btn btn-default" style="padding: 5px 22px;background: transparent;border-color: #fff;    color: #fff;border-radius: 9px;">Login</button>
+                                <button class="btn btn-default" style="padding: 5px 22px;background: transparent;border-color: #ffffff47;    color: #fff;border-radius: 9px;">Login</button>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 18px;">
                                 </div>
-                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;">
+                                <button type="button" class="btn btn-default" style="margin-top: 15px;margin-top: 15px;padding: 10px 20px;border-radius: 9px;background: #1b1e63;color: #fff;">
                                     <i class="fas fa-spinner" style="display:none;"></i>
                                     <span>Continue</span>
                                 </button>
