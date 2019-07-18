@@ -1,6 +1,6 @@
 <?php include('template/header5.php');?>
 </div><!-- sub-header -->
-<div class="latest-post-section">
+<div class="latest-post-section" style="min-height:80vh;">
     <div class="container">
         <div class="row  align-items-center h-100 post_select">
             <div class="row col-md-3 justify-content-center">
