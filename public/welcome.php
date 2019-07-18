@@ -22,21 +22,15 @@
                         <div class="contact-info-block">
                             <div class="contact-info-inner" style="text-align: center;">
                                 <h4 style="color: #1b1e63;">Create Account</h4>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 18px;">
+                                </div>
+                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;">
+                                    <i class="fas fa-spinner" style="display:none;"></i>
+                                    <span>Continue</span>
+                                </button>
                                 <ul class="contact-info-list">
-                                    <li>
-                                        <img src="./images/others/25.png" alt="img" class="img-responsive">
-                                        <p>
-                                            558 Rathdowne Road Miracel Carlton, 
-                                            Victoria 4500
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <img src="./images/others/26.png" alt="img" class="img-responsive">
-                                        <p>
-                                            supportexcoin@gmail.com
-                                            excoincompany@yourmail.com
-                                        </p>
-                                    </li>
+                                    
                                     <li>
                                         <img src="./images/others/27.png" alt="img" class="img-responsive">
                                         <p>
