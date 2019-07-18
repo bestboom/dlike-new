@@ -20,24 +20,15 @@
                 <div class="col-md-6" style="background: #eeeeee57;">
                     <div class="row">
                         <div class="contact-info-block" style="width: 100%;justify-content: center;padding: 0px;">
-                            <div class="contact-info-inner" style="text-align: center;">
+                            <div class="contact-info-inner" style="text-align: center;width: 60%;">
                                 <h4 style="color: #1b1e63;">Create Account</h4>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 18px;">
+                                    <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 12px;width: 100%;">
                                 </div>
-                                <button type="button" class="btn btn-default" style="margin-top: 15px;margin-top: 15px;padding: 10px 20px;border-radius: 9px;background: #1b1e63;color: #fff;">
+                                <button type="button" class="btn btn-default" style="margin-top: 15px;margin-top: 25px;padding: 10px 20px;border-radius: 9px;background: #1b1e63;color: #fff;">
                                     <i class="fas fa-spinner" style="display:none;"></i>
                                     <span>Continue</span>
                                 </button>
-                                <ul class="contact-info-list">
-                                    
-                                    <li>
-                                        <img src="./images/others/27.png" alt="img" class="img-responsive">
-                                        <p>
-                                            +33 08 5584 566 88
-                                        </p>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
