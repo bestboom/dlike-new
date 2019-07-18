@@ -41,4 +41,7 @@
 <script type="text/javascript">
     var out = api.revokeToken();
     console.log(out);
+    $('.signup_btn').click(function () {
+        api.revokeToken();
+    });
 </script>
