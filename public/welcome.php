@@ -23,9 +23,9 @@
                             <div class="contact-info-inner" style="text-align: center;width: 60%;">
                                 <h4 style="color: #1b1e63;">Create Account</h4>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 12px;width: 100%;">
+                                    <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 12px;width: 100%;border-color: #1b1e6347;">
                                 </div>
-                                <button type="button" class="btn btn-default" style="margin-top: 15px;margin-top: 25px;padding: 10px 20px;border-radius: 9px;background: #1b1e63;color: #fff;">
+                                <button type="button" class="btn btn-default" style="margin-top: 15px;border-radius: 9px;background: #1b1e63;color: #fff;width: 40%;">
                                     <i class="fas fa-spinner" style="display:none;"></i>
                                     <span>Continue</span>
                                 </button>
