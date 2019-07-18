@@ -374,7 +374,7 @@
         };
     });
 //logout
-    $('.signup_btn').click(function () {
+    $('.signin_btn').click(function () {
         alert('look');
         api.revokeToken(function(err_log, result_log) {
             if (result_log && result_log.success) {   
