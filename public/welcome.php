@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="contact-info-block" style="width: 100%;justify-content: center;padding: 0px;">
                             <div class="contact-info-inner" style="text-align: center;width: 60%;">
-                                <h4 style="color: #1b1e63;">Create Account</h4>
+                                <h4 style="color: #1b1e63;margin: 25px 0px;">Create Account</h4>
                                 <div class="form-group">
                                     <input type="text" class="form-control" required="true" placeholder="username" style="border-radius: 12px;width: 100%;border-color: #1b1e6347;">
                                 </div>
