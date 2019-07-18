@@ -17,5 +17,7 @@
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
-    
+    $( document ).ready(function() {    
+    $('#loader').delay(5000).fadeOut('slow');
+});
 </script>
