@@ -420,7 +420,7 @@
 				    var ucolorset = '';
 				    var show_status = '';
 				    
-				if(c_username == "dlike" || c_username == "chirag-im") {
+				if(c_username == "dlike") {
 
 					addfeaturedhtml += '<a id="featuredstatus_icon'+permlink +username +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-imgurl="' + imgsrc + '" data-title="' + titleset + '" data-category="' + categoryset + '"><i class="fa fa-plus" id="featuredpost_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;';
 					
