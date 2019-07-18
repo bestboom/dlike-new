@@ -48,6 +48,7 @@
 
             document.location.href = '/';
         }
+        if(err) { console.log(err)}
     });
     });
 </script>
