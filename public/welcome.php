@@ -39,18 +39,4 @@
 </div>  
 <?php include('template/footer3.php'); ?>
 <script type="text/javascript">
-    //var out = api.revokeToken();
-    //console.log(out);
-    $('.signup_btn').click(function () {
-        api.revokeToken(function(err, res) {
-            console.log(user_auth);
-            if (res && res.success) {
-            console.log('good');
-            $.removeCookie('username', { path: '/' });
-            $.removeCookie('access_token', { path: '/' });
-            document.location.href = '/';
-        }
-        if(err) { console.log(err)}
-    });
-    });
 </script>
