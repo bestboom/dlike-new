@@ -37,5 +37,4 @@
         </div>
     </div>
 </div> 
-<a href="javascript:void(0)" class="logout_btn">Logout</a> 
 <?php include('template/footer3.php'); ?>
