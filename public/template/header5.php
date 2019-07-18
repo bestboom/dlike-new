@@ -63,7 +63,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item button active">
-                        <a class="btn nav-link log_link" href="javascript:void(0)"><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
+                        <a class="btn nav-link log_link" href=""><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
