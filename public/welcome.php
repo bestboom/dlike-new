@@ -43,7 +43,8 @@
     //console.log(out);
     $('.signup_btn').click(function () {
         api.revokeToken(function(err, res) {
-        if (res && res.success) {
+            console.log(user_auth);
+            if (res && res.success) {
             console.log('good');
 
             document.location.href = '/';
