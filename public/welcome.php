@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="map-block" id="map_block"></div>
+                        <div class="map-block" id="map_block" style="background: #1b1e63;"></div>
                     </div>
                 </div>
                 <div class="col-md-6">
