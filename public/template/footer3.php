@@ -98,6 +98,7 @@
 <script src="/assets/js/jquery.slimscroll.min.js"></script>
 <script src="/js/custom.js"></script>
 <script src="/js/mint.js"></script>
+<script src="/js/posts.js"></script>
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
