@@ -66,9 +66,9 @@
                         <a class="btn nav-link log_link" href=""><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <!-- <a class="nav-link" href="">
 
-                            <!--<button type="button" class="btn btn-default btn-circle btn-lg"><i class="fa fa-list"></i>
+                            <button type="button" class="btn btn-default btn-circle btn-lg"><i class="fa fa-list"></i>
                             </button>-->
 
                             <div class="row">
@@ -94,7 +94,7 @@
                                 </div>
 
                             </div>
-                        </a>
+                        <!-- </a> -->
 
                     </li>
 
