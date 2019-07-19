@@ -12,7 +12,7 @@ error_reporting(E_ALL);
         </div>
     </div>
 </div>
-    <div class="working-process-section" style="box-shadow: 0px 0px 10px 1px #cccccc;">
+    <div class="working-process-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6  col-md-7">
@@ -21,18 +21,18 @@ error_reporting(E_ALL);
                             DLIKE REWARD POOL
                         </h4>
                         <p>
-                            10+
+                            You can earn tokens for your contributions to the Minds network. The more interactions on your content, the greater your share of the daily token reward pool to your OffChain address.
                         </p>
                         <div>
                             <img src="/images/post/dlike-reward.png" class="img-fluid" alt="">
                         </div>
                         <div class="features-section">
-        <div class="container">
+        <div class="container" style="box-shadow: 0px 0px 10px 1px #cccccc;">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
                     <div class="features-block">
                         <img src="./images/others/9.png" alt="img" class="img-responsive">
-                        <h4>Safe and secure</h4>
+                        <h4>Votes</h4>
                         <p>
                             10+
                         </p>
