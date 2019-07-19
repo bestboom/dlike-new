@@ -23,6 +23,9 @@ error_reporting(E_ALL);
                         <p>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ege
                         </p>
+                        <div>
+                            <img src="/images/post/dlike-reward.png" class="img-fluid" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="offset-lg-2 col-lg-5 col-md-6">
@@ -50,5 +53,5 @@ error_reporting(E_ALL);
                 </div>
             </div>
         </div>
-    </div><!-- working-process-section -->
+    </div><!-- working-process-section  https://demo.w3layouts.com/demos_new/template_demo/18-05-2019/gadget_signup_form-demo_Free/1576182126/web/index.html-->
 <?php include('template/footer3.php'); ?>
