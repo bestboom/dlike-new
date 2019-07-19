@@ -70,7 +70,7 @@
                                     <?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { 
                                     echo '<button onclick="window.location.href="https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=";" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
                                     </button>';
-                                    else {
+                                    } else {
                                     echo '<button onclick="window.location.href="#";" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid my_img"></span>
                                     </button>'; } ?>
                                 </div>
