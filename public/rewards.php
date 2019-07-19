@@ -17,9 +17,9 @@ error_reporting(E_ALL);
             <div class="row">
                 <div class="col-lg-5  col-md-6">
                     <div class="working-process">
-                        <h3>
-                            MANAGE YOUR GADGETS ACCOUNT
-                        </h3>
+                        <h4 style="text-align: center;font-weight: 800;font-size: 1.3rem;margin: 30px;">
+                            DLIKE REWARD POOL
+                        </h4>
                         <p>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ege
                         </p>
