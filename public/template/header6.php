@@ -76,7 +76,7 @@
                                     </button>
                                 </div>
                                 <div class="col-md-4 col-2" style="margin-top: 5px;">
-                                    <span style="font-size:36px;cursor:pointer;color: #fff;" onclick="openNav()">&#9776;</span>
+                                    <span class="nav_sticks" onclick="openNav()">&#9776;</span>
                                 </div>
                             </div>
                         </li>
