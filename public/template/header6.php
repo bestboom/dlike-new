@@ -61,9 +61,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <!--li class="nav-item button active">
-                            <a class="btn nav-link log_link" href=""><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
-                        </li> -->
                         <li class="nav-item" style="padding-top: 4px;">
                             <div class="row" style="margin: 0px;">
                                 <div class="col-md-3 col-2">
