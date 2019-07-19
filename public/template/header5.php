@@ -84,7 +84,7 @@
                                 </div> -->
 
                                 <div class="col-md-4 col-2">
-                                    <button id="btn_share" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
+                                    <button id="share_icon" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
                                     </button>
                                 </div>
 
