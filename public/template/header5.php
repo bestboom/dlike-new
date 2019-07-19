@@ -71,7 +71,7 @@
                             <button type="button" class="btn btn-default btn-circle btn-lg"><i class="fa fa-list"></i>
                             </button>-->
 
-                            <div class="row">
+                            <div class="row" style="margin: 0px;">
                                 <!--  
                                 <div class="col-md-3 col-2">
                                       <button type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fa fa-search"></i>
