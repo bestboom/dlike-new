@@ -437,6 +437,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
         position: relative; }
     .navbar {
         min-height: 80px; }
+    .nav_sticks {
+        color: #1a1a1a;
+    }    
     .navbar-toggler {
         background: transparent;
         position: absolute;
@@ -4649,7 +4652,7 @@ body{
         border: 2px solid #c51d24;
     }
     .nav_sticks {
-        color: #1a1a1a;
+        color: #c51d24;
     }
 }
 
