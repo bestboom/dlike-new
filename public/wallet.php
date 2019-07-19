@@ -666,7 +666,7 @@ function time_ago($timestamp)
                 const reward_vests = account.reward_vesting_balance.split(' ')[0];
 
                 // balance
-                document.querySelector('.balance-steem').innerHTML = account.balance;
+                document.querySelector('.balance-steem').innerHTML = account.steem_balance;
                 document.querySelector('.balance-sbd').innerHTML   = account.sbd_balance;
 
                 // steem power
