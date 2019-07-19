@@ -690,12 +690,12 @@ function time_ago($timestamp)
                     reward_sp <= 0 &&
                     reward_vests <= 0
                 ) {
-                    RewardInfos.innerHTML = '0 SBD and 0 SP';
+                    RewardInfos.innerHTML = '0 STEEM and 0 SBD and 0 SP';
                     ClaimRewards.disabled = true;
                     return;
                 }
 
-                RewardInfos.innerHTML = `${reward_sbd} SBD and ${reward_sp} SP`;
+                RewardInfos.innerHTML = `${reward_steem} STEEM and ${reward_sbd} SBD and ${reward_sp} SP`;
                 ClaimRewards.disabled = false;
             });
         };
