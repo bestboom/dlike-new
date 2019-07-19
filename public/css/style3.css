@@ -847,7 +847,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     position: relative;
     background: url("../images/bg/1.jpg") no-repeat center center;
     background-size: cover; }
-.explorer-top{margin-top: 0px; }
+.explorer-top{margin-top: 40px; }
 .explorer-form{margin-bottom: 20px !important;}
 .explorer-section{background-color: #f8f9fa!important;}
 .wallet-profile{padding: 25px;margin-left: 40px;}
