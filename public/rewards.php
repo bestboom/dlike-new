@@ -26,7 +26,7 @@ error_reporting(E_ALL);
                     </div>
                 </div>
                 <div class="offset-lg-2 col-lg-5 col-md-6">
-                    <div class="user-connected-form-block">
+                    <div class="user-connected-form-block" style="-webkit-box-shadow: 0px -20px 45px 0px rgba(0, 0, 0, 0.05);box-shadow: 0px -2px 15px 4px rgba(0, 0, 0, 0.05);">
                         <h3>
                             Stake DLIKE Tokens
                         </h3>
