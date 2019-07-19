@@ -1,6 +1,6 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
-    <div class="latest-post-section">
+    <div class="latest-post-section" style="min-height:80vh;">
 		<div class="container">
 			<div class="row  align-items-center h-100">
                 <div class="row col-md-3 justify-content-center">
@@ -8,6 +8,7 @@
                 </div>
                 <div class="col-md-9 lay">&nbsp;</div>
             </div>
+            <div id="loadings"><img src="/images/loader.svg" width="100"></div>
 	    	<div class="row" id="profposts"></div>
 		</div>
     </div>
@@ -15,8 +16,9 @@
 <?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
+		$('#loadings').delay(6000).fadeOut('slow');
+
 		let profname = '<?php echo $_GET['user'];?>';
-		
 		let $tag, $limit, content = "#profposts";
 		let query = {
 			tag: profname,
