@@ -68,7 +68,7 @@
                                     <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
                                     </button>
                                     <? } else { ?>
-                                    <button onclick="window.location.href='#';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid" style="background: #fff;margin-top: -6px;"></span>
+                                    <button onclick="window.location.href='/@"<? echo $_COOKIE['username']; ?>"';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid" style="background: #fff;margin-top: -6px;"></span>
                                     </button><? } ?>
                                 </div>
                                 <div class="col-md-4 col-2">
