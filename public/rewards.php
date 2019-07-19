@@ -51,47 +51,4 @@ error_reporting(E_ALL);
             </div>
         </div>
     </div><!-- working-process-section -->
-<? if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_COOKIE['username']; ?>
-    <div class="latest-tranjections-area">
-        <div class="latest-tranjections-block">
-            <div class="container">
-                <div class="latest-tranjections-block-inner">
-                    <div class="panel-heading-block">
-                        <h5>My Stakings</h5>
-                    </div>
-                    <table class="table coin-list latest-tranjections-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Date Staked</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">Period</th>
-                                <th scope="col">Bonus</th>
-                                <th scope="col">Maturity Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $sqlt = "SELECT * FROM staking where username ='$staker' ORDER BY start_time DESC";
-                            $result_t = $conn->query($sqlt);
-                                if ($result_t->num_rows > 0) {
-                                    while($row_t = $result_t->fetch_assoc()) { 
-                                    $period = $row_t["period"]; 
-                                    if($period == "2") {$period = '180'; $bonus = '25%'; $mature = '181';}
-                                    else if($period == "1") {$period = '90';$bonus = '9%'; $mature = '91';}
-                                    $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
-                            ?> 
-                            <tr>   
-                                <td><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></td>
-                                <td><?php echo $row_t["amount"]; ?></td>
-                                <td><?php echo $period; ?> Days</td>
-                                <td><?php echo $bonus; ?></td>
-                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + '.$mature.' days')); ?></td>    
-                            </tr>
-                            <? } }?>
-                        </tbody>
-                    </table>
-                </div><!-- order-history-block-inner -->
-            </div>
-        </div>
-    </div>
-<? } ?>     
 <?php include('template/footer3.php'); ?>
