@@ -4654,6 +4654,9 @@ body{
     .nav_sticks {
         color: #c51d24;
     }
+    ..ml-auto{
+        margin: 2px;
+    }
 }
 
 
