@@ -4568,7 +4568,16 @@ body{
     font-size: 12px;
     line-height: 1.42857;
 }
-
+.btn-circle-it {
+    width: 36px;
+    height: 36px;
+    padding: 6px 0px;
+    border-radius: 50%;
+    border: 2px solid #c51d24;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
 .custom_btn_icon{
     background: white;
     margin-right: 7px;

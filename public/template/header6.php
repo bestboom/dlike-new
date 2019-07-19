@@ -68,18 +68,18 @@
                             <div class="row" style="margin: 0px;">
                                 <div class="col-md-3 col-2">
                                     <?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { ?>
-                                    <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
+                                    <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
                                     </button>
                                     <? } else { ?>
-                                    <button onclick="window.location.href='#';" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid" style="background: #fff;margin-top: -6px;"></span>
+                                    <button onclick="window.location.href='#';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid" style="background: #fff;margin-top: -6px;"></span>
                                     </button><? } ?>
                                 </div>
                                 <div class="col-md-4 col-2">
-                                    <button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
+                                    <button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
                                     </button>
                                 </div>
-                                <div class="col-md-4 col-2">
-                                    <span style="font-size:30px;cursor:pointer;color: #fff;" onclick="openNav()">&#9776;</span>
+                                <div class="col-md-4 col-2" style="margin-top: 5px;">
+                                    <span style="font-size:36px;cursor:pointer;color: #fff;" onclick="openNav()">&#9776;</span>
                                 </div>
                             </div>
                         </li>
