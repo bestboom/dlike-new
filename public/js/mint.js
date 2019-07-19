@@ -1,5 +1,8 @@
     $(document).ready(function(){
-
+        $("#btn_share").click(function () {
+                    window.location.href="/share";
+        });
+        
     	let $urlfield,
         $editPost,
         $sharePost,
