@@ -67,12 +67,12 @@
                         <li class="nav-item" style="padding-top: 4px;">
                             <div class="row" style="margin: 0px;">
                                 <div class="col-md-3 col-2">
-                                    <?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { 
-                                    echo '<button onclick="window.location.href="https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=";" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
-                                    </button>';
-                                    } else {
-                                    echo '<button onclick="window.location.href="#";" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid my_img"></span>
-                                    </button>'; } ?>
+                                    <?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { ?>
+                                    <button onclick="window.location.href="https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=";" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
+                                    </button>
+                                    <? } else { ?>
+                                    <button onclick="window.location.href="#";" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid my_img"></span>
+                                    </button><? } ?>
                                 </div>
                                 <div class="col-md-4 col-2">
                                     <button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
