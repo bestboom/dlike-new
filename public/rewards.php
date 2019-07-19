@@ -15,7 +15,7 @@ error_reporting(E_ALL);
     <div class="working-process-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5  col-md-6">
+                <div class="col-lg-6  col-md-7">
                     <div class="working-process">
                         <h4 style="text-align: center;font-weight: 800;font-size: 1.3rem;margin: 30px;">
                             DLIKE REWARD POOL
@@ -28,7 +28,7 @@ error_reporting(E_ALL);
                         </div>
                     </div>
                 </div>
-                <div class="offset-lg-2 col-lg-5 col-md-6">
+                <div class="offset-lg-1 col-lg-5 col-md-5">
                     <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                         <h3>
                             Stake DLIKE Tokens
