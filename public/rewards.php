@@ -3,8 +3,6 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_COOKIE['username']; }
-
 ?>
 </div><!-- sub-header -->
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
@@ -19,40 +17,12 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
             <div class="row">
                 <div class="col-lg-5  col-md-6">
                     <div class="working-process">
-                        <ul class="working-process-list">
-                            <li>
-                                <div class="working-process-step">
-                                    <h4><span>#01.</span>  What is Staking?</h4>
-                                    <div class="process-details">
-                                        <p>
-                                            Staking means to "lock up" your DLIKE tokens for a certain period of time.For locking your tokens, you earn bonus rewards.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="working-process-step">
-                                    <h4><span>#02.</span>  Staking Rewards</h4>
-                                    <div class="process-details">
-                                        <p>
-                                            We have 2 staking options.<br>
-                                            1. Stake for <b>90 days</b> to earn <b>9% bonus</b> tokens<br>
-                                            2. Stake for <b>180 days</b> to earn <b>25% bonus</b> tokens
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="working-process-step">
-                                    <h4><span>#03.</span>  Staking Terms</h4>
-                                    <div class="process-details">
-                                        <p>
-                                            Tokens staked for bonus will not be withdrawable for set period. You can continue staking after the maturity or can withdraw once staking period is over.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <h3>
+                            MANAGE YOUR GADGETS ACCOUNT
+                        </h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula ege
+                        </p>
                     </div>
                 </div>
                 <div class="offset-lg-2 col-lg-5 col-md-6">
@@ -125,39 +95,3 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
     </div>
 <? } ?>     
 <?php include('template/footer3.php'); ?>
-<script type="text/javascript">
-    var optionstak = {
-        target: '#stak-msg',
-        url: 'helper/addstake.php',
-        success: function() {},
-    }
-$('#stake_sub').submit(function() {
-    if (username === null) {
-        toastr.error('hmm... You must be login!');
-        return false;
-    }
-
-    let stake_amt = parseInt($("#stakemaount").val());
-    let stake_period = parseInt($('.period').val());
-
-    if (!stake_amt) { 
-        $("#stakemaount").css("border-color", "RED"); 
-        toastr.error('phew... Enter Tokens Amount to Stake');
-        return false;
-    }
-
-    if (stake_amt < 500) { 
-        toastr.error('phew... Minimum Stake Amount is 500 DLIKE'); 
-        return false;
-    }
-
-    if (!stake_period) { 
-        toastr.error('phew... Select a staking period'); 
-        return false;
-    }
-
-    $(this).ajaxSubmit(optionstak);
-    return !1;
-});
-    
-</script>
