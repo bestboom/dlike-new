@@ -61,17 +61,22 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item button active">
-                            <a class="btn nav-link log_link" href=""><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
-                        </li>
                         <li class="nav-item" style="padding-top: 4px;">
                             <div class="row" style="margin: 0px;">
-                                <div class="col-md-4 col-2">
-                                    <button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
+                                <div class="col-md-3 col-2">
+                                    <?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { ?>
+                                    <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
                                     </button>
+                                    <? } else { ?>
+                                    <button onclick="window.location.href='/@<? echo $_COOKIE['username']; ?>';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="" id="user_img" class="rounded-circle img-fluid" style="background: #fff;margin-top: -6px;"></span>
+                                    </button><? } ?>
                                 </div>
                                 <div class="col-md-4 col-2">
-                                    <span style="font-size:30px;cursor:pointer;color: #fff;" onclick="openNav()">&#9776;</span>
+                                    <button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-4 col-2" style="margin-top: 5px;">
+                                    <span class="nav_sticks" onclick="openNav()">&#9776;</span>
                                 </div>
                             </div>
                         </li>

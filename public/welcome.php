@@ -12,7 +12,7 @@
                                 <p>
                                     If you already have a steem account, login with your steem username through steemconnect.
                                 </p>
-                                <button class="btn btn-default signin_btn">Login</button>
+                                <button class="btn btn-default signin_btn log_link">Login</button>
                             </div>
                         </div>
                     </div>
