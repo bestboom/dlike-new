@@ -17,9 +17,9 @@ $(document).ready(function(){
 		limit: 92,
 	};
 
-	steem.api.getDiscussionsByCreated(query, function (err, res) {
+	steem.api.getDiscussionsByCreated(query, function (err, res_c) {
 		//console.log(res);
-		res.forEach(($post, i) => {
+		res_c.forEach(($post, i) => {
 			let metadata;
 			if ($post.json_metadata && $post.json_metadata.length > 0){
 				metadata = JSON.parse($post.json_metadata);
