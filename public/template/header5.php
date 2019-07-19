@@ -84,9 +84,9 @@
                                 </div> -->
 
                                 <div class="col-md-4 col-2">
-                                    <a href="/share" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i></a>
-                                    <!-- <button id="share_icon" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
-                                    </button>-->
+                                    <!-- <a href="/share" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i></a>-->
+                                    <button onclick="window.location.href='/share';" type="button" class="btn btn-default btn-circle btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
+                                    </button>
                                 </div>
 
                                 <div class="col-md-4 col-2">
