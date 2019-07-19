@@ -438,7 +438,10 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     .navbar {
         min-height: 80px; }
     .nav_sticks {
-        color: #1a1a1a;
+        color: #1a1a1a !important;
+    }
+    #btn_share{
+        border: 1px solid #1a1a1a !important;
     }    
     .navbar-toggler {
         background: transparent;
@@ -4652,7 +4655,7 @@ body{
         border: 2px solid #c51d24;
     }
     .nav_sticks {
-        color: #c51d24;
+        color: #c51d24 !important;
     }
     ..ml-auto{
         margin: 2px;
