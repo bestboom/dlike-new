@@ -5,13 +5,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 </div><!-- sub-header -->
-<div class="container" style="background: #191d5d;max-width: 100% !important;">
-    <div class="row" style="padding: 50px;">
-        <div class="col" style="text-align:center;color: #fff;">
-            <h3>DLIKE TOKENS STAKING</h3>
-        </div>
-    </div>
-</div>
 <div class="working-process-section">
     <div class="container">
         <div class="row">
@@ -96,19 +89,16 @@ error_reporting(E_ALL);
                 <form action="" class="user-connected-from create-account-form" />   
                     <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Total Points">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Points">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Share">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Estimated Reward">
                     </div>
                     <button type="submit" class="btn btn-default" id="stake_me">STAKE NOW</button>
                 </form>
