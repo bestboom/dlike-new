@@ -50,32 +50,32 @@ error_reporting(E_ALL);
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
-                                        <span class="fas fa-comment-alt reward_icon"></span> | <p>votes <br>10+</p>
+                                        <span class="fas fa-comment-alt reward_icon"></span><p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
-                                        <span class="fas fa-comment-alt reward_icon"></span> | <p>votes <br>10+</p>
+                                        <span class="fas fa-comment-alt reward_icon"></span><p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
-                                        <span class="fas fa-comment-alt reward_icon"></span> | <p>votes <br>10+</p>
+                                        <span class="fas fa-comment-alt reward_icon"></span><p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
-                                        <span class="fas fa-comment-alt reward_icon"></span> | <p>votes <br>10+</p>
+                                        <span class="fas fa-comment-alt reward_icon"></span><p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
-                                        <span class="fas fa-comment-alt reward_icon"></span> | <p>votes <br>10+</p>
+                                        <span class="fas fa-comment-alt reward_icon"></span><p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
-                                        <span class="fas fa-comment-alt reward_icon"></span> | <p>votes <br>10+</p>
+                                        <span class="fas fa-comment-alt reward_icon"></span><p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                             </div>
