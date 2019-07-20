@@ -58,8 +58,8 @@ error_reporting(E_ALL);
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fas fa-eye reward_icon"></span>
-                                        <p>Views <br><span style="font-weight: 500;">For 100 views on your posts</span><br>
-                                            <span style="color:green;">10+</span></p>
+                                        <p>Views <br><span style="font-size: 0.7rem;">For 100 views on your posts</span><br>
+                                            <span style="color:#c51d24;">10+</span></p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
@@ -83,7 +83,7 @@ error_reporting(E_ALL);
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fas fa-user-plus reward_icon"></span>
-                                        <p>Referral Income <br>Each Post By Your Referrals<br/>5+</p>
+                                        <p>Referral Income <br><span style="font-size: 0.7rem;">Each Post By Your Referrals</span><br/><span style="color:#c51d24;">5+</span></p>
                                     </div><!-- features-block -->
                                 </div>
                             </div>
