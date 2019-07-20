@@ -84,7 +84,6 @@ error_reporting(E_ALL);
 </div>
 </div><!-- working-process-section  https://demo.w3layouts.com/demos_new/template_demo/18-05-2019/gadget_signup_form-demo_Free/1576182126/web/index.html-->
 <?php include('template/footer3.php'); ?>
-<iframe src="https://titanembeds.com/embed/448048900520017932" height="600" width="800" frameborder="0"></iframe>
 <script type="text/javascript">
     $( document ).ready(function() { 
     //var date = new Date();
