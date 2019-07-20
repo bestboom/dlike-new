@@ -19,15 +19,14 @@ error_reporting(E_ALL);
                     <div>
                         <img src="/images/post/dlike-reward.png" class="img-fluid" alt="">
                     </div>
-                    
+                </div>
             </div>
-        </div>
-        <div class="offset-lg-1 col-lg-5 col-md-5">
-            <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
-                <h3 style="text-align: center;">
-                    <span style="font-size: 1.1rem;">Total Reward Pool</span><br><span style="font-size: 1.4rem;color: #1652f0;">7,000 DLIKE</span>
-                </h3>
-                <form action="" class="user-connected-from create-account-form" /> 
+            <div class="offset-lg-1 col-lg-5 col-md-5">
+                <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
+                    <h3 style="text-align: center;">
+                        <span style="font-size: 1.1rem;">Total Reward Pool</span><br><span style="font-size: 1.4rem;color: #1652f0;">7,000 DLIKE</span>
+                    </h3>
+                    <form action="" class="user-connected-from create-account-form" /> 
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
@@ -45,6 +44,66 @@ error_reporting(E_ALL);
                 <p>By staking you agree to the Terms</a></p>
             </div><!-- create-account-block -->
         </div>
+
+
+        
+
+
+                    <div class="features-section" style="box-shadow: 0px 0px 10px 1px #cccccc;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2 col-sm-3">
+                                    <div class="features-block">
+                                        <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
+                                    </div><!-- features-block -->
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <div class="features-block">
+                                        <img src="./images/others/10.png" alt="img" class="img-responsive">
+                                        <h4>Recomendations</h4>
+                                        <p>
+                                            10+
+                                        </p>
+                                    </div><!-- features-block -->
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <div class="features-block">
+                                        <img src="./images/others/11.png" alt="img" class="img-responsive">
+                                        <h4>Fast and Reliable</h4>
+                                        <p>
+                                         10+
+                                     </p>
+                                 </div><!-- features-block -->
+                             </div>
+                             <div class="col-md-2 col-sm-3">
+                                <div class="features-block">
+                                    <img src="./images/others/12.png" alt="img" class="img-responsive">
+                                    <h4>Margin Trading</h4>
+                                    <p>
+                                        10+
+                                    </p>
+                                </div><!-- features-block -->
+                            </div>
+                            <div class="col-md-2 col-sm-3">
+                                <div class="features-block">
+                                    <img src="./images/others/13.png" alt="img" class="img-responsive">
+                                    <h4>24/7 Live Support</h4>
+                                    <p>
+                                        10+
+                                    </p>
+                                </div><!-- features-block -->
+                            </div>
+                            <div class="col-md-2 col-sm-3">
+                                <div class="features-block">
+                                    <img src="./images/others/14.png" alt="img" class="img-responsive">
+                                    <h4>Referrals</h4>
+                                    <p>
+                                        10+
+                                    </p>
+                                </div><!-- features-block -->
+                            </div>
+                        </div>
+                    </div>
     </div>
 </div>
 </div><!-- working-process-section  https://demo.w3layouts.com/demos_new/template_demo/18-05-2019/gadget_signup_form-demo_Free/1576182126/web/index.html-->
