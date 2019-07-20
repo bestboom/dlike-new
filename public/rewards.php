@@ -53,7 +53,10 @@ error_reporting(E_ALL);
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fab fa-gratipay reward_icon"></span>
-                                        <p>Likes <br>Each like on your posts<br>20+</p>
+                                        <p>Likes <br>
+                                            <span style="font-size: 0.7rem;">Each like on your posts</span>
+                                            <br><span style="color:#c51d24;">20+</span>
+                                        </p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
@@ -66,19 +69,25 @@ error_reporting(E_ALL);
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fas fa-comment-alt reward_icon"></span>
-                                        <p>comments <br>Each comment on your posts<br>10+</p>
+                                        <p>comments <br><span style="font-size: 0.7rem;">Each comment on your posts</span>
+                                            <br><span style="color:#c51d24;">10+</span>
+                                        </p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fas fa-chevron-circle-up reward_icon"></span>
-                                        <p>upvotes <br>$1 steem upvote <br>100+</p>
+                                        <p>upvotes <br><span style="font-size: 0.7rem;">$1 steem upvote</span> 
+                                            <br><span style="color:#c51d24;">100+</span>
+                                        </p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fas fa-users reward_icon"></span>
-                                        <p>Referralss <br>Each New Referral <br>50+</p>
+                                        <p>Referralss <br><span style="font-size: 0.7rem;">Each New Referral </span>
+                                            <br><span style="color:#c51d24;">50+</span>
+                                        </p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
