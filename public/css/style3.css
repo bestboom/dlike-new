@@ -1537,6 +1537,12 @@ justify-content: space-between;}
 .features-section {
     padding: 120px 0 40px 0; }
 .features-block-icons{margin-bottom: 5px !important;display: flex;align-items: center;justify-content: center;}
+.reward_icon{font-size: 2rem;
+    padding-right: 8px;
+    border-right: 1px solid #1a1a1a6b;}
+.features-block-icons p {padding-left: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;}    
 .features-block {
     margin-bottom: 70px;
     text-align: center; }
