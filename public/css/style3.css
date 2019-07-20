@@ -1536,11 +1536,9 @@ justify-content: space-between;}
 
 .features-section {
     padding: 120px 0 40px 0; }
-.features-block-icons{margin-bottom: 5px !important;display: flex;align-items: center;justify-content: center;}
-.reward_icon{font-size: 2.5rem;color: #c51d24;
-    padding-right: 8px;
-    border-right: 1px solid #1a1a1a6b;}
-.features-block-icons p {padding-left: 10px;margin: 0px !important;
+.features-block-icons{text-align: center;}
+.reward_icon{font-size: 2rem;color: #c51d24;padding: 1.2rem;border: 1px solid #c51d24;border-radius: 1rem;}
+.features-block-icons p {padding-top: 10px;margin: 0px !important;
     font-size: 0.9rem;
     font-weight: 600;}    
 .features-block {
