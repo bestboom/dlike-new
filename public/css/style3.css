@@ -1228,6 +1228,7 @@ justify-content: space-between;}
         position: relative;
         z-index: 2;
 }
+
 .modal-container .user-connected-form-block {
     -webkit-box-shadow: none;
     box-shadow: none;
