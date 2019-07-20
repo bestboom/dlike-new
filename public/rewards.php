@@ -24,7 +24,8 @@ error_reporting(E_ALL);
             <div class="offset-lg-1 col-lg-5 col-md-5">
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
-                        <span style="font-size: 1.1rem;">Total Reward Pool</span><br><span style="font-size: 1.4rem;color: #1652f0;">7,000 DLIKE</span>
+                        <div style="font-size: 1.1rem;">Total Reward Pool</div>
+                        <div style="font-size: 1.4rem;color: #1652f0;">7,000 DLIKE</div>
                     </h3>
                     <form action="" class="user-connected-from create-account-form" /> 
                     <div class="form-group">
@@ -57,7 +58,8 @@ error_reporting(E_ALL);
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fas fa-eye reward_icon"></span>
-                                        <p>Views <br>For 100 views on your posts<br>10+</p>
+                                        <p>Views <br><span style="font-weight: 500;">For 100 views on your posts</span><br>
+                                            <span style="color:green;">10+</span></p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
