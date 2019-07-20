@@ -45,6 +45,8 @@ error_reporting(E_ALL);
                 <p>By staking you agree to the Terms</a></p>
             </div><!-- create-account-block -->
         </div>
+    </div>
+    
 
                     <div class="features-section" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                         <div class="container">
@@ -105,7 +107,6 @@ error_reporting(E_ALL);
                             </div>
                         </div>
                     </div>
-    </div>
 </div>
 </div><!-- working-process-section  https://demo.w3layouts.com/demos_new/template_demo/18-05-2019/gadget_signup_form-demo_Free/1576182126/web/index.html-->
 <?php include('template/footer3.php'); ?>
