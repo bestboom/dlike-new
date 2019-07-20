@@ -70,7 +70,7 @@ error_reporting(E_ALL);
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
-                                        <span class="fas fa-user-friends reward_icon"></span><p>Referralss <br>10+</p>
+                                        <span class="fas fa-users reward_icon"></span><p>Referralss <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
