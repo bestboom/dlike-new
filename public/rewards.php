@@ -44,7 +44,7 @@ error_reporting(E_ALL);
                         <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
-                    <button type="button" class="btn btn-default reward_btn" disabled></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
+                    <button type="button" class="btn btn-default reward_btn" disabled><span class="fas fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
                 <p>By staking you agree to the Terms</p>
             </div><!-- create-account-block -->
         </div>
