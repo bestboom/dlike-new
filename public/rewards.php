@@ -45,38 +45,39 @@ error_reporting(E_ALL);
             </div><!-- create-account-block -->
         </div>
     </div>
-                        <div class="features-section" style="padding-top: 40px;">
+                    <div class="features-section" style="padding-top: 40px;">
                         <div class="container" style="box-shadow: 0px 0px 10px 1px #cccccc;padding: 40px;">
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px;">
+                                    <div class="features-block" style="margin-bottom: 5px !important;">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px;">
+                                    <div class="features-block" style="margin-bottom: 5px !important;">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px;">
+                                    <div class="features-block" style="margin-bottom: 5px !important;">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
-                                 </div><!-- features-block -->
-                             </div>
-                             <div class="col-md-2 col-sm-3">
-                                <div class="features-block" style="margin-bottom: 5px;">
-                                    <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
-                                </div><!-- features-block -->
-                            </div>
-                            <div class="col-md-2 col-sm-3" style="margin-bottom: 5px;" style="margin-bottom: 5px;">
-                                <div class="features-block">
-                                    <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
-                                </div><!-- features-block -->
-                            </div>
-                            <div class="col-md-2 col-sm-3">
-                                <div class="features-block" style="margin-bottom: 5px;">
-                                    <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
-                                </div><!-- features-block -->
+                                    </div><!-- features-block -->
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                        <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
+                                    </div><!-- features-block -->
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                        <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
+                                    </div><!-- features-block -->
+                                </div>
+                                <div class="col-md-2 col-sm-3">
+                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                        <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
+                                    </div><!-- features-block -->
+                                </div>
                             </div>
                         </div>
                     </div>
