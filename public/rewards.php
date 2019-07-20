@@ -5,10 +5,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 </div><!-- sub-header -->
-<div class="working-process-section">
+<div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6  col-md-7">
+            <div class="col-lg-6  col-md-6">
                 <div class="working-process">
                     <h4 style="text-align: center;font-weight: 800;font-size: 1.3rem;margin: 30px;">
                         DLIKE REWARD POOL
@@ -24,7 +24,7 @@ error_reporting(E_ALL);
                     </div>
                 </div>
             </div>
-            <div class="offset-lg-1 col-lg-5 col-md-5">
+            <div class="offset-lg-1 col-lg-5 col-md-6">
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
                         <div style="font-size: 1.1rem;">Total Reward Pool</div>
