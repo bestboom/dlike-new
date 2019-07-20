@@ -86,19 +86,18 @@ error_reporting(E_ALL);
                 <h3 style="text-align: center;">
                     <span style="font-size: 1.1rem;">Total Reward Pool</span><br><span style="font-size: 1.4rem;color: #1a1a1a;">7,000 DLIKE</span>
                 </h3>
-                <form action="" class="user-connected-from create-account-form" />   
-                    <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                <form action="" class="user-connected-from create-account-form" /> 
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="Total Points" readonly>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Total Points" readonly>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="My Points" readonly><span class="fas fa-database inp_icon"></span>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | My Points" readonly><span class="fas fa-bolt inp_icon"></span>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
                     <button type="submit" class="btn btn-default" id="stake_me">STAKE NOW</button>
                 </form>
