@@ -90,21 +90,25 @@ error_reporting(E_ALL);
         </div>
         <div class="offset-lg-1 col-lg-5 col-md-5">
             <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
-                <h3>
-                    Stake DLIKE Tokens
+                <h3 style="font-size: 1rem;">
+                    Total Reward Pool<br>7,000 DLIKE
                 </h3>
-                <div id="stak-msg"></div>
-                <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
+                <form action="" class="user-connected-from create-account-form" />   
                     <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                     <div class="form-group">
-                        <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
                     </div>
                     <div class="form-group">
-                        <select class="form-control form-control-lg period" name="stake_option" id="stake">
-                            <option value="0">Staking Time</option>
-                            <option value="1">90 Days</option>
-                            <option value="2">180 Days</option>
-                        </select>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" placeholder="Amount to Stake">
                     </div>
                     <button type="submit" class="btn btn-default" id="stake_me">STAKE NOW</button>
                 </form>
