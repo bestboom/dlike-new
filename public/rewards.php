@@ -95,7 +95,7 @@ error_reporting(E_ALL);
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Points">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Share">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="<i class='fas fa-flask'></i> | My Share">
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Estimated Reward">
