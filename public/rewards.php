@@ -15,7 +15,8 @@ error_reporting(E_ALL);
                         You can earn tokens for your contributions to the DLIKE network. The more interactions on your content, the greater your share of the daily token reward pool to your OffChain wallet.
                     </p>
                     <p style="color:#c51d24;font-weight: 600;">
-                        <span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>DLIKE reward pool is only available to PRO users
+                        <span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>
+                        DLIKE reward pool is only available to PRO users
                     </p>
                     <div>
                         <img src="/images/post/dlike-reward.png" class="img-fluid" alt="">
@@ -26,7 +27,7 @@ error_reporting(E_ALL);
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
                         <div style="font-size: 1.1rem;">Total Reward Pool</div>
-                        <div style="font-size: 1.4rem;color: #1652f0;">7,000 DLIKE</div>
+                        <div class="reward_amount">7,000 DLIKE</div>
                     </h3>
                     <form class="user-connected-from create-account-form reward_form" /> 
                     <div class="form-group reward_fileds">
@@ -43,95 +44,91 @@ error_reporting(E_ALL);
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                <p>By staking you agree to the Terms</p>
-            </div><!-- create-account-block -->
+                    <p>By staking you agree to the Terms</p>
+                </div><!-- create-account-block -->
+            </div>
         </div>
-    </div>
-                    <div class="features-section" style="padding-top: 40px;">
-                        <div class="container pool_box">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-3">
-                                    <div class="features-block-icons">
-                                        <span class="fab fa-gratipay reward_icon"></span>
-                                        <p>Likes <br>
-                                            <span style="font-size: 0.7rem;">Each like on your posts</span>
-                                            <br><span class="head_color">20+</span>
-                                        </p>
-                                    </div><!-- features-block -->
-                                </div>
-                                <div class="col-md-2 col-sm-3">
-                                    <div class="features-block-icons">
-                                        <span class="fas fa-eye reward_icon"></span>
-                                        <p>Views <br><span style="font-size: 0.7rem;">For 100 views on your posts</span><br>
-                                            <span class="head_color">10+</span></p>
-                                    </div><!-- features-block -->
-                                </div>
-                                <div class="col-md-2 col-sm-3">
-                                    <div class="features-block-icons">
-                                        <span class="fas fa-comment-alt reward_icon"></span>
-                                        <p>comments <br><span style="font-size: 0.7rem;">Each one on your posts</span>
-                                            <br><span class="head_color">10+</span>
-                                        </p>
-                                    </div><!-- features-block -->
-                                </div>
-                                <div class="col-md-2 col-sm-3">
-                                    <div class="features-block-icons">
-                                        <span class="fas fa-chevron-circle-up reward_icon"></span>
-                                        <p>upvotes <br><span style="font-size: 0.7rem;">$1 steem upvote</span> 
-                                            <br><span class="head_color">100+</span>
-                                        </p>
-                                    </div><!-- features-block -->
-                                </div>
-                                <div class="col-md-2 col-sm-3">
-                                    <div class="features-block-icons">
-                                        <span class="fas fa-users reward_icon"></span>
-                                        <p>Referralss <br><span style="font-size: 0.7rem;">Each New Referral </span>
-                                            <br><span class="head_color">50+</span>
-                                        </p>
-                                    </div><!-- features-block -->
-                                </div>
-                                <div class="col-md-2 col-sm-3">
-                                    <div class="features-block-icons">
-                                        <span class="fas fa-user-plus reward_icon"></span>
-                                        <p>Referral Income <br><span style="font-size: 0.7rem;">Each Post By Your Referrals</span><br/><span class="head_color">5+</span></p>
-                                    </div><!-- features-block -->
-                                </div>
-                            </div>
+        <div class="features-section" style="padding-top: 40px;">
+            <div class="container pool_box">
+                <div class="row">
+                    <div class="col-md-2 col-sm-3">
+                        <div class="features-block-icons">
+                            <span class="fab fa-gratipay reward_icon"></span>
+                            <p>Likes <br>
+                                <span style="font-size: 0.7rem;">Each like on your posts</span>
+                                <br><span class="head_color">20+</span>
+                            </p>
+                        </div><!-- features-block -->
+                    </div>
+                    <div class="col-md-2 col-sm-3">
+                        <div class="features-block-icons">
+                            <span class="fas fa-eye reward_icon"></span>
+                            <p>Views <br><span style="font-size: 0.7rem;">For 100 views on your posts</span><br>
+                                <span class="head_color">10+</span></p>
+                            </div><!-- features-block -->
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <div class="features-block-icons">
+                                <span class="fas fa-comment-alt reward_icon"></span>
+                                <p>comments <br><span style="font-size: 0.7rem;">Each one on your posts</span>
+                                    <br><span class="head_color">10+</span>
+                                </p>
+                            </div><!-- features-block -->
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <div class="features-block-icons">
+                                <span class="fas fa-chevron-circle-up reward_icon"></span>
+                                <p>upvotes <br><span style="font-size: 0.7rem;">$1 steem upvote</span> 
+                                    <br><span class="head_color">100+</span>
+                                </p>
+                            </div><!-- features-block -->
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <div class="features-block-icons">
+                                <span class="fas fa-users reward_icon"></span>
+                                <p>Referralss <br><span style="font-size: 0.7rem;">Each New Referral </span>
+                                    <br><span class="head_color">50+</span>
+                                </p>
+                            </div><!-- features-block -->
+                        </div>
+                        <div class="col-md-2 col-sm-3">
+                            <div class="features-block-icons">
+                                <span class="fas fa-user-plus reward_icon"></span>
+                                <p>Referral Income <br><span style="font-size: 0.7rem;">Each Post By Your Referrals</span><br/><span class="head_color">5+</span></p>
+                            </div><!-- features-block -->
                         </div>
                     </div>
-</div>
-</div><!-- working-process-section  https://demo.w3layouts.com/demos_new/template_demo/18-05-2019/gadget_signup_form-demo_Free/1576182126/web/index.html-->
-<?php include('template/footer3.php'); ?>
-<script type="text/javascript">
-    $( document ).ready(function() { 
-    //var date = new Date();
-    //console.log(date.toLocaleString('en-GB')); 
-    var countDownDate = 0;
-    function counter() {
-        setInterval(() => {
-            var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
-            var countDownDate = new Date(date);
-            //console.log(date);
-            var i = 60;
-            var h = 24 - countDownDate.getHours();
-            if (h < 10) {
-                h = "0" + h;
-            }
-            var m = 59 - countDownDate.getMinutes();
-            if (m < 10) {
-                m = "0" + m;
-            }
-            var s = countDownDate.getSeconds();
-            s = i - s;
-            if (s < 10) {
-                s = "0" + s;
-            }
-            str = h + ":" + m + ":" + s;
-            i++;
-            //$("div.time").html(str);
-            $(".dividendCountDown").html(str);
-        }, 1000);
-    };
-    counter(); 
-});
-</script>
+                </div>
+            </div>
+        </div>
+    </div><!-- working-process-section-->
+    <?php include('template/footer3.php'); ?>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            var countDownDate = 0;
+            function counter() {
+                setInterval(() => {
+                    var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
+                    var countDownDate = new Date(date);
+                    var i = 60;
+                    var h = 24 - countDownDate.getHours();
+                    if (h < 10) {
+                        h = "0" + h;
+                    }
+                    var m = 59 - countDownDate.getMinutes();
+                    if (m < 10) {
+                        m = "0" + m;
+                    }
+                    var s = countDownDate.getSeconds();
+                    s = i - s;
+                    if (s < 10) {
+                        s = "0" + s;
+                    }
+                    str = h + ":" + m + ":" + s;
+                    i++;
+                    $(".dividendCountDown").html(str);
+                }, 1000);
+            };
+            counter(); 
+        });
+    </script>

@@ -1543,6 +1543,7 @@ justify-content: space-between;}
 .pool_head{text-align: center;font-weight: 800;font-size: 1.3rem;margin: 30px;}
 .head_color{color:#c51d24;}
 .pool_box{box-shadow: 0px 0px 10px 1px #cccccc;padding: 40px;}
+.reward_amount{font-size: 1.4rem;color: #1652f0;}
 .features-block-icons p {padding-top: 10px;margin: 0px !important;
     font-size: 0.9rem;
     font-weight: 600;}    
