@@ -45,8 +45,8 @@ error_reporting(E_ALL);
             </div><!-- create-account-block -->
         </div>
     </div>
-                        <div class="features-section" style="box-shadow: 0px 0px 10px 1px #cccccc;">
-                        <div class="container">
+                        <div class="features-section" style="margin-top: 40px;">
+                        <div class="container" style="box-shadow: 0px 0px 10px 1px #cccccc;padding: 40px;">
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block">
@@ -55,29 +55,17 @@ error_reporting(E_ALL);
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block">
-                                        <img src="./images/others/10.png" alt="img" class="img-responsive">
-                                        <h4>Recomendations</h4>
-                                        <p>
-                                            10+
-                                        </p>
+                                        <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block">
-                                        <img src="./images/others/11.png" alt="img" class="img-responsive">
-                                        <h4>Fast and Reliable</h4>
-                                        <p>
-                                         10+
-                                     </p>
+                                        <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                  </div><!-- features-block -->
                              </div>
                              <div class="col-md-2 col-sm-3">
                                 <div class="features-block">
-                                    <img src="./images/others/12.png" alt="img" class="img-responsive">
-                                    <h4>Margin Trading</h4>
-                                    <p>
-                                        10+
-                                    </p>
+                                    <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                 </div><!-- features-block -->
                             </div>
                             <div class="col-md-2 col-sm-3">
