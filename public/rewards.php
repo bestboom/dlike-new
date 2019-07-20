@@ -89,13 +89,13 @@ error_reporting(E_ALL);
                 <form action="" class="user-connected-from create-account-form" />   
                     <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Total Points">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Total Points" readonly>
                     </div>
                     <div class="form-group">
-                        <span class="fas fa-flask inp_icon"></span><input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Points">
+                        <span class="fas fa-flask inp_icon"></span><input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Points" readonly>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value=" | My Share"><span class="fas fa-flask inp_icon"></span>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value=" | My Share"><span class="fas fa-flask inp_icon" readonly></span>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Estimated Reward">
