@@ -71,7 +71,7 @@ error_reporting(E_ALL);
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block-icons">
                                         <span class="fas fa-comment-alt reward_icon"></span>
-                                        <p>comments <br><span style="font-size: 0.7rem;">Each comment on your posts</span>
+                                        <p>comments <br><span style="font-size: 0.7rem;">Each one on your posts</span>
                                             <br><span style="color:#c51d24;">10+</span>
                                         </p>
                                     </div><!-- features-block -->
