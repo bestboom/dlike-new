@@ -16,7 +16,7 @@ error_reporting(E_ALL);
                     <p>
                         You can earn tokens for your contributions to the DLIKE network. The more interactions on your content, the greater your share of the daily token reward pool to your OffChain wallet.
                     </p>
-                    <p style="color:#c51d24;">
+                    <p style="color:#c51d24;font-weight: 600;">
                         DLIKE reward pool is only available to PRO users
                     </p>
                     <div>
