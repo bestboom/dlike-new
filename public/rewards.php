@@ -88,7 +88,7 @@ error_reporting(E_ALL);
                 </h3>
                 <form action="" class="user-connected-from create-account-form" /> 
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Total Points" readonly>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | My Points" readonly><span class="fas fa-bolt inp_icon"></span>
