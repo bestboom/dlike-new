@@ -92,13 +92,13 @@ error_reporting(E_ALL);
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="Total Points" readonly>
                     </div>
                     <div class="form-group">
-                        <span class="fas fa-flask inp_icon"></span><input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="My Points" readonly>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="My Points" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="Estimated Reward" readonly>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
                     <button type="submit" class="btn btn-default" id="stake_me">STAKE NOW</button>
                 </form>
