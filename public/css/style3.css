@@ -1536,7 +1536,7 @@ justify-content: space-between;}
 
 .features-section {
     padding: 120px 0 40px 0; }
-
+.features-block-icons{margin-bottom: 5px !important;display: flex;align-items: center;justify-content: center;}
 .features-block {
     margin-bottom: 70px;
     text-align: center; }

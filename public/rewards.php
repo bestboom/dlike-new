@@ -49,32 +49,32 @@ error_reporting(E_ALL);
                         <div class="container" style="box-shadow: 0px 0px 10px 1px #cccccc;padding: 40px;">
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                    <div class="features-block-icons">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                    <div class="features-block-icons">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                    <div class="features-block-icons">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                    <div class="features-block-icons">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                    <div class="features-block-icons">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
-                                    <div class="features-block" style="margin-bottom: 5px !important;">
+                                    <div class="features-block-icons">
                                         <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
@@ -84,6 +84,7 @@ error_reporting(E_ALL);
 </div>
 </div><!-- working-process-section  https://demo.w3layouts.com/demos_new/template_demo/18-05-2019/gadget_signup_form-demo_Free/1576182126/web/index.html-->
 <?php include('template/footer3.php'); ?>
+<iframe src="https://titanembeds.com/embed/448048900520017932" height="600" width="800" frameborder="0"></iframe>
 <script type="text/javascript">
     $( document ).ready(function() { 
     //var date = new Date();
