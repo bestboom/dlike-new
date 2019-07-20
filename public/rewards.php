@@ -83,8 +83,8 @@ error_reporting(E_ALL);
         </div>
         <div class="offset-lg-1 col-lg-5 col-md-5">
             <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
-                <h3 style="font-size: 1rem;">
-                    Total Reward Pool<br>7,000 DLIKE
+                <h3 style="text-align: center;">
+                    <span style="font-size: 1.1rem;">Total Reward Pool</span><br><span style="font-size: 1.4rem;color: #1a1a1a;">7,000 DLIKE</span>
                 </h3>
                 <form action="" class="user-connected-from create-account-form" />   
                     <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
