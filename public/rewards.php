@@ -32,16 +32,16 @@ error_reporting(E_ALL);
                     </h3>
                     <form class="user-connected-from create-account-form reward_form" /> 
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control" value=" | My Points" readonly><span class="fas fa-bolt inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | My Points" readonly><span class="fas fa-bolt inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
