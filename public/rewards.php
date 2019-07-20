@@ -99,7 +99,7 @@ error_reporting(E_ALL);
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
-                    <button class="btn btn-default" id="dividendCountDown"></button>
+                    <button class="btn btn-default" style="border-radius: 4px;font-size: 1.8rem;"><span class="far fa-clock"></span><span class="dividendCountDown"></span></button>
                 </form>
                 <p>By staking you agree to the Terms</a></p>
             </div><!-- create-account-block -->
@@ -135,7 +135,7 @@ error_reporting(E_ALL);
             str = h + ":" + m + ":" + s;
             i++;
             //$("div.time").html(str);
-            $("#dividendCountDown").html(str);
+            $(".dividendCountDown").html(str);
         }, 1000);
     };
     counter(); 
