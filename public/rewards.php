@@ -46,18 +46,14 @@ error_reporting(E_ALL);
             </div><!-- create-account-block -->
         </div>
     </div>
-    
+
 
                     <div class="features-section" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-2 col-sm-3">
                                     <div class="features-block">
-                                        <img src="./images/others/9.png" alt="img" class="img-responsive">
-                                        <h4>Votes</h4>
-                                        <p>
-                                            10+
-                                        </p>
+                                        <span class="fas fa-comment-alt"></span> | <p>votes <br>10+</p>
                                     </div><!-- features-block -->
                                 </div>
                                 <div class="col-md-2 col-sm-3">
