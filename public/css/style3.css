@@ -1537,6 +1537,9 @@ justify-content: space-between;}
 .features-section {
     padding: 120px 0 40px 0; }
 .features-block-icons{text-align: center;}
+.reward_form input {border: none;border-bottom: 1px solid #eee;background-color: #fff;}
+.reward_fileds{margin-bottom: 10px !important}
+.reward_btn{border-radius: 4px;"><span class="far fa-clock" style="font-size: 1.4rem;padding-right: 1rem;}
 .reward_icon{font-size: 2rem;color: #c51d24;padding: 1.2rem;border: 1px solid #c51d24;border-radius: 1rem;}
 .features-block-icons p {padding-top: 10px;margin: 0px !important;
     font-size: 0.9rem;

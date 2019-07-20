@@ -30,22 +30,21 @@ error_reporting(E_ALL);
                         <div style="font-size: 1.1rem;">Total Reward Pool</div>
                         <div style="font-size: 1.4rem;color: #1652f0;">7,000 DLIKE</div>
                     </h3>
-                    <form class="user-connected-from create-account-form" /> 
-                    <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
+                    <form class="user-connected-from create-account-form reward_form" /> 
+                    <div class="form-group reward_fileds">
+                        <input type="text" class="form-control" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | My Points" readonly><span class="fas fa-bolt inp_icon"></span>
+                    <div class="form-group reward_fileds">
+                        <input type="text" class="form-control" value=" | My Points" readonly><span class="fas fa-bolt inp_icon"></span>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
+                    <div class="form-group reward_fileds">
+                        <input type="text" class="form-control" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
+                    <div class="form-group reward_fileds">
+                        <input type="text" class="form-control" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
-                    <button type="button" class="btn btn-default" style="border-radius: 4px;"><span class="far fa-clock" style="font-size: 1.4rem;padding-right: 1rem;" disabled></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                
+                    <button type="button" class="btn btn-default reward_btn" disabled></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
                 <p>By staking you agree to the Terms</p>
             </div><!-- create-account-block -->
         </div>
