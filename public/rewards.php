@@ -89,16 +89,16 @@ error_reporting(E_ALL);
                 <form action="" class="user-connected-from create-account-form" />   
                     <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Total Points" readonly>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="Total Points" readonly>
                     </div>
                     <div class="form-group">
-                        <span class="fas fa-flask inp_icon"></span><input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Points" readonly>
+                        <span class="fas fa-flask inp_icon"></span><input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="My Points" readonly>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value=" | My Share"><span class="fas fa-flask inp_icon" readonly></span>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Estimated Reward">
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;background-color: #fff;" value="Estimated Reward" readonly>
                     </div>
                     <button type="submit" class="btn btn-default" id="stake_me">STAKE NOW</button>
                 </form>
