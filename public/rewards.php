@@ -92,10 +92,10 @@ error_reporting(E_ALL);
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Total Points">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Points">
+                        <span class="fas fa-flask inp_icon"></span><input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="My Points">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value=" | My Share"><span class="fas fa-flask errspan"></span>
+                        <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value=" | My Share"><span class="fas fa-flask inp_icon"></span>
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" style="border: none;border-bottom: 1px solid #eee;" value="Estimated Reward">

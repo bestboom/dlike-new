@@ -1221,7 +1221,13 @@ justify-content: space-between;}
     font-size: 14px;
     font-weight: 700;
     color: #00c162; }
-
+.inp_icon {
+        float: left;
+        margin-right: 6px;
+        margin-top: -20px;
+        position: relative;
+        z-index: 2;
+}
 .modal-container .user-connected-form-block {
     -webkit-box-shadow: none;
     box-shadow: none;
