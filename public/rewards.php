@@ -3,6 +3,19 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+if isset($_COOKIE['username']) || !$_COOKIE['username']) {
+    
+    $sql_T = "SELECT * FROM prousers where username=''";
+    $result_T = $conn->query($sql_T);
+
+    if ($result_T && $result_T->num_rows > 0) {
+        $user_status = "You Are not a PRO user";
+        $row_T  = $result_T->fetch_assoc();
+        //$tip_bal = $row_T['tip1'];
+    } else {
+        $user_status = "";
+    }
+}
 ?>
 </div><!-- sub-header -->
 <div class="working-process-section" style="padding-top: 80px;">
@@ -29,6 +42,7 @@ error_reporting(E_ALL);
                         <div style="font-size: 1.1rem;">Total Reward Pool</div>
                         <div class="reward_amount">7,000 DLIKE</div>
                     </h3>
+                    <p><?php echo $user_status; ?></p>
                     <form class="user-connected-from create-account-form reward_form" /> 
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
