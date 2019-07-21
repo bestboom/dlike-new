@@ -9,10 +9,10 @@ error_reporting(E_ALL);
 <table class="table coin-list table-hover">
 	<thead>
 		<tr style="text-align: center;">
-			<th scope="col" class="cent_me wid_2">Tip</th>
-			<th scope="col" class="cent_me wid_2">Amount</th>
+			<th scope="col" class="cent_me wid_2">Tip BY</th>
+			<th scope="col" class="cent_me wid_2">To</th>
 			<th scope="col" class="cent_me wid_2">For</th>
-			<th scope="col" class="cent_me wid_2">By</th>
+			<th scope="col" class="cent_me wid_2">Amount</th>
 			<th scope="col" class="cent_me wid_2">Time</th>
 		</tr>
 	</thead>
@@ -34,6 +34,9 @@ error_reporting(E_ALL);
 					</td>
 					<td class="exp-amt cent_me wid_2">
 						<?php echo $row_T["permlink"]; ?>
+					</td>
+					<td class="exp-amt cent_me wid_2">
+						<?php echo $row_T["tip1"]; ?>
 					</td>
 					<td class="exp-amt cent_me wid_2">
 						<?php echo time_ago($tip_time); ?>
