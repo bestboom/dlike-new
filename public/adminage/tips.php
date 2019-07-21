@@ -1,4 +1,4 @@
-<?php  include('template/header5.php');
+<?php include('head.php'); 
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
