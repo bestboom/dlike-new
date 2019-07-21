@@ -53,13 +53,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | My Points " readonly><span class="fas fa-bolt inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | My Points <?php echo '<span style="text-align:right;">$my_points</span>'; ?>" readonly><span class="fas fa-bolt inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Share <?php echo $my_share; ?>" readonly><span class="fas fa-flask inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | Estimated Reward <?php echo $my_earnings; ?>" readonly><span class="fas fa-database inp_icon"></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
