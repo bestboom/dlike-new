@@ -8,10 +8,28 @@ error_reporting(E_ALL);
 $sql_C = "SELECT sum(tip1) as total_tip,count(*) as total FROM TipTop";
 $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
-echo $row_C['total_tip'];
-echo '<br>';
-echo $row_C['total'];
 ?>
+<div class="container">
+	<ul class="download-options-list">
+		<li>
+			<div class="btn apps-download-btn signup-btn">
+				<div class="btn-content">
+					<span>Total Tips</span>
+					<p><? echo $row_C['total']; ?></p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="btn apps-download-btn googleplay-btn">
+				<div class="btn-content">
+					<span>Amount To Pay</span>
+					<p><? echo $row_C['total_tip']; ?></p>
+				</div>
+			</div>
+		</li>
+	</li>
+</ul>
+</div>
 <div>
 	<div class="row" style="margin: 30px;">
 		<table class="table coin-list table-hover" style="border: 1px solid #eee;">
