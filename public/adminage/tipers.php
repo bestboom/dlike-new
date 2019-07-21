@@ -31,20 +31,17 @@ $row_C = $result_C->fetch_assoc();
 </ul>
 </div>
 <div>
-	<div class="row" style="margin: 30px;">
+	<div class="row" style="margin: 40px;">
 		<table class="table coin-list table-hover" style="border: 1px solid #eee;">
 			<thead>
 				<tr style="text-align: center;">
-					<th scope="col" class="cent_me wid_2">Tip BY</th>
-					<th scope="col" class="cent_me wid_2">To</th>
-					<th scope="col" class="cent_me wid_2">For</th>
-					<th scope="col" class="cent_me wid_2">Amount</th>
-					<th scope="col" class="cent_me wid_2">Time</th>
+					<th scope="col" class="cent_me wid_2">User</th>
+					<th scope="col" class="cent_me wid_2">Income</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php 
-				$sql_T = "SELECT * FROM TipsWallet ORDER BY tip1 ASC LIMIT 100";
+				$sql_T = "SELECT * FROM TipsWallet ORDER BY tip1 DESC LIMIT 100";
 				$result_T = $conn->query($sql_T);
 
 				if ($result_T && $result_T->num_rows > 0) {
