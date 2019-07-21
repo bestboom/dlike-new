@@ -1224,14 +1224,14 @@ justify-content: space-between;}
 .inp_icon {
         float: left;
         margin-right: 6px;
-        margin-top: -30px;
+        margin-top: -32px;
         position: relative;
         z-index: 2;
 }
 .inp_text {
         float: right;
-        margin-right: 2rem;
-        margin-top: -30px;
+        margin-right: 1rem;
+        margin-top: -37px;
         position: relative;
         z-index: 2;
         color: #c51d24;
