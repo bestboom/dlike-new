@@ -10,10 +10,10 @@ $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
 ?>
 <div class="container">
-	<ul class="download-options-list" style="text-align: center">
+	<ul class="download-options-list">
 		<li>
 			<div class="btn apps-download-btn signup-btn">
-				<div class="btn-content">
+				<div class="btn-content" style="text-align: center;">
 					<span>Total Tips</span>
 					<p><? echo $row_C['total']; ?></p>
 				</div>
@@ -21,7 +21,7 @@ $row_C = $result_C->fetch_assoc();
 		</li>
 		<li>
 			<div class="btn apps-download-btn googleplay-btn">
-				<div class="btn-content">
+				<div class="btn-content" style="text-align: center;">
 					<span>Amount To Pay</span>
 					<p><? echo number_format($row_C['total_tip'],3); ?></p>
 				</div>
