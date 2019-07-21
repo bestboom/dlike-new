@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$sql_C = "SELECT sum(amount) as total_tip FROM TipTop";
+$sql_C = "SELECT sum(tip1) as total_tip,count(*) as total FROM TipTop";
 $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
 echo $row_C['total_tip'];
