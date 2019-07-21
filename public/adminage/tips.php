@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 
 		if ($result_T && $result_T->num_rows > 0) {
 			while ($row_T = $result_T->fetch_assoc()) {
-				$tip_time = strtotime($row_D["tip_time"]); 
+				$tip_time = strtotime($row_T["tip_time"]); 
 				?>
 				<tr>
 					<td class="exp-user cent_me wid_2">
