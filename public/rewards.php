@@ -44,7 +44,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <div style="font-size: 1.1rem;">Total Reward Pool</div>
                         <div class="reward_amount">7,000 DLIKE</div>
                     </h3>
-                    <p><?php echo $user_status; ?></p>
+                    <p style="margin-top: -20px;font-weight: 600;color: red;"><?php echo $user_status; ?></p>
                     <form class="user-connected-from create-account-form reward_form" /> 
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
