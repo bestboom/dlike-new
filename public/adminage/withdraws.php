@@ -47,9 +47,9 @@ $row_C = $result_C->fetch_assoc();
 				<?php 
 				$sql_T = "SELECT * FROM TokWithdraw ORDER BY with_time DESC LIMIT 100";
 				$result_T = $conn->query($sql_T);
-				$with_time = strtotime($row_T["with_time"]); 
 				if ($result_T && $result_T->num_rows > 0) {
 					while ($row_T = $result_T->fetch_assoc()) { 
+					$with_time = strtotime($row_T["with_time"]); 
 						?>
 						<tr>
 							<td class="exp-user cent_me wid_2">
