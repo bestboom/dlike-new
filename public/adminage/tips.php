@@ -59,7 +59,7 @@ $row_C = $result_C->fetch_assoc();
 								<span><?php echo $row_T["receiver"]; ?></span>
 							</td>
 							<td class="exp-amt cent_me wid_2">
-								<?php echo '<a href="">'.$row_T["permlink"].'</a>'; ?>
+								<?php echo '<a href="/@'.$row_T["receiver"].'/'.$row_T["permlink"].'">'.$row_T["permlink"].'</a>'; ?>
 							</td>
 							<td class="exp-amt cent_me wid_2">
 								<?php echo $row_T["tip1"]; ?>
