@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$sql_C = "SELECT sum(amount) as total_amount,count(*) as total FROM prousers";
+$sql_C = "SELECT sum(amount) as total_amount,count(*) as total FROM staking";
 $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
 ?>
@@ -22,8 +22,8 @@ $row_C = $result_C->fetch_assoc();
 		<li>
 			<div class="btn apps-download-btn googleplay-btn">
 				<div class="btn-content" style="text-align: center;">
-					<span>Tokens To Burn</span>
-					<p><? echo number_format($row_C['total_amount'],3); ?></p>
+					<span>Tokens Staked</span>
+					<p><? echo $row_C['total_amount']; ?></p>
 				</div>
 			</div>
 		</li>
@@ -34,20 +34,21 @@ $row_C = $result_C->fetch_assoc();
 	<div class="row" style="margin: 30px;">
 		<table class="table coin-list table-hover" style="border: 1px solid #eee;">
 			<thead>
-				<tr style="text-align: center;">
+				<tr>
 					<th scope="col" class="cent_me wid_2">User</th>
 					<th scope="col" class="cent_me wid_2">Amount</th>
+					<th scope="col" class="cent_me wid_2">Period</th>
 					<th scope="col" class="cent_me wid_2">Time</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php 
-				$sql_T = "SELECT * FROM prousers ORDER BY buy_time DESC";
+				$sql_T = "SELECT * FROM staking ORDER BY start_time DESC";
 				$result_T = $conn->query($sql_T);
 
 				if ($result_T && $result_T->num_rows > 0) {
 					while ($row_T = $result_T->fetch_assoc()) {
-						$buy_time = strtotime($row_T["buy_time"]); 
+						$start_time = strtotime($row_T["start_time"]); 
 						?>
 						<tr>
 							<td class="exp-user cent_me wid_2">
@@ -57,7 +58,10 @@ $row_C = $result_C->fetch_assoc();
 								<span><?php echo $row_T["amount"]; ?></span>
 							</td>
 							<td class="exp-amt cent_me wid_2">
-								<?php echo time_ago($buy_time); ?>
+								<span><?php echo $row_T["period"]; ?></span>
+							</td>
+							<td class="exp-amt cent_me wid_2">
+								<?php echo time_ago($start_time); ?>
 							</td>
 						</tr>
 						<?php
