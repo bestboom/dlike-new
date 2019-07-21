@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 	</thead>
 	<tbody>
 		<?php 
-		$sql_T = "SELECT * FROM TipTop ORDER BY tip_time";
+		$sql_T = "SELECT * FROM TipTop ORDER BY tip_time DESC LIMIT 100";
 		$result_T = $conn->query($sql_T);
 
 		if ($result_T && $result_T->num_rows > 0) {
