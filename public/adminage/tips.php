@@ -9,6 +9,8 @@ $sql_C = "SELECT sum(tip1) as total_tip,count(*) as total FROM TipTop";
 $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
 echo $row_C['total_tip'];
+echo '<br>';
+echo $row_C['total'];
 ?>
 <div>
 	<div class="row" style="margin: 30px;">

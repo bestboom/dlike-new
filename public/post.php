@@ -228,7 +228,7 @@ else
                     </div>
                     <div class="container tip-sponsor">
                         <div class="row">
-                            <div class="col tip-foot">This tip is sponsored by Bitfinex. Learn more about Bitfinex here</div>
+                            <div class="col tip-foot">USDT (Tether) is a stable coin by Bitfinex. Learn more about Tether <a href="https://tether.to/">here</a></div>
                         </div>
                     </div>
                 </div>
