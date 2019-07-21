@@ -4,9 +4,14 @@ include('../includes/config.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+$sql_C = "SELECT sum(amount) as total_tip,count(*) as total FROM TipTop";
+$result_C = $conn->query($sql_C);
+$row_C = $result_C->fetch_assoc();
+echo $row_C['total_tip'];
 ?>
-<div class="container">
-	<div class="row">
+<div>
+	<div class="row" style="margin: 40px;">
 		<table class="table coin-list table-hover" style="border: 1px solid #eee;">
 			<thead>
 				<tr style="text-align: center;">
