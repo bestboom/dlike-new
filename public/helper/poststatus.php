@@ -6,7 +6,7 @@
 	
 
 
-if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
+if($_COOKIE['username'] != 'dlike') {
 		$strReturn['status'] = 'no';	
 		$strReturn['message'] = 'only admin can enter.';	
 		echo json_encode($strReturn);die;
@@ -37,7 +37,7 @@ if($_COOKIE['username'] != 'dlike' && $_COOKIE['username'] != 'chirag-im') {
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		
-		$updatepost_status = "UPDATE poststatus set `status` = '".$p_status."' where permlink = '".$permlink."'";
+		$updatepost_status = "UPDATE poststatus set `status` = '".$p_status."' where permlink = '".$permlink."' and username = '".$author."'";
 		$updatepost_statusq = $conn->query($updatepost_status);
 		$strReturn['message'] = 'Updated Successfully!';
 	}
