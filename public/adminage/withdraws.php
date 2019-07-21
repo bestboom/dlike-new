@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$sql_C = "SELECT sum(tip1) as total_tip,count(*) as total FROM TokWithdraw where paid=0";
+$sql_C = "SELECT sum(amount) as total_tip,count(*) as total FROM TokWithdraw where paid=0";
 $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
 ?>
@@ -56,7 +56,7 @@ $row_C = $result_C->fetch_assoc();
 								<span><?php echo $row_T["username"]; ?></span>
 							</td>
 							<td class="exp-amt cent_me wid_2">
-								<span><?php echo $row_T["tip1"]; ?></span>
+								<span><?php echo $row_T["amount"]; ?></span>
 							</td>
 							<td class="exp-amt cent_me wid_2">
 								<span><?php echo $row_T["token"]; ?></span>
