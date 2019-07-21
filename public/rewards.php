@@ -16,6 +16,9 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         //$tip_bal = $row_T['tip1'];
     } else {
         $user_status = "You Are not a PRO user";
+        $my_points = "0";
+        $my_share = "0%";
+        $my_earnings = "0 DLIKE";
     }
 }
 ?>
@@ -50,7 +53,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | My Points" readonly><span class="fas fa-bolt inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | My Points <?php echo $my_points; ?>" readonly><span class="fas fa-bolt inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
