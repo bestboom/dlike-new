@@ -6,7 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 
-<table class="table coin-list table-hover">
+<table class="table coin-list table-hover" style="width: 90%;">
 	<thead>
 		<tr style="text-align: center;">
 			<th scope="col" class="cent_me wid_2">Tip BY</th>
@@ -49,4 +49,4 @@ error_reporting(E_ALL);
 	</tbody>
 </table>
 
-<?php include('template/footer3.php'); ?>
+<?php include('../template/footer3.php'); ?>
