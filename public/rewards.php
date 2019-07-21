@@ -53,10 +53,10 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | My Points <?php echo $my_points; ?>" readonly><span class="fas fa-bolt inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | My Points <?php echo '<span style="text-align:right;">'$my_points; ?>'</span>" readonly><span class="fas fa-bolt inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | My Share" readonly><span class="fas fa-flask inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | My Share <?php echo $my_share; ?>" readonly><span class="fas fa-flask inp_icon"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly><span class="fas fa-database inp_icon"></span>
