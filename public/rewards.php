@@ -3,8 +3,9 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 $user_status = "";
-if isset($_COOKIE['username']) || $_COOKIE['username']) {
+if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     $user_name = $_COOKIE['username'];
     $sql_T = "SELECT * FROM prousers where username='$user_name'";
     $result_T = $conn->query($sql_T);
