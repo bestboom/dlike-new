@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$sql_C = "SELECT sum(amount) as total_amount,count(DISTINCT(*) as total FROM staking";
+$sql_C = "SELECT sum(amount) as total_amount,count(DISTINCT(username) as total FROM staking";
 $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
 ?>
