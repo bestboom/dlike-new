@@ -1228,6 +1228,15 @@ justify-content: space-between;}
         position: relative;
         z-index: 2;
 }
+.inp_text {
+        float: right;
+        margin-right: 2rem;
+        margin-top: -30px;
+        position: relative;
+        z-index: 2;
+        color: #c51d24;
+        font-weight: 700;
+}
 .modal-container .user-connected-form-block {
     -webkit-box-shadow: none;
     box-shadow: none;
