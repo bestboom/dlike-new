@@ -13,6 +13,14 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     if ($result_T && $result_T->num_rows > 0) {
         $row_T  = $result_T->fetch_assoc();
 
+        $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
+        $result1 = $conn->query($sql1);
+    
+        if ($result1->num_rows > 0) {
+            $row1 = $result1->fetch_assoc();
+            $my_permlinks = $row1['permlink'];
+        }
+
         $user_status = "";
         $my_points = "";
         $my_share = "";
@@ -52,6 +60,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <div class="reward_amount">7,000 DLIKE</div>
                     </h3>
                     <p style="margin-top: -20px;font-weight: 600;color: red;"><?php echo $user_status; ?></p>
+                    <p><?php echo $my_permlinks; ?></p>
                     <form class="user-connected-from create-account-form reward_form" /> 
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
