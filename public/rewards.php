@@ -11,9 +11,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     $result_T = $conn->query($sql_T);
 
     if ($result_T && $result_T->num_rows > 0) {
-        $user_status = "";
         $row_T  = $result_T->fetch_assoc();
-        //$tip_bal = $row_T['tip1'];
+
+        $user_status = "";
+        $my_points = "";
+        $my_share = "";
+        $my_earnings = "";
+
     } else {
         $user_status = "You Are not a PRO user";
         $my_points = "0";
