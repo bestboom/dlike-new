@@ -19,7 +19,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         if ($result1->num_rows > 0) {
             $row1 = $result1->fetch_assoc();
             $my_permlinks = $row1['permlink'];
-        }
+        } else {$my_permlinks = '';}
 
         $user_status = "";
         $my_points = "";
