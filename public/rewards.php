@@ -31,6 +31,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         $my_points = "0";
         $my_share = "0%";
         $my_earnings = "0 DLIKE";
+        $my_permlinks = '';
     }
 }
 ?>
@@ -60,7 +61,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <div class="reward_amount">7,000 DLIKE</div>
                     </h3>
                     <p style="margin-top: -20px;font-weight: 600;color: red;"><?php echo $user_status; ?></p>
-                    <p><?php echo json_encode($my_permlinks); ?></p>
+                    <p><?php print_r($my_permlinks); ?></p>
                     <form class="user-connected-from create-account-form reward_form" /> 
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
