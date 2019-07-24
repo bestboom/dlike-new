@@ -21,13 +21,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             while($row1 = $result1->fetch_assoc()) {
                 $mydata[] = $row1['permlink'];
             }
-            echo implode(',', $mydata);
+            echo $permlinks_list = implode(',', $mydata);
             foreach ($mydata as $data)
             {
             $my_permlinks = $data['permlink'];
             }
 
-            $sql2 = "SELECT sum(totalviews) As myviews FROM TotalPostViews where author = '$user_name' and permlink IN ('".implode("','", $my_permlinks)."')";
+            $sql2 = "SELECT sum(totalviews) As myviews FROM TotalPostViews where author = '$user_name' and permlink IN 'permlinks_list'";
             $result2 = $conn->query($sql2);
             $row2 = $result2->fetch_assoc();
             echo $row2['myviews'];
