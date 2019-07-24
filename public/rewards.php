@@ -65,8 +65,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
 
 
                     <p><?php foreach ($mydata as $data) {
-                        $permlinks =  $data['permlink'];
-                        echo $ids = join(',',$permlinks);
+                        echo $data['permlink'];
                     } ?></p>
 
 
