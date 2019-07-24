@@ -181,7 +181,8 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         $( document ).ready(function() {
 
             if (username != null) {
-                let my_permlinks = <?=($permlinks_list)?>;
+                console.log(username);
+                let my_permlinks = <? echo $permlinks_list; ?>;
                 console.log(my_permlinks);
             }
 
