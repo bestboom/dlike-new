@@ -26,6 +26,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             }
             $permlinks_list = implode("','", $mydata);
 
+
 // views call
 
             $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
@@ -178,6 +179,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
         $( document ).ready(function() {
+
+            if (username != null) {
+                let my_permlinks = <?=($permlinks_list)?>;
+                console.log(my_permlinks);
+            }
+
+
             var countDownDate = 0;
             function counter() {
                 setInterval(() => {
