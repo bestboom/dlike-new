@@ -13,7 +13,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     if ($result_T && $result_T->num_rows > 0) {
         $row_T  = $result_T->fetch_assoc();
 
-        $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 24 HOURS";
+        $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 48 HOUR";
         $result1 = $conn->query($sql1);
     
         if ($result1->num_rows > 0) {
