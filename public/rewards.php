@@ -18,7 +18,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     
         if ($result1->num_rows > 0) {
             while($row1 = $result1->fetch_assoc()) {
-                echo $row1['permlink'];
                 $mydata[] = $row1;
             }
         } else {$my_permlinks = '';}
@@ -65,7 +64,9 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                     <p style="margin-top: -20px;font-weight: 600;color: red;"><?php echo $user_status; ?></p>
 
 
-                    <p><?php print_r($mydata); ?></p>
+                    <p><?php foreach ($mydata as $data) {
+                        echo $data['permlink'];
+                    } ?></p>
 
 
 
