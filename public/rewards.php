@@ -5,7 +5,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $user_status = "";
-$points_per_view = '0.1';
+$points_per_view = '0.2';
+$points_per_like = '20';
 
 if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     $user_name = $_COOKIE['username'];
@@ -39,7 +40,10 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             $row3 = $result3->fetch_assoc();
             echo $my_likes = $row3['total_likes'];
 
+// calculate points
+
             $my_views_points = $my_views * $points_per_view;
+            echo $my_likes_points = $my_likes * $points_per_like;
 
 
 
@@ -132,7 +136,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <div class="features-block-icons">
                             <span class="fas fa-eye reward_icon"></span>
                             <p>Views <br><span style="font-size: 0.7rem;">For 100 views on your posts</span><br>
-                                <span class="head_color">10+</span></p>
+                                <span class="head_color">20+</span></p>
                             </div><!-- features-block -->
                         </div>
                         <div class="col-md-2 col-sm-3">
