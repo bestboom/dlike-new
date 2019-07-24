@@ -23,7 +23,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             foreach ($mydata as $data)
 
             {
-                 $arr = $data['permlink'];
+                 $arr = $data[permlink];
                  echo $str = implode (", ", $arr);
             $my_permlinks = $data['permlink'];
             }
