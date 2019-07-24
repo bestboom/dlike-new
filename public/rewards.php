@@ -17,14 +17,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         $result1 = $conn->query($sql1);
     
         if ($result1->num_rows > 0) {
+            $mydata = array();
             while($row1 = $result1->fetch_assoc()) {
-                $mydata[] = $row1;
+                $mydata[] = $row1['permlink'];
             }
+            echo implode(',', $mydata);
             foreach ($mydata as $data)
-
             {
-                 $arr = $data[permlink];
-                 echo $str = implode (", ", $arr);
             $my_permlinks = $data['permlink'];
             }
 
