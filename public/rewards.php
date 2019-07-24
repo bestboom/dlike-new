@@ -182,8 +182,14 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
 
             if (username != null) {
                 console.log(username);
-                let my_permlinks = <? echo $permlinks_list; ?>;
-                console.log(my_permlinks);
+                let query = {
+                    tag: username,
+                    limit: 22,
+                };
+
+                steem.api.getDiscussionsByBlog(query, function (err, res) {
+                    console.log(res);
+                });
             }
 
             var countDownDate = 0;
