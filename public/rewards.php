@@ -23,10 +23,11 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             }
             $permlinks_list = implode(',', $mydata);
 
-            $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink IN ('permlinks_list')";
+            $sql2 = "SELECT totalviews FROM TotalPostViews where author = '$user_name' and permlink IN ('permlinks_list')";
             $result2 = $conn->query($sql2);
             $row2 = $result2->fetch_assoc();
-            echo $row2['views'];
+            $sum = array_sum($row2);
+            echo $sum;
 
         } else {$my_permlinks = '';}
 
