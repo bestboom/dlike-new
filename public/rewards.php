@@ -17,8 +17,8 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         $result1 = $conn->query($sql1);
     
         if ($result1->num_rows > 0) {
-            $row1 = $result1->fetch_assoc();
-            $my_permlinks[] = $row1['permlink'];
+            while($row1 = $result1->fetch_assoc());
+            {$my_permlinks[] = $row1['permlink'];}
         } else {$my_permlinks = '';}
 
         $user_status = "";
