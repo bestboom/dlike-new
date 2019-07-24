@@ -20,6 +20,16 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             while($row1 = $result1->fetch_assoc()) {
                 $mydata[] = $row1;
             }
+            foreach ($mydata as $data) 
+            {
+             $my_permlinks = $data['permlink'];
+            }
+
+            $sql2 = "SELECT * FROM TotalPostViews where author = '$user_name' and permlink IN '$my_permlinks'";
+            $result2 = $conn->query($sql2);
+            $row2 = $result2->fetch_assoc();
+            echo $row2['totalviews'];
+
         } else {$my_permlinks = '';}
 
         $user_status = "";
@@ -64,9 +74,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                     <p style="margin-top: -20px;font-weight: 600;color: red;"><?php echo $user_status; ?></p>
 
 
-                    <p><?php foreach ($mydata as $data) {
-                        echo $data['permlink'];
-                    } ?></p>
+                    <p><?php  ?></p>
 
 
 
