@@ -21,9 +21,9 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             while($row1 = $result1->fetch_assoc()) {
                 $mydata[] = $row1['permlink'];
             }
-            $permlinks_list = implode(',', $mydata);
+            $permlinks_list = implode("','", $mydata);
 
-            $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink IN ('doping-uzbek-wrestler-taymazov-stripped-of-london-2012-gold-medal','singapore-seizes-ivory-from-nearly-300-elephants-in-record-haul')";
+            $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
             $result2 = $conn->query($sql2);
             while($row2 = $result2->fetch_assoc()){
             echo $row2['views'];}
