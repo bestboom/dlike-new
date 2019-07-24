@@ -23,10 +23,10 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             }
             $permlinks_list = implode(',', $mydata);
 
-            $sql2 = "SELECT * FROM TotalPostViews where author = '$user_name' and permlink = 'singapore-seizes-ivory-from-nearly-300-elephants-in-record-haul,doping-uzbek-wrestler-taymazov-stripped-of-london-2012-gold-medal'";
+            $sql2 = "SELECT sum(totalviews) As myviews FROM TotalPostViews where author = '$user_name' and permlink = 'singapore-seizes-ivory-from-nearly-300-elephants-in-record-haul,doping-uzbek-wrestler-taymazov-stripped-of-london-2012-gold-medal'";
             $result2 = $conn->query($sql2);
             $row2 = $result2->fetch_assoc();
-            echo $row2['totalviews'];
+            echo $row2['myviews'];
 
         } else {$my_permlinks = '';}
 
