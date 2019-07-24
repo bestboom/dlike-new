@@ -30,5 +30,5 @@
 		}
 	}
 	
-	echo json_encode($strReturn);
+	echo json_encode($strReturn);die;
 ?>
