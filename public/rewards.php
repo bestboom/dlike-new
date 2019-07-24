@@ -38,19 +38,20 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             $sql3 = "SELECT SUM(likes) AS total_likes FROM PostsLikes where author = '$user_name' and permlink  IN ('$permlinks_list')";
             $result3 = $conn->query($sql3);
             $row3 = $result3->fetch_assoc();
-            echo $my_likes = $row3['total_likes'];
+            $my_likes = $row3['total_likes'];
 
 // calculate points
 
             $my_views_points = $my_views * $points_per_view;
-            echo $my_likes_points = $my_likes * $points_per_like;
+            $my_likes_points = $my_likes * $points_per_like;
+
+            $my_points = $my_views_points + $my_likes_points;
 
 
 
         } else {$my_permlinks = '';}
 
         $user_status = "";
-        $my_points = "";
         $my_share = "";
         $my_earnings = "";
 
