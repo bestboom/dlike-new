@@ -188,7 +188,10 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                 };
 
                 steem.api.getDiscussionsByBlog(query, function (err, res) {
-                    console.log(res['0'].permlink);
+                    res.forEach(($post, i) => {
+                        let posts = $post.permlink;
+                        console.log(posts);
+                    });
                 });
             }
 
