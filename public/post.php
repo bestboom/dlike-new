@@ -332,7 +332,7 @@ else
             </div>
         </div>
                         
-        <?php include('template/footer3.php'); ?>
+        <?php include('template/footer3.php'); $conn->close(); ?>
     <script type="text/javascript">
         post_author = '<?php echo $auth; ?>';
         post_permlink = '<?php echo $link; ?>';
