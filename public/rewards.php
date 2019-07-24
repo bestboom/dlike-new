@@ -18,7 +18,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     
         if ($result1->num_rows > 0) {
             while($row1 = $result1->fetch_assoc()) {
-                $mydata[] = $row1;
+                echo $mydata[] = $row1;
             }
             foreach ($mydata as $data)
 
