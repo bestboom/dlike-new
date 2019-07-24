@@ -186,7 +186,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                 console.log(my_permlinks);
             }
 
-
             var countDownDate = 0;
             function counter() {
                 setInterval(() => {
