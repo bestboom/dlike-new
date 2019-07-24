@@ -155,7 +155,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             </div>
         </div>
     </div><!-- working-process-section-->
-    <?php include('template/footer3.php'); ?>
+    <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
         $( document ).ready(function() {
             var countDownDate = 0;
