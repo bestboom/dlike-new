@@ -23,7 +23,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             }
             $permlinks_list = implode(',', $mydata);
 
-            $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink IN ('$permlinks_list')";
+            $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink IN ('doping-uzbek-wrestler-taymazov-stripped-of-london-2012-gold-medal')";
             $result2 = $conn->query($sql2);
             while($row2 = $result2->fetch_assoc()){
             echo $row2['views'];}
