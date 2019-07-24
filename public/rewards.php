@@ -5,6 +5,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $user_status = "";
+$points_per_view = '0.1';
+
 if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     $user_name = $_COOKIE['username'];
     $sql_T = "SELECT * FROM prousers where username='$user_name'";
@@ -23,10 +25,16 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             }
             $permlinks_list = implode("','", $mydata);
 
+// views call
+
             $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
             $result2 = $conn->query($sql2);
             $row2 = $result2->fetch_assoc();
-            echo $row2['views'];
+            $my_views = $row2['views'];
+
+            echo $my_views_points = $my_views * $points_per_view;
+
+
 
         } else {$my_permlinks = '';}
 
