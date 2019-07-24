@@ -13,14 +13,15 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     if ($result_T && $result_T->num_rows > 0) {
         $row_T  = $result_T->fetch_assoc();
 
-        $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
+        $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 24 HOURS";
         $result1 = $conn->query($sql1);
     
         if ($result1->num_rows > 0) {
             while($row1 = $result1->fetch_assoc()) {
                 $mydata[] = $row1;
             }
-            foreach ($mydata as $data) 
+            foreach ($mydata as $data)
+
             {
              echo $my_permlinks = $data['permlink'];
              echo $pp = implode(',', $data['permlink']);
