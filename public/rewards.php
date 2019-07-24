@@ -22,7 +22,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             }
             foreach ($mydata as $data) 
             {
-             echo $my_permlinks = $data['permlink'];
+             echo $my_permlinks = implode(", ", $data['permlink']);
             }
 
             $sql2 = "SELECT sum(totalviews) As myviews FROM TotalPostViews where author = '$user_name' and permlink IN ('".implode("','", $my_permlinks)."')";
