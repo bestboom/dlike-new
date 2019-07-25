@@ -4,9 +4,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$user_status = "";
+
 $points_per_view = '0.2';
 $points_per_like = '20';
+
+$user_status = "You Must Login";
+        $my_points = "0";
+        $my_share = "0%";
+        $my_earnings = "0 DLIKE";
 
 if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     $user_name = $_COOKIE['username'];
@@ -61,7 +66,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         $my_points = "0";
         $my_share = "0%";
         $my_earnings = "0 DLIKE";
-        $my_permlinks = '';
     }
 }
 ?>
