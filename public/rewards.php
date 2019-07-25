@@ -205,7 +205,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         steem.api.getContentReplies(username,posts, function(err, result) {
                             //console.log(result);
                             let totalDlikeComments = 0;  
-                            let sum = 0;
                             result.forEach(comment =>{
                             let metadata;
                                 if (comment.json_metadata && comment.json_metadata.length > 0){
@@ -213,10 +212,8 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                 }
                                 if(metadata.community == "dlike"){
                                     totalDlikeComments +=1; 
-                                    let summed = sum( totalDlikeComments );
                                     //let comt_count = result.length; 
-                                    console.log( "sum: "+summed );
-                                    //console.log(totalDlikeComments);  
+                                    console.log(totalDlikeComments);  
                                 }
                             });
                         $(".DlikeComments").html(totalDlikeComments);
