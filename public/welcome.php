@@ -1,4 +1,8 @@
-<?php include('template/header6.php'); ?>
+<?php 
+if (isset($_GET["r"])){ $referrer = $_GET['r'];} else { $referrer = '';}
+include('template/header6.php'); 
+
+?>
 </div>
 <div class="container">
     <div class="contact-info-outer welcome">
@@ -25,6 +29,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" required="true" placeholder="username">
                                 </div>
+                                <p><?php echo $referrer; ?></p>
                                 <button type="button" class="btn btn-default signup_btn">
                                     <i class="fas fa-spinner" style="display:none;"></i>
                                     <span>Continue</span>
