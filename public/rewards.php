@@ -212,6 +212,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                 }
                                 if(metadata.community == "dlike"){
                                     totalDlikeComments +=1; 
+                                    alert(totalDlikeComments);
                                     //let comt_count = result.length; 
                                     console.log(totalDlikeComments);  
                                 }
