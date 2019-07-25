@@ -200,9 +200,9 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         console.log(upvotes);
 
                     //check comments
-                    function getTotalcomments(thisAutor,posts){
+                    //function getTotalcomments(thisAutor,posts){
                     //Conting the comments (just the dlike ones)
-                        steem.api.getContentReplies(thisAutor,thisPermlink, function(err, result) {
+                        steem.api.getContentReplies(username,posts, function(err, result) {
                             let totalDlikeComments = 0;  
                             result.forEach(comment =>{
                             let metadata;
@@ -216,12 +216,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                             });
                         //$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
                         });
-                    }
+                    //}
 
 
 
                     });
                 });
+
             }
 
             var countDownDate = 0;
