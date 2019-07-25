@@ -29,7 +29,7 @@ include('template/header6.php');
                                 <div class="form-group">
                                     <input type="text" class="form-control" required="true" placeholder="username">
                                 </div>
-                                <p><?php echo $referrer; ?></p>
+                                <p><?php echo 'Referred By '$referrer; ?></p>
                                 <button type="button" class="btn btn-default signup_btn">
                                     <i class="fas fa-spinner" style="display:none;"></i>
                                     <span>Continue</span>
