@@ -122,7 +122,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                    <p>By staking you agree to the Terms</p>
+                    <p class="DlikeComments">By staking you agree to the Terms</p>
                 </div><!-- create-account-block -->
             </div>
         </div>
@@ -216,7 +216,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                     console.log(totalDlikeComments);  
                                 }
                             });
-                        //$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
+                        $(".DlikeComments").html(totalDlikeComments);
                         });
                     //}
 
