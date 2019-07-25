@@ -203,7 +203,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                     //function getTotalcomments(thisAutor,posts){
                     //Conting the comments (just the dlike ones)
                         steem.api.getContentReplies(username,posts, function(err, result) {
-                            console.log(result.length);
+                            console.log(result);
                             //let totalDlikeComments = 0;  
                             result.forEach(comment =>{
                             let metadata;
@@ -213,7 +213,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                 if(metadata && metadata.community == "dlike"){
                                     //totalDlikeComments +=1; 
                                     let comt_count = result.length; 
-                                    //console.log(comt_count);  
+                                    console.log(comt_count);  
                                 }
                             });
                         //$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
