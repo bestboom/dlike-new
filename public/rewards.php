@@ -205,17 +205,17 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         steem.api.getContentReplies(username,posts, function(err, result) {
                             console.log(result.length);
                             //let totalDlikeComments = 0;  
-                            result.forEach(comment =>{
+                            //result.forEach(comment =>{
                             let metadata;
-                                if (comment.json_metadata && comment.json_metadata.length > 0){
-                                    metadata = JSON.parse(comment.json_metadata);
-                                }
+                                //if (comment.json_metadata && comment.json_metadata.length > 0){
+                                //    metadata = JSON.parse(comment.json_metadata);
+                                //}
                                 if(metadata && metadata.community == "dlike"){
                                     //totalDlikeComments +=1; 
                                     let comt_count = result.length; 
                                     console.log(comt_count);  
                                 }
-                            });
+                            //});
                         //$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
                         });
                     //}
