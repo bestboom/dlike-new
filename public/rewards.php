@@ -203,8 +203,8 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                     //function getTotalcomments(thisAutor,posts){
                     //Conting the comments (just the dlike ones)
                         steem.api.getContentReplies(username,posts, function(err, result) {
-                            console.log(result);
-                            //let totalDlikeComments = 0;  
+                            //console.log(result);
+                            let totalDlikeComments = 0;  
                             result.forEach(comment =>{
                             let metadata;
                                 if (comment.json_metadata && comment.json_metadata.length > 0){
