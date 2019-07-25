@@ -188,10 +188,11 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                 console.log(username);
                 let query = {
                     tag: username,
-                    limit: 22,
+                    limit: 12,
                 };
 
                 steem.api.getDiscussionsByBlog(query, function (err, res) {
+                    console.log(res);
                     res.forEach(($post, i) => {
                         let posts = $post.permlink;
                         console.log(posts);
