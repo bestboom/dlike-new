@@ -212,7 +212,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                 }
                                 if(metadata.community == "dlike"){
                                     totalDlikeComments +=1; 
-                                    let summed = sum( sample );
+                                    let summed = sum( totalDlikeComments );
                                     //let comt_count = result.length; 
                                     console.log( "sum: "+summed );
                                     //console.log(totalDlikeComments);  
