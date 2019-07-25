@@ -198,6 +198,28 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         console.log(posts);
                         let upvotes = $post.pending_payout_value;
                         console.log(upvotes);
+
+                    //check comments
+                    function getTotalcomments(thisAutor,posts){
+                    //Conting the comments (just the dlike ones)
+                        steem.api.getContentReplies(thisAutor,thisPermlink, function(err, result) {
+                            let totalDlikeComments = 0;  
+                            result.forEach(comment =>{
+                            let metadata;
+                                if (comment.json_metadata && comment.json_metadata.length > 0){
+                                    metadata = JSON.parse(comment.json_metadata);
+                                }
+                                if(metadata && metadata.community == "dlike"){
+                                    totalDlikeComments +=1;  
+                                    console.log(totalDlikeComments);  
+                                }
+                            });
+                        //$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
+                        });
+                    }
+
+
+
                     });
                 });
             }
