@@ -205,6 +205,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         steem.api.getContentReplies(username,posts, function(err, result) {
                             //console.log(result);
                             let totalDlikeComments = 0;  
+                            let sum = 0;
                             result.forEach(comment =>{
                             let metadata;
                                 if (comment.json_metadata && comment.json_metadata.length > 0){
