@@ -210,7 +210,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                 if (comment.json_metadata && comment.json_metadata.length > 0){
                                     metadata = JSON.parse(comment.json_metadata);
                                 }
-                                if(metadata && metadata.community == "dlike"){
+                                if(metadata.community == "dlike"){
                                     //totalDlikeComments +=1; 
                                     let comt_count = result.length; 
                                     console.log(comt_count);  
