@@ -211,8 +211,8 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                     metadata = JSON.parse(comment.json_metadata);
                                 }
                                 if(metadata.community == "dlike"){
-                                    totalDlikeComments +=totalDlikeComments; 
-                                    alert(totalDlikeComments);
+                                    totalDlikeComments +=1; 
+                                    //alert(totalDlikeComments);
                                     //let comt_count = result.length; 
                                     console.log(totalDlikeComments);  
                                 }
