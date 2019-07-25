@@ -215,12 +215,11 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                                     //let comt_count = result.length; 
                                     console.log(totalDlikeComments);  
                                 }
+                                $(".DlikeComments").html(totalDlikeComments);
                             });
-                        $(".DlikeComments").html(totalDlikeComments);
+                        
                         });
                     //}
-
-
 
                     });
                 });
