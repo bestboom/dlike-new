@@ -217,18 +217,20 @@ include('template/header6.php');
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4 class="sign_head">Create Account</h4>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" required="true" placeholder="username">
-                                    <span class="fa fa-user"></span>
+                                <form name="signup">
+                                    <div class="form-group input-username">
+                                        <input type="text" class="form-control" required="true" placeholder="username">
+                                        <span class="fa fa-user"></span>
 
-                                    <span class="message" style="display: none"></span>
-                                    <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
-                                </div>
-                                <p style="margin: 0px;"><?php if($referrer !=''){ echo 'Referred By '.$referrer; } ?></p>
-                                <button type="button" class="next btn btn-lime" disabled>
-                                    <i class="fas fa-spinner" style="display:none;"></i>
-                                    <span>Continue</span>
-                                </button>
+                                        <span class="message" style="display: none"></span>
+                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                    </div>
+                                    <p style="margin: 0px;"><?php if($referrer !=''){ echo 'Referred By '.$referrer; } ?></p>
+                                    <button type="button" class="next btn btn-lime" disabled>
+                                        <i class="fas fa-spinner" style="display:none;"></i>
+                                        <span>Continue</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
