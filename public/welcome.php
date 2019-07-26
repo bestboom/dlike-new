@@ -39,8 +39,8 @@ include('template/header6.php');
 .signup-signup-icon {
     color: #ced4da;
     display: inline-block;
-    font-size: 4rem;
-    padding: 2rem 0;
+    font-size: 2rem;
+    padding: 0.4rem 0;
     text-align: center;
     width: 100%;
 }
@@ -239,7 +239,7 @@ include('template/header6.php');
                     <div class="signup-signup-phone" style="display: none">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
-                                <h4>Create New Account</h4>
+                                <h4>Verify Phone</h4>
                                 <span class="signup-signup-icon">
                                     <span class="fa fa-phone"></span>
                                 </span>
