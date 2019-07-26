@@ -219,7 +219,7 @@ include('template/header6.php');
                                 <h4 class="sign_head">Create Account</h4>
                                 <form name="signup">
                                     <div class="form-group input-username">
-                                        <input type="text" class="form-control" required="true" placeholder="username">
+                                        <input type="text" name="username" class="form-control" required="true" placeholder="username">
                                         <span class="fa fa-user"></span>
 
                                         <span class="message" style="display: none"></span>
