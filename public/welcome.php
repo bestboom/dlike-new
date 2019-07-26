@@ -32,7 +32,7 @@ include('template/header6.php');
  =============================== */
 
 .signup-signup {
-    padding: 3rem;
+    /* padding: 3rem; */
     text-align: center;
 }
 
@@ -213,7 +213,7 @@ include('template/header6.php');
                     </div>
                 </div>
                 <div class="col-md-6 signup_sec signup-signup">
-                    <div class="row">
+                    <div class="row signup-signup-steemit">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4 class="sign_head">Create Account</h4>
