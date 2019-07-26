@@ -244,8 +244,7 @@ include('template/header6.php');
                                     <span class="fa fa-phone"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Enter your phone number. We will send you a text message with a verification code that you’ll need
-                                    to enter on the next screen.
+                                    Enter your phone number. We will send you a text message with a verification code that you’ll need to enter on the next screen.
                                 </p>
                                 <form name="signup-phone">
                                     <span class="input-username">
@@ -254,6 +253,9 @@ include('template/header6.php');
 
                                         <span class="message" style="display: none"></span>
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                        <input id="phone" type="tel">
+                                        <span id="valid-msg" class="hide">✓ Valid</span>
+                                        <span id="error-msg" class="hide"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>
                                         Send SMS
@@ -269,4 +271,5 @@ include('template/header6.php');
     </div>
 </div> 
 <script src="/js/signup.js"></script>
+<!--https://github.com/jackocnr/intl-tel-input -->
 <?php include('template/footer3.php'); ?>
