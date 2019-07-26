@@ -3,7 +3,9 @@ if (isset($_GET["r"])){ $referrer = $_GET['r'];} else { $referrer = '';}
 include('template/header6.php'); 
 
 ?>
+<head>
 <link rel="stylesheet" href="/css/intlTelInput.css">
+</head>
 <style>
     .signup-container {
     padding: 5rem;
