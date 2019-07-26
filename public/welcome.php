@@ -238,26 +238,28 @@ include('template/header6.php');
 
                     <div class="signup-signup-phone" style="display: none">
                         <div class="contact-info-block signup_block">
-                            <h2>Create New Account</h2>
-                            <span class="signup-signup-icon">
-                                <span class="fa fa-phone"></span>
-                            </span>
-                            <p class="signup-signup-description">
-                                Enter your phone number. We will send you a text message with a verification code that you’ll need
-                                to enter on the next screen.
-                            </p>
-                            <form name="signup-phone">
-                                <span class="input-username">
-                                    <input type="tel" name="phone" placeholder="+1"/>
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Create New Account</h4>
+                                <span class="signup-signup-icon">
                                     <span class="fa fa-phone"></span>
-
-                                    <span class="message" style="display: none"></span>
-                                    <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                 </span>
-                                <button class="next btn btn-lime" disabled>
-                                    Send SMS
-                                </button>
-                            </form>
+                                <p class="signup-signup-description">
+                                    Enter your phone number. We will send you a text message with a verification code that you’ll need
+                                    to enter on the next screen.
+                                </p>
+                                <form name="signup-phone">
+                                    <span class="input-username">
+                                        <input type="tel" name="phone" placeholder="+1"/>
+                                        <span class="fa fa-phone"></span>
+
+                                        <span class="message" style="display: none"></span>
+                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                    </span>
+                                    <button class="next btn btn-lime" disabled>
+                                        Send SMS
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
 
