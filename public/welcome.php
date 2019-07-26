@@ -3,6 +3,7 @@ if (isset($_GET["r"])){ $referrer = $_GET['r'];} else { $referrer = '';}
 include('template/header6.php'); 
 
 ?>
+<link rel="stylesheet" href="/css/intlTelInput.css">
 <style>
     .signup-container {
     padding: 5rem;
@@ -271,5 +272,6 @@ include('template/header6.php');
     </div>
 </div> 
 <script src="/js/signup.js"></script>
+<script src="/js/intlTelInput.js"></script>
 <!--https://github.com/jackocnr/intl-tel-input -->
 <?php include('template/footer3.php'); ?>
