@@ -226,7 +226,7 @@ include('template/header6.php');
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                     </div>
                                     <p style="margin: 0px;"><?php if($referrer !=''){ echo 'Referred By '.$referrer; } ?></p>
-                                    <button type="button" class="next btn btn-lime" disabled>
+                                    <button class="next btn btn-lime" disabled>
                                         <i class="fas fa-spinner" style="display:none;"></i>
                                         <span>Continue</span>
                                     </button>
