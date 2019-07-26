@@ -237,16 +237,16 @@ include('template/header6.php');
 
 
                     <div class="signup-signup-phone" style="display: none">
-                        <h2>Create New Account</h2>
-                        <span class="signup-signup-icon">
-                            <span class="fa fa-phone"></span>
-                        </span>
-                        <p class="signup-signup-description">
-                            Enter your phone number. We will send you a text message with a verification code that you’ll need
-                            to enter on the next screen.
-                        </p>
-                        <form name="signup-phone">
-                            <label>
+                        <div class="contact-info-block signup_block">
+                            <h2>Create New Account</h2>
+                            <span class="signup-signup-icon">
+                                <span class="fa fa-phone"></span>
+                            </span>
+                            <p class="signup-signup-description">
+                                Enter your phone number. We will send you a text message with a verification code that you’ll need
+                                to enter on the next screen.
+                            </p>
+                            <form name="signup-phone">
                                 <span class="input-username">
                                     <input type="tel" name="phone" placeholder="+1"/>
                                     <span class="fa fa-phone"></span>
@@ -257,8 +257,8 @@ include('template/header6.php');
                                 <button class="next btn btn-lime" disabled>
                                     Send SMS
                                 </button>
-                            </label>
-                        </form>
+                            </form>
+                        </div>
                     </div>
 
                 </div>
