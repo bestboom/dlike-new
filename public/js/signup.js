@@ -131,7 +131,6 @@ domReady(function () {
         Timeout = setTimeout(checkUsername, 250);
     });
 });
-
 function signUpPhoneCheck() {
     var Signup  = document.querySelector('.signup-signup');
     var Steemit = Signup.querySelector('.signup-signup-steemit');
