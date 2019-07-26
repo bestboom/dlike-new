@@ -212,7 +212,7 @@ include('template/header6.php');
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 signup_sec">
+                <div class="col-md-6 signup_sec signup-signup">
                     <div class="row">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
