@@ -294,7 +294,7 @@ var intl = window.intlTelInput(input, {
             success(countryCode);
         });
     },
-    utilsScript: "js/utils.js"
+    utilsScript: "/js/phone_input.js"
 });
 
 var reset = function() {
