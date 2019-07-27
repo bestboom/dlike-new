@@ -19,6 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 		$return['message'] = 'Number already in use by other account';
 	}
 	echo json_encode($return);
+	exit;
 }
 
 ?>
