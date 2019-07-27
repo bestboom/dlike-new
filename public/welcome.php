@@ -287,8 +287,7 @@ var input = document.querySelector("#phone"),
 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
 // Initialise plugin
-var input = document.querySelector("#phone");
-intlTelInput(input, {
+var intl = window.intlTelInput(input, {
     initialCountry: "auto",
     geoIpLookup: function(success, failure) {
         $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
