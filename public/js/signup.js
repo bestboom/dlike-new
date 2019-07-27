@@ -305,6 +305,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 },
                 error: function(xhr, textStatus, error){
                           console.log(xhr.statusText);
+                          console.warn(xhr.responseText)
                            console.log(textStatus);
                             console.log(error);
                     }
