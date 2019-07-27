@@ -1,10 +1,3 @@
-/*
- * International Telephone Input v16.0.1
- * https://github.com/jackocnr/intl-tel-input.git
- * Licensed under the MIT license
- */
-
-// wrap in UMD
 (function(factory) {
     var intlTelInput = factory(window, document);
     if (typeof module === "object" && module.exports) module.exports = intlTelInput; else window.intlTelInput = intlTelInput;
