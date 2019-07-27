@@ -249,9 +249,8 @@ include('template/header6.php');
                                 </p>
                                 <form name="signup-phone">
                                     <span class="form-group input-username">
-                                        <input type="tel" min="0" name="phone" id="phone" class="form-control" required="true" placeholder="phone" style="padding-left: 82px;">
-                                        <span class="fa fa-phone"></span>
-                                        <span class="message" style="display: none;margin-left: 45px;"></span>
+                                        <input type="tel" min="0" name="phone" id="phone" class="form-control" required="true" placeholder="phone">
+                                        <span class="message" style="display: none;margin-left: 33px;"></span>
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>

@@ -135,7 +135,7 @@ function signUpPhoneCheck() {
     var Signup  = document.querySelector('.signup-signup');
     var Steemit = Signup.querySelector('.signup-signup-steemit');
     var Phone   = Signup.querySelector('.signup-signup-phone');
-
+    $(".signup-signup-phone .loader.fa").insertAfter($("#phone"));
     jQuery(Steemit).animate({
         opacity: 0,
         top    : -20
@@ -194,6 +194,8 @@ input.addEventListener('blur', function(){
             $("#phone").prop('disabled',true);
             $(".signup-signup-phone .message").text('checking number availability...');
             $(".signup-signup-phone .message").show();
+            $(".signup-signup-phone .message").show();
+            $(".signup-signup-phone .message").removeClass('signup-message-success').removeClass('signup-message-error');
             $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-times').addClass('fa-circle-notch').addClass('fa-spin');
             $(".signup-signup-phone .loader").show();
             var number = intl.getNumber();
@@ -212,12 +214,14 @@ input.addEventListener('blur', function(){
                         $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');
                         //validMsg.classList.remove("hide");
                         $(".signup-signup-phone .next.btn").prop('disabled',false);
+                        $(".signup-signup-phone .message").addClass('signup-message-success');
                         $(".signup-signup-phone .message").text(response.message);
                     }
                     else{
                         $(".signup-signup-phone .next.btn").prop('disabled',true);
                         $(".signup-signup-phone .loader").removeClass('fa-check').addClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');
                         //toastr['error'](response.message);
+                        $(".signup-signup-phone .message").addClass('signup-message-error');
                         $(".signup-signup-phone .message").text(response.message);
                     }
                 }
