@@ -37,6 +37,9 @@
     <link rel="stylesheet" href="/assets/css/slick.css">
     <link rel="stylesheet" href="/css/style3.css">
     <link rel="stylesheet" href="/css/responsive.css">
+<?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
+    <link rel="stylesheet" href="/css/intlTelInput.css">
+<? } ?>         
 </head>
 <body>
     <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
