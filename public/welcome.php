@@ -373,7 +373,7 @@ input.addEventListener('keyup', reset);
 document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
         var number = $("#phone").val();//intl.getNumber();
-        //var countryCode = intl.intlTelInput("getSelectedCountryData").dialCode;
+        var countryCode = $(".iti__selected-dial-code").text();
         //number = number.replace('+','');
         console.log(number);
         console.log(countryCode);
