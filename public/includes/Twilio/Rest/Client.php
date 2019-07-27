@@ -111,7 +111,9 @@ class Client {
         if (is_null($environment)) {
             $environment = $_ENV;
         }
-        
+        if(ucfirst($name)=='Sid'){
+            $name='AccountSid';
+        }
         if ($username) {
             $this->username = $username;
         } else {
