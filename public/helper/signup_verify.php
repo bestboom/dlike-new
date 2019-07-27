@@ -12,31 +12,22 @@ function sendSMS($country_code = '',$mobile_no, $message){
     $client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
     //$message = $client->messages->create($country_code.$mobile_no, array('from' => TWILIO_FROM_NO, 'body' => $message));
     /*$verification = $client->verify->v2->services("VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")->verifications->create($country_code.$mobile_no,"sms");*/
-    $creatService = $client->verify->v2->services->create("Number Verification Service");
-    /*File writer code*/
+    //$creatService = $client->verify->v2->services->create("Number Verification Service");
+    
+	$verification = $client->verify->v2->services('VAcd3624a0276d7eb9e0b442625771d7c1')->verifications->create($country_code.$mobile_no,"sms");
+	/*File writer code*/
 	$txt = '========================='.date('Y-m-d H:i:s').'=====================';
 	$myfile = fopen("sms-log.txt", "a");
-	fwrite($myfile, "\n". $creatService);
+	fwrite($myfile, "\n". $verification);
 	fclose($myfile);
 	/*File writer code*/
-    if($creatService && isset($creatService->sid) && $creatService->sid != ''){
-    	$verification = $client->verify->v2->services($creatService->sid)->verifications->create($country_code.$mobile_no,"sms");
-    	/*File writer code*/
-		$txt = '========================='.date('Y-m-d H:i:s').'=====================';
-		$myfile = fopen("sms-log.txt", "a");
-		fwrite($myfile, "\n". $verification);
-		fclose($myfile);
-		/*File writer code*/
-    	if($verification && isset($verification->sid) && $verification->sid != ''){
-    		return true;
-    	}
-    	else{
-    		return false;
-    	}
-    }
-    else{
-    	return false;
-    }
+	if($verification && isset($verification->sid) && $verification->sid != ''){
+		return true;
+	}
+	else{
+		return false;
+	}
+    
 
     /*File writer code*/
 	// $txt = '========================='.date('Y-m-d H:i:s').'=====================';
