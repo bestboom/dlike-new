@@ -257,6 +257,7 @@ input.addEventListener('keyup', function(){
             var errorCode = intl.getValidationError();
             message.innerHTML = errorMap[errorCode];
             //errorMsg.classList.remove("hide");
+            $(".signup-signup-phone .loader").removeClass('fa-check').addClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');        
             $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").addClass('signup-message-error');
         }
