@@ -237,8 +237,8 @@ input.addEventListener('blur', function(){
 });
 
 // Reset on keyup/change event
-input.addEventListener('change', reset);
-input.addEventListener('keyup', reset);
+//input.addEventListener('change', reset);
+//input.addEventListener('keyup', reset);
 
 document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
