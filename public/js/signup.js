@@ -209,7 +209,7 @@ validMsg.classList.add("hide");
 
 
 // Validate on blur event
-input.addEventListener('blur', function(){
+input.addEventListener('keyup', function(){
     //reset();
     if(input.value.trim()){
         if(intl.isValidNumber()){
