@@ -288,6 +288,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 dataType: 'json',
                 data: {action : 'send_sms',countryCode:countryCode,number:number},
                 success:function(response){
+                    console.log(response);
                     $("#phone").prop('disabled',false);
                     $(".signup-signup-phone .next.btn").prop('disabled',false);
                     if(response.status){
@@ -299,6 +300,11 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                         toastr['error'](response.message);
                     }
                 }
+                error: function(xhr, textStatus, error){
+                          console.log(xhr.statusText);
+                           console.log(textStatus);
+                            console.log(error);
+                    }
             });
             /*verify number call*/
         }
