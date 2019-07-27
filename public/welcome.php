@@ -238,7 +238,7 @@ include('template/header6.php');
                     </div>
 
 
-                    <div class="signup-signup-phone" style="display: none">
+                    <div class="signup-signup-phone">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4>Verify Phone</h4>
