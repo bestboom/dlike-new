@@ -4,18 +4,22 @@
 	error_reporting(E_ALL);
 require '../includes/config.php';
 // Sandbox Twillio Constants
-define("TWILIO_FROM_NO", "+919586561149");
+define("TWILIO_FROM_NO", "+15005550006");
 define("TWILIO_SID", "ACe117d252bc601c7d773357dcbfa29f69");
 define("TWILIO_TOKEN", "30c7d02328017d4b76ddb7652ec32bc1"); 
 function sendSMS($country_code = '',$mobile_no, $message) {
     require_once("../includes/Twilio/autoload.php");
     $client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
     $message = $client->messages->create($country_code.$mobile_no, array('from' => TWILIO_FROM_NO, 'body' => $message));
+    /*$verification = $client->verify->v2->services("VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+                                   ->verifications
+                                   ->create($country_code.$mobile_no,"sms");*/
+
     /*File writer code*/
-	  $txt = '========================='.date('Y-m-d H:i:s').'=====================';
-	  $myfile = fopen("sms-log.txt", "a");
-	  fwrite($myfile, "\n". $message);
-	  fclose($myfile);
+	$txt = '========================='.date('Y-m-d H:i:s').'=====================';
+	$myfile = fopen("sms-log.txt", "a");
+	fwrite($myfile, "\n". $message);
+	fclose($myfile);
 	  /*File writer code*/
     if($message != ""){
         $message = print_r($message, true);
