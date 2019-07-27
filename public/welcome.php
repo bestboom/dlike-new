@@ -248,16 +248,16 @@ include('template/header6.php');
                                     Enter your phone number. We will send you a text message with a verification code that you’ll need to enter on the next screen.
                                 </p>
                                 <form name="signup-phone">
-                                    <span class="input-username">
+                                    <span class="form-group input-username">
                                         <!-- <input type="tel" name="phone" placeholder="+1"/>
                                         <span class="fa fa-phone"></span>
 
                                         <span class="message" style="display: none"></span>
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span> -->
                                         <input id="phone" type="tel">
-                                        <span id="valid-msg" class="hide">✓ Valid</span>
-                                        <span id="error-msg" class="hide"></span>
                                     </span>
+                                    <span class="message" style="display: none"></span>
+                                    <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                     <button class="next btn btn-lime" disabled>
                                         Send SMS
                                     </button>

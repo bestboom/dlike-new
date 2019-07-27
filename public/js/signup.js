@@ -195,6 +195,10 @@ input.addEventListener('blur', function(){
     if(input.value.trim()){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
+            $(".signup-signup-phone .message").text('checking number availability...');
+            $(".signup-signup-phone .message").show();
+            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-times').addClass('fa-circle-notch').addClass('fa-spin');
+            $(".signup-signup-phone .loader").show();
             var number = intl.getNumber();
             number = number.replace('+','');
             console.log(number);
@@ -208,12 +212,16 @@ input.addEventListener('blur', function(){
                 success:function(response){
                     $("#phone").prop('disabled',false);
                     if(response.status){
+                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');
                         validMsg.classList.remove("hide");
                         $(".signup-signup-phone .next.btn").prop('disabled',false);
+                        $(".signup-signup-phone .message").text(response.message);
                     }
                     else{
                         $(".signup-signup-phone .next.btn").prop('disabled',true);
-                        toastr['error'](response.message);
+                        $(".signup-signup-phone .loader").removeClass('fa-check').addClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');
+                        //toastr['error'](response.message);
+                        $(".signup-signup-phone .message").text(response.message);
                     }
                 }
             });
