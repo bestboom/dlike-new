@@ -269,10 +269,12 @@ input.addEventListener('keyup', function(){
 
 document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
-        var number = $("#phone").val();//intl.getNumber();
+        var number = $("#phone").val();
+        var number2 = intl.getNumber();
         var countryCode = $(".iti__selected-dial-code").text();
         //number = number.replace('+','');
         console.log(number);
+        console.log(number2);
         console.log(countryCode);
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);
