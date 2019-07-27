@@ -10,8 +10,8 @@ require_once("../includes/Twilio/autoload.php");
 
 //use Twilio\Rest\Client;
 
-//$sid    = getenv('twilio_sid');
-//$token  = getenv('twilio_token');
+$sid    = getenv('twilio_sid');
+$token  = getenv('twilio_token');
 //$twilio = new Client($sid, $token);
 
 
