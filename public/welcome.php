@@ -301,6 +301,7 @@ include('template/header6.php');
     var input = document.querySelector("#phone"),
     errorMsg = document.querySelector("#error-msg"),
     validMsg = document.querySelector("#valid-msg");
+    var countryCode = '';
 
 // Error messages based on the code returned from getValidationError
 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
@@ -312,7 +313,7 @@ var intl = window.intlTelInput(input, {
     initialCountry: "auto",
     geoIpLookup: function(success, failure) {
         $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-            var countryCode = (resp && resp.country) ? resp.country : "";
+            countryCode = (resp && resp.country) ? resp.country : "";
             success(countryCode);
         });
     },
@@ -372,7 +373,7 @@ input.addEventListener('keyup', reset);
 document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
         var number = $("#phone").val();//intl.getNumber();
-        var countryCode = intl.intlTelInput("getSelectedCountryData").dialCode;
+        //var countryCode = intl.intlTelInput("getSelectedCountryData").dialCode;
         //number = number.replace('+','');
         console.log(number);
         console.log(countryCode);
