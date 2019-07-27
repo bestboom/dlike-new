@@ -274,7 +274,7 @@ include('template/header6.php');
 </div> 
 
 <!--https://github.com/jackocnr/intl-tel-input -->
-<?php include('template/footer3.php'); ?>
+<?php include('template/footer4.php'); ?>
 <script src="/js/signup.js"></script>
 <script src="/js/intlTelInput.js"></script>
 <script>
@@ -287,7 +287,15 @@ var input = document.querySelector("#phone"),
 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
 // Initialise plugin
-var intl = window.intlTelInput(input, {
+var input = document.querySelector("#phone");
+intlTelInput(input, {
+    initialCountry: "auto",
+    geoIpLookup: function(success, failure) {
+        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "";
+            success(countryCode);
+        });
+    },
     utilsScript: "/js/phone_input.js"
 });
 
