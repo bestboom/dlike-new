@@ -153,6 +153,28 @@ function signUpPhoneCheck() {
     });
 }
 
+
+function pinVerify() {
+    var Signit  = document.querySelector('.signup-signup');
+    var pinit = Signit.querySelector('.signup-signup-verify');
+    var Phoneit   = Signit.querySelector('.signup-signup-phone');
+    $(".signup-signup-phone .loader.fa").insertAfter($("#phone"));
+    jQuery(Phoneit).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        Phoneit.style.display = 'none';
+
+        pinit.style.opacity = 0;
+        pinit.style.top     = '50px';
+        pinit.style.display = '';
+
+        jQuery(pinit).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
 // phone input starts here
 
 /*new signup code*/
@@ -252,7 +274,9 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);
         if(number != ''){
+            pinVerify();
             /*verify number call*/
+
             $.ajax({
                 url: '/helper/signup_verify.php',
                 type: 'post',
