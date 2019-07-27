@@ -7,6 +7,9 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+/*'
+
 $sql = "ALTER TABLE wallet ADD phone_number VARCHAR(255) NOT NULL AFTER amount";
 if ($conn->query($sql) === TRUE) {
     echo "Table colms added";
@@ -14,7 +17,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating table: " . $conn->error;
 }
 
-/*'
+
 
 
 
