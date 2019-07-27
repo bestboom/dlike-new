@@ -250,11 +250,11 @@ include('template/header6.php');
                                 </p>
                                 <form name="signup-phone">
                                     <span class="input-username">
-                                        <input type="tel" name="phone" placeholder="+1"/>
+                                        <!-- <input type="tel" name="phone" placeholder="+1"/>
                                         <span class="fa fa-phone"></span>
 
                                         <span class="message" style="display: none"></span>
-                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span> -->
                                         <input id="phone" type="tel">
                                         <span id="valid-msg" class="hide">✓ Valid</span>
                                         <span id="error-msg" class="hide"></span>
