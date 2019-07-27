@@ -269,7 +269,7 @@ include('template/header6.php');
                                     <span class="fa fa-phone"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Enter the confirmation code. We sent the code to (phone number here) vis SMS.
+                                    Enter the confirmation code. We sent the code to <span id="sms_number"></span> vis SMS.
                                 </p>
                                 <form name="signup-pin">
                                     <span class="input-username">

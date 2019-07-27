@@ -277,6 +277,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);
         if(number != ''){
+            $("#sms_number").htmlfadeIn('+ 'number);
             pinVerify();
             /*verify number call*/
 
