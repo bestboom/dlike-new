@@ -192,6 +192,7 @@ input.addEventListener('blur', function(){
     if(input.value.trim()){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
+            $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").text('checking number availability...');
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").show();
