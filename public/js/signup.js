@@ -259,7 +259,6 @@ input.addEventListener('keyup', function(){
         }
     }
 });
-
 // Reset on keyup/change event
 //input.addEventListener('change', reset);
 //input.addEventListener('keyup', reset);
