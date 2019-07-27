@@ -299,7 +299,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     else{
                         toastr['error'](response.message);
                     }
-                }
+                },
                 error: function(xhr, textStatus, error){
                           console.log(xhr.statusText);
                            console.log(textStatus);
