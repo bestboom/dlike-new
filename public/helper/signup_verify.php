@@ -4,7 +4,7 @@
 	error_reporting(E_ALL);
 require '../includes/config.php';
 
-if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_POST['number'])  && $_POST['number'] != '')){
+if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_POST['number'])  && $_POST['number'] != ''){
 	$return = array();
 	$return['status'] = false;
 	$return['message'] = '';
