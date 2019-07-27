@@ -78,4 +78,7 @@ function time_ago($timestamp)
         }
     }
 }
+// Sandbox Twillio Constants
+define("TWILIO_SID", "");
+define("TWILIO_TOKEN", ""); 
 ?>
