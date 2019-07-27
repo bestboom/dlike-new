@@ -8,7 +8,7 @@ require_once("../includes/Twilio/autoload.php");
 $client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
 //$phone =  $_POST['number'];
 
-use Twilio\Rest\Client;
+//use Twilio\Rest\Client;
 
 $sid    = getenv('twilio_sid');
 $token  = getenv('twilio_token');
