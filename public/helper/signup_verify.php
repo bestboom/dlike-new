@@ -14,11 +14,8 @@ $sid    = getenv('twilio_sid');
 $token  = getenv('twilio_token');
 $twilio = new Client($sid, $token);
 
-$verification = $twilio->verify->v2->services("VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-                                   ->verifications
-                                   ->create($phone, "sms");
 
-print($verification->sid);
+//print($verification->sid);
 
 
 
@@ -61,7 +58,7 @@ print($verification->sid);
     //else{
     //	return false;
     //}
-}
+//}
 if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_POST['number'])  && $_POST['number'] != ''){
 	$return = array();
 	$return['status'] = false;
@@ -88,12 +85,15 @@ else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_P
 	$check_phone = "SELECT * FROM wallet where phone_number = '".$phone."' ";
 	$result_phone = $conn->query($check_phone);
 	if ($result_phone->num_rows <= 0){
-		$otp = mt_rand(1111,9999);
-		$txt = "Your otp is : ".$otp;
-		$sms = sendSMS($_POST['countryCode'],$_POST['number'],$txt);
-		if($sms){
+		//$otp = mt_rand(1111,9999);
+		//$txt = "Your otp is : ".$otp;
+		//$sms = sendSMS($_POST['countryCode'],$_POST['number'],$txt);
+		$verification = $twilio->verify->v2->services("VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+                                   ->verifications
+                                   ->create($phone, "sms");
+		if($verification->valid){
 			$return['status'] = true;
-			$return['message'] = 'We have sent you otp on your number please verify it.';
+			$return['message'] = 'We have sent you PIN on your number please verify it.';
 		}
 		else{
 			$return['message'] = 'We are unable to send otp, Please try again later.';
