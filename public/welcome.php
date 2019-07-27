@@ -272,11 +272,12 @@ include('template/header6.php');
         </div>
     </div>
 </div> 
+
+<!--https://github.com/jackocnr/intl-tel-input -->
+<?php include('template/footer3.php'); ?>
 <script src="/js/signup.js"></script>
 <script src="/js/intlTelInput.js"></script>
 <script>
   var input = document.querySelector("#phone");
   window.intlTelInput(input);
 </script>
-<!--https://github.com/jackocnr/intl-tel-input -->
-<?php include('template/footer3.php'); ?>
