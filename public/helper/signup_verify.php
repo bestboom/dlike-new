@@ -79,7 +79,8 @@ else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_P
 	$return = array();
 	$return['status'] = false;
 	$return['message'] = '';
-	$phone_number_full = $_POST['countryCode'].$_POST['number'];
+	echo $phone_number_full = $_POST['countryCode'].$_POST['number'];
+
 	$countryCode =str_replace('+','',$_POST['countryCode']); 
 	$phone =  $countryCode.$_POST['number'];
 	$check_phone = "SELECT * FROM wallet where phone_number = '".$phone."' ";
@@ -91,7 +92,7 @@ else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_P
 		$verification = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
                                    ->verifications
                                    ->create($phone_number_full, "sms");
-		if($verification->valid){
+		if($verification){
 			$return['status'] = true;
 			$return['message'] = 'We have sent you PIN on your number please verify it.';
 		}
