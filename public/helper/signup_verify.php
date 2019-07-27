@@ -3,14 +3,33 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 require '../includes/config.php';
+require_once("../includes/Twilio/autoload.php");
+
+$client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
+$phone =  $_POST['number'];
+
+use Twilio\Rest\Client;
+
+$sid    = getenv('twilio_sid');
+$token  = getenv('twilio_token');
+$twilio = new Client($sid, $token);
+
+$verification = $twilio->verify->v2->services("VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+                                   ->verifications
+                                   ->create($phone, "sms");
+
+print($verification->sid);
+
+
+
 // Sandbox Twillio Constants
-define("TWILIO_FROM_NO", "+13237759845");
-define("TWILIO_SID", "ACe117d252bc601c7d773357dcbfa29f69");
-define("TWILIO_TOKEN", "30c7d02328017d4b76ddb7652ec32bc1"); 
-function sendSMS($country_code = '',$mobile_no, $message){
-    require_once("../includes/Twilio/autoload.php");
-    $client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
-    $message = $client->messages->create($country_code.$mobile_no, array('from' => TWILIO_FROM_NO, 'body' => $message));
+//define("TWILIO_FROM_NO", "+13237759845");
+//define("TWILIO_SID", "ACe117d252bc601c7d773357dcbfa29f69");
+//define("TWILIO_TOKEN", "30c7d02328017d4b76ddb7652ec32bc1"); 
+//function sendSMS($country_code = '',$mobile_no, $message){
+    //require_once("../includes/Twilio/autoload.php");
+    //$client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
+    //$message = $client->messages->create($country_code.$mobile_no, array('from' => TWILIO_FROM_NO, 'body' => $message));
     /*$verification = $client->verify->v2->services("VAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")->verifications->create($country_code.$mobile_no,"sms");*/
     //$creatService = $client->verify->v2->services->create("Number Verification Service");
     
@@ -30,18 +49,18 @@ function sendSMS($country_code = '',$mobile_no, $message){
     
 
     /*File writer code*/
-	$txt = '========================='.date('Y-m-d H:i:s').'=====================';
-	$myfile = fopen("sms-log.txt", "a");
-	fwrite($myfile, "\n". $message);
-	fclose($myfile);
+	//$txt = '========================='.date('Y-m-d H:i:s').'=====================';
+	//$myfile = fopen("sms-log.txt", "a");
+	//fwrite($myfile, "\n". $message);
+	//fclose($myfile);
 	/*File writer code*/
-    if($message != ""){
-        $message = print_r($message, true);
-    	return true;
-    }
-    else{
-    	return false;
-    }
+    //if($message != ""){
+    //    $message = print_r($message, true);
+    //	return true;
+    //}
+    //else{
+    //	return false;
+    //}
 }
 if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_POST['number'])  && $_POST['number'] != ''){
 	$return = array();
