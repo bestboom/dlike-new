@@ -191,7 +191,7 @@ validMsg.classList.add("hide");
 
 // Validate on blur event
 input.addEventListener('blur', function(){
-    reset();
+    //reset();
     if(input.value.trim()){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
