@@ -1,20 +1,6 @@
 <?php 
 if (isset($_GET["r"])){ $referrer = $_GET['r'];} else { $referrer = '';}
 include('template/header6.php'); 
-// Sandbox Twillio Constants
-define("TWILIO_FROM_NO", "+919586561149");
-define("TWILIO_SID", "ACe117d252bc601c7d773357dcbfa29f69");
-define("TWILIO_TOKEN", "30c7d02328017d4b76ddb7652ec32bc1"); 
-function sendSMS($country_code = '',$mobile_no, $message) {
-    require_once("Twilio/autoload.php");
-    $client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
-    $message = $client->messages->create($country_code.$mobile_no, array('from' => TWILIO_FROM_NO, 'body' => $message));
-    echo $message.'<br/>';
-    if ($message != "") {
-        $message = print_r($message, true);
-        echo $message;die;
-    }
-}
 ?>
 
 <style>
@@ -384,10 +370,12 @@ input.addEventListener('change', reset);
 input.addEventListener('keyup', reset);
 
 $(document).on('click',".signup-signup-phone .next.btn",function(){
-    if(intl.isValidNumber()){
-        var number = intl.getNumber();
-        number = number.replace('+','');
+    if(intl.isValidNumber() && $("#phone").val() != ''){
+        var number = $("#phone").val();//intl.getNumber();
+        var countryCode = intl.intlTelInput("getSelectedCountryData").dialCode;
+        //number = number.replace('+','');
         console.log(number);
+        console.log(countryCode);
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);
         if(number != ''){
@@ -397,13 +385,14 @@ $(document).on('click',".signup-signup-phone .next.btn",function(){
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'send_sms',number:number},
+                data: {action : 'send_sms',countryCode:countryCode,number:number},
                 success:function(response){
                     $("#phone").prop('disabled',false);
                     $(".signup-signup-phone .next.btn").prop('disabled',false);
                     if(response.status){
                        $(".signup-signup-phone").fadeOut('slow');
                        $(".signup-signup-verify").fadeIn('slow');
+                       toastr['success'](response.message);
                     }
                     else{
                         toastr['error'](response.message);
