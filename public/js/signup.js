@@ -254,7 +254,7 @@ input.addEventListener('keyup', function(){
         }else{
             input.classList.add("error");
             var errorCode = intl.getValidationError();
-            errorMsg.innerHTML = errorMap[errorCode];
+            message.innerHTML = errorMap[errorCode];
             //errorMsg.classList.remove("hide");
         }
     }
