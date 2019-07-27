@@ -6,7 +6,13 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-
+$updatePost = "UPDATE wallet SET phone_number = 919586561149 WHERE username = 'certseek'";
+$updatePostQuery = $conn->query($updatePost);
+if ($updatePostQuery === TRUE) {
+        echo "phone number added";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
 
 /*'
 
