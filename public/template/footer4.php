@@ -79,5 +79,9 @@
         }
         function popup(e){var t=700;var n=400;var r=(screen.width-t)/2;var i=(screen.height-n)/2;var s="width="+t+", height="+n;s+=", top="+i+", left="+r;s+=", directories=no";s+=", location=no";s+=", menubar=no";s+=", resizable=no";s+=", scrollbars=no";s+=", status=no";s+=", toolbar=no";newwin=window.open(e,"windowname5",s);if(window.focus){newwin.focus()}return false}
     </script>
+<?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
+    <script src="/js/signup.js"></script>
+    <script src="/js/intlTelInput.js"></script>
+<? } ?>      
 </body>
 </html>
