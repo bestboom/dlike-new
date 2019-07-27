@@ -328,13 +328,35 @@ var reset = function() {
 };
 
 // Validate on blur event
-input.addEventListener('blur', function() {
+input.addEventListener('blur', function(){
     reset();
     if(input.value.trim()){
         if(intl.isValidNumber()){
+            $("#phone").prop('disabled',true);
             var number = intl.getNumber();
+            number = number.replace('+','');
             console.log(number);
-            validMsg.classList.remove("hide");
+            /*verify number call*/
+            $.ajax({
+                url: 'https://dlike.io/welcome.php/pulic/helper/signup_verify.php";?>',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'check_number',number:number},
+                success:function(response){
+                    $("#phone").prop('disabled',false);
+                    if(response.status){
+                        validMsg.classList.remove("hide");
+                        $(".signup-signup-phone .next.btn").prop('disabled',false);
+                    }
+                    else{
+                        $(".signup-signup-phone .next.btn").prop('disabled',true);
+                        toastr['error'](response.message);
+                    }
+                }
+            });
+            /*verify number call*/
+            
         }else{
             input.classList.add("error");
             var errorCode = intl.getValidationError();
@@ -347,4 +369,36 @@ input.addEventListener('blur', function() {
 // Reset on keyup/change event
 input.addEventListener('change', reset);
 input.addEventListener('keyup', reset);
+
+$(document).on('click',".signup-signup-phone .next.btn",function(){
+    if(intl.isValidNumber()){
+        var number = intl.getNumber();
+        number = number.replace('+','');
+        console.log(number);
+        $("#phone").prop('disabled',true);
+        $(".signup-signup-phone .next.btn").prop('disabled',true);
+        if(number != ''){
+            /*verify number call*/
+            $.ajax({
+                url: 'https://dlike.io/welcome.php/pulic/helper/signup_verify.php";?>',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'send_sms',number:number},
+                success:function(response){
+                    $("#phone").prop('disabled',false);
+                    $(".signup-signup-phone .next.btn").prop('disabled',false);
+                    if(response.status){
+                       $(".signup-signup-phone").fadeOut('slow');
+                       $(".signup-signup-verify").fadeIn('slow');
+                    }
+                    else{
+                        toastr['error'](response.message);
+                    }
+                }
+            });
+            /*verify number call*/
+        }
+    }
+})
 </script>
