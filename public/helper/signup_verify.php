@@ -52,7 +52,7 @@ else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_P
 	$result_phone = $conn->query($check_phone);
 	if ($result_phone->num_rows <= 0){
 		$otp = mt_rand(1111,9999);
-		echo $otp.'<br/>'.$countryCode.$_POST['number'].'<br/>'.$_POST['countryCode']'<br/>'.$_POST['number'];die;
+		echo $otp.'<br/>'.$countryCode.$_POST['number'].'<br/>'.$_POST['countryCode'].'<br/>'.$_POST['number'];die;
 		$sms = sendSMS($_POST['countryCode'],$_POST['number'],"You otp is : ".$otp);
 		if($sms){
 			$return['status'] = true;
