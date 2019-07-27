@@ -213,7 +213,7 @@ input.addEventListener('blur', function(){
                     $("#phone").prop('disabled',false);
                     if(response.status){
                         $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');
-                        validMsg.classList.remove("hide");
+                        //validMsg.classList.remove("hide");
                         $(".signup-signup-phone .next.btn").prop('disabled',false);
                         $(".signup-signup-phone .message").text(response.message);
                     }
@@ -230,8 +230,8 @@ input.addEventListener('blur', function(){
         }else{
             input.classList.add("error");
             var errorCode = intl.getValidationError();
-            errorMsg.innerHTML = errorMap[errorCode];
-            errorMsg.classList.remove("hide");
+            //errorMsg.innerHTML = errorMap[errorCode];
+            //errorMsg.classList.remove("hide");
         }
     }
 });
