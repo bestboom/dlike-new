@@ -156,9 +156,6 @@ function signUpPhoneCheck() {
 // phone input starts here
 
 /*new signup code*/
-$(document).ready(function(){
-    $(".signup-signup-phone .next.btn").prop('disabled',false);
-});
 var input = document.querySelector("#phone"),
 errorMsg = document.querySelector("#error-msg"),
 validMsg = document.querySelector("#valid-msg");
