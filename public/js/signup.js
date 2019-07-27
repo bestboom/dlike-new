@@ -154,3 +154,115 @@ function signUpPhoneCheck() {
 }
 
 // phone input starts here
+
+/*new signup code*/
+$(document).ready(function(){
+    $(".signup-signup-phone .next.btn").prop('disabled',false);
+});
+var input = document.querySelector("#phone"),
+errorMsg = document.querySelector("#error-msg"),
+validMsg = document.querySelector("#valid-msg");
+var countryCode = '';
+
+// Error messages based on the code returned from getValidationError
+var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+// Initialise plugin
+var intl = window.intlTelInput(input, {
+allowDropdown: true,
+separateDialCode: true,
+initialCountry: "auto",
+geoIpLookup: function(success, failure) {
+    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+        countryCode = (resp && resp.country) ? resp.country : "";
+        success(countryCode);
+    });
+},
+utilsScript: "/js/phone_input.js"
+});
+
+var reset = function() {
+input.classList.remove("error");
+errorMsg.innerHTML = "";
+errorMsg.classList.add("hide");
+validMsg.classList.add("hide");
+};
+
+
+// Validate on blur event
+input.addEventListener('blur', function(){
+    reset();
+    if(input.value.trim()){
+        if(intl.isValidNumber()){
+            $("#phone").prop('disabled',true);
+            var number = intl.getNumber();
+            number = number.replace('+','');
+            console.log(number);
+            /*verify number call*/
+            $.ajax({
+                url: '/helper/signup_verify.php',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'check_number',number:number},
+                success:function(response){
+                    $("#phone").prop('disabled',false);
+                    if(response.status){
+                        validMsg.classList.remove("hide");
+                        $(".signup-signup-phone .next.btn").prop('disabled',false);
+                    }
+                    else{
+                        $(".signup-signup-phone .next.btn").prop('disabled',true);
+                        toastr['error'](response.message);
+                    }
+                }
+            });
+            /*verify number call*/
+            
+        }else{
+            input.classList.add("error");
+            var errorCode = intl.getValidationError();
+            errorMsg.innerHTML = errorMap[errorCode];
+            errorMsg.classList.remove("hide");
+        }
+    }
+});
+
+// Reset on keyup/change event
+input.addEventListener('change', reset);
+input.addEventListener('keyup', reset);
+
+document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
+    if(intl.isValidNumber() && $("#phone").val() != ''){
+        var number = $("#phone").val();//intl.getNumber();
+        var countryCode = $(".iti__selected-dial-code").text();
+        //number = number.replace('+','');
+        console.log(number);
+        console.log(countryCode);
+        $("#phone").prop('disabled',true);
+        $(".signup-signup-phone .next.btn").prop('disabled',true);
+        if(number != ''){
+            /*verify number call*/
+            $.ajax({
+                url: '/helper/signup_verify.php',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'send_sms',countryCode:countryCode,number:number},
+                success:function(response){
+                    $("#phone").prop('disabled',false);
+                    $(".signup-signup-phone .next.btn").prop('disabled',false);
+                    if(response.status){
+                       $(".signup-signup-phone").fadeOut('slow');
+                       $(".signup-signup-verify").fadeIn('slow');
+                       toastr['success'](response.message);
+                    }
+                    else{
+                        toastr['error'](response.message);
+                    }
+                }
+            });
+            /*verify number call*/
+        }
+    }
+})
