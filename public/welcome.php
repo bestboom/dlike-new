@@ -369,7 +369,7 @@ input.addEventListener('blur', function(){
 input.addEventListener('change', reset);
 input.addEventListener('keyup', reset);
 
-$(document).on('click',".signup-signup-phone .next.btn",function(){
+document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
         var number = $("#phone").val();//intl.getNumber();
         var countryCode = intl.intlTelInput("getSelectedCountryData").dialCode;
