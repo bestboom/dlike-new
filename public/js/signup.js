@@ -259,7 +259,7 @@ input.addEventListener('keyup', function(){
             //errorMsg.classList.remove("hide");
             $(".signup-signup-phone .loader").removeClass('fa-check').addClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');        
             $(".signup-signup-phone .next.btn").prop('disabled',true);
-            $(".signup-signup-phone .message").addClass('signup-message-error');
+            $(".signup-signup-phone .message").removeClass('signup-message-success').addClass('signup-message-error');
         }
     }
 });
