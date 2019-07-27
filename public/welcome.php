@@ -351,7 +351,7 @@ input.addEventListener('blur', function(){
             console.log(number);
             /*verify number call*/
             $.ajax({
-                url: 'https://dlike.io/public/helper/signup_verify.php',
+                url: '/public/helper/signup_verify.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
@@ -393,7 +393,7 @@ $(document).on('click',".signup-signup-phone .next.btn",function(){
         if(number != ''){
             /*verify number call*/
             $.ajax({
-                url: 'https://dlike.io/public/helper/signup_verify.php',
+                url: '/public/helper/signup_verify.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
