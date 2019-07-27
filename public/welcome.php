@@ -267,6 +267,29 @@ include('template/header6.php');
                         </div>
                     </div>
 
+                    <div class="signup-signup-verify" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Verify PIN</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fa fa-phone"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Enter the confirmation code. We sent the code to (phone number here) vis SMS.
+                                </p>
+                                <form name="signup-pin">
+                                    <span class="input-username">
+                                        <input type="text" name="pin" placeholder="confirmation code (4 digits)"/>
+                                        <span class="fas fa-search"></span>
+                                    </span>
+                                    <button class="next btn btn-lime" disabled>
+                                        Verify PIN
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>                    
+
                 </div>
             </div>
         </div>
