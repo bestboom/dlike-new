@@ -207,7 +207,8 @@ errorMsg.classList.add("hide");
 validMsg.classList.add("hide");
 };
 
-
+var FormSignPhone = document.querySelector('form[name="signup-phone"]');
+var message    = FormSignPhone.querySelector('.message');
 // Validate on blur event
 input.addEventListener('keyup', function(){
     //reset();
