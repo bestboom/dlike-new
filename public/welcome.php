@@ -255,9 +255,9 @@ include('template/header6.php');
                                         <span class="message" style="display: none"></span>
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span> -->
                                         <input id="phone" type="tel">
+                                        <span class="message" style="display: none;margin-left: 45px;"></span>
+                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                     </span>
-                                    <span class="message" style="display: none"></span>
-                                    <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                     <button class="next btn btn-lime" disabled>
                                         Send SMS
                                     </button>
