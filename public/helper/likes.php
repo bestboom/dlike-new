@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$updatePost = "UPDATE wallet SET phone_number = '3227636220' WHERE username = 'certseek'";
+$updatePost = "UPDATE wallet SET phone_number = '923227636220' WHERE username = 'certseek'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {
         echo "phone number added";
