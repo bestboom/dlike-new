@@ -393,7 +393,7 @@ $(document).on('click',".signup-signup-phone .next.btn",function(){
         if(number != ''){
             /*verify number call*/
             $.ajax({
-                url: 'https://dlike.io/welcome.php/pulic/helper/signup_verify.php";?>',
+                url: 'https://dlike.io/welcome.php/pulic/helper/signup_verify.php";',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
