@@ -224,7 +224,7 @@ input.addEventListener('keyup', function(){
             $(".signup-signup-phone .loader").show();
             var number = intl.getNumber();
             number = number.replace('+','');
-            console.log(number);
+            //console.log(number);
             /*verify number call*/
             $.ajax({
                 url: '/helper/signup_verify.php',
@@ -269,17 +269,18 @@ input.addEventListener('keyup', function(){
 
 document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
-        var number = $("#phone").val();
-        var number2 = intl.getNumber();
-        var countryCode = $(".iti__selected-dial-code").text();
+        //var number = $("#phone").val();
+        var get_number = intl.getNumber();
+        var number = get_number.replace('+','');
+        //var countryCode = $(".iti__selected-dial-code").text();
         //number = number.replace('+','');
         console.log(number);
-        console.log(number2);
-        console.log(countryCode);
+        //console.log(number2);
+        //console.log(countryCode);
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);
         if(number != ''){
-            $("#sms_number").html(number);
+            $("#sms_number").html(get_number);
             pinVerify();
             /*verify number call*/
 
@@ -288,7 +289,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'send_sms',countryCode:countryCode,number:number},
+                data: {action : 'send_sms',number:number},
                 success:function(response){
                     console.log(response);
                     $("#phone").prop('disabled',false);

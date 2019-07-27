@@ -75,14 +75,16 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 	echo json_encode($return);
 	exit;
 }
-else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['number'])  && $_POST['number'] != '' && isset($_POST['countryCode'])  && $_POST['countryCode'] != ''){
+else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['number'])  && $_POST['number'] != ''){
 	$return = array();
 	$return['status'] = false;
 	$return['message'] = '';
-	echo $phone_number_full = $_POST['countryCode'].$_POST['number'];
+	//$phone_number_full = $_POST['countryCode'].$_POST['number'];
 
-	$countryCode =str_replace('+','',$_POST['countryCode']); 
-	$phone =  $countryCode.$_POST['number'];
+	//$countryCode =str_replace('+','',$_POST['countryCode']); 
+	//$phone =  $countryCode.$_POST['number'];
+	$phone =  $_POST['number'];
+	$phone_number_full = '+'.$phone;
 	$check_phone = "SELECT * FROM wallet where phone_number = '".$phone."' ";
 	$result_phone = $conn->query($check_phone);
 	if ($result_phone->num_rows <= 0){
