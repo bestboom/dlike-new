@@ -79,6 +79,18 @@ function time_ago($timestamp)
     }
 }
 // Sandbox Twillio Constants
-define("TWILIO_SID", "");
-define("TWILIO_TOKEN", ""); 
+define("TWILIO_FROM_NO", "+919586561149");
+define("TWILIO_SID", "ACe117d252bc601c7d773357dcbfa29f69");
+define("TWILIO_TOKEN", "30c7d02328017d4b76ddb7652ec32bc1"); 
+function sendSMS($country_code = '',$mobile_no, $message) {
+    require_once("Twilio/autoload.php");
+    $client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
+    $message = $client->messages->create($country_code.$mobile_no, array('from' => TWILIO_FROM_NO, 'body' => $message));
+    echo $message.'<br/>';
+    if ($message != "") {
+        $message = print_r($message, true);
+        echo $message;die;
+    }
+}
+
 ?>

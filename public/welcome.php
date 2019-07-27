@@ -308,6 +308,8 @@ var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too lon
 
 // Initialise plugin
 var intl = window.intlTelInput(input, {
+    allowDropdown: true,
+    separateDialCode: true,
     initialCountry: "auto",
     geoIpLookup: function(success, failure) {
         $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
@@ -330,6 +332,8 @@ input.addEventListener('blur', function() {
     reset();
     if(input.value.trim()){
         if(intl.isValidNumber()){
+            var number = intl.getNumber();
+            console.log(number);
             validMsg.classList.remove("hide");
         }else{
             input.classList.add("error");
