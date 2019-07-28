@@ -91,7 +91,7 @@ else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_P
 		//$otp = mt_rand(1111,9999);
 		//$txt = "Your otp is : ".$otp;
 		//$sms = sendSMS($_POST['countryCode'],$_POST['number'],$txt);
-		$verification = $twilio->verify->v2->services("AC69d5e6673cea4789147d4ac99ee58bfb")
+		$verification = $twilio->verify->v2->services("VA654da323cca833252d907ad7db43aecd")
                                    ->verifications
                                    ->create($phone_number_full, "sms");
 		if($verification){
