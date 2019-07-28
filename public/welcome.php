@@ -273,7 +273,7 @@ include('template/header6.php');
                                 </p>
                                 <form name="signup-pin">
                                     <span class="input-username">
-                                        <input type="text" name="pin" placeholder="confirmation code (4 digits)"/>
+                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits)"/>
                                         <span class="fas fa-search"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>

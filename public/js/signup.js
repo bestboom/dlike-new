@@ -187,18 +187,18 @@ var countryCode = '';
 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
 // Initialise plugin
-var intl = window.intlTelInput(input, {
-allowDropdown: true,
-separateDialCode: true,
-initialCountry: "auto",
-geoIpLookup: function(success, failure) {
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-        countryCode = (resp && resp.country) ? resp.country : "";
-        success(countryCode);
+    var intl = window.intlTelInput(input, {
+        allowDropdown: true,
+        separateDialCode: true,
+        initialCountry: "auto",
+    geoIpLookup: function(success, failure) {
+        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+            countryCode = (resp && resp.country) ? resp.country : "";
+            success(countryCode);
+        });
+    },
+        utilsScript: "/js/phone_input.js"
     });
-},
-utilsScript: "/js/phone_input.js"
-});
 
 var reset = function() {
 input.classList.remove("error");
@@ -209,7 +209,9 @@ validMsg.classList.add("hide");
 
 var FormSignPhone = document.querySelector('form[name="signup-phone"]');
 var message    = FormSignPhone.querySelector('.message');
-// Validate on blur event
+
+
+
 input.addEventListener('keyup', function(){
     //reset();
     if(input.value.trim()){
@@ -302,15 +304,17 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     else{
                         toastr['error'](response.message);
                     }
-                },
-                error: function(xhr, textStatus, error){
-                          console.log(xhr.statusText);
-                          console.warn(xhr.responseText)
-                           console.log(textStatus);
-                            console.log(error);
-                    }
+                }
             });
-            /*verify number call*/
         }
     }
 })
+
+//pin verify
+var input_pin = document.querySelector("#pin_code"),
+
+    input_pin.addEventListener('keyup', function(){
+        if(input_pin.length == 4) {
+            $(".signup-signup-verify .next.btn").prop('disabled',false);
+        }
+    })
