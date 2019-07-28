@@ -311,6 +311,9 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 var inputpin = document.querySelector("#pin_code");
 
     inputpin.addEventListener('keyup', function(){
+        console.log(inputpin);
+        console.log(inputpin.length);
+
         if(inputpin.length == 4) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
         }
