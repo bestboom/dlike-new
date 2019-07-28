@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 require 'includes/config.php';
-require_once("./vendor/autoload.php");
+require_once("includes/twilio-php-master/Twilio/autoload.php");
 
 //$client = new Twilio\Rest\Client(TWILIO_SID, TWILIO_TOKEN);
 
