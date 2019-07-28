@@ -314,7 +314,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 var inputpin = document.querySelector("#pin_code");
 
     inputpin.addEventListener('keyup', function(){
-        if(input_pin.length == 4) {
+        if(inputpin.length == 4) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
         }
     })
