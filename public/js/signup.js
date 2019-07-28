@@ -323,9 +323,8 @@ var inputpin = document.querySelector("#pin_code");
 
         if(inputpin.value.length == 4){
             $(".signup-signup-verify .next.btn").prop('disabled',true);
-            $(".signup-signup-phone .loader").removeClass('fa-circle-notch').addClass('fa-spin');       
+            $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-spin');       
            
         }
-
 
     })
