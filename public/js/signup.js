@@ -319,7 +319,7 @@ var inputpin = document.querySelector("#pin_code");
         }
     })
 
-    document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
+    document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
 
         if(inputpin.value.length == 4){
             $(".signup-signup-verify .next.btn").prop('disabled',true);
