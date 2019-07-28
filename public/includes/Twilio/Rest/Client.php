@@ -682,10 +682,10 @@ class Client {
      */
     public function __get($name) {
         $method = 'get' . ucfirst($name);
-        if(ucfirst($name)=='Sid'){ $name='AccountSid'; }
-        //if (method_exists($this, $method)) {
-        //    return $this->$method();
-        //}
+        //if(ucfirst($name)=='Sid'){ $name='AccountSid'; }
+        if (method_exists($this, $method)) {
+            return $this->$method();
+        }
         
         throw new TwilioException('Unknown domain ' . $name);
     }
