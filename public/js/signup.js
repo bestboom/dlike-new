@@ -311,11 +311,11 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 var inputpin = document.querySelector("#pin_code");
 
     inputpin.addEventListener('keyup', function(){
-        console.log(inputpin.value);
-        console.log(inputpin.value.length);
-
         if(inputpin.value.length == 4) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
+        }
+        if(inputpin.value.length < 4 || inputpin.value.length > 4) {
+            $(".signup-signup-verify .next.btn").prop('disabled',true);
         }
     })
 
