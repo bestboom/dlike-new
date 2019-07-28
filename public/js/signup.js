@@ -321,7 +321,7 @@ var inputpin = document.querySelector("#pin_code");
 
     document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
 
-        if(inputpin.length == 4){
+        if(inputpin.value.length == 4){
             $(".signup-signup-verify .next.btn").prop('disabled',true);
             $(".signup-signup-phone .loader").removeClass('fa-circle-notch').addClass('fa-spin');       
            
