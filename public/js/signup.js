@@ -311,9 +311,9 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 })
 
 //pin verify
-var input_pin = document.querySelector("#pin_code"),
+var inputpin = document.querySelector("#pin_code");
 
-    input_pin.addEventListener('keyup', function(){
+    inputpin.addEventListener('keyup', function(){
         if(input_pin.length == 4) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
         }
