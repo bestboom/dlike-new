@@ -275,7 +275,7 @@ include('template/header6.php');
                                     <span class="input-username">
                                         <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits) "class="form-control" />
                                         <span class="fas fa-search"></span>
-                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                        <span class="loader fas fa-circle-notch fa-spin" style="display: none"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>
                                         Verify PIN
