@@ -271,20 +271,17 @@ input.addEventListener('keyup', function(){
 
 document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
-        //var number = $("#phone").val();
+
         var get_number = intl.getNumber();
         var number = get_number.replace('+','');
-        //var countryCode = $(".iti__selected-dial-code").text();
-        //number = number.replace('+','');
-        console.log(number);
-        //console.log(number2);
-        //console.log(countryCode);
+        // console.log(number);
+
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);
+
         if(number != ''){
             $("#sms_number").html(get_number);
             pinVerify();
-            /*verify number call*/
 
             $.ajax({
                 url: '/helper/signup_verify.php',
@@ -317,4 +314,15 @@ var inputpin = document.querySelector("#pin_code");
         if(inputpin.length == 4) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
         }
+    })
+
+    document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
+
+        if(inputpin.length == 4){
+            $(".signup-signup-verify .next.btn").prop('disabled',true);
+            $(".signup-signup-phone .loader").removeClass('fa-circle-notch').addClass('fa-spin');       
+           
+        }
+
+
     })
