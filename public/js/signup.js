@@ -130,9 +130,6 @@ domReady(function () {
             Next.disabled = false;
             showSuccessIcon();
             $('#my_username').html(username);
-            console.log(username);
-            let password = suggestPassword();
-            console.log(password);
             
         }, function (err) {
             console.error(err);
@@ -407,6 +404,8 @@ var inputpin = document.querySelector("#pin_code");
         document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(){
 
             let my_name = $('#my_username').html();
+            let password = suggestPassword();
+            console.log(password);
             let keys = getPrivateKeys(my_name, password);
             console.log(keys);
             var myKeys = JSON.stringify(keys);
