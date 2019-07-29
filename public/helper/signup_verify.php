@@ -72,11 +72,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	$return['message'] = '';
 
 	$mypin =  $_POST['mypin'];
+	$phone =  $_POST['number'];
+	$my_phone = '+'.$phone;
+
 
 		$verification_check = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
                                          ->verificationChecks
                                          ->create($mypin, 
-                                                  array("to" => $phone_number_full)
+                                                  array("to" => $my_phone)
                                          );
 
 		//$verify_pin = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")->verifications->create($mypin, "sms");

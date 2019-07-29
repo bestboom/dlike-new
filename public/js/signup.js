@@ -338,13 +338,15 @@ var inputpin = document.querySelector("#pin_code");
 
             var pin_code = $("#pin_code").val();  
             console.log(pin_code);  
+            var my_number = intl.getNumber();
+            var number = my_number.replace('+','');
 
              $.ajax({
                 url: '/helper/signup_verify.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'verify_pin',mypin:pin_code},
+                data: {action : 'verify_pin',mypin:pin_code,number:number},
                 success:function(response){
                     console.log(response);
 
