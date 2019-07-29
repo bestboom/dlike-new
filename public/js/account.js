@@ -1,5 +1,9 @@
 #!/usr/bin/env nodejs
 const dotenv = require('dotenv');
+var fs = require('fs');
+dotenv.load();
+fs.createReadStream('.sample-env').pipe(fs.createWriteStream('.env'));
+
 const client = new dsteem.Client('https://api.steemit.com');
 const accountKey = process.env.active_account;
 $('#creator-key').val(accountKey);
