@@ -293,16 +293,12 @@ include('template/header6.php');
                                     <span class="fa fa-check"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Enter the confirmation code. We sent the code to <span id="sms_number"></span> vis SMS.
+                                    Thank you  @<span id="my_username"></span>. <br>
+                                    Your phone number has been verified.
                                 </p>
                                 <form name="signup-pin">
-                                    <span class="input-username">
-                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits) "class="form-control" />
-                                        <span class="fas fa-search"></span>
-                                        <span class="loader fas fa-circle-notch fa-spin" style="display: none"></span>
-                                    </span>
                                     <button class="next btn btn-lime" disabled>
-                                        Verify PIN
+                                        Show My Password
                                     </button>
                                 </form>
                             </div>

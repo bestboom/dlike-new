@@ -113,6 +113,7 @@ domReady(function () {
 
             Next.disabled = false;
             showSuccessIcon();
+            $('#my_username').html(username);
         }, function (err) {
             console.error(err);
 
@@ -175,7 +176,31 @@ function pinVerify() {
         }, 300);
     });
 }
-// phone input starts here
+
+
+function getSuccess() {
+
+    var Signit  = document.querySelector('.signup-signup');
+    var pinit = Signit.querySelector('.signup-signup-verify');
+    var passit   = Signit.querySelector('.signup-signup-pass');
+
+    jQuery(pinit).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        Phoneit.style.display = 'none';
+
+        passit.style.opacity = 0;
+        passit.style.top     = '50px';
+        passit.style.display = '';
+
+        jQuery(passit).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
+
 
 /*new signup code*/
 var input = document.querySelector("#phone"),
@@ -281,7 +306,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         if(number != ''){
             $("#sms_number").html(get_number);
-            pinVerify();
+            //pinVerify();
+            getSuccess();
 
             $.ajax({
                 url: '/helper/signup_verify.php',
@@ -330,7 +356,6 @@ var inputpin = document.querySelector("#pin_code");
             $("#pin_code").prop('disabled',true);
 
             var pin_code = $("#pin_code").val();  
-            console.log(pin_code);  
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
 

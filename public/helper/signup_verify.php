@@ -81,8 +81,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
                                          ->create($mypin, 
                                                   array("to" => $my_phone)
                                          );
-
-		//$verify_pin = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")->verifications->create($mypin, "sms");
 		if($verification_check->valid){
 			$return['status'] = true;
 			$return['message'] = 'PIN verified.';
