@@ -305,25 +305,7 @@ include('template/header6.php');
                         </div>
                     </div>                  
 
-                    <div class="signup-signup-pass" style="display: none">
-                        <div class="contact-info-block signup_block">
-                            <div class="contact-info-inner signup_inner">
-                                <h4>Success</h4>
-                                <span class="signup-signup-icon">
-                                    <span class="fa fa-check"></span>
-                                </span>
-                                <p class="signup-signup-description">
-                                    Thank you  <b>@<span id="my_username"></span></b>. <br>
-                                    Your phone number has been verified.
-                                </p>
-                                <form name="signup-pin">
-                                    <button class="next btn btn-lime">
-                                        Show My Password
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>    
+ 
 
                 </div>
             </div>
