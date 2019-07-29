@@ -65,7 +65,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['
 	exit;
 }
 
-if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST['mypin'])  && $_POST['number'] != ''){
+if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST['mypin'])  && $_POST['mypin'] != ''){
 
 	$return = array();
 	$return['status'] = false;
