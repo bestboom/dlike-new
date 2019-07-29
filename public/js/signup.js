@@ -188,7 +188,7 @@ function getSuccess() {
         opacity: 0,
         top    : -20
     }, 300, function () {
-        Phoneit.style.display = 'none';
+        pinit.style.display = 'none';
 
         passit.style.opacity = 0;
         passit.style.top     = '50px';
