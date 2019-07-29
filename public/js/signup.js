@@ -384,7 +384,7 @@ var inputpin = document.querySelector("#pin_code");
     })
 var Client = new dsteem.Client('https://api.steemit.com');
 //console.log(username);
-var user_name = $('#user_name').val;
+var user_name = $('#user_name').val();
 console.log(user_name);
 function suggestPassword() {
   const array = new Uint32Array(10);
