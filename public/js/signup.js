@@ -33,7 +33,7 @@ var domReady = (function () {
 
 domReady(function () {
     var Client = new dsteem.Client('https://api.steemit.com');
-    
+
     function suggestPassword() {
         const array = new Uint32Array(10);
         window.crypto.getRandomValues(array);
@@ -433,6 +433,5 @@ var inputpin = document.querySelector("#pin_code");
             });  
         
     })
-
-
+        
 });
