@@ -7,21 +7,6 @@ var domReady = (function () {
         }
         arrDomReadyCallBacks = [];
     }
-    function suggestPassword() {
-        const array = new Uint32Array(10);
-        window.crypto.getRandomValues(array);
-        return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
-    }
-
-    function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting', 'memo']) {
-        const privKeys = {};
-        roles.forEach((role) => {
-            privKeys[role] = dsteem.PrivateKey.fromLogin(username, password, role).toString();
-            privKeys[`${role}Pubkey`] = dsteem.PrivateKey.from(privKeys[role]).createPublic().toString();
-        });
-
-        return privKeys;
-    };
 
     return function (callback) {
         arrDomReadyCallBacks.push(callback);
@@ -48,6 +33,21 @@ var domReady = (function () {
 
 domReady(function () {
     var Client = new dsteem.Client('https://api.steemit.com');
+    function suggestPassword() {
+        const array = new Uint32Array(10);
+        window.crypto.getRandomValues(array);
+        return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
+    }
+
+    function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting', 'memo']) {
+        const privKeys = {};
+        roles.forEach((role) => {
+            privKeys[role] = dsteem.PrivateKey.fromLogin(username, password, role).toString();
+            privKeys[`${role}Pubkey`] = dsteem.PrivateKey.from(privKeys[role]).createPublic().toString();
+        });
+
+        return privKeys;
+    };
 
     var FormSignUp = document.querySelector('form[name="signup"]');
     var Input      = FormSignUp.querySelector('[name="username"]');
