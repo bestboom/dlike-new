@@ -8,7 +8,7 @@ echo $key    = getenv('accountKey');
 
 ?>
 
-
+<!--
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,3 +105,4 @@ echo $key    = getenv('accountKey');
 </body>
 
 </html>
+-->
