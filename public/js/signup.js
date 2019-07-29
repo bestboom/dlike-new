@@ -415,17 +415,20 @@ var inputpin = document.querySelector("#pin_code");
                 cache : false,
                 dataType: 'json',
                 data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
-                success:function(response){
-
-                    if(response.status)
-                    {
-                       toastr['success'](response.message);
-                    }
-                    else{
-                        toastr['error'](response.message);
-                        return false;
-                    }
-                },
+                success: function(data) {
+                        console.log(data);
+                        try {
+                            var response = JSON.parse(data)
+                            if(response.error == true) {
+                                toastr.error('There is some issue!');
+                                return false;
+                            } else {
+                                toastr.success('Account created successfully!');
+                            }
+                        } catch (err) {
+                            toastr.error('Sorry. Server response is malformed.');
+                        }
+                    },
                 error: function(xhr, textStatus, error){
                           console.log(xhr.statusText);
                            console.log(textStatus);
