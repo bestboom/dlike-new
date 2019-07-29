@@ -406,8 +406,10 @@ var inputpin = document.querySelector("#pin_code");
 
 
         document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(){
-        
-
+            $my_name = $('#my_username').html();
+            console.log($my_name);
+        })
+/*
             var myKeys = JSON.stringify(keys);
             console.log(myKeys);
 
@@ -433,6 +435,6 @@ var inputpin = document.querySelector("#pin_code");
             });  
         
     })
-
+*/
 
 });
