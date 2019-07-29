@@ -6,10 +6,13 @@
 
 const client = new dsteem.Client('https://api.steemit.com');
 
+async function getmykey() {
 const accountKey = process.env.active_account;
 
 $('#creator-key').val(accountKey);
+}
 
+getmykey();
 
 // Checking if the already exists
 async function checkAccountName(username) {
