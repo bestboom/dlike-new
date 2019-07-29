@@ -401,8 +401,8 @@ var inputpin = document.querySelector("#pin_code");
     })
 
 
-        document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(){
-
+        document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
+            event.preventDefault();
             let my_name = $('#my_username').html();
             let password = suggestPassword();
             console.log(password);
