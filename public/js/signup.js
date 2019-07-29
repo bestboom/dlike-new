@@ -383,7 +383,8 @@ var inputpin = document.querySelector("#pin_code");
         }
     })
 var Client = new dsteem.Client('https://api.steemit.com');
-
+console.log(username);
+//var username = $('#user_name').val;
 function suggestPassword() {
   const array = new Uint32Array(10);
   window.crypto.getRandomValues(array);
@@ -401,3 +402,5 @@ function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting
 };
 let password = suggestPassword();
 console.log(password);
+let keys = getPrivateKeys(username, password);
+console.log(keys);

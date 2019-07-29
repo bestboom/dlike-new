@@ -220,7 +220,7 @@ include('template/header6.php');
                                 <h4 class="sign_head">Create Account</h4>
                                 <form name="signup">
                                     <div class="form-group input-username">
-                                        <input type="text" name="username" class="form-control" required="true" placeholder="username">
+                                        <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
                                         <span class="fa fa-user"></span>
 
                                         <span class="message" style="display: none"></span>
@@ -304,6 +304,26 @@ include('template/header6.php');
                             </div>
                         </div>
                     </div>                  
+
+                    <div class="signup-signup-pass" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Success</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fa fa-check"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Thank you  <b>@<span id="my_username"></span></b>. <br>
+                                    Your phone number has been verified.
+                                </p>
+                                <form name="signup-pin">
+                                    <button class="next btn btn-lime">
+                                        Show My Password
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>    
 
                 </div>
             </div>
