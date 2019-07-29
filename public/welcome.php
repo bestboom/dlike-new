@@ -285,7 +285,7 @@ include('template/header6.php');
                         </div>
                     </div>  
 
-                    <div class="signup-signup-pass" style="display: none">
+                    <div class="signup-signup-success" style="display: none">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4>Success</h4>

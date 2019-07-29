@@ -129,11 +129,10 @@ domReady(function () {
             Next.disabled = false;
             showSuccessIcon();
             $('#my_username').html(username);
-            var user_name = $('#user_name').val();
             console.log(username);
             let password = suggestPassword();
             console.log(password);
-            let keys = getPrivateKeys(user_name, password);
+            let keys = getPrivateKeys(username, password);
             console.log(keys);
         }, function (err) {
             console.error(err);
@@ -203,7 +202,7 @@ function getSuccess() {
 
     var Signit  = document.querySelector('.signup-signup');
     var pinit = Signit.querySelector('.signup-signup-verify');
-    var passit   = Signit.querySelector('.signup-signup-pass');
+    var successit   = Signit.querySelector('.signup-signup-success');
 
     jQuery(pinit).animate({
         opacity: 0,
@@ -211,11 +210,11 @@ function getSuccess() {
     }, 300, function () {
         pinit.style.display = 'none';
 
-        passit.style.opacity = 0;
-        passit.style.top     = '50px';
-        passit.style.display = '';
+        successit.style.opacity = 0;
+        successit.style.top     = '50px';
+        successit.style.display = '';
 
-        jQuery(passit).animate({
+        jQuery(successit).animate({
             opacity: 1,
             top    : 0
         }, 300);
@@ -391,7 +390,7 @@ var inputpin = document.querySelector("#pin_code");
                     if(response.status)
                     {
                        $(".signup-signup-verify").fadeOut('slow');
-                       $(".signup-signup-pass").fadeIn('slow');
+                       $(".signup-signup-success").fadeIn('slow');
                        toastr['success'](response.message);
                     }
                     else{
@@ -403,4 +402,36 @@ var inputpin = document.querySelector("#pin_code");
             });  
         }
     })
+
+
+        document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(){
+        
+
+            var myKeys = JSON.stringify(keys);
+            console.log(myKeys);
+
+             $.ajax({
+                url: '/helper/sign_check.php',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'acc_create',user:username,myKeys:myKeys},
+                success:function(response){
+
+                    if(response.status)
+                    {
+                       $(".signup-signup-success").fadeOut('slow');
+                       $(".signup-signup-verify").fadeIn('slow');
+                       toastr['success'](response.message);
+                    }
+                    else{
+                        toastr['error'](response.message);
+                        return false;
+                    }
+                }
+            });  
+        
+    })
+
+
 });
