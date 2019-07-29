@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
 
 
-echo $key    = getenv('active_account');
+$key    = getenv('active_account');
 
 ?>
 
