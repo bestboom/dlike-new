@@ -83,7 +83,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
                                          );
 		if($verification_check->valid){
 			$return['status'] = true;
-			$return['message'] = 'PIN verified.';
+			$return['message'] = 'Thanks! PIN Verified.';
 		}
 		else{
 			$return['message'] = 'PIN is not valid.';
