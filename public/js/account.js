@@ -1,5 +1,5 @@
 #!/usr/bin/env nodejs
-//var dotenv = require('dotenv');
+const dotenv = require('dotenv');
 const client = new dsteem.Client('https://api.steemit.com');
 const accountKey = process.env.active_account;
 $('#creator-key').val(accountKey);
