@@ -152,7 +152,7 @@ domReady(function () {
 
         Timeout = setTimeout(checkUsername, 250);
     });
-});
+// here ends dom
 function signUpPhoneCheck() {
     var Signup  = document.querySelector('.signup-signup');
     var Steemit = Signup.querySelector('.signup-signup-steemit');
@@ -403,5 +403,4 @@ var inputpin = document.querySelector("#pin_code");
             });  
         }
     })
-var Client = new dsteem.Client('https://api.steemit.com');
-//console.log(username);
+});
