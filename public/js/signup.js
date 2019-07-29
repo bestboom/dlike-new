@@ -133,8 +133,7 @@ domReady(function () {
             console.log(username);
             let password = suggestPassword();
             console.log(password);
-            let keys = getPrivateKeys(username, password);
-            console.log(keys);
+            
         }, function (err) {
             console.error(err);
 
@@ -406,10 +405,10 @@ var inputpin = document.querySelector("#pin_code");
 
 
         document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(){
+            
             $my_name = $('#my_username').html();
-            console.log($my_name);
-        })
-/*
+            let keys = getPrivateKeys(my_name, password);
+            console.log(keys);
             var myKeys = JSON.stringify(keys);
             console.log(myKeys);
 
@@ -435,6 +434,6 @@ var inputpin = document.querySelector("#pin_code");
             });  
         
     })
-*/
+
 
 });
