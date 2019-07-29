@@ -7,6 +7,21 @@ var domReady = (function () {
         }
         arrDomReadyCallBacks = [];
     }
+    function suggestPassword() {
+        const array = new Uint32Array(10);
+        window.crypto.getRandomValues(array);
+        return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
+    }
+
+    function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting', 'memo']) {
+        const privKeys = {};
+        roles.forEach((role) => {
+            privKeys[role] = dsteem.PrivateKey.fromLogin(username, password, role).toString();
+            privKeys[`${role}Pubkey`] = dsteem.PrivateKey.from(privKeys[role]).createPublic().toString();
+        });
+
+        return privKeys;
+    };
 
     return function (callback) {
         arrDomReadyCallBacks.push(callback);
@@ -114,6 +129,12 @@ domReady(function () {
             Next.disabled = false;
             showSuccessIcon();
             $('#my_username').html(username);
+            var user_name = $('#user_name').val();
+            console.log(username);
+            let password = suggestPassword();
+            console.log(password);
+            let keys = getPrivateKeys(user_name, password);
+            console.log(keys);
         }, function (err) {
             console.error(err);
 
@@ -384,24 +405,3 @@ var inputpin = document.querySelector("#pin_code");
     })
 var Client = new dsteem.Client('https://api.steemit.com');
 //console.log(username);
-var user_name = $('#user_name').val();
-console.log(user_name);
-function suggestPassword() {
-  const array = new Uint32Array(10);
-  window.crypto.getRandomValues(array);
-  return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
-}
-
-function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting', 'memo']) {
-  const privKeys = {};
-  roles.forEach((role) => {
-    privKeys[role] = dsteem.PrivateKey.fromLogin(username, password, role).toString();
-    privKeys[`${role}Pubkey`] = dsteem.PrivateKey.from(privKeys[role]).createPublic().toString();
-  });
-
-  return privKeys;
-};
-let password = suggestPassword();
-console.log(password);
-let keys = getPrivateKeys(user_name, password);
-console.log(keys);
