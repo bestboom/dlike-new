@@ -274,6 +274,30 @@ include('template/header6.php');
                                 <form name="signup-pin">
                                     <span class="input-username">
                                         <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits) "class="form-control" />
+                                        <span class="fa fas fa-search"></span>
+                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                    </span>
+                                    <button class="next btn btn-lime" disabled>
+                                        Verify PIN
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="signup-signup-pass" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Success</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fa fa-check"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Enter the confirmation code. We sent the code to <span id="sms_number"></span> vis SMS.
+                                </p>
+                                <form name="signup-pin">
+                                    <span class="input-username">
+                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits) "class="form-control" />
                                         <span class="fas fa-search"></span>
                                         <span class="loader fas fa-circle-notch fa-spin" style="display: none"></span>
                                     </span>
@@ -283,7 +307,7 @@ include('template/header6.php');
                                 </form>
                             </div>
                         </div>
-                    </div>                    
+                    </div>                  
 
                 </div>
             </div>
