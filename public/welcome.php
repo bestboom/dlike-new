@@ -293,7 +293,7 @@ include('template/header6.php');
                                     <span class="fa fa-check"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Thank you  @<span id="my_username"></span>. <br>
+                                    Thank you  @<span id="my_username" style="color: blue;font-weight: 600;"></span>. <br>
                                     Your phone number has been verified.
                                 </p>
                                 <form name="signup-pin">
