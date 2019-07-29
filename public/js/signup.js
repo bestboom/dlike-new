@@ -427,6 +427,11 @@ var inputpin = document.querySelector("#pin_code");
                         toastr['error'](response.message);
                         return false;
                     }
+                },
+                error: function(xhr, textStatus, error){
+                          console.log(xhr.statusText);
+                           console.log(textStatus);
+                            console.log(error);
                 }
             });  
         
