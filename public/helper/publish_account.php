@@ -3,17 +3,17 @@ namespace dlike\signup;
 class makeAccount
 {
 
-    public function createAccount($v_weight, $v_author, $v_permlink)
+    public function createAccount($user, $owner_key, $active_key, $posting_key, $memo_key)
     {
             $create = [
             "operations" => [
                 ["createClaimedAccount", [
                     "creator" => $_COOKIE['username'],
-                    "newAccountName" => $v_author,
-                    "owner" => $v_permlink,
-                    "active" => $v_weight,
-                    "posting" => $v_permlink,
-                    "memoKey" => $v_permlink,
+                    "newAccountName" => $user,
+                    "owner" => $owner_key,
+                    "active" => $active_key,
+                    "posting" => $posting_key,
+                    "memoKey" => $memo_key,
                     "jsonMetadata" => '',
                     "extensions" => []
                 ]]

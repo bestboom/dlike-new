@@ -9,34 +9,36 @@ require_once "../helper/publish_account.php";
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
-$voteGenerator = new dlike\signup\makeAccount();
+$accountGenerator = new dlike\signup\makeAccount();
 
-if (isset($_POST["v_permlink"]) && isset($_POST["v_author"])){
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
-	$v_weight = validator($_POST["vote_value"]);
-    $v_author = validator($_POST["v_author"]);
-    $v_permlink = validator($_POST["v_permlink"]);
-    $v_weight = (int) $v_weight;
+	$user =  $_POST['user'];
+    $keys = $_POST['myKeys'];
+    $keys   = json_decode("$keys", true);
+    $active_key =  $keys["active"];
+    $owner_key =  $keys["owner"];
+    $memo_key =  $keys["memo"];
+    $posting_key =  $keys["posting"];
+
+    $return = array();
+    $return['status'] = false;
+    $return['message'] = '';
 
 	if (empty($errors)) {
-    $publish = $voteGenerator->createVote($v_weight, $v_author, $v_permlink);
-    $state = $voteGenerator->broadcast($publish);
+    $publish = $accountGenerator->createAccount($user, $owner_key, $active_key, $posting_key, $memo_key);
+    $state = $accountGenerator->broadcast($publish);
 	}
 
 	if (isset($state->result)) { 
-			    die(json_encode([
-			    	'error' => false,
-            		'message' => 'Thankk You', 
-            		'data' => 'Upvoting'
-            		
-        		]));
+			    $return['status'] = true;
+                $return['message'] = 'Account created successfully';
 	} else {
-			    die(json_encode([
-            		'error' => true,
-            		'message' => 'Sorry', 
-            		'data' => 'Already Upvoted'
-        		]));
+			   $return['message'] = 'There is some issue!';
 	} 
+
+    echo json_encode($return);
+    exit;
 
 } else {die('Some error');}
 ?>

@@ -410,7 +410,7 @@ var inputpin = document.querySelector("#pin_code");
             console.log(keys);
 
              $.ajax({
-                url: '/helper/sign_check.php',
+                url: '/helper/create_account.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
