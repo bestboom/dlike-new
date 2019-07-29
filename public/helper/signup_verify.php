@@ -35,7 +35,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 	exit;
 }
 
-else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['number'])  && $_POST['number'] != ''){
+if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['number'])  && $_POST['number'] != ''){
 
 	$return = array();
 	$return['status'] = false;
@@ -61,6 +61,32 @@ else if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_P
 	else{
 		$return['message'] = 'Number already in use by other account';
 	}
+	echo json_encode($return);
+	exit;
+}
+
+if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST['mypin'])  && $_POST['number'] != ''){
+
+	$return = array();
+	$return['status'] = false;
+	$return['message'] = '';
+
+	$mypin =  $_POST['mypin'];
+
+		$verification_check = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
+                                         ->verificationChecks
+                                         ->create($mypin, 
+                                                  array("to" => $phone_number_full)
+                                         );
+
+		//$verify_pin = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")->verifications->create($mypin, "sms");
+		if($verification_check->valid){
+			$return['status'] = true;
+			$return['message'] = 'PIN verified.';
+		}
+		else{
+			$return['message'] = 'PIN is not valid.';
+		}
 	echo json_encode($return);
 	exit;
 }

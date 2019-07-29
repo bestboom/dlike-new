@@ -300,6 +300,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     }
                     else{
                         toastr['error'](response.message);
+                        return false;
                     }
                 }
             });
@@ -319,12 +320,46 @@ var inputpin = document.querySelector("#pin_code");
         }
     })
 
-    document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
+    //document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
 
+    //    if(inputpin.value.length == 4){
+    //        $(".signup-signup-verify .next.btn").prop('disabled',true);
+    //        $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-spin');       
+           
+    //    }
+
+    //})
+
+    document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
         if(inputpin.value.length == 4){
+
             $(".signup-signup-verify .next.btn").prop('disabled',true);
-            $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-spin');       
+            $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-spin'); 
+            $("#pin_code").prop('disabled',true);
+
+            var pin_code = $("#phone").val();  
+            console.log(pin_code);  
+
+             $.ajax({
+                url: '/helper/signup_verify.php',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'verify_pin',mypin:pin_code},
+                success:function(response){
+                    console.log(response);
+
+                    if(response.status){
+                       $(".signup-signup-verify").fadeOut('slow');
+                       $(".signup-signup-pass").fadeIn('slow');
+                       toastr['success'](response.message);
+                    }
+                    else{
+                        toastr['error'](response.message);
+                        return false;
+                    }
+                }
+            });  
            
         }
-
     })
