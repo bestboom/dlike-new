@@ -408,8 +408,6 @@ var inputpin = document.querySelector("#pin_code");
             console.log(password);
             let keys = getPrivateKeys(my_name, password);
             console.log(keys);
-            var myKeys = JSON.stringify(keys);
-            console.log(myKeys);
 
              $.ajax({
                 url: '/helper/sign_check.php',

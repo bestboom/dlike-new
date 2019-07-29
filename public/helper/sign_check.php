@@ -7,8 +7,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$return['message'] = '';
 
 	$user =  $_POST['user'];
-	//$keys = json_decode(stripslashes($_POST['myKeys']));
-	$keys = $_POST['myKeys'];
+	$keys = json_decode(stripslashes($_POST['myKeys']));
+	//$keys = $_POST['myKeys'];
 
 		if($user != ''){
 			$return['status'] = true;
