@@ -405,8 +405,8 @@ var inputpin = document.querySelector("#pin_code");
 
 
         document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(){
-            
-            $my_name = $('#my_username').html();
+
+            let my_name = $('#my_username').html();
             let keys = getPrivateKeys(my_name, password);
             console.log(keys);
             var myKeys = JSON.stringify(keys);
