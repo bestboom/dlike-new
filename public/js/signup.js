@@ -337,7 +337,7 @@ var inputpin = document.querySelector("#pin_code");
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-spin'); 
             $("#pin_code").prop('disabled',true);
 
-            var pin_code = $("#phone").val();  
+            var pin_code = $("#pin_code").val();  
             console.log(pin_code);  
 
              $.ajax({
