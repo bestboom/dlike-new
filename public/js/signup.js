@@ -357,6 +357,7 @@ var inputpin = document.querySelector("#pin_code");
                     }
                     else{
                         toastr['error'](response.message);
+                        $("#pin_code").prop('disabled',false);
                         return false;
                     }
                 }
