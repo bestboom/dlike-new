@@ -290,10 +290,12 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 dataType: 'json',
                 data: {action : 'send_sms',number:number},
                 success:function(response){
-                    console.log(response);
+                    
                     $("#phone").prop('disabled',false);
                     $(".signup-signup-phone .next.btn").prop('disabled',false);
-                    if(response.status){
+
+                    if(response.status)
+                    {
                        $(".signup-signup-phone").fadeOut('slow');
                        $(".signup-signup-verify").fadeIn('slow');
                        toastr['success'](response.message);
@@ -320,15 +322,6 @@ var inputpin = document.querySelector("#pin_code");
         }
     })
 
-    //document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
-
-    //    if(inputpin.value.length == 4){
-    //        $(".signup-signup-verify .next.btn").prop('disabled',true);
-    //        $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-spin');       
-           
-    //    }
-
-    //})
     document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
         if(inputpin.value.length == 4){
 
@@ -348,9 +341,9 @@ var inputpin = document.querySelector("#pin_code");
                 dataType: 'json',
                 data: {action : 'verify_pin',mypin:pin_code,number:number},
                 success:function(response){
-                    console.log(response);
 
-                    if(response.status){
+                    if(response.status)
+                    {
                        $(".signup-signup-verify").fadeOut('slow');
                        $(".signup-signup-pass").fadeIn('slow');
                        toastr['success'](response.message);
@@ -362,6 +355,5 @@ var inputpin = document.querySelector("#pin_code");
                     }
                 }
             });  
-           
         }
     })
