@@ -431,6 +431,7 @@ var inputpin = document.querySelector("#pin_code");
                     },
                 error: function(xhr, textStatus, error){
                           console.log(xhr.statusText);
+                          console.warn(xhr.responseText);
                            console.log(textStatus);
                             console.log(error);
                 }
