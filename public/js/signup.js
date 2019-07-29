@@ -416,13 +416,11 @@ var inputpin = document.querySelector("#pin_code");
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:username,myKeys:myKeys},
+                data: {action : 'acc_create',user:my_name,myKeys:myKeys},
                 success:function(response){
 
                     if(response.status)
                     {
-                       $(".signup-signup-success").fadeOut('slow');
-                       $(".signup-signup-verify").fadeIn('slow');
                        toastr['success'](response.message);
                     }
                     else{
@@ -433,5 +431,5 @@ var inputpin = document.querySelector("#pin_code");
             });  
         
     })
-        
+
 });
