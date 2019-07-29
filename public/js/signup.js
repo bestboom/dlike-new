@@ -329,7 +329,6 @@ var inputpin = document.querySelector("#pin_code");
     //    }
 
     //})
-
     document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
         if(inputpin.value.length == 4){
 
