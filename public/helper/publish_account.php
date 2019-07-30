@@ -2,6 +2,7 @@
 namespace dlike\signup;
 class makeAccount
 {
+    $active=getenv('active_account');
     public function createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
             $create = [
