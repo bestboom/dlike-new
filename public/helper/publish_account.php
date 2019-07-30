@@ -7,14 +7,14 @@ class makeAccount
     {
             $create = [
             "operations" => [
-                ["createClaimedAccount", [
+                ["create_claimed_account", [
                     "creator" => $_COOKIE['username'],
                     "newAccountName" => $user,
                     "owner" => $owner_key,
                     "active" => $active_key,
                     "posting" => $posting_key,
                     "memoKey" => $memo_key,
-                    "jsonMetadata" => '',
+                    "json_metadata" => '',
                     "extensions" => []
                 ]]
             ]
@@ -36,7 +36,7 @@ class makeAccount
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
-            CURLOPT_POSTFIELDS => $post,
+            CURLOPT_POSTFIELDS => $create,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_HTTPHEADER => array(
