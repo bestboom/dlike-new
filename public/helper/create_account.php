@@ -26,7 +26,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 
 	if (empty($errors)) {
-    $publish = $accountGenerator->createAccount($user, $owner_key, $active_key, $posting_key, $memo_key);
+    $publish = $accountGenerator->createAccount($active_key, $user, $owner_key, $active_key, $posting_key, $memo_key);
     $state = $accountGenerator->broadcast($publish);
 	}
 
