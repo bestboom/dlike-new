@@ -324,8 +324,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         if(number != ''){
             $("#sms_number").html(get_number);
-            //pinVerify();
-            getSuccess();
+            pinVerify();
+            //getSuccess();
 
             $.ajax({
                 url: '/helper/signup_verify.php',
@@ -442,31 +442,6 @@ var inputpin = document.querySelector("#pin_code");
             console.log(e);
             });
 */
-
-             $.ajax({
-                url: '/helper/create_account.php',
-                type: 'post',
-                cache : false,
-                dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
-                success:function(response){
-
-                    if(response.status)
-                    {
-                       toastr['success'](response.message);
-                    }
-                    else{
-                        toastr['error'](response.message);
-                        return false;
-                    }
-                },
-                error: function(xhr, textStatus, error){
-                          console.log(xhr.statusText);
-                          console.warn(xhr.responseText);
-                           console.log(textStatus);
-                            console.log(error);
-                }
-            });  
 
     })
 
