@@ -112,6 +112,7 @@ domReady(function () {
         showLoader();
 
         Client.database.call('get_accounts', [[username]]).then(function (result) {
+
             //Loader.style.display  = 'none';
             Message.style.display = '';
 
@@ -411,6 +412,7 @@ var inputpin = document.querySelector("#pin_code");
 
                 const accSearch = 'dlike';
     const _account = await client.database.call('get_accounts', [[accSearch]]);
+    const _account = Client.database.call('get_accounts', [[accSearch]]);
     console.log(`_account:`, _account);
 /*
              $.ajax({
