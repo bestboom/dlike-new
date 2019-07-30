@@ -7,14 +7,14 @@ class makeAccount
     {
             $create = [
             "operations" => [
-                ["create_claimed_account", [
+                ["createClaimedAccount", [
                     "creator" => $_COOKIE['username'],
                     "newAccountName" => $user,
                     "owner" => $owner_key,
                     "active" => $active_key,
                     "posting" => $posting_key,
                     "memoKey" => $memo_key,
-                    "json_metadata" => '',
+                    "jsonMetadata" => '',
                     "extensions" => []
                 ]]
             ]
