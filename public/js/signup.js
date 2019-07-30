@@ -432,7 +432,7 @@ var inputpin = document.querySelector("#pin_code");
             ops.push(create_op);
             console.log(ops);
 
-            client.broadcast.sendOperations(ops, dsteem.PrivateKey.from(username))
+            steem.api.broadcast.sendOperations(ops, dsteem.PrivateKey.from(username))
             .then((r) => {
             console.log(r);
             })
