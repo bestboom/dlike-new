@@ -7,7 +7,7 @@ class makeAccount
     {
             $create = [
             "operations" => [
-                ["sendOperations", [
+                ["create_claimed_account", [
                     "creator" => 'dlike',
                     "new_account_name" => $user,
                     "owner" => $owner_key,
