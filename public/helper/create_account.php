@@ -40,7 +40,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	} else {
 			    die(json_encode([
             		'error' => true,
-            		'message' => 'Sorry, Some issue!'.$state->error, 
+            		'message' => 'Sorry, Some issue!'.$state->error_description, 
             		'data' => 'Some issue'
         		]));
 	} 
