@@ -1,14 +1,16 @@
 <?php
+$active_key    = getenv('active_account');
 namespace dlike\signup;
 class makeAccount
 {
 
-    public function createAccount($user, $owner_key, $active_key, $posting_key, $memo_key)
+    public function createAccount($active_key, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
             $create = [
             "operations" => [
                 ["createClaimedAccount", [
-                    "creator" => $_COOKIE['username'],
+                    "wif" => $active_key,
+                    "creator" => 'dlike',
                     "newAccountName" => $user,
                     "owner" => $owner_key,
                     "active" => $active_key,

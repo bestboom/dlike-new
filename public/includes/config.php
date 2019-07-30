@@ -3,7 +3,6 @@ session_start();
 
 $privkey=getenv('privkey');
 $hashkey=getenv('hashkey');
-$active_key    = getenv('active_account');
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $server = $url["host"]; 
