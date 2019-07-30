@@ -43,7 +43,6 @@ class makeAccount
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_HTTPHEADER => array(
                 "accept: application/json",
-                "authorization: " . $active,
                 "cache-control: no-cache",
                 "content-type: application/json",
             ),
