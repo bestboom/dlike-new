@@ -409,6 +409,10 @@ var inputpin = document.querySelector("#pin_code");
             let keys = getPrivateKeys(my_name, password);
             console.log(keys);
 
+                const accSearch = 'dlike';
+    const _account = await client.database.call('get_accounts', [[accSearch]]);
+    console.log(`_account:`, _account);
+/*
              $.ajax({
                 url: '/helper/create_account.php',
                 type: 'post',
@@ -436,7 +440,7 @@ var inputpin = document.querySelector("#pin_code");
                             console.log(error);
                 }
             });  
-        
+        */
     })
 
 });
