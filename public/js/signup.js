@@ -376,6 +376,7 @@ var inputpin = document.querySelector("#pin_code");
             var pin_code = $("#pin_code").val();  
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
+            getSuccess();
 
              $.ajax({
                 url: '/helper/signup_verify.php',
