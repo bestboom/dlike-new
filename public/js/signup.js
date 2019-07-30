@@ -453,13 +453,10 @@ var inputpin = document.querySelector("#pin_code");
 
                     if(response.status)
                     {
-                       $(".signup-signup-verify").fadeOut('slow');
-                       $(".signup-signup-success").fadeIn('slow');
                        toastr['success'](response.message);
                     }
                     else{
                         toastr['error'](response.message);
-                        $("#pin_code").prop('disabled',false);
                         return false;
                     }
                 },
