@@ -431,6 +431,8 @@ var inputpin = document.querySelector("#pin_code");
 
             ops.push(create_op);
             console.log(ops);
+/*
+            
 
             steem.api.broadcast.sendOperations(ops, activekeyhere)
             .then((r) => {
@@ -439,14 +441,14 @@ var inputpin = document.querySelector("#pin_code");
             .catch(e => {
             console.log(e);
             });
+*/
 
-/*
              $.ajax({
-                url: '/helper/create_account.php',
+                url: '/helper/sign_check.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
+                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(ops)},
                 success: function(data) {
                         console.log(data);
                         try {
@@ -468,7 +470,7 @@ var inputpin = document.querySelector("#pin_code");
                             console.log(error);
                 }
             });  
-*/
+
     })
 
 });
