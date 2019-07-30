@@ -7,13 +7,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$return['message'] = '';
 
 	$user =  $_POST['user'];
-	$ops = $_POST['ops'];
-	//$keys   = json_decode("$keys", true);
-	//$active_key =  $keys["active"];
+	$keys = $_POST['ops'];
+	$keys   = json_decode("$keys", true);
+	$active_key =  $keys["active"];
 
-		if($user != ''){
+	$state = '<script>steem.api.broadcast.sendOperations(ops, activekeyhere)</script>';
+		if($state){
 			$return['status'] = true;
-			$return['message'] = 'Looks data done'.$ops;
+			$return['message'] = 'Looks data done'.$keys;
 		}
 		else{
 			$return['message'] = 'data not good.';
