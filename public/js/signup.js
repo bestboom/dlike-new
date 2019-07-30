@@ -449,20 +449,20 @@ var inputpin = document.querySelector("#pin_code");
                 cache : false,
                 dataType: 'json',
                 data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(ops)},
-                success: function(data) {
-                        console.log(data);
-                        try {
-                            var response = JSON.parse(data)
-                            if(response.error == true) {
-                                toastr.error('There is some issue!');
-                                return false;
-                            } else {
-                                toastr.success('Account created successfully!');
-                            }
-                        } catch (err) {
-                            toastr.error('Sorry. Server response is malformed.');
-                        }
-                    },
+                success:function(response){
+
+                    if(response.status)
+                    {
+                       $(".signup-signup-verify").fadeOut('slow');
+                       $(".signup-signup-success").fadeIn('slow');
+                       toastr['success'](response.message);
+                    }
+                    else{
+                        toastr['error'](response.message);
+                        $("#pin_code").prop('disabled',false);
+                        return false;
+                    }
+                },
                 error: function(xhr, textStatus, error){
                           console.log(xhr.statusText);
                           console.warn(xhr.responseText);
