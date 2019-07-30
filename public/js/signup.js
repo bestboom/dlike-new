@@ -409,18 +409,8 @@ var inputpin = document.querySelector("#pin_code");
             console.log(password);
             let keys = getPrivateKeys(my_name, password);
             console.log(keys);
-            const myactive = 'STM7CuTxhi3gzrjqLCaPanYn7zYfFPKgKUztrxjUk6BN3Xc3cj9X5';
-            const doact = dsteem.PrivateKey.from(myactive);
-            console.log(doact);
-                const accSearch = 'dlike';
-    //const _account = await client.database.call('get_accounts', [[accSearch]]);
-    const _account = Client.database.call('get_accounts', [[accSearch]]);
-    console.log(`_account:`, _account);
-    //const name = _account[0].name;
-    //console.log(name);
-    //const steem_balance = _account[0].balance;
-    //console.log(steem_balance);
-/*
+
+
              $.ajax({
                 url: '/helper/create_account.php',
                 type: 'post',
@@ -448,7 +438,7 @@ var inputpin = document.querySelector("#pin_code");
                             console.log(error);
                 }
             });  
-        */
+
     })
 
 });
