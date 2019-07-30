@@ -3,12 +3,11 @@ namespace dlike\signup;
 class makeAccount
 {
 
-    public function createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key)
+    public function createAccount($user, $owner_key, $active_key, $posting_key, $memo_key)
     {
             $create = [
             "operations" => [
-                ["create_claimed_account", [
-                    "active" => $active,
+                ["sendOperations", [
                     "creator" => 'dlike',
                     "new_account_name" => $user,
                     "owner" => $owner_key,
