@@ -16,10 +16,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$user =  $_POST['user'];
     $keys = $_POST['myKeys'];
     $keys   = json_decode("$keys", true);
-    $active_key =  $keys["activePubkey"];
-    $owner_key =  $keys["ownerPubkey"];
-    $memo_key =  $keys["memoPubkey"];
-    $posting_key =  $keys["postingPubkey"];
+    $active_key =  $keys["active"];
+    $owner_key =  $keys["owner"];
+    $memo_key =  $keys["memo"];
+    $posting_key =  $keys["posting"];
 
     $return = array();
     $return['status'] = false;
