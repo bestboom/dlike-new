@@ -1,14 +1,16 @@
 <?php
+$active=getenv('active_account');
 namespace dlike\signup;
 class makeAccount
 {
 
-    public function createAccount($user, $owner_key, $active_key, $posting_key, $memo_key)
+    public function createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
             $create = [
             "operations" => [
                 ["create_claimed_account", [
-                    "creator" => $_COOKIE['username'],
+                    "wif" => $active,
+                    "creator" => 'dlike',
                     "new_account_name" => $user,
                     "owner" => $owner_key,
                     "active" => $active_key,
@@ -41,7 +43,7 @@ class makeAccount
             CURLOPT_CUSTOMREQUEST => "POST",
             CURLOPT_HTTPHEADER => array(
                 "accept: application/json",
-                "authorization: " . $_COOKIE['access_token'],
+                "authorization: " . $active,
                 "cache-control: no-cache",
                 "content-type: application/json",
             ),

@@ -26,7 +26,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 
 	if (empty($errors)) {
-    $publish = $accountGenerator->createAccount($user, $owner_key, $active_key, $posting_key, $memo_key);
+    $publish = $accountGenerator->createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key);
     $state = $accountGenerator->broadcast($publish);
 	}
 
@@ -40,7 +40,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	} else {
 			    die(json_encode([
             		'error' => true,
-            		'message' => 'Sorry, Some issue!'.$state->error_description . $_COOKIE['username'], 
+            		'message' => 'Sorry, Some issue!'.$state->error_description . $active, 
             		'data' => 'Some issue'
         		]));
 	} 
