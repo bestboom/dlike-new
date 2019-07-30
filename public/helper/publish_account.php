@@ -1,5 +1,4 @@
 <?php
-$active_key    = getenv('active_account');
 namespace dlike\signup;
 class makeAccount
 {

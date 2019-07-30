@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+$active_key    = getenv('active_account');
 require_once "../helper/publish_account.php";
 
 function validator($data){
