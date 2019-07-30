@@ -9,12 +9,12 @@ class makeAccount
             "operations" => [
                 ["create_claimed_account", [
                     "creator" => $_COOKIE['username'],
-                    "newAccountName" => $user,
+                    "new_account_name" => $user,
                     "owner" => $owner_key,
                     "active" => $active_key,
                     "posting" => $posting_key,
-                    "memoKey" => $memo_key,
-                    "jsonMetadata" => '',
+                    "memo_key" => $memo_key,
+                    "json_metadata" => '',
                     "extensions" => []
                 ]]
             ]
