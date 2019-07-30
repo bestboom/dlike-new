@@ -444,11 +444,11 @@ var inputpin = document.querySelector("#pin_code");
 */
 
              $.ajax({
-                url: '/helper/sign_check.php',
+                url: '/helper/create_account.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(ops)},
+                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
                 success:function(response){
 
                     if(response.status)

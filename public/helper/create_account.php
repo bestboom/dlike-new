@@ -31,19 +31,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	}
 
 	if (isset($state->result)) { 
-			    die(json_encode([
-			    	'error' => false,
-            		'message' => 'Account created successfully', 
-            		'data' => 'creating'
-            		
-        		]));
+			$return['status'] = true;
+            $return['message'] = 'Looks data done'.$keys;
 	} else {
-			    die(json_encode([
-            		'error' => true,
-            		'message' => 'Sorry, Some issue!'.$state->error_description, 
-            		'data' => 'Some issue'
-        		]));
+			$return['message'] = 'data not good.';
 	} 
+
+    echo json_encode($return);
+    exit;
 
 } else {die('Some error');}
 ?>
