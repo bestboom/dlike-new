@@ -35,7 +35,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 			$return['status'] = true;
             $return['message'] = 'Looks data done'.$keys;
 	} else {
-			$return['message'] = 'data not good.';
+			$return['message'] = 'data not good.'.$state->error_description;
 	} 
 
     echo json_encode($return);
