@@ -441,7 +441,7 @@ var inputpin = document.querySelector("#pin_code");
                 dataType: 'json',
                 data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
                 success:function(response){
-                    console.log(response);
+                    //console.log(response);
                     if(response.status)
                     {
                        toastr['success'](response.message);
