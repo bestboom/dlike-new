@@ -7,14 +7,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$return['message'] = '';
 
 	$user =  $_POST['user'];
-	$keys = $_POST['ops'];
+	$keys = $_POST['keys'];
 	$keys   = json_decode("$keys", true);
 	$active_key =  $keys["active"];
 
 
 		if($user != ''){
 			$return['status'] = true;
-			$return['message'] = 'Looks data done'.$keys;
+			$return['message'] = 'Looks data done'.$active_key;
 		}
 		else{
 			$return['message'] = 'data not good.';
@@ -26,27 +26,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 ?>
 
 
-             $.ajax({
-                url: '/helper/create_account.php',
-                type: 'post',
-                cache : false,
-                dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
-                success:function(response){
+/*
+            
 
-                    if(response.status)
-                    {
-                       toastr['success'](response.message);
-                    }
-                    else{
-                        toastr['error'](response.message);
-                        return false;
-                    }
-                },
-                error: function(xhr, textStatus, error){
-                          console.log(xhr.statusText);
-                          console.warn(xhr.responseText);
-                           console.log(textStatus);
-                            console.log(error);
-                }
-            });  
+            steem.api.broadcast.sendOperations(ops, activekeyhere)
+            .then((r) => {
+            console.log(r);
+            })
+            .catch(e => {
+            console.log(e);
+            });
+*/
