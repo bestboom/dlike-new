@@ -440,7 +440,7 @@ var inputpin = document.querySelector("#pin_code");
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
+                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(ops)},
                 success:function(response){
 
                     if(response.status)

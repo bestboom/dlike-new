@@ -7,14 +7,20 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$return['message'] = '';
 
 	$user =  $_POST['user'];
-	$keys = $_POST['myKeys'];
-	$keys   = json_decode("$keys", true);
-	$active_key =  $keys["active"];
-
+	//$keys = $_POST['myKeys'];
+	//$keys   = json_decode("$keys", true);
+	//$active_key =  $keys["active"];
+	$ops = $_POST['ops'];
+	$opst = echo '<script>let ops = $ops;</script>';
 
 		if($user != ''){
+
+
+
+
+
 			$return['status'] = true;
-			$return['message'] = 'Looks data done'.$active_key;
+			$return['message'] = 'Looks data done'.$opst. $ops;
 		}
 		else{
 			$return['message'] = 'data not good.';
