@@ -19,13 +19,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	//$ops = $_POST['ops'];
 	//$opst = echo '<script>let ops = $ops;</script>';
 	//$password = echo '';
-	if($user != ''){ 	
-			echo '<script>
+	echo '<script>
 
 				let ditp = (async function(){
 				toastr.error("phew... You forgot to enter URL");
 
 			})();</script>';
+	if($user != ''){ 	
+
 			$return['status'] = true;
 			$return['message'] = 'Looks data done';
 		}
