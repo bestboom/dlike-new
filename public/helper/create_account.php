@@ -31,7 +31,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $state = $accountGenerator->broadcast($publish, $active);
 	}
 
-	if (isset($state->result)) { 
+	if ($state) { 
 			$return['status'] = true;
             $return['message'] = 'Looks data done';
 	} else {
