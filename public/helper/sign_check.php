@@ -7,7 +7,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$return['message'] = '';
 
 	$user =  $_POST['user'];
-	$keys = $_POST['keys'];
+	$keys = $_POST['myKeys'];
 	$keys   = json_decode("$keys", true);
 	$active_key =  $keys["active"];
 
