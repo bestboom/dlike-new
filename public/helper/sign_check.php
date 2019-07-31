@@ -1,7 +1,11 @@
 <?php
 
-if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){ ?>
 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
+
+<?
 	$return = array();
 	$return['status'] = false;
 	$return['message'] = '';
@@ -10,17 +14,42 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	//$keys = $_POST['myKeys'];
 	//$keys   = json_decode("$keys", true);
 	//$active_key =  $keys["active"];
-	$ops = $_POST['ops'];
-	$opst = echo '<script>let ops = $ops;</script>';
+	//$ops = $_POST['ops'];
+	//$opst = echo '<script>let ops = $ops;</script>';
 	//$password = echo '';
-		if($user != ''){
+	if($user != ''){ ?>
+
+
+
+		<script type="text/javascript">
+			var Client = new dsteem.Client('https://api.steemit.com');
+
+		    function suggestPassword() {
+		        const array = new Uint32Array(10);
+		        window.crypto.getRandomValues(array);
+		        return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
+		    }
+
+		    function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting', 'memo']) {
+		        const privKeys = {};
+		        roles.forEach((role) => {
+		            privKeys[role] = dsteem.PrivateKey.fromLogin(username, password, role).toString();
+		            privKeys[`${role}Pubkey`] = dsteem.PrivateKey.from(privKeys[role]).createPublic().toString();
+		        });
+
+		        return privKeys;
+		    };
+		    let password = suggestPassword();
+            console.log(password);
+		</script>
 
 
 
 
-
+	<?		
+			$pass = echo '<script type="text/javascript">let password = suggestPassword();</script>';
 			$return['status'] = true;
-			$return['message'] = 'Looks data done'.$opst. $ops;
+			$return['message'] = 'Looks data done'. $pass;
 		}
 		else{
 			$return['message'] = 'data not good.';
@@ -30,27 +59,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 }
 
 ?>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
+
 <script type="text/javascript">
 		
-	    var Client = new dsteem.Client('https://api.steemit.com');
-
-    function suggestPassword() {
-        const array = new Uint32Array(10);
-        window.crypto.getRandomValues(array);
-        return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
-    }
-
-    function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting', 'memo']) {
-        const privKeys = {};
-        roles.forEach((role) => {
-            privKeys[role] = dsteem.PrivateKey.fromLogin(username, password, role).toString();
-            privKeys[`${role}Pubkey`] = dsteem.PrivateKey.from(privKeys[role]).createPublic().toString();
-        });
-
-        return privKeys;
-    };
 
 
 	        let password = suggestPassword();
@@ -77,7 +88,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
               },
             ];
 
-            
+
             ops.push(create_op);
             console.log(ops);
 </script>

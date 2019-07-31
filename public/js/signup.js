@@ -408,14 +408,14 @@ var inputpin = document.querySelector("#pin_code");
             let my_name = $('#my_username').html();
             //let privateKey = dsteem.PrivateKey.fromString(username);
             //console.log(privateKey);
-
+            //myKeys:JSON.stringify(ops)
 
              $.ajax({
                 url: '/helper/sign_check.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(ops)},
+                data: {action : 'acc_create',user:my_name},
                 success:function(response){
 
                     if(response.status)
