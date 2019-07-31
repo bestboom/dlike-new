@@ -37,7 +37,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
             $return['message'] = 'Looks data done';
 	} else {
 			$return['message'] = 'data not good.';
-            var_dump($state);
+            var_dump($state->err_description);
 
 	} 
 
