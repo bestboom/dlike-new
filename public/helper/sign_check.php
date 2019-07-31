@@ -70,9 +70,17 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	//$opst = echo '<script>let ops = $ops;</script>';
 	//$password = echo '';
 	if($user != ''){ 	
-			echo $pass = '<script>document.writeln(password);</script>';
+			echo '<script>
+				steem.api.broadcast.sendOperations(ops, activekeyhere)
+            .then((r) => {
+            console.log(r);
+            })
+            .catch(e => {
+            console.log(e);
+            });
+			</script>';
 			$return['status'] = true;
-			$return['message'] = 'Looks data done'. $pass;
+			$return['message'] = 'Looks data done';
 		}
 		else{
 			$return['message'] = 'data not good.';
