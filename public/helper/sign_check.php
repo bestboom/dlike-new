@@ -76,6 +76,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
                 posting: dsteem.Authority.from(keys.postingPubkey),
               },
             ];
+
+            
+            ops.push(create_op);
+            console.log(ops);
 </script>
 
 /*

@@ -408,32 +408,7 @@ var inputpin = document.querySelector("#pin_code");
             let my_name = $('#my_username').html();
             //let privateKey = dsteem.PrivateKey.fromString(username);
             //console.log(privateKey);
-            let password = suggestPassword();
-            console.log(password);
-            let created_by = 'dlike';
 
-            const ops = [];
-
-            let keys = getPrivateKeys(my_name, password);
-            console.log(keys);
-
-            const create_op = [
-              'create_claimed_account',
-              {
-                
-                creator: created_by,
-                new_account_name: my_name,
-                extensions: [],
-                json_metadata: '',
-                active: dsteem.Authority.from(keys.activePubkey),
-                memo_key: keys.memoPubkey,
-                owner: dsteem.Authority.from(keys.ownerPubkey),
-                posting: dsteem.Authority.from(keys.postingPubkey),
-              },
-            ];
-
-            ops.push(create_op);
-            console.log(ops);
 
              $.ajax({
                 url: '/helper/sign_check.php',
