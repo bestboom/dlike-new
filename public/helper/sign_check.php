@@ -70,7 +70,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	//$opst = echo '<script>let ops = $ops;</script>';
 	//$password = echo '';
 	if($user != ''){ 	
-			$pass = '<script type="text/javascript">let password = suggestPassword();</script>';
+			echo $pass = '<script type="text/javascript">let password = suggestPassword();</script>';
 			$return['status'] = true;
 			$return['message'] = 'Looks data done'. $pass;
 		}
