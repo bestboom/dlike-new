@@ -7,11 +7,6 @@
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
-	echo $pass = '<script type="text/javascript">let password = suggestPassword();</script>';
-
-	echo '<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>';
-
 
 	$return = array();
 	$return['status'] = false;
@@ -24,11 +19,23 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	//$ops = $_POST['ops'];
 	//$opst = echo '<script>let ops = $ops;</script>';
 	//$password = echo '';
-	if($user != ''){ ?>
+	if($user != ''){ 	
+			$pass = '<script type="text/javascript">let password = suggestPassword();</script>';
+			$return['status'] = true;
+			$return['message'] = 'Looks data done'. $pass;
+		}
+		else{
+			$return['message'] = 'data not good.';
+		}
+	echo json_encode($return);
+	exit;
+}
 
-
-
-		<script type="text/javascript">
+?>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
+<script type="text/javascript">
+		
 			var Client = new dsteem.Client('https://api.steemit.com');
 
 		    function suggestPassword() {
@@ -48,31 +55,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 		    };
 		    let password = suggestPassword();
             console.log(password);
-		</script>
 
-
-
-
-	<?		
-			$pass = '<script type="text/javascript">let password = suggestPassword();</script>';
-			$return['status'] = true;
-			$return['message'] = 'Looks data done'. $pass;
-		}
-		else{
-			$return['message'] = 'data not good.';
-		}
-	echo json_encode($return);
-	exit;
-}
-
-?>
-
-<script type="text/javascript">
-		
-
-
-	        let password = suggestPassword();
-            console.log(password);
             let created_by = 'dlike';
 
             const ops = [];
