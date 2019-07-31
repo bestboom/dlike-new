@@ -52,7 +52,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 
 	<?		
-			$pass = echo '<script type="text/javascript">let password = suggestPassword();</script>';
+			$pass = '<script type="text/javascript">let password = suggestPassword();</script>';
 			$return['status'] = true;
 			$return['message'] = 'Looks data done'. $pass;
 		}
