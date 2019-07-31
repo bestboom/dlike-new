@@ -27,15 +27,15 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 
 	if (empty($errors)) {
-    $publish = $accountGenerator->createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key);
-    $state = $accountGenerator->broadcast($publish);
+    $publish = $accountGenerator->createAccount($user, $owner_key, $active_key, $posting_key, $memo_key);
+    $state = $accountGenerator->broadcast($publish, $active);
 	}
 
 	if (isset($state->result)) { 
 			$return['status'] = true;
             $return['message'] = 'Looks data done';
 	} else {
-			$return['message'] = 'data not good.'.$state->result;
+			$return['message'] = 'data not good.';
 	} 
 
     echo json_encode($return);

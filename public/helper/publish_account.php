@@ -3,12 +3,11 @@ namespace dlike\signup;
 class makeAccount
 {
 
-    public function createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key)
+    public function createAccount($user, $owner_key, $active_key, $posting_key, $memo_key)
     {
             $create = [
             "operations" => [
                 ["create_claimed_account", [
-                    "active" => $active,
                     "creator" => 'dlike',
                     "new_account_name" => $user,
                     "owner" => $owner_key,
@@ -32,7 +31,7 @@ class makeAccount
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.steemit.com",
+            CURLOPT_URL => "https://api.steemit.com/broadcast",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
