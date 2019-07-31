@@ -21,13 +21,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $owner_key =  $keys["owner"];
     $memo_key =  $keys["memo"];
     $posting_key =  $keys["posting"];
+    $created_by = 'dlike';
 
     $return = array();
     $return['status'] = false;
     $return['message'] = '';
 
 	if (empty($errors)) {
-    $publish = $accountGenerator->createAccount($user, $owner_key, $active_key, $posting_key, $memo_key);
+    $publish = $accountGenerator->createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key);
     $state = $accountGenerator->broadcast($publish, $active);
 	}
 
