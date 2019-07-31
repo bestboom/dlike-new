@@ -5,12 +5,14 @@
 	error_reporting(E_ALL);
 
 
-if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){ ?>
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
+	echo $pass = '<script type="text/javascript">let password = suggestPassword();</script>';
 
-<?
+	echo '<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>';
+
+
 	$return = array();
 	$return['status'] = false;
 	$return['message'] = '';
