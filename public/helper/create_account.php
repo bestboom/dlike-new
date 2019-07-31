@@ -33,7 +33,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 	if (isset($state->result)) { 
 			$return['status'] = true;
-            $return['message'] = 'Looks data done'.$keys;
+            $return['message'] = 'Looks data done';
 	} else {
 			$return['message'] = 'data not good.';
 	} 
