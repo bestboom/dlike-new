@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$active=getenv('active_account');
+
 require_once "../helper/publish_account.php";
 
 function validator($data){
@@ -13,6 +13,7 @@ $accountGenerator = new dlike\signup\makeAccount();
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
+    $active=getenv('active_account');
 	$user =  $_POST['user'];
     $keys = $_POST['myKeys'];
     $keys   = json_decode("$keys", true);
@@ -26,8 +27,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 
 	if (empty($errors)) {
-    $publish = $accountGenerator->createAccount($user, $owner_key, $active_key, $posting_key, $memo_key);
-    $state = $accountGenerator->broadcast($publish, $active);
+    $publish = $accountGenerator->createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key);
+    $state = $accountGenerator->broadcast($publish);
 	}
 
 	if (isset($state->result)) { 

@@ -3,11 +3,12 @@ namespace dlike\signup;
 class makeAccount
 {
 
-    public function createAccount($user, $owner_key, $active_key, $posting_key, $memo_key)
+    public function createAccount($active, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
             $create = [
             "operations" => [
                 ["create_claimed_account", [
+                    "wif" => $active,
                     "creator" => 'dlike',
                     "new_account_name" => $user,
                     "owner" => $owner_key,
@@ -27,7 +28,6 @@ class makeAccount
     
     public function broadcast($create)
     {
-        $active=getenv('active_account');
 
         $curl = curl_init();
 
@@ -40,12 +40,6 @@ class makeAccount
             CURLOPT_POSTFIELDS => $create,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
-            CURLOPT_HTTPHEADER => array(
-                "accept: application/json",
-                "cache-control: no-cache",
-                "authorization: " . $_COOKIE['access_token'],
-                "content-type: application/json",
-            ),
         ));
 
         $response = curl_exec($curl);

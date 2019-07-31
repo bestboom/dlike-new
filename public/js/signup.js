@@ -407,16 +407,39 @@ var inputpin = document.querySelector("#pin_code");
         document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
             event.preventDefault();
             let my_name = $('#my_username').html();
-            //let privateKey = dsteem.PrivateKey.fromString(username);
-            //console.log(privateKey);
-            //myKeys:JSON.stringify(ops)
+            let password = suggestPassword();
+            console.log(password);
+            let created_by = 'dlike';
+
+            const ops = [];
+
+            let keys = getPrivateKeys(my_name, password);
+            console.log(keys);
+
+            const create_op = [
+              'create_claimed_account',
+              {
+                
+                creator: created_by,
+                new_account_name: my_name,
+                extensions: [],
+                json_metadata: '',
+                active: dsteem.Authority.from(keys.activePubkey),
+                memo_key: keys.memoPubkey,
+                owner: dsteem.Authority.from(keys.ownerPubkey),
+                posting: dsteem.Authority.from(keys.postingPubkey),
+              },
+            ];
+
+            ops.push(create_op);
+            console.log(ops);
 
              $.ajax({
-                url: '/helper/sign_check.php',
+                url: '/helper/create_account.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name},
+                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
                 success:function(response){
 
                     if(response.status)
@@ -435,7 +458,17 @@ var inputpin = document.querySelector("#pin_code");
                             console.log(error);
                 }
             });              
+/*
+            
 
+            steem.api.broadcast.sendOperations(ops, activekeyhere)
+            .then((r) => {
+            console.log(r);
+            })
+            .catch(e => {
+            console.log(e);
+            });
+*/
 
     })
 
