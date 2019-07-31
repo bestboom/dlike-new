@@ -1,5 +1,10 @@
 <?php
 
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
+
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){ ?>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
