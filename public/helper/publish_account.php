@@ -27,7 +27,7 @@ class makeAccount
     
     public function broadcast($create)
     {
-
+        $active=getenv('active_account');
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -39,6 +39,12 @@ class makeAccount
             CURLOPT_POSTFIELDS => $create,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_HTTPHEADER => array(
+                "accept: application/json",
+                "authorization: " . $active,
+                "cache-control: no-cache",
+                "content-type: application/json",
+            ),
         ));
 
         $response = curl_exec($curl);
