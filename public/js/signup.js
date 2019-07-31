@@ -406,6 +406,8 @@ var inputpin = document.querySelector("#pin_code");
         document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
             event.preventDefault();
             let my_name = $('#my_username').html();
+            privateKey = dsteem.PrivateKey.fromString(my_name);
+            console.log(privateKey);
             let password = suggestPassword();
             console.log(password);
             let created_by = 'dlike';
