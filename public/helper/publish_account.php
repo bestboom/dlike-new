@@ -19,7 +19,7 @@ class makeAccount
                     "extensions" => []
                 ]]
             ],
-            $active_owner,
+            "privateKey" => $active_owner,
         ];
 
         $fixed_str = json_encode($create);
