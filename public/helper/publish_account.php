@@ -30,7 +30,7 @@ class makeAccount
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.steemit.com/broadcast",
+            CURLOPT_URL => "https://api.steemit.com/broadcast/sendOperations",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

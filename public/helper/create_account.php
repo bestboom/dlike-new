@@ -15,9 +15,8 @@ $accountGenerator = new dlike\signup\makeAccount();
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
     $active_owner=getenv('active_account');
+
 	$user =  $_POST['user'];
-    //$keys = $_POST[_key'myKeys'];
-    //$keys   = json_decode("$keys", true);
     $created_by = 'dlike';
     $owner_key = $_POST['owner'];
     $active_key = $_POST['active'];
@@ -35,9 +34,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         echo $errors;
     }
 
-	if ($state) { 
+	if ($state->result) { 
 			$return['status'] = true;
             $return['message'] = 'Account created';
+    else if ($state->error) { 
+            $return['status'] = false;
+            $return['message'] = 'Failed'.$state;            
 	} else {
 			$return['message'] = 'SOme Error';
             //var_dump($state->err_description);
