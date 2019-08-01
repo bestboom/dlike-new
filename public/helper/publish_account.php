@@ -9,6 +9,7 @@ class makeAccount
         $create = [
             "operations" => [
                 ["create_claimed_account", [
+                    "wif" => $active_owner,
                     "creator" => $created_by,
                     "new_account_name" => $user,
                     "owner" => $owner_key,
@@ -18,8 +19,7 @@ class makeAccount
                     "json_metadata" => '',
                     "extensions" => []
                 ]]
-            ],
-            "privatekeys" =>  $active_owner,
+            ]
         ];
 
         $fixed_str = json_encode($create);
