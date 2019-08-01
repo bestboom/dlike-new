@@ -411,6 +411,12 @@ var inputpin = document.querySelector("#pin_code");
             console.log(password);
             let created_by = 'dlike';
 
+            var publicKeys = steem.auth.generateKeys(my_name, password, ['owner', 'active', 'posting', 'memo']);
+            var owner = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.owner, 1]] };
+            var active = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.active, 1]] };
+            var posting = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.posting, 1]] };
+            console.log(posting);
+
             const ops = [];
 
             let keys = getPrivateKeys(my_name, password);
