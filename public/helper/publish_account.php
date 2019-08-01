@@ -5,7 +5,7 @@ class makeAccount
 
     public function createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
-        $active_owner='active key here';
+        $active_owner=getenv('active_account');
         $create = [
             "operations" => [
                 ["create_claimed_account", [
@@ -23,7 +23,7 @@ class makeAccount
         ];
 
         $fixed_str = json_encode($create);
-        print($fixed_str);
+        //print($fixed_str);
         return $fixed_str;
     }
     
