@@ -415,7 +415,8 @@ var inputpin = document.querySelector("#pin_code");
             var owner = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.owner, 1]] };
             var active = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.active, 1]] };
             var posting = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.posting, 1]] };
-            console.log(posting);
+            var memo = publicKeys.memo;
+            console.log(memo);
 
             
 
@@ -423,13 +424,13 @@ var inputpin = document.querySelector("#pin_code");
             console.log(keys);
 
              $.ajax({
-                url: '/helper/sign_check.php',
+                url: '/helper/create_account.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys),owner:owner},
+                data: {action : 'acc_create',user:my_name,owner:owner,active:active,posting:posting,memo:memo;},
                 success:function(response){
-                    //console.log(response);
+                    console.log(response);
                     if(response.status)
                     {
                        toastr['success'](response.message);
@@ -469,7 +470,7 @@ var inputpin = document.querySelector("#pin_code");
             ops.push(create_op);
             console.log(ops);
 
-
+            //myKeys:JSON.stringify(keys)
             steem.api.broadcast.sendOperations(ops, activekeyhere)
             .then((r) => {
             console.log(r);

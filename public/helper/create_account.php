@@ -14,11 +14,15 @@ $accountGenerator = new dlike\signup\makeAccount();
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
-    $active=getenv('active_account');
+    $active_owner=getenv('active_account');
 	$user =  $_POST['user'];
-    $keys = $_POST['myKeys'];
-    $keys   = json_decode("$keys", true);
+    //$keys = $_POST[_key'myKeys'];
+    //$keys   = json_decode("$keys", true);
     $created_by = 'dlike';
+    $owner_key = $_POST['owner'];
+    $active_key = $_POST['active'];
+    $posting_key = $_POST['posting'];
+    $memo_key = $_POST['memo'];
 
     $return = array();
     $return['status'] = false;
@@ -26,7 +30,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 	if (empty($errors)) {
     $publish = $accountGenerator->createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key);
-    $state = $accountGenerator->broadcast($publish, $active);
+    $state = $accountGenerator->broadcast($publish, $active_owner);
 	}
 
 	if ($state) { 
@@ -34,7 +38,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
             $return['message'] = 'Account created';
 	} else {
 			$return['message'] = 'SOme Error';
-            //var_dump($state->err_description);
+            var_dump($state->err_description);
 
 	} 
 

@@ -1,5 +1,5 @@
 <?php
-namespace SnaddyvitchDispenser\signup;
+namespace dlike\signup;
 class makeAccount
 {
 
@@ -21,7 +21,7 @@ class makeAccount
         ];
 
         $fixed_str = json_encode($create);
-        print($fixed_str);
+        //print($fixed_str);
         return $fixed_str;
     }
     
