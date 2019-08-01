@@ -18,7 +18,8 @@ class makeAccount
                     "json_metadata" => '',
                     "extensions" => []
                 ]]
-            ]
+            ],
+            "privatekeys" =>  $active_owner,
         ];
 
         $fixed_str = json_encode($create);
