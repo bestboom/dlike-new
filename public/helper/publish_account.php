@@ -21,7 +21,7 @@ class makeAccount
         ];
 
         $fixed_str = json_encode($create);
-        print($fixed_str);
+        //print($fixed_str);
         return $fixed_str;
     }
     
@@ -30,7 +30,7 @@ class makeAccount
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.steemit.com/broadcast/sendOperations",
+            CURLOPT_URL => "https://api.steemit.com/broadcast",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
