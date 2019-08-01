@@ -1,6 +1,6 @@
 <?php
 
-broadcast($trx);
+echo $atit = broadcast();
     public function broadcast($trx)
     {
         $curl = curl_init();
