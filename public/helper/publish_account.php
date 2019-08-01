@@ -5,7 +5,8 @@ class makeAccount
 
     public function createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
-            $create = [
+        $active_owner='active key here';
+        $create = [
             "operations" => [
                 ["create_claimed_account", [
                     "creator" => $created_by,
@@ -17,11 +18,12 @@ class makeAccount
                     "json_metadata" => '',
                     "extensions" => []
                 ]]
-            ]
+            ],
+            $active_owner,
         ];
 
         $fixed_str = json_encode($create);
-        //print($fixed_str);
+        print($fixed_str);
         return $fixed_str;
     }
     
