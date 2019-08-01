@@ -30,9 +30,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	if (empty($errors)) {
     $publish = $accountGenerator->createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key);
     $state = $accountGenerator->broadcast($publish, $active_owner);
-	} else {
-        echo $errors;
-    }
+	} 
 
 	if ($state->result) { 
 			$return['status'] = true;
