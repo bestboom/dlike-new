@@ -416,12 +416,11 @@ var inputpin = document.querySelector("#pin_code");
             var active = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.active, 1]] };
             var posting = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.posting, 1]] };
             var memo = publicKeys.memo;
-            console.log(memo);
+            //console.log(memo);
 
             
 
-            let keys = getPrivateKeys(my_name, password);
-            console.log(keys);
+            
 
              $.ajax({
                 url: '/helper/create_account.php',
@@ -449,7 +448,8 @@ var inputpin = document.querySelector("#pin_code");
             });              
 /*
             
-
+            //let keys = getPrivateKeys(my_name, password);
+            //console.log(keys);
             const ops = [];
 
             const create_op = [
@@ -469,6 +469,8 @@ var inputpin = document.querySelector("#pin_code");
 
             ops.push(create_op);
             console.log(ops);
+
+
 
             //myKeys:JSON.stringify(keys)
             steem.api.broadcast.sendOperations(ops, activekeyhere)
