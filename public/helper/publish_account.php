@@ -1,5 +1,5 @@
 <?php
-namespace dlike\signup;
+namespace SnaddyvitchDispenser\signup;
 class makeAccount
 {
 
@@ -27,7 +27,6 @@ class makeAccount
     
     public function broadcast($create)
     {
-        $active=getenv('active_account');
         $curl = curl_init();
 
         curl_setopt_array($curl, array(

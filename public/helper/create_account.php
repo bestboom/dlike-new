@@ -6,10 +6,7 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_account.php";
 
-function validator($data){
-    return htmlspecialchars(strip_tags(trim($data)));
-}
-$accountGenerator = new dlike\signup\makeAccount();
+$accountGenerator = new SnaddyvitchDispenser\signup\makeAccount();
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
@@ -34,9 +31,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 	if ($state) { 
 			$return['status'] = true;
-            $return['message'] = 'Looks data done';
+            $return['message'] = 'Account created';
 	} else {
-			$return['message'] = 'data not good.';
+			$return['message'] = 'SOme Error';
             //var_dump($state->err_description);
 
 	} 
