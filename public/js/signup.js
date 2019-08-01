@@ -417,35 +417,17 @@ var inputpin = document.querySelector("#pin_code");
             var posting = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.posting, 1]] };
             console.log(posting);
 
-            const ops = [];
+            
 
             let keys = getPrivateKeys(my_name, password);
             console.log(keys);
 
-            const create_op = [
-              'create_claimed_account',
-              {
-                
-                creator: created_by,
-                new_account_name: my_name,
-                extensions: [],
-                json_metadata: '',
-                active: dsteem.Authority.from(keys.activePubkey),
-                memo_key: keys.memoPubkey,
-                owner: dsteem.Authority.from(keys.ownerPubkey),
-                posting: dsteem.Authority.from(keys.postingPubkey),
-              },
-            ];
-
-            ops.push(create_op);
-            console.log(ops);
-
              $.ajax({
-                url: '/helper/create_account.php',
+                url: '/helper/sign_check.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
+                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys),owner:owner},
                 success:function(response){
                     //console.log(response);
                     if(response.status)
@@ -466,6 +448,27 @@ var inputpin = document.querySelector("#pin_code");
             });              
 /*
             
+
+            const ops = [];
+
+            const create_op = [
+              'create_claimed_account',
+              {
+                
+                creator: created_by,
+                new_account_name: my_name,
+                extensions: [],
+                json_metadata: '',
+                active: dsteem.Authority.from(keys.activePubkey),
+                memo_key: keys.memoPubkey,
+                owner: dsteem.Authority.from(keys.ownerPubkey),
+                posting: dsteem.Authority.from(keys.postingPubkey),
+              },
+            ];
+
+            ops.push(create_op);
+            console.log(ops);
+
 
             steem.api.broadcast.sendOperations(ops, activekeyhere)
             .then((r) => {

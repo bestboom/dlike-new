@@ -6,7 +6,11 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_account.php";
 
-$accountGenerator = new SnaddyvitchDispenser\signup\makeAccount();
+function validator($data){
+    return htmlspecialchars(strip_tags(trim($data)));
+}
+
+$accountGenerator = new dlike\signup\makeAccount();
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
 
@@ -14,10 +18,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$user =  $_POST['user'];
     $keys = $_POST['myKeys'];
     $keys   = json_decode("$keys", true);
-    $active_key =  $keys["active"];
-    $owner_key =  $keys["owner"];
-    $memo_key =  $keys["memo"];
-    $posting_key =  $keys["posting"];
     $created_by = 'dlike';
 
     $return = array();
