@@ -26,7 +26,7 @@ class makeAccount
         return $fixed_str;
     }
     
-    public function broadcast($trx)
+    public function broadcast($create)
     {
         $curl = curl_init();
 
@@ -36,7 +36,7 @@ class makeAccount
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
             CURLOPT_TIMEOUT => 30,
-            CURLOPT_POSTFIELDS => $trx,
+            CURLOPT_POSTFIELDS => $create,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
         ));
