@@ -8,7 +8,7 @@ class makeAccount
         $active_owner=getenv('active_account');
         $create = [
             "operations" => [
-                ["create_claimed_account", [
+                ["sendOperations", [
                     "wif" => $active_owner,
                     "creator" => $created_by,
                     "new_account_name" => $user,
