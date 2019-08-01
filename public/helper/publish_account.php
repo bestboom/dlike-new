@@ -8,7 +8,7 @@ class makeAccount
         $active_owner=getenv('active_account');
         $create = [
             "operations" => [
-                ["sendOperations", [
+                ["create_claimed_account", [
                     "wif" => $active_owner,
                     "creator" => $created_by,
                     "new_account_name" => $user,
@@ -32,7 +32,7 @@ class makeAccount
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://steemconnect.com/api/broadcast",
+            CURLOPT_URL => "https://api.steemit.com/broadcast",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
