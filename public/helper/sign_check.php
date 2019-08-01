@@ -14,7 +14,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 		if($user != ''){
 			$return['status'] = true;
-			$return['message'] = 'Looks data done'.$keys;
+			$return['message'] = var_dump($keys);
 		}
 		else{
 			$return['message'] = 'data not good.';
