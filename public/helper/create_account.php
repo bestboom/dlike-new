@@ -35,7 +35,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	if (isset($state)) { 
 		$retusn['data']=$state;
 			$return['status'] = true;
-            $return['message'] = var_dump($state);
+            $return['message'] = $retusn['data'];
 	} else {
 			$return['message'] = var_dump($publish);
 
