@@ -64,8 +64,8 @@ domReady(function () {
     FormSignUp.addEventListener('submit', function (event) {
         event.stopPropagation();
         event.preventDefault();
-        signUpPhoneCheck();
-        //getSuccess();
+        //signUpPhoneCheck();
+        getSuccess();
         return false;
     });
 
