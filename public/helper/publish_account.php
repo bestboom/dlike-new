@@ -44,7 +44,8 @@ class makeAccount
         if ($err) {
             return json_decode('{"error":"server_comms","error_description":"Failed to connect to the server!"}');
         } else {
-            return json_decode($response);
+            $s = json_decode($response,true);
+            return json_encode($s);
         }
     }
 }
