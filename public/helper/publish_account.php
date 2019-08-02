@@ -2,7 +2,7 @@
 namespace dlike\signup;
 class makeAccount
 {
-    private $debug = false;
+
     public function createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
         
@@ -40,12 +40,16 @@ class makeAccount
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "POST",
         ));
-        $result = curl_exec($curl);
-        if ($this->debug) {
-            print $result . "\n";
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        if ($err) {
+            return json_decode('{"error":"server_comms","error_description":"Failed to connect to the server!"}');
+        } else {
+            return json_decode($response);
         }
-        $result = json_decode($result, true);
-        return $result;
-       
     }
 }
