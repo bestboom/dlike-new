@@ -34,9 +34,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 	if (isset($state)) { 
 			$return['status'] = true;
-            $return['message'] = 'Success' var_dump($state);
+            $return['message'] = var_dump($state);
 	} else {
-			$return['message'] = 'Failed' var_dump($state);
+			$return['message'] = var_dump($state);
 
 	} 
 
