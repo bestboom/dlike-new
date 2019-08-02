@@ -35,7 +35,7 @@ class makeAccount
         curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($create));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $create);
         $response = curl_exec($ch);
         $err = curl_error($ch);
        
