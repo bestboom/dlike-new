@@ -5,11 +5,10 @@ class makeAccount
 
     public function createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
-        $active_owner=getenv('active_account');
+        
         $create = [
             "operations" => [
                 ["create_claimed_account", [
-                    "wif" => $active_owner,
                     "creator" => $created_by,
                     "new_account_name" => $user,
                     "owner" => $owner_key,
