@@ -28,11 +28,11 @@ class makeAccount
         return $create;
     }
     
-    public function broadcast($create)
+    public function sendOperatiosn($create)
     {
        
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/");
+        curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/broadcast");
         //curl_setopt($ch, CURLOPT_URL, "https://steemconnect.com/api/");
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: multipart/form-data'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
