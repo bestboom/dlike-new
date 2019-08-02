@@ -31,12 +31,11 @@ class makeAccount
     {
        
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: multipart/form-data"));
+
         curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $create);
         $response = curl_exec($ch);
-        echo $response;die();
         $err = curl_error($ch);
        
 
