@@ -22,9 +22,9 @@ class makeAccount
             "privatekry" => $active_owner,
         ];
 
-        $fixed_str = json_encode($create);
+        //$fixed_str = json_encode($create);
         //print($fixed_str);
-        return $fixed_str;
+        return $create;
     }
     
     public function broadcast($create)
