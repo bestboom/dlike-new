@@ -19,8 +19,7 @@ class makeAccount
                     "json_metadata" => '',
                     "extensions" => []
                 ]]
-            ],
-            "privatekry" => $active_owner,
+            ]
         ];
 
         //$fixed_str = json_encode($create);
