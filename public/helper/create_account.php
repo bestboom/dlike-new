@@ -13,9 +13,9 @@ function validator($data){
 $accountGenerator = new dlike\signup\makeAccount();
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
-
+ 
     $active_owner=getenv('active_account');
-
+   echo json_encode($_POST);die();
 	$user =  $_POST['user'];
     $created_by = 'dlike';
     $owner_key = $_POST['owner'];
