@@ -5,7 +5,7 @@ class makeAccount
 
     public function createAccount($created_by='', $user='', $owner_key='', $active_key='', $posting_key='', $memo_key='')
     {
-        $active_owner='atit';
+        $active_owner=getenv('active_account');
         $create = [
             "operations" => [
                 ["create_claimed_account", [
@@ -32,7 +32,7 @@ class makeAccount
        
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/");
+        curl_setopt($ch, CURLOPT_URL, "https://steemconnect.com/api/");
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: multipart/form-data'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_POST, 1);
