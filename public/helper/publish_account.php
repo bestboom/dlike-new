@@ -2,7 +2,7 @@
 namespace dlike\signup;
 class makeAccount
 {
-
+    private $debug = false;
     public function createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
         
