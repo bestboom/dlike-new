@@ -415,7 +415,7 @@ var inputpin = document.querySelector("#pin_code");
             var owner = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.owner, 1]] };
             var active = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.active, 1]] };
             var posting = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.posting, 1]] };
-            var memo = publicKeys.memo;
+            var memo = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.memo, 1]] };
             //console.log(memo);
 
             
