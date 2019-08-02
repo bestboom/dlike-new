@@ -32,11 +32,11 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $state = $accountGenerator->broadcast($publish);
 	} 
 
-	if (isset($state->result)) { 
+	if (isset($state) { 
 			$return['status'] = true;
-            $return['message'] = 'Account created'.$state->result;
+            $return['message'] = 'Account created';
 	} else {
-			$return['message'] = print($state->result.err);
+			$return['message'] = print_r($state[error]);
 
 	} 
 
