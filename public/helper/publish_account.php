@@ -5,7 +5,7 @@ class makeAccount
 
     public function createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key)
     {
-        $active_owner=getenv('active_account');
+        $active_owner='atit';
         $create = [
             "operations" => [
                 ["create_claimed_account", [
@@ -36,8 +36,6 @@ class makeAccount
         curl_setopt($ch, CURLOPT_POSTFIELDS, $create);
         $response = curl_exec($ch);
         $err = curl_error($ch);
-        
-        
        
 
 
