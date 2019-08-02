@@ -34,7 +34,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 	if (isset($state)) { 
 			$return['status'] = true;
-            $return['message'] = 'Account created'.$state->result;
+            $return['message'] = 'Account created'.$state->result_description;
 	} else {
 			$return['message'] = $state->error_description;
 
