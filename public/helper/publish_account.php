@@ -38,7 +38,7 @@ class makeAccount
             CURLOPT_TIMEOUT => 30,
             CURLOPT_POSTFIELDS => $create,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
+            CURLOPT_CUSTOMREQUEST => "POST"
         ));
 
         $response = curl_exec($curl);
