@@ -32,8 +32,8 @@ class makeAccount
     {
        
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/broadcast/");
-        //curl_setopt($ch, CURLOPT_URL, "https://steemconnect.com/api/");
+        //curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/broadcast/");
+        curl_setopt($ch, CURLOPT_URL, "https://steemconnect.com/api/broadcast/");
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: multipart/form-data'));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_POST, 1);
