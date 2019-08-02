@@ -29,12 +29,14 @@ class makeAccount
     
     public function broadcast($create)
     {
-        echo json_encode($create);die();
+        
         $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: multipart/form-data"));
         curl_setopt($ch, CURLOPT_URL, "https://api.steemit.com/broadcast/");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $create);
         $response = curl_exec($ch);
+        echo $response;die();
         $err = curl_error($ch);
        
 
