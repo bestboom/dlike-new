@@ -408,19 +408,6 @@ var inputpin = document.querySelector("#pin_code");
             event.preventDefault();
             let my_name = $('#my_username').html();
             
-$.ajax({
-url: 'http://localhost:3000',
-type: 'get',
-dataType: 'json',
-data: {action : 'acc_create',my_name:my_name},
-success:function(response){
-console.log(response);
-},
-error: function(xhr, textStatus, error){
-console.log(error);
-}
-}); 
-/*
              $.ajax({
                 url: '/helper/create_account.php',
                 type: 'post',
@@ -446,7 +433,20 @@ console.log(error);
                 }
             });              
 
-            
+/* 
+$.ajax({
+url: 'http://localhost:3000',
+type: 'get',
+dataType: 'json',
+data: {my_name:my_name},
+success:function(response){
+console.log(response);
+},
+error: function(xhr, textStatus, error){
+console.log(error);
+}
+}); 
+           
             //let keys = getPrivateKeys(my_name, password);
             //console.log(keys);
             const ops = [];
