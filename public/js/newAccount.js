@@ -3,7 +3,7 @@ const steem = require('steem');
 const client = new dsteem.Client('https://api.steemit.com');
 
 
-const my_name = get value here;
+const my_name = 'tricircle';
 const created_by = 'dlike';
 const creator_key = process.env.active_Account;
 
