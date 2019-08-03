@@ -7,7 +7,7 @@ const my_name = 'fanfeo';
 console.log(my_name);
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');
-const creator_key = process.env.active_account;
+const creator_key = '5K8VEy24t3mB9yw9hPzkfFGeMkupnQmH3zfkuQC7JAFJJuwDDuY';
 
 //lets generate password
     function suggestPassword() {
