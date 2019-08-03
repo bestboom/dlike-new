@@ -9,9 +9,10 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
+    "dsteem": "^0.11.2",
     "express": "^4.13.3",
-    "steemconnect": "^2.0.1",
-    "dsteem": "^0.11.2"
+    "steem": "^0.7.6",
+    "steemconnect": "^2.0.1"
   },
   "engines": {
     "node": "4.7.0"
