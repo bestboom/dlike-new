@@ -407,19 +407,6 @@ var inputpin = document.querySelector("#pin_code");
         document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
             event.preventDefault();
             let my_name = $('#my_username').html();
-            let password = suggestPassword();
-            console.log(password);
-            let created_by = 'dlike';
-
-            var publicKeys = steem.auth.generateKeys(my_name, password, ['owner', 'active', 'posting', 'memo']);
-            var owner = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.owner, 1]] };
-            var active = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.active, 1]] };
-            var posting = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.posting, 1]] };
-            var memo = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.memo, 1]] };
-            //console.log(memo);
-
-            
-
             
 
              $.ajax({
@@ -427,7 +414,7 @@ var inputpin = document.querySelector("#pin_code");
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'acc_create',user:my_name,owner:owner,active:active,posting:posting,memo:memo},
+                data: {action : 'acc_create',user:my_name},
                 success:function(response){
                     console.log(response);
                     if(response.status)
