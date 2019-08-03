@@ -20,7 +20,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 
 	if ($user !='') {
-    $state = exec("node js/newAccount.js", $output); 
+    $state = exec("node app/public/js/newAccount.js", $output); 
     echo $result = implode("\n", $output);
 	} 
 
