@@ -10,7 +10,7 @@ const creator_key = process.env.active_account;
 
 //lets generate password
     function suggestPassword() {
-        const array = new Uint8Array(10);
+        const array = new Uint32Array(10);
         getRandomValues(array);
         return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
     }
