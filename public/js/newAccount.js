@@ -1,8 +1,9 @@
 const dsteem = require('dsteem');
+const steem = require('steem');
 const client = new dsteem.Client('https://api.steemit.com');
 
 
-const my_name = 'tricircle';
+const my_name = get value here;
 const created_by = 'dlike';
 const creator_key = process.env.active_Account;
 
@@ -12,6 +13,8 @@ const creator_key = process.env.active_Account;
         window.crypto.getRandomValues(array);
         return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
     }
+
+const password = suggestPassword();
 
 // lets generate keys
     const publicKeys = steem.auth.generateKeys(my_name, password, ['owner', 'active', 'posting', 'memo']);

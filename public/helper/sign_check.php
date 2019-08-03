@@ -1,87 +1,48 @@
 <?php
 
-  ini_set('display_errors', 1);
-  ini_set('display_startup_errors', 1);
-  error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+require_once "../helper/publish_account.php";
 
-echo $atit = broadcast();
-    public function broadcast($trx)
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://api.steemit.com/broadcast",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => "",
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_POSTFIELDS => $trx,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "POST",
-        ));
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        if ($err) {
-            return json_decode('{"error":"server_comms","error_description":"Failed to connect to the server!"}');
-        } else {
-            return json_decode($response);
-        }
-    }
-
-?>
-
-if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
-
-	$return = array();
-	$return['status'] = false;
-	$return['message'] = '';
-
-	$user =  $_POST['user'];
-	$keys = $_POST['owner'];
-	//$keys   = json_decode("$keys", true);
-	//$active_key =  $keys["active"];
-
-
-		if($user != ''){
-			$return['status'] = true;
-			$return['message'] = var_dump($keys);
-		}
-		else{
-			$return['message'] = 'data not good.';
-		}
-	echo json_encode($return);
-	exit;
+function validator($data){
+    return htmlspecialchars(strip_tags(trim($data)));
 }
 
+$accountGenerator = new dlike\signup\makeAccount();
+
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
+ 
+    $active_owner=getenv('active_account');
+
+  $user =  $_POST['user'];
+    $created_by = 'dlike';
+    $owner_key = $_POST['owner'];
+    $active_key = $_POST['active'];
+    $posting_key = $_POST['posting'];
+    $memo_key = $_POST['memo'];
+
+    $return = array();
+    $return['status'] = false;
+    $return['message'] = '';
+
+  if (empty($errors)) {
+    $publish = $accountGenerator->createAccount($created_by, $user, $owner_key, $active_key, $posting_key, $memo_key);
+    $state = $accountGenerator->sendOperations($publish);
+  } 
+
+  if (isset($state)) { 
+    $retusn['data']=$state;
+      $return['status'] = true;
+            $return['message'] = $retusn['data'];
+  } else {
+      $return['message'] = var_dump($publish);
+
+  } 
+
+    echo json_encode($return);
+    exit;
+
+} else {die('Some error');}
 ?>
-
-
-             $.ajax({
-                url: '/helper/create_account.php',
-                type: 'post',
-                cache : false,
-                dataType: 'json',
-                data: {action : 'acc_create',user:my_name,myKeys:JSON.stringify(keys)},
-                success:function(response){
-
-                    if(response.status)
-                    {
-                       toastr['success'](response.message);
-                    }
-                    else{
-                        toastr['error'](response.message);
-                        return false;
-                    }
-                },
-                error: function(xhr, textStatus, error){
-                          console.log(xhr.statusText);
-                          console.warn(xhr.responseText);
-                           console.log(textStatus);
-                            console.log(error);
-                }
-            });  
