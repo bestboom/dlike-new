@@ -20,14 +20,15 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 
 	if ($user !='') {
-    //run code here
+    $state = exec("node js/newAccount.js", $output); 
+    echo $result = implode("\n", $output);
 	} 
 
 	if (isset($state)) { 
 			$return['status'] = true;
-            $return['message'] = 'Account Created';
+            $return['message'] = 'Account Created'.$result;
 	} else {
-			$return['message'] = 'Failed';
+			$return['message'] = 'Failed'.$result;
 
 	} 
 

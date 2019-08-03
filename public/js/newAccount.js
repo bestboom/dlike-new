@@ -3,25 +3,27 @@ const steem = require('steem');
 const client = new dsteem.Client('https://api.steemit.com');
 
 
-const my_name = myname;
+const my_name = 'madmaster';
 const created_by = 'dlike';
-const creator_key = process.env.active_Account;
+const getRandomValues = require('get-random-values');
+const creator_key = process.env.active_account;
 
 //lets generate password
     function suggestPassword() {
-        const array = new Uint32Array(10);
-        window.crypto.getRandomValues(array);
+        const array = new Uint8Array(10);
+        getRandomValues(array);
         return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
     }
 
 const password = suggestPassword();
+console.log(password);
 
 // lets generate keys
     const publicKeys = steem.auth.generateKeys(my_name, password, ['owner', 'active', 'posting', 'memo']);
     const owner_key = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.owner, 1]] };
     const active_key = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.active, 1]] };
     const posting_key = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.posting, 1]] };
-    const memo_key = { weight_threshold: 1, account_auths: [], key_auths: [[publicKeys.memo, 1]] };
+    const memo_key = publicKeys.memo;
 
 
 //now geenrate operation for api
@@ -35,7 +37,7 @@ const password = suggestPassword();
         json_metadata: '',
         active: active_key,
         memo_key: memo_key,
-        owner: owne_keyr,
+        owner: owner_key,
         posting: posting_key,
       },
     ];
@@ -45,7 +47,7 @@ const password = suggestPassword();
 
 
 //this code will send data to api and get back call
-  client.api.broadcast.sendOperations(ops, creator_key)
+  client.broadcast.sendOperations(ops, dsteem.PrivateKey.from(creator_key))
   .then((r) => {
   console.log(r);
   })
