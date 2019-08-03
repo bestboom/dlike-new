@@ -4,6 +4,7 @@ const client = new dsteem.Client('https://api.steemit.com');
 
 
 const my_name = 'fanfeo';
+console.log(my_name);
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');
 const creator_key = process.env.active_account;
