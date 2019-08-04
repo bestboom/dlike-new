@@ -22,7 +22,7 @@ const creator_key = process.env.active_account;
     }
 
 const password = suggestPassword();
-//console.log(password); // this does not work, password is empty
+console.log(password); // this does not work, password is empty
 
 // lets generate keys
     const publicKeys = steem.auth.generateKeys(my_name, password, ['owner', 'active', 'posting', 'memo']);
