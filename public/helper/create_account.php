@@ -11,7 +11,6 @@ function validator($data){
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
  
-    $active_owner=getenv('active_account');
 
     $user =  $_POST['user'];
 
@@ -21,7 +20,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
     if ($user !='') {
     try {
-        $state = shell_exec("node js/newAccount.js ".$user); 
+        $state = shell_exec('node js/newAccount.js'.$user); 
     
         $password = trim($state); // do what you want with the password here
 
