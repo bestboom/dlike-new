@@ -6,4 +6,7 @@ $cmd = "node {$here}/js/newAccount.js \"{$user}\"";
 echo "cmd: $cmd\n";
 $output = shell_exec($cmd); 
 echo $output;
+
+exec('node -v', $o);
+echo $o;
 ?>
