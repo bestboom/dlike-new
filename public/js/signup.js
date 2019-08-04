@@ -412,7 +412,7 @@ var inputpin = document.querySelector("#pin_code");
                 url: '/helper/create_account.php',
                 type: 'post',
                 cache : false,
-               // dataType: 'json',
+                dataType: 'json',
                 data: {action : 'acc_create',user:my_name},
                 success:function(response){
                     console.log(response);
