@@ -3,15 +3,15 @@ const steem = require('steem');
 const client = new dsteem.Client('https://api.steemit.com');
 
 
-const my_name = 'fanfeo';
+const my_name = 'madmouse';
 console.log(my_name);
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');
-const creator_key = '5K8VEy24t3mB9yw9hPzkfFGeMkupnQmH3zfkuQC7JAFJJuwDDuY';
+const creator_key = process.env.active_account;
 
 //lets generate password
     function suggestPassword() {
-        const array = new Uint32Array(10);
+        const array = new Uint8Array(10);
         getRandomValues(array);
         return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
     }
