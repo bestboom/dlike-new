@@ -35,8 +35,5 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
             
         }
     }
-    print_r($return);
-    exit;
-
 } else {die('Some error');}
 ?>
