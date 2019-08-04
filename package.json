@@ -16,7 +16,7 @@
     "steemconnect": "^2.0.1"
   },
   "engines": {
-    "node": "4.7.0"
+    "node": "12.6.0"
   },
   "repository": {
     "type": "git",
