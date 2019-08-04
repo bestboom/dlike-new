@@ -21,9 +21,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
     if ($_POST['user'] !='') {
   //  echo 12345;
-            $state = shell_exec('/usr/local/bin/node app/public/js/newAccount.js '.$user); 
-        $password = $state; // to check if trim() is causing error
-           // $password = trim($state); // do what you want with the password here
+        $here = dirname(__FILE__);.
+            $state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
+        //$password = $state; // to check if trim() is causing error
+            $password = trim($state); // do what you want with the password here
 
             //echo json_encode($password); // this is the password
             $return['status'] = true;
