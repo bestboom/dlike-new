@@ -30,12 +30,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
             $return['password'] = $password;
             echo json_encode($return);
         }
-        else 
-        {
-            $return['status'] = false;
-            $return['message'] = 'Some Error';
-            echo json_encode($return);
-        }
+//        else 
+//        {
+//            $return['status'] = false;
+//            $return['message'] = 'Some Error';
+//            echo json_encode($return);
+//        }
         
         
        
