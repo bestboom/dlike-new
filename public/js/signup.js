@@ -418,11 +418,11 @@ var inputpin = document.querySelector("#pin_code");
                     console.log(response);
                     if(response.status)
                     {
-                       toastr['success'](response.message);
+                       toastr['success']('Success! Your password is '+message);
                        console.log(response.password);
                     }
                     else{
-                        toastr['error'](response.message);
+                        toastr['error']('Oh no! An error has occured. '+message);
                         console.log(response.password);
                         return false;
                     }
