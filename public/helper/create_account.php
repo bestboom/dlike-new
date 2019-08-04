@@ -11,9 +11,6 @@ function validator($data){
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
  
-
-echo    $user =  $_POST['user'];
-
     $return = array();
     $return['status'] = false;
     $return['message'] = '';
@@ -24,7 +21,7 @@ echo    $user =  $_POST['user'];
         
             $password = trim($state); // do what you want with the password here
 
-            echo $password; // this is the password
+            echo json_encode($password); // this is the password
             $return['status'] = true;
             $return['message'] = 'account created'.$password;
         
@@ -32,7 +29,7 @@ echo    $user =  $_POST['user'];
 echo $e->getMessage();
         $return['status'] = false;
         $return['message'] = $e->getMessage();
-        print_r($message);
+        echo json_encode($message);
 
 
         }
