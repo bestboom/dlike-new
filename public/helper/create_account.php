@@ -14,7 +14,7 @@ function validator($data){
     $return['message'] = '';
     
     
-try {
+
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
  $user = $_POST['user'];
 
@@ -33,12 +33,5 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     }
 } else {die('Some error');}
     
-     } catch (Exception $e) {
-echo $e->getMessage();
-        $return['status'] = false;
-        $return['message'] = $e->getMessage();
-        echo json_encode(return);
-
-
-        }
+    
 ?>
