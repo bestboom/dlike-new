@@ -24,6 +24,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         echo $password = trim($state); // do what you want with the password here
 
             //echo json_encode($password); // this is the password
+        if($password !=''){
         if(isset($state)){
             $return['status'] = true;
             $return['message'] = 'Account Created';
@@ -33,8 +34,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
        {
            $return['status'] = false;
            $return['message'] = 'Some Error';
-           $return['password'] = $password;
-           
+           //$return['password'] = $password;
        }
         
         echo json_encode($return);die;
