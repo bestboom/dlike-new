@@ -10,7 +10,7 @@ function validator($data){
 }
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
- 
+ $user = $_POST['user'];
     $return = array();
     $return['status'] = false;
     $return['message'] = '';
