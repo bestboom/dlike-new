@@ -6,7 +6,7 @@ const client = new dsteem.Client('https://api.steemit.com');
 // so understand that if you console log here, php will receive it too
 
 const my_name = process.argv[2];
-console.log({my_name});
+//console.log({my_name}); // thisd actually works
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');
 const creator_key = process.env.active_account;
@@ -20,7 +20,7 @@ const creator_key = process.env.active_account;
     }
 
 const password = suggestPassword();
-console.log(password);
+console.log(password); // this does not work, password is empty
 
 // lets generate keys
     const publicKeys = steem.auth.generateKeys(my_name, password, ['owner', 'active', 'posting', 'memo']);
