@@ -419,6 +419,7 @@ var inputpin = document.querySelector("#pin_code");
                     if(response.status)
                     {
                        toastr['success'](response.message);
+                       console.log(response.password);
                     }
                     else{
                         toastr['error'](response.message);

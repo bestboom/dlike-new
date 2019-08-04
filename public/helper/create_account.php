@@ -12,25 +12,23 @@ function validator($data){
     $return = array();
     $return['status'] = false;
     $return['message'] = '';
-    
-   // echo 555;
 
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
  $user = $_POST['user'];
 
 
     if ($_POST['user'] !='') {
-  //  echo 12345;
         $here = dirname(__FILE__);
-            $state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
+        $state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
         //$password = $state; // to check if trim() is causing error
-            $password = trim($state); // do what you want with the password here
+        $password = trim($state); // do what you want with the password here
 
             //echo json_encode($password); // this is the password
+        if($password !=''){
             $return['status'] = true;
             $return['message'] = 'account created'.$password;
-        $return['password'] = $password;
-        
+            $return['password'] = $password;
+        }
         echo json_encode($return);
         
        
