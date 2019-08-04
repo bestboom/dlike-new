@@ -9,6 +9,9 @@ app.get('/', function(request, response) {
   response.send('Hello Dlike!')
 })
 
+
+console.log(process.version)
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
