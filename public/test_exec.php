@@ -8,5 +8,5 @@ $output = shell_exec($cmd);
 echo $output;
 
 exec('node -v', $o);
-echo $o;
+print_r($o);
 ?>
