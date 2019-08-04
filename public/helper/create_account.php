@@ -17,7 +17,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
     if ($_POST['user'] !='') {
         try {
-            $state = shell_exec('node js/newAccount.js '.$user); 
+            $state = shell_exec('node app/public/js/newAccount.js '.$user); 
         
             $password = trim($state); // do what you want with the password here
 
