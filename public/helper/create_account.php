@@ -12,7 +12,7 @@ function validator($data){
 if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
  
 
-    $user =  $_POST['user'];
+echo    $user =  $_POST['user'];
 
     $return = array();
     $return['status'] = false;
@@ -29,7 +29,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
             $return['message'] = 'account created'.$password;
         
         } catch (Exception $e) {
-
+echo $e->getMessage();
         $return['status'] = false;
         $return['message'] = $e->getMessage();
         print_r($message);
