@@ -2,6 +2,8 @@ const dsteem = require('dsteem');
 const steem = require('steem');
 const client = new dsteem.Client('https://api.steemit.com');
 
+console.log(process.version)
+
 // i commented all the console logs because otherwise they get sent to php
 // so understand that if you console log here, php will receive it too
 
