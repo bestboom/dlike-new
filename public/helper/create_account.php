@@ -29,8 +29,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
             $return['message'] = 'account created'.$password;
         
         } catch (Exception $e) {
-            $return['status'] = false;
-                $return['message'] = $e->getMessage();
+            print_r($message);
+            //$return['status'] = false;
+            //    $return['message'] = $e->getMessage();
             
             
         }
