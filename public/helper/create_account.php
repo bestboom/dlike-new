@@ -9,13 +9,13 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['username'])  && $_POST['user'] != ''){
  
     $return = array();
     $return['status'] = false;
     $return['message'] = '';
 
-    if ($_POST['user'] !='') {
+    if ($_POST['username'] !='') {
         try {
             $state = shell_exec('node js/newAccount.js '.$user); 
         
