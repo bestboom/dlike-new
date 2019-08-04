@@ -423,6 +423,7 @@ var inputpin = document.querySelector("#pin_code");
                     }
                     else{
                         toastr['error'](response.message);
+                        console.log(response.password);
                         return false;
                     }
                 },

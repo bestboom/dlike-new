@@ -33,6 +33,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
        {
            $return['status'] = false;
            $return['message'] = 'Some Error';
+           $return['password'] = $password;
            
        }
         
