@@ -4,12 +4,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
+//print_r($_POST);
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['username'])  && $_POST['user'] != ''){
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['username'])  && $_POST['username'] != ''){
  
     $return = array();
     $return['status'] = false;
