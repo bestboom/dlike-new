@@ -1,2 +1,4 @@
 const my_name = process.argv[0];
-console.log(my_name);
+
+const password = '12345'
+console.log(password)
