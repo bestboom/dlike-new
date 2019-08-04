@@ -19,6 +19,7 @@ console.log(process.version)
 // so understand that if you console log here, php will receive it too
 
 const my_name = process.argv[2];
+
 console.log({my_name,v:process.version}); // thisd actually works
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');

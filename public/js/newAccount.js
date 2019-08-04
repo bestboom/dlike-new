@@ -12,12 +12,12 @@ console.log({my_name,v:process.version}); // thisd actually works
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');
 const creator_key = process.env.active_account;
-//console.log({creator_key});
+console.log({creator_key});
 
 //lets generate password
     function suggestPassword() {
         const array = new Uint8Array(10);
-        //getRandomValues(array);
+        getRandomValues(array);
         return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
     }
 
@@ -49,14 +49,14 @@ console.log(password); // this does not work, password is empty
     ];
 
     ops.push(create_op);
-   // console.log({ops});
+    console.log({ops});
 
 
 //this code will send data to api and get back call
   client.broadcast.sendOperations(ops, dsteem.PrivateKey.from(creator_key))
   .then((r) => {
-  //console.log(JSON.stringify(r));
+  console.log(JSON.stringify(r));
   })
   .catch(e => {
-  //throw JSON.stringify(e);
+  throw JSON.stringify(e);
   });
