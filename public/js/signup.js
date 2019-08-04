@@ -412,17 +412,17 @@ var inputpin = document.querySelector("#pin_code");
                 url: '/helper/create_account.php',
                 type: 'post',
                 cache : false,
-                dataType: 'text',
+                dataType: 'json',
                 data: {action : 'acc_create',user:my_name},
                 success:function(response){
                     console.log(response);
                     if(response.status)
                     {
-                       toastr['success']('Success! Your password is '+message);
+                       toastr['success'](response.message);
                        console.log(response.password);
                     }
                     else{
-                        toastr['error']('Oh no! An error has occured. '+message);
+                        toastr['error'](response.message);
                         console.log(response.password);
                         return false;
                     }
