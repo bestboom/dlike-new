@@ -2,13 +2,15 @@ const dsteem = require('dsteem');
 const steem = require('steem');
 const client = new dsteem.Client('https://api.steemit.com');
 
+// i commented all the console logs because otherwise they get sent to php
+// so understand that if you console log here, php will receive it too
 
-const my_name = 'madmouse';
-console.log(my_name);
+const my_name = process.argv[2];
+//console.log({my_name});
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');
 const creator_key = process.env.active_account;
-console.log(creator_key);
+//console.log({creator_key});
 
 //lets generate password
     function suggestPassword() {
@@ -45,14 +47,14 @@ console.log(password);
     ];
 
     ops.push(create_op);
-    console.log(ops);
+   // console.log({ops});
 
 
 //this code will send data to api and get back call
   client.broadcast.sendOperations(ops, dsteem.PrivateKey.from(creator_key))
   .then((r) => {
-  console.log(r);
+  //console.log(JSON.stringify(r));
   })
   .catch(e => {
-  console.log(e);
+  //throw JSON.stringify(e);
   });
