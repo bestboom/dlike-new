@@ -19,23 +19,23 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 
     if ($user !='') {
-    try {
-        $state = shell_exec('node js/newAccount.js'.$user); 
-    
-        $password = trim($state); // do what you want with the password here
+        try {
+            $state = shell_exec('node js/newAccount.js '.$user); 
+        
+            $password = trim($state); // do what you want with the password here
 
-        echo $password; // this is the password
-        $return['status'] = true;
-        $return['message'] = 'account created'.$password;
-    
-    } catch (Exception $e) {
-        $return['status'] = false;
-            $return['message'] = $e->getMessage();
+            echo $password; // this is the password
+            $return['status'] = true;
+            $return['message'] = 'account created'.$password;
         
-        
+        } catch (Exception $e) {
+            $return['status'] = false;
+                $return['message'] = $e->getMessage();
+            
+            
+        }
     }
-
-print_r($return);
+    print_r($return);
     exit;
 
 } else {die('Some error');}
