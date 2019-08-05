@@ -90,7 +90,7 @@ domReady(function () {
             return;
         }
 
-        if(!(username.match(letterNumber)))
+        if(!(username.match(letterNumber))) {
             Message.innerHTML     = msg_notAllowed;
             Message.style.display = '';
             Message.classList.remove('signup-message-success');
