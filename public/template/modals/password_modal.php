@@ -10,6 +10,6 @@
             Please securely store the key in a way that only you can access it.
           </p>
 	</div>
-	<button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">No I ahve not saved!</span></button>
+	<button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">No I have not saved!</span></button>
 	<button type="button" class="btn btn-success"><span aria-hidden="true">Yes I have saved!</span></button>
 </div>
