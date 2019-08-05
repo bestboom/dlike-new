@@ -477,6 +477,7 @@ var inputpin = document.querySelector("#pin_code");
     })
 // private key modal
     $('.pass_modal').click(function () {
-        $("#tk_buy").modal("show");
+        $("#copy_pass").modal("show");
     });
+    
 });

@@ -321,7 +321,7 @@ include('template/header6.php');
                                 <span class="password_container" id="pw_contain" style="padding: 20px;border: 1px solid #92b2bb;background: #dbf3fa;"></span>
                                 </p>
                                 <a id="pw_contain"  href="#" name="copy_pre"><button class="next btn btn-danger">Copy Password</button></a>
-                                <button class="next btn btn-lime pass_modal">Continue</button>
+                                <button class="next btn btn-lime pass_modal" id="copy_pass">Continue</button>
                             </div>
                         </div>
                     </div>         
@@ -332,10 +332,10 @@ include('template/header6.php');
     </div>
 </div> 
 
-<div class="modal fade" id="tk_buy" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="copy_pass" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <?php include('template/modals/tok_buy.php'); ?>
+            <?php include('template/modals/password_modal.php'); ?>
         </div>
     </div>
 </div>
