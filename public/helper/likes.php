@@ -7,6 +7,10 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+
+/*'
+
 $sqlm = "CREATE TABLE Referrals (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
@@ -20,7 +24,6 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-/*'
 
 
 $updatePost = "UPDATE wallet SET phone_number = '923227636220' WHERE username = 'certseek'";
