@@ -305,7 +305,24 @@ include('template/header6.php');
                         </div>
                     </div>                  
 
- 
+
+                    <div class="signup-signup-copy" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Success</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fas fa-user"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                     This is the password (private key) of your Steem account<br/>
+                                    Please keep it secured.
+                                </p>
+                                <span class="password-container"></span>
+                                <button class="next btn btn-lime">Copy Password</button>
+                                <button class="next btn btn-lime">Continue</button>
+                            </div>
+                        </div>
+                    </div>         
 
                 </div>
             </div>

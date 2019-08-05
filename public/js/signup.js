@@ -65,7 +65,7 @@ domReady(function () {
         event.stopPropagation();
         event.preventDefault();
         //signUpPhoneCheck();
-        getSuccess();
+        copyPassword();
         return false;
     });
 
@@ -220,6 +220,29 @@ function getSuccess() {
     });
 }
 
+
+function copyPassword() {
+
+    var Signit  = document.querySelector('.signup-signup');
+    var successit = Signit.querySelector('.signup-signup-success');
+    var copyit   = Signit.querySelector('.signup-signup-copy');
+
+    jQuery(successit).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        copyit.style.display = 'none';
+
+        copyit.style.opacity = 0;
+        copyit.style.top     = '50px';
+        copyit.style.display = '';
+
+        jQuery(copyit).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
 
 /*new signup code*/
 var input = document.querySelector("#phone"),
