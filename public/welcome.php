@@ -321,7 +321,7 @@ include('template/header6.php');
                                 <span class="password_container" id="pw_contain" style="padding: 20px;border: 1px solid #92b2bb;background: #dbf3fa;"></span>
                                 </p>
                                 <a id="pw_contain"  href="#" name="copy_pre"><button class="next btn btn-danger">Copy Password</button></a>
-                                <button class="next btn btn-lime pass_modal" id="copy_pass">Continue</button>
+                                <button class="next btn btn-lime pass_modal">Continue</button>
                             </div>
                         </div>
                     </div>
