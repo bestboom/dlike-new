@@ -313,12 +313,13 @@ include('template/header6.php');
                                 <span class="signup-signup-icon">
                                     <span class="fas fa-user"></span>
                                 </span>
-                                <p class="signup-signup-description">
+                                <p class="signup-signup-description" style="margin-bottom: 20px;">
                                      This is the password (private key) of your Steem account<br/>
                                     Please keep it secured.
                                 </p>
-                                <span class="password_container" id="pw_contain" style="padding: 20px;margin-bottom: 10px;border: 1px solid #efcccc;background: #d4d28a30;"></span>
-                                <br>
+                                <p>
+                                <span class="password_container" id="pw_contain" style="padding: 20px;margin-bottom: 10px;border: 1px solid #92b2bb;background: #dbf3fa;"></span>
+                                </p>
                                 <a id="pw_contain"  href="#" name="copy_pre"><button class="next btn btn-danger">Copy Password</button></a>
                                 <button class="next btn btn-lime">Continue</button>
                             </div>
