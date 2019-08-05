@@ -314,14 +314,14 @@ include('template/header6.php');
                                     <span class="fas fa-user"></span>
                                 </span>
                                 <p class="signup-signup-description" style="margin-bottom: 20px;">
-                                     This is the password (private key) of your Steem account<br/>
-                                    Please keep it secured.
+                                     This is the password (private key) of your Steem account<span style="color:red;">
+                                    Please keep it secured.</span>
                                 </p>
-                                <p style="margin-bottom: 15px;">
+                                <p style="margin-bottom: 20px;">
                                 <span class="password_container" id="pw_contain" style="padding: 20px;border: 1px solid #92b2bb;background: #dbf3fa;"></span>
                                 </p>
                                 <a id="pw_contain"  href="#" name="copy_pre"><button class="next btn btn-danger">Copy Password</button></a>
-                                <button class="next btn btn-lime">Continue</button>
+                                <button class="next btn btn-lime pass_modal">Continue</button>
                             </div>
                         </div>
                     </div>         
@@ -331,6 +331,14 @@ include('template/header6.php');
         </div>
     </div>
 </div> 
+
+<div class="modal fade" id="tk_buy" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/tok_buy.php'); ?>
+        </div>
+    </div>
+</div>
 
 <!--https://github.com/jackocnr/intl-tel-input -->
 <?php include('template/footer4.php'); ?>

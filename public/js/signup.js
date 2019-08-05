@@ -475,6 +475,8 @@ var inputpin = document.querySelector("#pin_code");
         toastr['success']("Password copied to clipboard.");
         return false;
     })
-
-
+// private key modal
+    $('.pass_modal').click(function () {
+        $("#tk_buy").modal("show");
+    });
 });
