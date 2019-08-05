@@ -324,7 +324,22 @@ include('template/header6.php');
                                 <button class="next btn btn-lime pass_modal" id="copy_pass">Continue</button>
                             </div>
                         </div>
-                    </div>         
+                    </div>
+
+                    <div class="signup-signup-done" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>All Done!</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fas fa-heart"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                     Now you can use DLIKE and all other Steem apps witht this account.
+                                </p>
+                                <button class="btn btn-default signin_btn log_link">Login</button>
+                            </div>
+                        </div>
+                    </div>                               
 
                 </div>
             </div>

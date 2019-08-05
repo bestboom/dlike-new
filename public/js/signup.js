@@ -231,7 +231,7 @@ function copyPassword() {
         opacity: 0,
         top    : -20
     }, 300, function () {
-        copyit.style.display = 'none';
+        successit.style.display = 'none';
 
         copyit.style.opacity = 0;
         copyit.style.top     = '50px';
@@ -243,6 +243,31 @@ function copyPassword() {
         }, 300);
     });
 }
+
+
+function passDone() {
+
+    var Signit  = document.querySelector('.signup-signup');
+    var doneit = Signit.querySelector('.signup-signup-done');
+    var copyit   = Signit.querySelector('.signup-signup-copy');
+
+    jQuery(copyit).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        copyit.style.display = 'none';
+
+        doneit.style.opacity = 0;
+        doneit.style.top     = '50px';
+        doneit.style.display = '';
+
+        jQuery(doneit).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
+
 
 /*new signup code*/
 var input = document.querySelector("#phone"),
@@ -479,5 +504,10 @@ var inputpin = document.querySelector("#pin_code");
     $('.pass_modal').click(function () {
         $("#copy_pass").modal("show");
     });
-    
+    $('#pass_done').click(function () {
+        $("#copy_pass").modal("hide");
+        $(".signup-signup-copy").fadeOut('slow');
+        passDone();
+    });
+
 });
