@@ -459,8 +459,22 @@ var inputpin = document.querySelector("#pin_code");
                            console.log(textStatus);
                             console.log(error);
                 }
-            });              
+            });   
+        })
 
+//copy content
+    $("a[name=copy_pre]").click(function() {
+        var id = $(this).attr('id');
+        var el = document.getElementById(id);
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand('copy');
+        toastr['success']("Password copied to clipboard.");
+        return false;
     })
+
 
 });
