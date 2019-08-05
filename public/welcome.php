@@ -2,7 +2,8 @@
 if (isset($_GET["r"])){ $referrer = $_GET['r'];} else { $referrer = '';}
 include('template/header6.php'); 
 ?>
-
+    <script src="/js/intlTelInput.js"></script>
+    <script src="/js/signup.js"></script>
 <style>
     .signup-container {
     padding: 5rem;

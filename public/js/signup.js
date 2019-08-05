@@ -283,12 +283,12 @@ var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too lon
         allowDropdown: true,
         separateDialCode: true,
         initialCountry: "auto",
-    //geoIpLookup: function(success, failure) {
-    //    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-    //        countryCode = (resp && resp.country) ? resp.country : "";
-    //        success(countryCode);
-    //    });
-    //},
+    geoIpLookup: function(success, failure) {
+        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+            countryCode = (resp && resp.country) ? resp.country : "";
+            success(countryCode);
+        });
+    },
         utilsScript: "/js/phone_input.js"
     });
 
