@@ -97,6 +97,7 @@ domReady(function () {
             Message.classList.add('signup-message-error');
             showLoader();
             showErrorIcon();
+            Next.disabled = true;
             return;
         }        
 
