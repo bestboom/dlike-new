@@ -46,20 +46,11 @@ domReady(function () {
     var msg_error       = 'Unfortunately an error occurred. The name could not be checked :(';
 
     FormSignUp.addEventListener('submit', function (event) {
-        var letterNumber = /^[0-9a-zA-Z]+$/;
-            if((Input.value.match(letterNumber)))
-            {
                 event.stopPropagation();
                 event.preventDefault();
                 signUpPhoneCheck();
                 //getSuccess();
                 return false;
-            }
-            else
-            { 
-                alert("message"); 
-                return false; 
-            }
 
     });
 
@@ -87,6 +78,7 @@ domReady(function () {
 
     var checkUsername = function () {
         var username = Input.value;
+        var letterNumber = /^[0-9a-zA-Z]+$/;
 
         if (username.length <= 2) {
             Message.innerHTML     = msg_notAllowed;
@@ -97,6 +89,16 @@ domReady(function () {
             showErrorIcon();
             return;
         }
+
+        if(!(username.match(letterNumber)))
+            Message.innerHTML     = msg_notAllowed;
+            Message.style.display = '';
+            Message.classList.remove('signup-message-success');
+            Message.classList.add('signup-message-error');
+            showLoader();
+            showErrorIcon();
+            return;
+        }        
 
         Message.style.display = '';
         Message.innerHTML     = 'Checking username...';
