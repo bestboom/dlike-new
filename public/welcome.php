@@ -336,7 +336,7 @@ include('template/header6.php');
                                 <p class="signup-signup-description">
                                      Now you can use DLIKE and all other Steem apps witht this account.
                                 </p>
-                                <button class="btn btn-default signin_btn log_link">Login</button>
+                                <button class="btn btn-success signin_btn log_link">Login</button>
                             </div>
                         </div>
                     </div>                               
