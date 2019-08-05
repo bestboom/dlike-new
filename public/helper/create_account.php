@@ -28,7 +28,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         
         if($password !=''){
             $return['status'] = true;
-            $return['message'] = 'Account Created. Your password is '.$password;
+            $return['message'] = 'Account Created Successfully';
             $return['password'] = $password;
             
         }
