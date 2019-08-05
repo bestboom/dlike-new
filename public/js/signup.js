@@ -65,7 +65,7 @@ domReady(function () {
         event.stopPropagation();
         event.preventDefault();
         //signUpPhoneCheck();
-        copyPassword();
+        getSuccess();
         return false;
     });
 
@@ -443,6 +443,9 @@ var inputpin = document.querySelector("#pin_code");
                     {
                        toastr['success'](response.message);
                        console.log(response.password);
+                       $('.password_container').html(response.password);
+                       $(".signup-signup-success").fadeOut('slow');
+                       copyPassword();
                     }
                     else{
                         toastr['error'](response.message);
@@ -457,54 +460,6 @@ var inputpin = document.querySelector("#pin_code");
                             console.log(error);
                 }
             });              
-
-/* 
-$.ajax({
-url: 'http://localhost:3000',
-type: 'get',
-dataType: 'json',
-data: {my_name:my_name},
-success:function(response){
-console.log(response);
-},
-error: function(xhr, textStatus, error){
-console.log(error);
-}
-}); 
-           
-            //let keys = getPrivateKeys(my_name, password);
-            //console.log(keys);
-            const ops = [];
-
-            const create_op = [
-              'create_claimed_account',
-              {
-                
-                creator: created_by,
-                new_account_name: my_name,
-                extensions: [],
-                json_metadata: '',
-                active: dsteem.Authority.from(keys.activePubkey),
-                memo_key: keys.memoPubkey,
-                owner: dsteem.Authority.from(keys.ownerPubkey),
-                posting: dsteem.Authority.from(keys.postingPubkey),
-              },
-            ];
-
-            ops.push(create_op);
-            console.log(ops);
-
-
-
-            //myKeys:JSON.stringify(keys)
-            steem.api.broadcast.sendOperations(ops, activekeyhere)
-            .then((r) => {
-            console.log(r);
-            })
-            .catch(e => {
-            console.log(e);
-            });
-*/
 
     })
 

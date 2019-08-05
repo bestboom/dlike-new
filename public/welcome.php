@@ -317,7 +317,7 @@ include('template/header6.php');
                                      This is the password (private key) of your Steem account<br/>
                                     Please keep it secured.
                                 </p>
-                                <span class="password-container"></span>
+                                <span class="password_container"></span>
                                 <button class="next btn btn-lime">Copy Password</button>
                                 <button class="next btn btn-lime">Continue</button>
                             </div>
