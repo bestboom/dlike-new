@@ -288,7 +288,7 @@ var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too lon
     //        countryCode = (resp && resp.country) ? resp.country : "";
     //        success(countryCode);
     //    });
-    },
+    //},
         utilsScript: "/js/phone_input.js"
     });
 
