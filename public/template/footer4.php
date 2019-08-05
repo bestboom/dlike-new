@@ -81,6 +81,8 @@
     </script>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
 
+    <script src="/js/intlTelInput.js"></script>
+    <script src="/js/signup.js"></script>
     
 <? } ?>      
 </body>
