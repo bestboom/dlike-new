@@ -34,22 +34,6 @@ var domReady = (function () {
 domReady(function () {
     var Client = new dsteem.Client('https://api.steemit.com');
 
-    function suggestPassword() {
-        const array = new Uint32Array(10);
-        window.crypto.getRandomValues(array);
-        return 'P' + dsteem.PrivateKey.fromSeed(array).toString();
-    }
-
-    function getPrivateKeys(username, password, roles = ['owner', 'active', 'posting', 'memo']) {
-        const privKeys = {};
-        roles.forEach((role) => {
-            privKeys[role] = dsteem.PrivateKey.fromLogin(username, password, role).toString();
-            privKeys[`${role}Pubkey`] = dsteem.PrivateKey.from(privKeys[role]).createPublic().toString();
-        });
-
-        return privKeys;
-    };
-
     var FormSignUp = document.querySelector('form[name="signup"]');
     var Input      = FormSignUp.querySelector('[name="username"]');
     var Message    = FormSignUp.querySelector('.message');
@@ -62,11 +46,21 @@ domReady(function () {
     var msg_error       = 'Unfortunately an error occurred. The name could not be checked :(';
 
     FormSignUp.addEventListener('submit', function (event) {
-        event.stopPropagation();
-        event.preventDefault();
-        signUpPhoneCheck();
-        //getSuccess();
-        return false;
+        var letterNumber = /^[0-9a-zA-Z]+$/;
+            if((Input.value.match(letterNumber)))
+            {
+                event.stopPropagation();
+                event.preventDefault();
+                signUpPhoneCheck();
+                //getSuccess();
+                return false;
+            }
+            else
+            { 
+                alert("message"); 
+                return false; 
+            }
+
     });
 
     var Timeout = null;
@@ -275,7 +269,6 @@ errorMsg = document.querySelector("#error-msg"),
 validMsg = document.querySelector("#valid-msg");
 var countryCode = '';
 
-// Error messages based on the code returned from getValidationError
 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
 // Initialise plugin
