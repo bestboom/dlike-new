@@ -49,6 +49,25 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 
 
+<<<<<<< HEAD
+exec('node -v', $o);
+print_r($o);
+?>
+=======
+have you discord or telegram or some other direct way of communication
+
+can you directly accpet payment in skrill? 
+=====
+
+Skype: jochem.stoel
+Discord: jochemstoel#7529
+
+I prefer Skype but both is fine.
+
+I don't know about Skrill, I'll have to check it out.
+
+By the way, we are not supposed to talk outside of Freelancer.com it is against the rules.
+>>>>>>> 1f69ae32acdf518a9a266bf3e71961f836039b1d
 
 
 
