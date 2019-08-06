@@ -345,7 +345,7 @@ input.addEventListener('keyup', function(){
             var errorCode = intl.getValidationError();
             message.innerHTML = errorMap[errorCode];
             //errorMsg.classList.remove("hide");
-            $(".signup-signup-phone .loader").removeClass('fa-circle-notch')removeClass('fa-spin').addClass('fa-exclamation-circle');        
+            $(".signup-signup-phone .loader").removeClass('fa-circle-notch').removeClass('fa-spin').addClass('fa-exclamation-circle');        
             $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").removeClass('signup-message-success').addClass('signup-message-error');
         }
