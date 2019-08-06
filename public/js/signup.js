@@ -298,6 +298,14 @@ validMsg.classList.add("hide");
 var FormSignPhone = document.querySelector('form[name="signup-phone"]');
 var message    = FormSignPhone.querySelector('.message');
 
+    FormSignPhone.addEventListener('submit', function (event) {
+                event.stopPropagation();
+                event.preventDefault();
+                pinVerify();
+                return false;
+
+    });
+
 input.addEventListener('keyup', function(){
     //reset();
     if(input.value.trim()){
@@ -366,7 +374,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         if(number != ''){
             $("#sms_number").html(get_number);
-            pinVerify();
+            
             //getSuccess();
 
             $.ajax({
