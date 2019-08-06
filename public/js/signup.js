@@ -379,7 +379,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     $("#phone").prop('disabled',false);
                     $(".signup-signup-phone .next.btn").prop('disabled',false);
 
-                    if(response.status===true)
+                    if(response.status===false)
                     {
                         pinVerify();
                        //$(".signup-signup-phone").fadeOut('slow');
