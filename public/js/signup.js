@@ -314,7 +314,7 @@ input.addEventListener('keyup', function(){
             $(".signup-signup-phone .loader").show();
             var number = intl.getNumber();
             var number = number.replace('+','');
-            console.log(number);
+            //console.log(number);
             /*verify number call*/
             $.ajax({
                 url: '/helper/signup_verify.php',
@@ -392,8 +392,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 })
 
 //pin verify
-var inputpin = document.querySelector("#pin_code");
-
+    var inputpin = document.querySelector("#pin_code");
     inputpin.addEventListener('keyup', function(){
         if(inputpin.value.length == 4) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
