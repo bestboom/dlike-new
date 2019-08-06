@@ -379,12 +379,10 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     $("#phone").prop('disabled',false);
                     $(".signup-signup-phone .next.btn").prop('disabled',false);
 
-                    if(response.status===false)
+                    if(response.status===true)
                     {
                         pinVerify();
-                       //$(".signup-signup-phone").fadeOut('slow');
-                       //$(".signup-signup-verify").fadeIn('slow');
-                       toastr['success'](response.message);
+                        toastr['success'](response.message);
                     }
                     else{
                         toastr['error'](response.message);
