@@ -298,8 +298,7 @@ validMsg.classList.add("hide");
 var FormSignPhone = document.querySelector('form[name="signup-phone"]');
 var message    = FormSignPhone.querySelector('.message');
 
-
-
+//check if number already used
 input.addEventListener('keyup', function(){
     //reset();
     if(input.value.trim()){
@@ -311,7 +310,7 @@ input.addEventListener('keyup', function(){
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").removeClass('signup-message-success').removeClass('signup-message-error');
-            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-times').addClass('fa-circle-notch').addClass('fa-spin');
+            $(".signup-signup-phone .loader").removeClass('fa-spin').removeClass('fa-exclamation-circle').addClass('fa-check');
             $(".signup-signup-phone .loader").show();
             var number = intl.getNumber();
             var number = number.replace('+','');
@@ -326,7 +325,7 @@ input.addEventListener('keyup', function(){
                 success:function(response){
                     $("#phone").prop('disabled',false);
                     if(response.status){
-                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');
+                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-exclamation-circle').removeClass('fa-spin');
                         //validMsg.classList.remove("hide");
                         $(".signup-signup-phone .next.btn").prop('disabled',false);
                         $(".signup-signup-phone .message").addClass('signup-message-success');
@@ -334,21 +333,19 @@ input.addEventListener('keyup', function(){
                     }
                     else{
                         $(".signup-signup-phone .next.btn").prop('disabled',true);
-                        $(".signup-signup-phone .loader").removeClass('fa-check').addClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');
+                        $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-spin').addClass('fa-exclamation-circle');
                         //toastr['error'](response.message);
                         $(".signup-signup-phone .message").addClass('signup-message-error');
                         $(".signup-signup-phone .message").text(response.message);
                     }
                 }
             });
-            /*verify number call*/
-            
         }else{
             input.classList.add("error");
             var errorCode = intl.getValidationError();
             message.innerHTML = errorMap[errorCode];
             //errorMsg.classList.remove("hide");
-            $(".signup-signup-phone .loader").removeClass('fa-check').addClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');        
+            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-spin').addClass('fa-exclamation-circle');        
             $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").removeClass('signup-message-success').addClass('signup-message-error');
         }
