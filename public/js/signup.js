@@ -273,20 +273,21 @@ validMsg = document.querySelector("#valid-msg");
 var countryCode = '';
 
 var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
-
+window.intlTelInput(input);
 // Initialise plugin
-    var intl = window.intlTelInput(input, {
-        allowDropdown: true,
-        separateDialCode: true,
-        initialCountry: "null",
-    geoIpLookup: function(success, failure) {
-        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-            countryCode = (resp && resp.country) ? resp.country : "";
-            success(countryCode);
-        });
-    },
-        utilsScript: "/js/phone_input.js"
-    });
+
+//    var intl = window.intlTelInput(input, {
+//        allowDropdown: true,
+//        separateDialCode: true,
+//        initialCountry: "null",
+//    geoIpLookup: function(success, failure) {
+//        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+//            countryCode = (resp && resp.country) ? resp.country : "";
+//            success(countryCode);
+//        });
+//    },
+//        utilsScript: "/js/phone_input.js"
+//    });
 
 var reset = function() {
 input.classList.remove("error");
