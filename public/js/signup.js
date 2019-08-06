@@ -306,11 +306,11 @@ input.addEventListener('keyup', function(){
             $("#phone").prop('disabled',true);
             $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").text('checking number availability...');
-            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-exclamation-circle').addClass('fa-spin');
+            $(".signup-signup-phone .loader").removeClass('fa-circle-notch').addClass('fa-spin');
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").removeClass('signup-message-success').removeClass('signup-message-error');
-            $(".signup-signup-phone .loader").removeClass('fa-spin').removeClass('fa-exclamation-circle').addClass('fa-check');
+            $(".signup-signup-phone .loader").removeClass('fa-spin').removeClass('fa-circle-notch').addClass('fa-check');
             $(".signup-signup-phone .loader").show();
             var number = intl.getNumber();
             var number = number.replace('+','');
@@ -325,7 +325,7 @@ input.addEventListener('keyup', function(){
                 success:function(response){
                     $("#phone").prop('disabled',false);
                     if(response.status){
-                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-exclamation-circle').removeClass('fa-spin');
+                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-circle-notch').removeClass('fa-spin');
                         //validMsg.classList.remove("hide");
                         $(".signup-signup-phone .next.btn").prop('disabled',false);
                         $(".signup-signup-phone .message").addClass('signup-message-success');
@@ -333,7 +333,7 @@ input.addEventListener('keyup', function(){
                     }
                     else{
                         $(".signup-signup-phone .next.btn").prop('disabled',true);
-                        $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-spin').addClass('fa-exclamation-circle');
+                        $(".signup-signup-phone .loader").removeClass('fa-circle-notch').removeClass('fa-spin').addClass('fa-exclamation-circle');
                         //toastr['error'](response.message);
                         $(".signup-signup-phone .message").addClass('signup-message-error');
                         $(".signup-signup-phone .message").text(response.message);
@@ -345,7 +345,7 @@ input.addEventListener('keyup', function(){
             var errorCode = intl.getValidationError();
             message.innerHTML = errorMap[errorCode];
             //errorMsg.classList.remove("hide");
-            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-spin').addClass('fa-exclamation-circle');        
+            $(".signup-signup-phone .loader").removeClass('fa-circle-notch')removeClass('fa-spin').addClass('fa-exclamation-circle');        
             $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").removeClass('signup-message-success').addClass('signup-message-error');
         }
