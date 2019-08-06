@@ -7,6 +7,4 @@ echo "cmd: $cmd\n";
 $output = shell_exec($cmd); 
 echo $output;
 
-exec('node -v', $o);
-print_r($o);
 ?>
