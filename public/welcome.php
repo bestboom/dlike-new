@@ -192,7 +192,7 @@ include('template/header6.php');
     border-color: #63ad27;
 }
 .hide{display: none;}
-.iti {width: 100% !important;}
+.input-username .iti {width: 100% !important;}
 </style>
 
 </div>
