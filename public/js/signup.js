@@ -383,8 +383,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
                     if(response.status)
                     {
-                       $(".signup-signup-phone").fadeOut('slow');
-                       $(".signup-signup-verify").fadeIn('slow');
+                       //$(".signup-signup-phone").fadeOut('slow');
+                       //$(".signup-signup-verify").fadeIn('slow');
                        toastr['success'](response.message);
                     }
                     else{
