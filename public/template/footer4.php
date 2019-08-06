@@ -54,6 +54,8 @@
     </div>
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="/js/intlTelInput.js"></script>
+    <script src="/js/signup.js"></script>
 <script src="/assets/js/popper.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/slick.min.js"></script>
@@ -80,8 +82,7 @@
     </script>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
 
-    <script src="/js/intlTelInput.js"></script>
-    <script src="/js/signup.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
     <script src="/js/steemconnect.js"></script>
 <? } ?>      
