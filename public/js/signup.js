@@ -78,7 +78,8 @@ domReady(function () {
 
     var checkUsername = function () {
         var username = Input.value;
-        var letterNumber = /^[0-9a-zA-Z]+$/;
+        //var letterNumber = /^[0-9a-zA-Z]+$/;
+        var letterNumber = /^[0-9a-zA-Z]*\.?[0-9a-zA-Z]*$/;
 
         if (username.length <= 2) {
             Message.innerHTML     = msg_notAllowed;
