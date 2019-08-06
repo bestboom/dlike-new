@@ -249,7 +249,7 @@ include('template/header6.php');
                                 <form name="signup-phone">
                                     <span class="form-group input-username">
                                         <input type="tel" min="0" name="phone" id="phone" class="form-control">
-                                        <span class="message" style="display: none;margin-left: 33px;"></span>
+                                        <span class="message" style="display: none;"></span>
                                         <span class="loader fa fas fa-circle-check fa-spin fa-exclamation-circle" style="display: none"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>

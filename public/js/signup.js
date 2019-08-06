@@ -305,7 +305,7 @@ input.addEventListener('keyup', function(){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
             $(".signup-signup-phone .next.btn").prop('disabled',true);
-            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-exclamation-circle').addClass('fa-spin');
+            //$(".signup-signup-phone .loader").addClass('fa-spin').removeClass('fa-check').removeClass('fa-exclamation-circle');
             $(".signup-signup-phone .message").text('checking number availability...');
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").show();
