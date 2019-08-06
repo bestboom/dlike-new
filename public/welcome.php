@@ -269,13 +269,13 @@ include('template/header6.php');
                                     <span class="fa fa-phone"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Enter the confirmation code. We sent the code to <span id="sms_number"></span> vis SMS.
+                                    Enter the confirmation code. We sent the code to <b><span id="sms_number"></span></b> vis SMS.
                                 </p>
                                 <form name="signup-pin">
                                     <span class="input-username">
-                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits) "class="form-control" />
+                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits)"class="form-control" />
                                         <span class="fa fas fa-search"></span>
-                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                        <span class="loader fa fas fa-circle-notch" style="display: none"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>
                                         Verify PIN

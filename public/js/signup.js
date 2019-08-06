@@ -351,9 +351,6 @@ input.addEventListener('keyup', function(){
         }
     }
 });
-// Reset on keyup/change event
-//input.addEventListener('change', reset);
-//input.addEventListener('keyup', reset);
 
 document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
     e.preventDefault();
@@ -406,18 +403,18 @@ var inputpin = document.querySelector("#pin_code");
         }
     })
 
-    document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(){
+    document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(e){
+        e.preventDefault();
         if(inputpin.value.length == 4){
 
             $(".signup-signup-verify .next.btn").prop('disabled',true);
-            $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-spin'); 
+            $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
             $("#pin_code").prop('disabled',true);
 
             var pin_code = $("#pin_code").val();  
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
-            getSuccess();
-
+            
              $.ajax({
                 url: '/helper/signup_verify.php',
                 type: 'post',
@@ -426,11 +423,10 @@ var inputpin = document.querySelector("#pin_code");
                 data: {action : 'verify_pin',mypin:pin_code,number:number},
                 success:function(response){
 
-                    if(response.status)
+                    if(response.status===true)
                     {
-                       $(".signup-signup-verify").fadeOut('slow');
-                       $(".signup-signup-success").fadeIn('slow');
-                       toastr['success'](response.message);
+                        getSuccess();
+                        toastr['success'](response.message);
                     }
                     else{
                         toastr['error'](response.message);
@@ -442,41 +438,40 @@ var inputpin = document.querySelector("#pin_code");
         }
     })
 
-
-        document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
-            event.preventDefault();
-            let my_name = $('#my_username').html();
-            
-             $.ajax({
-                url: '/helper/create_account.php',
-                type: 'post',
-                cache : false,
-                dataType: 'json',
-                data: {action : 'acc_create',user:my_name},
-                success:function(response){
-                    console.log(response);
-                    if(response.status)
-                    {
-                       toastr['success'](response.message);
-                       console.log(response.password);
-                       $('.password_container').html(response.password);
-                       $(".signup-signup-success").fadeOut('slow');
-                       copyPassword();
-                    }
-                    else{
-                        toastr['error'](response.message);
-                        console.log(response.password);
-                        return false;
-                    }
-                },
-                error: function(xhr, textStatus, error){
-                          console.log(xhr.statusText);
-                          console.warn(xhr.responseText);
-                           console.log(textStatus);
-                            console.log(error);
+    document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
+        event.preventDefault();
+        let my_name = $('#my_username').html();
+        
+         $.ajax({
+            url: '/helper/create_account.php',
+            type: 'post',
+            cache : false,
+            dataType: 'json',
+            data: {action : 'acc_create',user:my_name},
+            success:function(response){
+                console.log(response);
+                if(response.status)
+                {
+                   toastr['success'](response.message);
+                   console.log(response.password);
+                   $('.password_container').html(response.password);
+                   $(".signup-signup-success").fadeOut('slow');
+                   copyPassword();
                 }
-            });   
-        })
+                else{
+                    toastr['error'](response.message);
+                    console.log(response.password);
+                    return false;
+                }
+            },
+            error: function(xhr, textStatus, error){
+                      console.log(xhr.statusText);
+                      console.warn(xhr.responseText);
+                       console.log(textStatus);
+                        console.log(error);
+            }
+        });   
+    })
 
 //copy content
     $("a[name=copy_pre]").click(function() {
