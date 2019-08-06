@@ -312,15 +312,16 @@ input.addEventListener('keyup', function(){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
             $(".signup-signup-phone .next.btn").prop('disabled',true);
+            $(".signup-signup-phone .loader").removeClass('fa-exclamation-circle').removeClass('fa-check').addClass('fa-spin');
             $(".signup-signup-phone .message").text('checking number availability...');
             $(".signup-signup-phone .message").show();
-            $(".signup-signup-phone .message").removeClass('signup-message-success').removeClass('signup-message-error');
-            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-times').addClass('fa-circle-notch').addClass('fa-spin');
+            $(".signup-signup-phone .message").addClass('signup-message-success').removeClass('signup-message-error');
+            $(".signup-signup-phone .loader").removeClass('fa-exclamation-circle').removeClass('fa-spin').addClass('fa-check');
             $(".signup-signup-phone .loader").show();
-            var number = intl.getNumber();
-            var number = number.replace('+','');
-            console.log(number);
-            /*verify number call*/
+            //var number = intl.getNumber();
+            //var number = number.replace('+','');
+            //console.log(number);
+            /*verify number call
             $.ajax({
                 url: '/helper/signup_verify.php',
                 type: 'post',
@@ -345,14 +346,14 @@ input.addEventListener('keyup', function(){
                     }
                 }
             });
-            /*verify number call*/
+            verify number call*/
             
         }else{
             input.classList.add("error");
             var errorCode = intl.getValidationError();
             message.innerHTML = errorMap[errorCode];
             //errorMsg.classList.remove("hide");
-            $(".signup-signup-phone .loader").removeClass('fa-check').addClass('fa-times').removeClass('fa-circle-notch').removeClass('fa-spin');        
+            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-spin').addClass('fa-exclamation-circle');        
             $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").removeClass('signup-message-success').addClass('signup-message-error');
         }
