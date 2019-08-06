@@ -306,7 +306,6 @@ input.addEventListener('keyup', function(){
             $(".signup-signup-phone .next.btn").prop('disabled',true);
             $(".signup-signup-phone .message").text('checking number availability...');
             $(".signup-signup-phone .message").show();
-            $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").removeClass('signup-message-success').removeClass('signup-message-error');
             $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-times').addClass('fa-circle-notch').addClass('fa-spin');
             $(".signup-signup-phone .loader").show();
@@ -383,8 +382,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
                     if(response.status)
                     {
-                       $(".signup-signup-verify").fadeOut('slow');
-                       $(".signup-signup-success").fadeIn('slow');
+                       //$(".signup-signup-verify").fadeOut('slow');
+                       //$(".signup-signup-success").fadeIn('slow');
                        toastr['success'](response.message);
                     }
                     else{
