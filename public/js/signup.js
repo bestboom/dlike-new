@@ -298,12 +298,15 @@ validMsg.classList.add("hide");
 var FormSignPhone = document.querySelector('form[name="signup-phone"]');
 var message    = FormSignPhone.querySelector('.message');
 
+
+
 input.addEventListener('keyup', function(){
     //reset();
     if(input.value.trim()){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
             $(".signup-signup-phone .next.btn").prop('disabled',true);
+            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-exclamation-circle').addClass('fa-spin');
             $(".signup-signup-phone .message").text('checking number availability...');
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").show();
@@ -313,7 +316,7 @@ input.addEventListener('keyup', function(){
             var number = intl.getNumber();
             var number = number.replace('+','');
             console.log(number);
-            /*verify number call
+            /*verify number call*/
             $.ajax({
                 url: '/helper/signup_verify.php',
                 type: 'post',
@@ -383,8 +386,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
                     if(response.status)
                     {
-                       $(".signup-signup-verify").fadeOut('slow');
-                       $(".signup-signup-success").fadeIn('slow');
+                       $(".signup-signup-phone").fadeOut('slow');
+                       $(".signup-signup-verify").fadeIn('slow');
                        toastr['success'](response.message);
                     }
                     else{
