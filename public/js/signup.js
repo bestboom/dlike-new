@@ -298,8 +298,6 @@ validMsg.classList.add("hide");
 var FormSignPhone = document.querySelector('form[name="signup-phone"]');
 var message    = FormSignPhone.querySelector('.message');
 
-
-
 input.addEventListener('keyup', function(){
     //reset();
     if(input.value.trim()){
@@ -313,8 +311,8 @@ input.addEventListener('keyup', function(){
             $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-times').addClass('fa-circle-notch').addClass('fa-spin');
             $(".signup-signup-phone .loader").show();
             var number = intl.getNumber();
-            number = number.replace('+','');
-            //console.log(number);
+            var number = number.replace('+','');
+            console.log(number);
             /*verify number call*/
             $.ajax({
                 url: '/helper/signup_verify.php',
@@ -369,7 +367,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         if(number != ''){
             $("#sms_number").html(get_number);
-            pinVerify();
+            
             //getSuccess();
 
             $.ajax({
