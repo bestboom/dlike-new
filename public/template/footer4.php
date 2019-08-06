@@ -82,7 +82,7 @@
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
 
     <script src="/js/intlTelInput.js?1562189064761"></script>
-    <script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1562189064761"></script>
+    <!--<script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1562189064761"></script>-->
     <script src="/js/signup.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
     <script src="/js/steemconnect.js"></script>
