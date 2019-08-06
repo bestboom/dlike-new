@@ -278,7 +278,7 @@ var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too lon
     var intl = window.intlTelInput(input, {
         allowDropdown: true,
         separateDialCode: true,
-        initialCountry: "auto",
+        initialCountry: "null",
     geoIpLookup: function(success, failure) {
         $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
             countryCode = (resp && resp.country) ? resp.country : "";
