@@ -367,7 +367,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         if(number != ''){
             $("#sms_number").html(get_number);
-            
+            pinVerify();
             //getSuccess();
 
             $.ajax({
@@ -383,8 +383,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
                     if(response.status)
                     {
-                       $(".signup-signup-phone").fadeOut('slow');
-                       $(".signup-signup-verify").fadeIn('slow');
+                       $(".signup-signup-verify").fadeOut('slow');
+                       $(".signup-signup-success").fadeIn('slow');
                        toastr['success'](response.message);
                     }
                     else{
