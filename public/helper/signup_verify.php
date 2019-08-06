@@ -92,4 +92,38 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	exit;
 }
 
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
+
+	$return = array();
+    $return['status'] = false;
+    $return['message'] = '';
+	$user = $_POST['user'];
+
+    if ($_POST['user'] !='') {
+        $here = dirname(__FILE__);
+        //$state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
+        //$password = trim($state); // do what you want with the password here
+
+        $password = 'faflfnbdubbdklmajALDSakasDDd';
+        
+        if($password !=''){
+
+            
+            $return['status'] = true;
+            $return['message'] = 'Account Created Successfully';
+            $return['password'] = $password;
+            
+        }
+        else 
+       {
+           $return['status'] = false;
+           $return['message'] = 'Some Error';
+       }
+        
+        echo json_encode($return);die; 
+    }
+}
+
+
+
 ?>
