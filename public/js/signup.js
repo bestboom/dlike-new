@@ -302,8 +302,6 @@ var message    = FormSignPhone.querySelector('.message');
                 event.stopPropagation();
                 event.preventDefault();
                 pinVerify();
-                return false;
-
     });
 
 input.addEventListener('keyup', function(){
@@ -363,7 +361,8 @@ input.addEventListener('keyup', function(){
 //input.addEventListener('change', reset);
 //input.addEventListener('keyup', reset);
 
-document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
+document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){ 
+
     if(intl.isValidNumber() && $("#phone").val() != ''){
 
         var get_number = intl.getNumber();
