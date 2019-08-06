@@ -42,6 +42,7 @@ domReady(function () {
 
     var msg_inuse       = 'This username is already in use.';
     var msg_notAllowed  = 'This username is not allowed.';
+    var msg_tooLong     = 'Account name should be shorter.';
     var msg_isAvailable = 'This username is available.';
     var msg_error       = 'Unfortunately an error occurred. The name could not be checked :(';
 
@@ -100,7 +101,17 @@ domReady(function () {
             showErrorIcon();
             Next.disabled = true;
             return;
-        }        
+        } 
+
+        if (username.length > 16) {
+            Message.innerHTML     = msg_tooLong;
+            Message.style.display = '';
+            Message.classList.remove('signup-message-success');
+            Message.classList.add('signup-message-error');
+            showLoader();
+            showErrorIcon();
+            return;
+        }               
 
         Message.style.display = '';
         Message.innerHTML     = 'Checking username...';
