@@ -251,7 +251,7 @@ include('template/header6.php');
                                     <span class="form-group input-username">
                                         <input type="tel" min="0" name="phone" id="phone" class="form-control">
                                         <span class="message" style="display: none;"></span>
-                                        <span class="loader fa fas fa-circle-check fa-spin fa-exclamation-circle" style="display: none"></span>
+                                        <span class="loader fa fas fa-spin fa-circle-check fa-exclamation-circle" style="display: none"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>
                                         Send SMS

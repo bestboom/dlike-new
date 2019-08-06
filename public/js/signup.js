@@ -305,8 +305,8 @@ input.addEventListener('keyup', function(){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
             $(".signup-signup-phone .next.btn").prop('disabled',true);
-            //$(".signup-signup-phone .loader").addClass('fa-spin').removeClass('fa-check').removeClass('fa-exclamation-circle');
             $(".signup-signup-phone .message").text('checking number availability...');
+            $(".signup-signup-phone .loader").addClass('fa-spin').removeClass('fa-check').removeClass('fa-exclamation-circle');
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").removeClass('signup-message-success').removeClass('signup-message-error');
@@ -367,7 +367,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         if(number != ''){
             $("#sms_number").html(get_number);
-            pinVerify();
+            
             //getSuccess();
 
             $.ajax({
@@ -383,6 +383,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
                     if(response.status)
                     {
+                        pinVerify();
                        //$(".signup-signup-phone").fadeOut('slow');
                        //$(".signup-signup-verify").fadeIn('slow');
                        toastr['success'](response.message);
