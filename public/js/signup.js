@@ -302,6 +302,8 @@ var message    = FormSignPhone.querySelector('.message');
                 event.stopPropagation();
                 event.preventDefault();
                 pinVerify();
+                return false;
+
     });
 
 input.addEventListener('keyup', function(){
@@ -310,11 +312,10 @@ input.addEventListener('keyup', function(){
         if(intl.isValidNumber()){
             $("#phone").prop('disabled',true);
             $(".signup-signup-phone .next.btn").prop('disabled',true);
-            $(".signup-signup-phone .loader").removeClass('fa-exclamation-circle').removeClass('fa-check').addClass('fa-spin');
             $(".signup-signup-phone .message").text('checking number availability...');
             $(".signup-signup-phone .message").show();
             $(".signup-signup-phone .message").addClass('signup-message-success').removeClass('signup-message-error');
-            $(".signup-signup-phone .loader").removeClass('fa-exclamation-circle').removeClass('fa-spin').addClass('fa-check');
+            $(".signup-signup-phone .loader").removeClass('fa-times').addClass('fa-circle-notch').removeClass('fa-spin').addClass('fa-check');
             $(".signup-signup-phone .loader").show();
             //var number = intl.getNumber();
             //var number = number.replace('+','');
@@ -361,8 +362,7 @@ input.addEventListener('keyup', function(){
 //input.addEventListener('change', reset);
 //input.addEventListener('keyup', reset);
 
-document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){ 
-
+document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(){
     if(intl.isValidNumber() && $("#phone").val() != ''){
 
         var get_number = intl.getNumber();
