@@ -324,8 +324,8 @@ input.addEventListener('keyup', function(){
                 data: {action : 'check_number',number:number},
                 success:function(response){
                     $("#phone").prop('disabled',false);
-                    if(response.status){
-                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-circle-notch').removeClass('fa-spin');
+                    if(response.status===true){
+                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-spin');
                         //validMsg.classList.remove("hide");
                         $(".signup-signup-phone .next.btn").prop('disabled',false);
                         $(".signup-signup-phone .message").addClass('signup-message-success');
@@ -333,7 +333,7 @@ input.addEventListener('keyup', function(){
                     }
                     else{
                         $(".signup-signup-phone .next.btn").prop('disabled',true);
-                        $(".signup-signup-phone .loader").removeClass('fa-circle-notch').removeClass('fa-spin').addClass('fa-exclamation-circle');
+                        $(".signup-signup-phone .loader").removeClass('fa-spin').addClass('fa-exclamation-circle');
                         //toastr['error'](response.message);
                         $(".signup-signup-phone .message").addClass('signup-message-error');
                         $(".signup-signup-phone .message").text(response.message);
