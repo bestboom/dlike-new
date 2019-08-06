@@ -66,8 +66,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
 <script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
-<script src="/js/steemconnect.js"></script>
+
 <script src="/js/toaster.js"></script>
 <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
     <script>
@@ -83,8 +82,10 @@
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
 
     <script src="/js/intlTelInput.js"></script>
-    <!--<script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1562189064761"></script>-->
+    <script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1562189064761"></script>
     <script src="/js/signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
+    <script src="/js/steemconnect.js"></script>
 <? } ?>      
 </body>
 </html>
