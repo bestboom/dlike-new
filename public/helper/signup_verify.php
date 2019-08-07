@@ -123,11 +123,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 				            
 
 				        } */
-
-				        $return['status'] = true;
+				        if($refer_by !='dlike'){
+							$return['status'] = true;
 				            $return['message'] = 'Account Created Successfully';
 				            $return['password'] = $refer_by;
 				            $return['phone'] = $phone;
+				        }
         }
         else 
        	{
