@@ -423,8 +423,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $(".signup-signup-verify .next.btn").prop('disabled',true);
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
             $("#pin_code").prop('disabled',true);
-
-            var refer_by = $('#refer_by').val(); 
+ 
             var pin_code = $("#pin_code").val();
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
@@ -454,7 +453,11 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
     document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
         event.preventDefault();
+
         let my_name = $('#my_username').html();
+        let my_number = intl.getNumber();
+        let number = my_number.replace('+','');
+        var refer_by = $('#refer_by').val();
         
          $.ajax({
             url: '/helper/signup_verify.php',
