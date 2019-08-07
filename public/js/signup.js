@@ -433,7 +433,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'verify_pin',mypin:pin_code,number:number,refer_by:refer_by},
+                data: {action : 'verify_pin',mypin:pin_code},
                 success:function(response){
 
                     if(response.status===true)
@@ -464,7 +464,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             type: 'post',
             cache : false,
             dataType: 'json',
-            data: {action : 'acc_create',user:my_name},
+            data: {action : 'acc_create',user:my_name,number:number,refer_by:refer_by},
             success:function(response){
                 console.log(response);
                 if(response.status)
