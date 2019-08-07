@@ -424,8 +424,9 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
             $("#pin_code").prop('disabled',true);
 
+            var refer_by=<?=($referrer;)?>;
             var pin_code = $("#pin_code").val();
-            var refer_by=<? echo $referrer; ?>;
+            
             console.log(refer_by); 
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
