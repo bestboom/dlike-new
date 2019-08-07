@@ -470,7 +470,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 if(response.status)
                 {
                    toastr['success'](response.message);
-                   console.log(response.password);
+                   //console.log(response.password);
                    $('.password_container').html(response.password);
                    copyPassword();
                 }

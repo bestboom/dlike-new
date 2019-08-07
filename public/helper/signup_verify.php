@@ -19,6 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 	$return['status'] = false;
 	$return['message'] = '';
 	$phone =  $_POST['number'];
+	$phone = md5($phone);
 
 	$check_phone = "SELECT * FROM wallet where phone_number = '".$phone."' ";
 	$result_phone = $conn->query($check_phone);
@@ -101,7 +102,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$user = $_POST['user'];
 	$refer_by = $_POST['refer_by'];
 	$phone = $_POST['number'];
-	$phone = md5($phone)
+	$phone = md5($phone);
 	$amount = 20;
 
     if ($_POST['user'] !='') {
