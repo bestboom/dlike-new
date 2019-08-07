@@ -220,6 +220,7 @@ include('template/header6.php');
                                 <h4 class="sign_head">Create Account</h4>
                                 <form name="signup">
                                     <div class="form-group input-username">
+                                        <input type="hidden" id="refer_by" value="<?php echo $referrer; ?>" />
                                         <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
                                         <span class="fa fa-user"></span>
 
