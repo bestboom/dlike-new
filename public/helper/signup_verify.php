@@ -115,20 +115,24 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         if($password !=''){
 
 			 /* $sqlm = "INSERT INTO wallet (username, amount, phone_number)
-						VALUES ('".$user."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
+					VALUES ('".$user."', '".$amount."', '".$phone."')";
 
-						if (mysqli_query($conn, $sqlm)) 
-						{ 
+					if (mysqli_query($conn, $sqlm)) 
+					{ 
+						if($refer_by !='dlike'){
+							
+							/
 
-				            
+						}
 
-				        } */
-				        if($refer_by !='dlike'){
-							$return['status'] = true;
-				            $return['message'] = 'Account Created Successfully';
-				            $return['password'] = $refer_by;
-				            $return['phone'] = $phone;
-				        }
+			          
+
+			        } */    
+
+			        $return['status'] = true;
+			        $return['message'] = 'Account Created Successfully';
+			        $return['password'] = $refer_by;
+			        $return['phone'] = $phone;   
         }
         else 
        	{
