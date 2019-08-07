@@ -106,12 +106,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         //$password = trim($state); // do what you want with the password here
 
         $password = 'faflfnbdubbdklmajALDSakasDDdssssssssssssssssssss';
-
+        
         
         if($password !=''){
             $return['status'] = true;
             $return['message'] = 'Account Created Successfully';
-            $return['password'] = $phone;
+            $return['password'] = $password;
         }
         else 
        	{
