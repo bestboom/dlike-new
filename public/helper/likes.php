@@ -7,7 +7,13 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-
+$updatePost = "UPDATE wallet SET phone_number = '73a241da6e0b3f8d8fcc60c8e48988e4' WHERE username = 'certseek'";
+$updatePostQuery = $conn->query($updatePost);
+if ($updatePostQuery === TRUE) {
+        echo "phone number added";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
 
 /*'
 
@@ -26,13 +32,7 @@ if ($conn->query($sqlm) === TRUE) {
 
 
 
-$updatePost = "UPDATE wallet SET phone_number = '923227636220' WHERE username = 'certseek'";
-$updatePostQuery = $conn->query($updatePost);
-if ($updatePostQuery === TRUE) {
-        echo "phone number added";
-} else {
-    echo "Error updating table: " . $conn->error;
-}
+
 
 
 $sql = "ALTER TABLE wallet ADD phone_number VARCHAR(255) NOT NULL AFTER amount";
