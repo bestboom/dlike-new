@@ -425,7 +425,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $("#pin_code").prop('disabled',true);
 
             var pin_code = $("#pin_code").val();
-            var refer_by = '<? echo $referrer; ?>';
+            var refer_by=<? echo $referrer; ?>;
             console.log(refer_by); 
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
