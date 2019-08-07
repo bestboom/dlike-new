@@ -119,16 +119,16 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 						if (mysqli_query($conn, $sqlm)) 
 						{ 
-
+							if($refer_by !='dlike'){
 				            
-
-				        } */
-				        if($refer_by !='dlike'){
+				            }
+				        
 							$return['status'] = true;
 				            $return['message'] = 'Account Created Successfully';
 				            $return['password'] = $refer_by;
 				            $return['phone'] = $phone;
-				        }
+				            
+				        } */    
         }
         else 
        	{

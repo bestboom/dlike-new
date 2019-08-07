@@ -214,6 +214,23 @@ include('template/header6.php');
                     </div>
                 </div>
                 <div class="col-md-6 signup_sec signup-signup">
+
+                    <div class="row signup-signup-disable">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Create Account</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fas fa-user"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                     New signups through DLIKE are closed till further notice!
+                                </p>
+                                <button class="btn btn-success">Login</button>
+                            </div>
+                        </div>
+                    </div>
+
+<!--
                     <div class="row signup-signup-steemit">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
@@ -236,7 +253,7 @@ include('template/header6.php');
                             </div>
                         </div>
                     </div>
-
+-->
 
                     <div class="signup-signup-phone" style="display: none">
                         <div class="contact-info-block signup_block">
