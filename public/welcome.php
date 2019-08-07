@@ -227,7 +227,7 @@ include('template/header6.php');
                                         <span class="message" style="display: none"></span>
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                     </div>
-                                    <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By: '.$referrer;} ?></p>
+                                    <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By: <b>'.$referrer.'</b>'} ?></p>
                                     <button class="next btn btn-lime" disabled>
                                         <i class="fas fa-spinner" style="display:none;"></i>
                                         <span>Continue</span>
