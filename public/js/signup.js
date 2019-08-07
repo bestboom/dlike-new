@@ -433,7 +433,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'verify_pin',mypin:pin_code},
+                data: {action : 'verify_pin',mypin:pin_code,number:number},
                 success:function(response){
 
                     if(response.status===true)
