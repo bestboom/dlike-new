@@ -108,18 +108,15 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         $password = 'faflfnbdubbdklmajALDSakasDDd';
         
         if($password !=''){
-
-            
             $return['status'] = true;
             $return['message'] = 'Account Created Successfully';
             $return['password'] = $password;
-            
         }
         else 
-       {
+       	{
            $return['status'] = false;
            $return['message'] = 'Some Error';
-       }
+       	}
         
         echo json_encode($return);die; 
     }

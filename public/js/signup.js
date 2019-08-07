@@ -80,8 +80,8 @@ domReady(function () {
     var checkUsername = function () {
         var username = Input.value;
         //var letterNumber = /^[0-9a-zA-Z]+$/;
-        var letterNumber = /^[0-9a-zA-Z]*\.?[0-9a-zA-Z]+$/;
-        //var letterNumber = /^[0-9a-zA-Z](?!^\.)(?!.^[.]$)[a-zA-Z0-9]+$/;
+        //var letterNumber = /^[0-9a-zA-Z]*\.?[0-9a-zA-Z]+$/;
+        var letterNumber = /^[\0-9a-zA-Z]+.[\0-9a-zA-Z]{3,}$/;
 
         if (username.length <= 2) {
             Message.innerHTML     = msg_notAllowed;
@@ -424,7 +424,9 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
             $("#pin_code").prop('disabled',true);
 
-            var pin_code = $("#pin_code").val();  
+            var pin_code = $("#pin_code").val();
+            var refer_by = $(".refer_by").html(); 
+            console.log(refer_by); 
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
             
@@ -456,7 +458,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         let my_name = $('#my_username').html();
         
          $.ajax({
-            url: '/helper/create_account.php',
+            url: '/helper/signup_verify.php',
             type: 'post',
             cache : false,
             dataType: 'json',
@@ -468,20 +470,12 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                    toastr['success'](response.message);
                    console.log(response.password);
                    $('.password_container').html(response.password);
-                   $(".signup-signup-success").fadeOut('slow');
                    copyPassword();
                 }
                 else{
                     toastr['error'](response.message);
-                    console.log(response.password);
                     return false;
                 }
-            },
-            error: function(xhr, textStatus, error){
-                      console.log(xhr.statusText);
-                      console.warn(xhr.responseText);
-                       console.log(textStatus);
-                        console.log(error);
             }
         });   
     })

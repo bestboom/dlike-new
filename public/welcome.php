@@ -1,5 +1,5 @@
 <?php 
-if (isset($_GET["r"])){ $referrer = $_GET['r'];} else { $referrer = '';}
+if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';}
 include('template/header6.php'); 
 ?>
 <style>
@@ -226,7 +226,7 @@ include('template/header6.php');
                                         <span class="message" style="display: none"></span>
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
                                     </div>
-                                    <p style="margin: 0px;"><?php if($referrer !=''){ echo 'Referred By '.$referrer; } ?></p>
+                                    <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By '.$referrer; } ?></p>
                                     <button class="next btn btn-lime" disabled>
                                         <i class="fas fa-spinner" style="display:none;"></i>
                                         <span>Continue</span>
