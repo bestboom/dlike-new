@@ -80,7 +80,7 @@ domReady(function () {
     var checkUsername = function () {
         var username = Input.value;
         //var letterNumber = /^[0-9a-zA-Z]+$/;
-        var letterNumber = /^[0-9a-zA-Z]*\.{3,10}?[0-9a-zA-Z]+$/;
+        var letterNumber = /^[0-9a-zA-Z]*\.?{3,10}[0-9a-zA-Z]+$/;
         //var letterNumber = /^[0-9a-zA-Z](?!^\.)(?!.^[.]$)[a-zA-Z0-9]+$/;
 
         if (username.length <= 2) {
