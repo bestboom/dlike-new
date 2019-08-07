@@ -100,6 +100,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     $return['message'] = '';
 	$user = $_POST['user'];
 	$refer_by = $_POST['refer_by'];
+	$phone = $_POST['number'];
+	$amount = 20;
 
     if ($_POST['user'] !='') {
         $here = dirname(__FILE__);
@@ -107,12 +109,23 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         //$password = trim($state); // do what you want with the password here
 
         $password = 'faflfnbdubbdklmajALDSakasDDdssssssssssssssssssss';
-        $refer_by = 'i am';
         
         if($password !=''){
-            $return['status'] = true;
-            $return['message'] = 'Account Created Successfully';
-            $return['password'] = $refer_by;
+
+			 /* $sqlm = "INSERT INTO wallet (username, amount, phone_number)
+						VALUES ('".$user."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
+
+						if (mysqli_query($conn, $sqlm)) 
+						{ 
+
+				            
+
+				        } */
+
+				        $return['status'] = true;
+				            $return['message'] = 'Account Created Successfully';
+				            $return['password'] = $refer_by;
+				            $return['phone'] = $phone;
         }
         else 
        	{
