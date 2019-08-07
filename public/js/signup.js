@@ -426,8 +426,6 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
             var refer_by = $('#refer_by').val(); 
             var pin_code = $("#pin_code").val();
-            
-            console.log(refer_by); 
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
             
@@ -436,7 +434,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'verify_pin',mypin:pin_code,number:number},
+                data: {action : 'verify_pin',mypin:pin_code,number:number,refer_by:refer_by},
                 success:function(response){
 
                     if(response.status===true)
