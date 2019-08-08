@@ -19,7 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 	$return['status'] = false;
 	$return['message'] = '';
 	$phone =  $_POST['number'];
-	$phone_num = md5($phone);
+	echo $phone_num = md5($phone);
 
 	$check_phone = "SELECT * FROM wallet where phone_number = '".$phone_num."' ";
 	$result_phone = $conn->query($check_phone);
@@ -45,7 +45,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['
 	$return['message'] = '';
 
 	$phone =  $_POST['number'];
-	$phone_num = md5($phone);
+	echo $phone_num = md5($phone);
 	$phone_number_full = '+'.$phone;
 
 
