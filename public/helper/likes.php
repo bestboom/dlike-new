@@ -7,18 +7,18 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-
-
-/*'
-
-
-$updatePost = "UPDATE wallet SET phone_number = '73a241da6e0b3f8d8fcc60c8e48988e4' WHERE username = 'certseek'";
+$updatePost = "UPDATE wallet SET phone_number = '5044fe7c6c4ddc09898d876f921ca1d2' WHERE username = 'certseek'";
 $updatePostQuery = $conn->query($updatePost);
 if ($updatePostQuery === TRUE) {
         echo "phone number added";
 } else {
     echo "Error updating table: " . $conn->error;
 }
+
+
+/*'
+
+
 
 
 $sqlm = "CREATE TABLE Referrals (
