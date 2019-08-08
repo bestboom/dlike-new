@@ -425,6 +425,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $("#pin_code").prop('disabled',true);
  
             var pin_code = $("#pin_code").val();
+            console.log(pin_code);
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
             
@@ -435,7 +436,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 dataType: 'json',
                 data: {action : 'verify_pin',mypin:pin_code,number:number},
                 success:function(response){
-
+                    console.log(response);
                     if(response.status===true)
                     {
                         getSuccess();
