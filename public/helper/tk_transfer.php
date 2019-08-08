@@ -32,17 +32,31 @@ require '../includes/config.php';
 
 					if ($updateWalletQuery === TRUE) 
 					{
-						$updateRec = "UPDATE wallet SET amount = '$reciever_bal' + '$amount' WHERE username = '$reciever'";
-						$updateRecQuery = $conn->query($updateRec);
+						$sqlD = "SELECT amount FROM wallet where username='$reciever'"; 
+						$resultD = $conn->query($sqlD);
 
-						if ($updateRecQuery === TRUE) {
-							$sqlj = "INSERT INTO transactions (username, amount, reason, receiver)
-										VALUES ('".$user."', '".$amount."', '".$reason."', '".$reciever."')";
+							if ($resultAmount->num_rows > 0) {
+
+								$updateRec = "UPDATE wallet SET amount = '$reciever_bal' + '$amount' WHERE username = '$reciever'";
+								$updateRecQuery = $conn->query($updateRec);
+		
+							}
+							else
+							{
+								$sqln = "INSERT INTO WALLET (username, amount)
+										VALUES ('".$reciever."', '".$amount."')";
+								$addNewWallet = $conn->query($sqln);
+							}
+
+
+						$sqlj = "INSERT INTO transactions (username, amount, reason, receiver)
+									VALUES ('".$user."', '".$amount."', '".$reason."', '".$reciever."')";
+
 							if (mysqli_query($conn, $sqlj)) {
+
 								echo '<div class="alert alert-success">Transfer Successful</div>';
 								echo '<script>$(".tsf_btn").attr("disabled","disabled"); document.getElementById("tsf_sub").reset(); setTimeout(function(){location.reload();},2000);</script>';
 							}
-						}
 					}
 			}
 		}
