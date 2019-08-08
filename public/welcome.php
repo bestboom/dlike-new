@@ -72,6 +72,8 @@ include('template/header6.php');
                                 <p class="signup-signup-description">
                                     Enter your phone number. We will send you a text message with a verification code that you’ll need to enter on the next screen.
                                 </p>
+                            </div>
+                            <div>    
                                 <form name="signup-phone">
                                     <span class="form-group input-username">
                                         <input type="tel" min="0" name="phone" id="phone" class="form-control">
