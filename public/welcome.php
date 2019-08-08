@@ -2,74 +2,6 @@
 if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';}
 include('template/header6.php'); 
 ?>
-<!--
-<style>
-
-.signup {
-    background: #fff;
-    box-shadow: 0 0 16px 0 rgba(0, 0, 0, .4);
-    border-radius: 3px;
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-    width: 800px;
-}
-
-.signup h2 {
-    font-size: 1.75rem;
-    text-align: center;
-}
-
-.signup-signup,
-.signup-login {
-    width: 50%
-}
-
-/** SIGNUP
- =============================== */
-
-
-
-
-/** LOGIN
- =============================== */
-
-.signup-login {
-    display: flex;
-    flex-direction: column;
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.signup-login a {
-    /*background-color: #45aaf2;*/
-    /*border-color: #45aaf2;*/
-    /*color: #fff;*/
-    cursor: pointer;
-    font-size: 0.85rem;
-    padding: .375rem 2rem;
-}
-
-.signup-login-icon {
-    color: #ced4da;
-    display: inline-block;
-    font-size: 4rem;
-    padding: 2rem 0;
-    text-align: center;
-    width: 100%;
-}
-
-.signup-login p {
-    flex-grow: 1;
-}
-
-.signup-login-footer {
-    height: 80px;
-}
-
-
-</style>
--->
 </div>
 <div class="container">
     <div class="contact-info-outer welcome">
@@ -89,7 +21,7 @@ include('template/header6.php');
                     </div>
                 </div>
                 <div class="col-md-6 signup_sec signup-signup">
-
+<!--
                     <div class="row signup-signup-disable">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
@@ -104,8 +36,8 @@ include('template/header6.php');
                             </div>
                         </div>
                     </div>
+-->
 
-<!--
                     <div class="row signup-signup-steemit">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
@@ -128,7 +60,7 @@ include('template/header6.php');
                             </div>
                         </div>
                     </div>
--->
+
 
                     <div class="signup-signup-phone" style="display: none">
                         <div class="contact-info-block signup_block">
