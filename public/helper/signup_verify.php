@@ -123,12 +123,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 						{ 
 							/* if($refer_by !='dlike'){
 
-
+								$sqlR = "INSERT INTO Referrals (username, refer_by, entry_time)
+									VALUES ('".$user."', '".$refer_by."', now())";
+								$addReferral = $conn->query($sqlR);		
 				            
 				            }*/
 				            
 				        }
-				         
+
 		$return['status'] = true;
 		$return['message'] = 'Account Created Successfully';
 		$return['password'] = $password;			         		           
