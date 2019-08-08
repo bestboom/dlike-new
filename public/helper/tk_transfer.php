@@ -35,7 +35,7 @@ require '../includes/config.php';
 						$sqlD = "SELECT amount FROM wallet where username='$reciever'"; 
 						$resultD = $conn->query($sqlD);
 
-							if ($resultAmount->num_rows > 0) {
+							if ($resultD->num_rows > 0) {
 
 								$updateRec = "UPDATE wallet SET amount = '$reciever_bal' + '$amount' WHERE username = '$reciever'";
 								$updateRecQuery = $conn->query($updateRec);
