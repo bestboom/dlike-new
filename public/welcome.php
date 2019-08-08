@@ -1,4 +1,7 @@
 <?php 
+if (isset($_COOKIE['username']) || $_COOKIE['username']) {
+    die('<script>window.location.replace("https://dlike.io","_self")</script>');
+}
 if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';}
 include('template/header6.php'); 
 ?>
@@ -15,7 +18,7 @@ include('template/header6.php');
                                 <p>
                                     If you already have a steem account, login with your steem username through steemconnect.
                                 </p>
-                                <button class="btn btn-default signin_btn log_link">Login</button>
+                                <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-default signin_btn">Login</button>
                             </div>
                         </div>
                     </div>
@@ -32,7 +35,7 @@ include('template/header6.php');
                                 <p class="signup-signup-description">
                                      New signups through DLIKE are closed till further notice!
                                 </p>
-                                <button class="btn btn-success">Login</button>
+                                <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-success">Login</button>
                             </div>
                         </div>
                     </div>
@@ -125,7 +128,7 @@ include('template/header6.php');
                                 </p>
                                 <form name="signup-pin">
                                     <button class="next btn btn-lime">
-                                        Show My Password
+                                        <span id="show_pass">Show My Password</span>
                                     </button>
                                 </form>
                             </div>
@@ -163,7 +166,7 @@ include('template/header6.php');
                                 <p class="signup-signup-description">
                                      Now you can use DLIKE and all other Steem apps witht this account.
                                 </p>
-                                <button class="btn btn-success">Login</button>
+                                <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-success">Login</button>
                             </div>
                         </div>
                     </div>                               

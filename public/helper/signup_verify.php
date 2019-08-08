@@ -84,8 +84,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
                                          ->create($mypin, 
                                                   array("to" => $my_phone)
                                          );
-		if($verification_check->valid){
-		//if($mypin == 7654){	
+		//if($verification_check->valid){
+		if($mypin == 7654){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
@@ -113,10 +113,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
     if ($_POST['user'] !='') {
         $here = dirname(__FILE__);
 
-        $state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
-        $password = trim($state); // do what you want with the password here
+        //$state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
+        //$password = trim($state); // do what you want with the password here
 
-        //$password = 'asadadadafadafadad';
+        $password = 'asadadadafadafadad';
         
         if($password !=''){
 

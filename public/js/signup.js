@@ -453,6 +453,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
     document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
         event.preventDefault();
 
+        $('#show_pass').html('Loading...');
+        $(".signup-signup-success .next.btn").prop('disabled',true);
         let my_name = $('#my_username').html();
         let my_number = intl.getNumber();
         let number = my_number.replace('+','');
