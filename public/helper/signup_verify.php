@@ -105,7 +105,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$refer_by = $_POST['refer_by'];
 	$phone = $_POST['number'];
 	$phone_num = md5($phone);
-	$amount = 20;
+	$signup_bonus = 20;
+	$referral_bonus = 20;
 
     if ($_POST['user'] !='') {
         $here = dirname(__FILE__);
@@ -117,16 +118,39 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         if($password !=''){
 
 			 	$sqlm = "INSERT INTO wallet (username, amount, phone_number)
-						VALUES ('".$user."', '".$amount."', '".$phone_num."')";
+						VALUES ('".$user."', '".$signup_bonus."', '".$phone_num."')";
 
 						if (mysqli_query($conn, $sqlm)) 
 						{ 
-							/* if($refer_by !='dlike'){
+
+							/*
+							add transaction here
+
+							 if($refer_by !='dlike'){
 
 								$sqlR = "INSERT INTO Referrals (username, refer_by, entry_time)
 									VALUES ('".$user."', '".$refer_by."', now())";
-								$addReferral = $conn->query($sqlR);		
-				            
+								
+								if (mysqli_query($conn, $sqlR)) {
+								
+									$check_ref_balance = "SELECT amount FROM wallet where username = '".$refer_by."' ";
+									$result_bal = $conn->query($check_ref_balance);
+
+										if ($result_bal->num_rows > 0) {
+
+											$rowB = $result_bal->fetch_assoc();	
+											$user_bal = $rowB['amount'];
+
+											$updateBonus = "UPDATE wallet SET amount = '$user_bal' + '$referral_bonus' WHERE username = '$refer_by'";
+											$updateRefBonus = $conn->query($updateBonus);
+
+											if ($updateRefBonus === TRUE) {
+
+												Add transaction here
+	
+											}
+										}
+								}
 				            }*/
 				            
 				        }
