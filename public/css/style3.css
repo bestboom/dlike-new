@@ -1529,7 +1529,9 @@ justify-content: space-between;}
     display: flex;
     flex-direction: column;
     height: 80px;
-    width: 100%;
+    width: 60%;
+    float: left;
+    margin-left: 20%;
 }
 
 .signup-signup form label {
