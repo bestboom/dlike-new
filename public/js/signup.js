@@ -372,7 +372,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         var get_number = intl.getNumber();
         var number = get_number.replace('+','');
-        // console.log(number);
+        console.log(number);
 
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);

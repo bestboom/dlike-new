@@ -27,7 +27,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 	if ($result_phone->num_rows <= 0)
 	{
 		$return['status'] = true;
-		$return['message'] = 'Number is availabel';
+		$return['message'] = 'Number is available';
 		$return['phone'] = $phone;
 	}
 	else{
@@ -45,9 +45,11 @@ if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['
 	$return['message'] = '';
 
 	$phone =  $_POST['number'];
+	$phone_num = md5($phone);
 	$phone_number_full = '+'.$phone;
 
-	$check_phone = "SELECT * FROM wallet where phone_number = '".$phone."' ";
+
+	$check_phone = "SELECT * FROM wallet where phone_number = '".$phone_num."' ";
 	$result_phone = $conn->query($check_phone);
 
 	if ($result_phone->num_rows <= 0){
@@ -63,6 +65,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['
 	}
 	else{
 		$return['message'] = 'Number already in use by other account';
+		$return['phone'] = $phone;
 	}
 	echo json_encode($return);
 	exit;
