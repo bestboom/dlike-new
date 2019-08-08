@@ -22,7 +22,7 @@ $row_C = $result_C->fetch_assoc();
 		<li>
 			<div class="btn apps-download-btn googleplay-btn">
 				<div class="btn-content" style="text-align: center;">
-					<span>Tokens Staked</span>
+					<span>Total Tokens</span>
 					<p><? echo number_format($row_C['total_amount']); ?></p>
 				</div>
 			</div>
@@ -48,7 +48,6 @@ $row_C = $result_C->fetch_assoc();
 
 				if ($result_T && $result_T->num_rows > 0) {
 					while ($row_T = $result_T->fetch_assoc()) {
-						$start_time = strtotime($row_T["start_time"]); 
 						?>
 						<tr>
 							<td class="exp-user cent_me wid_2">
