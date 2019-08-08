@@ -79,13 +79,13 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	$my_phone = '+'.$phone;
 
 
-		//$verification_check = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
-        //                                 ->verificationChecks
-        //                                 ->create($mypin, 
-        //                                          array("to" => $my_phone)
-        //                                 );
-		//if($verification_check->valid){
-		if($mypin == 7654){	
+		$verification_check = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
+                                         ->verificationChecks
+                                         ->create($mypin, 
+                                                  array("to" => $my_phone)
+                                         );
+		if($verification_check->valid){
+		//if($mypin == 7654){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
@@ -107,13 +107,16 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$phone_num = md5($phone);
 	$signup_bonus = 20;
 	$referral_bonus = 50;
+	$signup_reason = 'Signup Bonus';
+	$referral_reason = 'Referral Bonus';
 
     if ($_POST['user'] !='') {
         $here = dirname(__FILE__);
-        //$state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
-        //$password = trim($state); // do what you want with the password here
 
-        $password = 'asadadadafadafadad';
+        $state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
+        $password = trim($state); // do what you want with the password here
+
+        //$password = 'asadadadafadafadad';
         
         if($password !=''){
 
@@ -123,8 +126,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 						if (mysqli_query($conn, $sqlm)) 
 						{ 
 
-							
-							/* add trx here --> */
+							$sqlX = "INSERT INTO transactions (username, amount, reason)
+								VALUES ('".$user."', '".$signup_bonus."', '".$signup_reason."')";
+
+							$signup_reward =  mysqli_query($conn, $sqlX);
 
 							 if($refer_by !='dlike'){
 
@@ -146,7 +151,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 											if ($updateRefBonus === TRUE) {
 
-												/* add trx here --> */
+												$sqlW = "INSERT INTO transactions (username, amount, reason)
+													VALUES ('".$refer_by."', '".$referral_bonus."', '".$referral_reason."')";
+
+							                  	$referral_reward =  mysqli_query($conn, $sqlW);
 	
 											}
 										}
