@@ -112,7 +112,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         //$state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
         //$password = trim($state); // do what you want with the password here
 
-        $password = 'faflfnbdubbdklmajALDSakasDDdssssssssssssssssssss';
+        $password = '';
         
         if($password !=''){
 
@@ -125,12 +125,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 				            
 				            }
 				        
-							$return['status'] = true;
-				            $return['message'] = 'Account Created Successfully';
-				            $return['password'] = $refer_by;
-				            $return['phone'] = $phone;
+							
 				            
-				        } */    
+				        } */ 
+		$return['status'] = true;
+				            $return['message'] = 'Account Created Successfully';
+				            $return['password'] = $password;		           
         }
         else 
        	{
