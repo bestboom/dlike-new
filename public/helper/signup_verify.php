@@ -106,7 +106,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$phone = $_POST['number'];
 	$phone_num = md5($phone);
 	$signup_bonus = 20;
-	$referral_bonus = 20;
+	$referral_bonus = 50;
 
     if ($_POST['user'] !='') {
         $here = dirname(__FILE__);
