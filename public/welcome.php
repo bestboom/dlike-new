@@ -42,10 +42,7 @@ include('template/header6.php');
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4 class="sign_head">Create Account</h4>
-                                <span class="signup-signup-icon">
-                                    <span class="fas fa-user"></span>
-                                </span>
-                                <form name="signup">
+                                <form name="signup" style="margin-top: 35px;">
                                     <div class="form-group input-username">
                                         <input type="hidden" id="refer_by" value="<?php echo $referrer; ?>" />
                                         <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
