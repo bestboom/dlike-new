@@ -6,6 +6,10 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+
+/*'
+
 $sqlw = "DELETE FROM wallet WHERE username = 'adme2it'";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -14,8 +18,6 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-
-/*'
 
 
 

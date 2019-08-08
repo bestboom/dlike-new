@@ -1549,6 +1549,7 @@ justify-content: space-between;}
 
 .signup-signup .input-username {
     position: relative;
+    margin-bottom: 0.1rem !important;
 }
 
 .signup-signup .input-username .fa {
