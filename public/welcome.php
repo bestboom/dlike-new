@@ -42,11 +42,14 @@ include('template/header6.php');
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4 class="sign_head">Create Account</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fas fa-user"></span>
+                                </span>
                                 <form name="signup">
                                     <div class="form-group input-username">
                                         <input type="hidden" id="refer_by" value="<?php echo $referrer; ?>" />
                                         <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
-                                        <span class="fa fa-user"></span>
+                                        <span class="fas fa-user"></span>
 
                                         <span class="message" style="display: none"></span>
                                         <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
