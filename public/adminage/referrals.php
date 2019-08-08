@@ -25,14 +25,14 @@ $row_C = $result_C->fetch_assoc();
 <div>
 	<div class="row" style="margin: 30px;">
 		<table class="table coin-list table-hover" style="border: 1px solid #eee;">
-			<thead>
+			<thead style="text-align: center;">
 				<tr>
 					<th scope="col" class="cent_me wid_2">User</th>
 					<th scope="col" class="cent_me wid_2">Referred By</th>
 					<th scope="col" class="cent_me wid_2">Time</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody style="text-align: center;">
 				<?php 
 				$sql_T = "SELECT * FROM Referrals ORDER BY entry_time DESC";
 				$result_T = $conn->query($sql_T);
