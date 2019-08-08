@@ -28,9 +28,11 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 	{
 		$return['status'] = true;
 		$return['message'] = 'Number is availabel';
+		$return['phone'] = $phone;
 	}
 	else{
 		$return['message'] = 'Number already in use by other account';
+		$return['phone'] = $phone;
 	}
 	echo json_encode($return);
 	exit;
@@ -83,7 +85,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
         //                                          array("to" => $my_phone)
         //                                 );
 		//if($verification_check->valid){
-		if($mypin = 7654){	
+		if($mypin == 7654){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
