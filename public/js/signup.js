@@ -393,7 +393,6 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     {
                         pinVerify();
                         toastr['success'](response.message);
-                        console.log(response.phone);
                     }
                     else{
                         toastr['error'](response.message);
