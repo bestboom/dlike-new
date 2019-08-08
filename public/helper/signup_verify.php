@@ -104,7 +104,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 	$user = $_POST['user'];
 	$refer_by = $_POST['refer_by'];
 	$phone = $_POST['number'];
-	$phone = md5($phone);
+	$phone_num = md5($phone);
 	$amount = 20;
 
     if ($_POST['user'] !='') {
@@ -112,25 +112,26 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
         //$state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
         //$password = trim($state); // do what you want with the password here
 
-        $password = '';
+        $password = 'asadadadafadafadad';
         
         if($password !=''){
 
-			 /* $sqlm = "INSERT INTO wallet (username, amount, phone_number)
-						VALUES ('".$user."', '".$rating."', '".$ip."', '".$author."', '".$permlink."')";
+			 	$sqlm = "INSERT INTO wallet (username, amount, phone_number)
+						VALUES ('".$user."', '".$amount."', '".$phone_num."')";
 
 						if (mysqli_query($conn, $sqlm)) 
 						{ 
-							if($refer_by !='dlike'){
+							/* if($refer_by !='dlike'){
+
+
 				            
-				            }
-				        
-							
+				            }*/
 				            
-				        } */ 
+				        }
+				         
 		$return['status'] = true;
-				            $return['message'] = 'Account Created Successfully';
-				            $return['password'] = $password;		           
+		$return['message'] = 'Account Created Successfully';
+		$return['password'] = $password;			         		           
         }
         else 
        	{

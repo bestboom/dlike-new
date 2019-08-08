@@ -372,7 +372,6 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         var get_number = intl.getNumber();
         var number = get_number.replace('+','');
-        console.log(number);
 
         $("#phone").prop('disabled',true);
         $(".signup-signup-phone .next.btn").prop('disabled',true);
@@ -426,7 +425,6 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $("#pin_code").prop('disabled',true);
  
             var pin_code = $("#pin_code").val();
-            console.log(pin_code);
             var my_number = intl.getNumber();
             var number = my_number.replace('+','');
             
@@ -469,7 +467,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             data: {action : 'acc_create',user:my_name,number:number,refer_by:refer_by},
             success:function(response){
                 console.log(response);
-                if(response.status)
+                if(response.status===true)
                 {
                    toastr['success'](response.message);
                    //console.log(response.password);
