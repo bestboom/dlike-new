@@ -37,8 +37,6 @@ $row_C = $result_C->fetch_assoc();
 				<tr>
 					<th scope="col" class="cent_me wid_2">User</th>
 					<th scope="col" class="cent_me wid_2">Amount</th>
-					<th scope="col" class="cent_me wid_2">Period</th>
-					<th scope="col" class="cent_me wid_2">Time</th>
 				</tr>
 			</thead>
 			<tbody>
