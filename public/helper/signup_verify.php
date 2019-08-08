@@ -123,8 +123,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 						if (mysqli_query($conn, $sqlm)) 
 						{ 
 
-							/*
-							add transaction here
+							
+							/* add trx here --> */
 
 							 if($refer_by !='dlike'){
 
@@ -146,12 +146,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 											if ($updateRefBonus === TRUE) {
 
-												Add transaction here
+												/* add trx here --> */
 	
 											}
 										}
 								}
-				            }*/
+				            }
 				            
 				        }
 
