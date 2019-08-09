@@ -75,7 +75,8 @@ include('template/header6.php');
                                     <span class="fa fa-phone"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Enter your phone number. We will send you a text message with a verification code that you’ll need to enter on the next screen.
+                                    Enter your phone number. We will send verification code through SMS.<br>
+                                    <span style="color:red;">Phone numbers are only for identity verification. We store them in hashed form (md5) to ensure no duplicate accounts are generated.</span>
                                 </p>
                                 <form name="signup-phone">
                                     <span class="form-group input-username">
