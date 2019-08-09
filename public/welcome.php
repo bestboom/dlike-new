@@ -86,8 +86,8 @@ include('template/header6.php');
                                     <button class="next btn btn-lime" disabled>
                                         Send SMS
                                     </button>
-                                    <p style="color:red;">Phoen numbers are only for identity verification. We store them in hashed form (md5) to ensure no duplicate accounts are generated.</p>
                                 </form>
+                                    <p style="color:red;">Phoen numbers are only for identity verification. We store them in hashed form (md5) to ensure no duplicate accounts are generated.</p>
                             </div>
                         </div>
                     </div>
