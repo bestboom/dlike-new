@@ -265,7 +265,7 @@ if ($user_eth == '') {
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="nav_aff">
                             <div class="catagori-content"><!-- PRO-content-starts -->
-                                <div class="pro-data">
+                                <div class="pro-datab">
                                     <h4 class="bell-bold">DLIKE Affiliate Program</h4>
                                     <p class="catagori-info">
                                     <h4 class="bell-bold">Refer New Users - Earn DLIKE Tokens</h4>
