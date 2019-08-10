@@ -3,7 +3,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     die('<script>window.location.replace("https://dlike.io","_self")</script>');
 }
 if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';}
-include('template/header6.php'); 
+include('template/header5.php'); 
 ?>
 </div>
 <div class="container">
@@ -185,6 +185,4 @@ include('template/header6.php');
         </div>
     </div>
 </div>
-
-<!--https://github.com/jackocnr/intl-tel-input -->
 <?php include('template/footer4.php'); ?>
