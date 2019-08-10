@@ -20,6 +20,10 @@
                             <h5>DLIKE Tokens</h5>
                             <p>All details about DLIKE Tokens</p>
                         </a>
+                        <a class="list-group-item list-group-item-action" id="list-affiliate-list" data-toggle="list" href="#list-affiliate" role="tab">
+                            <h5>Affiliate Program</h5>
+                            <p>All about DLIKE Affiliate</p>
+                        </a>
                         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab">
                             <h5>Terms &amp; Conditions</h5>
                             <p>How to use DLIKE? Basic Terms and Conditions.</p>
@@ -153,6 +157,70 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="list-affiliate" role="tabpanel" aria-labelledby="list-profile-list">
+                            <h4>Affiliate Program</h4>
+                            <div class="accordion style-2" id="accordion2Faq">
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="heading2One">
+                                    <h5 class="mb-0">
+                                        <button type="button" data-toggle="collapse" data-target="#collapse2One" aria-expanded="true" aria-controls="collapse2One">
+                                        What is DLIKE Affiliate Program?
+                                        </button>
+                                    </h5>
+                                    </div>
+    
+                                    <div id="collapse2One" class="collapse show" aria-labelledby="heading2One" data-parent="#accordion2Faq">
+                                    <div class="accordion-body">
+                                        DLIKE offers an incentive based affiliate program where you can refer your friends and other people to join DLIKE.
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="heading2Two">
+                                    <h5 class="mb-0">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Two" aria-expanded="false" aria-controls="collapse2Two">
+                                        Benefits of DLIKE Affiliate Program
+                                        </button>
+                                    </h5>
+                                    </div>
+                                    <div id="collapse2Two" class="collapse" aria-labelledby="heading2Two" data-parent="#accordion2Faq">
+                                    <div class="accordion-body">
+                                        <li>50 DLIKE tokens for every user you refer</li>
+                                        <li>Earn reward points for every new post made by your referrals</li>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="heading2Three">
+                                    <h5 class="mb-0">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Three" aria-expanded="false" aria-controls="collapse2Three">
+                                        How can I join?
+                                        </button>
+                                    </h5>
+                                    </div>
+                                    <div id="collapse2Three" class="collapse" aria-labelledby="heading2Three" data-parent="#accordion2Faq">
+                                    <div class="accordion-body">
+                                        To refer new users to DLIKE, simply use your personalized (steem username based) referral link <br>
+                                        <b>https://dlike.io/welcome.php?ref=<i>steem_user_name</i></b>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="heading2Four">
+                                    <h5 class="mb-0">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Four" aria-expanded="false" aria-controls="collapse2Four">
+                                        Where can I promote DLIKE?
+                                        </button>
+                                    </h5>
+                                    </div>
+                                    <div id="collapse2Four" class="collapse" aria-labelledby="heading2Four" data-parent="#accordion2Faq">
+                                    <div class="accordion-body">
+                                        You can use your referral link in any article on any website or you can use this link in your social media posts to promote DLIKE and earn rewards for all referrals who join DLIKE through your referral link.
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                             <h4>Terms &amp; Conditions</h4>
                             <div class="accordion style-2" id="accordion4Faq">
@@ -216,7 +284,7 @@
                                 <div class="accordion-item">
                                     <div class="accordion-header" id="heading4Five">
                                     <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Four" aria-expanded="false" aria-controls="collapse4Five">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Five" aria-expanded="false" aria-controls="collapse4Five">
                                         Why am I not getting upvotes?
                                         </button>
                                     </h5>
