@@ -168,7 +168,7 @@
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2One" class="collapse show" aria-labelledby="heading2One" data-parent="#accordion2Faq">
+                                    <div id="collapse2One" class="collapse show" aria-labelledby="heading2One" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         DLIKE offers an incentive based affiliate program where you can refer your friends and other people to join DLIKE.
                                     </div>
@@ -182,7 +182,7 @@
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2Two" class="collapse" aria-labelledby="heading2Two" data-parent="#accordion2Faq">
+                                    <div id="collapse2Two" class="collapse" aria-labelledby="heading2Two" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         <li>50 DLIKE tokens for every user you refer</li>
                                         <li>Earn reward points for every new post made by your referrals</li>
@@ -197,7 +197,7 @@
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2Three" class="collapse" aria-labelledby="heading2Three" data-parent="#accordion2Faq">
+                                    <div id="collapse2Three" class="collapse" aria-labelledby="heading2Three" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         To refer new users to DLIKE, simply use your personalized (steem username based) referral link <br>
                                         <b>https://dlike.io/welcome.php?ref=<i>steem_user_name</i></b>
@@ -212,7 +212,7 @@
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2Four" class="collapse" aria-labelledby="heading2Four" data-parent="#accordion2Faq">
+                                    <div id="collapse2Four" class="collapse" aria-labelledby="heading2Four" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         You can use your referral link in any article on any website or you can use this link in your social media posts to promote DLIKE and earn rewards for all referrals who join DLIKE through your referral link.
                                     </div>
