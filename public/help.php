@@ -18,7 +18,7 @@
                         </a>
                         <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab">
                             <h5>DLIKE Tokens</h5>
-                            <p>All details regarding DLIKE Tokens</p>
+                            <p>All details about DLIKE Tokens</p>
                         </a>
                         <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab">
                             <h5>Terms &amp; Conditions</h5>
@@ -42,9 +42,9 @@
     
                                     <div id="collapse1One" class="collapse show" aria-labelledby="heading1One" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        DLIKE pro users is the apex status of users available on DLIKE platform. Anyone can become a pro user by vesting 10,000 DLIKE tokens. The vested tokens are burnt and PRO users enjoy following benefits.<br>
+                                        DLIKE pro user is the apex status of users available on DLIKE platform. Anyone can become a pro user by vesting 10,000 DLIKE tokens. The vested tokens are burnt and PRO users enjoy following benefits.<br>
                                         <li>Pro users get 3x upvote on all their posts</li>
-                                        <li>Pro users can share more than 1 posts in 24 hours to earn more</li>
+                                        <li>Pro users can share more than 1 post in 24 hours to earn more</li>
                                         <li>Pro users can tip on posts which also rewards 40% of the tip earning to them.</li>
                                         <li>Pro users can earn DLIKE tokens from daily reward pool.</li>
                                     </div>
@@ -54,7 +54,7 @@
                                     <div class="accordion-header" id="heading1Two">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse1Two" aria-expanded="false" aria-controls="collapse1Two">
-                                        How to become PRO user?
+                                        How to become a PRO user?
                                         </button>
                                     </h5>
                                     </div>
@@ -75,11 +75,11 @@
                                     <div id="collapse1Three" class="collapse" aria-labelledby="heading1Three" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
                                         DLIKE reward pool is the daily DLIKE token distribution system which is only available for PRO users. Every PRO users can earn the share of total reward tokens by making his posts more viral and being more active on the platform. Below are few of the basic parameters which enhance the share of any user in daily reward pool.
-                                        <li>How many likes a user get on his posts. (anyone can like a post even without having steem account)</li>
+                                        <li>How many likes a user gets on his posts. (anyone can like a post even without having steem account)</li>
                                         <li>How many unique views a users post get in 24 hours</li>
                                         <li>How many comments a user gets on his posts</li>
                                         <li>How much steem upvotes he gets on his posts</li>
-                                        <li>How many new referrals he bring in 24 hours.</li>
+                                        <li>How many new referrals he brings in 24 hours.</li>
                                         DLIKE team is working on reward pool and it will be available soon.
                                     </div>
                                     </div>
@@ -94,7 +94,7 @@
                                     </div>
                                     <div id="collapse1Four" class="collapse" aria-labelledby="heading1Four" data-parent="#accordion1Faq">
                                     <div class="accordion-body">
-                                        DLIKE has an additional source of income for PRO users where they can tip any post which they like. 40% of the tip goes to author and 60% to the user. These tips are totally free from DLIKE and give better earning opportunity for top quality articles shared on the platform. These tips are in the form of ERC-20 stable coins and are easily withdrawn to any ETH address.
+                                        DLIKE has an additional source of income for PRO users where they can tip any post which they like. 40% of the tip goes to the author and 60% to the user. These tips are totally free from DLIKE and give better earning opportunity for top quality articles shared on the platform. These tips are in the form of ERC-20 stable coins and are easily withdrawn to any ETH address.
                                     </div>
                                     </div>
                                 </div>
@@ -138,13 +138,13 @@
                                     <div class="accordion-header" id="heading2Two">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Two" aria-expanded="false" aria-controls="collapse2Two">
-                                        How I can earn DLIKE Tokens?
+                                        How can I earn DLIKE Tokens?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse2Two" class="collapse" aria-labelledby="heading2Two" data-parent="#accordion2Faq">
                                     <div class="accordion-body">
-                                        DLIKE tokens can be earned in many ways. Below are few of the ways to earn them.
+                                        DLIKE tokens can be earned in many ways.
                                         <li>Become PRO user to earn daily DLIKE tokens from reward pool</li>
                                         <li>Join DLIKE bounty programs to earn tokens</li>
                                         <li>Promote DLIKE on other blogging platforms to earn tokens.</li>
@@ -167,7 +167,7 @@
     
                                     <div id="collapse4One" class="collapse show" aria-labelledby="heading4One" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        You can share 1 article per 24 hours. For pro user limit is 3 articles per 24 hours.
+                                        You can share 1 article per 24 hours. For pro user the limit is 3 articles per 24 hours.
                                     </div>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
                                     </div>
                                     <div id="collapse4Two" class="collapse" aria-labelledby="heading4Two" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        DLIKE is an informative face of internet which clearly means what can be shared. You can share any links which are informative, fresh and useful for community in the given categories.
+                                        DLIKE is an informative face of internet which clearly indicates what can be shared. You can share any links which are informative, fresh and useful for community in the given categories.
                                     </div>
                                     </div>
                                 </div>
@@ -203,16 +203,30 @@
                                     <div class="accordion-header" id="heading4Four">
                                     <h5 class="mb-0">
                                         <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Four" aria-expanded="false" aria-controls="collapse4Four">
-                                        Why I get blacklisted and not getting upvotes?
+                                        Why do I get blacklisted?
                                         </button>
                                     </h5>
                                     </div>
                                     <div id="collapse4Four" class="collapse" aria-labelledby="heading4Four" data-parent="#accordion4Faq">
                                     <div class="accordion-body">
-                                        Anyone violating rules will be blacklisted and will not get any upvotes. Do not share personal selfies or cats as we strongly recommend to share informative and useful links for the community.
+                                        Anyone violating rules will be blacklisted. Please do not share personal selfies or cats as we strongly recommend to share informative and useful links for the community.
                                     </div>
                                     </div>
                                 </div>
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="heading4Five">
+                                    <h5 class="mb-0">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse4Four" aria-expanded="false" aria-controls="collapse4Five">
+                                        Why am I not getting upvotes?
+                                        </button>
+                                    </h5>
+                                    </div>
+                                    <div id="collapse4Five" class="collapse" aria-labelledby="heading4Five" data-parent="#accordion4Faq">
+                                    <div class="accordion-body">
+                                        If your accounts are blacklisted, you will not get any upvotes. 
+                                    </div>
+                                    </div>
+                                </div>                                
                                 </div>
                             </div>
                         </div>
