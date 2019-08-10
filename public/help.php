@@ -192,7 +192,7 @@
                                 <div class="accordion-item">
                                     <div class="accordion-header" id="heading3Three">
                                     <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Three" aria-expanded="false" aria-controls="collapse3Three">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3Three" aria-expanded="false" aria-controls="collapse3Three">
                                         How can I join?
                                         </button>
                                     </h5>
@@ -212,7 +212,7 @@
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2Four" class="collapse" aria-labelledby="heading2Four" data-parent="#accordion3Faq">
+                                    <div id="collapse3Four" class="collapse" aria-labelledby="heading3Four" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         You can use your referral link in any article on any website or you can use this link in your social media posts to promote DLIKE and earn rewards for all referrals who join DLIKE through your referral link.
                                     </div>
