@@ -161,28 +161,28 @@
                             <h4>Affiliate Program</h4>
                             <div class="accordion style-2" id="accordion3Faq">
                                 <div class="accordion-item">
-                                    <div class="accordion-header" id="heading2One">
+                                    <div class="accordion-header" id="heading3One">
                                     <h5 class="mb-0">
-                                        <button type="button" data-toggle="collapse" data-target="#collapse2One" aria-expanded="true" aria-controls="collapse2One">
+                                        <button type="button" data-toggle="collapse" data-target="#collapse3One" aria-expanded="true" aria-controls="collapse3One">
                                         What is DLIKE Affiliate Program?
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2One" class="collapse show" aria-labelledby="heading2One" data-parent="#accordion3Faq">
+                                    <div id="collapse3One" class="collapse show" aria-labelledby="heading3One" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         DLIKE offers an incentive based affiliate program where you can refer your friends and other people to join DLIKE.
                                     </div>
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <div class="accordion-header" id="heading2Two">
+                                    <div class="accordion-header" id="heading3Two">
                                     <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Two" aria-expanded="false" aria-controls="collapse2Two">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3Two" aria-expanded="false" aria-controls="collapse3Two">
                                         Benefits of DLIKE Affiliate Program
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2Two" class="collapse" aria-labelledby="heading2Two" data-parent="#accordion3Faq">
+                                    <div id="collapse3Two" class="collapse" aria-labelledby="heading3Two" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         <li>50 DLIKE tokens for every user you refer</li>
                                         <li>Earn reward points for every new post made by your referrals</li>
