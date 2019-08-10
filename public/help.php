@@ -168,7 +168,6 @@
                                         </button>
                                     </h5>
                                     </div>
-    
                                     <div id="collapse2One" class="collapse show" aria-labelledby="heading2One" data-parent="#accordion2Faq">
                                     <div class="accordion-body">
                                         DLIKE offers an incentive based affiliate program where you can refer your friends and other people to join DLIKE.
