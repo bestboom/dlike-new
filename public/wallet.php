@@ -85,6 +85,12 @@ if ($user_eth == '') {
                                     <h4>Buy Tokens</h4>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#nav_aff" role="tab" data-toggle="tab"
+                                   aria-selected="false">
+                                    <h4>Affiliates</h4>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                     <div class="tab-content catagoritab-content" id="nav-tabContent">
@@ -257,6 +263,28 @@ if ($user_eth == '') {
                                 </div>
                             </div><!-- catagori-content -->
                         </div>
+                        <div role="tabpanel" class="tab-pane fade" id="nav_aff">
+                            <div class="catagori-content"><!-- PRO-content-starts -->
+                                <div class="pro-data">
+                                    <h4 class="bell-bold">DLIKE Affiliate Program</h4>
+                                    <p class="catagori-info">
+                                    <h4 class="bell-bold">Refer New Users - Earn DLIKE Tokens</h4>
+                                    <p>
+                                        My Referral link: https://dlike.io/welcome.php?ref=username
+                                    </p>
+                                    </p>
+                                    <h4 class="bell-bold">Benefits of DLIKE Affiliate Program</h4>
+                                    <p>
+                                    <li>50 DLIKE tokens for every user you refer</li>
+                                    <li>Earn reward points for every new post made by your referrals</li>
+                                    </p>
+                                    <h4 class="bell-bold">My Referral Link</h4>
+                                    <p>
+                                         https://dlike.io/welcome.php?ref=<?php echo $user_wallet; ?>
+                                    </p>
+                                </div>
+                            </div><!-- PRO-content-ends -->
+                        </div>                        
                     </div>
                 </div><!-- catagori-content-block -->
             </div>
@@ -290,6 +318,9 @@ if ($user_eth == '') {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#with_draw" role="tab" data-toggle="tab">WITHDRWLS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ref_data" role="tab" data-toggle="tab">My Referrals</a>
                         </li>
                         <li class="nav-item nav-item-last">
                         </li>
@@ -460,6 +491,45 @@ if ($user_eth == '') {
                                             </td>
                                             <td class="exp-amt cent_me wid_2">
                                                 <?php echo time_ago($with_time); ?>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                                </tbody>
+                            </table><!-- coin-list table -->
+                        </div><!-- market-ticker-block -->
+                        <div role="tabpanel" class="tab-pane fade" id="ref_data">
+                            <table class="table coin-list table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col" class="cent_me wid_2"></th>
+                                    <th scope="col" class="cent_me wid_2">Username</th>
+                                    <th scope="col" class="cent_me wid_2">Time</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+
+                                $sql_Ref = "SELECT * FROM Referrals where refer_by='$user_wallet' ORDER BY entry_time DESC LIMIT 50";
+                                $result_Ref = $conn->query($sql_Ref);
+
+                                if ($result_Ref && $result_Ref->num_rows > 0) {
+                                    while ($row_Ref = $result_Ref->fetch_assoc()) {
+                                        $Ref_time = strtotime($row_Ref["entry_time"]); 
+                                ?>
+                                        <tr>
+                                            <td class="cent_me wid_2"">
+                                                <span class="btn btn-icon btn-exp">
+                                                    <span class="text-dark">Tx</span>
+                                                </span>
+                                            </td>
+                                            <td class="exp-user cent_me wid_2">
+                                                <span><?php echo $row_Ref["username"]; ?></span>
+                                            </td>
+                                            <td class="exp-amt cent_me wid_2">
+                                                <?php echo time_ago($Ref_time); ?>
                                             </td>
                                         </tr>
                                         <?php
