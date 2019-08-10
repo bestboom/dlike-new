@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="list-affiliate" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="tab-pane fade" id="list-affiliate" role="tabpanel" aria-labelledby="list-affiliate-list">
                             <h4>Affiliate Program</h4>
                             <div class="accordion style-2" id="accordion2Faq">
                                 <div class="accordion-item">
