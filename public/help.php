@@ -190,14 +190,14 @@
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <div class="accordion-header" id="heading2Three">
+                                    <div class="accordion-header" id="heading3Three">
                                     <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Three" aria-expanded="false" aria-controls="collapse2Three">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Three" aria-expanded="false" aria-controls="collapse3Three">
                                         How can I join?
                                         </button>
                                     </h5>
                                     </div>
-                                    <div id="collapse2Three" class="collapse" aria-labelledby="heading2Three" data-parent="#accordion3Faq">
+                                    <div id="collapse3Three" class="collapse" aria-labelledby="heading3Three" data-parent="#accordion3Faq">
                                     <div class="accordion-body">
                                         To refer new users to DLIKE, simply use your personalized (steem username based) referral link <br>
                                         <b>https://dlike.io/welcome.php?ref=<i>steem_user_name</i></b>
@@ -205,9 +205,9 @@
                                     </div>
                                 </div>
                                 <div class="accordion-item">
-                                    <div class="accordion-header" id="heading2Four">
+                                    <div class="accordion-header" id="heading3Four">
                                     <h5 class="mb-0">
-                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse2Four" aria-expanded="false" aria-controls="collapse2Four">
+                                        <button class="collapsed" type="button" data-toggle="collapse" data-target="#collapse3Four" aria-expanded="false" aria-controls="collapse3Four">
                                         Where can I promote DLIKE?
                                         </button>
                                     </h5>
