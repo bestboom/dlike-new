@@ -265,12 +265,12 @@ if ($user_eth == '') {
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="nav_aff">
                             <div class="catagori-content"><!-- PRO-content-starts -->
-                                <div class="pro-data">
+                                <div class="pros-cons-block">
                                     <h4 class="bell-bold">DLIKE Affiliate Program</h4>
                                     <p class="catagori-info">
                                     <h4 class="bell-bold">Refer New Users - Earn DLIKE Tokens</h4>
                                     <p>
-                                        My Referral link: https://dlike.io/welcome.php?ref=username
+                                        With DLIKE affiliate program you can earn DIKE tokens.
                                     </p>
                                     </p>
                                     <h4 class="bell-bold">Benefits of DLIKE Affiliate Program</h4>
@@ -279,8 +279,8 @@ if ($user_eth == '') {
                                     <li>Earn reward points for every new post made by your referrals</li>
                                     </p>
                                     <h4 class="bell-bold">My Referral Link</h4>
-                                    <p>
-                                         https://dlike.io/welcome.php?ref=<?php echo $user_wallet; ?>
+                                    <p class="base-color">
+                                         <b>https://dlike.io/welcome.php?ref=<?php echo $user_wallet; ?></b>
                                     </p>
                                 </div>
                             </div><!-- PRO-content-ends -->
