@@ -1,10 +1,12 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
-<div class="container">
 	<div style="background-color: #111;min-height: 155px;">
 		
 	</div>
-</div>
+	<div class="row">
+		<div style="border-radius: 50%;"><img src="/images/user.png"></div>
+		<button class="btn btn-danger">Follow</button>
+	</div>
 
 
 
