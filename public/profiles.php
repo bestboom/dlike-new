@@ -3,9 +3,11 @@
 	<div style="background-color: #111;min-height: 155px;">
 		
 	</div>
-	<div class="row">
-		<div style="border-radius: 50%;"><img src="/images/user.png"></div>
-		<button class="btn btn-danger">Follow</button>
+	<div class="container">
+		<div class="row">
+			<img src="/images/user.png" style="border-radius: 50%;margin-top: -72px;">
+			<button class="btn btn-danger">Follow</button>
+		</div>
 	</div>
 
 
