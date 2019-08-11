@@ -1,7 +1,7 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
 	<div style="background-color: #111;min-height: 155px;">
-		
+		<img src="" id="p_cover">
 	</div>
 	<div style="background: #eeeeee94;">
 	<div class="container">
@@ -10,6 +10,8 @@
 			<button class="btn btn-danger">Follow</button>
 		</div>
 	</div>
+
+
 
 
 
@@ -211,6 +213,21 @@
 
 			}
 		});
+
+
+//profile details
+
+	steem.api.getAccounts([profname], function(err, result) {
+	  	console.log(result)
+
+	  	let metadata = JSON.parse(result["0"].json_metadata);
+	  	console.log(metadata.profile.location);
+	  	console.log(metadata.profile.cover_image);
+	  	let cover = metadata.profile.cover_image;
+	  	$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
+  	});
+
+
 	});	
 
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
