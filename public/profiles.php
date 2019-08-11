@@ -1,7 +1,7 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
-	<div style="background-color: #111;min-height: 155px;">
-		<img src="" id="p_cover">
+	<div style="background-color: #111;">
+		<img src="" id="p_cover" class="img-fluid">
 	</div>
 	<div style="background: #eeeeee94;">
 	<div class="container">
