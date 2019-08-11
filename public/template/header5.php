@@ -68,7 +68,7 @@
                             <div class="row" style="margin: 0px;">
                                 <div class="col-md-3 col-2">
                                     <?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { ?>
-                                    <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
+                                    <button onclick="window.location.href='/welcome';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
                                     </button>
                                     <? } else { ?>
                                     <button onclick="window.location.href='/@<? echo $_COOKIE['username']; ?>';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="/images/user.png" alt="<? echo $_COOKIE['username']; ?>" title="<? echo $_COOKIE['username']; ?>" id="user_img" class="rounded-circle img-fluid" style="background: #fff;margin-top: -6px;"></span>
