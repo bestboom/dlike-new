@@ -3,8 +3,9 @@
 	<div style="background-color: #111;min-height: 155px;">
 		
 	</div>
+	<div style="background: #eeeeee94;">
 	<div class="container">
-		<div class="row">
+		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
 			<img src="/images/user.png" style="border-radius: 50%;margin-top: -72px;">
 			<button class="btn btn-danger">Follow</button>
 		</div>
