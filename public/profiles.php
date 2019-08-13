@@ -1,12 +1,12 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
-	<div style="background-color: #111;">
+	<div style="background-color: #111;max-height: 155px;background-position: center center;background-size: cover;">
 		<img src="" id="p_cover" class="img-fluid">
 	</div>
 	<div style="background: #eeeeee94;">
 	<div class="container">
 		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
-			<img src="" id="p_img" class="img-fluid">
+			<img src="" id="p_img" class="img-fluid rounded-circle">
 			<button class="btn btn-danger">Follow</button>
 		</div>
 	</div>
@@ -34,6 +34,21 @@
 		$('#loadings').delay(6000).fadeOut('slow');
 
 		let profname = '<?php echo $_GET['user'];?>';
+
+//profile details
+
+	steem.api.getAccounts([profname], function(err, result) {
+	  	console.log(result)
+
+	  	let metadata = JSON.parse(result["0"].json_metadata);
+	  	console.log(metadata.profile.location);
+	  	let cover = metadata.profile.cover_image;
+	  	$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
+	  	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
+  	});
+
+
+// post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
 			tag: profname,
@@ -213,21 +228,6 @@
 
 			}
 		});
-
-
-//profile details
-
-	steem.api.getAccounts([profname], function(err, result) {
-	  	console.log(result)
-
-	  	let metadata = JSON.parse(result["0"].json_metadata);
-	  	console.log(metadata.profile.location);
-	  	console.log(metadata.profile.cover_image);
-	  	let cover = metadata.profile.cover_image;
-	  	$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
-	  	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
-  	});
-
 
 	});	
 
