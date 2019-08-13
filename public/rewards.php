@@ -122,7 +122,8 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                    <p class="DlikeComments"><span id="output">By staking you agree to the Terms</span></p>
+                    <p class="DlikeComments">By staking you agree to the Terms</p>
+                    <div id="output"></div>
                 </div><!-- create-account-block -->
             </div>
         </div>
@@ -184,47 +185,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     <script type="text/javascript">
         $( document ).ready(function() {
 
-            if (username != null) {
-                console.log(username);
-                let query = {
-                    tag: username,
-                    limit: 12,
-                };
-
-                steem.api.getDiscussionsByBlog(query, function (err, res) {
-                    console.log(res);
-                    res.forEach(($post, i) => {
-                        let posts = $post.permlink;
-                        console.log(posts);
-                        let upvotes = $post.pending_payout_value;
-                        console.log(upvotes);
-
-                    //check comments
-                    //function getTotalcomments(thisAutor,posts){
-                    //Conting the comments (just the dlike ones)
-                        steem.api.getContentReplies(username,posts, function(err, result) {
-                            //console.log(result);
-                            let totalDlikeComments = 0;  
-                            result.forEach(comment =>{
-                            let metadata;
-                                if (comment.json_metadata && comment.json_metadata.length > 0){
-                                    metadata = JSON.parse(comment.json_metadata);
-                                }
-                                if(metadata.community == "dlike"){
-                                    totalDlikeComments +=1; 
-                                    //alert(totalDlikeComments);
-                                    //let comt_count = result.length; 
-                                    console.log(totalDlikeComments);  
-                                }
-                            });
-                        $(".DlikeComments").html(totalDlikeComments);
-                        });
-                    //}
-
-                    });
-                });
-
-
 
             let data = {
               "totalComments": 0,
@@ -236,28 +196,27 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
               }
             };
 
-
-              let username = 'piuskhan';
-              if (username != null) {
+            let username = 'piuskhan';
+            if (username != null) {
                 console.log(username);
                 let query = {
-                  tag: username,
-                  limit: 12,
+                    tag: username,
+                    limit: 12,
                 };
 
-                steem.api.getDiscussionsByBlog(query, function(err, res) {
-                  let upvoteSum = 0.0;
-                  let relevantRes = [];
+            steem.api.getDiscussionsByBlog(query, function(err, res) {
+                let upvoteSum = 0.0;
+                let relevantRes = [];
                   
-                  res.forEach(($post)=>{
+                res.forEach(($post)=>{
                     let postTime = moment.utc($post.created);
-                    if (compareDates(postTime.format('D'), moment.utc().format('D'))){
-                      relevantRes.push($post);
-                    }     
-                  });
+                        if (compareDates(postTime.format('D'), moment.utc().format('D'))){
+                          relevantRes.push($post);
+                        }     
+                });
                   
-                  document.getElementById("output").innerHTML += "Getting Relevant Posts... " + relevantRes.length + " found.<br>";
-                  relevantRes.forEach(($post, i) => {
+                document.getElementById("output").innerHTML += "Getting Relevant Posts... " + relevantRes.length + " found.<br>";
+                relevantRes.forEach(($post, i) => {
                     let posts = $post.permlink;
                     //console.log(posts)
                     ;
@@ -275,68 +234,14 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                       //check comments
                       //function getTotalcomments(thisAutor,posts){
                       //Conting the comments (just the dlike ones)
-                      steem.api.getContentReplies(username, posts, function(err, result) 
-                      {
+                    steem.api.getContentReplies(username, posts, function(err, result) {
                         //console.log(result);
                         let i2 = i
                         handleComments(result, i2 == relevantRes.length-1);
-                      });
+                    });
                       //}
-                  });
                 });
-              }
-
-            function handleComments(result, done){
-              result.forEach((comment, j) => {
-
-                let metadata;
-                if (comment.json_metadata && comment.json_metadata.length > 0) {
-                  metadata = JSON.parse(comment.json_metadata);
-                  //totalComments++;
-                }
-                if (metadata.community == "dlike") {
-                  //totalDlikeComments += 1;
-                  data.totalDlikeComments++;
-                  //console.log(totalDlikeComments)
-                  ;
-                }
-              });
-              finish(done);
-            }
-
-            // Returns true if the dates are equal
-            function compareDates(a, b) {
-            /*  let pat = /\d+-\d+-(\d+)/;
-                  let d1 = a.match(pat)[1];
-                  let d2 = b.match(pat)[1]; */
-              return a == b;
-            }
-
-            // Make sure all data has been handled before exiting
-            function finish(complete) {
-              if (complete) {
-                logData();
-              }
-            }
-
-
-            function logData() {
-                window.setTimeout(()=>{  document.getElementById("output").innerHTML += data.toString();}, 0);
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            });
 
             }
 
@@ -366,4 +271,41 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             };
             counter(); 
         });
+
+            function handleComments(result, done){
+                result.forEach((comment, j) => {
+
+                    let metadata;
+                    if (comment.json_metadata && comment.json_metadata.length > 0) {
+                      metadata = JSON.parse(comment.json_metadata);
+                      //totalComments++;
+                    }
+                    if (metadata.community == "dlike") {
+                      //totalDlikeComments += 1;
+                      data.totalDlikeComments++;
+                      //console.log(totalDlikeComments);
+                    }
+                });
+                finish(done);
+            }
+
+            // Returns true if the dates are equal
+            function compareDates(a, b) {
+            /*  let pat = /\d+-\d+-(\d+)/;
+                  let d1 = a.match(pat)[1];
+                  let d2 = b.match(pat)[1]; */
+              return a == b;
+            }
+
+            // Make sure all data has been handled before exiting
+            function finish(complete) {
+              if (complete) {
+                logData();
+              }
+            }
+
+
+            function logData() {
+                window.setTimeout(()=>{  document.getElementById("output").innerHTML += data.toString();}, 0);
+            }
     </script>
