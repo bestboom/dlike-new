@@ -6,7 +6,7 @@
 	<div style="background: #eeeeee94;">
 	<div class="container">
 		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
-			<img src="/images/user.png" style="border-radius: 50%;margin-top: -72px;">
+			<img src="" id="p_img" class="img-fluid">
 			<button class="btn btn-danger">Follow</button>
 		</div>
 	</div>
@@ -225,6 +225,7 @@
 	  	console.log(metadata.profile.cover_image);
 	  	let cover = metadata.profile.cover_image;
 	  	$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
+	  	$('#p_img').attr("src","https://steemitimages.com/u/"+metadata.profile.name+"/avatar");
   	});
 
 
