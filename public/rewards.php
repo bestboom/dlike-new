@@ -183,18 +183,19 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     </div><!-- working-process-section-->
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
-        $( document ).ready(function() {
 
-
-            let data = {
-              "totalComments": 0,
-              "totalDlikeComments": 0,
-              "totalUpvotes": 0.0,
-              toString: function() {
+        let data = {
+            "totalComments": 0,
+            "totalDlikeComments": 0,
+            "totalUpvotes": 0.0,
+            toString: function() {
                 return "Sum Comments: " + this.totalDlikeComments + "\n<br>" +
-                  "Sum Upvotes: " + this.totalUpvotes;
-              }
-            };
+                "Sum Upvotes: " + this.totalUpvotes;
+            }
+        };
+
+
+        $( document ).ready(function() {
 
             let username = 'piuskhan';
             if (username != null) {
