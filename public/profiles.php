@@ -225,7 +225,7 @@
 	  	console.log(metadata.profile.cover_image);
 	  	let cover = metadata.profile.cover_image;
 	  	$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
-	  	$('#p_img').attr("src","https://steemitimages.com/u/"+metadata.profile.name+"/avatar");
+	  	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
   	});
 
 
