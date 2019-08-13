@@ -442,7 +442,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     }
     #btn_share{
         border: 1px solid #1a1a1a !important;
-    }    
+    } 
+    #p_img{max-width: 100px;}   
     .navbar-toggler {
         background: transparent;
         position: absolute;
@@ -4696,7 +4697,6 @@ button.toast-close-button {
         display: block!important;
     }
 }
-#p_img{max-width: 70%;}
 .colto-section>div>div>div>div>a{
     color: white !important;
 }
@@ -4784,7 +4784,7 @@ body{
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
-    #p_img{max-width: 50%;}
+
 }
 
 
@@ -4814,6 +4814,7 @@ body{
     ..ml-auto{
         margin: 2px;
     }
+    #p_img{max-width: 72px;}
 }
 
 
