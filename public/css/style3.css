@@ -836,6 +836,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .img_profile{
     margin-right:7px;
 }
+#p_img{max-width: 125px;max-height: 125px;}
 .my_img{
     border: 1px solid #eee;
     background: #fff;
@@ -4695,7 +4696,7 @@ button.toast-close-button {
         display: block!important;
     }
 }
-
+#p_img{max-width: 70%;}
 .colto-section>div>div>div>div>a{
     color: white !important;
 }
@@ -4783,6 +4784,7 @@ body{
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+    #p_img{max-width: 50%;}
 }
 
 
