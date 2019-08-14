@@ -1,13 +1,13 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
-	<div id="p_cover" class="img-fluid" style="background-color: #111;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
+	<div id="p_cover" class="img-fluid" style="background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
 		
 	</div>
 	<div style="background: #eeeeee94;">
 	<div class="container">
 		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
-			<img src="" id="p_img" class="img-fluid rounded-circle">
-			<button class="btn btn-danger">Follow</button>
+			<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
+			<button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button>
 		</div>
 	</div>
 
