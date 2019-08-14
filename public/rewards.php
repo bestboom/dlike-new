@@ -23,13 +23,14 @@ $user_status = "You Must Login";
 $_COOKIE['username'] = "certseek";
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
-if (isset($_COOKIE['username']) || $_COOKIE['username']) {
+if (isset($_COOKIE['username']) || $_COOKIE['username'])
+{
     $user_name = $_COOKIE['username'];
     $sql_T = "SELECT * FROM prousers where username='$user_name'";
     $result_T = $conn->query($sql_T);
 
-    if ($result_T && $result_T->num_rows > 0) {
-        $row_T  = $result_T->fetch_assoc();
+    // if ($result_T && $result_T->num_rows > 0) {
+    //     $row_T  = $result_T->fetch_assoc();
 
         $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 48 HOUR";
         $result1 = $conn->query($sql1);
@@ -87,12 +88,12 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         $my_share = "";
         $my_earnings = "";
 
-    } else {
-        $user_status = "You Are not a PRO user";
-        $my_points = "0";
-        $my_share = "0%";
-        $my_earnings = "0 DLIKE";
-    }
+    // } else {
+    //     $user_status = "You Are not a PRO user";
+    //     $my_points = "0";
+    //     $my_share = "0%";
+    //     $my_earnings = "0 DLIKE";
+    // }
 }
 
 function echoStr($str) {
