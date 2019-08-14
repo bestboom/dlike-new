@@ -1,4 +1,11 @@
-<?php  include('template/header5.php');
+<?php
+
+ob_start();
+include('template/header5.php');
+$contents = ob_get_contents();
+ob_end_clean();
+// ADD DEPENDENCIES
+echo str_replace('</head>', '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script><script src="https://momentjs.com/downloads/moment.min.js"></script><script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script></head>', $contents)
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -228,6 +235,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
           "totalUpvotes": 0.0,
           "totalPosts": 0
         };
+
         steem.api.getDiscussionsByBlog(query, function(err, res) {
           let upvoteSum = 0.0;
           let relevantRes = [];
