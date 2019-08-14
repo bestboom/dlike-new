@@ -443,7 +443,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     #btn_share{
         border: 1px solid #1a1a1a !important;
     } 
-    #p_img{max-width: 100px;}   
+    #p_img{width: 100px;}   
+    #p_cover{height:155px;}
     .navbar-toggler {
         background: transparent;
         position: absolute;
@@ -4392,6 +4393,8 @@ button.toast-close-button {
         right: -0.2em;
         top: -0.2em;
     }
+    #p_img{width: 72px;height: 72px;margin-top: -30px;}   
+    #p_cover{height:105px;}
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
     #toast-container > div {
@@ -4424,6 +4427,8 @@ button.toast-close-button {
         min-height: 274px !important;
         margin-bottom: 40px;
     }
+    #p_img{width: 100px;}   
+    #p_cover{height:135px;}
 }
 
 .testimonial-slider button.slick-prev {
