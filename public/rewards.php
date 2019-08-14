@@ -5,9 +5,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
+// POINTS SPECIFICATION
 $points_per_view = '0.2';
 $points_per_like = '20';
+$points_per_comment = '10';
+$points_per_upvote = '0.01';
 $points_per_referral_daily = '50';
+$points_per_referral_post = '5';
+
 
 $user_status = "You Must Login";
         $my_points = "0";
@@ -85,6 +90,10 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
         $my_share = "0%";
         $my_earnings = "0 DLIKE";
     }
+}
+
+function echoStr($str) {
+  echo ("\"" . $str . "\"");
 }
 ?>
 </div><!-- sub-header -->
@@ -201,14 +210,14 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     </div><!-- working-process-section-->
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
-    let users = JSON.parse(<?php echo($referred_users); ?>);
-    let pointsFromDB = <?php echo($my_points); ?>;
+    let users = JSON.parse(<?php echoStr($referred_users); ?>);
+    let pointsFromDB = <?php echoStr($my_points); ?>;
     // Tally up referral points
     let referralPostPoints;
     users.forEach(user, index, array)
     {
       getDataByUser(user, (x)=>{
-        referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
+        referralPostPoints += (x.totalPosts * <?php echoStr($points_per_referral_post) ?>);
         itemsProcessed++;
         if(itemsProcessed === array.length) {
           referralTallied(referralPostPoints);
@@ -272,7 +281,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
       });
     }
     function referralTallied(total) {
-      getDataByUser(<?php echo($user_name); ?>, (x)=>{
+      getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
         let commentPoints = x.totalComments * <?php echo($points_per_comment); ?>
         let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote); ?>
         let grandTotal = commentPoints + upvotePoints + referralPostPoints + pointsFromDB;
