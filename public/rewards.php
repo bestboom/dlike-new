@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 $points_per_view = '0.2';
 $points_per_like = '20';
 $points_per_comment = '10';
-$points_per_upvote = '0.01';
+$points_per_upvote = '100';
 $points_per_referral_daily = '50';
 $points_per_referral_post = '5';
 $referred_users = "";
