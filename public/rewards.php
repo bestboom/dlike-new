@@ -69,6 +69,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             if(is_null($row5)){
               $row5 = array();
             }
+            $echo('<script>console.log("ROW 5 " + ' . $row5 . ');</script>');
             $referred_users = json_encode($row5);
 
 // calculate points
