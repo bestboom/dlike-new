@@ -76,7 +76,8 @@
         }
         let profile_created = result["0"].created;
         console.log(profile_created)
-        $('.p_joined').html(profile_created);
+        let acc_created = moment(profile_created).format('MM-YYYY');
+        $('.p_joined').html(acc_created);
 	  		
   	});
 
