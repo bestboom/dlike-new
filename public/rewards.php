@@ -141,7 +141,7 @@ function echoStr($str) {
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Points" readonly>
                         <span class="fas fa-bolt inp_icon"></span>
-                        <span class="inp_text"><?php echo $my_points; ?></span>
+                        <span class="inp_text" id="my_points"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Share" readonly>
@@ -257,6 +257,9 @@ function echoStr($str) {
         steem.api.getDiscussionsByBlog(query, function(err, res) {
           let upvoteSum = 0.0;
           let relevantRes = [];
+          if(res.length <= 0){
+            callback(data);
+          }
           res.forEach(($post) => {
             let postTime = moment.utc($post.created);
             if (postTime.format('D') == moment.utc().format('D')) {
@@ -270,6 +273,9 @@ function echoStr($str) {
               }
             }
           });
+          if(relevantRes.length <= 0){
+            callback(data);
+          }
           relevantRes.forEach(($post, i) => {
             let posts = $post.permlink;
             let upvotes = $post.pending_payout_value;
@@ -302,6 +308,7 @@ function echoStr($str) {
         let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
         let grandTotal = commentPoints + upvotePoints + referralPostPoints + pointsFromDB;
         console.log("Grand Total: " + grandTotal + " points");
+        document.getElementById("my_points").innerHTML = grandTotal;
       });
     }
     var countDownDate = 0;
