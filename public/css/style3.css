@@ -4384,6 +4384,10 @@ button.toast-close-button {
         top: -0.2em;
     }
 }
+@media all and (max-width: 480px) {
+    #p_img{width: 72px;height: 72px;margin-top: -30px;}   
+    #p_cover{height:105px !important;}
+    }
 @media all and (min-width: 241px) and (max-width: 480px) {
     #toast-container > div {
         padding: 8px 8px 8px 50px;
@@ -4393,8 +4397,7 @@ button.toast-close-button {
         right: -0.2em;
         top: -0.2em;
     }
-    #p_img{width: 72px;height: 72px;margin-top: -30px;}   
-    #p_cover{height:105px !important;}
+    
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
     #toast-container > div {
