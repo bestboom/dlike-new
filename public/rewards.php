@@ -223,7 +223,7 @@ function echoStr($str) {
     let pointsFromDB = <?php echo($my_points); ?>;
     console.log(pointsFromDB);
     // Tally up referral points
-    let referralPostPoints;
+    let referralPostPoints = 0.0;
 
     if(users.length > 0)
     {
