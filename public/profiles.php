@@ -14,17 +14,17 @@
 			</div>
 			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
 		</div>
-		<div class="row" style="padding: 1px 40px;font-weight: bold;">
-			This is the text details of the account!
+		<div class="row" style="padding: 15px 40px 1px 40px;font-weight: bold;">
+			<span class="about"></span>
 		</div>
 		<div class="row" style="padding: 1px 40px;font-weight: bold;">
-			<span>Followers</span>
+			<span class="followers">Followers</span>
 			<span>Following</span>
-			<span>Joined</span>
+			<span class="joined" style="padding-left:10px;"></span>
 		</div>
 		<div class="row" style="padding: 1px 40px;font-weight: bold;">
-			<span>Location</span>
-			<span>Web</span>
+			<span class="p_location" style="padding-left:10px;"></span>
+			<span class="web_site" style="padding-left:10px;"></span>
 		</div>
 	</div>
 
@@ -60,12 +60,19 @@
 	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
         {
           	metadata = JSON.parse(result["0"].json_metadata);
-          	console.log(metadata.profile.location);
+          	
 	  		let cover = metadata.profile.cover_image;
 	  		let cover_url = "https://steemitimages.com/0x0/"+cover;
-	  		console.log(cover_url)
+	  		let about = metadata.profile.about;
+	  		let location = metadata.profile.location;
+	  		let website = metadata.profile.website;
+	  		//console.log(metadata.profile.location);
+	  		//console.log(cover_url)
 	  		//$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
 	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
+	  		$('.p_about').html(about);
+	  		$('.p_location').html(location);
+	  		$('.web_site').html(website);
         }
 	  	//let metadata = JSON.parse(result["0"].json_metadata);
 	  	
