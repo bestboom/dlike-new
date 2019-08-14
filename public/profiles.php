@@ -39,8 +39,12 @@
 
 	steem.api.getAccounts([profname], function(err, result) {
 	  	console.log(result)
-
-	  	let metadata = JSON.parse(result["0"].json_metadata);
+	  	let metadata;
+	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
+        {
+          metadata = JSON.parse(result["0"].json_metadata);
+        }
+	  	//let metadata = JSON.parse(result["0"].json_metadata);
 	  	console.log(metadata.profile.location);
 	  	let cover = metadata.profile.cover_image;
 	  	$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
