@@ -20,7 +20,7 @@ $user_status = "You Must Login";
         $my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
-$_COOKIE['username'] = "tapeworm16";
+$_COOKIE['username'] = "certseek";
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
 if (isset($_COOKIE['username']) || $_COOKIE['username']) {
@@ -66,6 +66,9 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where author = '$user_name'";
             $result5 = $conn->query($sql4);
             $row5 = $result5->fetch_assoc();
+            if(is_null($row5)){
+              $row5 = array();
+            }
             $referred_users = json_encode($row5);
 
 // calculate points
@@ -211,13 +214,13 @@ function echoStr($str) {
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
     let users = JSON.parse(<?php echoStr($referred_users); ?>);
-    let pointsFromDB = <?php echoStr($my_points); ?>;
+    let pointsFromDB = <?php echo($my_points); ?>;
     // Tally up referral points
     let referralPostPoints;
     users.forEach(user, index, array)
     {
       getDataByUser(user, (x)=>{
-        referralPostPoints += (x.totalPosts * <?php echoStr($points_per_referral_post) ?>);
+        referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
         itemsProcessed++;
         if(itemsProcessed === array.length) {
           referralTallied(referralPostPoints);
