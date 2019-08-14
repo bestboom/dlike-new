@@ -24,14 +24,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
 
         $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 48 HOUR";
         $result1 = $conn->query($sql1);
-    
+
         if ($result1->num_rows > 0) {
             $mydata = array();
             while($row1 = $result1->fetch_assoc()) {
                 $mydata[] = $row1['permlink'];
             }
             $permlinks_list = implode("','", $mydata);
-
 
 // views call
 
@@ -47,16 +46,18 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             $row3 = $result3->fetch_assoc();
             $my_likes = $row3['total_likes'];
 
-// referrals check today (GMT)   
+// referrals check today (GMT)
 
-            $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where author = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 48 HOUR";
+            $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where author = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
             $result4 = $conn->query($sql4);
-            $row4 = $result4->fetch_assoc();  
-            $my_referrals_today = $row4['total']; 
+            $row4 = $result4->fetch_assoc();
+            $my_referrals_today = $row4['total'];
 
 // get users all referral and their posts from api to multiply by 5 points
-
-
+            $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where author = '$user_name'";
+            $result5 = $conn->query($sql4);
+            $row5 = $result5->fetch_assoc();
+            $referred_users = json_encode($row5);
 
 // calculate points
 
@@ -114,7 +115,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
 
 
 
-                    <form class="user-connected-from create-account-form reward_form" /> 
+                    <form class="user-connected-from create-account-form reward_form" />
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
                     </div>
@@ -170,7 +171,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                         <div class="col-md-2 col-sm-3">
                             <div class="features-block-icons">
                                 <span class="fas fa-chevron-circle-up reward_icon"></span>
-                                <p>upvotes <br><span style="font-size: 0.7rem;">$1 steem upvote</span> 
+                                <p>upvotes <br><span style="font-size: 0.7rem;">$1 steem upvote</span>
                                     <br><span class="head_color">100+</span>
                                 </p>
                             </div><!-- features-block -->
@@ -196,134 +197,106 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     </div><!-- working-process-section-->
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
-
+    let users = JSON.parse(<?php echo($referred_users); ?>);
+    let pointsFromDB = <?php echo($my_points); ?>;
+    // Tally up referral points
+    let referralPostPoints;
+    users.forEach(user, index, array)
+    {
+      getDataByUser(user, (x)=>{
+        referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
+        itemsProcessed++;
+        if(itemsProcessed === array.length) {
+          referralTallied(referralPostPoints);
+      });
+    }
+    function getDataByUser(username, callback) {
+      $(document).ready(function() {
+        let query;
+        if (username != null) {
+          query = {
+            tag: username,
+            limit: 12,
+          }
+        }
         let data = {
-            "totalComments": 0,
-            "totalDlikeComments": 0,
-            "totalUpvotes": 0.0,
-            toString: function() {
-                return "Sum Comments: " + this.totalDlikeComments + "\n<br>" +
-                "Sum Upvotes: " + this.totalUpvotes;
-            }
+          "totalComments": 0,
+          "totalUpvotes": 0.0,
+          "totalPosts": 0
         };
-
-
-        $( document ).ready(function() {
-
-            let username = 'tapeworm16';
-            if (username != null) {
-                console.log(username);
-                let query = {
-                    tag: username,
-                    limit: 12,
-                };
-
-            steem.api.getDiscussionsByBlog(query, function(err, res) {
-                let upvoteSum = 0.0;
-                let relevantRes = [];
-                  
-                res.forEach(($post)=>{
-                    let postTime = moment.utc($post.created);
-
-                    if (compareDates(postTime.format('D'), moment.utc().format('D'))){
-                        //check community
-                        let metadata;
-                        if ($post.json_metadata && $post.json_metadata.length > 0)
-                        {
-                            metadata = JSON.parse($post.json_metadata);
-                        }
-                        if(metadata && metadata.community == "dlike"){
-                            relevantRes.push($post);
-                        }
-                    }     
-                });
-                  
-                document.getElementById("output").innerHTML += "Getting Relevant Posts... " + relevantRes.length + " found.<br>";
-                relevantRes.forEach(($post, i) => {
-
-                    let posts = $post.permlink;
-                    //console.log(posts)
-                    ;
-                    let upvotes = $post.pending_payout_value;
-                    //console.log(upvotes)
-                    ;
-                    let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
-                      //upvoteSum += parsedVote;
-                    data.totalUpvotes += parsedVote;
-                    //check comments
-                    //function getTotalcomments(thisAutor,posts){
-                    //Conting the comments (just the dlike ones)
-                    steem.api.getContentReplies(username, posts, function(err, result) {
-                        //console.log(result);
-                        let i2 = i
-                        handleComments(result, i2 == relevantRes.length-1);
-                    });
-                });
-            });
-
-            }
-
-            var countDownDate = 0;
-            function counter() {
-                setInterval(() => {
-                    var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
-                    var countDownDate = new Date(date);
-                    var i = 60;
-                    var h = 24 - countDownDate.getHours();
-                    if (h < 10) {
-                        h = "0" + h;
-                    }
-                    var m = 59 - countDownDate.getMinutes();
-                    if (m < 10) {
-                        m = "0" + m;
-                    }
-                    var s = countDownDate.getSeconds();
-                    s = i - s;
-                    if (s < 10) {
-                        s = "0" + s;
-                    }
-                    str = h + ":" + m + ":" + s;
-                    i++;
-                    $(".dividendCountDown").html(str);
-                }, 1000);
-            };
-            counter(); 
-        });
-
-            function handleComments(result, done){
-                result.forEach((comment, j) => {
-
-                    let metadata;
-                    if (comment.json_metadata && comment.json_metadata.length > 0) {
-                      metadata = JSON.parse(comment.json_metadata);
-                      //totalComments++;
-                    }
-                    if (metadata.community == "dlike") {
-                      //totalDlikeComments += 1;
-                      data.totalDlikeComments++;
-                      //console.log(totalDlikeComments);
-                    }
-                });
-                finish(done);
-            }
-
-            // Returns true if the dates are equal
-            function compareDates(a, b) {
-            /*  let pat = /\d+-\d+-(\d+)/;
-                  let d1 = a.match(pat)[1];
-                  let d2 = b.match(pat)[1]; */
-              return a == b;
-            }
-
-            // Make sure all data has been handled before exiting
-            function finish(complete) {
-              if (complete) {
-                logData();
+        steem.api.getDiscussionsByBlog(query, function(err, res) {
+          let upvoteSum = 0.0;
+          let relevantRes = [];
+          res.forEach(($post) => {
+            let postTime = moment.utc($post.created);
+            if (postTime.format('D') == moment.utc().format('D')) {
+              // Check community
+              let metadata;
+              if ($post.json_metadata && $post.json_metadata.length > 0) {
+                metadata = JSON.parse($post.json_metadata);
+                if (metadata.community == "dlike")
+                  relevantRes.push($post);
+                data.totalPosts = relevantRes.length;
               }
             }
-
-
-            function logData() {
-                window.setTimeout(()=>{  document.getElementById("output").innerHTML += data.toString();}, 0);
+          });
+          relevantRes.forEach(($post, i) => {
+            let posts = $post.permlink;
+            let upvotes = $post.pending_payout_value;
+            let postTime = moment.utc($post.created);
+            let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+            let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
+            data.totalUpvotes += parsedVote;
+            steem.api.getContentReplies(username, posts, function(err, result) {
+              let i2 = i;
+              result.forEach((comment, j) => {
+                let metadata;
+                if (comment.json_metadata && comment.json_metadata.length > 0) {
+                  metadata = JSON.parse(comment.json_metadata);
+                }
+                if (metadata.community == "dlike") {
+                  data.totalDlikeComments++;
+                }
+              });
+              if (i2 == relevantRes.length - 1) {
+                callback(data);
+              }
+            });
+          });
+        });
+      });
+    }
+    function referralTallied(total) {
+      getDataByUser(<?php echo($user_name); ?>, (x)=>{
+        let commentPoints = x.totalComments * <?php echo($points_per_comment); ?>
+        let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote); ?>
+        let grandTotal = commentPoints + upvotePoints + referralPostPoints + pointsFromDB;
+        console.log("Grand Total: " + grandTotal + " points");
+      });
+    }
+    var countDownDate = 0;
+    function counter() {
+        setInterval(() => {
+            var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
+            var countDownDate = new Date(date);
+            var i = 60;
+            var h = 24 - countDownDate.getHours();
+            if (h < 10) {
+                h = "0" + h;
             }
+            var m = 59 - countDownDate.getMinutes();
+            if (m < 10) {
+                m = "0" + m;
+            }
+            var s = countDownDate.getSeconds();
+            s = i - s;
+            if (s < 10) {
+                s = "0" + s;
+            }
+            str = h + ":" + m + ":" + s;
+            i++;
+            $(".dividendCountDown").html(str);
+        }, 1000);
+    };
+    counter();
     </script>
