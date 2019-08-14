@@ -13,7 +13,7 @@ $points_per_upvote = '0.01';
 $points_per_referral_daily = '50';
 $points_per_referral_post = '5';
 $referred_users = "";
-$dump_log;
+$dump_log = "";
 
 $user_status = "You Must Login";
         $my_points = "0";
@@ -326,5 +326,5 @@ function echoStr($str) {
         }, 1000);
     };
     counter();
-    <?php console.log($dump_log)?>
+    <?php echo("console.log(\"" . $dump_log . "\");")?>
     </script>
