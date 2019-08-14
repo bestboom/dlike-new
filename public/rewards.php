@@ -12,7 +12,7 @@ $points_per_comment = '10';
 $points_per_upvote = '0.01';
 $points_per_referral_daily = '50';
 $points_per_referral_post = '5';
-
+$referred_users = "";
 
 $user_status = "You Must Login";
         $my_points = "0";
@@ -64,12 +64,11 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
 
 // get users all referral and their posts from api to multiply by 5 points
             $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where author = '$user_name'";
-            $result5 = $conn->query($sql4);
+            $result5 = $conn->query($sql5);
             $row5 = $result5->fetch_assoc();
             if(is_null($row5)){
               $row5 = array();
             }
-            $echo('<script>console.log("ROW 5 " + ' . $row5 . ');</script>');
             $referred_users = json_encode($row5);
 
 // calculate points
