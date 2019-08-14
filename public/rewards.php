@@ -218,10 +218,13 @@ function echoStr($str) {
     <script type="text/javascript">
     let userObj = JSON.parse(<?php echoStr($referred_users); ?>);
     let users = Object.values(userObj).slice(0);
+    console.log(users);
 
     let pointsFromDB = <?php echo($my_points); ?>;
+    console.log(pointsFromDB);
     // Tally up referral points
     let referralPostPoints;
+
     if(users.length > 0)
     {
       let itemsProcessed = 0;
@@ -229,6 +232,7 @@ function echoStr($str) {
       {
         getDataByUser(users[i], (x)=>{
           referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
+          console.log(referralPostPoints);
           itemsProcessed++;
           if(itemsProcessed === users.length)
           {
@@ -306,10 +310,13 @@ function echoStr($str) {
         });
       });
     }
-    function referralTallied(total) {
+    function referralTallied(total)
+    {
       getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
         let commentPoints = x.totalComments * <?php echo($points_per_comment . ";\n"); ?>
+        console.log(commentPoints);
         let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
+        console.log(upvotePoints);
         let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + parseFloat(pointsFromDB);
         console.log("Grand Total: " + grandTotal + " points");
         document.getElementById("my_points").innerHTML = grandTotal;
