@@ -231,7 +231,10 @@ function echoStr($str) {
       for(let i = 0; i<users.length; i++)
       {
         getDataByUser(users[i], (x)=>{
-          referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
+          console.log(x)
+          console.log(x.totalPosts * <?php echo($points_per_referral_post) ?>);
+          referralPostPoints += ();
+
           console.log(referralPostPoints);
           itemsProcessed++;
           if(itemsProcessed === users.length)
@@ -314,9 +317,7 @@ function echoStr($str) {
     {
       getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
         let commentPoints = x.totalComments * <?php echo($points_per_comment . ";\n"); ?>
-        console.log(commentPoints);
         let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
-        console.log(upvotePoints);
         let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + parseFloat(pointsFromDB);
         console.log("Grand Total: " + grandTotal + " points");
         document.getElementById("my_points").innerHTML = grandTotal;
