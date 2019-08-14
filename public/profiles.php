@@ -82,9 +82,10 @@
 
 // get followers and following
 
-		steem.api.getFollowCount(profname, function(err, result) {
-		  console.log(err, result);
-		});
+	steem.api.getFollowCount(profname, function(err, result) {
+		 console.log(result.follower_count);
+
+	});
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
