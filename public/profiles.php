@@ -14,7 +14,7 @@
 			</div>
 			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
 		</div>
-		<div class="row">
+		<div class="row" style="padding: 15px 40px;font-weight: bold;">
 			This is the text details of the account!
 		</div>
 	</div>
