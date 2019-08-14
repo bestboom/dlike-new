@@ -247,17 +247,12 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                     let upvotes = $post.pending_payout_value;
                     //console.log(upvotes)
                     ;
-                    let postTime = moment.utc($post.created);
-                    //console.log(postTime.format('D'));
-                    //console.log(moment.utc(postTime));
-                    let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-                    // Only proceed with relevant comments
-                      let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
+                    let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
                       //upvoteSum += parsedVote;
-                        data.totalUpvotes += parsedVote;
-                      //check comments
-                      //function getTotalcomments(thisAutor,posts){
-                      //Conting the comments (just the dlike ones)
+                    data.totalUpvotes += parsedVote;
+                    //check comments
+                    //function getTotalcomments(thisAutor,posts){
+                    //Conting the comments (just the dlike ones)
                     steem.api.getContentReplies(username, posts, function(err, result) {
                         //console.log(result);
                         let i2 = i
