@@ -23,7 +23,7 @@
 			<span class="p_joined" style="padding-left:10px;"></span>
 		</div>
 		<div class="row" style="padding: 1px 40px;font-weight: bold;">
-			<span class="p_location" style="padding-left:10px;"></span>
+			<span class="p_location"></span>
 			<span class="web_site" style="padding-left:10px;"></span>
 		</div>
 	</div>
@@ -76,7 +76,7 @@
         }
         let profile_created = result["0"].created;
         let acc_created = moment(profile_created).format('MM-YYYY');
-        $('.p_joined').html('Joined ' + acc_created);
+        $('.p_joined').html('Joined ' + acc_created).addClass('fas fa-user');
 	  		
   	});
 
