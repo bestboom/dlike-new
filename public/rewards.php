@@ -259,6 +259,7 @@ function echoStr($str) {
           let relevantRes = [];
           if(res.length <= 0){
             callback(data);
+            return;
           }
           res.forEach(($post) => {
             let postTime = moment.utc($post.created);
@@ -275,6 +276,7 @@ function echoStr($str) {
           });
           if(relevantRes.length <= 0){
             callback(data);
+            return;
           }
           relevantRes.forEach(($post, i) => {
             let posts = $post.permlink;
@@ -296,6 +298,7 @@ function echoStr($str) {
               });
               if (i2 == relevantRes.length - 1) {
                 callback(data);
+                return;
               }
             });
           });
