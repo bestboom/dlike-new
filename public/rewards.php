@@ -13,6 +13,7 @@ $points_per_upvote = '0.01';
 $points_per_referral_daily = '50';
 $points_per_referral_post = '5';
 $referred_users = "";
+$dump_log;
 
 $user_status = "You Must Login";
         $my_points = "0";
@@ -67,6 +68,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
             $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where author = '$user_name'";
             $result5 = $conn->query($sql5);
             $row5 = $result5->fetch_array();
+            $dump_log .= var_dump($row5);
             if(is_null($row5)){
               $row5 = array();
             }
@@ -324,4 +326,5 @@ function echoStr($str) {
         }, 1000);
     };
     counter();
+    <?php console.log($dump_log)?>
     </script>
