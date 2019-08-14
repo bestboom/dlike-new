@@ -224,16 +224,16 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                   
                 res.forEach(($post)=>{
                     let postTime = moment.utc($post.created);
-                    //check community
-                    let metadata;
-                    if ($post.json_metadata && $post.json_metadata.length > 0)
-                    {
-                        metadata = JSON.parse($post.json_metadata);
-                    }
-                    if(metadata && metadata.community == "dlike"){
 
-                        if (compareDates(postTime.format('D'), moment.utc().format('D'))){
-                          relevantRes.push($post);
+                    if (compareDates(postTime.format('D'), moment.utc().format('D'))){
+                        //check community
+                        let metadata;
+                        if ($post.json_metadata && $post.json_metadata.length > 0)
+                        {
+                            metadata = JSON.parse($post.json_metadata);
+                        }
+                        if(metadata && metadata.community == "dlike"){
+                            relevantRes.push($post);
                         }
                     }     
                 });
