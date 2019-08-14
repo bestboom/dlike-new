@@ -10,7 +10,7 @@
 				<span>
 					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
 				</span>
-				<span>Golden Whale <br>@goldenwhale</span>
+				<span style="display: inline-flex;padding-left: 15px;font-weight: 600;"><span style="font-size: 20px;">Golden Whale</span> <br>@goldenwhale</span>
 			</div>
 			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
 		</div>
