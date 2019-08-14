@@ -4394,7 +4394,7 @@ button.toast-close-button {
         top: -0.2em;
     }
     #p_img{width: 72px;height: 72px;margin-top: -30px;}   
-    #p_cover{height:105px;}
+    #p_cover{height:105px !important;}
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
     #toast-container > div {
@@ -4427,8 +4427,8 @@ button.toast-close-button {
         min-height: 274px !important;
         margin-bottom: 40px;
     }
-    #p_img{width: 100px;}   
-    #p_cover{height:135px;}
+    #p_img{width: 100px;height: 100px; margin-top: -50px;}   
+    #p_cover{height:135px !important;}
 }
 
 .testimonial-slider button.slick-prev {
