@@ -1,6 +1,6 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
-	<div style="background-color: #111;max-height: 155px;background-position: center center;background-size: cover;">
+	<div style="background-color: #111;min-height: 155px;background-repeat: no-repeat;background-size: cover;background-position: 50% 50%;">
 		<img src="" id="p_cover" class="img-fluid">
 	</div>
 	<div style="background: #eeeeee94;">
