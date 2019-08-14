@@ -45,8 +45,10 @@
           	metadata = JSON.parse(result["0"].json_metadata);
           	console.log(metadata.profile.location);
 	  		let cover = metadata.profile.cover_image;
+	  		let cover_url = "https://steemitimages.com/0x0/"+cover;
+	  		console.log(cover_url)
 	  		//$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
-	  		$('#p_cover').css('background-image', 'url('"https://steemitimages.com/0x0/"+cover')');
+	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
         }
 	  	//let metadata = JSON.parse(result["0"].json_metadata);
 	  	
