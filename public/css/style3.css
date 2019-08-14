@@ -443,8 +443,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     #btn_share{
         border: 1px solid #1a1a1a !important;
     } 
-    #p_img{width: 100px;}   
-    #p_cover{height:155px;}
+    #p_img{width: 100px;height: 100px; margin-top: -50px;}   
+    #p_cover{height:155px !important;}
     .navbar-toggler {
         background: transparent;
         position: absolute;
@@ -838,7 +838,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .img_profile{
     margin-right:7px;
 }
-#p_img{max-width: 125px;max-height: 125px;}
+#p_img{width: 125px;height: 125px;margin-top: -62px;}
 .my_img{
     border: 1px solid #eee;
     background: #fff;
@@ -4384,6 +4384,10 @@ button.toast-close-button {
         top: -0.2em;
     }
 }
+@media all and (max-width: 480px) {
+    #p_img{width: 72px !important;height: 72px !important;margin-top: -30px !important;}   
+    #p_cover{height:105px !important;}
+    }
 @media all and (min-width: 241px) and (max-width: 480px) {
     #toast-container > div {
         padding: 8px 8px 8px 50px;
@@ -4393,8 +4397,7 @@ button.toast-close-button {
         right: -0.2em;
         top: -0.2em;
     }
-    #p_img{width: 72px;height: 72px;margin-top: -30px;}   
-    #p_cover{height:105px;}
+    
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
     #toast-container > div {
@@ -4427,8 +4430,8 @@ button.toast-close-button {
         min-height: 274px !important;
         margin-bottom: 40px;
     }
-    #p_img{width: 100px;}   
-    #p_cover{height:135px;}
+    #p_img{width: 100px;height: 100px; margin-top: -50px;}   
+    #p_cover{height:135px !important;}
 }
 
 .testimonial-slider button.slick-prev {
@@ -4819,7 +4822,6 @@ body{
     ..ml-auto{
         margin: 2px;
     }
-    #p_img{max-width: 72px;}
 }
 
 
