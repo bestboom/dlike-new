@@ -66,7 +66,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // get users all referral and their posts from api to multiply by 5 points
             $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where author = '$user_name'";
             $result5 = $conn->query($sql5);
-            $row5 = $result5->fetch_assoc();
+            $row5 = $result5->fetch_array();
             if(is_null($row5)){
               $row5 = array();
             }
