@@ -293,8 +293,8 @@ function echoStr($str) {
     }
     function referralTallied(total) {
       getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
-        let commentPoints = x.totalComments * <?php echo($points_per_comment); ?>
-        let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote); ?>
+        let commentPoints = x.totalComments * <?php echo($points_per_comment . ";\n"); ?>
+        let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
         let grandTotal = commentPoints + upvotePoints + referralPostPoints + pointsFromDB;
         console.log("Grand Total: " + grandTotal + " points");
       });
