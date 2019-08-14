@@ -218,14 +218,19 @@ function echoStr($str) {
     let pointsFromDB = <?php echo($my_points); ?>;
     // Tally up referral points
     let referralPostPoints;
-    users.forEach(user, index, array)
+    if(users.length > 0)
     {
-      getDataByUser(user, (x)=>{
-        referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
-        itemsProcessed++;
-        if(itemsProcessed === array.length) {
-          referralTallied(referralPostPoints);
-      });
+      users.forEach(user, index, array)
+      {
+        getDataByUser(user, (x)=>{
+          referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
+          itemsProcessed++;
+          if(itemsProcessed === array.length) {
+            referralTallied(referralPostPoints);
+        });
+      }
+    }else{
+      referralTallied(0);
     }
     function getDataByUser(username, callback) {
       $(document).ready(function() {
