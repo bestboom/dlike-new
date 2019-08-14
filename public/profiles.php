@@ -6,7 +6,7 @@
 	<div style="background: #eeeeee94;">
 	<div class="container">
 		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
-			<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
+			<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
 			<button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button>
 		</div>
 	</div>
