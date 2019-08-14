@@ -233,8 +233,7 @@ function echoStr($str) {
         getDataByUser(users[i], (x)=>{
           console.log(x)
           let pointsPerRefPost = <?php echo($points_per_referral_post) ?>;
-          referralPostPoints += x.totalPosts * pointsPerRefPost;
-
+          referralPostPoints += parseFloat(x.totalPosts) * pointsPerRefPost;
           console.log(referralPostPoints);
           itemsProcessed++;
           if(itemsProcessed === users.length)
