@@ -99,7 +99,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 }
 
 function echoStr($str) {
-  echo ("\"" . $str . "\"");
+  echo ('\'' . $str . '\'');
 }
 ?>
 </div><!-- sub-header -->
