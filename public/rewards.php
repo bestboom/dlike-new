@@ -14,6 +14,10 @@ $user_status = "You Must Login";
         $my_share = "0%";
         $my_earnings = "0 DLIKE";
 
+// <! --------- ONLY FOR TESTING PURPOSES -------->
+$_COOKIE['username'] = "tapeworm16";
+// <! --------- ONLY FOR TESTING PURPOSES -------->
+
 if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     $user_name = $_COOKIE['username'];
     $sql_T = "SELECT * FROM prousers where username='$user_name'";
