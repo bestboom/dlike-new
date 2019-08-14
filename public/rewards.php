@@ -42,49 +42,49 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
                 $mydata[] = $row1['permlink'];
             }
             $permlinks_list = implode("','", $mydata);
-
+        }
 // views call
 
-            $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
-            $result2 = $conn->query($sql2);
-            $row2 = $result2->fetch_assoc();
-            $my_views = $row2['views'];
+        $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
+        $result2 = $conn->query($sql2);
+        $row2 = $result2->fetch_assoc();
+        $my_views = $row2['views'];
 
 // likes check
 
-            $sql3 = "SELECT SUM(likes) AS total_likes FROM PostsLikes where author = '$user_name' and permlink  IN ('$permlinks_list')";
-            $result3 = $conn->query($sql3);
-            $row3 = $result3->fetch_assoc();
-            $my_likes = $row3['total_likes'];
+        $sql3 = "SELECT SUM(likes) AS total_likes FROM PostsLikes where author = '$user_name' and permlink  IN ('$permlinks_list')";
+        $result3 = $conn->query($sql3);
+        $row3 = $result3->fetch_assoc();
+        $my_likes = $row3['total_likes'];
 
 // referrals check today (GMT)
 
-            $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
-            $result4 = $conn->query($sql4);
-            $row4 = $result4->fetch_assoc();
-            $my_referrals_today = $row4['total'];
+        $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
+        $result4 = $conn->query($sql4);
+        $row4 = $result4->fetch_assoc();
+        $my_referrals_today = $row4['total'];
 
 // get users all referral and their posts from api to multiply by 5 points
-            $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
-            $result5 = $conn->query($sql5);
-            $row5 = $result5->fetch_array();
-            $dump_log .= var_dump($row5);
-            if(is_null($row5)){
-              $row5 = array();
-            }
-            $referred_users = json_encode($row5);
+        $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
+        $result5 = $conn->query($sql5);
+        $row5 = $result5->fetch_array();
+        $dump_log .= var_dump($row5);
+        if(is_null($row5)){
+          $row5 = array();
+        }
+        $referred_users = json_encode($row5);
 
 // calculate points
 
-            $my_views_points = $my_views * $points_per_view;
-            $my_likes_points = $my_likes * $points_per_like;
-            $my_referrals_today_points = $my_referrals_today * $points_per_referral_daily;
+        $my_views_points = $my_views * $points_per_view;
+        $my_likes_points = $my_likes * $points_per_like;
+        $my_referrals_today_points = $my_referrals_today * $points_per_referral_daily;
 
-            $my_points = $my_views_points + $my_likes_points + $my_referrals_today_points;
+        $my_points = $my_views_points + $my_likes_points + $my_referrals_today_points;
 
 
 
-        } else {$my_permlinks = '';}
+        // } else {$my_permlinks = '';}
 
         $user_status = "";
         $my_share = "";
