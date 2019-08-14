@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 
 $points_per_view = '0.2';
 $points_per_like = '20';
+$points_per_referral_daily = '50';
 
 $user_status = "You Must Login";
         $my_points = "0";
@@ -46,12 +47,24 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
             $row3 = $result3->fetch_assoc();
             $my_likes = $row3['total_likes'];
 
+// referrals check today (GMT)   
+
+            $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where author = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 48 HOUR";
+            $result4 = $conn->query($sql4);
+            $row4 = $result4->fetch_assoc();  
+            $my_referrals_today = $row4['total']; 
+
+// get users all referral and their posts from api to multiply by 5 points
+
+                  
+
 // calculate points
 
             $my_views_points = $my_views * $points_per_view;
             $my_likes_points = $my_likes * $points_per_like;
+            $my_referrals_today_points = $my_referrals_today * $points_per_referral_daily;
 
-            $my_points = $my_views_points + $my_likes_points;
+            $my_points = $my_views_points + $my_likes_points + $my_referrals_today_points;
 
 
 
@@ -217,7 +230,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                 });
                   
                 document.getElementById("output").innerHTML += "Getting Relevant Posts... " + relevantRes.length + " found.<br>";
-                relevantRes.forEach(($post, i) => {
+                res.forEach(($post, i) => {
 
                     let metadata;
                     if ($post.json_metadata && $post.json_metadata.length > 0)
