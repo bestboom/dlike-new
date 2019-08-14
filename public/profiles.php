@@ -86,7 +86,7 @@
 		 let p_followers = result.follower_count;
 		 let p_following = result.following_count;
 
-		 $('.followers').html('<b>'p_followers + '</b> Followers');
+		 $('.followers').html('<b>' + p_followers + '</b> Followers');
 		 $('.following').html(p_following + ' Following');
 
 	});
