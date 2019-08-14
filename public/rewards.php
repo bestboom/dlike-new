@@ -67,7 +67,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // get users all referral and their posts from api to multiply by 5 points
         $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
         $result5 = $conn->query($sql5);
-        $row5 = $result5->fetch_array();
+        $row5 = $result5->fetch_assoc();
         $dump_log .= var_dump($row5);
         if(is_null($row5)){
           $row5 = array();
@@ -216,7 +216,9 @@ function echoStr($str) {
     </div><!-- working-process-section-->
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
-    let users = JSON.parse(<?php echoStr($referred_users); ?>);
+    let userObj = JSON.parse(<?php echoStr($referred_users); ?>);
+    let users = Object.values(userObj).slice(0);
+
     let pointsFromDB = <?php echo($my_points); ?>;
     // Tally up referral points
     let referralPostPoints;
