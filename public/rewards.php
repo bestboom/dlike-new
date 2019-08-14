@@ -56,7 +56,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
 
 // get users all referral and their posts from api to multiply by 5 points
 
-                  
+
 
 // calculate points
 
@@ -224,45 +224,45 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                   
                 res.forEach(($post)=>{
                     let postTime = moment.utc($post.created);
-                        if (compareDates(postTime.format('D'), moment.utc().format('D'))){
-                          relevantRes.push($post);
-                        }     
-                });
-                  
-                document.getElementById("output").innerHTML += "Getting Relevant Posts... " + relevantRes.length + " found.<br>";
-                res.forEach(($post, i) => {
-
+                    //check community
                     let metadata;
                     if ($post.json_metadata && $post.json_metadata.length > 0)
                     {
                         metadata = JSON.parse($post.json_metadata);
                     }
-
                     if(metadata && metadata.community == "dlike"){
 
-                        let posts = $post.permlink;
-                        //console.log(posts)
-                        ;
-                        let upvotes = $post.pending_payout_value;
-                        //console.log(upvotes)
-                        ;
-                        let postTime = moment.utc($post.created);
-                        //console.log(postTime.format('D'));
-                        //console.log(moment.utc(postTime));
-                        let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-                        // Only proceed with relevant comments
-                          let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
-                          //upvoteSum += parsedVote;
-                            data.totalUpvotes += parsedVote;
-                          //check comments
-                          //function getTotalcomments(thisAutor,posts){
-                          //Conting the comments (just the dlike ones)
-                        steem.api.getContentReplies(username, posts, function(err, result) {
-                            //console.log(result);
-                            let i2 = i
-                            handleComments(result, i2 == relevantRes.length-1);
-                        });
-                    }
+                        if (compareDates(postTime.format('D'), moment.utc().format('D'))){
+                          relevantRes.push($post);
+                        }
+                    }     
+                });
+                  
+                document.getElementById("output").innerHTML += "Getting Relevant Posts... " + relevantRes.length + " found.<br>";
+                res.forEach(($post, i) => {
+
+                    let posts = $post.permlink;
+                    //console.log(posts)
+                    ;
+                    let upvotes = $post.pending_payout_value;
+                    //console.log(upvotes)
+                    ;
+                    let postTime = moment.utc($post.created);
+                    //console.log(postTime.format('D'));
+                    //console.log(moment.utc(postTime));
+                    let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+                    // Only proceed with relevant comments
+                      let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
+                      //upvoteSum += parsedVote;
+                        data.totalUpvotes += parsedVote;
+                      //check comments
+                      //function getTotalcomments(thisAutor,posts){
+                      //Conting the comments (just the dlike ones)
+                    steem.api.getContentReplies(username, posts, function(err, result) {
+                        //console.log(result);
+                        let i2 = i
+                        handleComments(result, i2 == relevantRes.length-1);
+                    });
                 });
             });
 
