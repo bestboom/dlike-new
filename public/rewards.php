@@ -261,6 +261,7 @@ function echoStr($str) {
             callback(data);
             return;
           }
+          console.log(res);
           res.forEach(($post) => {
             let postTime = moment.utc($post.created);
             if (postTime.format('D') == moment.utc().format('D')) {
