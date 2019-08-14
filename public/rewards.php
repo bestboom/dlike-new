@@ -59,13 +59,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 
 // referrals check today (GMT)
 
-            $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where author = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
+            $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
             $result4 = $conn->query($sql4);
             $row4 = $result4->fetch_assoc();
             $my_referrals_today = $row4['total'];
 
 // get users all referral and their posts from api to multiply by 5 points
-            $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where author = '$user_name'";
+            $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
             $result5 = $conn->query($sql5);
             $row5 = $result5->fetch_array();
             $dump_log .= var_dump($row5);
