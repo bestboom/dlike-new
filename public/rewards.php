@@ -137,7 +137,9 @@ function echoStr($str) {
 
                     <form class="user-connected-from create-account-form reward_form" />
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon" id="totalPoints"></span>
+                        <input type="text" class="form-control reward_input" value=" | Total Points" readonly>
+                        <span class="fas fa-star inp_icon"></span>
+                        <span class="inp_text" id="totalPoints"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Points" readonly>
