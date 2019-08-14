@@ -17,12 +17,12 @@
 		<div class="row" style="padding: 15px 40px;font-weight: bold;">
 			This is the text details of the account!
 		</div>
-		<div class="row">
+		<div class="row" style="padding: 15px 40px;font-weight: bold;">
 			<span>Followers</span>
 			<span>Following</span>
 			<span>Joined</span>
 		</div>
-		<div class="row">
+		<div class="row" style="padding: 15px 40px;font-weight: bold;">
 			<span>Location</span>
 			<span>Web</span>
 		</div>
