@@ -15,12 +15,12 @@
 			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
 		</div>
 		<div class="row" style="padding: 15px 40px 1px 40px;font-weight: bold;">
-			<span class="about"></span>
+			<span class="p_about"></span>
 		</div>
 		<div class="row" style="padding: 1px 40px;font-weight: bold;">
 			<span class="followers">Followers</span>
 			<span>Following</span>
-			<span class="joined" style="padding-left:10px;"></span>
+			<span class="p_joined" style="padding-left:10px;"></span>
 		</div>
 		<div class="row" style="padding: 1px 40px;font-weight: bold;">
 			<span class="p_location" style="padding-left:10px;"></span>
@@ -74,9 +74,10 @@
 	  		$('.p_location').html(location);
 	  		$('.web_site').html(website);
         }
-	  	//let metadata = JSON.parse(result["0"].json_metadata);
-	  	
-	  	
+        let profile_created = result["0"].created;
+        console.log(profile_created)
+        $('.p_joined').html(profile_created);
+	  		
   	});
 
 
