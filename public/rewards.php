@@ -239,7 +239,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username']) {
                 });
                   
                 document.getElementById("output").innerHTML += "Getting Relevant Posts... " + relevantRes.length + " found.<br>";
-                res.forEach(($post, i) => {
+                relevantRes.forEach(($post, i) => {
 
                     let posts = $post.permlink;
                     //console.log(posts)
