@@ -75,9 +75,8 @@
 	  		$('.web_site').html(website);
         }
         let profile_created = result["0"].created;
-        console.log(profile_created)
         let acc_created = moment(profile_created).format('MM-YYYY');
-        $('.p_joined').html(acc_created);
+        $('.p_joined').html('Joined ' + acc_created);
 	  		
   	});
 
@@ -87,8 +86,8 @@
 		 let p_followers = result.follower_count;
 		 let p_following = result.following_count;
 
-		 $('.followers').html(p_followers + 'Followers');
-		 $('.following').html(p_following + 'Following');
+		 $('.followers').html(p_followers + ' Followers');
+		 $('.following').html(p_following + ' Following');
 
 	});
 // post details		
