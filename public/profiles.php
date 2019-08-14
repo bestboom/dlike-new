@@ -18,8 +18,8 @@
 			<span class="p_about"></span>
 		</div>
 		<div class="row" style="padding: 1px 40px;font-weight: bold;">
-			<span class="followers">Followers</span>
-			<span>Following</span>
+			<span class="followers"></span>
+			<span class="following"></span>
 			<span class="p_joined" style="padding-left:10px;"></span>
 		</div>
 		<div class="row" style="padding: 1px 40px;font-weight: bold;">
@@ -83,7 +83,11 @@
 // get followers and following
 
 	steem.api.getFollowCount(profname, function(err, result) {
-		 console.log(result.follower_count);
+		 let p_followers = result.follower_count;
+		 let p_following = result.following_count;
+
+		 $('.followers').html(p_followers + 'Followers');
+		 $('.following').html(p_following + 'Following');
 
 	});
 // post details		
