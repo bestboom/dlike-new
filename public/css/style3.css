@@ -443,8 +443,8 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     #btn_share{
         border: 1px solid #1a1a1a !important;
     } 
-    #p_img{width: 100px;}   
-    #p_cover{height:155px;}
+    #p_img{width: 100px;height: 100px; margin-top: -50px;}   
+    #p_cover{height:155px !important;}
     .navbar-toggler {
         background: transparent;
         position: absolute;
@@ -838,7 +838,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .img_profile{
     margin-right:7px;
 }
-#p_img{max-width: 125px;max-height: 125px;}
+#p_img{width: 125px;height: 125px;margin-top: -62px;}
 .my_img{
     border: 1px solid #eee;
     background: #fff;
@@ -4819,7 +4819,6 @@ body{
     ..ml-auto{
         margin: 2px;
     }
-    #p_img{max-width: 72px;}
 }
 
 
