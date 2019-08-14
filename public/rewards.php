@@ -225,7 +225,7 @@ function echoStr($str) {
     if(users.length > 0)
     {
       let itemsProcessed = 0;
-      for(int i = 0; i<users.length; i++)
+      for(let i = 0; i<users.length; i++)
       {
         getDataByUser(users[i], (x)=>{
           referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
