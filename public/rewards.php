@@ -366,9 +366,12 @@ function echoStr($str) {
         let totalPts = <?php echo($total_points) ?>;
         document.getElementById("totalPoints").innerHTML = totalPts;
         document.getElementById("myPoints").innerHTML = x;
-        document.getElementById("myShare").innerHTML = (x/totalPts) * 100 + "%";
-        document.getElementById("myEarnings").innerHTML = <?php echo($total_reward); ?> * (x/totalPts);
+        document.getElementById("myShare").innerHTML = scale((x/totalPts) * 100) + "%";
+        document.getElementById("myEarnings").innerHTML = scale(<?php echo($total_reward); ?> * (x/totalPts));
     }
 
+    function scale(num) {
+      return Math.round(num * 100) / 100
+    }
 
     </script>
