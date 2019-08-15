@@ -41,7 +41,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $result1 = $conn->query($sql1);
 
         $rows1 = $result1->fetch_all();
-        var_dump($rows1);
 
 // referrals check today (GMT)
 
