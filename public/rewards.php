@@ -368,12 +368,10 @@ function echoStr($str) {
 
     let views = 0;
     let likes = 0;
-    let postsHandled;
+    let postsHandled = false;
     function handlePostData(x, last)
     {
-        console.log(x);
         let post = JSON.parse(x);
-        console.log(post);
         if(post.views != null && post.views != "null" && post.views != undefined && post.views != NaN)
         {
           views += parseFloat(post.views);
