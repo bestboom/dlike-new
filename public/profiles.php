@@ -1,16 +1,5 @@
 <?php include('template/header5.php'); ?>
-    </div><!-- sub-header -->
- <style>
- .p_data .fa .fas {
-    left: 0;
-    line-height: 2.5rem;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 2rem;
-    line-height: 0.1;
-}
- </style>   
+    </div><!-- sub-header --> 
 	<div id="p_cover" class="img-fluid" style="background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
 		
 	</div>
@@ -87,7 +76,7 @@
         }
         let profile_created = result["0"].created;
         let acc_created = moment(profile_created).format('MM-YYYY');
-        $('.p_joined').html(' Joined ' + acc_created).addClass('fas fa-user');
+        $('.p_joined').html('<i class="fas fa-user></i>" Joined ' + acc_created).addClass('fas fa-user');
 	  		
   	});
 
