@@ -12,6 +12,8 @@ $points_per_comment = '10';
 $points_per_upvote = '100';
 $points_per_referral_daily = '50';
 $points_per_referral_post = '5';
+$total_reward = 7000;
+
 $referred_users = "";
 $dump_log = "";
 
@@ -21,7 +23,7 @@ $user_status = "You Must Login";
         $my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
-$_COOKIE['username'] = "tapeworm16";
+$_COOKIE['username'] = "certseek";
 $total_points = 1000;
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
@@ -34,7 +36,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
     // if ($result_T && $result_T->num_rows > 0) {
     //     $row_T  = $result_T->fetch_assoc();
 
-        $sql1 = "SELECT * FROM steemposts where username = '$user_name' and created_at > CURRENT_TIMESTAMP - INTERVAL 48 HOUR";
+        $sql1 = "SELECT * FROM steemposts where username = '$user_name' and DAY(ADDTIME(created_at, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
         $result1 = $conn->query($sql1);
 
         if ($result1->num_rows > 0) {
@@ -60,7 +62,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 
 // referrals check today (GMT)
 
-        $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and entry_time > CURRENT_TIMESTAMP - INTERVAL 24 HOUR";
+        $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
         $result4 = $conn->query($sql4);
         $row4 = $result4->fetch_assoc();
         $my_referrals_today = $row4['total'];
