@@ -116,7 +116,7 @@ include('template/header5.php'); ?>
 //profile details
 	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
 	steem.api.getAccounts([profname], function(err, result) {
-	  	console.log(result)
+	  	//console.log(result)
 	  	let metadata;
 	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
         {
@@ -168,12 +168,14 @@ include('template/header5.php'); ?>
 	});
 
 // get user comments
-steem.api.getDiscussionsByComments({
-            "start_author": "jinzo",
-            "limit": 10
-        }, function (err, result) {
-            console.log(err, result);
-        });	
+	let comments_query = {
+		start_author: profname,
+		limit: 21,
+	};
+
+	steem.api.getDiscussionsByComments(comments_query, function(err, result){
+    	console.log(err, result);
+    });	
 
 
 // post details		
