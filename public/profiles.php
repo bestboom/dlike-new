@@ -190,7 +190,7 @@ include('template/header5.php'); ?>
 
 			$(rep_content).append('<div style="padding-top:15px;border-top:1px solid #ded4e4;width:100%;">\n' +
 				'\n' +
-				'<h4 class="post-title" style="font-weight:600; color: #111;"><a href="/post/@' + $post.root_title + '">' + $post.root_title + '</a></h4>\n' +
+				'<h4 class="post-title" style="font-weight:600; color: #1a1a1a;font-size:16px;"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
 				'<h5><a href="#">' + rep_body + '</a></h5>\n' +
 				'\n' +
