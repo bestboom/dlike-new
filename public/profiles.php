@@ -1,10 +1,20 @@
 <?php include('template/header5.php'); ?>
     </div><!-- sub-header -->
+ <style>
+ .p_data .fa .fas {
+    left: 0;
+    line-height: 2.5rem;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 2rem;
+}
+ </style>   
 	<div id="p_cover" class="img-fluid" style="background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
 		
 	</div>
 	<div style="background: #eeeeee94;">
-	<div class="container">
+	<div class="container p-data">
 		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
 			<div>
 				<span>
