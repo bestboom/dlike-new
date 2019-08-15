@@ -1,4 +1,4 @@
-<?php
+<?php include('includes/config.php')
   $activePost = $_POST["permlink"];
   $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where permlink = '$activePost'";
   $result2 = $conn->query($sql2);
