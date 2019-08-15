@@ -71,10 +71,10 @@ include('template/header5.php'); ?>
 						    	<div class="row" id="profposts" style="padding-top:40px;"></div>
 							</div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="steem_trx">
+                        <div role="tabpanel" class="tab-pane fade" id="steem_trx" style="padding:40px 20px;">
                         	<div class="row" id="cmt_content"></div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tips_trx">
+                        <div role="tabpanel" class="tab-pane fade" id="tips_trx" style="padding:40px 20px;">
                             <div class="row" id="replies_content"></div>
                         </div><!-- market-ticker-block -->
                     </div>
@@ -197,8 +197,10 @@ include('template/header5.php'); ?>
       	result.forEach(($post, i) => {
 			let rep_body = $post.body;
 
-			$(rep_content).append('<div>\n' +
+			$(rep_content).append('<div style="padding-top:15px;border-top:1px solid #eee;">\n' +
 				'\n' +
+				'<h4 class="post-title"><a href="/post/@' + $post.root_title + '">' + $post.root_title + '</a></h4>\n' +
+					'\n' +
 				'<h5><a href="#">' + rep_body + '</a></h5>\n' +
 				'\n' +
 			'</div>');		
