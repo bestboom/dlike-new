@@ -1,5 +1,6 @@
 <?php include('./../includes/config.php');
   $activePost = $_POST["permlink"];
+  if(isset($_POST["permlink"])) {
   $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where permlink = '$activePost'";
   $result2 = $conn->query($sql2);
   $row2 = $result2->fetch_assoc();
@@ -11,4 +12,7 @@
   $my_likes = $row3['total_likes'];
   $output = array('permlink' => $activePost, 'views' => $my_views, 'likes' => $my_likes);
   echo(json_encode($output));
+} else {
+  die("No input");
+}
 ?>
