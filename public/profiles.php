@@ -71,8 +71,8 @@
 	  		//$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
 	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
 	  		$('.p_about').html(about);
-	  		$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:4px;"></i>' + location);
-	  		$('.web_site').html('<i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:4px;"></i>' + website);
+	  		$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>' + location);
+	  		$('.web_site').html('<i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>' + website);
         }
         let profile_created = result["0"].created;
         let acc_created = moment(profile_created).format('MM-YYYY');
@@ -86,8 +86,8 @@
 		 let p_followers = result.follower_count;
 		 let p_following = result.following_count;
 
-		 $('.followers').html('<span style="font-weight:700;font-size:16px;padding-right:3px;">' + p_followers + '</span> Followers | ');
-		 $('.following').html('<span style="font-weight:700;font-size:16px;padding-right:3px;">' + p_following + '</span> Following');
+		 $('.followers').html('<span style="font-weight:700;font-size:16px;padding-right:3px;">' + p_followers + '</span> Followers |  ');
+		 $('.following').html('<span style="font-weight:700;font-size:16px;padding-right:3px;padding-left:8px;">' + p_following + '</span> Following');
 
 	});
 // post details		
