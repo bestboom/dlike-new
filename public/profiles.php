@@ -53,7 +53,7 @@ include('template/header5.php'); ?>
                         <li class="nav-item">
                             <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
                                aria-selected="true">
-                                <h5>Posts</h5>
+                               <h5>Posts</h5>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -71,8 +71,8 @@ include('template/header5.php'); ?>
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
 							<div class="container">
-					            <div id="loadings"><img src="/images/loader.svg" width="100"></div>
-						    	<div class="row" id="profposts" style="padding-top:20px;"></div>
+					            <div id="loadings"><img src="/images/loader.svg" width="100" style="padding-top:40px;"></div>
+						    	<div class="row" id="profposts" style="padding-top:40px;"></div>
 							</div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="steem_trx">
