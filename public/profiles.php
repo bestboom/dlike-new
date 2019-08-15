@@ -40,7 +40,7 @@ include('template/header5.php'); ?>
 		</div>
 	</div>
 
-	
+
 <div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
         <div class="container">
             <div class="new-ticker-block-wrap">
@@ -166,6 +166,16 @@ include('template/header5.php'); ?>
 		 $('.following').html('<span style="font-weight:700;font-size:16px;padding-right:2px;padding-left:8px;font-family: sans-serif;">' + p_following + '</span> Following');
 
 	});
+
+// get user comments
+steem.api.getDiscussionsByComments({
+            "start_author": "jinzo",
+            "limit": 10
+        }, function (err, result) {
+            console.log(err, result);
+        });	
+
+
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
