@@ -303,8 +303,8 @@ function echoStr($str) {
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function()
             {
-                print(xhr);
-                print(xhr.responseText);
+                console.log(xhr);
+                console.log(xhr.responseText);
                 handlePostData(xhr.responseText);
             }
             xhr.send(params);
