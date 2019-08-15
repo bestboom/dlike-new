@@ -76,7 +76,7 @@
         }
         let profile_created = result["0"].created;
         let acc_created = moment(profile_created).format('MM-YYYY');
-        $('.p_joined').html('<i class="fas fa-user"></i> Joined ' + acc_created).addClass('fas fa-user');
+        $('.p_joined').html('<i class="fas fa-user" style="line-height:0.1;font-weight: normal;"></i> Joined ' + acc_created);
 	  		
   	});
 
