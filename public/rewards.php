@@ -71,7 +71,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
         $result5 = $conn->query($sql5);
         $rows5 = array();
-        while ($row5 = mysql_fetch_assoc($result)) {
+        while ($row5 = mysql_fetch_assoc($result5)) {
           array.push($rows5,$row5);
         }
         $dump_log .= var_dump($rows5);
