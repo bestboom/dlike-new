@@ -39,7 +39,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $sql1 = "SELECT * FROM steemposts where username = '$user_name' and DAY(ADDTIME(created_at, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
         $result1 = $conn->query($sql1);
 
-        $rows1 = $resul1->fetch_all();
+        $rows1 = $result1->fetch_all();
         var_dump($rows1);
 
         // if ($result1->num_rows > 0) {
