@@ -25,6 +25,7 @@ $user_status = "You Must Login";
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 $_COOKIE['username'] = "certseek";
 $total_points = 1000;
+$permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
