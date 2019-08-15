@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 $points_per_view = '0.2';
 $points_per_like = '20';
 $points_per_comment = '10';
-$points_per_upvote = '0.01';
+$points_per_upvote = '100';
 $points_per_referral_daily = '50';
 $points_per_referral_post = '5';
 $referred_users = "";
@@ -21,7 +21,8 @@ $user_status = "You Must Login";
         $my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
-$_COOKIE['username'] = "certseek";
+$_COOKIE['username'] = "tapeworm16";
+$total_points = 1000;
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
@@ -136,22 +137,24 @@ function echoStr($str) {
 
                     <form class="user-connected-from create-account-form reward_form" />
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | Total Points" readonly><span class="fas fa-star inp_icon"></span>
+                        <input type="text" class="form-control reward_input" value=" | Total Points" readonly>
+                        <span class="fas fa-star inp_icon"></span>
+                        <span class="inp_text" id="totalPoints"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Points" readonly>
                         <span class="fas fa-bolt inp_icon"></span>
-                        <span class="inp_text" id="my_points"></span>
+                        <span class="inp_text" id="myPoints"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Share" readonly>
                         <span class="fas fa-flask inp_icon"></span>
-                        <span class="inp_text"><?php echo $my_share; ?></span>
+                        <span class="inp_text" id="myShare"></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo $my_earnings; ?></span>
+                        <span class="inp_text" id="myEarnings"></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
@@ -218,17 +221,23 @@ function echoStr($str) {
     <script type="text/javascript">
     let userObj = JSON.parse(<?php echoStr($referred_users); ?>);
     let users = Object.values(userObj).slice(0);
+    console.log(users);
 
     let pointsFromDB = <?php echo($my_points); ?>;
+    console.log(pointsFromDB);
     // Tally up referral points
-    let referralPostPoints;
+    let referralPostPoints = 0.0;
+
     if(users.length > 0)
     {
       let itemsProcessed = 0;
       for(let i = 0; i<users.length; i++)
       {
         getDataByUser(users[i], (x)=>{
-          referralPostPoints += (x.totalPosts * <?php echo($points_per_referral_post) ?>);
+          console.log(x)
+          let pointsPerRefPost = <?php echo($points_per_referral_post) ?>;
+          referralPostPoints += parseFloat(x.totalPosts) * pointsPerRefPost;
+          console.log(referralPostPoints);
           itemsProcessed++;
           if(itemsProcessed === users.length)
           {
@@ -306,13 +315,13 @@ function echoStr($str) {
         });
       });
     }
-    function referralTallied(total) {
+    function referralTallied(total)
+    {
       getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
         let commentPoints = x.totalComments * <?php echo($points_per_comment . ";\n"); ?>
         let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
         let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + parseFloat(pointsFromDB);
-        console.log("Grand Total: " + grandTotal + " points");
-        document.getElementById("my_points").innerHTML = grandTotal;
+        output(grandTotal)
       });
     }
     var countDownDate = 0;
@@ -340,5 +349,15 @@ function echoStr($str) {
         }, 1000);
     };
     counter();
-    <?php echo("console.log(\"" . $dump_log . "\");")?>
+
+    function output(x)
+    {
+        let totalPts = <?php echo($total_points) ?>;
+        document.getElementById("totalPoints").innerHTML = totalPts;
+        document.getElementById("myPoints").innerHTML = x;
+        document.getElementById("myShare").innerHTML = (x/totalPts) * 100 + "%";
+        document.getElementById("myEarnings").innerHTML = "$";
+    }
+
+
     </script>
