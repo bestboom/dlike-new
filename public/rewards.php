@@ -70,7 +70,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // get users all referral and their posts from api to multiply by 5 points
         $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
         $result5 = $conn->query($sql5);
-        $row5 = $result5->fetch_assoc();
+        $row5 = $result5->fetch();
         $dump_log .= var_dump($row5);
         if(is_null($row5)){
           $row5 = array();
@@ -358,7 +358,7 @@ function echoStr($str) {
         document.getElementById("totalPoints").innerHTML = totalPts;
         document.getElementById("myPoints").innerHTML = x;
         document.getElementById("myShare").innerHTML = (x/totalPts) * 100 + "%";
-        document.getElementById("myEarnings").innerHTML = totalPts * (x/totalPts);
+        document.getElementById("myEarnings").innerHTML = <?php echo($total_reward); ?> * (x/totalPts);
     }
 
 
