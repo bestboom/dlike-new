@@ -10,7 +10,7 @@
 				<span>
 					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
 				</span>
-				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;">Golden Whale</span> <br>@goldenwhale</span>
+				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br>@<span class="p_name"></span></span>
 			</div>
 			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
 		</div>
@@ -66,6 +66,7 @@
 	  		let about = metadata.profile.about;
 	  		let location = metadata.profile.location;
 	  		let website = metadata.profile.website;
+	  		let name = metadata.profile.name;
 	  		//console.log(metadata.profile.location);
 	  		//console.log(cover_url)
 	  		//$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
@@ -79,10 +80,16 @@
 	  		{
 	  			$('.web_site').html('<i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>' + website);
 	  		}
+	  		if (typeof name !== 'undefined')
+	  		{
+	  			$('.name').html(name);
+	  		}
         }
         let profile_created = result["0"].created;
+        let profile_name = result["0"].name;
         let acc_created = moment(profile_created).format('MM-YYYY');
         $('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
+        $('.p_name').html(profile_name)
 	  		
   	});
 
@@ -92,8 +99,8 @@
 		 let p_followers = result.follower_count;
 		 let p_following = result.following_count;
 
-		 $('.followers').html('<span style="font-weight:700;font-size:16px;padding-right:3px;">' + p_followers + '</span> Followers |  ');
-		 $('.following').html('<span style="font-weight:700;font-size:16px;padding-right:3px;padding-left:8px;">' + p_following + '</span> Following');
+		 $('.followers').html('<span style="font-weight:700;font-size:16px;padding-right:2px;font-family: sans-serif;">' + p_followers + '</span> Followers |  ');
+		 $('.following').html('<span style="font-weight:700;font-size:16px;padding-right:2px;padding-left:8px;font-family: sans-serif;">' + p_following + '</span> Following');
 
 	});
 // post details		
