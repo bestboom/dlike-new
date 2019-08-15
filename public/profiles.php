@@ -187,12 +187,15 @@ include('template/header5.php'); ?>
 
       	result.forEach(($post, i) => {
 			let rep_body = $post.body;
+			let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 
-			$(rep_content).append('<div style="padding-top:15px;border-top:1px solid #ded4e4;width:100%;">\n' +
+			$(rep_content).append('<div style="padding: 18px 10px 5px 5px;border-top:1px solid #ded4e4;width:100%;">\n' +
 				'\n' +
+				'<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid"></a></div><h5><a href="#">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
+				'\n' +  
 				'<h4 class="post-title" style="font-weight:600; color: #1a1a1a;font-size:16px;"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
-				'<h5><a href="#">' + rep_body + '</a></h5>\n' +
+				'<h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a href="#">' + rep_body + '</a></h5>\n' +
 				'\n' +
 			'</div>');		
 
