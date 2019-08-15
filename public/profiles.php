@@ -8,6 +8,7 @@
     text-align: center;
     top: 0;
     width: 2rem;
+    line-height: 0.1;
 }
  </style>   
 	<div id="p_cover" class="img-fluid" style="background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
@@ -86,7 +87,7 @@
         }
         let profile_created = result["0"].created;
         let acc_created = moment(profile_created).format('MM-YYYY');
-        $('.p_joined').html('Joined ' + acc_created).addClass('fas fa-user');
+        $('.p_joined').html(' Joined ' + acc_created).addClass('fas fa-user');
 	  		
   	});
 
