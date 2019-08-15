@@ -75,7 +75,7 @@ include('template/header5.php'); ?>
                         	<div class="row" id="cmt_content"></div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="tips_trx">
-                            
+                            <div class="row" id="replies_content"></div>
                         </div><!-- market-ticker-block -->
                     </div>
                 </div>
@@ -180,7 +180,7 @@ include('template/header5.php'); ?>
     	result.forEach(($post, i) => {
     		let cmt_body = $post.body;
 
-    		$(cmt_content).append('<div class="row">\n' +
+    		$(cmt_content).append('<div>\n' +
 				'\n' +
 				'<h5><a href="#">' + cmt_body + '</a></h5>\n' +
 				'\n' +
@@ -190,9 +190,20 @@ include('template/header5.php'); ?>
     });	
 
 // get user replies
-
+	let rep_content = "#replies_content";
 	steem.api.getRepliesByLastUpdate(profname, '', 23, function(err, result) {
 	  console.log(err, result);
+
+      	result.forEach(($post, i) => {
+			let rep_body = $post.body;
+
+			$(rep_content).append('<div>\n' +
+				'\n' +
+				'<h5><a href="#">' + rep_body + '</a></h5>\n' +
+				'\n' +
+			'</div>');		
+
+    	});
 	});
 
 // post details		
