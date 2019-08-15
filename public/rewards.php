@@ -23,7 +23,7 @@ $user_status = "You Must Login";
         $my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
-$_COOKIE['username'] = "certseek";
+$_COOKIE['username'] = "crypto.genius";
 $total_points = 1000;
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
