@@ -39,19 +39,23 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $sql1 = "SELECT * FROM steemposts where username = '$user_name' and DAY(ADDTIME(created_at, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
         $result1 = $conn->query($sql1);
 
-        if ($result1->num_rows > 0) {
-            $mydata = array();
-            while($row1 = $result1->fetch_assoc()) {
-                $mydata[] = $row1['permlink'];
-            }
-            $permlinks_list = implode("','", $mydata);
-        }
+        $rows1 = $resul1->fetch_all();
+        var_dump($rows1);
+
+        // if ($result1->num_rows > 0) {
+        //     $mydata = array();
+        //     while($row1 = $result1->fetch_assoc()) {
+        //         $mydata[] = $row1['permlink'];
+        //     }
+        //     $permlinks_list = implode("','", $mydata);
+        // }
 // views call
 
         $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
         $my_views = $row2['views'];
+        var_dump($row2);
 
 // likes check
 
@@ -59,6 +63,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $result3 = $conn->query($sql3);
         $row3 = $result3->fetch_assoc();
         $my_likes = $row3['total_likes'];
+        var_dump($row3);
 
 // referrals check today (GMT)
 
