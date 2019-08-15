@@ -179,7 +179,7 @@ include('template/header5.php'); ?>
 				'\n' +  
 				'<h4 class="post-title" style="font-weight:600; color: #1a1a1a;font-size:16px;"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
-				'<h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a href="#">' + rep_body + '</a></h5>\n' +
+				'<h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a href="#">' + cmt_body + '</a></h5>\n' +
 				'\n' +
 			'</div>');		
 
