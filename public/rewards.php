@@ -40,8 +40,12 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $result1 = $conn->query($sql1);
 
         $rows1 = $result1->fetch_all();
-        var_dump($rows1);
-
+        foreach($rows1 as $post)
+        {
+          array_push($permlinks_list, $post[5]);
+        }
+        var_dump($permlinks_list);
+        
         // if ($result1->num_rows > 0) {
         //     $mydata = array();
         //     while($row1 = $result1->fetch_assoc()) {
@@ -272,7 +276,7 @@ function echoStr($str) {
         steem.api.getDiscussionsByBlog(query, function(err, res) {
           let upvoteSum = 0.0;
           let relevantRes = [];
-          if(res.length <= 0 || err != null){
+          if(res.length <= 0 || err != 'null'){
             callback(data);
             return;
           }
