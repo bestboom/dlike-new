@@ -192,7 +192,7 @@ include('template/header5.php'); ?>
 
 			$(rep_content).append('<div style="padding: 18px 10px 5px 5px;border-top:1px solid #ded4e4;width:100%;">\n' +
 				'\n' +
-				'<div style="padding-bottom:5px;"><span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle" style="width:32px;margin-right:12px;"></a></span><span style="font-weight:600;padding-right:2px;"><a href="#">' + $post.author + '</a></span><span style="padding-right:4px;">('+reputation+')</span><span style="padding-right:5px;">'+$post.category+'</span><span class="time">' + activeDate + '</span></div>\n' +
+				'<div style="padding-bottom:5px;"><span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle" style="width:32px;margin-right:12px;"></a></span><span style="font-weight:600;padding-right:2px;"><a href="#">' + $post.author + '</a></span><span style="padding-right:4px;">('+reputation+')</span><span style="padding-right:5px;">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span></div>\n' +
 				'\n' +  
 				'<h4 class="post-title" style="font-weight:600; color: #1a1a1a;font-size:16px;"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
