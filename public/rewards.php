@@ -45,20 +45,20 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 
 // referrals check today (GMT)
 
-        // $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
-        // $result4 = $conn->query($sql4);
-        // $row4 = $result4->fetch_assoc();
-        // $my_referrals_today = $row4['total'];
+        $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
+        $result4 = $conn->query($sql4);
+        $row4 = $result4->fetch_assoc();
+        $my_referrals_today = $row4['total'];
 
 // get users all referral and their posts from api to multiply by 5 points
-        // $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
-        // $result5 = $conn->query($sql5);
-        // $row5 = $result5->fetch_all();
-        // $dump_log .= var_dump($row5);
-        // if(is_null($row5)){
-        //   $row5 = array();
-        // }
-        // $referred_users = json_encode($row5);
+        $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
+        $result5 = $conn->query($sql5);
+        $row5 = $result5->fetch_all();
+        $dump_log .= var_dump($row5);
+        if(is_null($row5)){
+          $row5 = array();
+        }
+        $referred_users = json_encode($row5);
 
 // calculate points
 
