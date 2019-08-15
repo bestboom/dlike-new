@@ -20,9 +20,9 @@ include('template/header5.php'); ?>
 			<div>
 				<span>
 					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
-					<span class="repu rounded-circle" style="font-size: 12px;margin-left:-24px;border: 1px solid #c51d24;background: #c51d24;padding: 5px;color: #fff;font-weight: 600;font-family: sans-serif;"></span>
+					<span class="repu rounded-circle" style="font-size: 12px;margin-left:-24px;border: 1px solid #191d5d;background: #191d5d;padding: 5px;color: #fff;font-weight: 600;font-family: sans-serif;"></span>
 				</span>
-				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br><span class="p_name"></span><?php if($profile_user== "PRO"){ echo '<span><i class="fas fa-check-circle" title="PRO User" style="padding-left:7px;color:#c51d24;"></i></span>';} ?></span>
+				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br><span class="p_name"></span><?php if($profile_user== "PRO"){ echo '<span><i class="fas fa-check-circle" title="PRO User" style="padding-left:7px;color:forestgreen;"></i></span>';} ?></span>
 			</div>
 			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
 		</div>
