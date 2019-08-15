@@ -25,6 +25,7 @@ $user_status = "You Must Login";
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 $_COOKIE['username'] = "certseek";
 $total_points = 1000;
+$permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
@@ -39,19 +40,27 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $sql1 = "SELECT * FROM steemposts where username = '$user_name' and DAY(ADDTIME(created_at, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
         $result1 = $conn->query($sql1);
 
-        if ($result1->num_rows > 0) {
-            $mydata = array();
-            while($row1 = $result1->fetch_assoc()) {
-                $mydata[] = $row1['permlink'];
-            }
-            $permlinks_list = implode("','", $mydata);
+        $rows1 = $result1->fetch_all();
+        foreach($rows1 as $post)
+        {
+          array_push($permlinks_list, $post[5]);
         }
+        var_dump($permlinks_list);
+
+        // if ($result1->num_rows > 0) {
+        //     $mydata = array();
+        //     while($row1 = $result1->fetch_assoc()) {
+        //         $mydata[] = $row1['permlink'];
+        //     }
+        //     $permlinks_list = implode("','", $mydata);
+        // }
 // views call
 
         $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
         $my_views = $row2['views'];
+        var_dump($row2);
 
 // likes check
 
@@ -59,6 +68,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $result3 = $conn->query($sql3);
         $row3 = $result3->fetch_assoc();
         $my_likes = $row3['total_likes'];
+        var_dump($row3);
 
 // referrals check today (GMT)
 
@@ -70,7 +80,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // get users all referral and their posts from api to multiply by 5 points
         $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
         $result5 = $conn->query($sql5);
-        $row5 = $result5->fetch_assoc();
+        $row5 = $result5->fetch_all();
         $dump_log .= var_dump($row5);
         if(is_null($row5)){
           $row5 = array();
@@ -221,8 +231,7 @@ function echoStr($str) {
     </div><!-- working-process-section-->
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
-    let userObj = JSON.parse(<?php echoStr($referred_users); ?>);
-    let users = Object.values(userObj).slice(0);
+    let users = JSON.parse(<?php echoStr($referred_users); ?>);
     console.log(users);
 
     let pointsFromDB = <?php echo($my_points); ?>;
@@ -235,7 +244,7 @@ function echoStr($str) {
       let itemsProcessed = 0;
       for(let i = 0; i<users.length; i++)
       {
-        getDataByUser(users[i], (x)=>{
+        getDataByUser(users[i][0], (x)=>{
           console.log(x)
           let pointsPerRefPost = <?php echo($points_per_referral_post) ?>;
           referralPostPoints += parseFloat(x.totalPosts) * pointsPerRefPost;
@@ -268,7 +277,7 @@ function echoStr($str) {
         steem.api.getDiscussionsByBlog(query, function(err, res) {
           let upvoteSum = 0.0;
           let relevantRes = [];
-          if(!res || res.length <= 0 || res.error){
+          if(res.length <= 0 || res.error != null){
             callback(data);
             return;
           }
@@ -286,7 +295,7 @@ function echoStr($str) {
               }
             }
           });
-          if(!relevantRes || relevantRes.length <= 0){
+          if(relevantRes.length <= 0){
             callback(data);
             return;
           }
@@ -358,7 +367,7 @@ function echoStr($str) {
         document.getElementById("totalPoints").innerHTML = totalPts;
         document.getElementById("myPoints").innerHTML = x;
         document.getElementById("myShare").innerHTML = (x/totalPts) * 100 + "%";
-        document.getElementById("myEarnings").innerHTML = "$";
+        document.getElementById("myEarnings").innerHTML = <?php echo($total_reward); ?> * (x/totalPts);
     }
 
 
