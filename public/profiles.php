@@ -168,7 +168,7 @@ include('template/header5.php'); ?>
 	});
 
 // get user comments
-	let $start_author, $limit, content = "#cmt_content";
+	let $start_author, $cmt_limit, content = "#cmt_content";
 	let comments_query = {
 		start_author: profname,
 		limit: 21,
