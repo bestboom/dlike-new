@@ -296,6 +296,16 @@ function echoStr($str) {
                 return;
               }
             });
+            let xhr = new XMLHttpRequest();
+            let url = https://dlike.io/helper/retrieve_post_data.php;
+            let params = 'permlink='+$post.permlink;
+            xhr.open("POST", 'url', true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function()
+            {
+                handlePostData(http.responseText);
+            }
+            xhr.send(params);
           });
         });
       });
@@ -305,7 +315,9 @@ function echoStr($str) {
       getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
         let commentPoints = x.totalComments * <?php echo($points_per_comment . ";\n"); ?>
         let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
-        let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + parseFloat(pointsFromDB);
+        let viewPoints = vies * <?php echo($points_per_view . ";\n"); ?>
+        let likePoints = vies * <?php echo($points_per_like . ";\n"); ?>
+        let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + viewPoints + likePoints +  parseFloat(pointsFromDB);
         output(grandTotal)
       });
     }
@@ -334,6 +346,16 @@ function echoStr($str) {
         }, 1000);
     };
     counter();
+
+    let views;
+    let likes;
+
+    function handlePostData(x)
+    {
+        let post = JSON.parse(x);
+        views += post.views;
+        likes += post.likes;
+    }
 
     function output(x)
     {
