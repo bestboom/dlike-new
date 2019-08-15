@@ -180,7 +180,7 @@ include('template/header5.php'); ?>
     	result.forEach(($post, i) => {
     		let cmt_body = $post.body;
 
-    		$(cmt_content).append('<div class="col">\n' +
+    		$(cmt_content).append('<div class="row">\n' +
 				'\n' +
 				'<h5><a href="#">' + cmt_body + '</a></h5>\n' +
 				'\n' +
@@ -189,6 +189,17 @@ include('template/header5.php'); ?>
     	});
     });	
 
+// get user replies
+
+	let replies_query = {
+		startAuthor: profname,
+		startPermlink: '',
+		limit: 21,
+	};
+
+	steem.api.getRepliesByLastUpdate(replies_query, function(err, result) {
+	  console.log(err, result);
+	});
 
 // post details		
 		let $tag, $limit, content = "#profposts";
