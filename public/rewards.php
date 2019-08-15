@@ -285,9 +285,9 @@ function echoStr($str) {
             let params = 'permlink='+$post.permlink;
             xhr.open("POST", url, true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function()
+            xhr.onload = function()
             {
-                if(xhr.responseText.length > 0 && xhr.status == 200){ 
+                if(xhr.responseText.length > 0 && xhr.status == 200){
                   handlePostData(xhr.responseText);
                 }else{
                   console.error(xhr);
