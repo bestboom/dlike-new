@@ -71,8 +71,14 @@
 	  		//$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
 	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
 	  		$('.p_about').html(about);
-	  		$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>' + location);
-	  		$('.web_site').html('<i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>' + website);
+	  		if (typeof location !== 'undefined')
+	  		{
+	  			$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>' + location);
+	  		}
+	  		if (typeof website !== 'undefined')
+	  		{
+	  			$('.web_site').html('<i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>' + website);
+	  		}
         }
         let profile_created = result["0"].created;
         let acc_created = moment(profile_created).format('MM-YYYY');
