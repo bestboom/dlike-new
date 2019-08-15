@@ -277,7 +277,7 @@ function echoStr($str) {
         steem.api.getDiscussionsByBlog(query, function(err, res) {
           let upvoteSum = 0.0;
           let relevantRes = [];
-          if(res.length <= 0 || err != null){
+          if(res.length <= 0 || res.error != null){
             callback(data);
             return;
           }
