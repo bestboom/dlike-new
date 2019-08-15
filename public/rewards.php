@@ -70,10 +70,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // get users all referral and their posts from api to multiply by 5 points
         $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
         $result5 = $conn->query($sql5);
-        $rows5 = array();
-        while ($row5 = mysql_fetch_assoc($result5)) {
-          array.push($rows5,$row5);
-        }
+        $rows5 = $result5->fetch_all()
         $referred_users = json_encode($rows5);
 
 // calculate points
