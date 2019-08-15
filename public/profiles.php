@@ -45,7 +45,7 @@ include('template/header5.php'); ?>
 
 
 
-<div class="new-ticker-block new-ticker-block-section">
+<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
         <div class="container">
             <div class="new-ticker-block-wrap">
                 <div class="ticker-head">
@@ -54,20 +54,13 @@ include('template/header5.php'); ?>
                             <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
                                aria-selected="true">
                                 <h5>Posts</h5>
-                                <i class="fa fa-stroopwafel"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#steem_trx" role="tab" data-toggle="tab">STEEM</a>
+                            <a class="nav-link" href="#steem_trx" role="tab" data-toggle="tab">Comments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">TIPS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#with_draw" role="tab" data-toggle="tab">WITHDRWLS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#ref_data" role="tab" data-toggle="tab">My Referrals</a>
+                            <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">Replies</a>
                         </li>
                         <li class="nav-item nav-item-last">
                         </li>
@@ -78,174 +71,15 @@ include('template/header5.php'); ?>
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
 							<div class="container">
-								<div class="row  align-items-center h-100">
-					                <div class="row col-md-3 justify-content-center">
-					                    <h4 class="lab_post"><?php echo $_GET['user'];?></h4>
-					                </div>
-					                <div class="col-md-9 lay">&nbsp;</div>
-					            </div>
 					            <div id="loadings"><img src="/images/loader.svg" width="100"></div>
-						    	<div class="row" id="profposts"></div>
+						    	<div class="row" id="profposts" style="padding-top:20px;"></div>
 							</div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="steem_trx">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                <tr>
-                                    <th scope="col" style="width: 200px;">Time</th>
-                                    <th scope="col" style="width: 400px; max-width: 50%">Action</th>
-                                    <th scope="col" style="max-width: 500px">Memo</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
-                            </table><!-- coin-list table -->
+
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="tips_trx">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                <tr style="text-align: center;">
-                                    <th scope="col" class="cent_me wid_2">Tip</th>
-                                    <th scope="col" class="cent_me wid_2">Amount</th>
-                                    <th scope="col" class="cent_me wid_2">For</th>
-                                    <th scope="col" class="cent_me wid_2">By</th>
-                                    <th scope="col" class="cent_me wid_2">Time</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-
-                                $sql_tip    = "SELECT * FROM TipTop where receiver='$user_wallet' ORDER BY tip_time DESC LIMIT 20";
-                                $result_tip = $conn->query($sql_tip);
-
-                                if ($result_tip && $result_tip->num_rows > 0) {
-                                    while ($row_tip = $result_tip->fetch_assoc()) {
-                                        $tip_time = strtotime($row_tip["tip_time"]);
-                                ?>
-                                        <tr>
-                                            <td class="cent_me wid_2">
-                                                <span class="btn btn-icon btn-exp">
-                                                    <span class="text-dark">Tx</span>
-                                                </span>
-                                            </td>
-                                            <td class="exp-amt cent_me wid_2">
-                                                <span>
-                                                    <?php echo $row_tip["tip1"]; ?>
-                                                </span> USDT
-                                            </td>
-                                            <td class="exp-amt cent_me wid_2">
-                                                <span class="color-sell">
-                                                <?php echo '<a href="/post/@'.$user_wallet.'/'.$row_tip["permlink"].'">Link</a>'; ?>
-                                                </span>
-                                            </td>
-                                            <td class="exp-user cent_me wid_2">
-                                                <span><?php echo $row_tip["sender"]; ?></span>
-                                            </td>
-                                            <td class="exp-amt cent_me wid_2">
-                                                <span>
-                                                    <?php echo time_ago($tip_time); ?>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                                </tbody>
-                            </table><!-- coin-list table -->
-                        </div><!-- market-ticker-block -->
-                        <div role="tabpanel" class="tab-pane fade" id="with_draw">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                <tr>
-                                    <th scope="col" class="cent_me wid_2"></th>
-                                    <th scope="col" class="cent_me wid_2">Token</th>
-                                    <th scope="col" class="cent_me wid_2">Amount</th>
-                                    <th scope="col" class="cent_me wid_2">Status</th>
-                                    <th scope="col" class="cent_me wid_2">Time</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-
-                                $sql_D = "SELECT * FROM TokWithdraw where username='$user_wallet' ORDER BY with_time DESC LIMIT 20";
-                                $result_D = $conn->query($sql_D);
-
-                                if ($result_D && $result_D->num_rows > 0) {
-                                    while ($row_D = $result_D->fetch_assoc()) {
-                                        $with_time = strtotime($row_D["with_time"]); 
-                                ?>
-                                        <tr>
-                                            <td class="cent_me wid_2"">
-                                                <span class="btn btn-icon btn-exp">
-                                                    <span class="text-dark">Tx</span>
-                                                </span>
-                                            </td>
-                                            <td class="exp-user cent_me wid_2">
-                                                <span><?php echo $row_D["token"]; ?></span>
-                                            </td>
-                                            <td class="exp-amt cent_me wid_2">
-                                                <span><?php echo $row_D["amount"]; ?></span>
-                                            </td>
-                                            <td class="exp-amt cent_me wid_2">
-                                                <span>
-                                                    <?php
-                                                    if($row_D["paid"] == '0')
-                                                        {echo '<span class="color-sell">Pending</span>';}
-                                                    elseif($row_D["paid"] == '1')
-                                                        {echo '<span class="color-buy">Paid</span>';}
-                                                    ?>
-                                                </span>
-                                            </td>
-                                            <td class="exp-amt cent_me wid_2">
-                                                <?php echo time_ago($with_time); ?>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                                </tbody>
-                            </table><!-- coin-list table -->
-                        </div><!-- market-ticker-block -->
-                        <div role="tabpanel" class="tab-pane fade" id="ref_data">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                <tr>
-                                    <th scope="col" class="cent_me wid_2"></th>
-                                    <th scope="col" class="cent_me wid_2">Username</th>
-                                    <th scope="col" class="cent_me wid_2">Time</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-
-                                $sql_Ref = "SELECT * FROM Referrals where refer_by='$user_wallet' ORDER BY entry_time DESC LIMIT 50";
-                                $result_Ref = $conn->query($sql_Ref);
-
-                                if ($result_Ref && $result_Ref->num_rows > 0) {
-                                    while ($row_Ref = $result_Ref->fetch_assoc()) {
-                                        $Ref_time = strtotime($row_Ref["entry_time"]); 
-                                ?>
-                                        <tr>
-                                            <td class="cent_me wid_2"">
-                                                <span class="btn btn-icon btn-exp">
-                                                    <span class="text-dark">Tx</span>
-                                                </span>
-                                            </td>
-                                            <td class="exp-user cent_me wid_2">
-                                                <span><?php echo $row_Ref["username"]; ?></span>
-                                            </td>
-                                            <td class="exp-amt cent_me wid_2">
-                                                <?php echo time_ago($Ref_time); ?>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                                </tbody>
-                            </table><!-- coin-list table -->
+                            
                         </div><!-- market-ticker-block -->
                     </div>
                 </div>
@@ -262,7 +96,7 @@ include('template/header5.php'); ?>
 
 
 
-
+<!--
     <div class="latest-post-section" style="min-height:80vh;">
 		<div class="container">
 			<div class="row  align-items-center h-100">
@@ -275,7 +109,7 @@ include('template/header5.php'); ?>
 	    	<div class="row" id="profposts"></div>
 		</div>
     </div>
-  
+-->  
 <?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
