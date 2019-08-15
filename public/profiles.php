@@ -72,7 +72,7 @@ include('template/header5.php'); ?>
 							</div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="steem_trx">
-
+                        	<div class="row" id="cmt_content"></div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="tips_trx">
                             
@@ -168,6 +168,7 @@ include('template/header5.php'); ?>
 	});
 
 // get user comments
+	let $start_author, $limit, content = "#cmt_content";
 	let comments_query = {
 		start_author: profname,
 		limit: 21,
@@ -175,6 +176,18 @@ include('template/header5.php'); ?>
 
 	steem.api.getDiscussionsByComments(comments_query, function(err, result){
     	console.log(err, result);
+
+    	res.forEach(($post, i) => {
+
+    		let cmt_body = $post.body;
+
+    		$(content).append('<div class="col-lg-4 col-md-6">\n' +
+					'\n' +
+					'<h5><a href="#">' + cmt_body + '</a></h5>\n' +
+					'\n' +
+			'</div>');		
+
+    	});
     });	
 
 
