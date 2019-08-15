@@ -51,9 +51,9 @@ include('template/header5.php'); ?>
                 <div class="ticker-head">
                     <ul class="nav nav-tabs ticker-nav" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active show" href="#dlike_trx" role="tab" data-toggle="tab"
+                            <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
                                aria-selected="true">
-                                <h5>DLIKE</h5>
+                                <h5>Posts</h5>
                                 <i class="fa fa-stroopwafel"></i>
                             </a>
                         </li>
@@ -76,56 +76,17 @@ include('template/header5.php'); ?>
                 <div class="market-ticker-block">
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active show" id="dlike_trx">
-                            <table class="table coin-list table-hover">
-                                <thead>
-                                <tr>
-                                    <th scope="col">TX</th>
-                                    <th scope="col">Reason</th>
-                                    <th scope="col" style="text-align: right;padding-right: 40px;">Amount</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-
-                                $sqlt   = "SELECT * FROM transactions where username='$user_wallet' OR receiver='$user_wallet' ORDER BY trx_time DESC";
-                                $result = $conn->query($sqlt);
-
-                                if ($result->num_rows > 0) {
-                                    while ($row = $result->fetch_assoc()) {
-                                        $trx_status = $row["reason"];
-                                        $rec_person = $row["receiver"];
-                                        $send_person = $row["username"];
-                                        ?>
-                                        <tr>
-                                            <td>
-                                                <span class="btn btn-icon btn-exp">
-                                                    <span class="text-dark">Tx</span>
-                                                </span>
-                                            </td>
-                                            <td class="exp-user">
-                                                <span>
-                                                    <?php 
-                                                    if($rec_person == $user_wallet)
-                                                        {echo '<span class="color-buy">Receieved From '.$send_person.'</span>';}
-                                                    //if($send_person == $user_wallet)
-                                                        //{echo '<span class="color-sell">'.$trx_status.'</span>'; }
-                                                    else{echo 'For '.$trx_status; }
-                                                    ?>
-                                                </span>
-                                            </td>
-                                            <td class="exp-amt">
-                                                <span id="tk-amt">
-                                                    <?php echo(number_format($row["amount"])); ?>
-                                                </span> DLIKE
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    }
-                                }
-                                ?>
-                                </tbody>
-                            </table><!-- coin-list table -->
+                        <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
+							<div class="container">
+								<div class="row  align-items-center h-100">
+					                <div class="row col-md-3 justify-content-center">
+					                    <h4 class="lab_post"><?php echo $_GET['user'];?></h4>
+					                </div>
+					                <div class="col-md-9 lay">&nbsp;</div>
+					            </div>
+					            <div id="loadings"><img src="/images/loader.svg" width="100"></div>
+						    	<div class="row" id="profposts"></div>
+							</div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="steem_trx">
                             <table class="table coin-list table-hover">
@@ -294,7 +255,7 @@ include('template/header5.php'); ?>
 
 
 
-    
+
 
 
 
