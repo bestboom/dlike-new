@@ -9,7 +9,7 @@
 			<div>
 				<span>
 					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
-					<span class="repu rounded-circle" style="font-size: 12px;margin-left:-45px;"></span>
+					<span class="repu rounded-circle" style="font-size: 12px;margin-left:-24px;border: 1px solid #c51d24;background: #c51d24;padding: 5px;color: #fff;font-weight: 600;font-family: sans-serif;"></span>
 				</span>
 				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br><span class="p_name"></span></span>
 			</div>
