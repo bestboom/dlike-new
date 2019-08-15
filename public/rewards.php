@@ -71,6 +71,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
         $result5 = $conn->query($sql5);
         $rows5 = $result5->fetch_all()
+        die($rows5);
         $referred_users = json_encode($rows5);
 
 // calculate points
