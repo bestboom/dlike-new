@@ -10,19 +10,19 @@
 				<span>
 					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
 				</span>
-				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br>@<span class="p_name"></span></span>
+				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br><span class="p_name"></span></span>
 			</div>
 			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
 		</div>
 		<div class="row" style="padding: 15px 40px 1px 40px;font-weight: bold;">
 			<span class="p_about"></span>
 		</div>
-		<div class="row" style="padding: 1px 40px;font-weight: bold;">
+		<div class="row" style="padding: 5px 40px;font-weight: bold;">
 			<span class="followers"></span>
 			<span class="following"></span>
-			<span class="p_joined" style="padding-left:10px;"></span>
+			<span class="p_joined" style="padding-left:14px;"></span>
 		</div>
-		<div class="row" style="padding: 1px 40px;font-weight: bold;">
+		<div class="row" style="padding: 5px 40px 15px;font-weight: bold;">
 			<span class="p_location"></span>
 			<span class="web_site" style="padding-left:10px;"></span>
 		</div>
@@ -82,7 +82,7 @@
 	  		}
 	  		if (typeof name !== 'undefined')
 	  		{
-	  			$('.name').html(name);
+	  			$('.name').html('@' + name);
 	  		}
         }
         let profile_created = result["0"].created;
