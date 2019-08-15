@@ -351,19 +351,19 @@ function echoStr($str) {
     };
     counter();
 
-    let views;
-    let likes;
+    let views = 0;
+    let likes = 0;
 
     function handlePostData(x)
     {
         console.log(x);
         let post = JSON.parse(x);
         console.log(post);
-        if(post.views != null && post.views != undefined && post.views != NaN)
+        if(post.views != null && post.views != "null" && post.views != undefined && post.views != NaN)
         {
           views += parseFloat(post.views);
         }
-        if(post.likes != null && post.likes != undefined && post.likes != NaN)
+        if(post.likes != null && post.likes != "null" && post.likes != undefined && post.likes != NaN)
         {
           likes += parseFloat(post.likes);
         }
