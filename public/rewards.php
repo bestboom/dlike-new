@@ -41,34 +41,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $result1 = $conn->query($sql1);
 
         $rows1 = $result1->fetch_all();
-        foreach($rows1 as $post)
-        {
-          array_push($permlinks_list, $post[5]);
-        }
-        var_dump($permlinks_list);
-
-        // if ($result1->num_rows > 0) {
-        //     $mydata = array();
-        //     while($row1 = $result1->fetch_assoc()) {
-        //         $mydata[] = $row1['permlink'];
-        //     }
-        //     $permlinks_list = implode("','", $mydata);
-        // }
-// views call
-
-        $sql2 = "SELECT SUM(totalviews) AS views FROM TotalPostViews where author = '$user_name' and permlink  IN ('$permlinks_list')";
-        $result2 = $conn->query($sql2);
-        $row2 = $result2->fetch_assoc();
-        $my_views = $row2['views'];
-        var_dump($row2);
-
-// likes check
-
-        $sql3 = "SELECT SUM(likes) AS total_likes FROM PostsLikes where author = '$user_name' and permlink  IN ('$permlinks_list')";
-        $result3 = $conn->query($sql3);
-        $row3 = $result3->fetch_assoc();
-        $my_likes = $row3['total_likes'];
-        var_dump($row3);
+        var_dump($rows1);
 
 // referrals check today (GMT)
 
@@ -103,13 +76,13 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $my_share = "";
         $my_earnings = "";
 
-    // } else {
-    //     $user_status = "You Are not a PRO user";
-    //     $my_points = "0";
-    //     $my_share = "0%";
-    //     $my_earnings = "0 DLIKE";
-    // }
-}
+    } else {
+        $user_status = "You Are not a PRO user";
+        $my_points = "0";
+        $my_share = "0%";
+        $my_earnings = "0 DLIKE";
+    }
+// }
 
 function echoStr($str) {
   echo ('\'' . $str . '\'');
@@ -305,6 +278,7 @@ function echoStr($str) {
             let postTime = moment.utc($post.created);
             let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
             let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
+            console.log($post);
             data.totalUpvotes += parsedVote;
             steem.api.getContentReplies(username, posts, function(err, result) {
               let i2 = i;
