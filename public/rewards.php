@@ -287,7 +287,8 @@ function echoStr($str) {
             xhr.onload = function()
             {
               let last = false;
-              if(i == relevantRes.length){
+              if(i == relevantRes.length - 1)
+              {
                 last = true;
               }
                 if(xhr.responseText.length > 0 && xhr.status == 200){
