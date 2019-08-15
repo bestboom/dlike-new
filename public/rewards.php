@@ -278,8 +278,22 @@ function echoStr($str) {
             let postTime = moment.utc($post.created);
             let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
             let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
-            console.log($post);
             data.totalUpvotes += parsedVote;
+
+            let xhr = new XMLHttpRequest();
+            let url = "https://dlike.io/helper/retrieve_post_data.php";
+            let params = 'permlink='+$post.permlink;
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function()
+            {
+                if(xhr.responseText.length > 0 && xhr.status == 200){ 
+                  handlePostData(xhr.responseText);
+                }else{
+                  console.error(xhr);
+                }
+            }
+            xhr.send(params);
             steem.api.getContentReplies(username, posts, function(err, result) {
               let i2 = i;
               result.forEach((comment, j) => {
@@ -296,18 +310,6 @@ function echoStr($str) {
                 return;
               }
             });
-            let xhr = new XMLHttpRequest();
-            let url = "https://dlike.io/helper/retrieve_post_data.php";
-            let params = 'permlink='+$post.permlink;
-            xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function()
-            {
-                console.log(xhr);
-                console.log(xhr.responseText);
-                handlePostData(xhr.responseText);
-            }
-            xhr.send(params);
           });
         });
       });
