@@ -297,7 +297,7 @@ function echoStr($str) {
               }
             });
             let xhr = new XMLHttpRequest();
-            let url = https://dlike.io/helper/retrieve_post_data.php;
+            let url = "https://dlike.io/helper/retrieve_post_data.php";
             let params = 'permlink='+$post.permlink;
             xhr.open("POST", 'url', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
