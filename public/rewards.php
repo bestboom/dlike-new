@@ -359,8 +359,14 @@ function echoStr($str) {
         console.log(x);
         let post = JSON.parse(x);
         console.log(post);
-        views += post.views;
-        likes += post.likes;
+        if(post.views != null && post.views != undefined && post.views != NaN)
+        {
+          views += parseFloat(post.views);
+        }
+        if(post.likes != null && post.likes != undefined && post.likes != NaN)
+        {
+          likes += parseFloat(post.likes);
+        }
     }
 
     function output(x)
