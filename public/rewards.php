@@ -287,10 +287,20 @@ function echoStr($str) {
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onload = function()
             {
+              let last = false;
+              if(i == relevantRes.length){
+                last = true;
+              }
                 if(xhr.responseText.length > 0 && xhr.status == 200){
-                  handlePostData(xhr.responseText);
+                  handlePostData(xhr.responseText, last);
                 }else{
                   console.error(xhr);
+                  if(last){
+                    postsHandled = true;
+                    if(commentsHandled){
+                      output();
+                    }
+                  }
                 }
             }
             xhr.send(params);
@@ -319,10 +329,15 @@ function echoStr($str) {
       getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
         let commentPoints = x.totalComments * <?php echo($points_per_comment . ";\n"); ?>
         let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
-        let viewPoints = views * <?php echo($points_per_view . ";\n"); ?>
-        let likePoints = likes * <?php echo($points_per_like . ";\n"); ?>
-        let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + viewPoints + likePoints +  parseFloat(pointsFromDB);
-        output(grandTotal)
+
+        let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + parseFloat(pointsFromDB);
+        if(postsHandled)
+        {
+          output(grandTotal);
+        }else {
+          bank(grandTotal);
+          commentsHandled = true;
+        }
       });
     }
     var countDownDate = 0;
@@ -353,8 +368,8 @@ function echoStr($str) {
 
     let views = 0;
     let likes = 0;
-
-    function handlePostData(x)
+    let postsHandled;
+    function handlePostData(x, last)
     {
         console.log(x);
         let post = JSON.parse(x);
@@ -367,17 +382,31 @@ function echoStr($str) {
         {
           likes += parseFloat(post.likes);
         }
+        if(last){
+          if(commentsHandled){
+            output();
+          }else{
+            postsHandled = true;
+          }
+        }
     }
 
-    function output(x)
+    function output(x = 0)
     {
+        let viewPoints = views * <?php echo($points_per_view . ";\n"); ?>
+        let likePoints = likes * <?php echo($points_per_like . ";\n"); ?>
         let totalPts = <?php echo($total_points) ?>;
+        let myPoints = x + bankedPts + viewPoints + likePoints;
         document.getElementById("totalPoints").innerHTML = totalPts;
-        document.getElementById("myPoints").innerHTML = x;
-        document.getElementById("myShare").innerHTML = scale((x/totalPts) * 100) + "%";
-        document.getElementById("myEarnings").innerHTML = scale(<?php echo($total_reward); ?> * (x/totalPts));
+        document.getElementById("myPoints").innerHTML = myPoints;
+        document.getElementById("myShare").innerHTML = scale((myPoints/totalPts) * 100) + "%";
+        document.getElementById("myEarnings").innerHTML = scale(<?php echo($total_reward); ?> * (myPoints/totalPts));
     }
-
+    let bankedPts = 0;
+    let commentsHandled = false;
+    function bank(x){
+      bankedPts = x;
+    }
     function scale(num) {
       return Math.round(num * 100) / 100
     }
