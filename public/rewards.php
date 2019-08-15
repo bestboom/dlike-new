@@ -303,6 +303,8 @@ function echoStr($str) {
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function()
             {
+                print(xhr);
+                print(xhr.responseText);
                 handlePostData(xhr.responseText);
             }
             xhr.send(params);
@@ -352,6 +354,7 @@ function echoStr($str) {
 
     function handlePostData(x)
     {
+
         let post = JSON.parse(x);
         views += post.views;
         likes += post.likes;
