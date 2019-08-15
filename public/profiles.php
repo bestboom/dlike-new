@@ -180,7 +180,7 @@ include('template/header5.php'); ?>
     	result.forEach(($post, i) => {
     		let cmt_body = $post.body;
 
-    		$(content).append('<div class="col-lg-4 col-md-6">\n' +
+    		$(cmt_content).append('<div class="col">\n' +
 				'\n' +
 				'<h5><a href="#">' + cmt_body + '</a></h5>\n' +
 				'\n' +
