@@ -221,8 +221,7 @@ function echoStr($str) {
     </div><!-- working-process-section-->
     <?php $conn->close(); include('template/footer3.php'); ?>
     <script type="text/javascript">
-    let userObj = JSON.parse(<?php echoStr($referred_users); ?>);
-    let users = Object.values(userObj).slice(0);
+    let users = JSON.parse(<?php echoStr($referred_users); ?>);
     console.log(users);
 
     let pointsFromDB = <?php echo($my_points); ?>;
@@ -235,7 +234,7 @@ function echoStr($str) {
       let itemsProcessed = 0;
       for(let i = 0; i<users.length; i++)
       {
-        getDataByUser(users[i], (x)=>{
+        getDataByUser(users[i][0], (x)=>{
           console.log(x)
           let pointsPerRefPost = <?php echo($points_per_referral_post) ?>;
           referralPostPoints += parseFloat(x.totalPosts) * pointsPerRefPost;
