@@ -662,7 +662,26 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     border-bottom: 1px solid #ededed;
     border-left: 1px solid #191d5d;
     border-top: 1px solid #191d5d;
-    color: #191d5d; }    
+    color: #191d5d; } 
+.prof-nav .nav-item a h5 {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 0 15px; }
+.prof-nav {border-bottom: 1px solid #191d5d !important;}        
+.prof-nav .nav-item a {
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    padding: 16px 30px;
+    background: #191d5d;
+    -webkit-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    border-right: 1px solid #f0f0f0;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid #191d5d; }       
 .ticker-nav .nav-item a.active h5 {
     color: #1652f0; }
 .ticker-nav .nav-item-last {
