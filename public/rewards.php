@@ -268,7 +268,7 @@ function echoStr($str) {
         steem.api.getDiscussionsByBlog(query, function(err, res) {
           let upvoteSum = 0.0;
           let relevantRes = [];
-          if(!res || res.length <= 0 || res.error){
+          if(res.length <= 0){
             callback(data);
             return;
           }
@@ -286,7 +286,7 @@ function echoStr($str) {
               }
             }
           });
-          if(!relevantRes || relevantRes.length <= 0){
+          if(relevantRes.length <= 0){
             callback(data);
             return;
           }
