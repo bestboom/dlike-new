@@ -74,7 +74,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         while ($row5 = mysql_fetch_assoc($result5)) {
           array.push($rows5,$row5);
         }
-        $dump_log .= var_dump($rows5);
         $referred_users = json_encode($rows5);
 
 // calculate points
