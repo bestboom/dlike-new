@@ -356,8 +356,9 @@ function echoStr($str) {
 
     function handlePostData(x)
     {
-
+        console.log(x);
         let post = JSON.parse(x);
+        console.log(post);
         views += post.views;
         likes += post.likes;
     }
