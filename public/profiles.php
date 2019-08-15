@@ -89,7 +89,7 @@
         let profile_name = result["0"].name;
         let acc_created = moment(profile_created).format('MM-YYYY');
         $('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
-        $('.p_name').html('&#64;' + profile_name)
+        $('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name)
 	  		
   	});
 
