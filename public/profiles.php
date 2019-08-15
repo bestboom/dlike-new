@@ -3,12 +3,13 @@
 	<div id="p_cover" class="img-fluid" style="background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
 		
 	</div>
-	<div style="background: #eeeeee94;">
+	<div style="background: #ededed;">
 	<div class="container p-data">
 		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
 			<div>
 				<span>
 					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
+					<span class="repu"></span>
 				</span>
 				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br><span class="p_name"></span></span>
 			</div>
@@ -89,7 +90,9 @@
         let profile_name = result["0"].name;
         let acc_created = moment(profile_created).format('MM-YYYY');
         $('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
-        $('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name)
+        $('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name);
+        let reputation = steem.formatter.reputation(result["0"].reputation);
+        $('.repu').html(reputation);
 	  		
   	});
 
