@@ -191,13 +191,7 @@ include('template/header5.php'); ?>
 
 // get user replies
 
-	let replies_query = {
-		startAuthor: profname,
-		startPermlink: '',
-		limit: 21,
-	};
-
-	steem.api.getRepliesByLastUpdate(replies_query, function(err, result) {
+	steem.api.getRepliesByLastUpdate(profname, '', 23, function(err, result) {
 	  console.log(err, result);
 	});
 
