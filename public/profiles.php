@@ -40,16 +40,12 @@ include('template/header5.php'); ?>
 		</div>
 	</div>
 
-
-
-
-
-
+	
 <div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
         <div class="container">
             <div class="new-ticker-block-wrap">
                 <div class="ticker-head">
-                    <ul class="nav nav-tabs ticker-nav" role="tablist">
+                    <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
                                aria-selected="true">

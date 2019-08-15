@@ -642,7 +642,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     border-right: 1px solid #b5d6ff;
     border-bottom: 1px solid transparent;
     border-left: 1px solid #b5d6ff;
-    border-top: 1px solid #b5d6ff; }
+    border-top: 1px solid #b5d6ff; }  
 .ticker-nav .nav-item a h5 {
     display: inline-block;
     font-size: 15px;
@@ -656,6 +656,13 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     border-left: 1px solid #b5d6ff;
     border-top: 1px solid #b5d6ff;
     color: #1652f0; }
+.prof-nav .nav-item a.active {
+    background: transparent;
+    border-right: 1px solid #191d5d;
+    border-bottom: 1px solid #ededed;
+    border-left: 1px solid #191d5d;
+    border-top: 1px solid #191d5d;
+    color: #191d5d; }    
 .ticker-nav .nav-item a.active h5 {
     color: #1652f0; }
 .ticker-nav .nav-item-last {
