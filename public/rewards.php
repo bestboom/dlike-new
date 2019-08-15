@@ -35,8 +35,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 
     // if ($result_T && $result_T->num_rows > 0) {
     //     $row_T  = $result_T->fetch_assoc();
-        $sql0 = "SELECT SYSDATETIMEOFFSET()"
-        echo(fetch_assoc($conn->query($sql0)));
 
         $sql1 = "SELECT * FROM steemposts where username = '$user_name' and DAY(ADDTIME(created_at, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
         $result1 = $conn->query($sql1);
