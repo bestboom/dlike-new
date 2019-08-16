@@ -7,6 +7,13 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$sql = "ALTER TABLE prousers ADD total_points float(8) NOT NULL";
+if ($conn->query($sql) === TRUE) {
+    echo "Table rece added";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
 
 /*'
 
