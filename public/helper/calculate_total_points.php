@@ -26,35 +26,36 @@ $my_earnings = "0 DLIKE";
     $sql_T = "SELECT username FROM prousers";
     $result_T = $conn->query($sql_T);
     $users = $result_T->fetch_all();
-
+    var_dump($users);
     $all_users = array();
-    foreach($users as $user)
-    {
-      $user_obj = array();
-// referrals check today (GMT)
-      $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
-      $result4 = $conn->query($sql4);
-      $row4 = $result4->fetch_all();
-      $my_referrals_today = $row4['total'];
 
-      array_push($user_obj, 'referrals_today'=>$my_referrals_today);
-// get users all referral and their posts from api to multiply by 5 points
-      $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
-      $result5 = $conn->query($sql5);
-      $row5 = $result5->fetch_all();
-      if(is_null($row5)){
-        $row5 = array();
-      }
-      // $referred_users = json_encode($row5);
-      array_push($user_obj, 'referred_users'=>$row5);
-      array_push($all_users, $user_obj);
-    }
+//     foreach($users as $user)
+//     {
+//       $user_obj = array();
+// // referrals check today (GMT)
+//       $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
+//       $result4 = $conn->query($sql4);
+//       $row4 = $result4->fetch_all();
+//       $my_referrals_today = $row4['total'];
+//
+//       array_push($user_obj, 'referrals_today'=>$my_referrals_today);
+// // get users all referral and their posts from api to multiply by 5 points
+//       $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
+//       $result5 = $conn->query($sql5);
+//       $row5 = $result5->fetch_all();
+//       if(is_null($row5)){
+//         $row5 = array();
+//       }
+//       // $referred_users = json_encode($row5);
+//       array_push($user_obj, 'referred_users'=>$row5);
+//       array_push($all_users, $user_obj);
+//     }
+    $conn->close();
+    die();
 
     function echoStr($str) {
       echo ('\'' . $str . '\'');
     }
-    $conn->close();
-    die();
 ?>
 
 
