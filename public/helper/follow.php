@@ -22,12 +22,13 @@ $voteGenerator = new dlike\followit\makeFollow();
     $publish = $voteGenerator->followMe($username, $_json);
     $state = $voteGenerator->broadcast($publish);
 
-        if (array_key_exists("error",$state)){
-            $response["success"] = false;
-            $response["message"] = $state->error_description;
-        }else{
+        if (isset($state->result)){
             $response["success"] = true;
             $response["message"] = "You Followed Successfully";
+            
+        }else{
+            $response["success"] = false;
+            $response["message"] = $state->error_description;
         }
 
     }
