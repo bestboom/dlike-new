@@ -5,8 +5,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $id = 1;
-$following = '';
-$follower = '';
+ $follower = 'goldenwhale';
+$following = $_COOKIE['username'];
 $response = [];
 if (isset($_POST["auth"]) && isset($_POST["p_auth"])){
 
@@ -19,15 +19,15 @@ if (isset($_POST["auth"]) && isset($_POST["p_auth"])){
         $voteOptions = [
             "operations"=> [
                 ["custom_json", [
-                    "required_auths"=> $auth,
-                    "required_posting_auths"=> $p_auth,
+                    "required_auths"=> $follow,
+                    "required_posting_auths"=> $following,
                     "id"=> $id,
                     "json"=> $_json
                 ]]
             ]
         ];
-        $response["user"] = $userName;
-        $steemconnect->url = "https://v2.steemconnect.com/api/broadcast";
+        $response["user"] = $_COOKIE['username'];
+        $steemconnect->url = "https://steemconnect.com/api/broadcast";
         $steemconnect->headers[] = "accept: application/json";
         $steemconnect->vote($voteOptions);
         $steem_res = get_object_vars($steemconnect->HttpResponse($steemconnect));
@@ -48,7 +48,7 @@ if (isset($_POST["auth"]) && isset($_POST["p_auth"])){
     $response["message"] = "Parameter empty";
 }
 print json_encode($response);
-#var_dump($steem_res);
+var_dump($steem_res);
 
 
 ?>
