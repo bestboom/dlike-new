@@ -172,16 +172,17 @@ include('template/header5.php'); ?>
     		let cmt_body = $post.body;
     		let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 			let reputation = steem.formatter.reputation($post.author_reputation);
+			let url = $post.url;
 
     		$(cmt_content).append('<div class="profile_content">\n' +
 				'\n' +
-				'<div style="padding-bottom:5px;"><span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
+				'<div style="padding-bottom:5px;"><span><a href="/@'+$post.author+'"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
 				'\n' + 
 				'<span class="p_content_author"><a href="/@'+$post.author+'">' + $post.author + '</a></span><span style="padding-right:4px;">('+reputation+')</span>\n' +
 				'\n' + 
 				'<span style="padding-right:5px;">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span></div>\n' +
 				'\n' +  
-				'<h4 class="p_content_title"><a href="https://steemit.com/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
+				'<h4 class="p_content_title"><a href="https://steemit.com' + url + '" target="_blank">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
 				'<h5 class="p_content_body">' + cmt_body + '</h5>\n' +
 				'\n' +
@@ -199,12 +200,13 @@ include('template/header5.php'); ?>
 			let rep_body = $post.body;
 			let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 			let reputation = steem.formatter.reputation($post.author_reputation);
+			let url = $post.url;
 
 			$(rep_content).append('<div class="profile_content">\n' +
 				'\n' +
 				'<div style="padding-bottom:5px;">\n' +
 				'\n' +
-				'<span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
+				'<span><a href="/@'+$post.author+'"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
 				'\n' +
 				'<span class="p_content_author"><a href="/@'+$post.author+'">' + $post.author + '</a></span><span class="p_content_pad">('+reputation+')</span>\n' +
 				'\n' +
@@ -212,7 +214,7 @@ include('template/header5.php'); ?>
 				'\n' + 
 				'</div>\n' +
 				'\n' +  
-				'<h4 class="p_content_title"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
+				'<h4 class="p_content_title"><a href="https://steemit.com' + url + '" target="_blank">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
 				'<h5 class="p_content_body">' + rep_body + '</h5>\n' +
 				'\n' +
