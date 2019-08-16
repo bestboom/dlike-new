@@ -8,7 +8,7 @@ $id = 1;
  $follower = 'goldenwhale';
 $following = $_COOKIE['username'];
 $response = [];
-if (isset($_POST["auth"]) && isset($_POST["p_auth"])){
+//if (isset($_POST["auth"]) && isset($_POST["p_auth"])){
 
     $_json = ["follow",[
         "follower"=> $follower,
@@ -42,11 +42,11 @@ if (isset($_POST["auth"]) && isset($_POST["p_auth"])){
         $response["success"] = false;
         $response["message"] = "No Vailid user session";
     }
-}else{
-    $response["user"] = "";
-    $response["success"] = false;
-    $response["message"] = "Parameter empty";
-}
+//}else{
+//    $response["user"] = "";
+//    $response["success"] = false;
+//   $response["message"] = "Parameter empty";
+//}
 print json_encode($response);
 var_dump($steem_res);
 
