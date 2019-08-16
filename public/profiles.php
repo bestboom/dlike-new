@@ -222,7 +222,6 @@ include('template/header5.php'); ?>
     	});
 	});
 // check if user following
-
     //isFollowing = profname;
     steem.api.getFollowers(username, profname, "blog", 10, function(err, result) {
     	console.log(result)
