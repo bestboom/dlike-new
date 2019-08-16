@@ -16,7 +16,7 @@ $response = [];
         "what"=>['blog']
     ]];
 
-$voteGenerator = new dlike\follow\makeFollow();
+$voteGenerator = new dlike\followit\makeFollow();
     if (!empty($username)){
 
     $publish = $voteGenerator->followMe($username, $_json);
