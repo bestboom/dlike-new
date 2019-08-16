@@ -73,7 +73,8 @@ $response = [];
         "what"=>['blog']
     ]];
 
-$voteGenerator = new dlike\follow\makeFollow();
+$voteGenerator = dlike\follow\makeFollow();
+//$voteGenerator = new dlike\vote\makeVote();
     if (!empty($username)){
 
     $publish = $voteGenerator->followMe($_json);
