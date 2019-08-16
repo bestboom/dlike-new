@@ -79,6 +79,7 @@ for(input of users)
         value: totalPointValue
       },
     });
+    document.body.append("\nPOSTED " + totalPointValue + "points for user: " + input.username + "\n");
   });
 }
 
