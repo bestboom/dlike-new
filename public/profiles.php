@@ -194,7 +194,7 @@ include('template/header5.php'); ?>
 // get user replies
 	let rep_content = "#replies_content";
 	steem.api.getRepliesByLastUpdate(profname, '', 23, function(err, result) {
-	  	console.log(err, result);
+	  	//console.log(err, result);
 
       	result.forEach(($post, i) => {
 			let rep_body = $post.body;
@@ -221,6 +221,14 @@ include('template/header5.php'); ?>
 			'</div>');		
     	});
 	});
+// check if user following
+
+    isFollowing = profname;
+    steem.api.getFollowers(username, profname, "blog", 10, function(err, result) {
+        let isFollow = (result.filter(followers => followers.follower == isFollowing));
+        if(isFollow.length > 0) {isFollow = 'following'} else {isFollow = 'Follow'}
+    console.log(isFollow)
+
 
 // post details		
 		let $tag, $limit, content = "#profposts";
