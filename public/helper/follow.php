@@ -21,19 +21,18 @@ $voteGenerator = new dlike\followit\makeFollow();
 
     $publish = $voteGenerator->followMe($username, $_json);
     $state = $voteGenerator->broadcast($publish);
-    var_dump($state);
+    //var_dump($state);
         if (isset($state->error)){
             $response["success"] = false;
             $response["message"] = $state->error_description;
-        }
-        if(isset($state)){
+        }else{
             $response["success"] = true;
             $response["message"] = "You Followed Successfully";
         }
 
     }
-//print json_encode($response);
-var_dump($state);
+print json_encode($response);
+//var_dump($state);
 
 
 /*
