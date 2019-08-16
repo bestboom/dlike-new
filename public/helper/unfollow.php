@@ -13,7 +13,7 @@ $response = [];
     $_json = ['follow',[
         'follower'=> $username,
         'following'=> $follower,
-        'what'=>['blog']
+        'what'=>[]
     ]];
 
 $voteGenerator = new dlike\unfollowit\makeunFollow();
