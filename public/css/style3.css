@@ -593,6 +593,10 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 
 .profile_content{padding: 18px 10px 5px 5px;border-top:1px solid #ded4e4;width:100%;}
 .p_content_body{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.p_content_author{font-weight:600;padding-right:2px;}
+.p_content_title{font-weight:600; color: #1a1a1a;font-size:16px;}
+.p_content_img{width:32px;margin-right:12px;}
+.p_content_pad{padding-right:5px;}
 .new-ticker-block-section {
     padding: 60px 0 0 0; }
 .new-ticker-block-section .coin-list th,
