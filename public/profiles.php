@@ -228,8 +228,8 @@ include('template/header5.php'); ?>
         let isFollow = (result.filter(followers => followers.follower == isFollowing));
         if(isFollow.length > 0) {isFollow = 'following'} else {isFollow = 'Follow'}
     console.log(isFollow)
-
-
+	});
+	
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
