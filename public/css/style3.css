@@ -590,6 +590,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 | 3. Coin List Style
 |----------------------------------------------------------------------------
 */
+
+.profile_content{padding: 18px 10px 5px 5px;border-top:1px solid #ded4e4;width:100%;}
+.p_content_body{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
 .new-ticker-block-section {
     padding: 60px 0 0 0; }
 .new-ticker-block-section .coin-list th,
