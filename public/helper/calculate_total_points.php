@@ -22,71 +22,85 @@ $my_points = "0";
 $my_share = "0%";
 $my_earnings = "0 DLIKE";
 
-    $sql_T = "SELECT username FROM prousers";
-    $result_T = $conn->query($sql_T);
-    $users = $result_T->fetch_all();
-    $all_users = array();
+  $sql_T = "SELECT username FROM prousers";
+  $result_T = $conn->query($sql_T);
+  $users = $result_T->fetch_all();
+  $all_users = array();
 
-    foreach($users as $user)
-    {
-      $user_name = $user[0];
+  foreach($users as $user)
+  {
+    $user_name = $user[0];
 // referrals check today (GMT)
-      $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
-      $result4 = $conn->query($sql4);
-      $row4 = $result4->fetch_all();
-      $my_referrals_today = $row4[0][0];
+    $sql4 = "SELECT count( DISTINCT(username) ) as total FROM Referrals where refer_by = '$user_name' and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
+    $result4 = $conn->query($sql4);
+    $row4 = $result4->fetch_all();
+    $my_referrals_today = $row4[0][0];
 //get users all referral and their posts from api to multiply by 5 points
-      $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
-      $result5 = $conn->query($sql5);
-      $row5 = $result5->fetch_all();
-      if(is_null($row5)){
-        $row5 = array();
-      }
-      $uname = array('username' => $user_name);
-      $ref_today = array('referrals_today' => $my_referrals_today);
-      $ref_users = array('referred_users'=>$row5);
-      $user_obj = $uname + $ref_today + $ref_users;
-      array_push($all_users, $user_obj);
+    $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
+    $result5 = $conn->query($sql5);
+    $row5 = $result5->fetch_all();
+    if(is_null($row5)){
+      $row5 = array();
     }
-    echo(json_encode($all_users));
-    $conn->close();
-    die();
+    $uname = array('username' => $user_name);
+    $ref_today = array('referrals_today' => $my_referrals_today);
+    $ref_users = array('referred_users'=>$row5);
+    $user_obj = $uname + $ref_today + $ref_users;
+    array_push($all_users, $user_obj);
+  }
+  $output = json_encode($all_users);
+  $conn->close();
 
-    function echoStr($str) {
-      echo ('\'' . $str . '\'');
-    }
+  function echoStr($str) {
+    echo ('\'' . $str . '\'');
+  }
 ?>
 
 
 <script type="text/javascript">
-let users = JSON.parse(<?php echoStr($referred_users); ?>);
-console.log(users);
+let users = JSON.parse(<?php echoStr($output); ?>);
+let url_updatePoints = "https://dlike.io/helper/update_prouser_points.php";
+let url_retrievePostData = "https://dlike.io/helper/retrieve_post_data.php";
 
-let pointsFromDB = <?php echo($my_points); ?>;
-console.log(pointsFromDB);
-// Tally up referral points
-let referralPostPoints = 0.0;
-
-if(users.length > 0)
+for(input of users)
 {
-  let itemsProcessed = 0;
-  for(let i = 0; i<users.length; i++)
+  getCompleteUserData(input, function(data){
+  	let totalPointValue = (data.totalViews * <?php echo($points_per_view); ?>) +
+                          (data.totalLikes * <?php echo($points_per_like); ?>) +
+                          (data.totalComments * <?php echo($points_per_comment); ?>) +
+                          (data.totalUpvotes * <?php echo($points_per_upvote); ?>) +
+                          (data.totalReferralPosts * <?php echo($points_per_referral_post); ?>) +
+                          (input.referrals_today * <?php echo($points_per_referral_daily); ?>);
+    $.ajax({
+      url: url_updatePoints,
+      type: "POST",
+      data: {
+        user: input.username,
+        value: totalPointValue
+      },
+    });
+  });
+}
+
+
+function getCompleteUserData(user, callback){
+	let referralData = {
+  	"totalPosts":0
+  };
+	for(let i = 0; i<user.referred_users.length; i++)
   {
-    getDataByUser(users[i][0], (x)=>{
-      console.log(x)
-      let pointsPerRefPost = <?php echo($points_per_referral_post) ?>;
-      referralPostPoints += parseFloat(x.totalPosts) * pointsPerRefPost;
-      console.log(referralPostPoints);
-      itemsProcessed++;
-      if(itemsProcessed === users.length)
-      {
-        referralTallied(referralPostPoints);
+  	getDataByUser(user.referred_users[i][0], (referdata)=>{
+    	referralData.totalPosts += referdata.totalPosts;
+      if(i == user.referred_users.length - 1){
+      	getDataByUser(user.username, (userdata)=>{
+        	userdata.totalReferralPosts = referralData.totalPosts;
+          callback(userdata);
+        });
       }
     });
   }
-}else{
-  referralTallied(0);
 }
+
 function getDataByUser(username, callback) {
   $(document).ready(function() {
     let query;
@@ -99,17 +113,21 @@ function getDataByUser(username, callback) {
     let data = {
       "totalComments": 0,
       "totalUpvotes": 0.0,
-      "totalPosts": 0
+      "totalPosts": 0,
+      "totalViews":0,
+      "totalLikes":0
     };
-
-    steem.api.getDiscussionsByBlog(query, function(err, res) {
+    steem.api.getDiscussionsByBlog(query, function(err, res)
+    {
+      let commentsHandled;
+      let postsHandled;
       let upvoteSum = 0.0;
       let relevantRes = [];
       if(res.length <= 0 || res.error != null){
         callback(data);
         return;
       }
-      console.log(res);
+
       res.forEach(($post) => {
         let postTime = moment.utc($post.created);
         if (postTime.format('D') == moment.utc().format('D')) {
@@ -127,6 +145,7 @@ function getDataByUser(username, callback) {
         callback(data);
         return;
       }
+
       relevantRes.forEach(($post, i) => {
         let posts = $post.permlink;
         let upvotes = $post.pending_payout_value;
@@ -134,32 +153,25 @@ function getDataByUser(username, callback) {
         let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
         let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
         data.totalUpvotes += parsedVote;
-
-        let xhr = new XMLHttpRequest();
-        let url = "https://dlike.io/helper/retrieve_post_data.php";
-        let params = 'permlink='+$post.permlink;
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onload = function()
-        {
-          let last = false;
-          if(i == relevantRes.length - 1)
+        $.ajax({
+          url: url_retrievePostData,
+          type: "POST",
+          data: {
+            permlink: $post.permlink,
+          },
+        }).done(function(post)
           {
-            last = true;
-          }
-            if(xhr.responseText.length > 0 && xhr.status == 200){
-              handlePostData(xhr.responseText, last);
-            }else{
-              console.error(xhr);
-              if(last){
-                postsHandled = true;
-                if(commentsHandled){
-                  output();
-                }
+            let last = (i == relevantRes.length - 1);
+            data.totalViews += (notNull(post.views)) ? parseFloat(post.views) : 0;
+            data.totalLikes += (notNull(post.likes)) ? parseFloat(post.likes) : 0;
+            if(last)
+            {
+              postsHandled = true;
+              if(commentsHandled){
+                callback(data);
               }
             }
-        }
-        xhr.send(params);
+          });
         steem.api.getContentReplies(username, posts, function(err, result) {
           let i2 = i;
           result.forEach((comment, j) => {
@@ -171,98 +183,20 @@ function getDataByUser(username, callback) {
               data.totalDlikeComments++;
             }
           });
-          if (i2 == relevantRes.length - 1) {
-            callback(data);
-            return;
+          if (i2 == relevantRes.length - 1)
+          {
+            commentsHandled = true;
+            if(postsHandled){
+              callback(data);
+            }
           }
         });
       });
     });
   });
 }
-function referralTallied(total)
-{
-  getDataByUser(<?php echoStr($user_name); ?>, (x)=>{
-    let commentPoints = x.totalComments * <?php echo($points_per_comment . ";\n"); ?>
-    let upvotePoints = x.totalUpvotes * <?php echo($points_per_upvote . ";\n"); ?>
 
-    let grandTotal = parseFloat(commentPoints) + parseFloat(upvotePoints) + parseFloat(referralPostPoints) + parseFloat(pointsFromDB);
-    if(postsHandled)
-    {
-      output(grandTotal);
-    }else {
-      bank(grandTotal);
-      commentsHandled = true;
-    }
-  });
+function notNull(x){
+	return (x != null && x != "null" && x != undefined && x != NaN);
 }
-var countDownDate = 0;
-function counter() {
-    setInterval(() => {
-        var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
-        var countDownDate = new Date(date);
-        var i = 60;
-        var h = 24 - countDownDate.getHours();
-        if (h < 10) {
-            h = "0" + h;
-        }
-        var m = 59 - countDownDate.getMinutes();
-        if (m < 10) {
-            m = "0" + m;
-        }
-        var s = countDownDate.getSeconds();
-        s = i - s;
-        if (s < 10) {
-            s = "0" + s;
-        }
-        str = h + ":" + m + ":" + s;
-        i++;
-        $(".dividendCountDown").html(str);
-    }, 1000);
-};
-counter();
-
-let views = 0;
-let likes = 0;
-let postsHandled = false;
-function handlePostData(x, last)
-{
-    let post = JSON.parse(x);
-    if(post.views != null && post.views != "null" && post.views != undefined && post.views != NaN)
-    {
-      views += parseFloat(post.views);
-    }
-    if(post.likes != null && post.likes != "null" && post.likes != undefined && post.likes != NaN)
-    {
-      likes += parseFloat(post.likes);
-    }
-    if(last){
-      if(commentsHandled){
-        output();
-      }else{
-        postsHandled = true;
-      }
-    }
-}
-
-function output(x = 0)
-{
-    let viewPoints = views * <?php echo($points_per_view . ";\n"); ?>
-    let likePoints = likes * <?php echo($points_per_like . ";\n"); ?>
-    let totalPts = <?php echo($total_points) ?>;
-    let myPoints = x + bankedPts + viewPoints + likePoints;
-    document.getElementById("totalPoints").innerHTML = totalPts;
-    document.getElementById("myPoints").innerHTML = myPoints;
-    document.getElementById("myShare").innerHTML = scale((myPoints/totalPts) * 100) + "%";
-    document.getElementById("myEarnings").innerHTML = scale(<?php echo($total_reward); ?> * (myPoints/totalPts));
-}
-let bankedPts = 0;
-let commentsHandled = false;
-function bank(x){
-  bankedPts = x;
-}
-function scale(num) {
-  return Math.round(num * 100) / 100
-}
-
 </script>
