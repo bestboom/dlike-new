@@ -4,6 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+echo $username = $_COOKIE['username'];
 $id = 1;
 $follower = 'goldenwhale';
 $following = $_COOKIE['username'];
@@ -15,7 +16,7 @@ $response = [];
         "following"=> $following,
         "what"=>['blog']
         ]];
-    if (!empty($userName)){
+    if (!empty($username)){
         $voteOptions = [
             "operations"=> [
                 ["custom_json", [
