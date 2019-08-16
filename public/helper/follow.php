@@ -20,7 +20,7 @@ $voteGenerator = new dlike\followit\makeFollow();
     if (!empty($username)){
 
     $publish = $voteGenerator->followMe($username, $_json);
-    $state = $voteGenerator->broadcast($publish);
+    echo $state = $voteGenerator->broadcast($publish);
 
         if (isset($state->error)){
             $response["success"] = false;
