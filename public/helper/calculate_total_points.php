@@ -36,7 +36,7 @@ $my_earnings = "0 DLIKE";
       $result4 = $conn->query($sql4);
       $row4 = $result4->fetch_all();
       $my_referrals_today = $row4[0][0];
-      var_dump($row4);
+      var_dump($my_referrals_today);
 
     }
 //get users all referral and their posts from api to multiply by 5 points
