@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 $id = 1;
- $follower = 'goldenwhale';
+$follower = 'goldenwhale';
 $following = $_COOKIE['username'];
 $response = [];
 //if (isset($_POST["auth"]) && isset($_POST["p_auth"])){
@@ -26,7 +26,7 @@ $response = [];
                 ]]
             ]
         ];
-        $response["user"] = $_COOKIE['username'];
+        $response["user"] = $_COOKIE['access_token'];
         $steemconnect->url = "https://steemconnect.com/api/broadcast";
         $steemconnect->headers[] = "accept: application/json";
         $steemconnect->vote($voteOptions);
