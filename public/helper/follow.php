@@ -10,10 +10,10 @@ $follower = 'crypto.genius';
 echo $username = $_COOKIE['username'];
 $response = [];
 
-    $_json = ["follow",[
-        "follower"=> $username,
-        "following"=> $follower,
-        "what"=>['blog']
+    $_json = ['follow',[
+        'follower'=> $username,
+        'following'=> $follower,
+        'what'=>['blog']
     ]];
 
 $voteGenerator = new dlike\followit\makeFollow();
