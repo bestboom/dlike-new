@@ -11,8 +11,8 @@ echo $username = $_COOKIE['username'];
 $response = [];
 
     $_json = ["follow",[
-        "follower"=> $follower,
-        "following"=> $_COOKIE['username'],
+        "follower"=> $_COOKIE['username'],
+        "following"=> $follower,
         "what"=>['blog']
     ]];
 
