@@ -11,7 +11,7 @@ class makeFollow
             "operations"=> [
                 ["custom_json", [
                     "required_auths"=> [],
-                    "required_posting_auths"=> ['$username'],
+                    "required_posting_auths"=> $username,
                     "id"=> 'follow',
                     "json"=> $_json
                 ]]
