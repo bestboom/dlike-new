@@ -25,7 +25,7 @@ $voteGenerator = new dlike\follow\makeFollow();
 
         if (array_key_exists("error",$state)){
             $response["success"] = false;
-            $response["message"] = $state["error_description"];
+            $response["message"] = $state->error_description;
         }else{
             $response["success"] = true;
             $response["message"] = "You Followed Successfully";
