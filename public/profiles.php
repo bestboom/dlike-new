@@ -222,14 +222,14 @@ include('template/header5.php'); ?>
     	});
 	});
 // check if user following
-
-    isFollowing = profname;
+    //isFollowing = profname;
     steem.api.getFollowers(username, profname, "blog", 10, function(err, result) {
+    	console.log(result)
         let isFollow = (result.filter(followers => followers.follower == isFollowing));
         if(isFollow.length > 0) {isFollow = 'following'} else {isFollow = 'Follow'}
     console.log(isFollow)
 	});
-	
+
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
