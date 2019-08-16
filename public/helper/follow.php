@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_follow.php";
 
-$follower = '@crypto.genius';
+$follower = 'crypto.genius';
 echo $username = $_COOKIE['username'];
 $response = [];
 
@@ -22,16 +22,12 @@ $voteGenerator = new dlike\followit\makeFollow();
     $publish = $voteGenerator->followMe($username, $_json);
     $state = $voteGenerator->broadcast($publish);
 
-        
-        if (isset($state->result)
-        {
-            $response["success"] = true;
-            $response["message"] = "You Followed Successfully";
-        }
-        else
-        {
+        if (array_key_exists("error",$state)){
             $response["success"] = false;
             $response["message"] = $state->error_description;
+        }else{
+            $response["success"] = true;
+            $response["message"] = "You Followed Successfully";
         }
 
     }
