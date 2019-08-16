@@ -6,12 +6,12 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_follow.php";
 
-$follower = 'goldenwhale';
-echo $username = $_COOKIE['username'];
+$follower = '@goldenwhale';
+echo $username = '@certseek';
 $response = [];
 
     $_json = ["follow",[
-        "follower"=> $_COOKIE['username'],
+        "follower"=> $username,
         "following"=> $follower,
         "what"=>['blog']
     ]];
