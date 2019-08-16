@@ -20,7 +20,7 @@ $response = [];
         $voteOptions = [
             "operations"=> [
                 ["custom_json", [
-                    "required_auths"=> $follow,
+                    "required_auths"=> $follower,
                     "required_posting_auths"=> $following,
                     "id"=> $id,
                     "json"=> $_json
