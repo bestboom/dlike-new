@@ -35,7 +35,7 @@ $my_earnings = "0 DLIKE";
        // and DAY(ADDTIME(entry_time, TIME(TIMEDIFF(LOCALTIMESTAMP, UTC_TIMESTAMP)))) = DAY(UTC_TIMESTAMP)";
       $result4 = $conn->query($sql4);
       $row4 = $result4->fetch_all();
-      //$my_referrals_today = $row4['total'];
+      $my_referrals_today = $row4[0][0];
       var_dump($row4);
 
     }
