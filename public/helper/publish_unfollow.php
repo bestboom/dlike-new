@@ -12,7 +12,7 @@ class makeunFollow
                 ["custom_json", [
                     "required_auths"=> [],
                     "required_posting_auths"=> [$username],
-                    "id"=> 'unfollow',
+                    "id"=> 'follow',
                     "json"=> json_encode($_json)
                 ]]
             ]
