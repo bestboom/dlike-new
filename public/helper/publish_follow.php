@@ -17,9 +17,9 @@ class makeFollow
                 ]]
             ]
         ];
-        //$fixed_str = json_encode($do_follow);
-        //print($fixed_str);
-        return $do_follow;
+        $fixed_str = json_encode($do_follow);
+        print($fixed_str);
+        return $fixed_str;
     }
 
 
