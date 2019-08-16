@@ -2,6 +2,6 @@
   $sql = "SELECT total_points, username from prousers";
   $result = $conn->query($sql);
   $output = $result->fetch_all();
-  var_dump($output);
+  highlight_string("<?php\n\$data =\n" . var_export($output, true) . ";\n?>");
   $conn->close();
 ?>
