@@ -10,16 +10,16 @@ class makeFollow
         $do_follow = [
             "operations"=> [
                 ["custom_json", [
-                    //"required_auths"=> [],
+                    "required_auths"=> [],
                     "required_posting_auths"=> [$username],
                     "id"=> 'follow',
                     "json"=> $_json
                 ]]
             ]
         ];
-        $fixed_str = json_encode($do_follow);
-        print($fixed_str);
-        return $fixed_str;
+        //$fixed_str = json_encode($do_follow);
+        print($do_follow);
+        //return $fixed_str;
     }
 
 
