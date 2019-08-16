@@ -5,13 +5,13 @@ namespace dlike\follow;
 class makeFollow
 {
 
-    public function followMe($_json)
+    public function followMe($username, $_json)
     {
         $do_follow = [
             "operations"=> [
                 ["custom_json", [
                     "required_auths"=> [],
-                    "required_posting_auths"=> $_COOKIE['access_token'],
+                    "required_posting_auths"=> ['$username'],
                     "id"=> 'follow',
                     "json"=> $_json
                 ]]

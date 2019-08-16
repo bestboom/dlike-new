@@ -6,12 +6,12 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_follow.php";
 
-$follower = '@goldenwhale';
-echo $username = '@certseek';
+$follower = 'goldenwhale';
+echo $username = $_COOKIE['username'];
 $response = [];
 
     $_json = ["follow",[
-        "follower"=> $username,
+        "follower"=> $_COOKIE['username'],
         "following"=> $follower,
         "what"=>['blog']
     ]];
@@ -19,7 +19,7 @@ $response = [];
 $voteGenerator = new dlike\follow\makeFollow();
     if (!empty($username)){
 
-    $publish = $voteGenerator->followMe($_json);
+    $publish = $voteGenerator->followMe($username, $_json);
     $state = $voteGenerator->broadcast($publish);
 
         if (array_key_exists("error",$state)){
