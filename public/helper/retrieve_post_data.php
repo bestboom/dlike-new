@@ -12,6 +12,7 @@
   $my_likes = $row3['total_likes'];
   $output = array('permlink' => $activePost, 'views' => $my_views, 'likes' => $my_likes);
   echo(json_encode($output));
+  $conn->close(); 
 } else {
   die("No input");
 }
