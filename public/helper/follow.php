@@ -20,8 +20,8 @@ $voteGenerator = new dlike\followit\makeFollow();
     if (!empty($username)){
 
     $publish = $voteGenerator->followMe($username, $_json);
-    echo $state = $voteGenerator->broadcast($publish);
-
+    $state = $voteGenerator->broadcast($publish);
+    var_dump($state);
         if (isset($state->error)){
             $response["success"] = false;
             $response["message"] = $state->error_description;
@@ -32,7 +32,7 @@ $voteGenerator = new dlike\followit\makeFollow();
         }
 
     }
-print json_encode($response);
+//print json_encode($response);
 var_dump($state);
 
 
