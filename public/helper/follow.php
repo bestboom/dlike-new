@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require_once "../helper/publish_follow.php";
 
 $follower = '@crypto.genius';
-echo $username = '@'.$_COOKIE['username'];
+echo $username = $_COOKIE['username'];
 $response = [];
 
     $_json = ["follow",[

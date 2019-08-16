@@ -10,8 +10,8 @@ class makeFollow
         $do_follow = [
             "operations"=> [
                 ["custom_json", [
-                    "required_auths"=> [],
-                    "required_posting_auths"=> [$username],
+                    //"required_auths"=> [],
+                    //"required_posting_auths"=> [$username],
                     "id"=> 'follow',
                     "json"=> $_json
                 ]]
