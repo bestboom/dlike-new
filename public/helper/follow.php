@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_follow.php";
 
-$follower = 'goldenwhale';
+$follower = '@goldenwhale';
 echo $username = $_COOKIE['username'];
 $response = [];
 
