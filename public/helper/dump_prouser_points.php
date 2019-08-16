@@ -2,6 +2,6 @@
   $sql = "SELECT total_points from prousers";
   $result = $conn->query($sql);
   $output = $result->fetch_all();
-  var_dump($result);
+  var_dump($output);
   $conn->close();
 ?>
