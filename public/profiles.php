@@ -166,20 +166,24 @@ include('template/header5.php'); ?>
 	};
 
 	steem.api.getDiscussionsByComments(comments_query, function(err, result){
-    	console.log(err, result);
+    	//console.log(err, result);
 
     	result.forEach(($post, i) => {
     		let cmt_body = $post.body;
     		let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 			let reputation = steem.formatter.reputation($post.author_reputation);
 
-    		$(cmt_content).append('<div style="padding: 18px 10px 5px 5px;border-top:1px solid #ded4e4;width:100%;">\n' +
+    		$(cmt_content).append('<div class="profile_content">\n' +
 				'\n' +
-				'<div style="padding-bottom:5px;"><span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle" style="width:32px;margin-right:12px;"></a></span><span style="font-weight:600;padding-right:2px;"><a href="#">' + $post.author + '</a></span><span style="padding-right:4px;">('+reputation+')</span><span style="padding-right:5px;">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span></div>\n' +
+				'<div style="padding-bottom:5px;"><span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
+				'\n' + 
+				'<span class="p_content_author"><a href="#">' + $post.author + '</a></span><span style="padding-right:4px;">('+reputation+')</span>\n' +
+				'\n' + 
+				'<span style="padding-right:5px;">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span></div>\n' +
 				'\n' +  
-				'<h4 class="post-title" style="font-weight:600; color: #1a1a1a;font-size:16px;"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
+				'<h4 class="p_content_title"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
-				'<h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a href="#">' + cmt_body + '</a></h5>\n' +
+				'<h5 class="p_content_body"><a href="#">' + cmt_body + '</a></h5>\n' +
 				'\n' +
 			'</div>');		
 
@@ -189,23 +193,30 @@ include('template/header5.php'); ?>
 // get user replies
 	let rep_content = "#replies_content";
 	steem.api.getRepliesByLastUpdate(profname, '', 23, function(err, result) {
-	  console.log(err, result);
+	  	//console.log(err, result);
 
       	result.forEach(($post, i) => {
 			let rep_body = $post.body;
 			let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 			let reputation = steem.formatter.reputation($post.author_reputation);
 
-			$(rep_content).append('<div style="padding: 18px 10px 5px 5px;border-top:1px solid #ded4e4;width:100%;">\n' +
+			$(rep_content).append('<div class="profile_content">\n' +
 				'\n' +
-				'<div style="padding-bottom:5px;"><span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle" style="width:32px;margin-right:12px;"></a></span><span style="font-weight:600;padding-right:2px;"><a href="#">' + $post.author + '</a></span><span style="padding-right:4px;">('+reputation+')</span><span style="padding-right:5px;">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span></div>\n' +
+				'<div style="padding-bottom:5px;">\n' +
+				'\n' +
+				'<span><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
+				'\n' +
+				'<span class="p_content_author"><a href="#">' + $post.author + '</a></span><span class="p_content_pad">('+reputation+')</span>\n' +
+				'\n' +
+				'<span class="p_content_pad">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span>\n' +
+				'\n' + 
+				'</div>\n' +
 				'\n' +  
-				'<h4 class="post-title" style="font-weight:600; color: #1a1a1a;font-size:16px;"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
+				'<h4 class="p_content_title"><a href="/post/@' + $post.root_title + '">Re: ' + $post.root_title + '</a></h4>\n' +
 				'\n' +
-				'<h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><a href="#">' + rep_body + '</a></h5>\n' +
+				'<h5 class="p_content_body"><a href="#">' + rep_body + '</a></h5>\n' +
 				'\n' +
 			'</div>');		
-
     	});
 	});
 
