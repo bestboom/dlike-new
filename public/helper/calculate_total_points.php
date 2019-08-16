@@ -35,7 +35,6 @@ $my_earnings = "0 DLIKE";
       $result4 = $conn->query($sql4);
       $row4 = $result4->fetch_all();
       $my_referrals_today = $row4[0][0];
-
 //get users all referral and their posts from api to multiply by 5 points
       $sql5 = "SELECT DISTINCT(username) as users FROM Referrals where refer_by = '$user_name'";
       $result5 = $conn->query($sql5);
@@ -43,15 +42,13 @@ $my_earnings = "0 DLIKE";
       if(is_null($row5)){
         $row5 = array();
       }
-      // $referred_users = json_encode($row5);
       $uname = array('username' => $user_name);
       $ref_today = array('referrals_today' => $my_referrals_today);
       $ref_users = array('referred_users'=>$row5);
-
       $user_obj = $uname + $ref_today + $ref_users;
       array_push($all_users, $user_obj);
     }
-    var_dump($all_users);
+    echo(json_encode($all_users));
     $conn->close();
     die();
 
