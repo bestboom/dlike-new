@@ -1,8 +1,7 @@
 <?php include('./../includes/config.php');
   $user = $_POST["user"];
-  $sql = "SELECT total_points FROM prousers";
+  $value = $_POST["value"];
+  $sql = "UPDATE prousers SET total_points = '$value'  where username = '$user'";
   $result = $conn->query($sql);
-  $row = $result->fetch_all();
-  var_dump($row);
-  $my_views = $row2['views'];
+  $conn->close();
 ?>
