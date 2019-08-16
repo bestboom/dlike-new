@@ -13,7 +13,7 @@ class makeFollow
                     "required_auths"=> [],
                     "required_posting_auths"=> [$username],
                     "id"=> 'follow',
-                    "json"=> $_json
+                    "json"=> JSON.stringify($_json)
                 ]]
             ]
         ];
