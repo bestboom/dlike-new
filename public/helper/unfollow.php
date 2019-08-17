@@ -14,10 +14,6 @@ if (isset($_POST["profname"])) {
 
     $follower = validator($_POST["profname"]);
     $username = $_COOKIE['username'];
-    
-    $return = array();
-    $return['status'] = false;
-    $return['message'] = '';
 
         $_json = ['follow',[
             'follower'=> $username,
@@ -27,17 +23,21 @@ if (isset($_POST["profname"])) {
 
         if (!empty($username) && ($username != $follower )){
 
+        $return = array();
+        $return['status'] = false;
+        $return['message'] = '';    
+
         $publish = $unfollowGenerator->unfollowMe($username, $_json);
         $state = $unfollowGenerator->broadcast($publish);
 
             if (isset($state->error)){
-                //$return["status"] = false;
+                $return["status"] = false;
                 $return["message"] = "Some Error";
             }else{
                 $return["status"] = true;
                 $return["message"] = "You Unfollowed Successfully";
             }    
-        }
         echo json_encode($return);die; 
+        }
 } else {die('Invalid Data');}
 ?>

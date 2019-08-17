@@ -13,10 +13,6 @@ function validator($data){
 if (isset($_POST["profname"])) {
     $follower = validator($_POST["profname"]);
     $username = $_COOKIE['username'];
-    
-    $return = array();
-    $return['status'] = false;
-    $return['message'] = '';
 
         $_json = ['follow',[
             'follower'=> $username,
@@ -25,6 +21,10 @@ if (isset($_POST["profname"])) {
         ]];
 
         if (!empty($username) && ($username != $follower )){
+
+            $return = array();
+            $return['status'] = false;
+            $return['message'] = '';
 
             $publish = $followGenerator->followMe($username, $_json);
             $state = $followGenerator->broadcast($publish);
@@ -35,8 +35,8 @@ if (isset($_POST["profname"])) {
             }else{
                 $return["status"] = true;
                 $return["message"] = "You Followed Successfully";
-            }    
-        }   
-        echo json_encode($return);die;  
+            }      
+        echo json_encode($return);die;   
+        }
 } else {die('Invalid Data');}        
 ?>
