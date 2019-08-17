@@ -22,21 +22,19 @@ if (isset($_POST["profname"])) {
 
         if (!empty($username) && ($username != $follower )){
 
-            $return = array();
-            $return['status'] = false;
-            $return['message'] = '';
+            $response=[];
 
             $publish = $followGenerator->followMe($username, $_json);
             $state = $followGenerator->broadcast($publish);
         
             if (isset($state->error)){
-                $return["status"] = false;
-                $return["message"] = "Some Error";
+                $response["status"] = false;
+                $response["message"] = "Some Error";
             }else{
-                $return["status"] = true;
-                $return["message"] = "You Followed Successfully";
+                $response["status"] = true;
+                $response["message"] = "You Followed Successfully";
             }      
-        echo json_encode($return);die;   
+        echo json_encode($response);die;   
         }
 } else {die('Invalid Data');}        
 ?>
