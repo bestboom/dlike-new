@@ -224,11 +224,11 @@ include('template/header5.php');
 
 //follow button on hover
 
-if ($(".btn-follow span").html() == "Following") {
-	
+if ($(".foll").html() == "Following") {
+
     $(".btn-follow").mouseover(function() {
         // Pass the new string into .html()
-        $(".btn-follow span").html("unfollow");
+        $(".foll").html("unfollow");
     });
 }
 // post details		
