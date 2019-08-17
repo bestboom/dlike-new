@@ -25,7 +25,7 @@ if (isset($_POST["profname"])) {
             $publish = $followGenerator->followMe($username, $_json);
             $state = $followGenerator->broadcast($publish);
         
-            if (isset($state->error)){
+            if (isset($state)){
                 $response["status"] = false;
                 $response["message"] = "Some Error";
             }else{
