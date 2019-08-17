@@ -32,7 +32,7 @@ include('template/header5.php');
 				</span>
 			</div>
 			<div>
-				<button class="btn btn-follow">
+				<button class="btn btn-danger follow">
 					<span class="foll"></span>
 				</button>
 			</div>

@@ -871,7 +871,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .img_profile{
     margin-right:7px;
 }
-.p_cover{background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;}
+#p_cover{background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;}
 .p-data .repu{font-size: 12px;margin-left:-24px;border: 1px solid #191d5d;background: #191d5d;padding: 5px;color: #fff;font-weight: 600;font-family: sans-serif;}
 .p_data_inner{justify-content: space-between;margin: 0px 25px;}
 .p_data_names{display: inline-table;padding-left: 15px;font-weight: 600;}
@@ -882,7 +882,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .p_data_top{padding: 15px 40px 1px 40px;font-weight: bold;}
 .p_data_mid{padding: 5px 40px;font-weight: bold;}
 .p_data_bot{padding: 5px 40px 15px;font-weight: bold;}
-.p_data .btn-follow {margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;}
+.p_data .follow {margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;}
 .p_tab_pad{padding:40px 20px;}
 #profposts{padding-top:40px;}
 .my_img{
