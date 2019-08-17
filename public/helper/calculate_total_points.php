@@ -56,185 +56,216 @@ $my_earnings = "0 DLIKE";
   }
 ?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-<script src="https://momentjs.com/downloads/moment.min.js"></script>
-<script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+      .tt:hover::after{
+      background-color:white;
+      content: attr(tooltip);
+      position: absolute;
+      border: 1px solid black;
+      white-space: pre;
+      padding:3px;
+      margin: 1px auto;
+      font-size: 15px;
+      }
 
-<script type="text/javascript">
-let users = JSON.parse(<?php echoStr($output); ?>);
-let url_updatePoints = "https://dlike.io/helper/update_prouser_points.php";
-let url_retrievePostData = "https://dlike.io/helper/retrieve_post_data.php";
-let count = 1;
+      .tt {
+      color:blue;
+      text-decoration:underline;
+      }
+    </style>
 
-for(let input of users)
-{
-	console.log(input)
-  getCompleteUserData(input, function(data){
-  	let totalPointValue = (data.totalViews * 0.2) +
-                          (data.totalLikes * 20) +
-                          (data.totalComments * 10) +
-                          (data.totalUpvotes * 100) +
-                          (data.totalReferralPosts * 5) +
-                          (input.referrals_today * 50);
-    // $.ajax({
-    //   url: url_updatePoints,
-    //   type: "POST",
-    //   data: {
-    //     user: input.username,
-    //     value: totalPointValue
-    //   },
-    // });
-    document.body.innerHTML += "<div>" + count + ". Calculated " + totalPointValue + " points for user: " + input.username + "</div>";
-    count++;
-  });
-}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+
+  </head>
+  <body>
 
 
-function getCompleteUserData(user, callback)
-{
-	let referralData = {
-  	"totalPosts":0,
-  };
-  if(user.referred_users.length > 0)
+  <script type="text/javascript">
+  let users = JSON.parse(<?php echoStr($output); ?>);
+  let url_updatePoints = "https://dlike.io/helper/update_prouser_points.php";
+  let url_retrievePostData = "https://dlike.io/helper/retrieve_post_data.php";
+  let count = 1;
+
+  for(let input of users)
   {
-    for(let i = 0; i<user.referred_users.length; i++)
-    {
-      getDataByUser(user.referred_users[i][0], (referdata)=>
-      {
-        referralData.totalPosts += referdata.totalPosts;
-        if(referdata.index == user.referred_users.length - 1)
-        {
-          getDataByUser(user.username, (userdata)=>{
-            userdata.totalReferralPosts = referralData.totalPosts;
-            callback(userdata);
-          });
-        }
-      }, i);
-   	}
-  }else
-  {
-  	console.log("no referrals...");
-    getDataByUser(user.username, (userdata)=>{
-      userdata.totalReferralPosts = 0;
-      document.body.innerHTML += "Running Callback";
-      callback(userdata);
+  	console.log(input)
+    getCompleteUserData(input, function(data){
+    	let totalPointValue = (data.totalViews * 0.2) +
+                            (data.totalLikes * 20) +
+                            (data.totalComments * 10) +
+                            (data.totalUpvotes * 100) +
+                            (data.totalReferralPosts * 5) +
+                            (input.referrals_today * 50);
+      // $.ajax({
+      //   url: url_updatePoints,
+      //   type: "POST",
+      //   data: {
+      //     user: input.username,
+      //     value: totalPointValue
+      //   },
+      // });
+      document.body.innerHTML += "<div>" + count + '. Calculated <span tooltip="' + data.toString() + '">' + totalPointValue + "</span> points for user: " + input.username + "</div>";
+      count++;
     });
   }
-}
 
-function getDataByUser(username, callback, index) {
-  $(document).ready(function() {
-    let query;
-    console.log(username);
-    if (username != null) {
-      query = {
-        tag: username,
-        limit: 12,
-      }
-    }
-    let data = {
-      "totalComments": 0,
-      "totalUpvotes": 0.0,
-      "totalPosts": 0,
-      "totalViews":0,
-      "totalLikes":0,
-      "index":index
+
+  function getCompleteUserData(user, callback)
+  {
+  	let referralData = {
+    	"totalPosts":0,
     };
-    steem.api.getDiscussionsByBlog(query, function(err, res)
+    if(user.referred_users.length > 0)
     {
-      let commentsHandled;
-      let postsHandled;
-      let upvoteSum = 0.0;
-      let relevantRes = [];
-      if(res.length <= 0 || res.error != null){
-        callback(data);
-        console.log("no result");
-        return;
-      }
-
-      res.forEach(($post) => {
-        let postTime = moment.utc($post.created);
-        if (postTime.format('D') == moment.utc().format('D')) {
-          // Check community
-          let metadata;
-          if ($post.json_metadata && $post.json_metadata.length > 0) {
-            metadata = JSON.parse($post.json_metadata);
-            if (metadata.community == "dlike")
-              relevantRes.push($post);
-            data.totalPosts = relevantRes.length;
+      for(let i = 0; i<user.referred_users.length; i++)
+      {
+        getDataByUser(user.referred_users[i][0], (referdata)=>
+        {
+          referralData.totalPosts += referdata.totalPosts;
+          if(referdata.index == user.referred_users.length - 1)
+          {
+            getDataByUser(user.username, (userdata)=>{
+              userdata.totalReferralPosts = referralData.totalPosts;
+              callback(userdata);
+            });
           }
-        }
+        }, i);
+     	}
+    }else
+    {
+    	console.log("no referrals...");
+      getDataByUser(user.username, (userdata)=>{
+        userdata.totalReferralPosts = 0;
+        document.body.innerHTML += "Running Callback";
+        callback(userdata);
       });
-      if(relevantRes.length <= 0){
-        callback(data);
-        console.log("no relevant result");
-        return;
+    }
+  }
+
+  function getDataByUser(username, callback, index) {
+    $(document).ready(function() {
+      let query;
+      console.log(username);
+      if (username != null) {
+        query = {
+          tag: username,
+          limit: 12,
+        }
       }
+      let data = {
+        "totalComments": 0,
+        "totalUpvotes": 0.0,
+        "totalPosts": 0,
+        "totalViews":0,
+        "totalLikes":0,
+        "index":index,
+        data.toString = function(){
+          return "Comments: " + this.totalComments + "\n" +
+                 "Upvotes: " + this.totalUpvotes + "\n" +
+                 "Posts: " + this.totalUpvotes + "\n" +
+                 "Views: " + this.totalUpvotes + "\n" +
+                 "Likes: " + this.totalUpvotes + "\n";
+        }
+      };
+      steem.api.getDiscussionsByBlog(query, function(err, res)
+      {
+        let commentsHandled;
+        let postsHandled;
+        let upvoteSum = 0.0;
+        let relevantRes = [];
+        if(res.length <= 0 || res.error != null){
+          callback(data);
+          console.log("no result");
+          return;
+        }
 
-      relevantRes.forEach(($post, i) => {
-        let posts = $post.permlink;
-        let upvotes = $post.pending_payout_value;
-        let postTime = moment.utc($post.created);
-        let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-        let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
-        data.totalUpvotes += parsedVote;
-        $.ajax({
-          url: url_retrievePostData,
-          type: "POST",
-          data: {
-            permlink: $post.permlink,
-          },
-        }).done(function(post)
-          {
-            let last = (i == relevantRes.length - 1);
-            data.totalViews += (notNull(post.views)) ? parseFloat(post.views) : 0;
-            data.totalLikes += (notNull(post.likes)) ? parseFloat(post.likes) : 0;
-            if(last)
-            {
-              postsHandled = true;
-              if(commentsHandled){
-                callback(data);
-              }
-            }
-          }).fail(()=>{
-          let last = (i == relevantRes.length - 1);
-          if(last)
-            {
-
-              postsHandled = true;
-              if(commentsHandled){
-                callback(data);
-              }
-            }
-          });
-        steem.api.getContentReplies(username, posts, function(err, result) {
-          let i2 = i;
-          result.forEach((comment, j) => {
+        res.forEach(($post) => {
+          let postTime = moment.utc($post.created);
+          if (postTime.format('D') == moment.utc().format('D')) {
+            // Check community
             let metadata;
-            if (comment.json_metadata && comment.json_metadata.length > 0) {
-              metadata = JSON.parse(comment.json_metadata);
-            }
-            if (metadata.community == "dlike") {
-              data.totalDlikeComments++;
-            }
-          });
-          if (i2 == relevantRes.length - 1)
-          {
-            commentsHandled = true;
-            if(postsHandled){
-              callback(data);
+            if ($post.json_metadata && $post.json_metadata.length > 0) {
+              metadata = JSON.parse($post.json_metadata);
+              if (metadata.community == "dlike")
+                relevantRes.push($post);
+              data.totalPosts = relevantRes.length;
             }
           }
         });
+        if(relevantRes.length <= 0){
+          callback(data);
+          console.log("no relevant result");
+          return;
+        }
+
+        relevantRes.forEach(($post, i) => {
+          let posts = $post.permlink;
+          let upvotes = $post.pending_payout_value;
+          let postTime = moment.utc($post.created);
+          let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+          let parsedVote = parseFloat(upvotes.match(/\d\.\d+(?= SBD)/)[0]);
+          data.totalUpvotes += parsedVote;
+          $.ajax({
+            url: url_retrievePostData,
+            type: "POST",
+            data: {
+              permlink: $post.permlink,
+            },
+          }).done(function(post)
+            {
+              let last = (i == relevantRes.length - 1);
+              data.totalViews += (notNull(post.views)) ? parseFloat(post.views) : 0;
+              data.totalLikes += (notNull(post.likes)) ? parseFloat(post.likes) : 0;
+              if(last)
+              {
+                postsHandled = true;
+                if(commentsHandled){
+                  callback(data);
+                }
+              }
+            }).fail(()=>{
+            let last = (i == relevantRes.length - 1);
+            if(last)
+              {
+
+                postsHandled = true;
+                if(commentsHandled){
+                  callback(data);
+                }
+              }
+            });
+          steem.api.getContentReplies(username, posts, function(err, result) {
+            let i2 = i;
+            result.forEach((comment, j) => {
+              let metadata;
+              if (comment.json_metadata && comment.json_metadata.length > 0) {
+                metadata = JSON.parse(comment.json_metadata);
+              }
+              if (metadata.community == "dlike") {
+                data.totalDlikeComments++;
+              }
+            });
+            if (i2 == relevantRes.length - 1)
+            {
+              commentsHandled = true;
+              if(postsHandled){
+                callback(data);
+              }
+            }
+          });
+        });
       });
     });
-  });
-}
+  }
 
-function notNull(x){
-	return (x != null && x != "null" && x != undefined && x != NaN);
-}
-
-
-
-</script>
+  function notNull(x){
+  	return (x != null && x != "null" && x != undefined && x != NaN);
+  }
+  </script>
+</body>
+</html>
