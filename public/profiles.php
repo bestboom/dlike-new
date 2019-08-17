@@ -443,7 +443,12 @@ include('template/header5.php');
 		                	toastr['error']('Sorry. Server response is malformed.');
 		                    //alert('Sorry. Server response is malformed.')
 		                }
-	                }
+	                },
+	                  error: function(xhr, textStatus, error){
+					      console.log(xhr.statusText);
+					      console.log(textStatus);
+					      console.log(error);
+					  }
 	            });
 	        }
 
