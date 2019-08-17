@@ -9,7 +9,7 @@ $followGenerator = new dlike\followit\makeFollow();
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
-$response = [];
+//$response = [];
 if (isset($_POST["profname"])) {
     $follower = validator($_POST["profname"]);
     $username = $_COOKIE['username'];
@@ -25,15 +25,26 @@ if (isset($_POST["profname"])) {
             $publish = $followGenerator->followMe($username, $_json);
             $state = $followGenerator->broadcast($publish);
         
-            if (isset($state)){
-                $response["status"] = false;
-                $response["message"] = "Some Error";
+            if (isset($state->error)){
+                //$response["status"] = false;
+                //$response["message"] = "Some Error";
+                die(json_encode([
+                    'error' => true,
+                    'message' => 'Some Error', 
+                    'data' => 'looks some issue'
+                ]));        
             }else{
-                $response["status"] = true;
-                $response["message"] = "You Followed Successfully";
+                //$response["status"] = true;
+                //$response["message"] = "You Followed Successfully";
+                    die(json_encode([
+                    'error' => false,
+                    'message' => 'You Followed Successfully', 
+                    'data' => 'following'
+                    
+                ]));            
             }      
           
         }
-        echo json_encode($response);die; 
+        //echo json_encode($response);die; 
 } else {die('Invalid Data');}        
 ?>

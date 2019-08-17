@@ -428,16 +428,20 @@ include('template/header5.php');
 	                cache : false,
 	                dataType: 'json',
 	                data: {profname:profname},
-	                success:function(response){
-	                	console.log(response);
-	                    if(response.status===true)
-	                    {
-	                        toastr['success'](response.message);
-	                    }
-	                    else{
-	                        toastr['error'](response.message);
-	                        return false;
-	                    }
+	                success:function(data){
+	                	console.log(data);
+		                try {
+		                    var response = JSON.parse(data)
+		                    if(response.error == true) {
+		                        toastr['error'](response.message);
+	                        	return false;
+		                    } else {
+		                        toastr['success'](response.message);
+		                    }
+		                } catch (err) {
+		                	toastr['error']('Sorry. Server response is malformed.');
+		                    //alert('Sorry. Server response is malformed.')
+		                }
 	                }
 	            });
 	        }

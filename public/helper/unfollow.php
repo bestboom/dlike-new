@@ -26,7 +26,7 @@ if (isset($_POST["profname"])) {
         $publish = $unfollowGenerator->unfollowMe($username, $_json);
         $state = $unfollowGenerator->broadcast($publish);
 
-            if (isset($state)){
+            if (isset($state->error)){
                 $response["status"] = false;
                 $response["message"] = "Some Error";
             }else{
