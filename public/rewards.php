@@ -16,10 +16,10 @@ $total_points = 1000;
 $permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
-$sql1 = "SELECT SUM(total_points) FROM prousers";
+$sql1 = "SELECT SUM(total_points) as pts FROM prousers";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
-$total_points = $row1["0"];
+$total_points = $row1["pts"];
 
 // if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // {
@@ -30,10 +30,10 @@ $total_points = $row1["0"];
     if ($result_T && $result_T->num_rows > 0) {
         $row_T  = $result_T->fetch_assoc();
 
-        $sql2 = "SELECT total_points FROM prousers where username='$user_name'";
+        $sql2 = "SELECT total_points as my_pts FROM prousers where username='$user_name'";
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
-        $my_points = (float) $row2["0"];
+        $my_points = (float) $row2["my_pts"];
 
         var_dump($row1);
         var_dump($row2);
