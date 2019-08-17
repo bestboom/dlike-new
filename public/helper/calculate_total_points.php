@@ -101,14 +101,14 @@ $my_earnings = "0 DLIKE";
                             (data.totalUpvotes * 100) +
                             (data.totalReferralPosts * 5) +
                             (input.referrals_today * 50);
-      // $.ajax({
-      //   url: url_updatePoints,
-      //   type: "POST",
-      //   data: {
-      //     user: input.username,
-      //     value: totalPointValue
-      //   },
-      // });
+      $.ajax({
+        url: url_updatePoints,
+        type: "POST",
+        data: {
+          user: input.username,
+          value: totalPointValue
+        },
+      });
 
       let tooltip = "Comments: " + data.totalComments + "&#xa;" +
                     "Upvotes: " + data.totalUpvotes + "&#xa;" +
