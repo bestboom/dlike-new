@@ -35,9 +35,8 @@ $sql1 = "SELECT SUM(total_points) as pts FROM prousers";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
 $total_points = $row1["pts"];
-
-// if (isset($_COOKIE['username']) || $_COOKIE['username'])
-// {
+if (isset($_COOKIE['username']) || $_COOKIE['username'])
+{
     $user_name = $_COOKIE['username'];
     $sql_T = "SELECT * FROM prousers where username='$user_name'";
     $result_T = $conn->query($sql_T);
