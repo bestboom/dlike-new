@@ -26,9 +26,9 @@ $user_status = "You Must Login";
         $my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
-$_COOKIE['username'] = "tfame3865";
-$total_points = 1000;
-$permlinks_list = array();
+$_COOKIE['certseek'] = "tfame3865";
+// $total_points = 1000;
+// $permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
 $sql1 = "SELECT SUM(total_points) as pts FROM prousers";
