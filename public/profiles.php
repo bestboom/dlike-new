@@ -402,16 +402,50 @@ include('template/header5.php');
 
 			}
 		});
-	//follow button on hover
-	if ($(".foll").html() == "Following") {
+		//follow button on hover
+		if ($(".foll").html() == "Following") {
 
-	    $('.btn-follow').hover(function() {
-	        $(this).find('span').text('unfollow');
-	    }, function() {
-	        $(this).find('span').text('Following');
-	    });
-	}
-	});
+		    $('.btn-follow').hover(function() {
+		        $(this).find('span').text('unfollow');
+		    }, function() {
+		        $(this).find('span').text('Following');
+		    });
+		}
+	
+
+
+	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
+	$('.btn-follow').click(function(e) {	
+	    e.preventDefault();
+
+	        let follower_status = $(".foll").html();
+	        console.log(follower_status);
+
+	        if(follower_status == 'Follow'){
+	            $.ajax({
+	                url: '/helper/follow.php',
+	                type: 'post',
+	                cache : false,
+	                dataType: 'json',
+	                data: {profname:profname},
+	                success:function(response){
+
+	                    if(response.success===true)
+	                    {
+	                        toastr['success'](response.message);
+	                    }
+	                    else{
+	                        toastr['error'](response.message);
+	                        return false;
+	                    }
+	                }
+	            });
+	        }
+	})
+
+});
+
+
 
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
