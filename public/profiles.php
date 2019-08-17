@@ -225,7 +225,7 @@ include('template/header5.php');
 //follow button on hover
 
 if ($(".foll").html() == "Following") {
-
+	console.log($(".foll").html());
     $('.btn-follow').hover(function() {
         $(this).find('span').text('unfollow');
     }, function() {
