@@ -415,8 +415,8 @@ include('template/header5.php');
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
-	$('.btn-follow').click(function() {	
-	    //e.preventDefault();
+	$('.btn-follow').click(function(e) {	
+	    e.preventDefault();
 	    	let profname = '<?php echo $_GET['user'];?>';
 	        let follower_status = $(".foll").html();
 	        console.log(follower_status);
@@ -464,7 +464,11 @@ include('template/header5.php');
 	                        toastr['error'](response.message);
 	                        return false;
 	                    }
-	                }
+	                },
+	                error: function(xhr, status, error){
+         			var errorMessage = xhr.status + ': ' + xhr.statusText
+         			alert('Error - ' + errorMessage);
+     				}
 	            });
 	        }
 
