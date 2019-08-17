@@ -228,9 +228,9 @@ if ($(".foll").html() == "Following") {
 
     $(".btn-follow").hover(function() {
         // Pass the new string into .html()
-        $(this).find('.foll').text('unfollow');
+        $('.foll').text('unfollow');
     }, function() {
-        $(this).find('.foll').text('Following');
+        $('.foll').text('Following');
     });
 }
 
