@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_unfollow.php";
 
-$follower = 'crypto.genius';
+$follower = 'goldenwhale';
 echo $username = $_COOKIE['username'];
 $response = [];
 
