@@ -41,7 +41,7 @@ domReady(function () {
     var Next       = FormSignUp.querySelector('.next');
 
     var msg_inuse       = 'This username is already in use.';
-    var msg_notAllowed  = 'Not allowed(no capital letters, no characters).';
+    var msg_notAllowed  = 'Not allowed (no capital letters, no characters).';
     var msg_tooLong     = 'Account name should be shorter.';
     var msg_isAvailable = 'This username is available.';
     var msg_error       = 'Unfortunately an error occurred. The name could not be checked :(';
