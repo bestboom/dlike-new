@@ -429,7 +429,7 @@ include('template/header5.php');
 	                dataType: 'json',
 	                data: {profname:profname},
 	                success:function(response){
-
+	                	console.log(response);
 	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
@@ -450,7 +450,7 @@ include('template/header5.php');
 	                dataType: 'json',
 	                data: {profname:profname},
 	                success:function(response){
-
+	                	console.log(response);
 	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
