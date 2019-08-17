@@ -237,7 +237,7 @@ include('template/header5.php');
 				metadata = JSON.parse($post.json_metadata);
 			}
 			
-		//get meta tags
+			//get meta tags
 			let steemTags = metadata.tags;
 			let dlikeTags = steemTags.slice(2);
 			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
@@ -411,7 +411,7 @@ include('template/header5.php');
 		        $(this).find('span').text('Following');
 		    });
 		}
-	
+	})
 
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
@@ -466,7 +466,6 @@ include('template/header5.php');
 	                }
 	            });
 	        }
-	})
 
 });
 
