@@ -1,30 +1,30 @@
 <?php 
-if (isset($_GET['user'])) {
-     $prof_user = $_GET['user'];
+if (isset($_GET['user'])) 
+{
+	$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-include('template/header5.php'); ?>
-    </div><!-- sub-header --> 
-<?php
+include('template/header5.php');
+//check pro status
     $sql_T = "SELECT * FROM prousers where username='$prof_user'";
     $result_T = $conn->query($sql_T);
-    if ($result_T && $result_T->num_rows > 0) {
+    if ($result_T && $result_T->num_rows > 0) 
+    {
     	$profile_user = 'PRO';
     }
 ?>
-	<div id="p_cover" class="img-fluid" style="background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
-		
-	</div>
+</div><!-- sub-header --> 
+	<div id="p_cover" class="img-fluid"></div>
 	<div style="background: #ededed;">
 	<div class="container p-data">
 		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
 			<div>
 				<span>
-					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
-					<span class="repu rounded-circle" style="font-size: 12px;margin-left:-24px;border: 1px solid #191d5d;background: #191d5d;padding: 5px;color: #fff;font-weight: 600;font-family: sans-serif;"></span>
+					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
+					<span class="repu rounded-circle"></span>
 				</span>
 				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br><span class="p_name"></span><?php if($profile_user== "PRO"){ echo '<span><i class="fas fa-check-circle" title="PRO User" style="padding-left:7px;color:forestgreen;"></i></span>';} ?></span>
 			</div>
-			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
+			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;"><span class=".foll"></span></button></div>
 		</div>
 		<div class="row" style="padding: 15px 40px 1px 40px;font-weight: bold;">
 			<span class="p_about"></span>
@@ -101,7 +101,6 @@ include('template/header5.php'); ?>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
-
 		let profname = '<?php echo $_GET['user'];?>';
 
 //profile details
@@ -119,9 +118,7 @@ include('template/header5.php'); ?>
 	  		let location = metadata.profile.location;
 	  		let website = metadata.profile.website;
 	  		let name = metadata.profile.name;
-	  		//console.log(metadata.profile.location);
-	  		//console.log(cover_url)
-	  		//$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
+
 	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
 	  		$('.p_about').html(about);
 	  		if (typeof location !== 'undefined')
@@ -224,9 +221,10 @@ include('template/header5.php'); ?>
 // check if user following
     isFollowing = username;
     steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
-    	console.log(result)
+    console.log(result)
         let isFollow = (result.filter(followers => followers.follower == isFollowing));
-        if(isFollow.length > 0) {isFollow = 'following'} else {isFollow = 'Follow'}
+        if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
+        $('.foll').html(isFollow);
     console.log(isFollow)
 	});
 
