@@ -416,6 +416,12 @@ if ($(".btn-follow span").html() == "Following") {
 */
 if ($(".foll").html() == "Following") {
 
+    $('.btn-follow').hover(function() {
+        $(this).find('span').text('unfollow');
+    }, function() {
+        $(this).find('span').text('Followings');
+    });
+/*
     $(".btn-follow").mouseover(function() {
         // Pass the new string into .html()
         $(".foll").html("unfollow");
@@ -423,6 +429,7 @@ if ($(".foll").html() == "Following") {
     },function() {
     	$(".foll").html("unfollow");
     });
+    */
 }
 
 	});	
