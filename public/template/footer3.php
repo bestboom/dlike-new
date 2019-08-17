@@ -104,9 +104,9 @@
 <script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
 <script src="/js/steemconnect.js"></script>
+<script src="/js/toaster.js"></script>
 <script src="/js/mint.js"></script>
 <script src="/js/posts.js"></script>
-<script src="/js/toaster.js"></script>
 <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
     <script>
         function openNav() {
