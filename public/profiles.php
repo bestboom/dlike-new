@@ -32,7 +32,7 @@ include('template/header5.php');
 				</span>
 			</div>
 			<div>
-				<button class="btn btn-danger follow">
+				<button class="btn btn-danger btn-follow">
 					<span class="foll"></span>
 				</button>
 			</div>
@@ -65,7 +65,7 @@ include('template/header5.php');
                             <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Comments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#user_posts" role="tab" data-toggle="tab">Replies</a>
+                            <a class="nav-link" href="#user_replies" role="tab" data-toggle="tab">Replies</a>
                         </li>
                         <li class="nav-item nav-item-last">
                         </li>
@@ -83,7 +83,7 @@ include('template/header5.php');
                         <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_comments">
                         	<div id="cmt_content"></div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_posts">
+                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
                             <div id="replies_content"></div>
                         </div><!-- market-ticker-block -->
                     </div>
