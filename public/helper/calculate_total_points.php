@@ -64,50 +64,68 @@ $my_earnings = "0 DLIKE";
 let users = JSON.parse(<?php echoStr($output); ?>);
 let url_updatePoints = "https://dlike.io/helper/update_prouser_points.php";
 let url_retrievePostData = "https://dlike.io/helper/retrieve_post_data.php";
+let count = 1;
 
-for(input of users)
+for(let input of users)
 {
+	console.log(input)
   getCompleteUserData(input, function(data){
-  	let totalPointValue = (data.totalViews * <?php echo($points_per_view); ?>) +
-                          (data.totalLikes * <?php echo($points_per_like); ?>) +
-                          (data.totalComments * <?php echo($points_per_comment); ?>) +
-                          (data.totalUpvotes * <?php echo($points_per_upvote); ?>) +
-                          (data.totalReferralPosts * <?php echo($points_per_referral_post); ?>) +
-                          (input.referrals_today * <?php echo($points_per_referral_daily); ?>);
-    $.ajax({
-      url: url_updatePoints,
-      type: "POST",
-      data: {
-        user: input.username,
-        value: totalPointValue
-      },
-    });
-    document.body.append("\nPOSTED " + totalPointValue + " points for user: " + input.username + "\n");
+  	let totalPointValue = (data.totalViews * 0.2) +
+                          (data.totalLikes * 20) +
+                          (data.totalComments * 10) +
+                          (data.totalUpvotes * 100) +
+                          (data.totalReferralPosts * 5) +
+                          (input.referrals_today * 50);
+    // $.ajax({
+    //   url: url_updatePoints,
+    //   type: "POST",
+    //   data: {
+    //     user: input.username,
+    //     value: totalPointValue
+    //   },
+    // });
+    document.body.innerHTML += "<div>" + count + ". Calculated " + totalPointValue + " points for user: " + input.username + "</div>";
+    count++;
   });
 }
 
 
-function getCompleteUserData(user, callback){
+function getCompleteUserData(user, callback)
+{
 	let referralData = {
-  	"totalPosts":0
+  	"totalPosts":0,
   };
-	for(let i = 0; i<user.referred_users.length; i++)
+  if(user.referred_users.length > 0)
   {
-  	getDataByUser(user.referred_users[i][0], (referdata)=>{
-    	referralData.totalPosts += referdata.totalPosts;
-      if(i == user.referred_users.length - 1){
-      	getDataByUser(user.username, (userdata)=>{
-        	userdata.totalReferralPosts = referralData.totalPosts;
-          callback(userdata);
-        });
-      }
+    for(let i = 0; i<user.referred_users.length; i++)
+    {
+      getDataByUser(user.referred_users[i][0], (referdata)=>
+      {
+        referralData.totalPosts += referdata.totalPosts;
+        if(referdata.index == user.referred_users.length - 1)
+        {
+          getDataByUser(user.username, (userdata)=>{
+            userdata.totalReferralPosts = referralData.totalPosts;
+            callback(userdata);
+          });
+        }
+      }, i);
+   	}
+  }else
+  {
+  	console.log("no referrals...");
+    getDataByUser(user.username, (userdata)=>{
+      userdata.totalReferralPosts = 0;
+      document.body.innerHTML += "Running Callback";
+      callback(userdata);
     });
   }
 }
 
-function getDataByUser(username, callback) {
+function getDataByUser(username, callback, index) {
   $(document).ready(function() {
     let query;
+    console.log(username);
     if (username != null) {
       query = {
         tag: username,
@@ -119,7 +137,8 @@ function getDataByUser(username, callback) {
       "totalUpvotes": 0.0,
       "totalPosts": 0,
       "totalViews":0,
-      "totalLikes":0
+      "totalLikes":0,
+      "index":index
     };
     steem.api.getDiscussionsByBlog(query, function(err, res)
     {
@@ -129,6 +148,7 @@ function getDataByUser(username, callback) {
       let relevantRes = [];
       if(res.length <= 0 || res.error != null){
         callback(data);
+        console.log("no result");
         return;
       }
 
@@ -147,6 +167,7 @@ function getDataByUser(username, callback) {
       });
       if(relevantRes.length <= 0){
         callback(data);
+        console.log("no relevant result");
         return;
       }
 
@@ -170,6 +191,16 @@ function getDataByUser(username, callback) {
             data.totalLikes += (notNull(post.likes)) ? parseFloat(post.likes) : 0;
             if(last)
             {
+              postsHandled = true;
+              if(commentsHandled){
+                callback(data);
+              }
+            }
+          }).fail(()=>{
+          let last = (i == relevantRes.length - 1);
+          if(last)
+            {
+
               postsHandled = true;
               if(commentsHandled){
                 callback(data);
@@ -203,4 +234,7 @@ function getDataByUser(username, callback) {
 function notNull(x){
 	return (x != null && x != "null" && x != undefined && x != NaN);
 }
+
+
+
 </script>
