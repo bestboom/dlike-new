@@ -465,10 +465,11 @@ include('template/header5.php');
 	                        return false;
 	                    }
 	                },
-	                error: function(xhr, status, error){
-         			var errorMessage = xhr.status + ': ' + xhr.statusText
-         			alert('Error - ' + errorMessage);
-     				}
+	                  error: function(xhr, textStatus, error){
+					      console.log(xhr.statusText);
+					      console.log(textStatus);
+					      console.log(error);
+					  }
 	            });
 	        }
 
