@@ -19,7 +19,7 @@ $permlinks_list = array();
 $sql1 = "SELECT SUM(total_points) FROM prousers";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
-$total_points = $row1[0];
+$total_points = (float) $row1[0];
 
 // if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // {
@@ -33,7 +33,7 @@ $total_points = $row1[0];
         $sql2 = "SELECT total_points FROM prousers where username='$user_name'";
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
-        $my_points = $row2[0];
+        $my_points = (float) $row2[0];
 
         var_dump($total_points);
         var_dump($my_points);
