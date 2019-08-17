@@ -224,11 +224,16 @@ include('template/header5.php');
 
 //follow button on hover
 
-    $('.btn-follow').hover(function() {
+
+if ($(".btn-follow span").html() == "Followings") {
+
+    $(".btn-follow").hover(function() {
+        // Pass the new string into .html()
         $(this).find('span').text('unfollow');
     }, function() {
-        $(this).find('span').text('Following');
+        $(this).find('span').text('Followings');
     });
+}
 
 // post details		
 		let $tag, $limit, content = "#profposts";
