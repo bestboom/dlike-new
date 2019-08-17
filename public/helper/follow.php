@@ -31,13 +31,13 @@ if (isset($_POST["profname"])) {
             $state = $followGenerator->broadcast($publish);
         
             if (isset($state->error)){
-                //$return["status"] = false;
+                $return["status"] = false;
                 $return["message"] = "Some Error";
             }else{
                 $return["status"] = true;
                 $return["message"] = "You Followed Successfully";
-            }
-        echo json_encode($return);die;     
-        }    
+            }    
+        }   
+        echo json_encode($return);die;  
 } else {die('Invalid Data');}        
 ?>
