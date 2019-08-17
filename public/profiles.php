@@ -430,7 +430,28 @@ include('template/header5.php');
 	                data: {profname:profname},
 	                success:function(response){
 
-	                    if(response.success===true)
+	                    if(response.status===true)
+	                    {
+	                        toastr['success'](response.message);
+	                    }
+	                    else{
+	                        toastr['error'](response.message);
+	                        return false;
+	                    }
+	                }
+	            });
+	        }
+
+	        if(follower_status == 'unfollow' || follower_status == 'Following'){
+	            $.ajax({
+	                url: '/helper/unfollow.php',
+	                type: 'post',
+	                cache : false,
+	                dataType: 'json',
+	                data: {profname:profname},
+	                success:function(response){
+
+	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
 	                    }
