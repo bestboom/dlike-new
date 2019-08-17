@@ -33,7 +33,8 @@ if (isset($_POST["profname"])) {
                 $response["status"] = true;
                 $response["message"] = "You Unfollowed Successfully";
             }    
-        echo json_encode($response);die; 
+         
         }
+        echo json_encode($response);die;
 } else {die('Invalid Data');}
 ?>

@@ -32,7 +32,8 @@ if (isset($_POST["profname"])) {
                 $response["status"] = true;
                 $response["message"] = "You Followed Successfully";
             }      
-        echo json_encode($response);die;   
+          
         }
+        echo json_encode($response);die; 
 } else {die('Invalid Data');}        
 ?>
