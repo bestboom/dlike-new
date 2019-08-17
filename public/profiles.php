@@ -429,9 +429,10 @@ include('template/header5.php');
 	                dataType: 'json',
 	                data: {profname:profname},
 	                success:function(data){
-	                	console.log(data);
+	                	
 		                try {
-		                    var response = JSON.parse(data)
+		                    let response = JSON.parse(data);
+		                    console.log(response);
 		                    if(response.error == true) {
 		                        toastr['error'](response.message);
 	                        	return false;
