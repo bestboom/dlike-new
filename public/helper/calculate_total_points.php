@@ -109,7 +109,7 @@ $my_earnings = "0 DLIKE";
       //     value: totalPointValue
       //   },
       // });
-      document.body.innerHTML += "<div>" + count + '. Calculated <span tooltip="' + data.toString() + '">' + totalPointValue + "</span> points for user: " + input.username + "</div>";
+      document.body.innerHTML += "<div>" + count + '. Calculated <span class="tt" tooltip="' + data.toString() + '">' + totalPointValue + "</span> points for user: " + input.username + "</div>";
       count++;
     });
   }
