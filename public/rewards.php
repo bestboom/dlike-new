@@ -19,7 +19,7 @@ $permlinks_list = array();
 $sql1 = "SELECT SUM(total_points) FROM prousers";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
-$total_points = (float) $row1[0];
+$total_points = $row1["0"];
 
 // if (isset($_COOKIE['username']) || $_COOKIE['username'])
 // {
@@ -33,7 +33,10 @@ $total_points = (float) $row1[0];
         $sql2 = "SELECT total_points FROM prousers where username='$user_name'";
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
-        $my_points = (float) $row2[0];
+        $my_points = (float) $row2["0"];
+
+        var_dump($row1);
+        var_dump($row2);
 
         var_dump($total_points);
         var_dump($my_points);
@@ -92,12 +95,12 @@ $total_points = (float) $row1[0];
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Share" readonly>
                         <span class="fas fa-flask inp_icon"></span>
-                        <span class="inp_text" id="myShare"><?php echo(($my_points/$total_points * 100) . "%"); ?></span>
+                        <span class="inp_text"><?php echo(($my_points/$total_points * 100) . "%"); ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text" id="myEarnings"><?php echo($my_points/$total_points * $total_reward); ?></span>
+                        <span class="inp_text"><?php echo($my_points/$total_points * $total_reward); ?></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
