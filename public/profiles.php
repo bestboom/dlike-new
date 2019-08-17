@@ -412,7 +412,7 @@ include('template/header5.php');
 		    });
 		}
 	})
-
+});
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
 	$('.btn-follow').click(function(e) {	
@@ -466,8 +466,6 @@ include('template/header5.php');
 	                }
 	            });
 	        }
-
-});
 
 
 
