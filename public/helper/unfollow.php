@@ -6,30 +6,35 @@ error_reporting(E_ALL);
 
 require_once "../helper/publish_unfollow.php";
 
-$follower = 'goldenwhale';
-echo $username = $_COOKIE['username'];
-$response = [];
+function validator($data){
+    return htmlspecialchars(strip_tags(trim($data)));
+}
 
-    $_json = ['follow',[
-        'follower'=> $username,
-        'following'=> $follower,
-        'what'=>[]
-    ]];
+if (isset($_POST["profname"])) {
 
-$voteGenerator = new dlike\unfollowit\makeunFollow();
-    if (!empty($username)){
+    $follower = validator($_POST["profname"]);
+    $username = $_COOKIE['username'];
+    $response = [];
 
-    $publish = $voteGenerator->unfollowMe($username, $_json);
-    $state = $voteGenerator->broadcast($publish);
-    //var_dump($state);
-        if (isset($state->error)){
-            $response["success"] = false;
-            $response["message"] = $state->error_description;
-        }else{
-            $response["success"] = true;
-            $response["message"] = "You Unfollowed Successfully";
+        $_json = ['follow',[
+            'follower'=> $username,
+            'following'=> $follower,
+            'what'=>[]
+        ]];
+
+    $unfollowGenerator = new dlike\unfollowit\makeunFollow();
+        if (!empty($username) && ($username != $follower )){
+
+        $publish = $unfollowGenerator->unfollowMe($username, $_json);
+        $state = $unfollowGenerator->broadcast($publish);
+
+            if (isset($state->error)){
+                $response["success"] = false;
+                $response["message"] = "Some Error";
+            }else{
+                $response["success"] = true;
+                $response["message"] = "You Unfollowed Successfully";
+            }
         }
-
-    }
-print json_encode($response);
+} else {die('Invalid Data');}
 ?>
