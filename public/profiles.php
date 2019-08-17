@@ -419,7 +419,7 @@ if ($(".foll").html() == "Following") {
     $('.btn-follow').hover(function() {
         $(this).find('span').text('unfollow');
     }, function() {
-        $(this).find('span').text('Followings');
+        $(this).find('span').text('Following');
     });
 /*
     $(".btn-follow").mouseover(function() {
