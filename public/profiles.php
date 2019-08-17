@@ -421,7 +421,7 @@ if ($(".foll").html() == "Following") {
         $(".foll").html("unfollow");
 
     },function() {
-    	$(".foll").html("Followings");
+    	$(".foll").html("Following");
     });
 }
 
