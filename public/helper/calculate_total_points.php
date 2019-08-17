@@ -64,7 +64,7 @@ $my_earnings = "0 DLIKE";
 let users = JSON.parse(<?php echoStr($output); ?>);
 let url_updatePoints = "https://dlike.io/helper/update_prouser_points.php";
 let url_retrievePostData = "https://dlike.io/helper/retrieve_post_data.php";
-
+let count = 1;
 
 for(let input of users)
 {
