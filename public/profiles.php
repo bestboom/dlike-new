@@ -222,29 +222,6 @@ include('template/header5.php');
     console.log(isFollow)
 	});
 
-//follow button on hover
-let folll = $(".foll").html();
-console.log(folll);
-
-if ($(".btn-follow span").html() == "Following") {
-
-    $(".btn-follow").mouseover(function() {
-        // Pass the new string into .html()
-        $(".btn-follow span").html("unfollow");
-    });
-}
-/*
-if ($(".foll").html() == "Following") {
-
-    $(".btn-follow").mouseover(function() {
-        // Pass the new string into .html()
-        $(".foll").html("unfollow");
-
-    },function() {
-    	$(".foll").html("Followings");
-    });
-}
-*/
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
@@ -425,7 +402,29 @@ if ($(".foll").html() == "Following") {
 
 			}
 		});
+//follow button on hover
+let folll = $(".foll").html();
+console.log(folll);
 
+if ($(".btn-follow span").html() == "Following") {
+
+    $(".btn-follow").mouseover(function() {
+        // Pass the new string into .html()
+        $(".btn-follow span").html("unfollow");
+    });
+}
+/*
+if ($(".foll").html() == "Following") {
+
+    $(".btn-follow").mouseover(function() {
+        // Pass the new string into .html()
+        $(".foll").html("unfollow");
+
+    },function() {
+    	$(".foll").html("Followings");
+    });
+}
+*/
 	});	
 
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
