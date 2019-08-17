@@ -430,7 +430,7 @@ include('template/header5.php');
 	                data: {profname:profname},
 	                success:function(response){
 
-	                    if(return.status===true)
+	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
 	                    }
@@ -451,7 +451,7 @@ include('template/header5.php');
 	                data: {profname:profname},
 	                success:function(response){
 
-	                    if(return.status===true)
+	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
 	                    }
