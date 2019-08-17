@@ -165,11 +165,11 @@ $my_earnings = "0 DLIKE";
         "totalLikes":0,
         "index":index,
         data.toString = function(){
-          return "Comments: " + this.totalComments + "\n" +
-                 "Upvotes: " + this.totalUpvotes + "\n" +
-                 "Posts: " + this.totalUpvotes + "\n" +
-                 "Views: " + this.totalUpvotes + "\n" +
-                 "Likes: " + this.totalUpvotes + "\n";
+          return "Comments: " + this.totalComments + "&#xa;" +
+                 "Upvotes: " + this.totalUpvotes + "&#xa;" +
+                 "Posts: " + this.totalUpvotes + "&#xa;" +
+                 "Views: " + this.totalUpvotes + "&#xa;" +
+                 "Likes: " + this.totalUpvotes + "&#xa;";
         }
       };
       steem.api.getDiscussionsByBlog(query, function(err, res)
