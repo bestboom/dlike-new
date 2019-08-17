@@ -1,5 +1,13 @@
 <?php  include('template/header5.php');
 
+
+function echo_formatted($a){
+  if($a == INF){
+	   $a = 0;
+  }
+  echo(number_format((float)$a, 2, '.', ''));
+}
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -85,22 +93,22 @@ $total_points = $row1["pts"];
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Total Points" readonly>
                         <span class="fas fa-star inp_icon"></span>
-                        <span class="inp_text"><?php echo($total_points); ?></span>
+                        <span class="inp_text"><?php echo_formatted($total_points); ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Points" readonly>
                         <span class="fas fa-bolt inp_icon"></span>
-                        <span class="inp_text"><?php echo($my_points); ?></span>
+                        <span class="inp_text"><?php echo_formatted($my_points); ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Share" readonly>
                         <span class="fas fa-flask inp_icon"></span>
-                        <span class="inp_text"><?php echo(($my_points/$total_points * 100) . "%"); ?></span>
+                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * 100); echo("%"); ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo($my_points/$total_points * $total_reward); ?></span>
+                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * $total_reward); ?></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
