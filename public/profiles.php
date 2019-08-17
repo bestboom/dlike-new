@@ -402,37 +402,17 @@ include('template/header5.php');
 
 			}
 		});
+	});
+
 //follow button on hover
-let folll = $(".foll").html();
-console.log(folll);
-/*
-if ($(".btn-follow span").html() == "Following") {
+	if ($(".foll").html() == "Following") {
 
-    $(".btn-follow").mouseover(function() {
-        // Pass the new string into .html()
-        $(".btn-follow span").html("unfollow");
-    });
-}
-*/
-if ($(".foll").html() == "Following") {
-
-    $('.btn-follow').hover(function() {
-        $(this).find('span').text('unfollow');
-    }, function() {
-        $(this).find('span').text('Following');
-    });
-/*
-    $(".btn-follow").mouseover(function() {
-        // Pass the new string into .html()
-        $(".foll").html("unfollow");
-
-    },function() {
-    	$(".foll").html("unfollow");
-    });
-    */
-}
-
-	});	
+	    $('.btn-follow').hover(function() {
+	        $(this).find('span').text('unfollow');
+	    }, function() {
+	        $(this).find('span').text('Following');
+	    });
+	}
 
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
