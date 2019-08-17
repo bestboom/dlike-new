@@ -224,14 +224,12 @@ include('template/header5.php');
 
 //follow button on hover
 
-if ($(".foll").html() == "Following") {
-	console.log($(".foll").html());
-    $('.btn-follow').hover(function() {
-        $(this).find('span').text('unfollow');
-    }, function() {
-        $(this).find('span').text('Followings');
+if ($(".btn-follow .foll").html() == "Following") {
+
+    $(".btn-follow").mouseover(function() {
+        // Pass the new string into .html()
+        $(".btn-follow .foll").html("unfollow");
     });
-    
 }
 
 // post details		
