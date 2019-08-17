@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once "../helper/publish_follow.php";
-
+$followGenerator = new dlike\followit\makeFollow();
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
@@ -24,7 +24,6 @@ if (isset($_POST["profname"])) {
             'what'=>['blog']
         ]];
 
-    $followGenerator = new dlike\followit\makeFollow();
         if (!empty($username) && ($username != $follower )){
 
             $publish = $followGenerator->followMe($username, $_json);

@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once "../helper/publish_unfollow.php";
-
+$unfollowGenerator = new dlike\unfollowit\makeunFollow();
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
@@ -25,7 +25,6 @@ if (isset($_POST["profname"])) {
             'what'=>[]
         ]];
 
-    $unfollowGenerator = new dlike\unfollowit\makeunFollow();
         if (!empty($username) && ($username != $follower )){
 
         $publish = $unfollowGenerator->unfollowMe($username, $_json);
