@@ -9,7 +9,7 @@ $unfollowGenerator = new dlike\unfollowit\makeunFollow();
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
-
+$response = [];
 if (isset($_POST["profname"])) {
 
     $follower = validator($_POST["profname"]);
@@ -21,9 +21,7 @@ if (isset($_POST["profname"])) {
             'what'=>[]
         ]];
 
-        if (!empty($username) && ($username != $follower )){
-
-        $response[];    
+        if (!empty($username) && ($username != $follower )){  
 
         $publish = $unfollowGenerator->unfollowMe($username, $_json);
         $state = $unfollowGenerator->broadcast($publish);

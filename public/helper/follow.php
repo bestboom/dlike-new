@@ -9,7 +9,7 @@ $followGenerator = new dlike\followit\makeFollow();
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
-
+$response = [];
 if (isset($_POST["profname"])) {
     $follower = validator($_POST["profname"]);
     $username = $_COOKIE['username'];
@@ -21,8 +21,6 @@ if (isset($_POST["profname"])) {
         ]];
 
         if (!empty($username) && ($username != $follower )){
-
-            $response=[];
 
             $publish = $followGenerator->followMe($username, $_json);
             $state = $followGenerator->broadcast($publish);
