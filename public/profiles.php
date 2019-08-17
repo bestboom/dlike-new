@@ -215,13 +215,22 @@ include('template/header5.php');
 // check if user following
     isFollowing = username;
     steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
-    console.log(result)
+    //console.log(result)
         let isFollow = (result.filter(followers => followers.follower == isFollowing));
         if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
         $('.foll').html(isFollow);
     console.log(isFollow)
 	});
 
+//follow button on hover
+
+if ($(".btn-follow span").html() == "Following") {
+	
+    $(".btn-follow").mouseover(function() {
+        // Pass the new string into .html()
+        $(".btn-follow span").html("unfollow");
+    });
+}
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
