@@ -29,12 +29,14 @@ if (isset($_POST["profname"])) {
             if (isset($state->error)){
                 $response["status"] = false;
                 $response["message"] = "Some Error";
+                echo json_encode($response);die;
             }else{
                 $response["status"] = true;
                 $response["message"] = "You Unfollowed Successfully";
+                echo json_encode($response);die;
             }    
          
         }
-        echo json_encode($response);die;
+
 } else {die('Invalid Data');}
 ?>
