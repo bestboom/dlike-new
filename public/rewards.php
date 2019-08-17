@@ -8,6 +8,13 @@ function echo_formatted($a){
   echo(number_format((float)$a, 2, '.', ''));
 }
 
+function echo_formatted_int($a){
+  if($a == INF){
+	   $a = 0;
+  }
+  echo(number_format((float)$a, 0, '.', ''));
+}
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -172,3 +179,31 @@ $total_points = $row1["pts"];
         </div>
     </div><!-- working-process-section-->
     <?php $conn->close(); include('template/footer3.php'); ?>
+
+    <script type="text/javascript">
+    var countDownDate = 0;
+    function counter() {
+        setInterval(() => {
+            var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
+            var countDownDate = new Date(date);
+            var i = 60;
+            var h = 24 - countDownDate.getHours();
+            if (h < 10) {
+                h = "0" + h;
+            }
+            var m = 59 - countDownDate.getMinutes();
+            if (m < 10) {
+                m = "0" + m;
+            }
+            var s = countDownDate.getSeconds();
+            s = i - s;
+            if (s < 10) {
+                s = "0" + s;
+            }
+            str = h + ":" + m + ":" + s;
+            i++;
+            $(".dividendCountDown").html(str);
+        }, 1000);
+    };
+    counter();
+    </script>
