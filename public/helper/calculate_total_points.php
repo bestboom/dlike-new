@@ -109,7 +109,16 @@ $my_earnings = "0 DLIKE";
       //     value: totalPointValue
       //   },
       // });
-      document.body.innerHTML += "<div>" + count + '. Calculated <span class="tt" tooltip="' + data.toString() + '">' + totalPointValue + "</span> points for user: " + input.username + "</div>";
+
+      let tooltip = "Comments: " + data.totalComments + "&#xa;" +
+                    "Upvotes: " + data.totalUpvotes + "&#xa;" +
+                    "Views: " + data.totalViews + "&#xa;" +
+                    "Likes: " + data.totalLikes + "&#xa;" +
+                    "Referral Posts: " + data.totalReferralPosts + "&#xa;" +
+                    "Referrals Today: " + input.referrals_today;
+
+
+      document.body.innerHTML += "<div>" + count + '. Calculated <span class="tt" tooltip="' + tooltip + '">' + totalPointValue + "</span> points for user: " + input.username + "</div>";
       count++;
     });
   }
@@ -163,14 +172,7 @@ $my_earnings = "0 DLIKE";
         "totalPosts": 0,
         "totalViews":0,
         "totalLikes":0,
-        "index":index,
-        data.toString = function(){
-          return "Comments: " + this.totalComments + "&#xa;" +
-                 "Upvotes: " + this.totalUpvotes + "&#xa;" +
-                 "Posts: " + this.totalUpvotes + "&#xa;" +
-                 "Views: " + this.totalUpvotes + "&#xa;" +
-                 "Likes: " + this.totalUpvotes + "&#xa;";
-        }
+        "index":index
       };
       steem.api.getDiscussionsByBlog(query, function(err, res)
       {
