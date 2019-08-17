@@ -405,7 +405,7 @@ include('template/header5.php');
 //follow button on hover
 let folll = $(".foll").html();
 console.log(folll);
-
+/*
 if ($(".btn-follow span").html() == "Following") {
 
     $(".btn-follow").mouseover(function() {
@@ -413,7 +413,7 @@ if ($(".btn-follow span").html() == "Following") {
         $(".btn-follow span").html("unfollow");
     });
 }
-/*
+*/
 if ($(".foll").html() == "Following") {
 
     $(".btn-follow").mouseover(function() {
@@ -424,7 +424,7 @@ if ($(".foll").html() == "Following") {
     	$(".foll").html("Followings");
     });
 }
-*/
+
 	});	
 
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
