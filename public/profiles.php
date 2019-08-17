@@ -402,9 +402,7 @@ include('template/header5.php');
 
 			}
 		});
-	});
-
-//follow button on hover
+	//follow button on hover
 	if ($(".foll").html() == "Following") {
 
 	    $('.btn-follow').hover(function() {
@@ -413,6 +411,7 @@ include('template/header5.php');
 	        $(this).find('span').text('Following');
 	    });
 	}
+	});
 
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
