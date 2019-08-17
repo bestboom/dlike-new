@@ -31,7 +31,7 @@ if (isset($_POST["profname"])) {
             $state = $followGenerator->broadcast($publish);
         
             if (isset($state->error)){
-                $return["status"] = false;
+                //$return["status"] = false;
                 $return["message"] = "Some Error";
             }else{
                 $return["status"] = true;

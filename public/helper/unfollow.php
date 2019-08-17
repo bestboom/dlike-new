@@ -32,7 +32,7 @@ if (isset($_POST["profname"])) {
         $state = $unfollowGenerator->broadcast($publish);
 
             if (isset($state->error)){
-                $return["status"] = false;
+                //$return["status"] = false;
                 $return["message"] = "Some Error";
             }else{
                 $return["status"] = true;
