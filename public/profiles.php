@@ -224,14 +224,13 @@ include('template/header5.php');
 
 //follow button on hover
 
-
-if ($(".btn-follow span").html() == "Following") {
+if ($(".btn-follow .foll").html() == "Following") {
 
     $(".btn-follow").hover(function() {
         // Pass the new string into .html()
-        $(this).find('span').text('unfollow');
+        $(this).find('.foll').text('unfollow');
     }, function() {
-        $(this).find('span').text('Following');
+        $(this).find('.foll').text('Following');
     });
 }
 
