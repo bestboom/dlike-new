@@ -1,13 +1,13 @@
 <?php
 
-namespace dlike\followit;
+namespace dlike\unfollowit;
 
-class makeFollow
+class makeunFollow
 {
 
-    public function followMe($username, $_json)
+    public function unfollowMe($username, $_json)
     {
-        $do_follow = [
+        $un_follow = [
             "operations"=> [
                 ["custom_json", [
                     "required_auths"=> [],
@@ -17,7 +17,7 @@ class makeFollow
                 ]]
             ]
         ];
-        $fixed_str = json_encode($do_follow);
+        $fixed_str = json_encode($un_follow);
         print($fixed_str);
         return $fixed_str;
     }

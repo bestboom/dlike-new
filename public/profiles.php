@@ -1,47 +1,56 @@
 <?php 
-if (isset($_GET['user'])) {
-     $prof_user = $_GET['user'];
+if (isset($_GET['user'])) 
+{
+	$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-include('template/header5.php'); ?>
-    </div><!-- sub-header --> 
-<?php
+include('template/header5.php');
+//check pro status
     $sql_T = "SELECT * FROM prousers where username='$prof_user'";
     $result_T = $conn->query($sql_T);
-    if ($result_T && $result_T->num_rows > 0) {
+    if ($result_T && $result_T->num_rows > 0) 
+    {
     	$profile_user = 'PRO';
     }
 ?>
-	<div id="p_cover" class="img-fluid" style="background-color: #191d5d;height: 175px;background-repeat: no-repeat;background-size: cover;background-position: center;">
-		
-	</div>
+</div><!-- sub-header --> 
+	<div id="p_cover" class="img-fluid"></div>
 	<div style="background: #ededed;">
 	<div class="container p-data">
-		<div class="row" style="justify-content: space-between;margin: 0px 25px;">
+		<div class="row p_data_inner">
 			<div>
 				<span>
-					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle" style="background-color: #191d5d;border: 2px solid #191d5d;">
-					<span class="repu rounded-circle" style="font-size: 12px;margin-left:-24px;border: 1px solid #191d5d;background: #191d5d;padding: 5px;color: #fff;font-weight: 600;font-family: sans-serif;"></span>
+					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
+					<span class="repu rounded-circle"></span>
 				</span>
-				<span style="display: inline-table;padding-left: 15px;font-weight: 600;"><span style="font-size: 24px;" class="name"></span> <br><span class="p_name"></span><?php if($profile_user== "PRO"){ echo '<span><i class="fas fa-check-circle" title="PRO User" style="padding-left:7px;color:forestgreen;"></i></span>';} ?></span>
+				<span class="p_data_names">
+					<span class="name"></span>
+					<br>
+					<span class="p_name"></span>
+					<?php if($profile_user== "PRO")
+						{ echo '<span><i class="fas fa-check-circle p_pro" title="PRO User"></i></span>'; }
+					?>
+				</span>
 			</div>
-			<div><button class="btn btn-danger" style="margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;">Follow</button></div>
+			<div>
+				<button class="btn btn-danger btn-follow">
+					<span class="foll"></span>
+				</button>
+			</div>
 		</div>
-		<div class="row" style="padding: 15px 40px 1px 40px;font-weight: bold;">
+		<div class="row p_data_top">
 			<span class="p_about"></span>
 		</div>
-		<div class="row" style="padding: 5px 40px;font-weight: bold;">
+		<div class="row p_data_mid">
 			<span class="followers"></span>
 			<span class="following"></span>
-			<span class="p_joined" style="padding-left:14px;"></span>
+			<span class="p_joined p_data_pad"></span>
 		</div>
-		<div class="row" style="padding: 5px 40px 15px;font-weight: bold;">
+		<div class="row p_data_bot">
 			<span class="p_location"></span>
-			<span class="web_site" style="padding-left:10px;"></span>
+			<span class="web_site p_data_pad"></span>
 		</div>
 	</div>
-
-
-<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
+	<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
         <div class="container">
             <div class="new-ticker-block-wrap">
                 <div class="ticker-head">
@@ -53,10 +62,10 @@ include('template/header5.php'); ?>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#steem_trx" role="tab" data-toggle="tab">Comments</a>
+                            <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Comments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#tips_trx" role="tab" data-toggle="tab">Replies</a>
+                            <a class="nav-link" href="#user_replies" role="tab" data-toggle="tab">Replies</a>
                         </li>
                         <li class="nav-item nav-item-last">
                         </li>
@@ -68,13 +77,13 @@ include('template/header5.php'); ?>
                         <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
 							<div class="container">
 					            <div id="loadings"><img src="/images/loader.svg" width="100" style="padding-top:40px;"></div>
-						    	<div class="row" id="profposts" style="padding-top:40px;"></div>
+						    	<div class="row" id="profposts"></div>
 							</div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="steem_trx" style="padding:40px 20px;">
+                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_comments">
                         	<div id="cmt_content"></div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="tips_trx" style="padding:40px 20px;">
+                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
                             <div id="replies_content"></div>
                         </div><!-- market-ticker-block -->
                     </div>
@@ -82,26 +91,10 @@ include('template/header5.php'); ?>
             </div>
         </div>
     </div>
-
-<!--
-    <div class="latest-post-section" style="min-height:80vh;">
-		<div class="container">
-			<div class="row  align-items-center h-100">
-                <div class="row col-md-3 justify-content-center">
-                    <h4 class="lab_post"><?php echo $_GET['user'];?></h4>
-                </div>
-                <div class="col-md-9 lay">&nbsp;</div>
-            </div>
-            <div id="loadings"><img src="/images/loader.svg" width="100"></div>
-	    	<div class="row" id="profposts"></div>
-		</div>
-    </div>
--->  
 <?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
-
 		let profname = '<?php echo $_GET['user'];?>';
 
 //profile details
@@ -119,9 +112,7 @@ include('template/header5.php'); ?>
 	  		let location = metadata.profile.location;
 	  		let website = metadata.profile.website;
 	  		let name = metadata.profile.name;
-	  		//console.log(metadata.profile.location);
-	  		//console.log(cover_url)
-	  		//$('#p_cover').attr("src","https://steemitimages.com/0x0/"+cover);
+
 	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
 	  		$('.p_about').html(about);
 	  		if (typeof location !== 'undefined')
@@ -222,11 +213,12 @@ include('template/header5.php'); ?>
     	});
 	});
 // check if user following
-    isFollowing = profname;
+    isFollowing = username;
     steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
-    	console.log(result)
+    //console.log(result)
         let isFollow = (result.filter(followers => followers.follower == isFollowing));
-        if(isFollow.length > 0) {isFollow = 'following'} else {isFollow = 'Follow'}
+        if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
+        $('.foll').html(isFollow);
     console.log(isFollow)
 	});
 
@@ -410,8 +402,50 @@ include('template/header5.php'); ?>
 
 			}
 		});
+		//follow button on hover
+		if ($(".foll").html() == "Following") {
 
-	});	
+		    $('.btn-follow').hover(function() {
+		        $(this).find('span').text('unfollow');
+		    }, function() {
+		        $(this).find('span').text('Following');
+		    });
+		}
+	
+
+
+	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
+	$('.btn-follow').click(function(e) {	
+	    e.preventDefault();
+
+	        let follower_status = $(".foll").html();
+	        console.log(follower_status);
+
+	        if(follower_status == 'Follow'){
+	            $.ajax({
+	                url: '/helper/follow.php',
+	                type: 'post',
+	                cache : false,
+	                dataType: 'json',
+	                data: {profname:profname},
+	                success:function(response){
+
+	                    if(response.success===true)
+	                    {
+	                        toastr['success'](response.message);
+	                    }
+	                    else{
+	                        toastr['error'](response.message);
+	                        return false;
+	                    }
+	                }
+	            });
+	        }
+	})
+
+});
+
+
 
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
