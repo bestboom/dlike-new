@@ -220,7 +220,10 @@ $my_earnings = "0 DLIKE";
             },
           }).done(function(response)
             {
+              console.log("RESPONSE:");
+              console.log(response);
               let responseObj = JSON.parse(response);
+
               let last = (i == relevantRes.length - 1);
               data.totalViews += responseObj.views;
               data.totalLikes += responseObj.likes;
