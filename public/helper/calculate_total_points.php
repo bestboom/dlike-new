@@ -225,8 +225,8 @@ $my_earnings = "0 DLIKE";
               let responseObj = JSON.parse(response);
 
               let last = (i == relevantRes.length - 1);
-              data.totalViews += responseObj.views;
-              data.totalLikes += responseObj.likes;
+              data.totalViews += notNull(responseObj.views) ? responseObj.views : 0;
+              data.totalLikes += notNull(responseObj.views) ? responseObj.likes : 0;
               if(last)
               {
                 postsHandled = true;
