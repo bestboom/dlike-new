@@ -108,7 +108,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * $total_reward); echo("DLIKE") ?></span>
+                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * $total_reward); echo(" DLIKE"); ?></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
