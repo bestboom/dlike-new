@@ -27,14 +27,16 @@ if (isset($_POST["profname"])) {
         
             if (isset($state)){
                 $response["status"] = true;
-                $response["message"] = "You Followed Successfully";    
+                $response["message"] = "You Followed Successfully";  
+                echo json_encode($response);die;  
             }else{   
                 $response["status"] = false;
-                $response["message"] = "Some Error";           
+                $response["message"] = "Some Error";  
+                echo json_encode($response);die;         
             }      
           
         //}
-        echo json_encode($response);die; 
+         
 } else {die('Invalid Data');}    
 //var_dump($state);  
 ?>
