@@ -234,12 +234,12 @@ $my_earnings = "0 DLIKE";
               document.body.innerHTML += "Views and Likes ERROR for user: " + username;
             let last = (i == relevantRes.length - 1);
             if(last)
-              {
-                postsHandled = true;
-                if(commentsHandled){
-                  callback(data);
-                }
+            {
+              postsHandled = true;
+              if(commentsHandled){
+                callback(data);
               }
+            }
             });
           steem.api.getContentReplies(username, posts, function(err, result) {
             let i2 = i;
@@ -266,7 +266,7 @@ $my_earnings = "0 DLIKE";
   }
 
   function notNull(x){
-  	return (x != null && x != "null" && x != undefined && x != NaN);
+  	return (x != null && x != "null" && x != undefined);
   }
   </script>
 </body>
