@@ -37,11 +37,15 @@ $total_points = $row1["pts"];
 
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
 {
+
     $user_name = $_COOKIE['username'];
     $sql_T = "SELECT * FROM prousers where username='$user_name'";
     $result_T = $conn->query($sql_T);
 
-    if ($result_T && $result_T->num_rows > 0) {
+    if ($result_T && $result_T->num_rows > 0)
+    {
+        $user_status = "";
+
         $row_T  = $result_T->fetch_assoc();
 
         $sql2 = "SELECT total_points as my_pts FROM prousers where username='$user_name'";
@@ -58,8 +62,8 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
     } else {
         $user_status = "You Are not a PRO user";
         $my_points = "0";
-        $my_share = "0%";
-        $my_earnings = "0 DLIKE";
+        $my_share = "0";
+        $my_earnings = "0";
     }
 }
 ?>
@@ -114,7 +118,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * $total_reward); ?></span>
+                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * $total_reward); echo("DLIKE") ?></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
