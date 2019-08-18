@@ -10,7 +10,7 @@ class makeProfile
         $profile_data = [
             "operations"=> [
                 ["account_update", [
-                    "account": $username,
+                    "account" => $username,
                     "json_metadata" => $_json
                 ]]
             ]
