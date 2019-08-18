@@ -428,22 +428,17 @@ include('template/header5.php');
 	                cache : false,
 	                dataType: 'json',
 	                data: datav,
-	                success:function(data){
-	                	
-		                try {
-		                    let response = JSON.parse(data);
-		                    console.log(response);
-		                    if(response.error == true) {
-		                        toastr['error'](response.message);
-	                        	return false;
-		                    } else {
-		                        toastr['success'](response.message);
-		                    }
-		                } catch (err) {
-		                	toastr['error']('Sorry. Server response is malformed.');
-		                    //alert('Sorry. Server response is malformed.')
-		                }
-	                },               
+	                success:function(response){
+	                	console.log(response);
+	                    if(response.status===true)
+	                    {
+	                        toastr['success'](response.message);
+	                    }
+	                    else{
+	                        toastr['error'](response.message);
+	                        return false;
+	                    }
+	                },              
 	                 error: function(xhr, textStatus, error){
                           console.warn(xhr.statusText);
                           console.warn(xhr.responseText);

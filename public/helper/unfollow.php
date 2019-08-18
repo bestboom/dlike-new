@@ -16,7 +16,7 @@ function validator($data){
     $return['status'] = false;
     $return['message'] = '';
 
-    
+
 if (isset($_POST["profname"])) {
 
     $follower = validator($_POST["profname"]);
@@ -36,7 +36,7 @@ if (isset($_POST["profname"])) {
             if (isset($state->error)){
                 $return["status"] = false;
                 $return["message"] = "Some Error";
-                echo json_encode($response);die;
+                echo json_encode($return);die;
             }else{
                 $return["status"] = true;
                 $return["message"] = "You Unfollowed Successfully";
