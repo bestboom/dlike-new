@@ -91,10 +91,10 @@ include('template/header5.php');
             </div>
         </div>
     </div>
-<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <?php include('template/modals/tktransfer.php'); ?>
+            <?php include('template/modals/profile_update.php'); ?>
         </div>
     </div>
 </div>    
@@ -482,7 +482,7 @@ include('template/header5.php');
 	        }
 
 	        if(follower_status == 'Edit'){
-	        	$("#tk_transfer").modal("show");
+	        	$("#profile_edit").modal("show");
 	        }
 
 /* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
