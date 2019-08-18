@@ -26,7 +26,6 @@ $user_status = "You Must Login";
         $my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
-$_COOKIE['certseek'] = "tfame3865";
 // $total_points = 1000;
 // $permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
@@ -35,6 +34,7 @@ $sql1 = "SELECT SUM(total_points) as pts FROM prousers";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
 $total_points = $row1["pts"];
+
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
 {
     $user_name = $_COOKIE['username'];
