@@ -21,12 +21,11 @@ error_reporting(E_ALL);
 
 $total_reward = 7000;
 $user_status = "You Must Login";
-        $my_points = "0";
-        $my_share = "0%";
-        $my_earnings = "0 DLIKE";
+$my_points = "0";
+$my_share = "0%";
+$my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
-$_COOKIE['certseek'] = "tfame3865";
 // $total_points = 1000;
 // $permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
@@ -35,6 +34,7 @@ $sql1 = "SELECT SUM(total_points) as pts FROM prousers";
 $result1 = $conn->query($sql1);
 $row1 = $result1->fetch_assoc();
 $total_points = $row1["pts"];
+
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
 {
     $user_name = $_COOKIE['username'];
@@ -61,7 +61,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $my_share = "0%";
         $my_earnings = "0 DLIKE";
     }
-// }
+}
 ?>
 </div><!-- sub-header -->
 <div class="working-process-section" style="padding-top: 80px;">
