@@ -448,7 +448,7 @@ include('template/header5.php');
                           console.warn(xhr.statusText);
                           console.warn(xhr.responseText);
                            console.warn(textStatus);
-                            console.warn(error);
+                            console.log(error);
                 }
 	            });
 	        }
@@ -475,14 +475,14 @@ include('template/header5.php');
                           console.warn(xhr.statusText);
                           console.warn(xhr.responseText);
                            console.warn(textStatus);
-                            console.warn(error);
+                            console.log(error);
                 }
 	            });
 	        }
 
 
 
-function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+/* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
 		type: "POST",
 		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
@@ -495,6 +495,6 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log('Error occured');
 		}
 	});
-};		
-	});
+};*/		
+});
 </script>
