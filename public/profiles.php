@@ -439,11 +439,9 @@ include('template/header5.php');
 	                        return false;
 	                    }
 	                },              
-	                 error: function(xhr, textStatus, error){
-                          console.warn(xhr.statusText);
-                          console.warn(xhr.responseText);
-                           console.warn(textStatus);
-                            console.log(error);
+	                error: function (jqXHR, textStatus, errorThrown) {
+					    var test = $.parseJSON(jqXHR.responseText);
+					    console.log(test)
                 }
 	            });
 	        }
