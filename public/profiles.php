@@ -219,7 +219,7 @@ include('template/header5.php');
         let isFollow = (result.filter(followers => followers.follower == isFollowing));
         if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
         $('.foll').html(isFollow);
-    console.log(isFollow)
+    	//console.log(isFollow)
 	});
 
 // post details		
@@ -433,16 +433,13 @@ include('template/header5.php');
 	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
+	                        $('.foll').html('Following').prop("disabled",true);
 	                    }
 	                    else{
 	                        toastr['error'](response.message);
 	                        return false;
 	                    }
-	                },              
-	                error: function (jqXHR, textStatus, errorThrown) {
-					    var test = $.parseJSON(jqXHR.responseText);
-					    console.log(test)
-                }
+	                }
 	            });
 	        }
 
@@ -458,17 +455,13 @@ include('template/header5.php');
 	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
+	                        $('.foll').html('Follow').prop("disabled",true);
 	                    }
 	                    else{
 	                        toastr['error'](response.message);
 	                        return false;
 	                    }
-	                }, 
-	                 error: function(xhr, textStatus, error){
-                          console.warn(xhr.statusText);
-                          console.warn(xhr.textStatus);
-                            console.log(error);
-                }
+	                }
 	            });
 	        }
 
