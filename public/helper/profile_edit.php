@@ -20,11 +20,11 @@ $response = [];
     $location = 'DLIKE';
 
         $_json = ["profile", [
-                    "name": $name,
-                    "about": $about,
-                    "website": $website,
-                    "profile_image": $profile_image,
-                    "location": $location
+                    "name" => $name,
+                    "about" => $about,
+                    "website" => $website,
+                    "profile_image" => $profile_image,
+                    "location" => $location
                 ]];
         //if (!empty($username) && ($username != $follower )){
         //https://github.com/steemit/steem-js/issues/165  
