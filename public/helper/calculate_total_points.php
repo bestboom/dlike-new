@@ -218,11 +218,12 @@ $my_earnings = "0 DLIKE";
             data: {
               permlink: posts,
             },
-          }).done(function(post)
+          }).done(function(response)
             {
+              let responseObj = JSON.parse(response);
               let last = (i == relevantRes.length - 1);
-              data.totalViews += (notNull(post.views)) ? parseFloat(post.views) : 0;
-              data.totalLikes += (notNull(post.likes)) ? parseFloat(post.likes) : 0;
+              data.totalViews += responseObj.views;
+              data.totalLikes += responseObj.likes;
               if(last)
               {
                 postsHandled = true;
