@@ -453,21 +453,24 @@ include('template/header5.php');
 	                cache : false,
 	                dataType: 'json',
 	                data: datav,
-	                success:function(response){
-	                	console.log(response);
-	                    if(response.status===true)
-	                    {
-	                        toastr['success'](response.message);
-	                    }
-	                    else{
-	                        toastr['error'](response.message);
-	                        return false;
-	                    }
-	                },
+                success: function(data) {
+                        console.log(data);
+                        try {
+                            var response = JSON.parse(data)
+                            if(response.status == false) {
+                                toastr.error('There is some issue!');
+                                return false;
+                            } else {
+                                toastr.success('upVote done successfully!'); 
+                            }
+                        } catch (err) {
+                            toastr.error('Sorry. Server response is malformed.');
+                        }
+                    },
 	                 error: function(xhr, textStatus, error){
                           console.warn(xhr.statusText);
                           console.warn(xhr.response);
-                           console.log(textStatus);
+                           console.warn(xhr.data);
                             console.log(error);
                 }
 	            });
