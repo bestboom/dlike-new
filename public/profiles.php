@@ -213,18 +213,18 @@ include('template/header5.php');
     	});
 	});
 // check if user following
-if(username == profname) {
-	$('.foll').html('Edit');
-} else {
-    isFollowing = username;
-    steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
-    //console.log(result)
-        let isFollow = (result.filter(followers => followers.follower == isFollowing));
-        if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
-        $('.foll').html(isFollow);
-    	//console.log(isFollow)
-	});
-};
+	if(username == profname) {
+		$('.foll').html('Edit');
+	} else {
+	    isFollowing = username;
+	    steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
+	    
+	        let isFollow = (result.filter(followers => followers.follower == isFollowing));
+	        if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
+	        $('.foll').html(isFollow);
+	    	//console.log(isFollow)
+		});
+	};
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
@@ -438,6 +438,7 @@ if(username == profname) {
 	                        toastr['success'](response.message);
 	                        $('.foll').html('Following');
 	                        $('.btn-follow').prop("disabled",true);
+	                        $(".btn-follow").unbind('mouseenter mouseleave');
 	                    }
 	                    else{
 	                        toastr['error'](response.message);
@@ -461,6 +462,7 @@ if(username == profname) {
 	                        toastr['success'](response.message);
 	                        $('.foll').html('Follow');
 	                        $('.btn-follow').prop("disabled",true);
+	                        $(".btn-follow").unbind('mouseenter mouseleave');
 	                    }
 	                    else{
 	                        toastr['error'](response.message);
