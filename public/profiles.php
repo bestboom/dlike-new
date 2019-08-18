@@ -444,13 +444,9 @@ include('template/header5.php');
 		                    //alert('Sorry. Server response is malformed.')
 		                }
 	                },
-	                      error: function (xhr, status, errorThrown) {
-					        //Here the status code can be retrieved like;
-					        xhr.status;
-
-					        //The message added to Response object in Controller can be retrieved as following.
-					        xhr.responseText;
-					    	}
+error: function(xhr, ajaxOptions, thrownError) {
+                  alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                }
 	            });
 	        }
 
