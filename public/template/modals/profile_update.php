@@ -1,8 +1,8 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
 		<h4>Update Profile</h4>
-		<div id="tsf-msg"></div>
-		<form action="" id="tsf_sub" method="POST">
+		<div id="prof-msg"></div>
+		<form action="" id="p_edit" method="POST">
 			<div class="row line">
 				<div class="col-md-12">
 					<div class="form-group">
@@ -75,7 +75,7 @@
 					</div>
 				</div>
 			</div>			
-			<center><button type="submit" class="btn btn-default tsf_btn">UPDATE</button></center>
+			<center><button type="submit" class="btn btn-default p_edit_btn">UPDATE</button></center>
 		</form>
 	</div>
 
