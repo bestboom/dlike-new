@@ -20,7 +20,7 @@ if (isset($_POST["profname"])) {
             'what'=>['blog']
         ]];
 
-        //if (!empty($username) && ($username != $follower )){
+        if (!empty($username) && ($username != $follower )){
 
             $publish = $followGenerator->followMe($username, $_json);
             $state = $followGenerator->broadcast($publish);
@@ -35,7 +35,7 @@ if (isset($_POST["profname"])) {
                 echo json_encode($response);die;         
             }      
           
-        //}
+        }
          
 } else {die('Invalid Data');}    
 //var_dump($state);  

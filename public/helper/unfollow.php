@@ -21,7 +21,7 @@ if (isset($_POST["profname"])) {
             'what'=>[]
         ]];
 
-        //if (!empty($username) && ($username != $follower )){  
+        if (!empty($username) && ($username != $follower )){  
 
         $publish = $unfollowGenerator->unfollowMe($username, $_json);
         $state = $unfollowGenerator->broadcast($publish);
@@ -36,7 +36,7 @@ if (isset($_POST["profname"])) {
                 echo json_encode($response);die;         
             }    
          
-        //}
+        }
 
 } else {die('Invalid Data');}
 ?>
