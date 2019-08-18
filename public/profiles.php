@@ -213,6 +213,9 @@ include('template/header5.php');
     	});
 	});
 // check if user following
+if(username == profname) {
+	$('.foll').html('Edit');
+} else {
     isFollowing = username;
     steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
     //console.log(result)
@@ -221,7 +224,7 @@ include('template/header5.php');
         $('.foll').html(isFollow);
     	//console.log(isFollow)
 	});
-
+};
 // post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
@@ -433,7 +436,8 @@ include('template/header5.php');
 	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
-	                        $('.foll').html('Following').prop("disabled",true);
+	                        $('.foll').html('Following');
+	                        $('.btn-follow').prop("disabled",true);
 	                    }
 	                    else{
 	                        toastr['error'](response.message);
@@ -455,7 +459,8 @@ include('template/header5.php');
 	                    if(response.status===true)
 	                    {
 	                        toastr['success'](response.message);
-	                        $('.foll').html('Follow').prop("disabled",true);
+	                        $('.foll').html('Follow');
+	                        $('.btn-follow').prop("disabled",true);
 	                    }
 	                    else{
 	                        toastr['error'](response.message);
