@@ -420,14 +420,14 @@ include('template/header5.php');
 	    	let profname = '<?php echo $_GET['user'];?>';
 	        let follower_status = $(".foll").html();
 	        console.log(follower_status);
-
+	        var datav = {profname:profname};
 	        if(follower_status == 'Follow'){
 	            $.ajax({
 	                url: '/helper/follow.php',
 	                type: 'post',
 	                cache : false,
 	                dataType: 'json',
-	                data: {profname:profname},
+	                data: datav,
 	                success:function(data){
 	                	
 		                try {
@@ -458,7 +458,7 @@ include('template/header5.php');
 	                type: 'post',
 	                cache : false,
 	                dataType: 'json',
-	                data: {profname:profname},
+	                data: datav,
 	                success:function(response){
 	                	console.log(response);
 	                    if(response.status===true)
