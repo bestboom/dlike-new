@@ -25,12 +25,12 @@ if (isset($_POST["profname"])) {
             $publish = $followGenerator->followMe($username, $_json);
             $state = $followGenerator->broadcast($publish);
         
-            if (isset($state->error)){
-                $response["status"] = false;
-                $response["message"] = "Some Error";     
-            }else{
+            if (isset($state)){
                 $response["status"] = true;
-                $response["message"] = "You Followed Successfully";             
+                $response["message"] = "You Followed Successfully";    
+            }else{   
+                $response["status"] = false;
+                $response["message"] = "Some Error";           
             }      
           
         //}
