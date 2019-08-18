@@ -21,9 +21,9 @@ error_reporting(E_ALL);
 
 $total_reward = 7000;
 $user_status = "You Must Login";
-        $my_points = "0";
-        $my_share = "0%";
-        $my_earnings = "0 DLIKE";
+$my_points = "0";
+$my_share = "0%";
+$my_earnings = "0 DLIKE";
 
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 // $total_points = 1000;
@@ -61,7 +61,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $my_share = "0%";
         $my_earnings = "0 DLIKE";
     }
-// }
+}
 ?>
 </div><!-- sub-header -->
 <div class="working-process-section" style="padding-top: 80px;">
