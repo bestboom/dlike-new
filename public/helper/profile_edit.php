@@ -32,14 +32,15 @@ $response = [];
         $publish = $profileGenerator->upProfile($username, $_json);
         $state = $profileGenerator->broadcast($publish);
 
-            if (isset($state)){
-                $response["status"] = true;
-                $response["message"] = "You updated Successfully";  
-                echo json_encode($response);die;  
-            }else{   
+            if (isset($state->error)){
                 $response["status"] = false;
                 $response["message"] = $state->error_description;  
-                echo json_encode($response);die;         
+                echo json_encode($response);die;  
+                 
+            }else{   
+                $response["status"] = true;
+                $response["message"] = "You updated Successfully";  
+                echo json_encode($response);die;      
             }    
          
         //}

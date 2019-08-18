@@ -11,7 +11,7 @@ class makeProfile
             "operations"=> [
                 ["account_update", [
                     "account" => $username,
-                    "json_metadata" => $_json
+                    "json_metadata" => json_encode($_json)
                 ]]
             ]
         ];
