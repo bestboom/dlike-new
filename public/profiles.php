@@ -107,7 +107,7 @@ include('template/header5.php');
 //profile details
 	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
 	steem.api.getAccounts([profname], function(err, result) {
-	  	console.log(result)
+	  	//console.log(result)
 	  	let metadata;
 	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
         {
@@ -115,6 +115,7 @@ include('template/header5.php');
           	
 	  		let cover = metadata.profile.cover_image;
 	  		let cover_url = "https://steemitimages.com/0x0/"+cover;
+	  		let profile_image = metadata.profile.profile_image;
 	  		let about = metadata.profile.about;
 	  		let location = metadata.profile.location;
 	  		let website = metadata.profile.website;
@@ -122,19 +123,22 @@ include('template/header5.php');
 
 	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
 	  		$('#cover_img').val(cover);
+	  		$('#profile_pic').val(profile_image);
 	  		$('.p_about').html(about);
-	  		//$('.p_about').val(about);
 	  		if (typeof location !== 'undefined')
 	  		{
 	  			$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>' + location);
+	  			$('#profile_location').val(location);
 	  		}
 	  		if (typeof website !== 'undefined')
 	  		{
 	  			$('.web_site').html('<i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>' + website);
+	  			$('#profile_website').val(website);
 	  		}
 	  		if (typeof name !== 'undefined')
 	  		{
 	  			$('.name').html(name);
+	  			$('#profile_name').val();
 	  		}
         }
         let profile_created = result["0"].created;

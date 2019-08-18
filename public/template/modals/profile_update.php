@@ -10,7 +10,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Name</div>
 							</div>
-							<input type="text" class="form-control" name="memo">
+							<input type="text" class="form-control" name="profile_name" id="profile_name" value="" />
 						</div>
 					</div>
 				</div>
@@ -46,7 +46,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Location</div>
 							</div>
-							<input type="text" class="form-control" name="memo">
+							<input type="text" class="form-control" name="profile_location" id="profile_location" value="" />
 						</div>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Website</div>
 							</div>
-							<input type="text" class="form-control" name="memo">
+							<input type="text" class="form-control" name="profile_website" id="profile_website" value="" />
 						</div>
 					</div>
 				</div>
