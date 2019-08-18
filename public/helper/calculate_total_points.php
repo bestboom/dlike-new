@@ -216,7 +216,7 @@ $my_earnings = "0 DLIKE";
             url: url_retrievePostData,
             type: "POST",
             data: {
-              permlink: $post.permlink,
+              permlink: posts,
             },
           }).done(function(post)
             {
@@ -231,10 +231,10 @@ $my_earnings = "0 DLIKE";
                 }
               }
             }).fail(()=>{
+              document.body.innerHTML += "Views and Likes ERROR for user: " + username;
             let last = (i == relevantRes.length - 1);
             if(last)
               {
-
                 postsHandled = true;
                 if(commentsHandled){
                   callback(data);

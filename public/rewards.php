@@ -37,7 +37,6 @@ $total_points = $row1["pts"];
 
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
 {
-
     $user_name = $_COOKIE['username'];
     $sql_T = "SELECT * FROM prousers where username='$user_name'";
     $result_T = $conn->query($sql_T);
