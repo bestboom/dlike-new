@@ -22,7 +22,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Profile picture url</div>
 							</div>
-							<input type="text" class="form-control" name="memo">
+							<input type="text" class="form-control" name="profile_pic" id="profile_pic" value="" />
 						</div>
 					</div>
 				</div>
@@ -34,7 +34,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Cover image url</div>
 							</div>
-							<input type="text" class="form-control" name="memo">
+							<input type="text" class="form-control" name="cover_img" id="cover_img" value="">
 						</div>
 					</div>
 				</div>
