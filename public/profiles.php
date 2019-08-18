@@ -91,6 +91,13 @@ include('template/header5.php');
             </div>
         </div>
     </div>
+<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/tktransfer.php'); ?>
+        </div>
+    </div>
+</div>    
 <?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
@@ -475,7 +482,7 @@ include('template/header5.php');
 	        }
 
 	        if(follower_status == 'Edit'){
-	        	
+	        	$("#tk_transfer").modal("show");
 	        }
 
 /* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
