@@ -445,9 +445,9 @@ include('template/header5.php');
 		                }
 	                },               
 	                 error: function(xhr, textStatus, error){
-                          console.log(xhr.statusText);
+                          console.warn(xhr.statusText);
                           console.warn(xhr.responseText);
-                           console.log(textStatus);
+                           console.warn(textStatus);
                             console.log(error);
                 }
 	            });
@@ -471,17 +471,18 @@ include('template/header5.php');
 	                        return false;
 	                    }
 	                },
-	                  error: function(xhr, textStatus, error){
-					      console.log(xhr.statusText);
-					      console.log(textStatus);
-					      console.log(error);
-					  }
+	                 error: function(xhr, textStatus, error){
+                          console.warn(xhr.statusText);
+                          console.warn(xhr.responseText);
+                           console.warn(textStatus);
+                            console.log(error);
+                }
 	            });
 	        }
 
 
 
-function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+/* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
 		type: "POST",
 		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
@@ -494,6 +495,6 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log('Error occured');
 		}
 	});
-};		
-	});
+};*/		
+});
 </script>
