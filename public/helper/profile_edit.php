@@ -29,7 +29,7 @@ $response = [];
         //if (!empty($username) && ($username != $follower )){
         //https://github.com/steemit/steem-js/issues/165  
 
-        $publish = $profileGenerator->unfollowMe($username, $_json);
+        $publish = $profileGenerator->upProfile($username, $_json);
         $state = $profileGenerator->broadcast($publish);
 
             if (isset($state)){
