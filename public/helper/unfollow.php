@@ -12,9 +12,9 @@ function validator($data){
 
 
 
-    $return = array();
-    $return['status'] = false;
-    $return['message'] = '';
+    //$return = array();
+    //$return['status'] = false;
+    //$return['message'] = '';
 
 
 if (isset($_POST["profname"])) {
@@ -33,15 +33,20 @@ if (isset($_POST["profname"])) {
         $publish = $unfollowGenerator->unfollowMe($username, $_json);
         $state = $unfollowGenerator->broadcast($publish);
 
-            if (isset($state->error)){
-                $return["status"] = false;
-                $return["message"] = "Some Error";
-                echo json_decode($return["status"]);die;
-            }else{
-                $return["status"] = true;
-                $return["message"] = "You Unfollowed Successfully";
-                echo json_decode($return["status"]);die;
-            }    
+    if (isset($state->result)) { 
+                die(json_encode([
+                    'error' => false,
+                    'message' => 'Thankk You', 
+                    'data' => 'following'
+                    
+                ]));
+    } else {
+                die(json_encode([
+                    'error' => true,
+                    'message' => 'Sorry', 
+                    'data' => 'Already Upvoted'
+                ]));
+    }   
          
         //}
 

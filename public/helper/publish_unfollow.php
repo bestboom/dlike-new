@@ -18,7 +18,7 @@ class makeunFollow
             ]
         ];
         $fixed_str = json_encode($un_follow);
-        print($fixed_str);
+        //print($fixed_str);
         return $fixed_str;
     }
 
