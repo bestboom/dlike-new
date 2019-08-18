@@ -12,12 +12,12 @@ function validator($data){
 $response = [];
 //if (isset($_POST["profname"])) {
 
-    $username = $_COOKIE['username'];
-    $about = "its me certseek";
+    echo $username = $_COOKIE['username'];
+    $about = 'its me certseek';
     $name = 'certit';
-    $website = "https://dnom.io/";
-    $profile_image = "https://dnom.io/special/dnom-icon.png";
-    $location = "DLIKE";
+    $website = 'https://dnom.io/';
+    $profile_image = 'https://dnom.io/special/dnom-icon.png';
+    $location = 'DLIKE';
 
         $_json = ["profile", [
                     "name": $name,
@@ -26,7 +26,8 @@ $response = [];
                     "profile_image": $profile_image,
                     "location": $location
                 ]];
-        //if (!empty($username) && ($username != $follower )){  
+        //if (!empty($username) && ($username != $follower )){
+        //https://github.com/steemit/steem-js/issues/165  
 
         $publish = $profileGenerator->unfollowMe($username, $_json);
         $state = $profileGenerator->broadcast($publish);
