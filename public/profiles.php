@@ -451,7 +451,7 @@ include('template/header5.php');
 	                url: '/helper/unfollow.php',
 	                type: 'post',
 	                cache : false,
-	                dataType: 'json',
+	                //dataType: 'json',
 	                data: datav,
 	                success:function(response){
 	                	console.log(response);

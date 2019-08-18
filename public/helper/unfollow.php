@@ -36,11 +36,11 @@ if (isset($_POST["profname"])) {
             if (isset($state->error)){
                 $return["status"] = false;
                 $return["message"] = "Some Error";
-                echo json_encode($return["status"]);die;
+                //echo json_encode($return["status"]);die;
             }else{
                 $return["status"] = true;
                 $return["message"] = "You Unfollowed Successfully";
-                echo json_encode($return["status"]);die;
+                //echo json_encode($return["status"]);die;
             }    
          
         //}
