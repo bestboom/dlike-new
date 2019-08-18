@@ -125,6 +125,7 @@ include('template/header5.php');
 	  		$('#cover_img').val(cover);
 	  		$('#profile_pic').val(profile_image);
 	  		$('.p_about').html(about);
+	  		$('#profile_about').val(about);
 	  		if (typeof location !== 'undefined')
 	  		{
 	  			$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>' + location);

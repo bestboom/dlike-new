@@ -70,7 +70,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> About</div>
 							</div>
-							<input type="text" class="form-control" name="memo">
+							<input type="text" class="form-control" name="profile_about" id="profile_about" value="" />
 						</div>
 					</div>
 				</div>
