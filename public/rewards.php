@@ -52,13 +52,6 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
         $result2 = $conn->query($sql2);
         $row2 = $result2->fetch_assoc();
         $my_points = (float) $row2["my_pts"];
-
-        var_dump($row1);
-        var_dump($row2);
-
-        var_dump($total_points);
-        var_dump($my_points);
-
     } else {
         $user_status = "You Are not a PRO user";
         $my_points = "0";
