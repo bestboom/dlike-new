@@ -9,7 +9,14 @@ $unfollowGenerator = new dlike\unfollowit\makeunFollow();
 function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
-$response = [];
+
+
+
+    $return = array();
+    $return['status'] = false;
+    $return['message'] = '';
+
+    
 if (isset($_POST["profname"])) {
 
     $follower = validator($_POST["profname"]);
@@ -21,22 +28,22 @@ if (isset($_POST["profname"])) {
             'what'=>[]
         ]];
 
-        if (!empty($username) && ($username != $follower )){  
+        //if (!empty($username) && ($username != $follower )){  
 
         $publish = $unfollowGenerator->unfollowMe($username, $_json);
         $state = $unfollowGenerator->broadcast($publish);
 
             if (isset($state->error)){
-                $response["status"] = false;
-                $response["message"] = "Some Error";
+                $return["status"] = false;
+                $return["message"] = "Some Error";
                 echo json_encode($response);die;
             }else{
-                $response["status"] = true;
-                $response["message"] = "You Unfollowed Successfully";
-                echo json_encode($response);die;
+                $return["status"] = true;
+                $return["message"] = "You Unfollowed Successfully";
+                echo json_encode($return);die;
             }    
          
-        }
+        //}
 
 } else {die('Invalid Data');}
 ?>
