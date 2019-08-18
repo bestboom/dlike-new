@@ -451,7 +451,7 @@ include('template/header5.php');
 	                url: '/helper/unfollow.php',
 	                type: 'post',
 	                cache : false,
-	                //dataType: 'json',
+	                dataType: 'json',
 	                data: datav,
 	                success:function(response){
 	                	console.log(response);
@@ -466,8 +466,8 @@ include('template/header5.php');
 	                },
 	                 error: function(xhr, textStatus, error){
                           console.warn(xhr.statusText);
-                          console.warn(xhr.responseText);
-                           console.warn(textStatus);
+                          console.warn(xhr.response);
+                           console.log(textStatus);
                             console.log(error);
                 }
 	            });
