@@ -425,6 +425,7 @@ include('template/header5.php');
 	        console.log(follower_status);
 	        var datav = {profname:profname};
 	        if(follower_status == 'Follow'){
+	        	$('.foll').html('following...');
 	            $.ajax({
 	                url: '/helper/follow.php',
 	                type: 'post',
@@ -449,6 +450,7 @@ include('template/header5.php');
 	        }
 
 	        if(follower_status == 'unfollow' || follower_status == 'Following'){
+	        	$('.foll').html('unfollowing...');
 	            $.ajax({
 	                url: '/helper/unfollow.php',
 	                type: 'post',
@@ -472,7 +474,9 @@ include('template/header5.php');
 	            });
 	        }
 
-
+	        if(follower_status == 'Edit'){
+	        	
+	        }
 
 /* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
