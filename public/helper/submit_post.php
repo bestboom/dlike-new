@@ -143,7 +143,7 @@ if(count($posts_tags)>0 && $post_id > 0) {
 		
 	<div style="margin-top: 10%;position:relative;min-height:95vh;">
 		<center>
-			<div style="background-color: #ff6600;max-width: 550px;color:#111;border-radius: 5px;font-family: "Quicksand", sans-serif;">
+			<div style="background-color: #ff6600;max-width: 550px;color:#111;border-radius: 5px;font-family:tahoma;">
 				<div style="min-height:400px;padding:30px;padding-top: 30%;">
 					<h3 style="color:#fff;">There seems some error!</h3>
 					<h4 style="color:#fff;">Please contact support if issue persist</h4><br>
