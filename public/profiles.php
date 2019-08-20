@@ -510,7 +510,9 @@ include('template/header5.php');
 			    });
 	        }
 
-/* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+/* 
+https://stackoverflow.com/questions/40017845/detect-any-input-change-jquery
+function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
 		type: "POST",
 		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,

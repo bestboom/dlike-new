@@ -139,8 +139,21 @@ if(count($posts_tags)>0 && $post_id > 0) {
     <script type="text/javascript">
         window.location = "https://dlike.io/";
     </script>
-<? 	} else {
-		echo $state->error_description;
-	} 
+<? 	} else { ?>
+		
+	<div style="margin-top: 10%;position:relative;min-height:95vh;">
+		<center>
+			<div style="background-color: #ff6600;max-width: 550px;color:#111;">
+				<div style="min-height:400px;padding:30px;padding-top: 30%;">
+					<h3 style="color:#fff;">There seems some error!</h3>
+					<h4 style="color:#fff;">Please contact support if issue persist</h4><br>
+					<?php echo '<p style="border-top: 1px dashed #111;border-bottom: 1px dashed #111;padding:8px;">' . $state->error_description . '</p>';
+					?>
+				</div>
+			</div>
+		</center>
+	</div>
+<?	} 
 	
 ?>
+
