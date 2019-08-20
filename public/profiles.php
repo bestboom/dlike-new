@@ -13,6 +13,8 @@ include('template/header5.php');
     }
 ?>
 </div><!-- sub-header --> 
+<div id="profile_miss" style="display: none;">It seems username does nto exist on steem blockchain</div>
+<div id="profile_page">
 	<div id="p_cover" class="img-fluid"></div>
 	<div style="background: #ededed;">
 	<div class="container p-data">
@@ -91,18 +93,29 @@ include('template/header5.php');
             </div>
         </div>
     </div>
-<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content modal-custom">
-            <?php include('template/modals/profile_update.php'); ?>
-        </div>
-    </div>
-</div>    
+	<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
+	    <div class="modal-dialog" role="document">
+	        <div class="modal-content modal-custom">
+	            <?php include('template/modals/profile_update.php'); ?>
+	        </div>
+	    </div>
+	</div>  
+</div>  
 <?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
 		let profname = '<?php echo $_GET['user'];?>';
+		
+//chexk if user exist
+
+	let Client = new dsteem.Client('https://api.steemit.com');
+	Client.database.call('get_accounts', [[username]]).then(function (result) {
+		if (result.length<=0) {
+			$('#profile_page').hide();
+			$('#profile_miss').show();
+		}
+	});
 
 //profile details
 	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
