@@ -13,112 +13,112 @@ include('template/header5.php');
     }
 ?>
 </div><!-- sub-header --> 
-<div id="profile_miss" style="display: none;">
-	<div class="container">
-		<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
-		    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
-		        <div class="modal-body">
-		            <div class="share-block">
-		                <p style="font-size: 3rem;">ooops!</p>
-		            </div>
-		            <div class="user-connected-form-block" style="background: #1b1e63;">
-		            	<i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i>
-		                <div class="share-block">
-		                	<p>It seems user does nto exist on STEEM blockchian!</p>
-		            	</div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	</div>
-</div>
-<div id="profile_page">
-	<div id="p_cover" class="img-fluid"></div>
-	<div style="background: #ededed;">
-	<div class="container p-data">
-		<div class="row p_data_inner">
-			<div>
-				<span>
-					<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
-					<span class="repu rounded-circle"></span>
-				</span>
-				<span class="p_data_names">
-					<span class="name"></span>
-					<br>
-					<span class="p_name"></span>
-					<?php if($profile_user== "PRO")
-						{ echo '<span><i class="fas fa-check-circle p_pro" title="PRO User"></i></span>'; }
-					?>
-				</span>
-			</div>
-			<div>
-				<button class="btn btn-danger btn-follow">
-					<span class="foll"></span>
-				</button>
+	<div id="profile_miss" style="display: none;">
+		<div class="container">
+			<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
+			    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
+			        <div class="modal-body">
+			            <div class="share-block">
+			                <p style="font-size: 3rem;">ooops!</p>
+			            </div>
+			            <div class="user-connected-form-block" style="background: #1b1e63;">
+			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
+			                <div class="share-block">
+			                	<p>It seems user does nto exist on STEEM blockchian!</p>
+			            	</div>
+			            </div>
+			        </div>
+			    </div>
 			</div>
 		</div>
-		<div class="row p_data_top">
-			<span class="p_about"></span>
-		</div>
-		<div class="row p_data_mid">
-			<span class="followers"></span>
-			<span class="following"></span>
-			<span class="p_joined p_data_pad"></span>
-		</div>
-		<div class="row p_data_bot">
-			<span class="p_location"></span>
-			<span class="web_site p_data_pad"></span>
-		</div>
 	</div>
-	<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
-        <div class="container">
-            <div class="new-ticker-block-wrap">
-                <div class="ticker-head">
-                    <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
-                               aria-selected="true">
-                               <h5>Posts</h5>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Comments</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#user_replies" role="tab" data-toggle="tab">Replies</a>
-                        </li>
-                        <li class="nav-item nav-item-last">
-                        </li>
-                    </ul>
-                </div>
-                <div class="market-ticker-block">
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
-							<div class="container">
-					            <div id="loadings"><img src="/images/loader.svg" width="100" style="padding-top:40px;"></div>
-						    	<div class="row" id="profposts"></div>
-							</div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_comments">
-                        	<div id="cmt_content"></div>
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
-                            <div id="replies_content"></div>
-                        </div><!-- market-ticker-block -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
-	    <div class="modal-dialog" role="document">
-	        <div class="modal-content modal-custom">
-	            <?php include('template/modals/profile_update.php'); ?>
+	<div id="profile_page">
+		<div id="p_cover" class="img-fluid"></div>
+		<div style="background: #ededed;">
+		<div class="container p-data">
+			<div class="row p_data_inner">
+				<div>
+					<span>
+						<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
+						<span class="repu rounded-circle"></span>
+					</span>
+					<span class="p_data_names">
+						<span class="name"></span>
+						<br>
+						<span class="p_name"></span>
+						<?php if($profile_user== "PRO")
+							{ echo '<span><i class="fas fa-check-circle p_pro" title="PRO User"></i></span>'; }
+						?>
+					</span>
+				</div>
+				<div>
+					<button class="btn btn-danger btn-follow">
+						<span class="foll"></span>
+					</button>
+				</div>
+			</div>
+			<div class="row p_data_top">
+				<span class="p_about"></span>
+			</div>
+			<div class="row p_data_mid">
+				<span class="followers"></span>
+				<span class="following"></span>
+				<span class="p_joined p_data_pad"></span>
+			</div>
+			<div class="row p_data_bot">
+				<span class="p_location"></span>
+				<span class="web_site p_data_pad"></span>
+			</div>
+		</div>
+		<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
+	        <div class="container">
+	            <div class="new-ticker-block-wrap">
+	                <div class="ticker-head">
+	                    <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
+	                        <li class="nav-item">
+	                            <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
+	                               aria-selected="true">
+	                               <h5>Posts</h5>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Comments</a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link" href="#user_replies" role="tab" data-toggle="tab">Replies</a>
+	                        </li>
+	                        <li class="nav-item nav-item-last">
+	                        </li>
+	                    </ul>
+	                </div>
+	                <div class="market-ticker-block">
+	                    <!-- Tab panes -->
+	                    <div class="tab-content">
+	                        <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
+								<div class="container">
+						            <div id="loadings"><img src="/images/loader.svg" width="100" style="padding-top:40px;"></div>
+							    	<div class="row" id="profposts"></div>
+								</div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_comments">
+	                        	<div id="cmt_content"></div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
+	                            <div id="replies_content"></div>
+	                        </div><!-- market-ticker-block -->
+	                    </div>
+	                </div>
+	            </div>
 	        </div>
 	    </div>
+		<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content modal-custom">
+		            <?php include('template/modals/profile_update.php'); ?>
+		        </div>
+		    </div>
+		</div>  
 	</div>  
-</div>  
 <?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
