@@ -34,7 +34,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Cover image url</div>
 							</div>
-							<input type="text" class="form-control" key="cover_img" name="cover_img" id="cover_img" value="">
+							<input type="text" class="form-control" key="cover_image" name="cover_img" id="cover_img" value="">
 						</div>
 					</div>
 				</div>
