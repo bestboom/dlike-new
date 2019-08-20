@@ -445,6 +445,9 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
     } 
     #p_img{width: 100px;height: 100px; margin-top: -50px;}   
     #p_cover{height:155px !important;}
+    .foll_count{font-weight:700;font-size:15px;padding-right:2px;font-family: sans-serif;}
+    .p_data_names .name{font-size: 22px;}
+    .p-data{font-size: 90%;}
     .navbar-toggler {
         background: transparent;
         position: absolute;
@@ -884,6 +887,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .p_data_bot{padding: 5px 40px 15px;font-weight: bold;}
 .btn-follow {margin: 10px;background: #191d5d;border-radius: 14px;padding: 8px 16px;border-color: #191d5d;}
 .p_tab_pad{padding:40px 20px;}
+.foll_count{font-weight:700;font-size:16px;padding-right:2px;font-family: sans-serif;}
 #profposts{padding-top:40px;}
 .my_img{
     border: 1px solid #eee;
@@ -4433,6 +4437,9 @@ button.toast-close-button {
 @media all and (max-width: 480px) {
     #p_img{width: 72px !important;height: 72px !important;margin-top: -30px !important;}   
     #p_cover{height:105px !important;}
+    .foll_count{font-weight:600;font-size:13px;padding-right:1px;font-family: sans-serif;}
+    .p_data_names .name{font-size: 14px;}
+    .p-data{font-size: 70%;}
     }
 @media all and (min-width: 241px) and (max-width: 480px) {
     #toast-container > div {
@@ -4478,6 +4485,9 @@ button.toast-close-button {
     }
     #p_img{width: 100px;height: 100px; margin-top: -50px;}   
     #p_cover{height:135px !important;}
+    .foll_count{font-weight:700;font-size:14px;padding-right:2px;font-family: sans-serif;}
+    .p_data_names .name{font-size: 18px;}
+    .p-data{font-size: 85%;}
 }
 
 .testimonial-slider button.slick-prev {

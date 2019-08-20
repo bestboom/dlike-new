@@ -158,8 +158,8 @@ include('template/header5.php');
 		 let p_followers = result.follower_count;
 		 let p_following = result.following_count;
 
-		 $('.followers').html('<span style="font-weight:700;font-size:16px;padding-right:2px;font-family: sans-serif;">' + p_followers + '</span> Followers |  ');
-		 $('.following').html('<span style="font-weight:700;font-size:16px;padding-right:2px;padding-left:8px;font-family: sans-serif;">' + p_following + '</span> Following');
+		 $('.followers').html('<span class="foll_count">' + p_followers + '</span> Followers |  ');
+		 $('.following').html('<span class="foll_count">' + p_following + '</span> Following');
 
 	});
 
