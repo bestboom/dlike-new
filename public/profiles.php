@@ -133,8 +133,8 @@ include('template/header5.php');
 			$('#profile_page').hide();
 			$('#profile_miss').show();
 			return false;
-		}
-	});
+		} else {
+	//
 
 //profile details
 	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
@@ -461,6 +461,8 @@ include('template/header5.php');
 		    });
 		}
 	})
+}
+});
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
@@ -585,52 +587,6 @@ include('template/header5.php');
   			});
 
 	    }
-
-/* 
-
-  			
-
-
-
-
-
-
-
-
-
-
-			    let profile_options = {
-			        target : '#prof-msg',
-			        url    : 'helper/profile_edit.php',
-			        success: function () {
-			        },
-			    };
-
-			    $('#p_edit').submit(function (e) {
-			        e.preventDefault();
-			        //let reciever = $(".reciever").val();
-			        //let send_amt = parseInt($(".send_amt").val());
-			        //let user_bal = parseInt($("#user_bal").val()) || 0;
-			        //console.log(user_bal);
-			        alert('working');
-			        //$(this).ajaxSubmit(profile_options);
-			        return !1;
-			    });
-
-https://stackoverflow.com/questions/40017845/detect-any-input-change-jquery
-function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
-	$.ajax({
-		type: "POST",
-		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
-		dataType: 'json',
-		success: function(response) {
-			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
-			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
-		},
-		error: function() {
-			console.log('Error occured');
-		}
-	});
-};*/		
+	
 });
 </script>
