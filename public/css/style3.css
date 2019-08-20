@@ -4443,12 +4443,11 @@ button.toast-close-button {
     .btn-follow{border-radius: 10px !important;padding: 4px 12px !important;}
     .card-img-top{height: 60vw !important;}
     .hov-item{margin-bottom: 0.5em !important;}
-    .post-style-two .post-title{  
-     white-space: none;
-    overflow: none;
-    text-overflow: none;  }
+    .post-style-two .post-title{white-space: unset;overflow: visible;text-overflow: unset;}
     .post-style-two .post-title a {font-size: 0.9rem !important;font-weight: 600 !important;line-height: 1.5 !important;}
-    .col-lg-4.col-md-6.postsMainDiv>.post-style-two{margin-bottom: 15px !important;margin-bottom: 15px !important;}
+    #content .col-lg-4.col-md-6.postsMainDiv>.post-style-two{margin-bottom: 15px !important;}
+    .single-post-block .post-title{font-size: 1.1rem !important;}
+    .details-post-meta-block-top{font-size: 85% !important;}
     }
 @media all and (min-width: 241px) and (max-width: 480px) {
     #toast-container > div {
