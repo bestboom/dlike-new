@@ -4441,7 +4441,7 @@ button.toast-close-button {
     .p_data_names .name{font-size: 14px !important;}
     .p-data{font-size: 70% !important;}
     .btn-follow{border-radius: 10px !important;padding: 4px 12px !important;}
-    .card-img-top{height: auto !important; object-fit: cover !important;}
+    .card-img-top{height: 60vw !important; object-fit: cover !important;}
     .hov-item{margin-bottom: 0.5em !important;}
     .post-style-two .post-title{white-space: unset;overflow: visible;text-overflow: unset;}
     .post-style-two .post-title a {font-size: 0.9rem !important;font-weight: 600 !important;line-height: 1.5 !important;}
