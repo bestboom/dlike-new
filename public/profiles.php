@@ -130,9 +130,8 @@ include('template/header5.php');
 	let Client = new dsteem.Client('https://api.steemit.com');
 	Client.database.call('get_accounts', [[profname]]).then(function (result) {
 		if (result.length<=0) {
-			//$('#profile_page').hide();
-			//$('#profile_miss').show();
-			$('#profile_page').replaceWith($('#profile_miss'));
+			$('#profile_page').hide();
+			$('#profile_miss').show();
 			return false;
 		} else {
 	//
