@@ -31,6 +31,7 @@ include('template/header5.php');
 			    </div>
 			</div>
 		</div>
+		<?php include('template/footer3.php'); ?>
 	</div> 
 	<div id="profile_page">
 		<div id="p_cover" class="img-fluid"></div>
@@ -118,9 +119,8 @@ include('template/header5.php');
 		        </div>
 		    </div>
 		</div>  
+		<?php include('template/footer3.php'); ?>
 	</div>  
-
-<?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
