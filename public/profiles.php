@@ -110,7 +110,7 @@ include('template/header5.php');
 //chexk if user exist
 
 	let Client = new dsteem.Client('https://api.steemit.com');
-	Client.database.call('get_accounts', [[username]]).then(function (result) {
+	Client.database.call('get_accounts', [[profname]]).then(function (result) {
 		if (result.length<=0) {
 			$('#profile_page').hide();
 			$('#profile_miss').show();
