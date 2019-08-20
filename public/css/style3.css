@@ -4439,7 +4439,7 @@ button.toast-close-button {
     #p_cover{height:105px !important;}
     .foll_count{font-weight:600;font-size:13px;padding-right:1px;font-family: sans-serif;}
     .p_data_names .name{font-size: 14px;}
-    .p-data{font-size: 70%;}
+    .p-data{font-size: 70% !important;}
     }
 @media all and (min-width: 241px) and (max-width: 480px) {
     #toast-container > div {
