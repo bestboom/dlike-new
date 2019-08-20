@@ -4440,6 +4440,7 @@ button.toast-close-button {
     .foll_count{font-weight:600 !important;font-size:12px !important;padding-right:1px !important;font-family: sans-serif !important;}
     .p_data_names .name{font-size: 14px !important;}
     .p-data{font-size: 70% !important;}
+    .btn-follow{border-radius: 10px !important;padding: 4px 12px !important;}
     }
 @media all and (min-width: 241px) and (max-width: 480px) {
     #toast-container > div {
