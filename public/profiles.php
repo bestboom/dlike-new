@@ -538,6 +538,7 @@ include('template/header5.php');
 
   			$('.p_edit_btn').click(function(){
     			window.open(url + output());
+    			$("#profile_edit").modal("hide");
 			});
   
   			$('.form-control').each(function()
