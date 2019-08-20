@@ -132,7 +132,7 @@ include('template/header5.php');
 		if (result.length<=0) {
 			//$('#profile_page').hide();
 			//$('#profile_miss').show();
-			$('#profile_page').replaceWith('#profile_miss');
+			$('#profile_page').replaceWith($('#profile_miss'));
 			return false;
 		} else {
 	//
