@@ -12,26 +12,7 @@ include('template/header5.php');
     	$profile_user = 'PRO';
     }
 ?>
-</div><!-- sub-header --> 
-	<div id="profile_miss" style="display: none;">
-		<div class="container">
-			<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
-			    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
-			        <div class="modal-body">
-			            <div class="share-block">
-			                <p style="font-size: 3rem;">ooops!</p>
-			            </div>
-			            <div class="user-connected-form-block" style="background: #1b1e63;">
-			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
-			                <div class="share-block">
-			                	<p>It seems user does nto exist on STEEM blockchian!</p>
-			            	</div>
-			            </div>
-			        </div>
-			    </div>
-			</div>
-		</div>
-	</div>
+</div><!-- sub-header -->
 	<div id="profile_page">
 		<div id="p_cover" class="img-fluid"></div>
 		<div style="background: #ededed;">
@@ -119,6 +100,25 @@ include('template/header5.php');
 		    </div>
 		</div>  
 	</div>  
+	<div id="profile_miss" style="display: none;">
+		<div class="container">
+			<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
+			    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
+			        <div class="modal-body">
+			            <div class="share-block">
+			                <p style="font-size: 3rem;">ooops!</p>
+			            </div>
+			            <div class="user-connected-form-block" style="background: #1b1e63;">
+			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
+			                <div class="share-block">
+			                	<p>It seems user does nto exist on STEEM blockchian!</p>
+			            	</div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</div> 
 <?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
@@ -130,8 +130,9 @@ include('template/header5.php');
 	let Client = new dsteem.Client('https://api.steemit.com');
 	Client.database.call('get_accounts', [[profname]]).then(function (result) {
 		if (result.length<=0) {
-			$('#profile_page').hide();
-			$('#profile_miss').show();
+			//$('#profile_page').hide();
+			//$('#profile_miss').show();
+			$('#profile_page').replaceWith('#profile_miss');
 			return false;
 		} else {
 	//
@@ -461,8 +462,8 @@ include('template/header5.php');
 		    });
 		}
 	})
-}
-});
+	} //close usercheck here
+	}); //close dsteem here
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
