@@ -13,7 +13,21 @@ include('template/header5.php');
     }
 ?>
 </div><!-- sub-header --> 
-<div id="profile_miss" style="display: none;">It seems username does nto exist on steem blockchain</div>
+<div id="profile_miss" style="display: none;">
+    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
+        <div class="modal-body">
+            <div class="share-block">
+                <p>ooops!</p>
+            </div>
+            <div class="user-connected-form-block" style="background: #1b1e63;">
+            	<i class="fas fa-frown"></i>
+                <div class="share-block">
+                	<p>It seems user does nto exist on STEEM blockchian!</p>
+            	</div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="profile_page">
 	<div id="p_cover" class="img-fluid"></div>
 	<div style="background: #ededed;">
@@ -106,7 +120,7 @@ include('template/header5.php');
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
 		let profname = '<?php echo $_GET['user'];?>';
-		
+
 //chexk if user exist
 
 	let Client = new dsteem.Client('https://api.steemit.com');
