@@ -488,8 +488,83 @@ include('template/header5.php');
 	            });
 	        }
 
-	        if(follower_status == 'Edit'){
-	        	$("#profile_edit").modal("show");
+	    if(follower_status == 'Edit'){
+	    	$("#profile_edit").modal("show");
+	    	$('.p_edit_btn').prop("disabled",true);
+
+
+			let url = "https://beta.steemconnect.com/sign/profile-update?";
+			let parts=[];
+			let originalparts = [];
+
+			function output(){
+				let out = [];
+				for(let i = 0; i<Object.entries(parts).length; i++)
+  				{
+  					let entry = Object.entries(parts)[i];
+    				out.push(entry[0]+"="+entry[1]);
+  				}
+  			return out.join("&");
+			}
+
+			function validate() {
+  				$('.p_edit_btn').prop("disabled", Object.entries(parts).length <= 0);
+			}
+
+			function input(key, val, original=false)
+			{
+				if(!original)
+  				{
+    				if(val.length<=0 || originalparts[key] == val)
+    				{
+      					delete(parts[key]);
+    				}
+    				else
+    				{
+      					parts[key] = val;
+    				}
+  				}
+  				else
+  				{	
+  					if(val.length>0)
+    				{
+      					originalparts[key] = val;
+    				}
+  				}
+  
+  				validate();
+  				//$('#out').html("Output: " + url + output());
+			}
+
+  			$('.p_edit_btn').click(function(){
+    			window.open(url + output());
+			});
+  
+  			$('.form-control').each(function()
+  			{ 
+    			let inp = $(this).val();
+    			input($(this).attr("key"), encodeURIComponent(inp), true);
+    
+    			$(this).on("change paste keyup", function(){ 
+    				let inp = $(this).val();
+	    			input($(this).attr("key"), encodeURIComponent(inp));
+  				});
+  			});
+
+	    }
+
+/* 
+
+  			
+
+
+
+
+
+
+
+
+
 
 			    let profile_options = {
 			        target : '#prof-msg',
@@ -508,9 +583,7 @@ include('template/header5.php');
 			        //$(this).ajaxSubmit(profile_options);
 			        return !1;
 			    });
-	        }
 
-/* 
 https://stackoverflow.com/questions/40017845/detect-any-input-change-jquery
 function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
