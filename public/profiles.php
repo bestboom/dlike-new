@@ -158,7 +158,7 @@ include('template/header5.php');
 		 let p_followers = result.follower_count;
 		 let p_following = result.following_count;
 
-		 $('.followers').html('<span class="foll_count">' + p_followers + '</span> Followers | &nbsp;&nbsp;');
+		 $('.followers').html('<span class="foll_count">' + p_followers + '</span> Followers |&nbsp;');
 		 $('.following').html('<span class="foll_count">' + p_following + '</span> Following');
 
 	});
