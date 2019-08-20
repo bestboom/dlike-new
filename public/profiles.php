@@ -14,19 +14,23 @@ include('template/header5.php');
 ?>
 </div><!-- sub-header --> 
 <div id="profile_miss" style="display: none;">
-    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
-        <div class="modal-body">
-            <div class="share-block">
-                <p>ooops!</p>
-            </div>
-            <div class="user-connected-form-block" style="background: #1b1e63;">
-            	<i class="fas fa-frown"></i>
-                <div class="share-block">
-                	<p>It seems user does nto exist on STEEM blockchian!</p>
-            	</div>
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
+		    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
+		        <div class="modal-body">
+		            <div class="share-block">
+		                <p style="font-size: 3rem;">ooops!</p>
+		            </div>
+		            <div class="user-connected-form-block" style="background: #1b1e63;">
+		            	<i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i>
+		                <div class="share-block">
+		                	<p>It seems user does nto exist on STEEM blockchian!</p>
+		            	</div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
 </div>
 <div id="profile_page">
 	<div id="p_cover" class="img-fluid"></div>
