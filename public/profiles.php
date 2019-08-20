@@ -139,7 +139,7 @@ include('template/header5.php');
 	  		if (typeof name !== 'undefined')
 	  		{
 	  			$('.name').html(name);
-	  			$('#profiles_name').val();
+	  			$('#profiles_name').val(name);
 	  		}
         }
         let profile_created = result["0"].created;

@@ -75,7 +75,7 @@
 					</div>
 				</div>
 			</div>			
-			<center><button type="submit" class="btn btn-default p_edit_btn">UPDATE</button></center>
+			<center><button type="button" class="btn btn-default p_edit_btn">UPDATE</button></center>
 		</form>
 	</div>
 
