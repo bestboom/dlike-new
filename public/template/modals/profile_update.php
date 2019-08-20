@@ -10,7 +10,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> Name</div>
 							</div>
-							<input type="text" class="form-control" key="profile_name" name="profile_name" id="profile_name" value="" />
+							<input type="text" class="form-control" key="profile_name" name="profile_name" id="profiles_name" value="" />
 						</div>
 					</div>
 				</div>
