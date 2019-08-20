@@ -150,7 +150,7 @@ if(count($posts_tags)>0 && $post_id > 0) {
 					<?php echo '<p style="border-top: 1px dashed #111;border-bottom: 1px dashed #111;padding:8px;">' . $state->error_description . '</p>';
 					?>
 					<br>
-					<button style="padding: 7px 10px;background: #fff;border: 1px solid #111;color: #111;border-radius: 4px;" onclick="goBack()">Go Back</button>
+					<button style="padding: 7px 10px;background: #fff;border: 1px solid #111;color: #111;border-radius: 4px;cursor: pointer;" onclick="goBack()">Go Back</button>
 				</div>
 			</div>
 		</center>
