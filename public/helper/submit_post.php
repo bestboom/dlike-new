@@ -149,6 +149,8 @@ if(count($posts_tags)>0 && $post_id > 0) {
 					<h4 style="color:#fff;">Please contact support if issue persist</h4><br>
 					<?php echo '<p style="border-top: 1px dashed #111;border-bottom: 1px dashed #111;padding:8px;">' . $state->error_description . '</p>';
 					?>
+					<br>
+					<button style="padding: 7px 10px;background: #fff;border: 1px solid #111;color: #111;border-radius: 4px;" onclick="goBack()">Go Back</button>
 				</div>
 			</div>
 		</center>
@@ -156,4 +158,8 @@ if(count($posts_tags)>0 && $post_id > 0) {
 <?	} 
 	
 ?>
-
+<script>
+function goBack() {
+  window.history.back()
+}
+</script>
