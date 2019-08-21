@@ -9,6 +9,18 @@ require '../includes/config.php';
 
 
 
+
+$sql = "ALTER TABLE dailyRewards ADD tokens float(8) NOT NULL";
+if ($conn->query($sql) === TRUE) {
+    echo "Table field added";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
+/*'
+
+
+
 $sqlm = "CREATE TABLE dailyRewards (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
@@ -23,9 +35,6 @@ if ($conn->query($sqlm) === TRUE) {
 }
 
 
-
-
-/*'
 
 $sql = "ALTER TABLE prousers ADD total_points float(8) NOT NULL";
 if ($conn->query($sql) === TRUE) {
