@@ -19,12 +19,12 @@
         <meta name="twitter:image" content="<?php echo $og_image; ?>">
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
-    <? }  
-    if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
+    <? } 
+    else if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
         <title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title>
         <meta name="description" content="The latest posts shared by <?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> on DLIKE. An informative face of internet to share and get rewarded like <?php echo ucfirst($prof_user); ?>.">
-    <? } ?>
-        <title>DLIKE - Share To Get Rewarded</title>
+    <? } else { ?>    
+        <title>Dlike :: Share To Get Rewarded</title>
         <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes.">
         <!--Facebook Meta Tags -->
         <meta property="og:url" content="https://dlike.io" />
@@ -32,17 +32,17 @@
         <meta property="og:description" content="Dlike." />
         <meta property="og:image" content="/images/dlike-main.jpg" />
         <!--End Facebook Meta Tags-->
-    
-    <link rel='favicon icon' type=image/x-icon href=/images/favicon.ico />
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="/assets/css/slick.css">
-    <link rel="stylesheet" href="/css/style3.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+    <? } ?>
+        <link rel='favicon icon' type=image/x-icon href=/images/favicon.ico />
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="/assets/css/themify-icons.css">
+        <link rel="stylesheet" href="/assets/css/slick.css">
+        <link rel="stylesheet" href="/css/style3.css">
+        <link rel="stylesheet" href="/css/responsive.css">
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
-    <link rel="stylesheet" href="/css/intlTelInput.css">
+        <link rel="stylesheet" href="/css/intlTelInput.css">
 <? } ?> 
 </head>
 <body>

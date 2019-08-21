@@ -26,7 +26,7 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
-include('template/header6.php');
+include('template/header5.php');
 
 $views = '1'; 
 //post views

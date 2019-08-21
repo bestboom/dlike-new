@@ -33,16 +33,16 @@
         <meta property="og:image" content="/images/dlike-main.jpg" />
         <!--End Facebook Meta Tags-->
     <? } ?>
-    <link rel='favicon icon' type=image/x-icon href=/images/favicon.ico />
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/assets/css/themify-icons.css">
-    <link rel="stylesheet" href="/assets/css/slick.css">
-    <link rel="stylesheet" href="/css/style3.css">
-    <link rel="stylesheet" href="/css/responsive.css">
+        <link rel='favicon icon' type=image/x-icon href=/images/favicon.ico />
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="/assets/css/themify-icons.css">
+        <link rel="stylesheet" href="/assets/css/slick.css">
+        <link rel="stylesheet" href="/css/style3.css">
+        <link rel="stylesheet" href="/css/responsive.css">
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
-    <link rel="stylesheet" href="/css/intlTelInput.css">
+        <link rel="stylesheet" href="/css/intlTelInput.css">
 <? } ?> 
 </head>
 <body>
