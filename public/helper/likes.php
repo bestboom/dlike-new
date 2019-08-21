@@ -10,12 +10,6 @@ require '../includes/config.php';
 
 
 
-$sql = "ALTER TABLE dailyRewards ADD tokens float(8) NOT NULL";
-if ($conn->query($sql) === TRUE) {
-    echo "Table field added";
-} else {
-    echo "Error updating table: " . $conn->error;
-}
 
 /*'
 
@@ -34,6 +28,12 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
+$sql = "ALTER TABLE dailyRewards ADD tokens float(8) NOT NULL";
+if ($conn->query($sql) === TRUE) {
+    echo "Table field added";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
 
 
 $sql = "ALTER TABLE prousers ADD total_points float(8) NOT NULL";
