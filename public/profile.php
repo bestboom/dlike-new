@@ -1,24 +1,278 @@
-<?php include('template/header5.php'); ?>
-    </div><!-- sub-header -->
-    <div class="latest-post-section" style="min-height:80vh;">
+<?php 
+if (isset($_GET['user'])) 
+{
+	$prof_user = $_GET['user'];
+} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+include('template/header5.php');
+//check pro status
+    $sql_T = "SELECT * FROM prousers where username='$prof_user'";
+    $result_T = $conn->query($sql_T);
+    if ($result_T && $result_T->num_rows > 0) 
+    {
+    	$profile_user = 'PRO';
+    }
+?>
+</div><!-- sub-header -->
+	<div id="profile_miss" style="display: none;">
 		<div class="container">
-			<div class="row  align-items-center h-100">
-                <div class="row col-md-3 justify-content-center">
-                    <h4 class="lab_post"><?php echo $_GET['user'];?></h4>
-                </div>
-                <div class="col-md-9 lay">&nbsp;</div>
-            </div>
-            <div id="loadings"><img src="/images/loader.svg" width="100"></div>
-	    	<div class="row" id="profposts"></div>
+			<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
+			    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
+			        <div class="modal-body">
+			            <div class="share-block">
+			                <p style="font-size: 3rem;">ooops!</p>
+			            </div>
+			            <div class="user-connected-form-block" style="background: #1b1e63;">
+			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
+			                <div class="share-block">
+			                	<p>It seems user does nto exist on STEEM blockchian!</p>
+			            	</div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
 		</div>
-    </div>
-  
-<?php include('template/footer3.php'); ?>
+		<?php include('template/footer3.php'); ?>
+	</div> 
+	<div id="profile_page">
+		<div id="p_cover" class="img-fluid"></div>
+		<div style="background: #ededed;">
+		<div class="container p-data">
+			<div class="row p_data_inner">
+				<div>
+					<span>
+						<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
+						<span class="repu rounded-circle"></span>
+					</span>
+					<span class="p_data_names">
+						<span class="name"></span>
+						<br>
+						<span class="p_name"></span>
+						<?php if($profile_user== "PRO")
+							{ echo '<span><i class="fas fa-check-circle p_pro" title="PRO User"></i></span>'; }
+						?>
+					</span>
+				</div>
+				<div>
+					<button class="btn btn-danger btn-follow">
+						<span class="foll"></span>
+					</button>
+				</div>
+			</div>
+			<div class="row p_data_top">
+				<span class="p_about"></span>
+			</div>
+			<div class="row p_data_mid">
+				<span class="followers"></span>
+				<span class="following"></span>
+				<span class="p_joined p_data_pad"></span>
+			</div>
+			<div class="row p_data_bot">
+				<span class="p_location"></span>
+				<span class="web_site p_data_pad"></span>
+			</div>
+		</div>
+		<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
+	        <div class="container">
+	            <div class="new-ticker-block-wrap">
+	                <div class="ticker-head">
+	                    <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
+	                        <li class="nav-item">
+	                            <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
+	                               aria-selected="true">
+	                               <h5>Posts</h5>
+	                            </a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Comments</a>
+	                        </li>
+	                        <li class="nav-item">
+	                            <a class="nav-link" href="#user_replies" role="tab" data-toggle="tab">Replies</a>
+	                        </li>
+	                        <li class="nav-item nav-item-last">
+	                        </li>
+	                    </ul>
+	                </div>
+	                <div class="market-ticker-block">
+	                    <!-- Tab panes -->
+	                    <div class="tab-content">
+	                        <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
+								<div class="container">
+						            <div id="loadings"><img src="/images/loader.svg" width="100" style="padding-top:40px;"></div>
+							    	<div class="row" id="profposts"></div>
+								</div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_comments">
+	                        	<div id="cmt_content"></div>
+	                        </div>
+	                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
+	                            <div id="replies_content"></div>
+	                        </div><!-- market-ticker-block -->
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content modal-custom">
+		            <?php include('template/modals/profile_update.php'); ?>
+		        </div>
+		    </div>
+		</div>  
+		<?php include('template/footer3.php'); ?>
+	</div>  
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
-
 		let profname = '<?php echo $_GET['user'];?>';
+
+//chexk if user exist
+
+	let Client = new dsteem.Client('https://api.steemit.com');
+	Client.database.call('get_accounts', [[profname]]).then(function (result) {
+		if (result.length<=0) {
+			$('#profile_page').hide();
+			$('#profile_miss').show();
+			return false;
+		} else {
+	//
+
+//profile details
+	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
+	steem.api.getAccounts([profname], function(err, result) {
+	  	console.log(result)
+	  	let metadata;
+	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
+        {
+          	metadata = JSON.parse(result["0"].json_metadata);
+          	
+	  		let cover = metadata.profile.cover_image;
+	  		let cover_url = "https://steemitimages.com/0x0/"+cover;
+	  		let profile_image = metadata.profile.profile_image;
+	  		let about = metadata.profile.about;
+	  		let location = metadata.profile.location;
+	  		let website = metadata.profile.website;
+	  		let name = metadata.profile.name;
+
+	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
+	  		$('#cover_img').val(cover);
+	  		$('#profile_pic').val(profile_image);
+	  		$('.p_about').html(about);
+	  		$('#profile_about').val(about);
+	  		if (typeof location !== 'undefined')
+	  		{
+	  			$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>' + location);
+	  			$('#profile_location').val(location);
+	  		}
+	  		if (typeof website !== 'undefined')
+	  		{
+	  			$('.web_site').html('<i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>' + website);
+	  			$('#profile_website').val(website);
+	  		}
+	  		if (typeof name !== 'undefined')
+	  		{
+	  			$('.name').html(name);
+	  			$('#profiles_name').val(name);
+	  		}
+        }
+        let profile_created = result["0"].created;
+        let profile_name = result["0"].name;
+        let acc_created = moment(profile_created).format('MM-YYYY');
+        $('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
+        $('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name);
+        let reputation = steem.formatter.reputation(result["0"].reputation);
+        $('.repu').html(reputation);
+	  		
+  	});
+
+// get followers and following
+
+	steem.api.getFollowCount(profname, function(err, result) {
+		 let p_followers = result.follower_count;
+		 let p_following = result.following_count;
+
+		 $('.followers').html('<span class="foll_count">' + p_followers + '</span> Followers |&nbsp;');
+		 $('.following').html('<span class="foll_count">' + p_following + '</span> Following');
+
+	});
+
+// get user comments
+	let $start_author, $cmt_limit, cmt_content = "#cmt_content";
+	let comments_query = {
+		start_author: profname,
+		limit: 21,
+	};
+
+	steem.api.getDiscussionsByComments(comments_query, function(err, result){
+    	//console.log(err, result);
+
+    	result.forEach(($post, i) => {
+    		let cmt_body = $post.body;
+    		let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+			let reputation = steem.formatter.reputation($post.author_reputation);
+			let url = $post.url;
+
+    		$(cmt_content).append('<div class="profile_content">\n' +
+				'\n' +
+				'<div style="padding-bottom:5px;"><span><a href="/@'+$post.author+'"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
+				'\n' + 
+				'<span class="p_content_author"><a href="/@'+$post.author+'">' + $post.author + '</a></span><span style="padding-right:4px;">('+reputation+')</span>\n' +
+				'\n' + 
+				'<span style="padding-right:5px;">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span></div>\n' +
+				'\n' +  
+				'<h4 class="p_content_title"><a href="https://steemit.com' + url + '" target="_blank">Re: ' + $post.root_title + '</a></h4>\n' +
+				'\n' +
+				'<h5 class="p_content_body">' + cmt_body + '</h5>\n' +
+				'\n' +
+			'</div>');		
+
+    	});
+    });	
+
+// get user replies
+	let rep_content = "#replies_content";
+	steem.api.getRepliesByLastUpdate(profname, '', 23, function(err, result) {
+	  	//console.log(err, result);
+
+      	result.forEach(($post, i) => {
+			let rep_body = $post.body;
+			let activeDate = moment.utc($post.created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+			let reputation = steem.formatter.reputation($post.author_reputation);
+			let url = $post.url;
+
+			$(rep_content).append('<div class="profile_content">\n' +
+				'\n' +
+				'<div style="padding-bottom:5px;">\n' +
+				'\n' +
+				'<span><a href="/@'+$post.author+'"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-fluid rounded-circle p_content_img"></a></span>\n' +
+				'\n' +
+				'<span class="p_content_author"><a href="/@'+$post.author+'">' + $post.author + '</a></span><span class="p_content_pad">('+reputation+')</span>\n' +
+				'\n' +
+				'<span class="p_content_pad">in '+$post.category+'</span><span class="time"><i class="far fa-clock"></i> ' + activeDate + '</span>\n' +
+				'\n' + 
+				'</div>\n' +
+				'\n' +  
+				'<h4 class="p_content_title"><a href="https://steemit.com' + url + '" target="_blank">Re: ' + $post.root_title + '</a></h4>\n' +
+				'\n' +
+				'<h5 class="p_content_body">' + rep_body + '</h5>\n' +
+				'\n' +
+			'</div>');		
+    	});
+	});
+// check if user following
+	if(username == profname) {
+		$('.foll').html('Edit');
+	} else {
+	    isFollowing = username;
+	    steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
+	    
+	        let isFollow = (result.filter(followers => followers.follower == isFollowing));
+	        if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
+	        $('.foll').html(isFollow);
+	    	//console.log(isFollow)
+		});
+	};
+// post details		
 		let $tag, $limit, content = "#profposts";
 		let query = {
 			tag: profname,
@@ -33,7 +287,7 @@
 				metadata = JSON.parse($post.json_metadata);
 			}
 			
-		//get meta tags
+			//get meta tags
 			let steemTags = metadata.tags;
 			let dlikeTags = steemTags.slice(2);
 			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
@@ -198,21 +452,142 @@
 
 			}
 		});
-	});	
+		//follow button on hover
+		if ($(".foll").html() == "Following") {
 
-function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
-	$.ajax({
-		type: "POST",
-		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
-		dataType: 'json',
-		success: function(response) {
-			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
-			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
-		},
-		error: function() {
-			console.log('Error occured');
+		    $('.btn-follow').hover(function() {
+		        $(this).find('span').text('unfollow');
+		    }, function() {
+		        $(this).find('span').text('Following');
+		    });
 		}
-	});
-};		
-	});
+	})
+	} //close usercheck here
+	}); //close dsteem here
+});
+
+	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
+	$('.btn-follow').click(function(e) {	
+	    e.preventDefault();
+	    	let profname = '<?php echo $_GET['user'];?>';
+	        let follower_status = $(".foll").html();
+	        console.log(follower_status);
+	        var datav = {profname:profname};
+	        if(follower_status == 'Follow'){
+	        	$('.foll').html('following...');
+	            $.ajax({
+	                url: '/helper/follow.php',
+	                type: 'post',
+	                cache : false,
+	                dataType: 'json',
+	                data: datav,
+	                success:function(response){
+	                	console.log(response);
+	                    if(response.status===true)
+	                    {
+	                        toastr['success'](response.message);
+	                        $('.foll').html('Following');
+	                        $('.btn-follow').prop("disabled",true);
+	                        $(".btn-follow").unbind('mouseenter mouseleave');
+	                    }
+	                    else{
+	                        toastr['error'](response.message);
+	                        return false;
+	                    }
+	                }
+	            });
+	        }
+
+	        if(follower_status == 'unfollow' || follower_status == 'Following'){
+	        	$('.foll').html('unfollowing...');
+	            $.ajax({
+	                url: '/helper/unfollow.php',
+	                type: 'post',
+	                cache : false,
+	                dataType: 'json',
+	                data: datav,
+	                success:function(response){
+	                	console.log(response);
+	                    if(response.status===true)
+	                    {
+	                        toastr['success'](response.message);
+	                        $('.foll').html('Follow');
+	                        $('.btn-follow').prop("disabled",true);
+	                        $(".btn-follow").unbind('mouseenter mouseleave');
+	                    }
+	                    else{
+	                        toastr['error'](response.message);
+	                        return false;
+	                    }
+	                }
+	            });
+	        }
+
+	    if(follower_status == 'Edit'){
+	    	$("#profile_edit").modal("show");
+	    	$('.p_edit_btn').prop("disabled",true);
+
+
+			let url = "https://beta.steemconnect.com/sign/profile-update?";
+			let parts=[];
+			let originalparts = [];
+
+			function output(){
+				let out = [];
+				for(let i = 0; i<Object.entries(parts).length; i++)
+  				{
+  					let entry = Object.entries(parts)[i];
+    				out.push(entry[0]+"="+entry[1]);
+  				}
+  			return out.join("&");
+			}
+
+			function validate() {
+  				$('.p_edit_btn').prop("disabled", Object.entries(parts).length <= 0);
+			}
+
+			function input(key, val, original=false)
+			{
+				if(!original)
+  				{
+    				if(val.length<=0 || originalparts[key] == val)
+    				{
+      					delete(parts[key]);
+    				}
+    				else
+    				{
+      					parts[key] = val;
+    				}
+  				}
+  				else
+  				{	
+  					if(val.length>0)
+    				{
+      					originalparts[key] = val;
+    				}
+  				}
+  
+  				validate();
+  				//$('#out').html("Output: " + url + output());
+			}
+
+  			$('.p_edit_btn').click(function(){
+    			window.open(url + output());
+    			$("#profile_edit").modal("hide");
+			});
+  
+  			$('.form-control').each(function()
+  			{ 
+    			let inp = $(this).val();
+    			input($(this).attr("key"), encodeURIComponent(inp), true);
+    
+    			$(this).on("change paste keyup", function(){ 
+    				let inp = $(this).val();
+	    			input($(this).attr("key"), encodeURIComponent(inp));
+  				});
+  			});
+
+	    }
+	
+});
 </script>
