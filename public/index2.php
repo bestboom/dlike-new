@@ -1,4 +1,4 @@
-<?php include('template/header5.php'); require ('lib/solvemedialib.php'); ?>
+<?php include('template/header6.php'); ?>
 <input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
