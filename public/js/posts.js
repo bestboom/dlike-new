@@ -128,11 +128,11 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-author-block">\n' +
 					'\n' +
-					'<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+					'<div class="author-thumb"><a href="/@' + $post.author + '"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="#">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
+					'<h5><a href="/@' + $post.author + '">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -191,40 +191,6 @@ $(document).ready(function(){
     		}
 		});
 	});
-/*
-	steem.api.getContent(topauthor , toppermlink, function(err, res) {
-		let metadata = JSON.parse(res.json_metadata);
-		let img = new Image();
-		if (typeof metadata.image === "string"){
-			img.src = metadata.image.replace("?","?");
-		} else {
-			img.src = metadata.image[0];
-		}
-		json_metadata = metadata;
-		let category = metadata.category;
-		if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
-		let steemTags = metadata.tags;
-        let dlikeTags = steemTags.slice(2);
-        let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
-		let post_description = metadata.body;
-		let title = res.title;
-        let created = res.created;
-        let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-        let author = res.author;
-        let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        //let post_body = $(post_description).text();
-
-		$('.auth_name').html(author);
-        $('#top_title').html(title);
-        $('.post_catg').html(category);
-        $('.post-date').html(created_time);
-		$('.top_post').text(post_description.substr(0,150)+'...');
-        $('.tags').html(posttags);
-		$('#top_img').attr("src", img.src).show();
-        $('.authThumb').attr("src", auth_img);
-        $('#top_post_votes').html(res.pending_payout_value.substr(0, 4));
-	});
-*/
 });
 
 //check likes
