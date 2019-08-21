@@ -3,7 +3,7 @@ if (isset($_GET['user']))
 {
 	$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-include('template/header6.php');
+include('template/header5.php');
 //check pro status
     $sql_T = "SELECT * FROM prousers where username='$prof_user'";
     $result_T = $conn->query($sql_T);
