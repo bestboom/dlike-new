@@ -15,11 +15,11 @@
   <link rel="stylesheet" href="/css/style3.css">
   <link rel="stylesheet" href="/css/responsive.css">
   <link rel="stylesheet" href="/css/token.css">
-  <title>Dlike</title>
+  <title>Dlike Token - A Blockchain Based dApp</title>
 </head>
 <body>
     <div class="banner-block">
-        <nav class="navbar main-nav navbar-expand-lg nav-tok">
+        <nav class="navbar main-nav navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img class="navbar-logo" src="/images/logo.png" alt="Dlike"/>
@@ -29,12 +29,25 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                      <li class="nav-item"><a class="nav-link" href="/share.php">SHARE</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/explorer">Explorer</a></li>
-                      <li class="nav-item"><a class="nav-link" href="/token">Token</a></li>
-                      <li class="nav-item button active">
-                          <a class="btn nav-link log_link" href="#"><span class="img_profile"><img src="" id="user_img"  style="display: none;" class="rounded-circle img-fluid my_img"></span><span id="user_log"> Login</span></a>
-                      </li>
+                        <li class="nav-item" style="padding-top: 4px;">
+                            <div class="row" style="margin: 0px;">
+                                <div class="col-md-3 col-2">
+                                    <?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { ?>
+                                    <button onclick="window.location.href='/welcome';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i>
+                                    </button>
+                                    <? } else { ?>
+                                    <button onclick="window.location.href='/@<? echo $_COOKIE['username']; ?>';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="/images/user.png" alt="<? echo $_COOKIE['username']; ?>" title="<? echo $_COOKIE['username']; ?>" id="user_img" class="rounded-circle img-fluid" style="background: #fff;margin-top: -6px;"></span>
+                                    </button><? } ?>
+                                </div>
+                                <div class="col-md-4 col-2">
+                                    <button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="col-md-4 col-2" style="margin-top: 5px;">
+                                    <span class="nav_sticks" onclick="openNav()">&#9776;</span>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -81,25 +94,25 @@
       <div class="col-md-3 col-sm-6">
         <div class="number_text">
           <p>TOTAL USERS</p>
-          <h2>1600+</h2>
+          <h2>2700+</h2>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="number_text">
           <p>TOKEN HOLDERS</p>
-          <h2>900+</h2>
+          <h2>1900+</h2>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="number_text">
           <p>DELEGATORS</p>
-          <h2>130+</h2>
+          <h2>160+</h2>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="number_text">
           <p>TOTAL POSTS</p>
-          <h2>23,534+</h2>
+          <h2>63,534+</h2>
         </div>
       </div>
     </div>
@@ -257,15 +270,15 @@
                         <div class="download-option-block">
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
-                                        <img src="https://steemitimages.com/u/julialee66/avatar" alt="img" class="img-responsive img-team mx-auto">
-                                </div>
-                                <h4>@julialee66</h4>
-                            </div>
-                            <div class="download-wrap">
-                                <div class="download-wrap-inner">
                                         <img src="https://steemitimages.com/u/freedom/avatar" alt="img" class="img-responsive img-team mx-auto">
                                 </div>
                                 <h4>@freedom</h4>
+                            </div>
+                            <div class="download-wrap">
+                                <div class="download-wrap-inner">
+                                        <img src="https://steemitimages.com/u/julialee66/avatar" alt="img" class="img-responsive img-team mx-auto">
+                                </div>
+                                <h4>@julialee66</h4>
                             </div>
                             <div class="download-wrap">
                                 <div class="download-wrap-inner">
