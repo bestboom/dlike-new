@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
   <link rel="stylesheet" href="/assets/css/themify-icons.css">
   <link rel="stylesheet" href="/assets/css/slick.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style3.css">
   <link rel="stylesheet" href="/css/responsive.css">
   <link rel="stylesheet" href="/css/token.css">
   <title>Dlike</title>
@@ -349,7 +349,7 @@
         </div>
     </div><!-- lattest-news-section -->
 
-<?php include('template/footer.php'); ?>
+<?php include('template/footer3.php'); ?>
 
 <script src='https://www.lition.io/wp-content/cache/wpfc-minified/d7u00mir/c05tu.js' type="text/javascript"></script>
 <script src='https://www.lition.io/wp-content/cache/wpfc-minified/kqbn7mmu/c05tu.js' type="text/javascript"></script>
