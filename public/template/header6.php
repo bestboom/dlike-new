@@ -20,7 +20,7 @@
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
     <? } ?>
-    <?php if(basename($_SERVER['PHP_SELF']) == 'post.php'){ ?>  
+    <?php if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
         <title><?php echo $prof_user; ?> Posts Shared on DLIKE</title>
     <? } ?>    
         <title>Dlike :: Share To Get Rewarded</title>
