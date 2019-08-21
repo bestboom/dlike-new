@@ -66,7 +66,7 @@
                         	<button type="submit" class="btn btn-default">WhitePaper</button>
                         </a>
                         <a href="https://dlike.io/" target="_blank">
-                        	<button type="submit" class="btn btn-default">Live Product</button>
+                        	<button type="submit" class="btn btn-default">Live Website</button>
                     	</a>
                     </div>
                     </form>
