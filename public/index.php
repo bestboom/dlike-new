@@ -1,4 +1,4 @@
-<?php include('template/header5.php');?>
+<?php include('template/header6.php');?>
 </div><!-- sub-header -->
 <div class="latest-post-section" style="min-height:80vh;">
     <div class="container">
