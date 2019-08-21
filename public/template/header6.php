@@ -19,8 +19,8 @@
         <meta name="twitter:image" content="<?php echo $og_image; ?>">
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
-    <? } ?>
-    <?php if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
+    <? } 
+    if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
         <title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title>
         <meta name="description" content="The latest posts shared by <?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> on DLIKE. An informative face of internet to share and get rewarded like <?php echo ucfirst($prof_user); ?>.">
     <? } ?>    
