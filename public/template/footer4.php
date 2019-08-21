@@ -1,5 +1,42 @@
 <div class="colto-section">
     <div class="row">
+        <!-- <div class="col-6 col-md-4">
+            <div class="row">
+                <div class="col-md-4 offset-md-8 col-6 offset-3">
+                    <a class="row" href="/token">Token</a>
+                    <a class="row" href="/docs/dlike-paper.pdf">Whitepaper</a>
+                    <a class="row" href="https://steemit.com/@dlike">News</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <div class="row">
+                <div class="col-md-4 offset-md-4 col-6 offset-2">
+                    <a class="row" href="/category/cryptocurrency">Cryptocurrency</a>
+                    <a class="row" href="/category/news">News</a>
+                    <a class="row" href="/category/health">Health & Fitness</a>
+                    <a class="row" href="/category/sports">Sports</a>
+                    <a class="row" href="/category/lifestyle">Lifestyle</a>
+                    <a class="row" href="/category/technology">Technology</a>
+                    <a class="row" href="/category/business">Business</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-4 pt-5">
+            <div class="row">
+                <div class="col-md-4 offset-md-0 col-4 offset-3">
+                    <img class="" src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg" style="width: 155px;cursor: pointer">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 offset-md-0 col-4 offset-3" style="padding-left: 5px !important;">
+                    <img class="" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="width: 175px;cursor: pointer">
+                </div>
+            </div>
+        </div> -->
     </div>
 </div><!-- colto-section -->
 

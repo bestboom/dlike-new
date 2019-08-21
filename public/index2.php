@@ -1,4 +1,4 @@
-<?php include('template/header2.php'); require ('lib/solvemedialib.php'); ?>
+<?php include('template/header5.php'); require ('lib/solvemedialib.php'); ?>
 <input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
     <?php if($_COOKIE['username'] == ''){ ?>
         <div class="container">
@@ -172,7 +172,7 @@
         </div>
     </div>
 <?php include('template/modals/modal.php'); ?>    
-<?php include('template/footer2.php'); ?>
+<?php include('template/footer4.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
 .defaultcoloruser{color:gray;}
