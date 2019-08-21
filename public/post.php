@@ -26,7 +26,7 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
-include('template/header5.php');
+include('template/header6.php');
 
 $views = '1'; 
 //post views
@@ -100,7 +100,7 @@ else
                 <div class="col">
                     <div class="blog-details-wrapper">
                         <div class="single-post-block">
-                            <h3 class="post-title"><a href="#"><span class="mod-title"></span></a></h3>
+                            <h1 class="post-title"><a href="#"><span class="mod-title"></span></a></h1>
                             <div class="details-post-meta-block-top">
                                 <div class="container">
                                     <div class="row">
