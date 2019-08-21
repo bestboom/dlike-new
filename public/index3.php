@@ -1,4 +1,4 @@
-<?php include('template/header3.php'); require('lib/solvemedialib.php');
+<?php include('template/header5.php');
 
 
 $sql = "SELECT sp.img_link,sp.title FROM featuredposts as sp order by sp.id DESC limit 10";
@@ -517,7 +517,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 
     
 <?php include('template/modals/modal.php'); ?>
-<?php include('template/footer3.php'); ?>
+<?php include('template/footer4.php'); ?>
 
 <style>
 .showcursor{cursor:pointer;}
