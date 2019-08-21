@@ -3458,6 +3458,10 @@ sub.transmoney-value {
 .post-style-two .author-info h5 {
     font-size: 14px;
     font-weight: 700; }
+.author-info a:hover, a:focus {
+    text-decoration: none;
+    color: #c51d24;
+    outline: 0; }
 .post-style-two .post-comments img {
     margin-right: 9px; }
 .post-style-two .time {

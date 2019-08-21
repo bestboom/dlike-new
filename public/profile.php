@@ -140,7 +140,7 @@ include('template/header5.php');
 //profile details
 	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
 	steem.api.getAccounts([profname], function(err, result) {
-	  	console.log(result)
+	  	//console.log(result)
 	  	let metadata;
 	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
         {
