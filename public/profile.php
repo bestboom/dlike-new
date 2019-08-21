@@ -390,11 +390,11 @@ include('template/header5.php');
 					'\n' +
 					'<div class="post-author-block">\n' +
 					'\n' +
-					'<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+					'<div class="author-thumb"><a href="/@' + $post.author + '"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="#">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
+					'<h5><a href="/@' + $post.author + '">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -412,7 +412,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="/images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
                     '\n' +
-					'<h4 class="post-title"><a href="' + exturl + '" target="_blank">' + $post.title + '</a></h4>\n' +
+					'<h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + $post.title + '</a></h4>\n' +
 					'\n' +
 					'<p class="post-entry post-tags">' + metatags + '</p>\n' +
 					'\n' +
