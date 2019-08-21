@@ -9,6 +9,22 @@ require '../includes/config.php';
 
 
 
+$sqlm = "CREATE TABLE dailyRewards (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+total_points float(8) NOT NULL,
+created_time TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table dailyRewards created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+
 /*'
 
 $sql = "ALTER TABLE prousers ADD total_points float(8) NOT NULL";
