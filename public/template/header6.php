@@ -20,6 +20,9 @@
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
     <? } ?>
+    <?php if(basename($_SERVER['PHP_SELF']) == 'post.php'){ ?>  
+        <title><?php echo $prof_user; ?> Posts Shared on DLIKE</title>
+    <? } ?>    
         <title>Dlike :: Share To Get Rewarded</title>
         <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes.">
         <!--Facebook Meta Tags -->
