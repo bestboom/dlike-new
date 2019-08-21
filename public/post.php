@@ -393,7 +393,7 @@ else
         $('.mod-title').html(title);
         $('.post-thumb-block').html(thumbnail);
         $('.mod-authThumb').attr("src", auth_img);
-        $('.mod-authThumb').attr("href", profile_url);
+        $('.author-thumb').attr("href", profile_url);
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
