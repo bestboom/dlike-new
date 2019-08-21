@@ -381,6 +381,7 @@ else
         let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="#">' + meta + ' </a>' });
         let title = res.title;
         let author = res.author;
+        let profile_url = "/@" + author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
@@ -392,6 +393,8 @@ else
         $('.mod-title').html(title);
         $('.post-thumb-block').html(thumbnail);
         $('.mod-authThumb').attr("src", auth_img);
+        $('.mod-authThumb').attr("href", profile_url);
+        $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
         $('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
