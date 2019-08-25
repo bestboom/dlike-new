@@ -45,40 +45,16 @@
                     </div>
                     <div class="col-lg-3 col-md-4">
                         <div class="footer-info-list">
-                            <h4>Contact Us</h4>
-                            <ul class="contact-info">
-                                <li>Email:  <span>support@dlike.io</span></li>
-                            </ul>
+                            <h4>COMMUNICATIONS</h4>
                             <ul class="social-style-two">
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                </li>
+                                <li><a href="https://discord.gg/JYSkBFk"><i class="fab fa-discord"></i></a></li>
+                                <li><a href="https://twitter.com/dlike_io"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://t.me/dlike_io"><i class="fab fa-telegram"></i></a></li>
+                                <li><a href="https://facebook.com/dlike.io"><i class="fab fa-facebook"></i></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-icon-wrap">
-                <a href="#">
-                    <img src="./images/others/31.png" alt="img" class="img-responsive">
-                </a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -86,16 +62,10 @@
                 <div class="footer-bottom-wrap">
                     <div class="trade-volume-block">
                         <ul>
-                            <li>
-                                <span>39151</span> Active Traders
-                            </li>
-                            <li>
-                                <span>4191 BTC</span> 24h Volume
-                            </li>
                         </ul>
                     </div>
                     <div class="copyright-text">
-                        © 2019 <a href="#">Excoin</a>. All Rights Reserved
+                        © 2019 <a href="/">DLIKE</a>. A social sharing dApp by BlockTalk Solutions.
                     </div>
                 </div>
             </div>
