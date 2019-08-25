@@ -26,24 +26,11 @@
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <div class="footer-info-list">
-                            <h4>About Us</h4>
-                            <ul>
-                                <li><a href="#">Our Team</a></li>
-                                <li><a href="#">Our Company</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Token Listing</a></li>
-                                <li><a href="#">Join Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-4">
-                        <div class="footer-info-list">
                             <h4>Learn</h4>
                             <ul>
-                                <li><a href="#">Legal</a></li>
                                 <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">AML&CFT</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Whitepaper</a></li>
                             </ul>
                         </div>
                     </div>
@@ -52,9 +39,7 @@
                             <h4>Help</h4>
                             <ul>
                                 <li><a href="#">Support</a></li>
-                                <li><a href="#">API Support</a></li>
-                                <li><a href="#">Coin/Token Listing</a></li>
-                                <li><a href="#">Partnership</a></li>
+                                <li><a href="#">FAQ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -62,8 +47,7 @@
                         <div class="footer-info-list">
                             <h4>Contact Us</h4>
                             <ul class="contact-info">
-                                <li>Email:  <span>info.excoin@gmail.com</span></li>
-                                <li>Phone:   <span>+99 5589 54789</span></li>
+                                <li>Email:  <span>support@dlike.io</span></li>
                             </ul>
                             <ul class="social-style-two">
                                 <li>
