@@ -106,10 +106,10 @@ include('template/header5.php');
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
-                                            <img src="./images/support-details/8.jpg" alt="img" class="img-responsive">
+                                            <img src="https://i.postimg.cc/25zFHZ8X/dlike-signup-phone.jpg" alt="img" class="img-responsive">
                                         </div>
                                         <div>
-                                            <img src="./images/support-details/9.jpg" alt="img" class="img-responsive">
+                                            <img src="https://i.postimg.cc/rwqQHbfJ/dlike-signup-pin.jpg" alt="img" class="img-responsive">
                                         </div>
                                     </div>
                                 </div>
