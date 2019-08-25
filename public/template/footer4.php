@@ -1,6 +1,6 @@
 <div class="colto-section">
     <div class="row">
-        <div class="col-6 col-md-4">
+        <!-- <div class="col-6 col-md-4">
             <div class="row">
                 <div class="col-md-4 offset-md-8 col-6 offset-3">
                     <a class="row" href="/token">Token</a>
@@ -36,7 +36,7 @@
                     <img class="" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" style="width: 175px;cursor: pointer">
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div><!-- colto-section -->
 
