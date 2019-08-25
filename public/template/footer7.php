@@ -14,7 +14,7 @@
         </div>
     </div><!-- colto-section -->
     <footer class="footer">
-        <div class="footer-upper-section">
+        <div class="footer-upper-section" style="padding: 80px 0 !important;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-4">
