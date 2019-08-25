@@ -197,15 +197,15 @@ include('template/header5.php');
                                         All the tips earnings are withdrawable to ETH address (minimum withdraw amount is 3 USDT) and withdrawls are processed daily.
                                     </p>
                                     <div class="account-support-img-block">
-                                        <img src="./images/support-details/19.png" alt="img" class="img-responsive">
+                                        <img src="https://i.postimg.cc/zfNwvPLQ/dlike-tips-usdt.jpg" alt="img" class="img-responsive">
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
                                     <h5>DLIKE Rewards</h5>
                                     <p>
                                         Third option of earning for DLIKE users is DLIKE rewards. On daily basis all PRO users are paid DLIKE tokens for their efforts on the platform. There are few factors which decides share of each user on daily basis.
-                                    </p><br>
-                                    dlike.io/rewards<br>
+                                    </p>
+                                    <p>Go to --> <b>dlike.io/rewards</b></p>
                                     <p>
                                         1. Number of comments on your shred posts<br>
                                         2. Number of Likes on your shared posts<br>
