@@ -9,8 +9,8 @@ include('template/header5.php');
                     <div class="support-details-tab-nav">
                         <h4>DLIKE</h4>
                         <nav class="support-list">
-                            <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                <li class="nav-item nav-support">
+                            <ul class="nav nav-tabs nav-fill nav-support" id="nav-tab" role="tablist">
+                                <li class="nav-item">
                                     <a class="nav-link active" href="#nav_signUp" role="tab" data-toggle="tab">
                                         What is DLIKE?
                                     </a>
