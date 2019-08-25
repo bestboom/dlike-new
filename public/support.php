@@ -43,7 +43,7 @@ include('template/header5.php');
                     <div class="tab-content support-details-tab-content-wrap">
                         <div role="tabpanel" class="tab-pane fade show active" id="nav_signUp">
                             <div class="support-details-content">
-                                <h4 class="sp-title">How to Sign Up</h4>
+                                <h4 class="sp-title">What is DLIKE?</h4>
                                 <div class="supporter-details">
                                     <div>
                                         <img src="./images/support-details/1.png" alt="img" class="img-responsive">
@@ -57,15 +57,13 @@ include('template/header5.php');
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by the readable content 
-                                        of a page when looking at its layout.  but also the leap into electronic typesetting, 
-                                        remaining essentially unchanged. It was popularised in the 1960s with the release  
-                                        circumstances occur in which toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        DLIKE is a social sharing platform built on top of STEEM blockchain. Just like any other scial sharing platform like pinterest, reddit, facebook, twitter, anyone can share anything that is informative for community. 
                                     </p>
                                     <p>
-                                        Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
-                                        No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because.
+                                        You can share links from your personal blogs, your wrtitng channels like Medium.com or you can also share useful and informative content from other any other website (with concent of author).
+                                    </p>
+                                    <p>
+                                        As compared to other social media channels, here on DLIKE you earn for your time and efforts. This is how we are shaped DLIKE to be an informative face of internet where users can know, what is happening around globaly in different categroies like NEWS, crypocurrency, technology, health and fitness, finance and money, sports, food and many more.
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
