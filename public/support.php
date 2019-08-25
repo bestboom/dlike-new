@@ -130,6 +130,9 @@ include('template/header5.php');
                                     <p>
                                         Sharing on DLIKE is as simple as 1,2,3. Follow below steps to share.
                                     </p>
+                                    <p>
+                                        Go To --> <b>dlike.io/share</b>
+                                    </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
                                     <h5>Step 01:</h5>
@@ -227,8 +230,8 @@ include('template/header5.php');
                                         DLIKE is offering a lucarative affiliate program where you can earn for every users which you refer to DLIKE. In addition to this daily reward points are paid for each post shared by your Referrals.
                                     </p>
                                     <p>
-                                        1. 50 DLIKE tokens for every new user referred by you
-                                        2. 5 reward points for every post shared by your referrals
+                                        <b>1.</b> 50 DLIKE tokens for every new user referred by you<br>
+                                        <b>2.</b> 5 reward points for every post shared by your referrals
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
