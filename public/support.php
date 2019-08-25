@@ -269,31 +269,6 @@
                         <div class="post-share-block">
                             <h5>Share this</h5>
                             <ul class="social-share-list">
-                                <li>
-                                    <a href="#" class="faceboox">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="linkdin">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="pinterest">
-                                        <i class="fab fa-pinterest"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
                             </ul>
                         </div><!-- post-share-block -->
                     </div>
@@ -322,4 +297,9 @@
         $('.uncheck span').addClass('liked');
         $('.check span').removeClass('liked');
     })
+$(document).ready(function(){
+    let page_description = 'DLIKE is a social sharing platform where you share informative links to get rewarded with crypto (steem upvotes, USDT and DLIKE tokens.';
+    let title = 'What is DLIKE? How to share and earn on DLIKE?';
+    $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'https://www.twitter.com/share?text='+page_description+'&url=https://dlike.io/support&hashtags=dlike\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'https://www.facebook.com/share.php?u=https://dlike.io/support&title='+title+'\')"><i class="fab fa-facebook-f"></i></a></li><li><a class="linkdin" href="javascript:void(0);" onclick="popup(\'https://www.linkedin.com/shareArticle?mini=true&url=https://dlike.io/support&title='+title+'&sumary=dlike.io\')"><i class="fab fa-linkedin-in"></i></a></li>');
+})    
 </script>
