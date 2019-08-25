@@ -1,6 +1,4 @@
-<?php
-include('template/header5.php');
-?>
+<?php include('template/header5.php'); ?>
 </div><!-- sub-header -->
     <div class="support-details-section">
         <div class="container">
@@ -314,7 +312,7 @@ include('template/header5.php');
             </div>
         </div>
     </div><!-- support-details-section -->
-<?php include('template/header7.php'); ?>    
+<?php include('template/footer7.php'); ?>    
 <script type="text/javascript">
     $('.check').click(function(){
         $('.check span').addClass('liked');
