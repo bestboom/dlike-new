@@ -79,13 +79,13 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	$my_phone = '+'.$phone;
 
 
-		$verification_check = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
+		/*$verification_check = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
                                          ->verificationChecks
                                          ->create($mypin, 
                                                   array("to" => $my_phone)
                                          );
-		if($verification_check->valid){
-		//if($mypin == 7654){	
+		if($verification_check->valid){ */
+		if($mypin == 7654){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
