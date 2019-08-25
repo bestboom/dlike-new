@@ -462,6 +462,7 @@ include('template/header5.php');
         $('.uncheck span').addClass('unliked');
     })
     $('.uncheck').click(function(){
+        alert('unc');
         $('.uncheck span').addClass('liked');
         $('.check span').addClass('unliked');
     })
