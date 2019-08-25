@@ -185,7 +185,7 @@ include('template/header5.php');
                                             <img src="https://i.postimg.cc/Y2bNd34c/dlike-post-2.png" alt="img" class="img-responsive">
                                         </div>
                                         <div>
-                                            <img src="https://i.postimg.cc/Y2bNd34c/dlike-post-2.png" alt="img" class="img-responsive">
+                                            <img src="https://i.postimg.cc/KzVGYwqS/dlike-post-1.png" alt="img" class="img-responsive">
                                         </div>
                                     </div>
                                 </div>
