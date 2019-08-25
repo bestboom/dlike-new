@@ -294,11 +294,6 @@ include('template/header5.php');
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="google-plus">
-                                        <i class="fab fa-google-plus-g"></i>
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="#" class="linkdin">
                                         <i class="fab fa-linkedin-in"></i>
                                     </a>
