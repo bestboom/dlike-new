@@ -294,13 +294,13 @@ include('template/header5.php');
                             </h5>
                             <ul class="ishelpful-list">
                                 <li>
-                                    <a href="#">
+                                    <a href="#" class="check">
                                         <i class="far fa-thumbs-up"></i>
                                         Yes
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="#" class="uncheck">
                                         <i class="far fa-thumbs-down"></i>
                                        no
                                     </a>
@@ -493,3 +493,12 @@ include('template/header5.php');
     <script src="./js/custom.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $('.check').click(function(){
+      $(this).addClass('liked');
+      $('.uncheck').addClass('unliked');
+    })
+    $('.uncheck').click(function(){
+    $(this).addClass('liked');
+    $('.check').addClass('unliked');
+</script>
