@@ -148,7 +148,7 @@ include('template/header5.php');
                                         DLIKE crawls the link to get data from it. Simply select proper category, write minimum 40 words to explain hwo this link is useful for community and add appropriate tags.
                                     </p>
                                     <div class="account-support-img-block">
-                                        <img src="./images/support-details/18.png" alt="img" class="img-responsive">
+                                        <img src="https://i.postimg.cc/rw9S3Ns2/dlike-post.jpg" alt="img" class="img-responsive">
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
