@@ -128,15 +128,6 @@ include('template/header5.php');
                             <div class="support-details-content">
                                 <h4 class="sp-title">How to share on DLIKE?</h4>
                                 <div class="supporter-details">
-                                    <div>
-                                        <img src="./images/support-details/3.png" alt="img" class="img-responsive">
-                                    </div>
-                                    <div class="sp-info">
-                                        <h5>Nayne Castro</h5>
-                                        <span>
-                                            12 Nov, 2019
-                                        </span>
-                                    </div>
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
@@ -149,12 +140,9 @@ include('template/header5.php');
                                         Enter the link which you want to share
                                     </p>
                                     <div class="account-support-img-block double-img">
-                                        <div>
-                                            <img src="./images/support-details/10.jpg" alt="img" class="img-responsive">
-                                        </div>
-                                        <div>
-                                            <img src="./images/support-details/11.jpg" alt="img" class="img-responsive">
-                                        </div>
+                                        <center><div>
+                                            <img src="https://i.postimg.cc/9FF8fsjn/dlike-share.jpg" alt="img" class="img-responsive">
+                                        </div></center>
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
