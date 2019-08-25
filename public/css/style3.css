@@ -3923,7 +3923,7 @@ sub.transmoney-value {
 .ishelpful-block ul li {
     display: inline-block; }
 
-.ishelpful-list a {
+.ishelpful-list span {
     padding: 4px 15px;
     border: 1px solid #1652f0;
     color: #1652f0;
