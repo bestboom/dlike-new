@@ -60,56 +60,18 @@ include('template/header5.php');
                                         DLIKE is a social sharing platform built on top of STEEM blockchain. Just like any other scial sharing platform like pinterest, reddit, facebook, twitter, anyone can share anything that is informative for community. 
                                     </p>
                                     <p>
-                                        You can share links from your personal blogs, your wrtitng channels like Medium.com or you can also share useful and informative content from other any other website (with concent of author).
+                                        You can share articles from your personal blogs, your wrtitng channels like Medium.com or you can also share useful and informative content from other any other website (with concent of author).
                                     </p>
                                     <p>
-                                        As compared to other social media channels, here on DLIKE you earn for your time and efforts. This is how we are shaped DLIKE to be an informative face of internet where users can know, what is happening around globaly in different categroies like NEWS, crypocurrency, technology, health and fitness, finance and money, sports, food and many more.
+                                        As compared to other social media channels, here on DLIKE you earn for your time and efforts. This is how we have shaped DLIKE to be an informative face of internet where users can know, what is happening around globaly in different categroies like NEWS, crypocurrency, technology, health and fitness, finance and money, sports, food and many more.
                                     </p>
                                 </div>
-                                <div class="details-support-steps account-support-block">
-                                    <h5>Step 01:</h5>
-                                    <p>
-                                        But also the leap into electronic typesetting, remaining essentially unchanged. 
-                                        It was popularised in the 1960s with the release  circumstances occur in which 
-                                        toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
-                                    </p>
-                                    <div class="account-support-img-block double-img">
-                                        <div>
-                                            <img src="./images/support-details/6.jpg" alt="img" class="img-responsive">
-                                        </div>
-                                        <div>
-                                            <img src="./images/support-details/7.jpg" alt="img" class="img-responsive">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="details-support-steps chart-support-block">
-                                    <h5>Step 02:</h5>
-                                    <p>
-                                        To take a trivial example, which of us ever undertakes laborious physical exercise, 
-                                        except to obtain some advantage from it? But who has any right to find fault with a 
-                                        man who chooses to enjoy a pleasure that has no annoying consequences, or one who 
-                                        avoids a pain that produces no 
-                                    </p>
-                                    <div class="account-support-img-block">
-                                        <img src="./images/support-details/16.png" alt="img" class="img-responsive">
-                                    </div>
-                                </div>
-                                <div class="details-support-steps last-support-block">
-                                    <h5>Step 03:</h5>
-                                    <p>
-                                        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta 
-                                        nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere 
-                                        possimus, omnis voluptas assumenda est, omnis dolor repellendus. <br>
-                                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
-                                        repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus
-                                    </p>
-                                </div>
+
                             </div><!-- support-details-content -->
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="nav_confimationEmail">
                             <div class="support-details-content">
-                                <h4 class="sp-title">Have Not Received Confirmation Email</h4>
+                                <h4 class="sp-title">How to signup new Account?</h4>
                                 <div class="supporter-details">
                                     <div>
                                         <img src="./images/support-details/2.png" alt="img" class="img-responsive">
@@ -123,24 +85,17 @@ include('template/header5.php');
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by the readable content 
-                                        of a page when looking at its layout.  but also the leap into electronic typesetting, 
-                                        remaining essentially unchanged. It was popularised in the 1960s with the release  
-                                        circumstances occur in which toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        DLIKE is built on STEEM blockchain so every user who wants to use DLIKE needs to have a STEEM account. If you are already a STEEM user on some other STEEM dapp then simply use same login credentials for DLIKE to get started. 
                                     </p>
                                     <p>
-                                        Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
-                                        No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because.
+                                        If you are new to DLIKE, follow these simple steps to signup on DLIKE.<br/>
+                                        <b>dlike.io/welcome</b>b>
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
                                     <h5>Step 01:</h5>
                                     <p>
-                                        But also the leap into electronic typesetting, remaining essentially unchanged. 
-                                        It was popularised in the 1960s with the release  circumstances occur in which 
-                                        toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        Select the username and check if its availble.
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
