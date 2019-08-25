@@ -247,13 +247,13 @@ include('template/header5.php');
                                     <p>
                                         Third option of earning for DLIKE users is DLIKE rewards. On daily basis all PRO users are paid DLIKE tokens for their efforts on the platform. There are few factors which decides share of each user on daily basis.
                                     </p><br>
-                                    <p>dlike.io/rewards</p><br>
+                                    dlike.io/rewards<br>
                                     <p>
-                                        1. Number of comments on your shred posts
-                                        2. Number of Likes on your shared posts
-                                        3. Number of page views on your shared posts
-                                        4. Amount of upvotes on your shared posts
-                                        5. Number of daily referrls brought by you
+                                        1. Number of comments on your shred posts<br>
+                                        2. Number of Likes on your shared posts<br>
+                                        3. Number of page views on your shared posts<br>
+                                        4. Amount of upvotes on your shared posts<br>
+                                        5. Number of daily referrls brought by you<br>
                                         6. Number of posts shared by your referrals as each post shared by your referral earn daily reward points for you.
                                     </p>
                                 </div>
