@@ -81,7 +81,7 @@ include('template/header5.php');
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
-                                            <img src="./images/support-details/8.jpg" alt="img" class="img-responsive">
+                                            <center><img src="https://i.postimg.cc/nLhJkX4H/dlike-signup.jpg" alt="img" class="img-responsive"></center>
                                         </div>
                                     </div>
                                 </div>
@@ -316,10 +316,10 @@ include('template/header5.php');
                     <div class="qs-answer-section">
                         <img src="./images/others/30.png" alt="img" class="img-responsive">
                         <h4>Don’t get Answer?</h4>
-                        <span>We have a record of answering everything in 3 hours of less.</span>
+                        <span>Get in touch on social channels.</span>
                         <div class="btn-group">
-                            <button class="btn btn-default active">E-mail Us</button>
-                            <button class="btn btn-default">Let’s Chat</button>
+                            <a href="https://discord.gg/JYSkBFk" target="_blank"><button class="btn btn-default active">Discord</button></a>
+                            <a href="https://t.me/dlike" target="_blank"><button type="button" class="btn btn-default">Telegram</button></a>
                         </div>
                         <p>Or maybe you’d like to call us:  <span>(+7 (966) 552-88-46)</span></p>
                     </div><!-- qs-answer-section -->
