@@ -105,9 +105,9 @@ include('template/header5.php');
                                         After phone verification, a password is generated for your account. Make sure to save it securely as this is un-recoverable.
                                     </p>
                                 </div><br>
-                                <div class="account-support-img-block double-img">
+                                <div class="account-support-img-block">
                                     <div>
-                                        <img src="https://i.postimg.cc/25zFHZ8X/dlike-signup-phone.jpg" alt="img" class="img-responsive">
+                                        <img src="https://i.postimg.cc/YqywXRgv/dlike-signup-final.jpg" alt="img" class="img-responsive">
                                     </div>
                                 </div><br>
                                 <div class="details-support-steps">
