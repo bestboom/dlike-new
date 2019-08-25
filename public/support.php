@@ -17,7 +17,7 @@ include('template/header5.php');
                                 </li>
                                 <li class="nav-item nav-support">
                                     <a class="nav-link" href="#nav_confimationEmail" role="tab" data-toggle="tab">
-                                        How to Singup new account?
+                                        How to create new DLIKE account?
                                     </a>
                                 </li>
                                 <li class="nav-item nav-support">
