@@ -24,7 +24,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-4">
+                    <div class="col-lg-3 col-md-4">
                         <div class="footer-info-list">
                             <h4>Learn</h4>
                             <ul>
@@ -34,7 +34,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-4">
+                    <div class="col-lg-3 col-md-4">
                         <div class="footer-info-list">
                             <h4>Help</h4>
                             <ul>
@@ -57,15 +57,11 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom" style="padding: 25px 0 50px 0px !important;">
             <div class="container">
-                <div class="footer-bottom-wrap">
-                    <div class="trade-volume-block">
-                        <ul>
-                        </ul>
-                    </div>
+                <div class="footer-bottom-wrap" style="justify-content: center;font-size: 13px;">
                     <div class="copyright-text">
-                        © 2019 <a href="/">DLIKE</a>. A social sharing dApp by BlockTalk Solutions.
+                        &copy; 2019 <a href="/">DLIKE</a>. A social sharing dApp by BlockTalk Solutions.
                     </div>
                 </div>
             </div>
