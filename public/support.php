@@ -80,9 +80,9 @@ include('template/header5.php');
                                         Enter desired username to check if its available.
                                     </p>
                                     <div class="account-support-img-block double-img">
-                                        <div>
-                                            <center><img src="https://i.postimg.cc/nLhJkX4H/dlike-signup.jpg" alt="img" class="img-responsive"></center>
-                                        </div>
+                                        <center><div>
+                                            <img src="https://i.postimg.cc/nLhJkX4H/dlike-signup.jpg" alt="img" class="img-responsive">
+                                        </div></center>
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
