@@ -61,7 +61,7 @@ include('template/header5.php');
                                     </p>
                                     <p>
                                         You can share articles from your personal blogs, your wrtitng channels like Medium.com or you can also share useful and informative content from other any other website (with concent of author).
-                                    </p>
+                                    </p><br>
                                     <p>
                                         As compared to other social media channels, here on DLIKE you earn for your time and efforts. This is how we have shaped DLIKE to be an informative face of internet where users can know, what is happening around globaly in different categroies like NEWS, crypocurrency, technology, health and fitness, finance and money, sports, food and many more.
                                     </p>
@@ -95,7 +95,18 @@ include('template/header5.php');
                                 <div class="details-support-steps account-support-block">
                                     <h5>Step 01:</h5>
                                     <p>
-                                        Select the username and check if its availble.
+                                        Enter desired username to check if its available.
+                                    </p>
+                                    <div class="account-support-img-block double-img">
+                                        <div>
+                                            <img src="./images/support-details/8.jpg" alt="img" class="img-responsive">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="details-support-steps">
+                                    <h5>Step 02:</h5>
+                                    <p>
+                                        Eneter your phone number for identity verification. We send you verificcation PIN to this number to verify your identity. 
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
@@ -107,25 +118,26 @@ include('template/header5.php');
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
-                                    <h5>Step 02:</h5>
+                                    <h5>Step 03:</h5>
                                     <p>
-                                        To take a trivial example, which of us ever undertakes laborious physical exercise, 
-                                        except to obtain some advantage from it? But who has any right to find fault with a 
-                                        man who chooses to enjoy a pleasure that has no annoying consequences, or one who 
-                                        avoids a pain that produces no 
+                                        After phone verification, a password is generated for your account. Make sure to save it securely as this is un-recoverable.
                                     </p>
-                                    <div class="account-support-img-block">
-                                        <img src="./images/support-details/17.png" alt="img" class="img-responsive">
+                                    <div class="account-support-img-block double-img">
+                                        <div>
+                                            <img src="./images/support-details/8.jpg" alt="img" class="img-responsive">
+                                        </div>
+                                        <div>
+                                            <img src="./images/support-details/9.jpg" alt="img" class="img-responsive">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
-                                    <h5>Step 03:</h5>
+                                    <h5>All is DONE!</h5>
                                     <p>
-                                        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta 
-                                        nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere 
-                                        possimus, omnis voluptas assumenda est, omnis dolor repellendus. <br>
-                                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
-                                        repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus
+                                        Your new ccount is active and live. You can login to start sharing new content on DLIKE and earning rewards for your efforts.
+                                    </p><br/>
+                                    <p>
+                                        Please remeber this is your master key password. To chnage password or to get your posting key, active key and memo key, simply login to steemitwallet.com with same login credentials which you created just now!
                                     </p>
                                 </div>
                             </div><!-- support-details-content -->
