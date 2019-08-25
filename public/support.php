@@ -182,10 +182,10 @@ include('template/header5.php');
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
-                                            <img src="./images/support-details/12.jpg" alt="img" class="img-responsive">
+                                            <img src="https://i.postimg.cc/Y2bNd34c/dlike-post-2.png" alt="img" class="img-responsive">
                                         </div>
                                         <div>
-                                            <img src="./images/support-details/13.jpg" alt="img" class="img-responsive">
+                                            <img src="https://i.postimg.cc/Y2bNd34c/dlike-post-2.png" alt="img" class="img-responsive">
                                         </div>
                                     </div>
                                 </div>
