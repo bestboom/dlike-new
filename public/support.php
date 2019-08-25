@@ -9,30 +9,30 @@ include('template/header5.php');
                     <div class="support-details-tab-nav">
                         <h4>DLIKE</h4>
                         <nav class="support-list">
-                            <ul class="nav nav-tabs nav-fill nav-support" id="nav-tab" role="tablist">
-                                <li class="nav-item">
+                            <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                <li class="nav-item nav-support">
                                     <a class="nav-link active" href="#nav_signUp" role="tab" data-toggle="tab">
                                         What is DLIKE?
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item nav-support">
                                     <a class="nav-link" href="#nav_confimationEmail" role="tab" data-toggle="tab">
                                         How to Singup new account?
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item nav-support">
                                     <a class="nav-link" href="#nav_invalidLink" role="tab" data-toggle="tab">
                                         How to share on DLIKE?
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item nav-support">
                                     <a class="nav-link" href="#nav_changeEmail" role="tab" data-toggle="tab">
                                         How to earn on DLIKE?
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item nav-support">
                                     <a class="nav-link" href="#nav_deleteAccount" role="tab" data-toggle="tab">
-                                        How to Delete your Account?
+                                        How to Join DLIKE Referral?
                                     </a>
                                 </li>
                             </ul>
