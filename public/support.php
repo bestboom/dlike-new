@@ -464,10 +464,11 @@ include('template/header5.php');
 <script type="text/javascript">
     $('.check').click(function(){
         alert('check');
-      $('.check span').addClass('liked');
-      $('.uncheck span').addClass('unliked');
+        $('.check span').addClass('liked');
+        $('.uncheck span').addClass('unliked');
     })
     $('.uncheck').click(function(){
-    $('.uncheck span').addClass('liked');
-    $('.check span').addClass('unliked');
+        $('.uncheck span').addClass('liked');
+        $('.check span').addClass('unliked');
+    })
 </script>
