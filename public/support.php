@@ -144,7 +144,7 @@ include('template/header5.php');
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="nav_invalidLink">
                             <div class="support-details-content">
-                                <h4 class="sp-title">Activation Link Invalid or Expired</h4>
+                                <h4 class="sp-title">How to share on DLIKE?</h4>
                                 <div class="supporter-details">
                                     <div>
                                         <img src="./images/support-details/3.png" alt="img" class="img-responsive">
@@ -158,24 +158,13 @@ include('template/header5.php');
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by the readable content 
-                                        of a page when looking at its layout.  but also the leap into electronic typesetting, 
-                                        remaining essentially unchanged. It was popularised in the 1960s with the release  
-                                        circumstances occur in which toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
-                                    </p>
-                                    <p>
-                                        Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
-                                        No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because.
+                                        Sharing on DLIKE is as simple as 1,2,3. Follow below steps to share.
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
                                     <h5>Step 01:</h5>
                                     <p>
-                                        But also the leap into electronic typesetting, remaining essentially unchanged. 
-                                        It was popularised in the 1960s with the release  circumstances occur in which 
-                                        toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        Enter the link which you want to share
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
@@ -189,10 +178,7 @@ include('template/header5.php');
                                 <div class="details-support-steps">
                                     <h5>Step 02:</h5>
                                     <p>
-                                        To take a trivial example, which of us ever undertakes laborious physical exercise, 
-                                        except to obtain some advantage from it? But who has any right to find fault with a 
-                                        man who chooses to enjoy a pleasure that has no annoying consequences, or one who 
-                                        avoids a pain that produces no 
+                                        DLIKE crawls the link to get data from it. Simply select proper category, write minimum 40 words to explain hwo this link is useful for community and add appropriate tags.
                                     </p>
                                     <div class="account-support-img-block">
                                         <img src="./images/support-details/18.png" alt="img" class="img-responsive">
@@ -201,18 +187,14 @@ include('template/header5.php');
                                 <div class="details-support-steps">
                                     <h5>Step 03:</h5>
                                     <p>
-                                        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta 
-                                        nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere 
-                                        possimus, omnis voluptas assumenda est, omnis dolor repellendus. <br>
-                                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
-                                        repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus
+                                        You are all done. Viola!
                                     </p>
                                 </div>
                             </div><!-- support-details-content -->
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="nav_changeEmail">
                             <div class="support-details-content">
-                                <h4 class="sp-title">How to Change  Email Address</h4>
+                                <h4 class="sp-title">How to earn on DLIKE?</h4>
                                 <div class="supporter-details">
                                     <div>
                                         <img src="./images/support-details/4.png" alt="img" class="img-responsive">
@@ -226,24 +208,19 @@ include('template/header5.php');
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by the readable content 
-                                        of a page when looking at its layout.  but also the leap into electronic typesetting, 
-                                        remaining essentially unchanged. It was popularised in the 1960s with the release  
-                                        circumstances occur in which toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        Being a blockchain based dApp, all earnings on DLIKE is in the form of cryptocurrency tokens. Every shared article has 3 earning option.
+                                        
                                     </p>
                                     <p>
-                                        Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
-                                        No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because.
+                                        1. STEEM upvotes<br>
+                                        2. USDT Tips<br>
+                                        3. DLIKE Rewards
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
-                                    <h5>Step 01:</h5>
+                                    <h5>STEEM Upvotes:</h5>
                                     <p>
-                                        But also the leap into electronic typesetting, remaining essentially unchanged. 
-                                        It was popularised in the 1960s with the release  circumstances occur in which 
-                                        toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        Once you share an article, other users who like it will upvote it. In addition to those upvotes, DLIKE also upvotes posts. These are STEEM based upvotes and gives you earnings in the form of STEEM/STEEM Power. Every such earning maytures after 7 days of article publish date and becomes vailbel to claim. Once you calimed it is ready to be withdrwn to any exchnge where STEEM is traded.
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
@@ -255,25 +232,29 @@ include('template/header5.php');
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
-                                    <h5>Step 02:</h5>
+                                    <h5>USDT Tips:</h5>
                                     <p>
-                                        To take a trivial example, which of us ever undertakes laborious physical exercise, 
-                                        except to obtain some advantage from it? But who has any right to find fault with a 
-                                        man who chooses to enjoy a pleasure that has no annoying consequences, or one who 
-                                        avoids a pain that produces no 
+                                        Second form of earning for DLIKE users is USDT Tips. On every post page, tips option is available for PRO users (what is PRO user?). If users like your shared post, they can tip you. This tip is free for both author and reader from DLIKE. <br/>
+                                        Author gets 40% share of the tip while reader gets 60%. So if you like other users posts, feelf ree to tip them as it will also generate earnings for you.<br/>
+                                        All the tips earnings are withdrawable to ETH address (minimum withdraw amount is 3 USDT) and withdrawls are processed daily.
                                     </p>
                                     <div class="account-support-img-block">
                                         <img src="./images/support-details/19.png" alt="img" class="img-responsive">
                                     </div>
                                 </div>
                                 <div class="details-support-steps">
-                                    <h5>Step 03:</h5>
+                                    <h5>DLIKE Rewards</h5>
                                     <p>
-                                        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta 
-                                        nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere 
-                                        possimus, omnis voluptas assumenda est, omnis dolor repellendus. <br>
-                                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
-                                        repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus
+                                        Third option of earning for DLIKE users is DLIKE rewards. On daily basis all PRO users are paid DLIKE tokens for their efforts on the platform. There are few factors which decides share of each user on daily basis.
+                                    </p><br>
+                                    <p>dlike.io/rewards</p><br>
+                                    <p>
+                                        1. Number of comments on your shred posts
+                                        2. Number of Likes on your shared posts
+                                        3. Number of page views on your shared posts
+                                        4. Amount of upvotes on your shared posts
+                                        5. Number of daily referrls brought by you
+                                        6. Number of posts shared by your referrals as each post shared by your referral earn daily reward points for you.
                                     </p>
                                 </div>
                             </div><!-- support-details-content -->
