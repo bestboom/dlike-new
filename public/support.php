@@ -45,15 +45,6 @@ include('template/header5.php');
                             <div class="support-details-content">
                                 <h4 class="sp-title">What is DLIKE?</h4>
                                 <div class="supporter-details">
-                                    <div>
-                                        <img src="./images/support-details/1.png" alt="img" class="img-responsive">
-                                    </div>
-                                    <div class="sp-info">
-                                        <h5>Nayne Castro</h5>
-                                        <span>
-                                            12 Nov, 2019
-                                        </span>
-                                    </div>
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
@@ -73,15 +64,6 @@ include('template/header5.php');
                             <div class="support-details-content">
                                 <h4 class="sp-title">How to signup new Account?</h4>
                                 <div class="supporter-details">
-                                    <div>
-                                        <img src="./images/support-details/2.png" alt="img" class="img-responsive">
-                                    </div>
-                                    <div class="sp-info">
-                                        <h5>Nayne Castro</h5>
-                                        <span>
-                                            12 Nov, 2019
-                                        </span>
-                                    </div>
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
@@ -196,15 +178,6 @@ include('template/header5.php');
                             <div class="support-details-content">
                                 <h4 class="sp-title">How to earn on DLIKE?</h4>
                                 <div class="supporter-details">
-                                    <div>
-                                        <img src="./images/support-details/4.png" alt="img" class="img-responsive">
-                                    </div>
-                                    <div class="sp-info">
-                                        <h5>Nayne Castro</h5>
-                                        <span>
-                                            12 Nov, 2019
-                                        </span>
-                                    </div>
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
