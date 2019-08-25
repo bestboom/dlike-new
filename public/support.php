@@ -71,7 +71,7 @@ include('template/header5.php');
                                     </p>
                                     <p>
                                         If you are new to DLIKE, follow these simple steps to signup on DLIKE.<br/>
-                                        <b>dlike.io/welcome</b>b>
+                                        Go to --> <b>dlike.io/welcome</b>
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
@@ -150,7 +150,7 @@ include('template/header5.php');
                                     <div class="account-support-img-block">
                                         <img src="https://i.postimg.cc/rw9S3Ns2/dlike-post.jpg" alt="img" class="img-responsive">
                                     </div>
-                                </div>
+                                </div><br>
                                 <div class="details-support-steps">
                                     <h5>Step 03:</h5>
                                     <p>
@@ -199,7 +199,7 @@ include('template/header5.php');
                                     <div class="account-support-img-block">
                                         <img src="https://i.postimg.cc/zfNwvPLQ/dlike-tips-usdt.jpg" alt="img" class="img-responsive">
                                     </div>
-                                </div>
+                                </div><br>
                                 <div class="details-support-steps">
                                     <h5>DLIKE Rewards</h5>
                                     <p>
