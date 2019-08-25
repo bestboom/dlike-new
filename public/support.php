@@ -104,20 +104,17 @@ include('template/header5.php');
                                     <p>
                                         After phone verification, a password is generated for your account. Make sure to save it securely as this is un-recoverable.
                                     </p>
-                                </div>
+                                </div><br>
                                 <div class="account-support-img-block double-img">
                                     <div>
                                         <img src="https://i.postimg.cc/25zFHZ8X/dlike-signup-phone.jpg" alt="img" class="img-responsive">
                                     </div>
-                                    <div>
-                                        <img src="https://i.postimg.cc/rwqQHbfJ/dlike-signup-pin.jpg" alt="img" class="img-responsive">
-                                    </div>
-                                </div>
+                                </div><br>
                                 <div class="details-support-steps">
                                     <h5>All is DONE!</h5>
                                     <p>
                                         Your new ccount is active and live. You can login to start sharing new content on DLIKE and earning rewards for your efforts.
-                                    </p><br/>
+                                    </p>
                                     <p>
                                         Please remeber this is your master key password. To chnage password or to get your posting key, active key and memo key, simply login to steemitwallet.com with same login credentials which you created just now!
                                     </p>
