@@ -261,70 +261,29 @@ include('template/header5.php');
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="nav_deleteAccount">
                             <div class="support-details-content">
-                                <h4 class="sp-title">How to Delete your Account?</h4>
+                                <h4 class="sp-title">How to join DLIKE Affiliates?</h4>
                                 <div class="supporter-details">
-                                    <div>
-                                        <img src="./images/support-details/5.png" alt="img" class="img-responsive">
-                                    </div>
-                                    <div class="sp-info">
-                                        <h5>Nayne Castro</h5>
-                                        <span>
-                                            12 Nov, 2019
-                                        </span>
-                                    </div>
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        It is a long established fact that a reader will be distracted by the readable content 
-                                        of a page when looking at its layout.  but also the leap into electronic typesetting, 
-                                        remaining essentially unchanged. It was popularised in the 1960s with the release  
-                                        circumstances occur in which toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        DLIKE is offering a lucarative affiliate program where you can earn for every users which you refer to DLIKE. In addition to this daily reward points are paid for each post shared by your Referrals.
                                     </p>
                                     <p>
-                                        Expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. 
-                                        No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because.
+                                        1. 50 DLIKE tokens for every new user referred by you
+                                        2. 5 reward points for every post shared by your referrals
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
-                                    <h5>Step 01:</h5>
+                                    <h5>How to join?</h5>
                                     <p>
-                                        But also the leap into electronic typesetting, remaining essentially unchanged. 
-                                        It was popularised in the 1960s with the release  circumstances occur in which 
-                                        toil and pain can procure him some great pleasure. 
-                                        To take a trivial example, which of us.
+                                        To get started with DLIKE affiliate program, use this referral link in your articles or share on your social media.
                                     </p>
-                                    <div class="account-support-img-block double-img">
-                                        <div>
-                                            <img src="./images/support-details/14.jpg" alt="img" class="img-responsive">
-                                        </div>
-                                        <div>
-                                            <img src="./images/support-details/15.jpg" alt="img" class="img-responsive">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="details-support-steps">
-                                    <h5>Step 02:</h5>
                                     <p>
-                                        To take a trivial example, which of us ever undertakes laborious physical exercise, 
-                                        except to obtain some advantage from it? But who has any right to find fault with a 
-                                        man who chooses to enjoy a pleasure that has no annoying consequences, or one who 
-                                        avoids a pain that produces no 
-                                    </p>
-                                    <div class="account-support-img-block">
-                                        <img src="./images/support-details/20.png" alt="img" class="img-responsive">
-                                    </div>
-                                </div>
-                                <div class="details-support-steps">
-                                    <h5>Step 03:</h5>
-                                    <p>
-                                        Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta 
-                                        nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere 
-                                        possimus, omnis voluptas assumenda est, omnis dolor repellendus. <br>
-                                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates 
-                                        repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus
+                                        <b>dlike.io/welcome.php?ref=steem_user_name</b>  <br/>
+                                        Make sure to chnage (steem_user_name) with your own steem username
                                     </p>
                                 </div>
+                                
                             </div><!-- support-details-content -->
                         </div>
                     </div><!-- support-details-tab-content-wrap -->
