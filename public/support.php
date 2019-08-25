@@ -416,11 +416,6 @@ include('template/header5.php');
                                         <i class="fab fa-github"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -463,7 +458,6 @@ include('template/header5.php');
 </html>
 <script type="text/javascript">
     $('.check').click(function(){
-        alert('check');
         $('.check span').addClass('liked');
         $('.uncheck span').addClass('unliked');
     })

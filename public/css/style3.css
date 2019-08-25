@@ -3932,7 +3932,8 @@ sub.transmoney-value {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
-    -o-border-radius: 5px; }
+    -o-border-radius: 5px; 
+    cursor: pointer;}
 .ishelpful-list .liked {background: #1652f0;color: #fff;}
 .ishelpful-list .unliked {background:#fff;color: #1652f0;}
 .ishelpful-list li:first-child {
