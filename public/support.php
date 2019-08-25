@@ -266,14 +266,14 @@ include('template/header5.php');
                                 Is this helpful ?
                             </h5>
                             <ul class="ishelpful-list">
-                                <li>
-                                    <a href="#" class="check">
+                                <li class="check">
+                                    <a href="">
                                         <i class="far fa-thumbs-up"></i>
                                         Yes
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#" class="uncheck">
+                                <li class="uncheck">
+                                    <a href="">
                                         <i class="far fa-thumbs-down"></i>
                                        no
                                     </a>
