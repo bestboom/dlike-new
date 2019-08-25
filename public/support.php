@@ -459,11 +459,10 @@ include('template/header5.php');
 <script type="text/javascript">
     $('.check').click(function(){
         $('.check span').addClass('liked');
-        //$('.uncheck span').addClass('unliked');
+        $('.uncheck span').removeClass('liked');
     })
     $('.uncheck').click(function(){
-        //alert('unc');
         $('.uncheck span').addClass('liked');
-        //$('.check span').addClass('unliked');
+        $('.check span').removeClass('liked');
     })
 </script>
