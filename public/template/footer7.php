@@ -2,13 +2,13 @@
         <div class="container">
             <div class="colto-content-wrap">
                 <div class="colto-content">
-                    <h3>Getting started</h3>
-                    <p>We provide professional and secure trading services for investors</p>
+                    <h3>Share To Get Rewarded</h3>
+                    <p>DLIKE - An Informative Source of Internet</p>
                 </div>
                 <div class="colto-btn-group">
-                    <button class="btn callto-btn">Log In</button>
+                    <button class="btn callto-btn" onclick="window.open('/welcome');" />Log In</button>
                     <span>or</span>
-                    <button class="btn callto-btn">Create Account</button>
+                    <button class="btn callto-btn" onclick="window.open('/welcome');" />Create Account</button>
                 </div>
             </div>
         </div>
