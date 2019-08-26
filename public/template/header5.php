@@ -24,7 +24,7 @@
         <title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title>
         <meta name="description" content="The latest posts shared by <?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> on DLIKE. An informative face of internet to share and get rewarded like <?php echo ucfirst($prof_user); ?>.">
     <? } else { ?>    
-        <title>Dlike :: Share To Get Rewarded</title>
+        <title>DLIKE - Share To Get Rewarded</title>
         <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes.">
         <!--Facebook Meta Tags -->
         <meta property="og:url" content="https://dlike.io" />
