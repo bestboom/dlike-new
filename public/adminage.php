@@ -1,6 +1,6 @@
 <?php
 if($_COOKIE['username'] != 'dlike'){die('<script>window.location.replace("https://dlike.io","_self")</script>');};
-include('template/header.php');
+include('template/header5.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -46,4 +46,4 @@ error_reporting(E_ALL);
     </div><!-- contact-section -->
 </div>    
 
-<?php include('template/footer.php'); ?>
+<?php include('template/footer7.php'); ?>
