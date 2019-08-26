@@ -6,9 +6,9 @@
                     <p>DLIKE - An Informative Source of Internet</p>
                 </div>
                 <div class="colto-btn-group">
-                    <button class="btn callto-btn" onclick="window.open('/welcome');" />Log In</button>
+                    <button class="btn callto-btn" onclick="window.location('/welcome');" />Log In</button>
                     <span>or</span>
-                    <button class="btn callto-btn" onclick="window.open('/welcome');" />Create Account</button>
+                    <button class="btn callto-btn" onclick="window.location('/welcome');" />Create Account</button>
                 </div>
             </div>
         </div>
