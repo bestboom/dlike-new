@@ -103,7 +103,7 @@
                                         After phone verification, a password is generated for your account. Make sure to save it securely as this is un-recoverable.
                                     </p>
                                 </div><br>
-                                <div class="account-support-img-block">
+                                <div class="account-support-img-block double-img">
                                     <div>
                                         <img src="https://i.postimg.cc/YqywXRgv/dlike-signup-final.jpg" alt="img" class="img-responsive">
                                     </div>
@@ -129,7 +129,7 @@
                                         Sharing on DLIKE is as simple as 1,2,3. Follow below steps to share.
                                     </p>
                                     <p>
-                                        Go To --> <b>dlike.io/share</b>
+                                        Go To --> <a href="https://dlike.io/share" target="_blank"><b>dlike.io/share</b></a>
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
@@ -146,7 +146,7 @@
                                 <div class="details-support-steps">
                                     <h5>Step 02:</h5>
                                     <p>
-                                        DLIKE crawls the link to get data from it. Simply select proper category, write minimum 40 words to explain hwo this link is useful for community and add appropriate tags.
+                                        DLIKE crawls the link to get data from it. Simply select proper category, write minimum 40 words to explain how this link is useful for community and add appropriate tags.
                                     </p>
                                 </div>
                                 <div class="account-support-img-block">
@@ -155,7 +155,7 @@
                                 <div class="details-support-steps">
                                     <h5>Step 03:</h5>
                                     <p>
-                                        You are all done. Viola!
+                                        You are all done. Voila!
                                     </p>
                                 </div>
                             </div><!-- support-details-content -->
