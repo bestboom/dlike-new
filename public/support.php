@@ -193,7 +193,7 @@
                                 <div class="details-support-steps">
                                     <h5>USDT Tips:</h5>
                                     <p>
-                                        Second form of earning for DLIKE users is USDT Tips. On every post page, tips option is available for PRO users (what is PRO user?). If a visitor likes your shared post, he can tip you. This tip is free for both author and reader from DLIKE. <br/>
+                                        Second form of earning for DLIKE users is USDT Tips. On every post page, tips option is available for PRO users (<a href="https://dlike.io/help#list-home" target="_blank"><b>what is PRO user?</b></a>). If a visitor likes your shared post, he can tip you. This tip is free for both author and reader from DLIKE. <br/>
                                         Author gets 40% share of the tip while reader gets 60%. So if you like other users posts, feel free to tip them as it will also generate earnings for you.<br/>
                                         All the tips earnings are withdraw-able to ETH address (minimum withdraw amount is 3 USDT) and withdrawals are processed daily.
                                     </p>
@@ -206,14 +206,14 @@
                                     <p>
                                         Third option of earning for DLIKE users is DLIKE rewards. On daily basis all PRO users are paid DLIKE tokens for their efforts on the platform. There are few factors which decides share of each user on daily basis.
                                     </p>
-                                    <p>Go to --> <b>dlike.io/rewards</b></p>
+                                    <p>Go to --> <a href="https://dlike.io/rewards" target="_blank"><b>dlike.io/rewards</b></a></p>
                                     <p>
                                         1. Number of comments on your shred posts<br>
                                         2. Number of Likes on your shared posts<br>
                                         3. Number of page views on your shared posts<br>
                                         4. Amount of upvotes on your shared posts<br>
                                         5. Number of daily referrls brought by you<br>
-                                        6. Number of posts shared by your referrals as each post shared by your referral earn daily reward points for you.
+                                        6. Number of posts shared by your referrals as each post shared by your referral earns daily reward points for you.
                                     </p>
                                 </div>
                             </div><!-- support-details-content -->
@@ -225,7 +225,7 @@
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        DLIKE is offering a lucarative affiliate program where you can earn for every users which you refer to DLIKE. In addition to this daily reward points are paid for each post shared by your Referrals.
+                                        DLIKE is offering a lucrative affiliate program where you can earn for every users which you refer to DLIKE. In addition to this daily reward points are paid for each post shared by your Referrals.
                                     </p>
                                     <p>
                                         <b>1.</b> 50 DLIKE tokens for every new user referred by you<br>
@@ -235,7 +235,7 @@
                                 <div class="details-support-steps account-support-block">
                                     <h5>How to join?</h5>
                                     <p>
-                                        To get started with DLIKE affiliate program, use this referral link in your articles or share on your social media.
+                                        To get started with DLIKE affiliate program, use this referral link in your articles or share on social media.
                                     </p>
                                     <p>
                                         <b>dlike.io/welcome.php?ref=steem_user_name</b>  <br/>
