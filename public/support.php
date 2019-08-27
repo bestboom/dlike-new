@@ -69,7 +69,7 @@
                                     </p>
                                     <p>
                                         If you are new to DLIKE, follow these simple steps to signup on DLIKE.<br/>
-                                        Go to --> <b>dlike.io/welcome</b>
+                                        Go to --> <a href="https://dlike.io/share" target="_blank"><b>dlike.io/welcome</b></a>
                                     </p>
                                 </div>
                                 <div class="details-support-steps account-support-block">
@@ -114,7 +114,7 @@
                                         Your new account is active and live. You can login to start sharing new content on DLIKE and earning rewards for your efforts.
                                     </p>
                                     <p>
-                                        Please remember this is your master key password. To change password or to get your posting key, active key and memo key, simply login to <a href="https://steemitwallet.com" target="_blank"> steemitwallet.com</a> with same login credentials which you created just now!
+                                        Please remember this is your master key password. To change password or to get your posting key, active key and memo key, simply login to <a href="https://steemitwallet.com" target="_blank"> <b>steemitwallet.com</b></a> with same login credentials which you created just now!
                                     </p>
                                 </div>
                             </div><!-- support-details-content -->
@@ -149,7 +149,7 @@
                                         DLIKE crawls the link to get data from it. Simply select proper category, write minimum 40 words to explain how this link is useful for community and add appropriate tags.
                                     </p>
                                 </div>
-                                <div class="account-support-img-block">
+                                <div class="account-support-img-block double-img">
                                     <img src="https://i.postimg.cc/rw9S3Ns2/dlike-post.jpg" alt="img" class="img-responsive">
                                 </div><br>
                                 <div class="details-support-steps">
@@ -167,7 +167,7 @@
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        Being a blockchain based dApp, all earnings on DLIKE is in the form of cryptocurrency tokens. Every shared article has 3 earning option.
+                                        Being a blockchain based dApp, all earnings on DLIKE are in the form of cryptocurrency tokens. Every shared article has 3 earning option.
                                         
                                     </p>
                                     <p>
@@ -179,7 +179,7 @@
                                 <div class="details-support-steps account-support-block">
                                     <h5>STEEM Upvotes:</h5>
                                     <p>
-                                        Once you share an article, other users who like it will upvote it. In addition to those upvotes, DLIKE also upvotes posts. These are STEEM based upvotes and gives you earnings in the form of STEEM/STEEM Power. Every such earning maytures after 7 days of article publish date and becomes vailbel to claim. Once you calimed it is ready to be withdrwn to any exchnge where STEEM is traded.
+                                        Once you share an article, other users who like it will upvote post. DLIKE also upvotes all posts. These are STEEM based upvotes to give you earnings in the form of STEEM/STEEM Power. Every such earning matures after 7 days of article publish date and becomes available to claim. Once you have claimed, you can use this STEEM on blockchain or transfer to any STEEM supported exchange to withdraw.
                                     </p>
                                     <div class="account-support-img-block double-img">
                                         <div>
@@ -193,9 +193,9 @@
                                 <div class="details-support-steps">
                                     <h5>USDT Tips:</h5>
                                     <p>
-                                        Second form of earning for DLIKE users is USDT Tips. On every post page, tips option is available for PRO users (what is PRO user?). If users like your shared post, they can tip you. This tip is free for both author and reader from DLIKE. <br/>
-                                        Author gets 40% share of the tip while reader gets 60%. So if you like other users posts, feelf ree to tip them as it will also generate earnings for you.<br/>
-                                        All the tips earnings are withdrawable to ETH address (minimum withdraw amount is 3 USDT) and withdrawls are processed daily.
+                                        Second form of earning for DLIKE users is USDT Tips. On every post page, tips option is available for PRO users (what is PRO user?). If a visitor likes your shared post, he can tip you. This tip is free for both author and reader from DLIKE. <br/>
+                                        Author gets 40% share of the tip while reader gets 60%. So if you like other users posts, feel free to tip them as it will also generate earnings for you.<br/>
+                                        All the tips earnings are withdraw-able to ETH address (minimum withdraw amount is 3 USDT) and withdrawals are processed daily.
                                     </p>
                                     <div class="account-support-img-block">
                                         <img src="https://i.postimg.cc/zfNwvPLQ/dlike-tips-usdt.jpg" alt="img" class="img-responsive">
