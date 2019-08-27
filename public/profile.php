@@ -145,9 +145,9 @@ include('template/header5.php');
 	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
         {
           	metadata = JSON.parse(result["0"].json_metadata);
-          	
-	  		let name = metadata.profile.name;
+	  		
 	  		let profile_image = metadata.profile.profile_image;
+	  		let name = metadata.profile.name;
 	  		let about = metadata.profile.about;
 	  		let location = metadata.profile.location;
 	  		let website = metadata.profile.website;
