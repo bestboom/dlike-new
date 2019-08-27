@@ -46,13 +46,13 @@
                                 </div>
                                 <div class="support-entry-block">
                                     <p>
-                                        DLIKE is a social sharing platform built on top of STEEM blockchain. Just like any other scial sharing platform like pinterest, reddit, facebook, twitter, anyone can share anything that is informative for community. 
+                                        DLIKE is a social sharing platform built on top of STEEM blockchain. Just like any other social sharing platform (pinterest, reddit, facebook, twitter) anyone can share anything that is informative for community.
                                     </p>
                                     <p>
-                                        You can share articles from your personal blogs, your wrtitng channels like Medium.com or you can also share useful and informative content from other any other website (with concent of author).
+                                        You can share articles from your personal blogs, your writing channels like Medium.com or any informative content from other online sources (with consent of author).
                                     </p><br>
                                     <p>
-                                        As compared to other social media channels, here on DLIKE you earn for your time and efforts. This is how we have shaped DLIKE to be an informative face of internet where users can know, what is happening around globaly in different categroies like NEWS, crypocurrency, technology, health and fitness, finance and money, sports, food and many more.
+                                        As compared to other social media channels, here on DLIKE you earn for your time and efforts. This is how we have shaped DLIKE to be an informative face of internet where users can know, what is happening around globally in different categories like NEWS, crypocurrency, technology, health and fitness, finance and money, sports, food and many more.
                                     </p>
                                 </div>
 
@@ -86,7 +86,7 @@
                                 <div class="details-support-steps">
                                     <h5>Step 02:</h5>
                                     <p>
-                                        Eneter your phone number for identity verification. We send you verificcation PIN to this number to verify your identity. 
+                                        Enter your phone number for identity verification. We send verification PIN to this number to verify your identity.
                                     </p>
                                 </div>
                                 <div class="account-support-img-block double-img">
@@ -96,7 +96,7 @@
                                     <div>
                                         <img src="https://i.postimg.cc/rwqQHbfJ/dlike-signup-pin.jpg" alt="img" class="img-responsive">
                                     </div>
-                                </div>
+                                </div><br>
                                 <div class="details-support-steps">
                                     <h5>Step 03:</h5>
                                     <p>
@@ -111,10 +111,10 @@
                                 <div class="details-support-steps">
                                     <h5>All is DONE!</h5>
                                     <p>
-                                        Your new ccount is active and live. You can login to start sharing new content on DLIKE and earning rewards for your efforts.
+                                        Your new account is active and live. You can login to start sharing new content on DLIKE and earning rewards for your efforts.
                                     </p>
                                     <p>
-                                        Please remeber this is your master key password. To chnage password or to get your posting key, active key and memo key, simply login to steemitwallet.com with same login credentials which you created just now!
+                                        Please remember this is your master key password. To change password or to get your posting key, active key and memo key, simply login to <a href="https://steemitwallet.com" target="_blank"> steemitwallet.com</a> with same login credentials which you created just now!
                                     </p>
                                 </div>
                             </div><!-- support-details-content -->
