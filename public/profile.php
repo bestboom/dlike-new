@@ -146,14 +146,14 @@ include('template/header5.php');
         {
           	metadata = JSON.parse(result["0"].json_metadata);
           	
-	  		let cover = metadata.profile.cover_image;
-	  		let cover_url = "https://steemitimages.com/0x0/"+cover;
+	  		let name = metadata.profile.name;
 	  		let profile_image = metadata.profile.profile_image;
 	  		let about = metadata.profile.about;
 	  		let location = metadata.profile.location;
 	  		let website = metadata.profile.website;
-	  		let name = metadata.profile.name;
-	  		
+	  		let cover = metadata.profile.cover_image;
+	  		let cover_url = "https://steemitimages.com/0x0/"+cover;
+
 	  		$('#profile_pic').val(profile_image);
 	  		$('.p_about').html(about);
 	  		$('#profile_about').val(about);
