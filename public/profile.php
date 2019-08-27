@@ -153,9 +153,7 @@ include('template/header5.php');
 	  		let location = metadata.profile.location;
 	  		let website = metadata.profile.website;
 	  		let name = metadata.profile.name;
-
 	  		
-	  		$('#cover_img').val(cover);
 	  		$('#profile_pic').val(profile_image);
 	  		$('.p_about').html(about);
 	  		$('#profile_about').val(about);
@@ -167,6 +165,7 @@ include('template/header5.php');
 	  		if (typeof cover !== 'undefined')
 	  		{
 	  			$('#p_cover').css('background-image', 'url(' + cover_url + ')');
+	  			$('#cover_img').val(cover);
 	  		}
 	  		if (typeof website !== 'undefined')
 	  		{
