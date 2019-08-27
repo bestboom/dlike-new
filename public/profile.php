@@ -154,7 +154,7 @@ include('template/header5.php');
 	  		let website = metadata.profile.website;
 	  		let name = metadata.profile.name;
 
-	  		$('#p_cover').css('background-image', 'url(' + cover_url + ')');
+	  		
 	  		$('#cover_img').val(cover);
 	  		$('#profile_pic').val(profile_image);
 	  		$('.p_about').html(about);
@@ -163,6 +163,10 @@ include('template/header5.php');
 	  		{
 	  			$('.p_location').html('<i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>' + location);
 	  			$('#profile_location').val(location);
+	  		}
+	  		if (typeof cover !== 'undefined')
+	  		{
+	  			$('#p_cover').css('background-image', 'url(' + cover_url + ')');
 	  		}
 	  		if (typeof website !== 'undefined')
 	  		{
