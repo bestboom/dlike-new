@@ -1,6 +1,6 @@
 <?php include('template/header5.php');?>
 </div>
-<div class="containe">
+<div class="container">
 	<div class="info-sec">
 		<h1>Privacy Policy</h1>
 
