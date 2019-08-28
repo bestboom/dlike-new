@@ -41,6 +41,15 @@
 		When other users view your profile, they will be able to see information about your activities on the Services such as your username, prior posts and comments, token balances and how long you have been a member of the Services.<br>
 		Please note that, even when you delete your account, the posts, comments and messages you submit through the Services may still be viewable or available on our servers. For more information, see "Your Choices" below.<br>
 		We will not share, sell or give away any of our user's personal information to third parties, unless one of the following circumstances applies:</p>
+		<li>	Except as it relates to advertisers and our ad partners, we may share information with vendors, consultants, and other service providers who need access to such information to carry out work for us</li>
+		<li>	If you participate in contests, sweepstakes, promotions, special offers or other events or activities in connection with our Services, we may share information with entities that partner with us to provide these offerings</li>
+		<li>	We may share information (and will attempt to provide you with prior notice, to the extent legally permissible) in response to a request for information if we believe disclosure is in accordance with or required by, any applicable law, regulation, legal process or governmental request</li>
+		<li>	We may share information in response to an emergency if we believe it's necessary to prevent imminent and serious bodily harm to a person</li>
+		<li>	We may share information if we believe your actions are inconsistent with our user agreements or other DLIKE policies or to protect the rights, property, and safety of ourselves and others</li>
+		<li>	We may share information between and among DLIKE, and its current and future parents, affiliates, subsidiaries and other companies under common control and ownership</li>
+		<li>	We may share information with your consent or at your direction</li>
+
+
 
 
 
