@@ -56,7 +56,13 @@
 		<h3>5.2. Analytics Partners</h3>
 		<p>We use analytics partners (such as Google Analytics) to help analyze usage and traffic for our Services. As an example, we may use analytics partners to analyze and measure, in the aggregate, the number of unique visitors to our Services.
 		For more information about how you may control the collection or use of information for advertising and analytics purposes, please see "Your Choices."</p>
-		
+		<h2>6. Security</h2>
+		<p>We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access, disclosure, alteration, and destruction.</p>
+		<h2>7. Children under 18</h2>
+		<p>Although we welcome users from all walks of life, DLIKE is not intended or directed at individuals under the age of 18. Therefore, individuals under the age of 18 may not create an account or otherwise access or use the Services.</p>
+		<h2>8. Your Choices</h2>
+		<p>As a DLIKE user, you have choices about how to protect and limit the collection, us, and disclosure of, information about you. This includes:</p>
+
 		<h2>9. Changes</h2>
 		<p>We may change this Privacy Policy from time to time. If we do, we will let you know by revising the date at the top of the policy. If we make a change to this policy that, in our sole discretion, is material, we will provide you with additional notice (such as adding a statement to announcements on our social channels, the front page of the Services or sending you a notification). We encourage you to review the Privacy Policy whenever you access or use our Services or otherwise interact with us to stay informed about our information practices and the ways you can help protect your privacy. If you continue to use our Services after Privacy Policy changes go into effect, you consent to the revised policy.</p>
 
