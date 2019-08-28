@@ -62,13 +62,26 @@
 		<p>Although we welcome users from all walks of life, DLIKE is not intended or directed at individuals under the age of 18. Therefore, individuals under the age of 18 may not create an account or otherwise access or use the Services.</p>
 		<h2>8. Your Choices</h2>
 		<p>As a DLIKE user, you have choices about how to protect and limit the collection, us, and disclosure of, information about you. This includes:</p>
-
+		<h3>8.1. Preferences</h3>
+		<p>We may provide you with tools and preference settings that allow you to access, correct, delete, and modify information associated with your account.</p>
+		<h3>8.2. Delete Account</h3>
+		<p>DLIKE does not receive or store your Account password or the unencrypted keys and addresses. DLIKE uses SteemConnect authentication. In order to delete your connection with DLIKE, please visit your SteemConnect dashboard and revoke the authentication of DLIKE. Please note, however, that the posts, comments and messages you submitted prior to deleting your account will still be visible to others, unless you delete such content. We may also retain certain information about you as required by law or for legitimate business purposes after you delete your account. Any information that has been published to the Steem blockchain will also remain indefinitely.</p>
+		<h3>8.3. Cookies</h3>
+		<p>Most web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove or reject first- and third-party cookies. Please note that if you choose to remove or reject cookies, this could affect the availability and functionality of our Services. For more information about cookies read our cookie policy section.</p>
+		<h3>8.4. Third-Party Advertising and Analytics</h3>
+		<p>Some analytics providers may provide specific opt-out mechanisms (e.g. Google Analytics Opt-out), and we will provide, as needed, additional tools and third-party services that allow you to better understand cookies and how you can opt-out. You have the ability to opt out of having your web browsing information used for behavioral advertising purposes. For more information about behavioral advertising, or to opt out, please visit <a href="https://www.aboutads.info/choices" target="_blank">www.aboutads.info/choices</a>.</p>
+		<h3>8.5. Do Not Track</h3>
+		<p>Do Not Track ("DNT") is a privacy preference that you can set in most web browsers. We support DNT in our Services. There is no accepted standard on how to respond to web browsers" DNT signals. When you have DNT enabled, we may still use information collected for analytics and measurement purposes or to otherwise provide our Services (e.g DLIKE buttons) but we will not load any third-party trackers. You may however, opt out of having information about you collected and used for behavioral advertising purposes, as described above.</p>
+		<h3>8.6. Promotional Communications</h3>
+		<p>You may opt out of receiving promotional communications from us by following the instructions in those communications. If you opt out, we may still send you non-promotional communications, such as information about your account or your use of our Services.</p>
+		<h3>8.7. Mobile Notifications</h3>
+		<p>With your consent, we may send promotional and non-promotional push notifications or alerts to your mobile device. You can deactivate these messages at any time by changing the notification settings on your mobile device.</p>
+		<h3>8.8. International Data Transfers</h3>
+		<p>By accessing or using the Services or otherwise providing information to us, you consent to the processing, transfer and storage of information in and to applicable countries, where you may not have the same rights as you do under local law.</p>
 		<h2>9. Changes</h2>
 		<p>We may change this Privacy Policy from time to time. If we do, we will let you know by revising the date at the top of the policy. If we make a change to this policy that, in our sole discretion, is material, we will provide you with additional notice (such as adding a statement to announcements on our social channels, the front page of the Services or sending you a notification). We encourage you to review the Privacy Policy whenever you access or use our Services or otherwise interact with us to stay informed about our information practices and the ways you can help protect your privacy. If you continue to use our Services after Privacy Policy changes go into effect, you consent to the revised policy.</p>
-
-
-
-
+		<h2>10. Contact Us</h2>
+		<p>If you have any questions about this Privacy Policy, please email admin&#64;dlik.io.</p>
 
 	</div>	
 </div>
