@@ -48,7 +48,14 @@
 		<li>	We may share information if we believe your actions are inconsistent with our user agreements or other DLIKE policies or to protect the rights, property, and safety of ourselves and others</li>
 		<li>	We may share information between and among DLIKE, and its current and future parents, affiliates, subsidiaries and other companies under common control and ownership</li>
 		<li>	We may share information with your consent or at your direction</li>
-
+		<p>We may share aggregated or de-identified information, which cannot reasonably be used to identify you.</p>
+		<h2>5. Ads and Analytics Partners</h2>
+		<p>We may partner with third-party advertisers, ad networks and analytics providers to deliver advertising and content targeted to your interests and to better understand your use of the Services. These third parties may collect information sent by your computer, browser or mobile device in response to a request for content, such as unique identifiers, your IP address, or other information about your computer or device. For example:</p>
+		<h3>5.1. Advertisers and Ad Networks</h3>
+		<p>Our ad partners and network may use cookies and use related technologies to collect information when ads are delivered to you on our Services, but DLIKE does not link to or provide your actual DLIKE account details to these advertising partners. This means that DLIKE does not share your individual account browsing habits with advertisers. DLIKE cannot see advertisers" cookies and advertisers will not see DLIKE cookies.</p>
+		<h3>5.2. Analytics Partners</h3>
+		<p>We use analytics partners (such as Google Analytics) to help analyze usage and traffic for our Services. As an example, we may use analytics partners to analyze and measure, in the aggregate, the number of unique visitors to our Services.
+		For more information about how you may control the collection or use of information for advertising and analytics purposes, please see "Your Choices."</p>
 
 
 
