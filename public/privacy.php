@@ -1,6 +1,6 @@
 <?php include('template/header5.php');?>
 </div>
-<div class="container">
+<div class="containe info-sec">
 	<h1>Privacy Policy</h1>
 
 	<p>This Privacy Policy describes how DLIKE collectively referred to as "dlike.io" (or "we" or "us" or "our") collects, uses, and handles your data when you use our website, products and services ("Services"). Please take the time to carefully read through this policy. As you use our Services, we want to be clear how DLIKE uses your information and how your privacy is protected. By using the Services, you consent to the data practices detailed in this policy.</p>
@@ -33,6 +33,13 @@
 	<li>	Communicate with you about products, services, offers, promotions, and events, and provide other news and information we think will be of interest to you (for information about how to opt out of these communications, see "Your Choices" below)</li>
 	<li>	Monitor and analyze trends, usage, and activities in connection with our Services</li>
 	<li>	Personalize the Services and provide advertisements, content and features that match user profiles or interests</li>
+
+	<h2>4. How We Share Information</h2>
+	<p>When you use the Services, certain information may be shared with other users and the public. For example:</p>
+	<p>When you submit a post or comment to the Services, visitors and users of our Services will be able to see the content of your posts and comments, the username associated with your posts or comments and the date and time you originally submitted the post or comment. Although some parts of the Services may be private or quarantined, they may become public and you should take that into consideration before posting to the Services.</p>
+	<p>When other users view your profile, they will be able to see information about your activities on the Services such as your username, prior posts and comments, token balances and how long you have been a member of the Services.</p>
+	<p>Please note that, even when you delete your account, the posts, comments and messages you submit through the Services may still be viewable or available on our servers. For more information, see "Your Choices" below.</p>
+	<p>We will not share, sell or give away any of our user's personal information to third parties, unless one of the following circumstances applies:</p>
 
 
 </div>
