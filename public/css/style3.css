@@ -2046,6 +2046,7 @@ justify-content: space-between;}
 .info-sec h2{font-weight: 600;font-size: 1.5rem;}
 .info-sec h3{font-size: 1.1rem;font-weight: 600;}
 .info-sec p{font-size: 0.9rem;line-height: 24px;}
+.info-sec a{color: blue;}
 /*
 |----------------------------------------------------------------------------
 | 10. star ratings
