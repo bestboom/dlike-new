@@ -118,16 +118,9 @@ include('template/header5.php');
 		            <?php include('template/modals/profile_update.php'); ?>
 		        </div>
 		    </div>
-		</div>  
-        <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content mybody">
-                    <?php include('template/modals/upvotemodal.php'); ?>
-                </div>
-            </div>
-        </div>
-		<?php include('template/footer3.php'); ?>
-	</div>  
+		</div>
+	</div>    
+	<?php include('template/footer3.php'); ?>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
@@ -430,7 +423,7 @@ include('template/header5.php');
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a class="upvoting-posts" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
@@ -475,7 +468,7 @@ include('template/header5.php');
 	} //close usercheck here
 	}); //close dsteem here
 
-    $('#user_posts').on("click", ".upvoting-posts", function() {
+    $('#user_posts').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
         console.log(votepermlink);
