@@ -194,7 +194,7 @@ $(document).ready(function(){
 });
 
 //check likes
-function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+/* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
 		type: "POST",
 		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
@@ -208,7 +208,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			//console.log('Error occured');
 		}
 	});
-};
+}; */
 
 function showPostSortedByLikes() {
 	var divList = $(".postsMainDiv");
