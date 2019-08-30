@@ -602,6 +602,7 @@ include('template/header5.php');
 	// steem upvotes
 
     $('#user_posts').on("click", ".upvoting-posts", function() {
+    	alert('upvote');
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
         console.log(votepermlink);
