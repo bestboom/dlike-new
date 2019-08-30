@@ -192,7 +192,7 @@
         };
 
     //dvd modal
-    $('.latest-post-section, user_posts').on("click", ".hov_me", function() {
+    $('.latest-post-section, #user_posts').on("click", ".hov_me", function() {
        //alert('called');
         // we want to copy the 'id' from the button to the modal
         var mypermlink = $(this).attr("data-permlink");
