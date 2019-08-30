@@ -478,6 +478,7 @@ include('template/header5.php');
 	// steem upvotes
 
 	$('.upvoting').click(function () {
+		console.log('upvote');
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
 
