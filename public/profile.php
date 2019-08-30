@@ -483,6 +483,7 @@ include('template/header5.php');
 
         $("#vote_author").val(voteauthor);
         $("#vote_permlink").val(votepermlink);
+        $("#upvoteModal").modal("show");
     });
 
 });
