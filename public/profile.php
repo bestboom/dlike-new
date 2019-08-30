@@ -32,7 +32,7 @@ include('template/header5.php');
 			</div>
 		</div>
 	</div> 
-	<div class="profile_details" id="profile_page">
+	<div id="profile_page">
 		<div id="p_cover" class="img-fluid">
 		</div>
 		<div style="background: #ededed;">
@@ -132,7 +132,14 @@ include('template/header5.php');
 			            <?php include('template/modals/recomend.php'); ?>
 			        </div>
 			    </div>
-			</div>	        
+			</div>
+			<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true">
+			    <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
+			        <div class="modal-content modal-custom">
+			        	<?php include('template/modals/upvotefail.php'); ?>
+			        </div>
+			    </div>
+			</div>				        
 	    </div>    
 	</div> 
 <?php include('template/footer3.php'); ?> 
