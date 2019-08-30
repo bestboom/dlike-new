@@ -600,7 +600,9 @@ include('template/header5.php');
 
 	    }
 	// steem upvotes
-
+	$('.upvoting').click(function() {
+		alert('upvote');
+	});
     $('#profposts').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
