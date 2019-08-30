@@ -601,7 +601,7 @@ include('template/header5.php');
 	    }
 	// steem upvotes
 
-    $('#profposts').on("click", ".upvoting", function() {
+    $('#profposts').on("click", ".upvoting-posts", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
         console.log(votepermlink);
