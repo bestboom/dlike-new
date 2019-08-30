@@ -307,7 +307,7 @@
     $('.latest-post-section').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
-        console.log(votepermlink);
+        
         $("#vote_author").val(voteauthor);
         $("#vote_permlink").val(votepermlink);
 
