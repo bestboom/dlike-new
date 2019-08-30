@@ -427,7 +427,7 @@ include('template/header5.php');
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
-				getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
+				//getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 
         		let author = $post.author;
         		let permlink = $post.permlink;				
