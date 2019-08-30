@@ -192,7 +192,7 @@
         };
 
     //dvd modal
-    $('#profile_pag').on("click", ".hov_me", function() {
+    $('#profile_page').on("click", ".hov_me", function() {
        //alert('called');
         // we want to copy the 'id' from the button to the modal
         var mypermlink = $(this).attr("data-permlink");
