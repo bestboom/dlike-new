@@ -430,7 +430,7 @@ include('template/header5.php');
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a class="upvoting-posts" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
+					'<div class="post-comments"><a class="upvoting-posts" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | ' + $post.active_votes.length + ' Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
@@ -601,15 +601,13 @@ include('template/header5.php');
 	    }
 	// steem upvotes
 
-	$('.upvoting-posts').click(function () {
-		console.log('upvote');
+    $('#profposts').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
-        console.log(votepermlink);
-        console.log(voteauthor);
+
         $("#vote_author").val(voteauthor);
         $("#vote_permlink").val(votepermlink);
-        $("#upvoteModal").modal("show");
-    });	    
+
+    });   
 });
 </script>
