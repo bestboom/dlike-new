@@ -604,7 +604,8 @@ include('template/header5.php');
     $('#profposts').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
-
+        console.log(votepermlink);
+        console.log(voteauthor);
         $("#vote_author").val(voteauthor);
         $("#vote_permlink").val(votepermlink);
 
