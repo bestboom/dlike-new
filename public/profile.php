@@ -31,6 +31,13 @@ include('template/header5.php');
 			    </div>
 			</div>
 		</div>
+        <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content mybody">
+                    <?php include('template/modals/upvotemodal.php'); ?>
+                </div>
+            </div>
+        </div>		
 		<?php include('template/footer3.php'); ?>
 	</div> 
 	<div id="profile_page">
@@ -198,16 +205,7 @@ include('template/header5.php');
 		 $('.following').html('<span class="foll_count">' + p_following + '</span> Following');
 
 	});
-// steem upvotes
-
-	$('.upvoting').click(function () {
-        var votepermlink = $(this).attr("data-permlink");
-        var voteauthor = $(this).attr("data-author");
-
-        $("#vote_author").val(voteauthor);
-        $("#vote_permlink").val(votepermlink);
-
-    });	
+	
 // get user comments
 	let $start_author, $cmt_limit, cmt_content = "#cmt_content";
 	let comments_query = {
@@ -476,6 +474,17 @@ include('template/header5.php');
 	})
 	} //close usercheck here
 	}); //close dsteem here
+
+	// steem upvotes
+
+	$('.upvoting').click(function () {
+        var votepermlink = $(this).attr("data-permlink");
+        var voteauthor = $(this).attr("data-author");
+
+        $("#vote_author").val(voteauthor);
+        $("#vote_permlink").val(votepermlink);
+    });
+    
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
