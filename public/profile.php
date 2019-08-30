@@ -122,7 +122,7 @@ include('template/header5.php');
         <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content mybody">
-                    <?php include('/template/modals/upvotemodal.php'); ?>
+                    <?php include('template/modals/upvotemodal.php'); ?>
                 </div>
             </div>
         </div>
