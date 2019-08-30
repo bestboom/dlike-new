@@ -475,6 +475,16 @@ include('template/header5.php');
 	} //close usercheck here
 	}); //close dsteem here
 
+    $('#user_posts').on("click", ".upvoting-posts", function() {
+    	alert('upvote');
+        var votepermlink = $(this).attr("data-permlink");
+        var voteauthor = $(this).attr("data-author");
+        console.log(votepermlink);
+        console.log(voteauthor);
+        $("#vote_author").val(voteauthor);
+        $("#vote_permlink").val(votepermlink);
+
+    }); 
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
@@ -599,17 +609,6 @@ include('template/header5.php');
   			});
 
 	    }
-	// steem upvotes
-
-    $('#user_posts').on("click", ".upvoting-posts", function() {
-    	alert('upvote');
-        var votepermlink = $(this).attr("data-permlink");
-        var voteauthor = $(this).attr("data-author");
-        console.log(votepermlink);
-        console.log(voteauthor);
-        $("#vote_author").val(voteauthor);
-        $("#vote_permlink").val(votepermlink);
-
-    });   
+	// steem upvotes  
 });
 </script>
