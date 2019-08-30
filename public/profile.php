@@ -32,7 +32,7 @@ include('template/header5.php');
 			</div>
 		</div>
 	</div> 
-	<div id="profile_page">
+	<div class="profile_details" id="profile_page">
 		<div id="p_cover" class="img-fluid">
 		</div>
 		<div style="background: #ededed;">
