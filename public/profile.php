@@ -198,7 +198,16 @@ include('template/header5.php');
 		 $('.following').html('<span class="foll_count">' + p_following + '</span> Following');
 
 	});
+// steem upvotes
 
+	$('.upvoting-posts').click(function () {
+        var votepermlink = $(this).attr("data-permlink");
+        var voteauthor = $(this).attr("data-author");
+
+        $("#vote_author").val(voteauthor);
+        $("#vote_permlink").val(votepermlink);
+
+    });	
 // get user comments
 	let $start_author, $cmt_limit, cmt_content = "#cmt_content";
 	let comments_query = {
@@ -591,13 +600,5 @@ include('template/header5.php');
   			});
 
 	    }
-	$('.latest-post-section').on("click", ".upvoting-posts", function() {
-        var votepermlink = $(this).attr("data-permlink");
-        var voteauthor = $(this).attr("data-author");
-
-        $("#vote_author").val(voteauthor);
-        $("#vote_permlink").val(votepermlink);
-
-    });	
 });
 </script>
