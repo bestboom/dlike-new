@@ -30,8 +30,7 @@ include('template/header5.php');
 			        </div>
 			    </div>
 			</div>
-		</div>		
-		<?php include('template/footer3.php'); ?>
+		</div>
 	</div> 
 	<div id="profile_page">
 		<div id="p_cover" class="img-fluid">
