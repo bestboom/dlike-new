@@ -192,7 +192,8 @@
         };
 
     //dvd modal
-    $('.latest-post-section').on("click", ".hov_me", function() {
+    //$('.latest-post-section').on("click", ".hov_me", function() {
+    $('.hov_me').click(function () {        
        //alert('called');
         // we want to copy the 'id' from the button to the modal
         var mypermlink = $(this).attr("data-permlink");
@@ -307,7 +308,7 @@
     $('.latest-post-section').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
-        
+
         $("#vote_author").val(voteauthor);
         $("#vote_permlink").val(votepermlink);
 
@@ -317,7 +318,7 @@
         var rangeSlider = document.getElementById("rs-range-line");
         var rangeBullet = document.getElementById("rs-bullet");
         rangeSlider.addEventListener("input", showSliderValue, false);
-        console.log(rangeSlider);
+        //console.log(rangeSlider);
     //}
     function showSliderValue() {
       rangeBullet.innerHTML = rangeSlider.value;
