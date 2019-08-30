@@ -485,9 +485,6 @@ include('template/header5.php');
         $("#vote_permlink").val(votepermlink);
 
     }); 
-    $('#user_posts').on("click", ".hov_me", function() {
-    	alert('recomend');
-    });
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
