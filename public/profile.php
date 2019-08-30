@@ -118,9 +118,16 @@ include('template/header5.php');
 		            <?php include('template/modals/profile_update.php'); ?>
 		        </div>
 		    </div>
-		</div>
-	</div>    
-	<?php include('template/footer3.php'); ?>
+		</div>  
+        <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content mybody">
+                    <?php include('template/modals/upvotemodal.php'); ?>
+                </div>
+            </div>
+        </div>
+	</div> 
+<?php include('template/footer3.php'); ?> 
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
