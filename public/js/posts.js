@@ -118,7 +118,7 @@ $(document).ready(function(){
 				}
 
 				//start posts here
-				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv">\n' +
+				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
 					'\n' +
@@ -148,7 +148,7 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
-					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num"></span></h5></div></span></div></div>\n' +
+					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
                     '\n' +
 					'<h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + $post.title + '</a></h4>\n' +
 					'\n' +
@@ -194,7 +194,7 @@ $(document).ready(function(){
 });
 
 //check likes
-/* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
 		type: "POST",
 		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
@@ -208,7 +208,7 @@ $(document).ready(function(){
 			//console.log('Error occured');
 		}
 	});
-}; */
+};
 
 function showPostSortedByLikes() {
 	var divList = $(".postsMainDiv");
