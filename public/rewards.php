@@ -178,26 +178,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
             </div>
         </div>
     </div><!-- working-process-section-->
-
-<?php
-
-  $query = "SELECT * from prousers";
-  $result = $conn->query($query);
-echo "<table class=table>";
-echo "<tr><th>Tokens</th><th>User</th><th>Total Points</th><th>Timestamp</th></tr>";
-
-if ($result && $result->num_rows > 0) {
-  while ($row = $result->fetch_assoc())
-  {
-    $timeof = date($row['last_points_update_time']);
-    echo "<tr><td>" . $row['amount'] . "</td><td>" . $row['username'] . "</td><td>" . $row['total_points'] . "</td><td>" . $timeof . "</td></tr>";
-  }
-}else {
-  echo "No results";
-}
-echo "</table>";
-?>
-    <?php $conn->close(); include('template/footer3.php'); ?>
+<?php $conn->close(); include('template/footer3.php'); ?>
 
     <script type="text/javascript">
     var countDownDate = 0;
