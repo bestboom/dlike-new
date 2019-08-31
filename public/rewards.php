@@ -30,7 +30,7 @@ $my_earnings = 0;
 // $permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
-echo $today_date = gmdate("d-m-Y");
+$today_date = gmdate("d-m-Y");
 
 $sql1 = "SELECT SUM(total_points) as pts FROM prousers where DATE(last_points_update_time)='$today_date'";
 $result1 = $conn->query($sql1);
@@ -189,7 +189,7 @@ echo "<tr><th>Tokens</th><th>User</th><th>Total Points</th><th>Timestamp</th></t
 if ($result && $result->num_rows > 0) {
   while ($row = $result->fetch_assoc())
   {
-    $timeof = date('d-m-Y', strtotime($row['last_points_update_time']));
+    $timeof = date($row['last_points_update_time']);
     echo "<tr><td>" . $row['amount'] . "</td><td>" . $row['username'] . "</td><td>" . $row['total_points'] . "</td><td>" . $timeof . "</td></tr>";
   }
 }else {
