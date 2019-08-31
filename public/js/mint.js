@@ -304,7 +304,7 @@
 
 
     // here starts dlike-steem-upvote
-    $('.latest-post-section').on("click", ".upvoting", function() {
+    $('.latest-post-section, #user_posts').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
         var voteauthor = $(this).attr("data-author");
 
