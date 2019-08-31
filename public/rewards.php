@@ -31,7 +31,6 @@ $my_earnings = 0;
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
 $today_date = gmdate("d-m-Y");
-
 $sql1 = "SELECT SUM(total_points) as pts FROM prousers where DATE(last_points_update_time)='$today_date'";
 $result1 = $conn->query($sql1);
 
@@ -42,8 +41,6 @@ if ($result1 && $result1->num_rows > 0)
 } else {
     $total_points = 0;
 }
-
-
 
 if (isset($_COOKIE['username']) || $_COOKIE['username'])
 {
@@ -121,7 +118,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                    <p class="DlikeComments"><?php print gmdate("d-m-Y"); ?>Rewards are updated at certain intervals. <?php print gmdate("Y-m-d\TH:i:s\Z"); ?></p>
+                    <p class="DlikeComments"><?php echo now(); ?>Rewards are updated at certain intervals.</p>
                     <div id="output"></div>
                 </div><!-- create-account-block -->
             </div>
