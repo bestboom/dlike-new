@@ -30,9 +30,9 @@ $my_earnings = 0;
 // $permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
-$today_date = gmdate("d-m-Y");
+$today_date = gmdate("Y-m-d");
 
-$sql1 = "SELECT SUM(total_points) as pts FROM prousers where DATE_FORMAT(last_points_update_time,'%d-%m-%y')='$today_date'";
+$sql1 = "SELECT SUM(total_points) as pts FROM prousers where DATE(last_points_update_time)='$today_date'";
 $result1 = $conn->query($sql1);
 
 if ($result1 && $result1->num_rows > 0) 
@@ -195,7 +195,7 @@ if ($result && $result->num_rows > 0) {
 }else {
   echo "No results";
 }
-echo "</table>";DATE_FORMAT(date,'%y-%m-%d') 
+echo "</table>";
 ?>
     <?php $conn->close(); include('template/footer3.php'); ?>
 
