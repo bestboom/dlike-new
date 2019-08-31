@@ -15,9 +15,9 @@ function echo_formatted_int($a){
   echo(number_format((float)$a, 0, '.', ''));
 }
 
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $total_reward = 7000;
 $user_status = "You Must Login";
