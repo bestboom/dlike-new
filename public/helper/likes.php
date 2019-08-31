@@ -7,12 +7,12 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$result = mysql_query("SHOW COLUMNS FROM prousers");
+$result = $conn->query("SHOW COLUMNS FROM prousers");
 if (!$result) {
-    echo 'Could not run query: ' . mysql_error();
+    echo 'Could not run query: ' . $conn->error;
     exit;
 }
-if (mysql_num_rows($result) > 0) {
+if ($result->num_rows > 0) {
     while ($row = mysql_fetch_assoc($result)) {
         print_r($row);
     }
