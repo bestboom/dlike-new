@@ -30,7 +30,8 @@ $my_earnings = 0;
 // $permlinks_list = array();
 // <! --------- ONLY FOR TESTING PURPOSES -------->
 
-$today_date = gmdate("d-m-Y");
+echo $today_date = gmdate("d-m-Y");
+
 $sql1 = "SELECT SUM(total_points) as pts FROM prousers where DATE(last_points_update_time)='$today_date'";
 $result1 = $conn->query($sql1);
 
