@@ -15,9 +15,9 @@ function echo_formatted_int($a){
   echo(number_format((float)$a, 0, '.', ''));
 }
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 $total_reward = 7000;
 $user_status = "You Must Login";
@@ -118,7 +118,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                    <p class="DlikeComments"><?php echo now(); ?>Rewards are updated at certain intervals.</p>
+                    <p class="DlikeComments">Rewards are updated at certain intervals.</p>
                     <div id="output"></div>
                 </div><!-- create-account-block -->
             </div>
