@@ -170,6 +170,24 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
             </div>
         </div>
     </div><!-- working-process-section-->
+
+<?php
+
+  $query = "SELECT * from dailyRewards ORDER BY created_time ASC";
+  $result = $conn->query($query);
+echo "<table class=table>";
+echo "<tr><th>Tokens</th><th>User</th><th>Total Points</th><th>Timestamp</th></tr>";
+
+if ($result && $result->num_rows > 0) {
+  while ($row = $result->fetch_assoc())
+  {
+    echo "<tr><td>" . $row['tokens'] . "</td><td>" . $row['username'] . "</td><td>" . $row['total_points'] . "</td><td>" . $row['created_time'] . "</td></tr>";
+  }
+}else {
+  echo "No results";
+}
+echo "</table>";
+?>
     <?php $conn->close(); include('template/footer3.php'); ?>
 
     <script type="text/javascript">
