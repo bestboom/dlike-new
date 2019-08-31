@@ -115,48 +115,6 @@
 		$("#PostStatusModal").modal('show');
 	}
 
-	function openuser_popup(self){
-		var permlink = $(self).data('permlink');
-		var author = $(self).data('author');
-		var category = $(self).data('category');
-		$("#pu_username").val(author);
-		$("#pu_permlink").val(permlink);
-		$("#pu_category").val(category);
-		$.ajax({
-			type: "POST",
-			url: '/helper/getuserpoststatus.php',
-			data:{'author':author},
-			dataType: 'json',
-			success: function(response) {
-				if(response.status == "OK") 
-				{
-					var all_status = response.setstatus;
-					$("#userstatus_select").val(all_status);
-					$("#userPostStatusModal").modal('show');
-				}
-				else 
-				{
-					$("#userstatus_select").val('');
-					$("#userPostStatusModal").modal('show');
-				}
-			}
-		});
-	}
-
-	function openfeaturedmodal_popup(self){
-		var permlink = $(self).data('permlink');
-		var author = $(self).data('author');
-		var category = $(self).data('category');
-		var imgurl = $(self).data('imgurl');
-		var title = $(self).data('title');
-		$("#pf_username").val(author);
-		$("#pf_permlink").val(permlink);
-		$("#pf_category").val(category);
-		$("#pf_imgurl").val(imgurl);
-		$("#pf_title").val(title);
-		$("#featuredPostStatusModal").modal('show');
-	}
-
 	$(document).ready(function(){
 	//$("#loader").show();
 	var savepoststatus=$('#savepoststatus');
@@ -261,65 +219,6 @@
 		});
 	});
 
-	
-	savepoststatus.click(function(){
-
-		var p_username = $("#p_username").val();
-		var p_permlink = $("#p_permlink").val();
-		var p_category = $("#p_category").val();
-		var p_status = $("#status_select").val();
-		if(p_status == ""){
-			alert("Please select status.");
-			return false;
-		}
-
-		$.ajax({
-			type: "POST",
-			url: '/helper/poststatus.php',
-			data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
-			dataType: 'json',
-			success: function(response) {
-				if(response.status == "OK") 
-				{
-					toastr.success(response.message);
-					$('#PostStatusModal').modal('hide');
-
-					var all_status = p_status;
-					if(all_status == "Rejected") 
-					{
-						var colorset = 'red';
-						$('#status_icon' + p_permlink + p_username).css({"color": colorset});
-						$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
-					}
-					else if(all_status == "Low Level") 
-					{
-						var colorset = 'blue';
-						$('#status_icon' + p_permlink + p_username).css({"color": colorset});
-						$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
-					}
-					else if(all_status == "High Level") 
-					{
-						var colorset = 'green';
-						$('#status_icon' + p_permlink + p_username).css({"color": colorset});
-						$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
-					}
-
-				}
-				else 
-				{
-					$('#PostStatusModal').modal('hide');
-					toastr.error(response.message);
-					return false;
-				}
-			},
-			error: function() {
-				$('#PostStatusModal').modal('hide');
-				toastr.error('Error occured');
-				return false;
-			}
-		});
-	});
-		
 
 	var catname = '<?php echo $_GET['cat'];?>';
 	
