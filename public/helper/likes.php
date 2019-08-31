@@ -13,7 +13,7 @@ if (!$result) {
     exit;
 }
 if ($result->num_rows > 0) {
-    while ($row = mysql_fetch_assoc($result)) {
+    while ($row = $result->fetch_assoc()) {
         print_r($row);
     }
 }
