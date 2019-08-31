@@ -7,6 +7,12 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+
+/*'
+
+
+
 $result = $conn->query("SHOW COLUMNS FROM prousers");
 if (!$result) {
     echo 'Could not run query: ' . $conn->error;
@@ -19,7 +25,6 @@ if ($result->num_rows > 0) {
 }
 
 
-/*'
 
 
 $sql = "ALTER TABLE prousers ADD last_points_update_time TIMESTAMP";
