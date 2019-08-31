@@ -8,7 +8,12 @@ require '../includes/config.php';
 
 
 
-
+$sql = "ALTER TABLE prousers ADD last_points_update_time TIMESTAMP";
+if ($conn->query($sql) === TRUE) {
+    echo "Table timer added";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
 
 
 /*'
