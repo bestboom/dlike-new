@@ -180,7 +180,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
 
 <?php
 
-  $query = "SELECT * from dailyRewards ORDER BY created_time ASC";
+  $query = "SELECT * from prousers";
   $result = $conn->query($query);
 echo "<table class=table>";
 echo "<tr><th>Tokens</th><th>User</th><th>Total Points</th><th>Timestamp</th></tr>";
@@ -188,8 +188,8 @@ echo "<tr><th>Tokens</th><th>User</th><th>Total Points</th><th>Timestamp</th></t
 if ($result && $result->num_rows > 0) {
   while ($row = $result->fetch_assoc())
   {
-    $timeof = date('d-m-Y', strtotime($row['created_time']));
-    echo "<tr><td>" . $row['tokens'] . "</td><td>" . $row['username'] . "</td><td>" . $row['total_points'] . "</td><td>" . $timeof . "</td></tr>";
+    $timeof = date('d-m-Y', strtotime($row['last_points_update_time']));
+    echo "<tr><td>" . $row['amount'] . "</td><td>" . $row['username'] . "</td><td>" . $row['total_points'] . "</td><td>" . $timeof . "</td></tr>";
   }
 }else {
   echo "No results";
