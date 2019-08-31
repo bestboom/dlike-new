@@ -32,7 +32,7 @@ $my_earnings = 0;
 
 $today_date = gmdate("d-m-Y");
 
-$sql1 = "SELECT SUM(total_points) as pts FROM prousers where DATE(last_points_update_time)='$today_date'";
+$sql1 = "SELECT SUM(total_points) as pts FROM prousers where DATE_FORMAT(last_points_update_time,'%y-%m-%d')='$today_date'";
 $result1 = $conn->query($sql1);
 
 if ($result1 && $result1->num_rows > 0) 
@@ -195,7 +195,7 @@ if ($result && $result->num_rows > 0) {
 }else {
   echo "No results";
 }
-echo "</table>";
+echo "</table>";DATE_FORMAT(date,'%y-%m-%d') 
 ?>
     <?php $conn->close(); include('template/footer3.php'); ?>
 
