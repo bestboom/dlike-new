@@ -181,7 +181,7 @@ echo "<tr><th>Tokens</th><th>User</th><th>Total Points</th><th>Timestamp</th></t
 if ($result && $result->num_rows > 0) {
   while ($row = $result->fetch_assoc())
   {
-    $timeof = DATE($row['created_time']);
+    $timeof = date('d-m-Y', $row['created_time']);
     echo "<tr><td>" . $row['tokens'] . "</td><td>" . $row['username'] . "</td><td>" . $row['total_points'] . "</td><td>" . $timeof . "</td></tr>";
   }
 }else {
