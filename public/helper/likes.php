@@ -7,14 +7,14 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+/*'
+
 $sql = "ALTER TABLE dailyRewards ADD distribute_time TIMESTAMP";
 if ($conn->query($sql) === TRUE) {
     echo "Table timer added";
 } else {
     echo "Error updating table: " . $conn->error;
 }
-
-/*'
 
 
 
