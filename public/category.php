@@ -86,7 +86,7 @@
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="#">' + username + "&nbsp;" +adduserhtml +'</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
+					'<h5><a href="#">' + username +'</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -130,7 +130,7 @@
 						if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
 						let steemTags = metadata.tags;
 						let dlikeTags = steemTags.slice(2);
-						let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/'+ meta +'">' + meta + ' </a>' });
+						let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/'+ meta +'"> #' + meta + ' </a>' });
 						let post_description = metadata.body;
 						let title = res.title;
 					//let created = res.created;
