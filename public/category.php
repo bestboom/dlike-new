@@ -68,55 +68,9 @@
 					var ucolorset = '';
 					var show_status = '';
 
-					if(c_username == "dlike") {
 
-						addfeaturedhtml += '<a id="featuredstatus_icon'+permlink +username +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-imgurl="' + imgsrc + '" data-title="' + titleset + '" data-category="' + categoryset + '"><i class="fa fa-plus" id="featuredpost_status'+permlink +username +'"></i></a><span>&nbsp; | &nbsp;';
-
-						var add_onclick = 'onclick="return openmodal_popup(this)"';
-						var colorset = '';
-						if(poststatus == "Rejected") {
-							colorset = 'style="color:red"';
-							add_onclick =  '';
-
-						}
-						else if(poststatus == "Low Level") {
-							colorset = 'style="color:blue"';
-							add_onclick =  '';
-
-						}
-						else if(poststatus == "High Level") {
-							colorset = 'style="color:green"';
-							add_onclick =  '';
-
-						}
-						addposthtml = '<a '+colorset+' id="status_icon'+permlink +username+'" '+add_onclick+' class="showcursor" data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fas fa-check-circle" id="post_status'+permlink +username +'"></i></a><span>&nbsp; ';
-						add_onclick2 = 'onclick="return openuser_popup(this)"';
-						ucolorset = 'style="color:gray;"';
-						show_status = 'yes';
-					}
 					var mylabel = permlink +username;
 					var newValue = mylabel.replace('.', '');
-
-					if(userstatus == "0") {
-						ucolorset = 'style="color:black"';
-						show_status = "yes";
-					}
-					else if(userstatus == "1") {
-						ucolorset = 'style="color:orange"';
-						show_status = "yes";
-					}
-					else if(userstatus == "2") {
-						ucolorset = 'style="color:green"';
-						show_status = "yes";
-					}
-					else if(userstatus == "3") {
-						ucolorset = 'style="color:green"';
-						show_status = "yes";
-					}
-
-					if(show_status == 'yes') {
-						adduserhtml += '<a '+ucolorset+' class="userstatus_icon'+newValue+' showcursor" '+add_onclick2+' data-permlink="' + permlink + '" data-author="' + username + '" data-category="' + categoryset + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
-					}
 
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv '+currentLikesDivElement+'" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
