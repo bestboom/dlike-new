@@ -3,7 +3,7 @@
     
 <div class="latest-post-section" style="min-height:80vh;">
 	<div class="container">
-		<div class="row  align-items-center h-100 myloader" style="margin-bottom:30px;">
+		<div class="row  align-items-center h-100" style="margin-bottom:30px;">
 			<div class="row col-md-3 justify-content-center">
 				<h4 class="lab_post">
 					<?php echo $_GET['cat'];?>
@@ -41,7 +41,7 @@
 		success: function(response) {
 			if(response.status == "OK") {
 				var resulthtml = response.data_row;
-				
+
 				for(i=0;i<resulthtml.length;i++) {
 
 					var responsehtml = '';
