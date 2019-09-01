@@ -157,6 +157,7 @@
 
 
 					steem.api.getActiveVotes(author, permlink, function(err, result) {
+						console.log(result)
 						if(result === Array) {
 							var voterList = result;
 						} else {
