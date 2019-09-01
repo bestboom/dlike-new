@@ -150,26 +150,27 @@
 						$('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
 						$('#article_'+permlink+' span.active_votes').html("&nbsp; | "+res.active_votes.length+" Votes");
 
-					});
 
-
-					steem.api.getActiveVotes(author, permlink, function(err, result) {
-						if(result === Array) {
-							var voterList = result;
-						} else {
-							var voterList = [];
-						}
-						if(!(voterList === Array)) {
-							voterList = [];
-						}
-						var voterList = result;
-						for (let j = 0; j < voterList.length; j++) {
-							if (voterList[j].voter == c_username) { 
-								$("#vote_icon" + permlink + author).css("color", "RED"); 
-								$('#vote_icon' + permlink + author).click(function(){return false;});
-								$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+						steem.api.getActiveVotes(author, permlink, function(err, result) {
+							if(result === Array) {
+								var voterList = result;
+							} else {
+								var voterList = [];
 							}
-						}                        
+							if(!(voterList === Array)) {
+								voterList = [];
+							}
+							var voterList = result;
+							for (let j = 0; j < voterList.length; j++) {
+								if (voterList[j].voter == c_username) { 
+									$("#vote_icon" + permlink + author).css("color", "RED"); 
+									$('#vote_icon' + permlink + author).click(function(){return false;});
+									$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+								}
+							}                        
+						});
+											
+
 					});
 				}
 				$("#loader").hide();
