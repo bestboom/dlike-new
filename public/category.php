@@ -27,16 +27,6 @@
 <?php include('template/footer3.php'); ?>
 <script>
 
-	function openmodal_popup(self){
-		var permlink = $(self).data('permlink');
-		var author = $(self).data('author');
-		var category = $(self).data('category');
-		$("#p_username").val(author);
-		$("#p_permlink").val(permlink);
-		$("#p_category").val(category);
-		$("#PostStatusModal").modal('show');
-	}
-
 	$(document).ready(function(){
 	//$("#loader").show();
 	var savepoststatus=$('#savepoststatus');
@@ -120,7 +110,7 @@
 						show_status = "yes";
 					}
 					else if(userstatus == "3") {
-						ucolorset = 'style="color:red"';
+						ucolorset = 'style="color:green"';
 						show_status = "yes";
 					}
 
@@ -166,7 +156,7 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span class="pending_payout_value"></span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +username +'">0</span></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments">'+addfeaturedhtml+addposthtml+'| &nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span class="active_votes">&nbsp; |  Votes</span></div>\n' +
+					'<div class="post-comments">&nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + username + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +username +'"></i></a><span class="active_votes">&nbsp; |  Votes</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 					'</article></div>';
