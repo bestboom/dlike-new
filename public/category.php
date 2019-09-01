@@ -1,6 +1,6 @@
 <?php include('template/header5.php');  ?>
 </div><!-- sub-header -->
-    
+<div id="p_cover" class="img-fluid"></div>    
 <div class="latest-post-section" style="min-height:80vh;">
 	<div class="container">
 		<div class="row  align-items-center h-100" style="margin-bottom:30px;">
@@ -164,8 +164,6 @@
 								}
 							}                        
 						});
-
-
 					});
 				}
 				$("#loadings").hide();
@@ -176,6 +174,5 @@
 			}
 		}
 	});
-
 });
 </script>
