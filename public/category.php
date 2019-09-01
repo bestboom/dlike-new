@@ -28,11 +28,7 @@
 <script>
 
 	$(document).ready(function(){
-	$('#loadings').delay(6000).fadeOut('slow');
-	//var savepoststatus=$('#savepoststatus');
-	//var saveuserpoststatus=$('#saveuserpoststatus');
-	//var savefeaturedpoststatus=$('#savefeaturedpoststatus');
-	//var c_username = $('#c_username').val();
+	$('#loadings').delay(4000).fadeOut('slow');
 
 	var c_username = '<?php echo $_COOKIE['username']; ?>';
 	var catname = '<?php echo $_GET['cat'];?>';
@@ -46,7 +42,6 @@
 			if(response.status == "OK") {
 				var resulthtml = response.data_row;
 				
-				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 				for(i=0;i<resulthtml.length;i++) {
 
 					var responsehtml = '';
@@ -169,17 +164,15 @@
 								}
 							}                        
 						});
-											
+
 
 					});
 				}
-				$("#loader").hide();
-				$(".myloader").css('display','flex');
+				$("#loadings").hide();
 			}
 			else {
-				//$("#loader").hide();
-				//$(".myloader").css('display','flex');
-				$("#contentposts").append("No posts found.");
+				$("loadings").hide();
+				$("#contentposts").append("<center><h2>No posts found.</h2></center>");
 			}
 		}
 	});
