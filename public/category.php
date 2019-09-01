@@ -11,7 +11,7 @@
 			</div>
 			<div class="col-md-9 lay">&nbsp;</div>
 		</div>
-		<!--  <div id="loader">Loading</div> -->
+		<div id="loadings"><img src="/images/loader.svg" width="100"></div>
 		<div class="row" id="contentposts"></div>
 	</div>
 </div>
@@ -28,7 +28,7 @@
 <script>
 
 	$(document).ready(function(){
-	//$("#loader").show();
+	$('#loadings').delay(6000).fadeOut('slow');
 	//var savepoststatus=$('#savepoststatus');
 	//var saveuserpoststatus=$('#saveuserpoststatus');
 	//var savefeaturedpoststatus=$('#savefeaturedpoststatus');
@@ -55,14 +55,14 @@
 					var timstamp = resulthtml[i]['created_at'];
 					var permlink = resulthtml[i]['permlink'];
 					var auth_name = resulthtml[i]['username'];
-					conole.log(auth_name);
+					console.log(auth_name);
 					var imgsrc =  resulthtml[i]['imgsrc'];
 					var categoryset = resulthtml[i]['category'];
 					var titleset = resulthtml[i]['title'];
 					var userstatus = resulthtml[i]['userstatus'];
 					var poststatus = resulthtml[i]['poststatus'];
 					var author = auth_name;
-					conole.log(author);
+					console.log(author);
 					var adduserhtml = "";
 					var addfeaturedhtml = "";
 					var addposthtml = "";
