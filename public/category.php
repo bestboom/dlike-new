@@ -156,7 +156,7 @@
 					});
 
 
-					steem.api.getActiveVotes(author_name, permlink, function(err, result) {
+					steem.api.getActiveVotes(author, permlink, function(err, result) {
 						if(result === Array) {
 							var voterList = result;
 						} else {
