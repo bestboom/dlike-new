@@ -157,7 +157,6 @@
 
 
 					steem.api.getActiveVotes(author, permlink, function(err, result) {
-						console.log(result)
 						if(result === Array) {
 							var voterList = result;
 						} else {
@@ -167,8 +166,10 @@
 							voterList = [];
 						}
 						var voterList = result;
+						console.log(voterList)
 						for (let j = 0; j < voterList.length; j++) {
 							if (voterList[j].voter == c_username) { 
+								console.log('yes')
 								$("#vote_icon" + permlink + author).css("color", "RED"); 
 								$('#vote_icon' + permlink + author).click(function(){return false;});
 								$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
