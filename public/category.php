@@ -55,20 +55,14 @@
 					var timstamp = resulthtml[i]['created_at'];
 					var permlink = resulthtml[i]['permlink'];
 					var auth_name = resulthtml[i]['username'];
-					console.log(auth_name);
 					var imgsrc =  resulthtml[i]['imgsrc'];
 					var categoryset = resulthtml[i]['category'];
 					var titleset = resulthtml[i]['title'];
 					var userstatus = resulthtml[i]['userstatus'];
 					var poststatus = resulthtml[i]['poststatus'];
 					var author = auth_name;
-					console.log(author);
-					var adduserhtml = "";
-					var addfeaturedhtml = "";
-					var addposthtml = "";
 					var add_onclick2 = '';
 					var ucolorset = '';
-					var show_status = '';
 
 
 					var mylabel = permlink +author;
@@ -84,11 +78,11 @@
 					'\n' +
 					'<div class="post-author-block">\n' +
 					'\n' +
-					'<div class="author-thumb"><a href="#"><img src="https://steemitimages.com/u/' + author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+					'<div class="author-thumb"><a href="/@' + author + '"><img src="https://steemitimages.com/u/' + author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="#">' + author +'</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author +'</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -104,7 +98,7 @@
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
-					'<h4 class="post-title"><a href="" target="_blank"></a></h4>\n' +
+					'<h4 class="post-title"><a href=""></a></h4>\n' +
 					'\n' +
 					'<p class="post-entry post-tags"></p>\n' +
 					'\n' +
@@ -145,11 +139,12 @@
 						var permlink = res.permlink;
 						var metatags =  posttags;
 						var exturl =   metadata.url;;
+						let post_link = '/post/@' + author + '/' + permlink + '';
 						var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 						$('#article_'+permlink+' span.post-meta').html(category);
 						$('#article_'+permlink+' a.post_detail').html(thumbnail);
-						$('#article_'+permlink+' h4.post-title a').attr('href',exturl);
+						$('#article_'+permlink+' h4.post-title a').attr('href',post_link);
 						$('#article_'+permlink+' h4.post-title a').html(title);
 						$('#article_'+permlink+' p.post-tags').html(metatags);
 						$('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
@@ -168,10 +163,8 @@
 							voterList = [];
 						}
 						var voterList = result;
-						console.log(voterList)
 						for (let j = 0; j < voterList.length; j++) {
 							if (voterList[j].voter == c_username) { 
-								console.log('yes')
 								$("#vote_icon" + permlink + author).css("color", "RED"); 
 								$('#vote_icon' + permlink + author).click(function(){return false;});
 								$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
