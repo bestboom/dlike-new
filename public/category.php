@@ -138,7 +138,7 @@
 						let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 						let author = res.author;
 						let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-						var author = author;
+						var author_name = author;
 						var created_at = created;
 						var permlink = res.permlink;
 						var metatags =  posttags;
@@ -156,7 +156,7 @@
 					});
 
 
-					steem.api.getActiveVotes(author, permlink, function(err, result) {
+					steem.api.getActiveVotes(author_name, permlink, function(err, result) {
 						if(result === Array) {
 							var voterList = result;
 						} else {
