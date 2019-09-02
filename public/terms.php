@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="info-sec">
 		<h1>Terms and Conditions</h1>
-
+		<p>Last Updated At: August 4th, 2018</p>
 		<p>These Terms of Service ("Terms") apply to your access to and use of dlike.io and any other products or services that link to these Terms ("DLIKE"). DLIKE is a dapp on steem blockchain developed by BlockTalk Solutions Company (“DLIKE, “we” or “us”. By accessing or using DLIKE, you agree to be bound by these Terms. If you do not agree to these Terms, do not access or use DLIKE. If we make changes to these Terms, we will provide notice of those changes by updating the "Last Updated" date above or posting notice on DLIKE (website, mobile apps). Your continued use of DLIKE services will confirm your acceptance of the changes.</p>
 		<p>You understand and agree that these Terms apply solely to your access to and use of DLIKE services and that, when you use other DLIKE services such as mobile apps, browser extensions and website, the terms and policies particular to those services apply.</p>
 		<h2>1. Privacy Policy</h2>
