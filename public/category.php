@@ -3,14 +3,10 @@
 <div id="p_cover" class="img-fluid"></div>    
 <div class="latest-post-section" style="min-height:80vh;">
 	<div class="container">
-		<div class="row  align-items-center h-100" style="margin-bottom:30px;">
-			<div><i class="fas fa-atom"></i> Latest posts shared in <?php echo $_GET['cat'];?> category.</div>
-			<div class="row col-md-3 justify-content-center">
-				<h4 class="lab_post">
-					<?php echo $_GET['cat'];?>
-				</h4>
+		<div class="row" style="margin: 0px 15px 25px;">
+			<div>
+				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;"></i> <span style="font-weight: 600;">Latest posts shared in <?php echo $_GET['cat'];?> category.</span>
 			</div>
-			<div class="col-md-9 lay">&nbsp;</div>
 		</div>
 		<div id="loadings"><img src="/images/loader.svg" width="100"></div>
 		<div class="row" id="contentposts"></div>
