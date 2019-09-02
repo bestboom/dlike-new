@@ -7,7 +7,7 @@
 		<p>These Terms of Service ("Terms") apply to your access to and use of dlike.io and any other products or services that link to these Terms ("DLIKE"). DLIKE is a dapp on steem blockchain developed by BlockTalk Solutions Company (“DLIKE, “we” or “us”. By accessing or using DLIKE, you agree to be bound by these Terms. If you do not agree to these Terms, do not access or use DLIKE. If we make changes to these Terms, we will provide notice of those changes by updating the "Last Updated" date above or posting notice on DLIKE (website, mobile apps). Your continued use of DLIKE services will confirm your acceptance of the changes.</p>
 		<p>You understand and agree that these Terms apply solely to your access to and use of DLIKE services and that, when you use other DLIKE services such as mobile apps, browser extensions and website, the terms and policies particular to those services apply.</p>
 		<h2>1. Privacy Policy</h2>
-		<p>Please refer to our <a href="/privacy" target="_blank">Privacy Policy</a> for information about how we collect, use and disclose information about you.</p>
+		<p>Please refer to our <a href="/privacy">Privacy Policy</a> for information about how we collect, use and disclose information about you.</p>
 		<h2>2. Eligibility</h2>
 		<p>DLIKE is not targeted towards, nor intended for use by, anyone under the age of 18. You must be at least 18 years of age to access or use DLIKE.</p>
 		<h2>3. Copyright and Limited License</h2>
@@ -87,7 +87,7 @@
 		<h2>21. Severability</h2>
 		<p>If any term, clause or provision of these Terms is deemed to be unlawful, void or for any reason unenforceable, then that term, clause or provision shall be deemed severable from these Terms and shall not affect the validity and enforceability of any remaining provisions.</p>
 		<h2>22. Questions & Contact Information</h2>
-		<p>Questions or comments about DLIKE services can be directed to admin&#64;dlik.io</p>
+		<p>Questions or comments about DLIKE services can be directed to <b>admin&#64;dlik.io</b></p>
 
 	</div>	
 </div>
