@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="info-sec">
 		<h1>Privacy Policy</h1>
-		<p>Last Updated At: August 4th, 2018</p>
+		<p><b>Last Updated At: August 4th, 2018</b></p>
 		<p>This Privacy Policy describes how DLIKE collectively referred to as "dlike.io" (or "we" or "us" or "our") collects, uses, and handles your data when you use our website, products and services ("Services"). Please take the time to carefully read through this policy. As you use our Services, we want to be clear how DLIKE uses your information and how your privacy is protected. By using the Services, you consent to the data practices detailed in this policy.</p>
 		<h2>1. Information You Provide to Us</h2>
 		<p>We collect information you provide directly to us when you use our Services. Depending on which Service you use, we may collect different information about you. <br>
@@ -81,6 +81,7 @@
 		<h2>9. Changes</h2>
 		<p>We may change this Privacy Policy from time to time. If we do, we will let you know by revising the date at the top of the policy. If we make a change to this policy that, in our sole discretion, is material, we will provide you with additional notice (such as adding a statement to announcements on our social channels, the front page of the Services or sending you a notification). We encourage you to review the Privacy Policy whenever you access or use our Services or otherwise interact with us to stay informed about our information practices and the ways you can help protect your privacy. If you continue to use our Services after Privacy Policy changes go into effect, you consent to the revised policy.</p>
 		<h2>10. Contact Us</h2>
+		<p>You can check our <a href="/cookies">cookies policy</a> here.</p>
 		<p>If you have any questions about this Privacy Policy, please email admin&#64;dlik.io.</p>
 
 	</div>	
