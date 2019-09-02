@@ -20,6 +20,7 @@ RewriteRule ^explorer$ ./explorer.php
 RewriteRule ^wallet$ ./wallet.php
 RewriteRule ^share$ ./share.php
 RewriteRule ^privacy$ ./privacy.php
+RewriteRule ^terms$ ./terms.php
 RewriteRule ^how-it-works$ ./how-it-works.php
 RewriteRule ^wallets/(.*)$ ./wallets.php?user=$1
 RewriteRule ^@/?(.*)$ ./profile.php?user=$1
