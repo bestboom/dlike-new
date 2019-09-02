@@ -170,7 +170,7 @@ include('template/header5.php');
 			else {
 				$("#loadings").hide();
 				var noposthtml = '';
-					noposthtml = '<div style="background: #eee;width: 60%;padding: 30px;border-radius: 7px;text-align: center;">\n' +
+					noposthtml = '<div style="background: #eee;width: 60%;padding: 30px;border-radius: 7px;text-align: center;flex-grow:1;margin-top:8%;">\n' +
 					'\n' +
 					'<div><i class="fas fa-frown" style="color: #c51d24;font-size: 5rem;"></i>\n' +
 					'\n' +
