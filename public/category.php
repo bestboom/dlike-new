@@ -170,17 +170,17 @@ include('template/header5.php');
 			else {
 				$("#loadings").hide();
 				var noposthtml = '';
-					noposthtml = '<div style="background: #eee;width: 40%;padding: 30px;border-radius: 7px;text-align: center;">\n' +
+					noposthtml = '<div class="row" style="justify-content: center;"><div style="background: #eee;width: 60%;padding: 30px;border-radius: 7px;text-align: center;">\n' +
 					'\n' +
 					'<div><i class="fas fa-frown" style="color: #c51d24;font-size: 5rem;"></i>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
-					'<div style="padding: 20px;"><h3 style="font-weight:600;color:#c51d24;font-size:1.5rem;">No posts found</h3>\n' +
+					'<div style="padding: 20px;"><h3 style="font-weight:600;color:#c51d24;">No Posts Found</h3>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
-					'</div>';				
+					'</div></div>';				
 				$("#contentposts").append(noposthtml);
 			}
 		}
