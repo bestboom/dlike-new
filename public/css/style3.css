@@ -2045,7 +2045,7 @@ justify-content: space-between;}
 .info-sec h1{font-size: 2rem;font-weight: 600;}
 .info-sec h2{font-weight: 600;font-size: 1.5rem;}
 .info-sec h3{font-size: 1.1rem;font-weight: 600;}
-.info-sec p{font-size: 0.9rem;line-height: 24px;}
+.info-sec p{font-size: 0.9rem;line-height: 24px;margin-bottom: 15px !important;}
 .info-sec a{color: blue;}
 /*
 |----------------------------------------------------------------------------
