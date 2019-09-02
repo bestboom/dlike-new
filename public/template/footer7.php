@@ -1,4 +1,4 @@
-    <div class="colto-section">
+    <div class="colto-section" style="padding: 30px 0;">
         <div class="container">
             <div class="colto-content-wrap">
                 <div class="colto-content">
@@ -14,7 +14,7 @@
         </div>
     </div><!-- colto-section -->
     <footer class="footer">
-        <div class="footer-upper-section" style="padding: 80px 0 !important;">
+        <div class="footer-upper-section" style="padding: 50px 0 30px !important;">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-4">
