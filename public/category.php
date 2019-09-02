@@ -4,6 +4,7 @@
 <div class="latest-post-section" style="min-height:80vh;">
 	<div class="container">
 		<div class="row  align-items-center h-100" style="margin-bottom:30px;">
+			<div><i class="fas fa-atom"></i> Latest posts shared in <?php echo $_GET['cat'];?> category.</div>
 			<div class="row col-md-3 justify-content-center">
 				<h4 class="lab_post">
 					<?php echo $_GET['cat'];?>
