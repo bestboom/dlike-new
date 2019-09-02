@@ -1,11 +1,13 @@
-<?php include('template/header5.php');  ?>
+<?php
+include('template/header5.php');  
+?>
 </div><!-- sub-header -->
 <div id="p_cover" class="img-fluid"></div>    
 <div class="latest-post-section" style="min-height:80vh;padding: 35px 0 60px 0;">
 	<div class="container">
 		<div class="row" style="margin: 0px 1px 25px;">
 			<div style="background: #eceff199;min-width: 100%;padding: 5px;">
-				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;margin-left: 10px;"></i> <span style="font-weight: 600;padding-left: 10px;">Latest posts shared in <?php echo $_GET['cat'];?> category.</span>
+				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;margin-left: 10px;"></i> <span style="font-weight: 600;padding-left: 10px;">Latest posts shared in <?php echo ucfirst($_GET['cat']);?> category.</span>
 			</div>
 		</div>
 		<div id="loadings"><img src="/images/loader.svg" width="100"></div>
