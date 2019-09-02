@@ -52,6 +52,20 @@
 		<p>DLIKE reserves the right, without notice and in our sole discretion, to terminate your license to access and use DLIKE and to block or prevent your future access to and use of DLIKE. In the event of termination, your access to funds will depend on your access to your backup of your Account data including your Account Name and Private Keys on steemit wallet.</p>
 		<h2>15. Modifications to DLIKE</h2>
 		<p>DLIKE reserves the right to modify or discontinue, temporarily or permanently, DLIKE, or any features or portions of DLIKE, without prior notice. You agree that DLIKE will not be liable for any modification, suspension or discontinuance of DLIKE, or any part of DLIKE.</p>
+		<h2>16. User Conduct</h2>
+		<p>15.1. When accessing or using DLIKE Services, you agree that you will not commit any unlawful act, and that you are solely responsible for your conduct while using DLIKE Services. Without limiting the generality of the foregoing, you agree that you will not:</p>
+		<p>
+			<li>15.1.1. Use our Services in any manner that could interfere with, disrupt, negatively affect or inhibit other users from fully enjoying our Services, or that could damage, disable, overburden or impair the functioning of our Services in any manner;</li>
+			<li>15.1.2. Use our Services to pay for, support or otherwise engage in any illegal activities, including, but not limited to illegal gambling, fraud, money- laundering, or terrorist activities;</li>
+			<li>15.1.3. Use any robot, spider, crawler, scraper or other automated means or interface not provided by us to access our Services or to extract data;</li>
+			<li>15.1.4. Use or attempt to use another user’s Wallet without authorization;</li>
+			<li>15.1.5. Attempt to circumvent any content moderation and curation techniques we employ, or attempt to access any service or area of our Services that you are not authorized to access;</li>
+			<li>15.1.6. Introduce to the Services any virus, Trojan, worms, logic bombs or other harmful material;</li>
+			<li>15.1.7. Develop any third-party applications that interact with our Services without our prior written consent;</li>
+			<li>15.1.8. Provide false, inaccurate, or misleading information; or</li>
+			<li>15.1.9. Encourage or induce any third party to engage in any of the activities prohibited under liability Section;</li>
+			<li>15.1.10. Reverse engineer any aspect of DLIKE or do anything that might discover source code or bypass or circumvent measures employed to prevent or limit access to any DLIKE Content, area or code of DLIKE.</li>
+		</p>
 		<h2>16. Feedback</h2>
 		<p>You may submit questions, comments, feedback, suggestions, and other information regarding DLIKE (we call this "Feedback"). You acknowledge and agree that Feedback is non-confidential and will become the sole property of DLIKE. DLIKE shall own exclusive rights, including, without limitation, all intellectual property rights, in and to such Feedback and is entitled to the unrestricted use and dissemination of this Feedback for any purpose, without acknowledgment or compensation to you. You agree to execute any documentation required by DLIKE to confirm such assignment to DLIKE.</p>
 		<h2>17. Copyright Complaints</h2>
