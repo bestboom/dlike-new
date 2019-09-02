@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row" style="margin: 0px 15px 25px;">
 			<div>
-				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;"></i> <span style="font-weight: 600;">Latest posts shared in <?php echo $_GET['cat'];?> category.</span>
+				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;"></i> <span style="font-weight: 600;padding-left: 10px;">Latest posts shared in <?php echo $_GET['cat'];?> category.</span>
 			</div>
 		</div>
 		<div id="loadings"><img src="/images/loader.svg" width="100"></div>
