@@ -23,9 +23,16 @@
 		<p>6.2. We will use reasonable endeavors to verify the accuracy of any information on the Service but we make no representation or warranty of any kind, express or implied, statutory or otherwise, regarding the contents of the Service, information and functions made accessible through the Service, any hyperlinks to third party websites, nor for any breach of security associated with the transmission of information through the Service or any website linked to by the Service.</p>
 		<p>6.3. We will not be responsible or liable to you for any loss and take no responsibility for and will not be liable to you for any use of DLIKE Services, including but not limited to any losses, damages or claims arising from: (a) User error such as forgotten passwords, incorrectly constructed transactions, or mistyped STEEM addresses; (b) Server failure or data loss; (c) Corrupted Account files; (d) Unauthorized access to applications; (e) Any unauthorized third party activities, including without limitation the use of viruses, phishing, brute forcing or other means of attack against the Service or Services.</p>
 		<p>6.4. We make no warranty that the Service or the server that makes it available, are free of viruses or errors, that its content is accurate, that it will be uninterrupted, or that defects will be corrected. We will not be responsible or liable to you for any loss of any kind, from action taken, or taken in reliance on material, or information, contained on the Service.</p>
-		<p>6.5. Subject to 8.1 below, any and all indemnities, warranties, terms and conditions (whether express or implied) are hereby excluded to the fullest extent permitted under applicable law.</p>
+		<p>6.5. Subject to 7.1 below, any and all indemnities, warranties, terms and conditions (whether express or implied) are hereby excluded to the fullest extent permitted under applicable law.</p>
 		<p>6.6. We will not be liable, in contract, or tort (including, without limitation, negligence), other than where we have been fraudulent or made negligent misrepresentations.</p>
 		<p>6.7. Nothing in these Terms excludes or limits liability for death or personal injury caused by negligence, fraudulent misrepresentation, or any other liability which may not otherwise be limited or excluded under applicable law.</p>
+		<h2>7. Agreement to Hold DLIKE Harmless</h2>
+		<p>7.1. You agree to hold harmless DLIKE (and each of our officers, directors, members, employees, moderators, agents and affiliates) from any claim, demand, action, damage, loss, cost or expense, including without limitation reasonable legal fees, arising out or relating to:</p>
+		<li>7.1.1. Your use of, or conduct in connection with, our Services;</li>
+		<li>7.1.2. Any feedback or submissions you provide (see 17 below);</li>
+		<li>7.1.3. Your violation of these Terms; or</li>
+		<li>7.1.4. Violation of any rights of any other person or entity.</li>
+		<p>7.2. If you are obligated to indemnify us, we will have the right, in our sole discretion, to control any action or proceeding (at our expense) and determine whether we wish to settle it.</p>
 
 
 
