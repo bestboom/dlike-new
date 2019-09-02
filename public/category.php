@@ -170,7 +170,7 @@ include('template/header5.php');
 			else {
 				$("#loadings").hide();
 				var noposthtml = '';
-					noposthtml = '<div class="row" style="justify-content: center;"><div style="background: #eee;width: 60%;padding: 30px;border-radius: 7px;text-align: center;">\n' +
+					noposthtml = '<div style="background: #eee;width: 60%;padding: 30px;border-radius: 7px;text-align: center;">\n' +
 					'\n' +
 					'<div><i class="fas fa-frown" style="color: #c51d24;font-size: 5rem;"></i>\n' +
 					'\n' +
@@ -180,7 +180,7 @@ include('template/header5.php');
 					'\n' +
 					'</div>\n' +
 					'\n' +
-					'</div></div>';				
+					'</div>';				
 				$("#contentposts").append(noposthtml);
 			}
 		}
