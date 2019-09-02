@@ -28,9 +28,9 @@
                         <div class="footer-info-list">
                             <h4>Learn</h4>
                             <ul>
-                                <li><a href="#">Terms of Use</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Whitepaper</a></li>
+                                <li><a href="/terms">Terms of Use</a></li>
+                                <li><a href="/privacy">Privacy Policy</a></li>
+                                <li><a href="/docs/dlike-paper.pdf" target="_blank">Whitepaper</a></li>
                             </ul>
                         </div>
                     </div>
@@ -38,8 +38,8 @@
                         <div class="footer-info-list">
                             <h4>Help</h4>
                             <ul>
-                                <li><a href="#">Support</a></li>
-                                <li><a href="#">FAQ</a></li>
+                                <li><a href="/help">FAQ</a></li>
+                                <li><a href="/how-it-works">How It Works</a></li>
                             </ul>
                         </div>
                     </div>
