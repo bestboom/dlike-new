@@ -176,7 +176,7 @@ include('template/header5.php');
 					'\n' +
 					'</div>\n' +
 					'\n' +
-					'<div style="padding: 20px;"><h3 style="font-weight: 600;color: #c51d24;">No posts found</h3>\n' +
+					'<div style="padding: 20px;"><h3 style="font-weight:600;color:#c51d24;font-size:1.5rem;">No posts found</h3>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
