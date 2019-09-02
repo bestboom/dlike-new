@@ -29,22 +29,22 @@
 		<h2>7. Agreement to Hold DLIKE Harmless</h2>
 		<p>7.1. You agree to hold harmless DLIKE (and each of our officers, directors, members, employees, moderators, agents and affiliates) from any claim, demand, action, damage, loss, cost or expense, including without limitation reasonable legal fees, arising out or relating to:</p>
 		<li>7.1.1. Your use of, or conduct in connection with, our Services;</li>
-		<li>7.1.2. Any feedback or submissions you provide (see 17 below);</li>
+		<li>7.1.2. Any feedback or submissions you provide (see 17 below);</li>----------------
 		<li>7.1.3. Your violation of these Terms; or</li>
 		<li>7.1.4. Violation of any rights of any other person or entity.</li>
 		<p>7.2. If you are obligated to indemnify us, we will have the right, in our sole discretion, to control any action or proceeding (at our expense) and determine whether we wish to settle it.</p>
+		<h2>8. Adult-Oriented Content</h2>
+		<p>DLIKE is intended for a general audience and as a result, some DLIKE Content may discuss or depict adult-oriented topics. We realize that this content may not be appropriate or desirable for some of our readers depending on their current location, age, background or personal views. As a result, we mark this content as Not Safe For Work ("NSFW").</p>
+		<p>Marking DLIKE Content as NSFW does not prevent you from being able to access this content but, instead, helps you make informed decisions about the type of content you view on DLIKE. You understand and agree that you access content marked as NSFW at your own risk.</p>
+		<h2>9. Account Registration</h2>
+		<p>9.1. DLIKE is built on STEEM blockchain so to use DLIKE, you need a STEEM account.  DLIKE provides account creation services to register new STEEM account. When you create an Account, you are strongly advised to take the following precautions, as failure to do so may result in loss of access to, and/or control over, your Wallet: (a) You must save your master password securely as in case of loss, DLIKE will not be able to recover it for you as we do not save any of your password or other steem related keys.(b) Once asked for identity verification make sure to provide correct phone number; (c) We save your phone number in hashed form(md5) to ensure uniqueness of accounts and avoid spammers to use same number again to register new accounts; (d) maintain the security of your Account by protecting your Account password and access to your computer and your Account as it involves your wallet.</p>
+		<p>9.2. You hereby accept and acknowledge that you take responsibility for all activities that occur under your Account and accept all risks of any authorized or unauthorized access to your Account, to the maximum extent permitted by law. You also accept and acknowledge that you have no objection on saving phone numbers by DLIKE in hashed form as this data (phone number)  is not shared publically or with any other users.</p>
+		<h2>11. Fees for Using DLIKE Services</h2>
+		<p>DLIEK takes 10% beneficiary reward out of total post upvotes. Out of this 10%, 9% is goes to main @dlike account to cover cost and pay to sponsors who delegated Steem Power. 1% which is accumulated in @dlike.fund account is paid to charities.</p>
 
 
 
-
-		<h3>2.1. Log and Usage Data</h3>
-		<p>We may log information when you access and use the Services. This may include your IP address, user-agent string, browser type, operating system, referral URLs, device information (e.g., device IDs), pages visited, links clicked, user interactions (e.g., voting data), the requested URL, hardware settings, and search terms.</p>
-		<h3>2.2. Information Collected from Cookies</h3>
-		<p>We may receive information from cookies, which are pieces of data your browser stores and sends back to us when making requests. We use this information to improve your experience, understand user activity, and improve the quality of our Services. For example, we store and retrieve information about your preferred language and other settings. On how you can disable cookies, please see "Your Choices" below. For more information about cookies read our cookie policy section.</p>
-		<h3>2.3. Location Information</h3>
-		<p>With your consent, we may collect information about the specific location of your mobile device (for example, by using GPS or Bluetooth). You can revoke this consent at any time by changing the preferences on your device, but doing so may affect your ability to use all of the features and functionality of our Services.</p>
-		<h3>2.4. Social Sharing</h3>
-		<p>We may offer social sharing features or other integrated tools that let you share content or actions you take on our Services with other media. Your use of these features enables the sharing of certain information with your friends or the public, depending on the settings you establish with the third party that provides the social sharing feature. For more information about the purpose and scope of data collection and processing in connection with social sharing features, please visit the privacy policies of the third parties that provide these social sharing features (e.g., Tumblr, Facebook, Reddit, Pinterest, and Twitter).</p>
+		
 		<h2>3. How We Use Information About You</h2>
 		<p>We use information about you to:</p>
 		<l1>	Provide, maintain, and improve the Services </l1>
