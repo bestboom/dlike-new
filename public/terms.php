@@ -52,16 +52,20 @@
 		<p>DLIKE reserves the right, without notice and in our sole discretion, to terminate your license to access and use DLIKE and to block or prevent your future access to and use of DLIKE. In the event of termination, your access to funds will depend on your access to your backup of your Account data including your Account Name and Private Keys on steemit wallet.</p>
 		<h2>15. Modifications to DLIKE</h2>
 		<p>DLIKE reserves the right to modify or discontinue, temporarily or permanently, DLIKE, or any features or portions of DLIKE, without prior notice. You agree that DLIKE will not be liable for any modification, suspension or discontinuance of DLIKE, or any part of DLIKE.</p>
-		<h2>16. Limitation of Liability</h2>
+		<h2>16. Feedback</h2>
+		<p>You may submit questions, comments, feedback, suggestions, and other information regarding DLIKE (we call this "Feedback"). You acknowledge and agree that Feedback is non-confidential and will become the sole property of DLIKE. DLIKE shall own exclusive rights, including, without limitation, all intellectual property rights, in and to such Feedback and is entitled to the unrestricted use and dissemination of this Feedback for any purpose, without acknowledgment or compensation to you. You agree to execute any documentation required by DLIKE to confirm such assignment to DLIKE.</p>
+		<h2>17. Copyright Complaints</h2>
+		<p>DLIKE respects the intellectual property of others by not reading infringed content from the Steem blockchain. If you believe that your work has been copied in a way that constitutes copyright infringement, you may notify DLIKE by contacting: admin&#64;dlik.io</p>
+		<p>Please see <a href="http://www.copyright.gov/title17/92chap5.html#512" target="_blank">17 U.S.C. §512(c)(3)</a> for the requirements of a proper notification. You should note that if you knowingly misrepresent in your notification that the material or activity is infringing, you may be liable for any damages, including costs and attorneys" fees, incurred by DLIKE or the alleged infringer, as the result of DLIKE’s relying upon such misrepresentation in removing or disabling access to the material or activity claimed to be infringing.</p>
+		<h2>18. Limitation of Liability</h2>
 		<p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL DLIKE OR THE DLIKE PARTIES BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES, OR ANY OTHER DAMAGES OF ANY KIND, INCLUDING, BUT NOT LIMITED TO, LOSS OF USE, LOSS OF PROFITS OR LOSS OF DATA, WHETHER IN AN ACTION IN CONTRACT, TORT (INCLUDING, BUT NOT LIMITED TO, NEGLIGENCE) OR OTHERWISE, ARISING OUT OF, OR IN ANY WAY CONNECTED WITH, THE USE OF, OR INABILITY TO USE, DLIKE OR THE DLIKE CONTENT. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE AGGREGATE LIABILITY OF DLIKE OR THE DLIKE PARTIES, WHETHER IN CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR IMPUTED), PRODUCT LIABILITY, STRICT LIABILITY OR OTHER THEORY, ARISING OUT OF OR RELATING TO: (A) THE USE OF OR INABILITY TO USE DLIKE OR THE DLIKE CONTENT; OR (B) THESE TERMS EXCEED ANY COMPENSATION YOU PAY, IF ANY, TO DLIKE FOR ACCESS TO OR USE OF DLIKE.</p>
 		<p>SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES, SO SOME OR ALL OF THE EXCLUSIONS AND LIMITATIONS IN THIS SECTION MAY NOT APPLY TO YOU.</p>
-		<h2>17. Disclaimers</h2>
+		<h2>19. Disclaimers</h2>
 		<p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, DLIKE AND THE DLIKE CONTENT ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT AND ANY WARRANTIES IMPLIED BY ANY COURSE OF PERFORMANCE OR USAGE OF TRADE. DLIKE DOES NOT REPRESENT OR WARRANT THAT DLIKE AND THE DLIKE CONTENT: (A) WILL BE SECURE OR AVAILABLE AT ANY PARTICULAR TIME OR LOCATION; (B) ARE ACCURATE, COMPLETE, RELIABLE, CURRENT OR ERROR-FREE OR THAT ANY DEFECTS OR ERRORS WILL BE CORRECTED; AND (C) ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. YOUR USE OF DLIKE AND THE DLIKE CONTENT IS SOLELY AT YOUR OWN RISK. SOME JURISDICTIONS DO NOT ALLOW THE DISCLAIMER OF IMPLIED TERMS IN CONTRACTS WITH CONSUMERS, SO SOME OR ALL OF THE DISCLAIMERS IN THIS SECTION MAY NOT APPLY TO YOU.</p>
-		<h2>18. Severability</h2>
+		<h2>20. Severability</h2>
 		<p>If any term, clause or provision of these Terms is deemed to be unlawful, void or for any reason unenforceable, then that term, clause or provision shall be deemed severable from these Terms and shall not affect the validity and enforceability of any remaining provisions.</p>
-		<h2>19. Questions & Contact Information</h2>
+		<h2>21. Questions & Contact Information</h2>
 		<p>Questions or comments about DLIKE services can be directed to admin&#64;dlik.io</p>
-		<P>If you wish to report abuses or copyright infrigement, PLEASE EMAIL admin&#64;dlik.io</p>
 
 	</div>	
 </div>
