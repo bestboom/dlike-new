@@ -1,4 +1,4 @@
-    <div class="colto-section" style="padding: 30px 0;">
+    <div class="colto-section" style="padding: 35px 0;">
         <div class="container">
             <div class="colto-content-wrap">
                 <div class="colto-content">
