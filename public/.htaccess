@@ -22,6 +22,7 @@ RewriteRule ^share$ ./share.php
 RewriteRule ^privacy$ ./privacy.php
 RewriteRule ^terms$ ./terms.php
 RewriteRule ^cookies$ ./cookies.php
+RewriteRule ^rewards$ ./rewards.php
 RewriteRule ^how-it-works$ ./how-it-works.php
 RewriteRule ^wallets/(.*)$ ./wallets.php?user=$1
 RewriteRule ^@/?(.*)$ ./profile.php?user=$1
