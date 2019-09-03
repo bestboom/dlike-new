@@ -28,7 +28,6 @@ function timeago($date) {
 	
 if(isset($_REQUEST['tagname']) && $_REQUEST['tagname'] != "") {
 	
-	  
     	$sql = "SELECT postid FROM posttags where tagname = '".$_REQUEST['tagname']."'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
