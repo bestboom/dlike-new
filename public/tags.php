@@ -193,6 +193,7 @@
 			dataType: 'json',
 			success: function(response) {
 			    if(response.status == "OK") {
+			    	console.log(response);
 				var resulthtml = response.data_row;
 				
 				//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');

@@ -30,36 +30,16 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 	
 	  
     	$sql = "SELECT postid FROM posttags where tagname = '".$_POST['tagname']."'";
-	$result = $conn->query($sql);
-	if ($result->num_rows > 0) {
-		while($row = $result->fetch_assoc()) {
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+		while($row = $result->fetch_assoc()) 
+		{
 			$postid = $row['postid'];
 		}
 		$sql1 = "SELECT * FROM steemposts where id IN (".$postid.") order by created_at DESC";
 		$result1 = $conn->query($sql1);
 		if ($result1->num_rows > 0) {
 			while($row1 = $result1->fetch_assoc()) {
-				
-				$userstatus = "SELECT * FROM userstatus where username = '".$row1['username']."'";
-				$userstatusresult = $conn->query($userstatus);
-				if ($userstatusresult->num_rows > 0) {
-					while($row = $userstatusresult->fetch_assoc()) {
-						$data['userstatus'] = $row['status'];
-					}
-				} else {
-					$data['userstatus'] = '';
-				}
-				
-				$poststatus = "SELECT * FROM poststatus where permlink = '".$row1['permlink']."'";
-				$resultpoststatus = $conn->query($poststatus);
-				if ($resultpoststatus->num_rows > 0) {
-					while($row = $resultpoststatus->fetch_assoc()) {
-						$data['poststatus'] = $row['status'];
-					}
-				} else {
-					$data['poststatus'] = 'error';
-				}
-				
 			    
 				$json_metadata = json_decode($row1['json_metadata'],true);
 				$data['username'] = $row1['username'];
@@ -73,7 +53,6 @@ if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
 			}
 			$strReturn['status'] = 'OK';
 		}
-		
 		
 	} else {
 		$strReturn['status'] = 'error';
