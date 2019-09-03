@@ -185,6 +185,7 @@
 	console.log(c_username);
       
 		  var tagname = '<?php echo $_GET['tag'];?>';
+		  console.log(tagname);
 	
 			$.ajax({
 			type: "POST",
@@ -192,7 +193,7 @@
 			data:{'tagname':tagname},
 			dataType: 'json',
 			success: function(response) {
-				
+
 			    	console.log(response);
 			    if(response.status == "OK") {
 				var resulthtml = response.data_row;
