@@ -38,11 +38,13 @@
       
 		var tagname = '<?php echo $_GET['tag'];?>';
 		console.log(tagname);
-	
+		var dataT = {
+            mytag: tagname
+        };
 		$.ajax({
-			type: "POST",
+			type: 'POST',
 			url: '/helper/gettposts.php',
-			data:{'mytag':tagname},
+			data: dataT,
 			dataType: 'json',
 				success: function(response) {
 
