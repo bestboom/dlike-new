@@ -52,8 +52,8 @@
 				    console.log(response.tagrs);
 				    if(response.status == "OK") {
 						var resulthtml = response.data_row;
-						
-						$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
+						console.log(resulthtml);
+						//$(".total_posts").html(resulthtml.length+' posts found, <a style="color: #1652f0;" href="/tags/'+tagname+'">#'+tagname+'</a>');
 						for(i=0;i<resulthtml.length;i++) 
 						{
 
