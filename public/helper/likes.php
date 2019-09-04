@@ -7,17 +7,6 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$result = $conn->query("SHOW COLUMNS FROM steemposts");
-if (!$result) {
-    echo 'Could not run query: ' . $conn->error;
-    exit;
-}
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        print_r($row);
-    }
-}
-
 
 
 /*'
