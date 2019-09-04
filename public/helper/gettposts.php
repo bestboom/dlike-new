@@ -39,9 +39,9 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 			while($row = $result->fetch_assoc()) 
 			{
 				$postid = $row['postid'];
-			}	
+				
 				//$sql1 = "SELECT * FROM steemposts where id IN (".$postid.") order by created_at DESC";
-				$sqlz = "SELECT * FROM steemposts where id IN ('.$postid.')";
+				$sqlz = "SELECT * FROM steemposts where id IN ('".$postid."')";
 				$resultz = $conn->query($sqlz);
 
 				$rowme = $resultz->num_rows;
@@ -72,7 +72,7 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 					$strReturn['status'] = 'posts not coming';
 					$strReturn['tagrs'] = $conn->error;
 				}
-			 	
+			} 	
 		} else {
 		$strReturn['status'] = 'error';
 		} 
