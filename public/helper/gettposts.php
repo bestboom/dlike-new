@@ -28,11 +28,11 @@ function timeago($date) {
 $strReturn = [];	
 if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 	$tag = $_POST['mytag'];
-	$json = json_decode($_POST["mytag"]);
+	/*$json = json_decode($_POST["mytag"]);
 
 		if(!empty($json)) { $strReturn['status'] = 'OK'; $strReturn['tagr'] = $tag; } else {$strReturn['status'] = 'error'; $strReturn['tagr'] = $tag;}
-	/*
-    	$sql = "SELECT postid FROM posttags where tagname = '".$_REQUEST['tagname']."'";
+	*/
+    	$sql = "SELECT postid FROM posttags where tagname = '$tag'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			while($row = $result->fetch_assoc()) 
@@ -55,10 +55,12 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 					$strReturn['data_row'][] = $data;
 				}
 				$strReturn['status'] = 'OK';
+				$strReturn['tagrs'] = $tag;
 			}
 		} else {
 		$strReturn['status'] = 'error';
-		} */
+		$strReturn['tagrs'] = $tag;
+		} 
   	echo json_encode($strReturn);die;
 }
 
