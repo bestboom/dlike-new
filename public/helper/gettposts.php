@@ -49,9 +49,6 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 
 				if ($resultz->num_rows > 0) {
 				
-				//$strReturn['tagrs'] = $postid;
-
-					/*
 					while($row1 = $result1->fetch_assoc()) {
 					    
 						$json_metadata = json_decode($row1['json_metadata'],true);
@@ -64,7 +61,7 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 
 						$strReturn['data_row'][] = $data;
 					}
-					//$strReturn['status'] = 'OK';*/
+					$strReturn['status'] = 'OK';
 				} 
 				else { 
 					$strReturn['status'] = 'posts not coming';
