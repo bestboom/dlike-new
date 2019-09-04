@@ -55,11 +55,9 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 					$strReturn['data_row'][] = $data;
 				}
 				$strReturn['status'] = 'OK';
-				$strReturn['tagrs'] = $tag;
 			}
 		} else {
 		$strReturn['status'] = 'error';
-		$strReturn['tagrs'] = $tag;
 		} 
   	echo json_encode($strReturn);die;
 }
