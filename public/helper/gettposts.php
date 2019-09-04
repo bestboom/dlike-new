@@ -46,10 +46,10 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 
 				$rowme = $resultz->num_rows;
 
-				$strReturn['status'] = 'OK';
-				$strReturn['tagrs'] = $rowme;
+				//$strReturn['status'] = 'OK';
+				//$strReturn['tagrs'] = $rowme;
 
-				if ($resultz->num_rows == 0) {
+				if ($resultz->num_rows > 0) {
 
 				
 
