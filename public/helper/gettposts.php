@@ -27,10 +27,10 @@ function timeago($date) {
 }
 $strReturn = [];	
 if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
-	
+	$tag = $_POST['mytag'];
 	$json = json_decode($_POST["mytag"]);
 
-		if(!empty($json)) { $strReturn['status'] = 'OK'; $strReturn['tagy'] = $json; } else {$strReturn['status'] = 'error'; $strReturn['tagy'] = $json;}
+		if(!empty($json)) { $strReturn['status'] = 'OK'; $strReturn['tagy'] = $tag; } else {$strReturn['status'] = 'error'; $strReturn['tagy'] = $json;}
 	/*
     	$sql = "SELECT postid FROM posttags where tagname = '".$_REQUEST['tagname']."'";
 		$result = $conn->query($sql);
