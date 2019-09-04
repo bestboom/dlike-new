@@ -41,13 +41,17 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 				$postid = $row['postid'];
 			}	
 				//$sql1 = "SELECT * FROM steemposts where id IN (".$postid.") order by created_at DESC";
-				$sqlz = "SELECT * FROM steemposts where id IN (".$postid.")";
+				$sqlz = "SELECT * FROM steemposts where id IN ('.$postid.')";
 				$resultz = $conn->query($sqlz);
+
+				$rowme = $resultz->num_rows;
+
+				$strReturn['status'] = 'OK';
+				$strReturn['tagrs'] = $rowme;
 
 				if ($resultz->num_rows > 0) {
 
-				$strReturn['status'] = 'OK';
-				$strReturn['tagrs'] = $postid;
+				
 
 				
 				//$strReturn['tagrs'] = $postid;
