@@ -39,12 +39,15 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 			while($row = $result->fetch_assoc()) 
 			{
 				$postid = $row['postid'];
-				$strReturn['status'] = 'OK';
-				$strReturn['tagrs'] = $postid;
-				/*
+				
 				$sql1 = "SELECT * FROM steemposts where id IN (".$postid.") order by created_at DESC";
 				$result1 = $conn->query($sql1);
 				if ($result1->num_rows > 0) {
+
+				$strReturn['status'] = 'OK';
+				//$strReturn['tagrs'] = $postid;
+
+					/*
 					while($row1 = $result1->fetch_assoc()) {
 					    
 						$json_metadata = json_decode($row1['json_metadata'],true);
@@ -57,8 +60,8 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 
 						$strReturn['data_row'][] = $data;
 					}
-					//$strReturn['status'] = 'OK';
-				} */
+					//$strReturn['status'] = 'OK';*/
+				} 
 			} 	
 		} else {
 		$strReturn['status'] = 'error';
