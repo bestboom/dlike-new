@@ -27,7 +27,11 @@ function timeago($date) {
 }
 	
 if(isset($_REQUEST['tagname']) && $_REQUEST['tagname'] != "") {
-	
+
+	$json = json_decode($_POST["tagname"]);
+
+		if(!empty($json)) { $strReturn['status'] = 'OK'; } else {$strReturn['status'] = 'error';}
+	/*
     	$sql = "SELECT postid FROM posttags where tagname = '".$_REQUEST['tagname']."'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -54,7 +58,7 @@ if(isset($_REQUEST['tagname']) && $_REQUEST['tagname'] != "") {
 			}
 		} else {
 		$strReturn['status'] = 'error';
-	}
+		} */
   	echo json_encode($strReturn);die;
 }
 
