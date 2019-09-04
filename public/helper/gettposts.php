@@ -67,10 +67,10 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 					}
 					//$strReturn['status'] = 'OK';*/
 				} 
-				/*else { 
+				else { 
 					$strReturn['status'] = 'posts not coming';
-					$strReturn['tagrs'] = $postid;
-				}*/
+					//$strReturn['tagrs'] = $postid;
+				}
 			} 	
 		} else {
 		$strReturn['status'] = 'error';
