@@ -25,12 +25,12 @@ function timeago($date) {
 		return $diff . " " . $strTime[$i] . $addif." ago ";
    }
 }
-	
+$strReturn = [];	
 if(isset($_REQUEST['tagname']) && $_REQUEST['tagname'] != "") {
 
 	$json = json_decode($_POST["tagname"]);
 
-		if(!empty($json)) { $strReturn['status'] = 'OK'; } else {$strReturn['status'] = 'error';}
+		if(!empty($json)) { $strReturn['status'] = 'OK'; $strReturn['tagy'] = $json; } else {$strReturn['status'] = 'error'; $strReturn['tagy'] = $json;}
 	/*
     	$sql = "SELECT postid FROM posttags where tagname = '".$_REQUEST['tagname']."'";
 		$result = $conn->query($sql);

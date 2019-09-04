@@ -47,6 +47,7 @@
 				success: function(response) {
 
 				    console.log(response);
+				    console.log(response.tagy);
 				    if(response.status == "OK") {
 						var resulthtml = response.data_row;
 						
