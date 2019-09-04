@@ -68,7 +68,6 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 				} 
 				else { 
 					$strReturn['status'] = 'posts not coming';
-					$strReturn['tagr'] = $postid;
 					$strReturn['tagrs'] = $conn->error;
 				}
 			} 	
