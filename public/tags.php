@@ -197,7 +197,12 @@
 						$(".myloader").css('display','flex');
 						$("#contentposts").append("No posts found.");
 				    }
-				}
+				},
+                error: function(xhr, textStatus, error){
+                    console.log(xhr.statusText);
+                    console.log(textStatus);
+                    console.log(error);
+                }
 		});
 
 	});
