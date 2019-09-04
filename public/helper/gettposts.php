@@ -39,11 +39,12 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 			while($row = $result->fetch_assoc()) 
 			{
 				$postid = $row['postid'];
+				$strReturn['tagrs'] = $postid;
 				$posts = explode(',', $postid);
 				$tag_posts = array_map(function(){ return '?'; }, $posts);
 				
 				//$sql1 = "SELECT * FROM steemposts where id IN (".$postid.") order by created_at DESC";
-				$sqlz = "SELECT * FROM steemposts where id IN ('".implode(',', $tag_posts)."') order by created_at DESC";
+				$sqlz = "SELECT * FROM steemposts where `id` IN (' . implode(',', array_map('intval', $postid)) . ') order by created_at DESC";
 				$resultz = $conn->query($sqlz);
 
 				//$strReturn['status'] = 'OK';
