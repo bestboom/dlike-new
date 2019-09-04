@@ -38,24 +38,25 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 			while($row = $result->fetch_assoc()) 
 			{
 				$postid = $row['postid'];
-			}
-			$sql1 = "SELECT * FROM steemposts where id IN (".$postid.") order by created_at DESC";
-			$result1 = $conn->query($sql1);
-			if ($result1->num_rows > 0) {
-				while($row1 = $result1->fetch_assoc()) {
-				    
-					$json_metadata = json_decode($row1['json_metadata'],true);
-					$data['username'] = $row1['username'];
-					$data['permlink'] = $row1['permlink'];
-					$data['title'] = $row1['title'];
-					$data['category'] = $json_metadata['category'];
-					$data['created_at'] = timeago($row1['created_at']);
-					$data['imgsrc'] = $json_metadata['image'];
+			
+				$sql1 = "SELECT * FROM steemposts where id IN (".$postid.") order by created_at DESC";
+				$result1 = $conn->query($sql1);
+				if ($result1->num_rows > 0) {
+					while($row1 = $result1->fetch_assoc()) {
+					    
+						$json_metadata = json_decode($row1['json_metadata'],true);
+						$data['username'] = $row1['username'];
+						$data['permlink'] = $row1['permlink'];
+						$data['title'] = $row1['title'];
+						$data['category'] = $json_metadata['category'];
+						$data['created_at'] = timeago($row1['created_at']);
+						$data['imgsrc'] = $json_metadata['image'];
 
-					$strReturn['data_row'][] = $data;
+						$strReturn['data_row'][] = $data;
+					}
+					$strReturn['status'] = 'OK';
 				}
-				$strReturn['status'] = 'OK';
-			}
+			}	
 		} else {
 		$strReturn['status'] = 'error';
 		} 
