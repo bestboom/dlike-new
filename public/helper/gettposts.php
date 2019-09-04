@@ -26,9 +26,9 @@ function timeago($date) {
    }
 }
 $strReturn = [];	
-if(isset($_REQUEST['tagname']) && $_REQUEST['tagname'] != "") {
+if(isset($_REQUEST['mytag']) && $_REQUEST['mytag'] != "") {
 
-	$json = json_decode($_POST["tagname"]);
+	$json = json_decode($_POST["mytag"]);
 
 		if(!empty($json)) { $strReturn['status'] = 'OK'; $strReturn['tagy'] = $json; } else {$strReturn['status'] = 'error'; $strReturn['tagy'] = $json;}
 	/*

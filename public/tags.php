@@ -42,12 +42,12 @@
 		$.ajax({
 			type: "POST",
 			url: '/helper/gettposts.php',
-			data:{'catname':tagname},
+			data:{'mytag':tagname},
 			dataType: 'json',
 				success: function(response) {
 
 				    console.log(response);
-				    //console.log(response.tagy);
+				    console.log(response.tagy);
 				    if(response.status == "OK") {
 						var resulthtml = response.data_row;
 						
