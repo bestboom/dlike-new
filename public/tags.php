@@ -42,7 +42,7 @@
 		$.ajax({
 			type: "POST",
 			url: '/helper/gettposts.php',
-			data:{'tagname':tagname},
+			data:{'catname':tagname},
 			dataType: 'json',
 				success: function(response) {
 
