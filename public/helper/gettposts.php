@@ -39,6 +39,7 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 					$sql1 = "SELECT * FROM steemposts where id IN (72,102,152,222,662,752,1092,1352,1562,1952,2042,2322,2922)";
 					$result1 = $conn->query($sql1);
 					if ($result1->num_rows > 0) {
+						/*
 						while($row1 = $result1->fetch_assoc()) {
 						    
 							$json_metadata = json_decode($row1['json_metadata'],true);
@@ -46,8 +47,8 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 							$data['permlink'] = $row1['permlink'];
 							$data['metatags'] = $meta_array;
 							$strReturn['data_row'][] = $data;
-						}
-						$strReturn['status'] = 'OK';
+						}*/
+					$strReturn['status'] = 'OK';
 					$strReturn['tagrs'] = $postid;
 					}
 								
