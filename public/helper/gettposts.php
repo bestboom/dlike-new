@@ -33,11 +33,11 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					$postid = $row['postid'];
-					$strReturn['status'] = 'OK';
-					$strReturn['tagrs'] = $postid;
+					//$strReturn['status'] = 'OK';
+					//$strReturn['tagrs'] = $postid;
 
 				}
-				/*	$sql1 = "SELECT * FROM steemposts where id IN (". $postid .")";
+					$sql1 = "SELECT * FROM steemposts where id IN (23932,24042,24052,24472,24632,24872,24882,24902,24912)";
 					$result1 = $conn->query($sql1);
 					if ($result1->num_rows > 0) {
 						
@@ -50,8 +50,8 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 							$strReturn['data_row'][] = $data;
 						}
 					$strReturn['status'] = 'OK';
-					$strReturn['tagrs'] = $postid;
-					} else { $strReturn['status'] = $conn->error;}*/
+					//$strReturn['tagrs'] = $postid;
+					} else { $strReturn['status'] = $conn->error;}
 								
 			} else {
 				$strReturn['status'] = $conn->error;
