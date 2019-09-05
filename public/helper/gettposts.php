@@ -58,7 +58,7 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 					$data['created_at'] = timeago($rowz['created_at']);
 					$data['imgsrc'] = $json_metadata['image'];
 
-					$strReturn['data_row'][] = $data;
+					array_push($strReturn['data_row'], $data);
 				}
 				$strReturn['status'] = 'OK';
 			}
