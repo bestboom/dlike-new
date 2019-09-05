@@ -36,7 +36,7 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 					//$strReturn['status'] = 'OK';
 
 				}
-					$sql1 = "SELECT * FROM steemposts where id IN (72,102,152,222,662,752,1092,1352,1562,1952,2042,2322,2922)";
+					$sql1 = "SELECT * FROM steemposts where id IN (2922)";
 					$result1 = $conn->query($sql1);
 					if ($result1->num_rows > 0) {
 						/*
