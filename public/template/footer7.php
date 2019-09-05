@@ -13,7 +13,7 @@
             </div>
         </div>
     </div><!-- colto-section -->
-    <footer class="footer">
+    <footer class="footer" style="background: #0C090D;">
         <div class="footer-upper-section" style="padding: 50px 0 30px !important;">
             <div class="container">
                 <div class="row">
