@@ -50,7 +50,7 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 						}*/
 					$strReturn['status'] = 'OK';
 					$strReturn['tagrs'] = $postid;
-					}
+					} else { $strReturn['status'] = $conn->error;}
 								
 			} else {
 				$strReturn['status'] = $conn->error;
