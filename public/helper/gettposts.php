@@ -33,13 +33,14 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 					$postid = $row['postid'];
-					//$strReturn['status'] = 'OK';
+					$strReturn['status'] = 'OK';
+					$strReturn['tagrs'] = $postid;
 
 				}
-					$sql1 = "SELECT * FROM steemposts where id IN (". $postid .")";
+				/*	$sql1 = "SELECT * FROM steemposts where id IN (". $postid .")";
 					$result1 = $conn->query($sql1);
 					if ($result1->num_rows > 0) {
-						/*
+						
 						while($row1 = $result1->fetch_assoc()) {
 						    
 							$json_metadata = json_decode($row1['json_metadata'],true);
@@ -47,10 +48,10 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 							$data['permlink'] = $row1['permlink'];
 							$data['metatags'] = $meta_array;
 							$strReturn['data_row'][] = $data;
-						}*/
+						}
 					$strReturn['status'] = 'OK';
 					$strReturn['tagrs'] = $postid;
-					} else { $strReturn['status'] = $conn->error;}
+					} else { $strReturn['status'] = $conn->error;}*/
 								
 			} else {
 				$strReturn['status'] = $conn->error;
