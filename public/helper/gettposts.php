@@ -26,7 +26,8 @@ function timeago($date) {
    }
 }
 //$strReturn = [];
-if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
+if(isset($_POST['mytag']) && $_POST['mytag'] != "")
+{
 	$tag = $_POST['mytag'];
 	/*$json = json_decode($_POST["mytag"]);
 
@@ -37,6 +38,7 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 		if ($result->num_rows > 0)
     {
 			$row = $result->fetch_all();
+      echo $row;
 			$postid = $row['postid'];
 			$strReturn['tagrs'] = $postid;
 			$posts = explode(',', $postid);
