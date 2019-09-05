@@ -42,8 +42,8 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 				$strReturn['tagrs'] = $postid;
 				$posts = explode(',', $postid);
 				$tag_posts = array_map(function(){ return '?'; }, $posts);
-
-				$sqlz = "SELECT * FROM steemposts where id IN (" . implode(',', $postid) . ") order by created_at DESC";
+                $idStr = implode(',', $postid);
+				$sqlz = "SELECT * FROM steemposts where id IN ('$idStr') order by created_at DESC";
 				//$sqlz = "SELECT * FROM steemposts where `id` IN ('". implode(',', array_map('intval', $postid)) ."') order by created_at DESC";
 				$resultz = $conn->query($sqlz);
 
