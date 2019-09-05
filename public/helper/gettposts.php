@@ -39,40 +39,11 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 		$result1 = $conn->query($sql1);
 		if ($result1->num_rows > 0) {
 			while($row1 = $result1->fetch_assoc()) {
-				
-				$select_meta = "SELECT tagname FROM posttags WHERE FIND_IN_SET(".$row1['id'].", `postid`)";
-				$result2 = $conn->query($select_meta);
-				if ($result2->num_rows > 0) {
-					$meta_array = '';
-					$counter = 0;
-					while($row2 = $result2->fetch_assoc()) {
-						if (strpos($row2['tagname'], 'dlike') === false) {
-							$meta_array .= '<a href="/tags/';
-							$meta_array .= trim($row2['tagname']);
-							$meta_array .= '" style="color: #1652f0;">#';
-							$meta_array .= trim($row2['tagname']);
-							$meta_array .= '</a>';
-							if(($counter+1)<($result2->num_rows)) {
-								$meta_array .= ',';
-							}
-							
-						}
-						++$counter;
-					}
-				}
-				
+			    
 				$json_metadata = json_decode($row1['json_metadata'],true);
-				
-				
 				$data['username'] = $row1['username'];
-				$data['created_at'] = time_elapsed_string($row1['created_at']);
-				$data['category'] = $json_metadata['category'];
 				$data['permlink'] = $row1['permlink'];
-				$data['thumbnail'] = $json_metadata['image'];
 				$data['metatags'] = $meta_array;
-				$data['title'] = $row1['title'];
-				$data['exturl'] = $json_metadata['url'];
-				
 				$strReturn['data_row'][] = $data;
 			}
 			$strReturn['status'] = 'OK';
@@ -84,7 +55,6 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 	}
   	echo json_encode($strReturn);die;
 }
-
 
 /*
 if(isset($_POST['mytag']) && $_POST['mytag'] != "")
