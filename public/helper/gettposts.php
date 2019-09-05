@@ -28,7 +28,7 @@ function timeago($date) {
 
 if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 	  	$mytag = $_POST['mytag'];
-    	$sql = "SELECT postid FROM posttags where tagname = '$mytag' order by postid DESC LIMIT 48";
+    	$sql = "SELECT postid FROM posttags where tagname = '$mytag' order by postid ASC LIMIT 48";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
