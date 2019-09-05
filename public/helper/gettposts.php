@@ -26,7 +26,7 @@ function timeago($date) {
    }
 }
 
-if(isset($_POST['tagname']) && $_POST['tagname'] != "") {
+if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 	
 	  
     	$sql = "SELECT postid FROM posttags where tagname = '".$_POST['mytag']."'";
