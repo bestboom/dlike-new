@@ -123,8 +123,8 @@
 						let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/'+ meta +'"> #' + meta + ' </a>' });
 						let post_description = metadata.body;
 						let title = res.title;
-						//let created = res.created;
-						let created = timstamp;
+						let created = res.created;
+						//let created = timstamp;
 						let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 						let author = res.author;
 						let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
