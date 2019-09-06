@@ -9,8 +9,8 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-//if (isset($_POST["url"])){
-    $url = $_GET['url'];
+if (isset($_POST["url"])){
+    $url = $_POST['url'];
 
     $return = array();
     $return['status'] = false;
@@ -26,5 +26,5 @@ function validator($data){
                 $return['message'] = 'Unique URL';
 	    } 
     echo json_encode($return);die;     
-//} else {die('Invalid Response on URL check. Try Later');} 
+} else {die('Invalid Response on URL check. Try Later');} 
 ?>

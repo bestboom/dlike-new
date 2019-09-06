@@ -21,7 +21,20 @@
                     { 
                      toastr.error('phew... Steem URL not allowed'); return false;
                     }
-                     
+                    $.ajax({
+                        url: '/helper/check_share.php',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {url:url},
+                        success:function(response){
+                            console.log(response);
+                            if(response.status===false)
+                            {
+                                toastr['error'](response.message);
+                                return false;
+                            }
+                        }
+                    });                      
                     _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return; 
                 }
             }
