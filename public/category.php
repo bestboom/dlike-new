@@ -48,7 +48,7 @@ include('template/header5.php');
 					var permlink = resulthtml[i]['permlink'];
 					var authore = resulthtml[i]['username'];
 
-					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv '+currentLikesDivElement+'" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
+					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
 					'\n' +
