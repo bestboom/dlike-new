@@ -76,7 +76,7 @@
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author +'</a><div class="time" id="articletime_'+permlink+'"></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author +'</a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -129,7 +129,7 @@
 						let author = res.author;
 						let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
 						var author_name = author;
-						var created_at = created;
+						//var created_at = created;
 						var permlink = res.permlink;
 						var metatags =  posttags;
 						var exturl =   metadata.url;;
@@ -143,7 +143,7 @@
 						$('#article_'+permlink+' p.post-tags').html(metatags);
 						$('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
 						$('#article_'+permlink+' span.active_votes').html("&nbsp; | "+res.active_votes.length+" Votes");
-						$("#articletime_'+permlink+'").html(created_time);
+						$('#article_'+permlink+' #post_time').html(created_time);
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
 							if(result === Array) {
