@@ -47,25 +47,19 @@ $postGenerator = new dlike\post\makePost();
 	$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
 
-// insert into DB
-
 	if (empty($errors)) {
     $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
     $state = $postGenerator->broadcast($publish);
 	}
 
 	if (isset($state->result)) { 
-		
-		$jsonmetadata = [
-    		"image" => $urlImage,
-    		"url" => $url,   
-    		"category" => $_POST['category']
-		];
+	// insert into DB	
 		$tags = $_POST['tags'];
 
-		$addposts = "INSERT INTO steemposts (`username`,`title`, `json_metadata`, `permlink`, `post_tags`, `ext_url`, `parent_ctegory`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$tags."', '".$url."', '".$category."','".date("Y-m-d H:i:s")."')";
+		$addposts = "INSERT INTO steemposts (`username`,`title`, `permlink`, `post_tags`, `ext_url`, `parent_ctegory`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".$permlink."', '".$tags."', '".$url."', '".$category."','".date("Y-m-d H:i:s")."')";
 
 			$addpostsquery = $conn->query($addposts);
+			
 		$post_id = mysqli_insert_id($conn);
 
 		$posts_tags = array_unique(explode(",",$_POST['tags']));
