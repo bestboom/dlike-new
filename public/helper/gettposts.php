@@ -48,21 +48,16 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 
 if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 
-	$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts where parent_ctegory = '".$_REQUEST['catname']."' ORDER BY id DESC LIMIT 48";
+	$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts where parent_ctegory = '".$_REQUEST['catname']."' ORDER BY created_at DESC LIMIT 48";
 	$result1 = $conn->query($sql1);
 	if ($result1->num_rows > 0) {
-		while($row1 = $result1->fetch_assoc()) {
-
+		while($row1 = $result1->fetch_assoc()) 
+		{
 			$json_metadata = json_decode($row1['json_metadata'],true);
 			if(strtolower($json_metadata['category']) == strtolower($_REQUEST['catname'])) {
 
 				$data['username'] = $row1['username'];
 				$data['permlink'] = $row1['permlink'];
-				$data['title'] = $row1['title'];
-				$data['category'] = $json_metadata['category'];
-				$data['imgsrc'] = $json_metadata['image'];
-
-				$data['created_at'] = timeago($row1['created_at']);
 				$strReturn['data_row'][] = $data;
 			}
 		}
