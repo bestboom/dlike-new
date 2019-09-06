@@ -62,12 +62,11 @@ $postGenerator = new dlike\post\makePost();
     		"category" => $_POST['category']
 		];
 		$tags = $_POST['tags'];
-		
-	//$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']),JSON_UNESCAPED_SLASHES);
-		$addposts = "INSERT INTO steemposts (`username`,`title`, `json_metadata`, `permlink`, `post_tags` , `parent_ctegory`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$tags."', '".$category."','".date("Y-m-d H:i:s")."')";
 
-	$addpostsquery = $conn->query($addposts);
-	$post_id = mysqli_insert_id($conn);
+		$addposts = "INSERT INTO steemposts (`username`,`title`, `json_metadata`, `permlink`, `post_tags`, `ext_url`, `parent_ctegory`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$tags."', '".$url."', '".$category."','".date("Y-m-d H:i:s")."')";
+
+			$addpostsquery = $conn->query($addposts);
+		$post_id = mysqli_insert_id($conn);
 
 		$posts_tags = array_unique(explode(",",$_POST['tags']));
 		if(count($posts_tags)>0 && $post_id > 0) {
