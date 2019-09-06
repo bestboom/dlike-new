@@ -172,7 +172,7 @@
         </div>
     </div>
 <?php include('template/modals/modal.php'); ?>    
-<?php include('template/footer4.php'); ?>
+<?php include('template/footer7.php'); ?>
 <style>
 .showcursor{cursor:pointer;}
 .defaultcoloruser{color:gray;}

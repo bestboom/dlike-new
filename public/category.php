@@ -45,22 +45,8 @@ include('template/header5.php');
 
 					var responsehtml = '';
 					var currentPostNumber = i;
-					var currentLikesDivElement = 'postLike_' + i;
-					var timstamp = resulthtml[i]['created_at'];
 					var permlink = resulthtml[i]['permlink'];
-					var auth_name = resulthtml[i]['username'];
-					var imgsrc =  resulthtml[i]['imgsrc'];
-					var categoryset = resulthtml[i]['category'];
-					var titleset = resulthtml[i]['title'];
-					var userstatus = resulthtml[i]['userstatus'];
-					var poststatus = resulthtml[i]['poststatus'];
-					var author = auth_name;
-					var add_onclick2 = '';
-					var ucolorset = '';
-
-
-					var mylabel = permlink +author;
-					var newValue = mylabel.replace('.', '');
+					var authore = resulthtml[i]['username'];
 
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv '+currentLikesDivElement+'" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
@@ -76,7 +62,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author +'</a><div class="time" id="articletime_'+permlink+'">'+timstamp+'</div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author +'</a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -123,13 +109,10 @@ include('template/header5.php');
 						let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/'+ meta +'"> #' + meta + ' </a>' });
 						let post_description = metadata.body;
 						let title = res.title;
-						//let created = res.created;
-						let created = timstamp;
+						let created = res.created;
 						let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 						let author = res.author;
 						let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-						var author_name = author;
-						var created_at = created;
 						var permlink = res.permlink;
 						var metatags =  posttags;
 						var exturl =   metadata.url;;
@@ -143,6 +126,7 @@ include('template/header5.php');
 						$('#article_'+permlink+' p.post-tags').html(metatags);
 						$('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
 						$('#article_'+permlink+' span.active_votes').html("&nbsp; | "+res.active_votes.length+" Votes");
+						$('#article_'+permlink+' #post_time').html(created_time);
 
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
