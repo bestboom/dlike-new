@@ -9,34 +9,22 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
+if (isset($_POST["url"])){
+    $url = $_POST['url'];
 
-//if (isset($_POST["url"])){
-    $url = $_GET['url'];
+    $return = array();
+    $return['status'] = false;
+    $return['message'] = '';
+
     $sqls = "SELECT ext_url FROM steemposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 100 HOUR"; 
     $resultAmount = $conn->query($sqls);
         if ($resultAmount->num_rows > 0) {
+                $return['status'] = false;
+                $return['message'] = 'URL already shared. Can not be shared again!';
+        } else {
+			    $return['status'] = true;
+                $return['message'] = 'Unique URL';
+	    } 
 
-            echo 'url exist'; } else { echo 'New url'; }
-
-	/*if (empty($errors)) {
-    $publish = $voteGenerator->createVote($v_weight, $v_author, $v_permlink);
-    $state = $voteGenerator->broadcast($publish);
-	}
-
-	if (isset($state->result)) { 
-			    die(json_encode([
-			    	'error' => false,
-            		'message' => 'Thankk You', 
-            		'data' => 'Upvoting'
-            		
-        		]));
-	} else {
-			    die(json_encode([
-            		'error' => true,
-            		'message' => 'Sorry', 
-            		'data' => 'Already Upvoted'
-        		]));
-	} */
-
-//} else {die('Some error');}
+} else {die('Invalid Response on URL check. Try Later');} 
 ?>
