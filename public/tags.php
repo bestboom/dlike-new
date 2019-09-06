@@ -1,5 +1,4 @@
 <?php include('template/header5.php');  ?>
-<!--<input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/> -->
 </div><!-- sub-header -->
 <div id="p_cover" class="img-fluid"></div>    
 <div class="latest-post-section" style="min-height:80vh;padding: 35px 0 60px 0;">
@@ -43,18 +42,10 @@
 
 							var responsehtml = '';
 							var currentPostNumber = i;
-							var currentLikesDivElement = 'postLike_' + i;
 							var permlink = resulthtml[i]['permlink'];
-							var username = resulthtml[i]['username'];
+							var author = resulthtml[i]['username'];
 
-							var author = username;
-							var adduserhtml = "";
-
-							//var mylabel = permlink +username;
-							//var newValue = mylabel.replace('.', '');
-						
-
-					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv '+currentLikesDivElement+'" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
+					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
 					'\n' +
