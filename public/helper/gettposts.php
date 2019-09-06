@@ -29,21 +29,21 @@ function timeago($date) {
 if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 	  	$mytag = $_POST['mytag'];
 
-			$sql1 = "SELECT * FROM steemposts where post_tags LIKE CONCAT('%' , '$mytag', '%') ORDER BY created_at DESC Limit 48";
-			$result1 = $conn->query($sql1);
-				if ($result1->num_rows > 0) {
-					
-					while($row1 = $result1->fetch_assoc()) {
-					    
-						$data['username'] = $row1['username'];
-						$data['permlink'] = $row1['permlink'];
-						$strReturn['data_row'][] = $data;
-					}
-					$strReturn['status'] = 'OK';	
-				} else {
-					$strReturn['status'] = $conn->error;
+		$sql1 = "SELECT * FROM steemposts where post_tags LIKE CONCAT('%' , '$mytag', '%') ORDER BY created_at DESC Limit 48";
+		$result1 = $conn->query($sql1);
+			if ($result1->num_rows > 0) {
+				
+				while($row1 = $result1->fetch_assoc()) 
+				{
+					$data['username'] = $row1['username'];
+					$data['permlink'] = $row1['permlink'];
+					$strReturn['data_row'][] = $data;
 				}
-  			echo json_encode($strReturn);die;
+				$strReturn['status'] = 'OK';	
+			} else {
+				$strReturn['status'] = $conn->error;
+			}
+			echo json_encode($strReturn);die;
 }			
 
 if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
