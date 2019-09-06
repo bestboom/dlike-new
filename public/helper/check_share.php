@@ -11,10 +11,12 @@ function validator($data){
 
 
 //if (isset($_POST["url"])){
-
-    $sqls = "SELECT ext_url FROM steemposts WHERE created_at >= now() - INTERVAL 1 DAY"; 
+    $url = $_GET['url'];
+    $sqls = "SELECT ext_url FROM steemposts WHERE ext_url = '$url' and created_at >= now() - INTERVAL 1 DAY"; 
     $resultAmount = $conn->query($sqls);
         if ($resultAmount->num_rows > 0) {
+
+            echo 'url exist'; } else { echo 'New url'; }
 
 	/*if (empty($errors)) {
     $publish = $voteGenerator->createVote($v_weight, $v_author, $v_permlink);
