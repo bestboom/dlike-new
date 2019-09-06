@@ -21,20 +21,7 @@
                     { 
                      toastr.error('phew... Steem URL not allowed'); return false;
                     }
-                    $.ajax({
-                        url: '/helper/check_share.php',
-                        type: 'post',
-                        dataType: 'json',
-                        data: {url:url},
-                        success:function(response){
-                            console.log(response);
-                            if(response.status===false)
-                            {
-                                toastr['error'](response.message);
-                                return false;
-                            }
-                        }
-                    });                      
+                     
                     _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return; 
                 }
             }
@@ -99,7 +86,7 @@
         }
         $('.shareme').click(function () {
             let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-            if(text_words < 30){
+            if(text_words < 40){
              showModalError(
                  "Make Sure..",
                  "Write minimum 40 words to explain how this share is useful for community.",
