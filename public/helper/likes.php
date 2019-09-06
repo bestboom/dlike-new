@@ -6,6 +6,17 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+$sql = "ALTER TABLE steemposts ADD post_tags VARCHAR(255) NOT NULL AFTER permlink";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to posts table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
+/*'
+
+
 $result = $conn->query("SHOW COLUMNS FROM posttags");
 if (!$result) {
     echo 'Could not run query: ' . $conn->error;
@@ -18,8 +29,6 @@ if ($result->num_rows > 0) {
 }
 
 
-
-/*'
 
 $sql = "ALTER TABLE dailyRewards ADD distribute_time TIMESTAMP";
 if ($conn->query($sql) === TRUE) {
