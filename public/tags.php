@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row" style="margin: 0px 1px 25px;">
 			<div style="background: #eceff199;min-width: 100%;padding: 5px;">
-				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;margin-left: 10px;"></i> <span style="font-weight: 600;padding-left: 10px;">Latest posts shared in <?php echo ucfirst($_GET['tag']);?> category.</span>
+				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;margin-left: 10px;"></i> <span style="font-weight: 600;padding-left: 10px;">Latest posts shared with #<?php echo $_GET['tag'];?> tag.</span>
 			</div>
 		</div>
 		<div id="loadings"><img src="/images/loader.svg" width="100"></div>
@@ -46,13 +46,12 @@
 							var currentLikesDivElement = 'postLike_' + i;
 							var permlink = resulthtml[i]['permlink'];
 							var username = resulthtml[i]['username'];
-							var titleset = resulthtml[i]['title'];
 
 							var author = username;
 							var adduserhtml = "";
 
-							var mylabel = permlink +username;
-							var newValue = mylabel.replace('.', '');
+							//var mylabel = permlink +username;
+							//var newValue = mylabel.replace('.', '');
 						
 
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv '+currentLikesDivElement+'" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +

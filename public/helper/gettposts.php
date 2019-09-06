@@ -29,7 +29,7 @@ function timeago($date) {
 if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 	  	$mytag = $_POST['mytag'];
 
-			$sql1 = "SELECT * FROM steemposts where post_tags LIKE CONCAT('%' , '$mytag', '%') ORDER BY created_at DESC Limit 5";
+			$sql1 = "SELECT * FROM steemposts where post_tags LIKE CONCAT('%' , '$mytag', '%') ORDER BY created_at DESC Limit 48";
 			$result1 = $conn->query($sql1);
 				if ($result1->num_rows > 0) {
 					
@@ -39,69 +39,14 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 						$data['permlink'] = $row1['permlink'];
 						$strReturn['data_row'][] = $data;
 					}
-				
-					$strReturn['status'] = 'OK';
-							
+					$strReturn['status'] = 'OK';	
 				} else {
 					$strReturn['status'] = $conn->error;
 				}
   			echo json_encode($strReturn);die;
 }			
 
-/*
-if(isset($_POST['mytag']) && $_POST['mytag'] != "")
-{
-	$tag = $_POST['mytag'];
-	$json = json_decode($_POST["mytag"]);
-	/*
-		if(!empty($json)) { $strReturn['status'] = 'OK'; $strReturn['tagr'] = $tag; } else {$strReturn['status'] = 'error'; $strReturn['tagr'] = $tag;}
-	
-  	$sql = "SELECT postid FROM posttags where tagname = '$tag'";
-		$result = $conn->query($sql);
-		if ($result->num_rows > 0)
-    	{
-			$row = $result->fetch_all();
-      		echo json_encode($row);
-			$postid = $row['postid'];
-			$strReturn['tagrs'] = $postid;
-			$posts = explode(',', $postid);
-			$tag_posts = array_map(function(){ return '?'; }, $posts);
-      		$idStr = implode(',', $postid);
-
-			$sqlz = "SELECT * FROM steemposts where id IN ('$idStr') order by created_at DESC";
-			//$sqlz = "SELECT * FROM steemposts where `id` IN ('". implode(',', array_map('intval', $postid)) ."') order by created_at DESC";
-			$resultz = $conn->query($sqlz);
-
-			if ($resultz->num_rows > 0)
-      		{
-				while($rowz = $resultz->fetch_assoc())
-        		{
-					$json_metadata = json_decode($rowz['json_metadata'],true);
-					$data['username'] = $rowz['username'];
-					$data['permlink'] = $rowz['permlink'];
-					$data['title'] = $rowz['title'];
-					$data['category'] = $json_metadata['category'];
-					$data['created_at'] = timeago($rowz['created_at']);
-					$data['imgsrc'] = $json_metadata['image'];
-
-					array_push($strReturn['data_row'], $data);
-				}
-				$strReturn['status'] = 'OK';
-			}
-			else
-      		{
-				$strReturn['status'] = 'posts not coming';
-				$strReturn['tagrs'] = $conn->error;
-			}
-		} else
-    	{
-		    $strReturn['status'] = 'error';
-		}
-  	echo json_encode($strReturn);die;
-	} */
-
 if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
-
 
 	$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts where parent_ctegory = '".$_REQUEST['catname']."' ORDER BY id DESC LIMIT 48";
 	$result1 = $conn->query($sql1);
@@ -127,7 +72,6 @@ if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 		$strReturn['status'] = 'error';
 	}
   	echo json_encode($strReturn);die;
-
 }
 $conn->close();
 ?>
