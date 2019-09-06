@@ -163,6 +163,15 @@ include('template/header5.php');
 	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
 	steem.api.getAccounts([profname], function(err, result) {
 	  	//console.log(result)
+	  	
+	  	let profile_created = result["0"].created;
+        let profile_name = result["0"].name;
+        let acc_created = moment(profile_created).format('MM-YYYY');
+        $('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
+        $('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name);
+        let reputation = steem.formatter.reputation(result["0"].reputation);
+        $('.repu').html(reputation);
+
 	  	let metadata;
 	  	if (result["0"].json_metadata && result["0"].json_metadata.length > 0)
         {
@@ -199,15 +208,7 @@ include('template/header5.php');
 	  			$('.name').html(name);
 	  			$('#profiles_name').val(name);
 	  		}
-        }
-        let profile_created = result["0"].created;
-        let profile_name = result["0"].name;
-        let acc_created = moment(profile_created).format('MM-YYYY');
-        $('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
-        $('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name);
-        let reputation = steem.formatter.reputation(result["0"].reputation);
-        $('.repu').html(reputation);
-	  		
+        }	
   	});
 
 // get followers and following
