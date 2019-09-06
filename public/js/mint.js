@@ -32,10 +32,12 @@
                             {
                                 toastr['error'](response.message);
                                 return false;
+                            }  else {
+                                _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return;
                             }
                         }
                     });                      
-                    _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return; 
+                     
                 }
             }
         }   else {  toastr.error('hmm... You must be login!'); return false; }     
