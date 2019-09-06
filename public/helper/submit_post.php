@@ -61,7 +61,7 @@ $postGenerator = new dlike\post\makePost();
     		"url" => $url,   
     		"category" => $_POST['category']
 		];
-		$tags = array_unique(explode(",",$_POST['tags']));
+		$tags = $_POST['tags'];
 		
 	$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']),JSON_UNESCAPED_SLASHES);
 		$addposts = "INSERT INTO steemposts (`username`,`title`, `body`, `json_metadata`, `permlink`, `post_tags` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".$_POST['description']."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$tags."', '".$beneficiaries."', '".$category."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
