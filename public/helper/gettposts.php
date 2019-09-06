@@ -48,18 +48,18 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 
 if(isset($_REQUEST['catname']) && $_REQUEST['catname'] != "") {
 
-	$sql1 = "SELECT json_metadata,username,permlink,created_at FROM steemposts where parent_ctegory = '".$_REQUEST['catname']."' ORDER BY created_at DESC LIMIT 48";
+	$sql1 = "SELECT * FROM steemposts where parent_ctegory = '".$_REQUEST['catname']."' ORDER BY created_at DESC LIMIT 48";
 	$result1 = $conn->query($sql1);
 	if ($result1->num_rows > 0) {
 		while($row1 = $result1->fetch_assoc()) 
 		{
-			$json_metadata = json_decode($row1['json_metadata'],true);
-			if(strtolower($json_metadata['category']) == strtolower($_REQUEST['catname'])) {
+			//$json_metadata = json_decode($row1['json_metadata'],true);
+			//if(strtolower($json_metadata['category']) == strtolower($_REQUEST['catname'])) {
 
 				$data['username'] = $row1['username'];
 				$data['permlink'] = $row1['permlink'];
 				$strReturn['data_row'][] = $data;
-			}
+			//}
 		}
 		$strReturn['status'] = 'OK';
 	}
