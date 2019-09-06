@@ -17,11 +17,14 @@
 
                 let verifyUrl = getDomain(url);
                 if(isValidURL(url)){ 
-                  if(verifyUrl.match(/steemit.com/g)) { 
-                     toastr.error('phew... Steem URL not allowed'); return false;} else{ _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return; }
-                 }
-             }
-         }   else {  toastr.error('hmm... You must be login!'); return false; }     
+                    if(verifyUrl.match(/steemit.com/g)) 
+                    { 
+                     toastr.error('phew... Steem URL not allowed'); return false;
+                    } 
+                    _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return; 
+                }
+            }
+        }   else {  toastr.error('hmm... You must be login!'); return false; }     
      });    
         function _fetch(apiUrl,webUrl) {
             $.post(apiUrl,{url:webUrl},function(response){
