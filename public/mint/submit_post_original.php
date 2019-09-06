@@ -35,7 +35,7 @@ $postGenerator = new dlike\post\makePost();
 
 	$json_metadata = [
     "community" => "dlike",
-    "app" => "dlike/3",
+    "app" => "dlike/1",
     "format" => "html",
     "image" => $urlImage,
     "url" => $url,
@@ -46,8 +46,52 @@ $postGenerator = new dlike\post\makePost();
 	
 	$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='" . $url . "'>Source of shared Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
+		/*
+        $json_php_array = $json_metadata;
+        $json_meta = json_encode($json_php_array);
+        $postOptions = [
+            "operations" => [
+                ["comment", [
+                    "parent_author" => "",
+                    "parent_permlink" => $category,
+                    "title" => $title,
+                    "body" => $body,
+                    "json_metadata" => $json_meta,
+                    "author" => $_COOKIE['username'],
+                    "permlink" => $permlink
+                ]],
+                ["comment_options", [
+                    "author" => $_COOKIE['username'],
+                    "permlink" => $permlink,
+                    "max_accepted_payout" => $max_accepted_payout,
+                    "percent_steem_dollars" => $percent_steem_dollars,
+                    "allow_votes" => true,
+                    "allow_curation_rewards" => true,
+                    "extensions" => []
+                ]]
+            ]
+        ];
 
-// insert into DB
+        if ($beneficiaries != []) {
+            $postOptions["operations"][1][1]["extensions"] = [[0, ["beneficiaries" => $beneficiaries]]];
+        }
+
+
+	if (empty($errors)) {
+    $post = $postGenerator->publish($postOptions);
+    $state = $postGenerator->broadcast($post);
+	}
+
+	if (isset($state->result)) { ?>
+    <script type="text/javascript">
+        window.location = "https://dlike.io/";
+    </script>
+<? 	} else {
+		echo $state->error_description;
+	} 
+	*/
+
+
 
 	if (empty($errors)) {
     $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
@@ -61,10 +105,10 @@ $postGenerator = new dlike\post\makePost();
     		"url" => $url,   
     		"category" => $_POST['category']
 		];
-		$tags = array_unique(explode(",",$_POST['tags']));
+		
 		
 	$beneficiaries = json_encode(genBeneficiaries($_POST['benefactor']),JSON_UNESCAPED_SLASHES);
-		$addposts = "INSERT INTO steemposts (`username`,`title`, `body`, `json_metadata`, `permlink`, `tags` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".$_POST['description']."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$tags."', '".$beneficiaries."', '".$category."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
+		$addposts = "INSERT INTO steemposts (`username`,`title`, `body`, `json_metadata`, `permlink` , `benefactor` , `parent_ctegory`,`max_accepted_payout`,`percent_steem_dollars`,`created_at`) VALUES ('".$_COOKIE['username']."','".$title."', '".$_POST['description']."', '".json_encode($jsonmetadata,JSON_UNESCAPED_SLASHES)."', '".$permlink."', '".$beneficiaries."', '".$category."', '".$max_accepted_payout."', '".$percent_steem_dollars."','".date("Y-m-d H:i:s")."')";
 
 	$addpostsquery = $conn->query($addposts);
 	$post_id = mysqli_insert_id($conn);

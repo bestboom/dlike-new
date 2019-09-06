@@ -7,6 +7,11 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+/*'
+
+
+
 $sql = "ALTER TABLE steemposts ADD post_tags VARCHAR(255) NOT NULL AFTER permlink";
 if ($conn->query($sql) === TRUE) {
     echo "new field added to posts table";
@@ -14,7 +19,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating table: " . $conn->error;
 }
 
-/*'
 
 
 $result = $conn->query("SHOW COLUMNS FROM posttags");
