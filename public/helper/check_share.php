@@ -12,7 +12,7 @@ function validator($data){
 
 //if (isset($_POST["url"])){
     $url = $_GET['url'];
-    $sqls = "SELECT ext_url FROM steemposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 48 HOUR"; 
+    $sqls = "SELECT ext_url FROM steemposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 96 HOUR"; 
     $resultAmount = $conn->query($sqls);
         if ($resultAmount->num_rows > 0) {
 
