@@ -39,13 +39,12 @@ if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 						$data['permlink'] = $row1['permlink'];
 						$strReturn['data_row'][] = $data;
 					}
-				$strReturn['status'] = 'OK';
-				//$strReturn['tagrs'] = $postid;
-				} else { $strReturn['status'] = $conn->error;}
+				
+					$strReturn['status'] = 'OK';
 							
-			} else {
-				$strReturn['status'] = $conn->error;
-			}
+				} else {
+					$strReturn['status'] = $conn->error;
+				}
   			echo json_encode($strReturn);die;
 }			
 
