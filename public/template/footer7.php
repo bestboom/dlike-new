@@ -20,7 +20,7 @@
                     <div class="col-lg-3 col-md-4">
                         <div class="footer-logo">
                             <a href="#">
-                                <img src="./images/logo.png" alt="img" class="img-responsive"/>
+                                <img src="/images/logo.png" alt="img" class="img-responsive"/>
                             </a>
                         </div>
                     </div>
@@ -75,7 +75,6 @@
 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-
 <script src="/js/custom.js"></script>
 <script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
@@ -97,7 +96,6 @@
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
         }
-
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
