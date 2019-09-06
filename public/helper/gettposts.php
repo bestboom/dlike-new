@@ -28,31 +28,21 @@ function timeago($date) {
 
 if(isset($_POST['mytag']) && $_POST['mytag'] != "") {
 	  	$mytag = $_POST['mytag'];
-    	$sql = "SELECT postid FROM posttags where tagname = '$mytag' order by postid ASC LIMIT 48";
-			$result = $conn->query($sql);
-			if ($result->num_rows > 0) {
-				while($row = $result->fetch_assoc()) {
-					$postid = $row['postid'];
-					//$strReturn['status'] = 'OK';
-					//$strReturn['tagrs'] = $postid;
 
-				}
-					$sql1 = "SELECT * FROM steemposts where id IN (23932,24042,24052,24472,24632,24872,24882,24902,24912)";
-					$result1 = $conn->query($sql1);
-					if ($result1->num_rows > 0) {
-						
-						while($row1 = $result1->fetch_assoc()) {
-						    
-							$json_metadata = json_decode($row1['json_metadata'],true);
-							$data['username'] = $row1['username'];
-							$data['permlink'] = $row1['permlink'];
-							$data['metatags'] = $meta_array;
-							$strReturn['data_row'][] = $data;
-						}
-					$strReturn['status'] = 'OK';
-					//$strReturn['tagrs'] = $postid;
-					} else { $strReturn['status'] = $conn->error;}
-								
+			$sql1 = "SELECT * FROM steemposts where post_tags LIKE CONCAT('%' , '$mytag', '%') ORDER BY created_at DESC Limit 5";
+			$result1 = $conn->query($sql1);
+				if ($result1->num_rows > 0) {
+					
+					while($row1 = $result1->fetch_assoc()) {
+					    
+						$data['username'] = $row1['username'];
+						$data['permlink'] = $row1['permlink'];
+						$strReturn['data_row'][] = $data;
+					}
+				$strReturn['status'] = 'OK';
+				//$strReturn['tagrs'] = $postid;
+				} else { $strReturn['status'] = $conn->error;}
+							
 			} else {
 				$strReturn['status'] = $conn->error;
 			}
