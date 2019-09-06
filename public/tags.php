@@ -1,20 +1,18 @@
 <?php include('template/header5.php');  ?>
-<input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
+<!--<input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/> -->
 </div><!-- sub-header -->
-    
-    <div class="latest-post-section">
+<div id="p_cover" class="img-fluid"></div>    
+<div class="latest-post-section" style="min-height:80vh;padding: 35px 0 60px 0;">
 	<div class="container">
-	    <div class="row  align-items-center h-100 myloader" style="margin-bottom:30px;">
-                <div class="row col-md-3 justify-content-center">
-                        <h4 class="lab_post"><?php echo $_GET['tag'];?></h4>
-                </div>
-                <div class="col-md-9 lay">&nbsp;</div>
-            </div>
-	    <!--<div id="loader">Loading</div> -->
-	    <div class="row" id="contentposts">
-	    </div>
+		<div class="row" style="margin: 0px 1px 25px;">
+			<div style="background: #eceff199;min-width: 100%;padding: 5px;">
+				<i class="fas fa-hand-holding-heart" style="border: 1px solid #c51d24;border-radius: 15px;padding: 3px;color: #c51d24;margin-left: 10px;"></i> <span style="font-weight: 600;padding-left: 10px;">Latest posts shared in <?php echo ucfirst($_GET['cat']);?> category.</span>
+			</div>
+		</div>
+		<div id="loadings"><img src="/images/loader.svg" width="100"></div>
+		<div class="row" id="contentposts"></div>
 	</div>
-    </div>
+</div>
 
 <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
@@ -23,12 +21,7 @@
         </div>
     </div>
 </div>
-
 <?php include('template/footer3.php'); ?>
-<style>
-.showcursor{cursor:pointer;}
-.defaultcoloruser{color:gray;}
-</style>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(4000).fadeOut('slow');
@@ -124,12 +117,9 @@
 						let post_description = metadata.body;
 						let title = res.title;
 						let created = res.created;
-						//let created = timstamp;
 						let created_time = moment.utc(created + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 						let author = res.author;
 						let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-						var author_name = author;
-						//var created_at = created;
 						var permlink = res.permlink;
 						var metatags =  posttags;
 						var exturl =   metadata.url;;
