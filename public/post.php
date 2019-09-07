@@ -259,11 +259,12 @@ else
                 $result1 = $conn->query($sql1);
                 if ($result1->num_rows > 0) {
                     while($row1 = $result1->fetch_assoc()) {
-                        $json_metadata = json_decode($row1['json_metadata'],true);
+                        //$json_metadata = json_decode($row1['json_metadata'],true);
 
-                        $imgsrc = $json_metadata['image'];
+                        //$imgsrc = $json_metadata['image'];
                         $permlink = $row1['permlink'];
                         $username = $row1['username'];
+                        $imgsrc = $row1['img_url'];
 
                         echo "<div class='container' style='padding: 0px !important;'>
                         <div class='row'>
