@@ -8,11 +8,21 @@ require '../includes/config.php';
 
 
 
-
 /*'
 
 
 /*
+
+
+$sql = "ALTER TABLE steemposts ADD img_url VARCHAR(500) NOT NULL AFTER ext_url";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to posts table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
+
+
 
 $sql = "ALTER TABLE steemposts ADD ext_url VARCHAR(500) NOT NULL AFTER post_tags";
 if ($conn->query($sql) === TRUE) {
