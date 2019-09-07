@@ -80,8 +80,7 @@ $postGenerator = new dlike\post\makePost();
 					$insert_posttagscounter = $conn->query("INSERT INTO posttags (`tagname`, `postid`, `tagcount`,`updated_at`) VALUES ('".$p_tag."', '".$setpostids."', '".$setcounter."','".date("Y-m-d H:i:s")."')");
 				}
 			}
-		}
-		
+		}	
 ?>
     <script type="text/javascript">
         window.location = "https://dlike.io/";

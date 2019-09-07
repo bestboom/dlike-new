@@ -7,7 +7,7 @@
                 </div>
                 <div class="colto-btn-group">
                 <?php if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { ?>
-                    <input type="email" placeholder="Email To Subscribe" style="padding: 15px 40px;border-radius: 5px;margin-right: 10px;">
+                    <input type="email" placeholder="Email To Subscribe" id="subscribe_field" style="padding: 15px 40px;border-radius: 5px;margin-right: 10px;">
                     <button class="btn callto-btn subscribe" />Subscribe</button>
                 <? } else {    ?>
                     <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Log In</button>
@@ -99,7 +99,14 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
-        function popup(e){var t=700;var n=400;var r=(screen.width-t)/2;var i=(screen.height-n)/2;var s="width="+t+", height="+n;s+=", top="+i+", left="+r;s+=", directories=no";s+=", location=no";s+=", menubar=no";s+=", resizable=no";s+=", scrollbars=no";s+=", status=no";s+=", toolbar=no";newwin=window.open(e,"windowname5",s);if(window.focus){newwin.focus()}return false}
+        function popup(e){var t=700;var n=400;var r=(screen.width-t)/2;var i=(screen.height-n)/2;var s="width="+t+", height="+n;s+=", top="+i+", left="+r;s+=", directories=no";s+=", location=no";s+=", menubar=no";s+=", resizable=no";s+=", scrollbars=no";s+=", status=no";s+=", toolbar=no";newwin=window.open(e,"windowname5",s);if(window.focus){newwin.focus()}return false};
+        $('.subscribe').click(function(e) {    
+            e.preventDefault();
+            let subscribe_value = $("#subscribe_field").val();
+               if($.trim($('#subscribe_field').val()) == ''){
+                    toastr.error('phew... Please enter Email Address'); return false;
+                }              
+        });
     </script>     
 </body>
 </html>
