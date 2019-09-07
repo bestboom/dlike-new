@@ -8,10 +8,10 @@
                 <div class="colto-btn-group">
                 <?php if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) {
                     echo '<input type="text" placeholder="Email To Subscribe">';
-                    echo '<button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Subscribe</button>'
+                    echo '<button class="btn callto-btn" onclick="window.open("/welcome", "_self");" />Subscribe</button>'
                 } else {    
                     echo '<button class="btn callto-btn" onclick="window.open("/welcome", "_self");" />Log In</button><span>or</span>';
-                    echo '<button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Create Account</button>'
+                    echo '<button class="btn callto-btn" onclick="window.open("/welcome", "_self");" />Create Account</button>'
                 } ?>    
                 </div>
             </div>
