@@ -3,12 +3,16 @@
             <div class="colto-content-wrap">
                 <div class="colto-content">
                     <h3>Share To Get Rewarded</h3>
-                    <p>DLIKE - An Informative Source of Internet</p>
+                    <p>DLIKE - An Informative Face of Internet</p>
                 </div>
                 <div class="colto-btn-group">
-                    <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Log In</button>
-                    <span>or</span>
-                    <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Create Account</button>
+                <?php if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) {
+                    echo '<input type="text" placeholder="Email To Subscribe">';
+                    echo '<button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Subscribe</button>'
+                } else {    
+                    echo '<button class="btn callto-btn" onclick="window.open("/welcome", "_self");" />Log In</button><span>or</span>';
+                    echo '<button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Create Account</button>'
+                } ?>    
                 </div>
             </div>
         </div>
