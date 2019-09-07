@@ -7,8 +7,8 @@
                 </div>
                 <div class="colto-btn-group">
                 <?php if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { ?>
-                    <input type="text" placeholder="Email To Subscribe" style="padding: 15px 40px;border-radius: 5px;margin-right: 10px;">
-                    <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Subscribe</button>
+                    <input type="email" placeholder="Email To Subscribe" style="padding: 15px 40px;border-radius: 5px;margin-right: 10px;">
+                    <button class="btn callto-btn subscribe" />Subscribe</button>
                 <? } else {    ?>
                     <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Log In</button>
                     <span>or</span>
@@ -72,13 +72,7 @@
             </div>
         </div>
     </footer>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script> 
-<script src="/assets/js/slick.min.js"></script>
-<script src="/assets/js/popper.min.js"></script>
-<script src="/assets/js/jquery.peity.min.js"></script>
-<script src="/assets/js/jquery.slimscroll.min.js"></script>
-<script src="/js/custom.js"></script>
--->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 
