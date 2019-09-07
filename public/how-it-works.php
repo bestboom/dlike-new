@@ -287,7 +287,7 @@
             </div>
         </div>
     </div><!-- support-details-section -->
-<?php include('template/footer7.php'); ?>    
+<?php include('template/footer.php'); ?>    
 <script type="text/javascript">
     $('.check').click(function(){
         $('.check span').addClass('liked');

@@ -142,7 +142,7 @@ include('template/header5.php');
 			</div>				        
 	    </div>    
 	</div> 
-<?php include('template/footer3.php'); ?> 
+<?php include('template/footer.php'); ?> 
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');

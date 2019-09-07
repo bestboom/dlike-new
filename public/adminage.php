@@ -46,4 +46,4 @@ error_reporting(E_ALL);
     </div><!-- contact-section -->
 </div>    
 
-<?php include('template/footer7.php'); ?>
+<?php include('template/footer.php'); ?>
