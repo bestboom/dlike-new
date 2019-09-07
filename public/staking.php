@@ -124,7 +124,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
         </div>
     </div>
 <? } ?>     
-<?php include('template/footer3.php'); ?>
+<?php include('template/footer.php'); ?>
 <script type="text/javascript">
     var optionstak = {
         target: '#stak-msg',

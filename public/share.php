@@ -27,4 +27,4 @@
             </div>
         </div>
     </div>  
-<?php include('template/footer3.php'); ?>
+<?php include('template/footer.php'); ?>

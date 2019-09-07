@@ -20,7 +20,7 @@
         </div>
     </div>
 </div>
-<?php include('template/footer7.php'); ?>
+<?php include('template/footer.php'); ?>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(4000).fadeOut('slow');

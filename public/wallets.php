@@ -78,4 +78,4 @@ $rowIt = $resultAmount->fetch_assoc();
     </div><!-- activity-section -->
           
 </div><!-- explorer-section -->
-<?php include('template/footer3.php'); ?>
+<?php include('template/footer.php'); ?>

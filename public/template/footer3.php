@@ -1,5 +1,12 @@
 <div class="colto-section">
     <div class="row">
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script> 
+<script src="/assets/js/slick.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/jquery.peity.min.js"></script>
+<script src="/assets/js/jquery.slimscroll.min.js"></script>
+<script src="/js/custom.js"></script>
+-->
         <!-- <div class="col-6 col-md-4">
             <div class="row">
                 <div class="col-md-4 offset-md-8 col-6 offset-3">

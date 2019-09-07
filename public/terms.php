@@ -91,4 +91,4 @@
 
 	</div>	
 </div>
-<?php include('template/footer7.php'); ?> 
+<?php include('template/footer.php'); ?> 

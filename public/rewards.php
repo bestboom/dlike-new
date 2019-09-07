@@ -178,7 +178,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
             </div>
         </div>
     </div><!-- working-process-section-->
-<?php $conn->close(); include('template/footer3.php'); ?>
+<?php $conn->close(); include('template/footer.php'); ?>
 
     <script type="text/javascript">
     var countDownDate = 0;
