@@ -105,7 +105,11 @@
             let subscribe_value = $("#subscribe_field").val();
                if($.trim($('#subscribe_field').val()) == ''){
                     toastr.error('phew... Please enter Email Address'); return false;
-                }              
+                }
+               if( !isValidEmailAddress( subscribe_value ) ) {
+                    toastr.error('phew... Not a valid Email Address'); return false;
+                }  
+                toastr.success('Thanks for subscribing');                
         });
     </script>     
 </body>
