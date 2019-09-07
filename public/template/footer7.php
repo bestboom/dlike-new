@@ -7,7 +7,7 @@
                 </div>
                 <div class="colto-btn-group">
                 <?php if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { ?>
-                    <input type="text" placeholder="Email To Subscribe">
+                    <input type="text" placeholder="Email To Subscribe" style="padding: 15px 40px;border-radius: 5px;margin-right: 10px;">
                     <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Subscribe</button>
                 <? } else {    ?>
                     <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Log In</button>
