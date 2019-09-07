@@ -255,7 +255,7 @@ else
             <!-- sidebar -posts -->
             <div class="col-md-3" style="margin-top: 30px !important;">
                 <?php
-                $sql1 = "SELECT json_metadata,username,permlink,title FROM steemposts ORDER BY id DESC LIMIT 4";
+                $sql1 = "SELECT * FROM steemposts ORDER BY id DESC LIMIT 4";
                 $result1 = $conn->query($sql1);
                 if ($result1->num_rows > 0) {
                     while($row1 = $result1->fetch_assoc()) {
