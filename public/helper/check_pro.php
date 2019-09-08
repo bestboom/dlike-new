@@ -24,7 +24,7 @@ $user_name = $_GET['user'];
             $sql1 = "SELECT * FROM steemposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR"; 
                 $result1 = $conn->query($sql1);
 
-                if ($resultAmount->num_rows >= 3) {
+                if ($result1->num_rows >= 3) {
 
                     $return['status'] = false;
                     $return['message'] = 'PRO users can only share 3 posts in 24 hours!';
@@ -32,10 +32,10 @@ $user_name = $_GET['user'];
                 }
         } else {
 
-            $sql1 = "SELECT * FROM steemposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR"; 
-                $result1 = $conn->query($sql1);
+            $sql2 = "SELECT * FROM steemposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR"; 
+                $result2 = $conn->query($sql2);
 
-                if ($resultAmount->num_rows >= 1) {
+                if ($result2->num_rows >= 1) {
 
                     $return['status'] = false;
                     $return['message'] = 'Only 1 share allowed every 24 hours. To share more become PRO!';
