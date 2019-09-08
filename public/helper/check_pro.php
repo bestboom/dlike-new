@@ -9,8 +9,8 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-if (isset($_POST["user_name"])){
-    $user_name = $_POST['user_name'];
+if (isset($_POST["user"])){
+    $user_name = $_POST['user'];
     //$user_name = $_GET['user'];
     $return = array();
     $return['status'] = true;
