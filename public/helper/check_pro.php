@@ -9,9 +9,9 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-//if (isset($_POST["user_name"])){
-//    $user_name = $_POST['user_name'];
-$user_name = $_GET['user'];
+if (isset($_POST["user_name"])){
+    $user_name = $_POST['user_name'];
+    //$user_name = $_GET['user'];
     $return = array();
     $return['status'] = true;
     $return['message'] = '';
@@ -43,5 +43,5 @@ $user_name = $_GET['user'];
                 }
 	    } 
     echo json_encode($return);die;     
-//} else {die('Invalid Response on share limit');} 
+} else {die('Invalid Response on share limit');} 
 ?>

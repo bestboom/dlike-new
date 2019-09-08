@@ -12,35 +12,50 @@
 
         _click($add_data, function() {
             if(username != null) {
-               let url = $("#url_field").val();
-               if(url == '') { $("#url_field").css("border-color", "RED"); toastr.error('phew... You forgot to enter URL');} else {
+            $.ajax({
+                url: '/helper/check_pro.php',
+                type: 'post',
+                dataType: 'json',
+                data: {user:username},
+                success:function(response){
+                    console.log(response);
+                    if(response.status===false)
+                    {
+                        toastr['error'](response.message);
+                        return false;
+                    }  else {
 
-                let verifyUrl = getDomain(url);
-                if(isValidURL(url)){ 
-                    if(verifyUrl.match(/steemit.com/g)) 
-                    { 
-                     toastr.error('phew... Steem URL not allowed'); return false;
-                    }
-                    $.ajax({
-                        url: '/helper/check_share.php',
-                        type: 'post',
-                        dataType: 'json',
-                        data: {url:url},
-                        success:function(response){
-                            console.log(response);
-                            if(response.status===false)
-                            {
-                                toastr['error'](response.message);
-                                return false;
-                            }  else {
-                                _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return;
+                        let url = $("#url_field").val();
+                        if(url == '') { $("#url_field").css("border-color", "RED"); toastr.error('phew... You forgot to enter URL');
+                            } else {
+
+                            let verifyUrl = getDomain(url);
+                            if(isValidURL(url)){ 
+                                if(verifyUrl.match(/steemit.com/g)) { 
+                                    toastr.error('phew... Steem URL not allowed'); return false;
+                                }
+                                $.ajax({
+                                    url: '/helper/check_share.php',
+                                    type: 'post',
+                                    dataType: 'json',
+                                    data: {url:url},
+                                    success:function(response){
+                                        console.log(response);
+                                        if(response.status===false)
+                                        {
+                                            toastr['error'](response.message);
+                                            return false;
+                                        }  else {
+                                            _hide($add_data_f); _show($loader); _fetch("helper/main.php",url); return;
+                                        }
+                                    }
+                                });                        
                             }
                         }
-                    });                      
-                     
-                }
-            }
-        }   else {  toastr.error('hmm... You must be login!'); return false; }     
+                    }//else
+                }//success    
+            }); //ajax   
+            }   else {  toastr.error('hmm... You must be login!'); return false; }     
      });    
         function _fetch(apiUrl,webUrl) {
             $.post(apiUrl,{url:webUrl},function(response){
