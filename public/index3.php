@@ -517,7 +517,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 
     
 <?php include('template/modals/modal.php'); ?>
-<?php include('template/footer4.php'); ?>
+<?php include('template/footer.php'); ?>
 
 <style>
 .showcursor{cursor:pointer;}
