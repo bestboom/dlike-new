@@ -103,7 +103,7 @@ class DataGraber{
 		//preg_match('/(?<=src=").*?(?=")/',$thumbnail,$imgSrc);
 		//$thumbnail=isset($imgSrc[0])?$imgSrc[0]:'';
 		*/
-			$thumbnail='https://dlike.io/images/default-img.jpg';	
+			$thumbnail='https://dlike.io/images/default-img.png';	
 			return $thumbnail;
 			}
 	

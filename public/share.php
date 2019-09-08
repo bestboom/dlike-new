@@ -21,7 +21,7 @@
                                 </button>
                             </center>
                         </form>
-                        <p style="color: #fff;">Must read  <a href="/terms" style="color: #e1ec31;"> Terms &amp; Conditions</a> for sharing!</p>
+                        <p style="color: #fff;">Must read  <a href="/help" style="color: #e1ec31;"> Terms &amp; Conditions</a> for sharing!</p>
                     </div>
                 </div>
             </div>
