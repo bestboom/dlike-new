@@ -27,10 +27,10 @@ if (isset($_POST["user"])){
                 if ($result1->num_rows >= 3) {
 
                     $return['status'] = false;
-                    $return['message'] = 'PRO users can only share 3 posts in 24 hours!';
+                    $return['message'] = 'PRO users can share 3 posts in 24 hours!';
 
                 }
-        } else {
+        } else  {
 
             $sql2 = "SELECT * FROM steemposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR"; 
                 $result2 = $conn->query($sql2);
