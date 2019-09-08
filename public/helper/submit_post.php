@@ -64,7 +64,6 @@ $postGenerator = new dlike\post\makePost();
 		$posts_tags = array_unique(explode(",",$_POST['tags']));
 		if(count($posts_tags)>0)  {
 			foreach($posts_tags as $p_tag) {
-
 				$add_tags = $conn->query("INSERT INTO posttags (`tagname`,`updated_at`) VALUES ('".$p_tag."','".date("Y-m-d H:i:s")."')");
 			}
 		}	
