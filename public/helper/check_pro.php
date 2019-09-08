@@ -9,22 +9,39 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-if (isset($_POST["user_name"])){
-    $user_name = $_POST['user_name'];
-
+//if (isset($_POST["user_name"])){
+//    $user_name = $_POST['user_name'];
+$user_name = $_GET['user'];
     $return = array();
     $return['status'] = false;
     $return['message'] = '';
 
-    $sqls = "SELECT ext_url FROM steemposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 100 HOUR"; 
+    $sqls = "SELECT * FROM prousers WHERE username = '$user_name'"; 
     $resultAmount = $conn->query($sqls);
         if ($resultAmount->num_rows > 0) {
-                $return['status'] = false;
-                $return['message'] = 'URL already shared. Can not be shared again!';
+
+
+            $sql1 = "SELECT * FROM steemposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR"; 
+                $result1 = $conn->query($sql1);
+
+                if ($resultAmount->num_rows >= 3) {
+
+                    $return['status'] = false;
+                    $return['message'] = 'PRO users can only share 3 posts in 24 hours!';
+
+                }
         } else {
-			    $return['status'] = true;
-                $return['message'] = 'Unique URL';
+
+            $sql1 = "SELECT * FROM steemposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR"; 
+                $result1 = $conn->query($sql1);
+
+                if ($resultAmount->num_rows >= 1) {
+
+                    $return['status'] = false;
+                    $return['message'] = 'Only 1 share allowed every 24 hours. To share more become PRO!';
+
+                }
 	    } 
     echo json_encode($return);die;     
-} else {die('Invalid Response on URL check. Try Later');} 
+//} else {die('Invalid Response on share limit');} 
 ?>
