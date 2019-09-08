@@ -13,7 +13,7 @@ function validator($data){
 //    $user_name = $_POST['user_name'];
 $user_name = $_GET['user'];
     $return = array();
-    $return['status'] = false;
+    $return['status'] = true;
     $return['message'] = '';
 
     $sqls = "SELECT * FROM prousers WHERE username = '$user_name'"; 
