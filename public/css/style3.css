@@ -4420,7 +4420,7 @@ button.toast-close-button {
     background-color: #51a351;
 }
 .toast-error {
-    background-color: #000;
+    background-color: #d9534f;
 }
 .toast-info {
     background-color: #2f96b4;
