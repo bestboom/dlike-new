@@ -8,4 +8,12 @@ require '../includes/config.php';
 
 
 
+$sqlw = "DELETE FROM posttags";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Table DELETED successfully";
+} else {
+    echo "Error deleting table: " . $conn->error;
+}
+
 ?>
