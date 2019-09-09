@@ -23,21 +23,20 @@ $main_categories = array_values(array_unique($category_array));
 
 
 
-$posttags = "SELECT * FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) order by tagcount DESC";
-$posttags_r = $conn->query($posttags);
-if ($posttags_r->num_rows > 0) {
-    $trending_html = '';
-    $counter = 0; 
-    while($row = $posttags_r->fetch_assoc()) {
-        if (strpos($row['tagname'], 'dlike') === false && $counter < 12) {
-            $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tagname'].'" role="tab" data-toggle="tab">'.strtoupper($row['tagname']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
-            ++$counter;
-        }
-        
+$posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 10";
+    $posttags_r = $conn->query($posttags);
+    if ($posttags_r->num_rows > 0) {
+        $trending_html = '';
+        $counter = 0; 
+            while($row = $posttags_r->fetch_assoc()) {
+                if (strpos($row['tagname'], 'dlike') === false && $counter < 12) {
+                    $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tagname'].'" role="tab" data-toggle="tab">'.strtoupper($row['tagname']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
+                    ++$counter;
+                }  
+            }
+    } else {
+        $trending_html = '';
     }
-} else {
-    $trending_html = '';
-}
 
 
 $s_sql = "SELECT * FROM `settings` where `type` = 'events' && options = 'enable'";
