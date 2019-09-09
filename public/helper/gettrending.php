@@ -8,6 +8,7 @@
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$html = '<div class="colxs-1 trendingword">Trending Now ></div>';
+		$trending_html = '';
 		$counter = 0; 
 		while($row = $result->fetch_assoc()) {
 			if (strpos($row['tagname'], 'dlike') === false && strpos($row['tagname'], ' ') === false) {
