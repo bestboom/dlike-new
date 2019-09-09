@@ -4,7 +4,7 @@
 	error_reporting(0);
     	require '../includes/config.php';
 	  
-    	$sql = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 5";
+    	$sql = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 10";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$html = '<div class="colxs-1 trendingword">Trending Now ></div>';
