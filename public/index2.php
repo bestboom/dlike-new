@@ -18,6 +18,22 @@
     }
     
     </style>
+<?php
+$posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 10";
+    $posttags_r = $conn->query($posttags);
+    if ($posttags_r->num_rows > 0) {
+        $trending_html = '';
+        $counter = 0; 
+            while($row = $posttags_r->fetch_assoc()) {
+                if (strpos($row['tagname'], 'dlike') === false && $counter < 12) {
+                    $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tagname'].'" role="tab" data-toggle="tab">'.strtoupper($row['tagname']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
+                    ++$counter;
+                }  
+            }
+	} else {
+    	$trending_html = '';
+	}
+?>    
     <div class="latest-post-section">
 	<div class="container trendingclass">
         <div class="row">
@@ -27,7 +43,7 @@
                 <div class="wrapper">
                     <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
                         <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>
-                        <div class="appendtrending"></div>
+                        <?php echo $trending_html;?>
                     </nav>
                 </div>
             </div>
