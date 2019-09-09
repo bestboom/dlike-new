@@ -10,10 +10,10 @@
 		$html = '<div class="colxs-1 trendingword">Trending Now ></div>';
 		$counter = 0; 
 		while($row = $result->fetch_assoc()) {
-			//if (strpos($row['tagname'], 'dlike') === false && $counter < 10) {
+			if (strpos($row['tagname'], 'dlike') === false) {
 				$html .= '<div class="colxs-1"><a href="/tags/'.$row['tagname'].'">'.$row['tagname'].'</a></div>';
 				++$counter;
-			//}
+			}
 			
 		}
 		$strReturn['status'] = 'OK';
