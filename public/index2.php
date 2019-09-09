@@ -20,8 +20,18 @@
     </style>
     <div class="latest-post-section">
 	<div class="container trendingclass">
-	    <div class="row appendtrending">
-	    </div>
+        <div class="row">
+            <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
+                <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
+                <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
+                <div class="wrapper">
+                    <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
+                        <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>
+                        <div class="appendtrending"></div>
+                    </nav>
+                </div>
+            </div>
+        </div>
 	</div>
     
         <div class="container">
