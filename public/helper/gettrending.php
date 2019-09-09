@@ -7,7 +7,7 @@
     $sql = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 10";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
-		$html = '<a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>';
+		$html = '<a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900;background-color: #F0F0F1;">Trending now ></a>';
 		$trending_html = '';
 		$counter = 0; 
 		while($row = $result->fetch_assoc()) {
