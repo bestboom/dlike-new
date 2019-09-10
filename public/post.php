@@ -8,7 +8,7 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender='';}
 
-$post_url = "https://http://scot-api.steem-engine.com/{$user}/{$link}";
+$post_url = "https://http://scot-api.steem-engine.com/$user/$link";
 $response = file_get_contents($post_url);
 $result = json_decode($response);
 $og_description = explode("\n\n#####\n\n",$result->body);
