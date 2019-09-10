@@ -19,7 +19,7 @@
     
     </style>
 <?php
-$posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 12";
+$posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 15";
     $posttags_r = $conn->query($posttags);
     if ($posttags_r->num_rows > 0) {
         $trending_html = '';
