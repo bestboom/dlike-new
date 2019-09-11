@@ -4,8 +4,16 @@ $post_url = "http://scot-api.steem-engine.com/@tophash/alibaba-set-for-big-chall
 $response = file_get_contents($post_url);
 $result = json_decode($response);
 
-var_dump($result->DLIKER->pending_token);
+echo $result->DLIKER->pending_token;
 echo '<br/>';
-echo $result->DLIKER->cashout_time;
+echo $cashout_time = $result->DLIKER->cashout_time;
 
+include('template/footer.php');
 ?>
+
+<script type="text/javascript">
+	let cashout_time = <?=($cashout_time)?>;
+	console.log(cashout_time);
+	let time_remian = moment.utc(cashout_time + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+	console.log(time_remian);
+</script>
