@@ -8,6 +8,8 @@ $sct_result = json_decode($sct_response);
 echo '<br/>';
 echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
+echo $og_description = explode("\n\n#####\n\n",$meta_data->body);
+echo '<br/>';
 echo $pending_amount = ($sct_result->DLIKER->pending_token)/1000;
 echo '<br/>';
 echo $precision = $sct_result->DLIKER->precision;
