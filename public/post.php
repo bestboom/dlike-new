@@ -142,9 +142,9 @@ else
                                                         <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                                     </div><!-- post-views-block -->
                                                 </div>
-                                                <div class="col auth_info">
+                                                <div class="col-sm-3 auth_info">
                                                     <div class="post-share-block">
-                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span>
+                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span>+<span>0 DLIKER</span>
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
