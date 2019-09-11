@@ -10,7 +10,7 @@ echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
 $og_description = explode("\n\n#####\n\n",$meta_data->body);
 $og_description = $og_description[1];
-$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
+echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 function removeTags($str) {  
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
     return $str;
