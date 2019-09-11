@@ -4,11 +4,11 @@ $post_url = "http://scot-api.steem-engine.com/@tophash/alibaba-set-for-big-chall
 $response = file_get_contents($post_url);
 $result = json_decode($response);
 
-echo $pending_amount = $result->DLIKER->pending_token;
+echo $pending_amount = ($result->DLIKER->pending_token)/1000;
 echo '<br/>';
 echo $precision = $result->DLIKER->precision;
 echo '<br/>';
-echo $pending_payout = number_format($pending_amount/1000);
+echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '');
 echo '<br/>';
 echo $cashout_time = $result->DLIKER->cashout_time;
 
