@@ -599,7 +599,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         		let author = $post.author;
         		let permlink = $post.permlink;	
 
-        		.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
+        		$.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
     						console.log(data.DLIKER.pending_token);
     						let pending_token = (data.DLIKER.pending_token)/1000;
     						$('#article_'+permlink+' #se_token').html(pending_token);
