@@ -602,12 +602,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         		$.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
     						console.log(data.DLIKER.pending_token);
     						let pending_token = (data.DLIKER.pending_token)/1000;
-    						$('#article_'+permlink+' #se_token').html(pending_token);
-
-    						//let payouts = data;
-    						//for (let k = 0; k < payouts.length; k++) {
-    						//	console.log(payouts[k].DLIKER.pending_token)
-    						//}
+    						$('#se_token').html(pending_token);
 						});			
 
     		//check if voted
