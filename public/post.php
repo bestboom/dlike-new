@@ -112,7 +112,7 @@ else
                             <div class="details-post-meta-block-top">
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-sm-3 col-lg-3">
+                                        <div class="col-lg-3 col-md-4">
                                             <div class="post-author-block" style="display: flex;align-items: center;">
                                                 <div class="author-thumb">
                                                     <a href="#" class="author-thumb-link"><img src="" onerror="this.src='./images/post/authors/8.png'" alt="img" class="mod-authThumb"></a>
@@ -122,7 +122,7 @@ else
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col col-lg-1 auth_info">
+                                        <div class="col-lg-1 col-md-2 auth_info">
                                             <div class="post-tag-block"><!-- post-likes-block -->
                                                 <?php
                                                 $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
@@ -142,18 +142,18 @@ else
                                                     </div><!-- post-likes-block -->
                                                 </div>
                                                 <!-- post-views-block -->
-                                                <div class="col col-lg-1 auth_info">
+                                                <div class="col-lg-1 col-md-2 auth_info">
                                                     <div class="post-share-block">
                                                         <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
                                                     </div><!-- post-views-block -->
                                                 </div>
-                                                <div class="col-sm-3 col-lg-4 auth_info">
+                                                <div class="col-lg-4 col-md-6 auth_info">
                                                     <div class="post-share-block">
                                                         <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span><?php echo $pending_amount;?></span> DLIKER
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
-                                                <div class="col col-lg-3 auth_info" style="">
+                                                <div class="col-lg-3 col-md-5 auth_info" style="">
                                                     <div class="post-share-block">
                                                         <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
                                                     </div>
