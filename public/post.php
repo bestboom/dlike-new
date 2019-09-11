@@ -153,7 +153,7 @@ else
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
-                                                <div class="col auth_info" style="max-width: 45%;">
+                                                <div class="col auth_info" style="">
                                                     <div class="post-share-block">
                                                         <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
                                                     </div>
