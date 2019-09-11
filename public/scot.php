@@ -8,7 +8,7 @@ $sct_result = json_decode($sct_response);
 echo '<br/>';
 echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
-echo $body = $meta_data[0]->image;
+echo $body = $meta_data[0]->community;
 echo '<br/>';
 $og_description = explode("\n\n#####\n\n",$sct_result->DLIKER->json_metadata[body]);
 var_dump($og_description);
