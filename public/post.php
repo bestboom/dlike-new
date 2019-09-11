@@ -144,7 +144,7 @@ else
                                                 </div>
                                                 <div class="col-sm-3 auth_info">
                                                     <div class="post-share-block">
-                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span>+<span>0 DLIKER</span>
+                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span>0</span>DLIKER
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
