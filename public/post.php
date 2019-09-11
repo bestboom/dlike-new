@@ -13,8 +13,10 @@ $response = file_get_contents($post_url);
 $result = json_decode($response);
 
 $og_title = $result->DLIKER->title;
-$meta_data = json_decode($result->DLIKER->json_metadata);
 
+
+
+$meta_data = json_decode($result->DLIKER->json_metadata);
 $og_description = explode("\n\n#####\n\n",$meta_data->body);
 $og_description = $og_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
@@ -30,6 +32,9 @@ $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
 include('template/header5.php');
+
+$pending_amount = ($sct_result->DLIKER->pending_token)/1000;
+$cashout_time = $sct_result->DLIKER->cashout_time;
 
 $views = '1'; 
 //post views
@@ -144,7 +149,7 @@ else
                                                 </div>
                                                 <div class="col-sm-3 auth_info">
                                                     <div class="post-share-block">
-                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span>0</span>DLIKER
+                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span><?php echo $pending_amount;?></span> DLIKER
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
