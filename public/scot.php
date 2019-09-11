@@ -6,6 +6,6 @@ $result = json_decode($response);
 
 var_dump($result->DLIKER->pending_token);
 echo '<br/>';
-var_dump($result->DLIKER->cashout_time);
+echo $result->DLIKER->cashout_time;
 
 ?>
