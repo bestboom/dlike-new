@@ -8,8 +8,8 @@ $sct_result = json_decode($sct_response);
 echo '<br/>';
 echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
-echo $og_description = explode("\n\n#####\n\n",$sct_result->DLIKER->json_metadata->body);
-$og_description = $og_description[1];
+$og_description = explode("\n\n#####\n\n",$sct_result->DLIKER->json_metadata->body);
+echo $og_description = $og_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 function removeTags($str) {  
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
