@@ -129,7 +129,7 @@ include('template/header5.php');
 						$('#article_'+permlink+' #post_time').html(created_time);
 
 						$.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
-    						console.log(data.DLIKER.pending_token);
+    						//console.log(data.DLIKER.pending_token);
     						let payouts = data;
     						for (let k = 0; k < payouts.length; k++) {
     							console.log(payouts[k].DLIKER.pending_token)
