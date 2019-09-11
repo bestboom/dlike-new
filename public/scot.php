@@ -2,17 +2,17 @@
 $link = 'alibaba-set-for-big-challenge-as-flamboyant-chairman-ma-departs';
 $user = '@tophash';
 
-echo $scot_url = "http://scot-api.steem-engine.com/$user/$link";
+echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response);
 echo '<br/>';
 echo $pending_amount = ($sct_result->DLIKER->pending_token)/1000;
 echo '<br/>';
-echo $precision = $result->DLIKER->precision;
+echo $precision = $sct_result->DLIKER->precision;
 echo '<br/>';
 echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '');
 echo '<br/>';
-echo $cashout_time = $result->DLIKER->cashout_time;
+echo $cashout_time = $sct_result->DLIKER->cashout_time;
 
 include('template/footer.php');
 ?>
