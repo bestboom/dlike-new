@@ -5,5 +5,7 @@ $response = file_get_contents($post_url);
 $result = json_decode($response);
 
 var_dump($result->DLIKER->pending_token);
+echo '<br/>';
+var_dump($result->DLIKER->cashout_time);
 
 ?>
