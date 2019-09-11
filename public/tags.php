@@ -81,7 +81,7 @@
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span class="pending_payout_value"></span> | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +author +'">0</span></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span class="pending_payout_value"></span> + <span id="se_token">0</span> DLIKER | <i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +author +'">0</span></div>\n' +
 					'</div>\n' +
 					'<div class="post-comments">&nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+permlink +author +'"></i></a><span class="active_votes">&nbsp; |  Votes</span></div>\n' +
 					'</div>\n' +
@@ -127,6 +127,8 @@
 
 						$.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
     						console.log(data.DLIKER.pending_token);
+    						let pending_token = (data.DLIKER.pending_token)/1000;
+    						$('#article_'+permlink+' #se_token').html(pending_token);
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
