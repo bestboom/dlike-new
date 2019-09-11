@@ -8,7 +8,7 @@ echo $pending_amount = $result->DLIKER->pending_token;
 echo '<br/>';
 echo $precision = $result->DLIKER->precision;
 echo '<br/>';
-echo $pending_payout = number_format($pending_amount, $precision, '.', '');
+echo $pending_payout = number_format($pending_amount, $precision, '');
 echo '<br/>';
 echo $cashout_time = $result->DLIKER->cashout_time;
 
