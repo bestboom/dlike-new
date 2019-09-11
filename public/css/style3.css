@@ -2351,7 +2351,7 @@ label.star:before{
     font-weight: 700;
     color: #fff;
 }
-.auth_info{padding: 5px;text-align: center;width: fit-content;}
+.auth_info{padding: 5px;text-align: center;width: auto;}
 #minutes{background: #c51d24;border-radius: 5px;padding: 15px;}
 #seconds{background: #c51d24;border-radius: 5px;padding: 15px;}
 #countdown{font-size:16px;float:center;color:#fff;text-align: center;}
