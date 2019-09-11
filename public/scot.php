@@ -6,6 +6,8 @@ echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response);
 echo '<br/>';
+echo $meta_data = json_decode($sct_result->DLIKER->json_metadata);
+echo '<br/>';
 echo $pending_amount = ($sct_result->DLIKER->pending_token)/1000;
 echo '<br/>';
 echo $precision = $sct_result->DLIKER->precision;
