@@ -11,17 +11,20 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_C
 $post_url = "https://scot-api.steem-engine.com/$user/$link";
 $response = file_get_contents($post_url);
 $result = json_decode($response);
-$og_description = explode("\n\n#####\n\n",$result->body);
+
+$og_title = $result->DLIKER->title;
+$meta_data = json_decode($result->DLIKER->json_metadata);
+
+$og_description = explode("\n\n#####\n\n",$meta_data->body);
 $og_description = $og_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
-$og_title = $result->DLIKER->title;
 function removeTags($str) {  
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
     return $str;
 }
 $og_description = removeTags($og_description);
-$meta_data = json_decode($result->DLIKER->json_metadata);
 $og_image = $meta_data->image;
+
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
