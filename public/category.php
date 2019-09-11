@@ -132,7 +132,7 @@ include('template/header5.php');
     						console.log(data.DLIKER.pending_token);
     						let payouts = data;
     						for (let k = 0; k < payouts.length; k++) {
-    							console.log(payouts.DLIKER.pending_token)
+    							console.log(payouts[k].DLIKER.pending_token)
     						}
 						});
 
