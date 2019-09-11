@@ -130,6 +130,10 @@ include('template/header5.php');
 
 						$.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
     						console.log(data.DLIKER.pending_token);
+    						let payouts = data;
+    						for (let k = 0; k < payouts.length; k++) {
+    							console.log(payouts.DLIKER.pending_token)
+    						}
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
