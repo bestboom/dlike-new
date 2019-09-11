@@ -125,6 +125,10 @@
 						$('#article_'+permlink+' span.active_votes').html("&nbsp; | "+res.active_votes.length+" Votes");
 						$('#article_'+permlink+' #post_time').html(created_time);
 
+						$.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
+    						console.log(data.DLIKER.pending_token);
+						});
+
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
 							if(result === Array) {
 								var voterList = result;
