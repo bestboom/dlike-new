@@ -12,14 +12,14 @@ echo '<br/>';
 echo '<br/>';
 //$og_description = explode("\n\n#####\n\n",$sct_result->DLIKER->json_metadata->body);
 $og_description = $sct_result->DLIKER->json_metadata['body'];
-var_dump($og_description);
-echo $og_description = $og_description[1];
+print_r($og_description);
+$og_description = $og_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 function removeTags($str) {  
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
     return $str;
 }
-echo $og_description = removeTags($og_description);
+$og_description = removeTags($og_description);
 echo '<br/>';
 echo $pending_amount = ($sct_result->DLIKER->pending_token)/1000;
 echo '<br/>';
