@@ -271,7 +271,18 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
             document.getElementById("mySidenav").style.width = "0";
         }
     </script>
+    </div>
 
+    <div class="latest-post-section pt-0" style="margin-top: -5px !important;">
+        <div class="container">
+
+            
+        </div>
+    </div>
+
+
+    
+<?php include('template/modals/modal.php'); ?>
 <?php include('template/footer.php'); ?>
 
 <style>
