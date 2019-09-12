@@ -275,7 +275,18 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 
     <div class="latest-post-section pt-0" style="margin-top: -5px !important;">
         <div class="container">
+            <div class="row  align-items-center h-100 post_select">
+                <div class="row col-md-3 justify-content-center">
+                    <h4 class="lab_post orderByLatest activeOrderBy">Latest</h4>
+                    <h4 class="lab_post orderByTopRated">Top Rated</h4>
+                </div>
+                <div class="col-md-9 lay">&nbsp;</div>
+            </div>
+            <div id="loader">Loading</div>
+            <div class="row" id="content">
+            </div>
 
+            <?php if($show_ads == "yes") { echo $ad2_html; } ?>
             
         </div>
     </div>
@@ -291,8 +302,41 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 </style>
 <script>
 $(document).ready(function(){
-
+	    
+    var show_category=$('#show_category');
     var c_username = $('#c_username').val();
+
+
+    show_category.click(function(){
+	    //var p_username = $("#pu_username").val();
+	    var category_html = '<div class="col-sm-12" style="display:block;overflow:hidden;">';
+        var category_value = '';
+        <?php foreach($main_categories as $category) { ?>
+            category_value = '<?php echo $category;?>';
+            category_html += '<div class="col-sm-3"><label><input type="checkbox" name="user_category[]" value="'+category_value+'"/> '+category_value+'</label></div>';
+        <?php } ?>
+        category_html += '<a href="javascript:" onclick="return call_save_category()" class="btn btn-primary">Save</a></div>';
+        
+	    $("#categoryStatusModal").modal('show');
+        $("#categoryStatusModal div.modal-body").append(category_html);
+	});
+    
+	  
+	
+	
+  
+	$(".orderByTopRated").click(function(){
+		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
+		$( ".orderByTopRated" ).last().addClass( "activeOrderBy" );
+		showPostSortedByLikes();
+	});
+	
+	$(".orderByLatest").click(function(){
+		$( ".orderByLatest" ).last().addClass( "activeOrderBy" );
+		$( ".orderByTopRated" ).removeClass( "activeOrderBy" );
+		showPostSortedByLatest();
+	});
+	
 	let $tag, $limit, content = "#content";
 	let query = {
 		tag: "dlike",
