@@ -134,22 +134,8 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                         </div>
 
                     </article>
-                    <?php if($show_ads == "yes") { ?>
-                    <div class="post-thumb" style="border: none;">
-                        <div class="row pl-3">
-                            <div class="col-4">
-                                <span>Advertiseme</span>
-                            </div>
-                            <div class="col-8 pl-0">
-                                <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 2px solid #7F7F7F;">
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php  echo $ad1_html;  ?>
 
                 </div>
-                <?php } ?>
                 <div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
                     <div class="p-0">
                         <div class="container p-0">
