@@ -671,90 +671,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 	    });
 	});    
 	
-	savefeaturedpoststatus.click(function(){
-	    var p_username = $("#pf_username").val();
-	    var p_permlink = $("#pf_permlink").val();
-	    var p_category = $("#pf_category").val();
-	    var p_imgurl = $("#pf_imgurl").val();
-	    var p_title = $("#pf_title").val();
-	    $.ajax({
-		    type: "POST",
-		    url: '/helper/featuredpoststatus.php',
-		    data:{'img_link':p_imgurl,'title':p_title,'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category},
-		    dataType: 'json',
-		    success: function(response) {
-			if(response.status == "OK") {
-			    toastr.success(response.message);
-			    $('#featuredPostStatusModal').modal('hide');
-			    
-			    $('#featuredstatus_icon' + p_permlink + p_username).removeAttr('onclick');
-				
-			}
-			else {
-			    $('#featuredPostStatusModal').modal('hide');
-			    toastr.error(response.message);
-			    return false;
-			}
-		    },
-		    error: function() {
-			$('#featuredPostStatusModal').modal('hide');
-			 toastr.error('Error occured');
-			    return false;
-		    }
-	    });
-	});
 	
-	savepoststatus.click(function(){
-	    var p_username = $("#p_username").val();
-	    var p_permlink = $("#p_permlink").val();
-	    var p_category = $("#p_category").val();
-	    var p_status = $("#status_select").val();
-	    if(p_status == ""){
-		alert("Please select status.");
-		return false;
-	    }
-	    
-	    $.ajax({
-		    type: "POST",
-		    url: '/helper/poststatus.php',
-		    data:{'p_username':p_username,'p_permlink':p_permlink,'p_category':p_category,'p_status':p_status},
-		    dataType: 'json',
-		    success: function(response) {
-			if(response.status == "OK") {
-			    toastr.success(response.message);
-			    $('#PostStatusModal').modal('hide');
-			    
-			    var all_status = p_status;
-			    if(all_status == "Rejected") {
-				var colorset = 'red';
-				$('#status_icon' + p_permlink + p_username).css({"color": colorset});
-				$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
-			    }
-			    else if(all_status == "Low Level") {
-				var colorset = 'blue';
-			       $('#status_icon' + p_permlink + p_username).css({"color": colorset});
-				$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
-			    }
-			    else if(all_status == "High Level") {
-				var colorset = 'green';
-				$('#status_icon' + p_permlink + p_username).css({"color": colorset});
-				$('#status_icon' + p_permlink + p_username).removeAttr('onclick');
-			    }
-				
-			}
-			else {
-			    $('#PostStatusModal').modal('hide');
-			    toastr.error(response.message);
-			    return false;
-			}
-		    },
-		    error: function() {
-			$('#PostStatusModal').modal('hide');
-			 toastr.error('Error occured');
-			    return false;
-		    }
-	    });
-	});
   
 	$(".orderByTopRated").click(function(){
 		$( ".orderByLatest" ).removeClass( "activeOrderBy" );
@@ -954,82 +871,6 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
                 	}
                 }                        
     		});
-		$.ajax({
-			type: "POST",
-			url: '/helper/getpoststatus.php',
-			data:{'permlink':$post.permlink},
-			dataType: 'json',
-			success: function(response) {
-			    if(response.status == "OK") {
-				var all_status = response.setstatus;
-				if(all_status == "Rejected") {
-				    var colorset = 'red';
-				    $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
-				}
-				else if(all_status == "Low Level") {
-				    var colorset = 'blue';
-				   $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
-				}
-				else if(all_status == "High Level") {
-				    var colorset = 'green';
-				    $('#status_icon' + permlink + author).css({"color": colorset});
-				    $('#status_icon' + permlink + author).removeAttr('onclick');
-				}
-				
-				$('#status_icon' + permlink + author).hover(function() {toastr.error('Post already Checked!');})
-					
-			    }
-			}
-		});
-		$.ajax({
-			type: "POST",
-			url: '/helper/getuserpoststatus.php',
-			data:{'author':author},
-			dataType: 'json',
-			success: function(response) {
-			    var mylabel = permlink +author;
-				var newValue = mylabel.replace('.', '');
-			    if(response.status == "OK") {
-				var all_status = response.setstatus;
-				
-				
-				if(all_status == "0") {
-				    var colorset = 'black';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Blacklisted";
-				}
-				else if(all_status == "1") {
-				    var colorset = 'orange';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Greenlisted";
-				}
-				else if(all_status == "2") {
-				    var colorset = 'green';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Whitelisted";
-				}
-				else if(all_status == "3") {
-				    var colorset = 'red';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Pro";
-				}
-				if(c_username != "dlike" && c_username != "chirag-im") {
-				    $('.userstatus_icon' + newValue).removeAttr('onclick');
-				}
-				else {    
-				    $('.userstatus_icon' + newValue).hover(function() {toastr.error(erroset);})
-				}
-					
-			    }
-			    else {
-				if(c_username != "dlike" && c_username != "chirag-im") {
-				    $('.userstatus_icon' + newValue).remove();
-				}
-			    }
-			}
-		});
 		
     		}
 		});
@@ -1084,19 +925,5 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 		}
 	});
 };
-function showPostSortedByLikes() {
-	var divList = $(".postsMainDiv");
-	divList.sort(function(a, b){
-		return $(b).attr("postLikes") - $(a).attr("postLikes")
-	});
-	$("#content").html(divList);
-};
-function showPostSortedByLatest() {
-	var divList = $(".postsMainDiv");
-	divList.sort(function(a, b){
-		return $(a).attr("postNumber") - $(b).attr("postNumber")
-	});
-	$("#content").html(divList);
-	
-};
+
 </script>
