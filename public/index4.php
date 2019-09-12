@@ -48,6 +48,50 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         <div class="container">
             <div class="row" style="background:  #f3f4f5;padding-top: 31px;margin-bottom: 20px;">
 
+                <div class="col-lg-12 col-md-12 " style="margin-bottom: 10px">
+                    <div class="p-0">
+                        <div class="container p-0">
+                            <div class="row">
+                                <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
+                                    <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
+                                    <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
+                                    <div class="wrapper">
+                                        <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
+                                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900"><?php echo strtoupper($current_city);?> / 26 ° C  </a>
+                                            <a class="nav-item nav-link" href="javascript:" role="tab" id="show_category"  style="color: #579BCD !important;"><i class="fa fa-cog" aria-hidden="true"></i>
+                                            </a>
+                                            
+                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">AFRICA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            
+
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div><!-- testimonial-section -->
+                </div>
+
+                <div class="col-lg-8 col-md-6 ">
+                    <div class=" p-0">
+                        <div class="container p-0">
+                            <div class="row">
+                                <div class="offset-md-0 col-md-12">
+                                    <div class="testimonials-wrap">
+                                        <div id="testimonial" class="testimonial-slider p-0">
+                                            <?php echo $featuredposts_html;?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- testimonial-section -->
+                </div>
 
                 <div class="col-lg-4 col-md-6 ">
 
@@ -341,23 +385,6 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
     </script>
     </div>
 
-    <div class="latest-post-section pt-0" style="margin-top: -5px !important;">
-        <div class="container">
-            <div class="row  align-items-center h-100 post_select">
-                <div class="row col-md-3 justify-content-center">
-                    <h4 class="lab_post orderByLatest activeOrderBy">Latest</h4>
-                    <h4 class="lab_post orderByTopRated">Top Rated</h4>
-                </div>
-                <div class="col-md-9 lay">&nbsp;</div>
-            </div>
-            <div id="loader">Loading</div>
-            <div class="row" id="content">
-            </div>
-
-            <?php if($show_ads == "yes") { echo $ad2_html; } ?>
-            
-        </div>
-    </div>
 
 
     
