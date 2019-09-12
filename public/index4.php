@@ -75,6 +75,8 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                         <div class="container p-0">
                             <div class="row">
                                 <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
+                                    <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
+                                    <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
                                     <div class="wrapper">
                                         <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
                                             
