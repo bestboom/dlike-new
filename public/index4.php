@@ -56,7 +56,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                                     <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
                                     <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
                                     <div class="wrapper">
-                                        <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
+                                        <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
                                             <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>
 
                                             <?php echo $trending_html;?>
@@ -70,18 +70,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                 </div>
 
 
-                <div class="col-lg-12 col-md-12 " style="margin-bottom: 10px">
-                    <div class="p-0">
-                        <div class="container p-0">
-                            <div class="row">
-                                <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
-                                   
-                                </div>
 
-                            </div>
-                        </div>
-                    </div><!-- testimonial-section -->
-                </div>
 
                 <?php if($show_events == "yes") { echo $events_html;  } ?>
 
