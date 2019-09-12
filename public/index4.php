@@ -93,49 +93,6 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                     </div><!-- testimonial-section -->
                 </div>
 
-                <div class="col-lg-4 col-md-6 ">
-
-                    <article class="post-style-two">
-                        <div class="post-thumb" style="border: none;">
-                            <div class="row pl-3">
-                                <div class="col-4">
-                                    <span>Top Rated</span>
-                                </div>
-                                <div class="col-8 pl-0">
-                                    <hr style="margin-top: 12px;margin-bottom: 5px;border-top: 2px solid #7F7F7F;">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="post-thumb" style="border: none;background: white">
-
-                            <div class="row">
-                                <div class="col-4 p-2 pl-4" style="height: 95px;">
-                                    <img src="https://dotesports-media.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2019/04/26143424/London_Spitfire_wins_5-26-18.jpg"
-                                         alt="London Spitfire signs Quatermain | Dot Esports"
-                                         style="height: 100%;" class="card-img-top img-fluid">
-                                </div>
-
-                                <div class="col-8">
-                                    <a style="color: black;font-size: 12px;">The mysterious Imperial Treasures Of Japan</a>
-                                    <div class="row mt-2">
-                                        <div class="col-1 pt-1">
-                                            <img src="https://static-global-s-msn-com.akamaized.net/img-resizer/tenant/amp/entityid/AAywGC0.img?h=16&amp;w=16&amp;m=6&amp;q=60&amp;u=t&amp;o=t&amp;l=f&amp;f=png"
-                                                 class="loaded">
-                                        </div>
-
-                                        <div class="col-4">
-                                            <span class="sourcename">CNN</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </article>
-
-                </div>
                 <div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
                     <div class="p-0">
                         <div class="container p-0">
