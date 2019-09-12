@@ -522,76 +522,8 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 .defaultcoloruser{color:gray;}
 </style>
 <script>
-    function openmodal_popup(self){
-		var permlink = $(self).data('permlink');
-		var author = $(self).data('author');
-		var category = $(self).data('category');
-		
-		$("#p_username").val(author);
-		$("#p_permlink").val(permlink);
-		$("#p_category").val(category);
-		
-		$("#PostStatusModal").modal('show');
-    }
-    function openuser_popup(self){
-	var permlink = $(self).data('permlink');
-	var author = $(self).data('author');
-	var category = $(self).data('category');
-	$("#pu_username").val(author);
-	$("#pu_permlink").val(permlink);
-	$("#pu_category").val(category);
-	$.ajax({
-		type: "POST",
-		url: '/helper/getuserpoststatus.php',
-		data:{'author':author},
-		dataType: 'json',
-		success: function(response) {
-		    if(response.status == "OK") {
-			var all_status = response.setstatus;
-			$("#userstatus_select").val(all_status);
-			$("#userPostStatusModal").modal('show');
-		    }
-		    else {
-			$("#userPostStatusModal").modal('show');
-		    }
-		    
-		}
-	});
-    }
-    function openfeaturedmodal_popup(self){
-	var permlink = $(self).data('permlink');
-	var author = $(self).data('author');
-	var category = $(self).data('category');
-	var imgurl = $(self).data('imgurl');
-	var title = $(self).data('title');
-	$("#pf_username").val(author);
-	$("#pf_permlink").val(permlink);
-	$("#pf_category").val(category);
-	$("#pf_imgurl").val(imgurl);
-	$("#pf_title").val(title);
-	$("#featuredPostStatusModal").modal('show');
-    }
-    
-    
-    
-    	$(document).ready(function(){
-
-
-            $("#loader").show();
-                $.ajax({
-                    //type: "POST",
-                    //url: '/helper/gettrending.php',
-                    //dataType: 'json',
-                    //success: function(response) {
-                        //if(response.status == "OK") {
-                            //$(".appendtrending").html(response.html);
-                        //}
-                    //}
-                });
+$(document).ready(function(){
 	    
-	var savepoststatus=$('#savepoststatus');
-	var saveuserpoststatus=$('#saveuserpoststatus');
-	var savefeaturedpoststatus=$('#savefeaturedpoststatus');
     var show_category=$('#show_category');
     var c_username = $('#c_username').val();
 
@@ -610,66 +542,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
         $("#categoryStatusModal div.modal-body").append(category_html);
 	});
     
-	
-	saveuserpoststatus.click(function(){
-	    var p_username = $("#pu_username").val();
-	    var p_permlink = $("#pu_permlink").val();
-	    var p_category = $("#pu_category").val();
-	    var p_status = $("#userstatus_select").val();
-	    if(p_status == ""){
-			alert("Please select user status.");
-			return false;
-	    }
-	    
-	    $.ajax({
-		    type: "POST",
-		    url: '/helper/userpoststatus.php',
-		    data:{'p_username':p_username,'p_status':p_status},
-		    dataType: 'json',
-		    success: function(response) {
-			if(response.status == "OK") {
-			    toastr.success(response.message);
-			    $('#userPostStatusModal').modal('hide');
-			    var all_status = p_status;
-			    var mylabel = p_permlink +p_username;
-				var newValue = mylabel.replace('.', '');
-				
-			    if(all_status == "0") {
-				var colorset = 'black';
-				$('.userstatus_icon' + newValue).css({"color": colorset});
-				var erroset = "User is Blacklisted";
-			    }
-			    else if(all_status == "1") {
-				var colorset = 'orange';
-				$('.userstatus_icon' + newValue).css({"color": colorset});
-				var erroset = "User is Greenlisted";
-			    }
-			    else if(all_status == "2") {
-				var colorset = 'green';
-				$('.userstatus_icon' + newValue).css({"color": colorset});
-				var erroset = "User is Whitelisted";
-			    }
-			    else if(all_status == "3") {
-				var colorset = 'red';
-				$('.userstatus_icon' + newValue).css({"color": colorset});
-				var erroset = "User is Pro";
-			    }
-			    $('.userstatus_icon' + newValue).hover(function() {toastr.error(erroset);});
-				
-			}
-			else {
-			    $('#userPostStatusModal').modal('hide');
-			    toastr.error(response.message);
-			    return false;
-			}
-		    },
-		    error: function() {
-				$('#userPostStatusModal').modal('hide');
-				toastr.error('Error occured');
-			    return false;
-		    }
-	    });
-	});    
+	  
 	
 	
   
