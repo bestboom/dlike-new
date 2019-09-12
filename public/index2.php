@@ -16,7 +16,6 @@
       .trendingclass .colxs-1 {	width: 33%;font-size: 13px;}
       .trendingclass .trendingword{width: 100%;}
     }
-    
     </style>
 <?php
 $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 15";
