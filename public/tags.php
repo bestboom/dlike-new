@@ -126,7 +126,7 @@
 						$('#article_'+permlink+' #post_time').html(created_time);
 
 						$.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
-    						console.log(data.DLIKER.pending_token);
+    						//console.log(data.DLIKER.pending_token);
     						let pending_token = (data.DLIKER.pending_token)/1000;
     						$('#article_'+permlink+' #se_token').html(pending_token);
 						});
