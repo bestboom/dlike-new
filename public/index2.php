@@ -48,6 +48,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
             </div>
         </div>
 	</div> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 	<div class="container">
     <div class="row" style="background:  #f3f4f5;padding-top: 31px;margin-bottom: 20px;">
 	<div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
