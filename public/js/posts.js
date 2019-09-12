@@ -54,6 +54,7 @@ $(document).ready(function(){
 				let dlikeTags = steemTags.slice(2);
 				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/' + meta + '"> #' + meta + ' </a>' });
 				let category = metadata.category;
+				let category_link = category.toLowerCase();
 				let exturl = metadata.url;
 
 				//Get the body
@@ -138,7 +139,7 @@ $(document).ready(function(){
 					'\n' + 
 					'</div>\n' +
 					'\n' +
-					'<div class="post-comments"><span class="post-meta">' + category + '</span></div>\n' +
+					'<div class="post-comments"><a href="/category/' + category_link + '"><span class="post-meta">' + category + '</span></a></div>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
