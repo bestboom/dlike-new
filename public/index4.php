@@ -41,49 +41,6 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 
 
 ?>
-<input type="hidden" id="c_username" value="<?php echo $_COOKIE['username'];?>"/>
-
-<?php if ($_COOKIE['username'] == '') { ?>
-    <div class="banner-content home-connect">
-    <div class="news-headline-block">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-1 col-md-2">
-                <i class="fas fa-volume-up vol"></i>
-            </div>
-            <div class="col-lg-11 col-md-10">
-                <div class="news-headlines-block">
-                    <div class="news-headlines-slider ticker">
-                        <ul>
-                            <li>Dlike will soon start token sale for steemians with huge bonus.</li>
-                        </ul>
-                    </div><!-- news-headlines-slider -->
-                </div>
-            </div>
-        </div>
-    </div>
-<?php } else { ?>
-    <div class="banner-content home-connect">
-    <div class="news-headline-block">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-1 col-md-2">
-                <i class="fas fa-volume-up vol"></i>
-            </div>
-            <div class="col-lg-11 col-md-10">
-                <div class="news-headlines-block">
-                    <div class="news-headlines-slider ticker">
-                        <ul>
-                            <li>Dlike will soon start token sale for steemians datawith huge bonus.</li>
-                        </ul>
-                    </div><!-- news-headlines-slider -->
-                </div>
-            </div>
-        </div>
-    </div>
-<?php } ?>
-    </div>
-    </div>
     </div><!-- sub-header -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
