@@ -83,11 +83,6 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                                             <a class="nav-item nav-link" href="javascript:" role="tab" id="show_category"  style="color: #579BCD !important;"><i class="fa fa-cog" aria-hidden="true"></i>
                                             </a>
                                             
-                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">AFRICA&nbsp;<button type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-                                            
 
                                         </nav>
                                     </div>
