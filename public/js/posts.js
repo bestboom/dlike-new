@@ -52,7 +52,7 @@ $(document).ready(function(){
 				//get meta tags
 				let steemTags = metadata.tags;
 				let dlikeTags = steemTags.slice(2);
-				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
+				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/' + meta + '"> #' + meta + ' </a>' });
 				let category = metadata.category;
 				let exturl = metadata.url;
 
