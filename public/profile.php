@@ -427,7 +427,7 @@ include('template/header5.php');
 					'\n' + 
 					'</div>\n' +
 					'\n' +
-					'<div class="post-comments"><a href="/category/' + category_link + '"><span class="post-meta">' + category + '</span></a></div>\n' +
+					'<div class="post-comments post-catg"><a href="/category/' + category_link + '"><span class="post-meta">' + category + '</span></a></div>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
