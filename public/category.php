@@ -68,7 +68,7 @@ include('template/header5.php');
 					'\n' + 
 					'</div>\n' +
 					'\n' +
-					'<div class="post-comments"><span class="post-meta"></span></div>\n' +
+					'<div class="post-comments"><a href="/category/' + category_link + '"><span class="post-meta"></span></a></div>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
@@ -104,6 +104,7 @@ include('template/header5.php');
 						json_metadata = metadata;
 						let category = metadata.category;
 						if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
+						let category_link = category.toLowerCase();
 						let steemTags = metadata.tags;
 						let dlikeTags = steemTags.slice(2);
 						let posttags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/'+ meta +'"> #' + meta + ' </a>' });
