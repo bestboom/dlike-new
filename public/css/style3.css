@@ -3409,7 +3409,6 @@ sub.transmoney-value {
     display: block; }
 .post-style-two .post-meta {
     font-size: 14px;
-    color: #1652f0;
     display: block;
     margin-bottom: 5px; }
 .post-style-two .post-tags {
@@ -3473,7 +3472,7 @@ sub.transmoney-value {
     color: #c51d24;
     outline: 0; }
 .post-style-two .post-catg a {
-    color: #191d5d;
+    color: #262a6f;
     font-weight: 600;
 }
 .post-style-two .post-catg a:hover, a:focus {
