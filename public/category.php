@@ -68,7 +68,7 @@ include('template/header5.php');
 					'\n' + 
 					'</div>\n' +
 					'\n' +
-					'<div class="post-comments"><a href="/category/' + category_link + '"><span class="post-meta"></span></a></div>\n' +
+					'<div class="post-comments post-catg"><a href=""><span class="post-meta"></span></a></div>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
@@ -118,11 +118,13 @@ include('template/header5.php');
 						var metatags =  posttags;
 						var exturl =   metadata.url;;
 						let post_link = '/post/@' + author + '/' + permlink + '';
+						let category_url = '/category/' + category_link + '';
 						var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 						$('#article_'+permlink+' span.post-meta').html(category);
 						$('#article_'+permlink+' a.post_detail').html(thumbnail);
 						$('#article_'+permlink+' h4.post-title a').attr('href',post_link);
+						$('#article_'+permlink+' .post-catg a').attr('href',category_url);
 						$('#article_'+permlink+' h4.post-title a').html(title);
 						$('#article_'+permlink+' p.post-tags').html(metatags);
 						$('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
