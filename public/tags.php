@@ -121,7 +121,7 @@
 						$('#article_'+permlink+' span.post-meta').html(category);
 						$('#article_'+permlink+' a.post_detail').html(thumbnail);
 						$('#article_'+permlink+' h4.post-title a').attr('href',post_link);
-						$('#article_'+permlink+' .post-catg a').attr('href',category_url); post-catg
+						$('#article_'+permlink+' .post-catg a').attr('href',category_url);
 						$('#article_'+permlink+' h4.post-title a').html(title);
 						$('#article_'+permlink+' p.post-tags').html(metatags);
 						$('#article_'+permlink+' span.pending_payout_value').html(res.pending_payout_value.substr(0, 4));
