@@ -58,8 +58,6 @@ $postGenerator = new dlike\post\makePost();
 		$post_title= mysqli_real_escape_string($conn, $_POST['title']);
 		$addposts = "INSERT INTO steemposts (`username`,`title`, `permlink`, `post_tags`, `ext_url`, `img_url`, `parent_ctegory`,`created_at`) VALUES ('".$_COOKIE['username']."','".$post_title."', '".$permlink."', '".$tags."', '".$url."', '".$urlImage."', '".$category."','".date("Y-m-d H:i:s")."')";
 		$addpostsquery = $conn->query($addposts);
-			
-		$post_id = mysqli_insert_id($conn);
 
 		$posts_tags = array_unique(explode(",",$_POST['tags']));
 		if(count($posts_tags)>0)  {
@@ -87,9 +85,7 @@ $postGenerator = new dlike\post\makePost();
 			</div>
 		</center>
 	</div>
-<?	} 
-	
-?>
+<?	} 	?>
 <script>
 	function goBack() {window.history.back()}
 </script>
