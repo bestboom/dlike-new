@@ -1,4 +1,5 @@
 <?php
+include('template/header5.php');
 $link = 'alibaba-set-for-big-challenge-as-flamboyant-chairman-ma-departs';
 $user = '@tophash';
 
