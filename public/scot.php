@@ -43,8 +43,10 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
         				Buy DLIKEM tokens to stake, earn DLIEKR tokens reward.
         				40 miners get rewarded every hour!
         			</p><br>
+        			<center>
         			<button class="btn btn-danger" style="padding: 12px 25px;font-weight: 600;font-size: 18px;">Limited Tokens For Sale</button>
-        			<p>Sale is live on STEEM Engine Market</p>
+        			<p style="padding-top: 7px;">Sale is live on STEEM Engine Market</p>
+        			</center>
         		</div>
         	</div>
         </div>
