@@ -37,7 +37,7 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
         		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           			<span aria-hidden="true">&times;</span>
         		</button>
-        		<div class="transfer-respond">
+        		<div class="transfer-respond" style="padding: 10px 10px;">
         			<h2 style="font-size: 28px;font-weight: 600;padding-bottom: 30px;padding-top: 20px;">Buy DLIKEM Tokens</h4>
         			<p style="font-weight: 500;margin-bottom: 0px;padding: 0px;">
         				Buy DLIKEM tokens to stake, earn DLIEKR tokens reward.
@@ -45,7 +45,7 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
         			</p><br>
         			<center>
         			<button class="btn btn-danger" style="padding: 12px 25px;font-weight: 600;font-size: 18px;">Limited Tokens For Sale</button>
-        			<p style="padding-top: 7px;">Sale is live on STEEM Engine Market</p>
+        			<p style="padding-top: 7px;">Sale is live on <a href="https://steem-engine.com/?p=market&t=DLIKEM" target="_blank"><b>STEEM Engine Market</b></a></p>
         			</center>
         		</div>
         	</div>
