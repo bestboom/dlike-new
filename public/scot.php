@@ -28,7 +28,15 @@ echo '<br/>';
 echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '');
 echo '<br/>';
 echo $cashout_time = $sct_result->DLIKER->cashout_time;
-
+?>
+<div class="modal fade" id="tk_buy" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/tok_buy.php'); ?>
+        </div>
+    </div>
+</div>
+<?
 include('template/footer.php');
 ?>
 
