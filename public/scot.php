@@ -33,7 +33,20 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
 <div class="modal fade" id="dlikem_maket" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <?php include('template/modals/tok_buy.php'); ?>
+        	<div class="modal-body ">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+        		<div class="transfer-respond">
+        			<h2>Buy DLIKEM Tokens</h4>
+        			<p class="base-color respond_top">
+        				Buy DLIKEM tokens to stake, earn DLIEKR tokens reward.
+        				40 miners get rewarded every hour!
+        			</p><br>
+        			<button>Limited Tokens For Sale</button>
+        			<p>Sale is live on STEEM Engine Market</p>
+        		</div>
+        	</div>
         </div>
     </div>
 </div>
