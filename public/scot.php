@@ -29,7 +29,7 @@ echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '
 echo '<br/>';
 echo $cashout_time = $sct_result->DLIKER->cashout_time;
 ?>
-<div class="modal fade" id="tk_buy" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="dlikem_maket" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
             <?php include('template/modals/tok_buy.php'); ?>
@@ -41,8 +41,12 @@ include('template/footer.php');
 ?>
 
 <script type="text/javascript">
+	$(window).on('load',function(){
+        $('#dlikem_maket').modal('show');
+    });
 	let cashout_time = '<?=($cashout_time)?>';
 	console.log(cashout_time);
 	let time_remian = moment.utc(cashout_time + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
 	console.log(time_remian);
+
 </script>
