@@ -26,11 +26,11 @@ function removeTags($str) {
 }
 $og_description = removeTags($og_description);
 $og_image = $meta_data->image;
-
+*/
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
-*/
+
 include('template/header5.php');
 
 $pending_amount = ($result->DLIKER->pending_token)/1000;
