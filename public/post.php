@@ -15,7 +15,7 @@ $result = json_decode($response);
 $og_title = $result->DLIKER->title;
 
 
-
+/*
 $meta_data = json_decode($result->DLIKER->json_metadata);
 $og_description = explode("\n\n#####\n\n",$meta_data->body);
 $og_description = $og_description[1];
@@ -30,7 +30,7 @@ $og_image = $meta_data->image;
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
-
+*/
 include('template/header5.php');
 
 $pending_amount = ($result->DLIKER->pending_token)/1000;
