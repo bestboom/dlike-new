@@ -318,8 +318,8 @@ include('template/header5.php');
 			let dlikeTags = steemTags.slice(2);
 			let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="#"> #' + meta + ' </a>' });
 			let category = metadata.category;
-			let category_link = category.toLowerCase();
 			let dlikecat = category;
+			//let category_link = category.toLowerCase();
 			let exturl = metadata.url;
 
 			var currentPostNumber = i;
@@ -427,7 +427,7 @@ include('template/header5.php');
 					'\n' + 
 					'</div>\n' +
 					'\n' +
-					'<div class="post-comments post-catg"><a href="/category/' + category_link + '"><span class="post-meta">' + category + '</span></a></div>\n' +
+					'<div class="post-comments post-catg"><a href="/category/' + category + '"><span class="post-meta">' + category + '</span></a></div>\n' +
 					'\n' +
 					'</div>\n' +
 					'\n' +
