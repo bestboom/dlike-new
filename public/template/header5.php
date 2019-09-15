@@ -15,10 +15,10 @@
         <!--End Facebook Meta Tags-->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="<?php echo $og_title; ?>">
-        <!--<meta name="twitter:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
-        <meta name="twitter:image" content="<?php echo $og_image; ?>"> -->
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
+        <!--<meta name="twitter:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
+        <meta name="twitter:image" content="<?php echo $og_image; ?>"> -->
     <? } 
     else if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
         <title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title>
