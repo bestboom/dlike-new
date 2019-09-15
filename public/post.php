@@ -34,7 +34,7 @@ $og_url = $uri;
 include('template/header5.php');
 
 $pending_amount = ($result->DLIKER->pending_token)/1000;
-$cashout_time = $sct_result->DLIKER->cashout_time;
+//$cashout_time = $result->DLIKER->cashout_time;
 
 $views = '1'; 
 //post views
