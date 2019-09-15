@@ -7,7 +7,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         $trending_html = '';
         $counter = 0; 
             while($row = $posttags_r->fetch_assoc()) {
-                if (strpos($row['tagname'], 'dlike') === false && strpos($row['tagname'], ' ') === false && strpos($row['tagname'], '') === false) {
+                if (!empty($row['tagname']) && strpos($row['tagname'], 'dlike') === false) {
                     $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tagname'].'">'.strtoupper($row['tagname']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
                     ++$counter;
                 }  
