@@ -883,7 +883,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 				var mylabel = $post.permlink +$post.author;
 				var newValue = mylabel.replace('.', '');
 		
-				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+newValue+' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
+				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+newValue+' showcursor"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
 				
 				
 				//start posts here
@@ -996,23 +996,15 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 				var all_status = response.setstatus;
 				
 				
-				if(all_status == "3") {
-				    var colorset = 'red';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Pro";
-				}
-				if(c_username != "dlike" && c_username != "chirag-im") {
-				    $('.userstatus_icon' + newValue).removeAttr('onclick');
-				}
-				else {    
-				    $('.userstatus_icon' + newValue).hover(function() {toastr.error(erroset);})
-				}
+    				if(all_status == "3") {
+    				    var colorset = 'red';
+    				    $('.userstatus_icon' + newValue).css({"color": colorset});
+    				    var erroset = "User is Pro";
+    				}
 					
 			    }
 			    else {
-				if(c_username != "dlike" && c_username != "chirag-im") {
 				    $('.userstatus_icon' + newValue).remove();
-				}
 			    }
 			}
 		});
