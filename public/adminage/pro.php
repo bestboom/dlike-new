@@ -35,6 +35,7 @@ $row_C = $result_C->fetch_assoc();
 		<table class="table coin-list table-hover" style="border: 1px solid #eee;">
 			<thead>
 				<tr>
+					<th scope="col" class="cent_me wid_2">id</th>
 					<th scope="col" class="cent_me wid_2">User</th>
 					<th scope="col" class="cent_me wid_2">Amount</th>
 					<th scope="col" class="cent_me wid_2">Time</th>
@@ -50,6 +51,9 @@ $row_C = $result_C->fetch_assoc();
 						$buy_time = strtotime($row_T["buy_time"]); 
 						?>
 						<tr>
+							<td class="exp-user cent_me wid_2">
+								<span><?php echo $row_T["id"]; ?></span>
+							</td>
 							<td class="exp-user cent_me wid_2">
 								<span><?php echo $row_T["username"]; ?></span>
 							</td>
