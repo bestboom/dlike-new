@@ -116,7 +116,7 @@ else
                                         <div class="col-lg-3 col-md-4 col-sm-4 auth_info">
                                             <div class="post-author-block" style="display: flex;align-items: center;">
                                                 <div class="author-thumb">
-                                                    <a href="#" class="author-thumb-link"><img src="" onerror="this.src='/images/post/authors/8.png'" alt="img" class="mod-authThumb"></a>
+                                                    <a href="#" class="author-thumb-link"><img src="" alt="img" class="mod-authThumb"></a>
                                                 </div>
                                                 <div class="author-info">
                                                     <h5> <a href="#" class="mod-auth" style="padding: 10px;"></a></h5>
