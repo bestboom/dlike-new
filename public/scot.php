@@ -17,7 +17,7 @@ echo '<br/>';
 //$og_description = $sct_result->DLIKER->desc;
 //print_r($og_description);
 echo '<br/>';
-$og_description = explode("\n\n#####\n\n",$sct_result->DLIKER->desc);
+$og_description = explode("\n\n#####\n\n",$sct_result['DLIKER']['desc']);
 $og_description = $og_description[1];
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 //function removeTags($str) {  
