@@ -155,7 +155,7 @@ else
                                                 <!-- post-income-block -->
                                                 <div class="col-lg-3 col-md-5 col-sm-4 auth_info" style="">
                                                     <div class="post-share-block">
-                                                        <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;Tip<!--+(<?php echo $postincome; ?> USDT  <?php echo $postincome2; ?> DSC-->
+                                                        <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;Tip<!--+(<?php //echo $postincome; ?> USDT  <?php //echo $postincome2; ?> DSC-->
                                                     </div>
                                                 </div>
                                                 <!-- post-income-block -->
