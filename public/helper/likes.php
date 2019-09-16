@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$id = 572;
+$id = 562;
 
 $sqlw = "DELETE FROM prousers WHERE id = '$id'";
 
