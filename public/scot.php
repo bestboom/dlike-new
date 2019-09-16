@@ -24,7 +24,8 @@ function removeTags($str) {
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
     return $str;
 }
-$og_description = removeTags($og_description);
+echo '<br/>';
+echo $og_description = removeTags($og_description);
 echo '<br/>';
 echo $pending_amount = ($sct_result->DLIKER->pending_token)/1000;
 echo '<br/>';
