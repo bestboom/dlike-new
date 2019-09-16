@@ -1,7 +1,7 @@
 <?php 
 if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     die('<script>window.location.replace("https://dlike.io","_self")</script>');
-}
+} else {
 if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';}
 include('template/header5.php'); 
 ?>
@@ -185,4 +185,4 @@ include('template/header5.php');
         </div>
     </div>
 </div>
-<?php include('template/footer.php'); ?>
+<?php include('template/footer.php'); } ?>

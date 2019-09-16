@@ -996,22 +996,7 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 				var all_status = response.setstatus;
 				
 				
-				if(all_status == "0") {
-				    var colorset = 'black';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Blacklisted";
-				}
-				else if(all_status == "1") {
-				    var colorset = 'orange';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Greenlisted";
-				}
-				else if(all_status == "2") {
-				    var colorset = 'green';
-				    $('.userstatus_icon' + newValue).css({"color": colorset});
-				    var erroset = "User is Whitelisted";
-				}
-				else if(all_status == "3") {
+				 if(all_status == "3") {
 				    var colorset = 'red';
 				    $('.userstatus_icon' + newValue).css({"color": colorset});
 				    var erroset = "User is Pro";
