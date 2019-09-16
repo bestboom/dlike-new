@@ -85,7 +85,7 @@
 <script src="/js/steemconnect.js"></script>
 <script src="/js/toaster.js"></script>
 <script src="/js/mint.js"></script>
-<?php if(basename($_SERVER['PHP_SELF']) != 'post.php' || basename($_SERVER['PHP_SELF']) != 'share.php') { ?> 
+<?php if((basename($_SERVER['PHP_SELF']) != 'post.php') || (basename($_SERVER['PHP_SELF']) != 'share.php')) { ?> 
 <script src="/js/posts.js"></script>
 <? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
