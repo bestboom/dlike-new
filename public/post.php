@@ -15,6 +15,9 @@ if (!empty($result)) {
 $og_title = $result->DLIKER->title;
 $pending_amount = ($result->DLIKER->pending_token)/1000;
 //$cashout_time = $result->DLIKER->cashout_time;
+} else {
+    $og_title = 'DLIKE - Share To Get Rewarded';
+    $pending_amount = 0;
 }
 /*
 $meta_data = json_decode($result->DLIKER->json_metadata);
