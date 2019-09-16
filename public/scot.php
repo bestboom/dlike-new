@@ -7,7 +7,7 @@ echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response);
 echo '<br/>';
-$og_title = $sct_result->DLIKER[0]->title;
+$og_title = $sct_result->DLIKER;
 print_r($og_title);
 
 echo '<br/>';
