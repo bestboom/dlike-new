@@ -7,6 +7,8 @@ echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response);
 echo '<br/>';
+echo $og_title = $sct_result->DLIKER->title;
+echo '<br/>';
 echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
 //echo $body = json_decode($meta_data['community']);
