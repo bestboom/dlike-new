@@ -5,9 +5,9 @@ $user = '@tophash';
 
 echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
-$sct_result = json_decode($sct_response);
+$sct_result = json_decode($sct_response, TRUE);
 echo '<br/>';
-$og_title = $sct_result->DLIKER;
+echo $og_title = $sct_result[DLIKER];
 
 echo '<br/>';
 $meta_data = $sct_result->DLIKER->json_metadata;
