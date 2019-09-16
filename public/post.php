@@ -11,10 +11,11 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_C
 $post_url = "https://scot-api.steem-engine.com/$user/$link";
 $response = file_get_contents($post_url);
 $result = json_decode($response);
-
+if (!empty($result)) {
 $og_title = $result->DLIKER->title;
-
-
+$pending_amount = ($result->DLIKER->pending_token)/1000;
+//$cashout_time = $result->DLIKER->cashout_time;
+}
 /*
 $meta_data = json_decode($result->DLIKER->json_metadata);
 $og_description = explode("\n\n#####\n\n",$meta_data->body);
@@ -32,9 +33,6 @@ $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
 include('template/header5.php');
-
-$pending_amount = ($result->DLIKER->pending_token)/1000;
-//$cashout_time = $result->DLIKER->cashout_time;
 
 $views = '1'; 
 //post views
