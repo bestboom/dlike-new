@@ -11,18 +11,17 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_C
 $post_url = "https://scot-api.steem-engine.com/$user/$link";
 $response = file_get_contents($post_url);
 $result = json_decode($response, TRUE);
+
+
+if(property_exists($result,'DLIKER')) {
 $og_title = $result['DLIKER']['title'];
 $pending_amount = ($result['DLIKER']['pending_token'])/1000;
-/*
-if(property_exists($result,'DLIKER')) {
-$og_title = $result->DLIKER->title;
-$pending_amount = ($result->DLIKER->pending_token)/1000;
 //$cashout_time = $result->DLIKER->cashout_time;
 } else {
     $og_title = 'DLIKE - Share To Get Rewarded';
     $pending_amount = 0;
 }
-
+/*
 $meta_data = json_decode($result->DLIKER->json_metadata);
 $og_description = explode("\n\n#####\n\n",$meta_data->body);
 $og_description = $og_description[1];
