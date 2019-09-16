@@ -14,11 +14,12 @@ $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
 //echo $body = json_decode($meta_data['community']);
 echo '<br/>';
-$og_description = $sct_result->DLIKER->desc;
-print_r($og_description);
+//$og_description = $sct_result->DLIKER->desc;
+//print_r($og_description);
 echo '<br/>';
 $og_description = explode("\n\n#####\n\n",$sct_result->DLIKER->desc);
-//$og_description = $og_description[1];
+print_r($og_description);
+$og_description = $og_description[1];
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 //function removeTags($str) {  
 //    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
