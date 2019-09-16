@@ -11,7 +11,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_C
 $post_url = "https://scot-api.steem-engine.com/$user/$link";
 $response = file_get_contents($post_url);
 $result = json_decode($response);
-if (!empty($result)) {
+if(property_exists($result,'DLIKER')) {
 $og_title = $result->DLIKER->title;
 $pending_amount = ($result->DLIKER->pending_token)/1000;
 //$cashout_time = $result->DLIKER->cashout_time;
