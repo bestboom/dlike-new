@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if(basename($_SERVER['PHP_SELF']) == 'post.php'){ ?>    
         <title><?php echo $og_title; ?></title>
-        <!--<meta name="description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>"> -->
-        <!--Facebook Meta Tags -->
+
         <meta property="og:url" content="<?php echo $og_url; ?>" />
         <meta property="og:title" content="<?php echo $og_title; ?>" />
-        <!--<meta property="og:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>" />
-        <meta property="og:image" content="<?php echo $og_image; ?>" /> -->
-        <!--End Facebook Meta Tags-->
+
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="<?php echo $og_title; ?>">
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
-        <!--<meta name="twitter:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
-        <meta name="twitter:image" content="<?php echo $og_image; ?>"> -->
+
     <? } 
     else if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
         <title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title>
@@ -29,7 +25,7 @@
         <!--Facebook Meta Tags -->
         <meta property="og:url" content="https://dlike.io" />
         <meta property="og:title" content="Dlike - Share To Get Rewarded" />
-        <meta property="og:description" content="Dlike." />
+        <meta property="og:description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes." />
         <meta property="og:image" content="/images/dlike-main.jpg" />
         <!--End Facebook Meta Tags-->
     <? } ?>
