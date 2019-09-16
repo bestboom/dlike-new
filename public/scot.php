@@ -16,7 +16,7 @@ echo '<br/>';
 //echo $body = json_decode($meta_data['community']);
 echo '<br/>';
 //$og_description = explode("\n\n#####\n\n",$sct_result->DLIKER->json_metadata->body);
-$og_description = $sct_result->DLIKER->json_metadata['body'];
+$og_description = $sct_result->DLIKER->desc;
 print_r($og_description);
 $og_description = $og_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
