@@ -874,12 +874,12 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 				var adduserhtml = "";
 				var addfeaturedhtml = "";
 				var addposthtml = "";
-				
+				if(c_username == "dlike" || c_username == "chirag-im") {
 					
 					
 					addfeaturedhtml += '<a id="featuredstatus_icon'+$post.permlink +$post.author +'" onclick="return openfeaturedmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-imgurl="' + img.src + '" data-title="' + $post.title + '" data-category="' + category + '"><i class="fa fa-plus" id="featuredpost_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; | &nbsp;';
 					addposthtml = '<a id="status_icon'+$post.permlink +$post.author +'" onclick="return openmodal_popup(this)" class="showcursor" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fas fa-check-circle" id="post_status'+$post.permlink +$post.author +'"></i></a><span>&nbsp; ';
-				
+				}
 				var mylabel = $post.permlink +$post.author;
 				var newValue = mylabel.replace('.', '');
 		
@@ -996,12 +996,23 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 				var all_status = response.setstatus;
 				
 				
-    				if(all_status == "3") {
-    				    var colorset = 'red';
-    				    $('.userstatus_icon' + newValue).css({"color": colorset});
-    				    var erroset = "User is Pro";
-    				}
+				if(all_status == "3") {
+				    var colorset = 'red';
+				    $('.userstatus_icon' + newValue).css({"color": colorset});
+				    var erroset = "User is Pro";
+				}
+				if(c_username != "dlike" && c_username != "chirag-im") {
+				    $('.userstatus_icon' + newValue).removeAttr('onclick');
+				}
+				else {    
+				    $('.userstatus_icon' + newValue).hover(function() {toastr.error(erroset);})
+				}
 					
+			    }
+			    else {
+				if(c_username != "dlike" && c_username != "chirag-im") {
+				    $('.userstatus_icon' + newValue).remove();
+				}
 			    }
 			}
 		});
