@@ -66,9 +66,25 @@ include('template/footer.php');
     //    $('#dlikem_maket').modal('show');
     //});
 
-$.getJSON('https://scot-api.steem-engine.com/@tophash/alibaba-set-for-big-challenge-as-flamboyant-chairman-ma-departs', function(data) {
-    				console.log(data.DLIKER.active_votes);
-    				//let pending_token = (data.DLIKER.pending_token)/1000;
+$.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-plan-in-place-to-cope-with-poor-air-quality', function(data) {
+					var voterList = data.DLIKER.active_votes;
+    				console.log(voterList);
+
+    				let netshare = data.DLIKER.vote_rshares;
+    				console.log(netshare);
+
+    				let pending_payout = (data.DLIKER.pending_token)/1000;
+    				console.log(pending_payout);
+
+    				for (let j = 0; j < voterList.length; j++) {
+                            let vote_amt = ((voterList[j].rshares / netshare) * pending_payout);
+                            console.log(vote_amt);
+                            let votePercent = ((voterList[j].percent / 10000) * 100);
+                            votePercent = parseInt(votePercent);
+                            console.log(votePercent);
+                            let voter = voterList[j].voter;
+                            console.log(voter);
+                    }        
     				//$('#se_token' + $post.permlink + $post.author).html(pending_token);
 				});	
 
