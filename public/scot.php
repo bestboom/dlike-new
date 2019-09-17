@@ -8,7 +8,7 @@ $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response, TRUE);
 echo '<br/>';
 $og_title = $sct_result['DLIKER']['title'];
-
+/*
 echo '<br/>';
 //echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
@@ -34,6 +34,7 @@ echo '<br/>';
 echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '');
 echo '<br/>';
 echo $cashout_time = $sct_result->DLIKER->cashout_time;
+*/
 ?>
 <div class="modal fade" id="dlikem_maket" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -93,9 +94,9 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
 
 
 
-	let cashout_time = '<?=($cashout_time)?>';
-	console.log(cashout_time);
-	let time_remian = moment.utc(cashout_time + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
-	console.log(time_remian);
+	//let cashout_time = '<?=($cashout_time)?>';
+	//console.log(cashout_time);
+	//let time_remian = moment.utc(cashout_time + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();
+	//console.log(time_remian);
 
 </script>
