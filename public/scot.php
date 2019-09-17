@@ -60,6 +60,7 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
 </div>
 <br><br><br><br><br><br><br><br><br>
  <span id="similar" class="vtme"  style="padding-top: 200px;" data-popover="true" data-html="true" data-content="<ul>' + vote_info + '</ul>">heeeeeeeeeeeeeeeeeee</span>
+  <a href="#" data-toggle="tooltip" data-placement="bottom" title="Hooray!">Top</a>
 <?
 include('template/footer.php');
 ?>
@@ -68,6 +69,9 @@ include('template/footer.php');
 	//$(window).on('load',function(){
     //    $('#dlikem_maket').modal('show');
     //});
+$(document).ready(function() { 
+    $('[data-toggle="tooltip"]').tooltip();    
+});
 
 $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-plan-in-place-to-cope-with-poor-air-quality', function(data) {
 					vote_info = "";
