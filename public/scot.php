@@ -7,10 +7,10 @@ echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response, TRUE);
 echo '<br/>';
-echo $og_title = $sct_result['DLIKER']['title'];
+$og_title = $sct_result['DLIKER']['title'];
 
 echo '<br/>';
-$meta_data = $sct_result->DLIKER->json_metadata;
+echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
 //echo $body = json_decode($meta_data['community']);
 echo '<br/>';
@@ -19,7 +19,7 @@ echo '<br/>';
 echo '<br/>';
 $og_description = explode("\n\n#####\n\n",$sct_result['DLIKER']['desc']);
 $og_description = $og_description[1];
-echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
+$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 //function removeTags($str) {  
 //    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
 //    return $str;
@@ -62,9 +62,21 @@ include('template/footer.php');
 ?>
 
 <script type="text/javascript">
-	$(window).on('load',function(){
-        $('#dlikem_maket').modal('show');
-    });
+	//$(window).on('load',function(){
+    //    $('#dlikem_maket').modal('show');
+    //});
+
+$.getJSON('https://scot-api.steem-engine.com/@tophash/alibaba-set-for-big-challenge-as-flamboyant-chairman-ma-departs', function(data) {
+    				console.log(data.DLIKER.active_votes);
+    				//let pending_token = (data.DLIKER.pending_token)/1000;
+    				//$('#se_token' + $post.permlink + $post.author).html(pending_token);
+				});	
+
+
+
+
+
+
 	let cashout_time = '<?=($cashout_time)?>';
 	console.log(cashout_time);
 	let time_remian = moment.utc(cashout_time + "Z", 'YYYY-MM-DD  h:mm:ss').fromNow();

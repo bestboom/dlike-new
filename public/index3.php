@@ -994,14 +994,11 @@ $current_city = file_get_contents('https://ipapi.co/' . $setip . '/city/');
 				var newValue = mylabel.replace('.', '');
 			    if(response.status == "OK") {
 				var all_status = response.setstatus;
-				
-				
     				if(all_status == "3") {
     				    var colorset = 'red';
     				    $('.userstatus_icon' + newValue).css({"color": colorset});
     				    var erroset = "User is Pro";
     				}
-					
 			    }
 			    else {
 				    $('.userstatus_icon' + newValue).remove();
