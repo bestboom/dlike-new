@@ -118,6 +118,12 @@ $(document).ready(function(){
 					});
 				}
 
+				var adduserhtml = "";
+				var mylabel = $post.permlink +$post.author;
+				var newValue = mylabel.replace('.', '');
+
+				adduserhtml += '<a style="color:white;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
+
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
@@ -133,7 +139,7 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + $post.author + '">' + $post.author + '</a><div class="time">' + activeDate + '</div></h5>\n' +
+					'<h5><a href="/@' + $post.author + '">' + $post.author  + "&nbsp;" +adduserhtml +'</a><div class="time">' + activeDate + '</div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -173,6 +179,31 @@ $(document).ready(function(){
     				let pending_token = (data.DLIKER.pending_token)/1000;
     				$('#se_token' + $post.permlink + $post.author).html(pending_token);
 				});	
+
+        		//user-pro status
+				$.ajax({
+					type: "POST",
+					url: '/helper/getuserpoststatus.php',
+					data:{'author':author},
+					dataType: 'json',
+					success: function(response) {
+					    var mylabel = permlink +author;
+						var newValue = mylabel.replace('.', '');
+					    if(response.status == "OK") {
+						var all_status = response.setstatus;
+
+							if(all_status == "3") {
+							    var colorset = 'red';
+							    $('.userstatus_icon' + newValue).css({"color": colorset});
+							    var erroset = "PRO User";
+							}
+						$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
+					    }
+					    else {
+						    $('.userstatus_icon' + newValue).remove();
+					    }
+					}
+				});
 
     		//check if voted
     		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
