@@ -60,7 +60,7 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
 </div>
 <br><br><br><br><br><br><br><br><br>
  <span id="similar" class="vtme"  style="padding-top: 200px;" data-popover="true" data-html="true" data-content="<ul>' + vote_info + '</ul>">heeeeeeeeeeeeeeeeeee</span>
-  <a href="#" data-toggle="tooltip" data-placement="bottom" data-html="true" data-content="<ul>' + vote_info + '</ul>">Top</a>
+  <a href="#" data-toggle="tooltip" data-placement="bottom" title="<ul>' + vote_info + '</ul>">Top</a>
 <?
 include('template/footer.php');
 ?>
