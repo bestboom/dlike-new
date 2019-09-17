@@ -58,6 +58,7 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
         </div>
     </div>
 </div>
+ <span id="similar" class="vtme"  data-popover="true" data-html="true" data-content="<ul>' + $post['vote_info'] + '</ul>"></span>
 <?
 include('template/footer.php');
 ?>
@@ -68,6 +69,7 @@ include('template/footer.php');
     //});
 
 $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-plan-in-place-to-cope-with-poor-air-quality', function(data) {
+					$post["vote_info"] = "";
 					var voterList = data.DLIKER.active_votes;
     				console.log(voterList);
 
@@ -86,6 +88,13 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
                             console.log(votePercent);
                             let voter = voterList[j].voter;
                             console.log(voter);
+
+                        	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
+                            if (j == 16) {
+                                let moreV = voterList.length - 15;
+                                $post["vote_info"] += "... and " + moreV + " more votes.";
+                                break;
+                            }    
                         }    
                     }        
     				//$('#se_token' + $post.permlink + $post.author).html(pending_token);
