@@ -469,7 +469,7 @@ include('template/header5.php');
 
                 for (let v = 0; v < voterList.length; v++) {
 					if(voterList[v].weight>0){
-                        let vote_amt = ((voterList[v].rshares / netshare) * pending_payout);
+                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token);
                         //console.log(vote_amt);
                         let votePercent = ((voterList[v].percent / 10000) * 100);
                         votePercent = parseInt(votePercent);
