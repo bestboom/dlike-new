@@ -674,7 +674,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 					    $('.userstatus_icon' + newValue).css({"color": colorset});
 					    var erroset = "User is Pro";
 					}
-				$('.userstatus_icon' + permlink + author).hover(function() {toastr.success('PRO User');});	
+				//$('.userstatus_icon' + permlink + author).hover(function() {toastr.success('PRO User');});	
 			    }
 			    else {
 				    $('.userstatus_icon' + newValue).remove();
