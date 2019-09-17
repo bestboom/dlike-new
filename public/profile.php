@@ -146,9 +146,7 @@ include('template/header5.php');
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
-		let profname = '<?php echo $_GET['user'];?>';
-
-    	$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: { show: 50, hide: 400 } });  
+		let profname = '<?php echo $_GET['user'];?>'; 
 
 	//chexk if user exist
 
@@ -651,5 +649,6 @@ include('template/header5.php');
 
 	    }
 	// steem upvotes  
+	$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: { show: 50, hide: 400 } }); 
 });
 </script>
