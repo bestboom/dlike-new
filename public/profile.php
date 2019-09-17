@@ -477,7 +477,7 @@ include('template/header5.php');
                         votePercent = parseInt(votePercent);
                         //console.log(votePercent);
                         let voter = voterList[v].voter;
-                        //console.log(voter);
+                        console.log(voter);
 
                     	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
                         if (v == 16) {
