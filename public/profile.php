@@ -478,9 +478,9 @@ include('template/header5.php');
                         //console.log(voter);
 
                     	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
-                        if (j == 16) {
+                        if (v == 16) {
                             let moreV = voterList.length - 15;
-                        $post["vote_info"] += "... and " + moreV + " more votes.";
+                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
                             break;
                         }    
                     }    
