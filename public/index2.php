@@ -547,7 +547,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 				var newValue = mylabel.replace('.', '');
 		
 
-				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+newValue+' showcursor" onclick="return openuser_popup(this)" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '" data-category="' + category + '"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
+				adduserhtml += '<a style="color:gray;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
 				
 				
 				//start posts here
