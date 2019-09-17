@@ -78,6 +78,7 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
     				console.log(pending_payout);
 
     				for (let j = 0; j < voterList.length; j++) {
+    					if(voterList[j].weight>0){
                             let vote_amt = ((voterList[j].rshares / netshare) * pending_payout);
                             console.log(vote_amt);
                             let votePercent = ((voterList[j].percent / 10000) * 100);
@@ -85,6 +86,7 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
                             console.log(votePercent);
                             let voter = voterList[j].voter;
                             console.log(voter);
+                        }    
                     }        
     				//$('#se_token' + $post.permlink + $post.author).html(pending_token);
 				});	
