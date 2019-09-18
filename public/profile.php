@@ -446,10 +446,10 @@ include('template/header5.php');
 	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
 	                            break;
 	                        } 
-	                        console.log($post["vote_info"]);
+	                        
 	                    }    
 	                }  
-
+	                console.log($post["vote_info"]);
 	            }); 
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
