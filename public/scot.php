@@ -59,7 +59,7 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
     </div>
 </div>
 <br><br><br><br><br><br><br><br><br>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
  <span id="similar" class="vtme"  style="padding-top: 200px;" data-popover="true" data-html="true" data-content="<ul>' + vote_info + '</ul>">heeeeeeeeeeeeeeeeeee</span>
 <p id='container'>
 <button class='btn btn-primary btn-large' data-popover="true" data-html=true data-content="<a href='http://www.wojt.eu' target='blank' >click me, I'll try not to disappear</a>">hover here</button>
@@ -107,9 +107,6 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
                     }        
     				//$('#se_token' + $post.permlink + $post.author).html(pending_token);
 				});	
-
-
-
 
 $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 
