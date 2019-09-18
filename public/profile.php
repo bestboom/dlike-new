@@ -650,6 +650,6 @@ include('template/header5.php');
 
 	    }
 	// steem upvotes  
-
+$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 });
 </script>
