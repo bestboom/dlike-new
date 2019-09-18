@@ -148,9 +148,7 @@ include('template/header5.php');
 		$('#loadings').delay(6000).fadeOut('slow');
 		let profname = '<?php echo $_GET['user'];?>';
 
-		$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 	//chexk if user exist
-
 	let Client = new dsteem.Client('https://api.steemit.com');
 	Client.database.call('get_accounts', [[profname]]).then(function (result) {
 		if (result.length<=0) {

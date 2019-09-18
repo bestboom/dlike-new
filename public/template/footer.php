@@ -113,6 +113,7 @@
                 }  
                 toastr.success('Thanks for subscribing');                
         });
+        $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
     </script>     
 </body>
 </html>
