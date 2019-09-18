@@ -430,28 +430,25 @@ include('template/header5.php');
 	                       	var voterList = [];
 	                    }
 	                    var voterList = voters;
-
+	                    if (voterList === Array && voterList.length === 0) {
+                            $post["vote_info"] = '<center><red>No Upvotes Yet!</red></center>';
+                        }
 	                for (let v = 0; v < voterList.length; v++) {
 						if(voterList[v].weight>0){
-	                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token);
-	                        //console.log(vote_amt);
+	                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
 	                        let votePercent = ((voterList[v].percent / 10000) * 100);
 	                        votePercent = parseInt(votePercent);
-	                        //console.log(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
-	                    	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>' + vote_amt + '</i></li>');
+	                    	$post["vote_info"] += ('<li style="list:none;"><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>' + vote_amt + '</i></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
 	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
 	                            break;
 	                        } 
-	                        
 	                    }    
 	                }
-	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", $post['vote_info']);  
-	                console.log($post["vote_info"]);
-	                //<ul>' + $post["vote_info"] + '</ul>
+	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", $post['vote_info']);
 	            }); 
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
