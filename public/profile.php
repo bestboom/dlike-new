@@ -408,9 +408,8 @@ include('template/header5.php');
 						$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
 					});
 				}
+				
 	        	//scot vote	
-	        	
-	        	
 	            $.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
 	                //console.log(data.DLIKER.pending_token);
 	                let pending_token = (data.DLIKER.pending_token)/1000;

@@ -20,6 +20,8 @@ $(document).ready(function(){
 	steem.api.getDiscussionsByCreated(query, function (err, res) {
 		//console.log(res);
 		res.forEach(($post, i) => {
+
+			$post["vote_info"] = "";
 			let metadata;
 			if ($post.json_metadata && $post.json_metadata.length > 0){
 				metadata = JSON.parse($post.json_metadata);
@@ -163,7 +165,7 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'">0</span> <b>DLIKER</b></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
 					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
@@ -174,11 +176,46 @@ $(document).ready(function(){
         		let author = $post.author;
         		let permlink = $post.permlink;				
 
-        		$.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
-    				//console.log(data.DLIKER.pending_token);
-    				let pending_token = (data.DLIKER.pending_token)/1000;
-    				$('#se_token' + $post.permlink + $post.author).html(pending_token);
-				});	
+				$.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
+	                //console.log(data.DLIKER.pending_token);
+	                let pending_token = (data.DLIKER.pending_token)/1000;
+	                $('#se_token' + $post.permlink + $post.author ).html(pending_token);
+
+	                let voters = data.DLIKER.active_votes;
+	                let netshare = data.DLIKER.vote_rshares;
+
+	                    if(voters === Array) {
+	                    	var voterList = voters;
+	                   	} else {
+	                       	var voterList = [];
+	                    }
+	                    if(!(voters === Array)) {
+	                       	var voterList = [];
+	                    }
+	                    var voterList = voters;
+	                    if (voterList.length === 0) {
+                            $post["vote_info"] = '<center><red>No Upvotes Yet!</red></center>';
+                        }
+	                for (let v = 0; v < voterList.length; v++) {
+						if(voterList[v].weight>0){
+	                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
+	                        let votePercent = ((voterList[v].percent / 10000) * 100);
+	                        votePercent = parseInt(votePercent);
+	                        let voter = voterList[v].voter;
+	                        console.log(voter);
+	                        if (v > 0) {
+	                        	$('#se_token' + $post.permlink + $post.author ).css('cursor','pointer');
+	                        }
+	                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
+	                        if (v == 16) {
+	                            let moreV = voterList.length - 15;
+	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
+	                            break;
+	                        } 
+	                    }    
+	                }
+	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", $post['vote_info']);
+	            }); 
 
         		//user-pro status
 				$.ajax({
