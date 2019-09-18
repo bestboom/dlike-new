@@ -430,7 +430,7 @@ include('template/header5.php');
 	                       	var voterList = [];
 	                    }
 	                    var voterList = voters;
-	                    if (voterList === Array && voterList.length === 0) {
+	                    if (voterList.length === 0) {
                             $post["vote_info"] = '<center><red>No Upvotes Yet!</red></center>';
                         }
 	                for (let v = 0; v < voterList.length; v++) {
