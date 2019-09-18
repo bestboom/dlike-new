@@ -314,7 +314,7 @@ include('template/header5.php');
 				metadata = JSON.parse($post.json_metadata);
 			}
 			
-			$post["vote_info"] = "";
+			$post["vote_info"] = "dliker";
 			//$post["me"] = "";
 
 			//get meta tags
