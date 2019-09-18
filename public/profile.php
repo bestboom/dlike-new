@@ -313,7 +313,8 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 				metadata = JSON.parse($post.json_metadata);
 			}
 			
-			//$post["vote_info"] = "";
+			$post["vote_info"] = "";
+			$post["me"] = "";
 
 			//get meta tags
 			let steemTags = metadata.tags;
@@ -489,7 +490,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="<ul>' + $post["vote_info"] + '</ul>">0</span> <b>DLIKER</b></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="' + $post["me"] + '">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
 					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
