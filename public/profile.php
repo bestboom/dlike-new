@@ -411,6 +411,8 @@ include('template/header5.php');
 					});
 				}
 	        	//scot vote	
+	        	
+	        	let vote_info = [];
 	            $.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
 	                //console.log(data.DLIKER.pending_token);
 	                let pending_token = (data.DLIKER.pending_token)/1000;
