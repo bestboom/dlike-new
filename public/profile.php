@@ -449,8 +449,9 @@ include('template/header5.php');
 	                        
 	                    }    
 	                }
-	                //$('#se_token' + $post.permlink + $post.author ).attr("data-content", "<ul>' + $post["vote_info"] + '</ul>");  
+	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", "DlIker");  
 	                console.log($post["vote_info"]);
+	                //<ul>' + $post["vote_info"] + '</ul>
 	            }); 
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
