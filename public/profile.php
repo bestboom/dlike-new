@@ -144,12 +144,11 @@ include('template/header5.php');
 	</div> 
 	<button class='btn btn-primary btn-large' data-popover="true" data-html=true data-content="<a href='http://www.wojt.eu' target='blank' >voters</a>">here</button>
 <?php include('template/footer.php'); ?> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
 		let profname = '<?php echo $_GET['user'];?>';
-$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
+
 	//chexk if user exist
 
 	let Client = new dsteem.Client('https://api.steemit.com');
@@ -651,5 +650,6 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 
 	    }
 	// steem upvotes  
+$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 });
 </script>
