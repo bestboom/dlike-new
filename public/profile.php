@@ -465,8 +465,18 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
                 let pending_token = (data.DLIKER.pending_token)/1000;
                 $('#se_token' + $post.permlink + $post.author ).html(pending_token);
 
-                let voterList = data.DLIKER.active_votes;
+                let voters = data.DLIKER.active_votes;
                 let netshare = data.DLIKER.vote_rshares;
+
+                    if(voters === Array) {
+                    	var voterList = voters;
+                   	} else {
+                       	var voterList = [];
+                    }
+                    if(!(voters === Array)) {
+                       	voterList = [];
+                    }
+                    var voterList = voters;
 
                 for (let v = 0; v < voterList.length; v++) {
 					if(voterList[v].weight>0){
