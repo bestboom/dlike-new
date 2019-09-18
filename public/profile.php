@@ -440,6 +440,9 @@ include('template/header5.php');
 	                        votePercent = parseInt(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
+	                        if (v > 0) {
+	                        	$('#se_token' + $post.permlink + $post.author ).css('cursor','pointer');
+	                        }
 	                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
