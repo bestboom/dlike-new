@@ -440,7 +440,7 @@ include('template/header5.php');
 	                        votePercent = parseInt(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
-	                    	$post["vote_info"] += ('<li style="list:none;"><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>' + vote_amt + '</i></li>');
+	                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
 	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
