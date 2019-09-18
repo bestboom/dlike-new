@@ -409,6 +409,48 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 						$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
 					});
 				}
+	        	//scot vote	
+	            $.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
+	                //console.log(data.DLIKER.pending_token);
+	                let pending_token = (data.DLIKER.pending_token)/1000;
+	                $('#se_token' + $post.permlink + $post.author ).html(pending_token);
+
+	                let voters = data.DLIKER.active_votes;
+	                let netshare = data.DLIKER.vote_rshares;
+
+	                    if(voters === Array) {
+	                    	var voterList = voters;
+	                   	} else {
+	                       	var voterList = [];
+	                    }
+	                    if(!(voters === Array)) {
+	                       	voterList = [];
+	                    }
+	                    var voterList = voters;
+
+	                for (let v = 0; v < voterList.length; v++) {
+						if(voterList[v].weight>0){
+	                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token);
+	                        //console.log(vote_amt);
+	                        let votePercent = ((voterList[v].percent / 10000) * 100);
+	                        votePercent = parseInt(votePercent);
+	                        //console.log(votePercent);
+	                        let voter = voterList[v].voter;
+	                        console.log(voter);
+
+	                    	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
+	                        if (v == 16) {
+	                            let moreV = voterList.length - 15;
+	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
+	                            break;
+	                        } 
+	                        console.log($post["vote_info"]);  
+	                    }    
+	                }  
+
+	            }); 
+
+				
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
@@ -458,47 +500,6 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 
         		let author = $post.author;
         		let permlink = $post.permlink;	
-
-        	//scot vote	
-            $.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
-                //console.log(data.DLIKER.pending_token);
-                let pending_token = (data.DLIKER.pending_token)/1000;
-                $('#se_token' + $post.permlink + $post.author ).html(pending_token);
-
-                let voters = data.DLIKER.active_votes;
-                let netshare = data.DLIKER.vote_rshares;
-
-                    if(voters === Array) {
-                    	var voterList = voters;
-                   	} else {
-                       	var voterList = [];
-                    }
-                    if(!(voters === Array)) {
-                       	voterList = [];
-                    }
-                    var voterList = voters;
-
-                for (let v = 0; v < voterList.length; v++) {
-					if(voterList[v].weight>0){
-                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token);
-                        //console.log(vote_amt);
-                        let votePercent = ((voterList[v].percent / 10000) * 100);
-                        votePercent = parseInt(votePercent);
-                        //console.log(votePercent);
-                        let voter = voterList[v].voter;
-                        console.log(voter);
-
-                    	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
-                        if (v == 16) {
-                            let moreV = voterList.length - 15;
-                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
-                            break;
-                        } 
-                        console.log($post["vote_info"]);  
-                    }    
-                }  
-
-            }); 
 
     		//check if voted
     		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
