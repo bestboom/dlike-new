@@ -141,8 +141,7 @@ include('template/header5.php');
 			    </div>
 			</div>				        
 	    </div>    
-	</div> 
-	<button class='btn btn-primary btn-large' data-popover="true" data-html=true data-content="<a href='http://www.wojt.eu' target='blank' >voters</a>">here</button>
+	</div>
 <?php include('template/footer.php'); ?> 
 <script>
 	$(document).ready(function(){
@@ -437,7 +436,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 	                        //console.log(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
-
+	                        $post['me'] = 'voters';
 	                    	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
@@ -450,7 +449,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 
 	            }); 
 
-				
+
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
@@ -490,7 +489,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="<ul>' + $post["vote_info"] + '</ul>">0</span> <b>DLIKER</b></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="' + $post["me"] + '">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
 					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
