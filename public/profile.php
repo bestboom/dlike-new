@@ -147,6 +147,29 @@ include('template/header5.php');
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
 		let profname = '<?php echo $_GET['user'];?>';
+
+    var originalLeave = $.fn.popover.Constructor.prototype.leave;
+    $.fn.popover.Constructor.prototype.leave = function (obj) {
+        var self = obj instanceof this.constructor ?
+            obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
+        var voters, timeout;
+
+        originalLeave.call(this, obj);
+
+        if (obj.currentTarget) {
+            voters = $(obj.currentTarget).siblings('.popover')
+            timeout = self.timeout;
+            voters.one('mouseenter', function () {
+
+                clearTimeout(timeout);
+
+                voters.one('mouseleave', function () {
+                    $.fn.popover.Constructor.prototype.leave.call(self, self);
+                });
+            })
+        }
+    };
+
 $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 	//chexk if user exist
 
@@ -314,7 +337,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 			}
 			
 			$post["vote_info"] = "";
-			$post["me"] = "";
+			//$post["me"] = "";
 
 			//get meta tags
 			let steemTags = metadata.tags;
@@ -437,7 +460,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 	                        //console.log(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
-	                        $post['me'] = voter;
+	                        //$post['me'] = voter;
 	                    	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
@@ -490,7 +513,7 @@ $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placemen
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="' + $post["me"] + '">0</span> <b>DLIKER</b></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="<ul>' + $post["vote_info"] + '</ul>">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
 					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
