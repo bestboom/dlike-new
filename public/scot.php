@@ -60,7 +60,9 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
 </div>
 <br><br><br><br><br><br><br><br><br>
  <span id="similar" class="vtme"  style="padding-top: 200px;" data-popover="true" data-html="true" data-content="<ul>' + vote_info + '</ul>">heeeeeeeeeeeeeeeeeee</span>
-  <a href="#" data-toggle="tooltip" data-placement="bottom" title="<ul>' + vote_info + '</ul>">Top</a>
+<p id='container'>
+<button class='btn btn-primary btn-large' data-popover="true" data-html=true data-content="<a href='http://www.wojt.eu' target='blank' >click me, I'll try not to disappear</a>">hover here</button>
+</p>
 <?
 include('template/footer.php');
 ?>
@@ -84,14 +86,14 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
     				let pending_payout = (data.DLIKER.pending_token)/1000;
     				console.log(pending_payout);
 
-    				for (let j = 0; j < voterList.length; j++) {
-    					if(voterList[j].weight>0){
-                            let vote_amt = ((voterList[j].rshares / netshare) * pending_payout);
+    				for (let v = 0; v < voterList.length; v++) {
+    					if(voterList[v].weight>0){
+                            let vote_amt = ((voterList[v].rshares / netshare) * pending_payout);
                             console.log(vote_amt);
-                            let votePercent = ((voterList[j].percent / 10000) * 100);
+                            let votePercent = ((voterList[v].percent / 10000) * 100);
                             votePercent = parseInt(votePercent);
                             console.log(votePercent);
-                            let voter = voterList[j].voter;
+                            let voter = voterList[v].voter;
                             console.log(voter);
 
                         	vote_info += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
@@ -107,7 +109,30 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
 
 
 
+var originalLeave = $.fn.popover.Constructor.prototype.leave;
+$.fn.popover.Constructor.prototype.leave = function(obj){
+  var self = obj instanceof this.constructor ?
+    obj : $(obj.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type)
+  var container, timeout;
 
+  originalLeave.call(this, obj);
+
+  if(obj.currentTarget) {
+    container = $(obj.currentTarget).siblings('.popover')
+    timeout = self.timeout;
+    container.one('mouseenter', function(){
+      //We entered the actual popover – call off the dogs
+      clearTimeout(timeout);
+      //Let's monitor popover content instead
+      container.one('mouseleave', function(){
+        $.fn.popover.Constructor.prototype.leave.call(self, self);
+      });
+    })
+  }
+};
+
+
+$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 
 
 	//let cashout_time = '<?=($cashout_time)?>';
