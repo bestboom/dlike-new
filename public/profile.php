@@ -428,7 +428,7 @@ include('template/header5.php');
 	                       	voterList = [];
 	                    }
 	                    var voterList = voters;
-
+	                    $post['vote_info'] = 'DLIKER Voters';
 	                for (let v = 0; v < voterList.length; v++) {
 						if(voterList[v].weight>0){
 	                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token);
@@ -438,7 +438,7 @@ include('template/header5.php');
 	                        //console.log(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
-	                        $post['vote_info'] = 'DLIKER Voters';
+	                        
 	                    	//$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
