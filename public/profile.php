@@ -446,6 +446,7 @@ include('template/header5.php');
 	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
 	                            break;
 	                        } 
+	                        console.log($post["vote_info"]);
 	                    }    
 	                }  
 
