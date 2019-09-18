@@ -449,7 +449,7 @@ include('template/header5.php');
 	                        
 	                    }    
 	                }
-	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", "<ul>' + $post["vote_info"] + '</ul>");  
+	                //$('#se_token' + $post.permlink + $post.author ).attr("data-content", "<ul>' + $post["vote_info"] + '</ul>");  
 	                console.log($post["vote_info"]);
 	            }); 
 				//start posts here
