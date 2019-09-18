@@ -448,6 +448,7 @@ include('template/header5.php');
 	                }  
 
 	            }); 
+	             $('#se_token').attr('data-content', 'DLIKEr');
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
