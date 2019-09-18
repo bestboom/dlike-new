@@ -314,7 +314,7 @@ include('template/header5.php');
 				metadata = JSON.parse($post.json_metadata);
 			}
 			
-			$post["vote_info"] = "dliker";
+			$post["vote_info"] = "";
 			//$post["me"] = "";
 
 			//get meta tags
@@ -449,7 +449,7 @@ include('template/header5.php');
 	                        
 	                    }    
 	                }
-	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", "DlIker");  
+	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", "' + $post["vote_info"] + '");  
 	                console.log($post["vote_info"]);
 	                //<ul>' + $post["vote_info"] + '</ul>
 	            }); 
