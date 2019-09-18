@@ -438,7 +438,6 @@ include('template/header5.php');
 	                        //console.log(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
-	                        //$post['vote_info'] = 'DLIKER Voters';
 	                    	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
@@ -449,8 +448,6 @@ include('template/header5.php');
 	                }  
 
 	            }); 
-	            $post["vote_info"] = "DLIKER";
-	            console.log($post["vote_info"]); 
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 					'\n' +
