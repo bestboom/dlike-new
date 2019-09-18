@@ -438,8 +438,8 @@ include('template/header5.php');
 	                        //console.log(votePercent);
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
-	                        $post['vote_info'] = 'DLIKER Voters';
-	                    	//$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
+	                        //$post['vote_info'] = 'DLIKER Voters';
+	                    	$post["vote_info"] += ('<li><span><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<i>$' + vote_amt + '</i></li>');
 	                        if (v == 16) {
 	                            let moreV = voterList.length - 15;
 	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
@@ -447,7 +447,7 @@ include('template/header5.php');
 	                        } 
 	                    }    
 	                }  
-	                
+
 	            }); 
 
 	            console.log($post["vote_info"]); 
