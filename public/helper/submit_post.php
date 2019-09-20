@@ -14,7 +14,7 @@ $postGenerator = new dlike\post\makePost();
 	$_POST['benefactor'] = "dlike:9,dlike.fund:1";
 	$category = strtolower($_POST['category']);
 	$parent_ctegory = 'dlike';
-	$_POST['tags'] = "dlike," . 'dlike-' . $category . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
+	$_POST['tags'] = "dlike" . ',' . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
 	$max_accepted_payout = '900.000 SBD';
 	$percent_steem_dollars =10000;
