@@ -21,7 +21,8 @@ $googleDomain = $googleDomains[$random_domain];
          echo '<br>';     
 echo $googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencode($search_keyword);
     echo '<br>';  
-echo $pageData = curlGET_Text($googleUrl);
+ $pageData = curlGET_Text($googleUrl);
+ var_dump($pageData)
     echo '<br>';    
     if(str_contains($pageData,'No results found for')){
             //No Match Found
