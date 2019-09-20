@@ -18,9 +18,10 @@ $googleDomains = array('google.com', 'google.ad', 'google.ae', 'google.com.af', 
 
 $random_domain =array_rand($googleDomains,1);
 $googleDomain = $googleDomains[$random_domain];
-        
-$googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencode($search_keyword);
-$pageData = curlGET_Text($googleUrl);
+         echo '<br>';     
+echo $googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencode($search_keyword);
+    echo '<br>';  
+echo $pageData = curlGET_Text($googleUrl);
     echo '<br>';    
     if(str_contains($pageData,'No results found for')){
             //No Match Found
