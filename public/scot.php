@@ -7,7 +7,9 @@ include('template/header5.php');
     <button type="submit">check</button>
 </form>
 <?
-$check_data = stripslashes(Trim($_POST['data']));
+echo $para = $_GET['data'];
+echo '<br>';
+$check_data = stripslashes(Trim($para));
 
 $search_keyword = str_replace("�", "'", $check_data);
 $search_keyword = '"'.$search_keyword.'"';
@@ -19,7 +21,7 @@ $googleDomain = $googleDomains[$random_domain];
         
 $googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencode($search_keyword);
 $pageData = curlGET_Text($googleUrl);
-        
+    echo '<br>';    
     if(str_contains($pageData,'No results found for')){
             //No Match Found
         die('content is unique');
