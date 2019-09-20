@@ -97,7 +97,7 @@ echo $cashout_time = $sct_result->DLIKER->cashout_time;
 <button class='btn btn-primary btn-large' data-popover="true" data-html=true data-content="<a href='http://www.wojt.eu' target='blank' >click me, I'll try not to disappear</a>">hover here</button>
 </p>
 */
-<?
+
 include('template/footer.php');
 ?>
 
