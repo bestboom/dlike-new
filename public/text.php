@@ -16,6 +16,16 @@ $para = $_GET['data'];
 echo '<br>';
 $check_data = stripslashes(Trim($para));
 
+  
+$item_purchase_code = 'nulled-by-amacode';
+$mydomain= 'dlike.io';
+        $url = 'http://googleapi.prothemes.biz/api.php?data='.urlencode($check_data).'&domain='.$mydomain.'&code='.$item_purchase_code;
+        $palData = getMyData($url);
+        echo $palData;
+function getMyData($site){
+    return file_get_contents($site);
+}
+/*
 $search_keyword = str_replace("�", "'", $check_data);
 $search_keyword = '"'.$search_keyword.'"';
 
@@ -25,15 +35,7 @@ $random_domain =array_rand($googleDomains,1);
 $googleDomain = $googleDomains[$random_domain];
 echo '<br>';     
 echo $googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencode($search_keyword);
-echo '<br>';  
-$item_purchase_code = 'nulled-by-amacode';
-$mydomain= 'dlike.io';
-        $url = 'http://googleapi.prothemes.biz/api.php?data='.urlencode($check_data).'&domain='.$mydomain.'&code='.$item_purchase_code;
-        $palData = getMyData($url);
-        echo $palData;
-function getMyData($site){
-    return file_get_contents($site);
-}
+echo '<br>';
 
 
  $pageData = curlGET_Text($googleUrl);
@@ -59,7 +61,7 @@ function curlGET($url,$ref_url = "http://www.google.com/",$agent = "Mozilla/5.0 
 	curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie);
 	curl_setopt($ch, CURLOPT_HEADER, false);
 	curl_setopt($ch, CURLOPT_MAXREDIRS, 100);
-	curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/html; charset=utf-8","Accept: */*"));
+	curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/html; charset=utf-8","Accept: *"));
     curl_setopt($ch, CURLOPT_VERBOSE, true);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -109,6 +111,6 @@ function newod( $url )
     }
 
 
-
+*/
 include('template/footer.php');
 ?>    
