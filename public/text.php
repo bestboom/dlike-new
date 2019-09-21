@@ -1,20 +1,54 @@
 <?php
 include('template/header5.php');
+$secKey = 2;
+$secVal = 2;
+$wordLimit = 700;
 ?>
+
 </div>
-<center>
-<form action="" id="mainbox">
-    <textarea name="data" style="width: 60%;margin-top: 100px; height: 300px;" id="mycontent"></textarea>
-    <br>
-    <button class="btn btn-success" type="submit" id="checkButton">check</button>
-</form>
-</center>
-<div id="resultList"></div>
-<div id="words-count"></div>
-<div id="percent"></div>
+
+
+
+           
+        <div id="mainbox">
+            <textarea id="mycontent" rows="3" style="height: 270px;" class="form-control"></textarea> <br />
+            <input type="hidden" id="authCode" value="<?php echo $secKey.$secVal; ?>" />
+            
+            <div class="text-center"> 
+            <a class="btn btn-info" style="cursor:pointer;" id="checkButton">check</a>
+            </div>
+            <br />  
+            
+            <div class="tbox">
+            <div class="max-text"> <span id="max_words_limit"><?php echo $wordLimit; ?></span>Limit</div>
+            <div class="total-word">words<span id="words-count">0</span></div>
+            </div>
+        </div>
+
+        <div class="percentimg">
+        <br />
+
+        <br />
+        </div>
+        
+        <div class="percentbox" id="percent">
+
+        </div>
+        
+        <div>
+            <table class="table table-bordered" id="resultList">
+                
+            </table>
+           <div id="tryNew" class="text-center hide">
+                <a class="btn btn-info" style="cursor:pointer;" href="">ok</a>
+           </div>  
+        </div>
+
+
+
 
 <?
-$para = $_GET['data'];
+$para = 'Polacy siatkarze przyzwyczaili nas do samych zwycięstw w Mistrzostwach Europy. Tym razem ponownie nas nie zawiedli i wygrali w 1/8 finału 3:0 (25:18, 25:13, 25:16) z Hiszpanami. Był to naprawdę dobry mecz i cały czas widać formę naszych zawodników jak również luz a zarazem skupienie na grze. W poniedziałek Polacy zagrają w ćwierćfinałach z Niemcami. Przypomnę tylko, że Niemcy to aktualni wicemistrzowie świata, więc zapowiada się naprawdę pasjonujący mecz. Już nie mogę się doczekać kolejnego spotkania!';
 echo '<br>';
 $check_data = stripslashes(Trim($para));
 
@@ -111,6 +145,19 @@ function newod( $url )
         $header['content'] = $content;
         return $header;
     }
+
+<center>
+<form action="" id="mainbox">
+    <textarea name="data" style="width: 60%;margin-top: 100px; height: 300px;" id="mycontent"></textarea>
+    <br>
+    <button class="btn btn-success" type="button" id="checkButton">check</button>
+</form>
+
+</center>
+<div id="resultList"></div>
+<div id="words-count"></div>
+<div id="percent"></div>
+
 
 
 */
