@@ -174,6 +174,7 @@ include('template/footer.php');
  */
  
 //Plagiarism Checker
+var placeHolderText = '<?php makeJavascriptStr('this is text',true); ?>';
 
 $("#mycontent").focus(function (){
     countMyWords()
