@@ -26,6 +26,16 @@ $googleDomain = $googleDomains[$random_domain];
 echo '<br>';     
 echo $googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencode($search_keyword);
 echo '<br>';  
+$item_purchase_code = 'nulled-by-amacode';
+$mydomain= 'dlike.io';
+        $url = 'http://googleapi.prothemes.biz/api.php?data='.urlencode($check_data).'&domain='.$mydomain.'&code='.$item_purchase_code;
+        $palData = getMyData($url);
+        echo $palData;
+function getMyData($site){
+    return file_get_contents($site);
+}
+
+
  $pageData = curlGET_Text($googleUrl);
  var_dump($pageData);
 echo '<br>';    
@@ -36,12 +46,7 @@ echo '<br>';
             //Matched
         die('duplicate');   
     }
-        $url = 'http://googleapi.prothemes.biz/api.php?data='.urlencode($check_data).'&domain='.$_SERVER['HTTP_HOST'].'&code='.$item_purchase_code;
-        $palData = getMyData($url);
-        echo $palData;
-function getMyData($site){
-    return file_get_contents($site);
-}
+
 
 function curlGET($url,$ref_url = "http://www.google.com/",$agent = "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0"){
     $cookie = TMP_DIR.unqFile(TMP_DIR, randomPassword().'_curl.tdata');
