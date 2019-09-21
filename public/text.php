@@ -12,7 +12,7 @@ include('template/header5.php');
 
 
 <?
-echo $para = $_GET['data'];
+$para = $_GET['data'];
 echo '<br>';
 $check_data = stripslashes(Trim($para));
 
@@ -27,7 +27,7 @@ echo '<br>';
 echo $googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencode($search_keyword);
 echo '<br>';  
  $pageData = curlGET_Text($googleUrl);
- //var_dump($pageData);
+ var_dump($pageData);
 echo '<br>';    
     if(str_contains($pageData,'No results found for')){
             //No Match Found
@@ -37,7 +37,33 @@ echo '<br>';
         die('duplicate');   
     }
 
-function curlGET_Text( $url )
+
+function curlGET($url,$ref_url = "http://www.google.com/",$agent = "Mozilla/5.0 (Windows NT 6.3; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0"){
+    $cookie = TMP_DIR.unqFile(TMP_DIR, randomPassword().'_curl.tdata');
+	$ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+    curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie);
+	curl_setopt($ch, CURLOPT_COOKIEFILE, $cookie);
+	curl_setopt($ch, CURLOPT_HEADER, false);
+	curl_setopt($ch, CURLOPT_MAXREDIRS, 100);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, Array("Content-Type: text/html; charset=utf-8","Accept: */*"));
+    curl_setopt($ch, CURLOPT_VERBOSE, true);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 20);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+	curl_setopt($ch, CURLOPT_REFERER, $ref_url);
+	$html=curl_exec($ch);
+    curl_close($ch);
+    return $html;
+}
+
+
+
+function newod( $url )
     {
         $user_agent='Mozilla/5.0 (Windows NT 6.1; rv:8.0) Gecko/20100101 Firefox/8.0';
 
