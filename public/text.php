@@ -161,7 +161,7 @@ function newod( $url )
 
 
 */
-include('template/footer.php');
+
 ?>    
 
 <script type="text/javascript">
