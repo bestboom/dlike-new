@@ -4,8 +4,9 @@ include('template/header5.php');
 </div>
 <center>
 <form action="">
-    <textarea name="data" style="width: 60%;"></textarea>
-    <button type="submit">check</button>
+    <textarea name="data" style="width: 60%;margin-top: 100px; height: 300px;"></textarea>
+    <br>
+    <button style="btn btn-success" type="submit">check</button>
 </form>
 </center>
 
@@ -72,6 +73,6 @@ function curlGET_Text( $url )
     }
 
 
-    
+
 include('template/footer.php');
 ?>    
