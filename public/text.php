@@ -6,7 +6,7 @@ include('template/header5.php');
 <form action="">
     <textarea name="data" style="width: 60%;margin-top: 100px; height: 300px;"></textarea>
     <br>
-    <button style="btn btn-success" type="submit">check</button>
+    <button class="btn btn-success" type="submit">check</button>
 </form>
 </center>
 
