@@ -12,7 +12,7 @@ $wordLimit = 700;
            
         <div id="mainbox">
             <textarea id="mycontent" rows="3" style="height: 270px;" class="form-control"></textarea> <br />
-            <input type="hidden" id="authCode" value="<?php echo $secKey.$secVal; ?>" />
+            <input type="hidden" id="authCode" value="" />
             
             <div class="text-center"> 
             <a class="btn btn-info" style="cursor:pointer;" id="checkButton">check</a>
