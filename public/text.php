@@ -9,6 +9,7 @@ include('template/header5.php');
     <button class="btn btn-success" type="submit" id="checkButton">check</button>
 </form>
 </center>
+<div id="resultList"></div>
 <div id="words-count"></div>
 <div id="percent"></div>
 
