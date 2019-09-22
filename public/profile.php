@@ -408,8 +408,6 @@ include('template/header5.php');
 						$("#DlikeComments" + thisPermlink + thisAutor).html(totalDlikeComments);
 					});
 				}
-				let author = $post.author;
-        		let permlink = $post.permlink;	
 				
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
@@ -458,7 +456,9 @@ include('template/header5.php');
 				'</article></div>');
 				//getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 
-        		
+        		let author = $post.author;
+        		let permlink = $post.permlink;	 
+
 	        	//scot vote	
 	            $.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
 	                console.log(data.DLIKER.pending_token);
@@ -498,7 +498,7 @@ include('template/header5.php');
 	                        } 
 	                    }    
 	                }
-	                $('#se_token'+$post.permlink + $post.author).attr("data-content", $post.['vote_info']);
+	                $('#se_token'+$post.permlink + $post.author).attr("data-content", $post['vote_info']);
 	                
 	            });        
 	            		
