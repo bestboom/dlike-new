@@ -448,7 +448,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_profile_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
 					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
@@ -463,7 +463,7 @@ include('template/header5.php');
 	            $.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
 	                console.log(data.DLIKER.pending_token);
 	                let pending_token = (data.DLIKER.pending_token)/1000;
-	                $('#se_token' + $post.permlink + $post.author ).html(pending_token);
+	                $('#se_profile_token' + $post.permlink + $post.author ).html(pending_token);
 	                /*
 	                let voters = data.DLIKER.active_votes;
 	                let netshare = data.DLIKER.vote_rshares;
