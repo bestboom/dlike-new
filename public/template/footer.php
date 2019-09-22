@@ -88,6 +88,9 @@
 <?php if(basename($_SERVER['PHP_SELF']) != 'post.php') { ?> 
 <script src="/js/posts.js"></script>
 <? } ?>
+<?php if(basename($_SERVER['PHP_SELF']) != 'profile.php') { ?> 
+<script src="/js/posts.js"></script>
+<? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
 <script src="/js/intlTelInput.js?1562189064761"></script>
 <script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1562189064761"></script>
