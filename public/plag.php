@@ -8,7 +8,7 @@ include('template/header5.php');
 <form action="" id="mainbox">
     <textarea name="data" style="width: 60%;margin-top: 100px; height: 300px;" id="mycontent"></textarea>
     <br>
-    <button class="btn btn-success" type="button" id="checkButton">check</button>
+    <button class="btn btn-success" type="submit" id="checkButton">check</button>
 </form>
 
 </center>
