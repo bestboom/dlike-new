@@ -482,7 +482,7 @@ include('template/header5.php');
                         }
 	                for (let v = 0; v < voterList.length; v++) {
 						if(voterList[v].weight>0){
-	                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
+	                        let vote_amt = ((voterList[v].rshares / netshare) * my_pending_token).toFixed(3);
 	                        let votePercent = ((voterList[v].percent / 10000) * 100);
 	                        votePercent = parseInt(votePercent);
 	                        let voter = voterList[v].voter;
