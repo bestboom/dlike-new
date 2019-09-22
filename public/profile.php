@@ -465,7 +465,6 @@ include('template/header5.php');
 	                let my_pending_token = (data.DLIKER.pending_token)/1000;
 	                $('#se_profile_token'+permlink +author).html(my_pending_token);
 
-	                /*
 	                let voters = data.DLIKER.active_votes;
 	                let netshare = data.DLIKER.vote_rshares;
 
@@ -489,7 +488,7 @@ include('template/header5.php');
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
 	                        if (v > 0) {
-	                        	$('#se_token' + $post.permlink + $post.author ).css('cursor','pointer');
+	                        	$('#se_token'+ permlink + author).css('cursor','pointer');
 	                        }
 	                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
 	                        if (v == 16) {
@@ -499,7 +498,7 @@ include('template/header5.php');
 	                        } 
 	                    }    
 	                }
-	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", $post['vote_info']);
+	                $('#se_token'+permlink + author).attr("data-content", $post['vote_info']);
 	                */
 	            });        
 	            		
