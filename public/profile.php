@@ -464,7 +464,7 @@ include('template/header5.php');
 	                //console.log(data.DLIKER.pending_token);
 	                let pending_token = (data.DLIKER.pending_token)/1000;
 	                $('#se_token' + $post.permlink + $post.author ).html(pending_token);
-
+	                /*
 	                let voters = data.DLIKER.active_votes;
 	                let netshare = data.DLIKER.vote_rshares;
 
@@ -499,6 +499,7 @@ include('template/header5.php');
 	                    }    
 	                }
 	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", $post['vote_info']);
+	                */
 	            });         		
 
     		//check if voted
