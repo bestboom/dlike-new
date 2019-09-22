@@ -455,7 +455,7 @@ include('template/header5.php');
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_profile_token'+myValue+'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
+					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+myValue+'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
@@ -521,9 +521,9 @@ include('template/header5.php');
                     var voterList = result;
                 for (let j = 0; j < voterList.length; j++) {
                 	if (voterList[j].voter == username) { 
-                		$("#vote_icon" + permlink + author).css("color", "RED"); 
-                		$('#vote_icon' + permlink + author).click(function(){return false;});
-                		$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+                		$("#vote_icon" + myValue).css("color", "RED"); 
+                		$('#vote_icon' + myValue).click(function(){return false;});
+                		$('#vote_icon' + myValue).hover(function() {toastr.error('hmm... Already Upvoted');})
                 	}
                 }                        
     		});
