@@ -1,6 +1,23 @@
 <?php
 
+include('template/header5.php');
+?>
+</div>
 
+<center>
+<form action="" id="mainbox">
+    <textarea name="data" style="width: 60%;margin-top: 100px; height: 300px;" id="mycontent"></textarea>
+    <br>
+    <button class="btn btn-success" type="button" id="checkButton">check</button>
+</form>
+
+</center>
+<div id="resultList"></div>
+<div id="words-count"></div>
+<div id="percent"></div>
+
+
+<?php
 echo $para = $_GET['data'];
 echo '<br>';
 $check_data = stripslashes(Trim($para));
@@ -63,17 +80,7 @@ echo $googleUrl = 'https://www.' . $googleDomain . '/search?hl=en&q=' . urlencod
     }
 ?>
 
-<center>
-<form action="" id="mainbox">
-    <textarea name="data" style="width: 60%;margin-top: 100px; height: 300px;" id="mycontent"></textarea>
-    <br>
-    <button class="btn btn-success" type="button" id="checkButton">check</button>
-</form>
 
-</center>
-<div id="resultList"></div>
-<div id="words-count"></div>
-<div id="percent"></div>
 
 <script type="text/javascript">
 	function countMyWords() {
