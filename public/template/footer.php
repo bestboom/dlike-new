@@ -85,10 +85,7 @@
 <script src="/js/steemconnect.js"></script>
 <script src="/js/toaster.js"></script>
 <script src="/js/mint.js"></script>
-<?php if(basename($_SERVER['PHP_SELF']) != 'post.php') { ?> 
-<script src="/js/posts.js"></script>
-<? } ?>
-<?php if(basename($_SERVER['PHP_SELF']) != 'profile.php') { ?> 
+<?php if(basename($_SERVER['PHP_SELF']) == 'index.php') { ?> 
 <script src="/js/posts.js"></script>
 <? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
