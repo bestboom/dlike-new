@@ -411,6 +411,8 @@ include('template/header5.php');
 				
 				let author = $post.author;
         		let permlink = $post.permlink;	
+        		var mylabel = $post.permlink +$post.author;
+				var myValue = mylabel.replace('.', '');
 
 				//start posts here
 				$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
@@ -451,7 +453,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_profile_token'+permlink +author +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_profile_token'+myValue+'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
 					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
@@ -465,7 +467,7 @@ include('template/header5.php');
 	            $.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+permlink+'', function(data) {
 	                console.log(data.DLIKER.pending_token);
 	                let my_pending_token = (data.DLIKER.pending_token)/1000;
-	                $('#se_profile_token'+permlink +author).html(my_pending_token);
+	                $('#se_profile_token'+myValue).html(my_pending_token);
 
 	                let voters = data.DLIKER.active_votes;
 	                let netshare = data.DLIKER.vote_rshares;
@@ -490,7 +492,7 @@ include('template/header5.php');
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
 	                        if (v > 0) {
-	                        	$('#se_profile_token'+permlink +author).css('cursor','pointer');
+	                        	$('#se_profile_token'+myValue).css('cursor','pointer');
 	                        }
 	                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
 	                        if (v == 16) {
@@ -500,7 +502,7 @@ include('template/header5.php');
 	                        } 
 	                    }    
 	                }
-	                $('#se_profile_token'+permlink + author).attr("data-content", $post['vote_info']);
+	                $('#se_profile_token'+myValue).attr("data-content", $post['vote_info']);
 	                
 	            });        
 	            		
