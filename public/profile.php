@@ -456,14 +456,13 @@ include('template/header5.php');
 				'</article></div>');
 				//getTotalLikes($post.author,$post.permlink, currentLikesDivElement);
 
-        		let author = $post.author;
-        		let permlink = $post.permlink;	
+        		
 
 	        	//scot vote	
-	            $.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
+	            $.getJSON("https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'", function(data) {
 	                //console.log(data.DLIKER.pending_token);
 	                let my_pending_token = (data.DLIKER.pending_token)/1000;
-	                //$('#se_profile_token'+$post.permlink +$post.author).html(1);
+	                $('#se_profile_token'+$post.permlink +$post.author).html(1);
 
 	                /*
 	                let voters = data.DLIKER.active_votes;
@@ -501,7 +500,9 @@ include('template/header5.php');
 	                }
 	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", $post['vote_info']);
 	                */
-	            });         		
+	            });        
+	            let author = $post.author;
+        		let permlink = $post.permlink;	 		
 
     		//check if voted
     		steem.api.getActiveVotes($post.author, $post.permlink, function(err, result) {
