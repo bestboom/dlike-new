@@ -499,7 +499,7 @@ include('template/header5.php');
 	                    }    
 	                }
 	                $('#se_token'+permlink + author).attr("data-content", $post['vote_info']);
-	                */
+	                
 	            });        
 	            		
 
