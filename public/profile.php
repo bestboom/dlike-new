@@ -461,7 +461,7 @@ include('template/header5.php');
 
 	        	//scot vote	
 	            $.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
-	                //console.log(data.DLIKER.pending_token);
+	                console.log(data.DLIKER.pending_token);
 	                let pending_token = (data.DLIKER.pending_token)/1000;
 	                $('#se_token' + $post.permlink + $post.author ).html(pending_token);
 	                /*
