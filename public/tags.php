@@ -44,7 +44,7 @@
 							var currentPostNumber = i;
 							var permlink = resulthtml[i]['permlink'];
 							var author = resulthtml[i]['username'];
-							var mylabel = permlink +author;
+							var mylabel = permlink + author;
 							var newValue = mylabel.replace('.', '');
 
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
@@ -85,7 +85,7 @@
 					'<div class="post-author-block">\n' +
 					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span class="pending_payout_value"></span> <b>+</b> <span id="se_token">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments">&nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+newValue +'"></i></a><span class="active_votes"></span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +author +'">0</span></div>\n' +
+					'<div class="post-comments">&nbsp;<a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + permlink + '" data-author="' + author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+ permlink +'"></i></a><span class="active_votes"></span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+permlink +author +'">0</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 					'</article></div>';
@@ -148,9 +148,9 @@
 							var voterList = result;
 							for (let j = 0; j < voterList.length; j++) {
 								if (voterList[j].voter == c_username) { 
-									$("#vote_icon" +newValue).css("color", "RED"); 
-									$('#vote_icon' +newValue).click(function(){return false;});
-									$('#vote_icon' +newValue).hover(function() {toastr.error('hmm... Already Upvoted');})
+									$('#article_'+permlink+' #vote_icon').css("color", "RED"); 
+									$('#article_'+permlink+' #vote_icon').click(function(){return false;});
+									$('#article_'+permlink+' #vote_icon').hover(function() {toastr.error('hmm... Already Upvoted');})
 								}
 							}                        
 						});
