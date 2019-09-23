@@ -137,6 +137,42 @@ include('template/header5.php');
     						//console.log(data.DLIKER.pending_token);
     						let pending_token = (data.DLIKER.pending_token)/1000;
     						$('#article_'+permlink+' #se_token').html(pending_token);
+
+		                let voters = data.DLIKER.active_votes;
+		                let netshare = data.DLIKER.vote_rshares;
+
+		                    if(voters === Array) {
+		                    	var voterList = voters;
+		                   	} else {
+		                       	var voterList = [];
+		                    }
+		                    if(!(voters === Array)) {
+		                       	var voterList = [];
+		                    }
+		                    var voterList = voters;
+		                    if (voterList.length === 0) {
+	                            $post["vote_info"] = '<center><red>No Upvotes Yet!</red></center>';
+	                        }
+		                for (let v = 0; v < voterList.length; v++) {
+							if(voterList[v].weight>0){
+		                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
+		                        let votePercent = ((voterList[v].percent / 10000) * 100);
+		                        votePercent = parseInt(votePercent);
+		                        let voter = voterList[v].voter;
+		                        //console.log(voter);
+		                        if (v > 0) {
+		                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
+		                        }
+		                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
+		                        if (v == 16) {
+		                            let moreV = voterList.length - 15;
+		                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
+		                            break;
+		                        } 
+		                    }    
+		                }
+		                $('#article_'+permlink+' #se_token').attr("data-content", $post['vote_info']);
+
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
