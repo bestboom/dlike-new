@@ -165,9 +165,9 @@ $(document).ready(function(){
 					'\n' +
 					'<div class="post-footer">\n' +
 					'<div class="post-author-block">\n' +
-					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+$post.permlink +$post.author +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
+					'<div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+newValue +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>\n' +
 					'</div>\n' +
-					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+$post.permlink +$post.author +'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
+					'<div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+newValue+'"></i></a><span>&nbsp;' + $post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>\n' +
 					'</div>\n' +
 					'</div>\n' +
 				'</article></div>');
@@ -179,7 +179,7 @@ $(document).ready(function(){
 				$.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
 	                //console.log(data.DLIKER.pending_token);
 	                let pending_token = (data.DLIKER.pending_token)/1000;
-	                $('#se_token' + $post.permlink + $post.author ).html(pending_token);
+	                $('#se_token' + newValue ).html(pending_token);
 
 	                let voters = data.DLIKER.active_votes;
 	                let netshare = data.DLIKER.vote_rshares;
@@ -204,7 +204,7 @@ $(document).ready(function(){
 	                        let voter = voterList[v].voter;
 	                        console.log(voter);
 	                        if (v > 0) {
-	                        	$('#se_token' + $post.permlink + $post.author ).css('cursor','pointer');
+	                        	$('#se_token' + newValue ).css('cursor','pointer');
 	                        }
 	                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
 	                        if (v == 16) {
@@ -214,7 +214,7 @@ $(document).ready(function(){
 	                        } 
 	                    }    
 	                }
-	                $('#se_token' + $post.permlink + $post.author ).attr("data-content", $post['vote_info']);
+	                $('#se_token' + newValue ).attr("data-content", $post['vote_info']);
 	            }); 
 
         		//user-pro status
@@ -256,9 +256,9 @@ $(document).ready(function(){
                     var voterList = result;
                 for (let j = 0; j < voterList.length; j++) {
                 	if (voterList[j].voter == username) { 
-                		$("#vote_icon" + permlink + author).css("color", "RED"); 
-                		$('#vote_icon' + permlink + author).click(function(){return false;});
-                		$('#vote_icon' + permlink + author).hover(function() {toastr.error('hmm... Already Upvoted');})
+                		$("#vote_icon" + newValue).css("color", "RED"); 
+                		$('#vote_icon' + newValue).click(function(){return false;});
+                		$('#vote_icon' + newValue).hover(function() {toastr.error('hmm... Already Upvoted');})
                 	}
                 }                        
     		});
