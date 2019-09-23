@@ -110,7 +110,7 @@ include('template/header5.php');
 							var newValue = mylabel.replace('.', '');
 						    if(response.status == "OK") {
 							var all_status = response.setstatus;
-
+							console.log(all_status);
 								if(all_status == "3") {
 								    var colorset = 'red';
 								    $('.userstatus_icon' + newValue).css({"color": colorset});
