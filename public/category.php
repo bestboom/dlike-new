@@ -158,7 +158,7 @@ include('template/header5.php');
 			                        let voter = voterList[v].voter;
 			                        //console.log(voter);
 			                        if (v > 0) {
-			                        	$('#se_profile_token').css('cursor','pointer');
+			                        	$('#se_token').css('cursor','pointer');
 			                        }
 	
 			                    }    
