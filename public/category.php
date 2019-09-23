@@ -138,6 +138,32 @@ include('template/header5.php');
     						let pending_token = (data.DLIKER.pending_token)/1000;
     						$('#article_'+permlink+' #se_token').html(pending_token);
 
+			                let voters = data.DLIKER.active_votes;
+			                let netshare = data.DLIKER.vote_rshares;
+
+			                    if(voters === Array) {
+			                    	var voterList = voters;
+			                   	} else {
+			                       	var voterList = [];
+			                    }
+			                    if(!(voters === Array)) {
+			                       	var voterList = [];
+			                    }
+			                    var voterList = voters;
+			                for (let v = 0; v < voterList.length; v++) {
+								if(voterList[v].weight>0){
+			                        let vote_amt = ((voterList[v].rshares / netshare) * my_pending_token).toFixed(3);
+			                        let votePercent = ((voterList[v].percent / 10000) * 100);
+			                        votePercent = parseInt(votePercent);
+			                        let voter = voterList[v].voter;
+			                        //console.log(voter);
+			                        if (v > 0) {
+			                        	$('#se_profile_token').css('cursor','pointer');
+			                        }
+	
+			                    }    
+			                }
+			                //$('#se_profile_token'+myValue).attr("data-content", $post['vote_info']);
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
