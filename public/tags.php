@@ -134,7 +134,7 @@
     						//console.log(data.DLIKER.pending_token);
     						let pending_token = (data.DLIKER.pending_token)/1000;
     						$('#article_'+permlink+' #se_token').html(pending_token);
-    						
+
 			                let voters = data.DLIKER.active_votes;
 			                let netshare = data.DLIKER.vote_rshares;
 
@@ -152,7 +152,7 @@
 		                        }
 			                for (let v = 0; v < voterList.length; v++) {
 								if(voterList[v].weight>0){
-			                        let vote_amt = ((voterList[v].rshares / netshare) * my_pending_token).toFixed(3);
+			                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
 			                        let votePercent = ((voterList[v].percent / 10000) * 100);
 			                        votePercent = parseInt(votePercent);
 			                        let voter = voterList[v].voter;
