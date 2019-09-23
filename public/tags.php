@@ -25,7 +25,7 @@
 	$(document).ready(function(){
 		$('#loadings').delay(4000).fadeOut('slow');
 	
-		var c_username = $('#c_username').val();
+		var c_username = '<?php echo $_COOKIE['username']; ?>';
 		var tagname = '<?php echo $_GET['tag'];?>';
 
 		$.ajax({
@@ -148,7 +148,7 @@
 							}
 							var voterList = result;
 							for (let j = 0; j < voterList.length; j++) {
-								if (voterList[j].voter == username) { 
+								if (voterList[j].voter == c_username) { 
 									$('#article_'+permlink+' #vote_icon').css("color", "RED"); 
 									$('#article_'+permlink+' #vote_icon').click(function(){return false;});
 									$('#article_'+permlink+' #vote_icon').hover(function() {toastr.error('hmm... Already Upvoted');})
