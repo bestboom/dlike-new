@@ -40,15 +40,18 @@ include('template/header5.php');
 		success: function(response) {
 			if(response.status == "OK") {
 				var resulthtml = response.data_row;
-				adduserhtml += '<a style="color:white;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
+				
 				for(i=0;i<resulthtml.length;i++) {
 
 					var responsehtml = '';
+					var adduserhtml = '';
 					var currentPostNumber = i;
 					var permlink = resulthtml[i]['permlink'];
 					var author = resulthtml[i]['username'];
 					var mylabel = permlink +author;
 					var newValue = mylabel.replace('.', '');
+
+					adduserhtml += '<a style="color:white;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
 
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
