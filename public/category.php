@@ -184,7 +184,7 @@ include('template/header5.php');
 			                        let voter = voterList[v].voter;
 			                        //console.log(voter);
 			                        if (v > 0) {
-			                        	$('#se_token').css('cursor','pointer');
+			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
 	
 			                    }    
