@@ -52,7 +52,7 @@ include('template/header5.php');
 					var newValue = mylabel.replace('.', '');
 
 					adduserhtml += '<a style="color:grey;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
-					console.log(adduserhtml);
+				
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
