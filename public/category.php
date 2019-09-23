@@ -51,7 +51,7 @@ include('template/header5.php');
 					var mylabel = permlink +author;
 					var newValue = mylabel.replace('.', '');
 
-					adduserhtml += '<a style="color:white;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
+					adduserhtml += '<a style="color:white;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
 
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
@@ -113,13 +113,13 @@ include('template/header5.php');
 
 								if(all_status == "3") {
 								    var colorset = 'red';
-								    $('.userstatus_icon').css({"color": colorset});
+								    $('.userstatus_icon' + newValue).css({"color": colorset});
 								    var erroset = "PRO User";
 								}
-							$('.userstatus_icon').hover(function() {toastr.success(erroset);});	
+							$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
 						    }
 						    else {
-							    $('.userstatus_icon').remove();
+							    $('.userstatus_icon' + newValue).remove();
 						    }
 						}
 					});
