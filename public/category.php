@@ -40,7 +40,7 @@ include('template/header5.php');
 		success: function(response) {
 			if(response.status == "OK") {
 				var resulthtml = response.data_row;
-
+				adduserhtml += '<a style="color:white;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
 				for(i=0;i<resulthtml.length;i++) {
 
 					var responsehtml = '';
@@ -64,7 +64,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author +'</a><div class="time" id="post_time"></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -94,6 +94,32 @@ include('template/header5.php');
 					'</article></div>';
 
 					$("#contentposts").append(responsehtml);
+
+					//user-pro status
+					
+					$.ajax({
+						type: "POST",
+						url: '/helper/getuserpoststatus.php',
+						data:{'author':author},
+						dataType: 'json',
+						success: function(response) {
+						    var mylabel = permlink +author;
+							var newValue = mylabel.replace('.', '');
+						    if(response.status == "OK") {
+							var all_status = response.setstatus;
+
+								if(all_status == "3") {
+								    var colorset = 'red';
+								    $('.userstatus_icon').css({"color": colorset});
+								    var erroset = "PRO User";
+								}
+							$('.userstatus_icon').hover(function() {toastr.success(erroset);});	
+						    }
+						    else {
+							    $('.userstatus_icon').remove();
+						    }
+						}
+					});
 
 					steem.api.getContent(author , permlink, function(err, res) {
 						let metadata = JSON.parse(res.json_metadata);
