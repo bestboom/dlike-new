@@ -182,7 +182,7 @@
 							}
 							var voterList = result;
 							for (let j = 0; j < voterList.length; j++) {
-								if (voterList[j].voter == c_username) { 
+								if (voterList[j].voter == username) { 
 									$('#article_'+permlink+' #vote_icon').css("color", "RED"); 
 									$('#article_'+permlink+' #vote_icon').click(function(){return false;});
 									$('#article_'+permlink+' #vote_icon').hover(function() {toastr.error('hmm... Already Upvoted');})
