@@ -44,6 +44,7 @@ include('template/header5.php');
 				for(i=0;i<resulthtml.length;i++) {
 
 					var responsehtml = '';
+					var addvoterlist = '';
 					var currentPostNumber = i;
 					var permlink = resulthtml[i]['permlink'];
 					var author = resulthtml[i]['username'];
@@ -64,7 +65,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author + '</a>&nbsp;<a style="color:grey;" id="userstatus_icon"><i class="fa fa-check-circle"></i></a><div class="time" id="post_time"></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + '</a>&nbsp;<a style="color:white;" id="userstatus_icon"><i class="fa fa-check-circle"></i></a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -162,9 +163,9 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-				                    //addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
+				                    addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
 
-				                    $('#article_'+permlink+' #se_token').attr("data-content", voter);
+				                    $('#article_'+permlink+' #se_token').attr("data-content", addvoterlist);
 			                    }    
 			                }
 			                //$('#article_'+permlink+' #se_token').attr("data-content", addvoterlist);
