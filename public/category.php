@@ -42,9 +42,10 @@ include('template/header5.php');
 				var resulthtml = response.data_row;
 				
 				for(i=0;i<resulthtml.length;i++) {
-
+					
+					resulthtml["voterlist"] = '';
 					var responsehtml = '';
-					var resulthtml["voterlist"] = '';
+					
 					var currentPostNumber = i;
 					var permlink = resulthtml[i]['permlink'];
 					var author = resulthtml[i]['username'];
