@@ -53,7 +53,7 @@ include('template/header5.php');
 					var newValue = mylabel.replace('.', '');
 
 
-					adduserhtml += '<a style="color:grey;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue+'"></i></a>';
+					adduserhtml += '<a style="color:grey;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle"></i></a>';
 
 
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
@@ -70,7 +70,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"></div><span id="pros"></span></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + '</a>&nbsp;<a style="color:grey;" id="userstatus_icon"><i class="fa fa-check-circle"></i></a><div class="time" id="post_time"></div><span id="pros"></span></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -209,6 +209,7 @@ include('template/header5.php');
 									    //$('.userstatus_icon' + newValue).css({"color": colorset});
 									    $('#article_'+permlink+' #pros').html('PRO');
 									    $('#article_'+permlink+' #pros').css({"color": colorset});
+									    $('#article_'+permlink+' #userstatus_icon').css({"color": colorset});
 									    var erroset = "PRO User";
 									}
 								$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
