@@ -52,7 +52,30 @@ include('template/header5.php');
 					var newValue = mylabel.replace('.', '');
 
 					adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
-				
+									
+					$.ajax({
+						type: "POST",
+						url: '/helper/getuserpoststatus.php',
+						data:{'author':author},
+						dataType: 'json',
+						success: function(response) {
+						    var mylabel = permlink +author;
+							var newValue = mylabel.replace('.', '');
+						    if(response.status == "OK") {
+							var all_status = response.setstatus;
+							console.log(all_status);
+								if(all_status == "3") {
+								    var colorset = 'red';
+								    $('#article_'+permlink+' .userstatus_icon').css({"color": colorset});
+								    var erroset = "PRO User";
+								}
+							$('#article_'+permlink+' .userstatus_icon').hover(function() {toastr.success(erroset);});	
+						    }
+						    else {
+							    $('#article_'+permlink+' .userstatus_icon').remove();
+						    }
+						}
+					});
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
@@ -99,30 +122,6 @@ include('template/header5.php');
 					$("#contentposts").append(responsehtml);
 
 					//user-pro status
-					
-					$.ajax({
-						type: "POST",
-						url: '/helper/getuserpoststatus.php',
-						data:{'author':author},
-						dataType: 'json',
-						success: function(response) {
-						    var mylabel = permlink +author;
-							var newValue = mylabel.replace('.', '');
-						    if(response.status == "OK") {
-							var all_status = response.setstatus;
-							console.log(all_status);
-								if(all_status == "3") {
-								    var colorset = 'red';
-								    $('#article_'+permlink+' .userstatus_icon').css({"color": colorset});
-								    var erroset = "PRO User";
-								}
-							$('#article_'+permlink+' .userstatus_icon').hover(function() {toastr.success(erroset);});	
-						    }
-						    else {
-							    $('#article_'+permlink+' .userstatus_icon').remove();
-						    }
-						}
-					});
 
 					steem.api.getContent(author , permlink, function(err, res) {
 						let metadata = JSON.parse(res.json_metadata);
