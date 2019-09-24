@@ -169,7 +169,7 @@ include('template/header5.php');
 				                    //$('#article_'+permlink+' #se_token').attr("data-content", resulthtml["voterlist"]);
 			                    }    
 			                }
-			                $('#article_'+permlink+' #se_token').attr("data-content", resulthtml["voterlist"]);
+			                //$('#article_'+permlink+' #se_token').attr("data-content", resulthtml["voterlist"]);
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
