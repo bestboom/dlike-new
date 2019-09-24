@@ -51,7 +51,7 @@ include('template/header5.php');
 					var mylabel = permlink +author;
 					var newValue = mylabel.replace('.', '');
 
-					adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
+					adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
 				
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
@@ -67,7 +67,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + '</a><a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
