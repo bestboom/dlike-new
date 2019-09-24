@@ -66,6 +66,7 @@ include('template/header5.php');
 							var all_status = response.setstatus;
 							console.log(all_status);
 								if(all_status == "3") {
+									console.log('this is pro')
 								    var colorset = 'red';
 								    $('.userstatus_icon' + newValue).css({"color": colorset});
 								    var erroset = "PRO User";
