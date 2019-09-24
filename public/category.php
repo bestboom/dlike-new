@@ -70,7 +70,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author + '</a>&nbsp;<a style="color:grey;" id="userstatus_icon"><i class="fa fa-check-circle"></i></a><div class="time" id="post_time"></div><span id="pros"></span></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + '</a>&nbsp;<a style="color:grey;" id="userstatus_icon"><i class="fa fa-check-circle"></i></a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -206,16 +206,13 @@ include('template/header5.php');
 								console.log(all_status);
 									if(all_status == "3") {
 									    var colorset = 'red';
-									    //$('.userstatus_icon' + newValue).css({"color": colorset});
-									    $('#article_'+permlink+' #pros').html('PRO');
-									    $('#article_'+permlink+' #pros').css({"color": colorset});
 									    $('#article_'+permlink+' #userstatus_icon').css({"color": colorset});
 									    var erroset = "PRO User";
 									}
-								$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
+								$('#article_'+permlink+' #userstatus_icon').hover(function() {toastr.success(erroset);});	
 							    }
 							    else {
-								    $('.userstatus_icon' + newValue).remove();
+								    $('#article_'+permlink+' #userstatus_icon').remove();
 							    }
 							}
 						});
