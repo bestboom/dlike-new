@@ -52,7 +52,7 @@ include('template/header5.php');
 					var mylabel = permlink +author;
 					var newValue = mylabel.replace('.', '');
 
-					//adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
+					
 									
 					$.ajax({
 						type: "POST",
@@ -67,16 +67,20 @@ include('template/header5.php');
 							console.log(all_status);
 								if(all_status == "3") {
 								    var colorset = 'red';
-								    $('#article_'+permlink+' a.userstatus_icon').css({"color": colorset});
+								    $('.userstatus_icon' + newValue).css({"color": colorset});
 								    var erroset = "PRO User";
 								}
-							$('#article_'+permlink+' .userstatus_icon').hover(function() {toastr.success(erroset);});	
+							$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
 						    }
 						    else {
-							    $('#article_'+permlink+' a.userstatus_icon').remove();
+							    $('.userstatus_icon' + newValue).remove();
 						    }
 						}
 					});
+
+					adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
+
+					
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
@@ -91,7 +95,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author + '</a><a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a><div class="time" id="post_time"></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
