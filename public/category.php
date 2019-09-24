@@ -52,7 +52,7 @@ include('template/header5.php');
 					var mylabel = permlink +author;
 					var newValue = mylabel.replace('.', '');
 
-					adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
+					//adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
 									
 					$.ajax({
 						type: "POST",
@@ -67,13 +67,13 @@ include('template/header5.php');
 							console.log(all_status);
 								if(all_status == "3") {
 								    var colorset = 'red';
-								    $('#article_'+permlink+' .userstatus_icon').css({"color": colorset});
+								    $('#article_'+permlink+' a.userstatus_icon').css({"color": colorset});
 								    var erroset = "PRO User";
 								}
 							$('#article_'+permlink+' .userstatus_icon').hover(function() {toastr.success(erroset);});	
 						    }
 						    else {
-							    $('#article_'+permlink+' .userstatus_icon').remove();
+							    $('#article_'+permlink+' a.userstatus_icon').remove();
 						    }
 						}
 					});
@@ -189,12 +189,7 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-				                    addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
-			                        if (v > 15) {
-			                            let moreV = voterList.length - 15;
-			                        addvoterlist += "... and " + moreV + " more upvotes.";
-			                            break;
-			                        } 
+				                    addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
 			                    }    
 			                }
 			                $('#article_'+permlink+' #se_token').attr("data-content", addvoterlist);
