@@ -207,7 +207,8 @@ include('template/header5.php');
 									if(all_status == "3") {
 									    var colorset = 'red';
 									    //$('.userstatus_icon' + newValue).css({"color": colorset});
-									    $('#article_'+permlink+' #post_time').html('PRO');
+									    $('#article_'+permlink+' #pros').html('PRO');
+									    $('#article_'+permlink+' #pros').css({"color": colorset});
 									    var erroset = "PRO User";
 									}
 								$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
