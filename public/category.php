@@ -45,7 +45,7 @@ include('template/header5.php');
 
 					var responsehtml = '';
 					var adduserhtml = '';
-					var addvoterlist = '';
+					var addvoterlist['vote_info'] = '';
 					var currentPostNumber = i;
 					var permlink = resulthtml[i]['permlink'];
 					var author = resulthtml[i]['username'];
@@ -66,9 +66,9 @@ include('template/header5.php');
 							var all_status = response.setstatus;
 							console.log(all_status);
 								if(all_status == "3") {
-									console.log('this is pro')
 								    var colorset = 'red';
-								    $('.userstatus_icon' + newValue).css({"color": colorset});
+								    var redit = $('.userstatus_icon' + newValue).css({"color": colorset});
+								    console.log(redit);
 								    var erroset = "PRO User";
 								}
 							$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
@@ -194,10 +194,10 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-				                    addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
+				                    addvoterlist['vote_info'] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
 			                    }    
 			                }
-			                $('#article_'+permlink+' #se_token').attr("data-content", 1);
+			                $('#article_'+permlink+' #se_token').attr("data-content", addvoterlist['vote_info']);
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
