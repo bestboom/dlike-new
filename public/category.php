@@ -70,7 +70,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"><span id="pros"></span></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"></div><span id="pros"></span></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
