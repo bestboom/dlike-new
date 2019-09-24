@@ -113,13 +113,13 @@ include('template/header5.php');
 							console.log(all_status);
 								if(all_status == "3") {
 								    var colorset = 'red';
-								    $('.userstatus_icon' + newValue).css({"color": colorset});
+								    $('#article_'+permlink+' a.userstatus_icon').css({"color": colorset});
 								    var erroset = "PRO User";
 								}
-							$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
+							$('#article_'+permlink+' a.userstatus_icon').hover(function() {toastr.success(erroset);});	
 						    }
 						    else {
-							    $('.userstatus_icon' + newValue).remove();
+							    $('#article_'+permlink+' a.userstatus_icon').remove();
 						    }
 						}
 					});
