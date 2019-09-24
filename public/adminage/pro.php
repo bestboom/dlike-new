@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 
 $sql_C = "SELECT sum(amount) as total_amount,count(*) as total FROM prousers";
 $result_C = $conn->query($sql_C);
-$row_C = $result_C->fetch_assoc();
+$row_C = $result_C->fetch_assoc() or die($conn->error);
 ?>
 <div class="container">
 	<ul class="download-options-list">
