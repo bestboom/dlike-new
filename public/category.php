@@ -163,9 +163,9 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-				                    addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
+				                    voterlist = '<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'; 
 
-				                    $('#article_'+permlink+' #se_token').attr("data-content", addvoterlist);
+				                    $('#article_'+permlink+' #se_token').attr("data-content", voterlist);
 			                    }    
 			                }
 			                //$('#article_'+permlink+' #se_token').attr("data-content", addvoterlist);
