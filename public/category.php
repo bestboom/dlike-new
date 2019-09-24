@@ -44,7 +44,7 @@ include('template/header5.php');
 				for(i=0;i<resulthtml.length;i++) {
 
 					var responsehtml = '';
-					var addvoterlist = '';
+					var resulthtml["voterlist"] = '';
 					var currentPostNumber = i;
 					var permlink = resulthtml[i]['permlink'];
 					var author = resulthtml[i]['username'];
@@ -163,9 +163,9 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-				                    voterlist += '<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'; 
+				                    resulthtml["voterlist"] += '<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'; 
 
-				                    $('#article_'+permlink+' #se_token').attr("data-content", voterlist);
+				                    $('#article_'+permlink+' #se_token').attr("data-content", resulthtml["voterlist"]);
 			                    }    
 			                }
 			                //$('#article_'+permlink+' #se_token').attr("data-content", addvoterlist);
