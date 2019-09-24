@@ -80,7 +80,7 @@ include('template/header5.php');
 
 					adduserhtml += '<a style="color:grey;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue+'"></i></a>';
 
-					
+
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
 					'\n' +
 					'<article class="post-style-two">\n' +
@@ -193,10 +193,10 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-				                    addvoterlist['vote_info'] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
+				                    addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'); 
 			                    }    
 			                }
-			                $('#article_'+permlink+' #se_token').attr("data-content", addvoterlist['vote_info']);
+			                $('#article_'+permlink+' #se_token').attr("data-content", 1);
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
