@@ -188,10 +188,15 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-	
+				                    addvoterlist += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
+			                        if (v == 16) {
+			                            let moreV = voterList.length - 15;
+			                        addvoterlist += "... and " + moreV + " more upvotes.";
+			                            break;
+			                        } 
 			                    }    
 			                }
-			                //$('#se_profile_token'+myValue).attr("data-content", $post['vote_info']);
+			                $('#article_'+permlink+' #se_token').attr("data-content", addvoterlist);
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
