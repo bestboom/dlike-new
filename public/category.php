@@ -52,32 +52,6 @@ include('template/header5.php');
 					var mylabel = permlink +author;
 					var newValue = mylabel.replace('.', '');
 
-					
-									
-					$.ajax({
-						type: "POST",
-						url: '/helper/getuserpoststatus.php',
-						data:{'author':author},
-						dataType: 'json',
-						success: function(response) {
-						    var mylabel = permlink +author;
-							var newValue = mylabel.replace('.', '');
-						    if(response.status == "OK") {
-							var all_status = response.setstatus;
-							console.log(all_status);
-								if(all_status == "3") {
-								    var colorset = 'red';
-								    var redit = $('.userstatus_icon' + newValue).css({"color": colorset});
-								    console.log(redit);
-								    var erroset = "PRO User";
-								}
-							$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
-						    }
-						    else {
-							    $('.userstatus_icon' + newValue).remove();
-						    }
-						}
-					});
 
 					adduserhtml += '<a style="color:grey;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue+'"></i></a>';
 
@@ -96,7 +70,7 @@ include('template/header5.php');
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author + "&nbsp;" +adduserhtml +'</a><div class="time" id="post_time"><span id="pros"></span></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -218,6 +192,32 @@ include('template/header5.php');
 								}
 							}                        
 						});
+
+						$.ajax({
+							type: "POST",
+							url: '/helper/getuserpoststatus.php',
+							data:{'author':author},
+							dataType: 'json',
+							success: function(response) {
+							    var mylabel = permlink +author;
+								var newValue = mylabel.replace('.', '');
+							    if(response.status == "OK") {
+								var all_status = response.setstatus;
+								console.log(all_status);
+									if(all_status == "3") {
+									    var colorset = 'red';
+									    //$('.userstatus_icon' + newValue).css({"color": colorset});
+									    $('#article_'+permlink+' #post_time').html('PRO');
+									    var erroset = "PRO User";
+									}
+								$('.userstatus_icon' + newValue).hover(function() {toastr.success(erroset);});	
+							    }
+							    else {
+								    $('.userstatus_icon' + newValue).remove();
+							    }
+							}
+						});
+						
 					});
 				}
 				$("#loadings").hide();
