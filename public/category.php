@@ -45,6 +45,7 @@ include('template/header5.php');
 
 					var responsehtml = '';
 					var adduserhtml = '';
+					var addvoterlist = '';
 					var currentPostNumber = i;
 					var permlink = resulthtml[i]['permlink'];
 					var author = resulthtml[i]['username'];
