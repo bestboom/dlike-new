@@ -78,7 +78,7 @@ include('template/header5.php');
 						}
 					});
 
-					adduserhtml += '<a style="color:grey;" class="userstatus_icon"><i class="fa fa-check-circle" class="user_status"></i></a>';
+					adduserhtml += '<a style="color:grey;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue+'"></i></a>';
 
 					
 					responsehtml = '<div class="col-lg-4 col-md-6 postsMainDiv mainDiv" postLikes="0" postNumber="'+currentPostNumber+'" id="article_'+permlink+'">\n' +
