@@ -256,7 +256,7 @@ include('template/header5.php');
 							    }
 							}
 						});
-					}	
+					});//foreach	
 					});
 				}
 				$("#loadings").hide();
