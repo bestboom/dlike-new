@@ -153,7 +153,7 @@ else
                                                 </div>
                                                 <div class="col-lg-4 col-md-6 col-sm-5 auth_info">
                                                     <div class="post-share-block">
-                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span><?php echo $pending_amount;?></span> DLIKER
+                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span id="se_token" data-popover="true" data-html="true" data-content=""><?php echo $pending_amount;?></span> DLIKER
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
@@ -351,7 +351,7 @@ else
         post_permlink = '<?php echo $link; ?>';
         steem.api.getContent(post_author , post_permlink, function(err, res) {
         //console.log(res);
-
+        res["voterlist"] = '';
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
         if (typeof metadata.image === "string"){
@@ -439,6 +439,36 @@ else
                 }                        
             });
 
+            $.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+post_permlink+'', function(data) {
+                //console.log(data.DLIKER.pending_token);
+                let pending_token = (data.DLIKER.pending_token)/1000;
+
+                let voters = data.DLIKER.active_votes;
+                let netshare = data.DLIKER.vote_rshares;
+
+                    if(voters === Array) {
+                        var voterList = voters;
+                    } else {
+                        var voterList = [];
+                    }
+                    if(!(voters === Array)) {
+                        var voterList = [];
+                    }
+                    var voterList = voters;
+                for (let v = 0; v < voterList.length; v++) {
+                    if(voterList[v].weight>0){
+                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
+                        let votePercent = ((voterList[v].percent / 10000) * 100);
+                        votePercent = parseInt(votePercent);
+                        let voter = voterList[v].voter;
+                        if (v > 0) {
+                            $('#article_'+permlink+' #se_token').css('cursor','pointer');
+                        }
+                        res["voterlist"] += '<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'; 
+                    }    
+                }
+                $('#article_'+permlink+' #se_token').attr("data-content", res["voterlist"]);
+            });
     });
     //comments
 var refreashComments = function () {
