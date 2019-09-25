@@ -100,8 +100,8 @@ include('template/header5.php');
 					//user-pro status
 
 					steem.api.getContent(author , permlink, function(err, res) {
-					res.forEach(($post, i) => {	
-						$post["voterlist"] = '';
+					
+						res["voterlist"] = '';
 						let metadata = JSON.parse(res.json_metadata);
 
 						// get image here
@@ -206,12 +206,12 @@ include('template/header5.php');
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
-				                    $post["voterlist"] += '<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'; 
+				                    res["voterlist"] += '<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'; 
 
 				                    //$('#article_'+permlink+' #se_token').attr("data-content", resulthtml["voterlist"]);
 			                    }    
 			                }
-			                $('#article_'+permlink+' #se_token').attr("data-content", $post["voterlist"]);
+			                $('#article_'+permlink+' #se_token').attr("data-content", res["voterlist"]);
 						});
 
 						steem.api.getActiveVotes(author, permlink, function(err, result) {
@@ -256,7 +256,7 @@ include('template/header5.php');
 							    }
 							}
 						});
-					});//foreach	
+						
 					});
 				}
 				$("#loadings").hide();
