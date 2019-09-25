@@ -138,7 +138,7 @@ include('template/header5.php');
 						var exturl =   metadata.url;;
 						let post_link = '/post/@' + author + '/' + permlink + '';
 						let category_url = '/category/' + category_link + '';
-						var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
+						//var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 												//image or youtube
 						let thumbnail = '<img src="' + img.src + '" alt="' + title + '" class="card-img-top img-fluid">';
