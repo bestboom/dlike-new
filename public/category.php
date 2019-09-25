@@ -196,6 +196,7 @@ include('template/header5.php');
 			                       	var voterList = [];
 			                    }
 			                    var voterList = voters;
+			                    console.log(voterList);
 			                for (let v = 0; v < voterList.length; v++) {
 								if(voterList[v].weight>0){
 			                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
