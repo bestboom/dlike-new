@@ -196,14 +196,12 @@ include('template/header5.php');
 			                       	var voterList = [];
 			                    }
 			                    var voterList = voters;
-			                    console.log(voterList);
 			                for (let v = 0; v < voterList.length; v++) {
 								if(voterList[v].weight>0){
 			                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
 			                        let votePercent = ((voterList[v].percent / 10000) * 100);
 			                        votePercent = parseInt(votePercent);
 			                        let voter = voterList[v].voter;
-			                        console.log(voter);
 			                        if (v > 0) {
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
@@ -242,7 +240,6 @@ include('template/header5.php');
 								var newValue = mylabel.replace('.', '');
 							    if(response.status == "OK") {
 								var all_status = response.setstatus;
-								console.log(all_status);
 									if(all_status == "3") {
 									    var colorset = 'red';
 									    $('#article_'+permlink+' #userstatus_icon').css({"color": colorset});
