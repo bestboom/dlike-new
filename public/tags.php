@@ -93,7 +93,7 @@
 					$("#contentposts").append(responsehtml);
 
 					steem.api.getContent(author , permlink, function(err, res) {
-					res.forEach(($post, i) => {	
+						res["voterlist"] = '';
 						let metadata = JSON.parse(res.json_metadata);
 
 						// get image here

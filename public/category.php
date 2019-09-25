@@ -208,8 +208,6 @@ include('template/header5.php');
 			                        	$('#article_'+permlink+' #se_token').css('cursor','pointer');
 			                        }
 				                    res["voterlist"] += '<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>'; 
-
-				                    //$('#article_'+permlink+' #se_token').attr("data-content", resulthtml["voterlist"]);
 			                    }    
 			                }
 			                $('#article_'+permlink+' #se_token').attr("data-content", res["voterlist"]);
