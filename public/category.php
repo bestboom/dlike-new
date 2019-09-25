@@ -102,7 +102,6 @@ include('template/header5.php');
 					steem.api.getContent(author , permlink, function(err, res) {
 						let metadata = JSON.parse(res.json_metadata);
 
-
 						// get image here
 						let img = new Image();
 						if (typeof metadata.image === "string") {
@@ -138,9 +137,9 @@ include('template/header5.php');
 						var exturl =   metadata.url;;
 						let post_link = '/post/@' + author + '/' + permlink + '';
 						let category_url = '/category/' + category_link + '';
-						//var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
+					
 
-												//image or youtube
+						//image or youtube
 						let thumbnail = '<img src="' + img.src + '" alt="' + title + '" class="card-img-top img-fluid">';
 
 						var getLocation = function(href) {

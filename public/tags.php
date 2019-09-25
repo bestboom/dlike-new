@@ -61,7 +61,7 @@
 					'\n' +
 					'<div class="author-info">\n' +
 					'\n' +
-					'<h5><a href="/@' + author + '">' + author +'</a><div class="time" id="post_time"></div></h5>\n' +
+					'<h5><a href="/@' + author + '">' + author +'</a>&nbsp;<a style="color:white;" id="userstatus_icon"><i class="fa fa-check-circle"></i></a><div class="time" id="post_time"></div></h5>\n' +
 					'\n' +    
 					'</div>\n' +
 					'\n' + 
@@ -94,12 +94,23 @@
 
 					steem.api.getContent(author , permlink, function(err, res) {
 						let metadata = JSON.parse(res.json_metadata);
+
+						// get image here
 						let img = new Image();
-						if (typeof metadata.image === "string"){
-							img.src = metadata.image.replace("?","?");
+						if (typeof metadata.image === "string") {
+							if (metadata.image.indexOf("https://dlike") >= 0){
+							img.src = metadata.image.replace("?","%3f");
+							}else{
+							 img.src = metadata.image;
+							}
 						} else {
+							if (!metadata.image || metadata.image[0] === undefined) {
+							img.src = "https://dlike.io/images/default-img.jpg";
+							} else {
 							img.src = metadata.image[0];
+							}
 						}
+
 						json_metadata = metadata;
 						let category = metadata.category;
 						if (category === undefined) { category = "dlike"; } else {category = metadata.category;};
@@ -118,7 +129,33 @@
 						var exturl =   metadata.url;;
 						let post_link = '/post/@' + author + '/' + permlink + '';
 						let category_url = '/category/' + category_link + '';
-						var thumbnail = '<img src="' + metadata.image + '" alt="' + title + '" class="card-img-top img-fluid">';
+						
+						//image or youtube
+						let thumbnail = '<img src="' + img.src + '" alt="' + title + '" class="card-img-top img-fluid">';
+
+						var getLocation = function(href) {
+							var l = document.createElement("a");
+							l.href = href;
+							return l;
+						};
+						var url = getLocation(metadata.url);
+						var youtubeAnchorTagVariableClass = '';
+						if(url.hostname == 'www.youtube.com' || url.hostname == 'youtube.com' || url.hostname == 'youtu.be' || url.hostname == 'www.youtu.be'){
+							//alert(url);
+							youtubeAnchorTagVariableClass = 'youtubeAnchorTagVariableClass_' + i;
+							if(url.search != ''){
+								let query = url.search.substr(1); //remove ? from begning
+								query = query.split('&')
+								for (i in query){
+									let splited = query[i].split('=');
+									if(splited[0] == 'v'){
+										thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+									}
+								}
+							}else{
+								thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+							}
+						}
 
 						$('#article_'+permlink+' span.post-meta').html(category);
 						$('#article_'+permlink+' a.post_detail').html(thumbnail);
@@ -155,6 +192,31 @@
 								}
 							}                        
 						});
+						// pro status
+						$.ajax({
+							type: "POST",
+							url: '/helper/getuserpoststatus.php',
+							data:{'author':author},
+							dataType: 'json',
+							success: function(response) {
+							    var mylabel = permlink +author;
+								var newValue = mylabel.replace('.', '');
+							    if(response.status == "OK") {
+								var all_status = response.setstatus;
+								console.log(all_status);
+									if(all_status == "3") {
+									    var colorset = 'red';
+									    $('#article_'+permlink+' #userstatus_icon').css({"color": colorset});
+									    var erroset = "PRO User";
+									}
+								$('#article_'+permlink+' #userstatus_icon').hover(function() {toastr.success(erroset);});	
+							    }
+							    else {
+								    $('#article_'+permlink+' #userstatus_icon').remove();
+							    }
+							}
+						});
+
 					});
 				}
 				$("#loadings").hide();
