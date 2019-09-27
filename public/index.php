@@ -54,7 +54,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         </div>
     </div>
 </div>
-
+<!--
 <div class="modal fade" id="dlikem_maket" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
@@ -77,6 +77,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         </div>
     </div>
 </div>
+-->
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
