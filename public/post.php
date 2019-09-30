@@ -179,7 +179,7 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <p class="post-entry"></p>
-                                    <?php echo  html_entity_decode(nl2br($body)); ?>
+                                    <?php echo  html_entity_decode(nl2br(htmlspecialchars($body))); ?>
                                     <p class="post_link"></p>
                                 </div>
                             </div>
