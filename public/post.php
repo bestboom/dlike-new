@@ -171,6 +171,7 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <p class="post-entry mod-post"></p>
+                                    <?php echo "<script>document.writeln(post_description);</script>"; ?>
                                     <p class="post_link"></p>
                                 </div>
                             </div>
