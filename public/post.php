@@ -180,7 +180,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <span class="post-entry"><?php echo  preg_replace("/\n\n+/", "\n\n", $post_body); ?></span>
+                                    <span class="post-entry"><?php echo preg_replace('/(?:\r\n|[\r\n]){2,}/', "\n\n", $post_body); ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
