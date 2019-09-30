@@ -178,8 +178,8 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <p class="post-entry mod-post"></p>
-                                    <?php echo  $body; ?>
+                                    <p class="post-entry"><?php echo  $body; ?></p>
+                                    
                                     <p class="post_link"></p>
                                 </div>
                             </div>
