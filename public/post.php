@@ -16,6 +16,8 @@ $pending_amount = ($result['DLIKER']['pending_token'])/1000;
 $ogs_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
 $ogs_description = $ogs_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $ogs_description), 0, 23));
+
+$post_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
 /*
 if(property_exists($result,'DLIKER')) {
 $og_title = $result->DLIKER->title;
@@ -175,7 +177,7 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <p class="post-entry mod-post"></p>
-                                    <?php echo  $ogs_description; ?>
+                                    <?php echo  $post_description; ?>
                                     <p class="post_link"></p>
                                 </div>
                             </div>
