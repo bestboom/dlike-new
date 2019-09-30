@@ -20,7 +20,7 @@ $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23)
 $meta_data = $result['DLIKER']['json_metadata'];
 $meta_data = json_decode($meta_data, true);
 $body = $meta_data['body'];
-$body = preg_replace('/[ \t]+/', ' ', preg_replace('/\s*$^\s*/m', "\n", $body));
+$body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
 $post_body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
 /*
@@ -182,6 +182,7 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <span class="post-entry"><?php echo $post_body; ?></span>
+                                    <?php echo $body; ?>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
