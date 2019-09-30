@@ -113,6 +113,7 @@ else
                     <div class="blog-details-wrapper">
                         <div class="single-post-block">
                             <h1 class="post-title"><a href="#"><span class="mod-title"></span></a></h1>
+                            <h1><?php echo $og_title; ?></h1>
                             <div class="details-post-meta-block-top">
                                 <div class="container">
                                     <div class="row">
@@ -171,7 +172,6 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <p class="post-entry mod-post"></p>
-                                    <?php echo "<script>document.writeln(post_description);</script>"; ?>
                                     <p class="post_link"></p>
                                 </div>
                             </div>
