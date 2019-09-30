@@ -141,9 +141,10 @@ echo '<br/>';
 echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '');
 echo '<br/>';
 echo $cashout_time = $sct_result->DLIKER->cashout_time;
-*/
-/*
+
+
 ?>
+<!--
 <div class="modal fade" id="dlikem_maket" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
@@ -223,3 +224,4 @@ $.getJSON('https://scot-api.steem-engine.com/@habibabiba/singapore-grand-prix-pl
 	//console.log(time_remian);
 
 </script>
+-->
