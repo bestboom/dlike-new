@@ -112,8 +112,8 @@ else
                 <div class="col">
                     <div class="blog-details-wrapper">
                         <div class="single-post-block">
-                            <h1 class="post-title"><a href="#"><span class="mod-title"></span></a></h1>
-                            <h1><?php echo $og_title; ?></h1>
+                            <h1 class="post-title"><a href="#"><?php echo $og_title; ?></a></h1>
+                            <!--<h1><span class="mod-title"></span></h1>-->
                             <div class="details-post-meta-block-top">
                                 <div class="container">
                                     <div class="row">
