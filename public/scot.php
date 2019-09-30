@@ -110,8 +110,8 @@ function googleCSEQueryCheck($searchQuery,$domain='com') {
 
 -->
 <?
-$link = 'alibaba-set-for-big-challenge-as-flamboyant-chairman-ma-departs';
-$user = '@tophash';
+$link = 'lil-don-trump-and-how-the-cookie-crumbles';
+$user = '@mitty';
 
 echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
@@ -125,7 +125,7 @@ $meta_data = json_decode($meta_data, true);
 echo '<br/>';
 echo $bodys = $meta_data['body'];
 echo '<br/>';
-var_dump($meta_data['image']);
+var_dump($meta_data['body']);
 //echo $body = json_decode($sct_result['DLIKER']['json_metadata']{'image'});
 echo '<br/>';
 //$og_description = $sct_result->DLIKER->desc;
