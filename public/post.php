@@ -13,9 +13,9 @@ $response = file_get_contents($post_url);
 $result = json_decode($response, TRUE);
 $og_title = $result['DLIKER']['title'];
 $pending_amount = ($result['DLIKER']['pending_token'])/1000;
-$og_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
-$og_description = $og_description[1];
-$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
+$ogs_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
+$ogs_description = $ogs_description[1];
+$og_description = implode(' ', array_slice(explode(' ', $ogs_description), 0, 23));
 /*
 if(property_exists($result,'DLIKER')) {
 $og_title = $result->DLIKER->title;
@@ -175,6 +175,7 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <p class="post-entry mod-post"></p>
+                                    <?php echo  $og_description; ?>
                                     <p class="post_link"></p>
                                 </div>
                             </div>
