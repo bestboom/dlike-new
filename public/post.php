@@ -18,6 +18,7 @@ $ogs_description = $ogs_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $ogs_description), 0, 23));
 
 $post_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
+$post_description = $post_description[1];
 /*
 if(property_exists($result,'DLIKER')) {
 $og_title = $result->DLIKER->title;
