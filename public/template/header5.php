@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if(basename($_SERVER['PHP_SELF']) == 'post.php'){ ?>    
         <title><?php echo $og_title; ?></title>
-
+        <meta name="description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
         <meta property="og:url" content="<?php echo $og_url; ?>" />
         <meta property="og:title" content="<?php echo $og_title; ?>" />
-
+        <meta property="og:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>" />
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="<?php echo $og_title; ?>">
+        <meta name="twitter:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
 

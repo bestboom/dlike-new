@@ -13,6 +13,9 @@ $response = file_get_contents($post_url);
 $result = json_decode($response, TRUE);
 $og_title = $result['DLIKER']['title'];
 $pending_amount = ($result['DLIKER']['pending_token'])/1000;
+$og_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
+$og_description = $og_description[1];
+$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 /*
 if(property_exists($result,'DLIKER')) {
 $og_title = $result->DLIKER->title;
@@ -131,9 +134,9 @@ else
                                             <div class="post-tag-block"><!-- post-likes-block -->
                                                 <?php
                                                 $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
-                                                $result = $conn->query($sqlm);
-                                                $row = mysqli_fetch_assoc($result);
-                                                if ($result->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
+                                                $result_lk = $conn->query($sqlm);
+                                                $row = mysqli_fetch_assoc($result_lk);
+                                                if ($result_lk->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
 
                                                 $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$ip'";
                                                 $resultv = $conn->query($sqlv); 
