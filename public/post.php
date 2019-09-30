@@ -178,7 +178,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <p class="post-entry"><?php echo  html_entity_decode(nl2br($body)); ?></p>
+                                    <p class="post-entry"><?php echo  html_entity_decode($body); ?></p>
                                     <p class="post_link"></p>
                                 </div>
                             </div>
