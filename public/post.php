@@ -20,6 +20,7 @@ $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23)
 $meta_data = $result['DLIKER']['json_metadata'];
 $meta_data = json_decode($meta_data, true);
 $body = $meta_data['body'];
+$body = preg_replace('/[ \t]+/', ' ', preg_replace('/\s*$^\s*/m', "\n", $body))
 $post_body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
 /*
@@ -180,7 +181,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <span class="post-entry"><?php echo preg_replace('/[ \t]+/', ' ', preg_replace('/\s*$^\s*/m', "\n", $post_body)); ?></span>
+                                    <span class="post-entry"><?php echo $post_body; ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
