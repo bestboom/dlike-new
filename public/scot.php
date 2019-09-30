@@ -120,30 +120,30 @@ echo '<br/>';
 $og_title = $sct_result['DLIKER']['title'];
 
 echo '<br/>';
-$meta_data = $sct_result->['DLIKER']['json_metadata'];
+//$meta_data = $sct_result->['DLIKER']['json_metadata'];
 echo '<br/>';
 //$body = json_decode($sct_result->['DLIKER']['json_metadata']['community']);
 echo '<br/>';
 //$og_description = $sct_result->DLIKER->desc;
-print_r($meta_data);
+//print_r($meta_data);
 echo '<br/>';
 $og_description = explode("\n\n#####\n\n",$sct_result['DLIKER']['desc']);
 $og_description = $og_description[1];
-$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
+echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 //function removeTags($str) {  
 //    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
 //    return $str;
 //}
 echo '<br/>';
-$og_description = removeTags($og_description);
+//$og_description = removeTags($og_description);
 echo '<br/>';
-echo $pending_amount = ($sct_result->DLIKER->pending_token)/1000;
+//echo $pending_amount = ($sct_result->DLIKER->pending_token)/1000;
 echo '<br/>';
-echo $precision = $sct_result->DLIKER->precision;
+//echo $precision = $sct_result->DLIKER->precision;
 echo '<br/>';
-echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '');
+//echo $pending_payout = number_format((float) $pending_amount, $precision, '.', '');
 echo '<br/>';
-echo $cashout_time = $sct_result->DLIKER->cashout_time;
+//echo $cashout_time = $sct_result->DLIKER->cashout_time;
 
 
 ?>
