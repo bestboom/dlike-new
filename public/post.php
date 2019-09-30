@@ -175,7 +175,7 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <p class="post-entry mod-post"></p>
-                                    <?php echo  $og_description; ?>
+                                    <?php echo  $ogs_description; ?>
                                     <p class="post_link"></p>
                                 </div>
                             </div>
