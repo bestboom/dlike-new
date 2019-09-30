@@ -104,7 +104,7 @@ function googleCSEQueryCheck($searchQuery,$domain='com') {
             die('unique'); //No Match Found
         }
 
-
+*/
 
 
 $link = 'alibaba-set-for-big-challenge-as-flamboyant-chairman-ma-departs';
@@ -115,14 +115,14 @@ $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response, TRUE);
 echo '<br/>';
 $og_title = $sct_result['DLIKER']['title'];
-/*
+
 echo '<br/>';
-//echo $meta_data = $sct_result->DLIKER->json_metadata;
+echo $meta_data = $sct_result->DLIKER->json_metadata;
 echo '<br/>';
-//echo $body = json_decode($meta_data['community']);
+echo $body = json_decode($meta_data['community']);
 echo '<br/>';
 //$og_description = $sct_result->DLIKER->desc;
-//print_r($og_description);
+print_r($body);
 echo '<br/>';
 $og_description = explode("\n\n#####\n\n",$sct_result['DLIKER']['desc']);
 $og_description = $og_description[1];
