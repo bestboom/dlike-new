@@ -202,7 +202,7 @@ $(document).ready(function(){
 	                        let votePercent = ((voterList[v].percent / 10000) * 100);
 	                        votePercent = parseInt(votePercent);
 	                        let voter = voterList[v].voter;
-	                        console.log(voter);
+	                        //console.log(voter);
 	                        if (v > 0) {
 	                        	$('#se_token' + newValue ).css('cursor','pointer');
 	                        }
