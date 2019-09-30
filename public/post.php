@@ -182,7 +182,6 @@ else
                                     </div>
                                     <h3 class="post-title"></h3>
                                     <span class="post-entry"><?php echo $post_body; ?></span>
-                                    <?php echo $body; ?>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
