@@ -30,6 +30,7 @@ $postGenerator = new dlike\post\makePost();
 
 	$title = validationData($title);
 	$permlink = validationData(clean($_POST['title']));
+	$post = validationData($_POST["description"]);
 
 	$beneficiaries = genBeneficiaries($_POST['benefactor']);
 
@@ -39,7 +40,7 @@ $postGenerator = new dlike\post\makePost();
     "format" => "html",
     "image" => $urlImage,
     "url" => $url,
-    "body" => $_POST["description"],    
+    "body" => $post,
     "category" => $_POST['category'],
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
 	];
