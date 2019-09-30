@@ -20,6 +20,7 @@ $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23)
 $meta_data = $result['DLIKER']['json_metadata'];
 $meta_data = json_decode($meta_data, true);
 $body = $meta_data['body'];
+$ext_link = $meta_data['url'];
 /*
 if(property_exists($result,'DLIKER')) {
 $og_title = $result->DLIKER->title;
@@ -178,9 +179,8 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <p class="post-entry"></p>
-                                    <?php echo  html_entity_decode(nl2br(htmlspecialchars($body))); ?>
-                                    <p class="post_link"></p>
+                                    <p class="post-entry"><?php echo  html_entity_decode(nl2br(htmlspecialchars($body))); ?></p>
+                                    <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
                         </div>
@@ -419,7 +419,7 @@ else
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
-        $('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
+        //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 
         let page_description = post_description.substr(0,70);
