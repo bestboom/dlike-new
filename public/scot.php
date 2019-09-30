@@ -2,11 +2,13 @@
 <?php
 include('template/header5.php');
 ?>
+</div>
+<!--
 <form action="">
     <textarea name="data"></textarea>
     <button type="submit">check</button>
 </form>
-<?
+
 echo $para = $_GET['data'];
 echo '<br>';
 $check_data = stripslashes(Trim($para));
@@ -106,7 +108,8 @@ function googleCSEQueryCheck($searchQuery,$domain='com') {
 
 */
 
-
+-->
+<?
 $link = 'alibaba-set-for-big-challenge-as-flamboyant-chairman-ma-departs';
 $user = '@tophash';
 
