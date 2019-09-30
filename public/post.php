@@ -19,6 +19,7 @@ $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23)
 
 $meta_data = $result['DLIKER']['json_metadata'];
 $meta_data = json_decode($meta_data, true);
+$og_image = $meta_data['image'];
 $body = $meta_data['body'];
 $body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
 $post_body = html_entity_decode(nl2br($body));
@@ -33,10 +34,6 @@ $pending_amount = ($result->DLIKER->pending_token)/1000;
     $pending_amount = 0;
 }
 
-$meta_data = json_decode($result->DLIKER->json_metadata);
-$og_description = explode("\n\n#####\n\n",$meta_data->body);
-$og_description = $og_description[1];
-$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 function removeTags($str) {  
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
     return $str;
@@ -181,7 +178,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <span class="post-entry"><?php echo $post_body; ?></span>
+                                    <span class="post-entry" style="font-weight: bold;line-height: 1.9;"><?php echo $post_body; ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>

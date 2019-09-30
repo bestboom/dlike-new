@@ -127,7 +127,7 @@ $bodys = $meta_data['body'];
 echo $my_body = html_entity_decode(nl2br($bodys));
 echo '<br/>';
 //var_dump($meta_data['body']);
-echo $link = $meta_data['url'];
+echo $link = $meta_data['image'];
 
 //echo $body = json_decode($sct_result['DLIKER']['json_metadata']{'image'});
 echo '<br/>';
