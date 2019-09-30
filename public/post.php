@@ -179,7 +179,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <p class="post-entry"><?php echo  html_entity_decode(nl2br(htmlspecialchars($body))); ?></p>
+                                    <span class="post-entry"><?php echo  html_entity_decode(nl2br(htmlspecialchars($body))); ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
