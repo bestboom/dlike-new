@@ -120,9 +120,9 @@ echo '<br/>';
 $og_title = $sct_result['DLIKER']['title'];
 
 echo '<br/>';
-echo $meta_data = $sct_result->DLIKER->json_metadata;
+$meta_data = $sct_result->['DLIKER']['json_metadata'];
 echo '<br/>';
-echo $body = json_decode($meta_data['community']);
+$body = json_decode($meta_data['community']);
 echo '<br/>';
 //$og_description = $sct_result->DLIKER->desc;
 print_r($body);
