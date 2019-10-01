@@ -22,7 +22,7 @@ $meta_data = json_decode($meta_data, true);
 $og_image = $meta_data['image'];
 $body = $meta_data['body'];
 $body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
-$post_body = html_entity_decode(nl2br($body));
+//$post_body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
 
 $pending_amount = ($result['DLIKER']['pending_token'])/1000;
@@ -180,7 +180,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <span class="post-entry" style="font-weight: bold;line-height: 1.9;"><?php echo $post_body; ?></span>
+                                    <span class="post-entry" style="font-weight: bold;line-height: 1.9;"><?php echo $body; ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
