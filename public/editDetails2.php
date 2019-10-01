@@ -133,9 +133,10 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     ClassicEditor
         .create( document.querySelector( '#com-body' ))
         .then( editor => { 
-          editorObject = editor;
-        document.getElementById( 'com-sbmt' ).onclick = () => {
-            var text = document.getElementById( 'com-body' ).innerHtml = editor.getData();
+            editorObject = editor;
+            document.getElementById( 'com-sbmt' ).onclick = () => {
+                var text = document.getElementById( 'com-body' ).innerHtml = editor.getData();
+            }  
         }
     console.log(text);    
 </script>
