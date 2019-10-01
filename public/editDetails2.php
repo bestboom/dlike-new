@@ -169,15 +169,17 @@ function showModalError(title, content, callback) {
     });
     }
 
-    function arrayTo2DArray1(list, howMany) {
-  var result = []
-  input = list.slice(0)
-  while (a[0]) {
-    result.push(a.splice(0, howMany))
+function arrayTo2DArray(list, howMany) {
+  var idx = 0
+  result = []
+
+  while (idx < list.length) {
+    if (idx % howMany === 0) result.push([])
+    result[result.length - 1].push(list[idx++])
   }
+
   return result
 }
-
 
 
 document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) => {
@@ -208,7 +210,7 @@ document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) =>
     const editorData = stripHtml(editor.getData()).trim()
     const words = editorData.split(/\s+/)
     if(words.length > 25) {
-        const segments = arrayTo2DArray1(words, 25)
+        const segments = arrayTo2DArray(words, 25)
         for(let segment of segments) {
             console.log(segment, segment.join(' '))
             checkPlagiarism(segment.join(' '))
