@@ -133,6 +133,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 let editor;
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
+        alignment: {
+            options: [ 'left', 'right' ]
+        },
         toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
         heading: {
             options: [
