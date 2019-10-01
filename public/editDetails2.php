@@ -48,7 +48,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             <div class="row">
 
                                 <div class="user-connected-form-block">
-                                    <form class="user-connected-from user-signup-form" method="post" action="">
+                                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
                                     	<input type="hidden" name="image" value="<?php print $img; ?>">
                                         <div class="form-group">
                                         	<div class="input-group mb-3">
