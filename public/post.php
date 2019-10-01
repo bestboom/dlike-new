@@ -12,7 +12,7 @@ $post_url = "https://scot-api.steem-engine.com/$user/$link";
 $response = file_get_contents($post_url);
 $result = json_decode($response, TRUE);
 $og_title = $result['DLIKER']['title'];
-$pending_amount = ($result['DLIKER']['pending_token'])/1000;
+
 $og_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
 $og_description = $og_description[1];
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
@@ -24,6 +24,8 @@ $body = $meta_data['body'];
 $body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
 $post_body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
+
+$pending_amount = ($result['DLIKER']['pending_token'])/1000;
 /*
 if(property_exists($result,'DLIKER')) {
 $og_title = $result->DLIKER->title;
