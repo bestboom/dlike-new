@@ -137,6 +137,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             document.getElementById( 'com-sbmt' ).onclick = () => {
                 var text = document.getElementById( 'com-body' ).innerHtml = editor.getData();
             }  
-        }
+        })
     console.log(text);    
 </script>
