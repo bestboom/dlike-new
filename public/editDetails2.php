@@ -129,6 +129,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 
+var config = {};
+config.placeholder = 'Write minimum 50 words to explain this link share!'; 
+CKEDITOR.replace("editor" , config );
 
 let editor;
 ClassicEditor
