@@ -1,0 +1,21 @@
+<textarea id="content"></textarea>
+<button id="check">check</button>
+<script>
+var textarea = document.querySelector('#content')
+var button = document.querySelector('#check')
+
+button.addEventListener('click', event => {
+    const text = textarea.value 
+    fetch('check.php', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({text})
+  }).then(response => response.json()).then(object => {
+      alert(object)
+      console.log(object)
+  })
+})
+    </script>
