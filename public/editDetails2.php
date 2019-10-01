@@ -136,7 +136,7 @@ ClassicEditor
         alignment: {
             options: [ 'left', 'right' ]
         },
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote','alignment', 'undo', 'redo' ],
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
         heading: {
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
@@ -152,8 +152,44 @@ ClassicEditor
     .catch( error => {
         console.error( error );
     });
-document.querySelector( '#com-sbmt' ).addEventListener( 'click', () => {
-    const editorData = editor.getData();
-    console.log(editorData);
+
+    function stripHtml(html)
+{
+   var tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent || tmp.innerText || "";
+}
+
+function showModalError(title, content, callback) {
+    $("#alert-title-error").text(title);
+    $("#alert-content-error").html(content);
+    $("#alert-modal-error").modal("show");
+    $("#alert-modal-error").on("hidden.bs.modal", function(e) {
+        callback();
+    });
+    }
+
+    
+document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) => {
+    const editorData = stripHtml(editor.getData()).trim()
+    fetch('check.php', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({text})
+  }).then(response => response.json()).then(object => {
+      
+      console.log(object)
+      if(!object.unique) {
+        showModalError(
+                 "Make Sure..",
+                 "Write your own text and do not copy from elsewhere.",
+                 () => clickEvent.preventDefault()
+                 );
+      }
+  })
+    console.log({editorData});
 });      
 </script>
