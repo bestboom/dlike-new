@@ -18,7 +18,8 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 ?>
 </div><!-- sub-header -->
 
-     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
     <style>
         .ck-editor__editable {
             min-height: 200px;
@@ -129,10 +130,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 
-var config = {};
-config.placeholder = 'Write minimum 50 words to explain this link share!'; 
-ClassicEditor.replace("editor" , config );
-
 let editor;
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
@@ -148,6 +145,7 @@ ClassicEditor
     } )
     .then( newEditor => {
         editor = newEditor;
+        console.log( editor );
     })
     .catch( error => {
         console.error( error );
