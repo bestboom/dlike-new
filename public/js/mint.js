@@ -127,7 +127,7 @@
         }
         $('.shareme').click(function(clickEvent) {
             //let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-   let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
+            let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
             console.log({ text_words })
             if (text_words.length < 40) {
                 showModalError(
@@ -137,10 +137,6 @@
                 );
                 return false;
             }
-
-
-
-
 
             if ($('.catg').val() == "0") {
                 $('.catg').css("border-color", "RED");
@@ -175,12 +171,6 @@
                 return false;
             }
 
-
-
-
-
-
-
             function arrayTo2DArray(list, howMany) {
                 var idx = 0
                 result = []
@@ -192,7 +182,6 @@
 
                 return result
             }
-
 
             const checkPlagiarism = text => {
                 $("#com-sbmt").html('Checking Plagiarism...');
@@ -222,8 +211,6 @@
                 })
             }
 
-
-
             const editorData = stripHtml(editor.getData()).trim()
             const words = editorData.split(/\s+/)
             if (words.length > 25) {
@@ -238,13 +225,6 @@
 
             return false;
             console.log(clickEvent)
-
-
-
-
-
-
-
 
         });
 
