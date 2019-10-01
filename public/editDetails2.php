@@ -160,65 +160,9 @@ ClassicEditor
    return tmp.textContent || tmp.innerText || "";
 }
 
-function showModalError(title, content, callback) {
-    $("#alert-title-error").text(title);
-    $("#alert-content-error").html(content);
-    $("#alert-modal-error").modal("show");
-    $("#alert-modal-error").on("hidden.bs.modal", function(e) {
-        callback();
-    });
-    }
-
-function arrayTo2DArray(list, howMany) {
-  var idx = 0
-  result = []
-
-  while (idx < list.length) {
-    if (idx % howMany === 0) result.push([])
-    result[result.length - 1].push(list[idx++])
-  }
-
-  return result
-}
-
-
-document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) => {
-
-    const checkPlagiarism = text => {
-        fetch('check.php', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({text})
-  }).then(response => response.json()).then(object => {
-      
-      console.log(object)
-      if(!object.unique) {
-        showModalError(
-                 "Make Sure..",
-                 "Write your own text and do not copy from elsewhere.",
-                 () => clickEvent.preventDefault()
-                 );
-      }
-  })
-    }
 
 
 
-    const editorData = stripHtml(editor.getData()).trim()
-    const words = editorData.split(/\s+/)
-    if(words.length > 25) {
-        const segments = arrayTo2DArray(words, 25)
-        for(let segment of segments) {
-            console.log(segment, segment.join(' '))
-            if(segment.length > 24) { checkPlagiarism(segment.join(' ')) }
-        }
-    } else {
-        checkPlagiarism(editorData)
-    }
+
     
-    console.log({editorData});
-});      
 </script>
