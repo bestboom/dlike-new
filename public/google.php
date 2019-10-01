@@ -72,8 +72,8 @@ if(str_contains($pageData, 'Error 400')) {
     die("Error 400. Are we blocked by Google?".$googleUrl);
 }
 
-    //if(str_contains($pageData,'No results found for')){
-    if(str_contains($pageData,'No results found for')  ||   str_contains($pageData, "Did you mean")){
+    if(str_contains($pageData,'No results found for')){
+    //if(str_contains($pageData,'No results found for')  ||   str_contains($pageData, "Did you mean")){
     //No Match Found
         return true;
     } else{
