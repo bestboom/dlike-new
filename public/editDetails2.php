@@ -131,7 +131,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
 var config = {};
 config.placeholder = 'Write minimum 50 words to explain this link share!'; 
-CKEDITOR.replace("editor" , config );
+ClassicEditor.replace("editor" , config );
 
 let editor;
 ClassicEditor
