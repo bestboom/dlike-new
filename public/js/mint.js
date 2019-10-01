@@ -195,6 +195,7 @@
 
 
             const checkPlagiarism = text => {
+                text = text.replace(/\W/g, '')
                 fetch('check.php', {
                     method: 'POST',
                     headers: {
