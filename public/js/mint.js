@@ -195,6 +195,7 @@
 
 
             const checkPlagiarism = text => {
+                $("#com-sbmt").html('Checking Plagiarism...');
                 fetch('check.php', {
                     method: 'POST',
                     headers: {
