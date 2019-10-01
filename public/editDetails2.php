@@ -213,7 +213,7 @@ document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) =>
         const segments = arrayTo2DArray(words, 25)
         for(let segment of segments) {
             console.log(segment, segment.join(' '))
-            checkPlagiarism(segment.join(' '))
+            if(segment.length > 24) { checkPlagiarism(segment.join(' ')) }
         }
     } else {
         checkPlagiarism(editorData)
