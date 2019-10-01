@@ -114,9 +114,11 @@
                 return null;
             }
         }
-        $('.shareme').click(function () {
-            let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-            if(text_words < 40){
+        $('.shareme').click(function (clickEvent) {
+            //let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
+            let text_words = stripHtml(editor.getData()).trim()
+            console.log({text_words})
+            if(text_words.length < 40){
              showModalError(
                  "Make Sure..",
                  "Write minimum 40 words to explain how this share is useful for community.",
@@ -124,6 +126,62 @@
                  );
              return false;
          }
+
+
+
+         function arrayTo2DArray(list, howMany) {
+            var idx = 0
+            result = []
+          
+            while (idx < list.length) {
+              if (idx % howMany === 0) result.push([])
+              result[result.length - 1].push(list[idx++])
+            }
+          
+            return result
+          }
+          
+
+         const checkPlagiarism = text => {
+            fetch('check.php', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({text})
+      }).then(response => response.json()).then(object => {
+          
+          console.log(object)
+          if(!object.unique) {
+            showModalError(
+                     "Make Sure..",
+                     "Write your own text and do not copy from elsewhere.",
+                     () => clickEvent.preventDefault()
+                     );
+                     return false;
+          }
+      })
+        }
+    
+    
+    
+        const editorData = stripHtml(editor.getData()).trim()
+        const words = editorData.split(/\s+/)
+        if(words.length > 25) {
+            const segments = arrayTo2DArray(words, 25)
+            for(let segment of segments) {
+                console.log(segment, segment.join(' '))
+                if(segment.length > 24) { checkPlagiarism(segment.join(' ')) }
+            }
+        } else {
+            checkPlagiarism(editorData)
+        }
+
+
+
+
+
          if($('.catg').val() == "0"){
             $('.catg').css("border-color", "RED");
             showModalError(
