@@ -131,20 +131,18 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
 
 let editor;
-
 ClassicEditor
-    .create( document.querySelector( '#editor' ) )
+    .create( document.querySelector( '#editor' ).{
+        placeholder: 'Write minimum 50 words to explain this link share!'
+    } )
     .then( newEditor => {
         editor = newEditor;
-    } )
+    })
     .catch( error => {
         console.error( error );
-    } );
-
-// Assuming there is a <button id="submit">Submit</button> in your application.
+    });
 document.querySelector( '#com-sbmt' ).addEventListener( 'click', () => {
     const editorData = editor.getData();
-console.log(editorData);
-    // ...
-} );      
+    console.log(editorData);
+});      
 </script>
