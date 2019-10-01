@@ -21,8 +21,8 @@ $meta_data = $result['DLIKER']['json_metadata'];
 $meta_data = json_decode($meta_data, true);
 $og_image = $meta_data['image'];
 $body = $meta_data['body'];
-$body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
-//$post_body = html_entity_decode(nl2br($body));
+//$body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
+$body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
 
 $pending_amount = ($result['DLIKER']['pending_token'])/1000;
