@@ -178,7 +178,7 @@ document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) =>
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({editorData})
+    body: JSON.stringify({text: editorData})
   }).then(response => response.json()).then(object => {
       
       console.log(object)
