@@ -17,6 +17,27 @@ if (isset($_GET["url"])) {
 $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
 </div><!-- sub-header -->
+
+     <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
+    <style>
+        .ck-editor__editable {
+            min-height: 200px;
+        }
+
+        .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+            border-color: #eee;
+        }
+
+        .ck.ck-editor__main > .ck-editor__editable {
+            background: #eee;
+        }
+
+        .ck.ck-toolbar {
+            background: #eeeeee36;
+        }
+    </style>
+
+
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
             <div class="contact-info-outer">
@@ -71,9 +92,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                         	</div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" name="description" placeholder="Write minimum 50 words to explain this link share!"></textarea><!--<?php print $des; ?> -->
+                                            <textarea class="form-control" rows="5" name="description" id="com-body" placeholder="Write minimum 50 words to explain this link share!"></textarea><!--<?php print $des; ?> -->
                                         </div>
-                                        <button type="submit" class="btn btn-default shareme">SUBMIT</button>
+                                        <button type="submit" class="btn btn-default" id="com-sbmt">SUBMIT</button>
                                     </form>
                                 </div><!-- create-account-block -->
                             </div>
@@ -106,3 +127,15 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         </div>
     </div>    
 <?php include('template/footer.php'); ?>
+<script type="text/javascript">
+    let texty = document.querySelector( '#com-body' );
+    var editorObject;
+    ClassicEditor
+        .create( document.querySelector( '#com-body' ))
+        .then( editor => { 
+          editorObject = editor;
+        document.getElementById( 'com-sbmt' ).onclick = () => {
+            var text = document.getElementById( 'com-body' ).innerHtml = editor.getData();
+        }
+    console.log(text);    
+</script>
