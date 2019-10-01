@@ -47,7 +47,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             <div class="row">
 
                                 <div class="user-connected-form-block">
-                                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
+                                    <form class="user-connected-from user-signup-form" method="post" action="">
                                     	<input type="hidden" name="image" value="<?php print $img; ?>">
                                         <div class="form-group">
                                         	<div class="input-group mb-3">
@@ -92,9 +92,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                         	</div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" name="description" id="com-body" placeholder="Write minimum 50 words to explain this link share!"></textarea><!--<?php print $des; ?> -->
+                                            <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 50 words to explain this link share!"></textarea><!--<?php print $des; ?> -->
                                         </div>
-                                        <button type="submit" class="btn btn-default" id="com-sbmt">SUBMIT</button>
+                                        <button type="button" class="btn btn-default" id="com-sbmt">SUBMIT</button>
                                     </form>
                                 </div><!-- create-account-block -->
                             </div>
@@ -128,16 +128,23 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     </div>    
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
-    let texty = document.querySelector( '#com-body' );
-    var editorObject;
-    ClassicEditor
-        .create( document.querySelector( '#com-body' ))
-        .then( editor => { 
-            editorObject = editor;
-            document.getElementById( 'com-sbmt' ).onclick = () => {
-                document.getElementById( 'com-body' ).innerHtml = editor.getData();
-                const editorData = editor.getData();
-            }  
-        })
-    console.log(editorData);    
+
+
+let editor;
+
+ClassicEditor
+    .create( document.querySelector( '#editor' ) )
+    .then( newEditor => {
+        editor = newEditor;
+    } )
+    .catch( error => {
+        console.error( error );
+    } );
+
+// Assuming there is a <button id="submit">Submit</button> in your application.
+document.querySelector( '#com-sbmt' ).addEventListener( 'click', () => {
+    const editorData = editor.getData();
+console.log(editorData);
+    // ...
+} );      
 </script>
