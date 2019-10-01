@@ -127,7 +127,7 @@
         }
         $('.shareme').click(function(clickEvent) {
             //let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-            let text_words = stripHtml(editor.getData()).trim()
+   let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
             console.log({ text_words })
             if (text_words.length < 40) {
                 showModalError(
