@@ -208,6 +208,7 @@
 
                     console.log(object)
                     if (!object.unique) {
+                        $("#com-sbmt").html('SUBMIT');
                         showModalError(
                             "Make Sure..",
                             "Write your own text and do not copy from elsewhere.",
