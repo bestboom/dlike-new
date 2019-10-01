@@ -48,7 +48,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             <div class="row">
 
                                 <div class="user-connected-form-block">
-                                    <form class="user-connected-from user-signup-form" method="post" action="">
+                                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
                                     	<input type="hidden" name="image" value="<?php print $img; ?>">
                                         <div class="form-group">
                                         	<div class="input-group mb-3">
@@ -95,7 +95,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 50 words to explain this link share!"></textarea><!--<?php print $des; ?> -->
                                         </div>
-                                        <button type="button" class="btn btn-default" id="com-sbmt">SUBMIT</button>
+                                        <button type="submit" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
                                     </form>
                                 </div><!-- create-account-block -->
                             </div>
@@ -169,16 +169,27 @@ function showModalError(title, content, callback) {
     });
     }
 
-    
+    function arrayTo2DArray1(list, howMany) {
+  var result = []
+  input = list.slice(0)
+  while (a[0]) {
+    result.push(a.splice(0, howMany))
+  }
+  return result
+}
+
+
+
 document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) => {
-    const editorData = stripHtml(editor.getData()).trim()
-    fetch('check.php', {
+
+    const checkPlagiarism = text => {
+        fetch('check.php', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({text: editorData})
+    body: JSON.stringify({text})
   }).then(response => response.json()).then(object => {
       
       console.log(object)
@@ -190,6 +201,22 @@ document.querySelector( '#com-sbmt' ).addEventListener( 'click', (clickEvent) =>
                  );
       }
   })
+    }
+
+
+
+    const editorData = stripHtml(editor.getData()).trim()
+    const words = editorData.split(/\s+/)
+    if(words.length > 25) {
+        const segments = arrayTo2DArray1(words, 25)
+        for(let segment of segments) {
+            console.log(segment, segment.join(' '))
+            checkPlagiarism(segment.join(' '))
+        }
+    } else {
+        checkPlagiarism(editorData)
+    }
+    
     console.log({editorData});
 });      
 </script>
