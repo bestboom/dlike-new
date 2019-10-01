@@ -159,6 +159,7 @@
                      "Write your own text and do not copy from elsewhere.",
                      () => clickEvent.preventDefault()
                      );
+                     clickEvent.preventDefault()
                      return false;
           }
       })
