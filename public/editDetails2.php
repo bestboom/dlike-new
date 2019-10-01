@@ -132,9 +132,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
 let editor;
 ClassicEditor
-    .create( document.querySelector( '#editor' ).{
+    .create( document.querySelector( '#editor' ),{
         placeholder: 'Write minimum 50 words to explain this link share!'
-    } )
+    })
     .then( newEditor => {
         editor = newEditor;
     })
