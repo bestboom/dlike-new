@@ -408,7 +408,6 @@ else
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         let resBody = res.body;
         let restBody = resBody.split(/\n\n#####\n\n/);
-        let respBody = restBody.replace(/(^[ \t]*\n)/gm, "");
         let resyBody = restBody[1];
         console.log(respBody);
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
