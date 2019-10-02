@@ -641,9 +641,9 @@ $('.up_steem').click(function () {
     $("#upvoteModal").modal("show");
 }); 
 
-$('.mod-post p').each(function() {
-  if ($(this).text() === '&nbsp;' || $(this).text() === '') {
-    $(this).remove();
-  }
-});   
+$('p').each(function() {
+    var $this = $(this);
+    if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+        $this.remove();
+});  
 </script>
