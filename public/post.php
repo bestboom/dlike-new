@@ -26,23 +26,7 @@ $body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
 
 $pending_amount = ($result['DLIKER']['pending_token'])/1000;
-/*
-if(property_exists($result,'DLIKER')) {
-$og_title = $result->DLIKER->title;
-$pending_amount = ($result->DLIKER->pending_token)/1000;
-//$cashout_time = $result->DLIKER->cashout_time;
-} else {
-    $og_title = 'DLIKE - Share To Get Rewarded';
-    $pending_amount = 0;
-}
 
-function removeTags($str) {  
-    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
-    return $str;
-}
-$og_description = removeTags($og_description);
-$og_image = $meta_data->image;
-*/
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
@@ -406,9 +390,6 @@ else
         let author = res.author;
         let profile_url = "/@" + author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        let resBody = res.body;
-        let restBody = resBody.split(/\n\n#####\n\n/);
-        let resyBody = restBody[1];
         
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
