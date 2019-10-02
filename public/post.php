@@ -409,7 +409,7 @@ else
         let resBody = res.body;
         let restBody = resBody.split(/\n\n#####\n\n/);
         let resyBody = restBody[1];
-        console.log(resyBody);
+        
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
         let pending_steem = res.pending_payout_value.substr(0, 4);
@@ -422,15 +422,15 @@ else
         postbody = res.body;
         postbody = postbody.split(/\n\n#####\n\n/);
         postbody = postbody[1];
-        postbody = postbody.replace(/#([^\s]*)/g,'');
-        //body = $post.body.replace(/<(.|\n)*?>/g, '');
+        //postbody = postbody.replace(/#([^\s]*)/g,'');
+        postbody = postbody.replace(/<(.|\n)*?>/g, '');
         }catch(err) {
         postbody = "";
         }
         }else{
         postbody = "";
         }
-
+        console.log(postbody);
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
         $('.post-thumb-block').html(thumbnail);
@@ -438,7 +438,7 @@ else
         $('.author-thumb-link').attr("href", profile_url);
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
-        $('.mod-post').html(postbody);
+        $('.mod-post').html(post_description);
         //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 
