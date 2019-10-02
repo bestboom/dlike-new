@@ -180,7 +180,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <span class="post-entry" style="font-weight: bold;line-height: 1.9;"><?php echo $body; ?></span>
+                                    <span class="post-entry mod-post" style="font-weight: bold;line-height: 1.9;"><?php echo $body; ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
