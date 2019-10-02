@@ -408,8 +408,9 @@ else
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
         let resBody = res.body;
         let restBody = resBody.split(/\n\n#####\n\n/);
+        let respBody = restBody.replace(/(^[ \t]*\n)/gm, "");
         let resyBody = restBody[1];
-        console.log(resyBody);
+        console.log(respBody);
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
         let pending_steem = res.pending_payout_value.substr(0, 4);
@@ -639,11 +640,5 @@ $('.up_steem').click(function () {
     $("#vote_author").val(post_author);
     $("#vote_permlink").val(post_permlink);
     $("#upvoteModal").modal("show");
-}); 
-
-$('p').each(function() {
-    var $this = $(this);
-    if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
-        $this.remove();
-});  
+});   
 </script>
