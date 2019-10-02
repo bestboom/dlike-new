@@ -420,6 +420,7 @@ else
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
+        console.log(post_description);
         //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 
