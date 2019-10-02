@@ -423,7 +423,7 @@ else
         $('.author-thumb-link').attr("href", profile_url);
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
-        $('.mod-post').text(post_description);
+        $('.mod-post').text(resyBody);
         //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 
