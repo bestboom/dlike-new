@@ -3638,7 +3638,8 @@ sub.transmoney-value {
 .make_link{color: #1652f0;font-weight: 600;}    
 .single-post-block .post-thumb-block {
     margin-bottom: 40px; }
-
+.mod-post {line-height: 1.9;}
+.mod-post p{margin-bottom: 10px !important;}
 .single-post-block .post-title {
     font-size: 1.3rem;
     font-weight: 600;
