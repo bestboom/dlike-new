@@ -409,7 +409,8 @@ else
         let resBody = res.body;
         let restBody = resBody.split(/\n\n#####\n\n/);
         let resyBody = restBody[1];
-        console.log(resyBody);
+        let respBody = resyBody.replace(/#([^\s]*)/g,'');
+        console.log(respBody);
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
         let pending_steem = res.pending_payout_value.substr(0, 4);
