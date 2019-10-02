@@ -16,6 +16,8 @@ $postGenerator = new dlike\post\makePost();
 	$parent_ctegory = 'dlike';
 	$_POST['tags'] = "dlike," . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
+	$_POST["description"] = preg_replace('#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#', '', $_POST["description"]);
+
 	$max_accepted_payout = '900.000 SBD';
 	$percent_steem_dollars =10000;
 	if(isset($_POST['reward_option'])){
