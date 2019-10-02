@@ -360,7 +360,7 @@ else
         post_author = '<?php echo $auth; ?>';
         post_permlink = '<?php echo $link; ?>';
         steem.api.getContent(post_author , post_permlink, function(err, res) {
-        console.log(res);
+        //console.log(res);
         res["voterlist"] = '';
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
@@ -406,8 +406,7 @@ else
         let author = res.author;
         let profile_url = "/@" + author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        let body_text = metadata.body;
-        console.log(body_text);
+        console.log(res.body);
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
         let pending_steem = res.pending_payout_value.substr(0, 4);
