@@ -18,26 +18,29 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 ?>
 </div><!-- sub-header -->
 
+<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
+<style>
+    .ck-editor__editable {
+        min-height: 200px;
+    }
 
-    <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
-    <style>
-        .ck-editor__editable {
-            min-height: 200px;
-        }
+    .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+        border-color: #c4c4c4;
+    }
 
-        .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-            border-color: #eee;
-        }
+    .ck.ck-editor__main > .ck-editor__editable {
+        background: #fff;
+        border-color: #111;
+    }
 
-        .ck.ck-editor__main > .ck-editor__editable {
-            background: #fff;
-        }
-
-        .ck.ck-toolbar {
-            background: #eeeeee36;
-        }
-    </style>
-
+    .ck.ck-toolbar {
+        background: #eeeeee36;
+    }
+    .user-connected-form-block p {
+        text-align: left !important;
+        padding: 1px 8px;
+    }
+</style>
 
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
