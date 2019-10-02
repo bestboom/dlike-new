@@ -639,5 +639,11 @@ $('.up_steem').click(function () {
     $("#vote_author").val(post_author);
     $("#vote_permlink").val(post_permlink);
     $("#upvoteModal").modal("show");
-});    
+}); 
+
+$('.mod-post p').each(function() {
+  if ($(this).text() === '') {
+    $(this).remove();
+  }
+});   
 </script>
