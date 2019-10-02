@@ -26,7 +26,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         }
 
         .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-            border-color: #eee;
+            border-color: #c4c4c4;
         }
 
         .ck.ck-editor__main > .ck-editor__editable {
@@ -36,6 +36,10 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
         .ck.ck-toolbar {
             background: #eeeeee36;
+        }
+        .user-connected-form-block p {
+            text-align: left !important;
+            padding: 1px 8px;
         }
     </style>
 
