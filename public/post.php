@@ -406,6 +406,8 @@ else
         let author = res.author;
         let profile_url = "/@" + author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
+        let body_text = metadata.body;
+        console.log(body_text);
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
         let pending_steem = res.pending_payout_value.substr(0, 4);
@@ -420,7 +422,6 @@ else
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
         $('.mod-post').text(post_description);
-        console.log(post_description);
         //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 
