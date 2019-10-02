@@ -31,6 +31,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
         .ck.ck-editor__main > .ck-editor__editable {
             background: #fff;
+            border-color: #111;
         }
 
         .ck.ck-toolbar {
