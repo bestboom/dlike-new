@@ -406,7 +406,10 @@ else
         let author = res.author;
         let profile_url = "/@" + author;
         let auth_img = "https://steemitimages.com/u/" + author + "/avatar";
-        console.log(res.body);
+        let resBody = res.body;
+        let resBody = resBody.split(/\n\n#####\n\n/);
+        let resBody = resBody[1];
+        console.log(resBody);
         let post_description = metadata.body.replace(/<[\/]{0,1}(p)[^><]*>/ig,"");
         let ext_url = metadata.url;
         let pending_steem = res.pending_payout_value.substr(0, 4);
