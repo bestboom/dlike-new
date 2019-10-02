@@ -642,7 +642,7 @@ $('.up_steem').click(function () {
 }); 
 
 $('.mod-post p').each(function() {
-  if ($(this).text() === '') {
+  if ($(this).text() === '&nbsp;' || $(this).text() === '') {
     $(this).remove();
   }
 });   
