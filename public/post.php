@@ -416,6 +416,21 @@ else
 
         //let post_body = $(post_description).text();
 
+        let postbody;
+        if(res.body && res.body != undefined){
+        try {
+        postbody = res.body;
+        postbody = postbody.split(/\n\n#####\n\n/);
+        postbody = postbody[1];
+        postbody = postbody.replace(/#([^\s]*)/g,'');
+        //body = $post.body.replace(/<(.|\n)*?>/g, '');
+        }catch(err) {
+        postbody = "";
+        }
+        }else{
+        postbody = "";
+        }
+
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
         $('.post-thumb-block').html(thumbnail);
@@ -423,7 +438,7 @@ else
         $('.author-thumb-link').attr("href", profile_url);
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
-        $('.mod-post').html(resyBody);
+        $('.mod-post').html(postbody);
         //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 
