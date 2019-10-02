@@ -360,7 +360,7 @@ else
         post_author = '<?php echo $auth; ?>';
         post_permlink = '<?php echo $link; ?>';
         steem.api.getContent(post_author , post_permlink, function(err, res) {
-        //console.log(res);
+        console.log(res);
         res["voterlist"] = '';
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
