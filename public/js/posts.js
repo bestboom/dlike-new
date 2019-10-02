@@ -53,7 +53,7 @@ $(document).ready(function(){
 
 				//get meta tags
 				let steemTags = metadata.tags;
-				let dlikeTags = steemTags.slice(2);
+				let dlikeTags = steemTags.slice(1);
 				let metatags = dlikeTags.map(function (meta) { if (meta) return '<a href="/tags/' + meta + '"> #' + meta + ' </a>' });
 				let category = metadata.category;
 				let category_link = category.toLowerCase();
