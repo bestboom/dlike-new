@@ -239,7 +239,7 @@
                 }).length;
 
                 // if less than 50%, go out
-                if (trueCount < results / 2) {
+                if (trueCount < results.length / 2) {
                     return;
                 }
 
