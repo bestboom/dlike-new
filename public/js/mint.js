@@ -233,11 +233,22 @@
 
             // wait if all checks are run
             Promise.all(proms).then(function(results) {
-                for (let i = 0, len = results.length; i< len; i++) {
-                    if (results[i] === false) {
-                        return;
-                    }
+                // more than 50% must be true
+                let trueCount = results.filter(function(result) {
+                    return result;
+                });
+
+                // if less than 50%, go out
+                if (trueCount < results / 2) {
+                    return;
                 }
+
+                // all must true
+                // for (let i = 0, len = results.length; i< len; i++) {
+                //     if (results[i] === false) {
+                //         return;
+                //     }
+                // }
 
                 $('form').submit();
             });
