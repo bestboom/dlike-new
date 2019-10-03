@@ -236,7 +236,7 @@
                 // more than 50% must be true
                 let trueCount = results.filter(function(result) {
                     return result;
-                });
+                }).length;
 
                 // if less than 50%, go out
                 if (trueCount < results / 2) {
