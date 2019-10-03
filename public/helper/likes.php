@@ -11,7 +11,7 @@ $sqlw = "DELETE FROM `steemposts`
     SELECT * FROM (
       SELECT MAX(id) FROM steemposts 
         GROUP BY title
-    ) 
+    ) as T
   )";
 
 if ($conn->query($sqlw) === TRUE) {
