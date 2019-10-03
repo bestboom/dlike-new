@@ -57,8 +57,8 @@
                                     }
                                 }
                             } //else
-                        } //success    
-                }); //ajax   
+                        } //success
+                }); //ajax
             } else { toastr.error('hmm... You must be login!'); return false; }
         });
 
@@ -185,8 +185,9 @@
 
             const checkPlagiarism = text => {
                 $("#com-sbmt").html('Checking Plagiarism...');
-                text = text.replace(/"/g, '')
-                fetch('check.php', {
+                text = text.replace(/"/g, '');
+
+                return fetch('check.php', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -203,28 +204,45 @@
                             "Write your own text and do not copy from elsewhere.",
                             () => clickEvent.preventDefault()
                         );
-                        clickEvent.preventDefault()
+                        clickEvent.preventDefault();
                         return false;
-                    } 
-                    else {$('form').submit()}
-                })
-            }
+                    }
 
-            const editorData = stripHtml(editor.getData()).trim()
-            const words = editorData.split(/\s+/)
+                    return true;
+
+                    //else {$('form').submit()}
+                });
+            };
+
+            const editorData = stripHtml(editor.getData()).trim();
+            const words = editorData.split(/\s+/);
+
+            let proms = [];
+
             if (words.length > 25) {
-                const segments = arrayTo2DArray(words, 25)
+                const segments = arrayTo2DArray(words, 25);
                 for (let segment of segments) {
-                    console.log(segment, segment.join(' '))
-                    if (segment.length > 24) { checkPlagiarism(segment.join(' ')) }
+                    console.log(segment, segment.join(' '));
+                    if (segment.length > 24) {
+                        proms.push(checkPlagiarism(segment.join(' ')));
+                    }
                 }
             } else {
-                checkPlagiarism(editorData)
+                proms.push(checkPlagiarism(editorData));
             }
 
-            return false;
-            console.log(clickEvent)
+            // wait if all checks are run
+            Promise.all(proms).then(function(results) {
+                for (let i = 0, len = results.length; i< len; i++) {
+                    if (results[i] === false) {
+                        return;
+                    }
+                }
 
+                $('form').submit();
+            });
+
+            return false;
         });
 
         function showModalError(title, content, callback) {
