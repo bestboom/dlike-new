@@ -22,6 +22,7 @@ $meta_data = json_decode($meta_data, true);
 $og_image = $meta_data['image'];
 $body = $meta_data['body'];
 $body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
+$body = preg_replace('/\[(.*?)\]\{(.*?)\}/', "<a href='$2'>$1</a>", $body);
 $body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
 
