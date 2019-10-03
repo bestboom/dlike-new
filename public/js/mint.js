@@ -205,9 +205,8 @@
                         );
                         clickEvent.preventDefault()
                         return false;
-                    } else {
-                        $('form').submit()
-                    }
+                    } 
+                    //else {$('form').submit()}
                 })
             }
 
