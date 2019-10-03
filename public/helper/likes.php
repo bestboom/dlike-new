@@ -6,6 +6,12 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+
+
+?>
+
+<!--
 $sqlw = "DELETE FROM `steemposts` 
   WHERE id NOT IN (
     SELECT * FROM (
@@ -20,5 +26,4 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-
-?>
+-->
