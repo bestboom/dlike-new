@@ -340,6 +340,7 @@ else
         </div>
                         
 <?php include('template/footer.php'); $conn->close(); ?>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="text/javascript">
         post_author = '<?php echo $auth; ?>';
         post_permlink = '<?php echo $link; ?>';
