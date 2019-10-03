@@ -6,15 +6,18 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$result = $conn->query("SHOW COLUMNS FROM prousers");
-if (!$result) {
-    echo 'Could not run query: ' . $conn->error;
-    exit;
-}
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        print_r($row);
-    }
+$sqlw = "DELETE FROM `steemposts` 
+  WHERE id NOT IN (
+    SELECT * FROM (
+      SELECT MAX(id) FROM steemposts 
+        GROUP BY title
+    ) 
+  )";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Posts DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
 }
 
 
