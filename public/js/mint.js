@@ -195,20 +195,10 @@
                     },
                     body: JSON.stringify({ text })
                 }).then(response => response.json()).then(object => {
+                    clickEvent.preventDefault();
+                    console.log(object);
 
-                    console.log(object)
-                    if (!object.unique) {
-                        $("#com-sbmt").html('SUBMIT');
-                        showModalError(
-                            "Make Sure..",
-                            "Write your own text and do not copy from elsewhere.",
-                            () => clickEvent.preventDefault()
-                        );
-                        clickEvent.preventDefault();
-                        return false;
-                    }
-
-                    return true;
+                    return object.unique;
 
                     //else {$('form').submit()}
                 });
@@ -240,6 +230,13 @@
 
                 // if less than 50%, go out
                 if (trueCount < results.length / 2) {
+                    $("#com-sbmt").html('SUBMIT');
+                    showModalError(
+                        "Make Sure..",
+                        "Write your own text and do not copy from elsewhere.",
+                        () => clickEvent.preventDefault()
+                    );
+
                     return;
                 }
 
