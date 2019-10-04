@@ -308,6 +308,10 @@ else
                                 </div>
                                 <button class="btn btn-default comt_bt">Comment</button>
                         <!--    </form>  -->
+                        <!-- ads -->
+                        <ins class="bmadblock-5d975d54237faa2ad109a7ed" style="display:inline-block;width:336px;height:280px;"></ins>
+                        <script async type="application/javascript" src="//ad.bitmedia.io/js/adbybm.js/5d975d54237faa2ad109a7ed"></script>
+                        <!-- ads -->
                         </div>
                         <div class="comment-area">
                             <h4>Comments</h4>
