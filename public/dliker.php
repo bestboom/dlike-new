@@ -410,7 +410,7 @@ if (isset($user[1])) {
                                  aria-labelledby="nav-rewards-tab">
                                 <?php $rewards = json_decode(get_rewards($user_name));
                                     $reward_rows = "";
-                                    require_once "../libs/time_string.php";
+                                    require_once "./lib/time_string.php";
                                     foreach ($rewards as $reward) {
                                         switch ($reward->type) {
                                             case "mining_reward":
