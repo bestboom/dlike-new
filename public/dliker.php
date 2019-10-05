@@ -74,7 +74,6 @@ function getClaimDetails($name,$tokens) {
         <link href="user_profile.css" rel="stylesheet" type="text/css" />
         <?php include "./template/header5.php"; ?>
     </head>
-
     <body>
         <div class="card flex-row flex-wrap p-3 m-3">
             <div class="card-head">
