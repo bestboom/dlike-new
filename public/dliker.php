@@ -78,7 +78,10 @@ function getClaimDetails($name,$tokens) {
     <body>
         </div>
         <div class="card flex-row flex-wrap p-3 m-3">
-
+            <div class="card-head">
+                <?php
+                ?>
+            </div>
             <div class="card-body px-3 py-0">
                 <?php
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
@@ -462,9 +465,6 @@ function getClaimDetails($name,$tokens) {
 
                     <?php
                 }
-        } else {
-            echo "<h2>This user doesn't exist =(</h2>";
-        }
         ?>
 
     <?php require "../additions/scripts.php"; ?>
