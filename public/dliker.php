@@ -72,7 +72,7 @@ function getClaimDetails($name,$tokens) {
         <meta charset="UTF-8">
         <meta name="author" content="@CADawg">
         <link href="user_profile.css" rel="stylesheet" type="text/css" />
-        <?php include "./template/header5.php"; ?>
+        <?php include "../header.php"; ?>
     </head>
 
     <body>
