@@ -1,4 +1,10 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 function get_rewards ($account = "null") {
     return file_get_contents("http://scot-api.steem-engine.com/get_account_history?account=$account");
 }
