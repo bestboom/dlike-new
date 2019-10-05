@@ -66,30 +66,20 @@ function getClaimDetails($name,$tokens) {
 <!DOCTYPE HTML>
 <html>
     <head lang="en">
-        <?php include "../additions/styles.php"; ?>
+        <!---<?php //include "../additions/styles.php"; ?> -->
         <title>Profile of @<?php echo $user_name; ?></title>
         <meta name="description" content="View your profile and see balances, market orders and rewards!" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
         <meta name="author" content="@CADawg">
         <link href="user_profile.css" rel="stylesheet" type="text/css" />
-        <?php include "../header.php"; ?>
+        <?php include "./template/header5.php"; ?>
     </head>
 
     <body>
-        <?php include "../navagation.php"; ?>
+        <!--<?php //include "../navagation.php"; ?> -->
         <div class="card flex-row flex-wrap p-3 m-3">
             <div class="card-head">
-                <?php
-                $user_profile = get_steem_profile($user_name);
-                //$user_profile = json_decode(file_get_contents("cadawg.json"));
-                if (is_object($user_profile) and $user_profile->user != "No account found" and $user_profile->user != "User Profiles unavailable. Try again in a few minutes!" and isset($user_profile->user->owner)) {
-                if (isset($user_profile->user->json_metadata->profile->profile_image)) {
-                    echo "<img class='usr-image' src='" . $user_profile->user->json_metadata->profile->profile_image . "' alt='profile image of @" . $user_profile->user->name . "'>";
-                } else {
-                    echo "<img class='usr-image' src='https://steemitimages.com/p/7ohP4GDMGPrVF5MeU8t5EQqCvJfGAJHyAFuxrYFhqA4BPKCkPjVBef1jSt7fHRrXVXRuRKBksi1FSJnZL8Co9zi6CpbK1bmV2sFR' alt='profile image of @" . $user_profile->user->name . "'>";
-                }
-                ?>
             </div>
             <div class="card-body px-3 py-0">
                 <?php
