@@ -122,17 +122,6 @@ function getClaimDetails($name,$tokens) {
                         echo "<p class='mb-1'><a rel='nofollow' href='" . $user_profile->user->json_metadata->profile->website . "'>" . GetDomainName($user_profile->user->json_metadata->profile->website) . "</a></p>";
                     } else {
                         echo "<p class='mb-1'></p>";
-                    }
-                    if ($user_name == "cadawg") {
-                        echo('<p class="badge user-badge badge-primary"><i class="fas fa-star"></i> Owner</p>');
-                    } elseif (in_array($user_name, ["soyrosa", "pouchon"])) {
-                        echo('<p class="badge user-badge badge-info"><i class="fas fa-dollar-sign"></i> Early Donor</p>');
-                    } elseif (in_array($user_name, ["gerber", "mermaidvampire"])) {
-                        echo('<p class="badge user-badge badge-success"><i class="fas fa-users"></i> Supporter</p>');
-                    } elseif ($user_name == "definethedollar") {
-                        echo('<p class="badge user-badge badge-warning"><i class="fas fa-fish"></i> <em>Ugh. Herrings.</em></p>');
-                    } elseif ($user_name == "khaleelkazi") {
-                        echo('<p class="badge user-badge badge-warning"><i class="fas fa-user"></i> I guess he\'s okay-ish!</p>');
                     } ?>
             </div>
         </div>
