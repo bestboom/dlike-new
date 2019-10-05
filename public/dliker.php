@@ -33,7 +33,7 @@ function GetDomainName($url)
 $loki = '$loki';
 //require "steemuser.php";
 function getTokensToClaim($name) {
-    $url="https://scot-api.steem-engine.com/@".$name."?v=".time()."000";
+    $url="https://scot-api.steem-engine.com/@".$name."?token=DLIKER?v=".time()."000";
     $obj=json_decode(file_get_contents($url));
     $pendingTokens=array();
     foreach ($obj as $data) {
