@@ -8,7 +8,7 @@ error_reporting(E_ALL);
 function get_rewards ($account = "null") {
     return file_get_contents("http://scot-api.steem-engine.com/get_account_history?account=$account");
 }
-require_once "/lib/SteemEngine.php";
+require_once "./lib/SteemEngine.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
 $_STEEM_ENGINE = new SteemEngine();
 function GetDomainName($url)
