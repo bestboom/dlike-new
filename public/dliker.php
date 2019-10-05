@@ -78,18 +78,7 @@ function getClaimDetails($name,$tokens) {
     <body>
         </div>
         <div class="card flex-row flex-wrap p-3 m-3">
-            <div class="card-head">
-                <?php
-                $user_profile = get_steem_profile($user_name);
-                //$user_profile = json_decode(file_get_contents("cadawg.json"));
-                if (is_object($user_profile) and $user_profile->user != "No account found" and $user_profile->user != "User Profiles unavailable. Try again in a few minutes!" and isset($user_profile->user->owner)) {
-                if (isset($user_profile->user->json_metadata->profile->profile_image)) {
-                    echo "<img class='usr-image' src='" . $user_profile->user->json_metadata->profile->profile_image . "' alt='profile image of @" . $user_profile->user->name . "'>";
-                } else {
-                    echo "<img class='usr-image' src='https://steemitimages.com/p/7ohP4GDMGPrVF5MeU8t5EQqCvJfGAJHyAFuxrYFhqA4BPKCkPjVBef1jSt7fHRrXVXRuRKBksi1FSJnZL8Co9zi6CpbK1bmV2sFR' alt='profile image of @" . $user_profile->user->name . "'>";
-                }
-                ?>
-            </div>
+
             <div class="card-body px-3 py-0">
                 <?php
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
