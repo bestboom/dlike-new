@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
+$user_name = $_COOKIE['username'];
 function get_rewards ($account = "null") {
     return file_get_contents("http://scot-api.steem-engine.com/get_account_history?account=$account");
 }
@@ -31,7 +31,7 @@ function GetDomainName($url)
     return $host;
 }
 $loki = '$loki';
-require "steemuser.php";
+//require "steemuser.php";
 function getTokensToClaim($name) {
     $url="https://scot-api.steem-engine.com/@".$name."?v=".time()."000";
     $obj=json_decode(file_get_contents($url));
@@ -55,13 +55,13 @@ function getClaimDetails($name,$tokens) {
     }
     return [];
 }
-$user = [];
-preg_match('/@([A-z0-9\.\-]{3,16})/', $_SERVER["REQUEST_URI"], $user);
-if (isset($user[1])) {
-    $user_name = strtolower($user[1]);
-} else {
-    $user_name = "null";
-}
+//$user = [];
+//preg_match('/@([A-z0-9\.\-]{3,16})/', $_SERVER["REQUEST_URI"], $user);
+//if (isset($user[1])) {
+//    $user_name = strtolower($user[1]);
+//} else {
+//    $user_name = "null";
+//}
 ?>
 <!DOCTYPE HTML>
 <html>
