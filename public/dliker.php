@@ -66,7 +66,6 @@ function getClaimDetails($name,$tokens) {
 <!DOCTYPE HTML>
 <html>
     <head lang="en">
-        <!---<?php //include "../additions/styles.php"; ?> -->
         <title>Profile of @<?php echo $user_name; ?></title>
         <meta name="description" content="View your profile and see balances, market orders and rewards!" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,7 +76,6 @@ function getClaimDetails($name,$tokens) {
     </head>
 
     <body>
-        <!--<?php //include "../navagation.php"; ?> -->
         <div class="card flex-row flex-wrap p-3 m-3">
             <div class="card-head">
             </div>
