@@ -131,13 +131,13 @@ function getClaimDetails($name,$tokens) {
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">Balances</h3>
         </div>
-        <div class="row" style="justify-content: space-between;">
+        <div class="row" style="justify-content: space-between;width: 98%;padding: 10px 4px;">
             <span style="font-weight: bold;"">Balance: &nbsp;<br>
                 <p>DLIKER Tokens are tradeable, can be transfered to anyone, can be staked to DLIKER POWER.</p>
             </span>
             <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
         </div>
-        <div class="row" style="justify-content: space-between;">
+        <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 10px 4px;">
             <span style="font-weight: bold;">DLIKER Power: &nbsp;</span>
             <span><? echo $balance_stake . '&nbsp;DLIKER'; ?></span>
         </div>
