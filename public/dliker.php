@@ -139,7 +139,7 @@ function getClaimDetails($name,$tokens) {
                 
                 $precisions = [];
                 foreach ($balances as $balance) {
-                    var_dump($balance->symbol['DLIKER']->balance);
+                    //var_dump($balance->symbol['DLIKER']->balance);
 
                     foreach ($token_info_raw as $token) {
                         $meta = json_decode($token->metadata);
