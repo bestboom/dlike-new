@@ -148,8 +148,8 @@ function getClaimDetails($name,$tokens) {
                 $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
                 $market_buys = $_STEEM_ENGINE->get_market_buys($user_name);
                 $token_info_raw = $_STEEM_ENGINE->get_tokens();
-                $rewards = getTokensToClaim($user_name);
-                echo $pending_rewards = (floatval($rewards[$balances->symbol[DLIKER]])/10**$precisions[$balances->symbol[DLIKER]]);
+                echo $rewards = getTokensToClaim($user_name);
+                echo $pending_rewards = (floatval($rewards[$balances->symbol["DLIKER"]])/10**$precisions[$balances->symbol["DLIKER"]]);
                 $market_balances = [];
                 $precisions = [];
                 if ($balances !== false and $market_sells !== false and $market_buys !== false and $token_info_raw !== false) {
