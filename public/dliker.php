@@ -153,7 +153,7 @@ function getClaimDetails($name,$tokens) {
                         }
                     }
                 }
-
+                echo 'Your Pending Rewards:' . $pending_rewards;
                 $market_balances = [];
                 $precisions = [];
                 if ($balances !== false and $market_sells !== false and $market_buys !== false and $token_info_raw !== false) {
