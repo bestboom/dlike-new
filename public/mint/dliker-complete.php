@@ -215,7 +215,7 @@ function getClaimDetails($name,$tokens) {
                     foreach ($balances as $balance) {
                         $balance_row = "<tr>";
                         $total = 0.0;
-                        if (in_array($balance->symbol, ["DLIKER"])) {
+                            $metadata = $token_info[$balance->symbol];
                             if ($metadata[1] != "") {
                                 $balance_row .= "<td><img style='width: 40px; height: 40px;' src='$metadata[1]' alt='Logo of $metadata[0]'></td></td>";
                             } else {
@@ -273,7 +273,6 @@ function getClaimDetails($name,$tokens) {
                             if ($total > 0) {
                                 $balance_rows .= $balance_row;
                             }
-                        }
                     }
                     ?>
 
