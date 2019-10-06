@@ -86,6 +86,7 @@ function getClaimDetails($name,$tokens) {
                 } else {
                     $pending_rewards = 0;
                 }
+                $my_balance = floatval($balance->balance);
             }
         }
     ?>
@@ -124,7 +125,7 @@ function getClaimDetails($name,$tokens) {
         </div>
         <h3>Balances</h3>
         <div class="row">
-            Balance:
+            <? echo 'Balance: &nbsp;' . $my_balance; ?>
         </div>
     </div>
 </div>
