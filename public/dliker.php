@@ -138,8 +138,10 @@ function getClaimDetails($name,$tokens) {
                 $token_info_raw = $_STEEM_ENGINE->get_tokens();
                 $rewards = getTokensToClaim($user_name);
                 
-                var_dump($balances->symbol);
-                
+                foreach ($balances as $balance) {
+                    var_dump($balance->symbol);
+                }
+
                 $market_balances = [];
                 $precisions = [];
                 if ($balances !== false and $market_sells !== false and $market_buys !== false and $token_info_raw !== false) {
