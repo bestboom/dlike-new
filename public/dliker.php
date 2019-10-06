@@ -112,7 +112,7 @@ include "./template/header5.php";
                         if(window.steem_keychain) {
                             steem_keychain.requestCustomJson('<?php echo $tokens_claimable[1][2]; ?>', '<?php echo $tokens_claimable[1][0]; ?>', 'posting', '<?php echo $tokens_claimable[1][1]; ?>', 'Claim All SE Rewards', function(response) {
                                 if (response.success) {
-                                    toastr.error("Rewards Claimed!");
+                                    toastr.success("Rewards Claimed!");
                                     $('#claim_dliker').hide();
                                 } else {
                                     toastr.error("Failed to claim rewards!");
