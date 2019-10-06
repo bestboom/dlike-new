@@ -63,26 +63,12 @@ function getClaimDetails($name,$tokens) {
 //    $user_name = "null";
 //}
 ?>
-<!DOCTYPE HTML>
-<html>
-    <head lang="en">
-        <title>Profile of @<?php echo $user_name; ?></title>
-        <meta name="description" content="View your profile and see balances, market orders and rewards!" >
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta charset="UTF-8">
-        <meta name="author" content="@CADawg">
-        <link href="user_profile.css" rel="stylesheet" type="text/css" />
-        <?php include "./template/header5.php"; ?>
-    </head>
+    <?php include "./template/header5.php"; ?>
+</div>
 
-    <body>
-        </div>
-        <div class="card flex-row flex-wrap p-3 m-3">
-            <div class="card-head">
-                <?php
-                ?>
-            </div>
-            <div class="card-body px-3 py-0">
+<div class="catagori-section">
+    <div class="container">
+        <div class="row">
                 <?php
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
                 if (sizeof($tokens_claimable) > 0) {
@@ -107,6 +93,16 @@ function getClaimDetails($name,$tokens) {
                     </script>
                 <?php
                 }?>
+            </div>
+        </div>
+    </div>
+        <div class="card flex-row flex-wrap p-3 m-3">
+            <div class="card-head">
+                <?php
+                ?>
+            </div>
+            <div class="card-body px-3 py-0">
+
                 <?php
                     if (isset($user_profile->user->json_metadata->profile->name)) {
                         echo "<h2 class='mb-0'>" . $user_profile->user->json_metadata->profile->name . "</h2>";
@@ -147,9 +143,9 @@ function getClaimDetails($name,$tokens) {
                     }
                     if (in_array($balance->symbol, ["DLIKER"])) {
                         if (isset($rewards[$balance->symbol])) {
-                            echo $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
+                            $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
                         } else {
-                            echo $pending_rewards = 0;
+                            $pending_rewards = 0;
                         }
                     }
                 }
