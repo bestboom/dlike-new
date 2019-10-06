@@ -37,9 +37,8 @@ function getClaimDetails($name,$tokens) {
     }
     return [];
 }
-?>
-    <?php 
-        include "./template/header5.php"; 
+
+include "./template/header5.php"; 
 
         $balances = $_STEEM_ENGINE->get_user_balances($user_name);
         $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
