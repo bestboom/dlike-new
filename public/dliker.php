@@ -73,9 +73,8 @@ function getClaimDetails($name,$tokens) {
         $rewards = getTokensToClaim($user_name);
         
         $precisions = [];
+        $market_balances = [];
         foreach ($balances as $balance) {
-            //var_dump($balance->symbol['DLIKER']->balance);
-
             foreach ($token_info_raw as $token) {
                 $meta = json_decode($token->metadata);
                 $precisions[$token->symbol] = $token->precision;
@@ -105,7 +104,18 @@ function getClaimDetails($name,$tokens) {
                         $delegation_out = floatval($balance->delegatedStake);
                     }
                     else {$delegation_out = 0;}
-                }                           
+                } 
+                if (isset($balance->pendingUnstake) and $balance->pendingUnstake) {
+                    $pending_unstake = floatval($balance->pendingUnstake);
+                } else {
+                    $pending_unstake = 0;
+                }        
+                if (isset($market_balances[$balance->symbol])) {
+                    $tokens_in_market = floatval($market_balances[$balance->symbol]);
+                } else {
+                    $tokens_in_market = 0;
+                }                         
+                $total_balane = $my_balance + $pending_rewards + $delegation_out + $balance_stake + $pending_unstake + $tokens_in_market;   
             }
         }
     ?>
@@ -155,8 +165,19 @@ function getClaimDetails($name,$tokens) {
             <span><b>DLIKER Power:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
             </span>
-            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>'; ?><br><? if($delegation_in > 0) { echo '(+'.$delegation_in.')'; } ?></span>
+            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>'; ?>
+                <br>
+                <? if($delegation_in > 0) { echo '(+'.$delegation_in.')'; } ?>
+                <br>
+                <? if($delegation_out > 0) { echo '(+'.$delegation_out.')'; } ?>
+            </span>
         </div>
+        <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 12px 8px;">
+            <span><b>Total DLIKER Owned:</b> &nbsp;<br>
+                <p style="margin-bottom: 5px;">Total tokens owned in all forms.</p>
+            </span>
+            <span><? echo $total . '&nbsp;<b>DLIKER</b>'; ?></span>
+        </div>        
     </div>
 </div>
         <div class="card flex-row flex-wrap p-3 m-3">
