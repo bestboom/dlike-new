@@ -87,6 +87,11 @@ function getClaimDetails($name,$tokens) {
                     $pending_rewards = 0;
                 }
                 $my_balance = floatval($balance->balance);
+                if (isset($balance->stake)) {
+                    $balance_stake = floatval($balance->stake);
+                } else  {
+                    $balance_stake = 0;
+                }                
             }
         }
     ?>
@@ -125,7 +130,12 @@ function getClaimDetails($name,$tokens) {
         </div>
         <h3>Balances</h3>
         <div class="row">
-            <? echo 'Balance: &nbsp;' . $my_balance; ?>
+            <span>Balance: &nbsp;</span>
+            <span><? echo $my_balance; ?></span>
+        </div>
+        <div class="row">
+            <span>DLIKER Power: &nbsp;</span>
+            <span><? echo $balance_stake; ?></span>
         </div>
     </div>
 </div>
