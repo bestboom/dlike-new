@@ -11,25 +11,7 @@ function get_rewards ($account = "null") {
 require_once "./lib/SteemEngine.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
 $_STEEM_ENGINE = new SteemEngine();
-function GetDomainName($url)
-{
-    $host = @parse_url($url, PHP_URL_HOST);
-    // If the URL can't be parsed, use the original URL
-    // Change to "return false" if you don't want that
-    if (!$host) {
-        return "";
-    }
-    // The "www." prefix isn't really needed if you're just using
-    // this to display the domain to the user
-    if (substr($host, 0, 4) == "www.") {
-        $host = substr($host, 4);
-    }
-    // You might also want to limit the length if screen space is limited
-    if (strlen($host) > 50) {
-        $host = substr($host, 0, 47) . '...';
-    }
-    return $host;
-}
+
 $loki = '$loki';
 //require "steemuser.php";
 function getTokensToClaim($name) {
@@ -55,13 +37,6 @@ function getClaimDetails($name,$tokens) {
     }
     return [];
 }
-//$user = [];
-//preg_match('/@([A-z0-9\.\-]{3,16})/', $_SERVER["REQUEST_URI"], $user);
-//if (isset($user[1])) {
-//    $user_name = strtolower($user[1]);
-//} else {
-//    $user_name = "null";
-//}
 ?>
     <?php 
         include "./template/header5.php"; 
@@ -180,101 +155,11 @@ function getClaimDetails($name,$tokens) {
         </div>        
     </div>
 </div>
-        <div class="card flex-row flex-wrap p-3 m-3">
-            <div class="card-head">
-                <?php
-                ?>
-            </div>
 
-        </div>
 
         <div class="card text-center m-3">
 
 
-            <?php
-
-                
-                $market_balances = [];
-                $precisions = [];
-                if ($balances !== false and $market_sells !== false and $market_buys !== false and $token_info_raw !== false) {
-                    $token_info = [];
-                    foreach ($token_info_raw as $token) {
-                        $meta = json_decode($token->metadata);
-                        $precisions[$token->symbol] = $token->precision;
-                        if (isset($meta->icon)) {
-                            $icon = $meta->icon;
-                        } else {
-                            $icon = "";
-                        }
-                        $token_info[$token->symbol] = [$token->name, $icon];
-                    }
-
-                    $balance_rows = "";
-                    foreach ($balances as $balance) {
-                        $balance_row = "<tr>";
-                        $total = 0.0;
-                        if (in_array($balance->symbol, ["DLIKER"])) {
-                            $metadata = $token_info[$balance->symbol];
-                            if ($metadata[1] != "") {
-                                $balance_row .= "<td><img style='width: 40px; height: 40px;' src='$metadata[1]' alt='Logo of $metadata[0]'></td></td>";
-                            } else {
-                                $balance_row .= "<td></td>";
-                            }
-                            $balance_row .= "<td>$balance->symbol</td>";
-                            $balance_row .= "<td>$metadata[0]</td>";
-                            $balance_row .= "<td>" . floatval($balance->balance) . "</td>";
-                            $total += floatval($balance->balance);
-                            if (isset($market_balances[$balance->symbol])) {
-                                $balance_row .= "<td>" . floatval($market_balances[$balance->symbol]) . "</td>";
-                                $total += floatval($market_balances[$balance->symbol]);
-                            } else {
-                                $balance_row .= "<td></td>";
-                            }
-                            /* Polyfill for old version data*/
-                            if (isset($balance->delegationsIn)) {$balance->receivedStake = $balance->delegationsIn;}
-                            if (isset($balance->delegationsOut)) {$balance->delegatedStake = $balance->delegationsOut;}
-                            if (isset($balance->stake)) {
-                                $balance_row .= "<td>" . floatval($balance->stake) . "</td>";
-                                $total += floatval($balance->stake);
-                            } else  {
-                                $balance_row .= "<td></td>";
-                            }
-                            if (isset($balance->delegatedStake) and isset($balance->receivedStake)) {
-                                $total += floatval($balance->delegatedStake);
-                                if ($balance->receivedStake > 0) {
-                                    $balance_row .= "<td><em>" . floatval($balance->receivedStake) . "</em></td>";
-                                } else {
-                                    $balance_row .= "<td></td>";
-                                }
-                                if ($balance->delegatedStake > 0) {
-                                    $balance_row .= "<td>" . floatval($balance->delegatedStake) . "</td>";
-                                } else {
-                                    $balance_row .= "<td></td>";
-                                }
-                            } else {
-                                $balance_row .= "<td></td><td></td>";
-                            }
-                            if (isset($balance->pendingUnstake) and $balance->pendingUnstake) {
-                                $balance_row .= "<td>" . floatval($balance->pendingUnstake) . "</td>";
-                                $total += floatval($balance->pendingUnstake);
-                            } else {
-                                $balance_row .= "<td></td>";
-                            }
-                            if (isset($rewards[$balance->symbol])) {
-                                $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
-                                $balance_row .= "<td>" . $pending_rewards . "</td>";
-                                $total += floatval($pending_rewards);
-                            } else {
-                                $balance_row .= "<td></td>";
-                            }
-                            $balance_row .= "<td>$total</td>";
-                            $balance_row .= "</tr>";
-                            if ($total > 0) {
-                                $balance_rows .= $balance_row;
-                            }
-                        }
-                    }
-                    ?>
 
                     <div class="card-body">
                         <div class="tab-content" id="nav-tabContent">
@@ -457,14 +342,3 @@ function getClaimDetails($name,$tokens) {
         ?>
 
     <?php include "./template/footer.php"; ?>
-    <script>
-        $(document).ready(function() {
-            $('#balances').DataTable({"order": [[10, "desc"]]});
-            $('#buys').DataTable({"order": [[6, "asc"]]});
-            $('#sells').DataTable({"order": [[6, "asc"]]});
-            $('#rewards').DataTable({"order": [[4, "desc"]]});
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-            })
-        } );
-    </script>
