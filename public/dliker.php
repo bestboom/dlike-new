@@ -128,14 +128,16 @@ function getClaimDetails($name,$tokens) {
             <?php
             }?>
         </div>
-        <h3>Balances</h3>
         <div class="row">
-            <span>Balance: &nbsp;</span>
-            <span><? echo $my_balance; ?></span>
+            <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">Balances</h3>
         </div>
-        <div class="row">
-            <span>DLIKER Power: &nbsp;</span>
-            <span><? echo $balance_stake; ?></span>
+        <div class="row" style="justify-content: space-between;">
+            <span>Balance: &nbsp;</span>
+            <span><? echo $my_balance . '&nbsp;DLIKER'; ?></span>
+        </div>
+        <div class="row" style="justify-content: space-between;">
+            <span style="font-weight: bold;">DLIKER Power: &nbsp;</span>
+            <span><? echo $balance_stake . '&nbsp;DLIKER'; ?></span>
         </div>
     </div>
 </div>
