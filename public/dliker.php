@@ -115,7 +115,7 @@ function getClaimDetails($name,$tokens) {
                 } else {
                     $tokens_in_market = 0;
                 }                         
-                $total_balane = $my_balance + $pending_rewards + $delegation_out + $balance_stake + $pending_unstake + $tokens_in_market;   
+                $total_balance = $my_balance + $pending_rewards + $delegation_out + $balance_stake + $pending_unstake + $tokens_in_market;   
             }
         }
     ?>
@@ -176,7 +176,7 @@ function getClaimDetails($name,$tokens) {
             <span><b>Total DLIKER Owned:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">Total tokens owned in all forms.</p>
             </span>
-            <span><? echo $total . '&nbsp;<b>DLIKER</b>'; ?></span>
+            <span><? echo $total_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
         </div>        
     </div>
 </div>
@@ -456,7 +456,7 @@ function getClaimDetails($name,$tokens) {
                 }
         ?>
 
-    <?php require "../additions/scripts.php"; ?>
+    <?php include "./template/footer.php"; ?>
     <script>
         $(document).ready(function() {
             $('#balances').DataTable({"order": [[10, "desc"]]});
@@ -468,5 +468,3 @@ function getClaimDetails($name,$tokens) {
             })
         } );
     </script>
-    </body>
-</html>
