@@ -86,7 +86,9 @@ function getClaimDetails($name,$tokens) {
                 <?php
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
                 if (sizeof($tokens_claimable) > 0) {
+                    echo $tokens_claimable;
                     ?>
+
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
                     <script>
                         function claimRewards() {
@@ -211,12 +213,12 @@ function getClaimDetails($name,$tokens) {
                             $market_balances["STEEMP"] = $buy->tokensLocked;
                         }
                     }
-                    
+
                     $balance_rows = "";
                     foreach ($balances as $balance) {
                         $balance_row = "<tr>";
                         $total = 0.0;
-                        if (in_array($balance->symbol, ["DLIKE", "DLIKER"])) {
+                        if (in_array($balance->symbol, ["DLIKER"])) {
                             $metadata = $token_info[$balance->symbol];
                             if ($metadata[1] != "") {
                                 $balance_row .= "<td><img style='width: 40px; height: 40px;' src='$metadata[1]' alt='Logo of $metadata[0]'></td></td>";
