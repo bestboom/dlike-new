@@ -146,10 +146,11 @@ include "./template/header5.php";
                 <? if($delegation_out > 0) { echo '(+'.$delegation_out.')'; } ?>
             </span>
         </div>
-        <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 12px 8px;">
+        <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;">
             <span><b>DLIKER Unstaking:</b> &nbsp;</span>
             <span><? if($pending_unstake > 0) { echo $pending_unstake . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
-            <br>
+        </div>
+        <div class="row" style="justify-content: space-between;width: 98%;padding: 6px 18px 12px 8px;">    
             <span><b>DLIKER Market:</b> &nbsp;</span>
             <span><? if($tokens_in_market > 0) { echo $tokens_in_market . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
         </div> 
