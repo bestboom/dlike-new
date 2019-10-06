@@ -86,7 +86,7 @@ function getClaimDetails($name,$tokens) {
                 <?php
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
                 if (sizeof($tokens_claimable) > 0) {
-                    var_dump($tokens_claimable[1])
+                    echo $balances = $_STEEM_ENGINE->get_user_balances($user_name);
                     //echo $tokens_claimable;
                     ?>
 
