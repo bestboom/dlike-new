@@ -89,7 +89,6 @@ function getClaimDetails($name,$tokens) {
                     $balances = $_STEEM_ENGINE->get_user_balances($user_name);
                     var_dump($balances->symbol);
                     ?>
-
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
                     <script>
                         function claimRewards() {
