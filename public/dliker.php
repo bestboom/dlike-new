@@ -103,7 +103,7 @@ include "./template/header5.php";
             if (sizeof($tokens_claimable) > 0) {
                 $balances = $_STEEM_ENGINE->get_user_balances($user_name);
                 ?>
-                <div style="background: #c8e0bd;border-radius: 5px;width: 95%;padding: 20px;font-weight: bold;">
+                <div id="claim_dliker" style="background: #c8e0bd;border-radius: 5px;width: 95%;padding: 20px;font-weight: bold;">
                     <? echo 'Your Pending Rewards: &nbsp;' . $pending_rewards . '&nbsp;DLIKER'; ?>
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
                 </div>
@@ -112,9 +112,10 @@ include "./template/header5.php";
                         if(window.steem_keychain) {
                             steem_keychain.requestCustomJson('<?php echo $tokens_claimable[1][2]; ?>', '<?php echo $tokens_claimable[1][0]; ?>', 'posting', '<?php echo $tokens_claimable[1][1]; ?>', 'Claim All SE Rewards', function(response) {
                                 if (response.success) {
-                                    alert("Rewards Claimed!");
+                                    toastr.error("Rewards Claimed!");
+                                    $('#claim_dliker').hide();
                                 } else {
-                                    alert("Failed to claim rewards!");
+                                    toastr.error("Failed to claim rewards!");
                                 }
                             });
                         } else {
@@ -141,9 +142,9 @@ include "./template/header5.php";
             </span>
             <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>'; ?>
                 <br>
-                <? if($delegation_in > 0) { echo '(+'.$delegation_in.')'; } ?>
+                <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER)'; } ?>
                 <br>
-                <? if($delegation_out > 0) { echo '(+'.$delegation_out.')'; } ?>
+                <? if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER)'; } ?>
             </span>
         </div>
         <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;">
