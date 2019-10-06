@@ -94,11 +94,12 @@ function getClaimDetails($name,$tokens) {
                 }  
                 if (isset($balance->delegationsIn)) {$balance->receivedStake = $balance->delegationsIn;}
                 if (isset($balance->delegationsOut)) {$balance->delegatedStake = $balance->delegationsOut;}  
-                //if (isset($balance->delegatedStake)) {
+                if (isset($balance->delegatedStake)) {
                     if ($balance->receivedStake > 0) {
                         $delegation_in = floatval($balance->receivedStake);
                     }
-                //}
+                    else {$delegation_in = 0;}
+                }
                 if (isset($balance->receivedStake)) {
                     if ($balance->delegatedStake > 0) {
                         $delegation_out = floatval($balance->delegatedStake);
