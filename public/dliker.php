@@ -138,8 +138,20 @@ function getClaimDetails($name,$tokens) {
                 $token_info_raw = $_STEEM_ENGINE->get_tokens();
                 $rewards = getTokensToClaim($user_name);
                 
+                $precisions = [];
                 foreach ($balances as $balance) {
                     var_dump($balance->symbol);
+                    $precisions[$token->symbol] = $token->precision;
+                    if (in_array($balance->symbol, ["DLIKER"])) {
+
+                        if (isset($rewards[$balance->symbol])) {
+                                $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
+                                $balance_row .= "<td>" . $pending_rewards . "</td>";
+                                $total += floatval($pending_rewards);
+                        } else {
+                            $balance_row .= "<td></td>";
+                        }
+                    }
                 }
 
                 $market_balances = [];
