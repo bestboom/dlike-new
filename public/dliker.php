@@ -86,8 +86,8 @@ function getClaimDetails($name,$tokens) {
                 <?php
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
                 if (sizeof($tokens_claimable) > 0) {
-                    echo $balances = $_STEEM_ENGINE->get_user_balances($user_name);
-                    //echo $tokens_claimable;
+                    $balances = $_STEEM_ENGINE->get_user_balances($user_name);
+                    var_dump($balances);
                     ?>
 
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
