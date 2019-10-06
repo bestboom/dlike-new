@@ -63,7 +63,32 @@ function getClaimDetails($name,$tokens) {
 //    $user_name = "null";
 //}
 ?>
-    <?php include "./template/header5.php"; ?>
+    <?php 
+        include "./template/header5.php"; 
+
+        $balances = $_STEEM_ENGINE->get_user_balances($user_name);
+        $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
+        $market_buys = $_STEEM_ENGINE->get_market_buys($user_name);
+        $token_info_raw = $_STEEM_ENGINE->get_tokens();
+        $rewards = getTokensToClaim($user_name);
+        
+        $precisions = [];
+        foreach ($balances as $balance) {
+            //var_dump($balance->symbol['DLIKER']->balance);
+
+            foreach ($token_info_raw as $token) {
+                $meta = json_decode($token->metadata);
+                $precisions[$token->symbol] = $token->precision;
+            }
+            if (in_array($balance->symbol, ["DLIKER"])) {
+                if (isset($rewards[$balance->symbol])) {
+                    $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
+                } else {
+                    $pending_rewards = 0;
+                }
+            }
+        }
+    ?>
 </div>
 
 <div class="catagori-section">
@@ -74,7 +99,10 @@ function getClaimDetails($name,$tokens) {
                 if (sizeof($tokens_claimable) > 0) {
                     $balances = $_STEEM_ENGINE->get_user_balances($user_name);
                     ?>
-                    <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
+                    <div>
+                        <? echo 'Your Pending Rewards:' . $pending_rewards; ?>
+                        <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
+                    </div>
                     <script>
                         function claimRewards() {
                             if(window.steem_keychain) {
@@ -127,29 +155,8 @@ function getClaimDetails($name,$tokens) {
 
 
             <?php
-                $balances = $_STEEM_ENGINE->get_user_balances($user_name);
-                $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
-                $market_buys = $_STEEM_ENGINE->get_market_buys($user_name);
-                $token_info_raw = $_STEEM_ENGINE->get_tokens();
-                $rewards = getTokensToClaim($user_name);
-                
-                $precisions = [];
-                foreach ($balances as $balance) {
-                    //var_dump($balance->symbol['DLIKER']->balance);
 
-                    foreach ($token_info_raw as $token) {
-                        $meta = json_decode($token->metadata);
-                        $precisions[$token->symbol] = $token->precision;
-                    }
-                    if (in_array($balance->symbol, ["DLIKER"])) {
-                        if (isset($rewards[$balance->symbol])) {
-                            $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
-                        } else {
-                            $pending_rewards = 0;
-                        }
-                    }
-                }
-                echo 'Your Pending Rewards:' . $pending_rewards;
+                
                 $market_balances = [];
                 $precisions = [];
                 if ($balances !== false and $market_sells !== false and $market_buys !== false and $token_info_raw !== false) {
