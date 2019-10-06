@@ -87,7 +87,7 @@ function getClaimDetails($name,$tokens) {
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
                 if (sizeof($tokens_claimable) > 0) {
                     $balances = $_STEEM_ENGINE->get_user_balances($user_name);
-                    var_dump($balances[0]->symbol->DLIKER);
+                    var_dump($balances);
                     ?>
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
                     <script>
