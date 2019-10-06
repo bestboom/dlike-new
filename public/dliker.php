@@ -139,8 +139,12 @@ function getClaimDetails($name,$tokens) {
                 
                 $precisions = [];
                 foreach ($balances as $balance) {
-                    var_dump($balance->symbol->DLIKER);
-                    $precisions[$token->symbol] = $token->precision;
+                    var_dump($balance->symbol['DLIKER']->balance);
+
+                    foreach ($token_info_raw as $token) {
+                        $meta = json_decode($token->metadata);
+                        $precisions[$token->symbol] = $token->precision;
+                    }
                     if (in_array($balance->symbol, ["DLIKER"])) {
                         if (isset($rewards[$balance->symbol])) {
                             echo $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
