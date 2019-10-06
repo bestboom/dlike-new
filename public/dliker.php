@@ -101,8 +101,9 @@ function getClaimDetails($name,$tokens) {
                 }
                 if (isset($balance->receivedStake)) {
                     if ($balance->delegatedStake > 0) {
-                        $delegation_out = $balance->delegatedStake;
+                        $delegation_out = floatval($balance->delegatedStake);
                     }
+                    else {$delegation_out = 0;}
                 }                           
             }
         }
