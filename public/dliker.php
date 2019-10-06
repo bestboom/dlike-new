@@ -87,7 +87,6 @@ function getClaimDetails($name,$tokens) {
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
                 if (sizeof($tokens_claimable) > 0) {
                     $balances = $_STEEM_ENGINE->get_user_balances($user_name);
-                    var_dump($balances);
                     ?>
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
                     <script>
@@ -140,16 +139,13 @@ function getClaimDetails($name,$tokens) {
                 
                 $precisions = [];
                 foreach ($balances as $balance) {
-                    var_dump($balance->symbol);
+                    var_dump($balance->symbol->DLIKER);
                     $precisions[$token->symbol] = $token->precision;
                     if (in_array($balance->symbol, ["DLIKER"])) {
-
                         if (isset($rewards[$balance->symbol])) {
-                                $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
-                                $balance_row .= "<td>" . $pending_rewards . "</td>";
-                                $total += floatval($pending_rewards);
+                            echo $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
                         } else {
-                            $balance_row .= "<td></td>";
+                            echo $pending_rewards = 0;
                         }
                     }
                 }
