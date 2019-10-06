@@ -99,8 +99,8 @@ function getClaimDetails($name,$tokens) {
                 if (sizeof($tokens_claimable) > 0) {
                     $balances = $_STEEM_ENGINE->get_user_balances($user_name);
                     ?>
-                    <div>
-                        <? echo 'Your Pending Rewards:' . $pending_rewards; ?>
+                    <div style="background: #c8e0bd;border-radius: 5px;width: 95%;padding: 20px;font-weight: bold;">
+                        <? echo 'Your Pending Rewards: ' . $pending_rewards . 'DLIKER'; ?>
                         <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
                     </div>
                     <script>
@@ -129,26 +129,7 @@ function getClaimDetails($name,$tokens) {
                 <?php
                 ?>
             </div>
-            <div class="card-body px-3 py-0">
 
-                <?php
-                    if (isset($user_profile->user->json_metadata->profile->name)) {
-                        echo "<h2 class='mb-0'>" . $user_profile->user->json_metadata->profile->name . "</h2>";
-                        echo "<h5>@$user_name</h5>";
-                    } else {
-                        echo "<h2>" . $user_name . "</h2>";
-                    }
-                    if (isset($user_profile->user->json_metadata->profile->about)) {
-                        echo "<p class='mb-1'>" . $user_profile->user->json_metadata->profile->about . "</p>";
-                    } else {
-                        echo "<p class='mb-1'></p>";
-                    }
-                    if (isset($user_profile->user->json_metadata->profile->website)) {
-                        echo "<p class='mb-1'><a rel='nofollow' href='" . $user_profile->user->json_metadata->profile->website . "'>" . GetDomainName($user_profile->user->json_metadata->profile->website) . "</a></p>";
-                    } else {
-                        echo "<p class='mb-1'></p>";
-                    } ?>
-            </div>
         </div>
 
         <div class="card text-center m-3">
