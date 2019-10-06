@@ -211,6 +211,7 @@ function getClaimDetails($name,$tokens) {
                             $market_balances["STEEMP"] = $buy->tokensLocked;
                         }
                     }
+                    
                     $balance_rows = "";
                     foreach ($balances as $balance) {
                         $balance_row = "<tr>";
