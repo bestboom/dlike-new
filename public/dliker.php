@@ -91,7 +91,9 @@ function getClaimDetails($name,$tokens) {
                     $balance_stake = floatval($balance->stake);
                 } else  {
                     $balance_stake = 0;
-                }                
+                }  
+                if (isset($balance->delegationsIn)) {$balance->receivedStake = $balance->delegationsIn;}
+                if (isset($balance->delegationsOut)) {$balance->delegatedStake = $balance->delegationsOut;}              
             }
         }
     ?>
@@ -141,7 +143,7 @@ function getClaimDetails($name,$tokens) {
             <span><b>DLIKER Power:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
             </span>
-            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>'; ?></span>
+            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>'; ?><br><? echo $balance->receivedStake; ?></span>
         </div>
     </div>
 </div>
