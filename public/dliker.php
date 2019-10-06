@@ -122,6 +122,10 @@ function getClaimDetails($name,$tokens) {
             <?php
             }?>
         </div>
+        <h3>Balances</h3>
+        <div class="row">
+            Balance:
+        </div>
     </div>
 </div>
         <div class="card flex-row flex-wrap p-3 m-3">
