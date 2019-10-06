@@ -131,15 +131,17 @@ function getClaimDetails($name,$tokens) {
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">Balances</h3>
         </div>
-        <div class="row" style="justify-content: space-between;width: 98%;padding: 10px 4px;">
-            <span style="font-weight: bold;"">Balance: &nbsp;<br>
+        <div class="row" style="justify-content: space-between;width: 98%;padding: 16px 8px;">
+            <span><b>Balance:</b> &nbsp;<br>
                 <p>DLIKER Tokens are tradeable, can be transfered to anyone, can be staked to DLIKER POWER.</p>
             </span>
             <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
         </div>
-        <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 10px 4px;">
-            <span style="font-weight: bold;">DLIKER Power: &nbsp;</span>
-            <span><? echo $balance_stake . '&nbsp;DLIKER'; ?></span>
+        <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 16px 8px;">
+            <span><b>DLIKER Power:</b> &nbsp;<br>
+                <p>DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
+            </span>
+            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>'; ?></span>
         </div>
     </div>
 </div>
