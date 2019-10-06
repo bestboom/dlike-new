@@ -86,7 +86,8 @@ function getClaimDetails($name,$tokens) {
                 <?php
                 $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
                 if (sizeof($tokens_claimable) > 0) {
-                    echo $tokens_claimable;
+                    var_dump($tokens_claimable)
+                    //echo $tokens_claimable;
                     ?>
 
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
