@@ -94,36 +94,36 @@ function getClaimDetails($name,$tokens) {
 <div class="catagori-section">
     <div class="container">
         <div class="row">
-                <?php
-                $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
-                if (sizeof($tokens_claimable) > 0) {
-                    $balances = $_STEEM_ENGINE->get_user_balances($user_name);
-                    ?>
-                    <div style="background: #c8e0bd;border-radius: 5px;width: 95%;padding: 20px;font-weight: bold;">
-                        <? echo 'Your Pending Rewards: ' . $pending_rewards . 'DLIKER'; ?>
-                        <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
-                    </div>
-                    <script>
-                        function claimRewards() {
-                            if(window.steem_keychain) {
-                                steem_keychain.requestCustomJson('<?php echo $tokens_claimable[1][2]; ?>', '<?php echo $tokens_claimable[1][0]; ?>', 'posting', '<?php echo $tokens_claimable[1][1]; ?>', 'Claim All SE Rewards', function(response) {
-                                    if (response.success) {
-                                        alert("Rewards Claimed!");
-                                    } else {
-                                        alert("Failed to claim rewards!");
-                                    }
-                                });
-                            } else {
-                                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
-                                win.focus();
-                            }
+            <?php
+            $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
+            if (sizeof($tokens_claimable) > 0) {
+                $balances = $_STEEM_ENGINE->get_user_balances($user_name);
+                ?>
+                <div style="background: #c8e0bd;border-radius: 5px;width: 95%;padding: 20px;font-weight: bold;">
+                    <? echo 'Your Pending Rewards: &nbsp;' . $pending_rewards . '&nbsp;DLIKER'; ?>
+                    <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
+                </div>
+                <script>
+                    function claimRewards() {
+                        if(window.steem_keychain) {
+                            steem_keychain.requestCustomJson('<?php echo $tokens_claimable[1][2]; ?>', '<?php echo $tokens_claimable[1][0]; ?>', 'posting', '<?php echo $tokens_claimable[1][1]; ?>', 'Claim All SE Rewards', function(response) {
+                                if (response.success) {
+                                    alert("Rewards Claimed!");
+                                } else {
+                                    alert("Failed to claim rewards!");
+                                }
+                            });
+                        } else {
+                            var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                            win.focus();
                         }
-                    </script>
-                <?php
-                }?>
-            </div>
+                    }
+                </script>
+            <?php
+            }?>
         </div>
     </div>
+</div>
         <div class="card flex-row flex-wrap p-3 m-3">
             <div class="card-head">
                 <?php
