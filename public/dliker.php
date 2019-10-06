@@ -159,7 +159,12 @@ include "./template/header5.php";
                 <p style="margin-bottom: 5px;">Total tokens owned in all forms.</p>
             </span>
             <span><? echo $total_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
-        </div>        
+        </div>  
+
+        <div class="row">
+            <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
+        </div>
+
     </div>
 </div>
 <?php include "./template/footer.php"; ?>
