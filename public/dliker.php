@@ -148,6 +148,13 @@ function getClaimDetails($name,$tokens) {
             </span>
         </div>
         <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 12px 8px;">
+            <span><b>DLIKER Unstaking:</b> &nbsp;</span>
+            <span><? if($pending_unstake > 0) { echo $pending_unstake . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
+            <br>
+            <span><b>DLIKER Market:</b> &nbsp;</span>
+            <span><? if($tokens_in_market > 0) { echo $tokens_in_market . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
+        </div> 
+        <div class="row" style="justify-content: space-between;width: 98%;background-color: #f4f4f4;padding: 12px 18px 12px 8px;">
             <span><b>Total DLIKER Owned:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">Total tokens owned in all forms.</p>
             </span>
