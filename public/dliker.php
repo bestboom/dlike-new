@@ -149,6 +149,7 @@ function getClaimDetails($name,$tokens) {
                 $market_buys = $_STEEM_ENGINE->get_market_buys($user_name);
                 $token_info_raw = $_STEEM_ENGINE->get_tokens();
                 $rewards = getTokensToClaim($user_name);
+                echo $pending_rewards = (floatval($rewards[$balances->symbol['DLIKER']])/10**$precisions[$balances->symbol['DLIKER']]);
                 $market_balances = [];
                 $precisions = [];
                 if ($balances !== false and $market_sells !== false and $market_buys !== false and $token_info_raw !== false) {
@@ -162,56 +163,6 @@ function getClaimDetails($name,$tokens) {
                             $icon = "";
                         }
                         $token_info[$token->symbol] = [$token->name, $icon];
-                    }
-                    $sell_rows = "";
-                    $total_sells = 0;
-                    foreach ($market_sells as $sell) {
-                        $amt = round($sell->quantity * $sell->price, 8);
-                        $total_sells += $amt;
-                        $sell_rows .= "<tr>";
-                        $metadata = $token_info[$sell->symbol];
-                        if ($metadata[1] != "") {
-                            $sell_rows .= "<td><img style='width: 40px; height: 40px;' src='$metadata[1]' alt='Logo of $metadata[0]'></td></td>";
-                        } else {
-                            $sell_rows .= "<td></td>";
-                        }
-                        $sell_rows .= "<td>$metadata[0]</td>";
-                        $sell_rows .= "<td>$sell->quantity</td>";
-                        $sell_rows .= "<td>$sell->symbol</td>";
-                        $sell_rows .= "<td><strong>$sell->price</strong></td>";
-                        $sell_rows .= "<td>$amt</td>";
-                        $sell_rows .= "<td>$total_sells</td>";
-                        $sell_rows .= "</tr>";
-                        if (isset($market_balances[$sell->symbol])) {
-                            $market_balances[$sell->symbol] += $sell->quantity;
-                        } else {
-                            $market_balances[$sell->symbol] = $sell->quantity;
-                        }
-                    }
-                    $buy_rows  = "";
-                    $total_buys = 0.0;
-                    foreach ($market_buys as $buy) {
-                        $amt = round((float)$buy->tokensLocked, 8);
-                        $total_buys += $amt;
-                        $buy_rows .= "<tr>";
-                        $metadata = $token_info[$buy->symbol];
-                        if ($metadata[1] != "") {
-                            $buy_rows .= "<td><img style='width: 40px; height: 40px;' src='$metadata[1]' alt='Logo of $metadata[0]'></td></td>";
-                        } else {
-                            $buy_rows .= "<td></td>";
-                        }
-                        $buy_rows .= "<td>$metadata[0]</td>";
-                        $buy_rows .= "<td>$buy->quantity</td>";
-                        $buy_rows .= "<td>$buy->symbol</td>";
-                        $buy_rows .= "<td><strong>$buy->price</strong></td>";
-                        $buy_rows .= "<td>$amt</td>";
-                        $buy_rows .= "<td>$total_buys</td>";
-                        $buy_rows .= "</tr>";
-                        if (isset($market_balances["STEEMP"])) {
-                            $market_balances["STEEMP"] += $buy->tokensLocked;
-                        } else {
-                            $market_balances["STEEMP"] = $buy->tokensLocked;
-                        }
                     }
 
                     $balance_rows = "";
