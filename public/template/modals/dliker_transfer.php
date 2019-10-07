@@ -17,7 +17,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<div class="input-group mb-3">
-							<input type="number" class="form-control send_amt" name="send_amt" min="10" value="" />
+							<input type="number" class="form-control send_amt" name="send_amt" value="" placeholder="0.000" />
 							<div class="input-group-append">
 								<div class="input-group-text mb-deck"> DLIKER</div>
 							</div>
