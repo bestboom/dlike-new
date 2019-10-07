@@ -147,7 +147,7 @@ include "./template/header5.php";
             <span><b>DLIKER Power:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
             </span>
-            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<i class="fas fa-unlock" title="unstake" style="cursor: pointer;"></i>'; ?>
+            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<a href="" data-toggle="modal" data-target="#dlk_unstake"><i class="fas fa-unlock" title="unstake" style="cursor: pointer;"></i></a>'; ?>
                 <br>
                 <span style="float: right;">
                     <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<i class="fas fa-eye" style="color:grey;cursor: pointer;"></i>'; } ?>
@@ -172,7 +172,7 @@ include "./template/header5.php";
         </div>  
         <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;">
             <span><b>DLIKER Market Price:</b> &nbsp;</span>
-            <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<i class="fas fa-exchange-alt"></i>'; ?></span>
+            <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt"></i>'; ?></span>
         </div>
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
@@ -199,6 +199,13 @@ include "./template/header5.php";
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
             <?php include('template/modals/dliker_delegate.php'); ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="dlk_unstake" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/dliker_unstake.php'); ?>
         </div>
     </div>
 </div>

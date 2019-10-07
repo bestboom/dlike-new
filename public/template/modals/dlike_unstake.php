@@ -1,13 +1,13 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
-		<h4>Stake DLIKER Tokens</h4>
+		<h4>UNSTAKE DLIKER Tokens</h4>
 		<div id="tsf-msg"></div>
 		<form action="" id="tsf_sub" method="POST">
 			<div class="row line">
 				<div class="col-md-12">
 					<div class="form-group">
-						<input type="hidden" name="dliker_bal" id="dliker_bal" value="<? echo $my_balance; ?>" />
-						<label><b>Balance: </b><?php echo $my_balance; ?> DLIKER</label>
+						<input type="hidden" name="dliker_bal" id="dliker_bal" value="<? echo $balance_stake; ?>" />
+						<label><b>Balance: </b><?php echo $balance_stake; ?> DLIKER</label>
 					</div>
 				</div>
 			</div>			
@@ -23,7 +23,7 @@
 					</div>
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-default tsf_btn">STAKE DLIKER</button></center>
+			<center><button type="submit" class="btn btn-default tsf_btn">UNSTAKE DLIKER</button></center>
 		</form>
 	</div>
 
