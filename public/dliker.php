@@ -100,7 +100,7 @@ include "./template/header5.php";
         <div class="row">
             <?php
             $tokens_claimable = getClaimDetails($user_name, getTokensToClaim($user_name));
-            if (sizeof($tokens_claimable) > 0) {
+            if ($pending_rewards > 0) {
                 $balances = $_STEEM_ENGINE->get_user_balances($user_name);
                 ?>
                 <div id="claim_dliker" style="background: #c8e0bd;border-radius: 5px;width: 95%;padding: 20px;font-weight: bold;">
