@@ -1,6 +1,7 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
 		<h4>UNSTAKE DLIKER Tokens</h4>
+		<center>
 		<div id="tsf-msg"></div>
 		<form action="" id="tsf_sub" method="POST">
 			<div class="row line">
@@ -25,6 +26,6 @@
 			</div>
 			<center><button type="submit" class="btn btn-default tsf_btn">UNSTAKE DLIKER</button></center>
 		</form>
+		</center>
 	</div>
-
 </div>
