@@ -134,7 +134,7 @@ include "./template/header5.php";
             <span><b>Balance:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIKER Tokens are tradeable, can be transfered to anyone, can be staked to DLIKER POWER.</p>
             </span>
-            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
+            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?><br><i class="fas fa-share-square"></i> &nbsp;<i class="fas fa-share-square"></i></span>
         </div>
         <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;">
             <span><b>DLIKER Power:</b> &nbsp;<br>
