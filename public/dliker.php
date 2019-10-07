@@ -150,7 +150,7 @@ include "./template/header5.php";
             <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<a href="" data-toggle="modal" data-target="#dlk_unstake"><i class="fas fa-unlock" title="unstake" style="cursor: pointer;"></i></a>'; ?>
                 <br>
                 <span style="float: right;">
-                    <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<i class="fas fa-eye" style="color:grey;cursor: pointer;"></i>'; } ?>
+                    <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<a href="" data-toggle="modal" data-target="#dlk_delegation_in"><i class="fas fa-eye" style="color:grey;cursor: pointer;"></i></a>'; } ?>
                     <br>
                     <? if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER) &nbsp;<i class="fas fa-eye" style="color:grey;cursor: pointer;"></i>'; } ?>
                 </span>
