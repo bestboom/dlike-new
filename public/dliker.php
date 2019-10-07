@@ -168,9 +168,12 @@ include "./template/header5.php";
             <span><b>Total DLIKER Owned:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">Total tokens owned in all forms.</p>
             </span>
-            <span><? echo $total_balance . '&nbsp;<b>DLIKER</b><i class="fas fa-exchange-alt"></i>'; ?></span>
+            <span><? echo $total_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
         </div>  
-
+        <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;">
+            <span><b>DLIKER Market Price:</b> &nbsp;</span>
+            <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<i class="fas fa-exchange-alt"></i>'; ?></span>
+        </div>
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
         </div>
