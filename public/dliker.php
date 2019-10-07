@@ -5,6 +5,12 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include "./template/header5.php"; 
 $user_name = $_COOKIE['username'];
+?>
+<style>
+.row-3 { justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;}
+.row-2 {justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;}
+</style>
+<?
 function get_rewards ($account = "null") {
     return file_get_contents("http://scot-api.steem-engine.com/get_account_history?account=$account");
 }
@@ -142,7 +148,7 @@ function getClaimDetails($name,$tokens) {
                 </span>
             </span>
         </div>
-        <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;">
+        <div class="row row-2">
             <span><b>DLIKER Power:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
             </span>
@@ -155,7 +161,7 @@ function getClaimDetails($name,$tokens) {
                 </span>
             </span>
         </div>
-        <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;">
+        <div class="row row-3">
             <span><b>DLIKER Unstaking:</b> &nbsp;</span>
             <span><? if($pending_unstake > 0) { echo $pending_unstake . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
         </div>
@@ -163,13 +169,13 @@ function getClaimDetails($name,$tokens) {
             <span><b>DLIKER Market:</b> &nbsp;</span>
             <span><? if($tokens_in_market > 0) { echo $tokens_in_market . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
         </div> 
-        <div class="row" style="justify-content: space-between;width: 98%;background-color: #f4f4f4;padding: 12px 18px 12px 8px;">
+        <div class="row row-2">
             <span><b>Total DLIKER Owned:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">Total tokens owned in all forms.</p>
             </span>
             <span><? echo $total_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
         </div>  
-        <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;">
+        <div class="row row-3">
             <span><b>DLIKER Market Price:</b> &nbsp;</span>
             <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i></a>'; ?></span>
         </div>
