@@ -134,7 +134,14 @@ include "./template/header5.php";
             <span><b>Balance:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIKER Tokens are tradeable, can be transfered to anyone, can be staked to DLIKER POWER.</p>
             </span>
-            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?><br><span style="float:right;"><i class="fas fa-share-square" title="transfer" style="cursor: pointer;"></i>&nbsp; &nbsp;<i class="fas fa-lock" title="stake" style="cursor: pointer;"></i>&nbsp; &nbsp;<i class="fas fa-minus-circle" title="delegate" style="cursor: pointer;"></i></span></span>
+            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?>
+                <br>
+                <span style="float:right;">
+                    <a href="" data-toggle="modal" data-target="#tk_transfer"><i class="fas fa-share-square" title="transfer" style="cursor: pointer;"></i></a>&nbsp; &nbsp;
+                    <i class="fas fa-lock" title="stake" style="cursor: pointer;"></i>&nbsp; &nbsp;
+                    <i class="fas fa-minus-circle" title="delegate" style="cursor: pointer;"></i>
+                </span>
+            </span>
         </div>
         <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;">
             <span><b>DLIKER Power:</b> &nbsp;<br>
@@ -168,6 +175,14 @@ include "./template/header5.php";
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
         </div>
 
+    </div>
+</div>
+
+<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/tktransfer.php'); ?>
+        </div>
     </div>
 </div>
 <?php include "./template/footer.php"; ?>
