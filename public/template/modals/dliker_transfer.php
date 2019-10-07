@@ -36,6 +36,7 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<input type="hidden" name="dliker_bal" id="dliker_bal" value="<? echo $my_balance; ?>" />
 						<label><b>Balance: </b><?php echo $my_balance; ?> DLIKER</label>
 					</div>
 				</div>

@@ -36,6 +36,7 @@
 						</div>
 					</div>
 					<div class="form-group">
+						<input type="hidden" name="dliker_stake_bal" id="dliker_stake_bal" value="<? echo $balance_stake; ?>" />
 						<label><b>Staked Balance: </b><?php echo $balance_stake; ?> DLIKER</label>
 					</div>
 				</div>
