@@ -134,18 +134,18 @@ include "./template/header5.php";
             <span><b>Balance:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIKER Tokens are tradeable, can be transfered to anyone, can be staked to DLIKER POWER.</p>
             </span>
-            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?><br><span style="float:right;"><i class="fas fa-share-square" title="transfer"></i>&nbsp; &nbsp;<i class="fas fa-lock" title="stake"></i>&nbsp; &nbsp;<i class="fas fa-minus-circle" title="delegate"></i></span></span>
+            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?><br><span style="float:right;"><i class="fas fa-share-square" title="transfer" style="cursor: pointer;"></i>&nbsp; &nbsp;<i class="fas fa-lock" title="stake" style="cursor: pointer;"></i>&nbsp; &nbsp;<i class="fas fa-minus-circle" title="delegate" style="cursor: pointer;"></i></span></span>
         </div>
         <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;">
             <span><b>DLIKER Power:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
             </span>
-            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<i class="fas fa-unlock" title="unstake"></i>'; ?>
+            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<i class="fas fa-unlock" title="unstake" style="cursor: pointer;"></i>'; ?>
                 <br>
                 <span style="float: right;">
-                    <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<i class="fas fa-eye" style="color:grey;"></i>'; } ?>
+                    <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<i class="fas fa-eye" style="color:grey;cursor: pointer;"></i>'; } ?>
                     <br>
-                    <? if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER)'; } ?>
+                    <? if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER) &nbsp;<i class="fas fa-eye" style="color:grey;cursor: pointer;"></i>'; } ?>
                 </span>
             </span>
         </div>
