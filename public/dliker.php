@@ -3,7 +3,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+include "./template/header5.php"; 
 $user_name = $_COOKIE['username'];
 function get_rewards ($account = "null") {
     return file_get_contents("http://scot-api.steem-engine.com/get_account_history?account=$account");
@@ -38,7 +38,6 @@ function getClaimDetails($name,$tokens) {
     return [];
 }
 
-include "./template/header5.php"; 
 
         $balances = $_STEEM_ENGINE->get_user_balances($user_name);
         $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
@@ -152,7 +151,7 @@ include "./template/header5.php";
                 <span style="float: right;">
                     <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<a href="" data-toggle="modal" data-target="#dlk_delegation_in"><i class="fas fa-eye" style="color:grey;cursor: pointer;"></i></a>'; } ?>
                     <br>
-                    <? if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER) &nbsp;<i class="fas fa-eye" style="color:grey;cursor: pointer;"></i>'; } ?>
+                    <? if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER) &nbsp;<a href="" data-toggle="modal" data-target="#dlk_delegation_out"><i class="fas fa-eye" style="color:grey;cursor: pointer;"></i></a>'; } ?>
                 </span>
             </span>
         </div>
@@ -213,6 +212,13 @@ include "./template/header5.php";
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
             <?php include('template/modals/dliker_delegate_in.php'); ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="dlk_delegation_out" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/dliker_delegate_out.php'); ?>
         </div>
     </div>
 </div>
