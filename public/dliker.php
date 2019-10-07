@@ -134,13 +134,13 @@ include "./template/header5.php";
             <span><b>Balance:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIKER Tokens are tradeable, can be transfered to anyone, can be staked to DLIKER POWER.</p>
             </span>
-            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?><br><span style="float:right;"><i class="fas fa-share-square"></i>&nbsp; &nbsp;<i class="fas fa-lock"></i></span></span>
+            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?><br><span style="float:right;"><i class="fas fa-share-square"></i>&nbsp; &nbsp;<i class="fas fa-lock"></i>&nbsp; &nbsp;<i class="fas fa-minus-circle" title="delegate"></i></span></span>
         </div>
         <div class="row" style="justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;">
             <span><b>DLIKER Power:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
             </span>
-            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>'; ?>
+            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<i class="fas fa-unlock"></i>'; ?>
                 <br>
                 <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER)'; } ?>
                 <br>
