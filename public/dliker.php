@@ -172,7 +172,7 @@ include "./template/header5.php";
         </div>  
         <div class="row" style="justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;">
             <span><b>DLIKER Market Price:</b> &nbsp;</span>
-            <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt"></i>'; ?></span>
+            <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i>'; ?></span>
         </div>
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
