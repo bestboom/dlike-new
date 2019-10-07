@@ -137,9 +137,9 @@ include "./template/header5.php";
             <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?>
                 <br>
                 <span style="float:right;">
-                    <a href="" data-toggle="modal" data-target="#tk_transfer"><i class="fas fa-share-square" title="transfer" style="cursor: pointer;"></i></a>&nbsp; &nbsp;
-                    <i class="fas fa-lock" title="stake" style="cursor: pointer;"></i>&nbsp; &nbsp;
-                    <i class="fas fa-minus-circle" title="delegate" style="cursor: pointer;"></i>
+                    <a href="" data-toggle="modal" data-target="#dlk_transfer"><i class="fas fa-share-square" title="transfer" style="cursor: pointer;"></i></a>&nbsp; &nbsp;
+                    <a href="" data-toggle="modal" data-target="#dlk_stake"><i class="fas fa-lock" title="stake" style="cursor: pointer;"></i></a>&nbsp; &nbsp;
+                    <a href="" data-toggle="modal" data-target="#dlk_delegate"><i class="fas fa-minus-circle" title="delegate" style="cursor: pointer;"></i></a>
                 </span>
             </span>
         </div>
@@ -178,10 +178,24 @@ include "./template/header5.php";
     </div>
 </div>
 
-<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="dlk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <?php include('template/modals/tktransfer.php'); ?>
+            <?php include('template/modals/dliker_transfer.php'); ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="dlk_stake" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/dliker_stake.php'); ?>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="dlk_delegate" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/dliker_delegate.php'); ?>
         </div>
     </div>
 </div>
