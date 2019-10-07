@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-default tsf_btn">Transfer</button></center>
+			<center><button type="submit" class="btn btn-default tsf_btn">Transfer DLIKER</button></center>
 		</form>
 	</div>
 
