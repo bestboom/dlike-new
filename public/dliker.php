@@ -209,4 +209,11 @@ include "./template/header5.php";
         </div>
     </div>
 </div>
+<div class="modal fade" id="dlk_delegation_in" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/dliker_delegate_in.php'); ?>
+        </div>
+    </div>
+</div>
 <?php include "./template/footer.php"; ?>
