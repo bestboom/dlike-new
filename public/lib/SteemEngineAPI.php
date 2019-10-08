@@ -13,13 +13,7 @@ class SteemEngineAPI
     {
         $this->RPC_URL = $rpc;
     }
-    /**
-     * Query a Contract on the Steem Engine network
-     * @param array $location Contract,Table array
-     * @param array $query Query for table as array
-     * @param array $modifiers Limit and offset
-     * @return bool|object
-     */
+
     function query_contract($location = "tokens/balances", $query = []) {
         try {
             $location = explode("/", $location);
