@@ -3,6 +3,16 @@
 		<h4>Delegate DLIKER Tokens</h4>
 		<div id="tsf-msg"></div>
 		<form action="" id="tsf_sub" method="POST">
+			<center>	
+			<div class="row line">
+				<div class="col-md-12">
+					<div class="form-group">
+						<input type="hidden" name="dliker_stake_bal" id="dliker_stake_bal" value="<? echo $balance_stake; ?>" />
+						<label><b>Staked Balance: </b><?php echo $balance_stake; ?> DLIKER</label>
+					</div>
+				</div>
+			</div>
+			</center>			
 			<div class="row line">
 				<div class="col-md-12">
 					<div class="form-group">
@@ -14,7 +24,7 @@
 						</div>
 					</div>
 				</div>
-				<br>
+				<br><br>
 				<div class="col-md-12">
 					<div class="form-group">
 						<div class="input-group mb-3">
@@ -23,14 +33,6 @@
 								<div class="input-group-text mb-deck"> DLIKER</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row line">
-				<div class="col-md-12">
-					<div class="form-group">
-						<input type="hidden" name="dliker_stake_bal" id="dliker_stake_bal" value="<? echo $balance_stake; ?>" />
-						<label><b>Staked Balance: </b><?php echo $balance_stake; ?> DLIKER</label>
 					</div>
 				</div>
 			</div>
