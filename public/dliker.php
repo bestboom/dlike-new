@@ -186,9 +186,6 @@ function getClaimDetails($name,$tokens) {
         </div>
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
-        </div>
-        <div class="row">
-            <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
             <table style="width: 100%;">
                 <thead>
                     <tr><th>From</th><th>Amount</th><th>To</th><th>Memo</th><th>Time</th></tr>
@@ -386,26 +383,7 @@ function getClaimDetails($name,$tokens) {
 <div class="modal fade" id="dlk_delegation_in" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <div class="modal-body ">
-                <div class="transfer-respond">
-                    <h4>DELEGATIONS</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>From</th>
-                                <th>To</th>
-                                <th class="amount">Amount</th>
-                                <th>Symbol</th>
-                                <th>Created</th>
-                                <th>Updated</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <?php include('template/modals/dliker_delegate_in.php'); ?>
         </div>
     </div>
 </div>
@@ -413,26 +391,7 @@ function getClaimDetails($name,$tokens) {
 <div class="modal fade" id="dlk_delegation_out" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <div class="modal-body ">
-                <div class="transfer-respond">
-                    <h4>DELEGATIONS</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>From</th>
-                                <th>To</th>
-                                <th class="amount">Amount</th>
-                                <th>Symbol</th>
-                                <th>Created</th>
-                                <th>Updated</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            <?php include('template/modals/dliker_delegate_out.php'); ?>
         </div>
     </div>
 </div>
