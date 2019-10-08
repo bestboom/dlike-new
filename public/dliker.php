@@ -418,3 +418,4 @@ function getClaimDetails($name,$tokens) {
         </div>
     </div>
 </div>
+<?php include "./template/footer.php"; ?>
