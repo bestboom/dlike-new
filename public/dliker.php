@@ -418,4 +418,9 @@ function getClaimDetails($name,$tokens) {
         </div>
     </div>
 </div>
-<?php include "./template/footer.php"; ?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://dlike.io/assets/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
+<script src="https://dlike.io/js/toaster.js"></script>
+<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
