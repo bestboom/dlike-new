@@ -182,7 +182,20 @@ function getClaimDetails($name,$tokens) {
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
         </div>
-
+        <div class="row">
+            <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
+            <table style="width: 100%;">
+                <thead>
+                    <tr><th>From</th><th>Amount</th><th>To</th><th>Memo</th><th>Time</th></tr>
+                </thead>
+            <?php
+                $data = get_recent_transactions($user_name);
+                foreach ($data as $datum) {
+                    print("<tr><td>$datum->from</td><td>$datum->quantity $datum->symbol</td><td>$datum->to</td><td>$datum->memo</td><td>" . epoch_to_time(strtotime($datum->timestamp), false, false) . "</td></tr>");
+                }
+            ?>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -418,9 +431,4 @@ function getClaimDetails($name,$tokens) {
         </div>
     </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
-<script src="https://dlike.io/assets/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-<script src="https://dlike.io/js/toaster.js"></script>
-<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
+<?php include "./template/footer.php"; ?>

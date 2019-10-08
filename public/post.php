@@ -11,11 +11,12 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_C
 $post_url = "https://scot-api.steem-engine.com/$user/$link";
 $response = file_get_contents($post_url);
 $result = json_decode($response, TRUE);
-$og_title = $result['DLIKER']['title'];
 
-$og_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
-$og_description = $og_description[1];
-$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
+    $og_title = $result['DLIKER']['title'];
+    $og_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
+    $og_description = $og_description[1];
+    $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
+    $pending_amount = ($result['DLIKER']['pending_token'])/1000;
 
 $meta_data = $result['DLIKER']['json_metadata'];
 $meta_data = json_decode($meta_data, true);
@@ -25,7 +26,7 @@ $body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
 $body = html_entity_decode(nl2br($body));
 $ext_link = $meta_data['url'];
 
-$pending_amount = ($result['DLIKER']['pending_token'])/1000;
+
 
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
