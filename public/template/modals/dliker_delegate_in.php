@@ -1,7 +1,7 @@
                 <div class="modal-body ">
                     <div class="transfer-respond">
                         <h4>DELEGATIONS</h4>
-                        <table style="width: 100%">
+                        <table class='table table-striped table-bordered table-hover table-condensed table-responsive' style="width: 100%">
                             <thead>
                             <tr>
                                 <th>From</th>

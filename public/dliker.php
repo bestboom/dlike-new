@@ -186,7 +186,7 @@ function getClaimDetails($name,$tokens) {
         </div>
         <div class="row">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
-            <table style="width: 100%;">
+            <table class='table table-striped table-bordered table-hover table-condensed table-responsive' style="width: 100%;">
                 <thead>
                     <tr><th>From</th><th>Amount</th><th>To</th><th>Memo</th><th>Time</th></tr>
                 </thead>
