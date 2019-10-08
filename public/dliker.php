@@ -184,7 +184,7 @@ function getClaimDetails($name,$tokens) {
             <span><b>DLIKER Market Price:</b> &nbsp;</span>
             <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i></a>'; ?></span>
         </div>
-        <div class="row">
+        <div class="row" style="width: 98%;">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
             <table class='table table-striped table-bordered table-condensed' style="width: 100%;">
                 <thead>
@@ -381,7 +381,7 @@ function getClaimDetails($name,$tokens) {
 </div>
 
 <div class="modal fade" id="dlk_delegation_in" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content modal-custom">
             <?php include('template/modals/dliker_delegate_in.php'); ?>
         </div>
@@ -389,7 +389,7 @@ function getClaimDetails($name,$tokens) {
 </div>
 
 <div class="modal fade" id="dlk_delegation_out" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content modal-custom">
             <?php include('template/modals/dliker_delegate_out.php'); ?>
         </div>

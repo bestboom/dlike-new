@@ -28,5 +28,4 @@
 			<center><button type="submit" class="btn btn-default tsf_btn">STAKE DLIKER</button></center>
 		</form>
 	</div>
-
 </div>
