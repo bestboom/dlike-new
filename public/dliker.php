@@ -11,15 +11,21 @@ $user_name = $_COOKIE['username'];
 .row-2 {justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;}
 </style>
 <?
-function get_rewards ($account = "null") {
-    return file_get_contents("http://scot-api.steem-engine.com/get_account_history?account=$account");
+function get_recent_transactions ($account = "null") {
+    $recent = file_get_contents("https://api.steem-engine.com/accounts/history?account=$account&limit=100&offset=0&type=user&symbol=DLIKER");
+    try {
+        $json = json_decode($recent);
+        return $json;
+    } catch (Exception $exception) {
+        return (object) [];
+    }
 }
+
 require_once "./lib/SteemEngine.php";
+require_once "./lib/time_string.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
 $_STEEM_ENGINE = new SteemEngine();
 
-$loki = '$loki';
-//require "steemuser.php";
 function getTokensToClaim($name) {
     $url="https://scot-api.steem-engine.com/@".$name."?v=".time()."000";
     $obj=json_decode(file_get_contents($url));
@@ -43,7 +49,6 @@ function getClaimDetails($name,$tokens) {
     }
     return [];
 }
-
 
         $balances = $_STEEM_ENGINE->get_user_balances($user_name);
         $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
