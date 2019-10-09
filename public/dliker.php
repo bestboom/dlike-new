@@ -266,10 +266,10 @@ function getClaimDetails($name,$tokens) {
                                 steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake 0.488 DLIKER Tokens", function(response) {
                                     if (response.success) {
                                         toastr.success("Tokens Unstaked Success!");
-                                        $('#unstake_sub').hide();
+                                        $('#dlk_unstake').hide();
                                     } else {
                                         toastr.error("Failed to Unstake!");
-                                        $('#unstake_sub').hide();
+                                        $('#dlk_unstake').hide();
                                     }
                                 });
                             } else {
