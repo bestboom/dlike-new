@@ -4,7 +4,7 @@
 		<div id="tsf-msg"></div>
 		<form action="" id="tsf_sub" method="POST">
 			<center>	
-			<div class="row line">
+			<div class="row">
 				<div class="col-md-12">
 					<div class="form-group">
 						<input type="hidden" name="dliker_stake_bal" id="dliker_stake_bal" value="<? echo $balance_stake; ?>" />
@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			</center>			
-			<div class="row line">
+			<div class="row line" style="margin-bottom:15px;">
 				<div class="col-md-12">
 					<div class="form-group">
 						<div class="input-group mb-3">

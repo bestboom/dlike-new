@@ -144,7 +144,7 @@ function getClaimDetails($name,$tokens) {
             <span><b>Balance:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIKER Tokens are tradeable, can be transfered to anyone, can be staked to DLIKER POWER.</p>
             </span>
-            <span><? echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?>
+            <span><?php echo $my_balance . '&nbsp;<b>DLIKER</b>'; ?>
                 <br>
                 <span style="float:right;">
                     <a href="" data-toggle="modal" data-target="#dlk_transfer"><i class="fas fa-share-square" title="transfer" style="cursor: pointer;"></i></a>&nbsp; &nbsp;
@@ -157,32 +157,36 @@ function getClaimDetails($name,$tokens) {
             <span><b>DLIKER Power:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">DLIEKR power is the influence to control over post payouts and allow you to earn on curation rewards.</p>
             </span>
-            <span><? echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<a href="" data-toggle="modal" data-target="#dlk_unstake"><i class="fas fa-unlock" title="unstake" style="cursor: pointer;"></i></a>'; ?>
+            <span><?php echo $balance_stake . '&nbsp;<b>DLIKER</b>&nbsp; &nbsp;<a href="" data-toggle="modal" data-target="#dlk_unstake"><i class="fas fa-unlock" title="unstake" style="cursor: pointer;"></i></a>'; ?>
                 <br>
                 <span style="float: right;">
-                    <? if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<a href="" data-toggle="modal" data-target="#dlk_delegation_in"><i class="fas fa-eye" style="color:grey;cursor: pointer;"></i></a>'; } ?>
+                    <?php if($delegation_in > 0) { echo '(+'.$delegation_in.'&nbsp; DLIKER) &nbsp;<a href="" data-toggle="modal" data-target="#dlk_delegation_in"><i class="fas fa-eye" style="color:grey;cursor: pointer;"></i></a>'; } ?>
                     <br>
-                    <? if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER) &nbsp;<a href="" data-toggle="modal" data-target="#dlk_delegation_out"><i class="fas fa-eye" style="color:grey;cursor: pointer;"></i></a>'; } ?>
+                    <?php if($delegation_out > 0) { echo '(-'.$delegation_out.'&nbsp; DLIKER) &nbsp;<a href="" data-toggle="modal" data-target="#dlk_delegation_out"><i class="fas fa-eye" style="color:grey;cursor: pointer;"></i></a>'; } ?>
                 </span>
             </span>
         </div>
         <div class="row row-3">
             <span><b>DLIKER Unstaking:</b> &nbsp;</span>
-            <span><? if($pending_unstake > 0) { echo $pending_unstake . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
+            <span><?php if($pending_unstake > 0) { echo $pending_unstake . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
         </div>
         <div class="row" style="justify-content: space-between;width: 98%;padding: 6px 18px 12px 8px;">    
             <span><b>DLIKER Market:</b> &nbsp;</span>
-            <span><? if($tokens_in_market > 0) { echo $tokens_in_market . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
+            <span><?php if($tokens_in_market > 0) { echo $tokens_in_market . '&nbsp;<b>DLIKER</b>'; } else { echo '0.000 <b>DLIKER</b>';} ?></span>
         </div> 
         <div class="row row-2">
             <span><b>Total DLIKER Owned:</b> &nbsp;<br>
                 <p style="margin-bottom: 5px;">Total tokens owned in all forms.</p>
             </span>
-            <span><? echo $total_balance . '&nbsp;<b>DLIKER</b>'; ?></span>
+            <span>
+                <?php echo $total_balance . '&nbsp;<b>DLIKER</b>'; ?>
+            </span>
         </div>  
         <div class="row row-3">
             <span><b>DLIKER Market Price:</b> &nbsp;</span>
-            <span><? echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i></a>'; ?></span>
+            <span>
+                <?php echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i></a>'; ?>
+            </span>
         </div>
         <div class="row" style="width: 98%;">
             <h3 style="font-size: 24px !important;font-weight: 600;padding: 30px 0px;">History</h3>
@@ -204,90 +208,14 @@ function getClaimDetails($name,$tokens) {
 <div class="modal fade" id="dlk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <div class="modal-body ">
-                <div class="transfer-respond">
-                    <h4>Transfer DLIKER Tokens</h4>
-                    <div id="tsf-msg"></div>
-                    <form action="" id="tsf_sub" method="POST">
-                        <div class="row line">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck"> @</div>
-                                        </div>
-                                        <input type="text" class="form-control reciever" name="reciever" value="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control send_amt" name="send_amt" value="" placeholder="0.000" />
-                                        <div class="input-group-append">
-                                            <div class="input-group-text mb-deck"> DLIKER</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row line">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck"> Memo</div>
-                                        </div>
-                                        <input type="text" class="form-control" name="memo">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="hidden" name="dliker_bal" id="dliker_bal" value="<? echo $my_balance; ?>" />
-                                    <label><b>Balance: </b><?php echo $my_balance; ?> DLIKER</label>
-                                </div>
-                            </div>
-                        </div>
-                        <center><button type="submit" class="btn btn-default tsf_btn">Transfer DLIKER</button></center>
-                    </form>
-                </div>
-            </div>
+            <?php include('template/modals/dliker_transfer.php'); ?>
         </div>
     </div>
 </div>
 <div class="modal fade" id="dlk_stake" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <div class="modal-body ">
-                <div class="transfer-respond">
-                    <h4>Stake DLIKER Tokens</h4>
-                    <div id="tsf-msg"></div>
-                    <form action="" id="tsf_sub" method="POST">
-                        <center>    
-                        <div class="row line">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="hidden" name="dliker_bal" id="dliker_bal" value="<? echo $my_balance; ?>" />
-                                    <label><b>Balance: </b><?php echo $my_balance; ?> DLIKER</label>
-                                </div>
-                            </div>
-                        </div>  
-                        </center>       
-                        <div class="row line">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control send_amt" name="send_amt" value="" placeholder="0.000" />
-                                        <div class="input-group-append">
-                                            <div class="input-group-text mb-deck"> DLIKER</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <center><button type="submit" class="btn btn-default tsf_btn">STAKE DLIKER</button></center>
-                    </form>
-                </div>
-            </div>
+            <?php include('template/modals/dliker_stake.php'); ?>
         </div>
     </div>
 </div>
@@ -295,48 +223,7 @@ function getClaimDetails($name,$tokens) {
 <div class="modal fade" id="dlk_delegate" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <div class="modal-body ">
-                <div class="transfer-respond">
-                    <h4>Delegate DLIKER Tokens</h4>
-                    <div id="tsf-msg"></div>
-                    <form action="" id="tsf_sub" method="POST">
-                        <center>    
-                        <div class="row line">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="hidden" name="dliker_stake_bal" id="dliker_stake_bal" value="<? echo $balance_stake; ?>" />
-                                    <label><b>Staked Balance: </b><?php echo $balance_stake; ?> DLIKER</label>
-                                </div>
-                            </div>
-                        </div>
-                        </center>           
-                        <div class="row line">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck"> @</div>
-                                        </div>
-                                        <input type="text" class="form-control reciever" name="reciever" value="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control send_amt" name="send_amt" value="" placeholder="0.000" />
-                                        <div class="input-group-append">
-                                            <div class="input-group-text mb-deck"> DLIKER</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <center><button type="submit" class="btn btn-default tsf_btn">DELEGATE DLIKER</button></center>
-                    </form>
-                </div>
-            </div>
+            <?php include('template/modals/dliker_delegate.php'); ?>
         </div>
     </div>
 </div>
@@ -344,38 +231,7 @@ function getClaimDetails($name,$tokens) {
 <div class="modal fade" id="dlk_unstake" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content modal-custom">
-            <!--<?php //include('template/modals/dliker_unstake.php'); ?> -->
-            <div class="modal-body ">
-                <div class="transfer-respond">
-                    <h4>UNSTAKE DLIKER Tokens</h4>
-                    <center>
-                    <div id="tsf-msg"></div>
-                    <form action="" id="tsf_sub" method="POST">
-                        <div class="row line">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="hidden" name="dliker_bal" id="dliker_bal" value="<? echo $balance_stake; ?>" />
-                                    <label><b>Balance: </b><?php echo $balance_stake; ?> DLIKER</label>
-                                </div>
-                            </div>
-                        </div>          
-                        <div class="row line">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="input-group mb-3">
-                                        <input type="number" class="form-control send_amt" name="send_amt" value="" placeholder="0.000" />
-                                        <div class="input-group-append">
-                                            <div class="input-group-text mb-deck"> DLIKER</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <center><button type="submit" class="btn btn-default tsf_btn">UNSTAKE DLIKER</button></center>
-                    </form>
-                    </center>
-                </div>
-            </div>
+            <?php include('template/modals/dliker_unstake.php'); ?>
         </div>
     </div>
 </div>
