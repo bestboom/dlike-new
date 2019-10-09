@@ -294,7 +294,7 @@ function getClaimDetails($name,$tokens) {
                         toastr.success("Tokens Staked Successfully!");
                         $('#dlk_stake').hide();
                     } else {
-                        toastr.error("Failed to Unstake!");
+                        toastr.error("Failed to Stake!");
                         $('#dlk_stake').hide();
                     }
                 });
