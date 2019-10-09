@@ -10,8 +10,7 @@ $user_name = $_COOKIE['username'];
 .row-3 { justify-content: space-between;width: 98%;padding: 12px 18px 6px 8px;}
 .row-2 {justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;}
 </style>
-<?
-/*
+<?php
 function get_recent_transactions ($account = "null") {
     $recent = file_get_contents("https://api.steem-engine.com/accounts/history?account=$account&limit=100&offset=0&type=user&symbol=DLIKER");
     try {
@@ -21,7 +20,7 @@ function get_recent_transactions ($account = "null") {
         return (object) [];
     }
 }
-*/
+
 require_once "./lib/SteemEngine.php";
 require_once "./lib/time_string.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
@@ -115,7 +114,7 @@ function getClaimDetails($name,$tokens) {
                 $balances = $_STEEM_ENGINE->get_user_balances($user_name);
                 ?>
                 <div id="claim_dliker" style="background: #c8e0bd;border-radius: 5px;width: 95%;padding: 20px;font-weight: bold;">
-                    <? echo 'Your Pending Rewards: &nbsp;' . $pending_rewards . '&nbsp;DLIKER'; ?>
+                    <?php echo 'Your Pending Rewards: &nbsp;' . $pending_rewards . '&nbsp;DLIKER'; ?>
                     <button class="btn float-right btn-primary" onclick="claimRewards();">Claim Rewards</button>
                 </div>
                 <script>
