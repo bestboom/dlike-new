@@ -253,8 +253,9 @@ function getClaimDetails($name,$tokens) {
 </div>
 <?php include "./template/footer.php"; ?>
                 <script>
-                    $('.shareme').click(function(clickEvent) {
+                    $('.unstake_btn').click(function(clickEvent) {
                         let unstake_amount = $('#unstake_amt').val();
+                        unstakeDliker();
                     })
                     function unstakeDliker() {
                         if(window.steem_keychain) {
