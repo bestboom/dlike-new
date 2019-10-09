@@ -24,7 +24,7 @@
 					</div>
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-default unstake_btn">UNSTAKE DLIKER</button></center>
+			<center><button type="button" class="btn btn-default unstake_btn">UNSTAKE DLIKER</button></center>
 		</form>
 		</center>
 	</div>
