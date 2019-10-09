@@ -13,8 +13,8 @@
 				</div>
 			</div>
 			</center>			
-			<div class="row line" style="margin-bottom:15px;">
-				<div class="col-md-12">
+			<div class="row line">
+				<div class="col-md-12" style="margin-bottom:15px;">
 					<div class="form-group">
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
@@ -24,7 +24,6 @@
 						</div>
 					</div>
 				</div>
-				<br><br>
 				<div class="col-md-12">
 					<div class="form-group">
 						<div class="input-group mb-3">
