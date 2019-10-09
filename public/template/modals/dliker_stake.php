@@ -1,7 +1,7 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
 		<h4>Stake DLIKER Tokens</h4>
-		<div class="alert alert-danger" id="stake-msg"></div>
+		<div class="alert alert-danger" id="stake-msg" style="display: none;"></div>
 		<form action="" id="syake_sub" method="POST">
 			<center>	
 			<div class="row line">

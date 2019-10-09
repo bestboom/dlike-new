@@ -259,7 +259,7 @@ function getClaimDetails($name,$tokens) {
         console.log(unstake_amount);
         console.log(staked_amount);
         if(unstake_amount > staked_amount){
-            $('#unstake-msg').html('Entered value is more than available amount');
+            $('#unstake-msg').html('Entered value is more than available amount').show();
             return false;
         } else {
             if(window.steem_keychain) {
@@ -285,7 +285,7 @@ function getClaimDetails($name,$tokens) {
         console.log(stake_amount);
         console.log(dliker_bal);
         if(stake_amount > dliker_bal){
-            $('#stake-msg').html('Entered value is more than available amount');
+            $('#stake-msg').html('Entered value is more than available amount').show();
             return false;
         } else {
             if(window.steem_keychain) {
