@@ -1,6 +1,6 @@
                 <div class="modal-body ">
                     <div class="transfer-respond">
-                        <h4>DELEGATIONS</h4>
+                        <h4>DELEGATIONS Given</h4>
                         <table class='table table-striped table-bordered table-condensed' style="width: 100%;">
                             <thead>
                             <tr>
@@ -10,6 +10,7 @@
                                 <th>Symbol</th>
                                 <th>Created</th>
                                 <th>Updated</th>
+                                <th>Undelegate</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -29,7 +30,7 @@
                                     if (!isset($delegation->created)) {
                                         $delegation->created = "";
                                     }
-                                    print("<tr><td>$delegation->from</td><td>$delegation->to</td><td>" . (float)$delegation->quantity . "</td><td>$delegation->symbol</td><td data-order='$created_safe'><abbr title='" . epoch_to_time($created_safe, true, true) . "'>" . epoch_to_time($created_safe) . "</abbr></td><td data-order='$updated_safe'><abbr title='" . epoch_to_time($updated_safe, true, true) . "'>$updated</abbr></td></tr>");
+                                    print("<tr><td>$delegation->from</td><td>$delegation->to</td><td>" . (float)$delegation->quantity . "</td><td>$delegation->symbol</td><td data-order='$created_safe'><abbr title='" . epoch_to_time($created_safe, true, true) . "'>" . epoch_to_time($created_safe) . "</abbr></td><td data-order='$updated_safe'><abbr title='" . epoch_to_time($updated_safe, true, true) . "'>$updated</abbr></td><td><i class='fas fa-minus-circle' title='undelegate' style='cursor: pointer;'></i></td></tr>");
                                 }
                             }
                             ?>

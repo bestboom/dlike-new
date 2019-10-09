@@ -1,6 +1,6 @@
                 <div class="modal-body ">
                     <div class="transfer-respond">
-                        <h4>DELEGATIONS</h4>
+                        <h4>DELEGATIONS Recieved</h4>
                         <table class='table table-striped table-bordered table-condensed' style="width: 100%">
                             <thead>
                             <tr>
