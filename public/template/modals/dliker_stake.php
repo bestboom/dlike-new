@@ -25,7 +25,7 @@
 					</div>
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-default stake_btn">STAKE DLIKER</button></center>
+			<center><button type="button" class="btn btn-default stake_btn">STAKE DLIKER</button></center>
 		</form>
 	</div>
 </div>
