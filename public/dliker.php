@@ -257,7 +257,7 @@ function getClaimDetails($name,$tokens) {
                     $('.unstake_btn').click(function(clickEvent) {
                         let unstake_amount = $('#unstake_amt').val();
                         console.log(unstake_amount);
-                        unstakeDliker();
+                        //unstakeDliker();
                     })
                     function unstakeDliker() {
                         if(window.steem_keychain) {
