@@ -3,7 +3,7 @@
 		<h4>UNSTAKE DLIKER Tokens</h4>
 		<center>
 		<div id="unstake-msg"></div>
-		<form action="" id="tsf_sub" method="POST">
+		<form action="" id="unstake_sub" method="POST">
 			<div class="row line">
 				<div class="col-md-12">
 					<div class="form-group">
