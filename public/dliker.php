@@ -263,7 +263,7 @@ function getClaimDetails($name,$tokens) {
             return false;
         } else {
             if(window.steem_keychain) {
-                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake 0.488 DLIKER Tokens", function(response) {
+                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake DLIKER Tokens", function(response) {
                     if (response.success) {
                         toastr.success("Tokens Unstaked Success!");
                         $('#dlk_unstake').hide();
@@ -278,4 +278,30 @@ function getClaimDetails($name,$tokens) {
             }
         }
     })
+
+    $('.stake_btn').click(function(clickEvent) {
+        let stake_amount = $('#stake_amt').val();
+        let dliker_bal = $('#dliker_bal').val();
+        console.log(stake_amount);
+        console.log(dliker_bal);
+        if(stake_amount > dliker_bal){
+            $('#stake-msg').html('Entered value is more than available amount');
+            return false;
+        } else {
+            if(window.steem_keychain) {
+                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"stake","contractPayload":{"to":"<?php echo $user_name; ?>","symbol":"DLIKER","quantity":"'+stake_amount+'"}}', "Stake DLIKER Tokens", function(response) {
+                    if (response.success) {
+                        toastr.success("Tokens Staked Successfully!");
+                        $('#dlk_stake').hide();
+                    } else {
+                        toastr.error("Failed to Unstake!");
+                        $('#dlk_stake').hide();
+                    }
+                });
+            } else {
+                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                win.focus();
+            }
+        }
+    })    
 </script>
