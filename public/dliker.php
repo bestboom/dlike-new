@@ -11,6 +11,7 @@ $user_name = $_COOKIE['username'];
 .row-2 {justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;}
 </style>
 <?
+/*
 function get_recent_transactions ($account = "null") {
     $recent = file_get_contents("https://api.steem-engine.com/accounts/history?account=$account&limit=100&offset=0&type=user&symbol=DLIKER");
     try {
@@ -20,7 +21,7 @@ function get_recent_transactions ($account = "null") {
         return (object) [];
     }
 }
-
+*/
 require_once "./lib/SteemEngine.php";
 require_once "./lib/time_string.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
@@ -252,30 +253,30 @@ function getClaimDetails($name,$tokens) {
     </div>
 </div>
 <?php include "./template/footer.php"; ?>
-                <script>
-                    $('.unstake_btn').click(function(clickEvent) {
-                        let unstake_amount = $('#unstake_amt').val();
-                        let staked_amount = $('#dliker_unstake').val();
-                        console.log(unstake_amount);
-                        console.log(staked_amount);
-                        if(unstake_amount > staked_amount){
-                            $('#unstake-msg').html('Entered value is more than available amount');
-                            return false;
-                        } else {
-                            if(window.steem_keychain) {
-                                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake 0.488 DLIKER Tokens", function(response) {
-                                    if (response.success) {
-                                        toastr.success("Tokens Unstaked Success!");
-                                        $('#dlk_unstake').hide();
-                                    } else {
-                                        toastr.error("Failed to Unstake!");
-                                        $('#dlk_unstake').hide();
-                                    }
-                                });
-                            } else {
-                                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
-                                win.focus();
-                            }
-                        }
-                    })
-                </script>
+<script>
+    $('.unstake_btn').click(function(clickEvent) {
+        let unstake_amount = $('#unstake_amt').val();
+        let staked_amount = $('#dliker_unstake').val();
+        console.log(unstake_amount);
+        console.log(staked_amount);
+        if(unstake_amount > staked_amount){
+            $('#unstake-msg').html('Entered value is more than available amount');
+            return false;
+        } else {
+            if(window.steem_keychain) {
+                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake 0.488 DLIKER Tokens", function(response) {
+                    if (response.success) {
+                        toastr.success("Tokens Unstaked Success!");
+                        $('#dlk_unstake').hide();
+                    } else {
+                        toastr.error("Failed to Unstake!");
+                        $('#dlk_unstake').hide();
+                    }
+                });
+            } else {
+                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                win.focus();
+            }
+        }
+    })
+</script>
