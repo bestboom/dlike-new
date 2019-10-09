@@ -253,26 +253,29 @@ function getClaimDetails($name,$tokens) {
 </div>
 <?php include "./template/footer.php"; ?>
                 <script>
-                    //let unstake_amount = $('#unstake_amt').val();
                     $('.unstake_btn').click(function(clickEvent) {
                         let unstake_amount = $('#unstake_amt').val();
+                        let staked_amount = $('#dliker_unstake').val();
                         console.log(unstake_amount);
-                        //unstakeDliker();
-                    //})
-                    //function unstakeDliker() {
-                        if(window.steem_keychain) {
-                            steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake 0.488 DLIKER Tokens", function(response) {
-                                if (response.success) {
-                                    toastr.success("Tokens Unstaked Success!");
-                                    //$('#claim_dliker').hide();
-                                } else {
-                                    toastr.error("Failed to Unstake!");
-                                }
-                            });
+                        console.log(staked_amount);
+                        if(unstake_amount > staked_amount){
+                            $('#unstake-msg').html('Entered value is more than available amount');
+                            return false;
                         } else {
-                            var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
-                            win.focus();
+                            if(window.steem_keychain) {
+                                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake 0.488 DLIKER Tokens", function(response) {
+                                    if (response.success) {
+                                        toastr.success("Tokens Unstaked Success!");
+                                        $('#unstake_sub').hide();
+                                    } else {
+                                        toastr.error("Failed to Unstake!");
+                                        $('#unstake_sub').hide();
+                                    }
+                                });
+                            } else {
+                                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                                win.focus();
+                            }
                         }
-                    //} 
                     })
                 </script>
