@@ -2,7 +2,7 @@
 	<div class="transfer-respond">
 		<h4>UNSTAKE DLIKER Tokens</h4>
 		<center>
-		<div id="unstake-msg"></div>
+		<div class="alert alert-danger" id="unstake-msg"></div>
 		<form action="" id="unstake_sub" method="POST">
 			<div class="row line">
 				<div class="col-md-12">
