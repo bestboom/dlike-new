@@ -273,6 +273,6 @@ function getClaimDetails($name,$tokens) {
                             var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
                             win.focus();
                         }
-                    //}
-                    })
+                    }
+                    //})
                 </script>
