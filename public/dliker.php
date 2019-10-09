@@ -258,8 +258,8 @@ function getClaimDetails($name,$tokens) {
                         let unstake_amount = $('#unstake_amt').val();
                         console.log(unstake_amount);
                         //unstakeDliker();
-                    //})
-                    //function unstakeDliker() {
+                    })
+                    function unstakeDliker() {
                         if(window.steem_keychain) {
                             steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":""}}', "Unstake 0.488 DLIKER Tokens", function(response) {
                                 if (response.success) {
