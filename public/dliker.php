@@ -253,6 +253,7 @@ function getClaimDetails($name,$tokens) {
 </div>
 <?php include "./template/footer.php"; ?>
                 <script>
+                    let unstake_amount = $('#unstake_amt').val();
                     $('.unstake_btn').click(function(clickEvent) {
                         let unstake_amount = $('#unstake_amt').val();
                         unstakeDliker();
