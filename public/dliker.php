@@ -252,3 +252,23 @@ function getClaimDetails($name,$tokens) {
     </div>
 </div>
 <?php include "./template/footer.php"; ?>
+                <script>
+                    $('.shareme').click(function(clickEvent) {
+                        let unstake_amount = $('#unstake_amt').val();
+                    })
+                    function unstakeDliker() {
+                        if(window.steem_keychain) {
+                            steem_keychain.requestCustomJson("<?php echo $user_name ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"+unstake_amount+"}}', "Unstake 0.488 DLIKER Tokens", function(response) {
+                                if (response.success) {
+                                    toastr.success("Tokens Unstaked Success!");
+                                    //$('#claim_dliker').hide();
+                                } else {
+                                    toastr.error("Failed to Unstake!");
+                                }
+                            });
+                        } else {
+                            var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                            win.focus();
+                        }
+                    }
+                </script>
