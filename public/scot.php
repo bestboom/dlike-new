@@ -118,7 +118,7 @@ $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response, TRUE);
 echo '<br/>';
 $og_title = $sct_result[0];
-var_dump($og_title)
+var_dump($og_title);
 
 echo '<br/>';
 echo $meta_data = $sct_result['DLIKER']['json_metadata'];
