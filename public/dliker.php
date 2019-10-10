@@ -284,7 +284,7 @@ function getClaimDetails($name,$tokens) {
         let dliker_bal = parseFloat($('#dliker_bal').val());
         console.log(stake_amount);
         console.log(dliker_bal);
-        if(stake_amount > dliker_bal){
+        if(parseFloat(stake_amount > dliker_bal)){
             $('#stake-msg').html('Entered value is more than available amount').show();
             return false;
         } else {
