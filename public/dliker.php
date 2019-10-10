@@ -258,7 +258,7 @@ function getClaimDetails($name,$tokens) {
         let staked_amount = $('#dliker_unstake').val();
         console.log(unstake_amount);
         console.log(staked_amount);
-        if(unstake_amount > staked_amount){
+        if(parseFloat(unstake_amount) > parseFloat(staked_amount)){
             $('#unstake-msg').html('Entered value is more than available amount').show();
             return false;
         } else {
