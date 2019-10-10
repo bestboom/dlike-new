@@ -280,8 +280,8 @@ function getClaimDetails($name,$tokens) {
     })
 
     $('.stake_btn').click(function(clickEvent) {
-        let stake_amount = $('#stake_amt').val();
-        let dliker_bal = $('#dliker_bal').val();
+        let stake_amount = parseFloat($('#stake_amt').val());
+        let dliker_bal = parseFloat($('#dliker_bal').val());
         console.log(stake_amount);
         console.log(dliker_bal);
         if(stake_amount > dliker_bal){
@@ -292,10 +292,10 @@ function getClaimDetails($name,$tokens) {
                 steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"stake","contractPayload":{"to":"<?php echo $user_name; ?>","symbol":"DLIKER","quantity":"'+stake_amount+'"}}', "Stake DLIKER Tokens", function(response) {
                     if (response.success) {
                         toastr.success("Tokens Staked Successfully!");
-                        $('#dlk_stake').hide();
+                        $('#dlk_stake').modal(hide);
                     } else {
                         toastr.error("Failed to Stake!");
-                        $('#dlk_stake').hide();
+                        $('#dlk_stake').modal(hide);
                     }
                 });
             } else {
