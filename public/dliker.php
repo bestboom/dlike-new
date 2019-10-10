@@ -280,8 +280,8 @@ function getClaimDetails($name,$tokens) {
     })
 
     $('.stake_btn').click(function(clickEvent) {
-        let stake_amount = parseFloat($('#stake_amt').val());
-        let dliker_bal = parseFloat($('#dliker_bal').val());
+        let stake_amount = $('#stake_amt').val();
+        let dliker_bal = $('#dliker_bal').val();
         console.log(stake_amount);
         console.log(dliker_bal);
         if(parseFloat(stake_amount > dliker_bal)){
