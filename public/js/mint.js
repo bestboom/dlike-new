@@ -209,11 +209,11 @@
 
             let proms = [];
 
-            if (words.length > 20) {
-                const segments = arrayTo2DArray(words, 20);
+            if (words.length > 27) {
+                const segments = arrayTo2DArray(words, 27);
                 for (let segment of segments) {
                     console.log(segment, segment.join(' '));
-                    if (segment.length > 19) {
+                    if (segment.length > 26) {
                         proms.push(checkPlagiarism(segment.join(' ')));
                     }
                 }
