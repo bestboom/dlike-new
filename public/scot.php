@@ -110,14 +110,14 @@ function googleCSEQueryCheck($searchQuery,$domain='com') {
 
 -->
 <?
-$link = 'lil-don-trump-and-how-the-cookie-crumbles';
-$user = '@mitty';
+$link = 'steemfest-2019-limited-shirt';
+$user = '@steemstyle-io';
 
 echo $scot_url = "https://scot-api.steem-engine.com/$user/$link";
 $sct_response = file_get_contents($scot_url);
 $sct_result = json_decode($sct_response, TRUE);
 echo '<br/>';
-$og_title = $sct_result['DLIKER']['title'];
+echo $og_title = $sct_result[0]['title'];
 
 echo '<br/>';
 echo $meta_data = $sct_result['DLIKER']['json_metadata'];
