@@ -292,10 +292,10 @@ function getClaimDetails($name,$tokens) {
                 steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"stake","contractPayload":{"to":"<?php echo $user_name; ?>","symbol":"DLIKER","quantity":"'+stake_amount+'"}}', "Stake DLIKER Tokens", function(response) {
                     if (response.success) {
                         toastr.success("Tokens Staked Successfully!");
-                        $('#dlk_stake').modal(hide);
+                        $('#dlk_stake').modal('hide');
                     } else {
                         toastr.error("Failed to Stake!");
-                        $('#dlk_stake').modal(hide);
+                        $('#dlk_stake').modal('hide');
                     }
                 });
             } else {
