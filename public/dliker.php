@@ -317,13 +317,13 @@ function getClaimDetails($name,$tokens) {
             return false;
         } else {
             if(window.steem_keychain) {
-                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"to":"'+delegate_to+'","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Stake DLIKER Tokens", function(response) {
+                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"to":"'+delegate_to+'","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Delegate DLIKER Tokens", function(response) {
                     if (response.success) {
                         toastr.success("Tokens Delegated Successfully!");
-                        $('#dlk_stake').modal('hide');
+                        $('#dlk_delegate').modal('hide');
                     } else {
                         toastr.error("Failed to Delegate!");
-                        $('#dlk_stake').modal('hide');
+                        $('#dlk_delegate').modal('hide');
                     }
                 });
             } else {
@@ -331,5 +331,35 @@ function getClaimDetails($name,$tokens) {
                 win.focus();
             }
         }
-    })        
+    })  
+
+
+    $('.transfer_btn').click(function(clickEvent) {
+        let transfer_amount = $('#transfer_amt').val();
+        let my_dliker_bal = $('#my_dliker_bal').val();
+        let transfer_to = $('#transfer_to').val();
+        let memo = $('#trs_memo').val();
+        
+        console.log(transfer_amount);
+        console.log(my_dliker_bal);
+        if(parseFloat(transfer_amount) > parseFloat(my_dliker_bal)){
+            $('#transfer-msg').html('Entered value is more than available amount').show();
+            return false;
+        } else {
+            if(window.steem_keychain) {
+                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"transfer","contractPayload":{"to":"'+transfer_to+'","symbol":"DLIKER","quantity":"'+transfer_amount+'","memo":"'+memo+'"}}', "Transfer DLIKER Tokens", function(response) {
+                    if (response.success) {
+                        toastr.success("Tokens Transfered Successfully!");
+                        $('#dlk_transfer').modal('hide');
+                    } else {
+                        toastr.error("Failed to Transfer!");
+                        $('#dlk_transfer').modal('hide');
+                    }
+                });
+            } else {
+                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                win.focus();
+            }
+        }
+    })           
 </script>
