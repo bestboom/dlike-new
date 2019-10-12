@@ -1,7 +1,7 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
 		<h4>Delegate DLIKER Tokens</h4>
-		<div id="delegate-msg"></div>
+		<div class="alert alert-danger" id="delegate-msg"></div>
 		<form action="" id="delegate_sub" method="POST">
 			<center>	
 			<div class="row">

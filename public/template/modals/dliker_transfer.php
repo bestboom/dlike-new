@@ -1,7 +1,7 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
 		<h4>Transfer DLIKER Tokens</h4>
-		<div id="transfer-msg"></div>
+		<div class="alert alert-danger" id="transfer-msg"></div>
 		<form action="" id="tsf_sub" method="POST">
 			<div class="row line">
 				<div class="col-md-6">
