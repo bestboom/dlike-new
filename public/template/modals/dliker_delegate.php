@@ -20,14 +20,14 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text mb-deck"> @</div>
 							</div>
-							<input type="text" class="form-control reciever" name="reciever" value="" />
+							<input type="text" class="form-control reciever" id="delegate_to" value="" />
 						</div>
 					</div>
 				</div>
 				<div class="col-md-12">
 					<div class="form-group">
 						<div class="input-group mb-3">
-							<input type="number" class="form-control" name="delegate_amt" value="" placeholder="0.000" />
+							<input type="number" class="form-control" id="delegate_amt" value="" placeholder="0.000" />
 							<div class="input-group-append">
 								<div class="input-group-text mb-deck"> DLIKER</div>
 							</div>

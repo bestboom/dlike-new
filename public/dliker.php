@@ -308,6 +308,8 @@ function getClaimDetails($name,$tokens) {
     $('.delegate_btn').click(function(clickEvent) {
         let delegate_amount = $('#delegate_amt').val();
         let staked_bal = $('#dliker_staked_bal').val();
+        let delegate_to = $('#delegate_to').val();
+        
         console.log(delegate_amount);
         console.log(staked_bal);
         if(parseFloat(delegate_amount) > parseFloat(staked_bal)){
@@ -315,7 +317,7 @@ function getClaimDetails($name,$tokens) {
             return false;
         } else {
             if(window.steem_keychain) {
-                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"stake","contractPayload":{"to":"<?php echo $user_name; ?>","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Stake DLIKER Tokens", function(response) {
+                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"to":"'+delegate_to+'","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Stake DLIKER Tokens", function(response) {
                     if (response.success) {
                         toastr.success("Tokens Delegated Successfully!");
                         $('#dlk_stake').modal('hide');
