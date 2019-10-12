@@ -303,5 +303,31 @@ function getClaimDetails($name,$tokens) {
                 win.focus();
             }
         }
-    })    
+    })  
+
+    $('.delegate_btn').click(function(clickEvent) {
+        let delegate_amount = $('#delegate_amt').val();
+        let staked_bal = $('#dliker_staked_bal').val();
+        console.log(delegate_amount);
+        console.log(staked_bal);
+        if(parseFloat(delegate_amount) > parseFloat(staked_bal)){
+            $('#delegate-msg').html('Entered value is more than available amount').show();
+            return false;
+        } else {
+            if(window.steem_keychain) {
+                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"stake","contractPayload":{"to":"<?php echo $user_name; ?>","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Stake DLIKER Tokens", function(response) {
+                    if (response.success) {
+                        toastr.success("Tokens Delegated Successfully!");
+                        $('#dlk_stake').modal('hide');
+                    } else {
+                        toastr.error("Failed to Delegate!");
+                        $('#dlk_stake').modal('hide');
+                    }
+                });
+            } else {
+                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                win.focus();
+            }
+        }
+    })        
 </script>
