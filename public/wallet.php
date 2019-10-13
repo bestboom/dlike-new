@@ -628,7 +628,7 @@ if ($user_eth == '') {
         let send_amt = parseInt($(".send_amt").val());
         let user_bal = parseInt($("#user_bal").val()) || 0;
         let sender    = '<?php echo $_COOKIE['username']; ?>';
-        console.log(user_bal);
+        //console.log(user_bal);
 
         if (reciever == sender) {
             toastr.error('phew... Cant send to own account');
