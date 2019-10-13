@@ -4,8 +4,6 @@ include('../includes/config.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-
 ?>
 
 
@@ -17,13 +15,13 @@ error_reporting(E_ALL);
 					<th scope="col" class="cent_me wid_2">ID</th>
 					<th scope="col" class="cent_me wid_2">Username</th>
 					<th scope="col" class="cent_me wid_2">Amount</th>
-					<th scope="col" class="cent_me wid_2">Reason/th>
+					<th scope="col" class="cent_me wid_2">Reason</th>
 					<th scope="col" class="cent_me wid_2">Time</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php 
-				$sql_T = "SELECT * FROM staking ORDER BY start_time DESC";
+				$sql_T = "SELECT * FROM transactions ORDER BY trx_time DESC";
 				$result_T = $conn->query($sql_T);
 
 				if ($result_T && $result_T->num_rows > 0) {
