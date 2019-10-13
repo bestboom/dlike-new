@@ -105,7 +105,7 @@ if ($user_eth == '') {
                                     <p class="coins-detail">
                                         Native Token for DLIKE Platform
                                         <span class="coins-match">
-                                                <a href="" data-toggle="modal" data-target="#tk_transfer">Transfer</a>
+                                                <a href="" data-toggle="modal" data-target="#tk_transfers">Transfer</a>
                                             </span>
                                     </p>
                                     <hr class="wal_hr">
