@@ -6,11 +6,19 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$id = 802;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 
 
 ?>
-
 <!--
 $sqlw = "DELETE FROM `steemposts` 
   WHERE id NOT IN (
