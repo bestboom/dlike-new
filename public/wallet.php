@@ -105,7 +105,7 @@ if ($user_eth == '') {
                                     <p class="coins-detail">
                                         Native Token for DLIKE Platform
                                         <span class="coins-match">
-                                                <a href="" data-toggle="modal" data-target="#tk_transfers">Transfer</a>
+                                                <a href="" data-toggle="modal" data-target="#tk_transfer">Transfer</a>
                                             </span>
                                     </p>
                                     <hr class="wal_hr">
@@ -629,11 +629,14 @@ if ($user_eth == '') {
         let user_bal = parseInt($("#user_bal").val()) || 0;
         console.log(user_bal);
 
+        if (reciever == USERNAME) {
+            toastr.error('phew... Cant send to own account');
+            return false;
+        }
         if (!reciever) {
             toastr.error('phew... Enter Reciever Name');
             return false;
         }
-
         if (!send_amt) {
             toastr.error('phew... Enter Amount To Send');
             return false;
