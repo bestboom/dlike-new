@@ -6,9 +6,9 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$id = 3962;
+$id = 115042;
 
-$sqlw = "DELETE FROM staking WHERE id = '$id'";
+$sqlw = "DELETE FROM transactions WHERE id = '$id'";
 
 if ($conn->query($sqlw) === TRUE) {
     echo "Row DELETED successfully";
