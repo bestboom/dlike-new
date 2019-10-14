@@ -47,7 +47,7 @@ $postGenerator = new dlike\post\makePost();
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 5)
 	];
 	$posting_user = $_COOKIE['username'];
-	$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE Link</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+	$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
 
 	if (empty($errors)) {
