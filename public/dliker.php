@@ -339,9 +339,11 @@ function getClaimDetails($name,$tokens) {
         let my_dliker_bal = $('#my_dliker_bal').val();
         let transfer_to = $('#transfer_to').val();
         let memo = $('#trs_memo').val();
+
+        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=";
         
-        console.log(transfer_amount);
-        console.log(my_dliker_bal);
+        //$url = "https://v2.steemconnect.com/sign/custom-json?required_auths=" . urlencode(json_encode(["cadawg"])) . "&required_posting_auths=" . urlencode("[]") . "&id=ssc-mainnet1" . urlencode(json_encode(["contractName" => "tokens","contractAction" => "transfer","contractPayload" => ["symbol" => "DLIKER","quantity" =>".448"]]));
+
         if(parseFloat(transfer_amount) > parseFloat(my_dliker_bal)){
             $('#transfer-msg').html('Entered value is more than available amount').show();
             return false;
@@ -357,7 +359,7 @@ function getClaimDetails($name,$tokens) {
                     }
                 });
             } else {
-                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+                var win = window.open(transfer_url, '_blank');
                 win.focus();
             }
         }
