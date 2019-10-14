@@ -340,7 +340,7 @@ function getClaimDetails($name,$tokens) {
         let transfer_to = $('#transfer_to').val();
         let memo = $('#trs_memo').val();
 
-        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22"<?php echo $user_name; ?>"%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22%22%2C%22"transfer_to"%22%2C%22quantity%22%3A%22"transfer_amount"%22%7D%7D";
+        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22"<?php echo $user_name; ?>"%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22%22%2C%22"+transfer_to+"%22%2C%22quantity%22%3A%22"+transfer_amount+"%22%7D%7D";
         
         //$url = "https://v2.steemconnect.com/sign/custom-json?required_auths=" . urlencode(json_encode(["cadawg"])) . "&required_posting_auths=" . urlencode("[]") . "&id=ssc-mainnet1" . urlencode(json_encode(["contractName" => "tokens","contractAction" => "transfer","contractPayload" => ["symbol" => "DLIKER","quantity" =>".448"]]));
 
