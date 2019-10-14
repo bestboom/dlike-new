@@ -340,7 +340,7 @@ function getClaimDetails($name,$tokens) {
         let transfer_to = $('#transfer_to').val();
         let memo = $('#trs_memo').val();
 
-        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=";
+        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=" . urlencode(json_encode(["cadawg"])) . "&required_posting_auths=" . urlencode("[]") . "&id=ssc-mainnet1" . urlencode(json_encode(["contractName" => "tokens","contractAction" => "transfer","contractPayload" => ["symbol" => "DLIKER","quantity" =>".448"]]));
         
         //$url = "https://v2.steemconnect.com/sign/custom-json?required_auths=" . urlencode(json_encode(["cadawg"])) . "&required_posting_auths=" . urlencode("[]") . "&id=ssc-mainnet1" . urlencode(json_encode(["contractName" => "tokens","contractAction" => "transfer","contractPayload" => ["symbol" => "DLIKER","quantity" =>".448"]]));
 
