@@ -6,16 +6,6 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$id = 114812;
-
-$sqlw = "DELETE FROM transactions WHERE id = '$id'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
 
 ?>
 <!--
