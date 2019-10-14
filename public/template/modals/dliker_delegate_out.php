@@ -25,12 +25,12 @@
                                     if ((int)$updated_safe === (int)$created_safe) {
                                         $updated = "";
                                     } else {
-                                        $updated = epoch_to_time(strtotime($delegation->updated));
+                                        $updated = epoch_to_time($delegation->updated);
                                     }
                                     if (!isset($delegation->created)) {
                                         $delegation->created = "";
                                     }
-                                    print("<tr><td>$delegation->from</td><td>$delegation->to</td><td>" . (float)$delegation->quantity . "</td><td>$delegation->symbol</td><td data-order='$created_safe'><abbr title='" . epoch_to_time($created_safe, true, true) . "'>" . epoch_to_time(strtotime($created_safe)) . "</abbr></td><td data-order='$updated_safe'><abbr title='" . epoch_to_time($updated_safe, true, true) . "'>$updated</abbr></td><td><center><i class='fas fa-minus-circle' title='undelegate' style='cursor: pointer;'></i></center></td></tr>");
+                                    print("<tr><td>$delegation->from</td><td>$delegation->to</td><td>" . (float)$delegation->quantity . "</td><td>$delegation->symbol</td><td data-order='$created_safe'><abbr title='" . epoch_to_time($created_safe, true, true) . "'>" . epoch_to_time($created_safe) . "</abbr></td><td data-order='$updated_safe'><abbr title='" . epoch_to_time($updated_safe, true, true) . "'>$updated</abbr></td><td><center><i class='fas fa-minus-circle' title='undelegate' style='cursor: pointer;'></i></center></td></tr>");
                                 }
                             }
                             ?>
