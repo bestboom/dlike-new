@@ -25,7 +25,7 @@
                                     if ((int)$updated_safe === (int)$created_safe) {
                                         $updated = "";
                                     } else {
-                                        $updated = epoch_to_time(strtotime($delegation->updated));
+                                        $updated = epoch_to_time($delegation->updated);
                                     }
                                     if (!isset($delegation->created)) {
                                         $delegation->created = "";
