@@ -346,6 +346,10 @@ function getClaimDetails($name,$tokens) {
             $('#transfer-msg').html('Please enter receiver name').show();
             return false;
         }
+        if(transfer_amount == "") {  
+            $('#transfer-msg').html('Please enter tokens amount').show();
+            return false;
+        }        
         //} else {
         if(window.steem_keychain) {
             steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"transfer","contractPayload":{"to":"'+transfer_to+'","symbol":"DLIKER","quantity":"'+transfer_amount+'","memo":"'+memo+'"}}', "Transfer DLIKER Tokens", function(response) {
