@@ -42,7 +42,7 @@ function getClaimDetails($name,$tokens) {
             $arr[]=["symbol"=>$token];
         }
         $json=json_encode($arr);
-        $url="https://steemconnect.com/sign/custom-json?required_posting_auths=".urlencode("[\"".$name."\"]")."&id=scot_claim_token&json=".urlencode($json);
+        $url="https://steemconnect.com/sign/custom-json?required_posting_auths=".urlencode("[\"".$name."\"]")."&authority=active&id=scot_claim_token&json=".urlencode($json);
         return [$url,["scot_claim_token", $json, $name]];
     }
     return [];
