@@ -1,7 +1,7 @@
 <div class="modal-body ">
 	<div class="transfer-respond">
 		<h4>Delegate DLIKER Tokens</h4>
-		<div class="alert alert-danger" id="delegate-msg"></div>
+		<div class="alert alert-danger" id="delegate-msg" style="display: none;></div>
 		<form action="" id="delegate_sub" method="POST">
 			<center>	
 			<div class="row">
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<center><button type="submit" class="btn btn-default delegate_btn">DELEGATE DLIKER</button></center>
+			<center><button type="button" class="btn btn-default delegate_btn">DELEGATE DLIKER</button></center>
 		</form>
 	</div>
 
