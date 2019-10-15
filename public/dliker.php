@@ -351,34 +351,25 @@ function getClaimDetails($name,$tokens) {
 
     $('.undelegate_btn').click(function(clickEvent) {
         var amount = $(this).closest("tr").find(".amt").text();
+        var from = $(this).closest("tr").find(".from").text();
         console.log(amount);
-        let delegate_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22delegate%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+delegate_to+"%22%2C%22quantity%22%3A%22"+delegate_amount+"%22%7D%7D";        
-        
-        if(parseFloat(delegate_amount) > parseFloat(staked_bal)){
-            $('#delegate-msg').html('Entered value is more than available amount').show();
-            return false;
-        }  
-        if(delegate_to == "") {  
-            $('#delegate-msg').html('Please enter receiver name').show();
-            return false;
-        }
-        if(delegate_amount == ""){
-            $('#delegate-msg').html('Please enter tokens amount').show();
-            return false;
-        }        
+        console.log(from);
+
+        let undelegate_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22undelegate%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22from%22%3A%22"+from+"%22%2C%22quantity%22%3A%22"+amount+"%22%7D%7D";        
+               
         if(window.steem_keychain) {
-            steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"to":"'+delegate_to+'","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Delegate DLIKER Tokens", function(response) {
+            steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"from":"'+from+'","symbol":"DLIKER","quantity":"'+amount+'"}}', "UnDelegate DLIKER Tokens", function(response) {
                 if (response.success) {
-                    toastr.success("Tokens Delegated Successfully!");
-                    $('#dlk_delegate').modal('hide');
+                    toastr.success("Tokens UnDelegated Successfully!");
+                    $('#dlk_delegation_out').modal('hide');
                 } else {
-                    toastr.error("Failed to Delegate!");
-                    $('#dlk_delegate').modal('hide');
+                    toastr.error("Failed to UnDelegate!");
+                    $('#dlk_delegation_out').modal('hide');
                 }
             });
         }
         if(!window.steem_keychain) {
-            var win = window.open(delegate_url, '_blank');
+            var win = window.open(undelegate_url, '_blank');
             win.focus();           
         }
     })  
