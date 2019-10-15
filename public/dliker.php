@@ -341,7 +341,8 @@ function getClaimDetails($name,$tokens) {
         if(parseFloat(transfer_amount) > parseFloat(my_dliker_bal)){
             $('#transfer-msg').html('Entered value is more than available amount').show();
             return false;
-        } else {
+        }    
+        //} else {
             if(window.steem_keychain) {
                 steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"transfer","contractPayload":{"to":"'+transfer_to+'","symbol":"DLIKER","quantity":"'+transfer_amount+'","memo":"'+memo+'"}}', "Transfer DLIKER Tokens", function(response) {
                     if (response.success) {
@@ -356,6 +357,6 @@ function getClaimDetails($name,$tokens) {
                 var win = window.open(transfer_url, '_blank');
                 win.focus();
             }
-        }
+        //}
     })           
 </script>
