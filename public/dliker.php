@@ -285,7 +285,7 @@ function getClaimDetails($name,$tokens) {
         let stake_amount = $('#stake_amt').val();
         let dliker_bal = $('#dliker_bal').val();
 
-        let stake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22stake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22quantity%22%3A%22"+stake_amount+"%22%7D%7D";          
+        let stake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22stake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22<?php echo $user_name; ?>%22%2C%22quantity%22%3A%22"+stake_amount+"%22%7D%7D";          
 
         if(parseFloat(stake_amount) > parseFloat(dliker_bal)){
             $('#stake-msg').html('Entered value is more than available amount').show();
