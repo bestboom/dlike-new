@@ -335,14 +335,7 @@ function getClaimDetails($name,$tokens) {
         }
         if(!window.steem_keychain) {
             var win = window.open(delegate_url, '_blank');
-            win.focus();
-                if (response.success) {
-                    toastr.success("Tokens Delegated Successfully!");
-                    $('#dlk_delegate').modal('hide');
-                } else {
-                    toastr.error("Failed to Delegate!");
-                    $('#dlk_delegate').modal('hide');
-                }            
+            win.focus();           
         }
     })  
 
