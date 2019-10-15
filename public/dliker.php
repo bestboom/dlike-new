@@ -343,20 +343,21 @@ function getClaimDetails($name,$tokens) {
             return false;
         }    
         //} else {
-            if(window.steem_keychain) {
-                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"transfer","contractPayload":{"to":"'+transfer_to+'","symbol":"DLIKER","quantity":"'+transfer_amount+'","memo":"'+memo+'"}}', "Transfer DLIKER Tokens", function(response) {
-                    if (response.success) {
-                        toastr.success("Tokens Transfered Successfully!");
-                        $('#dlk_transfer').modal('hide');
-                    } else {
-                        toastr.error("Failed to Transfer!");
-                        $('#dlk_transfer').modal('hide');
-                    }
-                });
-            } else {
-                var win = window.open(transfer_url, '_blank');
-                win.focus();
-            }
+        if(window.steem_keychain) {
+            steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"transfer","contractPayload":{"to":"'+transfer_to+'","symbol":"DLIKER","quantity":"'+transfer_amount+'","memo":"'+memo+'"}}', "Transfer DLIKER Tokens", function(response) {
+                if (response.success) {
+                    toastr.success("Tokens Transfered Successfully!");
+                    $('#dlk_transfer').modal('hide');
+                } else {
+                    toastr.error("Failed to Transfer!");
+                    $('#dlk_transfer').modal('hide');
+                }
+            });
+        } 
+        if(!window.steem_keychain) {
+            var win = window.open(transfer_url, '_blank');
+            win.focus();
+        }
         //}
     })           
 </script>
