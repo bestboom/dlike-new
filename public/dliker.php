@@ -313,7 +313,15 @@ function getClaimDetails($name,$tokens) {
         if(parseFloat(delegate_amount) > parseFloat(staked_bal)){
             $('#delegate-msg').html('Entered value is more than available amount').show();
             return false;
+        }  
+        if(delegate_to == "") {  
+            $('#delegate-msg').html('Please enter receiver name').show();
+            return false;
         }
+        if(delegate_amount == ""){
+            $('#delegate-msg').html('Please enter tokens amount').show();
+            return false;
+        }        
         if(window.steem_keychain) {
             steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"to":"'+delegate_to+'","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Delegate DLIKER Tokens", function(response) {
                 if (response.success) {
