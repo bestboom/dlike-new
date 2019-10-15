@@ -1,4 +1,4 @@
-                <div class="modal-body ">
+                <div class="modal-body">
                     <div class="transfer-respond">
                         <h4>DELEGATIONS Given</h4>
                         <table class='table table-striped table-bordered table-condensed' style="width: 100%;" id="undelegate_tb">
