@@ -257,24 +257,30 @@ function getClaimDetails($name,$tokens) {
         let unstake_amount = $('#unstake_amt').val();
         let staked_amount = $('#dliker_unstake').val();
 
+        let unstake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22unstake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22quantity%22%3A%22"+unstake_amount+"%22%7D%7D";         
+
         if(parseFloat(unstake_amount) > parseFloat(staked_amount)){
             $('#unstake-msg').html('Entered value is more than available amount').show();
             return false;
-        } else {
-            if(window.steem_keychain) {
-                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake DLIKER Tokens", function(response) {
-                    if (response.success) {
-                        toastr.success("Tokens Unstaked Success!");
-                        $('#dlk_unstake').modal('hide');
-                    } else {
-                        toastr.error("Failed to Unstake!");
-                        $('#dlk_unstake').modal('hide');
-                    }
-                });
-            } else {
-                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
-                win.focus();
-            }
+        }
+        if(unstake_amount == ""){
+            $('#unstake-msg').html('Please enter tokens amount').show();
+            return false;
+        } 
+        if(window.steem_keychain) {
+            steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"unstake","contractPayload":{"symbol":"DLIKER","quantity":"'+unstake_amount+'"}}', "Unstake DLIKER Tokens", function(response) {
+                if (response.success) {
+                    toastr.success("Tokens Unstaked Success!");
+                    $('#dlk_unstake').modal('hide');
+                } else {
+                    toastr.error("Failed to Unstake!");
+                    $('#dlk_unstake').modal('hide');
+                }
+            });
+        }
+        if(!window.steem_keychain) {
+            var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+            win.focus();
         }
     })
 
@@ -282,11 +288,17 @@ function getClaimDetails($name,$tokens) {
         let stake_amount = $('#stake_amt').val();
         let dliker_bal = $('#dliker_bal').val();
 
+        let stake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22stake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22quantity%22%3A%22"+stake_amount+"%22%7D%7D";          
+
         if(parseFloat(stake_amount) > parseFloat(dliker_bal)){
             $('#stake-msg').html('Entered value is more than available amount').show();
             return false;
-        } else {
-            if(window.steem_keychain) {
+        }
+        if(stake_amount == ""){
+            $('#stake-msg').html('Please enter tokens amount').show();
+            return false;
+        } 
+        if(window.steem_keychain) {
                 steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"stake","contractPayload":{"to":"<?php echo $user_name; ?>","symbol":"DLIKER","quantity":"'+stake_amount+'"}}', "Stake DLIKER Tokens", function(response) {
                     if (response.success) {
                         toastr.success("Tokens Staked Successfully!");
@@ -296,10 +308,10 @@ function getClaimDetails($name,$tokens) {
                         $('#dlk_stake').modal('hide');
                     }
                 });
-            } else {
-                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
-                win.focus();
-            }
+        }
+        if(!window.steem_keychain) {
+            var win = window.open(stake_url, '_blank');
+            win.focus();
         }
     })  
 
