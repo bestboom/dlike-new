@@ -43,7 +43,7 @@ $row_C = $result_C->fetch_assoc() or die($conn->error);
 			</thead>
 			<tbody>
 				<?php 
-				$sql_T = "SELECT * FROM prousers ORDER BY buy_time DESC";
+				$sql_T = "SELECT * FROM prousers ORDER BY id DESC";
 				$result_T = $conn->query($sql_T);
 
 				if ($result_T && $result_T->num_rows > 0) {
