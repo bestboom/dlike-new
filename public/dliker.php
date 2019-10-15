@@ -102,7 +102,6 @@ function get_recent_transactions ($account = "null") {
     ?>
 
 <div class="catagori-section">
-    <div id="loadings"><img src="/images/loader.svg" width="100"></div>
     <div class="container">
         <div class="row">
             <?php
@@ -249,10 +248,7 @@ function get_recent_transactions ($account = "null") {
     </div>
 </div>
 <?php include "./template/footer.php"; ?>
-<script>
-    $( document ).ready(function() {    
-        $('#loadings').delay(6000).fadeOut('slow');
-    })    
+<script> 
     $('.unstake_btn').click(function(clickEvent) {
         let unstake_amount = $('#unstake_amt').val();
         let staked_amount = $('#dliker_unstake').val();
