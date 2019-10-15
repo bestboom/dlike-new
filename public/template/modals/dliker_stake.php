@@ -17,7 +17,7 @@
 				<div class="col-md-12">
 					<div class="form-group">
 						<div class="input-group mb-3">
-							<input type="number" class="form-control" id="stake_amt" value="" placeholder="0.000" />
+							<input type="number" class="form-control" id="stake_amt" value="" placeholder="0.000" step="any" />
 							<div class="input-group-append">
 								<div class="input-group-text mb-deck"> DLIKER</div>
 							</div>
