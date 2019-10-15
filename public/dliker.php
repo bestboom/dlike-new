@@ -1,5 +1,4 @@
 <?php
-
 include "./template/header5.php"; 
 $user_name = $_COOKIE['username'];
 ?>
@@ -9,16 +8,6 @@ $user_name = $_COOKIE['username'];
 .row-2 {justify-content: space-between;background-color: #f4f4f4;width: 98%;padding: 12px 18px 12px 8px;}
 </style>
 <?php
-function get_recent_transactions ($account = "null") {
-    $recent = file_get_contents("https://api.steem-engine.com/accounts/history?account=$account&limit=100&offset=0&type=user&symbol=DLIKER");
-    try {
-        $json = json_decode($recent);
-        return $json;
-    } catch (Exception $exception) {
-        return (object) [];
-    }
-}
-
 require_once "./lib/SteemEngine.php";
 require_once "./lib/time_string.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
@@ -46,6 +35,16 @@ function getClaimDetails($name,$tokens) {
         return [$url,["scot_claim_token", $json, $name]];
     }
     return [];
+}
+
+function get_recent_transactions ($account = "null") {
+    $recent = file_get_contents("https://api.steem-engine.com/accounts/history?account=$account&limit=100&offset=0&type=user&symbol=DLIKER");
+    try {
+        $json = json_decode($recent);
+        return $json;
+    } catch (Exception $exception) {
+        return (object) [];
+    }
 }
 
         $balances = $_STEEM_ENGINE->get_user_balances($user_name);
@@ -103,6 +102,7 @@ function getClaimDetails($name,$tokens) {
     ?>
 
 <div class="catagori-section">
+    <div id="loadings"><img src="/images/loader.svg" width="100"></div>
     <div class="container">
         <div class="row">
             <?php
@@ -250,6 +250,9 @@ function getClaimDetails($name,$tokens) {
 </div>
 <?php include "./template/footer.php"; ?>
 <script>
+    $( document ).ready(function() {    
+        $('#loadings').delay(6000).fadeOut('slow');
+    })    
     $('.unstake_btn').click(function(clickEvent) {
         let unstake_amount = $('#unstake_amt').val();
         let staked_amount = $('#dliker_unstake').val();
