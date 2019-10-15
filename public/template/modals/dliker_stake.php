@@ -2,7 +2,7 @@
 	<div class="transfer-respond">
 		<h4>Stake DLIKER Tokens</h4>
 		<div class="alert alert-danger" id="stake-msg" style="display: none;"></div>
-		<form action="" id="syake_sub" method="POST">
+		<form id="stake_sub">
 			<center>	
 			<div class="row line">
 				<div class="col-md-12">

@@ -2,7 +2,7 @@
 	<div class="transfer-respond">
 		<h4>Delegate DLIKER Tokens</h4>
 		<div class="alert alert-danger" id="delegate-msg" style="display: none;"></div>
-		<form action="" id="delegate_sub" method="POST">
+		<form id="delegate_sub">
 			<center>	
 			<div class="row">
 				<div class="col-md-12">
