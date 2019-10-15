@@ -352,7 +352,7 @@ function getClaimDetails($name,$tokens) {
     $('.undelegate_btn').click(function(clickEvent) {
         var amount = $(this).closest("tr").find(".amt").text();
         console.log(amount);
-        let delegate_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22delegate%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+delegate_to+"%22%2C%22quantity%22%3A%22"+delegate_amount+"%22%7D%7D";        
+        let delegate_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22delegate%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+delegate_to+"%22%2C%22quantity%22%3A%22"+delegate_amount+"%22%7D%7D";        
         
         if(parseFloat(delegate_amount) > parseFloat(staked_bal)){
             $('#delegate-msg').html('Entered value is more than available amount').show();
