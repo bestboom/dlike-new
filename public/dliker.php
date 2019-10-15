@@ -308,7 +308,7 @@ function getClaimDetails($name,$tokens) {
         let staked_bal = $('#dliker_staked_bal').val();
         let delegate_to = $.trim($('#delegate_to').val());
 
-        let delegate_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+delegate_to+"%22%2C%22quantity%22%3A%22"+delegate_amount+"%22%7D%7D";        
+        let delegate_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22delegate%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+delegate_to+"%22%2C%22quantity%22%3A%22"+delegate_amount+"%22%7D%7D";        
         
         if(parseFloat(delegate_amount) > parseFloat(staked_bal)){
             $('#delegate-msg').html('Entered value is more than available amount').show();
@@ -336,6 +336,13 @@ function getClaimDetails($name,$tokens) {
         if(!window.steem_keychain) {
             var win = window.open(delegate_url, '_blank');
             win.focus();
+                if (response.success) {
+                    toastr.success("Tokens Delegated Successfully!");
+                    $('#dlk_delegate').modal('hide');
+                } else {
+                    toastr.error("Failed to Delegate!");
+                    $('#dlk_delegate').modal('hide');
+                }            
         }
     })  
 
