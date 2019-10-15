@@ -254,7 +254,7 @@ function getClaimDetails($name,$tokens) {
         let unstake_amount = $('#unstake_amt').val();
         let staked_amount = $('#dliker_unstake').val();
 
-        let unstake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22unstake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22quantity%22%3A%22"+unstake_amount+"%22%7D%7D";         
+        let unstake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22unstake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22quantity%22%3A%22"+unstake_amount+"%22%7D%7D";         
 
         if(parseFloat(unstake_amount) > parseFloat(staked_amount)){
             $('#unstake-msg').html('Entered value is more than available amount').show();
@@ -276,7 +276,7 @@ function getClaimDetails($name,$tokens) {
             });
         }
         if(!window.steem_keychain) {
-            var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
+            var win = window.open(unstake_url, '_blank');
             win.focus();
         }
     })
@@ -285,7 +285,7 @@ function getClaimDetails($name,$tokens) {
         let stake_amount = $('#stake_amt').val();
         let dliker_bal = $('#dliker_bal').val();
 
-        let stake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22stake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22quantity%22%3A%22"+stake_amount+"%22%7D%7D";          
+        let stake_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22stake%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22quantity%22%3A%22"+stake_amount+"%22%7D%7D";          
 
         if(parseFloat(stake_amount) > parseFloat(dliker_bal)){
             $('#stake-msg').html('Entered value is more than available amount').show();
@@ -379,7 +379,7 @@ function getClaimDetails($name,$tokens) {
         let transfer_to = $.trim($('#transfer_to').val());
         let memo = $('#trs_memo').val();
 
-        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+transfer_to+"%22%2C%22quantity%22%3A%22"+transfer_amount+"%22%2C%22memo%22%3A%22"+memo+"%22%7D%7D";
+        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&authority=active&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+transfer_to+"%22%2C%22quantity%22%3A%22"+transfer_amount+"%22%2C%22memo%22%3A%22"+memo+"%22%7D%7D";
 
         if(parseFloat(transfer_amount) > parseFloat(my_dliker_bal)){
             $('#transfer-msg').html('Entered value is more than available amount').show();
