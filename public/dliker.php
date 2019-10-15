@@ -185,6 +185,7 @@ function getClaimDetails($name,$tokens) {
         <div class="row row-3">
             <span><b>DLIKER Market Price:</b> &nbsp;</span>
             <span>
+            <?php echo $_STEEM_ENGINE->get_market_metrics("DLIKER")[0]->lastPrice; ?>    
                 <?php echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i></a>'; ?>
             </span>
         </div>

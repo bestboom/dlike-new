@@ -18,7 +18,9 @@ class SteemEngine
     function get_user_balances($user = "null") {
         return $this->SteemEngineAPI->query_contract("tokens/balances", [ "account" => $user ]);
     }
-
+    function get_market_metrics($token = "DLIKER") {
+        return $this->SteemEngineAPI->query_contract("market/metrics", ["symbol" => $token]);
+    }
     function get_market_sells($user = "null", $token = "") {
         $query = [];
         if (strlen($user) > 0) {
