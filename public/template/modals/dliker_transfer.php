@@ -2,7 +2,7 @@
 	<div class="transfer-respond">
 		<h4>Transfer DLIKER Tokens</h4>
 		<div class="alert alert-danger" id="transfer-msg" style="display: none;"></div>
-		<form action="" id="tsf_sub" method="POST">
+		<form id="dliker_sub">
 			<div class="row line">
 				<div class="col-md-6">
 					<div class="form-group">
