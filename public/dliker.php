@@ -184,9 +184,8 @@ function getClaimDetails($name,$tokens) {
         </div>  
         <div class="row row-3">
             <span><b>DLIKER Market Price:</b> &nbsp;</span>
-            <span>
-            <?php echo $_STEEM_ENGINE->get_market_metrics("DLIKER")[0]->lastPrice; ?>    
-                <?php echo '0.00123 <b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i></a>'; ?>
+            <span>    
+                <?php echo $_STEEM_ENGINE->get_market_metrics("DLIKER")[0]->lastPrice .'<b>STEEM</b> &nbsp;&nbsp;<a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank"><i class="fas fa-exchange-alt" title="market" style="color: #c51d24;"></i></a>'; ?>
             </span>
         </div>
         <div class="row" style="width: 98%;">
@@ -308,25 +307,27 @@ function getClaimDetails($name,$tokens) {
         let delegate_amount = $('#delegate_amt').val();
         let staked_bal = $('#dliker_staked_bal').val();
         let delegate_to = $.trim($('#delegate_to').val());
+
+        let delegate_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+delegate_to+"%22%2C%22quantity%22%3A%22"+delegate_amount+"%22%7D%7D";        
         
         if(parseFloat(delegate_amount) > parseFloat(staked_bal)){
             $('#delegate-msg').html('Entered value is more than available amount').show();
             return false;
-        } else {
-            if(window.steem_keychain) {
-                steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"to":"'+delegate_to+'","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Delegate DLIKER Tokens", function(response) {
-                    if (response.success) {
-                        toastr.success("Tokens Delegated Successfully!");
-                        $('#dlk_delegate').modal('hide');
-                    } else {
-                        toastr.error("Failed to Delegate!");
-                        $('#dlk_delegate').modal('hide');
-                    }
-                });
-            } else {
-                var win = window.open('<?php echo $tokens_claimable[0]; ?>', '_blank');
-                win.focus();
-            }
+        }
+        if(window.steem_keychain) {
+            steem_keychain.requestCustomJson("<?php echo $user_name; ?>", "ssc-mainnet1", "active", '{"contractName":"tokens","contractAction":"delegate","contractPayload":{"to":"'+delegate_to+'","symbol":"DLIKER","quantity":"'+delegate_amount+'"}}', "Delegate DLIKER Tokens", function(response) {
+                if (response.success) {
+                    toastr.success("Tokens Delegated Successfully!");
+                    $('#dlk_delegate').modal('hide');
+                } else {
+                    toastr.error("Failed to Delegate!");
+                    $('#dlk_delegate').modal('hide');
+                }
+            });
+        }
+        if(!window.steem_keychain) {
+            var win = window.open(delegate_url, '_blank');
+            win.focus();
         }
     })  
 
@@ -337,7 +338,7 @@ function getClaimDetails($name,$tokens) {
         let transfer_to = $.trim($('#transfer_to').val());
         let memo = $('#trs_memo').val();
 
-        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+transfer_to+"%22%2C%22quantity%22%3A%22"+transfer_amount+"%22%7D%7D";
+        let transfer_url = "https://v2.steemconnect.com/sign/custom-json?required_auths=%5B%22<?php echo $user_name; ?>%22%5D&required_posting_auths=%5B%5D&id=ssc-mainnet1&json=%7B%22contractName%22%3A%22tokens%22%2C%22contractAction%22%3A%22transfer%22%2C%22contractPayload%22%3A%7B%22symbol%22%3A%22DLIKER%22%2C%22to%22%3A%22"+transfer_to+"%22%2C%22quantity%22%3A%22"+transfer_amount+"%22%2C%22memo%22%3A%22"+memo+"%22%7D%7D";
 
         if(parseFloat(transfer_amount) > parseFloat(my_dliker_bal)){
             $('#transfer-msg').html('Entered value is more than available amount').show();
