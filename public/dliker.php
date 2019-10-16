@@ -41,56 +41,7 @@ function get_recent_transactions ($account = "null") {
     }
 }
     $balances = $_STEEM_ENGINE->get_user_balance_one($user_name, "DLIKER");
-    $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
-    $token_info_raw = $_STEEM_ENGINE->get_tokens();
-    $rewards = getTokensToClaim($user_name);
-    $tokens_in_market = 0;
-        
-        $precisions = [];
-        foreach ($balances as $balance) {
-            foreach ($token_info_raw as $token) {
-                $meta = json_decode($token->metadata);
-                $precisions[$token->symbol] = $token->precision;
-            }
-            //if (in_array($balance->symbol, ["DLIKER"])) {
-                if (isset($rewards[$balance->symbol])) {
-                    $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
-                } else {
-                    $pending_rewards = 0;
-                }
-                $my_balance = floatval($balance->balance);
-                if (isset($balance->stake)) {
-                    $balance_stake = floatval($balance->stake);
-                } else  {
-                    $balance_stake = 0;
-                }  
-                if (isset($balance->delegationsIn)) {$balance->receivedStake = $balance->delegationsIn;}
-                if (isset($balance->delegationsOut)) {$balance->delegatedStake = $balance->delegationsOut;}  
-                if (isset($balance->delegatedStake)) {
-                    if ($balance->receivedStake > 0) {
-                        $delegation_in = floatval($balance->receivedStake);
-                    }
-                    else {$delegation_in = 0;}
-                }
-                if (isset($balance->receivedStake)) {
-                    if ($balance->delegatedStake > 0) {
-                        $delegation_out = floatval($balance->delegatedStake);
-                    }
-                    else {$delegation_out = 0;}
-                } 
-                if (isset($balance->pendingUnstake) and $balance->pendingUnstake) {
-                    $pending_unstake = floatval($balance->pendingUnstake);
-                } else {
-                    $pending_unstake = 0;
-                }        
-                foreach ($market_sells as $sell) {
-                    if ($sell->symbol == $balance->symbol) {
-                        $tokens_in_market += floatval($sell->quantity);
-                    }
-                }                        
-                $total_balance = $my_balance + $pending_rewards + $delegation_out + $balance_stake + $pending_unstake + $tokens_in_market;   
-            //}
-        }
+    
 ?>
 </div>
 <style>
