@@ -27,6 +27,7 @@ RewriteRule ^how-it-works$ ./how-it-works.php
 RewriteRule ^wallets/(.*)$ ./wallets.php?user=$1
 RewriteRule ^@/?(.*)$ ./profile.php?user=$1
 RewriteRule ^token$ ./token.php
+RewriteRule ^dliker$ ./dliker.php
 RewriteRule ^tokensale$ ./tokensale.php
 RewriteRule ^welcome$ ./welcome.php
 RewriteRule ^tags/(.*)$ ./tags.php?tag=$1
