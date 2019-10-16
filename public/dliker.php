@@ -40,15 +40,13 @@ function get_recent_transactions ($account = "null") {
         return (object) [];
     }
 }
-
-        $balances = $_STEEM_ENGINE->get_user_balances($user_name);
-        $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
-        $market_buys = $_STEEM_ENGINE->get_market_buys($user_name);
-        $token_info_raw = $_STEEM_ENGINE->get_tokens();
-        $rewards = getTokensToClaim($user_name);
+    $balances = $_STEEM_ENGINE->get_user_balance_one($user_name, "DLIKER");
+    $market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
+    $token_info_raw = $_STEEM_ENGINE->get_tokens();
+    $rewards = getTokensToClaim($user_name);
+    $tokens_in_market = 0;
         
         $precisions = [];
-        $market_balances = [];
         foreach ($balances as $balance) {
             foreach ($token_info_raw as $token) {
                 $meta = json_decode($token->metadata);
