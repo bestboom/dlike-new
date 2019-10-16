@@ -1,6 +1,12 @@
 <?php
 include "./template/header5.php"; 
 $user_name = $_COOKIE['username'];
+
+require_once "./lib/SteemEngine.php";
+require_once "./lib/time_string.php";
+use SnaddyvitchDispenser\SteemEngine\SteemEngine;
+$_STEEM_ENGINE = new SteemEngine();
+
 ?>
 </div>
 <div id="loadings"><img src="/images/loader.svg" width="100"></div>
