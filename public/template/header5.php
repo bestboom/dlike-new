@@ -48,11 +48,11 @@
     <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/wallet">Wallet</a>
+        <a href="/dliker">DLIKER</a>
         <a href="/rewards">Reward Pool</a>
         <a href="/staking">Staking</a>
         <a href="/explorer">Explorer</a>
         <a href="/help">FAQ</a>
-        <a href="https://steem-engine.com/?p=market&t=DLIKER" target="_blank">DLIKER Market</a>
         <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a href="javascript:void(0)" class="logout_btn">Logout</a>';} else { } ?>
         <br>
         <a href="/token">Token</a>
