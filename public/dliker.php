@@ -41,7 +41,7 @@ function get_recent_transactions ($account = "null") {
     }
 }
     $balances = $_STEEM_ENGINE->get_user_balance_one($user_name, "DLIKER");
-    var_dump($balances)
+    var_dump($balances);
     //$market_sells = $_STEEM_ENGINE->get_market_sells($user_name);
     //$token_info_raw = $_STEEM_ENGINE->get_tokens();
     //$rewards = getTokensToClaim($user_name);
