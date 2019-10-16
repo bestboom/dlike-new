@@ -27,5 +27,5 @@ include "./template/footer.php";
 <script type="text/javascript">
     $( document ).ready(function() {    
         $('#loadings').delay(6000).fadeOut('slow');
-    }   
+    })   
 </script>
