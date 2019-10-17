@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$id = 102;
+$id = 1142;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
 
