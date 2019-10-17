@@ -68,7 +68,7 @@ $row_C = $result_C->fetch_assoc();
 								<?php echo time_ago($start_time); ?>
 							</td>
 							<td class="exp-amt cent_me wid_2">
-								<?php echo $start_time; ?>
+								<?php echo date('m/d/Y', strtotime($start_time)); ?>
 							</td>
 						</tr>
 						<?php
