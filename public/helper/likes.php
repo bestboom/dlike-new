@@ -7,19 +7,23 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-?>
-<!--
+$id = 118382;
 
-
-$id = 802;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id'";
+$sqlw = "DELETE FROM transactions WHERE id = '$id'";
 
 if ($conn->query($sqlw) === TRUE) {
     echo "Row DELETED successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }
+
+
+
+?>
+<!--
+
+
+
 
 
 
