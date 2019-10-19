@@ -187,7 +187,7 @@
                 $("#com-sbmt").html('Checking Plagiarism...');
                 text = text.replace(/"/g, '');
 
-                return fetch('check_plag.php', {
+                return fetch('check.php', {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
