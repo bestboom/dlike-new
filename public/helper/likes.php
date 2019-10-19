@@ -7,6 +7,11 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+?>
+<!--
+
+
 $id = 202;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
@@ -16,11 +21,6 @@ if ($conn->query($sqlw) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
-
-?>
-<!--
-
 
 
 
