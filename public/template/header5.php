@@ -45,7 +45,7 @@
 <? } ?> 
 </head>
 <body>
-<script language="javascript" data-spot_id_top="D274U87B3ES9A" data-site_id_top="JFGD1VRUJVE48" src="//coinad.com/ads/show/topbar.js"></script>    
+<!--<script language="javascript" data-spot_id_top="D274U87B3ES9A" data-site_id_top="JFGD1VRUJVE48" src="//coinad.com/ads/show/topbar.js"></script>  -->  
     <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/wallet">Wallet</a>
