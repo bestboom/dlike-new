@@ -642,7 +642,10 @@ if ($user_eth == '') {
             toastr.error('phew... Enter Amount To Send');
             return false;
         }
-
+        if (send_amt < 10) {
+            toastr.error('phew... Not less than 10 tokens');
+            return false;
+        }
         if (send_amt > user_bal || user_bal < '1') {
             toastr.error('phew... Not Enough Balance');
             return false;
