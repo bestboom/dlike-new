@@ -56,7 +56,7 @@ function get_recent_transactions ($account = "null") {
                 $meta = json_decode($token->metadata);
                 $precisions[$token->symbol] = $token->precision;
             }
-            //if (in_array($balance->symbol, ["DLIKER"])) {
+            if (in_array($balance->symbol, ["DLIKER"])) {
                 if (isset($rewards[$balance->symbol])) {
                     $pending_rewards = (floatval($rewards[$balance->symbol])/10**$precisions[$balance->symbol]);
                 } else {
@@ -93,7 +93,7 @@ function get_recent_transactions ($account = "null") {
                     }
                 }                        
                 $total_balance = $my_balance + $pending_rewards + $delegation_out + $balance_stake + $pending_unstake + $tokens_in_market;   
-            //}
+            }
         }
 ?>
 </div>
