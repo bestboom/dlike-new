@@ -94,6 +94,7 @@
 <script src="/js/signup.js"></script>
 <? } ?> 
 <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
+<script language="javascript" data-spot_id_top="GDYU9ITE33L7W" data-site_id_top="IN0CPFCKPXSN5" src="//coinad.com/ads/show/topbar.js"></script> 
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
