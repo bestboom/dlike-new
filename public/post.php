@@ -106,7 +106,7 @@ else
                 <div class="col">
                     <div class="blog-details-wrapper">
                         <div class="single-post-block">
-                            <h1 class="post-title"><a href="#"><?php echo $og_title; ?></a></h1>
+                            <h1 class="post-title mod-title"><a href="#"><?php echo $og_title; ?></a></h1>
                             <!--<h1><span class="mod-title"></span></h1>-->
                             <div class="details-post-meta-block-top">
                                 <div class="container">
@@ -419,7 +419,7 @@ else
         }else{
         postbody = "";
         }
-        console.log(postbody);
+        //console.log(postbody);
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
         $('.post-thumb-block').html(thumbnail);
