@@ -180,8 +180,8 @@ else
                             <center><img src="/images/bitfinex-logo.png" alt="img" class="img-responsive"></center>
                         </div>
                         <div class="col-sm-5 mid-tip">
-                            <h2 class="tipratio" style="font-size: 18px;line-height: 2;font-weight: 600;">DLIKE pays to share Links <br>Start sharing to earn money Now!</h2>
-                            <p class="tipthnk">Tip this post for free - Author(40%) You(60%)</p>
+                            <h2 class="tipratio" style="font-size: 18px;line-height: 2;font-weight: 600;color: #fffffffc;">DLIKE pays to share Links <br>Start sharing to earn money Now!</h2>
+                            <p class="tipthnk">You need to wait before you can TIP again.</p>
                         </div>
                         <div class="col-sm-4">
 
@@ -235,7 +235,7 @@ else
                     </div>
                     <div class="container tip-sponsor">
                         <div class="row">
-                            <div class="col tip-foot">USDT (Tether) is a stable coin by Bitfinex. Learn more about Tether <a href="https://tether.to/" target="_blank">here</a></div>
+                            <div class="col tip-foot">Tip this post for free - Author (40%) - You (60%)</div>
                         </div>
                     </div>
                 </div>
