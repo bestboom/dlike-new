@@ -173,7 +173,7 @@ else
                     </div>
                 </div>
             <div id="tip-msg"></div>
-            <div class="details-post-meta-tip" style="background: #c51d24;">
+            <div class="details-post-meta-tip" style="background: #080e70;">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
@@ -224,7 +224,7 @@ else
                                     <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                         <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                         <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
-                                        <center><button class="btn btn-default btn-tip">TIP</button></center>
+                                        <center><button class="btn btn-default btn-tip" style="background: #fff;color: #090e68;">TIP</button></center>
                                         </form> <?
                                     }   
                                 }   ?>           
