@@ -180,8 +180,8 @@ else
                             <center><img src="/images/bitfinex-logo.png" alt="img" class="img-responsive"></center>
                         </div>
                         <div class="col-sm-5 mid-tip">
-                            <p class="tipratio">Tips are free from DLIKE <br>Tip Author 40% - 60% to ME</p>
-                            <p class="tipthnk">You need to wait before you can TIP again.</p>
+                            <h2 class="tipratio" style="font-size: 18px;line-height: 2;font-weight: 600;">DLIKE pays to share Links <br>Start sharing to earn money Now!</h2>
+                            <p class="tipthnk">Tip this post for free - Author(40%) You(60%)</p>
                         </div>
                         <div class="col-sm-4">
 
