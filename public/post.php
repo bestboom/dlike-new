@@ -173,11 +173,11 @@ else
                     </div>
                 </div>
             <div id="tip-msg"></div>
-            <div class="details-post-meta-tip">
+            <div class="details-post-meta-tip" style="background: #c51d24;">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-3">
-                            <center><img src="/images/bitfinex-logo.png" alt="img" class="img-responsive"></center>
+                            <center><img src="/images/tip-dlike.png" alt="img" class="img-responsive"></center>
                         </div>
                         <div class="col-sm-5 mid-tip">
                             <h2 class="tipratio" style="font-size: 18px;line-height: 2;font-weight: 600;color: #fffffffc;">DLIKE pays to share Links <br>Start sharing to earn money Now!</h2>
