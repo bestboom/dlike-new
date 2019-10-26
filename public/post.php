@@ -235,7 +235,7 @@ else
                     </div>
                     <div class="container tip-sponsor">
                         <div class="row">
-                            <div class="col tip-foot">Tip this post for free - Author (40%) - You (60%)</div>
+                            <div class="col tip-foot" style="color: #fff;">Tip this post for free - Author (40%) - You (60%)</div>
                         </div>
                     </div>
                 </div>
