@@ -186,7 +186,7 @@ else
                         <div class="col-sm-4">
 
                             <?php
-                            if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><button class="btn btn-danger">Login To Tip</button></center>'; $tiptime = '601';} else {
+                            if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><a href="/welcome"><button class="btn btn-danger">Login To Tip</button></a></center>'; $tiptime = '601';} else {
                                 $verifysender = "SELECT * FROM TipTop where sender = '$sender'";
                                 $result_sender = $conn->query($verifysender);
                                 if ($result_sender->num_rows > 0) {
