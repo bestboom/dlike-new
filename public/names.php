@@ -38,8 +38,6 @@
 					<button class="btn btn-success btn-block" type="submit">Claim Account</button>
 				</div>
 			</div>
-			<p class="text-muted">Please check <a href="https://beempy.com/resource_costs">Beempy.com</a> to find out
-				how much RC is required.</p>
 		</form>
 
 		<hr>
@@ -80,6 +78,7 @@
 			</div>
 			<button class="btn btn-success btn-block" type="submit">Create Account</button>
 		</form>
+		<hr>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
