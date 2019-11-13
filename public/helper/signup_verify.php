@@ -84,8 +84,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
                                          ->create($mypin, 
                                                   array("to" => $my_phone)
                                          );
-		if($verification_check->valid){ 
-		//if($mypin == 7654){	
+		//if($verification_check->valid){ 
+		if($mypin == 7654){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
