@@ -132,7 +132,7 @@
             if (text_words.length < 40) {
                 showModalError(
                     "Make Sure..",
-                    "Write minimum 40 words to explain how this share is useful for community.",
+                    "Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article.",
                     ""
                 );
                 return false;

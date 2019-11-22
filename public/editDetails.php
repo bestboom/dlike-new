@@ -96,7 +96,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 50 words to explain this link share!"></textarea><!--<?php print $des; ?> -->
+                                            <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea><!--<?php print $des; ?> -->
                                         </div>
                                         <button type="button" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
                                     </form>
