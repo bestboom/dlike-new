@@ -63,10 +63,10 @@ include('template/header5.php');
                         <div class="row">
                             <div class="col-md-4">
                                 <p style="margin-bottom: 2px;">Get Free Tips</p>
-                                <button class="btn btn-default">Tweet Now</button>
+                                <button class="btn btn-default-sm">Tweet Now</button>
                             </div>
                             <div class="col-md-4">
-                                <i class="far fa-heart"></i>
+                                <i class="far fa-heart" style="font-size: 4rem; color: red;"></i>
                             </div>
                             <div class="col-md-4">
                                 <p style="margin-bottom: 2px;">DIPS username</p>
