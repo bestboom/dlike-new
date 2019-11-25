@@ -54,46 +54,47 @@ include('template/header5.php');
 }
 </style>
 <div class="modal fade" id="modal-skill25" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                    <div class="modal-body">
-                                                        <div class="comment-respond">
-                                                            <h4>Write A Comment</h4>
-                                                            <form action="#">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                        <input type="text" placeholder="Name" class="form-control">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                        <input type="email" placeholder="Email address" class="form-control">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-group">
-                                                                            <textarea placeholder="Comment" class="form-control"></textarea>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <div class="custom-control custom-checkbox">
-                                                                                <div class="custom-checkbox-wrap">
-                                                                                    <input type="checkbox" class="custom-control-input" id="customCheck4" name="example1">
-                                                                                    <label class="custom-control-label" for="customCheck4">Notify me of follow-up comments by email</label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <button class="btn btn-default">Submit</button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="comment-respond" style="padding: 60px 30px;">
+                    <h4>Write A Comment</h4>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p>Get Free Tips</p>
+                                <button>Tweet Now</button>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="far fa-heart"></i>
+                            </div>
+                            <div class="col-md-4">
+                                <p>DIPS username</p>
+                                <p>Certseek</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea placeholder="Comment" class="form-control"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        <div class="custom-checkbox-wrap">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck4" name="example1">
+                                            <label class="custom-control-label" for="customCheck4">Notify me of follow-up comments by email</label>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <?php include('template/footer.php'); $conn->close(); ?>
 <script type="text/javascript">
     $('.up_tip').click(function () {
