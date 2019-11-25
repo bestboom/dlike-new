@@ -82,7 +82,7 @@ include('template/header5.php');
                         <center>
                         <div class="row">
                             <div class="col-md-12">
-                                <p style="font-size: 2rem;margin: 20px;">My Earnings: $0.006</p>
+                                <p style="font-size: 1.5rem;margin: 20px;">My Earnings: $0.006</p>
                             </div>
                         </div>
                         </center>
