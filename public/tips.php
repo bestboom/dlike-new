@@ -16,7 +16,7 @@ include('template/header5.php');
             </div>
             <div class="col-sm-4">
 
-                <form action="" method="post" id="tipsubmit">
+                <form action="" method="post" id="">
                     <input type="hidden" name="tipauthor" value="">
                     <input type="hidden" name="tippermlink" value="">
                     <center><button type="button" class="btn btn-default up_tip" style="background: #fff;color: #090e68;">TIP</button></center>
