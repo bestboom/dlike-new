@@ -58,11 +58,11 @@ include('template/header5.php');
         <div class="modal-content">
             <div class="modal-body">
                 <div class="comment-respond" style="padding: 30px 20px;">
-                    <center><h4>@dlike_io</h4></center>
+                    <center><h3>@dlike_io</h3></center>
                         <center>
                         <div class="row">
                             <div class="col-md-12">
-                                <p style="font-size: 1rem;">My TIPs Balance: 109</p>
+                                <p style="font-size: 1rem;font-weight: 600;">My TIPs Balance: 109</p>
                             </div>
                         </div>
                         </center>
@@ -72,7 +72,7 @@ include('template/header5.php');
                                 <button class="btn btn-default-sm">Tweet Now</button>
                             </div>
                             <div class="col-md-4">
-                                <i class="far fa-heart" style="font-size: 4rem; color: red;"></i>
+                                <center><i class="far fa-heart" style="font-size: 4rem; color: red;"></i></center>
                             </div>
                             <div class="col-md-4">
                                 <p style="margin-bottom: 2px;">DIPS username</p>
@@ -82,7 +82,7 @@ include('template/header5.php');
                         <center>
                         <div class="row">
                             <div class="col-md-12">
-                                <p style="font-size: 2rem;">My Earnings: $0.006</p>
+                                <p style="font-size: 2rem;margin: 20px;">My Earnings: $0.006</p>
                             </div>
                         </div>
                         </center>
