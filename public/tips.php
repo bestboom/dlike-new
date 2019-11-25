@@ -16,10 +16,10 @@ include('template/header5.php');
             </div>
             <div class="col-sm-4">
 
-                <form action="/helper/addtips.php" method="post" id="tipsubmit">
-                    <input type="hidden" name="tipauthor" value="livaria">
-                    <input type="hidden" name="tippermlink" value="astronomers-find-three-supermassive-black-holes-in-ngc-6240-astronomy-sci-newscom">
-                    <center><button class="btn btn-default up_tip" style="background: #fff;color: #090e68;">TIP</button></center>
+                <form action="" method="post" id="tipsubmit">
+                    <input type="hidden" name="tipauthor" value="">
+                    <input type="hidden" name="tippermlink" value="">
+                    <center><button type="button" class="btn btn-default up_tip" style="background: #fff;color: #090e68;">TIP</button></center>
                 </form>            
 
 
