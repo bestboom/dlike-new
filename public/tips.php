@@ -45,6 +45,14 @@ include('template/header5.php');
                 </div>
             </div>
         </div>
+        <style>
+        .post-comment-block .comment-respond, .post-comment-block .comment-area {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 60px 30px;
+}
+</style>
 <div class="modal fade" id="modal-skill25" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
