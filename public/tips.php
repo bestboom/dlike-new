@@ -57,9 +57,15 @@ include('template/header5.php');
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="comment-respond" style="padding: 60px 30px;">
+                <div class="comment-respond" style="padding: 30px 20px;">
                     <center><h4>@dlike_io</h4></center>
-
+                        <center>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p style="font-size: 1rem;">My TIPs Balance: 109</p>
+                            </div>
+                        </div>
+                        </center>
                         <div class="row">
                             <div class="col-md-4">
                                 <p style="margin-bottom: 2px;">Get Free Tips</p>
@@ -73,12 +79,14 @@ include('template/header5.php');
                                 <p>Certseek</p>
                             </div>
                         </div>
+                        <center>
                         <div class="row">
                             <div class="col-md-12">
-                                <p>My Earnings: $0.006</p>
+                                <p style="font-size: 2rem;">My Earnings: $0.006</p>
                             </div>
                         </div>
-                        <button class="btn btn-default">Withdraw</button>
+                        </center>
+                        <center><button class="btn btn-default">Withdraw</button></center>
 
                 </div>
             </div>
