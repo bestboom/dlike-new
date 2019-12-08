@@ -10,7 +10,7 @@ include('template/header5.php');
     if ($result_T && $result_T->num_rows > 0) 
     {
     	$profile_user = 'PRO';
-    }
+    } else {$profile_user = 'Non-PRO';}
 ?>
 </div><!-- sub-header -->
 	<div id="profile_miss" style="display: none;">
