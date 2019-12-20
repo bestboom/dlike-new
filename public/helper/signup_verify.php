@@ -52,7 +52,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['
 
 	if ($result_phone->num_rows <= 0){
 
-		$verification = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")->verifications->create($phone_number_full, "sms");
+		#$verification = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")->verifications->create($phone_number_full, "sms");
 		if($verification){
 			$return['status'] = true;
 			$return['message'] = 'We have sent you PIN on your number please verify it.';
