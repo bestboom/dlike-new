@@ -92,3 +92,4 @@
                 </div>
             </div>
         </nav><!-- main-nav-block -->
+        <script data-ad-client="ca-pub-6758799291201201" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
