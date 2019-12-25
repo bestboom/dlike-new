@@ -18,7 +18,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
     }
 ?> 
 <div class="latest-post-section" style="min-height:80vh;padding: 70px 0 60px 0;">
-    <div class="container">
+    <!-- <div class="container">
         <div class="row" style="background:  #f3f4f5;padding-top: 31px;margin-bottom: 20px;">
             <div class="col-lg-12 col-md-12 " style="margin-bottom: 10px">
                 <div class="p-0">
@@ -37,10 +37,10 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 
                         </div>
                     </div>
-                </div><!-- testimonial-section -->
+                </div>
             </div>
         </div>
-    </div>
+    </div>  -->
 
     <div class="container">
         <div class="row  align-items-center h-100 post_select">
