@@ -1,4 +1,5 @@
 <?php include('template/header5.php');?>
+<script data-ad-client="ca-pub-6758799291201201" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </div><!-- sub-header -->
 <?php
 $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 15";
