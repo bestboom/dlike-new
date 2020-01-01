@@ -8,7 +8,7 @@ require '../includes/config.php';
 
 
 
-?>
+
 
 
 
@@ -100,8 +100,28 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
+$id9 = 182;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id9'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 
+
+$id10 = 192;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id10'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+?>
 <!--
 $sqlw = "DELETE FROM `steemposts` 
   WHERE id NOT IN (
