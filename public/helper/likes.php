@@ -10,8 +10,8 @@ require '../includes/config.php';
 
 
 
-
-
+?>
+<!--
 $id = 1392;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
@@ -142,8 +142,8 @@ if ($conn->query($sqlw) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-?>
-<!--
+
+
 $sqlw = "DELETE FROM `steemposts` 
   WHERE id NOT IN (
     SELECT * FROM (
