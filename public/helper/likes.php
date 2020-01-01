@@ -12,7 +12,7 @@ require '../includes/config.php';
 
 
 
-$id = 252;
+$id = 302;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
 
@@ -23,7 +23,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id2 = 482;
+$id2 = 282;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id2'";
 
@@ -35,7 +35,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id3 = 462;
+$id3 = 522;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id3'";
 
@@ -46,7 +46,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id4 = 492;
+$id4 = 512;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id4'";
 
@@ -57,7 +57,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id5 = 452;
+$id5 = 532;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id5'";
 
@@ -69,7 +69,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id6 = 442;
+$id6 = 552;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id6'";
 
@@ -80,7 +80,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id7 = 422;
+$id7 = 562;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id7'";
 
@@ -90,7 +90,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id8 = 402;
+$id8 = 572;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id8'";
 
@@ -100,7 +100,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id9 = 392;
+$id9 = 582;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id9'";
 
@@ -112,7 +112,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id10 = 222;
+$id10 = 592;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id10'";
 
