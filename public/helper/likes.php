@@ -9,10 +9,10 @@ require '../includes/config.php';
 
 
 ?>
-<!--
 
 
-$id = 202;
+
+$id = 72;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
 
@@ -23,9 +23,86 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
+$id2 = 172;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id2'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 
 
+$id3 = 162;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id3'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id4 = 132;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id4'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id5 = 122;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id5'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+$id6 = 112;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id6'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id7 = 92;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id7'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$id8 = 82;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id8'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+<!--
 $sqlw = "DELETE FROM `steemposts` 
   WHERE id NOT IN (
     SELECT * FROM (
