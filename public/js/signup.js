@@ -260,7 +260,7 @@ function getSuccess2() {
 function copyPassword() {
 
     var Signit  = document.querySelector('.signup-signup');
-    var successit = Signit.querySelector('.signup-signup-success');
+    var successit = Signit.querySelector('.signup-signup-success-2');
     var copyit   = Signit.querySelector('.signup-signup-copy');
 
     jQuery(successit).animate({
