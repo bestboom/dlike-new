@@ -475,10 +475,11 @@ if (filter.test(sEmail)) {
 }
 
 //email verify
+    var email_check = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     var inputemail = document.querySelector("#email_id");
     //var inputemail = $('#email_id').val();
     inputemail.addEventListener('keyup', function(){
-        if(validateEmail(inputemail)) {
+        if(email_check.test(inputemail)) {
             $(".signup-signup-email .next.btn").prop('disabled',false);
         }
         if(inputemail.value.length == 0 || inputemail.value.length == "") {
