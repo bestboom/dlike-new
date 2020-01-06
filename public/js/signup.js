@@ -594,7 +594,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             type: 'post',
             cache : false,
             dataType: 'json',
-            data: {action : 'acc_create2',user:my_name,,email:my_email,refer_by:refer_by},
+            data: {action : 'acc_create2',user:my_name,email:my_email,refer_by:refer_by},
             success:function(response){
                 console.log(response);
                 if(response.status===true)
