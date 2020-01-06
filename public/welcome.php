@@ -99,7 +99,7 @@ include('template/header5.php');
                                     <span class="fa fa-phone"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Enter the confirmation code. We sent the code to <b><span id="sms_number"></span></b> vis SMS.
+                                    Enter the confirmation code. We sent the code to <b><span id="sms_number"></span></b> via SMS.
                                 </p>
                                 <form name="signup-pin">
                                     <span class="input-username">
@@ -109,6 +109,30 @@ include('template/header5.php');
                                     </span>
                                     <button class="next btn btn-lime" disabled>
                                         Verify PIN
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="signup-signup-email" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Add Email</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fa fa-email"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Enter the email where we can send you details.
+                                </p>
+                                <form name="signup-pin">
+                                    <span class="input-username">
+                                        <input type="email" name="email" id="email_id" placeholder="enter email address"class="form-control" />
+                                        <span class="fa fas fa-email"></span>
+                                        <span class="loader fa fas fa-circle-notch" style="display: none"></span>
+                                    </span>
+                                    <button class="next btn btn-lime" disabled>
+                                        Verify Email
                                     </button>
                                 </form>
                             </div>
