@@ -36,6 +36,32 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 	exit;
 }
 
+
+//check if email exist
+
+if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_POST['email'])  && $_POST['email'] != '')
+{
+	$return = array();
+	$return['status'] = false;
+	$return['message'] = '';
+	$email =  $_POST['email'];
+
+	$check_email = "SELECT * FROM wallet where email = '".$email."' ";
+	$result_email = $conn->query($check_email);
+
+	if ($result_email->num_rows <= 0)
+	{
+		$return['status'] = true;
+		$return['message'] = 'Fine to Move on!';
+	}
+	else{
+		$return['message'] = 'Email already in use';
+	}
+	echo json_encode($return);
+	exit;
+}
+
+
 if (isset($_POST['action'])  && $_POST['action'] == 'send_sms' && isset($_POST['number'])  && $_POST['number'] != ''){
 
 	$return = array();

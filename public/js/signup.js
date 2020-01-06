@@ -480,7 +480,7 @@ function validateEmail(email) {
     $('.signup-signup-email input').keyup(function () {
         var email_address = this.value;    
         console.log(email_address)
-        if(validateEmail(email_address)) {
+        if(email_check.test(email_address)) {
             $(".signup-signup-email .next.btn").prop('disabled',false);
         }
         if(email_address.length == 0 || email_address.length == "") {
