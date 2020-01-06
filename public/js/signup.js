@@ -479,10 +479,10 @@ if (filter.test(sEmail)) {
     //var sEmail = $('#txtEmail').val();
     inputemail.addEventListener('keyup', function(){
         if(validateEmail(inputemail)) {
-            $(".signup-signup-verify .next.btn").prop('disabled',false);
+            $(".signup-signup-email .next.btn").prop('disabled',false);
         }
         if(inputemail.value.length == 0 || inputemail.value.length == "") {
-            $(".signup-signup-verify .next.btn").prop('disabled',true);
+            $(".signup-signup-email .next.btn").prop('disabled',true);
         }
     })    
 

@@ -123,7 +123,7 @@ include('template/header5.php');
                                     <span class="fas fa-envelope"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Enter the email where we can send you details.
+                                    Make sure to enter a valid email address.
                                 </p>
                                 <form name="signup-pin">
                                     <span class="input-username">
