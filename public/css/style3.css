@@ -1555,7 +1555,7 @@ justify-content: space-between;}
 .signup_block{width: 100%;justify-content: center;padding: 0px;}
 .sign_head{color: #1b1e63;margin: 25px 0px;}
 .signup_block input {border-radius: 12px;width: 100%;border-color: #1b1e6347;}
-.signup_inner{text-align: center;width: 75%;}
+.signup_inner{text-align: center;width: 75%;margin-top:13%;}
 .signup_inner h4 {margin-bottom: 1.1rem;}
 .signup_sec{background: #eeeeee57;}
 .signin_btn{padding: 5px 22px;background: transparent;border-color: #ffffff47;    color: #fff;border-radius: 9px;}
