@@ -465,9 +465,9 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
     })
 
 // Function that validates email address through a regular expression.
-function validateEmail(sEmail) {
+function validateEmail(inputemail) {
 var filter = /^[w-.+]+@[a-zA-Z0-9.-]+.[a-zA-z0-9]{2,4}$/;
-if (filter.test(sEmail)) {
+if (filter.test(inputemail)) {
     return true;
     } else {
     return false;
@@ -475,8 +475,8 @@ if (filter.test(sEmail)) {
 }
 
 //email verify
-    var inputemail = document.querySelector("#email_id");
-    //var sEmail = $('#txtEmail').val();
+    //var inputemail = document.querySelector("#email_id");
+    var inputemail = $('#email_id').val();
     inputemail.addEventListener('keyup', function(){
         if(validateEmail(inputemail)) {
             $(".signup-signup-email .next.btn").prop('disabled',false);
