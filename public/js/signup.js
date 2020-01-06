@@ -527,7 +527,8 @@ function validateEmail(email) {
     document.querySelector(".signup-signup-email .next.btn").addEventListener('click',function(e){
         e.preventDefault();
         var inputemail = $('#email_id').val();
-        if(validateEmail(inputemail)){
+        console.log(inputemail)
+        if(email_check.test(inputemail)){
 
             $(".signup-signup-verify .next.btn").prop('disabled',true);
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
