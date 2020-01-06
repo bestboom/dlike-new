@@ -475,7 +475,7 @@ if (filter.test(sEmail)) {
 }
 
 //email verify
-    var email_check = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    var email_check = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var inputemail = document.querySelector("#email_id");
     //var inputemail = $('#email_id').val();
     inputemail.addEventListener('keyup', function(){
