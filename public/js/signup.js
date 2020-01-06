@@ -464,13 +464,24 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         }
     })
 
+// Function that validates email address through a regular expression.
+function validateEmail(sEmail) {
+var filter = /^[w-.+]+@[a-zA-Z0-9.-]+.[a-zA-z0-9]{2,4}$/;
+if (filter.test(sEmail)) {
+    return true;
+    } else {
+    return false;
+    }
+}
+
 //email verify
-    var inputpin = document.querySelector("#email_id");
-    inputpin.addEventListener('keyup', function(){
-        if(inputpin.value.length == 4) {
+    var inputemail = document.querySelector("#email_id");
+    //var sEmail = $('#txtEmail').val();
+    inputemail.addEventListener('keyup', function(){
+        if(validateEmail(inputemail)) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
         }
-        if(inputpin.value.length < 4 || inputpin.value.length > 4) {
+        if(inputemail.value.length == 0 || inputemail.value.length == "") {
             $(".signup-signup-verify .next.btn").prop('disabled',true);
         }
     })    
