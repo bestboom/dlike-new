@@ -120,7 +120,7 @@ include('template/header5.php');
                             <div class="contact-info-inner signup_inner">
                                 <h4>Add Email</h4>
                                 <span class="signup-signup-icon">
-                                    <span class="fa fa-email"></span>
+                                    <span class="fas fa-envelope"></span>
                                 </span>
                                 <p class="signup-signup-description">
                                     Enter the email where we can send you details.
@@ -128,7 +128,7 @@ include('template/header5.php');
                                 <form name="signup-pin">
                                     <span class="input-username">
                                         <input type="email" name="email" id="email_id" placeholder="enter email address"class="form-control" />
-                                        <span class="fa fas fa-email"></span>
+                                        <span class="fa fas fa-envelope"></span>
                                         <span class="loader fa fas fa-circle-notch" style="display: none"></span>
                                     </span>
                                     <button class="next btn btn-lime" disabled>

@@ -464,6 +464,17 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         }
     })
 
+//email verify
+    var inputpin = document.querySelector("#email_id");
+    inputpin.addEventListener('keyup', function(){
+        if(inputpin.value.length == 4) {
+            $(".signup-signup-verify .next.btn").prop('disabled',false);
+        }
+        if(inputpin.value.length < 4 || inputpin.value.length > 4) {
+            $(".signup-signup-verify .next.btn").prop('disabled',true);
+        }
+    })    
+
     document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(e){
         e.preventDefault();
         if(inputpin.value.length == 4){
