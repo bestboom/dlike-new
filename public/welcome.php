@@ -144,12 +144,12 @@ include('template/header5.php');
                                     <span class="fa fa-check"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Hello!  <b>@<span id="my_username2"></span></b>. <br>
-                                    Let's generate secure password.
+                                    Hello  <b>@<span id="my_username2"></span></b>! <br>
+                                    Welcome to STEEM Blockchain.
                                 </p>
                                 <form name="signup-pin">
                                     <button class="next btn btn-lime">
-                                        <span id="set_pass">Show My Password</span>
+                                        <span id="set_pass">Set My Password</span>
                                     </button>
                                 </form>
                             </div>
