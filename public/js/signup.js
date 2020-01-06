@@ -513,11 +513,11 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
     document.querySelector(".signup-signup-success-2 .next.btn").addEventListener('click',function(event){
         event.preventDefault();
 
-        $('#set_pass').html('Loading...');
+        $('#set_pass').html('Generating...');
         $(".signup-signup-success-2 .next.btn").prop('disabled',true);
         let my_name = $('#my_username2').html();
-        let my_number = intl.getNumber();
-        let number = my_number.replace('+','');
+        //let my_number = intl.getNumber();
+        //let number = my_number.replace('+','');
         var refer_by = $('#refer_by').val();
         
          $.ajax({
