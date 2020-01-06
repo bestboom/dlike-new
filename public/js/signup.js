@@ -475,8 +475,8 @@ if (filter.test(sEmail)) {
 }
 
 //email verify
-    //var inputemail = document.querySelector("#email_id");
-    var inputemail = $('#email_id').val();
+    var inputemail = document.querySelector("#email_id");
+    //var inputemail = $('#email_id').val();
     inputemail.addEventListener('keyup', function(){
         if(validateEmail(inputemail)) {
             $(".signup-signup-email .next.btn").prop('disabled',false);
