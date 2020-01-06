@@ -233,10 +233,33 @@ function getSuccess() {
 }
 
 
-function getSuccess2() {
+function emailCheck() {
 
     var Signit  = document.querySelector('.signup-signup');
     var pinit = Signit.querySelector('.signup-signup-steemit');
+    var successit   = Signit.querySelector('.signup-signup-email');
+
+    jQuery(pinit).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        pinit.style.display = 'none';
+
+        successit.style.opacity = 0;
+        successit.style.top     = '50px';
+        successit.style.display = '';
+
+        jQuery(successit).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
+
+function getSuccess2() {
+
+    var Signit  = document.querySelector('.signup-signup');
+    var pinit = Signit.querySelector('.signup-signup-email');
     var successit   = Signit.querySelector('.signup-signup-success-2');
 
     jQuery(pinit).animate({
