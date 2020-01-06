@@ -40,7 +40,6 @@ include('template/header5.php');
                         </div>
                     </div>
 -->
-
                     <div class="row signup-signup-steemit">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
@@ -130,6 +129,27 @@ include('template/header5.php');
                                 <form name="signup-pin">
                                     <button class="next btn btn-lime">
                                         <span id="show_pass">Show My Password</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>                  
+
+
+                    <div class="signup-signup-success-2" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Generate Password</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fa fa-check"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Hello!  <b>@<span id="my_username"></span></b>. <br>
+                                    Let's generate secure password.
+                                </p>
+                                <form name="signup-pin">
+                                    <button class="next btn btn-lime">
+                                        <span id="set_pass">Show My Password</span>
                                     </button>
                                 </form>
                             </div>
