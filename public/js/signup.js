@@ -166,7 +166,7 @@ domReady(function () {
 function signUpPhoneCheck() {
     var Signup  = document.querySelector('.signup-signup');
     var Steemit = Signup.querySelector('.signup-signup-steemit');
-    var Phone   = Signup.querySelector('.signup-signup-phone');
+    var Phone   = Signup.querySelector('.signup-signup-success');
     $(".signup-signup-phone .loader.fa").insertAfter($("#phone"));
     jQuery(Steemit).animate({
         opacity: 0,
@@ -184,7 +184,6 @@ function signUpPhoneCheck() {
         }, 300);
     });
 }
-
 
 function pinVerify() {
     var Signit  = document.querySelector('.signup-signup');
