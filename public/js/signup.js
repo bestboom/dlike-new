@@ -463,23 +463,12 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $(".signup-signup-verify .next.btn").prop('disabled',true);
         }
     })
-//email valid check fucntion
-function validateEmail(email) {
-    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    if (!emailReg.test(email)) {
-        return true;
-    } else {
-        return false;
-    }
-}
+
 //email verify
     var email_check = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    //var inputemail = document.querySelector("#email_id");
-    //var inputemail = $('#email_id').val();
-    //inputemail.addEventListener('keyup', function(){
     $('.signup-signup-email input').keyup(function () {
         var email_address = this.value;    
-        console.log(email_address)
+        //console.log(email_address)
         if(email_check.test(email_address)) {
             $(".signup-signup-email .next.btn").prop('disabled',false);
         }
@@ -523,7 +512,7 @@ function validateEmail(email) {
         }
     })
 
-
+//email-verify
     document.querySelector(".signup-signup-email .next.btn").addEventListener('click',function(e){
         e.preventDefault();
         var inputemail = $('#email_id').val();
