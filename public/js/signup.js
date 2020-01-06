@@ -507,6 +507,41 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         });   
     })
 
+//new success
+
+    document.querySelector(".signup-signup-success-2 .next.btn").addEventListener('click',function(event){
+        event.preventDefault();
+
+        $('#set_pass').html('Loading...');
+        $(".signup-signup-success-2 .next.btn").prop('disabled',true);
+        let my_name = $('#my_username').html();
+        let my_number = intl.getNumber();
+        let number = my_number.replace('+','');
+        var refer_by = $('#refer_by').val();
+        
+         $.ajax({
+            url: '/helper/signup_verify.php',
+            type: 'post',
+            cache : false,
+            dataType: 'json',
+            data: {action : 'acc_create2',user:my_name,refer_by:refer_by},
+            success:function(response){
+                console.log(response);
+                if(response.status===true)
+                {
+                   toastr['success'](response.message);
+                   $('.password_container').html(response.password);
+                   copyPassword();
+                }
+                else{
+                    toastr['error'](response.message);
+                    return false;
+                }
+            }
+        });   
+    })
+
+    
 //copy content
     $("a[name=copy_pre]").click(function() {
         var id = $(this).attr('id');
