@@ -8,15 +8,6 @@ require '../includes/config.php';
 
 
 
-
-$sql = "ALTER TABLE wallet ADD email VARCHAR(255) NOT NULL AFTER amount";
-if ($conn->query($sql) === TRUE) {
-    echo "Table email added";
-} else {
-    echo "Error updating table: " . $conn->error;
-}
-
-
 ?>
 <!--
 $id = 1392;

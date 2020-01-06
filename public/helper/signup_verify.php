@@ -38,7 +38,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_PO
 
 
 //check if email exist
-
 if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_POST['email'])  && $_POST['email'] != '')
 {
 	$return = array();
@@ -205,14 +204,14 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 
 // new signup-with IP or email
-if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POST['user'])  && $_POST['user'] != ''){
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POST['user'])  && $_POST['user'] != ''  && $_POST['email'] != ''){
 
 	$return = array();
     $return['status'] = false;
     $return['message'] = '';
 	$user = $_POST['user'];
 	$refer_by = $_POST['refer_by'];
-	//$phone = $_POST['number'];
+	$email = $_POST['email'];
 	//$phone_num = md5($phone);
 	$signup_bonus = 20;
 	$referral_bonus = 50;
@@ -229,8 +228,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
         
         if($password !=''){
 
-			 	$sqlm = "INSERT INTO wallet (username, amount)
-						VALUES ('".$user."', '".$signup_bonus."')";
+			 	$sqlm = "INSERT INTO wallet (username, amount, email)
+						VALUES ('".$user."', '".$signup_bonus."', '".$email."')";
 
 						if (mysqli_query($conn, $sqlm)) 
 						{ 
