@@ -144,6 +144,7 @@ domReady(function () {
             Next.disabled = false;
             showSuccessIcon();
             $('#my_username').html(username);
+            $('#my_username2').html(username);
             
         }, function (err) {
             console.error(err);
@@ -514,7 +515,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
         $('#set_pass').html('Loading...');
         $(".signup-signup-success-2 .next.btn").prop('disabled',true);
-        let my_name = $('#my_username').html();
+        let my_name = $('#my_username2').html();
         let my_number = intl.getNumber();
         let number = my_number.replace('+','');
         var refer_by = $('#refer_by').val();
@@ -541,7 +542,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         });   
     })
 
-    
+
 //copy content
     $("a[name=copy_pre]").click(function() {
         var id = $(this).attr('id');

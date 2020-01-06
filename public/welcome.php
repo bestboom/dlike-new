@@ -144,7 +144,7 @@ include('template/header5.php');
                                     <span class="fa fa-check"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Hello!  <b>@<span id="my_username"></span></b>. <br>
+                                    Hello!  <b>@<span id="my_username2"></span></b>. <br>
                                     Let's generate secure password.
                                 </p>
                                 <form name="signup-pin">
