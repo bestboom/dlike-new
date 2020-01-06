@@ -475,15 +475,17 @@ if (filter.test(sEmail)) {
 }
 
 //email verify
-    var email_check = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    var inputemail = document.querySelector("#email_id");
+    var email_check = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    //var inputemail = document.querySelector("#email_id");
     //var inputemail = $('#email_id').val();
-    inputemail.addEventListener('keyup', function(){
-        console.log(inputemail)
-        if(email_check.test(inputemail)) {
+    //inputemail.addEventListener('keyup', function(){
+    $('.signup-signup-email input').first().keyup(function () {
+        var email_address = this.value;    
+        console.log(email_address)
+        if(email_check.test(email_address)) {
             $(".signup-signup-email .next.btn").prop('disabled',false);
         }
-        if(inputemail.value.length == 0 || inputemail.value.length == "") {
+        if(email_address.length == 0 || email_address.length == "") {
             $(".signup-signup-email .next.btn").prop('disabled',true);
         }
     })    
