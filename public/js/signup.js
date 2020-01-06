@@ -463,17 +463,15 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $(".signup-signup-verify .next.btn").prop('disabled',true);
         }
     })
-
-// Function that validates email address through a regular expression.
-function validateEmail(sEmail) {
-var filter = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-if (filter.test(sEmail)) {
-    return true;
+//email valid check fucntion
+function validateEmail(email) {
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    if (!emailReg.test(email)) {
+        return true;
     } else {
-    return false;
+        return false;
     }
 }
-
 //email verify
     var email_check = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     //var inputemail = document.querySelector("#email_id");
@@ -482,7 +480,7 @@ if (filter.test(sEmail)) {
     $('.signup-signup-email input').keyup(function () {
         var email_address = this.value;    
         console.log(email_address)
-        if(email_check.test(email_address)) {
+        if(validateEmail(email_address)) {
             $(".signup-signup-email .next.btn").prop('disabled',false);
         }
         if(email_address.length == 0 || email_address.length == "") {
@@ -525,6 +523,38 @@ if (filter.test(sEmail)) {
         }
     })
 
+
+    document.querySelector(".signup-signup-email .next.btn").addEventListener('click',function(e){
+        e.preventDefault();
+        var inputemail = $('#email_id').val();
+        if(validateEmail(inputemail)){
+
+            $(".signup-signup-verify .next.btn").prop('disabled',true);
+            $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
+            $("#pin_code").prop('disabled',true);
+            
+             $.ajax({
+                url: '/helper/signup_verify.php',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'verify_email',email:inputemail},
+                success:function(response){
+                    console.log(response);
+                    if(response.status===true)
+                    {
+                        getSuccess();
+                        toastr['success'](response.message);
+                    }
+                    else{
+                        toastr['error'](response.message);
+                        $("#pin_code").prop('disabled',false);
+                        return false;
+                    }
+                }
+            });  
+        } else {toastr['error']("Email Not Valid"); return false;}
+    })
     document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
         event.preventDefault();
 
