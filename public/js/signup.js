@@ -49,8 +49,8 @@ domReady(function () {
     FormSignUp.addEventListener('submit', function (event) {
                 event.stopPropagation();
                 event.preventDefault();
-                signUpPhoneCheck();
-                //getSuccess();
+                //signUpPhoneCheck();
+                getSuccess();
                 return false;
 
     });
@@ -166,7 +166,7 @@ domReady(function () {
 function signUpPhoneCheck() {
     var Signup  = document.querySelector('.signup-signup');
     var Steemit = Signup.querySelector('.signup-signup-steemit');
-    var Phone   = Signup.querySelector('.signup-signup-success');
+    var Phone   = Signup.querySelector('.signup-signup-phone');
     $(".signup-signup-phone .loader.fa").insertAfter($("#phone"));
     jQuery(Steemit).animate({
         opacity: 0,
