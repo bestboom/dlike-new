@@ -179,7 +179,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST
 
 
 // new signup-with IP or email
-if (isset($_POST['action'])  && $_POST['action'] == 'acc_create' && isset($_POST['user'])  && $_POST['user'] != ''){
+if (isset($_POST['action'])  && $_POST['action'] == 'acc_create-2' && isset($_POST['user'])  && $_POST['user'] != ''){
 
 	$return = array();
     $return['status'] = false;
