@@ -168,7 +168,7 @@ include('template/header5.php');
                                     <span class="fa fa-check"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Hello  <b>@<span id="my_username2"></span></b>! <br>
+                                    Hello  <b>@<span id="my_username2"></span> (<span id="my_email"></span>)</b>! <br>
                                     Welcome to STEEM Blockchain.
                                 </p>
                                 <form name="signup-pin">

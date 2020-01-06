@@ -518,7 +518,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         var inputemail = $('#email_id').val();
         console.log(inputemail)
         if(email_check.test(inputemail)){
-
+            $('#my_email').html(inputemail);
             $(".signup-signup-verify .next.btn").prop('disabled',true);
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
             $("#pin_code").prop('disabled',true);
@@ -586,8 +586,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         $('#set_pass').html('Generating...');
         $(".signup-signup-success-2 .next.btn").prop('disabled',true);
         let my_name = $('#my_username2').html();
-        //let my_number = intl.getNumber();
-        //let number = my_number.replace('+','');
+        let my_email = $('#my_email').html();
         var refer_by = $('#refer_by').val();
         
          $.ajax({
