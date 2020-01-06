@@ -50,7 +50,8 @@ domReady(function () {
                 event.stopPropagation();
                 event.preventDefault();
                 //signUpPhoneCheck();
-                getSuccess2();
+                emailCheck();
+                //getSuccess2();
                 return false;
 
     });
