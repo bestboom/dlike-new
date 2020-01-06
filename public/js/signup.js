@@ -533,7 +533,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     console.log(response);
                     if(response.status===true)
                     {
-                        getSuccess();
+                        getSuccess2();
                         toastr['success'](response.message);
                     }
                     else{
