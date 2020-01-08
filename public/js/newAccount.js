@@ -12,7 +12,6 @@ const my_name = process.argv[2];
 const created_by = 'dlike';
 const getRandomValues = require('get-random-values');
 const creator_key = process.env.active_account;
-//console.log({creator_key});
 
 //lets generate password
     function suggestPassword() {
