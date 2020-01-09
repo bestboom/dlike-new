@@ -1,6 +1,8 @@
 <?php
+$link = "dlike-weekly-report-72-dliker-token-details";
+$user = "dlike";
+$post_url = "https://steemd.minnowsupportproject.org/get_content?author={$user}&permlink={$link}";;
 
-$post_url = "https://steemd.minnowsupportproject.org/get_content?author=dlike&permlink=dlike-weekly-report-72-dliker-token-details";
 $response = file_get_contents($post_url);
 $result = json_decode($response);
 $og_description = explode("\n\n#####\n\n",$result->body);
