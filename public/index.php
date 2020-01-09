@@ -30,7 +30,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                                 <div class="wrapper">
                                     <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
                                         <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>
-                                        <?php echo $trending_html;?>
+                                        -- ?php echo $trending_html;?>
                                     </nav>
                                 </div>
                             </div>
