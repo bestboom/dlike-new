@@ -1,7 +1,7 @@
 <?php
 $link = "dlike-weekly-report-72-dliker-token-details";
 $user = "dlike";
-$post_url = "https://api.steemit.com/$user/$link";;
+$post_url = "https://api.steemit.com/$user/$link";
 
 $response = file_get_contents($post_url);
 $result = json_decode($response);
