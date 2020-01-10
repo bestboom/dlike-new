@@ -1,6 +1,6 @@
 {
   "require": {
-    "php": "^5.5.12",
+    "php": "^7.3.13",
     "ext-mbstring": "*",
     "ext-mongo": "*",
     "ext-mysqli": "*",
