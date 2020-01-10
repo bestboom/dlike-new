@@ -2,7 +2,6 @@
   "require": {
     "php": "^7.2.24",
     "ext-mbstring": "*",
-    "ext-mongo": "*",
     "ext-mysqli": "*",
     "ext-gettext": "*"
   },
