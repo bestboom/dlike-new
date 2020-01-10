@@ -58,7 +58,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^5.5.12",
+        "php": "^7.3.13",
         "ext-curl": "*",
         "ext-mbstring": "*",
         "ext-mongo": "*",
