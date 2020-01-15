@@ -5,12 +5,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-$id = 5362;
+$user = 'bestboom';
+$amount = 4000;
+$reason = 'checking';
 
-$sqlw = "DELETE FROM staking WHERE id = '$id'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
+$sqlj = "INSERT INTO transactions (username, amount, reason)
+        VALUES ('".$user."', '".$amount."', '".$reason."')";
+if ($conn->query($sqlj) === TRUE) {
+    echo "data added successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }
