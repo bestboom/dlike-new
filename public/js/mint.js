@@ -294,7 +294,7 @@
     // Add me
     var optionstk = {
         target: '#add-msg',
-        url: 'helper/tkad.php',
+        url: '../helper/tkad.php',
         success: function() {},
     }
     $('#toksubmit').submit(function() {

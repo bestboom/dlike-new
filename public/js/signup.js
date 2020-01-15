@@ -524,7 +524,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $("#pin_code").prop('disabled',true);
             
              $.ajax({
-                url: '/helper/signup_verify.php',
+                url: '../helper/signup_verify.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
