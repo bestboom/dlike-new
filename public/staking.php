@@ -126,13 +126,15 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
 <? } ?>     
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
+    username = 'bestboom';
     var optionstak = {
         target: '#stak-msg',
         url: 'helper/addstake.php',
         success: function() {},
     }
 $('#stake_sub').submit(function() {
-    if (username === null) {
+    console.log(username)
+    if (username == null) {
         toastr.error('hmm... You must be login!');
         return false;
     }
