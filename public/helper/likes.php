@@ -5,8 +5,17 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
+$username = 'bestboom';
+$amount = 200;
 
-
+$addWallet = "INSERT INTO wallet (username, amount)
+    VALUES ('".$username."', '".$amount."')";
+#$addWalletQuery = $conn->query($addWallet);
+if ($conn->query($addWallet) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 ?>
 <!--
