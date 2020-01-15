@@ -35,7 +35,7 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 											echo '<script>$("#stake_me").attr("disabled","disabled"); document.getElementById("stake_sub").reset(); setTimeout(function(){location.reload();},1000);</script>';
 											}
 									} 
-				}
+				}else {echo '<div class="alert alert-danger">Looks connc error</div>';}
 			}
 		} else {echo '<div class="alert alert-danger">Do not have token balance!</div>';}
 
