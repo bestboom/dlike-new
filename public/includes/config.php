@@ -5,7 +5,7 @@ session_start();
 #$hashkey=getenv('hashkey');
 
 $url = parse_url(getenv("DATABASE_URL"));
-echo $url;
+print_r($url);
 $server = $url["host"]; 
 $username = $url["user"]; 
 $password = $url["pass"];
