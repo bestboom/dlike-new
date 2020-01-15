@@ -1,0 +1,2 @@
+dokku buildpacks:add --index 1 dlikeapp https://github.com/heroku/heroku-buildpack-php.git
+dokku buildpacks:add --index 2 dlikeapp https://github.com/heroku/heroku-buildpack-nodejs.git
