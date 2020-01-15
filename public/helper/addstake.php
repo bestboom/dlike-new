@@ -8,7 +8,8 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 
 	$amount = $_POST["stakemaount"];
 	$period = $_POST["stake_option"];
-	$user = $_POST["staker"];
+	#$user = $_POST["staker"];
+	$user = 'bestboom';
 	$reason = 'Staking';
 	$sqls = "SELECT amount FROM wallet where username='$user'"; 
 	$resultAmount = $conn->query($sqls);
