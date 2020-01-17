@@ -517,12 +517,12 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         e.preventDefault();
         var inputemail = $('#email_id').val();
         console.log(inputemail)
-        if(email_check.test(inputemail)){
-            console.log("this check is working");
-            $('#my_email').html(inputemail);
-            $(".signup-signup-verify .next.btn").prop('disabled',true);
-            $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
-            $("#pin_code").prop('disabled',true);
+        //if(email_check.test(inputemail)){
+        //    console.log("this check is working");
+        //    $('#my_email').html(inputemail);
+        //    $(".signup-signup-verify .next.btn").prop('disabled',true);
+        //    $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
+        //    $("#pin_code").prop('disabled',true);
             
              $.ajax({
                 url: '/helper/signup_verify.php',
@@ -544,7 +544,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     }
                 }
             });  
-        } else {toastr['error']("Email Not Valid"); return false;}
+        //} else {toastr['error']("Email Not Valid"); return false;}
     })
     document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
         event.preventDefault();
