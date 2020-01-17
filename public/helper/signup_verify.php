@@ -4,14 +4,14 @@
 	error_reporting(E_ALL);
 
 require '../includes/config.php';
-require_once("../includes/twilio-php-master/Twilio/autoload.php");
+//require_once("../includes/twilio-php-master/Twilio/autoload.php");
 
 
-use Twilio\Rest\Client;
+//use Twilio\Rest\Client;
 
-$sid    = getenv('twilio_sid');
-$token  = getenv('twilio_token');
-$twilio = new Client($sid, $token);
+//$sid    = getenv('twilio_sid');
+//$token  = getenv('twilio_token');
+//$twilio = new Client($sid, $token);
 
 if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_POST['number'])  && $_POST['number'] != '')
 {
@@ -219,11 +219,58 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
 	$referral_reason = 'Referral Bonus';
 
     if ($_POST['user'] !='') {
+        $here = dirname(__FILE__);
 
+        $state = shell_exec("node {$here}/../js/newAccount.js \"{$user}\""); 
+        $password = trim($state); // do what you want with the password here
+
+        //$password = 'asadadadafadafadad';
         
-        if($email !=''){
+        if($password !=''){
 
-		
+			 	$sqlm = "INSERT INTO wallet (username, amount, email)
+						VALUES ('".$user."', '".$signup_bonus."', '".$email."')";
+
+						if (mysqli_query($conn, $sqlm)) 
+						{ 
+
+							$sqlX = "INSERT INTO transactions (username, amount, reason)
+								VALUES ('".$user."', '".$signup_bonus."', '".$signup_reason."')";
+
+							$signup_reward =  mysqli_query($conn, $sqlX);
+
+							 if($refer_by !='dlike'){
+
+								$sqlR = "INSERT INTO Referrals (username, refer_by, entry_time)
+									VALUES ('".$user."', '".$refer_by."', now())";
+								
+								if (mysqli_query($conn, $sqlR)) {
+								
+									$check_ref_balance = "SELECT amount FROM wallet where username = '".$refer_by."' ";
+									$result_bal = $conn->query($check_ref_balance);
+
+										if ($result_bal->num_rows > 0) {
+
+											$rowB = $result_bal->fetch_assoc();	
+											$user_bal = $rowB['amount'];
+
+											$updateBonus = "UPDATE wallet SET amount = '$user_bal' + '$referral_bonus' WHERE username = '$refer_by'";
+											$updateRefBonus = $conn->query($updateBonus);
+
+											if ($updateRefBonus === TRUE) {
+
+												$sqlW = "INSERT INTO transactions (username, amount, reason)
+													VALUES ('".$refer_by."', '".$referral_bonus."', '".$referral_reason."')";
+
+							                  	$referral_reward =  mysqli_query($conn, $sqlW);
+	
+											}
+										}
+								}
+				            }
+				            
+				        }
+
 		$return['status'] = true;
 		$return['message'] = 'Account Created Successfully';
 		$return['password'] = $password;			         		           
