@@ -466,16 +466,16 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 
 //email verify
     var email_check = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    $('.signup-signup-email input').keyup(function () {
-        var email_address = this.value;    
+    //$('.signup-signup-email input').keyup(function () {
+    //    var email_address = this.value;    
         //console.log(email_address)
-        if(email_check.test(email_address)) {
-            $(".signup-signup-email .next.btn").prop('disabled',false);
-        }
-        if(email_address.length == 0 || email_address.length == "") {
-            $(".signup-signup-email .next.btn").prop('disabled',true);
-        }
-    })    
+    //    if(email_check.test(email_address)) {
+    //        $(".signup-signup-email .next.btn").prop('disabled',false);
+    //    }
+    //    if(email_address.length == 0 || email_address.length == "") {
+    //        $(".signup-signup-email .next.btn").prop('disabled',true);
+    //    }
+    //})    
 
     document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(e){
         e.preventDefault();
