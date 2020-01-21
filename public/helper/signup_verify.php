@@ -4,14 +4,14 @@
 	error_reporting(E_ALL);
 
 require '../includes/config.php';
-//require_once("../includes/twilio-php-master/Twilio/autoload.php");
+require_once("../includes/twilio-php-master/Twilio/autoload.php");
 
 
-//use Twilio\Rest\Client;
+use Twilio\Rest\Client;
 
-//$sid    = getenv('twilio_sid');
-//$token  = getenv('twilio_token');
-//$twilio = new Client($sid, $token);
+$sid    = getenv('twilio_sid');
+$token  = getenv('twilio_token');
+$twilio = new Client($sid, $token);
 
 if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_POST['number'])  && $_POST['number'] != '')
 {

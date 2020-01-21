@@ -52,7 +52,7 @@
 */
 html, html a {
     text-rendering: optimizeLegibility !important;
-    -webkit-font-smoothing: antialiased !important; }
+    -webkit-font-smoothing: antialiased !important;}
 
 body {
     width: 100%;
@@ -3394,10 +3394,6 @@ sub.transmoney-value {
 .post-style-two .post-contnet-wrap:hover {
     -webkit-box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.05);
     box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.05); }
-.card-img-top {
-    width: 100%;
-    height: 18vw;
-    object-fit: cover;}
 .card-img-top2 {
     width: 100%;
     height: auto;
@@ -4466,15 +4462,11 @@ button.toast-close-button {
     .p_data_names .name{font-size: 14px !important;}
     .p-data{font-size: 70% !important;}
     .btn-follow{border-radius: 10px !important;padding: 4px 12px !important;}
-    .card-img-top{height: 60vw !important; object-fit: cover !important;}
-    .hov-item{margin-bottom: 0.5em !important;}
-    .post-style-two .post-title{white-space: unset;overflow: visible;text-overflow: unset;}
-    .post-style-two .post-title a {font-size: 0.9rem !important;font-weight: 600 !important;line-height: 1.5 !important;}
-    #content .col-lg-4.col-md-6.postsMainDiv>.post-style-two{margin-bottom: 15px !important;}
+
     .single-post-block .post-title{font-size: 1.1rem !important;}
     .details-post-meta-block-top{font-size: 85% !important;}
     }
-@media all and (min-width: 241px) and (max-width: 480px) {
+@media all and (min-width: 241px) and (max-width: 440px) {
     #toast-container > div {
         padding: 8px 8px 8px 50px;
         width: 18em;
@@ -4483,7 +4475,31 @@ button.toast-close-button {
         right: -0.2em;
         top: -0.2em;
     }
-    
+}
+@media all and (min-width: 992px)  and (max-width: 1680px) {
+    .card-img-top {width: 100%;height: 20vw !important;object-fit: cover !important;}
+}
+@media all and (min-width: 769px)  and (max-width: 991px) {
+    .card-img-top {height: 30vw !important;}
+}
+@media all and (min-width: 576px)  and (max-width: 768px){
+    .card-img-top{height: 60vw !important; object-fit: cover !important;}
+    .hov-item{margin-bottom: 0.5em !important;}
+    .post-style-two .post-title{white-space: unset;overflow: visible;text-overflow: unset;}
+    .post-style-two .post-title a {font-size: 1.2rem !important;font-weight: 600 !important;line-height: 1.5 !important;}
+    #content .col-lg-4.col-md-6.postsMainDiv>.post-style-two{margin-bottom: 15px !important;}
+}
+@media all and (min-width: 481px)  and (max-width: 575px) {
+    .card-img-top {height: 70vw !important;}
+}
+@media all and (min-width: 310px) and (max-width: 480px) {
+    .latest-post-section {background: none;padding: 90px 0px !important;}
+    .card-img-top{height: 90vw !important; object-fit: cover !important;display: flex !important;padding: 0px !important;flex-shrink: 0;width: 100% !important;align-items: flex-start !important;vertical-align: top;overflow-x: hidden !important; z-index: 11111111;}
+    .hov-item{margin-bottom: 0.5em !important;}
+    .post-style-two .post-title{white-space: unset;overflow: visible;text-overflow: unset;}
+    .post-style-two .post-title a {font-size: 0.9rem !important;font-weight: 600 !important;line-height: 1.5 !important;}
+    #content .col-lg-4.col-md-6.postsMainDiv>.post-style-two{margin-bottom: 15px !important;}
+    .banner-block {padding: 0px;background: url("../images/bg/1.jpg") no-repeat center center;}
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
     #toast-container > div {
@@ -4970,7 +4986,6 @@ body{
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
+
     .myloader{display:none;}
     .latest-post-section{position:relative;}
-
-

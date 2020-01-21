@@ -1,5 +1,5 @@
 <?php 
-#if($_COOKIE['username'] != 'dlike'){die('<script>window.location.replace("https://dlike.io","_self")</script>');};
+if($_COOKIE['username'] != 'dlike'){die('<script>window.location.replace("https://dlike.io","_self")</script>');};
 include('../template/header5.php');  
 ?>
 <style>

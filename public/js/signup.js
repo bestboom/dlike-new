@@ -518,7 +518,6 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         var inputemail = $('#email_id').val();
         console.log(inputemail)
         if(email_check.test(inputemail)){
-            console.log("this check is working");
             $('#my_email').html(inputemail);
             $(".signup-signup-verify .next.btn").prop('disabled',true);
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 

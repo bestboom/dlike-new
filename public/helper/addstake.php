@@ -8,8 +8,7 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 
 	$amount = $_POST["stakemaount"];
 	$period = $_POST["stake_option"];
-	#$user = $_POST["staker"];
-	$user = 'bestboom';
+	$user = $_POST["staker"];
 	$reason = 'Staking';
 	$sqls = "SELECT amount FROM wallet where username='$user'"; 
 	$resultAmount = $conn->query($sqls);
@@ -33,9 +32,9 @@ if (isset($_POST["stakemaount"]) && isset($_POST["stake_option"]) && isset($_POS
 
 											echo '<div class="alert alert-success">Staking done successfully</div>';
 											echo '<script>$("#stake_me").attr("disabled","disabled"); document.getElementById("stake_sub").reset(); setTimeout(function(){location.reload();},1000);</script>';
-											}else {echo '<div class="alert alert-danger">Looks connc error on trnx entry</div>';}
-									} else {echo '<div class="alert alert-danger">Looks connc error on wallet entry</div>';}
-				}else {echo '<div class="alert alert-danger">Looks connc error </div>';}
+											}
+									} 
+				}
 			}
 		} else {echo '<div class="alert alert-danger">Do not have token balance!</div>';}
 

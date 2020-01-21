@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-#$privkey=getenv('privkey');
-#$hashkey=getenv('hashkey');
+$privkey=getenv('privkey');
+$hashkey=getenv('hashkey');
 
-$url = parse_url(getenv("NEW_DATABASE_URL"));
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 $server = $url["host"]; 
 $username = $url["user"]; 
 $password = $url["pass"];
@@ -14,7 +14,7 @@ $conn = new mysqli($server, $username, $password, $db);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-}
+} 
 
 //Test if it is a shared client
 

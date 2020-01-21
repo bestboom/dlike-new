@@ -1,5 +1,4 @@
 <?php include('template/header5.php');?>
-<script data-ad-client="ca-pub-6758799291201201" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </div><!-- sub-header -->
 <?php
 $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB( NOW(), INTERVAL 24 HOUR) Group by tagname order by count(*) DESC Limit 15";
@@ -40,7 +39,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
                 </div>
             </div>
         </div>
-    </div>  -->
+    </div>  -->  
 
     <div class="container">
         <div class="row  align-items-center h-100 post_select">
@@ -50,12 +49,12 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
             </div>
             <div class="col-md-9 lay">&nbsp;</div>
         </div>
-        <div id="loadings"><img src="/images/loader.svg" width="100"></div>
+        <div id="loadings"><img src="/images/loader.svg" width="100"></div>   
         <div class="row" id="content">
         </div>
-    </div>
+    </div>  
 
-    <div class="container" style="padding-top:40px;">
+    <div class="container" style="padding-top:0px;">
         <p>Dlike is a social sharing dapp (decentralized application) built on steem blockchain where you can share any news, story or tips which you consider worth sharing with community and if community likes your sharing then you get rewarded in the form of upvotes.</p>
         <p>Dlike has 2 types of upvotes namely STEEM and DLIKER. Steem is the native token for steem blockchain while DLIKER is the native token for Dlike platform which is built on steem-engine exchange and is independently trade-able. </p>
         <p>On dlike, we have different categories in which you can share according to your liking. Mainly these categories are health, business, food, cryptocurrency, sports, news, technology and general. You can share these news, stories and tips from any popular website or even from your personal blog but being an informative source, we do not allow personal promotion like selfies and other such content. So always share content that is information oriented and is useful as a source of information for all community members across the globe.</p>

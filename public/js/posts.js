@@ -76,7 +76,7 @@ $(document).ready(function(){
 				}
 
 				//image or youtube
-				let thumbnail = '<img src="' + img.src + '" alt="' + $post.title + '" class="card-img-top img-fluid">';
+				let thumbnail = '<img src="' + img.src + '" alt="' + $post.title + '" class="card-img-top">';
 
 				var getLocation = function(href) {
 					var l = document.createElement("a");
@@ -94,11 +94,11 @@ $(document).ready(function(){
 						for (i in query){
 							let splited = query[i].split('=');
 							if(splited[0] == 'v'){
-								thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+								thumbnail = '<iframe src="https://www.youtube.com/embed/' + splited[1] + '" class="card-img-top" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
 							}
 						}
 					}else{
-						thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top img-fluid" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
+						thumbnail = '<iframe src="https://www.youtube.com/embed/' + url.pathname + '" class="card-img-top" style="overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen></iframe>';
 					}
 				}
 
@@ -153,7 +153,7 @@ $(document).ready(function(){
 					'\n' +
 					'</div>\n' + 
 					'\n' +
-					'<div class="post-thumb"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + thumbnail + '</a></div>\n' + 
+					'<div class="post-thumb img-fluid"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + thumbnail + '</a></div>\n' + 
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +

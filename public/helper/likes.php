@@ -1,24 +1,16 @@
 <?php
-#if($_COOKIE['username'] != 'dlike'){die('<script>window.location.replace("https://dlike.io","_self")</script>');};
+if($_COOKIE['username'] != 'dlike'){die('<script>window.location.replace("https://dlike.io","_self")</script>');};
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-$user = 'bestboom';
-$amount = 4000;
-$reason = 'checking';
 
-$sqlj = "INSERT INTO transactions (username, amount, reason)
-        VALUES ('".$user."', '".$amount."', '".$reason."')";
-if ($conn->query($sqlj) === TRUE) {
-    echo "data added successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-?>
-<!--
-$id = 1392;
+
+
+
+
+$id = 2292;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
 
@@ -29,7 +21,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id2 = 1402;
+$id2 = 2282;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id2'";
 
@@ -41,7 +33,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id3 = 1412;
+$id3 = 2272;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id3'";
 
@@ -52,7 +44,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id4 = 1432;
+$id4 = 2262;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id4'";
 
@@ -63,7 +55,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id5 = 1442;
+$id5 = 2252;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id5'";
 
@@ -75,7 +67,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id6 = 1452;
+$id6 = 1922;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id6'";
 
@@ -86,7 +78,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id7 = 1462;
+$id7 = 1912;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id7'";
 
@@ -96,7 +88,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id8 = 1472;
+$id8 = 1902;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id8'";
 
@@ -106,7 +98,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id9 = 1482;
+$id9 = 1892;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id9'";
 
@@ -118,7 +110,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id10 = 1502;
+$id10 = 1882;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id10'";
 
@@ -128,7 +120,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id11 = 1512;
+$id11 = 1872;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id11'";
 
@@ -139,7 +131,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id12 = 1522;
+$id12 = 882;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id12'";
 
@@ -148,8 +140,8 @@ if ($conn->query($sqlw) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
-
+?>
+<!---
 $sqlw = "DELETE FROM `steemposts` 
   WHERE id NOT IN (
     SELECT * FROM (
