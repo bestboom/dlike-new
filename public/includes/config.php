@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-$privkey=getenv('privkey');
-$hashkey=getenv('hashkey');
-
 $url = parse_url(getenv("NEW_DATABASE_URL"));
 $server = $url["host"]; 
 $username = $url["user"]; 

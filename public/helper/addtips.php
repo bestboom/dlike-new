@@ -1,9 +1,9 @@
 <?php 
+require '../includes/config.php';
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-require '../includes/config.php';
 
 if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){	
 	$receiver =  $_POST['tipauthor'];	
@@ -14,7 +14,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	$sender_amount = '0.006';
 
 
-	$checktip = "SELECT * FROM TipTop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
+	$checktip = "SELECT * FROM tiptop where permlink = '$permlink' and receiver = '$receiver' and sender = '$sender'";
 	$resulttip = $conn->query($checktip);
 
 	if ($resulttip->num_rows > 0) 
@@ -27,7 +27,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 	else 
 	{
 
-		$verifytime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
+		$verifytime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS lasttime FROM tiptop where sender = '$sender' order by tip_time DESC limit 1";
 		$resulttime = $conn->query($verifytime);
 		$rowtime = $resulttime->fetch_assoc();
 		$lasttip = $rowtime['lasttime'];
@@ -45,7 +45,7 @@ if (isset($_POST["tipauthor"]) && isset($_POST["tippermlink"])){
 				}
 
 			
-				$sqlm = "INSERT INTO TipTop (sender, receiver, permlink, tip1, userip, tip_time)
+				$sqlm = "INSERT INTO tiptop (sender, receiver, permlink, tip1, userip, tip_time)
 					VALUES ('".$sender."', '".$receiver."', '".$permlink."', '".$tip1."', '".$ip."', now())";
 
 					if (mysqli_query($conn, $sqlm)) 
