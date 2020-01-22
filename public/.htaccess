@@ -1,6 +1,6 @@
 ##Force SSL 
 Options +FollowSymLinks
-RewriteEngine On
+#RewriteEngine On
 RewriteBase /
 
 #Normal way (in case you need to deploy to NON-heroku)
