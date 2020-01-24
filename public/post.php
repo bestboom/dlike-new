@@ -29,7 +29,7 @@ include('template/header5.php');
 
 $views = '1'; 
 //post views
-$sqlvs = "SELECT * FROM TotalPostViews where permlink = '$link' and author = '$auth'";
+$sqlvs = "SELECT * FROM totalpostviews where permlink = '$link' and author = '$auth'";
 $resultvs = $conn->query($sqlvs);
 if ($resultvs->num_rows > 0) {
     $rowview = mysqli_fetch_assoc($resultvs); 
