@@ -8,26 +8,19 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender='';}
 
-$post_url = "https://scot-api.steem-engine.com/$user/$link";
+$post_url = "https://tower.emrebeyler.me/api/v1/posts/?author={$user}&permlink={$link}";
 $response = file_get_contents($post_url);
-$result = json_decode($response, TRUE);
-
-    $og_title = $result['DLIKER']['title'];
-    $og_description = explode("\n\n#####\n\n",$result['DLIKER']['desc']);
-    $og_description = $og_description[1];
-    $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
-    $pending_amount = ($result['DLIKER']['pending_token'])/1000;
-
-$meta_data = $result['DLIKER']['json_metadata'];
-$meta_data = json_decode($meta_data, true);
-$og_image = $meta_data['image'];
-$body = $meta_data['body'];
-$body = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $body));
-$body = html_entity_decode(nl2br($body));
-$ext_link = $meta_data['url'];
-
-
-
+$result = json_decode($response);
+$og_description = explode("\n\n#####\n\n",$result->body);
+$og_description = $og_description[1];
+$og_title = $result->title;
+function removeTags($str) {  
+    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
+    return $str;
+}
+$og_description = removeTags($og_description);
+$meta_data = json_decode($result->json);
+$og_image = $meta_data->image;
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
@@ -42,7 +35,7 @@ if ($resultvs->num_rows > 0) {
     $rowview = mysqli_fetch_assoc($resultvs); 
     $postviews = $rowview["totalviews"];
 
-    $sqlvip = "SELECT * FROM PostViews where permlink = '$link' and author = '$auth' and userip = '$ip'";
+    $sqlvip = "SELECT * FROM postviews where permlink = '$link' and author = '$auth' and userip = '$ip'";
     $resultvip = $conn->query($sqlvip);
     if ($resultvip->num_rows > 0) { } else {
         $updatePostviews = "UPDATE TotalPostViews SET totalviews = '$postviews' + 1 WHERE author = '$auth' AND permlink = '$link'";
@@ -54,14 +47,14 @@ if ($resultvs->num_rows > 0) {
 
     }
 } else {
-    $sqlview = "INSERT INTO TotalPostViews (author, permlink, totalviews)
+    $sqlview = "INSERT INTO totalpostviews (author, permlink, totalviews)
     VALUES ('".$auth."', '".$link."', '".$views."')";
     mysqli_query($conn, $sqlview); 
     $postviews = '1';  
 } 
 
 //tip total income
-$post_inc = "SELECT SUM(tip1) As post_inc, SUM(tip2) As post_inc2 FROM TipTop where permlink = '$link' and receiver = '$auth'";
+$post_inc = "SELECT SUM(tip1) As post_inc, SUM(tip2) As post_inc2 FROM tiptop where permlink = '$link' and receiver = '$auth'";
 $result_inc = $conn->query($post_inc);
 if ($result_inc->num_rows > 0) 
 {
@@ -126,12 +119,12 @@ else
                                         <div class="col-lg-1 col-md-2 col-sm-4 auth_info">
                                             <div class="post-tag-block"><!-- post-likes-block -->
                                                 <?php
-                                                $sqlm = "SELECT likes FROM PostsLikes WHERE author = '$auth' and permlink = '$link'";
+                                                $sqlm = "SELECT likes FROM postslikes WHERE author = '$auth' and permlink = '$link'";
                                                 $result_lk = $conn->query($sqlm);
                                                 $row = mysqli_fetch_assoc($result_lk);
                                                 if ($result_lk->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
 
-                                                $sqlv = "SELECT * FROM MyLikes where permlink = '$link' and author = '$auth' and userip = '$ip'";
+                                                $sqlv = "SELECT * FROM mylikes where permlink = '$link' and author = '$auth' and userip = '$ip'";
                                                 $resultv = $conn->query($sqlv); 
                                                 if ($resultv->num_rows > 0) { ?>
                                                     <div class="post-comments-mid">
@@ -189,12 +182,12 @@ else
 
                             <?php
                             if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><a href="/welcome"><button class="btn btn-danger">Login To Tip</button></a></center>'; $tiptime = '601';} else {
-                                $verifysender = "SELECT * FROM TipTop where sender = '$sender'";
+                                $verifysender = "SELECT * FROM tiptop where sender = '$sender'";
                                 $result_sender = $conn->query($verifysender);
                                 if ($result_sender->num_rows > 0) {
                                 $row_sender = $result_sender->fetch_assoc();   
 
-                                    $verifytip = "SELECT * FROM TipTop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
+                                    $verifytip = "SELECT * FROM tiptop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
                                     $resultvtip = $conn->query($verifytip);
                                     $rowvtip = $resultvtip->fetch_assoc(); 
                                     if ($resultvtip->num_rows > 0) { 
@@ -202,7 +195,7 @@ else
                                         $tiptime = '0';
                                     } else {
 
-                                        $verifytiptime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS timed FROM TipTop where sender = '$sender' order by tip_time DESC limit 1";
+                                        $verifytiptime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS timed FROM tiptop where sender = '$sender' order by tip_time DESC limit 1";
                                         $resulttiptime = $conn->query($verifytiptime);
                                         $rowtiptime = $resulttiptime->fetch_assoc();
                                         if ($resulttiptime->num_rows > 0) {
