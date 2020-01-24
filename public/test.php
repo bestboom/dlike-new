@@ -33,13 +33,15 @@ echo 'description';
 echo '<br>';
 $body = $result['results'][0]['body'];
 echo '<br>';
-print_r($body);
+//print_r($body);
 echo '<br>';
-$og_description = explode("\n\n#####\n\n",$body);
+echo $og_description = explode("\n\n#####\n\n",$body);
 echo '<br>';
-print_r($og_description);
-//$og_description = $og_description[1];
-//$og_description = removeTags($og_description);
+//print_r($og_description);
+$og_description = $og_description[0];
+echo $og_description = removeTags($og_description);
+echo '<br>';
+echo '<br>';
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 
 
