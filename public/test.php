@@ -32,7 +32,7 @@ echo '<br>';
 echo 'description';
 echo '<br>';
 $og_description = explode("\n\n#####\n\n",$og_res['body']);
-$og_description = $og_description[1];
+//$og_description = $og_description[1];
 $og_description = removeTags($og_description);
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 
@@ -51,9 +51,9 @@ echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0
 
 echo '<br>';
 echo 'image here';
-$meta_data = json_decode($og_res['json']);
-echo $og_image = $meta_data->image;
-echo '<br>';
+$meta_data = $result['results'][0]['json'];
+$meta_data = json_decode($meta_data, true);
+echo $og_image = $meta_data['image'];
 echo 'or this works';
 echo $og_image = $meta_data['image'];
 echo '<br>';
