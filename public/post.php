@@ -16,10 +16,10 @@ $og_res = $result['results'][0];
 $og_title = $og_res['title']; 
 
 $body = $og_res['body'];
-$og_description = explode("\n\n#####\n\n",$body);
-$og_description = $og_description[1];
-$og_description = str_replace(array('\'', '"'), '', $og_description); 
-$og_description = strip_tags($og_description);
+$body = explode("\n\n#####\n\n",$body);
+$body = $body[1];
+$body = str_replace(array('\'', '"'), '', $body); 
+$og_description = strip_tags($body);
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 
 $meta_data = $result['results'][0]['json'];
@@ -32,13 +32,12 @@ $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
 include('template/header5.php');
-
-$body_text = explode("\n\n#####\n\n",$body);
+//post body description
 function removeTags($str) {  
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
     return $str;
 }
-$body_text = removeTags($body_text);
+$body_text = removeTags($body);
 
 $views = '1'; 
 //post views
@@ -156,7 +155,7 @@ else
                                                 </div>
                                                 <div class="col-lg-4 col-md-6 col-sm-5 auth_info">
                                                     <div class="post-share-block">
-                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span id="se_token" data-popover="true" data-html="true" data-content=""><span id="pending_dliker"></span><?php echo $pending_amount;?></span> DLIKER
+                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span id="se_token" data-popover="true" data-html="true" data-content=""><span id="pending_dliker"></span></span> DLIKER
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
