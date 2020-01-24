@@ -5,9 +5,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-$link = "dlike-weekly-report-72-dliker-token-details";
+$link = "dlike-affiliate-program-dlike-staking-rewards-and-dliker-delegations-for-pro-users";
 $user = "dlike";
-$post_url = "https://tower.emrebeyler.me/api/v1/posts/?$user/$link";
+$post_url = "https://tower.emrebeyler.me/api/v1/posts/?author=$user&permlink=$link";
 
 
 $response = file_get_contents($post_url);
