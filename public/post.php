@@ -151,7 +151,7 @@ else
                                                 </div>
                                                 <div class="col-lg-4 col-md-6 col-sm-5 auth_info">
                                                     <div class="post-share-block">
-                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span id="se_token" data-popover="true" data-html="true" data-content=""><?php echo $pending_amount;?></span> DLIKER
+                                                        <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span id="se_token" data-popover="true" data-html="true" data-content=""><span id="pending_dliker"></span><?php echo $pending_amount;?></span> DLIKER
                                                     </div><!-- post-views-block -->
                                                 </div>
                                                 <!-- post-income-block -->
@@ -168,7 +168,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <span class="post-entry mod-post"><?php echo $body; ?></span>
+                                    <span class="post-entry mod-post"><?php echo $body_text; ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
@@ -463,7 +463,7 @@ else
             $.getJSON('https://scot-api.steem-engine.com/@'+author+'/'+post_permlink+'', function(data) {
                 //console.log(data.DLIKER.pending_token);
                 let pending_token = (data.DLIKER.pending_token)/1000;
-
+                $("#pending_dliker").html(pending_token);
                 let voters = data.DLIKER.active_votes;
                 let netshare = data.DLIKER.vote_rshares;
 
