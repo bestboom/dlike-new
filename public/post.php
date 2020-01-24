@@ -34,6 +34,11 @@ $og_url = $uri;
 include('template/header5.php');
 
 $body_text = explode("\n\n#####\n\n",$body);
+function removeTags($str) {  
+    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
+    return $str;
+}
+$body_text = removeTags($body_text);
 
 $views = '1'; 
 //post views
