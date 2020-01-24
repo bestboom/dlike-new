@@ -41,7 +41,8 @@ echo 'this is alst line of description check';
 echo '<br>';
 //$og_description = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $og_description));
 //$og_description = html_entity_decode(nl2br($og_description));
-//$og_description = removeTags($og_description);
+$og_description = str_replace(array('\'', '"'), '', $og_description); 
+$og_description = strip_tags($og_description);
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 
 
