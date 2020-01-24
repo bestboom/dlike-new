@@ -191,52 +191,49 @@ else
                             <p class="tipthnk">You need to wait before you can TIP again.</p>
                         </div>
                         <div class="col-sm-4">
-
                             <?php
                             if(empty($_COOKIE['username']) && !isset($_COOKIE['username'])) { echo '<center><a href="/welcome"><button class="btn btn-danger">Login To Tip</button></a></center>'; $tiptime = '601';} else {
                                 $verifysender = "SELECT * FROM tiptop where sender = '$sender'";
                                 $result_sender = $conn->query($verifysender);
                                 if ($result_sender->num_rows > 0) {
-                                $row_sender = $result_sender->fetch_assoc();   
+                                    $row_sender = $result_sender->fetch_assoc();   
 
                                     $verifytip = "SELECT * FROM tiptop where permlink = '$link' and receiver = '$auth' and sender = '$sender'";
                                     $resultvtip = $conn->query($verifytip);
                                     $rowvtip = $resultvtip->fetch_assoc(); 
-                                    if ($resultvtip->num_rows > 0) { 
+                                    if ($resultvtip->num_rows > 0) 
+                                    { 
                                         echo '<center><button class="btn btn-danger">You Already Tip This Post</button></center>';
                                         $tiptime = '0';
                                     } else {
-
                                         $verifytiptime = "SELECT TimeStampDiff(SECOND,tip_time,Now()) AS timed FROM tiptop where sender = '$sender' order by tip_time DESC limit 1";
                                         $resulttiptime = $conn->query($verifytiptime);
                                         $rowtiptime = $resulttiptime->fetch_assoc();
-                                        if ($resulttiptime->num_rows > 0) {
+                                        if ($resulttiptime->num_rows > 0) 
+                                        {
                                             $tiptime = $rowtiptime['timed']; 
-                                            if($tiptime < 600) {
-                                                echo    '<div id="countdown">
+                                            if($tiptime < 600) 
+                                            {
+                                                echo '<div id="countdown">
                                                 <div class="btn"><span id="minutes">00</span><span style="float:center">:</span>
                                                 <span id="seconds">00</span></div></div>'; 
-                                                echo    '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>';    
-
+                                                echo '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>'; 
                                             }  else { ?>
                                                 <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                                     <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                                     <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                                     <center><button class="btn btn-default btn-tip">TIP</button></center>
-                                                    </form> <?
-                                                }                
-                                            }   
+                                                </form> 
+                                            <? }                
                                         }   
-                                    }   else    {   $tiptime = '601'; ?>
+                                    }   
+                                } else { $tiptime = '601'; ?>
                                     <form action="/helper/addtips.php" method="post" id="tipsubmit">
                                         <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
                                         <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
                                         <center><button class="btn btn-default btn-tip" style="background: #fff;color: #090e68;">TIP</button></center>
-                                        </form> <?
-                                    }   
-                                }   ?>           
-                                
-
+                                    </form> 
+                                <? } } ?>
                             </div>
                         </div>
                     </div>
