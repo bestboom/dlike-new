@@ -25,12 +25,13 @@ echo '<br>';
 echo $og_title = $result['results'][0]['title'];
 echo '<br>';
 echo '<br>';
-echo '<br>';
+echo 'second title';
 echo $og_title = $og_res['title']; 
 echo '<br>';
 echo '<br>';
+echo 'description';
 echo '<br>';
-$og_description = explode("\n\n#####\n\n",$result['results'][0]->body);
+$og_description = explode("\n\n#####\n\n",$og_res['body']);
 $og_description = $og_description[1];
 $og_description = removeTags($og_description);
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
@@ -48,12 +49,14 @@ echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0
 
 //echo $og_description = removeTags($og_description);
 
-
-$meta_data = json_decode($result['results']['json']);
+echo '<br>';
+echo 'image here';
+$meta_data = json_decode($og_res['json']);
 echo $og_image = $meta_data->image;
+echo '<br>';
 echo 'or this works';
 echo $og_image = $meta_data['image'];
-
+echo '<br>';
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 echo $og_url = $uri;
