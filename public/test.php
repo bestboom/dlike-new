@@ -17,8 +17,8 @@ function removeTags($str) {
 	$str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
 	return $str;
 }
-
-echo $og_title = $result['results']['title'];
+echo $og_res = $result['results'];
+echo $og_title = $result['results'][0]['title'];
     
 $og_description = explode("\n\n#####\n\n",$result['results']['body']);
 $og_description = $og_description[1];
