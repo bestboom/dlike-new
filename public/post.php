@@ -112,8 +112,8 @@ else
                 <div class="col">
                     <div class="blog-details-wrapper">
                         <div class="single-post-block">
-                            <center><ins class="bmadblock-5ddbb7dff918d6c5b02131db" style="display:inline-block;width:468px;height:60px;"></ins><script async type="application/javascript" src="//ad.bitmedia.io/js/adbybm.js/5ddbb7dff918d6c5b02131db"></script></center>
-                            <br>
+                            <!-- <center><ins class="bmadblock-5ddbb7dff918d6c5b02131db" style="display:inline-block;width:468px;height:60px;"></ins><script async type="application/javascript" src="//ad.bitmedia.io/js/adbybm.js/5ddbb7dff918d6c5b02131db"></script></center>
+                            <br> -->
                             <h1 class="post-title mod-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
                             <!--<h1><span class="mod-title"></span></h1>-->
                             <div class="details-post-meta-block-top">
