@@ -17,7 +17,7 @@ $og_title = $og_res['title'];
 
 $body = $og_res['body'];
 $og_description = explode("\n\n#####\n\n",$body);
-$og_description = $og_description[0];
+$og_description = $og_description[1];
 $og_description = str_replace(array('\'', '"'), '', $og_description); 
 $og_description = strip_tags($og_description);
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
@@ -25,12 +25,15 @@ $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23)
 $meta_data = $result['results'][0]['json'];
 $metadata = json_decode($meta_data, TRUE);
 $og_image = $metadata['image'][0];
+$ext_link = $metadata['url'];
 
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
 include('template/header5.php');
+
+$body_text = explode("\n\n#####\n\n",$body);
 
 $views = '1'; 
 //post views

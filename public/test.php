@@ -42,6 +42,8 @@ $meta_data = $result['results'][0]['json'];
 $metadata = json_decode($meta_data, TRUE);
 echo $og_image = $metadata['image'][0];
 echo '<br>';
+echo $ext_link = $metadata['url'];
+echo '<br>';
 echo 'this is otherway';
 echo '<br>';
 $new_descr = $metadata['body'];
