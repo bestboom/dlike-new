@@ -17,10 +17,16 @@ function removeTags($str) {
 	$str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
 	return $str;
 }
-$og_res = $result['results'];
+$og_res = $result['results'][0];
 print_r($og_res);
-echo $og_title = $result['results'][0]['title'];
-    
+echo '<br>';
+
+echo '<br>';
+//echo $og_title = $result['results'][0]['title'];
+echo $og_title = $og_res['title']; 
+echo '<br>';
+echo '<br>';
+echo '<br>';
 $og_description = explode("\n\n#####\n\n",$result['results'][0]->body);
 $og_description = $og_description[1];
 $og_description = removeTags($og_description);
