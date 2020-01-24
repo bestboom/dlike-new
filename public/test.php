@@ -22,7 +22,10 @@ print_r($og_res);
 echo '<br>';
 
 echo '<br>';
-//echo $og_title = $result['results'][0]['title'];
+echo $og_title = $result['results'][0]['title'];
+echo '<br>';
+echo '<br>';
+echo '<br>';
 echo $og_title = $og_res['title']; 
 echo '<br>';
 echo '<br>';
