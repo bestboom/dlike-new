@@ -32,15 +32,11 @@ echo '<br>';
 echo 'description';
 echo '<br>';
 $body = $result['results'][0]['body'];
-echo '<br>';
-//print_r($body);
-echo '<br>';
-echo $og_description = explode("\n\n#####\n\n",$body);
-echo '<br>';
-//print_r($og_description);
+$og_description = explode("\n\n#####\n\n",$body);
 $og_description = $og_description[0];
-echo $og_description = removeTags($og_description);
+//echo $og_description = removeTags($og_description);
 echo '<br>';
+echo 'this is alst line of description check';
 echo '<br>';
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 
