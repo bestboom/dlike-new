@@ -31,13 +31,17 @@ echo '<br>';
 echo '<br>';
 echo 'description';
 echo '<br>';
-$body = $result['results'][0]['body'];
+//$body = $result['results'][0]['body'];
+$body = $og_res['body'];
 $og_description = explode("\n\n#####\n\n",$body);
 $og_description = $og_description[0];
 //echo $og_description = removeTags($og_description);
 echo '<br>';
 echo 'this is alst line of description check';
 echo '<br>';
+$og_description = preg_replace('/[ \t]+/', ' ', preg_replace('/[\r\n]+/', "\n", $og_description));
+$og_description = html_entity_decode(nl2br($og_description));
+$og_description = removeTags($og_description);
 echo $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 
 
@@ -60,7 +64,8 @@ $metadata = json_decode($meta_data, TRUE);
 print_r($metadata);
 echo '<br>';
 echo '<br>';
-//echo $og_image = $meta_data->image;
+$og_image = $meta_data['image'];
+echo $og_image;
 echo 'or this works';
 echo $og_image = $metadata['image'];
 echo '<br>';
