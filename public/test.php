@@ -18,7 +18,7 @@ function removeTags($str) {
 	return $str;
 }
 $og_res = $result['results'];
-print_r($og_res)
+print_r($og_res);
 echo $og_title = $result['results'][0]['title'];
     
 $og_description = explode("\n\n#####\n\n",$result['results'][0]->body);
