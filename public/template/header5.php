@@ -24,14 +24,15 @@
     <? } else { ?>    
         <title>DLIKE - Share To Get Rewarded</title>
         <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes.">
-        <!--Facebook Meta Tags -->
         <meta property="og:url" content="https://dlike.io" />
         <meta property="og:title" content="Dlike - Share To Get Rewarded" />
         <meta property="og:description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes." />
         <meta property="og:image" content="/images/dlike-main.jpg" />
-        <!--End Facebook Meta Tags-->
     <? } ?>
-        <link rel='favicon icon' type=image/x-icon href=/images/favicon.ico />
+        <link rel="shortcut icon" href="https://dlike.io/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://dlike.io/images/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://dlike.io/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://dlike.io/images/favicons/favicon-16x16.png">
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
