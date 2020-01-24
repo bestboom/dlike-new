@@ -37,7 +37,7 @@ function removeTags($str) {
     $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
     return $str;
 }
-$body_text = removeTags($body);
+$body_text = $body;
 
 $views = '1'; 
 //post views

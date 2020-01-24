@@ -16,7 +16,7 @@ $response = file_get_contents($post_url);
 $result = json_decode($response, TRUE);
 
 
-$og_res = $result['results'][0];
+$og_res = $result['results'];
 echo $og_title = $og_res['title']; 
 echo '<br>';
 echo 'description';
@@ -38,9 +38,9 @@ echo $og_description;
 echo '<br>';
 echo 'image here';
 echo '<br>';
-$meta_data = $result['results'][0]['json'];
+$meta_data = $result['results']['json'];
 $metadata = json_decode($meta_data, TRUE);
-echo $og_image = $metadata['image'][0];
+echo $og_image = $metadata['image'];
 echo '<br>';
 echo $ext_link = $metadata['url'];
 echo '<br>';
