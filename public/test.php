@@ -20,7 +20,7 @@ function removeTags($str) {
 $og_res = $result['results'][0];
 print_r($og_res);
 echo '<br>';
-
+echo '<br>';
 echo '<br>';
 echo $og_title = $result['results'][0]['title'];
 echo '<br>';
