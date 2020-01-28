@@ -4,8 +4,7 @@
             <b class="top-ads-text">
                 <i class="fas fa-gift"></i> Instant cryptocurrency exchange: No signup required
             </b>    
-            <button class="btn btn-hb" type="button">Exchange Now
-            </button> 
+            <button class="btn btn-hb" type="button">Exchange Anonymously</button> 
         </a> 
         <button href="javascript:void(0);" class="btn btn-close" data-dismiss="alert" aria-label="close" title="close">
             <i class="fa fa-times" aria-hidden="true"></i>
