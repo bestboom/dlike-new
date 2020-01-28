@@ -30,7 +30,7 @@ $ext_link = $metadata['url'];
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
-include('promo/top-sticky.php');
+
 include('template/header5.php');
 //post body description
 function removeTags($str) {  
