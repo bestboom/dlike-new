@@ -4280,7 +4280,6 @@ sub.transmoney-value {
 16. top-sticky
 -----------------------------------*/
 .hb-strip {
-    position: fixed !important;
     top: 0;
     width: 100%;
     z-index: 9999;
