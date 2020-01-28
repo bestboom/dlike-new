@@ -30,7 +30,7 @@ $ext_link = $metadata['url'];
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
-
+include('promo/top-sticky.php');
 include('template/header5.php');
 //post body description
 function removeTags($str) {  
@@ -315,9 +315,9 @@ else
                                 <br>
                         <!--    </form>  -->
                         <!-- ads -->
+                        <br>
                         <center>
-                        <ins class="bmadblock-5d975d54237faa2ad109a7ed" style="display:inline-block;width:336px;height:280px;"></ins>
-                        <script async type="application/javascript" src="//ad.bitmedia.io/js/adbybm.js/5d975d54237faa2ad109a7ed"></script>
+                        <iframe data-aa="1318357" src="//ad.a-ads.com/1318357?size=336x280" scrolling="no" style="width:336px; height:280px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
                         </center>
                         <!-- ads -->
                         </div>

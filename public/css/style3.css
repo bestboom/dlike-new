@@ -4276,6 +4276,50 @@ sub.transmoney-value {
 .copyright-text p {
     padding-top: 9px;
 }
+/*-----------------------------------
+16. top-sticky
+-----------------------------------*/
+.hb-strip {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #000000;
+    font-size: 18px;
+    border-radius: 0 !important;
+    margin: 0;
+    padding: 5px 20px !important;
+}
+.top-ads-text {
+    color: #ddd;
+    font-weight: normal;
+    font-size: 1rem;
+}
+.btn-close {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    color: #ddd;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+    padding: 0;
+}
+.btn-hb {
+    padding: 3px 9px !important;
+    margin-left: 10px;
+    border: 0;
+    border-radius: 0.4rem !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    color: #ffffff;
+    background-color: #f24400;
+}
+
+
+
 
 /*-----------------------------------
 16. toaster
