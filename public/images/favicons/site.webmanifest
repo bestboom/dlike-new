@@ -1,0 +1,15 @@
+{
+    "name": "DLIKE",
+    "short_name": "DLIKE",
+    "icons": [
+        {
+            "src": "https://dlike.io/images/favicons/android-chrome-192x192.png?v=kPvWrWRLXe",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "https://dlike.io",
+    "display": "standalone"
+}
