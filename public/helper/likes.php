@@ -10,7 +10,7 @@ require '../includes/config.php';
 
 
 
-$id = 2912;
+$id = 4402;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
 
@@ -21,7 +21,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id2 = 2842;
+$id2 = 4382;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id2'";
 
@@ -33,7 +33,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id3 = 2832;
+$id3 = 4322;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id3'";
 
@@ -44,7 +44,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id4 = 2812;
+$id4 = 4142;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id4'";
 
@@ -55,7 +55,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id5 = 2822;
+$id5 = 4092;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id5'";
 
@@ -67,7 +67,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id6 = 2732;
+$id6 = 3982;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id6'";
 
@@ -78,7 +78,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id7 = 3852;
+$id7 = 3822;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id7'";
 
@@ -88,7 +88,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id8 = 3802;
+$id8 = 3812;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id8'";
 
@@ -98,6 +98,14 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
+
+?>
+
+
+
+
+
+<!--
 $id9 = 3712;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id9'";
@@ -205,8 +213,15 @@ if ($conn->query($sqlw) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-?>
-<!---
+
+
+
+
+
+
+
+
+
 $sqlw = "DELETE FROM `steemposts` 
   WHERE id NOT IN (
     SELECT * FROM (
