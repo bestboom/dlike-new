@@ -10,7 +10,7 @@ require '../includes/config.php';
 
 
 
-$id = 2512;
+$id = 2212;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id'";
 
@@ -21,7 +21,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id2 = 2502;
+$id2 = 2232;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id2'";
 
@@ -33,7 +33,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id3 = 2472;
+$id3 = 2302;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id3'";
 
@@ -44,7 +44,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id4 = 2482;
+$id4 = 2312;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id4'";
 
@@ -55,7 +55,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id5 = 2492;
+$id5 = 2322;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id5'";
 
@@ -67,7 +67,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id6 = 2462;
+$id6 = 2332;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id6'";
 
@@ -78,7 +78,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id7 = 2452;
+$id7 = 2342;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id7'";
 
@@ -88,7 +88,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id8 = 2442;
+$id8 = 2352;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id8'";
 
@@ -98,7 +98,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id9 = 2432;
+$id9 = 2362;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id9'";
 
@@ -110,7 +110,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 
 
-$id10 = 2422;
+$id10 = 2372;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id10'";
 
@@ -120,7 +120,7 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-$id11 = 2412;
+$id11 = 2382;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id11'";
 
@@ -131,9 +131,74 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-$id12 = 2402;
+$id12 = 2392;
 
 $sqlw = "DELETE FROM staking WHERE id = '$id12'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id13 = 2182;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id13'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id14 = 2162;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id14'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id15 = 2002;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id15'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$id16 = 1962;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id16'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id17 = 1942;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id17'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id18 = 1932;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id18'";
 
 if ($conn->query($sqlw) === TRUE) {
     echo "Row DELETED successfully";
