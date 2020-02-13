@@ -4498,6 +4498,11 @@ button.toast-close-button {
         top: -0.2em;
     }
 }
+@media screen and (max-width: 499px) {
+    .callto-btn {
+        padding: 15px 4px !important;
+    }
+}
 @media all and (max-width: 480px) {
     #p_img{width: 72px !important;height: 72px !important;margin-top: -30px !important;}   
     #p_cover{height:105px !important;}
