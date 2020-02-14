@@ -512,7 +512,7 @@ if ($user_eth == '') {
                                 <tbody>
                                 <?php
 
-                                $sql_Ref = "SELECT * FROM Referrals where refer_by='$user_wallet' ORDER BY entry_time DESC LIMIT 50";
+                                $sql_Ref = "SELECT * FROM referrals where refer_by='$user_wallet' ORDER BY entry_time DESC LIMIT 50";
                                 $result_Ref = $conn->query($sql_Ref);
 
                                 if ($result_Ref && $result_Ref->num_rows > 0) {
@@ -520,7 +520,7 @@ if ($user_eth == '') {
                                         $Ref_time = strtotime($row_Ref["entry_time"]); 
                                 ?>
                                         <tr>
-                                            <td class="cent_me wid_2"">
+                                            <td class="cent_me wid_2">
                                                 <span class="btn btn-icon btn-exp">
                                                     <span class="text-dark">Tx</span>
                                                 </span>
