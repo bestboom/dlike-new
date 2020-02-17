@@ -16,7 +16,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         $trending_html = '';
     }
 ?> 
-<div class="latest-post-section" style="min-height:80vh;padding: 70px 0 60px 0;">
+<div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;">
     <!-- <div class="container">
         <div class="row" style="background:  #f3f4f5;padding-top: 31px;margin-bottom: 20px;">
             <div class="col-lg-12 col-md-12 " style="margin-bottom: 10px">
@@ -49,7 +49,7 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
             </div>
             <div class="col-md-9 lay">&nbsp;</div>
         </div>
-        <div id="loadings"><img src="/images/loader.svg" width="100"></div>   
+        <!--<div id="loadings"><img src="/images/loader.svg" width="100"></div> -->  
         <div class="row" id="content">
         </div>
     </div>  

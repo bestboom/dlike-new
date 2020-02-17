@@ -4549,7 +4549,7 @@ button.toast-close-button {
     .card-img-top {height: 70vw !important;}
 }
 @media all and (min-width: 310px) and (max-width: 480px) {
-    .latest-post-section {background: none;padding: 90px 0px !important;}
+    .latest-post-section {background: none;padding: 0px 0px !important;}
     .card-img-top{height: 90vw !important; object-fit: cover !important;display: flex !important;padding: 0px !important;flex-shrink: 0;width: 100% !important;align-items: flex-start !important;vertical-align: top;overflow-x: hidden !important; z-index: 11111111;}
     .hov-item{margin-bottom: 0.5em !important;}
     .post-style-two .post-title{white-space: unset;overflow: visible;text-overflow: unset;}
