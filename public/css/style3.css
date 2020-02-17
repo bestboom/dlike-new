@@ -4505,6 +4505,9 @@ button.toast-close-button {
     .banner-block {
         display: none !important;
     }
+    .post_select{
+        display: none !important;
+    }
     .top-ads-text {font-size: 0.7rem !important;}
     .btn-hb {font-size: 0.6rem !important;}
 }
