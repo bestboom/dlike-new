@@ -4502,9 +4502,11 @@ button.toast-close-button {
     .callto-btn {
         padding: 15px 4px !important;
     }
-    .navbar-collapse {
+    .banner-block {
         display: none !important;
     }
+    .top-ads-text {font-size: 0.7rem !important;}
+    .btn-hb {font-size: 0.6rem !important;}
 }
 @media all and (max-width: 480px) {
     #p_img{width: 72px !important;height: 72px !important;margin-top: -30px !important;}   
