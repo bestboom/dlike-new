@@ -4502,6 +4502,9 @@ button.toast-close-button {
     .callto-btn {
         padding: 15px 4px !important;
     }
+    .navbar-collapse {
+        display: none !important;
+    }
 }
 @media all and (max-width: 480px) {
     #p_img{width: 72px !important;height: 72px !important;margin-top: -30px !important;}   
