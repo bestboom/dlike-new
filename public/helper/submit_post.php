@@ -13,7 +13,7 @@ $postGenerator = new dlike\post\makePost();
 	$title = $_POST['title'];
 	$_POST['benefactor'] = "dlike:11,dlike.fund:2";
 	$category = strtolower($_POST['category']);
-	$parent_ctegory = 'dlike';
+	$parent_ctegory = 'hive-116221';
 	$_POST['tags'] = "hive-116221,dlike," . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
 	$_POST["description"] = preg_replace('#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#', '', $_POST["description"]);
