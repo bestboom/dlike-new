@@ -7,14 +7,11 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 $id = 1152;
-$sqlw = "DELETE FROM prousers WHERE id = '$id'"";
+$sqlw = "DELETE FROM prousers WHERE id = '$id'";
 
 if ($conn->query($sqlw) === TRUE) {
     echo "Table DELETED successfully";
 } else {
     echo "Error deleting table: " . $conn->error;
 }
-
 ?>
-
-
