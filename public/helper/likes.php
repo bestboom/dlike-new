@@ -5,6 +5,22 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
+
+
+$sqlm = "CREATE TABLE userposttemplates (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+template_name VARCHAR(255) NOT NULL,
+content VARCHAR(1000) NOT NULL,
+added_time TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table dailyRewards created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
 ?>
 <!--
 $id = 1152;
