@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+?>
 
 $sqlm = "CREATE TABLE userposttemplates (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -21,7 +22,7 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-?>
+
 <!--
 $id = 1152;
 $sqlw = "DELETE FROM prousers WHERE id = '$id'";
