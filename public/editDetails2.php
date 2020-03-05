@@ -16,9 +16,7 @@ if (isset($_GET["url"])) {
 } else { die('Not Allowed');}
 $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
-</div><!-- sub-header -->
-
-<!--<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>-->
+</div>
 <script src="lib/editor/build/ckeditor.js"></script>
 <style>
     body {
