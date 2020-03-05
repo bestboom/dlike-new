@@ -277,7 +277,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
     $(document).ready(function(){
         var steemuser = username;
-        console.log(steemuser);
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};
             $.ajax({
