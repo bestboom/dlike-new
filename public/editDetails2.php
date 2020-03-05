@@ -154,7 +154,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             <div class=" modal-header text-center">
                 <h5 class="modal-title w-100" id="exampleModalPreviewLabel"></h5>
                 <button  type="button" class="close " data-dismiss="modal" aria-label="Close">
-                    <span style="font-size: 1.3em;" aria-hidden="true">&times;</span>
+                    <span style="font-size: 1em;" aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
