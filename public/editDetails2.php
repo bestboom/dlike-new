@@ -230,7 +230,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     .create( document.querySelector( '#editor2' ), {
         ckfinder: {
             // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl:'helper/image_upload/ck_upload.php?command=QuickUpload&type=Files&responseType=json'
+            uploadUrl:'helper/ck_upload.php?command=QuickUpload&type=Files&responseType=json'
         },
         toolbar: {
             items: [
