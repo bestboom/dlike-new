@@ -1,7 +1,7 @@
 <?php
 
 require __DIR__ . '/../../vendor/autoload.php';
-require_once "/../../helper/image_upload/B2.php";
+require_once "../helper/image_upload/B2.php";
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
