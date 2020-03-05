@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 require_once "/../../helper/image_upload/B2.php";
 
 ini_set('display_errors', 1);
@@ -57,7 +57,7 @@ if( isset($_FILES['upload']) && strlen($nameUpload) > 1 ) {
                         $fileit = $_FILES['upload']['tmp_name'];
 
                         try {
-                            $uploadbb = $b2->store($fileit, "/dlike/",  $new_file_name);
+                            $uploadbb = $b2->store($fileit, "/",  $new_file_name);
                         } catch (\Exception $e) {
                             echo $e->getMessage();
                         }
