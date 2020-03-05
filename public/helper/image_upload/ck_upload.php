@@ -3,9 +3,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 //require __DIR__ . '/../../helper/image_upload/B2.php';
-require_once "../../../helper/image_upload/B2.php";
+require_once "../../helper/image_upload/B2.php";
 
 $appKeyId = "00063e4beabebed0000000003"; 
 $appKey = "K000SsnlbgCLwONCLR5SH7GByCBHGy4"; 
