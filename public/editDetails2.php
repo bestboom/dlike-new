@@ -165,7 +165,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             <div class="modal-footer">
                 <!--<button type="button" class="btn btn-danger btn-md btn-rounded" data-dismiss="modal">Close</button>-->
                 <button type="button" class="btn btn-success btn-md btn-rounded btn_my_templates">My Templates</button>
-                <button type="button" class="btn btn-primary btn-md btn-rounded btn-move">Let's Publish</button>
+                <button type="button" class="btn btn-primary btn-md btn-rounded btn_move">Let's Publish</button>
             </div>
         </div>
     </div>
@@ -230,7 +230,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     .create( document.querySelector( '#editor2' ), {
         ckfinder: {
             // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl: 'helper/ck_upload.php?command=QuickUpload&type=Files&responseType=json'
+            uploadUrl: 'helper/image_upload/ck_upload.php?command=QuickUpload&type=Files&responseType=json'
         },
         toolbar: {
             items: [
@@ -262,10 +262,10 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         console.error( error );
     });       
 
-    $(".btn-move").click(function(){
+    $(".btn_move").click(function(){
         var newcontent=editor2.getData();
         editor.setData(newcontent);
-        $('#exampleModalPreview').modal('hide');
+        $('#editorModal').modal('hide');
         
     });
     function stripHtml(html)
@@ -276,7 +276,8 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     }
 
     $(document).ready(function(){
-        var steemuser = 'dlike';
+        var steemuser = username;
+        console.log(steemuser);
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};
             $.ajax({
