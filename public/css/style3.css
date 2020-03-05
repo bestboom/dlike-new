@@ -3221,7 +3221,26 @@ sub.transmoney-value {
     font-size: 16px;
     font-weight: 700;
     line-height: 20px; }
-
+/*
+|----------------------------------------------------------------------------
+| 13.Editor Modal for Long Post
+|----------------------------------------------------------------------------
+*/    
+.editmodal .modal-dialog {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width:none !important;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.editmodal .modal-header, .modal-footer {height: 50px;}
+.editmodal .modal-content, .modal-footer {position: absolute;width: 100%;}
+.editmodal .modal-content {bottom: 0px;top: 0px;overflow-y: auto; }
+.editmodal .modal-footer {bottom: 0;}
+.editmodal .modal-body {max-height: 80vh;overflow-y: auto;}
 /*
 |----------------------------------------------------------------------------
 | 13. Post Style
