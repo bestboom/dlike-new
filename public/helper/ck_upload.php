@@ -57,7 +57,7 @@ if( isset($_FILES['upload']) && strlen($nameUpload) > 1 ) {
                         $fileit = $_FILES['upload']['tmp_name'];
 
                         try {
-                            $uploadbb = $b2->store($fileit, "/",  $new_file_name);
+                            $uploadbb = $b2->store($fileit, "/dlike/",  $new_file_name);
                         } catch (\Exception $e) {
                             echo $e->getMessage();
                         }
