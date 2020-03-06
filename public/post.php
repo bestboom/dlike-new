@@ -105,9 +105,9 @@ else
 </div>
 <style>
     body {background: #f4f4f4;}
-    .main_post > img {max-width: 100% !important;}
+    .main_post > figure > img {max-width: 100% !important;}
 </style>
-<div class="container" style="padding-top: 40px;background: #fff;">
+<div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
    <div class="row">
     <div class="col-md-12">
         <div class="container">
