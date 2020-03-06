@@ -3,80 +3,110 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include('template/header5.php');
+$categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
 </div>
 <style>
-    body {background: #f4f4f4;}
+    body {
+    	background: #f4f4f4;
+    /* We need to assaign this CSS Custom property to the body instead of :root, because of CSS Specificity and codepen stylesheet placement before loaded CKE5 content. */
+        --ck-z-default: 100;
+        --ck-z-modal: calc( var(--ck-z-default) + 999 );
+    }
+    .ck-content .ck-editor__editable {
+        min-height: 220px;
+    }
+    .editmodal .ck-editor__editable {
+        min-height: 80vh;
+    }
+    .ck-content .image>figcaption {
+        display: none !important;
+    }
+    .ck-content .image>img {
+        display: block;
+        margin: 0 auto;
+        max-width: 85%;
+        min-width: 50px;
+    }
+    .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+        border-color: #c4c4c4;
+    }
+
+    .ck.ck-editor__main > .ck-editor__editable {
+        background: #fff;
+        border-color: #111;
+    }
+
+    .ck.ck-toolbar {
+        background: #eeeeee36;
+    }
+    .user-connected-form-block p {
+        text-align: left !important;
+        padding: 1px 8px;
+    }
+    #editor2 .ck.ck-toolbar > .ck-toolbar__items { z-index: 5590 !important; }
 </style>
 <script src="lib/editor/build/ckeditor.js"></script>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
 	<div class="row">
-    	<div class="col-md-12">
-			<div class="contact-form-section" style="margin-top: 50px;">
-			    <div class="container d-flex h-100">
-			        <div class="contact-info-outer">
-			            <div class="contact-info-wrap">
-			                <div class="row align-items-center h-100">
-	                            <div class="user-connected-form-block">
-	                                <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
-	                                    <input type="hidden" name="image" value="">
-	                                    <div class="form-group">
-	                                        <div class="input-group mb-3">
-	                                            <div class="input-group-prepend">
-	                                                <div class="input-group-text mb-deck"> Title</div>
-	                                            </div>
-	                                            <input type="text" class="form-control title_field" name="title" value="">
-	                                        </div>
-	                                    </div>
-	                                    <div class="form-group">
-	                                        <textarea class="form-control" rows="20" name="description" id="editor2" placeholder=""></textarea>
-	                                    </div>
-	                                    <div class="form-group">
-	                                        <div class="input-group mb-3">
-	                                            <div class="input-group-prepend">
-	                                                <div class="input-group-text mb-deck"> Tags</div>
-	                                            </div>
-	                                            <input type="text" class="form-control tags" name="tags" value="" placeholder="Enter tags with spaces">
-	                                        </div>
-	                                    </div>
-	                                    <div class="form-group">
-	                                        <div class="input-group mb-3">
-	                                            <div class="input-group-prepend">
-	                                                <div class="input-group-text mb-deck"> Featured Image Link</div>
-	                                            </div>
-	                                            <input type="text" readonly="readonly" class="form-control" name="featured_image" value="">
-	                                        </div>
-	                                    </div>
-                                        <div class="row form-group">
-                                            <div class="col">
-                                                <select class="form-control form-control-lg catg" name="category">
-                                                    <option value="0">Select Category</option>
-                                                <?php foreach ($categories as $category){ ?>
-                                                    <option value="<?php echo $category;?>"><?php echo $category;?></option>    
-                                                <?php } ?>
-                                                </select>
-                                            </div>
-                                            <div class="col">
-                                                <select class="form-control form-control-lg" name="reward_option" id="rewards">
-                                                    <option>Reward Options</option>
-                                                    <option value="1">50% SBD and 50% SP</option>
-                                                    <option value="2">100% Steem Power</option>
-                                                    <option value="3">Declined</option>
-                                                </select>
-                                            </div>
-                                        </div>
-	                                    <br>
-	                                    <button type="button" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
-	                                    <button type="button" class="btn btn-success btn-md btn-rounded btn_my_templates">My Templates</button>
-                						<button type="button" class="btn btn-primary btn-md btn-rounded btn_move">Let's Publish</button>
-	                                </form>
-	                            </div><!-- create-account-block -->
-			                </div>
-			            </div>
-			        </div>
-			    </div>
-			</div><!-- contact-section -->
-    	</div>
+		<div class="contact-form-section" style="margin-top: 30px;">
+            <div class="row align-items-center h-100">
+                <div class="user-connected-form-block">
+                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
+                        <input type="hidden" name="image" value="">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mb-deck"> Title</div>
+                                </div>
+                                <input type="text" class="form-control title_field" name="title" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="20" name="description" id="editor2" placeholder=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mb-deck"> Tags</div>
+                                </div>
+                                <input type="text" class="form-control tags" name="tags" value="" placeholder="Enter tags with spaces">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mb-deck"> Featured Image Link</div>
+                                </div>
+                                <input type="text" readonly="readonly" class="form-control" name="featured_image" value="">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <select class="form-control form-control-lg catg" name="category">
+                                    <option value="0">Select Category</option>
+                                <?php foreach ($categories as $category){ ?>
+                                    <option value="<?php echo $category;?>"><?php echo $category;?></option>    
+                                <?php } ?>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <select class="form-control form-control-lg" name="reward_option" id="rewards">
+                                    <option>Reward Options</option>
+                                    <option value="1">50% SBD and 50% SP</option>
+                                    <option value="2">100% Steem Power</option>
+                                    <option value="3">Declined</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
+                        <button type="button" class="btn btn-success btn-md btn-rounded btn_my_templates">My Templates</button>
+						<button type="button" class="btn btn-primary btn-md btn-rounded btn_move">Let's Publish</button>
+                    </form>
+                </div><!-- create-account-block -->
+            </div>
+		</div><!-- contact-section -->
     </div>
 </div>
 <div class="modal fade" id="myTemplates" style="margin-top: 10%;text-align: center;" tabindex="-1" role="dialog">
