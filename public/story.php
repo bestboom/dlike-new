@@ -14,10 +14,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         --ck-z-modal: calc( var(--ck-z-default) + 999 );
     }
     .ck-content .ck-editor__editable {
-        min-height: 220px;
-    }
-    .editmodal .ck-editor__editable {
-        min-height: 80vh;
+        min-height: 80vh !important;
     }
     .ck-content .image>figcaption {
         display: none !important;
@@ -45,14 +42,15 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         padding: 1px 8px;
     }
     #editor2 .ck.ck-toolbar > .ck-toolbar__items { z-index: 5590 !important; }
+    .mb-deck {color: #111;font-weight: 600;background:#eee;}
 </style>
 <script src="lib/editor/build/ckeditor.js"></script>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
 	<div class="row">
-		<div class="contact-form-section" style="margin-top: 30px;">
-            <div class="row align-items-center h-100">
-                <div class="user-connected-form-block">
-                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
+		<div class="contact-form-section" style="margin-top: 30px;width: 100%">
+            <div class="align-items-center h-100">
+                <div class="user-connected-form-block" style="padding: 40px 80px 45px 80px;">
+                    <form class="user-connected-from user-signup-form" method="post" action="">
                         <input type="hidden" name="image" value="">
                         <div class="form-group">
                             <div class="input-group mb-3">
@@ -78,7 +76,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck"> Featured Image Link</div>
                                 </div>
-                                <input type="text" readonly="readonly" class="form-control" name="featured_image" value="">
+                                <input type="text" class="form-control" name="featured_image" value="">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -101,8 +99,10 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                         </div>
                         <br>
                         <button type="button" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
-                        <button type="button" class="btn btn-success btn-md btn-rounded btn_my_templates">My Templates</button>
-						<button type="button" class="btn btn-primary btn-md btn-rounded btn_move">Let's Publish</button>
+                        <div class="row" style="justify-content: center;">
+                        	<button type="button" class="btn btn-primary btn-md btn-rounded btn_my_templates">My Templates</button>
+							<button type="button" class="btn btn-primary btn-md btn-rounded btn_move">Let's Publish</button>
+						</div>
                     </form>
                 </div><!-- create-account-block -->
             </div>
