@@ -6,13 +6,13 @@ echo $_SERVER['DOCUMENT_ROOT'];
 echo '<br>';
 echo $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 echo '<br>';
-echo $_SERVER['DOCUMENT_ROOT'].'../vendor/autoload.php';
+echo $_SERVER['DOCUMENT_ROOT'].'/../vendor/autoload.php';
 echo '<br>';
-echo $_SERVER['DOCUMENT_ROOT'].'helper/image_upload/B2.php';
+echo $_SERVER['DOCUMENT_ROOT'].'/helper/image_upload/B2.php';
 echo '<br>';
 
-require $_SERVER['DOCUMENT_ROOT'] . '../vendor/autoload.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . "helper/image_upload/B2.php";
+require $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/helper/image_upload/B2.php";
 
 $appKeyId = "00063e4beabebed0000000003"; 
 $appKey = "K000SsnlbgCLwONCLR5SH7GByCBHGy4"; 
