@@ -2,11 +2,12 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
 echo 'now including' . __DIR__ . '/../../vendor/autoload.php';
-echo 'now including ' . '../helper/image_upload/B2.php';
+echo 'now including' . "../helper/image_upload/B2.php";
+
 require __DIR__ . '/../../vendor/autoload.php';
 require_once "../helper/image_upload/B2.php";
-
 
 $appKeyId = "00063e4beabebed0000000003"; 
 $appKey = "K000SsnlbgCLwONCLR5SH7GByCBHGy4"; 
@@ -15,10 +16,17 @@ $bucketId = "56b36e641bbeaabb7e0b0e1d";
 use b2cloud\B2 as B2Client;
 $b2 = new B2Client($appKeyId, $appKey, $bucketId);
 
-define('PTK_URL', 'https://img.imageduck.org/file/dliker/');
+
+define('PTK_URL', 'https://img.imageduck.org/file/dlktest/dlike/');
 define('PTK_FNAME_SIZE', 7);
 
 $ptk=array("uploaded"=>false);
+
+//define('PTK_FILES', '../upload/');
+//if (!file_exists('../upload')) {
+//    mkdir('../upload', 0777, true);
+//}
+
 
 $limited_ext = array(".jpg",".jpeg",".png",".gif",".bmp");
 $limited_type = array("image/jpg","image/jpeg","image/png","image/gif","image/bmp");
@@ -50,19 +58,34 @@ if( isset($_FILES['upload']) && strlen($nameUpload) > 1 ) {
                         $uploadurl  = PTK_URL;
                         $ptk['uploadurl']=$uploadurl;
                         
+
+                        //$uploaddir  =  PTK_FILES; //$uploaddir set permission 777 (unix)
+                        //$ptk['uploaddir']=$uploaddir;
+
                         $randonname = getRandomName(PTK_FNAME_SIZE);
                         $new_file_name = $randonname . '-' . $ptk['name'];
+
+                        //$new_file_name = getRandomName(PTK_FNAME_SIZE) . $ext;
+                        //while ( is_file( $uploaddir . $new_file_name) ) {
+                            //$new_file_name = getRandomName(PTK_FNAME_SIZE)-$ptk['name'] . $ext;
+                        //    $new_file_name = $randonname . '-' . $ptk['name'];
+                        //}
                         
                         $ptk['new_file_name']=$new_file_name;
+                        //$new_file_name_full=$uploaddir . $new_file_name;
+                        //$ptk['new_file_name_full']=$new_file_name_full;
 
                         $fileit = $_FILES['upload']['tmp_name'];
 
                         try {
-                            $uploadbb = $b2->store($fileit, "/",  $new_file_name);
+                            $uploadbb = $b2->store($fileit, "/dlike/",  $new_file_name);
                         } catch (\Exception $e) {
                             echo $e->getMessage();
+                            //exit;
                         }
 
+                        // Process the response
+                        // $upload is an instance of a guzzlehttp client request.
                         $response = json_decode($uploadbb->getBody());
 
                         // Get response code
@@ -77,6 +100,12 @@ if( isset($_FILES['upload']) && strlen($nameUpload) > 1 ) {
                         // Check upload status
                         // Backblaze returns 200, but this should really be 201
                         if ($responseCode == 200) {
+                        //    echo 'Upload successful';
+                        //} else {
+                        //    echo 'Upload failed';
+                        //}
+
+                        //if ( move_uploaded_file($_FILES['upload']['tmp_name'], $new_file_name_full) ) {
                             $url = $uploadurl . $new_file_name;
                             $ptk['url']=$url;
                             $ptk["uploaded"]=true;
