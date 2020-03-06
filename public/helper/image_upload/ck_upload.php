@@ -5,7 +5,8 @@ error_reporting(E_ALL);
 
 require __DIR__ . '/../../../vendor/autoload.php';
 //require __DIR__ . '/../../helper/image_upload/B2.php';
-require_once __DIR__ . "/B2.php";
+echo 'now including ' . __DIR__ . '/B2.php';
+require_once __DIR__ . "B2.php";
 
 $appKeyId = "00063e4beabebed0000000003"; 
 $appKey = "K000SsnlbgCLwONCLR5SH7GByCBHGy4"; 
