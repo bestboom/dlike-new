@@ -22,7 +22,7 @@ use b2cloud\B2 as B2Client;
 $b2 = new B2Client($appKeyId, $appKey, $bucketId);
 
 
-define('PTK_URL', 'https://img.imageduck.org/file/dlktest/dlike/');
+define('PTK_URL', 'https://img.imageduck.org/file/dliker/');
 define('PTK_FNAME_SIZE', 7);
 
 $ptk=array("uploaded"=>false);
