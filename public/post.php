@@ -361,5 +361,6 @@ else
 <script type="text/javascript">
     post_author = '<?php echo $auth; ?>';
     post_permlink = '<?php echo $link; ?>';
+    var directTime = <?=($tiptime)?>;
 </script>
 <script src="/js/post_page.js"></script>

@@ -6,6 +6,7 @@ include('template/header5.php');
 $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
 </div>
+<script src="lib/editor/build/ckeditor.js"></script>
 <style>
     body {
     	background: #f4f4f4;
@@ -14,7 +15,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         --ck-z-modal: calc( var(--ck-z-default) + 999 );
     }
     .ck-content .ck-editor__editable {
-        min-height: 80vh !important;
+        min-height: 50vh !important;
     }
     .ck-content .image>figcaption {
         display: none !important;
@@ -44,7 +45,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     #editor2 .ck.ck-toolbar > .ck-toolbar__items { z-index: 5590 !important; }
     .mb-deck {color: #111;font-weight: 600;background:#eee;}
 </style>
-<script src="lib/editor/build/ckeditor.js"></script>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
 	<div class="row">
 		<div class="contact-form-section" style="margin-top: 30px;width: 100%">
@@ -98,8 +98,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             </div>
                         </div>
                         <br>
-                        <button type="button" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
-                        <div class="row" style="justify-content: center;">
+                        <div class="row" style="justify-content: space-between;margin: 0px;">
                         	<button type="button" class="btn btn-primary btn-md btn-rounded btn_my_templates">My Templates</button>
 							<button type="button" class="btn btn-primary btn-md btn-rounded btn_move">Let's Publish</button>
 						</div>
@@ -151,7 +150,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     .create( document.querySelector( '#editor2' ), {
         ckfinder: {
             // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl: 'helper/ck_upload.php?command=QuickUpload&type=Files&responseType=json'
+            uploadUrl: 'helper/image_upload/ck_upload.php?command=QuickUpload&type=Files&responseType=json'
         },
         toolbar: {
             items: [

@@ -251,7 +251,6 @@ var refreashComments = function () {
         $(this).ajaxSubmit(tipoptions)
         return !1 
     });
-    var directTime = <?=($tiptime)?>;
     var sTime = new Date().getTime();
     var countDown = 595 - directTime;
 
