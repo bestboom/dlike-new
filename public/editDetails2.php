@@ -191,7 +191,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form>
                     <div class="form-group">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -201,7 +200,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                         </div>
                     </div>
                     <button type="button" class="btn btn-default btn_save_temp">Save</button>
-                </form>
             </div>
         </div>
     </div>
