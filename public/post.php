@@ -103,14 +103,18 @@ else
 
 ?>
 </div>
-<div class="container" style="padding-top: 40px;">
+<style>
+    body {background: #f4f4f4;}
+    .main_post > img {max-width: 100% !important;}
+</style>
+<div class="container" style="padding-top: 40px;background: #fff;">
    <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-12">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="blog-details-wrapper">
-                        <div class="single-post-block">
+                        <div class="single-post-block" style="max-width: 100%;">
                             <center>
                                 <iframe data-aa="1318371" src="//ad.a-ads.com/1318371?size=320x50" scrolling="no" style="width:320px; height:50px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
                             </center>
@@ -174,7 +178,7 @@ else
                                         <img src="/images/post/8.png" alt="img" class="card-img-post img-fluid">
                                     </div>
                                     <h3 class="post-title"></h3>
-                                    <span class="post-entry mod-post"><?php echo $body_text; ?></span>
+                                    <span class="main_post post-entry mod-post"><?php echo $body_text; ?></span>
                                     <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
@@ -265,7 +269,7 @@ else
                     </div>
                 </div>
             </div>
-            <!-- sidebar -posts -->
+            <!-- sidebar -posts
             <div class="col-md-3" style="margin-top: 30px !important;">
                 <?php
                 $sql1 = "SELECT * FROM steemposts ORDER BY id DESC LIMIT 4";
@@ -292,10 +296,10 @@ else
                     }
                 }
                 ?>
-            </div>
+            </div>  -->
 
         </div></div>
-        <div class="container">
+        <div class="container" style="background: #fff;">
             <div class="row">
                 <div class="col">
                     <div class="post-comment-block">
