@@ -1,13 +1,11 @@
 <?php
+
+require __DIR__ . '/../../../vendor/autoload.php';
+require_once "../../helper/image_upload/B2.php";
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-echo 'now including' . '/app/vendor/autoload.php';
-require '/app/vendor/autoload.php';
-//require __DIR__ . '/../../helper/image_upload/B2.php';
-echo 'now including' . __DIR__ . '/vendor/autoload.php';
-echo 'now including ' . __DIR__ . '/B2.php';
-require_once __DIR__ . "/B2.php";
 
 $appKeyId = "00063e4beabebed0000000003"; 
 $appKey = "K000SsnlbgCLwONCLR5SH7GByCBHGy4"; 
@@ -16,7 +14,7 @@ $bucketId = "56b36e641bbeaabb7e0b0e1d";
 use b2cloud\B2 as B2Client;
 $b2 = new B2Client($appKeyId, $appKey, $bucketId);
 
-define('PTK_URL', 'https://img.imageduck.org/file/dliker/');
+define('PTK_URL', 'https://img.imageduck.org/file/dliker/d/');
 define('PTK_FNAME_SIZE', 7);
 
 $ptk=array("uploaded"=>false);
@@ -59,7 +57,7 @@ if( isset($_FILES['upload']) && strlen($nameUpload) > 1 ) {
                         $fileit = $_FILES['upload']['tmp_name'];
 
                         try {
-                            $uploadbb = $b2->store($fileit, "/",  $new_file_name);
+                            $uploadbb = $b2->store($fileit, "/d/",  $new_file_name);
                         } catch (\Exception $e) {
                             echo $e->getMessage();
                         }
