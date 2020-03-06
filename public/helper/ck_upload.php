@@ -2,12 +2,17 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+echo $_SERVER['DOCUMENT_ROOT'];
+echo '<br>';
+echo $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+echo '<br>';
+echo $_SERVER['DOCUMENT_ROOT'].'../vendor/autoload.php';
+echo '<br>';
+echo $_SERVER['DOCUMENT_ROOT'].'helper/image_upload/B2.php';
+echo '<br>';
 
-echo 'now including' . __DIR__ . '/../../vendor/autoload.php';
-echo 'now including' . "../helper/image_upload/B2.php";
-
-require __DIR__ . '/../../vendor/autoload.php';
-require_once "../helper/image_upload/B2.php";
+require $_SERVER['DOCUMENT_ROOT'] . '../vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "helper/image_upload/B2.php";
 
 $appKeyId = "00063e4beabebed0000000003"; 
 $appKey = "K000SsnlbgCLwONCLR5SH7GByCBHGy4"; 
