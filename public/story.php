@@ -128,7 +128,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 <div class="modal fade" id="myTemplateData" style="margin-top: 10%;text-align: center;" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background: #c51d24;color: #f5f5f5;">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
