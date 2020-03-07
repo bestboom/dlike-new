@@ -26,8 +26,12 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         max-width: 85%;
         min-width: 50px;
     }
+    .ck-editor__editable_inline {
+        min-height: 50vh;
+    }
     .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
         border-color: #c4c4c4;
+        min-height: 50vh !important;
     }
 
     .ck.ck-editor__main > .ck-editor__editable {
