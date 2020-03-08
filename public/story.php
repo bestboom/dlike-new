@@ -346,28 +346,12 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         });  
 
         $('.submit_story').click(function(clickEvent) {
-            var main_story = editor2.getData();
-            console.log(main_story);
-            var elem = document.createElement('div');
-            elem.style.display = 'none';
-            document.body.appendChild(elem);
-            elem.innerHTML = main_story;
-            console.log(elem.querySelector('img').src);
-            var first_image = elem.querySelector('img').src;
-            console.log(first_image);
-
-            
-            if (first_image.length == 0) {
-                toastr.error('There is no image in story');
-                return false;
-            }
-
-
 
             if ($('.title_field').val() == "") {
                 toastr.error('Title Should not be empty!');
                 return false;
             }
+
             var tags = $('.tags').val();
             tags = $.trim(tags);
             tags = tags.split(' ');
@@ -387,12 +371,25 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                 toastr.error('It seems you forgot to write story!');
                 return false;
             }
+            var main_story = editor2.getData();
+            var elem = document.createElement('div');
+            elem.style.display = 'none';
+            document.body.appendChild(elem);
+            elem.innerHTML = main_story;
+            //console.log(elem.querySelector('img').src);
+            var first_image = elem.querySelector('img').src;
+            
+            if (first_image.length == 0) {
+                toastr.error('There is no image in story. Please add featured image link');
+                return false;
+            }
             //$('form').submit();
             var datam = {
                 story_title: $('.title_field').val(),
                 story_tags: $('.tags').val(),
                 story_content: editor2.getData(),
                 story_category: $('.catg').val(),
+                story_image: first_image,
                 story_rewards: $('.rewards').val()
             };
             console.log(datam);
