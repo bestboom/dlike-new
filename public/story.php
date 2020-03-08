@@ -55,6 +55,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             <div class="align-items-center h-100">
                 <div class="user-connected-form-block" style="padding: 40px 80px 45px 80px;">
                     <form class="user-connected-from user-signup-form" method="post" action="helper/submit_story.php">
+                        <div id="aq"></div>
                         <input type="hidden" name="image" value="">
                         <div class="form-group">
                             <div class="input-group mb-3">
@@ -94,7 +95,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             </div>
                             <div class="col">
                                 <select class="form-control form-control-lg rewards" name="reward_option" id="rewards">
-                                    <option>Reward Options</option>
                                     <option value="1">50% SBD and 50% SP</option>
                                     <option value="2">100% Steem Power</option>
                                     <option value="3">Declined</option>
@@ -389,6 +389,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             return false;
                         } else {
                             toastr.success('Story published successfully');
+                            $('#aq')..html(response.data);
                         }
                     } catch (err) {
                         toastr.error('Sorry. Server response is malformed.');
