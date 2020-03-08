@@ -361,7 +361,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         $('.submit_story').click(function(clickEvent) {
             var main_story = editor2.getData();
             console.log(main_story);
-            if (img_find(main_story).length == "0") {
+            if (img_find(main_story).length == 0) {
                 toastr.error('There is no image in story');
                 return false;
             }
