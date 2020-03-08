@@ -346,22 +346,12 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         });  
 
         $('.submit_story').click(function(clickEvent) {
-            
-        //check if story has image
-        function img_find(id) {
-          var dom = document.getElementById(id);
-          var e = document.createElement('div');
-          e.innerHTML = _.unescape(dom.innerHTML); // Or use regex to replace &lt; to < and &gt; to >
-          var imgs = e.querySelectorAll('img');
-          var srcCollection = [];
-          for (var i = 0; i < imgs.length; i++) {
-            srcCollection.push(imgs[i].src);
-          }
-          return srcCollection;
-        }
             var main_story = editor2.getData();
             console.log(main_story);
-            if (img_find(main_story).length == 0) {
+            var first_image = editor2.getData().find('img:first');
+            console.log(first_image);
+            
+            if (first_image.length == 0) {
                 toastr.error('There is no image in story');
                 return false;
             }
