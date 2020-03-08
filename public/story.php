@@ -185,7 +185,12 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     .catch( error => {
         console.error( error );
     });       
-
+    function stripHtml(html)
+    {
+        var tmp = document.createElement("DIV");
+        tmp.innerHTML = html;
+        return tmp.textContent || tmp.innerText || "";
+    }
     $(document).ready(function(){
         var steemuser = username;
         $('.btn_my_templates').click(function() {
@@ -340,7 +345,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         });  
         $('.submit_story').click(function(clickEvent) {
             if ($('.title_field').val() == "") {
-                toastr.erroe('Title Should not be empty!');
+                toastr.error('Title Should not be empty!');
                 return false;
             }
             var tags = $('.tags').val();
@@ -349,17 +354,17 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
             if (tags.length < 2) {
                 $('.tags').css("border-color", "RED");
-                toastr.erroe('Please add at least two related tags');
+                toastr.error('Please add at least two related tags');
                 return false;
             }
             if ($('.catg').val() == "0") {
                 $('.catg').css("border-color", "RED");
-                toastr.erroe('You must Select an appropriate Category');
+                toastr.error('You must Select an appropriate Category');
                 return false;
             }
             let text_words = stripHtml(editor2.getData()).trim().split(/\s+/);
             if (text_words.length < 40) {
-                toastr.erroe('It seems you forgot to write story!');
+                toastr.error('It seems you forgot to write story!');
                 return false;
             }
             //$('form').submit();
