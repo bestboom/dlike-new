@@ -93,7 +93,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                 </select>
                             </div>
                             <div class="col">
-                                <select class="form-control form-control-lg" name="reward_option" id="rewards">
+                                <select class="form-control form-control-lg rewards" name="reward_option" id="rewards">
                                     <option>Reward Options</option>
                                     <option value="1">50% SBD and 50% SP</option>
                                     <option value="2">100% Steem Power</option>
@@ -362,7 +362,40 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                 toastr.erroe('It seems you forgot to write story!');
                 return false;
             }
-            $('form').submit();
+            //$('form').submit();
+            var datam = {
+                story_title: $('.title_field').val(),
+                story_tags: $('.tags').val(),
+                story_content: editor2.getData(),
+                story_category: $('.catg').val(),
+                story_rewards: $('.rewards').val()
+            };
+            console.log(datam);
+            $.ajax({
+                type: "POST",
+                url: "/helper/submit_story.php",
+                data: datam,
+                
+                success: function(data) {
+                    try {
+                        var response = JSON.parse(data)
+                        if (response.error == true) {
+                            toastr.error('There is some issue');
+                            return false;
+                        } else {
+                            toastr.success('Story published successfully');
+                        }
+                    } catch (err) {
+                        toastr.error('Sorry. Server response is malformed.');
+                    }
+                },
+                error: function(xhr, textStatus, error) {
+                    console.log(xhr.statusText);
+                    console.log(textStatus);
+                    console.log(error);
+                }
+            });  
+
         });
     });
 </script> 
