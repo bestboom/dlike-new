@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 include('../functions/main.php');
 
-//if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST["story_content"]) && isset($_POST["story_category"])){
+if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST["story_content"]) && isset($_POST["story_category"])){
 
 	//$content = mysqli_real_escape_string($conn, $_POST['story_content']);
 
@@ -48,9 +48,9 @@ include('../functions/main.php');
 
 	$posting_user = $_COOKIE['username'];
 
-	$body = "\n\n#####\n\n " . $_POST['story_content'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+	$body = "\n\n#####\n\n " . $_POST['story_content'] . "  \n\n#####\n\n <center><hr><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
-	$check = ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body;
+	$check = ' reward' . $urlImage . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body;
 	if ($title !='') {
 		die(json_encode([
 	    	'error' => false,
@@ -65,5 +65,5 @@ include('../functions/main.php');
 		]));
 	}
 
-//} else { echo 'some issue'; }
+} else { echo 'some issue'; }
 ?>

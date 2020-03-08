@@ -382,6 +382,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             var first_image = "";
             if (find_image) {
                 first_image = elem.querySelector('img').src;
+                $('.featured_image').val(first_image);
                 console.log(first_image);
             } else {
                 if($('.featured_image').val() == "") {
