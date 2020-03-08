@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 include('../functions/main.php');
 
-if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST["story_content"]) && isset($_POST["story_category"])){
+//if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST["story_content"]) && isset($_POST["story_category"])){
 
 	//$content = mysqli_real_escape_string($conn, $_POST['story_content']);
 
@@ -52,19 +52,18 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
 
 
 	if ($title !='') {
-
 		die(json_encode([
 	    	'error' => false,
     		'message' => 'Success', 
     		'data' => $title . ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body . ' json ' . $json_metadata
 		]));
-		} else {
-			die(json_encode([
-		    	'error' => true,
-        		'message' => 'Sorry', 
-        		'data' => 'There is some issue'	
-    		]));
-		}
+	} else {
+		die(json_encode([
+	    	'error' => true,
+    		'message' => 'Sorry', 
+    		'data' => 'There is some issue'	
+		]));
+	}
 
-} else { echo 'some issue'; }
+//} else { echo 'some issue'; }
 ?>

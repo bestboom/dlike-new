@@ -377,9 +377,11 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             document.body.appendChild(elem);
             elem.innerHTML = main_story;
             //console.log(elem.querySelector('img').src);
-            var first_image = elem.querySelector('img').src;
+            //var first_image = elem.querySelector('img').src;
             
-            if (first_image.length == 0) {
+            if (elem.querySelector('img').src) {
+                first_image = elem.querySelector('img').src;
+            } else { 
                 toastr.error('There is no image in story. Please add featured image link');
                 return false;
             }
