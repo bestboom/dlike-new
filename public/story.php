@@ -148,6 +148,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
 
 <?php include('template/footer.php'); ?>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.3.0/lodash.min.js"></script>
 <script type="text/javascript">
     let editor2;
     ClassicEditor

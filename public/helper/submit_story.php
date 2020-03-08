@@ -35,12 +35,26 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
     $_POST['benefactor'] = "dlike:11,dlike.fund:2";
     $beneficiaries = genBeneficiaries($_POST['benefactor']);
 
+	$json_metadata = [
+    "community" => "dlike",
+    "app" => "dlike/3",
+    "format" => "html",
+    "body" => $post,
+    "category" => $_POST['story_category'],
+    "tags" => array_slice(array_unique(explode(",", $tags)), 0, 7)
+	];
+
+	$posting_user = $_COOKIE['username'];
+
+	$body = "\n\n#####\n\n " . $_POST['story_content'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+
+
 	if ($content !='') {
 
 		die(json_encode([
 	    	'error' => false,
     		'message' => 'Success', 
-    		'data' => $content. ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags
+    		'data' => $content. ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body . ' json ' . $json_metadata
 		]));
 		} else {
 			die(json_encode([
