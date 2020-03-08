@@ -54,7 +54,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 		<div class="contact-form-section" style="margin-top: 30px;width: 100%">
             <div class="align-items-center h-100">
                 <div class="user-connected-form-block" style="padding: 40px 80px 45px 80px;">
-                    <form class="user-connected-from user-signup-form" method="post" action="">
+                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_story.php">
                         <input type="hidden" name="image" value="">
                         <div class="form-group">
                             <div class="input-group mb-3">
@@ -104,7 +104,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                         <br>
                         <div class="row" style="justify-content: space-between;margin: 0px;">
                         	<button type="button" class="btn btn-primary btn-md btn-rounded btn_my_templates">My Templates</button>
-							<button type="button" class="btn btn-primary btn-md btn-rounded btn_move">Let's Publish</button>
+							<button type="button" class="btn btn-primary btn-md btn-rounded submit_story">Publish</button>
 						</div>
                     </form>
                 </div><!-- create-account-block -->
@@ -115,7 +115,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 <div class="modal fade" id="myTemplates" style="margin-top: 10%;text-align: center;" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <div class="modal-header" style="background: red;">
+            <div class="modal-header" style="background: #c51d24;color: #f5f5f5;">
                 <h4 class="modal-title">My Templates</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -337,6 +337,32 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                     console.log(error);
                 }
             });                
-        });             
+        });  
+        $('.submit_story').click(function(clickEvent) {
+            if ($('.title_field').val() == "") {
+                toastr.erroe('Title Should not be empty!');
+                return false;
+            }
+            var tags = $('.tags').val();
+            tags = $.trim(tags);
+            tags = tags.split(' ');
+
+            if (tags.length < 2) {
+                $('.tags').css("border-color", "RED");
+                toastr.erroe('Please add at least two related tags');
+                return false;
+            }
+            if ($('.catg').val() == "0") {
+                $('.catg').css("border-color", "RED");
+                toastr.erroe('You must Select an appropriate Category');
+                return false;
+            }
+            let text_words = stripHtml(editor2.getData()).trim().split(/\s+/);
+            if (text_words.length < 40) {
+                toastr.erroe('It seems you forgot to write story!');
+                return false;
+            }
+            $('form').submit();
+        });
     });
 </script> 
