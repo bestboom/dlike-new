@@ -345,6 +345,8 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             });                
         });  
 
+        $('.submit_story').click(function(clickEvent) {
+            
         //check if story has image
         function img_find(id) {
           var dom = document.getElementById(id);
@@ -357,8 +359,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
           }
           return srcCollection;
         }
-
-        $('.submit_story').click(function(clickEvent) {
             var main_story = editor2.getData();
             console.log(main_story);
             if (img_find(main_story).length == 0) {
