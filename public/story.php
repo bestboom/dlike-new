@@ -81,7 +81,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck"> Featured Image Link</div>
                                 </div>
-                                <input type="text" class="form-control" name="featured_image" value="">
+                                <input type="text" class="form-control featured_image" name="featured_image" value="">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -351,7 +351,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                 toastr.error('Title Should not be empty!');
                 return false;
             }
-
+            var featured_image = $('.featured_image').val();
             var tags = $('.tags').val();
             tags = $.trim(tags);
             tags = tags.split(' ');
@@ -384,8 +384,13 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                 first_image = elem.querySelector('img').src;
                 console.log(first_image);
             } else {
-                toastr.error('There is no image in story. Please add featured image link');
-                return false;
+                if($('.featured_image').val() == "") {
+                    toastr.error('There is no image in story. Please add featured image link');
+                    $('.featured_image').css("border-color", "RED");
+                    return false;
+                } else {
+                    first_image = $('.featured_image').val();
+                }
             }
             console.log(first_image);
             //$('form').submit();
