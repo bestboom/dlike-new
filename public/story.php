@@ -379,12 +379,12 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             //console.log(elem.querySelector('img').src);
             //var first_image = elem.querySelector('img').src;
             
-            if (typeof(elem.querySelector('img').src) != null) {
-            //if (!(elem.querySelector('img').src)) {
-                first_image = elem.querySelector('img').src;
-            } else { 
+            if (typeof(elem.querySelector('img').src) == null) {
                 toastr.error('There is no image in story. Please add featured image link');
                 return false;
+            //if (!(elem.querySelector('img').src)) {
+            } else { 
+                first_image = elem.querySelector('img').src;
             }
             //$('form').submit();
             var datam = {

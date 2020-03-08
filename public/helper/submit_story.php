@@ -50,7 +50,7 @@ include('../functions/main.php');
 
 	$body = "\n\n#####\n\n " . $_POST['story_content'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
-	$check = ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body . ' json ' . $json_metadata;
+	$check = ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body;
 	if ($title !='') {
 		die(json_encode([
 	    	'error' => false,
