@@ -348,8 +348,14 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         $('.submit_story').click(function(clickEvent) {
             var main_story = editor2.getData();
             console.log(main_story);
-            var first_image = editor2.getData().find('img:first');
+            var elem = document.createElement('div');
+            elem.style.display = 'none';
+            document.body.appendChild(elem);
+            elem.innerHTML = main_story;
+            console.log(elem.querySelector('img').src);
+            var first_image = elem.querySelector('img').src;
             console.log(first_image);
+
             
             if (first_image.length == 0) {
                 toastr.error('There is no image in story');
