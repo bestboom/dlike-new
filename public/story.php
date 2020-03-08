@@ -379,7 +379,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             //console.log(elem.querySelector('img').src);
             //var first_image = elem.querySelector('img').src;
             
-            if ((elem.querySelector('img').src) == null) {
+            if (!(elem.querySelector('img').src)) {
                 toastr.error('There is no image in story. Please add featured image link');
                 return false;
             } else { 

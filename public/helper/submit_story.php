@@ -55,7 +55,7 @@ include('../functions/main.php');
 		die(json_encode([
 	    	'error' => false,
     		'message' => 'Success', 
-    		'data' => $title . ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body . ' json ' . $json_metadata
+    		'data' => $title
 		]));
 	} else {
 		die(json_encode([
