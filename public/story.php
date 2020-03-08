@@ -412,7 +412,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             return false;
                         } else {
                             toastr.success('Story published successfully');
-                            $('#aq')..html(response.data);
+                            $('#aq').html(response.data);
                         }
                     } catch (err) {
                         toastr.error('Sorry. Server response is malformed.');

@@ -4,11 +4,19 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
+include('../functions/main.php');
 
 if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST["story_content"]) && isset($_POST["story_category"])){
 
-	$content = mysqli_real_escape_string($conn, $_POST['story_content']);
+	//$content = mysqli_real_escape_string($conn, $_POST['story_content']);
 
+	$title = validationData($_POST["story_title"]);
+	$permlink = validationData(clean($_POST["story_title"]));
+	$post = validationData($_POST["story_content"]);
+
+	$category = strtolower($_POST['story_category']);
+	$parent_ctegory = 'hive-116221';
+	$tags = "hive-116221,dlike," . preg_replace('#\s+#', ',', trim(strtolower($_POST['story_tags'])));
 
 	if($_POST['story_rewards']=='1'){
         $max_accepted_payout = "900.000 SBD";
@@ -24,12 +32,15 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
 		$percent_steem_dollars =10000;
     }
 
+    $_POST['benefactor'] = "dlike:11,dlike.fund:2";
+    $beneficiaries = genBeneficiaries($_POST['benefactor']);
+
 	if ($content !='') {
 
 		die(json_encode([
 	    	'error' => false,
     		'message' => 'Success', 
-    		'data' => $content. ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars
+    		'data' => $content. ' reward' . $max_accepted_payout . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags
 		]));
 		} else {
 			die(json_encode([
