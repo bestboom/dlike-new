@@ -43,6 +43,7 @@ $postGenerator = new dlike\post\makePost();
     "image" => $urlImage,
     "url" => $url,
     "body" => $post,
+    "type" => "share",
     "category" => $_POST['category'],
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 7)
 	];

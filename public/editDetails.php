@@ -1,6 +1,6 @@
 <?php include('template/header5.php'); 
 
-$link = $_GET['link'];
+//$link = $_GET['link'];
 if (isset($_GET["url"])) {
     $decode = function ($data) {
         return rawurldecode($data);
