@@ -2,8 +2,8 @@
 if (isset($_COOKIE['username']) || $_COOKIE['username']) {
     die('<script>window.location.replace("https://dlike.io","_self")</script>');
 } else {
+include('template/header5.php');
 if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';}
-include('template/header5.php'); 
 ?>
 </div>
 <div class="container">
