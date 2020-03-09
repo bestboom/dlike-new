@@ -38,7 +38,7 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
     $beneficiaries = genBeneficiaries($_POST['benefactor']);
 
     $posting_user = $_COOKIE['username'];
-    $url = 'https://dlike.io/post/@" . $posting_user . "/" . $permlink . "';
+    $url = 'https://dlike.io/post/@' . $posting_user . '/' . $permlink';
 
 	$json_metadata = [
     "community" => "dlike",
