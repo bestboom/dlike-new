@@ -4,6 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
+require_once "../helper/publish_post.php";
 include('../functions/main.php');
 
 if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST["story_content"]) && isset($_POST["story_category"])){
@@ -36,34 +37,38 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
     $_POST['benefactor'] = "dlike:11,dlike.fund:2";
     $beneficiaries = genBeneficiaries($_POST['benefactor']);
 
+    $posting_user = $_COOKIE['username'];
+    $url = 'https://dlike.io/post/@" . $posting_user . "/" . $permlink . "';
+
 	$json_metadata = [
     "community" => "dlike",
     "app" => "dlike/3",
     "format" => "html",
     "image" => $urlImage,
+    "url" => $url,
     "body" => $post,
     "category" => $_POST['story_category'],
     "tags" => array_slice(array_unique(explode(",", $tags)), 0, 7)
 	];
 
-	$posting_user = $_COOKIE['username'];
-
 	$body = "\n\n#####\n\n " . $_POST['story_content'] . "  \n\n#####\n\n <center><hr><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
-	$check = ' reward' . $urlImage . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body;
+	$check = ' reward' . $url . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body;
 	if ($title !='') {
-		die(json_encode([
-	    	'error' => false,
-    		'message' => 'Success', 
-    		'data' => $check
-		]));
-	} else {
-		die(json_encode([
-	    	'error' => true,
-    		'message' => 'Sorry', 
-    		'data' => 'There is some issue'	
-		]));
-	}
 
+			die(json_encode([
+		    	'error' => false,
+	    		'message' => 'Success', 
+	    		'data' => $check
+			]));
+		} else {
+			die(json_encode([
+		    	'error' => true,
+	    		'message' => 'Sorry post could not be published', 
+	    		'data' => $state->error_description	
+			]));
+		}
+
+	//} else { echo 'Something went wrong'; }
 } else { echo 'some issue'; }
 ?>

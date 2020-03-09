@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
 ?>
 
 $sqlm = "CREATE TABLE userposttemplates (
