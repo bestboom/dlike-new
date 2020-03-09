@@ -7,6 +7,8 @@ require '../includes/config.php';
 require_once "../helper/publish_post.php";
 include('../functions/main.php');
 
+$postGenerator = new dlike\post\makePost();
+
 if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST["story_content"]) && isset($_POST["story_category"])){
 
 	//$content = mysqli_real_escape_string($conn, $_POST['story_content']);
@@ -53,13 +55,28 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
 
 	$body = "\n\n#####\n\n " . $_POST['story_content'] . "  \n\n#####\n\n <center><hr><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
-	$check = ' reward' . $url . ' 2nd reward ' . $percent_steem_dollars . ' permlink ' . $permlink . ' category ' . $category . ' tags ' . $tags . ' user ' . $posting_user . ' body ' . $body;
 	if ($title !='') {
+		$publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
+    	$state = $postGenerator->broadcast($publish);
 
+    	if (isset($state->result)) { 
+	    	// insert into DB
+			$post_title= mysqli_real_escape_string($conn, $_POST['title']);
+			$addposts = "INSERT INTO steemposts (`username`,`title`, `permlink`, `ext_url`, `img_url`, `parent_ctegory`,`created_at`) VALUES ('".$posting_user."','".$post_title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."','".date("Y-m-d H:i:s")."')";
+			$addpostsquery = $conn->query($addposts);
+
+			$posts_tags = array_unique(explode(",",$_POST['tags']));
+			if(count($posts_tags)>0)  {
+				foreach($posts_tags as $p_tag) {
+					$add_tags = $conn->query("INSERT INTO posttags (`tagname`,`updated_at`) VALUES ('".$p_tag."','".date("Y-m-d H:i:s")."')");
+				}
+			}
+			//send success message
 			die(json_encode([
 		    	'error' => false,
-	    		'message' => 'Success', 
-	    		'data' => $check
+	    		'message' => 'Success',
+	    		'redirect' => $url, 
+	    		'data' => 'Post Published!'
 			]));
 		} else {
 			die(json_encode([
@@ -69,6 +86,6 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
 			]));
 		}
 
-	//} else { echo 'Something went wrong'; }
+	} else { echo 'Something went wrong'; }
 } else { echo 'some issue'; }
 ?>

@@ -55,7 +55,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             <div class="align-items-center h-100">
                 <div class="user-connected-form-block" style="padding: 40px 80px 45px 80px;">
                     <form class="user-connected-from user-signup-form" method="post" action="helper/submit_story.php">
-                        <div id="aq"></div>
                         <input type="hidden" name="image" value="">
                         <div class="form-group">
                             <div class="input-group mb-3">
@@ -416,8 +415,8 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             toastr.error('There is some issue');
                             return false;
                         } else {
-                            toastr.success('Story published successfully');
-                            $('#aq').html(response.data);
+                            toastr.success('Post published successfully');
+                            window.location.href = response.redirect;
                         }
                     } catch (err) {
                         toastr.error('Sorry. Server response is malformed.');
