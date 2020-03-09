@@ -174,6 +174,20 @@ else
                                             </div>
                                         </div>
                                     </div>
+                                    <?php
+                                        if(array_key_exists('type', $metadata)) {
+                                            $type_text = $metadata['type'];
+                                        
+                                            if($type_text == 'story') {
+                                                echo '<div class="post-thumb-block" style="display:none;"></div>';
+                                            } else {
+                                                echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
+                                            }
+                                            
+                                        } else {
+                                            echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
+                                        }
+                                    ?>
                                     
                                     <h3 class="post-title"></h3>
                                     <span class="main_post post-entry mod-post"><?php echo $body_text; ?></span>
