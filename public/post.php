@@ -106,6 +106,7 @@ else
 <style>
     body {background: #f4f4f4;}
     .main_post > figure > img {max-width: 100% !important;min-width: 100% !important;}
+    .main_post > figure > image {max-width: 100% !important;min-width: 100% !important;}
 </style>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
    <div class="row">
@@ -183,7 +184,7 @@ else
                                             } else {
                                                 echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
                                             }
-                                            
+
                                         } else {
                                             echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
                                         }
