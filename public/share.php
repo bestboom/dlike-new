@@ -12,7 +12,7 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL" style="border-radius: 20px;">
                             </div>
-                            <p style="color: #fff;">Want to write own story <a href="/story" style="color: #e1ec31;"> Go Here</a></p>
+                            <p style="color: #fff;padding-bottom: 10px;margin-top: -10px;">Want to write your own story <a href="/story" style="color: #e1ec31;"> Go Here</a></p>
                             <center>
                                 <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;" id="share">
                                     <i class="fas fa-spinner fa-spin loader" style="display:none;"></i>
