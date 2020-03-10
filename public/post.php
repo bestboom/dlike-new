@@ -106,10 +106,10 @@ else
 <style>
     body {background: #f4f4f4;}
     .single-post-block > h1 {font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;letter-spacing: -0.022em;}
-    .main_post > p {font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;font-weight: 400;font-size: 18px;line-height: 1.53;color: rgba(0, 0, 0, 0.84);}
+    .main_post > p {font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;font-weight: 400;font-size: 20px;color: rgba(0, 0, 0, 0.84);letter-spacing: -0.004em;line-height: 1.58;font-style: normal;margin-top: 0.86em;}
     .image_resized {width: 100% !important;max-width: 100% !important;min-width: 100% !important;}
     .main_post > figure > img {width: 100% !important;max-width: 100% !important;min-width: 100% !important;}
-    .main_post h1, h2, h3, h4, h5, h6 {font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;font-weight: 600;color: rgba(0, 0, 0, 0.84);letter-spacing: -0.022em;}
+    .main_post h1, h2, h3, h4, h5, h6 {font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;font-weight: 600;color: rgba(0, 0, 0, 0.84);letter-spacing: -0.022em;line-height: 1.25;}
     .main_post h3 {font-size: 24px;}
     .main_post a {text-decoration: underline;color: #007bff;font-weight: lighter !important;}
 </style>
@@ -121,9 +121,7 @@ else
                 <div class="col">
                     <div class="blog-details-wrapper">
                         <div class="single-post-block" style="max-width: 100%;">
-                            <center>
-                                <iframe data-aa="1318371" src="//ad.a-ads.com/1318371?size=320x50" scrolling="no" style="width:320px; height:50px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe>
-                            </center>
+                            <div class="row" style="margin: 0px;display: block;font-size: 0.95rem;"><span style="margin: 0px;text-decoration: underline;color: #111;color: rgba(0, 0, 0, 0.84);font-family: medium-content-sans-serif-font, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, &quot;Lucida Sans&quot;, Geneva, Arial, sans-serif;letter-spacing: -0.022em;">Need VPN for Fast, Secure and Annonymous Browsing - Check this VPN service - Special Discount Price</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Ad</span></div>
                             <br>
                             <h1 class="post-title mod-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
                             <!--<h1><span class="mod-title"></span></h1>-->
