@@ -6,15 +6,16 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+
+?>
+<!--
 $sql = "ALTER TABLE userposttemplates MODIFY content VARCHAR(100000)";
 if ($conn->query($sql) === TRUE) {
     echo "Table varchar updated";
 } else {
     echo "Error updating table: " . $conn->error;
 }
-
-
-?>
 
 $sqlm = "CREATE TABLE userposttemplates (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -31,7 +32,7 @@ if ($conn->query($sqlm) === TRUE) {
 }
 
 
-<!--
+
 $id = 1152;
 $sqlw = "DELETE FROM prousers WHERE id = '$id'";
 

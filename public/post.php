@@ -187,9 +187,10 @@ else
                                                 echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
                                             }
 
-                                        } else {
-                                            echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
-                                        }
+                                        } 
+                                        //else {
+                                        //    echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
+                                        //}
                                     ?>
                                     
                                     <h3 class="post-title"></h3>

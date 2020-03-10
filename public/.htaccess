@@ -19,6 +19,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^explorer$ ./explorer.php
 RewriteRule ^wallet$ ./wallet.php
 RewriteRule ^share$ ./share.php
+RewriteRule ^story$ ./story.php
 RewriteRule ^privacy$ ./privacy.php
 RewriteRule ^terms$ ./terms.php
 RewriteRule ^cookies$ ./cookies.php
