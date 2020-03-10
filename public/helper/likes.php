@@ -6,6 +6,13 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sql = "ALTER TABLE userposttemplates MODIFY content VARCHAR(100000)";
+if ($conn->query($sql) === TRUE) {
+    echo "Table varchar updated";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
 
 ?>
 
