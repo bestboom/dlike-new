@@ -109,9 +109,9 @@ else
     .main_post > p {font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;font-weight: 400;font-size: 18px;line-height: 1.53;color: rgba(0, 0, 0, 0.84);}
     .image_resized {width: 100% !important;max-width: 100% !important;min-width: 100% !important;}
     .main_post > figure > img {width: 100% !important;max-width: 100% !important;min-width: 100% !important;}
-    .main_post h1, h2, h3, h4, h5, h6 {font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;font-weight: 600;color: rgba(0, 0, 0, 0.84);}
+    .main_post h1, h2, h3, h4, h5, h6 {font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;font-weight: 600;color: rgba(0, 0, 0, 0.84);letter-spacing: -0.022em;}
     .main_post h3 {font-size: 24px;}
-    .main_post a {text-decoration: underline;color: #007bff;}
+    .main_post a {text-decoration: underline;color: #007bff;font-weight: lighter !important;}
 </style>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
    <div class="row">
