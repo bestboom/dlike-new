@@ -107,7 +107,7 @@ else
     body {background: #f4f4f4;}
     .single-post-block > h1 {font-family: medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;letter-spacing: -0.022em;}
     .main_post > p {font-family: medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif;font-weight: 400;font-size: 18px;line-height: 1.53;color: rgba(0, 0, 0, 0.84);}
-    .main_post > figure .image_resized {max-width: 100% !important;min-width: 100% !important;}
+    .main_post .image_resized .image {max-width: 100% !important;min-width: 100% !important;}
     .main_post > figure > img {max-width: 100% !important;min-width: 100% !important;}
 </style>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
