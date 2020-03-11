@@ -123,7 +123,7 @@ else
                 <div class="col">
                     <div class="blog-details-wrapper">
                         <div class="single-post-block" style="max-width: 100%;">
-                            <div class="row" style="margin: 0px;display: block;font-size: 0.95rem;"><span style="margin: 0px;text-decoration: underline;color: #111;color: rgba(0, 0, 0, 0.84);font-family: medium-content-sans-serif-font, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, &quot;Lucida Sans&quot;, Geneva, Arial, sans-serif;letter-spacing: -0.022em;">Need VPN for Fast, Secure and Anonymous Browsing - Check this VPN service - Special Discount Price</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Ad</span></div>
+                            <div class="row" style="margin: 0px;display: block;font-size: 0.95rem;"><span style="margin: 0px;text-decoration: underline;color: #111;color: rgba(0, 0, 0, 0.84);font-family: medium-content-sans-serif-font, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, &quot;Lucida Sans&quot;, Geneva, Arial, sans-serif;letter-spacing: -0.022em;"><a href="https://namecheap.pxf.io/jLqG6">Need VPN for Fast Secure and Anonymous Browsing - Check Our VPN Service - Special Discount Price</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Ad</span></div>
                             <br>
                             <h1 class="post-title mod-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
                             <!--<h1><span class="mod-title"></span></h1>-->
