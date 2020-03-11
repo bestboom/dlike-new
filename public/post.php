@@ -50,10 +50,10 @@ if ($resultvs->num_rows > 0) {
     $sqlvip = "SELECT * FROM postviews where permlink = '$link' and author = '$auth' and userip = '$ip'";
     $resultvip = $conn->query($sqlvip);
     if ($resultvip->num_rows > 0) { } else {
-        $updatePostviews = "UPDATE TotalPostViews SET totalviews = '$postviews' + 1 WHERE author = '$auth' AND permlink = '$link'";
+        $updatePostviews = "UPDATE totalpostviews SET totalviews = '$postviews' + 1 WHERE author = '$auth' AND permlink = '$link'";
         $updatePostview = $conn->query($updatePostviews);
         $postviews = $postviews + '1';
-        $sqlviewup = "INSERT INTO PostViews (author, permlink, views, userip, view_time)
+        $sqlviewup = "INSERT INTO postviews (author, permlink, views, userip, view_time)
         VALUES ('".$auth."', '".$link."', '".$views."', '".$ip."', '".date("Y-m-d h:m:s")."')";
         mysqli_query($conn, $sqlviewup);
 
@@ -113,7 +113,7 @@ else
     .main_post h3 {font-size: 21px;}
     .main_post h2 {font-size: 25px;}
     .main_post h1 {font-size: 30px;}
-    .main_post a {text-decoration: underline;color: #007bff;font-weight: lighter !important;}
+    .main_post a {text-decoration: underline;color: #c51d24;;font-weight: lighter !important;font-size:17px;}
 </style>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
    <div class="row">
