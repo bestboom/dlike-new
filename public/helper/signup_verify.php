@@ -19,6 +19,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 
 	if ($result_email->num_rows <= 0)
 	{
+		$pin_number = mt_rand(100000, 999999);
+		$status = '0';
+
+		$sqlm = "INSERT INTO wallet (username, email, pin_code, verified)
+					VALUES ('".$userval."', '".$email."', '".$pin_number."', '".$status."')";
+		if (mysqli_query($conn, $sqlm)) { }
 		$return['status'] = true;
 		$return['message'] = 'Verification code sent';
 	}

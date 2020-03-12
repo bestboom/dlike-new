@@ -73,6 +73,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     <span class="fas fa-envelope"></span>
                                 </span>
                                 <p class="signup-signup-description">
+                                    Hello <b>@<span id="my_username"></span></b>! <br>
                                     Make sure to enter a valid email address.
                                 </p>
                                 <form name="signup-pin">
