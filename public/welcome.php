@@ -127,7 +127,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 </p>
                                 <form name="signup-pin">
                                     <span class="input-username">
-                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits)"class="form-control" />
+                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (6 digits)"class="form-control" />
                                         <span class="fa fas fa-search"></span>
                                         <span class="loader fa fas fa-circle-notch" style="display: none"></span>
                                     </span>

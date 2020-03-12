@@ -455,10 +455,10 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
 //pin verify
     var inputpin = document.querySelector("#pin_code");
     inputpin.addEventListener('keyup', function(){
-        if(inputpin.value.length == 4) {
+        if(inputpin.value.length == 6) {
             $(".signup-signup-verify .next.btn").prop('disabled',false);
         }
-        if(inputpin.value.length < 4 || inputpin.value.length > 4) {
+        if(inputpin.value.length < 6 || inputpin.value.length > 6) {
             $(".signup-signup-verify .next.btn").prop('disabled',true);
         }
     })
@@ -575,7 +575,6 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             }
         });   
     })
-
 //new success
 
     document.querySelector(".signup-signup-success-2 .next.btn").addEventListener('click',function(event){

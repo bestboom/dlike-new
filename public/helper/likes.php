@@ -6,6 +6,12 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sql = "ALTER TABLE wallet ADD pin_code INT(6) NOT NULL AFTER email";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to wallet table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
 
 
 ?>
