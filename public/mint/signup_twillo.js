@@ -189,8 +189,8 @@ function signUpPhoneCheck() {
 function pinVerify() {
     var Signit  = document.querySelector('.signup-signup');
     var pinit = Signit.querySelector('.signup-signup-verify');
-    var Phoneit   = Signit.querySelector('.signup-signup-email');
-    //$(".signup-signup-phone .loader.fa").insertAfter($("#phone"));
+    var Phoneit   = Signit.querySelector('.signup-signup-phone');
+    $(".signup-signup-phone .loader.fa").insertAfter($("#phone"));
     jQuery(Phoneit).animate({
         opacity: 0,
         top    : -20
@@ -259,7 +259,7 @@ function emailCheck() {
 function getSuccess2() {
 
     var Signit  = document.querySelector('.signup-signup');
-    var pinit = Signit.querySelector('.signup-signup-verify');
+    var pinit = Signit.querySelector('.signup-signup-email');
     var successit   = Signit.querySelector('.signup-signup-success-2');
 
     jQuery(pinit).animate({
@@ -475,29 +475,30 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             $(".signup-signup-email .next.btn").prop('disabled',true);
         }
     })    
-// pin verify
+
     document.querySelector(".signup-signup-verify .next.btn").addEventListener('click',function(e){
         e.preventDefault();
-        if(inputpin.value.length == 6){
+        if(inputpin.value.length == 4){
 
             $(".signup-signup-verify .next.btn").prop('disabled',true);
             $(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
             $("#pin_code").prop('disabled',true);
  
             var pin_code = $("#pin_code").val();
-            var my_email = $('#my_email').html();
+            var my_number = intl.getNumber();
+            var number = my_number.replace('+','');
             
              $.ajax({
                 url: '/helper/signup_verify.php',
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'verify_pin',mypin:pin_code,email:my_email},
+                data: {action : 'verify_pin',mypin:pin_code,number:number},
                 success:function(response){
                     console.log(response);
                     if(response.status===true)
                     {
-                        getSuccess2();
+                        getSuccess();
                         toastr['success'](response.message);
                     }
                     else{
@@ -531,7 +532,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                     console.log(response);
                     if(response.status===true)
                     {
-                        pinVerify();
+                        getSuccess2();
                         toastr['success'](response.message);
                     }
                     else{

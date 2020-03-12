@@ -91,30 +91,6 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
                     </div>
 
-                    <div class="signup-signup-verify" style="display: none">
-                        <div class="contact-info-block signup_block">
-                            <div class="contact-info-inner signup_inner">
-                                <h4>Verify PIN</h4>
-                                <span class="signup-signup-icon">
-                                    <span class="fa fa-phone"></span>
-                                </span>
-                                <p class="signup-signup-description">
-                                    Enter the confirmation code. We sent the code to <b><span id="sms_number"></span></b> via SMS.
-                                </p>
-                                <form name="signup-pin">
-                                    <span class="input-username">
-                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits)"class="form-control" />
-                                        <span class="fa fas fa-search"></span>
-                                        <span class="loader fa fas fa-circle-notch" style="display: none"></span>
-                                    </span>
-                                    <button class="next btn btn-lime" disabled>
-                                        Verify PIN
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>  
-
                     <div class="signup-signup-email" style="display: none">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
@@ -133,6 +109,30 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     </span>
                                     <button class="next btn btn-lime" disabled>
                                         Verify Email
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>  
+
+                    <div class="signup-signup-verify" style="display: none">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Verify PIN</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fa fa-phone"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Enter the confirmation code sent to <b><span id="my_email"></span></b>.
+                                </p>
+                                <form name="signup-pin">
+                                    <span class="input-username">
+                                        <input type="text" name="pin" id="pin_code" placeholder="confirmation code (4 digits)"class="form-control" />
+                                        <span class="fa fas fa-search"></span>
+                                        <span class="loader fa fas fa-circle-notch" style="display: none"></span>
+                                    </span>
+                                    <button class="next btn btn-lime" disabled>
+                                        Verify PIN
                                     </button>
                                 </form>
                             </div>
@@ -168,7 +168,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     <span class="fa fa-check"></span>
                                 </span>
                                 <p class="signup-signup-description">
-                                    Hello  <b>@<span id="my_username2"></span> (<span id="my_email"></span>)</b>! <br>
+                                    Hello  <b>@<span id="my_username2"></span></b>! <br>
                                     Welcome to STEEM Blockchain.
                                 </p>
                                 <form name="signup-pin">
