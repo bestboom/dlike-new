@@ -4,12 +4,6 @@
 	error_reporting(E_ALL);
 
 require '../includes/config.php';
-//require_once("../includes/twilio-php-master/Twilio/autoload.php");
-//use Twilio\Rest\Client;
-
-//$sid    = getenv('twilio_sid');
-//$token  = getenv('twilio_token');
-//$twilio = new Client($sid, $token);
 
 if (isset($_POST['action'])  && $_POST['action'] == 'check_number' && isset($_POST['number'])  && $_POST['number'] != '')
 {
@@ -43,7 +37,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 	$return['message'] = '';
 	$email =  $_POST['email'];
 
-	$check_email = "SELECT * FROM wallet where email = '".$email."' ";
+	$check_email = "SELECT * FROM wallet where email = '$email' and verified = '1'";
 	$result_email = $conn->query($check_email);
 
 	if ($result_email->num_rows <= 0)
@@ -98,16 +92,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	$return['message'] = '';
 
 	$mypin =  $_POST['mypin'];
-	$phone =  $_POST['number'];
-	$my_phone = '+'.$phone;
+	$my_email =  $_POST['email'];
 
+	$check_pin = "SELECT * FROM wallet where email = '$my_email' and pin_code = '$mypin' ";
+	$result_pin = $conn->query($check_pin);
 
-		$verification_check = $twilio->verify->v2->services("VA7e42d549091ac2261146897b3655b465")
-                                         ->verificationChecks
-                                         ->create($mypin, 
-                                                  array("to" => $my_phone)
-                                         );
-		if($verification_check->valid){ 
+	if ($result_pin->num_rows > 0) { 
 		//if($mypin == 7654){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
