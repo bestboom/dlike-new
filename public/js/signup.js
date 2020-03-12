@@ -164,27 +164,6 @@ domReady(function () {
         Timeout = setTimeout(checkUsername, 250);
     });
 // here ends dom
-function signUpPhoneCheck() {
-    var Signup  = document.querySelector('.signup-signup');
-    var Steemit = Signup.querySelector('.signup-signup-steemit');
-    var Phone   = Signup.querySelector('.signup-signup-phone');
-    $(".signup-signup-phone .loader.fa").insertAfter($("#phone"));
-    jQuery(Steemit).animate({
-        opacity: 0,
-        top    : -20
-    }, 300, function () {
-        Steemit.style.display = 'none';
-
-        Phone.style.opacity = 0;
-        Phone.style.top     = '50px';
-        Phone.style.display = '';
-
-        jQuery(Phone).animate({
-            opacity: 1,
-            top    : 0
-        }, 300);
-    });
-}
 
 function pinVerify() {
     var Signit  = document.querySelector('.signup-signup');
@@ -328,28 +307,6 @@ function passDone() {
 }
 
 
-/*new signup code*/
-var input = document.querySelector("#phone"),
-errorMsg = document.querySelector("#error-msg"),
-validMsg = document.querySelector("#valid-msg");
-var countryCode = '';
-
-var errorMap = [ "Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
-
-// Initialise plugin
-    var intl = window.intlTelInput(input, {
-        allowDropdown: true,
-        separateDialCode: true,
-        initialCountry: "auto",
-    geoIpLookup: function(success, failure) {
-        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-            countryCode = (resp && resp.country) ? resp.country : "";
-            success(countryCode);
-        });
-    },
-        utilsScript: "/js/phone_input.js"
-    });
-
 var reset = function() {
 input.classList.remove("error");
 errorMsg.innerHTML = "";
@@ -357,100 +314,6 @@ errorMsg.classList.add("hide");
 validMsg.classList.add("hide");
 };
 
-var FormSignPhone = document.querySelector('form[name="signup-phone"]');
-var message    = FormSignPhone.querySelector('.message');
-
-//check if number already used
-input.addEventListener('keyup', function(){
-    //reset();
-    if(input.value.trim()){
-        if(intl.isValidNumber()){
-            $("#phone").prop('disabled',true);
-            $(".signup-signup-phone .next.btn").prop('disabled',true);
-            $(".signup-signup-phone .message").text('checking number availability...');
-            $(".signup-signup-phone .loader").removeClass('fa-exclamation-circle').addClass('fa-spin');
-            $(".signup-signup-phone .message").show();
-            $(".signup-signup-phone .message").show();
-            $(".signup-signup-phone .message").removeClass('signup-message-success').removeClass('signup-message-error');
-            $(".signup-signup-phone .loader").removeClass('fa-spin').addClass('fa-check');
-            $(".signup-signup-phone .loader").show();
-            var number = intl.getNumber();
-            var number = number.replace('+','');
-            //console.log(number);
-            /*verify number call*/
-            $.ajax({
-                url: '/helper/signup_verify.php',
-                type: 'post',
-                cache : false,
-                dataType: 'json',
-                data: {action : 'check_number',number:number},
-                success:function(response){
-                    $("#phone").prop('disabled',false);
-                    if(response.status===true){
-                        $(".signup-signup-phone .loader").addClass('fa-check').removeClass('fa-spin').removeClass('fa-exclamation-circle');
-                        //validMsg.classList.remove("hide");
-                        $(".signup-signup-phone .next.btn").prop('disabled',false);
-                        $(".signup-signup-phone .message").addClass('signup-message-success');
-                        $(".signup-signup-phone .message").text(response.message);
-                    }
-                    else{
-                        $(".signup-signup-phone .next.btn").prop('disabled',true);
-                        $(".signup-signup-phone .loader").removeClass('fa-spin').addClass('fa-exclamation-circle').removeClass('fa-check');
-                        //toastr['error'](response.message);
-                        $(".signup-signup-phone .message").addClass('signup-message-error');
-                        $(".signup-signup-phone .message").text(response.message);
-                    }
-                }
-            });
-        }else{
-            input.classList.add("error");
-            var errorCode = intl.getValidationError();
-            message.innerHTML = errorMap[errorCode];
-            //errorMsg.classList.remove("hide");
-            $(".signup-signup-phone .loader").removeClass('fa-check').removeClass('fa-spin').addClass('fa-exclamation-circle');        
-            $(".signup-signup-phone .next.btn").prop('disabled',true);
-            $(".signup-signup-phone .message").removeClass('signup-message-success').addClass('signup-message-error');
-        }
-    }
-});
-
-document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
-    e.preventDefault();
-    if(intl.isValidNumber() && $("#phone").val() != ''){
-
-        var get_number = intl.getNumber();
-        var number = get_number.replace('+','');
-
-        $("#phone").prop('disabled',true);
-        $(".signup-signup-phone .next.btn").prop('disabled',true);
-
-        if(number != ''){
-            $("#sms_number").html(get_number);
-            $.ajax({
-                url: '/helper/signup_verify.php',
-                type: 'post',
-                cache : false,
-                dataType: 'json',
-                data: {action : 'send_sms',number:number},
-                success:function(response){
-                    
-                    $("#phone").prop('disabled',false);
-                    $(".signup-signup-phone .next.btn").prop('disabled',false);
-
-                    if(response.status===true)
-                    {
-                        pinVerify();
-                        toastr['success'](response.message);
-                    }
-                    else{
-                        toastr['error'](response.message);
-                        return false;
-                    }
-                }
-            });
-        }
-    }
-})
 
 //pin verify
     var inputpin = document.querySelector("#pin_code");
@@ -544,40 +407,8 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
             });  
         } else {toastr['error']("Email Not Valid"); return false;}
     })
-    document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
-        event.preventDefault();
 
-        $('#show_pass').html('Loading...');
-        $(".signup-signup-success .next.btn").prop('disabled',true);
-        let my_name = $('#my_username').html();
-        let my_number = intl.getNumber();
-        let number = my_number.replace('+','');
-        var refer_by = $('#refer_by').val();
-        
-         $.ajax({
-            url: '/helper/signup_verify.php',
-            type: 'post',
-            cache : false,
-            dataType: 'json',
-            data: {action : 'acc_create',user:my_name,number:number,refer_by:refer_by},
-            success:function(response){
-                console.log(response);
-                if(response.status===true)
-                {
-                   toastr['success'](response.message);
-                   //console.log(response.password);
-                   $('.password_container').html(response.password);
-                   copyPassword();
-                }
-                else{
-                    toastr['error'](response.message);
-                    return false;
-                }
-            }
-        });   
-    })
 //new success
-
     document.querySelector(".signup-signup-success-2 .next.btn").addEventListener('click',function(event){
         event.preventDefault();
 
