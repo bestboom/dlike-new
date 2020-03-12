@@ -65,32 +65,6 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
                     </div>
 
-
-                    <div class="signup-signup-phone" style="display: none">
-                        <div class="contact-info-block signup_block">
-                            <div class="contact-info-inner signup_inner">
-                                <h4>Verify Phone</h4>
-                                <span class="signup-signup-icon">
-                                    <span class="fa fa-phone"></span>
-                                </span>
-                                <p class="signup-signup-description">
-                                    Enter your phone number. We will send verification code through SMS.<br>
-                                    <span style="color:red;font-weight: 600;">Phone numbers are only for identity verification. We store them in hashed form (md5) to ensure no duplicate accounts are generated.</span>
-                                </p>
-                                <form name="signup-phone">
-                                    <span class="form-group input-username">
-                                        <input type="tel" min="0" name="phone" id="phone" class="form-control">
-                                        <span class="message" style="display: none;"></span>
-                                        <span class="loader fa fas fa-spin" style="display: none"></span>
-                                    </span>
-                                    <button class="next btn btn-lime" disabled>
-                                        Send SMS
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="signup-signup-email" style="display: none">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
@@ -137,28 +111,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 </form>
                             </div>
                         </div>
-                    </div>  
-
-                    <div class="signup-signup-success" style="display: none">
-                        <div class="contact-info-block signup_block">
-                            <div class="contact-info-inner signup_inner">
-                                <h4>Success</h4>
-                                <span class="signup-signup-icon">
-                                    <span class="fa fa-check"></span>
-                                </span>
-                                <p class="signup-signup-description">
-                                    Thank you  <b>@<span id="my_username"></span></b>. <br>
-                                    Your phone number has been verified.
-                                </p>
-                                <form name="signup-pin">
-                                    <button class="next btn btn-lime">
-                                        <span id="show_pass">Show My Password</span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>                  
-
+                    </div>
 
                     <div class="signup-signup-success-2" style="display: none">
                         <div class="contact-info-block signup_block">

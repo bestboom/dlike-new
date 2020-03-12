@@ -414,44 +414,6 @@ input.addEventListener('keyup', function(){
     }
 });
 
-document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
-    e.preventDefault();
-    if(intl.isValidNumber() && $("#phone").val() != ''){
-
-        var get_number = intl.getNumber();
-        var number = get_number.replace('+','');
-
-        $("#phone").prop('disabled',true);
-        $(".signup-signup-phone .next.btn").prop('disabled',true);
-
-        if(number != ''){
-            $("#sms_number").html(get_number);
-            $.ajax({
-                url: '/helper/signup_verify.php',
-                type: 'post',
-                cache : false,
-                dataType: 'json',
-                data: {action : 'send_sms',number:number},
-                success:function(response){
-                    
-                    $("#phone").prop('disabled',false);
-                    $(".signup-signup-phone .next.btn").prop('disabled',false);
-
-                    if(response.status===true)
-                    {
-                        pinVerify();
-                        toastr['success'](response.message);
-                    }
-                    else{
-                        toastr['error'](response.message);
-                        return false;
-                    }
-                }
-            });
-        }
-    }
-})
-
 //pin verify
     var inputpin = document.querySelector("#pin_code");
     inputpin.addEventListener('keyup', function(){
@@ -517,9 +479,6 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         console.log(inputemail)
         if(email_check.test(inputemail)){
             $('#my_email').html(inputemail);
-            //$(".signup-signup-verify .next.btn").prop('disabled',true);
-            //$(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
-            //$("#pin_code").prop('disabled',true);
             
              $.ajax({
                 url: '/helper/signup_verify.php',
