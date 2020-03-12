@@ -414,6 +414,44 @@ input.addEventListener('keyup', function(){
     }
 });
 
+document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
+    e.preventDefault();
+    if(intl.isValidNumber() && $("#phone").val() != ''){
+
+        var get_number = intl.getNumber();
+        var number = get_number.replace('+','');
+
+        $("#phone").prop('disabled',true);
+        $(".signup-signup-phone .next.btn").prop('disabled',true);
+
+        if(number != ''){
+            $("#sms_number").html(get_number);
+            $.ajax({
+                url: '/helper/signup_verify.php',
+                type: 'post',
+                cache : false,
+                dataType: 'json',
+                data: {action : 'send_sms',number:number},
+                success:function(response){
+                    
+                    $("#phone").prop('disabled',false);
+                    $(".signup-signup-phone .next.btn").prop('disabled',false);
+
+                    if(response.status===true)
+                    {
+                        pinVerify();
+                        toastr['success'](response.message);
+                    }
+                    else{
+                        toastr['error'](response.message);
+                        return false;
+                    }
+                }
+            });
+        }
+    }
+})
+
 //pin verify
     var inputpin = document.querySelector("#pin_code");
     inputpin.addEventListener('keyup', function(){
@@ -479,6 +517,9 @@ input.addEventListener('keyup', function(){
         console.log(inputemail)
         if(email_check.test(inputemail)){
             $('#my_email').html(inputemail);
+            //$(".signup-signup-verify .next.btn").prop('disabled',true);
+            //$(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
+            //$("#pin_code").prop('disabled',true);
             
              $.ajax({
                 url: '/helper/signup_verify.php',
@@ -502,8 +543,40 @@ input.addEventListener('keyup', function(){
             });  
         } else {toastr['error']("Email Not Valid"); return false;}
     })
+    document.querySelector(".signup-signup-success .next.btn").addEventListener('click',function(event){
+        event.preventDefault();
 
+        $('#show_pass').html('Loading...');
+        $(".signup-signup-success .next.btn").prop('disabled',true);
+        let my_name = $('#my_username').html();
+        let my_number = intl.getNumber();
+        let number = my_number.replace('+','');
+        var refer_by = $('#refer_by').val();
+        
+         $.ajax({
+            url: '/helper/signup_verify.php',
+            type: 'post',
+            cache : false,
+            dataType: 'json',
+            data: {action : 'acc_create',user:my_name,number:number,refer_by:refer_by},
+            success:function(response){
+                console.log(response);
+                if(response.status===true)
+                {
+                   toastr['success'](response.message);
+                   //console.log(response.password);
+                   $('.password_container').html(response.password);
+                   copyPassword();
+                }
+                else{
+                    toastr['error'](response.message);
+                    return false;
+                }
+            }
+        });   
+    })
 //new success
+
     document.querySelector(".signup-signup-success-2 .next.btn").addEventListener('click',function(event){
         event.preventDefault();
 
