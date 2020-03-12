@@ -517,6 +517,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
         console.log(inputemail)
         if(email_check.test(inputemail)){
             $('#my_email').html(inputemail);
+            let my_name = $('#my_username').html();
             //$(".signup-signup-verify .next.btn").prop('disabled',true);
             //$(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
             //$("#pin_code").prop('disabled',true);
@@ -526,7 +527,7 @@ document.querySelector(".signup-signup-phone .next.btn").addEventListener('click
                 type: 'post',
                 cache : false,
                 dataType: 'json',
-                data: {action : 'verify_email',email:inputemail},
+                data: {action : 'verify_email',user:my_name,email:inputemail},
                 success:function(response){
                     console.log(response);
                     if(response.status===true)

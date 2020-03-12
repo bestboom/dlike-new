@@ -13,6 +13,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 	$return['status'] = false;
 	$return['message'] = '';
 	$email =  $_POST['email'];
+	$user =  $_POST['user'];
 
 	$check_email = "SELECT * FROM wallet where email = '$email' and verified = '1'";
 	$result_email = $conn->query($check_email);
@@ -23,10 +24,11 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 		$status = '0';
 
 		$sqlm = "INSERT INTO wallet (username, email, pin_code, verified)
-					VALUES ('".$userval."', '".$email."', '".$pin_number."', '".$status."')";
-		if (mysqli_query($conn, $sqlm)) { }
-		$return['status'] = true;
-		$return['message'] = 'Verification code sent';
+					VALUES ('".$user."', '".$email."', '".$pin_number."', '".$status."')";
+		if (mysqli_query($conn, $sqlm)) { 
+			$return['status'] = true;
+			$return['message'] = 'Verification code sent';
+		} else {$return['message'] = 'Some issue in code entry';}
 	}
 	else{
 		$return['message'] = 'Email already in use';
