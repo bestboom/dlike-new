@@ -24,8 +24,8 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                     </div>
                 </div>
                 <div class="col-md-6 signup_sec signup-signup">
-<!--
-                    <div class="row signup-signup-disable">
+
+                    <div class="row signup-signup-disable" style="display: none;">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4>Create Account</h4>
@@ -39,8 +39,8 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                             </div>
                         </div>
                     </div>
--->
-                    <div class="row signup-signup-steemit">
+
+                    <div class="row signup-signup-steemit" style="display: block;">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4 class="sign_head">Create Account</h4>

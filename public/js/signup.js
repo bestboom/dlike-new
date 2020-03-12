@@ -33,7 +33,15 @@ var domReady = (function () {
 
 domReady(function () {
     var Client = new dsteem.Client('https://api.steemit.com');
-
+    var creator = 'dlike';
+    var check_pending_accounts = Client.database.call('get_accounts', [[creator]]).then(function (res) {
+        pending_accounts = res[0].pending_claimed_accounts; 
+        console.log(res[0].pending_claimed_accounts);
+        if(pending_accounts == 0) {
+            $('.signup-signup-steemit').css('display','none');
+            $('.signup-signup-disable').css('display','block');
+        }
+    });
     var FormSignUp = document.querySelector('form[name="signup"]');
     var Input      = FormSignUp.querySelector('[name="username"]');
     var Message    = FormSignUp.querySelector('.message');
@@ -332,7 +340,7 @@ validMsg.classList.add("hide");
                 dataType: 'json',
                 data: {action : 'verify_pin',mypin:pin_code,email:my_email},
                 success:function(response){
-                    console.log(response);
+                    //console.log(response);
                     if(response.status===true)
                     {
                         getSuccess2();
@@ -365,7 +373,7 @@ validMsg.classList.add("hide");
                 dataType: 'json',
                 data: {action : 'verify_email',user:my_name,email:inputemail},
                 success:function(response){
-                    console.log(response);
+                    //console.log(response);
                     if(response.status===true)
                     {
                         pinVerify();
@@ -400,7 +408,7 @@ validMsg.classList.add("hide");
             dataType: 'json',
             data: {action : 'acc_create2',user:my_name,email:my_email,refer_by:refer_by},
             success:function(response){
-                console.log(response);
+                //console.log(response);
                 if(response.status===true)
                 {
                    toastr['success'](response.message);
