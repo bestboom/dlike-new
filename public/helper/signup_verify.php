@@ -15,7 +15,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 	$email =  $_POST['email'];
 	$user =  $_POST['user'];
 
-	$check_email = "SELECT * FROM wallet where email = '$email' and verified = '1'";
+	$check_email = "SELECT * FROM wallet where email = '$email'";
 	$result_email = $conn->query($check_email);
 
 	if ($result_email->num_rows <= 0)
@@ -27,7 +27,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 					VALUES ('".$user."', '".$email."', '".$pin_number."', '".$status."')";
 		if (mysqli_query($conn, $sqlm)) { 
 			$return['status'] = true;
-			$return['message'] = 'Verification code sent';
+			$return['message'] = 'Verification code sent to email';
 		} else {$return['message'] = 'Some issue in code entry';}
 	}
 	else{
@@ -50,8 +50,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	$check_pin = "SELECT * FROM wallet where email = '$my_email' and pin_code = '$mypin' ";
 	$result_pin = $conn->query($check_pin);
 
-	//if ($result_pin->num_rows > 0) { 
-		if($mypin == 765432){	
+	if ($result_pin->num_rows > 0) { 
+		//if($mypin == 765432){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
@@ -86,12 +86,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
         //$password = 'asadadadafadafadad';
         
         if($password !=''){
-
-			 	$sqlm = "INSERT INTO wallet (username, amount, email)
-						VALUES ('".$user."', '".$signup_bonus."', '".$email."')";
-
-						if (mysqli_query($conn, $sqlm)) 
-						{ 
+			 	$updateStatus = "UPDATE wallet SET verified = '1'  WHERE username = '$user' AND email = '$email'";
+			 	$updateUserStatus = $conn->query($updateStatus);
+						if ($updateUserStatus === TRUE) { 
 
 							$sqlX = "INSERT INTO transactions (username, amount, reason)
 								VALUES ('".$user."', '".$signup_bonus."', '".$signup_reason."')";

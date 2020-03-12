@@ -187,31 +187,6 @@ function pinVerify() {
     });
 }
 
-
-function getSuccess() {
-
-    var Signit  = document.querySelector('.signup-signup');
-    var pinit = Signit.querySelector('.signup-signup-verify');
-    var successit   = Signit.querySelector('.signup-signup-success');
-
-    jQuery(pinit).animate({
-        opacity: 0,
-        top    : -20
-    }, 300, function () {
-        pinit.style.display = 'none';
-
-        successit.style.opacity = 0;
-        successit.style.top     = '50px';
-        successit.style.display = '';
-
-        jQuery(successit).animate({
-            opacity: 1,
-            top    : 0
-        }, 300);
-    });
-}
-
-
 function emailCheck() {
 
     var Signit  = document.querySelector('.signup-signup');
@@ -381,9 +356,6 @@ validMsg.classList.add("hide");
         if(email_check.test(inputemail)){
             $('#my_email').html(inputemail);
             let my_name = $('#my_username').html();
-            //$(".signup-signup-verify .next.btn").prop('disabled',true);
-            //$(".signup-signup-verify .loader").removeClass('fa-circle-notch').addClass('fa-check'); 
-            //$("#pin_code").prop('disabled',true);
             
              $.ajax({
                 url: '/helper/signup_verify.php',
