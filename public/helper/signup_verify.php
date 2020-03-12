@@ -3,8 +3,17 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
+require __DIR__ . '/../../vendor/autoload.php';
 require '../includes/config.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;	
+
+require '../helper/mailer/src/Exception.php';
+require '../helper/mailer/src/PHPMailer.php';
+require '../helper/mailer/src/SMTP.php';
+
+$mail = new PHPMailer();
 
 //check if email exist
 if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_POST['email'])  && $_POST['email'] != '')
@@ -26,9 +35,29 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 		$sqlm = "INSERT INTO wallet (username, email, pin_code, verified)
 					VALUES ('".$user."', '".$email."', '".$pin_number."', '".$status."')";
 		if (mysqli_query($conn, $sqlm)) { 
-			$return['status'] = true;
-			$return['message'] = 'Verification code sent to email';
-		} else {$return['message'] = 'Some issue in code entry';}
+
+			$mail->isSMTP();
+		    $mail->Host = 'smtp.zoho.com';
+		    $mail->SMTPAuth = true;
+		    $mail->Username = 'verification@dlike.io';
+		    $mail->Password = getenv("EMAIL_PASS");
+		    $mail->SMTPSecure = 'tls';
+		    $mail->Port = 587;
+
+		    $mail->setFrom('verification@dlike.io', 'DLIKE');
+    		$mail->addAddress($email);
+
+    		$mail->isHTML(true); 
+    		$mail->Subject = 'DLIKE Email Verification';
+    		$mail->Body    = 'Welcome to DLIKE <br><br> Your Activation Code is '.$pin_number.' <br><br><br>Cheers<br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
+			
+			$done_email = $mail->send();
+
+			if($done_email) {
+				$return['status'] = true;
+				$return['message'] = 'Verification code sent to email';
+			} else {$return['message'] = 'Email does not seem to work!';}
+		} else {$return['message'] = 'Some issue in processing. Please Try later';}
 	}
 	else{
 		$return['message'] = 'Email already in use';

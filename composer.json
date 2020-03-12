@@ -5,7 +5,8 @@
     "ext-mysqli": "*",
     "ext-gettext": "*",
     "demafelix/b2sdk": "^1.0",
-    "guzzlehttp/guzzle": "^6.3"
+    "guzzlehttp/guzzle": "^6.3",
+    "phpmailer/phpmailer": "~6.1"
   },
   	"require-dev": {
       "heroku/heroku-buildpack-php": "*"
