@@ -53,7 +53,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 </style>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
 	<div class="row">
-        <div id="pub_loadings"><img src="/images/loader.svg" width="100"></div>
+        <!--<div id="pub_loadings"><img src="/images/loader.svg" width="100"></div>-->
 		<div class="contact-form-section" style="margin-top: 30px;width: 100%">
             <div class="align-items-center h-100">
                 <div class="user-connected-form-block" style="padding: 40px 80px 45px 80px;">
@@ -196,7 +196,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     }
     $(document).ready(function(){
         var steemuser = username;
-        $('#pub_loadings').hide();
+        //$('#pub_loadings').hide();
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};
             $.ajax({
@@ -407,7 +407,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                 story_rewards: $('.rewards').val()
             };
             console.log(datam);
-            $('#pub_loadings').show();
+            //$('#pub_loadings').show();
             $.ajax({
                 type: "POST",
                 url: "/helper/submit_story.php",
@@ -417,14 +417,14 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                     try {
                         var response = JSON.parse(data)
                         if (response.error == true) {
-                            $('#pub_loadings').hide();
+                            //$('#pub_loadings').hide();
                             toastr.error('There is some issue');
                             return false;
                         } else {
                             toastr.success('Post published successfully');
                             $(".submit_story").attr("disabled", true);
                             $(".btn_my_templates").attr("disabled", true);
-                            $('#pub_loadings').hide();
+                            //$('#pub_loadings').hide();
                             setTimeout(function(){
                                 window.location.href = response.redirect;
                             }, 5000);

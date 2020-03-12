@@ -356,8 +356,9 @@ validMsg.classList.add("hide");
         if(email_check.test(inputemail)){
             $('#my_email').html(inputemail);
             let my_name = $('#my_username').html();
-            
-             $.ajax({
+            $(".signup-signup-email .next.btn").html('Verifying...');
+            $(".signup-signup-email .next.btn").prop('disabled',true);
+            $.ajax({
                 url: '/helper/signup_verify.php',
                 type: 'post',
                 cache : false,
@@ -373,6 +374,8 @@ validMsg.classList.add("hide");
                     else{
                         toastr['error'](response.message);
                         $("#pin_code").prop('disabled',false);
+                        $(".signup-signup-email .next.btn").html('Verify');
+                        $(".signup-signup-email .next.btn").prop('disabled',false);
                         return false;
                     }
                 }
