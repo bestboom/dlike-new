@@ -51,7 +51,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             <div class="row">
 
                                 <div class="user-connected-form-block">
-                                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
+                                    <form class="user-connected-from user-signup-form" method="post" action="">
                                         <input type="hidden" name="image" value="<?php print $img; ?>">
                                         <div class="form-group">
                                             <div class="input-group mb-3">
@@ -165,25 +165,16 @@ ClassicEditor
 </script>
 <script type="text/javascript">
     $('.shareme2').click(function(clickEvent) {
-            //let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
             let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
             console.log({ text_words })
             if (text_words.length < 40) {
-                showModalError(
-                    "Make Sure..",
-                    "Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article.",
-                    ""
-                );
+                toastr.error('Please Write minimum 40 words to explain this share!');
                 return false;
             }
 
             if ($('.catg').val() == "0") {
                 $('.catg').css("border-color", "RED");
-                showModalError(
-                    "uh-oh..",
-                    "You must Select an appropriate Category",
-                    ""
-                );
+                toastr.error('Please Select an appropriate Category');
                 return false;
             }
 
@@ -194,38 +185,15 @@ ClassicEditor
 
             if (tags.length < 2) {
                 $('.tags').css("border-color", "RED");
-                showModalError(
-                    "uh-oh..",
-                    "Please add at least two related tags",
-                    ""
-                );
+                toastr.error('Please add at least two related tags');
                 return false;
             }
             if ($('.title_field').val() == "") {
-                showModalError(
-                    "uh-oh..",
-                    "Title Should not be empty!",
-                    ""
-                );
+                toastr.error('Title Should not be empty!');
                 return false;
             }
 
             $('form').submit();
         });
 
-
-
-            $(function() {
-            var new_content = editor2.getData();
-            if (localStorage) {
-                var saved_content = localStorage.getItem("autoSave");
-                    if(saved_content) {
-                        //$("#text").text(story_content);
-                        editor2.setData(saved_content);
-                    }
-                }
-            $("#editor2").autoSave(function() {
-                console.log('Content Saved!')
-            }, 2000);
-        });
 </script>
