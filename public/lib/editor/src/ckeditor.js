@@ -22,6 +22,7 @@ import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave.js';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough.js';
@@ -51,6 +52,7 @@ Editor.builtinPlugins = [
 	Table,
 	TableToolbar,
 	Alignment,
+	Autosave,
 	HorizontalLine,
 	ImageResize,
 	Strikethrough,
