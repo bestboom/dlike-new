@@ -172,6 +172,12 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                     'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'horizontalLine', 'strikethrough', 'blockQuote', '|', 'indent', 'outdent', 'alignment', '|', 'imageUpload', 'insertTable', 'mediaEmbed', 'undo','redo'
             ]
         },
+        autosave: {
+            waitingTime: 5000, // in ms
+            save( editor2 ) {
+                return saveData( editor2.getData() );
+            }
+        },
         language: 'en',
         image: {
             toolbar: [
@@ -201,6 +207,15 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         var tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
+    }
+    function saveData( data ) {
+        return new Promise( resolve => {
+            setTimeout( () => {
+                console.log( 'Saved', data );
+
+                resolve();
+            }, HTTP_SERVER_LAG );
+        } );
     }
     $(document).ready(function(){
         var steemuser = username;
@@ -414,8 +429,10 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                 story_image: first_image,
                 story_rewards: $('.rewards').val()
             };
-            console.log(datam);
-            //$('#pub_loadings').show();
+            //console.log(datam);
+            $(".submit_story").attr("disabled", true);
+            $(".btn_my_templates").attr("disabled", true);
+            $('.submit_story').html('Publishing...');
             $.ajax({
                 type: "POST",
                 url: "/helper/submit_story.php",
@@ -425,14 +442,13 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                     try {
                         var response = JSON.parse(data)
                         if (response.error == true) {
-                            //$('#pub_loadings').hide();
+                            $(".submit_story").attr("disabled", false);
+                            $(".btn_my_templates").attr("disabled", false);
+                            $('.submit_story').html('Publish');
                             toastr.error('There is some issue');
                             return false;
                         } else {
                             toastr.success('Post published successfully');
-                            $(".submit_story").attr("disabled", true);
-                            $(".btn_my_templates").attr("disabled", true);
-                            //$('#pub_loadings').hide();
                             setTimeout(function(){
                                 window.location.href = response.redirect;
                             }, 5000);
