@@ -207,18 +207,17 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         //autosave content function
         if (localStorage) {
             var get_saved_content = localStorage.getItem('saved_story_content');
-
             if(get_saved_content) {
                 var saved_story = JSON.parse(get_saved_content);
-                //$("textarea#text").text(saved_data);
                 editor2.setData(saved_story);
             }
         }
-        $("#editor2").change (function(){
+        setInterval(function(){ 
             var get_new_content = editor2.getData();
             console.log(get_new_content);
             localStorage.setItem('saved_story_content', JSON.stringify(get_new_content));
-        });
+        }, 20000);
+        
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};
             $.ajax({
