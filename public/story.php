@@ -173,8 +173,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             ]
         },
         autosave: {
-            waitingTime: 5000, // in ms
             save( editor2 ) {
+                // The saveData() function must return a promise
+                // which should be resolved when the data is successfully saved.
                 return saveData( editor2.getData() );
             }
         },
@@ -207,15 +208,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         var tmp = document.createElement("DIV");
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
-    }
-    function saveData( data ) {
-        return new Promise( resolve => {
-            setTimeout( () => {
-                console.log( 'Saved', data );
-
-                resolve();
-            }, HTTP_SERVER_LAG );
-        } );
     }
     $(document).ready(function(){
         var steemuser = username;
