@@ -214,10 +214,10 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
         }
         setInterval(function(){ 
             var get_new_content = editor2.getData();
-            console.log(get_new_content);
+            //console.log(get_new_content);
             localStorage.setItem('saved_story_content', JSON.stringify(get_new_content));
-        }, 20000);
-        
+        }, 30000);
+
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};
             $.ajax({
@@ -407,7 +407,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             if (find_image) {
                 first_image = elem.querySelector('img').src;
                 $('.featured_image').val(first_image);
-                console.log(first_image);
+                //console.log(first_image);
             } else {
                 if($('.featured_image').val() == "") {
                     toastr.error('There is no image in story. Please add featured image link');
@@ -417,7 +417,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                     first_image = $('.featured_image').val();
                 }
             }
-            console.log(first_image);
+            //console.log(first_image);
             //$('form').submit();
             var datam = {
                 story_title: $('.title_field').val(),
