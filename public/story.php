@@ -215,7 +215,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                         editor2.setData(story_content);
                     }
                 }
-            $(new_content).autoSave(function() {
+            $("#editor2").autoSave(function() {
                 console.log('Content Saved!')
             }, 2000);
         });
