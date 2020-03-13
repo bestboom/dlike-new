@@ -159,7 +159,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
 <?php include('template/footer.php'); ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.3.0/lodash.min.js"></script>
-<script src="/js/jquery.autoSave.min.js"></script>
 <script type="text/javascript">
     let editor2;
     ClassicEditor
@@ -206,8 +205,20 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     $(document).ready(function(){
         var steemuser = username;
         //autosave content function
+        if (localStorage) {
+            var get_saved_content = localStorage.getItem('saved_story_content');
 
-
+            if(get_saved_content) {
+                var saved_story = JSON.parse(get_saved_content);
+                //$("textarea#text").text(saved_data);
+                editor2.setData(saved_story);
+            }
+        }
+        $("#editor2").change (function(){
+            var get_new_content = editor2.getData();
+            console.log(get_new_content);
+            localStorage.setItem('saved_story_content', JSON.stringify(get_new_content));
+        });
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};
             $.ajax({
