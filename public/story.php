@@ -13,7 +13,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 ?>
 </div>
 <script src="lib/editor/build/ckeditor.js"></script>
-<script src="/js/jquery.autoSave.min.js"></script>
 <style>
     body {
     	background: #f4f4f4;
@@ -160,6 +159,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
 
 <?php include('template/footer.php'); ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/3.3.0/lodash.min.js"></script>
+<script src="/js/jquery.autoSave.min.js"></script>
 <script type="text/javascript">
     let editor2;
     ClassicEditor
