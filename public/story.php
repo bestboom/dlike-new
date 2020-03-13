@@ -12,7 +12,7 @@ if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
 $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
 </div>
-<script src="lib/editor/build/ckeditor.js"></script>
+<script src="lib/editor5/build/ckeditor.js"></script>
 <style>
     body {
     	background: #f4f4f4;
