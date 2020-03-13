@@ -206,19 +206,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     $(document).ready(function(){
         var steemuser = username;
         //autosave content function
-        $(function() {
-            var new_content = editor2.getData();
-            if (localStorage) {
-                var story_content = localStorage.getItem("autoSave");
-                    if(story_content) {
-                        //$("#text").text(story_content);
-                        editor2.setData(story_content);
-                    }
-                }
-            $("#editor2").autoSave(function() {
-                console.log('Content Saved!')
-            }, 2000);
-        });
+
 
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};

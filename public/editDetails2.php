@@ -98,7 +98,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea><!--<?php print $des; ?> -->
                                         </div>
-                                        <button type="button" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
+                                        <button type="button" class="btn btn-default shareme2" id="com-sbmt">SUBMIT</button>
                                     </form>
                                 </div><!-- create-account-block -->
                             </div>
@@ -162,4 +162,70 @@ ClassicEditor
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
     }   
+</script>
+<script type="text/javascript">
+    $('.shareme2').click(function(clickEvent) {
+            //let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
+            let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
+            console.log({ text_words })
+            if (text_words.length < 40) {
+                showModalError(
+                    "Make Sure..",
+                    "Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article.",
+                    ""
+                );
+                return false;
+            }
+
+            if ($('.catg').val() == "0") {
+                $('.catg').css("border-color", "RED");
+                showModalError(
+                    "uh-oh..",
+                    "You must Select an appropriate Category",
+                    ""
+                );
+                return false;
+            }
+
+            // tag check
+            var tags = $('.tags').val();
+            tags = $.trim(tags);
+            tags = tags.split(' ');
+
+            if (tags.length < 2) {
+                $('.tags').css("border-color", "RED");
+                showModalError(
+                    "uh-oh..",
+                    "Please add at least two related tags",
+                    ""
+                );
+                return false;
+            }
+            if ($('.title_field').val() == "") {
+                showModalError(
+                    "uh-oh..",
+                    "Title Should not be empty!",
+                    ""
+                );
+                return false;
+            }
+
+            $('form').submit();
+        });
+
+
+
+            $(function() {
+            var new_content = editor2.getData();
+            if (localStorage) {
+                var saved_content = localStorage.getItem("autoSave");
+                    if(saved_content) {
+                        //$("#text").text(story_content);
+                        editor2.setData(saved_content);
+                    }
+                }
+            $("#editor2").autoSave(function() {
+                console.log('Content Saved!')
+            }, 2000);
+        });
 </script>
