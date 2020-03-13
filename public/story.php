@@ -3,6 +3,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include('template/header5.php');
+
+if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
+    die('<script>window.location.replace("https://dlike.io/welcome","_self")</script>');
+} else {
+    $user = $_COOKIE['username'];
+}
 $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
 </div>
@@ -50,6 +56,8 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     .mb-deck {color: #111;font-weight: 600;background:#eee;}
     #pub_loadings {background-color: rgba(255,255,255,0.7);position: absolute;z-index: +100 !important;width: 100%;height:100%;}
     #pub_loadings img {position: relative;top:40%;left:40%;}
+    .user-connected-form-block h2 {font-size: 30px;line-height: 36px;font-weight: 700;color: #1c2437;margin-bottom: 30px;}
+    .user-connected-form-block h1 {font-size: 34px;line-height: 36px;font-weight: 700;color: #1c2437;margin-bottom: 30px;}
 </style>
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
 	<div class="row">
