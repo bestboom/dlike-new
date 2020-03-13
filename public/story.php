@@ -172,13 +172,6 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                     'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'horizontalLine', 'strikethrough', 'blockQuote', '|', 'indent', 'outdent', 'alignment', '|', 'imageUpload', 'insertTable', 'mediaEmbed', 'undo','redo'
             ]
         },
-        autosave: {
-            save( editor2 ) {
-                // The saveData() function must return a promise
-                // which should be resolved when the data is successfully saved.
-                return saveData( editor2.getData() );
-            }
-        },
         language: 'en',
         image: {
             toolbar: [
