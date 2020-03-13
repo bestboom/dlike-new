@@ -12,7 +12,8 @@ if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
 $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
 ?>
 </div>
-<script src="lib/editor5/build/ckeditor.js"></script>
+<script src="lib/editor/build/ckeditor.js"></script>
+<script src="/js/jquery.autoSave.min.js"></script>
 <style>
     body {
     	background: #f4f4f4;
@@ -204,7 +205,21 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
     }
     $(document).ready(function(){
         var steemuser = username;
-        //$('#pub_loadings').hide();
+        //autosave content function
+        $(function() {
+            var new_content = editor2.getData();
+            if (localStorage) {
+                var story_content = localStorage.getItem("autoSave");
+                    if(story_content) {
+                        //$("#text").text(story_content);
+                        editor2.setData(story_content);
+                    }
+                }
+            $(new_content).autoSave(function() {
+                console.log('Content Saved!')
+            }, 2000);
+        });
+
         $('.btn_my_templates').click(function() {
         var datav = {steemuser: steemuser};
             $.ajax({
