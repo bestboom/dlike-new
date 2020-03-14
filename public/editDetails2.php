@@ -118,7 +118,7 @@ if (isset($_GET["url"])) {
         </div>
     </div><!-- contact-section -->
    
-<?php include('template/footer.php'); ?>
+<?php include('template/main_footer.php'); ?>
 <script type="text/javascript">
 
 let editor;
@@ -179,7 +179,7 @@ ClassicEditor
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
-            if (verifyUrl.match(/prosportsdaily.com/) || verifyUrl.match(/steemit.com/)) {
+            if (verifyUrl.match(/prosportsdaily.com/g) || verifyUrl.match(/steemit.com/g)) {
                 toastr.error('phew... Sharing from this url is not allowed');
                 return false;
             }
@@ -215,7 +215,7 @@ ClassicEditor
                 url: '/helper/check_share.php',
                 type: 'post',
                 dataType: 'json',
-                data: { url: url },
+                data: { url: urlInput },
                 success: function(response) {
                     console.log(response);
                     if (response.status === false) {
