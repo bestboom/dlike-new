@@ -101,6 +101,17 @@
             toastr.success('Thanks for subscribing');                
     });
     $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
+    
+    //logout
+    $('.logout_btn').click(function() {
+        api.revokeToken(function(err_log, result_log) {
+            if (result_log && result_log.success) {
+                $.removeCookie('username', { path: '/' });
+                $.removeCookie('access_token', { path: '/' });
+                document.location.href = '/';
+            }
+        });
+    });
 </script>     
 </body>
 </html>
