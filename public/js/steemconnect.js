@@ -1,5 +1,3 @@
-//var sc = require('steemconnect');
-
 var api = steemconnect.Initialize({
     app        : 'dlike.app',
     callbackURL: 'https://dlike.io/steemconnect',
