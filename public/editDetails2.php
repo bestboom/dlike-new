@@ -255,7 +255,7 @@ ClassicEditor
                                                 if (response.error == true) {
                                                     $(".shareme2").attr("disabled", false);
                                                     $('.shareme2').html('Publish');
-                                                    toastr.error('There is some issue');
+                                                    toastr.error(response.data);
                                                     return false;
                                                 } else {
                                                     toastr.success('Post published successfully');
