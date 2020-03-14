@@ -124,10 +124,7 @@ if (isset($_GET["url"])) {
 let editor;
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        alignment: {
-            options: [ 'left', 'right' ]
-        },
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote','alignment', 'undo', 'redo' ],
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo' ],
         heading: {
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
@@ -182,7 +179,7 @@ ClassicEditor
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
-            if (verifyUrl.match((/prosportsdaily.com/g) || (/steemit.com/g))) {
+            if (verifyUrl.match((/prosportsdaily.com/) || (/steemit.com/))) {
                 toastr.error('phew... Sharing from this url is not allowed');
                 return false;
             }
