@@ -52,7 +52,7 @@ if (isset($_GET["url"])) {
 
                                 <div class="user-connected-form-block">
                                     <form class="user-connected-from user-signup-form">
-                                        <input type="hidden" name="image" value="<?php print $img; ?>">
+                                        <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
                                         <div class="form-group">
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -79,7 +79,7 @@ if (isset($_GET["url"])) {
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <select class="form-control form-control-lg" name="reward_option" id="rewards">
+                                                <select class="form-control form-control-lg" name="reward_option rewards" id="rewards">
                                                     <option value="1">50% SBD and 50% SP</option>
                                                     <option value="2">100% Steem Power</option>
                                                     <option value="3">Declined</option>
@@ -95,7 +95,7 @@ if (isset($_GET["url"])) {
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea><!--<?php print $des; ?> -->
+                                            <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea>
                                         </div>
                                         <button type="button" class="btn btn-default shareme2" id="com-sbmt">Publish</button>
                                     </form>
@@ -232,6 +232,14 @@ ClassicEditor
                                         toastr['error'](response.message);
                                         return false;
                                 } else { 
+                                    var datam = {
+                                        title: $('.title_field').val(),
+                                        tags: $('.tags').val(),
+                                        description: editor.getData(),
+                                        category: $('.catg').val(),
+                                        image: $('.image_field').val(),
+                                        rewards: $('.rewards').val()
+                                    };
                                     $(".shareme2").attr("disabled", true);
                                     $('.shareme2').html('Publishing...');
                                     $.ajax({
