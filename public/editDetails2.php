@@ -212,7 +212,7 @@ ClassicEditor
             }
 
             $.ajax({
-                url: '/helper/check_pro2.php',
+                url: '/helper/post/check_pro.php',
                 type: 'post',
                 dataType: 'json',
                 data: { user: username },
@@ -223,7 +223,7 @@ ClassicEditor
                             return false;
                     } else {
                         $.ajax({
-                            url: '/helper/check_share2.php',
+                            url: '/helper/post/check_share.php',
                             type: 'post',
                             dataType: 'json',
                             data: { url: urlInput },
@@ -246,7 +246,7 @@ ClassicEditor
                                     $('.shareme2').html('Publishing...');
                                     $.ajax({
                                         type: "POST",
-                                        url: "/helper/submit_post2.php",
+                                        url: "/helper/post/submit_post.php",
                                         data: datam,
                                         
                                         success: function(data) {
