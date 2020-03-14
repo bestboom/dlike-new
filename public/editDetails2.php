@@ -175,6 +175,7 @@ ClassicEditor
 
     $('.shareme2').click(function(clickEvent) {
         if (username != null) {
+            console.log(username);
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
