@@ -15,6 +15,7 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
 
 	$title = validationData($_POST["story_title"]);
 	$permlink = validationData(clean($_POST["story_title"]));
+	$_POST["story_content"] = preg_replace('#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#', '', $_POST["story_content"]);
 	$post = validationData($_POST["story_content"]);
 	$urlImage = $_POST["story_image"];
 
