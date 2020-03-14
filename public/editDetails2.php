@@ -1,6 +1,5 @@
 <?php include('template/header5.php'); 
 
-//$link = $_GET['link'];
 if (isset($_GET["url"])) {
     $decode = function ($data) {
         return rawurldecode($data);
@@ -184,7 +183,7 @@ ClassicEditor
 
         let verifyUrl = getDomain(urlInput);
 
-        if (verifyUrl.match(/prosportsdaily.com/g, /steemit.com.com/g)) {
+        if (verifyUrl.match(/prosportsdaily.com/ || /steemit.com.com/)) {
             toastr.error('phew... Sharing from this url is not allowed');
             return false;
         }
