@@ -80,7 +80,6 @@ if (isset($_GET["url"])) {
                                             </div>
                                             <div class="col">
                                                 <select class="form-control form-control-lg" name="reward_option" id="rewards">
-                                                    <option>Reward Options</option>
                                                     <option value="1">50% SBD and 50% SP</option>
                                                     <option value="2">100% Steem Power</option>
                                                     <option value="3">Declined</option>
