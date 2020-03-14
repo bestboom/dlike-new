@@ -238,7 +238,8 @@ ClassicEditor
                                         description: editor.getData(),
                                         category: $('.catg').val(),
                                         image: $('.image_field').val(),
-                                        rewards: $('.rewards').val()
+                                        rewards: $('.rewards').val(),
+                                        exturl:urlInput
                                     };
                                     $(".shareme2").attr("disabled", true);
                                     $('.shareme2').html('Publishing...');
@@ -252,7 +253,7 @@ ClassicEditor
                                                 var response = JSON.parse(data)
                                                 if (response.error == true) {
                                                     $(".shareme2").attr("disabled", false);
-                                                    $('.submit_story').html('Publish');
+                                                    $('.shareme2').html('Publish');
                                                     toastr.error('There is some issue');
                                                     return false;
                                                 } else {

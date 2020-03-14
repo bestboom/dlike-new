@@ -21,13 +21,13 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["descrip
 
 	$_POST["description"] = preg_replace('#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#', '', $_POST["description"]);
 
-	if($_POST['story_rewards']=='1'){
+	if($_POST['rewards']=='1'){
         $max_accepted_payout = "900.000 SBD";
         $percent_steem_dollars = 10000;
-	} else if($_POST['story_rewards']=='2'){
+	} else if($_POST['rewards']=='2'){
         $max_accepted_payout = "900.000 SBD";
         $percent_steem_dollars = 0;
-    } else if($_POST['story_rewards']=='3'){
+    } else if($_POST['rewards']=='3'){
         $max_accepted_payout = '0.000 SBD';
         $percent_steem_dollars = 10000;
     } else {
