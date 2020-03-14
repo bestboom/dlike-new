@@ -184,7 +184,7 @@ ClassicEditor
 
         let verifyUrl = getDomain(urlInput);
 
-        if (verifyUrl.match(/prosportsdaily.com/g)) {
+        if (verifyUrl.match(/prosportsdaily.com/g, /steemit.com.com/g)) {
             toastr.error('phew... Sharing from this url is not allowed');
             return false;
         }
