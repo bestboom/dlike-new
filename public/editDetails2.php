@@ -79,7 +79,7 @@ if (isset($_GET["url"])) {
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <select class="form-control form-control-lg" name="reward_option rewards" id="rewards">
+                                                <select class="form-control form-control-lg rewards" name="reward_option" id="rewards">
                                                     <option value="1">50% SBD and 50% SP</option>
                                                     <option value="2">100% Steem Power</option>
                                                     <option value="3">Declined</option>
