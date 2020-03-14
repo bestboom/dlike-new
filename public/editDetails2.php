@@ -117,19 +117,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             </div>
         </div>
     </div><!-- contact-section -->
-    <!-- modal error -->
-    <div class="modal fade" id="alert-modal-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
-            <div class="modal-content modal-custom">
-                <div class="modal-body ">
-                    <div class="mdStatusTitle sttError"><div class="iconTitle"><i class="fas fa-frown"></i></div></div>
-                    <div class="mdStatusContent"><h3 id="alert-title-error"></h3><p id="alert-content-error"></p>
-                        <div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Ok.. Let Me Do!</span></button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>    
+   
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 
@@ -164,6 +152,32 @@ ClassicEditor
     }   
 </script>
 <script type="text/javascript">
+
+    function getDomain(url) {
+        let hostName = getHostName(url);
+        let domain = hostName;
+
+        if (hostName != null) {
+            let parts = hostName.split('.').reverse();
+            if (parts != null && parts.length > 1) {
+                domain = parts[1] + '.' + parts[0];
+                if (hostName.toLowerCase().indexOf('.co.uk') != -1 && parts.length > 2) {
+                    domain = parts[2] + '.' + domain;
+                }
+            }
+        }
+        return domain;
+    }
+
+    var urlInput = '<?php echo $url; ?>';
+    console.log(urlInput)
+
+    let verifyUrl = getDomain(urlInput);
+
+    if (verifyUrl.match(/prosportsdaily.com/g)) {
+        toastr.error('phew... Sharing from this url is not allowed');
+        return false;
+    }
     $('.shareme2').click(function(clickEvent) {
             let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
             console.log({ text_words })
