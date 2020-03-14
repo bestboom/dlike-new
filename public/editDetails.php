@@ -1,6 +1,6 @@
-<?php include('template/header5.php'); 
-
-//$link = $_GET['link'];
+<?php 
+include('template/header5.php'); 
+include('functions/categories.php'); 
 if (isset($_GET["url"])) {
     $decode = function ($data) {
         return rawurldecode($data);
@@ -14,7 +14,7 @@ if (isset($_GET["url"])) {
     $title = strip_tags(htmlspecialchars(trim($decode($title))));
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
 } else { die('Not Allowed');}
-$categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
+
 ?>
 </div><!-- sub-header -->
 
@@ -51,8 +51,8 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                             <div class="row">
 
                                 <div class="user-connected-form-block">
-                                    <form class="user-connected-from user-signup-form" method="post" action="helper/submit_post.php">
-                                        <input type="hidden" name="image" value="<?php print $img; ?>">
+                                    <form class="user-connected-from user-signup-form">
+                                        <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
                                         <div class="form-group">
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
@@ -79,8 +79,7 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                                 </select>
                                             </div>
                                             <div class="col">
-                                                <select class="form-control form-control-lg" name="reward_option" id="rewards">
-                                                    <option>Reward Options</option>
+                                                <select class="form-control form-control-lg rewards" name="reward_option" id="rewards">
                                                     <option value="1">50% SBD and 50% SP</option>
                                                     <option value="2">100% Steem Power</option>
                                                     <option value="3">Declined</option>
@@ -96,9 +95,9 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea><!--<?php print $des; ?> -->
+                                            <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea>
                                         </div>
-                                        <button type="button" class="btn btn-default shareme" id="com-sbmt">SUBMIT</button>
+                                        <button type="button" class="btn btn-default shareme2" id="com-sbmt">Publish</button>
                                     </form>
                                 </div><!-- create-account-block -->
                             </div>
@@ -117,29 +116,14 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             </div>
         </div>
     </div><!-- contact-section -->
-    <!-- modal error -->
-    <div class="modal fade" id="alert-modal-error" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
-            <div class="modal-content modal-custom">
-                <div class="modal-body ">
-                    <div class="mdStatusTitle sttError"><div class="iconTitle"><i class="fas fa-frown"></i></div></div>
-                    <div class="mdStatusContent"><h3 id="alert-title-error"></h3><p id="alert-content-error"></p>
-                        <div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Ok.. Let Me Do!</span></button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>    
-<?php include('template/footer.php'); ?>
+   
+<?php include('template/main_footer.php'); ?>
 <script type="text/javascript">
 
 let editor;
 ClassicEditor
     .create( document.querySelector( '#editor' ), {
-        alignment: {
-            options: [ 'left', 'right' ]
-        },
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote','alignment', 'undo', 'redo' ],
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo' ],
         heading: {
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
@@ -162,4 +146,142 @@ ClassicEditor
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || "";
     }   
+</script>
+<script type="text/javascript">
+    function getHostName(url) {
+        var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+        if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
+            return match[2];
+        } else {
+            return null;
+        }
+    }
+
+    function getDomain(url) {
+        let hostName = getHostName(url);
+        let domain = hostName;
+
+        if (hostName != null) {
+            let parts = hostName.split('.').reverse();
+            if (parts != null && parts.length > 1) {
+                domain = parts[1] + '.' + parts[0];
+                if (hostName.toLowerCase().indexOf('.co.uk') != -1 && parts.length > 2) {
+                    domain = parts[2] + '.' + domain;
+                }
+            }
+        }
+        return domain;
+    }
+
+    $('.shareme2').click(function(clickEvent) {
+        if (username != null) {
+            console.log(username);
+            let urlInput = '<?php echo $url; ?>';
+            let verifyUrl = getDomain(urlInput);
+
+            if (verifyUrl.match(/prosportsdaily.com/g) || verifyUrl.match(/steemit.com/g)) {
+                toastr.error('phew... Sharing from this url is not allowed');
+                return false;
+            }
+
+            let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
+            if (text_words.length < 40) {
+                toastr.error('Please Write minimum 40 words to explain this share!');
+                return false;
+            }
+
+            if ($('.catg').val() == "0") {
+                $('.catg').css("border-color", "RED");
+                toastr.error('Please Select an appropriate Category');
+                return false;
+            }
+
+            // tag check
+            var tags = $('.tags').val();
+            tags = $.trim(tags);
+            tags = tags.split(' ');
+
+            if (tags.length < 2) {
+                $('.tags').css("border-color", "RED");
+                toastr.error('Please add at least two related tags');
+                return false;
+            }
+            if ($('.title_field').val() == "") {
+                toastr.error('Title Should not be empty!');
+                return false;
+            }
+
+            $.ajax({
+                url: '/helper/post/check_pro.php',
+                type: 'post',
+                dataType: 'json',
+                data: { user: username },
+                success: function(response) {
+                    console.log(response);
+                    if (response.error === true) {
+                            toastr['error'](response.data);
+                            return false;
+                    } else {
+                        $.ajax({
+                            url: '/helper/post/check_share.php',
+                            type: 'post',
+                            dataType: 'json',
+                            data: { url: urlInput },
+                            success: function(response) {
+                                console.log(response);
+                                if (response.error == true) {
+                                    toastr['error'](response.data);
+                                    return false;
+                                } else { 
+                                    var datam = {
+                                        title: $('.title_field').val(),
+                                        tags: $('.tags').val(),
+                                        description: editor.getData(),
+                                        category: $('.catg').val(),
+                                        image: $('.image_field').val(),
+                                        rewards: $('.rewards').val(),
+                                        exturl:urlInput
+                                    };
+                                    $(".shareme2").attr("disabled", true);
+                                    $('.shareme2').html('Publishing...');
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/helper/post/submit_post.php",
+                                        data: datam,
+                                        
+                                        success: function(data) {
+                                            console.log(data);
+                                            try {
+                                                var response = JSON.parse(data)
+                                                if (response.error == true) {
+                                                    $(".shareme2").attr("disabled", false);
+                                                    $('.shareme2').html('Publish');
+                                                    toastr.error(response.message);
+                                                    return false;
+                                                } else {
+                                                    toastr.success('Post published successfully');
+                                                    setTimeout(function(){
+                                                        window.location.href = response.redirect;
+                                                    }, 5000);
+                                                }
+                                            } catch (err) {
+                                                toastr.error('Sorry. Server response is malformed.');
+                                            }
+                                        },
+                                        error: function(xhr, textStatus, error) {
+                                            console.log(xhr.statusText);
+                                            console.log(textStatus);
+                                            console.log(error);
+                                        }
+                                    }); 
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        } else { toastr.error('You must be login to share!'); return false; }
+        //$('form').submit();
+    });
+
 </script>
