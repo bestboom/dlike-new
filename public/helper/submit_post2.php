@@ -75,15 +75,13 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["descrip
 			//send success message
 			die(json_encode([
 		    	'error' => false,
-	    		'message' => 'Success',
 	    		'redirect' => $redirect_url, 
-	    		'data' => 'Post Published!'
+	    		'message' => 'Post Published!'
 			]));
 		} else {
 			die(json_encode([
 		    	'error' => true,
-	    		'message' => 'Sorry post could not be published', 
-	    		'data' => $state->error_description	
+	    		'message' => $state->error_description	
 			]));
 		}
 	} else { echo 'Something went wrong'; }	

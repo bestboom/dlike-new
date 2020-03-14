@@ -250,12 +250,13 @@ ClassicEditor
                                         data: datam,
                                         
                                         success: function(data) {
+                                            console.log(data);
                                             try {
                                                 var response = JSON.parse(data)
                                                 if (response.error == true) {
                                                     $(".shareme2").attr("disabled", false);
                                                     $('.shareme2').html('Publish');
-                                                    toastr.error(response.data);
+                                                    toastr.error(response.message);
                                                     return false;
                                                 } else {
                                                     toastr.success('Post published successfully');
