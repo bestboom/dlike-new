@@ -179,7 +179,7 @@ ClassicEditor
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
-            if (verifyUrl.match((/prosportsdaily.com/) || (/steemit.com/))) {
+            if (verifyUrl.match(/prosportsdaily.com/) || verifyUrl.match(/steemit.com/)) {
                 toastr.error('phew... Sharing from this url is not allowed');
                 return false;
             }
