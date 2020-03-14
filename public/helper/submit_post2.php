@@ -56,8 +56,22 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["descrip
 	$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
 	$redirect_url = 'https://dlike.io/post/@' . $posting_user .'/'. $permlink;
-		if ($title !='') {
+	if ($title !='') {
+	    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
+	    $state = $postGenerator->broadcast($publish);
 
+		if (isset($state->result)) { 
+			// insert into DB	
+			$post_title= mysqli_real_escape_string($conn, $_POST['title']);
+			$addposts = "INSERT INTO steemposts (`username`,`title`, `permlink`, `ext_url`, `img_url`, `parent_ctegory`,`created_at`) VALUES ('".$_COOKIE['username']."','".$post_title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."','".date("Y-m-d H:i:s")."')";
+			$addpostsquery = $conn->query($addposts);
+
+			$posts_tags = array_unique(explode(",",$_POST['tags']));
+			if(count($posts_tags)>0)  {
+				foreach($posts_tags as $p_tag) {
+					$add_tags = $conn->query("INSERT INTO posttags (`tagname`,`updated_at`) VALUES ('".$p_tag."','".date("Y-m-d H:i:s")."')");
+				}
+			}
 			//send success message
 			die(json_encode([
 		    	'error' => false,
@@ -69,9 +83,9 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["descrip
 			die(json_encode([
 		    	'error' => true,
 	    		'message' => 'Sorry post could not be published', 
-	    		'data' => '$state->error_description'	
+	    		'data' => $state->error_description	
 			]));
 		}
-	//} else { echo 'Something went wrong'; }	
+	} else { echo 'Something went wrong'; }	
 } else { echo 'some issue'; }
 ?>

@@ -9,9 +9,9 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-//if (isset($_POST["user"])){
-    //$user_name = $_POST['user'];
-    $user_name = $_GET['user'];
+if (isset($_POST["user"])){
+    $user_name = $_POST['user'];
+    //$user_name = $_GET['user'];
 
     $sqls = "SELECT * FROM prousers WHERE username = '$user_name'"; 
     $resultAmount = $conn->query($sqls);
@@ -54,5 +54,5 @@ function validator($data){
                     ]));
                 }
 	    }   
-//} else {die('Invalid Response on share limit');} 
+} else { echo 'some issue'; } 
 ?>

@@ -212,25 +212,25 @@ ClassicEditor
             }
 
             $.ajax({
-                url: '/helper/check_pro.php',
+                url: '/helper/check_pro2.php',
                 type: 'post',
                 dataType: 'json',
                 data: { user: username },
                 success: function(response) {
                     console.log(response);
-                    if (response.status === false) {
-                            toastr['error'](response.message);
+                    if (response.error === true) {
+                            toastr['error'](response.data);
                             return false;
                     } else {
                         $.ajax({
-                            url: '/helper/check_share.php',
+                            url: '/helper/check_share2.php',
                             type: 'post',
                             dataType: 'json',
                             data: { url: urlInput },
                             success: function(response) {
                                 console.log(response);
-                                if (response.status === false) {
-                                    toastr['error'](response.message);
+                                if (response.error == true) {
+                                    toastr['error'](response.data);
                                     return false;
                                 } else { 
                                     var datam = {
