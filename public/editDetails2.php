@@ -152,6 +152,14 @@ ClassicEditor
     }   
 </script>
 <script type="text/javascript">
+    function getHostName(url) {
+        var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
+        if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
+            return match[2];
+        } else {
+            return null;
+        }
+    }
 
     function getDomain(url) {
         let hostName = getHostName(url);
@@ -169,26 +177,19 @@ ClassicEditor
         return domain;
     }
 
-    function getHostName(url) {
-        var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
-        if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
-            return match[2];
-        } else {
-            return null;
-        }
-    }
-
-    
-    var urlInput = '<?php echo $url; ?>';
-    console.log(urlInput);
-
-    let verifyUrl = getDomain(urlInput);
-
-    if (verifyUrl.match(/prosportsdaily.com/g)) {
-        toastr.error('phew... Sharing from this url is not allowed');
-        return false;
-    }
     $('.shareme2').click(function(clickEvent) {
+
+        var urlInput = '<?php echo $url; ?>';
+        console.log(urlInput);
+
+        let verifyUrl = getDomain(urlInput);
+
+        if (verifyUrl.match(/prosportsdaily.com/g)) {
+            toastr.error('phew... Sharing from this url is not allowed');
+            return false;
+        }
+
+
             let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
             console.log({ text_words })
             if (text_words.length < 40) {
