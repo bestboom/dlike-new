@@ -51,7 +51,7 @@ if (isset($_GET["url"])) {
                             <div class="row">
 
                                 <div class="user-connected-form-block">
-                                    <form class="user-connected-from user-signup-form" method="post" action="">
+                                    <form class="user-connected-from user-signup-form">
                                         <input type="hidden" name="image" value="<?php print $img; ?>">
                                         <div class="form-group">
                                             <div class="input-group mb-3">
@@ -98,7 +98,7 @@ if (isset($_GET["url"])) {
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea><!--<?php print $des; ?> -->
                                         </div>
-                                        <button type="button" class="btn btn-default shareme2" id="com-sbmt">SUBMIT</button>
+                                        <button type="button" class="btn btn-default shareme2" id="com-sbmt">Publish</button>
                                     </form>
                                 </div><!-- create-account-block -->
                             </div>
@@ -233,7 +233,37 @@ ClassicEditor
                                         toastr['error'](response.message);
                                         return false;
                                 } else { 
-                                    $('form').submit();
+                                    $(".shareme2").attr("disabled", true);
+                                    $('.shareme2').html('Publishing...');
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "/helper/submit_post2.php",
+                                        data: datam,
+                                        
+                                        success: function(data) {
+                                            try {
+                                                var response = JSON.parse(data)
+                                                if (response.error == true) {
+                                                    $(".shareme2").attr("disabled", false);
+                                                    $('.submit_story').html('Publish');
+                                                    toastr.error('There is some issue');
+                                                    return false;
+                                                } else {
+                                                    toastr.success('Post published successfully');
+                                                    setTimeout(function(){
+                                                        window.location.href = response.redirect;
+                                                    }, 5000);
+                                                }
+                                            } catch (err) {
+                                                toastr.error('Sorry. Server response is malformed.');
+                                            }
+                                        },
+                                        error: function(xhr, textStatus, error) {
+                                            console.log(xhr.statusText);
+                                            console.log(textStatus);
+                                            console.log(error);
+                                        }
+                                    }); 
                                 }
                             }
                         });
