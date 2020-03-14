@@ -9,7 +9,7 @@ function validator($data){
     return htmlspecialchars(strip_tags(trim($data)));
 }
 
-if (isset($_POST["user"])){
+//if (isset($_POST["user"])){
     //$user_name = $_POST['user'];
     $user_name = $_GET['user'];
     $return = array();
@@ -43,5 +43,5 @@ if (isset($_POST["user"])){
                 }
 	    } 
     echo json_encode($return);die;     
-} else {die('Invalid Response on share limit');} 
+//} else {die('Invalid Response on share limit');} 
 ?>
