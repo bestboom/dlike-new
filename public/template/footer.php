@@ -12,7 +12,7 @@
                 <? } else {    ?>
                     <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Log In</button>
                     <span>or</span>
-                    <button class="btn callto-btn" onclick="window.open("/welcome", "_self");" />Create Account</button>
+                    <button class="btn callto-btn" onclick="window.open('/welcome', '_self');" />Create Account</button>
                 <? } ?>    
                 </div>
             </div>
