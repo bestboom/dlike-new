@@ -178,43 +178,73 @@ ClassicEditor
     }
 
     $('.shareme2').click(function(clickEvent) {
+        if (username != null) {
+            let urlInput = '<?php echo $url; ?>';
+            let verifyUrl = getDomain(urlInput);
 
-        let urlInput = '<?php echo $url; ?>';
-        let verifyUrl = getDomain(urlInput);
+            if (verifyUrl.match(/prosportsdaily.com/g) || (/steemit.com.com/g)) {
+                toastr.error('phew... Sharing from this url is not allowed');
+                return false;
+            }
 
-        if (verifyUrl.match(/prosportsdaily.com/g) || (/steemit.com.com/g)) {
-            toastr.error('phew... Sharing from this url is not allowed');
-            return false;
-        }
+            let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
+            if (text_words.length < 40) {
+                toastr.error('Please Write minimum 40 words to explain this share!');
+                return false;
+            }
 
-        let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
-        if (text_words.length < 40) {
-            toastr.error('Please Write minimum 40 words to explain this share!');
-            return false;
-        }
+            if ($('.catg').val() == "0") {
+                $('.catg').css("border-color", "RED");
+                toastr.error('Please Select an appropriate Category');
+                return false;
+            }
 
-        if ($('.catg').val() == "0") {
-            $('.catg').css("border-color", "RED");
-            toastr.error('Please Select an appropriate Category');
-            return false;
-        }
+            // tag check
+            var tags = $('.tags').val();
+            tags = $.trim(tags);
+            tags = tags.split(' ');
 
-        // tag check
-        var tags = $('.tags').val();
-        tags = $.trim(tags);
-        tags = tags.split(' ');
+            if (tags.length < 2) {
+                $('.tags').css("border-color", "RED");
+                toastr.error('Please add at least two related tags');
+                return false;
+            }
+            if ($('.title_field').val() == "") {
+                toastr.error('Title Should not be empty!');
+                return false;
+            }
 
-        if (tags.length < 2) {
-            $('.tags').css("border-color", "RED");
-            toastr.error('Please add at least two related tags');
-            return false;
-        }
-        if ($('.title_field').val() == "") {
-            toastr.error('Title Should not be empty!');
-            return false;
-        }
-
-        $('form').submit();
+            $.ajax({
+                url: '/helper/check_share.php',
+                type: 'post',
+                dataType: 'json',
+                data: { url: url },
+                success: function(response) {
+                    console.log(response);
+                    if (response.status === false) {
+                        toastr['error'](response.message);
+                        return false;
+                    } else {
+                        $.ajax({
+                            url: '/helper/check_pro.php',
+                            type: 'post',
+                            dataType: 'json',
+                            data: { user: username },
+                            success: function(response) {
+                                console.log(response);
+                                if (response.status === false) {
+                                        toastr['error'](response.message);
+                                        return false;
+                                } else { 
+                                    $('form').submit();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        } else { toastr.error('You must be login to share!'); return false; }
+        //$('form').submit();
     });
 
 </script>
