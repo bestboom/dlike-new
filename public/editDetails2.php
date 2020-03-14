@@ -1,5 +1,6 @@
-<?php include('template/header5.php'); 
-
+<?php 
+include('template/header5.php'); 
+include('functions/categories.php'); 
 if (isset($_GET["url"])) {
     $decode = function ($data) {
         return rawurldecode($data);
@@ -13,7 +14,7 @@ if (isset($_GET["url"])) {
     $title = strip_tags(htmlspecialchars(trim($decode($title))));
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
 } else { die('Not Allowed');}
-$categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "LifeStyle", "Health", "Videos", "Business", "General"); 
+
 ?>
 </div><!-- sub-header -->
 
@@ -178,9 +179,7 @@ ClassicEditor
 
     $('.shareme2').click(function(clickEvent) {
 
-        var urlInput = '<?php echo $url; ?>';
-        console.log(urlInput);
-
+        let urlInput = '<?php echo $url; ?>';
         let verifyUrl = getDomain(urlInput);
 
         if (verifyUrl.match(/prosportsdaily.com/g) || (/steemit.com.com/g)) {
@@ -188,36 +187,34 @@ ClassicEditor
             return false;
         }
 
+        let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
+        if (text_words.length < 40) {
+            toastr.error('Please Write minimum 40 words to explain this share!');
+            return false;
+        }
 
-            let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
-            console.log({ text_words })
-            if (text_words.length < 40) {
-                toastr.error('Please Write minimum 40 words to explain this share!');
-                return false;
-            }
+        if ($('.catg').val() == "0") {
+            $('.catg').css("border-color", "RED");
+            toastr.error('Please Select an appropriate Category');
+            return false;
+        }
 
-            if ($('.catg').val() == "0") {
-                $('.catg').css("border-color", "RED");
-                toastr.error('Please Select an appropriate Category');
-                return false;
-            }
+        // tag check
+        var tags = $('.tags').val();
+        tags = $.trim(tags);
+        tags = tags.split(' ');
 
-            // tag check
-            var tags = $('.tags').val();
-            tags = $.trim(tags);
-            tags = tags.split(' ');
+        if (tags.length < 2) {
+            $('.tags').css("border-color", "RED");
+            toastr.error('Please add at least two related tags');
+            return false;
+        }
+        if ($('.title_field').val() == "") {
+            toastr.error('Title Should not be empty!');
+            return false;
+        }
 
-            if (tags.length < 2) {
-                $('.tags').css("border-color", "RED");
-                toastr.error('Please add at least two related tags');
-                return false;
-            }
-            if ($('.title_field').val() == "") {
-                toastr.error('Title Should not be empty!');
-                return false;
-            }
-
-            $('form').submit();
-        });
+        $('form').submit();
+    });
 
 </script>
