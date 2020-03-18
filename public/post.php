@@ -8,7 +8,8 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender='';}
 
-$post_url = "https://tower.emrebeyler.me/api/v1/posts/?author=$auth&permlink=$link";
+//$post_url = "https://tower.emrebeyler.me/api/v1/posts/?author=$auth&permlink=$link";
+$post_url = "https://steemapi.dlkapps.tk/get_content?author={$auth}&permlink={$link}";
 $response = file_get_contents($post_url);
 $result = json_decode($response, TRUE);
 
