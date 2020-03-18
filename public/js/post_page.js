@@ -8,7 +8,7 @@ steem.api.getContent(post_author , post_permlink, function(err, res) {
         } else {
             img.src = metadata.image[0];
         }
-        if (metadata.hasOwnProperty('type')) {console.log('type exist');} else {console.log('type not exist');}
+
         //image or youtube
         let thumbnail = '<img src="' + img.src + '" alt="' + res.title + '" onerror="this.src=/images/post/8.png" class="card-img-post img-fluid">';
 
@@ -67,9 +67,15 @@ steem.api.getContent(post_author , post_permlink, function(err, res) {
         postbody = "";
         }
         //console.log(postbody);
+        if (metadata.hasOwnProperty('type')) {
+            console.log('type exist');
+            if (metadata.type == 'share') {
+                $('.post-thumb-block').html(thumbnail);
+            } else {$('.post-thumb-block').html();}
+        } else {console.log('type not exist'); $('.post-thumb-block').html(thumbnail);}
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
-        $('.post-thumb-block').html(thumbnail);
+        
         $('.mod-authThumb').attr("src", auth_img);
         $('.author-thumb-link').attr("href", profile_url);
         $('.mod-auth').attr("href", profile_url);

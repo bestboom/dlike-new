@@ -109,7 +109,7 @@ else
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
 <div class="row"><div class="col-md-12">
 <div class="container"><div class="row"><div class="col">
-<div class="blog-details-wrapper"><div class="single-post-block" style="max-width: 100%;">
+<div class="blog-details-wrapper"><div class="single-post-block" style="width: 100%;max-width: 100%;">
 <?php include('promo/post_page_top_ad.php'); ?><br>
 <h1 class="post-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
 <div class="details-post-meta-block-top"><div class="container">
