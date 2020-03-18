@@ -11,10 +11,14 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_C
 //$post_url = "https://tower.emrebeyler.me/api/v1/posts/?author=$auth&permlink=$link";
 $post_url = "https://steemapi.dlkapps.tk/get_content?author={$auth}&permlink={$link}";
 $response = file_get_contents($post_url);
-$result = json_decode($response, TRUE);
-
+$result = json_decode($response);
+$og_title = $result->title;
+echo $og_title;
+$meta_data = json_decode($result->json_metadata);
+$og_image = $meta_data->image;
+echo $og_image;
 $og_res = $result['results'][0];
-$og_title = $og_res['title']; 
+//$og_title = $og_res['title']; 
 
 $body = $og_res['body'];
 $body = explode("\n\n#####\n\n",$body);
