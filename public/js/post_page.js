@@ -68,11 +68,10 @@ steem.api.getContent(post_author , post_permlink, function(err, res) {
         }
         //console.log(postbody);
         if (metadata.hasOwnProperty('type')) {
-            console.log('type exist');
             if (metadata.type == 'share') {
                 $('.post-thumb-block').html(thumbnail);
             } else {$('.post-thumb-block').html();}
-        } else {console.log('type not exist'); $('.post-thumb-block').html(thumbnail);}
+        } else {$('.post-thumb-block').html(thumbnail);}
         $('.mod-auth').html(author);
         $('.mod-title').html(title);
         

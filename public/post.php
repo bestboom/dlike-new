@@ -163,13 +163,7 @@ else
             <!-- post-income-block -->
         </div>
     </div>
-</div>
-<?php 
-if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image;
-    if($type_text == 'story') { echo '<div class="post-thumb-block" style="display:none;"></div>';}
-    else { echo '<div class="post-thumb-block"><img src="" alt="shared-on-dlike" class="card-img-post img-fluid"></div>';}
-} else {echo '<div class="post-thumb-block"><img src="" alt="shared-on-dlike" class="card-img-post img-fluid"></div>';}
-?>                              
+</div>                             
 <span class="main_post post-entry"><?php echo $body_text; ?></span>
 <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
 </div></div>
@@ -232,31 +226,17 @@ if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image;
                 </div>
             </div>
         </div>
-        <div class="container tip-sponsor">
-            <div class="row">
-                <div class="col tip-foot" style="color: #fff;">Tip this post for free - Author (40%) - You (60%)</div>
-            </div>
-        </div>
+        <div class="container tip-sponsor"><div class="row"><div class="col tip-foot" style="color: #fff;">Tip this post for free - Author (40%) - You (60%)</div></div></div>
     </div>
     <div class="details-post-meta-block">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="details-post-meta-block-wrap">
-                        <div class="post-tag-block">
-                            <h5>Post Tag</h5>
-                            <div class="tags mod-tags">
-                            </div>
-                        </div><!-- post-tag-block -->
-                        <div class="post-share-block">
-                            <h5>Share this</h5>
-                            <ul class="social-share-list"></ul>
-                        </div><!-- post-share-block -->
-                    </div>
-                </div>
+        <div class="container"><div class="row"><div class="col">
+            <div class="details-post-meta-block-wrap">
+                <div class="post-tag-block"><h5>Post Tag</h5><div class="tags mod-tags"></div></div>
+                <div class="post-share-block"><h5>Share this</h5><ul class="social-share-list"></ul></div>
             </div>
-        </div>
-    </div></div>
+        </div></div></div>
+    </div>
+    </div>
 </div></div>
 
 <div class="container" style="background: #fff;"><div class="row"><div class="col">
