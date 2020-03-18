@@ -13,12 +13,15 @@ $post_url = "https://steemapi.dlkapps.tk/get_content?author={$auth}&permlink={$l
 $response = file_get_contents($post_url);
 $result = json_decode($response);
 $og_title = $result->title;
-echo $og_title;
+
 $meta_data = json_decode($result->json_metadata);
 $og_image = $meta_data->image;
-echo $og_image;
-$og_description = explode("\n\n#####\n\n",$result->body);
-$og_description = $og_description[1];
+
+$body = explode("\n\n#####\n\n",$result->body);
+$body = $body[1];
+$body = str_replace(array('\'', '"'), '', $body); 
+$og_description = strip_tags($body);
+$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 $ext_link = $meta_data->url;
 
 
