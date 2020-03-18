@@ -74,7 +74,7 @@ steem.api.getContent(post_author , post_permlink, function(err, res) {
         $('.author-thumb-link').attr("href", profile_url);
         $('.mod-auth').attr("href", profile_url);
         $('.mod-tags').html(posttags);
-        $('.mod-post').html(postbody);
+        //$('.mod-post').html(postbody);
         //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 

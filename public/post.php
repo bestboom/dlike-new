@@ -109,15 +109,10 @@ else
 <div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
    <div class="row">
     <div class="col-md-12">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="blog-details-wrapper">
-                        <div class="single-post-block" style="max-width: 100%;">
-                            <div class="row" style="margin: 0px;display: block;font-size: 0.95rem;"><span style="margin: 0px;text-decoration: underline;color: #111;color: rgba(0, 0, 0, 0.84);font-family: medium-content-sans-serif-font, &quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, &quot;Lucida Sans&quot;, Geneva, Arial, sans-serif;letter-spacing: -0.022em;"><a href="https://namecheap.pxf.io/jLqG6">Need VPN for Fast Secure and Anonymous Browsing - Check Our VPN Service - Special Discount Price</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>Ad</span></div>
-                            <br>
-                            <h1 class="post-title mod-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
-                            <!--<h1><span class="mod-title"></span></h1>-->
+    <div class="container"><div class="row"><div class="col">
+    <div class="blog-details-wrapper"><div class="single-post-block" style="max-width: 100%;">
+    <?php include('promo/post_page_top_ad.php'); ?><br>
+    <h1 class="post-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
                             <div class="details-post-meta-block-top">
                                 <div class="container">
                                     <div class="row">
@@ -185,11 +180,9 @@ else
                                         else {
                                             echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';
                                         }
-                                    ?>
-                                    
-                                    <h3 class="post-title"></h3>
-                                    <span class="main_post post-entry mod-post"><?php echo $body_text; ?></span>
-                                    <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
+                                    ?>                               
+<span class="main_post post-entry"><?php echo $body_text; ?></span>
+<p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
                                 </div>
                             </div>
                         </div>
