@@ -8,7 +8,6 @@ $user = $_GET['user'];
 $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender='';}
 
-//$post_url = "https://tower.emrebeyler.me/api/v1/posts/?author=$auth&permlink=$link";
 $post_url = "https://steemapi.dlkapps.tk/get_content?author={$auth}&permlink={$link}";
 $response = file_get_contents($post_url);
 $result = json_decode($response);
@@ -23,18 +22,12 @@ $body = str_replace(array('\'', '"'), '', $body);
 $og_description = strip_tags($body);
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 $ext_link = $meta_data->url;
-
-
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
-include('template/header5.php');
-//post body description
-function removeTags($str) {  
-    $str = preg_replace("#<(.*)/(.*)>#iUs", "", $str);
-    return $str;
-}
+include('template/header.php');
+
 $body_text = $body;
 
 $views = '1'; 
