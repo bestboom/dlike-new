@@ -8,7 +8,7 @@ steem.api.getContent(post_author , post_permlink, function(err, res) {
         } else {
             img.src = metadata.image[0];
         }
-
+        if (metadata.hasOwnProperty('type')) {console.log('type exist');} else {console.log('type not exist');}
         //image or youtube
         let thumbnail = '<img src="' + img.src + '" alt="' + res.title + '" onerror="this.src=/images/post/8.png" class="card-img-post img-fluid">';
 
