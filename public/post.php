@@ -163,7 +163,8 @@ else
             <!-- post-income-block -->
         </div>
     </div>
-</div>                             
+</div>
+<div class="post-thumb-block"></div>                          
 <span class="main_post post-entry"><?php echo $body_text; ?></span>
 <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
 </div></div>
@@ -208,34 +209,23 @@ else
                                     <span id="seconds">00</span></div></div>'; 
                                     echo '<div id="aftercount" style="display: none;"><center><button class="btn btn-success">Ready To Tip Again</button></center></div>'; 
                                 }  else { ?>
-                                    <form action="/helper/addtips.php" method="post" id="tipsubmit">
-                                        <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
-                                        <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
-                                        <center><button class="btn btn-default btn-tip">TIP</button></center>
-                                    </form> 
+                                    <form action="/helper/addtips.php" method="post" id="tipsubmit"><input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" /><input type="hidden" name="tippermlink" value="<?php echo $link; ?>" /><center><button class="btn btn-default btn-tip">TIP</button></center></form> 
                                 <? }                
                             }   
                         }   
                     } else { $tiptime = '601'; ?>
-                        <form action="/helper/addtips.php" method="post" id="tipsubmit">
-                            <input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" />
-                            <input type="hidden" name="tippermlink" value="<?php echo $link; ?>" />
-                            <center><button class="btn btn-default btn-tip" style="background: #fff;color: #090e68;">TIP</button></center>
-                        </form> 
+                        <form action="/helper/addtips.php" method="post" id="tipsubmit"><input type="hidden" name="tipauthor" value="<?php echo $auth; ?>" /><input type="hidden" name="tippermlink" value="<?php echo $link; ?>" /><center><button class="btn btn-default btn-tip" style="background: #fff;color: #090e68;">TIP</button></center></form> 
                     <? } } ?>
                 </div>
             </div>
         </div>
         <div class="container tip-sponsor"><div class="row"><div class="col tip-foot" style="color: #fff;">Tip this post for free - Author (40%) - You (60%)</div></div></div>
     </div>
-    <div class="details-post-meta-block">
-        <div class="container"><div class="row"><div class="col">
-            <div class="details-post-meta-block-wrap">
-                <div class="post-tag-block"><h5>Post Tag</h5><div class="tags mod-tags"></div></div>
-                <div class="post-share-block"><h5>Share this</h5><ul class="social-share-list"></ul></div>
-            </div>
-        </div></div></div>
-    </div>
+<div class="details-post-meta-block"><div class="container"><div class="row"><div class="col"><div class="details-post-meta-block-wrap">
+<div class="post-tag-block"><h5>Post Tag</h5><div class="tags mod-tags"></div></div>
+<div class="post-share-block"><h5>Share this</h5><ul class="social-share-list"></ul></div>
+</div></div></div></div></div>
+
     </div>
 </div></div>
 
