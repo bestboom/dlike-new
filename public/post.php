@@ -268,27 +268,9 @@ if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image; echo 
 </div></div></div>
 
 
-<div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content mybody">
-            <?php include('template/modals/recomend.php'); ?>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="prouser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
-        <div class="modal-content modal-custom">
-            <?php include('template/modals/prouser.php'); ?>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content mybody">
-            <?php include('template/modals/upvotemodal.php'); ?>
-        </div>
-    </div>
-</div>
+<div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"> <?php include('template/modals/recomend.php'); ?></div></div></div>
+<div class="modal fade" id="prouser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"> <?php include('template/modals/prouser.php'); ?></div></div></div>
+<div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"> <?php include('template/modals/upvotemodal.php'); ?></div></div></div>
                         
 <?php include('template/footer.php'); $conn->close(); ?>
 <script type="text/javascript">
