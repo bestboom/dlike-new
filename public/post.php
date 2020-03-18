@@ -165,17 +165,15 @@ else
     </div>
 </div>
 <?php 
-if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image;
+if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image; echo 'Type checked';
     if($type_text == 'story') { echo '<div class="post-thumb-block" style="display:none;"></div>';}
     else { echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';}
-} else {echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';}
+} else {echo '<span>image on share</span><br><div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';}
 ?>                              
 <span class="main_post post-entry"><?php echo $body_text; ?></span>
 <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
 </div></div>
-                        </div>
-                    </div>
-                </div>
+</div></div></div>
 <div id="tip-msg"></div>
 <div class="details-post-meta-tip" style="background: #080e70;">
     <div class="container">
@@ -258,22 +256,15 @@ if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image;
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </div></div>
+</div></div>
 
-        </div></div>
 <div class="container" style="background: #fff;"><div class="row"><div class="col">
-<div class="post-comment-block">
-    <div class="comment-respond">
-        <h4>Leave A Comment</h4>
-        <div class="row"><div class="col-md-12">
-            <div class="form-group"><textarea placeholder="Comment" class="form-control cmt" name="cmt_body"></textarea></div>
-        </div></div>
-        <button class="btn btn-default comt_bt">Comment</button><br><br>
-        <center><iframe data-aa="1318357" src="//ad.a-ads.com/1318357?size=336x280" scrolling="no" style="width:336px; height:280px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe></center>
-    </div>
-    <div class="comment-area"><h4>Comments</h4><ul class="comments cmt_section" id="comment_sec"></ul></div>
-</div>
+<div class="post-comment-block"><div class="comment-respond">
+<h4>Leave A Comment</h4><div class="row"><div class="col-md-12">
+<div class="form-group"><textarea placeholder="Comment" class="form-control cmt" name="cmt_body"></textarea></div></div></div><button class="btn btn-default comt_bt">Comment</button><br><br>
+<center><iframe data-aa="1318357" src="//ad.a-ads.com/1318357?size=336x280" scrolling="no" style="width:336px; height:280px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe></center>
+</div><div class="comment-area"><h4>Comments</h4><ul class="comments cmt_section" id="comment_sec"></ul></div></div>
 </div></div></div>
 
 
