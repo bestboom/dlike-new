@@ -165,10 +165,10 @@ else
     </div>
 </div>
 <?php 
-if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image; echo 'Type checked';
+if(array_key_exists('type', $meta_data)) { $type_text = $meta_data->image;
     if($type_text == 'story') { echo '<div class="post-thumb-block" style="display:none;"></div>';}
-    else { echo '<div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';}
-} else {echo '<span>image on share</span><br><div class="post-thumb-block"><img src="/images/post/8.png" alt="img" class="card-img-post img-fluid"></div>';}
+    else { echo '<div class="post-thumb-block"><img src="" alt="shared-on-dlike" class="card-img-post img-fluid"></div>';}
+} else {echo '<div class="post-thumb-block"><img src="" alt="shared-on-dlike" class="card-img-post img-fluid"></div>';}
 ?>                              
 <span class="main_post post-entry"><?php echo $body_text; ?></span>
 <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
