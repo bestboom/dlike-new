@@ -17,20 +17,10 @@ echo $og_title;
 $meta_data = json_decode($result->json_metadata);
 $og_image = $meta_data->image;
 echo $og_image;
-$og_res = $result['results'][0];
-//$og_title = $og_res['title']; 
+$og_description = explode("\n\n#####\n\n",$result->body);
+$og_description = $og_description[1];
+$ext_link = $meta_data->url;
 
-$body = $og_res['body'];
-$body = explode("\n\n#####\n\n",$body);
-$body = $body[1];
-$body = str_replace(array('\'', '"'), '', $body); 
-$og_description = strip_tags($body);
-$og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
-
-$meta_data = $result['results'][0]['json'];
-$metadata = json_decode($meta_data, TRUE);
-$og_image = $metadata['image'][0];
-$ext_link = $metadata['url'];
 
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
