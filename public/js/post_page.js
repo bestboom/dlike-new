@@ -83,7 +83,8 @@ steem.api.getContent(post_author , post_permlink, function(err, res) {
         //$('.post_link').html('<a href="' + ext_url + '" target="_blank">Source of shared link</a>');
         $('.pending_payout').html(pending_steem);
 
-        let page_description = post_description.substr(0,70);
+        let page_description = post_description.replace(/(<([^>]+)>)/ig,"");
+        let page_description = page_description.substr(0,70);
 
         $(".social-share-list").html('<li><a class="twitter" href="javascript:void(0);" onclick="popup(\'https://www.twitter.com/share?text='+page_description+'&url=https://dlike.io/post/@'+author+'/'+post_permlink+'&hashtags=dlike\')"><i class="fab fa-twitter"></i></a></li><li><a class="faceboox" href="javascript:void(0);" onclick="popup(\'https://www.facebook.com/share.php?u=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'\')"><i class="fab fa-facebook-f"></i></a></li><li><a class="linkdin" href="javascript:void(0);" onclick="popup(\'https://www.linkedin.com/shareArticle?mini=true&url=https://dlike.io/post/'+author+'/'+post_permlink+'&title='+title+'&sumary=dlike.io\')"><i class="fab fa-linkedin-in"></i></a></li>');
 
