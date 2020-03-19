@@ -233,7 +233,7 @@ else
 <div class="comment-respond"><h4>Leave A Comment</h4><div class="row"><div class="col-md-12"><div class="form-group">
 <textarea placeholder="Comment" class="form-control cmt" name="cmt_body"></textarea>
 </div></div></div><button class="btn btn-default comt_bt">Comment</button><br><br>
-<!--<center><iframe data-aa="1318357" src="//ad.a-ads.com/1318357?size=336x280" scrolling="no" style="width:336px; height:280px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe></center>--></div>
+<div class="comt_ads"><iframe data-aa="1318357" src="//ad.a-ads.com/1318357?size=336x280" scrolling="no" style="width:336px; height:280px; border:0px; padding:0; overflow:hidden" allowtransparency="true"></iframe></div></div>
 <div class="comment-area"><h4>Comments</h4><ul class="comments cmt_section" id="comment_sec"></ul></div>
 </div></div></div></div>
 
