@@ -5,7 +5,7 @@
                     <h3>Share To Get Rewarded</h3>
                     <p>DLIKE - An Informative Face of Internet</p>
                 </div>
-                <div class="colto-btn-group">
+                <div class="colto-btn-group" style="display: block;">
                 <?php if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { ?>
                     <input type="email" placeholder="Email To Subscribe" id="subscribe_field" style="padding: 15px 40px;border-radius: 5px;margin-right: 10px;">
                     <button class="btn callto-btn subscribe" />Subscribe</button>
