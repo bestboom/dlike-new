@@ -225,8 +225,7 @@ else
 <div class="post-tag-block"><h5>Post Tag</h5><div class="tags mod-tags"></div></div>
 <div class="post-share-block"><h5>Share this</h5><ul class="social-share-list"></ul></div>
 </div></div></div></div></div>
-
-    </div>
+</div>
 </div></div>
 
 <div class="container" style="background: #fff;"><div class="row"><div class="col">
