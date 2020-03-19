@@ -437,7 +437,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus,select:foc
 .colto-section{background:#c51d24;background-size:cover;padding:45px 0}
 .colto-content-in{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:100%}
 .colto-content-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
-.colto-content h3{font-weight:700;margin-bottom:20px;color:#fff}
+.colto-content h3{font-weight:600;margin-bottom:20px;color:#fff;font-family: inherit !important;}
 .colto-content p{color:#fff;margin:0}
 .colto-btn-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .colto-btn-group span{font-weight:700;color:#fff;height:34px;width:34px;margin:0 15px;display:block;text-align:center;line-height:34px;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;border:1px solid rgba(252,253,255,0.08)}
