@@ -64,7 +64,6 @@
         <a href="/help">FAQ</a>
         <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a href="javascript:void(0)" class="logout_btn">Logout</a>';} else { } ?>
         <br>
-        <a href="/token">Token</a>
         <a href="/docs/dlike-paper.pdf">Whitepaper</a>
     </div>
     <div class="banner-block">
