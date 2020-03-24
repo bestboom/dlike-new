@@ -1,5 +1,4 @@
-<?php
-include('../template/header.php');
+<?php include('../template/header.php');
 
     <div class="main-container fixed-top-padding cont-sec" style="background:#e4e4e4;">
 	<div class="container" style="margin-top: 0.1%;position:relative;">
@@ -37,11 +36,9 @@ include('../template/header.php');
                         
     
             </div>
-            
 
         <div class="clear"></div>
 	   </div>
 	</div>
 </div>
-
-include('../template/footer.php');
+include('../template/footer.php'); ?>
