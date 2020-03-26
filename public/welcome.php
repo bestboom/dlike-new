@@ -184,5 +184,4 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
         </div>
     </div>
 </div>
-<?php echo $thisip;
-include('template/footer.php'); } ?>
+<?php include('template/footer.php'); } ?>
