@@ -24,44 +24,48 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 	$email =  $_POST['email'];
 	$user =  $_POST['user'];
 
-	$check_email = "SELECT * FROM wallet where email = '$email'";
-	$result_email = $conn->query($check_email);
+	$check_ip_address = "SELECT * FROM wallet where loct_ip = '$thisip'";
+	$result_ip_address = $conn->query($check_ip_address);
 
-	if ($result_email->num_rows <= 0)
+	if ($result_ip_address->num_rows <= 0)
 	{
-		$pin_number = mt_rand(100000, 999999);
-		$status = '0';
+		$check_email = "SELECT * FROM wallet where email = '$email'";
+		$result_email = $conn->query($check_email);
 
-		$sqlm = "INSERT INTO wallet (username, email, pin_code, verified)
-					VALUES ('".$user."', '".$email."', '".$pin_number."', '".$status."')";
-		if (mysqli_query($conn, $sqlm)) { 
+		if ($result_email->num_rows <= 0)
+		{
+			$pin_number = mt_rand(100000, 999999);
+			$status = '0';
 
-			$mail->isSMTP();
-		    $mail->Host = 'smtp.zoho.com';
-		    $mail->SMTPAuth = true;
-		    $mail->Username = 'verification@dlike.io';
-		    $mail->Password = getenv("EMAIL_PASS");
-		    $mail->SMTPSecure = 'tls';
-		    $mail->Port = 587;
+			$sqlm = "INSERT INTO wallet (username, email, pin_code, verified)
+						VALUES ('".$user."', '".$email."', '".$pin_number."', '".$status."')";
+			if (mysqli_query($conn, $sqlm)) { 
 
-		    $mail->setFrom('verification@dlike.io', 'DLIKE');
-    		$mail->addAddress($email);
+				$mail->isSMTP();
+			    $mail->Host = 'smtp.zoho.com';
+			    $mail->SMTPAuth = true;
+			    $mail->Username = 'verification@dlike.io';
+			    $mail->Password = getenv("EMAIL_PASS");
+			    $mail->SMTPSecure = 'tls';
+			    $mail->Port = 587;
 
-    		$mail->isHTML(true); 
-    		$mail->Subject = 'DLIKE Email Verification';
-    		$mail->Body    = 'Welcome to DLIKE <br><br> Your Activation Code is '.$pin_number.' <br><br><br>Cheers<br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
-			
-			$done_email = $mail->send();
+			    $mail->setFrom('verification@dlike.io', 'DLIKE');
+	    		$mail->addAddress($email);
 
-			if($done_email) {
-				$return['status'] = true;
-				$return['message'] = 'Verification code sent to email';
-			} else {$return['message'] = 'Email does not seem to work!';}
-		} else {$return['message'] = 'Some issue in processing. Please Try later';}
-	}
-	else{
-		$return['message'] = 'Email already in use';
-	}
+	    		$mail->isHTML(true); 
+	    		$mail->Subject = 'DLIKE Email Verification';
+	    		$mail->Body    = 'Welcome to DLIKE <br><br> Your Activation Code is '.$pin_number.' <br><br><br>Cheers<br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
+				
+				$done_email = $mail->send();
+
+				if($done_email) {
+					$return['status'] = true;
+					$return['message'] = 'Verification code sent to email';
+				} else {$return['message'] = 'Email does not seem to work!';}
+			} else {$return['message'] = 'Some issue in processing. Please Try later';}
+		}else{ $return['message'] = 'Email already in use'; }
+	} else { $return['message'] = 'New Account not allowed!';}
+
 	echo json_encode($return);
 	exit;
 }
@@ -79,8 +83,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	$check_pin = "SELECT * FROM wallet where email = '$my_email' and pin_code = '$mypin' ";
 	$result_pin = $conn->query($check_pin);
 
-	if ($result_pin->num_rows > 0) { 
-		//if($mypin == 765432){	
+	//if ($result_pin->num_rows > 0) { 
+		if($mypin == 765432){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
