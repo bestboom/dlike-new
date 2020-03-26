@@ -402,13 +402,14 @@ validMsg.classList.add("hide");
         let my_name = $('#my_username2').html();
         let my_email = $('#my_email').html();
         var refer_by = $('#refer_by').val();
+        var loct = $('#user_loc').val();
         
          $.ajax({
             url: '/helper/signup_verify.php',
             type: 'post',
             cache : false,
             dataType: 'json',
-            data: {action : 'acc_create2',user:my_name,email:my_email,refer_by:refer_by},
+            data: {action : 'acc_create2',user:my_name,email:my_email,loct:loct,refer_by:refer_by},
             success:function(response){
                 //console.log(response);
                 if(response.status===true)

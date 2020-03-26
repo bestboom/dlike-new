@@ -99,6 +99,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
     $return['message'] = '';
 	$user = $_POST['user'];
 	$refer_by = $_POST['refer_by'];
+	$loct_ip = $_POST['loct'];
 	$email = $_POST['email'];
 	//$phone_num = md5($phone);
 	$signup_bonus = 20;
@@ -115,7 +116,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
         //$password = 'asadadadafadafadad';
         
         if($password !=''){
-			 	$updateStatus = "UPDATE wallet SET verified = '1'  WHERE username = '$user' AND email = '$email'";
+			 	$updateStatus = "UPDATE wallet SET verified = '1', loct_ip = '$loct_ip' WHERE username = '$user' AND email = '$email'";
 			 	$updateUserStatus = $conn->query($updateStatus);
 						if ($updateUserStatus === TRUE) { 
 

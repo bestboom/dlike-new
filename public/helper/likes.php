@@ -7,18 +7,18 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-
-
-
-?>
-<!--
-
-$sql = "ALTER TABLE wallet ADD verified INT(1) NOT NULL AFTER eth";
+$sql = "ALTER TABLE wallet ADD loct_ip varchar(255) NOT NULL AFTER verified";
 if ($conn->query($sql) === TRUE) {
     echo "new field added to wallet table";
 } else {
     echo "Error updating table: " . $conn->error;
 }
+
+
+?>
+<!--
+
+
 
     
 $sql = "ALTER TABLE userposttemplates MODIFY content VARCHAR(100000)";
