@@ -59,9 +59,6 @@ domReady(function () {
                 event.preventDefault();
                 //signUpPhoneCheck();
                 emailCheck();
-                //getSuccess2();
-                var locat = $('#user_loc').val();
-                console.log(locat)
                 return false;
     });
 
