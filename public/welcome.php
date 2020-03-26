@@ -50,6 +50,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <form name="signup" style="margin-top: 15px;">
                                     <div class="form-group input-username">
                                         <input type="hidden" id="refer_by" value="<?php echo $referrer; ?>" />
+                                        <input type="hidden" id="user_loc" value="<?php echo $thisip; ?>" />
                                         <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
                                         <span class="fa fa-user"></span>
                                         <span class="message" style="display: none"></span>
@@ -183,4 +184,5 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
         </div>
     </div>
 </div>
-<?php include('template/footer.php'); } ?>
+<?php echo $thisip;
+include('template/footer.php'); } ?>

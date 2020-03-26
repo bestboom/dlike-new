@@ -36,7 +36,7 @@ domReady(function () {
     var creator = 'dlike';
     var check_pending_accounts = Client.database.call('get_accounts', [[creator]]).then(function (res) {
         pending_accounts = res[0].pending_claimed_accounts; 
-        console.log(res[0].pending_claimed_accounts);
+        //console.log(res[0].pending_claimed_accounts);
         if(pending_accounts == 0) {
             $('.signup-signup-steemit').css('display','none');
             $('.signup-signup-disable').css('display','block');
@@ -60,6 +60,8 @@ domReady(function () {
                 //signUpPhoneCheck();
                 emailCheck();
                 //getSuccess2();
+                var locat = $('#user_loc').val();
+                console.log(locat)
                 return false;
     });
 
@@ -155,7 +157,7 @@ domReady(function () {
             $('#my_username2').html(username);
             
         }, function (err) {
-            console.error(err);
+            //console.error(err);
 
             Message.innerHTML = msg_error;
             Message.classList.remove('signup-message-success');
@@ -360,7 +362,7 @@ validMsg.classList.add("hide");
     document.querySelector(".signup-signup-email .next.btn").addEventListener('click',function(e){
         e.preventDefault();
         var inputemail = $('#email_id').val();
-        console.log(inputemail)
+        //console.log(inputemail)
         if(email_check.test(inputemail)){
             $('#my_email').html(inputemail);
             let my_name = $('#my_username').html();
