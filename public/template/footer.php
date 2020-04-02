@@ -14,7 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/steemconnect@latest"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
+<script src="https://unpkg.com/dsteem@0.10.1/dist/dsteem.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
 <script src="/js/steemconnect.js"></script>
 <script src="/js/toaster.js"></script>
