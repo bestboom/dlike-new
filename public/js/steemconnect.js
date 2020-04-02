@@ -2,7 +2,7 @@ var api = steemconnect.Initialize({
     app        : 'dlike.app',
     callbackURL: 'https://dlike.io/steemconnect',
     accessToken: 'access_token',
-    scope      : [],
+    scope      : ['vote', 'comment'],
 });
 
 
