@@ -41,13 +41,13 @@ include('template/footer.php'); ?>
 	jsonMetadata = {
 	    "tags": post_tags,
 	    "app": "steemit/0.1",
-	    "community": "steem"
+	    "community": "steem",
     	"format": "html",
     	"image": urlImage,
     	"url": ext_url,
     	"type": "share",
     	"category": category
-	},
+	};
 	extensions: [
                 [0, {
                 "beneficiaries": [
