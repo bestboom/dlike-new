@@ -14,7 +14,9 @@ include('template/footer.php'); ?>
 	body = "<center><img src='https://i.postimg.cc/d0Vf2w92/hummingbird.jpg' alt='New Share' /></center><br> this is a share  <br><center><br><a href='https://steemit.com/'>Posting Test</a><hr><br>";
 	jsonMetadata = {
 	    "tags": [
-	        "test, steem"
+	        "test",
+	        "steem",
+	        "steem"
 	    ],
 	    "app": "steemit\/0.1",
 	    "community": "steem"
