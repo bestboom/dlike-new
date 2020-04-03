@@ -247,12 +247,13 @@ ClassicEditor
                                     var author = username;
                                     var title = $('.title_field').val();
                                     var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
+                                    var urlImage =  $('.image_field').val();
                                     var added_tags = $('.tags').val();
                                     var vtags = added_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
                                     var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
                                     var description = editor.getData();
-                                    var body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
-                                    var urlImage =  $('.image_field').val();
+                                    var post_body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
+                                    var body = '<center><img src="'+urlImage+'" alt="Shared From DLIKE" /></center><br>'+post_body+'<br><center><br><a href="https://dlike.io/post/@' + author + '/' + permlink+'>Shared On DLIKE</a><hr><br><a href="https://dlike.io/"><img src="https://dlike.io/images/dlike-logo.jpg"></a></center>';
                                     var post_category = $('.catg').val();
                                     var post_tags = '["hive-116221", "dlike", '+ qtags +']';
                                     var meta_tags = JSON.parse(post_tags);
@@ -264,7 +265,7 @@ ClassicEditor
                                         "image": urlImage,
                                         "url": urlInput,
                                         "type": "share",
-                                        "body": body,
+                                        "body": post_body,
                                         "category": post_category
                                     };
                                     
