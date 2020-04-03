@@ -242,27 +242,25 @@ ClassicEditor
                                         rewards: $('.rewards').val(),
                                         exturl:urlInput
                                     };
-                                    var post_title = $('.title_field').val();
-                                    console.log(post_title)
                                     var parentAuthor = "";
                                     var parentPermlink = 'hive-116221';
                                     var author = username;
-                                    console.log(author)
-                                    var title = post_title;
+                                    var title = $('.title_field').val();
                                     console.log(title)
                                     var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
                                     console.log(permlink)
                                     var description = editor.getData();
                                     var body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
-                                    console.log(body)
+                                    var urlImage =  $('.image_field').val();
+                                    var post_category = $('.catg').val();
                                     var tags = $('.tags').val();
                                     console.log(tags);
-                                    var urlImage =  $('.image_field').val();
-                                    console.log(urlImage);
-                                    var post_category = $('.catg').val();
-                                    var tags = tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
-                                    var tags = tags.replace(/\s+/g, ', ').toLowerCase();
-                                    var post_tags = '["hive-116221", "dlike", '+ tags +']';
+                                    var vtags = ntags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
+                                    console.log(vtags);
+                                    var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
+                                    console.log(qtags);
+                                    var post_tags = '["hive-116221", "dlike", '+ qtags +']';
+                                    console.log(post_tags);
                                     var meta_tags = JSON.parse(post_tags);
                                     console.log(meta_tags)
                                     var jsonMetadata = {
@@ -282,8 +280,6 @@ ClassicEditor
                                     $('.shareme2').html('Publishing...');
 
                                     
-
-
                                     /*$.ajax({
                                         type: "POST",
                                         url: "/helper/post/submit_post.php",
