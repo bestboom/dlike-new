@@ -34,7 +34,7 @@ include('template/footer.php'); ?>
 	var parentPermlink = 'test';
 	var author = username;
 	//var permlink = 'a-new-steem-test-6';
-	var title = "posting test no's 7";
+	var title = "posting test no-s 8";
 	var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
 	var body = '<center><img src="https://i.postimg.cc/d0Vf2w92/hummingbird.jpg" alt="New Share" /></center><br><p>This is an other test post with rewards check</p><p>This is (check <a href="https://www.steemit.com">steemit</a>) , Now content can also be published.&nbsp;</p><br><center><br><a href="https://steemit.com/">Posting Test</a><hr><br>';
 	//var max_accepted_payout = max_accepted_payout;
