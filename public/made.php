@@ -15,30 +15,30 @@ include('template/footer.php'); ?>
 
 	var rewards = "2";
 	if(rewards == '1'){
-	    max_accepted_payout = "900.000 SBD";
-	    percent_steem_dollars = 10000;
+	    var max_accepted_payout = "900.000 SBD";
+	    var percent_steem_dollars = 10000;
 	} else if(rewards == '2'){
-        max_accepted_payout = "900.000 SBD";
-        percent_steem_dollars = 0;
+        var max_accepted_payout = "900.000 SBD";
+        var percent_steem_dollars = 0;
     } else if(rewards == '3'){
-        max_accepted_payout = '0.000 SBD';
-        percent_steem_dollars = 10000;
+        var max_accepted_payout = '0.000 SBD';
+        var percent_steem_dollars = 10000;
     } else {
-        max_accepted_payout = '900.000 SBD';
-		percent_steem_dollars = 10000;
+        var max_accepted_payout = '900.000 SBD';
+		var percent_steem_dollars = 10000;
     }
 
 
 	console.log(username);
-	parentAuthor = '';
-	parentPermlink = 'test';
-	author = username;
-	permlink = 'a-new-steem-test-5';
-	title = 'posting test';
-	body = '<center><img src="https://i.postimg.cc/d0Vf2w92/hummingbird.jpg" alt="New Share" /></center><br><p>This is an other test post with rewards check</p><p>This is (check <a href="https://www.steemit.com">steemit</a>) , Now content can also be published.&nbsp;</p><br><center><br><a href="https://steemit.com/">Posting Test</a><hr><br>';
-	max_accepted_payout: max_accepted_payout;
-    percent_steem_dollars: percent_steem_dollars;
-	jsonMetadata = {
+	var parentAuthor = '';
+	var parentPermlink = 'test';
+	var author = username;
+	var permlink = 'a-new-steem-test-6';
+	var title = 'posting test';
+	var body = '<center><img src="https://i.postimg.cc/d0Vf2w92/hummingbird.jpg" alt="New Share" /></center><br><p>This is an other test post with rewards check</p><p>This is (check <a href="https://www.steemit.com">steemit</a>) , Now content can also be published.&nbsp;</p><br><center><br><a href="https://steemit.com/">Posting Test</a><hr><br>';
+	var max_accepted_payout = max_accepted_payout;
+    var percent_steem_dollars = percent_steem_dollars;
+	var jsonMetadata = {
 	    "tags": post_tags,
 	    "app": "steemit/0.1",
 	    "community": "steem",
@@ -48,7 +48,7 @@ include('template/footer.php'); ?>
     	"type": "share",
     	"category": category
 	};
-	extensions: [
+	var extensions: [
                 [0, {
                 "beneficiaries": [
                     {
