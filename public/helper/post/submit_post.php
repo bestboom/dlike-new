@@ -60,7 +60,8 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["descrip
 	    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
 	    $state = $postGenerator->broadcast($publish);
 
-		if (isset($state->result)) { 
+		//if (isset($state->result)) { 
+		if ($state->result) {
 			// insert into DB	
 			$post_title= mysqli_real_escape_string($conn, $_POST['title']);
 			$addposts = "INSERT INTO steemposts (`username`,`title`, `permlink`, `ext_url`, `img_url`, `parent_ctegory`,`created_at`) VALUES ('".$_COOKIE['username']."','".$post_title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."','".date("Y-m-d H:i:s")."')";
