@@ -27,17 +27,18 @@ include('template/footer.php'); ?>
         var max_accepted_payout = '900.000 SBD';
 		var percent_steem_dollars = 10000;
     }
-
+    console.log(max_accepted_payout);
 
 	console.log(username);
 	var parentAuthor = '';
 	var parentPermlink = 'test';
 	var author = username;
-	var permlink = 'a-new-steem-test-6';
-	var title = 'posting test';
+	//var permlink = 'a-new-steem-test-6';
+	var title = "posting test no's 7";
+	var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
 	var body = '<center><img src="https://i.postimg.cc/d0Vf2w92/hummingbird.jpg" alt="New Share" /></center><br><p>This is an other test post with rewards check</p><p>This is (check <a href="https://www.steemit.com">steemit</a>) , Now content can also be published.&nbsp;</p><br><center><br><a href="https://steemit.com/">Posting Test</a><hr><br>';
-	var max_accepted_payout = max_accepted_payout;
-    var percent_steem_dollars = percent_steem_dollars;
+	//var max_accepted_payout = max_accepted_payout;
+    //var percent_steem_dollars = percent_steem_dollars;
 	var jsonMetadata = {
 	    "tags": post_tags,
 	    "app": "steemit/0.1",
@@ -48,6 +49,7 @@ include('template/footer.php'); ?>
     	"type": "share",
     	"category": category
 	};
+	console.log(jsonMetadata)
 	var beneficiaries = [
                     {
                         "account": "steem",
@@ -58,7 +60,7 @@ include('template/footer.php'); ?>
                         "weight": 200
                     }
             ];
-	console.log(body);
+	console.log(beneficiaries);
 
 
 	api.comment(parentAuthor, parentPermlink, author, permlink, title, body, max_accepted_payout, percent_steem_dollars, jsonMetadata, beneficiaries, function (err, res) {
