@@ -381,6 +381,8 @@
         //alert(upvoteValue)
         var v_authorname = $("#vote_author").val();
         var v_permlink = $("#vote_permlink").val();
+        var voter = username;
+
         var datav = {
             v_permlink: v_permlink,
             v_author: v_authorname,
@@ -390,6 +392,12 @@
         if (username != null) {
             $('#upvoting-bar').hide();
             $('#upvoting-status').show();
+            api.vote(voter, v_authorname, v_permlink, weight, function (err, res) {
+                console.log(err, res)
+            });
+            if(res) {toastr.success('upVote done successfully!');}
+            else{toastr.error('There is some issue!');}
+            /*
             $.ajax({
                 type: "POST",
                 url: "/helper/vote2.php",
@@ -424,7 +432,7 @@
                     console.log(textStatus);
                     console.log(error);
                 }
-            });
+            }); */
         } else {
             toastr.error('hmm... You must be login!');
             $('#upvoteModal').modal('hide');
