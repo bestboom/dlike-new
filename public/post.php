@@ -16,10 +16,11 @@ $og_title = $result->title;
 $meta_data = json_decode($result->json_metadata);
 $og_image = $meta_data->image;
 
-$body = explode("\n\n#####\n\n",$result->body);
-$body = $body[1];
-$body = str_replace(array('\'', '"'), '', $body); 
-$og_description = strip_tags($body);
+$new_body = $meta_data->body;
+//$body = explode("\n\n#####\n\n",$result->body);
+//$body = $body[1];
+//$body = str_replace(array('\'', '"'), '', $body); 
+$og_description = strip_tags($new_body);
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 $ext_link = $meta_data->url;
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
@@ -28,7 +29,7 @@ $og_url = $uri;
 
 include('template/header.php');
 
-$body_text = $body;
+$body_text = $new_body;
 
 $views = '1'; 
 //post views

@@ -175,7 +175,7 @@ ClassicEditor
 
     $('.shareme2').click(function(clickEvent) {
         if (username != null) {
-            console.log(username);
+            //console.log(username);
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
@@ -217,7 +217,7 @@ ClassicEditor
                 dataType: 'json',
                 data: { user: username },
                 success: function(response) {
-                    console.log(response);
+                    //console.log(response);
                     if (response.error === true) {
                             toastr['error'](response.data);
                             return false;
@@ -228,7 +228,7 @@ ClassicEditor
                             dataType: 'json',
                             data: { url: urlInput },
                             success: function(response) {
-                                console.log(response);
+                                //console.log(response);
                                 if (response.error == true) {
                                     toastr['error'](response.data);
                                     return false;
@@ -269,12 +269,12 @@ ClassicEditor
                                         "category": post_category
                                     };
                                     
-                                    console.log(jsonMetadata)
+                                    //console.log(jsonMetadata)
                                     $(".shareme2").attr("disabled", true);
                                     $('.shareme2').html('Publishing...');
 
                                     api.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function (err, res) {
-                                        console.log(err, res)
+                                        //console.log(err, res)
                                         if(!err) {
                                             toastr.success('Post published successfully');
                                             setTimeout(function(){
