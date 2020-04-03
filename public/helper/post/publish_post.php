@@ -69,10 +69,10 @@ class makePost
 
         if ($err) {
             return json_decode('{"error":"server_comms","error_description":"Failed to connect to the server!"}');
-            var_dump($err)
+            var_dump($err);
         } else {
             return json_decode($response);
-            var_dump($response)
+            var_dump($response);
         }
     }
 }
