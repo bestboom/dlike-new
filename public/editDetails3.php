@@ -259,7 +259,7 @@ ClassicEditor
                                     console.log(vtags);
                                     var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
                                     console.log(qtags);
-                                    var post_tags = '"hive-116221", "dlike", '+ qtags +'';
+                                    var post_tags = '["hive-116221", "dlike", '+ qtags +']';
                                     console.log(post_tags);
                                     var meta_tags = JSON.parse(post_tags);
                                     console.log(meta_tags)
@@ -279,6 +279,12 @@ ClassicEditor
                                     $(".shareme2").attr("disabled", true);
                                     $('.shareme2').html('Publishing...');
 
+                                    api.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function (err, res) {
+                                        console.log(err, res)
+                                        if(!err) {
+
+                                        } else {}
+                                    });
                                     
                                     /*$.ajax({
                                         type: "POST",
