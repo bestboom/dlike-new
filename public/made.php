@@ -1,9 +1,9 @@
-<?php include('template/header5.php'); ?>
+<?php include('template/header5.php');
 $urlImage = 'https://i.postimg.cc/d0Vf2w92/hummingbird.jpg';
-$_POST['description'] = 'This is a test on steem posting';
-$body = "<center><img src='" . $urlImage . "' alt='New Share' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://steemit.com/"'>Posting Test</a><hr><br>";
+$description = 'This is a test on steem posting';
+$body = "<center><img src='" . $urlImage . "' alt='New Share' /></center>  \n\n#####\n\n '" . $description . "'  \n\n#####\n\n <center><br><a href='https://steemit.com/'>Posting Test</a><hr><br>";
 
-<?php include('template/footer.php'); ?>
+include('template/footer.php'); ?>
 <script type="text/javascript">
 	console.log(username);
 	parentAuthor = '';
@@ -17,7 +17,7 @@ $body = "<center><img src='" . $urlImage . "' alt='New Share' /></center>  \n\n#
 	        "test, steem"
 	    ],
 	    "app": "steemit\/0.1",
-	    "community" => "steem"
+	    "community": "steem"
 	}
 	console.log(body)
 
