@@ -233,11 +233,11 @@ ClassicEditor
                                     toastr['error'](response.data);
                                     return false;
                                 } else { 
-                                    tags: $('.tags').val();
+                                    var tags: $('.tags').val();
                                     console.log(tags);
-                                    rewards: $('.rewards').val();
+                                    var rewards: $('.rewards').val();
                                     console.log(rewards);
-                                    description: editor.getData();
+                                    var description: editor.getData();
                                     console.log(description);
                                     var datam = {
                                         title: $('.title_field').val(),
