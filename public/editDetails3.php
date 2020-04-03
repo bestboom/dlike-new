@@ -246,23 +246,16 @@ ClassicEditor
                                     var parentPermlink = 'hive-116221';
                                     var author = username;
                                     var title = $('.title_field').val();
-                                    console.log(title)
                                     var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
-                                    console.log(permlink)
+                                    var added_tags = $('.tags').val();
+                                    var vtags = added_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
+                                    var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
                                     var description = editor.getData();
                                     var body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
                                     var urlImage =  $('.image_field').val();
                                     var post_category = $('.catg').val();
-                                    var post_tags = $('.tags').val();
-                                    console.log(post_tags);
-                                    var vtags = post_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
-                                    console.log(vtags);
-                                    var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
-                                    console.log(qtags);
                                     var post_tags = '["hive-116221", "dlike", '+ qtags +']';
-                                    console.log(post_tags);
                                     var meta_tags = JSON.parse(post_tags);
-                                    console.log(meta_tags)
                                     var jsonMetadata = {
                                         "tags": meta_tags,
                                         "app": "dlike/3",
@@ -274,7 +267,7 @@ ClassicEditor
                                         "body": body,
                                         "category": post_category
                                     };
-                                
+                                    
                                     console.log(jsonMetadata)
                                     $(".shareme2").attr("disabled", true);
                                     $('.shareme2').html('Publishing...');
@@ -282,8 +275,16 @@ ClassicEditor
                                     api.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function (err, res) {
                                         console.log(err, res)
                                         if(!err) {
-
-                                        } else {}
+                                            toastr.success('Post published successfully');
+                                            setTimeout(function(){
+                                                window.location.href = "https://dlike.io/post/@" + author + "/" + permlink;
+                                            }, 5000);
+                                        } else {
+                                            $(".shareme2").attr("disabled", false);
+                                            $('.shareme2').html('Publish');
+                                            toastr.error('There is some issue!');
+                                            return false;
+                                        }
                                     });
                                     
                                     /*$.ajax({
