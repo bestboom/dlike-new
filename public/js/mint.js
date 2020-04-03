@@ -395,8 +395,17 @@
             api.vote(voter, v_authorname, v_permlink, weight, function (err, res) {
                 console.log(err, res)
             });
-            if(res) {toastr.success('upVote done successfully!');}
-            else{toastr.error('There is some issue!');}
+            if(res.result) {
+                toastr.success('upVote done successfully!');
+                $('#upvoteModal').modal('hide');
+                $('#upvoting-status').hide();
+                $('#upvoting-bar').show();
+            } else {
+                toastr.error('There is some issue!');
+                $('#upvoteModal').modal('hide');
+                $('#upvoting-status').hide();
+                $('#upvoting-bar').show();
+            }
             /*
             $.ajax({
                 type: "POST",
