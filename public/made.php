@@ -59,9 +59,9 @@ include('template/footer.php'); ?>
                         "account": "steemit",
                         "weight": 200
                     }
-                }]
-            ]
-	console.log(body)
+                ]}]
+            ];
+	console.log(body);
 
 
 	api.comment(parentAuthor, parentPermlink, author, permlink, title, body, max_accepted_payout, percent_steem_dollars, jsonMetadata, function (err, res) {
