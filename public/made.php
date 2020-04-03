@@ -11,7 +11,6 @@ include('template/footer.php'); ?>
 	author = username;
 	permlink = 'a-new-steem-test-4';
 	title = 'posting test';
-	body = "<?php echo $body ?>";
 	body = "<center><img src='https://i.postimg.cc/d0Vf2w92/hummingbird.jpg' alt='New Share' /></center><br> this is a share  <br><center><br><a href='https://steemit.com/'>Posting Test</a><hr><br>";
 	jsonMetadata = {
 	    "tags": [
