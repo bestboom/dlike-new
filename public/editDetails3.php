@@ -253,13 +253,13 @@ ClassicEditor
                                     var body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
                                     var urlImage =  $('.image_field').val();
                                     var post_category = $('.catg').val();
-                                    var tags = $('.tags').val();
-                                    console.log(tags);
-                                    var vtags = tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
+                                    var post_tags = $('.tags').val();
+                                    console.log(post_tags);
+                                    var vtags = post_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
                                     console.log(vtags);
                                     var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
                                     console.log(qtags);
-                                    var post_tags = '["hive-116221", "dlike", '+ qtags +']';
+                                    var post_tags = '"hive-116221", "dlike", '+ qtags +'';
                                     console.log(post_tags);
                                     var meta_tags = JSON.parse(post_tags);
                                     console.log(meta_tags)
