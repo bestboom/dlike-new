@@ -255,7 +255,7 @@ ClassicEditor
                                     var post_category = $('.catg').val();
                                     var tags = $('.tags').val();
                                     console.log(tags);
-                                    var vtags = ntags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
+                                    var vtags = tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
                                     console.log(vtags);
                                     var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
                                     console.log(qtags);
