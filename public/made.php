@@ -63,7 +63,7 @@ include('template/footer.php'); ?>
 	console.log(beneficiaries);
 
 
-	api.comment(parentAuthor, parentPermlink, author, permlink, title, body, max_accepted_payout, percent_steem_dollars, jsonMetadata, beneficiaries, function (err, res) {
+	api.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, beneficiaries, function (err, res) {
   		console.log(err, res)
 	});
 </script>
