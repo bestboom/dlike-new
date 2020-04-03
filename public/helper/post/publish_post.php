@@ -36,7 +36,7 @@ class makePost
         }
 
         $fixed_str = str_replace(str_replace("/", "\\\\\\/", $json_php_array['app']), $json_php_array['app'], json_encode($post));
-        print($fixed_str);
+        //print($fixed_str);
         return $fixed_str;
     }
     
@@ -63,6 +63,7 @@ class makePost
         ));
 
         $response = curl_exec($curl);
+        print json_encode($response);
         $err = curl_error($curl);
 
         curl_close($curl);
