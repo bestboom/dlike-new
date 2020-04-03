@@ -63,15 +63,16 @@ class makePost
         ));
 
         $response = curl_exec($curl);
-        print json_encode($response);
         $err = curl_error($curl);
 
         curl_close($curl);
 
         if ($err) {
             return json_decode('{"error":"server_comms","error_description":"Failed to connect to the server!"}');
+            var_dump($err)
         } else {
             return json_decode($response);
+            var_dump($response)
         }
     }
 }
