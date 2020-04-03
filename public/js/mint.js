@@ -392,7 +392,7 @@
             $('#upvoting-status').show();
             $.ajax({
                 type: "POST",
-                url: "/helper/vote.php",
+                url: "/helper/vote2.php",
                 data: datav,
 
                 success: function(data) {
