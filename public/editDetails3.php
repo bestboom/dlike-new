@@ -253,7 +253,7 @@ ClassicEditor
                                     var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
                                     var description = editor.getData();
                                     var post_body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
-                                    var body = '<center><img src="'+urlImage+'" alt="Shared From DLIKE" /></center><br>'+post_body+'<br><center><br><a href="https://dlike.io/post/@' + author + '/' + permlink+'>Shared On DLIKE</a><hr><br><a href="https://dlike.io/"><img src="https://dlike.io/images/dlike-logo.jpg"></a></center>';
+                                    var body = '<center><img src="'+urlImage+'" alt="Shared From DLIKE" /></center><br>'+post_body+'<br><center><br><a href="https://dlike.io/post/@' + author + '/' + permlink+'">Shared On DLIKE</a><hr><br><a href="https://dlike.io/"><img src="https://dlike.io/images/dlike-logo.jpg"></a></center>';
                                     var post_category = $('.catg').val();
                                     var post_tags = '["hive-116221", "dlike", '+ qtags +']';
                                     var meta_tags = JSON.parse(post_tags);
