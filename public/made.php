@@ -1,14 +1,28 @@
 <?php include('template/header5.php'); ?>
+$urlImage = 'https://i.postimg.cc/d0Vf2w92/hummingbird.jpg';
+$_POST['description'] = 'This is a test on steem posting';
+$body = "<center><img src='" . $urlImage . "' alt='New Share' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://steemit.com/"'>Posting Test</a><hr><br>";
 
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 	console.log(username);
-	voter = username;
-	author = 'myinns';
-	permlink = 'what-are-the-challenges-of-battling-coronavirus-in-india-india-al-jazeera';
-	weight = 1000;
+	parentAuthor = '';
+	parentPermlink = 'test';
+	author = username;
+	permlink = 'a-new-steem-test-4';
+	title = 'posting test';
+	body = "<?php echo $body ?>";
+	jsonMetadata = {
+	    "tags": [
+	        "test, steem"
+	    ],
+	    "app": "steemit\/0.1",
+	    "community" => "steem"
+	}
+	console.log(body)
 
-	api.vote(voter, author, permlink, weight, function (err, res) {
+
+	api.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function (err, res) {
   		console.log(err, res)
 	});
 </script>
