@@ -11,8 +11,8 @@ include('template/footer.php'); ?>
 	var tags = "new-test blockchain";
 	var tags = tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
 	var tags = tags.replace(/\s+/g, ', ').toLowerCase();
-	var post_tags = '["hive-116221", "dlike", '+ tags +']';
-	var meta_tags = JSON.parse(post_tags);
+	//var post_tags = '["hive-116221", "dlike", '+ tags +']';
+	//var meta_tags = JSON.parse(post_tags);
 
 	var rewards = "2";
 	if(rewards == '1'){
@@ -42,7 +42,7 @@ include('template/footer.php'); ?>
 	//var max_accepted_payout = max_accepted_payout;
     //var percent_steem_dollars = percent_steem_dollars;
 	var jsonMetadata = {
-	    "tags": meta_tags,
+	    "tags": tags,
 	    "app": "steemit/0.1",
 	    "community": "steem",
     	"format": "html",
