@@ -35,7 +35,7 @@ include('template/footer.php'); ?>
 	var parentPermlink = 'test';
 	var author = username;
 	//var permlink = 'a-new-steem-test-6';
-	var title = "posting test no 11";
+	var title = "posting test no 12";
 	var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
 	var body = '<center><img src="https://i.postimg.cc/d0Vf2w92/hummingbird.jpg" alt="New Share" /></center><br><p>This is an other test post with rewards check</p><p>This is (check <a href="https://www.steemit.com">steemit</a>) , Now content can also be published.&nbsp;</p><br><center><br><a href="https://steemit.com/">Posting Test</a><hr><br>';
 	var post_body = body.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
@@ -53,20 +53,32 @@ include('template/footer.php'); ?>
     	"category": category
 	};
 	console.log(jsonMetadata)
-	/*var beneficiaries = [
-                    {
-                        "account": "steem",
-                        "weight": 1000
-                    },
-                    {
-                        "account": "steemit",
-                        "weight": 200
-                    }
-            ];
-	console.log(beneficiaries);*/
+
+  var comment_options = {
+      "author": username,
+      "permlink": permlink,
+      "allow_votes": true,
+      "allow_curation_rewards": true,
+      "max_accepted_payout": "1000000.000 SBD",
+      "percent_steem_dollars": 0,
+      "extensions": [
+        [
+          0,
+          {
+            "beneficiaries": [
+              {
+                "account": "null",
+                "weight": 2000
+              }
+            ]
+          }
+        ]
+      ]
+    };
 
 
-	api.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, function (err, res) {
+
+	api.comment(parentAuthor, parentPermlink, author, permlink, title, body, jsonMetadata, comment_options, function (err, res) {
   		console.log(err, res)
 	});
 </script>
