@@ -304,7 +304,7 @@ ClassicEditor
                                         data: datam,
                                         
                                         success: function(data) {
-                                            console.log(data);
+                                            //console.log(data);
                                             try {
                                                 var response = JSON.parse(data)
                                                 if (response.error == true) {

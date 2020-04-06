@@ -67,7 +67,7 @@
                 //console.log(response);
 
                 let res = JSON.parse(response);
-                window.location.replace("editDetails3.php?url=" + encodeURIComponent(res.url) + "&title=" + encodeURIComponent(res.title) + "&imgUrl=" + encodeURIComponent(res.imgUrl) + "&details=" + encodeURIComponent(res.des));
+                window.location.replace("editDetails2.php?url=" + encodeURIComponent(res.url) + "&title=" + encodeURIComponent(res.title) + "&imgUrl=" + encodeURIComponent(res.imgUrl) + "&details=" + encodeURIComponent(res.des));
                 //console.log("Response array: "+res.imgUrl);
 
             });
