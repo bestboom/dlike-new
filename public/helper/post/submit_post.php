@@ -14,7 +14,7 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["main_bo
 	$url = $_POST['exturl'];
 	$urlImage = $_POST["image"];
 	$title = $_POST['title'];
-	$permlink = $_POST['title'];
+	$permlink = $_POST['permlink'];
 	$_POST['benefactor'] = "dlike:11,dlike.fund:2";
 	$category = strtolower($_POST['category']);
 	$parent_ctegory = 'hive-116221';
@@ -61,7 +61,7 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["main_bo
 	/*$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";*/
 
 	$redirect_url = 'https://dlike.io/post/@' . $posting_user .'/'. $permlink;
-	
+
 	if ($title !='') {
 	    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
 	    $state = $postGenerator->broadcast($publish);
