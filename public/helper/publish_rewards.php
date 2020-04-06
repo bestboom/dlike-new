@@ -43,7 +43,7 @@ class claim_rewards
     {
         $curl = curl_init();
         curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://steemlogin.com/api/me",
+            CURLOPT_URL => "https://api.steemlogin.com/api/me",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

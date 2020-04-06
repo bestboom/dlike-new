@@ -392,6 +392,7 @@
         if (username != null) {
             $('#upvoting-bar').hide();
             $('#upvoting-status').show();
+            /*
             api.vote(voter, v_authorname, v_permlink, weight, function (err, res) {
                 console.log(err, res)
             
@@ -407,10 +408,10 @@
                     $('#upvoting-bar').show();
                 }
             });
-            /*
+            */
             $.ajax({
                 type: "POST",
-                url: "/helper/vote2.php",
+                url: "/helper/vote.php",
                 data: datav,
 
                 success: function(data) {
@@ -442,7 +443,7 @@
                     console.log(textStatus);
                     console.log(error);
                 }
-            }); */
+            }); 
         } else {
             toastr.error('hmm... You must be login!');
             $('#upvoteModal').modal('hide');
