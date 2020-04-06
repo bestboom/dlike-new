@@ -9,17 +9,18 @@ include('../../functions/main.php');
 
 $postGenerator = new dlike\post\makePost();
 
-if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["description"]) && isset($_POST["image"])){
+if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["main_body"]) && isset($_POST["image"])){
 
 	$url = $_POST['exturl'];
 	$urlImage = $_POST["image"];
 	$title = $_POST['title'];
+	$permlink = $_POST['title'];
 	$_POST['benefactor'] = "dlike:11,dlike.fund:2";
 	$category = strtolower($_POST['category']);
 	$parent_ctegory = 'hive-116221';
 	$_POST['tags'] = "hive-116221,dlike," . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
-	$_POST["description"] = preg_replace('#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#', '', $_POST["description"]);
+	/*$_POST["description"] = preg_replace('#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#', '', $_POST["description"]);*/
 
 	if($_POST['rewards']=='1'){
         $max_accepted_payout = "900.000 SBD";
@@ -35,9 +36,11 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["descrip
 		$percent_steem_dollars =10000;
     }
 
-	$title = validationData($title);
-	$permlink = validationData(clean($_POST['title']));
-	$post = validationData($_POST["description"]);
+	//$title = validationData($title);
+	//$permlink = validationData(clean($_POST['title']));
+	//$post = validationData($_POST["description"]);
+
+	$post = $_POST['meta_body'];
 
 	$beneficiaries = genBeneficiaries($_POST['benefactor']);
 
@@ -53,9 +56,12 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["descrip
     "tags" => array_slice(array_unique(explode(",", $_POST['tags'])), 0, 7)
 	];
 	$posting_user = $_COOKIE['username'];
-	$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
+	$body = $_POST['main_body'];
+
+	/*$body = "<center><img src='" . $urlImage . "' alt='Shared From Dlike' /></center>  \n\n#####\n\n " . $_POST['description'] . "  \n\n#####\n\n <center><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'>Shared On DLIKE</a><hr><br><a href='https://dlike.io/'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";*/
 
 	$redirect_url = 'https://dlike.io/post/@' . $posting_user .'/'. $permlink;
+	
 	if ($title !='') {
 	    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
 	    $state = $postGenerator->broadcast($publish);

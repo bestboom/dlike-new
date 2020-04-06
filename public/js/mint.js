@@ -426,7 +426,7 @@
                             return false;
                         } else {
                             //$('#vote_icon').css("color", "RED");
-                            toastr.success('upVote done successfully!');
+                            toastr.success('UpVoted Successfully!');
                             $('#upvoteModal').modal('hide');
                             $('#upvoting-status').hide();
                             $('#upvoting-bar').show();
