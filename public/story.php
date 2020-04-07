@@ -419,12 +419,15 @@ $categories  = array("News", "Cryptocurrency", "Food", "Sports", "Technology", "
             }
             //console.log(first_image);
             //$('form').submit();
+            var story_description = editor2.getData(),
+            var post_body = story_description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
             var datam = {
                 story_title: $('.title_field').val(),
                 story_tags: $('.tags').val(),
                 story_content: editor2.getData(),
                 story_category: $('.catg').val(),
                 story_image: first_image,
+                meta_body: post_body,
                 story_rewards: $('.rewards').val()
             };
             //console.log(datam);

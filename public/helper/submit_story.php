@@ -49,7 +49,7 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
     "format" => "html",
     "image" => $urlImage,
     "url" => $url,
-    "body" => $post,
+    "body" => $_POST['meta_body'],
     "type" => "story",
     "category" => $_POST['story_category'],
     "tags" => array_slice(array_unique(explode(",", $tags)), 0, 7)
