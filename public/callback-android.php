@@ -24,7 +24,7 @@
     params = (new URL(location)).searchParams;
     if (params.get('code') != null && params.get('username') != null && params.get('expires_in') != null)  {
       //$.cookie("access_token", params.get('access_token'), { expires: 7, path: '/' });
-      $.cookie("code", params.get('access_token'), { expires: 7, path: '/' });
+      $.cookie("code", params.get('code'), { expires: 7, path: '/' });
       $.cookie("username", params.get('username'), { expires: 7, path: '/' });
       $.cookie("expires_in", params.get('expires_in'), { expires: 7, path: '/' });
     }
