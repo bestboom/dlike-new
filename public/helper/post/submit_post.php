@@ -15,7 +15,7 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["main_bo
 	$urlImage = $_POST["image"];
 	$title = $_POST['title'];
 	$permlink = $_POST['permlink'];
-	$_POST['benefactor'] = "dlike:11,dlike.fund:2";
+	$_POST['benefactor'] = "dlike:7.5,dlike.fund:2.5";
 	$category = strtolower($_POST['category']);
 	$parent_ctegory = 'hive-116221';
 	$_POST['tags'] = "hive-116221,dlike," . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));

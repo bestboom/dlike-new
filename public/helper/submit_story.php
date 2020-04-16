@@ -37,7 +37,7 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
 		$percent_steem_dollars =10000;
     }
 
-    $_POST['benefactor'] = "dlike:11,dlike.fund:2";
+    $_POST['benefactor'] = "dlike:7.5,dlike.fund:2.5";
     $beneficiaries = genBeneficiaries($_POST['benefactor']);
 
     $posting_user = $_COOKIE['username'];

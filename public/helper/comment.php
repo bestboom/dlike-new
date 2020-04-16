@@ -20,7 +20,7 @@ if (isset($_POST["p_permlink"]) && isset($_POST["p_author"])){
 	$body = $_POST["comt_body"];
 
 	$max_accepted_payout = '900.000 SBD';
-	$_POST['benefactor'] = "dlike:9,dlike.fund:1";
+	$_POST['benefactor'] = "dlike:5,dlike.fund:2.5";
 
 	$json_metadata = [
     "community" => "dlike",
