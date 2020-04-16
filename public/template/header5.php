@@ -58,6 +58,7 @@
         <a href="/wallet">Wallet</a>
         <a href="/dliker">DLIKER</a>
         <? } else {} ?>        
+        <a href="https://dex.dlike.io">DEX</a>
         <a href="/rewards">Reward Pool</a>
         <a href="/staking">Staking</a>
         <a href="/explorer">Explorer</a>
