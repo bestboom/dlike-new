@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-
+/*
 $sql = "ALTER TABLE wallet ADD loct_ip varchar(255) NOT NULL AFTER verified";
 if ($conn->query($sql) === TRUE) {
     echo "new field added to wallet table";
@@ -14,7 +14,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating table: " . $conn->error;
 }
 
-
+*/
 ?>
 <!--
 
