@@ -17,9 +17,6 @@ $meta_data = json_decode($result->json_metadata);
 $og_image = $meta_data->image;
 
 $new_body = $meta_data->body;
-//$body = explode("\n\n#####\n\n",$result->body);
-//$body = $body[1];
-//$body = str_replace(array('\'', '"'), '', $body); 
 $og_description = strip_tags($new_body);
 $og_description = implode(' ', array_slice(explode(' ', $og_description), 0, 23));
 $ext_link = $meta_data->url;
@@ -28,9 +25,9 @@ $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 
 include('template/header.php');
-
-$body_text = $new_body;
-
+//$body_post = $new_body;
+//$body_text = preg_replace("/<p[^>]*>(?:\s|&nbsp;)*<\/p>/", '', $body_post);
+$body_text = preg_replace('#<p>&nbsp;</p>#i','<p></p>', $new_body);
 $views = '1'; 
 //post views
 $sqlvs = "SELECT * FROM totalpostviews where permlink = '$link' and author = '$auth'";
