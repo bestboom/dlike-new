@@ -24,9 +24,7 @@ include('template/header5.php');
                   while($row1 = $result1->fetch_assoc()) 
                   { 
                     $category = $row1['category'];
-                    $username = "aq";
-                    $imgsrc = "aq-dsdsd-sas";
-                  echo $title = "<a href='/post/@".$username."/".$category."'><img src='".$imgsrc."' style='width:36px;height:36px;margin-right:15px;padding-bottom:5px;'>".$row1['title']."</a><br>";
+                  echo $title = $row1['title']."<br>";
                   }
                 } ?>
             </div>
