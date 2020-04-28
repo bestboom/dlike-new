@@ -24,7 +24,7 @@ include('template/header5.php');
                   while($row1 = $result1->fetch_assoc()) 
                   {
                       
-                      echo "<a href='https://dlike.io/latest/cryptocurrency/'>".$row1['title']."</a><br>";
+                      echo $row1['title']."<br>";
                   }
                 } ?>
             </div>
