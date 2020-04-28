@@ -23,9 +23,8 @@ include('template/header5.php');
                 {
                   while($row1 = $result1->fetch_assoc()) 
                   {
-                      echo "<div class='news-detail'>";
-                      echo $title = $row1['title']."<br>"; 
-                      echo "</div>";
+                      
+                      echo "<a href='https://dlike.io/latest/cryptocurrency/'>".$row1['title']."</a><br>";
                   }
                 } ?>
             </div>
