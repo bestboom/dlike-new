@@ -4,7 +4,7 @@ include('template/header5.php');
 </div><!-- sub-header -->
 <style>
   .faq-section{background: #e6e6e6;}
-  .container {max-width: 1366px;background: #fff;padding: 100px 50px 50px;}
+  .container2 {max-width: 1366px;background: #fff;padding: 100px 50px 50px;}
 </style>
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
     <div class="row" style="padding: 50px;">
