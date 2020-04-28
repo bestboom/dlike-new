@@ -23,7 +23,7 @@ include('template/header5.php');
                 {
                   while($row1 = $result1->fetch_assoc()) 
                   {
-                      echo $title = "<span class='news-detail'>".$row1['title']."</span><br>";  
+                      echo $title = "<span class='news-detail'>".$row1['title']."<br></span>";  
                   }
                 } ?>
             </div>
