@@ -25,7 +25,7 @@ include('template/header5.php');
                   while($row1 = $result1->fetch_assoc()) 
                   { 
                     $category = $row1['category'];
-                    echo $title = "<a href='https://dlike.io/latest/".$category."'>".$row1['title']."</a><br>";
+                    echo $title = "<a href='https://dlike.io/latest/".$category."' class='news-detail'>".$row1['title']."</a><br>";
                   }
                 } ?>
             </div>
