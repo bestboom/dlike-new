@@ -6,7 +6,7 @@ include('template/header5.php');
   .faq-section{background: #e6e6e6;}
   .news-set {max-width: 1366px;background: #fff;padding: 80px 50px 50px;}
   .news-detail{color: #202020;font-family: Verdana,Arial,Helvetica,sans-serif;font-size: 0.9rem;font-weight: 500;}
-  .news-detail:hover{color: #86828C;text-decoration: underline;}
+  .news-detail a:hover{color: #86828C;text-decoration: underline;}
 </style>
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
     <div class="row" style="padding: 25px;">
