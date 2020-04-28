@@ -24,8 +24,10 @@ include('template/header5.php');
                   while($row1 = $result1->fetch_assoc()) 
                   { 
                     $category = $row1['category'];
-                  echo $title = $row1['title']."<br>";
-                  }
+                    $title = $row1['title'];
+                    ?>
+                    <div class="news-detail"><?php echo $title; ?></div>
+                <?  }
                 } ?>
             </div>
         </div>
