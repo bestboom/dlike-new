@@ -4,10 +4,9 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 include('../template/news-header.php');
-include('../functions/main.php');
 include('../latest/main.php');
-echo $link = $_GET['link'];
-echo $news_id = $_GET['id'];
+$link = $_GET['link'];
+$news_id = $_GET['id'];
 
 ?>
 </div><!-- sub-header -->
@@ -25,9 +24,9 @@ echo $news_id = $_GET['id'];
         </div>
     </div>
 </div>
-    <div class="faq-section" style="padding-top:1px;">
+    <div class="faq-section" style="padding-top:1px;padding-bottom: 0px;">
         <div class="container news-set">
-            <div class="row">
+            <div class="row" style="margin: 0px">
             <?php $sql1 = "SELECT * FROM latestnews where id='$news_id'";
                 $result1 = $conn->query($sql1);
                 if ($result1->num_rows > 0) 
@@ -50,7 +49,7 @@ echo $news_id = $_GET['id'];
 	                <br>
 	                <p style="padding-top: 15px;"><?php echo $description; ?></p>
 	                <p style="font-weight: bold">
-	                	<a href="<?php echo $post_ext_link; ?>">continue reading <?php echo $post_title;?></a>
+	                	<a href="<?php echo $post_ext_link; ?>">Continue Reading <?php echo $post_title;?></a>
 	                </p>
 	            </div>
 	            <div class="col-md-4"></div>
