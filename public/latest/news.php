@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 include('../template/news-header.php'); 
 echo $link = $_GET['link'];
-echo $id = $_GET['id'];
+
 ?>
 </div><!-- sub-header -->
 <style>
@@ -25,13 +25,6 @@ echo $id = $_GET['id'];
     <div class="faq-section" style="padding-top:1px;">
         <div class="container news-set">
             <div style="padding-left:10px;">
-          <?php $sql1 = "SELECT * FROM latestnews where id='$id'";
-                $result1 = $conn->query($sql1);
-                if ($result1->num_rows > 0) 
-                $post_data = mysqli_fetch_assoc($result1); 
-    			$post_title = $post_data["title"];
-                } ?>
-                <h2><?php echo $post_title; ?></h2>
             </div>
         </div>
     </div>
