@@ -32,6 +32,4 @@ include('../template/header5.php');
             </div>
         </div>
     </div>
-<?php include('../template/news-footer.php'); ?>
-
-var aq = moment.unix(1588100604).format('HH:mm')
+<?php include('../template/footer.php'); ?>
