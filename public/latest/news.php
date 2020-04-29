@@ -38,12 +38,16 @@ echo $news_id = $_GET['id'];
                 $url = $post_ext_link;
                 $grab = new DataGraber($url);
                 if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
-                	echo $titles = $grab->getTitle();
-        			echo $image = $grab->getThumbnail();
-        			echo $description = $grab->getDescription();
+        			$image = $grab->getThumbnail();
+        			$description = $grab->getDescription();
                 }
                 ?>
                 <h2><?php echo $post_title;?></h2>
+                <br>
+                <img src="<?php echo $image;?>" style="width:100%">
+                <br>
+                <p><?php echo $description; ?></p>
+                <br>
                 <p><a href="<?php echo $post_ext_link; ?>">Read This News Here</a></p>
             </div>
         </div>
