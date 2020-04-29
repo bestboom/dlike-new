@@ -1,5 +1,10 @@
 <?php
 include('../template/header5.php'); 
+$ipInfo = file_get_contents('http://ip-api.com/json/' . $thisip);
+$ipInfo = json_decode($ipInfo);
+$timezone = $ipInfo->timezone;
+date_default_timezone_set($timezone);
+$mytimezone =  date_default_timezone_get();
 ?>
 </div><!-- sub-header -->
 <style>
@@ -26,7 +31,11 @@ include('../template/header5.php');
                   { 
                     $category = $row1['category'];
                     $news_time = $row1['news_time'];
-                    echo $news_time."&nbsp;<i class='fas fa-step-forward'></i>&nbsp;<a href='https://dlike.io/latest/".$category."' class='news-detail'>".$row1['title']."</a><br>";
+                    $dt = new DateTime();
+                    $dt->setTimestamp($news_time);
+                    $dt->setTimezone(new DateTimeZone($mytimezone));
+                    $datetime = $dt->format('H:i');
+                    echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/".$category."' class='news-detail'>".$row1['title']."</a><br>";
                   }
                 } ?>
             </div>
