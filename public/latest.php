@@ -32,6 +32,17 @@ include('template/header5.php');
             </div>
         </div>
     </div>
-<?php include('template/footer.php'); ?>
+<?php 
+echo $thisip;
+$ipInfo = file_get_contents('http://ip-api.com/json/' . $thisip);
+$ipInfo = json_decode($ipInfo);
+$timezone = $ipInfo->timezone;
+date_default_timezone_set($timezone);
+echo date_default_timezone_get();
+echo "<br>";
+echo date('Y/m/d H:i:s');
+
+
+include('template/footer.php'); ?>
 
 var aq = moment.unix(1588100604).format('HH:mm')
