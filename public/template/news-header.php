@@ -1,4 +1,4 @@
-<?php include('includes/config.php'); ?>
+<?php include('../includes/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if(basename($_SERVER['PHP_SELF']) == 'post.php'){ ?>    
         <title><?php echo $og_title; ?></title>
-        <meta name="description" content="<?php echo $og_description; ?>" />
+        <meta name="description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
+        <!--Facebook Meta Tags -->
         <meta property="og:url" content="<?php echo $og_url; ?>" />
         <meta property="og:title" content="<?php echo $og_title; ?>" />
-        <meta property="og:description" content="<?php echo $og_description; ?>" />
+        <meta property="og:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>" />
         <meta property="og:image" content="<?php echo $og_image; ?>" />
+        <!--End Facebook Meta Tags-->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="<?php echo $og_title; ?>">
-        <meta name="twitter:description" content="<?php echo $og_description; ?>">
+        <meta name="twitter:description" content="<?php echo trim(preg_replace("~<blockquote(.*?)>(.*)</blockquote>~si","",' '.$og_description.' ')); ?>">
         <meta name="twitter:image" content="<?php echo $og_image; ?>">
         <meta name="twitter:domain" content="<?php echo $og_url; ?>">
         <link rel="canonical" href="<?php echo $og_url; ?>" />
@@ -22,23 +24,16 @@
         <title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title>
         <meta name="description" content="The latest posts shared by <?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> on DLIKE. An informative face of internet to share and get rewarded like <?php echo ucfirst($prof_user); ?>.">
     <? } else { ?>    
-        <title>DLIKE - Share To Get Rewarded</title>
+        <title>Dlike :: Share To Get Rewarded</title>
         <meta name="description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes.">
+        <!--Facebook Meta Tags -->
         <meta property="og:url" content="https://dlike.io" />
         <meta property="og:title" content="Dlike - Share To Get Rewarded" />
-        <meta property="og:description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes." />
+        <meta property="og:description" content="Dlike." />
         <meta property="og:image" content="/images/dlike-main.jpg" />
+        <!--End Facebook Meta Tags-->
     <? } ?>
-        <link rel="apple-touch-icon" sizes="180x180" href="https://dlike.io/images/favicons/apple-touch-icon.png?v=kPvWrWRLXe">
-        <link rel="icon" type="image/png" sizes="32x32" href="https://dlike.io/images/favicons/favicon-32x32.png?v=kPvWrWRLXe">
-        <link rel="icon" type="image/png" sizes="16x16" href="https://dlike.io/images/favicons/favicon-16x16.png?v=kPvWrWRLXe">
-        <link rel="manifest" href="https://dlike.io/images/favicons/site.webmanifest?v=kPvWrWRLXe">
-        <link rel="shortcut icon" href="https://dlike.io/images/favicons/favicon.ico?v=kPvWrWRLXe">
-        <meta name="apple-mobile-web-app-title" content="DLIKE">
-        <meta name="application-name" content="DLIKE">
-        <meta name="msapplication-TileColor" content="#2d89ef">
-        <meta name="msapplication-config" content="https://dlike.io/images/favicons/browserconfig.xml?v=kPvWrWRLXe">
-        <meta name="theme-color" content="#ffffff">
+        <link rel='favicon icon' type=image/x-icon href=/images/favicon.ico />
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
@@ -51,20 +46,15 @@
 <? } ?> 
 </head>
 <body>
-    <?php include('promo/top-sticky.php'); ?>
     <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?>
         <a href="/wallet">Wallet</a>
-        <a href="/dliker">DLIKER</a>
-        <? } else {} ?>        
-        <a href="https://dex.dlike.io">DEX</a>
-        <a href="/rewards">Reward Pool</a>
+        <a href="/help">FAQ</a>
         <a href="/staking">Staking</a>
         <a href="/explorer">Explorer</a>
-        <a href="/help">FAQ</a>
-        <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a href="javascript:void(0)" class="logout_btn">Logout</a>';} else { } ?>
+        <?php if (isset($_COOKIE['username']) || $_COOKIE['username']) { echo '<a href="javascript:void(0)" class="logout_btn">Logout</a>';} ?>
         <br>
+        <a href="/token">Token</a>
         <a href="/docs/dlike-paper.pdf">Whitepaper</a>
     </div>
     <div class="banner-block">
