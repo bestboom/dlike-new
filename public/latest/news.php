@@ -5,8 +5,10 @@ error_reporting(E_ALL);
 
 include('../template/news-header.php');
 include('../functions/main.php');
+include('../latest/main.php');
 echo $link = $_GET['link'];
 echo $news_id = $_GET['id'];
+
 ?>
 </div><!-- sub-header -->
 <style>
@@ -32,7 +34,15 @@ echo $news_id = $_GET['id'];
                   	$post_data = mysqli_fetch_assoc($result1); 
     				$post_title = $post_data["title"];
     				$post_ext_link = $post_data["ext_link"];
-                } ?>
+                } 
+                $url = $post_ext_link;
+                $grab = new DataGraber($url);
+                if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
+                	echo $titles = $grab->getTitle();
+        			echo $image = $grab->getThumbnail();
+        			echo $description = $grab->getDescription();
+                }
+                ?>
                 <h2><?php echo $post_title;?></h2>
                 <p><a href="<?php echo $post_ext_link; ?>">Read This News Here</a></p>
             </div>
