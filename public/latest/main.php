@@ -190,42 +190,4 @@ class DataGraber{
 
 }
 
-
-$response = [];
-$url = $post_ext_link;
-//$url = $_POST['url'];
-
-$grab = new DataGraber($url);
-
-if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
-    //$grab->copyImage($grab->getThumbnail(),"hel");
-    if (empty($grab->getError())){
-        $response["success"] = true;
-        $response["url"] = $url;
-        $response["title"] = $grab->getTitle();
-        $response["imgUrl"] = $grab->getThumbnail();
-        $response["des"] = $grab->getDescription();
-    }else{
-        $response["success"] = false;
-        $response["url"] = $url;
-        $response["title"] = $grab->getTitle();
-        $response["imgUrl"] = $grab->getThumbnail();
-        $response["des"] = $grab->getDescription();
-        foreach ($grab->getError() as $error){
-            $response["error"] = $error;
-        }
-    }
-
-}else{
-    $response["success"] = false;
-    $response["url"] = $url;
-    $response["title"] = $grab->getTitle();
-    $response["imgUrl"] = $grab->getThumbnail();
-    $response["des"] = $grab->getDescription();
-    if (empty($grab->getTitle())) $response["error"]="Title can't be empty";
-    elseif (empty($grab->getTitle()) && empty($grab->getThumbnail())) $response["error"]="Image source and title can't be empty";
-    else $response["error"]="Image source can't be empty";
-}
-
-print json_encode($response);
 ?>
