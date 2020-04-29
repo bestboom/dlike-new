@@ -1,5 +1,5 @@
 <?php
-include('template/header5.php'); 
+include('../template/header5.php'); 
 ?>
 </div><!-- sub-header -->
 <style>
@@ -32,6 +32,6 @@ include('template/header5.php');
             </div>
         </div>
     </div>
-<?php include('template/footer.php'); ?>
+<?php include('../template/news-footer.php'); ?>
 
 var aq = moment.unix(1588100604).format('HH:mm')
