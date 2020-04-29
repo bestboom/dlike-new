@@ -43,7 +43,7 @@ $mytimezone =  date_default_timezone_get();
                     $dt->setTimestamp($news_time);
                     $dt->setTimezone(new DateTimeZone($mytimezone));
                     $datetime = $dt->format('H:i');
-                    echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/post/".$news_id."/".$permlink."' class='news-detail'>".$row1['title']."</a><br>";
+                    echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/news/".$news_id."/".$permlink."' class='news-detail'>".$row1['title']."</a><br>";
                   }
                 } ?>
             </div>

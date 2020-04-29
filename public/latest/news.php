@@ -3,9 +3,10 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include('../template/news-header.php'); 
+include('../template/news-header.php');
+include('../functions/main.php');
 echo $link = $_GET['link'];
-
+echo $news_id = $_GET['id'];
 ?>
 </div><!-- sub-header -->
 <style>
@@ -24,24 +25,14 @@ echo $link = $_GET['link'];
     <div class="faq-section" style="padding-top:1px;">
         <div class="container news-set">
             <div style="padding-left:10px;">
-            	          <?php $sql1 = "SELECT * FROM latestnews ORDER BY id DESC LIMIT 48";
+            <?php $sql1 = "SELECT * FROM latestnews where id='$news_id'";
                 $result1 = $conn->query($sql1);
                 if ($result1->num_rows > 0) 
                 {
-                  while($row1 = $result1->fetch_assoc()) 
-                  { 
-                    $title = $row1['title'];
-                    $category = $row1['category'];
-                    $news_id = $row1['id'];
-                    $news_time = $row1['news_time'];
-                    $permlink = validationData(clean($title));
-                    $dt = new DateTime();
-                    $dt->setTimestamp($news_time);
-                    $dt->setTimezone(new DateTimeZone($mytimezone));
-                    $datetime = $dt->format('H:i');
-                    echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/post/".$news_id."/".$permlink."' class='news-detail'>".$row1['title']."</a><br>";
-                  }
+                  	$post_data = mysqli_fetch_assoc($result1); 
+    				$post_title = $post_data["title"];
                 } ?>
+                <h2></h2><?php echo $post_title;?></h2>
             </div>
         </div>
     </div>
