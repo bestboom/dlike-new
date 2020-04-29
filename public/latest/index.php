@@ -3,7 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include('../template/header5.php'); 
+include('template/header5.php'); 
+include('../functions/main.php');
 $ipInfo = file_get_contents('http://ip-api.com/json/' . $thisip);
 $ipInfo = json_decode($ipInfo);
 $timezone = $ipInfo->timezone;
@@ -33,16 +34,19 @@ $mytimezone =  date_default_timezone_get();
                 {
                   while($row1 = $result1->fetch_assoc()) 
                   { 
+                    $title = $row1['title'];
                     $category = $row1['category'];
+                    $news_id = $row1['id'];
                     $news_time = $row1['news_time'];
+                    $permlink = validationData(clean($title));
                     $dt = new DateTime();
                     $dt->setTimestamp($news_time);
                     $dt->setTimezone(new DateTimeZone($mytimezone));
                     $datetime = $dt->format('H:i');
-                    echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/".$category."' class='news-detail'>".$row1['title']."</a><br>";
+                    echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/".$news_id."/".$permlink."' class='news-detail'>".$row1['title']."</a><br>";
                   }
                 } ?>
             </div>
         </div>
     </div>
-<?php include('../template/footer.php'); ?>
+<?php include('template/footer.php'); ?>
