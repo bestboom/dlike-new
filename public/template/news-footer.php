@@ -9,16 +9,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-<script src="/assets/js/slick.min.js"></script>
-<script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/steemconnect"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.js"></script>
-<script src="https://unpkg.com/dsteem@0.10.1/dist/dsteem.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script>
 <script src="/js/steemconnect.js"></script>
-<script src="/js/toaster.js"></script>
-<script src="/js/mint.js"></script>
+
 
 <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
 <script>
