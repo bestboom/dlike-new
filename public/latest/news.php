@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include('../template/header6.php'); 
+include('../template/news-header.php'); 
 echo $link = $_GET['link'];
 echo $id = $_GET['id'];
 ?>
