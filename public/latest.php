@@ -26,7 +26,7 @@ include('template/header5.php');
                   { 
                     $category = $row1['category'];
                     $news_time = $row1['news_time'];
-                    echo "".$news_time."<i class='fas fa-clock'></i>&nbsp;<a href='https://dlike.io/latest/".$category."' class='news-detail'>".$row1['title']."</a><br>";
+                    echo "".$news_time."<i class='fas fa-step-forward'></i>&nbsp;<a href='https://dlike.io/latest/".$category."' class='news-detail'>".$row1['title']."</a><br>";
                   }
                 } ?>
             </div>
