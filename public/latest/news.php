@@ -48,8 +48,6 @@ include('../functions/main.php');
     <div class="faq-section" style="padding-top:1px;padding-bottom: 0px;">
         <div class="container news-set">
             <div class="row" style="margin: 0px">
-            <?php 
-                ?>
                 <div class="col-md-8">
 	                <h2 class="title"><?php echo $post_title;?></h2>
 	                <br>
@@ -64,12 +62,12 @@ include('../functions/main.php');
 	            	<div style="width:100%;background: #c51d24;padding: 15px;color: #fff;font-size: 1.3rem;font-weight: 600;text-align: center;">
 	            		<span style="padding-bottom: 20px;">Share on DLIKE to Get Rewarded</span><br>
 	            		<span style="font-size: 1.1rem;padding: 10px;">STEEM + DLIKER Upvotes</span><br>
-	            		<span style="font-size: 1.1rem;padding: 10px;">Daily Reward Pool</span>
+	            		<span style="font-size: 1.1rem;padding: 10px;">Daily Reward Pool</span><br>
 	            		<button style="background-color: #fff;color: #373f59;border: 2px solid transparent;border-radius: 22px;margin-bottom: 10px;margin-top: 20px;padding: 5px 25px;font-weight: 600;font-size: 18px;">Share Now</button>
 	            	</div>
 	            	<div style="margin-top: 25px;"><span style="color: #202020;font-size: 1.1rem;">Latest <?php echo $news_category; ?> News</span><hr style="margin: 0;background-color: #5f5f5f;">
 	            		<span style="margin-top: 10px;">
-	            			<?php $sql2 = "SELECT * FROM latestnews ORDER BY id DESC LIMIT 48";
+	            			<?php $sql2 = "SELECT * FROM latestnews where category='$news_category' ORDER BY id DESC LIMIT 9";
 				                $result2 = $conn->query($sql2);
 				                if ($result2->num_rows > 0) 
 				                {
@@ -79,7 +77,7 @@ include('../functions/main.php');
 				                    $side_category = $row2['category'];
 				                    $side_id = $row2['id'];
 				                    $side_permlink = validationData(clean($side_title));
-				                    echo "<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/news/".$side_category."/".$side_id."/".$side_permlink."' class='news-detail'>".$side_title."</a><br>";
+				                    echo "<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/news/".$side_category."/".$side_id."/".$side_permlink."' class='news-detail' style='font-size:0.8rem'>".$side_title."</a><br>";
 				                  }
 				                } ?>
 	            		</span>
