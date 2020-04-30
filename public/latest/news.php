@@ -45,25 +45,17 @@ include('../functions/main.php');
         </div>
     </div>
 </div>
-    <div class="faq-section" style="padding-top:1px;padding-bottom: 0px;">
-        <div class="container news-set">
-            <div class="row" style="margin: 0px">
+<div class="faq-section" style="padding-top:1px;padding-bottom: 0px;"><div class="container news-set"><div class="row" style="margin: 0px">
                 <div class="col-md-8">
-	                <h2 class="title"><?php echo $post_title;?></h2>
-	                <br>
-	                <img src="<?php echo $image;?>" style="width:100%">
-	                <br>
+	                <h2 class="title"><?php echo $post_title;?></h2><br>
+	                <img src="<?php echo $image;?>" style="width:100%"><br>
 	                <p style="padding-top: 15px;"><?php echo $description; ?></p>
-	                <p style="font-weight: bold">
-	                	<a href="<?php echo $post_ext_link; ?>" target="_blank">Continue Reading <?php echo $post_title;?></a>
-	                </p>
+	                <p style="font-weight: bold"><a href="<?php echo $post_ext_link; ?>" target="_blank">Continue Reading <?php echo $post_title;?></a></p>
 	            </div>
 	            <div class="col-md-4">
 	            	<div style="width:100%;background: #c51d24;padding: 15px;color: #fff;font-size: 1.3rem;font-weight: 600;text-align: center;">
 	            		<span style="padding-bottom: 20px;">Share on DLIKE to Get Rewarded</span><br>
-	            		<span style="font-size: 1.1rem;padding: 10px;">STEEM + DLIKER Upvotes</span><br>
-	            		<span style="font-size: 1.1rem;padding: 10px;">Daily Reward Pool</span><br>
-	            		<button style="background-color: #fff;color: #373f59;border: 2px solid transparent;border-radius: 22px;margin-bottom: 10px;margin-top: 20px;padding: 5px 25px;font-weight: 600;font-size: 18px;">Share Now</button>
+	            		<span style="font-size: 1.1rem;padding: 10px;">STEEM + DLIKER Upvotes</span><br><span style="font-size: 1.1rem;padding: 10px;">Daily Reward Pool</span><br><button style="background-color: #fff;color: #373f59;border: 2px solid transparent;border-radius: 22px;margin-bottom: 10px;margin-top: 20px;padding: 5px 25px;font-weight: 600;font-size: 18px;">Share Now</button>
 	            	</div>
 	            	<div style="margin-top: 25px;"><span style="color: #202020;font-size: 1.1rem;">Latest <?php echo $news_category; ?> News</span><hr style="margin: 0;background-color: #5f5f5f;">
 	            		<span style="margin-top: 10px;">
@@ -83,7 +75,5 @@ include('../functions/main.php');
 	            		</span>
 	            	</div>
 	            </div>
-            </div>
-        </div>
-    </div>
+</div></div></div>
 <?php include('../template/news-footer.php'); ?>
