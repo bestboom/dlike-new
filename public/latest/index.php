@@ -28,7 +28,8 @@ $mytimezone =  date_default_timezone_get();
     <div class="faq-section" style="padding-top:1px;">
         <div class="container news-set">
             <div style="padding-left:10px;">
-          <?php $sql1 = "SELECT * FROM latestnews ORDER BY id DESC LIMIT 48";
+              <h3>Cryptocurrencies</h3><hr style="margin: 0;background-color: #5f5f5f;">
+              <?php $sql1 = "SELECT * FROM latestnews ORDER BY id DESC LIMIT 48";
                 $result1 = $conn->query($sql1);
                 if ($result1->num_rows > 0) 
                 {
