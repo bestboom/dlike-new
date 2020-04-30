@@ -3,6 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include('../includes/config.php');
+include('../latest/main.php');  
 $link = $_GET['link'];
 $news_id = $_GET['id'];
 $sql1 = "SELECT * FROM latestnews where id='$news_id'";
@@ -19,8 +20,11 @@ $sql1 = "SELECT * FROM latestnews where id='$news_id'";
 		$image = $grab->getThumbnail();
 		$description = $grab->getDescription();
     }
+$og_title = $post_title;
+$og_description = $description;
+$og_image = $image;
 include('../template/news-header.php');
-include('../latest/main.php');    
+  
 ?>
 </div><!-- sub-header -->
 <style>
