@@ -79,11 +79,7 @@ class DataGraber{
             foreach($imgSrc as $thumbnail) { 
 			return $thumbnail;
 				}
-        }elseif($meta->getAttribute('property') == 'og:image') {
-            if(filter_var($meta->getAttribute('content'), FILTER_VALIDATE_URL)) {
-               $this->thumbnail = $meta->getAttribute('content');
-            }        
-		}else{
+        }else{
 			$thumbnail='https://dlike.io/images/default-img.png';	
 			return $thumbnail;
 			}
