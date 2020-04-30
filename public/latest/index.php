@@ -15,8 +15,28 @@ $mytimezone =  date_default_timezone_get();
   <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest News</h3></div></div>
 </div>
 <div class="faq-section" style="padding-top:1px;"><div class="container news-set"><div style="padding-left:10px;">
-<h3>Cryptocurrencies</h3><hr style="margin: 0;background-color: #5f5f5f;">
-  <?php $sql1 = "SELECT * FROM latestnews ORDER BY id DESC LIMIT 48";
+<h3 style="font-weight: 600;font-size: 24px;">Cryptocurrencies</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+  <?php $sql1 = "SELECT * FROM latestnews where category='cryptocurrency' ORDER BY id DESC LIMIT 13";
+    $result1 = $conn->query($sql1);
+    if ($result1->num_rows > 0) 
+    {
+      while($row1 = $result1->fetch_assoc()) 
+      { 
+        $title = $row1['title'];
+        $category = $row1['category'];
+        $news_id = $row1['id'];
+        $news_time = $row1['news_time'];
+        $permlink = validationData(clean($title));
+        $dt = new DateTime();
+        $dt->setTimestamp($news_time);
+        $dt->setTimezone(new DateTimeZone($mytimezone));
+        $datetime = $dt->format('H:i');
+        echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/news/".$category."/".$news_id."/".$permlink."' class='news-detail'>".$row1['title']."</a><br>";
+      }
+    } ?>
+<br>
+<h3 style="font-weight: 600;font-size: 24px;">Technology</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+  <?php $sql1 = "SELECT * FROM latestnews where category='technology' ORDER BY id DESC LIMIT 13";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
     {
