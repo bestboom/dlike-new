@@ -7,4 +7,4 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
-RewriteRule ^news/(.*)/(.*)$ ./news.php?id=$1&link=$2
+RewriteRule ^news/(.*)/(.*)/(.*)$ ./news.php?category=$1&id=$2&link=$3

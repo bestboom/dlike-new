@@ -6,6 +6,7 @@ include('../includes/config.php');
 include('../latest/main.php');  
 $link = $_GET['link'];
 $news_id = $_GET['id'];
+$news_category = $_GET['category'];
 $sql1 = "SELECT * FROM latestnews where id='$news_id'";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
@@ -23,6 +24,8 @@ $sql1 = "SELECT * FROM latestnews where id='$news_id'";
 $og_title = $post_title;
 $og_description = $description;
 $og_image = $image;
+$uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$og_url = $uri;
 include('../template/news-header.php');
   
 ?>
@@ -57,7 +60,8 @@ include('../template/news-header.php');
 	                </p>
 	            </div>
 	            <div class="col-md-4">
-	            	<div style="width:100%;background: #24487d;padding: 15px;color: #fff;font-size: 24px;">Share on DLIKE to Get Rewarded</div>
+	            	<div style="width:100%;background: #c51d24;padding: 15px;color: #fff;font-size: 1.3rem;font-weight: 600;text-align: center;">Share on DLIKE to Get Rewarded<br><span>STEEM + DLIKER Upvotes</span><br><span>Daily Reward Pool</span><br><button style="background-color: #fff;color: #373f59;border: 2px solid transparent;border-radius: 32px;font-size: 18px;">Share Now</button></div>
+	            	<div style="margin-top: 25px;"><span style="border-bottom: 1px solid #111;">Latest <?php echo $news_category; ?> News</span></div>
 	            </div>
             </div>
         </div>
