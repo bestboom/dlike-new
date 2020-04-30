@@ -1,4 +1,3 @@
-<?php include('../includes/config.php'); ?>
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <?php if(basename($_SERVER['PHP_SELF']) == 'post.php'){ ?><title><?php echo $og_title; ?></title>   
 <meta name="description" content="<?php echo $og_description; ?>" />

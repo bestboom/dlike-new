@@ -11,8 +11,6 @@
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/steemconnect"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-<script src="/js/steemconnect.js"></script>
-
 
 <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
 <script>

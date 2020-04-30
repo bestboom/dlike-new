@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+include('../includes/config.php');
 include('../template/news-header.php'); 
 include('../functions/main.php');
 $ipInfo = file_get_contents('http://ip-api.com/json/' . $thisip);

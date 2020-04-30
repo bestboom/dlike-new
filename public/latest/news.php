@@ -2,12 +2,25 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-include('../template/news-header.php');
-include('../latest/main.php');
+include('../includes/config.php');
 $link = $_GET['link'];
 $news_id = $_GET['id'];
-
+$sql1 = "SELECT * FROM latestnews where id='$news_id'";
+    $result1 = $conn->query($sql1);
+    if ($result1->num_rows > 0) 
+    {
+      	$post_data = mysqli_fetch_assoc($result1); 
+		$post_title = $post_data["title"];
+		$post_ext_link = $post_data["ext_link"];
+    } 
+    $url = $post_ext_link;
+    $grab = new DataGraber($url);
+    if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
+		$image = $grab->getThumbnail();
+		$description = $grab->getDescription();
+    }
+include('../template/news-header.php');
+include('../latest/main.php');    
 ?>
 </div><!-- sub-header -->
 <style>
@@ -27,20 +40,7 @@ $news_id = $_GET['id'];
     <div class="faq-section" style="padding-top:1px;padding-bottom: 0px;">
         <div class="container news-set">
             <div class="row" style="margin: 0px">
-            <?php $sql1 = "SELECT * FROM latestnews where id='$news_id'";
-                $result1 = $conn->query($sql1);
-                if ($result1->num_rows > 0) 
-                {
-                  	$post_data = mysqli_fetch_assoc($result1); 
-    				$post_title = $post_data["title"];
-    				$post_ext_link = $post_data["ext_link"];
-                } 
-                $url = $post_ext_link;
-                $grab = new DataGraber($url);
-                if (!empty($grab->getTitle()) && !empty($grab->getThumbnail())){
-        			$image = $grab->getThumbnail();
-        			$description = $grab->getDescription();
-                }
+            <?php 
                 ?>
                 <div class="col-md-8">
 	                <h2 class="title"><?php echo $post_title;?></h2>
@@ -49,10 +49,12 @@ $news_id = $_GET['id'];
 	                <br>
 	                <p style="padding-top: 15px;"><?php echo $description; ?></p>
 	                <p style="font-weight: bold">
-	                	<a href="<?php echo $post_ext_link; ?>">Continue Reading <?php echo $post_title;?></a>
+	                	<a href="<?php echo $post_ext_link; ?>" target="_blank">Continue Reading <?php echo $post_title;?></a>
 	                </p>
 	            </div>
-	            <div class="col-md-4"></div>
+	            <div class="col-md-4">
+	            	<div style="width:100%;background: #24487d;padding: 15px;color: #fff;font-size: 24px;">Share on DLIKE to Get Rewarded</div>
+	            </div>
             </div>
         </div>
     </div>
