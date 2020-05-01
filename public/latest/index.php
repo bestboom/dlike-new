@@ -135,7 +135,7 @@ $mytimezone =  date_default_timezone_get();
       }
     } ?>
 <br>
-<h3 style="font-weight: 600;font-size: 24px;">Entertainment</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/entertainment">Entertainment</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
 <?php $sql1 = "SELECT * FROM latestnews where category='entertainment' ORDER BY id DESC LIMIT 13";
   $result1 = $conn->query($sql1);
   if ($result1->num_rows > 0) 

@@ -36,6 +36,7 @@ include('../functions/main.php');
 </div>
 <div class="faq-section" style="padding-top:1px;padding-bottom: 0px;"><div class="container news-set"><div class="row" style="margin: 0px">
     <div class="col-md-8">
+        <div class="row"><a href="/latest">Latest News</a> > <a href="/latest/<?php echo ucfirst($news_category); ?>"></a></div>
         <h2 class="title"><?php echo $post_title;?></h2><hr style="margin-top: 1px; margin-bottom: 5px;background-color: #202020;">
         <span class="row" style="margin:0px;margin-bottom: 10px;">By <?php echo $post_source; ?> | Time: </span>
         <img src="<?php echo $image;?>" style="width:100%"><br>
