@@ -14,6 +14,7 @@ $sql1 = "SELECT * FROM latestnews where id='$news_id'";
       	$post_data = mysqli_fetch_assoc($result1); 
 		$post_title = $post_data["title"];
 		$post_ext_link = $post_data["ext_link"];
+		$post_source = $post_data["resource"];
     } 
     $url = $post_ext_link;
     $grab = new DataGraber($url);
@@ -31,11 +32,12 @@ include('../template/news-header.php');
 include('../functions/main.php');
 ?></div><!-- sub-header -->
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
-    <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest <?php echo $news_category; ?> News</h3></div></div>
+    <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest <?php echo ucfirst($news_category); ?> News</h3></div></div>
 </div>
 <div class="faq-section" style="padding-top:1px;padding-bottom: 0px;"><div class="container news-set"><div class="row" style="margin: 0px">
     <div class="col-md-8">
-        <h2 class="title"><?php echo $post_title;?></h2><br>
+        <h2 class="title"><?php echo $post_title;?></h2><hr style="margin-top: 1px; margin-bottom: 5px;background-color: #202020;">
+        <span class="row">By <?php echo $post_source; ?> | Time: </span>
         <img src="<?php echo $image;?>" style="width:100%"><br>
         <p style="padding-top: 15px;"><?php echo $description; ?></p>
         <p style="font-weight: bold"><a href="<?php echo $post_ext_link; ?>" target="_blank">Continue Reading <?php echo $post_title;?></a></p>
