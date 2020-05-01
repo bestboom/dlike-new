@@ -16,6 +16,7 @@ $mytimezone =  date_default_timezone_get();
   <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest <?php echo ucfirst($page_category); ?> News</h3></div></div>
 </div>
 <div class="faq-section" style="padding-top:1px;"><div class="container news-set"><div style="padding-left:10px;">
+  <div class="row" style="margin: 2px;font-size: 0.85rem;color: #c51d24;"><a href="/latest">Latest News </a> &nbsp; > &nbsp; <?php echo ucfirst($age_category); ?></div>
   <?php $sql1 = "SELECT * FROM latestnews where category='$page_category' ORDER BY id DESC LIMIT 54";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
