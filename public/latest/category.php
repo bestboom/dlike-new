@@ -13,7 +13,7 @@ date_default_timezone_set($timezone);
 $mytimezone =  date_default_timezone_get();
 ?></div><!-- sub-header -->
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
-  <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest <?php echo ucfirst($news_category); ?> News</h3></div></div>
+  <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest <?php echo ucfirst($page_category); ?> News</h3></div></div>
 </div>
 <div class="faq-section" style="padding-top:1px;"><div class="container news-set"><div style="padding-left:10px;">
   <?php $sql1 = "SELECT * FROM latestnews where category='$page_category' ORDER BY id DESC LIMIT 54";
