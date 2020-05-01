@@ -37,7 +37,7 @@ include('../functions/main.php');
 <div class="faq-section" style="padding-top:1px;padding-bottom: 0px;"><div class="container news-set"><div class="row" style="margin: 0px">
     <div class="col-md-8">
         <h2 class="title"><?php echo $post_title;?></h2><hr style="margin-top: 1px; margin-bottom: 5px;background-color: #202020;">
-        <span class="row">By <?php echo $post_source; ?> | Time: </span>
+        <span class="row" style="margin:0px;margin-bottom: 10px;">By <?php echo $post_source; ?> | Time: </span>
         <img src="<?php echo $image;?>" style="width:100%"><br>
         <p style="padding-top: 15px;"><?php echo $description; ?></p>
         <p style="font-weight: bold"><a href="<?php echo $post_ext_link; ?>" target="_blank">Continue Reading <?php echo $post_title;?></a></p>
