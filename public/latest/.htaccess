@@ -8,4 +8,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteRule ^news/(.*)/(.*)/(.*)$ ./news.php?category=$1&id=$2&link=$3
-RewriteRule ^(.*) ./category.php?cat=$1
+RewriteRule ^?(.*)$ ./category.php?cat=$1
