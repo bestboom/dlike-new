@@ -15,7 +15,7 @@ $mytimezone =  date_default_timezone_get();
   <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest News</h3></div></div>
 </div>
 <div class="faq-section" style="padding-top:1px;"><div class="container news-set"><div style="padding-left:10px;">
-<h3 style="font-weight: 600;font-size: 24px;">World News</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/category/world">World News</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
   <?php $sql1 = "SELECT * FROM latestnews where category='world' ORDER BY id DESC LIMIT 13";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
@@ -35,7 +35,7 @@ $mytimezone =  date_default_timezone_get();
       }
     } ?>
 <br>  
-<h3 style="font-weight: 600;font-size: 24px;">Cryptocurrencies</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/category/cryptocurrency">Cryptocurrencies</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
   <?php $sql1 = "SELECT * FROM latestnews where category='cryptocurrency' ORDER BY id DESC LIMIT 13";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
@@ -55,7 +55,7 @@ $mytimezone =  date_default_timezone_get();
       }
     } ?>
 <br>
-<h3 style="font-weight: 600;font-size: 24px;">Business</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/category/business">Business</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
   <?php $sql1 = "SELECT * FROM latestnews where category='business' ORDER BY id DESC LIMIT 13";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
@@ -75,7 +75,7 @@ $mytimezone =  date_default_timezone_get();
       }
     } ?>
 <br> 
-<h3 style="font-weight: 600;font-size: 24px;">Technology</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/category/technology">Technology</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
   <?php $sql1 = "SELECT * FROM latestnews where category='technology' ORDER BY id DESC LIMIT 13";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
@@ -95,7 +95,7 @@ $mytimezone =  date_default_timezone_get();
       }
     } ?>
 <br>
-<h3 style="font-weight: 600;font-size: 24px;">Sports</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/category/sports">Sports</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
   <?php $sql1 = "SELECT * FROM latestnews where category='sports' ORDER BY id DESC LIMIT 13";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
@@ -115,7 +115,7 @@ $mytimezone =  date_default_timezone_get();
       }
     } ?>
 <br>
-<h3 style="font-weight: 600;font-size: 24px;">Football</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/category/football">Football</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
   <?php $sql1 = "SELECT * FROM latestnews where category='football' ORDER BY id DESC LIMIT 13";
     $result1 = $conn->query($sql1);
     if ($result1->num_rows > 0) 
@@ -135,7 +135,7 @@ $mytimezone =  date_default_timezone_get();
       }
     } ?>
 <br>
-<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/entertainment">Entertainment</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
+<h3 style="font-weight: 600;font-size: 24px;"><a href="/latest/category/entertainment">Entertainment</a></h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
 <?php $sql1 = "SELECT * FROM latestnews where category='entertainment' ORDER BY id DESC LIMIT 13";
   $result1 = $conn->query($sql1);
   if ($result1->num_rows > 0) 
