@@ -134,25 +134,5 @@ $mytimezone =  date_default_timezone_get();
         echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/news/".$category."/".$news_id."/".$permlink."' class='news-detail'>".$row1['title']."</a><br>";
       }
     } ?>
-<br>       
-<h3 style="font-weight: 600;font-size: 24px;">Entertainment</h3><hr style="margin-top: 0;background-color: #5f5f5f;margin-bottom: 10px;">
-<?php $sql1 = "SELECT * FROM latestnews where category='entertainment' ORDER BY id DESC LIMIT 13";
-  $result1 = $conn->query($sql1);
-  if ($result1->num_rows > 0) 
-  {
-    while($row1 = $result1->fetch_assoc()) 
-    { 
-      $title = $row1['title'];
-      $category = $row1['category'];
-      $news_id = $row1['id'];S
-      $news_time = $row1['news_time'];
-      $permlink = validationData(clean($title));
-      $dt = new DateTime();
-      $dt->setTimestamp($news_time);
-      $dt->setTimezone(new DateTimeZone($mytimezone));
-      $datetime = $dt->format('H:i');
-      echo "".$datetime."&nbsp;<i class='fas fa-step-forward' style='color: #c51d24;'></i>&nbsp;&nbsp;<a href='https://dlike.io/latest/news/".$category."/".$news_id."/".$permlink."' class='news-detail'>".$row1['title']."</a><br>";
-    }
-  } ?>
 </div></div></div>
 <?php include('../template/news-footer.php'); ?>
