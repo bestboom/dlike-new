@@ -399,6 +399,7 @@ validMsg.classList.add("hide");
         let my_name = $('#my_username2').html();
         let my_email = $('#my_email').html();
         var refer_by = $('#refer_by').val();
+        console.log(refer_by);
         var loct = $('#user_loc').val();
         
          $.ajax({

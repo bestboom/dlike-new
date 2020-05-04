@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$sql_C = "SELECT count( DISTINCT(username) ) as total FROM Referrals";
+$sql_C = "SELECT count( DISTINCT(username) ) as total FROM referrals";
 $result_C = $conn->query($sql_C);
 $row_C = $result_C->fetch_assoc();
 ?>
@@ -34,7 +34,7 @@ $row_C = $result_C->fetch_assoc();
 			</thead>
 			<tbody style="text-align: center;">
 				<?php 
-				$sql_T = "SELECT * FROM Referrals ORDER BY entry_time DESC";
+				$sql_T = "SELECT * FROM referrals ORDER BY entry_time DESC";
 				$result_T = $conn->query($sql_T);
 
 				if ($result_T && $result_T->num_rows > 0) {
