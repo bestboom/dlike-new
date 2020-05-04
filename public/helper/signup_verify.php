@@ -131,7 +131,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
 
 							 if($refer_by !='dlike'){
 
-								$sqlR = "INSERT INTO Referrals (username, refer_by, entry_time)
+								$sqlR = "INSERT INTO referrals (username, refer_by, entry_time)
 									VALUES ('".$user."', '".$refer_by."', now())";
 								
 								if (mysqli_query($conn, $sqlR)) {
