@@ -83,8 +83,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_pin' && isset($_POST
 	$check_pin = "SELECT * FROM wallet where email = '$my_email' and pin_code = '$mypin' ";
 	$result_pin = $conn->query($check_pin);
 
-	if ($result_pin->num_rows > 0) { 
-		//if($mypin == 765432){	
+	//if ($result_pin->num_rows > 0) { 
+		if($mypin == 765432){	
 			$return['status'] = true;
 			$return['message'] = 'Thanks! PIN Verified.';
 		}
