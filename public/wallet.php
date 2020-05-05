@@ -275,7 +275,7 @@ if ($user_eth == '') {
                                     </p>
                                     <h4 class="bell-bold">Benefits of DLIKE Affiliate Program</h4>
                                     <p>
-                                    <li>50 DLIKE tokens for every user you refer</li>
+                                    <li>20 DLIKE tokens for every user you refer</li>
                                     <li>Earn reward points for every new post made by your referrals</li>
                                     </p>
                                     <h4 class="bell-bold">My Referral Link</h4>

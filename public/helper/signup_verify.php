@@ -106,8 +106,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
 	$loct_ip = $_POST['loct'];
 	$email = $_POST['email'];
 	//$phone_num = md5($phone);
-	$signup_bonus = 20;
-	$referral_bonus = 50;
+	$signup_bonus = 10;
+	$referral_bonus = 20;
 	$signup_reason = 'Signup Bonus';
 	$referral_reason = 'Referral Bonus';
 
