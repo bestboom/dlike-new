@@ -35,7 +35,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <p class="signup-signup-description">
                                      New signups through DLIKE are closed till further notice!
                                 </p>
-                                <button onclick="window.location.href='https://steemconnect.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemconnect&scope=';" type="button" class="btn btn-success">Login</button>
+                                <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-success">Login</button>
                             </div>
                         </div>
                     </div>
