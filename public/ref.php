@@ -12,12 +12,15 @@ $user = $_GET['user'];
 			{ 
 				$rows  = $result_T->fetch_assoc();
     			echo $referrer = $rows['refer_by'];
+    			echo '<br>';
 			} else {
-				echo 'there is no referrer in this table';
+				echo $referrer = 'none';
+				echo '<br>';
 			}
 
+			if($referrer == "dlike" || $referrer == "none"){ echo "dlike-bene=7.5"; }
+			else{echo "dlike-bene=5";}
 
 	?>
 </div>
-
 <?php include('template/footer.php'); ?>
