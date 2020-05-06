@@ -300,7 +300,7 @@ ClassicEditor
                                     };
                                     $.ajax({
                                         type: "POST",
-                                        url: "/helper/post/submit_post.php",
+                                        url: "/helper/post/submit_post2.php",
                                         data: datam,
                                         
                                         success: function(data) {
