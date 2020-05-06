@@ -125,54 +125,6 @@
                 return null;
             }
         }
-        $('.shareme').click(function(clickEvent) {
-            //let text_words = $.trim($('form [name="description"]').val()).split(' ').filter(function(v){return v!==''}).length;
-            let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
-            console.log({ text_words })
-            if (text_words.length < 40) {
-                showModalError(
-                    "Make Sure..",
-                    "Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article.",
-                    ""
-                );
-                return false;
-            }
-
-            if ($('.catg').val() == "0") {
-                $('.catg').css("border-color", "RED");
-                showModalError(
-                    "uh-oh..",
-                    "You must Select an appropriate Category",
-                    ""
-                );
-                return false;
-            }
-
-            // tag check
-            var tags = $('.tags').val();
-            tags = $.trim(tags);
-            tags = tags.split(' ');
-
-            if (tags.length < 2) {
-                $('.tags').css("border-color", "RED");
-                showModalError(
-                    "uh-oh..",
-                    "Please add at least two related tags",
-                    ""
-                );
-                return false;
-            }
-            if ($('.title_field').val() == "") {
-                showModalError(
-                    "uh-oh..",
-                    "Title Should not be empty!",
-                    ""
-                );
-                return false;
-            }
-
-            $('form').submit();
-        });
 
         function showModalError(title, content, callback) {
             $("#alert-title-error").text(title);
@@ -342,18 +294,6 @@
             },
         });
     });
-    //logout
-    $('.logout_btn').click(function() {
-        api.revokeToken(function(err_log, result_log) {
-            if (result_log && result_log.success) {
-                $.removeCookie('username', { path: '/' });
-                $.removeCookie('access_token', { path: '/' });
-                document.location.href = '/';
-            }
-        });
-    });
-
-
     // here starts dlike-steem-upvote
     $('.latest-post-section, #user_posts').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
@@ -392,23 +332,6 @@
         if (username != null) {
             $('#upvoting-bar').hide();
             $('#upvoting-status').show();
-            /*
-            api.vote(voter, v_authorname, v_permlink, weight, function (err, res) {
-                console.log(err, res)
-            
-                if(res.result) {
-                    toastr.success('upVote done successfully!');
-                    $('#upvoteModal').modal('hide');
-                    $('#upvoting-status').hide();
-                    $('#upvoting-bar').show();
-                } else {
-                    toastr.error('There is some issue!');
-                    $('#upvoteModal').modal('hide');
-                    $('#upvoting-status').hide();
-                    $('#upvoting-bar').show();
-                }
-            });
-            */
             $.ajax({
                 type: "POST",
                 url: "/helper/vote.php",
@@ -455,6 +378,3 @@
         var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
         return pattern.test(emailAddress);
     }
-    //chat
-    //function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','//www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}
-    //ChatbroLoader({encodedChatId: '938nz'});
