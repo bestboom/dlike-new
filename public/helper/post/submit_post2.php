@@ -20,19 +20,19 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["main_bo
 	$parent_ctegory = 'hive-116221';
 	$_POST['tags'] = "hive-116221,dlike," . preg_replace('#\s+#', ',', trim(strtolower($_POST['tags'])));
 
-	$sql_T = "SELECT * FROM referrals where username = '$user'";
+	$sql_T = "SELECT * FROM referrals where username = '$posting_user'";
 		$result_T = $conn->query($sql_T);
 		if ($result_T && $result_T->num_rows > 0) 
 		{ 
 			$rows  = $result_T->fetch_assoc();
 			$referrer = $rows['refer_by'];
 		} else {
-			echo $referrer = 'none';
+			$referrer = 'none';
 		}
 
 		if($referrer == "dlike" || $referrer == "none")
 			{ $_POST['benefactor'] = "dlike:7.5,dlike.fund:2.5";}
-			else{$_POST['benefactor'] = $referrer.":2.5,dlike:5,dlike.fund:2.5";}
+			else{$_POST['benefactor'] = "dlike:5,".$referrer.":2.5,dlike.fund:2.5";}
 
 	/*$_POST["description"] = preg_replace('#<p>(\s|&nbsp;|</?\s?br\s?/?>)*</?p>#', '', $_POST["description"]);*/
 
@@ -76,7 +76,7 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["main_bo
 	$redirect_url = 'https://dlike.io/post/@' . $posting_user .'/'. $permlink;
 
 	if ($title !='') {
-	    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
+	    $publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, $beneficiaries, $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
 	    $state = $postGenerator->broadcast($publish);
 
 		if (isset($state->result)) { 
