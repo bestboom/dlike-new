@@ -20,4 +20,4 @@ $user = $_GET['user'];
 	?>
 </div>
 
-<?php include('template/footer.php'); } ?>
+<?php include('template/footer.php'); ?>
