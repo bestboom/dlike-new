@@ -36,11 +36,23 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
         $max_accepted_payout = '900.000 SBD';
 		$percent_steem_dollars =10000;
     }
+    $posting_user = $_COOKIE['username'];
+	$sql_T = "SELECT * FROM referrals where username = '$posting_user'";
+		$result_T = $conn->query($sql_T);
+		if ($result_T && $result_T->num_rows > 0) 
+		{ 
+			$rows  = $result_T->fetch_assoc();
+			$referrer = $rows['refer_by'];
+		} else {
+			$referrer = 'none';
+		}
 
-    $_POST['benefactor'] = "dlike:7.5,dlike.fund:2.5";
+		if($referrer == "dlike" || $referrer == "none")
+		{ $_POST['benefactor'] = "dlike:7.5,dlike.fund:2.5";}
+		else{$_POST['benefactor'] = "dlike:5,".$referrer.":2.5,dlike.fund:2.5";}
+    //$_POST['benefactor'] = "dlike:7.5,dlike.fund:2.5";
     $beneficiaries = genBeneficiaries($_POST['benefactor']);
 
-    $posting_user = $_COOKIE['username'];
     $url = 'https://dlike.io/post/@' . $posting_user .'/'. $permlink;
 
 	$json_metadata = [
@@ -58,7 +70,7 @@ if (isset($_POST["story_title"]) && isset($_POST["story_tags"]) && isset($_POST[
 	$body = "\n\n#####\n\n " . $_POST['story_content'] . "  \n\n#####\n\n <center><hr><br><a href='https://dlike.io/post/@" . $posting_user . "/" . $permlink . "'><img src='https://dlike.io/images/dlike-logo.jpg'></a></center>";
 
 	if ($title !='') {
-		$publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, genBeneficiaries($_POST['benefactor']), $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
+		$publish = $postGenerator->createPost($title, $body, $json_metadata, $permlink, $beneficiaries, $parent_ctegory, $max_accepted_payout, $percent_steem_dollars);
     	$state = $postGenerator->broadcast($publish);
 
     	if (isset($state->result)) { 
