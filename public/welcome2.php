@@ -30,9 +30,12 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     This is open email login (not steem blockchain).
                                 </p>
                                 <form name="email_login_form">
-                                    <span class="input-username">
-                                        <input type="email" name="email" id="email_login_id" placeholder="enter email address" class="form-control" /><span class="fa fas fa-envelope"></span>
-                                    </span>
+                                    <div class="input-username mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text mb-deck"> <span class="fa fas fa-envelope"></span></div>
+                                        </span>
+                                        <input type="email" name="email" id="email_login_id" placeholder="enter email address" class="form-control" />
+                                    </div>
                                     <span class="input-username">
                                         <input type="password" name="email_pass" id="email_pass" placeholder="enter password" class="form-control" /><span class="fa fas fa-lock"></span>
                                     </span>
