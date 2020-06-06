@@ -36,3 +36,5 @@ RewriteRule ^post/(.*)/(.*)$ ./post.php?user=$1&link=$2
 RewriteRule ^help$ ./help.php
 RewriteRule ^staking$ ./staking.php
 #RewriteRule ^token$ ./token.php
+RewriteRule ^welcomeit$ ./welcome2.php
+RewriteRule ^welcomeits$ ./welcome3.php
