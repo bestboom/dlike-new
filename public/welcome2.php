@@ -11,7 +11,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
         <div class="contact-info-wrap">
             <div class="row">
                 <div class="col-md-6 signin_main_block">
-                    <div class="row">
+                    <div class="row" style="margin: 0px;">
                         <div class="map-block signin_block">
                             <div class="contact-info-inner signin_inner">
                                 <h4 class="signin_head">Existing User</h4>
@@ -25,13 +25,9 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
 
                         <div class="map-block signin_email_block" style="display: none">
                             <div class="contact-info-inner signup_inner">
-                                <h4>Add Email</h4>
-                                <span class="signup-signup-icon">
-                                    <span class="fas fa-envelope"></span>
-                                </span>
+                                <h4>Email Login</h4>
                                 <p class="signup-signup-description">
-                                    Hello <b>@<span id="my_username"></span></b>! <br>
-                                    Make sure to enter a valid email address.
+                                    This is open email login (not steem blockchain).
                                 </p>
                                 <form name="email_login_form">
                                     <span class="input-username">
@@ -42,9 +38,8 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <input type="password" name="email_pass" id="email_pass" placeholder="enter password" class="form-control" />
                                         <span class="fa fas fa-lock"></span>
                                     </span>
-                                    <button class="btn btn-default">
-                                        LOGIN
-                                    </button>
+                                    <span class="error_message" style="display: none"></span>
+                                    <button class="btn btn-default" style="padding-top: 15px;">LOGIN</button>
                                 </form>
                             </div>
                         </div>
