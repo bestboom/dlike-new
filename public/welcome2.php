@@ -30,20 +30,20 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     This is open email login (not steem blockchain).
                                 </p>
                                 <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
-                                    <div class="input-username mb-3">
+                                    <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck"> <span class="fa fas fa-envelope"></span></div>
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
                                         </div>
-                                        <input type="email" name="email" id="email_login_id" placeholder="enter email address" class="form-control" />
+                                        <input type="email" name="email" id="email_login_id" placeholder="Email Address" class="form-control" />
                                     </div>
-                                    <div class="input-username mb-3">
+                                    <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck"> <span class="fa fas fa-lock"></span></div>
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
                                         </div>
-                                        <input type="password" name="email_pass" id="email_pass" placeholder="enter password" class="form-control" />
+                                        <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                                     </div>
                                     <div class="error_message" style="display: none"></div>
-                                    <button class="btn btn-default" style="margin-top: 15px;">LOGIN</button>
+                                    <button class="btn btn-primary" style="margin-top: 15px;">LOGIN</button>
                                 </form>
                             </div>
                         </div>
