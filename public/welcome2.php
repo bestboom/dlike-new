@@ -81,7 +81,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                     </div>
 
                     <div class="map-block signup-signup-email" style="display: none;">
-                        <div class="contact-info-block signup_email_block">
+                        <div class="map-block signup_email_block">
                             <div class="contact-info-inner" style="margin-top: 15%;">
                                 <h4 class="sign_head">Signup</h4>
                                 <form name="email_signup" style="margin-top: 15px;margin-left: 10%;margin-right: 10%;width: unset;float: none;">
