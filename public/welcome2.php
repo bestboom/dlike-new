@@ -219,7 +219,7 @@ function emailLogin() {
     var signin_text_section = Signin_main_section.querySelector('.signin_block');
     var signin_email_section   = Signin_main_section.querySelector('.signup-signup-email');
 
-    jQuery(pinit).animate({
+    jQuery(signin_text_section).animate({
         opacity: 0,
         top    : -20
     }, 300, function () {
