@@ -24,22 +24,20 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
 
                         <div class="map-block signin_email_block" style="display: none">
-                            <div class="contact-info-inner signup_inner">
-                                <h4>Email Login</h4>
+                            <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
+                                <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Email Login</h4>
                                 <p class="signup-signup-description">
                                     This is open email login (not steem blockchain).
                                 </p>
                                 <form name="email_login_form">
                                     <span class="input-username">
-                                        <input type="email" name="email" id="email_login_id" placeholder="enter email address" class="form-control" />
-                                        <span class="fa fas fa-envelope"></span>
+                                        <input type="email" name="email" id="email_login_id" placeholder="enter email address" class="form-control" /><span class="fa fas fa-envelope"></span>
                                     </span>
                                     <span class="input-username">
-                                        <input type="password" name="email_pass" id="email_pass" placeholder="enter password" class="form-control" />
-                                        <span class="fa fas fa-lock"></span>
+                                        <input type="password" name="email_pass" id="email_pass" placeholder="enter password" class="form-control" /><span class="fa fas fa-lock"></span>
                                     </span>
                                     <span class="error_message" style="display: none"></span>
-                                    <button class="btn btn-default" style="padding-top: 15px;">LOGIN</button>
+                                    <button class="btn btn-default" style="margin-top: 15px;">LOGIN</button>
                                 </form>
                             </div>
                         </div>
