@@ -66,7 +66,21 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
                     </div>
 
-                    <div class="row signup-signup-steemit" style="display: block;">
+                    <div class="row signup-signup-first" style="display: block;">
+                        <div class="contact-info-block signup_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Create Account</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fas fa-user"></span>
+                                </span>
+                                <button type="button" class="btn btn-default signin_btn signup_steem_btn">Create STEEM Account</button>
+                                <h4>OR</h4>
+                                <button type="button" class="btn btn-default signin_btn signup_email_btn">Signup With Email</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row signup-signup-steemit" style="display: none;">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4 class="sign_head">Create Account</h4>
@@ -235,7 +249,32 @@ function emailLogin() {
     });
 }
 
+function signupwithsteem() {
+
+    var Signup_main_block  = document.querySelector('.signup-signup');
+    var signup_first_block = Signup_main_block.querySelector('.signup-signup-first');
+    var signup_steem_block   = Signup_main_block.querySelector('.signup-signup-steemit');
+
+    jQuery(signup_first_block).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        pinit.style.display = 'none';
+
+        signup_steem_block.style.opacity = 0;
+        signup_steem_block.style.top     = '50px';
+        signup_steem_block.style.display = '';
+
+        jQuery(signup_steem_block).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
 $('.signin_email_btn').click(function() {
     emailLogin();
+});
+$('.signup_steem_btn').click(function() {
+    signupwithsteem();
 });
 </script>
