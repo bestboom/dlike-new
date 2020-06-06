@@ -10,16 +10,42 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
     <div class="contact-info-outer welcome">
         <div class="contact-info-wrap">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 signin_main_block">
                     <div class="row">
                         <div class="map-block signin_block">
                             <div class="contact-info-inner signin_inner">
                                 <h4 class="signin_head">Existing User</h4>
                                 <p>
-                                    If you already have a steem account, login with your steem username through Steem Login.
+                                    If you already have an account, login with your steem based username OR open login with email.
                                 </p>
                                 <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-default signin_btn">STEEM Login</button>
-                                <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-default signin_btn">Email Login</button>
+                                <button type="button" class="btn btn-default signin_email_btn">Email Login</button>
+                            </div>
+                        </div>
+
+                        <div class="map-block signin_email_block" style="display: none">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Add Email</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fas fa-envelope"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Hello <b>@<span id="my_username"></span></b>! <br>
+                                    Make sure to enter a valid email address.
+                                </p>
+                                <form name="email_login_form">
+                                    <span class="input-username">
+                                        <input type="email" name="email" id="email_login_id" placeholder="enter email address" class="form-control" />
+                                        <span class="fa fas fa-envelope"></span>
+                                    </span>
+                                    <span class="input-username">
+                                        <input type="password" name="email_pass" id="email_pass" placeholder="enter password" class="form-control" />
+                                        <span class="fa fas fa-lock"></span>
+                                    </span>
+                                    <button class="btn btn-default">
+                                        LOGIN
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -186,3 +212,31 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
     </div>
 </div>
 <?php include('template/footer.php'); } ?>
+<script>
+function emailLogin() {
+
+    var Signin_main_section  = document.querySelector('.signin_main_block');
+    var signin_text_section = Signin_main_section.querySelector('.signin_block');
+    var signin_email_section   = Signin_main_section.querySelector('.signup-signup-email');
+
+    jQuery(pinit).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        signin_text_section.style.display = 'none';
+
+        signin_email_section.style.opacity = 0;
+        signin_email_section.style.top     = '50px';
+        signin_email_section.style.display = '';
+
+        jQuery(signin_email_section).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
+
+$('.signin_email_btn').click(function() {
+    emailLogin();
+});
+</script>
