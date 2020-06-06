@@ -10,41 +10,15 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
     <div class="contact-info-outer welcome">
         <div class="contact-info-wrap">
             <div class="row">
-                <div class="col-md-6 signin_main_block">
-                    <div class="row" style="margin: 0px;">
+                <div class="col-md-6">
+                    <div class="row">
                         <div class="map-block signin_block">
                             <div class="contact-info-inner signin_inner">
                                 <h4 class="signin_head">Existing User</h4>
                                 <p>
-                                    If you already have an account, login with your steem based username OR open login with email.
+                                    If you already have a steem account, login with your steem username through Steem Login.
                                 </p>
-                                <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-default signin_btn">STEEM Login</button>
-                                <button type="button" class="btn btn-default signin_btn signin_email_btn">Email Login</button>
-                            </div>
-                        </div>
-
-                        <div class="map-block signin_email_block" style="display: none">
-                            <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
-                                <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Email Login</h4>
-                                <p class="signup-signup-description">
-                                    This is open email login (not steem blockchain).
-                                </p>
-                                <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
-                                        </div>
-                                        <input type="email" name="login_email" id="email_login_id" placeholder="Email Address" class="form-control" />
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
-                                        </div>
-                                        <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
-                                    </div>
-                                    <div class="error_message" style="display: none"></div>
-                                    <button class="btn btn-primary" style="margin-top: 15px;">LOGIN</button>
-                                </form>
+                                <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-default signin_btn">Login</button>
                             </div>
                         </div>
                     </div>
@@ -211,31 +185,3 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
     </div>
 </div>
 <?php include('template/footer.php'); } ?>
-<script>
-function emailLogin() {
-
-    var Signin_main_section  = document.querySelector('.signin_main_block');
-    var signin_text_section = Signin_main_section.querySelector('.signin_block');
-    var signin_email_section   = Signin_main_section.querySelector('.signin_email_block');
-
-    jQuery(signin_text_section).animate({
-        opacity: 0,
-        top    : -20
-    }, 300, function () {
-        signin_text_section.style.display = 'none';
-
-        signin_email_section.style.opacity = 0;
-        signin_email_section.style.top     = '50px';
-        signin_email_section.style.display = '';
-
-        jQuery(signin_email_section).animate({
-            opacity: 1,
-            top    : 0
-        }, 300);
-    });
-}
-
-$('.signin_email_btn').click(function() {
-    emailLogin();
-});
-</script>
