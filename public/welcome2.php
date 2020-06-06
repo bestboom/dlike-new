@@ -19,7 +19,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     If you already have an account, login with your steem based username OR open login with email.
                                 </p>
                                 <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-default signin_btn">STEEM Login</button>
-                                <button type="button" class="btn btn-default signin_email_btn">Email Login</button>
+                                <button type="button" class="btn btn-default signin_btn signin_email_btn">Email Login</button>
                             </div>
                         </div>
 
@@ -217,7 +217,7 @@ function emailLogin() {
 
     var Signin_main_section  = document.querySelector('.signin_main_block');
     var signin_text_section = Signin_main_section.querySelector('.signin_block');
-    var signin_email_section   = Signin_main_section.querySelector('.signup-signup-email');
+    var signin_email_section   = Signin_main_section.querySelector('.signin_email_block');
 
     jQuery(signin_text_section).animate({
         opacity: 0,
