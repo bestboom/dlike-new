@@ -27,6 +27,9 @@
 <script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/intlTelInput.js?1562189064761"></script>
 <script src="/js/signup.js"></script>
 <? } ?> 
+<?php if(basename($_SERVER['PHP_SELF']) == 'welcome2.php'){ ?> 
+<script src="/js/signup.js"></script>
+<? } ?> 
 <script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
 <script>
     function openNav(){document.getElementById("mySidenav").style.width="250px";}

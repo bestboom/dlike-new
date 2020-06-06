@@ -88,10 +88,24 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     <div class="form-group input-username">
                                         <input type="hidden" id="refer_by" value="<?php echo $referrer; ?>" />
                                         <input type="hidden" id="user_loc" value="<?php echo $thisip; ?>" />
-                                        <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
-                                        <span class="fa fa-user"></span>
-                                        <span class="message" style="display: none"></span>
-                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
+                                        </div>
+                                        <input type="text" name="signup_username" id="username_signup_id" placeholder="Username" class="form-control" />
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
+                                        </div>
+                                        <input type="email" name="signup_email" id="signup_email" placeholder="Email Address" class="form-control" />
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
+                                        </div>
+                                        <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" />
                                     </div>
                                     <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
                                     <button class="next btn btn-lime">SIGNUP</button>
@@ -291,10 +305,36 @@ function signupwithsteem() {
         }, 300);
     });
 }
+
+function signupwithemail() {
+
+    var Signup_main_block  = document.querySelector('.signup-signup');
+    var signup_first_block = Signup_main_block.querySelector('.signup-signup-first');
+    var signup_email_block   = Signup_main_block.querySelector('.signup-signup-email');
+
+    jQuery(signup_first_block).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        signup_first_block.style.display = 'none';
+
+        signup_email_block.style.opacity = 0;
+        signup_email_block.style.top     = '50px';
+        signup_email_block.style.display = '';
+
+        jQuery(signup_email_block).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
 $('.signin_email_btn').click(function() {
     emailLogin();
 });
 $('.signup_steem_btn').click(function() {
     signupwithsteem();
+});
+$('.signup_email_btn').click(function() {
+    signupwithemail();
 });
 </script>
