@@ -80,11 +80,11 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
                     </div>
 
-                    <div class="row signup-signup-email" style="display: none;">
+                    <div class="map-block signup-signup-email" style="display: none;">
                         <div class="contact-info-block signup_email_block">
-                            <div class="contact-info-inner signup_inner">
+                            <div class="contact-info-inner" style="margin-top: 15%;">
                                 <h4 class="sign_head">Signup</h4>
-                                <form name="email_signup" style="margin-top: 15px;">
+                                <form name="email_signup" style="margin-top: 15px;margin-left: 10%;margin-right: 10%;width: unset;float: none;">
                                     <div class="form-group input-username">
                                         <input type="hidden" id="refer_by" value="<?php echo $referrer; ?>" />
                                         <input type="hidden" id="user_loc" value="<?php echo $thisip; ?>" />
@@ -108,7 +108,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" />
                                     </div>
                                     <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
-                                    <button class="next btn btn-lime">SIGNUP</button>
+                                    <button class="next btn btn-lime" style="background-color: #1b1e63;border-color: #1b1e63;">SIGNUP</button>
                                 </form>
                             </div>
                         </div>
