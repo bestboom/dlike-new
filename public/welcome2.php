@@ -80,35 +80,35 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
                     </div>
 
-                    <div class="map-block signup-signup-email" style="display: none;">
-                        <div class="map-block signup_email_block">
-                            <div class="contact-info-inner" style="margin-top: 15%;">
+                    <div class="signup-signup-email" style="display: none;">
+                        <div class="signup_email_block">
+                            <div class="contact-info-inner" style="margin-top: 10%;">
                                 <h4  style="color: #0b132d;font-weight: 700;font-size: 24px;">Signup</h4>
-                                <form name="email_signup" style="margin-top: 15px;margin-left: 16%;margin-right: 16%;width: unset;float: none;">
+                                <form name="email_signup" style="margin-top: 25px;margin-left: 16%;margin-right: 16%;width: unset;float: none;">
                                     <div class="form-group input-username">
                                         <input type="hidden" id="refer_by_email" value="<?php echo $referrer; ?>" />
                                         <input type="hidden" id="user_loc_email" value="<?php echo $thisip; ?>" />
                                     </div>
-                                    <div class="input-group mb-3" style="padding: 8px;">
+                                    <div class="input-group mb-3" style="padding: 3px;">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                                         </div>
                                         <input type="text" name="signup_username" id="username_signup_id" placeholder="Username" class="form-control" style="padding: 8px;" />
                                     </div>
-                                    <div class="input-group mb-3" style="padding: 8px;">
+                                    <div class="input-group mb-3" style="padding: 3px;">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
                                         </div>
                                         <input type="email" name="signup_email" id="signup_email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
                                     </div>
-                                    <div class="input-group mb-3" style="padding: 8px;">
+                                    <div class="input-group mb-3" style="padding: 3px;">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
                                         </div>
                                         <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" style="padding: 8px;" />
                                     </div>
                                     <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
-                                    <button class="btn btn-lime email_signup_btn" type="button" style="background-color: #1b1e63;border-color: #1b1e63;margin: 8px;">SIGNUP</button>
+                                    <button class="btn btn-lime email_signup_btn" type="button" style="background-color: #1b1e63;border-color: #1b1e63;padding: 8px;width: 50%;margin-right:25%;margin-left:25%;">SIGNUP</button>
                                 </form>
                             </div>
                         </div>
