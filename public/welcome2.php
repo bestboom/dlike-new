@@ -43,7 +43,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                                     </div>
                                     <div class="error_message" style="display: none"></div>
-                                    <button class="btn btn-primary" style="margin-top: 15px;">LOGIN</button>
+                                    <button class="btn btn-primary" type="button" style="margin-top: 15px;">LOGIN</button>
                                 </form>
                             </div>
                         </div>
@@ -91,24 +91,24 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                     </div>
                                     <div class="input-group mb-3" style="padding: 8px;">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;padding: 8px;"> <span class="fa fas fa-user"></span></div>
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                                         </div>
-                                        <input type="text" name="signup_username" id="username_signup_id" placeholder="Username" class="form-control" />
+                                        <input type="text" name="signup_username" id="username_signup_id" placeholder="Username" class="form-control" style="padding: 8px;" />
                                     </div>
                                     <div class="input-group mb-3" style="padding: 8px;">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;padding: 8px;"> <span class="fa fas fa-envelope"></span></div>
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
                                         </div>
-                                        <input type="email" name="signup_email" id="signup_email" placeholder="Email Address" class="form-control" />
+                                        <input type="email" name="signup_email" id="signup_email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
                                     </div>
                                     <div class="input-group mb-3" style="padding: 8px;">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;padding: 8px;"> <span class="fa fas fa-lock"></span></div>
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
                                         </div>
-                                        <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" />
+                                        <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" style="padding: 8px;" />
                                     </div>
                                     <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
-                                    <button class="btn btn-lime email_signup_btn" style="background-color: #1b1e63;border-color: #1b1e63;margin: 8px;">SIGNUP</button>
+                                    <button class="btn btn-lime email_signup_btn" type="button" style="background-color: #1b1e63;border-color: #1b1e63;margin: 8px;">SIGNUP</button>
                                 </form>
                             </div>
                         </div>
