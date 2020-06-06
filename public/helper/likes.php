@@ -13,6 +13,12 @@ email VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
 refer_by VARCHAR(255) NOT NULL,
 status INT(6) NOT NULL,
+about VARCHAR(1000) NOT NULL,
+profile_pic VARCHAR(255) NOT NULL,
+profile_banner VARCHAR(255) NOT NULL,
+location VARCHAR(255) NOT NULL,
+website VARCHAR(255) NOT NULL,
+full_name VARCHAR(255) NOT NULL,
 loct_ip VARCHAR(255) NOT NULL,
 created_time TIMESTAMP
 )";
