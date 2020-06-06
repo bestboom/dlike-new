@@ -28,16 +28,18 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating table: " . $conn->error;
 }
 
-$sqlm = "CREATE TABLE userposttemplates (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+$sqlm = "CREATE TABLE dlikeaccounts (
+id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
-template_name VARCHAR(255) NOT NULL,
-content VARCHAR(1000) NOT NULL,
-added_time TIMESTAMP
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+refer_by VARCHAR(255) NOT NULL,
+status INT(6) NOT NULL,
+created_time TIMESTAMP
 )";
 
 if ($conn->query($sqlm) === TRUE) {
-    echo "Table dailyRewards created successfully";
+    echo "Table dlikeaccounts created successfully";
 } else {
     echo "Error creating table: " . $conn->error;
 }

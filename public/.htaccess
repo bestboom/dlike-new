@@ -37,4 +37,3 @@ RewriteRule ^help$ ./help.php
 RewriteRule ^staking$ ./staking.php
 #RewriteRule ^token$ ./token.php
 RewriteRule ^welcomeit$ ./welcome2.php
-RewriteRule ^welcomeits$ ./welcome3.php
