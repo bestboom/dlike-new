@@ -73,9 +73,29 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <span class="signup-signup-icon">
                                     <span class="fas fa-user"></span>
                                 </span>
-                                <button type="button" class="btn btn-default signin_btn signup_steem_btn">Create STEEM Account</button>
-                                <h4>OR</h4>
-                                <button type="button" class="btn btn-default signin_btn signup_email_btn">Signup With Email</button>
+                                <button type="button" class="btn btn-default signin_btn signup_steem_btn" style="color: #1b1e63;border-color: #1b1e63;">Create STEEM Account</button>
+                                <h4 style="margin:1rem;">OR</h4>
+                                <button type="button" class="btn btn-default signin_btn signup_email_btn" style="color: #1b1e63;border-color: #1b1e63;">Signup With Email</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row signup-signup-email" style="display: none;">
+                        <div class="contact-info-block signup_email_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4 class="sign_head">Signup</h4>
+                                <form name="email_signup" style="margin-top: 15px;">
+                                    <div class="form-group input-username">
+                                        <input type="hidden" id="refer_by" value="<?php echo $referrer; ?>" />
+                                        <input type="hidden" id="user_loc" value="<?php echo $thisip; ?>" />
+                                        <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
+                                        <span class="fa fa-user"></span>
+                                        <span class="message" style="display: none"></span>
+                                        <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                    </div>
+                                    <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
+                                    <button class="next btn btn-lime">SIGNUP</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -259,7 +279,7 @@ function signupwithsteem() {
         opacity: 0,
         top    : -20
     }, 300, function () {
-        pinit.style.display = 'none';
+        signup_first_block.style.display = 'none';
 
         signup_steem_block.style.opacity = 0;
         signup_steem_block.style.top     = '50px';

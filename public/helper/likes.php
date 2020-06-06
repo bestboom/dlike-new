@@ -13,6 +13,7 @@ email VARCHAR(255) NOT NULL,
 password VARCHAR(255) NOT NULL,
 refer_by VARCHAR(255) NOT NULL,
 status INT(6) NOT NULL,
+loct_ip VARCHAR(255) NOT NULL,
 created_time TIMESTAMP
 )";
 
