@@ -362,7 +362,33 @@ $('.email_signup_btn').click(function() {
         toastr.error('phew... Password should not be empty');
         return false;
     }
-    toastr.success('Success now submit');
+
+    var data_sign = {
+        signup_username: signup_username,
+        signup_email: signup_email,
+        signup_pass: signup_pass
+    };
+    $.ajax({
+        type: "POST",
+        url: "/helper/email_signup.php",
+        data: data_sign,
+        success: function(data) {
+            try {
+                var response = JSON.parse(data)
+                if (response.error == true) {
+                    //$('#upvotefail').modal('show');
+                    toastr.error('phew... username should not be empty');
+                } else {
+                    //$('#recomendModal').modal('show');
+                    toastr.success('Signup successful');
+                }
+            } catch (err) {
+                toastr.error('Sorry. Server response is malformed');
+                //alert('Sorry. Server response is malformed.')
+            }
+        }
+    });
+    //toastr.success('Success now submit');
 });
 </script>
 
