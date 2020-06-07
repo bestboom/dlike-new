@@ -339,8 +339,8 @@ $('.signup_email_btn').click(function() {
 });
 $('.email_signup_btn').click(function() {
     //toastr.error('phew... Ok Move on!');
-    let signup_username = $('#username_signup_id').html();
-    let signup_email = $('#signup_email').html();
+    let signup_username = $('#username_signup_id').val();
+    let signup_email = $('#signup_email').val();
     let signup_pass = $('#signup_pass').val();
     let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
@@ -361,7 +361,7 @@ $('.email_signup_btn').click(function() {
         return false;
         toastr.error('phew... Password should not be empty');
     }
-
+    toastr.success('Success now submit');
 });
 </script>
 
