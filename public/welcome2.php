@@ -393,4 +393,4 @@ $('.email_signup_btn').click(function() {
 });
 </script>
 
-https://codeshack.io/secure-registration-system-php-mysql/
+//https://codeshack.io/secure-registration-system-php-mysql/
