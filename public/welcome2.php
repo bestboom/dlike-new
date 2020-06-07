@@ -376,18 +376,16 @@ $('.email_signup_btn').click(function() {
                 var response = JSON.parse(data)
                 if (response.error == true) {
                     //$('#upvotefail').modal('show');
-                    toastr.error('phew... username should not be empty');
+                    toastr['error'](response.message);
+                    return false;
                 } else {
                     //$('#recomendModal').modal('show');
                     toastr.success('Signup successful');
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');
-                //alert('Sorry. Server response is malformed.')
-            }
         }
     });
-    //toastr.success('Success now submit');
 });
 </script>
 
