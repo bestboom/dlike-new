@@ -377,7 +377,8 @@ $('.email_signup_btn').click(function() {
                 var response = JSON.parse(data)
                 if (response.error == true) {
                     //$('#upvotefail').modal('show');
-                    toastr.error('phew... there is some error');
+                    //toastr.error('phew... there is some error');
+                    toastr['error'](response.message);
                 } else {
                     //$('#recomendModal').modal('show');
                     toastr.success('Signup successful');
