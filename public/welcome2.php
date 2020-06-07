@@ -338,6 +338,31 @@ $('.signup_email_btn').click(function() {
     signupwithemail();
 });
 $('.email_signup_btn').click(function() {
-    toastr.error('phew... Ok Move on!');
+    //toastr.error('phew... Ok Move on!');
+    let signup_username = $('#username_signup_id').html();
+    let signup_email = $('#signup_email').html();
+    let signup_pass = $('#signup_pass').val();
+    let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+    if (signup_username == "") {
+        return false;
+        toastr.error('phew... username should not be empty');
+    }
+    if (signup_email == "") {
+        return false;
+        toastr.error('phew... Email should not be empty');
+    } else {
+        if (!emailRegex.test(signup_email)) {
+            return false;
+            toastr.error('phew... email address is not valid');
+        }
+    }
+    if (signup_pass == "") {
+        return false;
+        toastr.error('phew... Password should not be empty');
+    }
+
 });
 </script>
+
+https://codeshack.io/secure-registration-system-php-mysql/
