@@ -11,7 +11,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	if (!filter_var($_POST['signup_email'], FILTER_VALIDATE_EMAIL)) {
 		$errors = 'Email is not valid!';
 	}
-	if (preg_match('/[A-Za-z0-9]+/', $_POST['signup_username']) == 0) {
+	if (preg_match('/[A-Za-z0-9]+/', $_POST['signup_username'])) {
 		$errors = 'Username is not valid!';
 	}
 	if (empty($errors)) { 
