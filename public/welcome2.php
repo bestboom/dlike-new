@@ -353,7 +353,7 @@ $('.email_signup_btn').click(function() {
         toastr.error('phew... Email should not be empty');
         return false;
     }
-    if (!emailRegex.test(signup_email) {
+    if (!emailRegex.test(signup_email)) {
         toastr.error('phew... email address is not valid');
         return false;
     }
@@ -376,8 +376,7 @@ $('.email_signup_btn').click(function() {
                 var response = JSON.parse(data)
                 if (response.error == true) {
                     //$('#upvotefail').modal('show');
-                    toastr['error'](response.message);
-                    return false;
+                    toastr.error('phew... there is some error');
                 } else {
                     //$('#recomendModal').modal('show');
                     toastr.success('Signup successful');
