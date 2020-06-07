@@ -353,7 +353,7 @@ $('.email_signup_btn').click(function() {
         toastr.error('phew... Email should not be empty');
         return false;
     }
-    if (!emailRegex.test(signup_email)) {
+    if (!emailRegex.test(signup_email) {
         toastr.error('phew... email address is not valid');
         return false;
     }
