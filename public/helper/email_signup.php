@@ -66,10 +66,18 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	}
 
 	if (empty($errors)) {
+		$pin_number = mt_rand(100000, 999999);
+		$status = '0';
+		$verified = '0';
+
+		$escapedPW = mysqli_real_escape_string($conn, $signup_password);
+		$salt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
+		$saltedPW =  $escapedPW . $salt;
+		$hashedPW = hash('sha256', $saltedPW);
 
 		die(json_encode([
 		   	'error' => false,
-	    		'message' => 'Signup successful. Please verify Email!'
+	    	'message' => $hashedPW
 			]));	
 	} else {
 	    die(json_encode([

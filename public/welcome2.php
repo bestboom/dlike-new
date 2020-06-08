@@ -385,7 +385,8 @@ $('.email_signup_btn').click(function() {
                     toastr['error'](response.message);
                 } else {
                     //$('#recomendModal').modal('show');
-                    toastr.success('Signup successful');
+                    toastr['success'](response.message);
+                    //toastr.success('Signup successful');
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');
