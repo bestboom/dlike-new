@@ -106,7 +106,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		} else {
 		    die(json_encode([
 	    		'error' => true,
-	    		'message' => 'There is some issue. Please Try later';
+	    		'message' => 'There is some issue. Please Try later'
 			]));
 		}
 	} else {
