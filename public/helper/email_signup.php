@@ -67,58 +67,10 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 
 	if (empty($errors)) {
 
-		$pin_number = mt_rand(100000, 999999);
-		$status = '0';
-		$verified = '0';
-
-		$escapedPW = mysqli_real_escape_string($conn, $signup_password);
-		$salt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-		$saltedPW =  $escapedPW . $salt;
-		$hashedPW = hash('sha256', $saltedPW);
-
-		$signup_username = mysqli_real_escape_string($conn, $signup_username);
-		$signup_email = mysqli_real_escape_string($conn, $signup_email);
-
-		$sqlm = "INSERT INTO dlikeaccounts (username, email, password, refer_by, status, loct_ip, verify_code, verified, created_time)
-				VALUES ('".$signup_username."', '".$signup_email."', '".$hashedPW."', '".$refer_by."', '".$status."', '".$loct_ip."', '".$pin_number."', '".$verified."', '".date("Y-m-d H:i:s")."')";
-		if (mysqli_query($conn, $sqlm)) {
-
-			$mail->isSMTP();
-		    $mail->Host = 'smtp.zoho.com';
-		    $mail->SMTPAuth = true;
-		    $mail->Username = 'verification@dlike.io';
-		    $mail->Password = getenv("EMAIL_PASS");
-		    $mail->SMTPSecure = 'tls';
-		    $mail->Port = 587;
-
-		    $mail->setFrom('verification@dlike.io', 'DLIKE');
-    		$mail->addAddress($signup_email);
-
-    		$mail->isHTML(true); 
-    		$mail->Subject = 'DLIKE Email Verification';
-    		$mail->Body    = 'Welcome to DLIKE <br><br> Your Activation Code is '.$pin_number.' <br><br><br>Cheers<br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
-			
-			$done_email = $mail->send();
-
-			if($done_email) { 
-				die(json_encode([
-			    	'error' => false,
-		    		'message' => 'Signup successful. Please verify Email!', 
-		    		'data' => 'Signup'
-				]));	
-			} else {
-			    die(json_encode([
-		    		'error' => true,
-		    		'message' => 'Email does not seem to work', 
-		    		'data' => 'Email Send Issue'
-				]));
-			}
-		} else {
-		    die(json_encode([
-	    		'error' => true,
-	    		'message' => 'There is some issue. Please Try later'
-			]));
-		}
+		die(json_encode([
+		   	'error' => false,
+	    		'message' => 'Signup successful. Please verify Email!'
+			]));	
 	} else {
 	    die(json_encode([
     		'error' => true,
