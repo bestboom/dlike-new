@@ -71,9 +71,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		$verified = '0';
 
 		$escapedPW = mysqli_real_escape_string($conn, $signup_password);
-		$salt = bin2hex(mcrypt_create_iv(32, MCRYPT_DEV_URANDOM));
-		$saltedPW =  $escapedPW . $salt;
-		$hashedPW = hash('sha256', $saltedPW);
+		$hashedPW = hash('sha256', $escapedPW);
 
 		die(json_encode([
 		   	'error' => false,
