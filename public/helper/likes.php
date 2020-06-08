@@ -10,7 +10,7 @@ $sqlm = "CREATE TABLE dlikeaccounts (
 id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL,
-password VARCHAR(255) NOT NULL,
+password VARCHAR(1000) NOT NULL,
 refer_by VARCHAR(255) NOT NULL,
 status INT(6) NOT NULL,
 about VARCHAR(1000) NOT NULL,
@@ -20,6 +20,8 @@ location VARCHAR(255) NOT NULL,
 website VARCHAR(255) NOT NULL,
 full_name VARCHAR(255) NOT NULL,
 loct_ip VARCHAR(255) NOT NULL,
+verify_code VARCHAR(255) NOT NULL,
+verified INT(6) NOT NULL,
 created_time TIMESTAMP
 )";
 

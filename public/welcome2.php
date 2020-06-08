@@ -343,6 +343,8 @@ $('.email_signup_btn').click(function() {
     console.log(signup_username);
     let signup_email = $('#signup_email').val();
     let signup_pass = $('#signup_pass').val();
+    let signup_refer_by = $('#refer_by_email').val();
+    let signup_loct_ip = $('#user_loc_email').val();
     let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
     if (signup_username == "") {
@@ -366,7 +368,9 @@ $('.email_signup_btn').click(function() {
     var data_sign = {
         signup_username: signup_username,
         signup_email: signup_email,
-        signup_pass: signup_pass
+        signup_pass: signup_pass,
+        signup_refer_by: signup_refer_by,
+        signup_loct_ip:signup_loct_ip
     };
     $.ajax({
         type: "POST",
@@ -394,3 +398,4 @@ $('.email_signup_btn').click(function() {
 </script>
 
 //https://codeshack.io/secure-registration-system-php-mysql/
+https://stackoverflow.com/questions/6781931/how-do-i-create-and-store-md5-passwords-in-mysql/6781988
