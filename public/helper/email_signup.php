@@ -55,13 +55,13 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 
 	$check_email = "SELECT * FROM dlikeaccounts where email = '$signup_email'";
 	$result_email = $conn->query($check_email);
-	if ($result_email->num_rows > 0)
+	if ($result_email->num_rows > 0) {
 		$errors = 'Email already in use!';
 	}
 
 	$check_user= "SELECT * FROM dlikeaccounts where username = '$signup_username'";
 	$result_user = $conn->query($check_user);
-	if ($result_user->num_rows > 0)
+	if ($result_user->num_rows > 0) {
 		$errors = 'Username already taken!';
 	}
 
