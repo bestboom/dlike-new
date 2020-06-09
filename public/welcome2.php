@@ -586,6 +586,9 @@ $('.email_verify_pin_btn').click(function() {
                     toastr['error'](response.message);
                 } else {
                     toastr['success'](response.message);
+                    setTimeout(function(){
+                        window.location.href = response.redirect;
+                    }, 1000);
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');
