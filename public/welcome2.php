@@ -139,15 +139,14 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <p class="signup-signup-description">
                                     Enter the confirmation code sent to <b><span id="my_signup_email"></span></b>.
                                 </p>
-                                <form name="email-signup-pin">
-                                    <span class="input-username">
-                                        <input type="text" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)"class="form-control" />
-                                        <span class="fa fas fa-search"></span>
-                                        <span class="loader fa fas fa-circle-notch" style="display: none"></span>
-                                    </span>
-                                    <button class="next btn btn-lime" disabled>
-                                        Verify PIN
-                                    </button>
+                                <form name="email-signup-pin" style="margin-left: 15%;margin-right: 15%;margin-top: 40px;">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-key"></span></div>
+                                        </div>
+                                        <input type="text" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)" class="form-control" />
+                                    </div>
+                                    <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled>Verify PIN</button>
                                 </form>
                             </div>
                         </div>
@@ -370,6 +369,29 @@ function signupwithemail() {
     });
 }
 
+function signupemailverify() {
+
+    var Signup_main_block  = document.querySelector('.signup-signup');
+    var signup_email_block = Signup_main_block.querySelector('.signup-signup-email');
+    var signup_verify_block   = Signup_main_block.querySelector('.signup-signup-email_verify');
+
+    jQuery(signup_email_block).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        signup_email_block.style.display = 'none';
+
+        signup_verify_block.style.opacity = 0;
+        signup_verify_block.style.top     = '50px';
+        signup_verify_block.style.display = '';
+
+        jQuery(signup_verify_block).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
+
 function resetemailpass() {
 
     var Signin_main_section  = document.querySelector('.signin_main_block');
@@ -450,13 +472,11 @@ $('.email_signup_btn').click(function() {
                     //toastr.error('phew... there is some error');
                     toastr['error'](response.message);
                 } else {
-                    //$('#recomendModal').modal('show');
                     toastr['success'](response.message);
-                    //toastr.success('Signup successful');
+                    signupemailverify();
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');
-                //alert('Sorry. Server response is malformed.')
             }
         }
     });
