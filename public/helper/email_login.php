@@ -16,7 +16,6 @@ if (isset($_POST['login_username'])  && $_POST['login_username'] != '' && isset(
     if(empty($login_pass)){
         $errors = "Password Shoould not be empty";
     }
-
     if (empty($errors)) {
 
     	$escapedPW = mysqli_real_escape_string($conn, $login_pass);
