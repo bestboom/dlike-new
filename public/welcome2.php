@@ -25,16 +25,16 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
 
                         <div class="map-block signin_email_block" style="display: none">
                             <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
-                                <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Email Login</h4>
+                                <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">DLIKE Login</h4>
                                 <p class="signup-signup-description">
                                     This is open email login (not steem blockchain).
                                 </p>
                                 <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                                         </div>
-                                        <input type="email" name="login_email" id="email_login_id" placeholder="Email Address" class="form-control" />
+                                        <input type="email" name="login_user" id="login_user_id" placeholder="Email Address" class="form-control" />
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -43,7 +43,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                                     </div>
                                     <div class="error_message" style="display: none"></div>
-                                    <button class="btn btn-primary" type="button" style="margin-top: 15px;">LOGIN</button>
+                                    <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;">LOGIN</button>
                                 </form>
                             </div>
                         </div>
@@ -114,6 +114,32 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
                     </div>
 
+                    <div class="signup-signup-email_verify" style="display: none">
+                        <div class="signup_email_block">
+                            <div class="contact-info-inner signup_inner">
+                                <h4>Verify Email</h4>
+                                <span class="signup-signup-icon">
+                                    <span class="fa fa-phone"></span>
+                                </span>
+                                <p class="signup-signup-description">
+                                    Enter the confirmation code sent to <b><span id="my_signup_email"></span></b>.
+                                </p>
+                                <form name="email-signup-pin">
+                                    <span class="input-username">
+                                        <input type="text" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)"class="form-control" />
+                                        <span class="fa fas fa-search"></span>
+                                        <span class="loader fa fas fa-circle-notch" style="display: none"></span>
+                                    </span>
+                                    <button class="next btn btn-lime" disabled>
+                                        Verify PIN
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
                     <div class="row signup-signup-steemit" style="display: none;">
                         <div class="contact-info-block signup_block">
                             <div class="contact-info-inner signup_inner">
@@ -336,11 +362,10 @@ $('.signup_steem_btn').click(function() {
 });
 $('.signup_email_btn').click(function() {
     signupwithemail();
-});
+}); email_login_btn
 $('.email_signup_btn').click(function() {
-    //toastr.error('phew... Ok Move on!');
     let signup_username = $('#username_signup_id').val();
-    console.log(signup_username);
+    //console.log(signup_username);
     let signup_email = $('#signup_email').val();
     let signup_pass = $('#signup_pass').val();
     let signup_refer_by = $('#refer_by_email').val();
@@ -365,7 +390,7 @@ $('.email_signup_btn').click(function() {
         return false;
     }
 
-    var data_sign = {
+    var data_signup = {
         signup_username: signup_username,
         signup_email: signup_email,
         signup_pass: signup_pass,
@@ -375,7 +400,7 @@ $('.email_signup_btn').click(function() {
     $.ajax({
         type: "POST",
         url: "/helper/email_signup.php",
-        data: data_sign,
+        data: data_signup,
         success: function(data) {
             try {
                 var response = JSON.parse(data)
@@ -395,6 +420,43 @@ $('.email_signup_btn').click(function() {
         }
     });
     //toastr.success('Success now submit');
+});
+
+
+$('.email_login_btn').click(function() {
+    let login_user_id = $('#login_user_id').val();
+    let login_pass = $('#email_pass').val();
+    let login_url = 'helper/email_login.php';
+    if (login_user_id == "") {
+        toastr.error('phew... Username should not be empty');
+        return false;
+    }
+    if (login_pass == "") {
+        toastr.error('phew... Password should not be empty');
+        return false;
+    }
+    var data_login = {
+        login_username: login_user_id,
+        login_pass: login_pass
+    };
+    $.ajax({
+        type: "POST",
+        url: login_url,
+        data: data_login,
+        success: function(data) {
+            try {
+                var response = JSON.parse(data)
+                if (response.error == true) {
+                    toastr['error'](response.message);
+                } else {
+                    toastr['success'](response.message);
+                }
+            } catch (err) {
+                toastr.error('Sorry. Server response is malformed');
+            }
+        }
+    });
+
 });
 </script>
 
