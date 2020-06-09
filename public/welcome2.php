@@ -34,7 +34,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <div class="input-group-prepend">
                                             <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                                         </div>
-                                        <input type="email" name="login_user" id="login_user_id" placeholder="Email Address" class="form-control" />
+                                        <input type="email" name="login_user" id="login_user_id" placeholder="Username" class="form-control" />
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -362,7 +362,7 @@ $('.signup_steem_btn').click(function() {
 });
 $('.signup_email_btn').click(function() {
     signupwithemail();
-}); email_login_btn
+});
 $('.email_signup_btn').click(function() {
     let signup_username = $('#username_signup_id').val();
     //console.log(signup_username);
@@ -450,6 +450,9 @@ $('.email_login_btn').click(function() {
                     toastr['error'](response.message);
                 } else {
                     toastr['success'](response.message);
+                    setTimeout(function(){
+                        window.location.href = response.redirect;
+                    }, 5000);
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');

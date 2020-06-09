@@ -26,10 +26,11 @@ if (isset($_POST['login_username'])  && $_POST['login_username'] != '' && isset(
 		$result_user = $conn->query($check_user);
 
 		if ($result_user->num_rows > 0) {
-
+			$dlike_user_login_url = 'https://dlike.io';
     		die(json_encode([
 	    	'error' => false,
-    		'message' => 'Login Successful!'
+    		'message' => 'Login Successful!',
+    		'redirect' => $dlike_user_login_url
 			]));
 		} else {
 	    die(json_encode([
