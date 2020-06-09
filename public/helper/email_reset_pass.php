@@ -3,7 +3,17 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
+	require __DIR__ . '/../../vendor/autoload.php';
 	require '../includes/config.php';
+
+	use PHPMailer\PHPMailer\PHPMailer;
+	use PHPMailer\PHPMailer\Exception;	
+
+	require '../helper/mailer/src/Exception.php';
+	require '../helper/mailer/src/PHPMailer.php';
+	require '../helper/mailer/src/SMTP.php';
+
+	$mail = new PHPMailer();
 
 if (isset($_POST['reset_email'])  && $_POST['reset_email'] != '') { 
 
