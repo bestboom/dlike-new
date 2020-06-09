@@ -30,7 +30,8 @@ if (isset($_POST['login_username'])  && $_POST['login_username'] != '' && isset(
     		die(json_encode([
 	    	'error' => false,
     		'message' => 'Login Successful!',
-    		'redirect' => $dlike_user_login_url
+    		'redirect' => $dlike_user_login_url,
+    		'dlikeuser' => $login_username
 			]));
 		} else {
 	    die(json_encode([

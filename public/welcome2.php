@@ -450,9 +450,10 @@ $('.email_login_btn').click(function() {
                     toastr['error'](response.message);
                 } else {
                     toastr['success'](response.message);
+                    $.cookie("dlike_username", response.dlikeuser, { expires: 7, path: '/' });
                     setTimeout(function(){
                         window.location.href = response.redirect;
-                    }, 5000);
+                    }, 1000);
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');
