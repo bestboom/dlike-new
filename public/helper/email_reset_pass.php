@@ -21,7 +21,10 @@ if (isset($_POST['reset_email'])  && $_POST['reset_email'] != '') {
 
     if (empty($errors)) {
 
-    	$token = bin2hex(random_bytes(50));
+    	$key = md5(2418*3);
+		$addKey = substr(md5(uniqid(rand(),1)),3,50);
+		$token = $key . $addKey;
+    	//$token = bin2hex(random_bytes(50));
 
     	$sqlm = "INSERT INTO dlikepasswordreset (email, token, reset_time)
 				VALUES ('".$reset_email."', '".$token."', '".date("Y-m-d H:i:s")."')";

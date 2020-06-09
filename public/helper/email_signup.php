@@ -80,7 +80,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		$signup_email = mysqli_real_escape_string($conn, $signup_email);
 
 		$sqlm = "INSERT INTO dlikeaccounts (username, email, password, refer_by, status, profile_pic, loct_ip, verify_code, verified, created_time)
-				VALUES ('".$signup_username."', '".$signup_email."', '".$hashedPW."', '".$refer_by."', '".$status."', '".$profile_pic."', , '".$loct_ip."', '".$pin_number."', '".$verified."', '".date("Y-m-d H:i:s")."')";
+				VALUES ('".$signup_username."', '".$signup_email."', '".$hashedPW."', '".$refer_by."', '".$status."', '".$profile_pic."', '".$loct_ip."', '".$pin_number."', '".$verified."', '".date("Y-m-d H:i:s")."')";
 		if (mysqli_query($conn, $sqlm)) {
 
 			$mail->isSMTP();
