@@ -42,7 +42,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         </div>
                                         <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                                     </div>
-                                    <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;" class="forgot_pass">Forgot Password</div>
+                                    <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:blue;" class="forgot_pass">Forgot Password</div>
                                     <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;">LOGIN</button>
                                 </form>
                             </div>
@@ -51,12 +51,12 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         <div class="map-block signin_forgot_block" style="display: none">
                             <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
                                 <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Reset Password</h4>
-                                <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
+                                <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;margin-top: 40px;">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
                                         </div>
-                                        <input type="email" name="email_reset_pass" id="email_reset_pass" placeholder="Username" class="form-control" />
+                                        <input type="email" name="email_reset_pass" id="email_reset_pass" placeholder="Email Address" class="form-control" />
                                     </div>
                                     <button class="btn btn-primary email_reset_pass_btn" type="button" style="margin-top: 15px;">Submit</button>
                                 </form>
@@ -503,7 +503,7 @@ $('.email_login_btn').click(function() {
 });
 
 $('.email_reset_pass_btn').click(function() {
-    let reset_email_id = $('#login_user_id').val();
+    let reset_email_id = $('#email_reset_pass').val();
     let reset_url = 'helper/email_reset_pass.php';
     if (reset_email_id == "") {
         toastr.error('phew... Email should not be empty');
