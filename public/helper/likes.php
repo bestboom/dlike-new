@@ -6,6 +6,23 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sqlm = "CREATE TABLE dlikepasswordreset (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+email VARCHAR(255) NOT NULL,
+token VARCHAR(1000) NOT NULL,
+reset_time TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table dlikepasswordreset created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+?>
+<!--
 $sqlm = "CREATE TABLE dlikeaccounts (
 id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
@@ -30,8 +47,7 @@ if ($conn->query($sqlm) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-?>
-<!--
+
 /*
 $sql = "ALTER TABLE wallet ADD loct_ip varchar(255) NOT NULL AFTER verified";
 if ($conn->query($sql) === TRUE) {

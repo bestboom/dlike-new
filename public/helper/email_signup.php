@@ -69,6 +69,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		$pin_number = mt_rand(100000, 999999);
 		$status = '0';
 		$verified = '0';
+		$profile_img = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';
 
 		$escapedPW = mysqli_real_escape_string($conn, $signup_password);
 		$escapedPWN = md5($escapedPW);
@@ -77,8 +78,8 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		$signup_username = mysqli_real_escape_string($conn, $signup_username);
 		$signup_email = mysqli_real_escape_string($conn, $signup_email);
 
-		$sqlm = "INSERT INTO dlikeaccounts (username, email, password, refer_by, status, loct_ip, verify_code, verified, created_time)
-				VALUES ('".$signup_username."', '".$signup_email."', '".$hashedPW."', '".$refer_by."', '".$status."', '".$loct_ip."', '".$pin_number."', '".$verified."', '".date("Y-m-d H:i:s")."')";
+		$sqlm = "INSERT INTO dlikeaccounts (username, email, password, refer_by, status, profile_pic, loct_ip, verify_code, verified, created_time)
+				VALUES ('".$signup_username."', '".$signup_email."', '".$hashedPW."', '".$refer_by."', '".$status."', '".$profile_img."', , '".$loct_ip."', '".$pin_number."', '".$verified."', '".date("Y-m-d H:i:s")."')";
 		if (mysqli_query($conn, $sqlm)) {
 
 			$mail->isSMTP();

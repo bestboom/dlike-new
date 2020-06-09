@@ -34,7 +34,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <div class="input-group-prepend">
                                             <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                                         </div>
-                                        <input type="email" name="login_user" id="login_user_id" placeholder="Username" class="form-control" />
+                                        <input type="text" name="login_user" id="login_user_id" placeholder="Username" class="form-control" />
                                     </div>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -42,8 +42,23 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         </div>
                                         <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                                     </div>
-                                    <div class="error_message" style="display: none"></div>
+                                    <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;" class="forgot_pass">Forgot Password</div>
                                     <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;">LOGIN</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="map-block signin_forgot_block" style="display: none">
+                            <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
+                                <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Reset Password</h4>
+                                <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
+                                        </div>
+                                        <input type="email" name="email_reset_pass" id="email_reset_pass" placeholder="Username" class="form-control" />
+                                    </div>
+                                    <button class="btn btn-primary email_reset_pass_btn" type="button" style="margin-top: 15px;">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -354,6 +369,29 @@ function signupwithemail() {
         }, 300);
     });
 }
+
+function resetemailpass() {
+
+    var Signin_main_section  = document.querySelector('.signin_main_block');
+    var signin_email_section = Signin_main_section.querySelector('.signin_email_block');
+    var signin_forgot_section   = Signin_main_section.querySelector('.signin_forgot_block');
+
+    jQuery(signin_email_section).animate({
+        opacity: 0,
+        top    : -20
+    }, 300, function () {
+        signin_email_section.style.display = 'none';
+
+        signin_forgot_section.style.opacity = 0;
+        signin_forgot_section.style.top     = '50px';
+        signin_forgot_section.style.display = '';
+
+        jQuery(signin_forgot_section).animate({
+            opacity: 1,
+            top    : 0
+        }, 300);
+    });
+}
 $('.signin_email_btn').click(function() {
     emailLogin();
 });
@@ -362,6 +400,9 @@ $('.signup_steem_btn').click(function() {
 });
 $('.signup_email_btn').click(function() {
     signupwithemail();
+});
+$('.forgot_pass').click(function() {
+    resetemailpass();
 });
 $('.email_signup_btn').click(function() {
     let signup_username = $('#username_signup_id').val();
@@ -422,7 +463,6 @@ $('.email_signup_btn').click(function() {
     //toastr.success('Success now submit');
 });
 
-
 $('.email_login_btn').click(function() {
     let login_user_id = $('#login_user_id').val();
     let login_pass = $('#email_pass').val();
@@ -460,7 +500,35 @@ $('.email_login_btn').click(function() {
             }
         }
     });
+});
 
+$('.email_reset_pass_btn').click(function() {
+    let reset_email_id = $('#login_user_id').val();
+    let reset_url = 'helper/email_reset_pass.php';
+    if (reset_email_id == "") {
+        toastr.error('phew... Email should not be empty');
+        return false;
+    }
+    var data_reset = {
+        reset_email: reset_email_id
+    };
+    $.ajax({
+        type: "POST",
+        url: reset_url,
+        data: data_reset,
+        success: function(data) {
+            try {
+                var response = JSON.parse(data)
+                if (response.error == true) {
+                    toastr['error'](response.message);
+                } else {
+                    toastr['success'](response.message);
+                }
+            } catch (err) {
+                toastr.error('Sorry. Server response is malformed');
+            }
+        }
+    });
 });
 </script>
 
