@@ -44,12 +44,12 @@ if (isset($_POST['reset_email'])  && $_POST['reset_email'] != '') {
 			$mail->isSMTP();
 		    $mail->Host = 'smtp.zoho.com';
 		    $mail->SMTPAuth = true;
-		    $mail->Username = 'noreply@dlike.io';
+		    $mail->Username = 'verification@dlike.io';
 		    $mail->Password = getenv("EMAIL_PASS");
 		    $mail->SMTPSecure = 'tls';
 		    $mail->Port = 587;
 
-		    $mail->setFrom('noreply@dlike.io', 'DLIKE');
+		    $mail->setFrom('verification@dlike.io', 'DLIKE');
     		$mail->addAddress($reset_email);
 
     		$mail->isHTML(true); 
