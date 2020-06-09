@@ -129,7 +129,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         </div>
                     </div>
 
-                    <div class="signup-signup-email_verify" style="display: none">
+                    <div class="signup-signup-email-verify" style="display: none">
                         <div class="signup_email_block">
                             <div class="contact-info-inner signup_inner">
                                 <h4>Verify Email</h4>
@@ -473,6 +473,7 @@ $('.email_signup_btn').click(function() {
                     toastr['error'](response.message);
                 } else {
                     toastr['success'](response.message);
+                    $('#my_signup_email').html(signup_email);
                     signupemailverify();
                 }
             } catch (err) {
@@ -549,6 +550,17 @@ $('.email_reset_pass_btn').click(function() {
             }
         }
     });
+});
+
+//pin verify
+var inputemailpin = document.querySelector("#email_pin_code");
+inputpin.addEventListener('keyup', function(){
+    if(inputemailpin.value.length == 6) {
+        $(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',false);
+    }
+    if(inputemailpin.value.length < 6 || inputemailpin.value.length > 6) {
+        $(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',true);
+    }
 });
 </script>
 
