@@ -373,7 +373,7 @@ function signupemailverify() {
 
     var Signup_main_block  = document.querySelector('.signup-signup');
     var signup_email_block = Signup_main_block.querySelector('.signup-signup-email');
-    var signup_verify_block   = Signup_main_block.querySelector('.signup-signup-email_verify');
+    var signup_verify_block   = Signup_main_block.querySelector('.signup-signup-email-verify');
 
     jQuery(signup_email_block).animate({
         opacity: 0,
@@ -554,7 +554,7 @@ $('.email_reset_pass_btn').click(function() {
 
 //pin verify
 var inputemailpin = document.querySelector("#email_pin_code");
-inputpin.addEventListener('keyup', function(){
+inputemailpin.addEventListener('keyup', function(){
     if(inputemailpin.value.length == 6) {
         $(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',false);
     }
@@ -562,6 +562,38 @@ inputpin.addEventListener('keyup', function(){
         $(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',true);
     }
 });
+
+$('.email_verify_pin_btn').click(function() {
+    let email_pin_code = $('#email_pin_code').val();
+    let user_email = $('#my_signup_email').html();
+    let email_verify_url = 'helper/email_verify.php';
+    if (email_pin_code == "") {
+        toastr.error('phew... PIN value should not be empty');
+        return false;
+    }
+    var data_verify = {
+        email_pin_code: email_pin_code,
+        user_email: user_email
+    };
+    $.ajax({
+        type: "POST",
+        url: email_verify_url,
+        data: data_verify,
+        success: function(data) {
+            try {
+                var response = JSON.parse(data)
+                if (response.error == true) {
+                    toastr['error'](response.message);
+                } else {
+                    toastr['success'](response.message);
+                }
+            } catch (err) {
+                toastr.error('Sorry. Server response is malformed');
+            }
+        }
+    });
+});
+
 </script>
 
 //https://codeshack.io/secure-registration-system-php-mysql/
