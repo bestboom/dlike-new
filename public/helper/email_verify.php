@@ -22,22 +22,29 @@ if (isset($_POST['email_pin_code'])  && $_POST['email_pin_code'] != '' && isset(
 		$result_pin = $conn->query($check_pin);
 
 		if ($result_pin->num_rows > 0) {
+			$verified = '1';
 
+			$verifyuser = "UPDATE dlikeaccounts SET verified = '$verified' WHERE email = '$user_email'";
+				$updateverifyuser = $conn->query($verifyuser);
+				if ($updateverifyuser === TRUE) {
 
+					$dlike_user_verify_url = 'https://dlike.io';
 
-
-			
-			$dlike_user_login_url = 'https://dlike.io';
-    		die(json_encode([
-	    	'error' => false,
-    		'message' => 'Login Successful!',
-    		'redirect' => $dlike_user_login_url,
-    		'dlikeuser' => $login_username
-			]));
+		    		die(json_encode([
+				    	'error' => false,
+			    		'message' => 'Email Verified Successfully!',
+			    		'redirect' => $dlike_user_verify_url
+					]));
+				} else {
+				    die(json_encode([
+			    		'error' => true,
+			    		'message' => 'There is some issue in Email Verification!'
+					])); 
+				}
 		} else {
 	    die(json_encode([
     		'error' => true,
-    		'message' => 'Login details does not match!'
+    		'message' => 'User Record does nto match!'
 		])); }
     } else {
 	    die(json_encode([
