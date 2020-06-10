@@ -54,7 +54,7 @@ if (isset($_POST['reset_email'])  && $_POST['reset_email'] != '') {
 
     		$mail->isHTML(true); 
     		$mail->Subject = 'DLIKE Password Reset';
-    		$mail->Body    = 'Hi, We got password reset request for your DLIKE account! <br><br> To reset password, visit <a href=\'https://dlike.io/password_reset.php?token='.$token.'\'>this link</a> <br>If you did not requested please ignore this message!<br><br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
+    		$mail->Body    = 'Hi, We got password reset request for your DLIKE account! <br><br> To reset password, visit <a href=\'https://dlike.io/password_reset.php?token='.$token.'&email='.$reset_email.'\'>this link</a> <br>If you did not requested please ignore this message!<br><br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
 			
 			$done_email = $mail->send(); 
 
