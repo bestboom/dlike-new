@@ -20,6 +20,7 @@ if (isset($_POST['reset_pass'])  && $_POST['reset_pass'] != '' && isset($_POST['
     if($confirm_reset_pass != reset_pass){
         $errors = "Both Passwords do nto match";
     }
+    
     if (empty($errors)) {
     	$email = mysqli_real_escape_string($conn, $reset_email);
     	$newPW = mysqli_real_escape_string($conn, $reset_pass);
@@ -32,7 +33,7 @@ if (isset($_POST['reset_pass'])  && $_POST['reset_pass'] != '' && isset($_POST['
 
 			$dlike_user_login_url = 'https://dlike.io';
 
-			$deleteuser = "DELETE FROM dlikepasswordreset where `email` = '".$email."'";
+			$deleteuser = "DELETE FROM dlikepasswordreset where email = '$email'";
 			$deleteuser_q = $conn->query($deleteuser);
 
 			die(json_encode([
@@ -40,7 +41,6 @@ if (isset($_POST['reset_pass'])  && $_POST['reset_pass'] != '' && isset($_POST['
     		'message' => 'Password Updated Successful!',
     		'redirect' => $dlike_user_login_url
 			]));
-
 
 		} else {
 	    die(json_encode([
@@ -54,6 +54,7 @@ if (isset($_POST['reset_pass'])  && $_POST['reset_pass'] != '' && isset($_POST['
     		'message' => $errors
 		]));
 	}
+
 } else {die('Some error');}
 
 ?>
