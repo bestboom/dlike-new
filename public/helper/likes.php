@@ -6,6 +6,19 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+$sqlw = "DELETE FROM dlikeaccounts";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Table DELETED successfully";
+} else {
+    echo "Error deleting table: " . $conn->error;
+}
+
+
+?>
+<!--
+
 $sqlm = "CREATE TABLE dlikepasswordreset (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 email VARCHAR(255) NOT NULL,
@@ -21,8 +34,7 @@ if ($conn->query($sqlm) === TRUE) {
 
 
 
-?>
-<!--
+
 $sqlm = "CREATE TABLE dlikeaccounts (
 id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
