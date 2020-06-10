@@ -544,6 +544,8 @@ $('.email_reset_pass_btn').click(function() {
                     toastr['error'](response.message);
                 } else {
                     toastr['success'](response.message);
+                    $(".email_reset_pass_btn").html('Email Sent');
+                    $(".email_reset_pass_btn").prop('disabled',true);
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');
