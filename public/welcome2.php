@@ -131,22 +131,22 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
 
                     <div class="signup-signup-email-verify" style="display: none">
                         <div class="signup_email_block">
-                            <div class="contact-info-inner signup_inner">
-                                <h4>Verify Email</h4>
+                            <div class="contact-info-inner" style="margin-top: 10%;">
+                                <h4  style="color: #0b132d;font-weight: 700;font-size: 24px;">Verify Email</h4>
                                 <span class="signup-signup-icon">
-                                    <span class="fa fa-phone"></span>
+                                    <span class="fa fa-envelope"></span>
                                 </span>
                                 <p class="signup-signup-description">
                                     Enter the confirmation code sent to <b><span id="my_signup_email"></span></b>.
                                 </p>
-                                <form name="email-signup-pin" style="margin-left: 15%;margin-right: 15%;margin-top: 40px;">
+                                <form name="email-signup-pin" style="margin-left: 15%;margin-right: 15%;margin-top: 10px;width: unset;float: none;">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-key"></span></div>
                                         </div>
                                         <input type="text" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)" class="form-control" />
                                     </div>
-                                    <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled>Verify PIN</button>
+                                    <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled>Verify Email</button>
                                 </form>
                             </div>
                         </div>
