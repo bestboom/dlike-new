@@ -54,7 +54,7 @@
     </div>  
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
-	$('.reset_pass_btn').click(function() {
+	$('#reset_pass_btn').click(function() {
 		let reset_email = $('#reset_email_id').val();
 		let reset_pass = $('#reset_pass').val();
     	let confirm_reset_pass = $('#confirm_reset_pass').val();
