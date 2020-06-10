@@ -17,10 +17,10 @@ if (isset($_POST['reset_pass'])  && $_POST['reset_pass'] != '' && isset($_POST['
     if(empty($confirm_reset_pass)){
         $errors = "Confirm Password Shoould not be empty";
     }
-    if($confirm_reset_pass != reset_pass){
+    if($confirm_reset_pass != $reset_pass){
         $errors = "Both Passwords do nto match";
     }
-    
+
     if (empty($errors)) {
     	$email = mysqli_real_escape_string($conn, $reset_email);
     	$newPW = mysqli_real_escape_string($conn, $reset_pass);
