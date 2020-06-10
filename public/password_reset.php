@@ -13,7 +13,6 @@
 	}
 	$row = mysqli_fetch_assoc($result_link);
 	$reset_date = $row['reset_time'];
-	$reset_email = $row['email'];
   	if ($reset_date >= $curDate){
   		$errors = 'The link to reset password has expired';
   	}
@@ -29,7 +28,7 @@
                     <div class="user-connected-form-block" style="background: #1b1e63;">
                     <?php if (empty($errors)) { ?>
                         <form class="user-connected-from password-reset-form">
-                        	<input type="hidden" id="reset_email_id" value="<?php echo $reset_email; ?>" />
+                        	<input type="hidden" id="reset_email_id" value="<?php echo $email; ?>" />
                             <div class="input-group mb-3" style="padding: 3px;">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
