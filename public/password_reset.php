@@ -27,7 +27,6 @@
                     </div>
                     <div class="user-connected-form-block" style="background: #1b1e63;">
                     <?php if (empty($errors)) { ?>
-                    	<?php echo $email; ?>
                         <form class="user-connected-from password-reset-form">
                         	<input type="hidden" id="reset_email_id" value="<?php echo $email; ?>" />
                             <div class="input-group mb-3" style="padding: 3px;">
