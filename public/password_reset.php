@@ -42,7 +42,7 @@
                                 <input type="password" name="confirm_reset_pass" id="confirm_reset_pass" placeholder="Confirm Password" class="form-control" style="padding: 8px;" />
                             </div>
                             <center>
-                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 15px;" id="reset_pass_btn">Reset Password</button>
+                                <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="reset_pass_btn">Reset Password</button>
                             </center>
                         </form>
                     <? } else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; } ?>

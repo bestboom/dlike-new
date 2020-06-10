@@ -78,7 +78,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 
 		$signup_username = mysqli_real_escape_string($conn, $signup_username);
 		$signup_email = mysqli_real_escape_string($conn, $signup_email);
-
+/*
 		$sqlm = "INSERT INTO dlikeaccounts (username, email, password, refer_by, status, profile_pic, loct_ip, verify_code, verified, created_time)
 				VALUES ('".$signup_username."', '".$signup_email."', '".$hashedPW."', '".$refer_by."', '".$status."', '".$profile_pic."', '".$loct_ip."', '".$pin_number."', '".$verified."', '".date("Y-m-d H:i:s")."')";
 		if (mysqli_query($conn, $sqlm)) {
@@ -116,7 +116,11 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	    		'error' => true,
 	    		'message' => 'There is some issue. Please Try later'
 			]));
-		}	
+		}	*/
+		die(json_encode([
+			    	'error' => false,
+		    		'message' => 'Signup successful. Please verify Email!'
+				]));
 	} else {
 	    die(json_encode([
     		'error' => true,
