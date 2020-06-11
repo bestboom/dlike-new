@@ -109,4 +109,9 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){
         });
     });
+
+    $('#logout_btn').click(function() {
+        $.removeCookie("dlike_username",{path:"/"});
+        document.location.href="/";
+    });
 </script>
