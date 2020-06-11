@@ -30,6 +30,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
     </div>  
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
+    var dlike_username  = $.cookie("dlike_username");
     $('#dlike_share').click(function() {
             console.log(dlike_username);
             if (dlike_username != null) {
