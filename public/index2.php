@@ -43,6 +43,9 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
+    $('#logout_btn').click(function() {
+        $.removeCookie("dlike_username",{path:"/"});
+    });
     $( document ).ready(function() {    
         $('#loadings').delay(6000).fadeOut('slow');
 
@@ -110,7 +113,5 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
         });
     });
 
-    $('#logout_btn').click(function() {
-        $.removeCookie("dlike_username",{path:"/"});
-    });
+
 </script>
