@@ -1,5 +1,5 @@
 <?php 
-if (isset($_COOKIE['username']) || $_COOKIE['username']) {
+if (isset($_COOKIE['username']) || $_COOKIE['username'] || isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {
     die('<script>window.location.replace("https://dlike.io","_self")</script>');
 } else {
 include('template/header5.php');
@@ -600,6 +600,3 @@ $('.email_verify_pin_btn').click(function() {
 });
 
 </script>
-
-//https://codeshack.io/secure-registration-system-php-mysql/
-https://stackoverflow.com/questions/6781931/how-do-i-create-and-store-md5-passwords-in-mysql/6781988

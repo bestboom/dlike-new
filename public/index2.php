@@ -44,8 +44,8 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
     $('#logout_btn').click(function() {
-        alert('Sign new href executed.');
         $.removeCookie("dlike_username",{path:"/"});
+        document.location.href="/";
     });
 </script>
 <script type="text/javascript">
