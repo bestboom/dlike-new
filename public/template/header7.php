@@ -63,7 +63,7 @@
         <a href="/staking">Staking</a>
         <a href="/explorer">Explorer</a>
         <a href="/help">FAQ</a>
-        <?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { echo '<a href="" id="logout_btn">Logout</a>';} else { } ?>
+        <?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?>
         <br>
         <a href="/docs/dlike-paper.pdf">Whitepaper</a>
     </div>
