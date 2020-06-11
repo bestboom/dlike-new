@@ -112,6 +112,5 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 
     $('#logout_btn').click(function() {
         $.removeCookie("dlike_username",{path:"/"});
-        document.location.href="/";
     });
 </script>
