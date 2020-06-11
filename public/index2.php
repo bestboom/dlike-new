@@ -51,10 +51,6 @@ $posttags = "SELECT tagname, count(*) FROM posttags WHERE updated_at > DATE_SUB(
 <script type="text/javascript">
     $( document ).ready(function() {    
         $('#loadings').delay(6000).fadeOut('slow');
-
-        //$(window).on('load',function(){
-        //    $('#dlikem_maket').modal('show');
-        //});
     });
     var hidWidth;
     var scrollBarWidths = 40;
