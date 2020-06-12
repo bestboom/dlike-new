@@ -49,6 +49,12 @@
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome.php'){ ?> 
         <link rel="stylesheet" href="/css/intlTelInput.css">
 <? } ?> 
+<style type="text/css">#logout_btn{padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 18px;
+color: #c5bebe;
+display: block;
+transition: .3s;font-weight: 600;cursor:pointer;}</style>
 </head>
 <body>
     <?php include('promo/top-sticky.php'); ?>
@@ -63,7 +69,7 @@
         <a href="/staking">Staking</a>
         <a href="/explorer">Explorer</a>
         <a href="/help">FAQ</a>
-        <?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { echo '<a id="logout_btn" style="cursor:pointer;" >Logout</a>';} else { } ?>
+        <?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?>
         <br>
         <a href="/docs/dlike-paper.pdf">Whitepaper</a>
     </div>
