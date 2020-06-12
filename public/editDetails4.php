@@ -21,17 +21,17 @@ if (isset($_GET["url"])) {
     .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-family: arial;margin-bottom: 0px;}
 </style>
         <div class="container">
-            <div class="user-login-signup-form-wrap">
-                <div class="modal-content">
+            <div class="user-login-signup-form-wrap" style="margin-top: 70px;">
+                <div class="modal-content" style="border:none;">
                     <h3>Share</h3>
                     <div class="modal-body">
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
-                        <div class="modal-info-block">
+                        <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
-                            <p>This is some testing of the text This is some testing of the text This is some testing of the text </p>
-                            <p><i class="fas fa-link"></i>dlike.io</p>
-                        </div>
+                            <p style="margin-bottom: 4px;">This is some testing of the text This is some testing of the text This is some testing of the text </p>
+                            <p><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
                         <button type="submit" class="btn btn-primary" style="float:right;">SHARE</button>
+                        </div>
                     </div>
                 </div>
             </div><!-- user-login-signup-form-wrap -->
