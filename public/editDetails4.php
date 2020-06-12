@@ -48,7 +48,7 @@ if (isset($_GET["url"])) {
                     <div class="modal-body">
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
                         <div class="modal-info-block">
-                            <p>Always ensure you're on the correct website</p>
+                            <p style="font-weight:600;"><?php print $title; ?></p>
                             <div class="block-inner">
                                 <p>
                                     <span>
