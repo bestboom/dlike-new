@@ -41,10 +41,12 @@ if (isset($_GET["url"])) {
         padding: 1px 8px;
     }
 </style>
+        <div class="container">
             <div class="user-login-signup-form-wrap">
                 <div class="modal-content">
-                    <h3>User Login</h3>
+                    <h3>Share</h3>
                     <div class="modal-body">
+                        <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
                         <div class="modal-info-block">
                             <p>Always ensure you're on the correct website</p>
                             <div class="block-inner">
@@ -83,9 +85,9 @@ if (isset($_GET["url"])) {
                     </div>
                 </div>
             </div><!-- user-login-signup-form-wrap -->
+        </div>
 
 
-            
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
             <div class="contact-info-outer">
