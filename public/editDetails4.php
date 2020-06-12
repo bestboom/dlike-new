@@ -17,29 +17,8 @@ if (isset($_GET["url"])) {
 
 ?>
 </div><!-- sub-header -->
-
-<script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
 <style>
-    .ck-editor__editable {
-        min-height: 200px;
-    }
-
-    .ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
-        border-color: #c4c4c4;
-    }
-
-    .ck.ck-editor__main > .ck-editor__editable {
-        background: #fff;
-        border-color: #111;
-    }
-
-    .ck.ck-toolbar {
-        background: #eeeeee36;
-    }
-    .user-connected-form-block p {
-        text-align: left !important;
-        padding: 1px 8px;
-    }
+    .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-family: arial;margin-bottom: 0px;}
 </style>
         <div class="container">
             <div class="user-login-signup-form-wrap">
@@ -48,15 +27,15 @@ if (isset($_GET["url"])) {
                     <div class="modal-body">
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
                         <div class="modal-info-block">
-                            <p style="font-weight:600;"><?php print $title; ?></p>
+                            <p class="data-title"><?php print $title; ?></p>
                             <p>This is some testing of the text This is some testing of the text This is some testing of the text </p>
                             <p><i class="fas fa-link"></i>dlike.io</p>
                         </div>
+                        <button type="submit" class="btn btn-primary" style="float:right;">SHARE</button>
                     </div>
                 </div>
             </div><!-- user-login-signup-form-wrap -->
         </div>
-        <button type="submit" class="btn btn-default">Login</button>
 
 
     <div class="contact-form-section" style="margin-top: 100px;">
@@ -135,35 +114,7 @@ if (isset($_GET["url"])) {
     </div><!-- contact-section -->
    
 <?php include('template/main_footer.php'); ?>
-<script type="text/javascript">
 
-let editor;
-ClassicEditor
-    .create( document.querySelector( '#editor' ), {
-        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo' ],
-        heading: {
-            options: [
-                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
-                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
-                { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' }
-            ]
-        }
-    } )
-    .then( newEditor => {
-        editor = newEditor;
-    })
-    .catch( error => {
-        console.error( error );
-    });
-
-    function stripHtml(html)
-    {
-        var tmp = document.createElement("DIV");
-        tmp.innerHTML = html;
-        return tmp.textContent || tmp.innerText || "";
-    }   
-</script>
 <script type="text/javascript">
     function getHostName(url) {
         var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
