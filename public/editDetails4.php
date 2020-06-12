@@ -49,43 +49,14 @@ if (isset($_GET["url"])) {
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
                         <div class="modal-info-block">
                             <p style="font-weight:600;"><?php print $title; ?></p>
-                            <div class="block-inner">
-                                <p>
-                                    <span>
-                                        <i class="fas fa-lock"></i>
-                                        https://
-                                    </span>
-                                    www.excoin.com
-                                </p>
-                            </div>
+                            <p>This is some testing of the text This is some testing of the text This is some testing of the text </p>
+                            <p><i class="fas fa-link"></i>dlike.io</p>
                         </div>
-                        <div class="user-connected-form-block">
-                            <form class="user-connected-from user-login-form">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                </div>
-                                <div class="form-group pass-remember-block">
-                                    <div class="custom-control custom-checkbox">
-                                        <div class="custom-checkbox-wrap">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-                                            <label class="custom-control-label" for="customCheck">Remember me</label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <a href="#">Forget password?</a>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-default">Login</button>
-                            </form>
-                            <p>Don't have an account?  <a href="#"> Register</a></p>
-                        </div><!-- create-account-block -->
                     </div>
                 </div>
             </div><!-- user-login-signup-form-wrap -->
         </div>
+        <button type="submit" class="btn btn-default">Login</button>
 
 
     <div class="contact-form-section" style="margin-top: 100px;">
