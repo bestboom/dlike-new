@@ -19,7 +19,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                                 <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL" style="border-radius: 20px;">
                             </div>
                             <center>
-                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;" id="dlike_share"><i class="fas fa-spinner fa-spin loader" style="display:none;"></i><span id="plus">Share</span></button>
+                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;" id="dlike_share"><i class="fas fa-spinner fa-spin share_loader" style="display:none;"></i><span id="share_plus">Share</span></button>
                             </center>
                         </form>
                         <p style="color: #fff;">Must read  <a href="/help" style="color: #e1ec31;"> Terms &amp; Conditions</a> for sharing!</p>
@@ -46,11 +46,12 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                         toastr.error('phew... Steem URL not allowed');
                         return false;
                     }
+                    $('#share_plus').hide();
+                    $('#share_loader').show();
                     fetch_data("helper/main.php", url);
                 } else {
                     toastr.error('phew... URL is not Valid');
                 }
-
             } else { toastr.error('hmm... You must be login!'); return false; }
         });
         function fetch_data(apiUrl, webUrl) {

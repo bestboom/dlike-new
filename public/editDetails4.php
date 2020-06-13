@@ -30,7 +30,7 @@ if (isset($_GET["url"])) {
                             <p style="margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;"><?php print $des; ?></p>
                             <div style="display: flex;justify-content: space-between;">
                                 <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
-                                <select style="border:none;" name="category">
+                                <select style="border:none;" name="category" class="dlike_cat">
                                     <option value="0">Select Category</option>
                                 <?php foreach ($categories as $category){ ?>
                                     <option value="<?php echo $category;?>"><?php echo $category;?></option>    
@@ -38,8 +38,8 @@ if (isset($_GET["url"])) {
                                 </select>
                             </div>
                             <div style="display: flex;justify-content: space-between;margin-top:9px;color: rgb(27, 149, 224);">
-                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;" />
-                                <button type="button" class="btn btn-primary" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
+                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;" class="dlike_tags" />
+                                <button type="button" class="btn btn-primary dlike_share_post" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
                         </div>
                     </div>
@@ -152,31 +152,31 @@ if (isset($_GET["url"])) {
         return domain;
     }
 
-    $('.shareme2').click(function(clickEvent) {
-        if (username != null) {
+    $('.dlike_share_post').click(function(clickEvent) {
+        if (dlike_username != null) {
             //console.log(username);
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
-            if (verifyUrl.match(/prosportsdaily.com/g) || verifyUrl.match(/steemit.com/g)) {
+            if (verifyUrl.match(/cointelegraph.com/g) || verifyUrl.match(/steemit.com/g)) {
                 toastr.error('phew... Sharing from this url is not allowed');
                 return false;
             }
 
-            let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
-            if (text_words.length < 40) {
-                toastr.error('Please Write minimum 40 words to explain this share!');
-                return false;
-            }
+            //let text_words = stripHtml(editor.getData()).trim().split(/\s+/)
+            //if (text_words.length < 40) {
+            //    toastr.error('Please Write minimum 40 words to explain this share!');
+            //    return false;
+            //}
 
-            if ($('.catg').val() == "0") {
-                $('.catg').css("border-color", "RED");
+            if ($('.dlike_cat').val() == "0") {
+                $('.dlike_cat').css("border-color", "RED");
                 toastr.error('Please Select an appropriate Category');
                 return false;
             }
 
             // tag check
-            var tags = $('.tags').val();
+            var tags = $('.dlike_tags').val();
             tags = $.trim(tags);
             tags = tags.split(' ');
 
@@ -185,12 +185,12 @@ if (isset($_GET["url"])) {
                 toastr.error('Please add at least two related tags');
                 return false;
             }
-            if ($('.title_field').val() == "") {
-                toastr.error('Title Should not be empty!');
-                return false;
-            }
+            //if ($('.title_field').val() == "") {
+            //    toastr.error('Title Should not be empty!');
+            //    return false;
+            //}
 
-            $.ajax({
+           // $.ajax({
                 url: '/helper/post/check_pro.php',
                 type: 'post',
                 dataType: 'json',
@@ -312,7 +312,7 @@ if (isset($_GET["url"])) {
                         });
                     }
                 }
-            });
+            //});
         } else { toastr.error('You must be login to share!'); return false; }
         //$('form').submit();
     });
