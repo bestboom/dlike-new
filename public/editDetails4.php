@@ -1,5 +1,5 @@
 <?php 
-include('template/header5.php'); 
+include('template/header7.php'); 
 include('functions/categories.php'); 
 if (isset($_GET["url"])) {
     $decode = function ($data) {
@@ -50,6 +50,7 @@ if (isset($_GET["url"])) {
 <?php include('template/main_footer.php'); ?>
 
 <script type="text/javascript">
+    var dlike_username  = $.cookie("dlike_username");
     function getHostName(url) {
         var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
         if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
