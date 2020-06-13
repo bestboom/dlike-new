@@ -19,7 +19,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                                 <input type="text" class="form-control" id="url_field" required="true" placeholder="Enter URL" style="border-radius: 20px;">
                             </div>
                             <center>
-                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;" id="dlike_share">Share on DLIKE</button>
+                                <button type="button" class="btn btn-default" style="width: 40%;padding-top: 5px;" id="dlike_share"><i class="fas fa-spinner fa-spin loader" style="display:none;"></i><span id="plus">Share</span></button>
                             </center>
                         </form>
                         <p style="color: #fff;">Must read  <a href="/help" style="color: #e1ec31;"> Terms &amp; Conditions</a> for sharing!</p>

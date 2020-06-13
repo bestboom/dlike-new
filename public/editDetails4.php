@@ -28,7 +28,7 @@ if (isset($_GET["url"])) {
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
-                            <p style="margin-bottom: 4px;">This is some testing of the text This is some testing of the text This is some testing of the text </p>
+                            <p style="margin-bottom: 4px;"><?php print $des; ?></p>
                             <div style="display: flex;justify-content: space-between;">
                                 <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
                                 <select style="border:none;" name="category">
