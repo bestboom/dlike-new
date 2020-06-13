@@ -21,7 +21,7 @@ if (isset($_GET["url"])) {
     .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-family: arial;margin-bottom: 0px;}
 </style>
         <div class="container">
-            <div class="user-login-signup-form-wrap" style="margin-top: 70px;">
+            <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
                 <div class="modal-content" style="border:none;">
                     <h3>Share</h3>
                     <div class="modal-body">
@@ -38,9 +38,9 @@ if (isset($_GET["url"])) {
                                 <?php } ?>
                                 </select>
                             </div>
-                            <div style="display: flex;justify-content: space-between;margin-top:4px;">
+                            <div style="display: flex;justify-content: space-between;margin-top:9px;">
                                 <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;border-bottom: 1px solid #ccc;" />
-                                <button type="submit" class="btn btn-primary">SHARE</button>
+                                <button type="button" class="btn btn-primary" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
                         </div>
                     </div>
