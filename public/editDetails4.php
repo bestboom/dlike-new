@@ -31,14 +31,14 @@ if (isset($_GET["url"])) {
                             <p style="margin-bottom: 4px;">This is some testing of the text This is some testing of the text This is some testing of the text </p>
                             <div style="display: flex;justify-content: space-between;">
                                 <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
-                                <select class="" name="category">
+                                <select style="border:none;" name="category">
                                     <option value="0">Select Category</option>
                                 <?php foreach ($categories as $category){ ?>
                                     <option value="<?php echo $category;?>"><?php echo $category;?></option>    
                                 <?php } ?>
                                 </select>
                             </div>
-                            <div style="display: flex;justify-content: space-between;">
+                            <div style="display: flex;justify-content: space-between;margin-top:4px;">
                                 <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;border-bottom: 1px solid #ccc;" />
                                 <button type="submit" class="btn btn-primary">SHARE</button>
                             </div>
@@ -48,7 +48,7 @@ if (isset($_GET["url"])) {
             </div><!-- user-login-signup-form-wrap -->
         </div>
 
-
+<!--
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
             <div class="contact-info-outer">
@@ -106,7 +106,7 @@ if (isset($_GET["url"])) {
                                         </div>
                                         <button type="button" class="btn btn-default shareme2" id="com-sbmt">Publish</button>
                                     </form>
-                                </div><!-- create-account-block -->
+                                </div><-- create-account-block ---
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -122,8 +122,9 @@ if (isset($_GET["url"])) {
                 </div>
             </div>
         </div>
-    </div><!-- contact-section -->
-   
+    </div> contact-section 
+-->
+  
 <?php include('template/main_footer.php'); ?>
 
 <script type="text/javascript">
