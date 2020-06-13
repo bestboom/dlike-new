@@ -37,8 +37,8 @@ if (isset($_GET["url"])) {
                                 <?php } ?>
                                 </select>
                             </div>
-                            <div style="display: flex;justify-content: space-between;margin-top:9px;color: rgb(27, 149, 224);">
-                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;" class="dlike_tags" />
+                            <div style="display: flex;justify-content: space-between;margin-top:9px">
+                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;;color: rgb(27, 149, 224);" class="dlike_tags" />
                                 <button type="button" class="btn btn-primary dlike_share_post" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
                         </div>
