@@ -30,7 +30,10 @@ if (isset($_GET["url"])) {
                             <p class="data-title"><?php print $title; ?></p>
                             <p style="margin-bottom: 4px;">This is some testing of the text This is some testing of the text This is some testing of the text </p>
                             <p><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
-                        <button type="submit" class="btn btn-primary" style="float:right;">SHARE</button>
+                            <div style="display: flex;justify-content: space-between;">
+                                <input type="text" placeholder="Tages separated by space" />
+                                <button type="submit" class="btn btn-primary">SHARE</button>
+                            </div>
                         </div>
                     </div>
                 </div>
