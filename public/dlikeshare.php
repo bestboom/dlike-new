@@ -47,7 +47,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                         return false;
                     }
                     $('#share_plus').hide();
-                    $('#share_loader').show();
+                    $('.share_loader').show();
                     fetch_data("helper/main.php", url);
                 } else {
                     toastr.error('phew... URL is not Valid');
