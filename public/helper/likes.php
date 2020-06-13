@@ -7,6 +7,31 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+
+
+$sqlm = "CREATE TABLE dlikeposts (
+id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+title VARCHAR(255) NOT NULL,
+permlink VARCHAR(1000) NOT NULL,
+ext_url VARCHAR(255) NOT NULL,
+img_url VARCHAR(255) NOT NULL,
+ctegory VARCHAR(255) NOT NULL,
+description VARCHAR(1000) NOT NULL,
+tags VARCHAR(255) NOT NULL,
+created_at TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table dlikeposts created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+?>
+<!--
+
 $sqlw = "DELETE FROM dlikeaccounts";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -16,8 +41,7 @@ if ($conn->query($sqlw) === TRUE) {
 }
 
 
-?>
-<!--
+
 
 $sqlm = "CREATE TABLE dlikepasswordreset (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
