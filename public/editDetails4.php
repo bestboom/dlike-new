@@ -23,12 +23,12 @@ if (isset($_GET["url"])) {
         <div class="container">
             <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
                 <div class="modal-content" style="border:none;">
-                    <h3>Share</h3>
+                    <h3 style="color:#c51d24;">Share</h3>
                     <div class="modal-body">
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
-                            <p style="margin-bottom: 4px;"><?php print $des; ?></p>
+                            <p style="margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;"><?php print $des; ?></p>
                             <div style="display: flex;justify-content: space-between;">
                                 <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
                                 <select style="border:none;" name="category">
@@ -39,7 +39,7 @@ if (isset($_GET["url"])) {
                                 </select>
                             </div>
                             <div style="display: flex;justify-content: space-between;margin-top:9px;">
-                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;border-bottom: 1px solid #ccc;" />
+                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;" />
                                 <button type="button" class="btn btn-primary" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
                         </div>
