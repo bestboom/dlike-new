@@ -29,7 +29,15 @@ if (isset($_GET["url"])) {
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
                             <p style="margin-bottom: 4px;">This is some testing of the text This is some testing of the text This is some testing of the text </p>
-                            <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
+                            <div style="display: flex;justify-content: space-between;">
+                                <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
+                                <select class="" name="category">
+                                    <option value="0">Select Category</option>
+                                <?php foreach ($categories as $category){ ?>
+                                    <option value="<?php echo $category;?>"><?php echo $category;?></option>    
+                                <?php } ?>
+                                </select>
+                            </div>
                             <div style="display: flex;justify-content: space-between;">
                                 <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;border-bottom: 1px solid #ccc;" />
                                 <button type="submit" class="btn btn-primary">SHARE</button>
