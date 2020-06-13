@@ -57,7 +57,6 @@ display: block;
 transition: .3s;font-weight: 600;cursor:pointer;}</style>
 </head>
 <body>
-    <?php include('promo/top-sticky.php'); ?>
     <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?>

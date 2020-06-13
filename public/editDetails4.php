@@ -18,12 +18,11 @@ if (isset($_GET["url"])) {
 ?>
 </div><!-- sub-header -->
 <style>
-    .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-family: arial;margin-bottom: 0px;}
+    .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
 </style>
         <div class="container">
             <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
                 <div class="modal-content" style="border:none;">
-                    <h3 style="color:#c51d24;">Share</h3>
                     <div class="modal-body">
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;" alt="dlike"/>
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
@@ -38,7 +37,7 @@ if (isset($_GET["url"])) {
                                 <?php } ?>
                                 </select>
                             </div>
-                            <div style="display: flex;justify-content: space-between;margin-top:9px;">
+                            <div style="display: flex;justify-content: space-between;margin-top:9px;color: rgb(27, 149, 224);">
                                 <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;" />
                                 <button type="button" class="btn btn-primary" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
