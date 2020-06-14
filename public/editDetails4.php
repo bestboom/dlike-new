@@ -21,12 +21,11 @@ if (isset($_GET["url"])) {
     .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
     .addiez {
    position:relative;
-   width:100%;
-   padding:30px;
-   border:1px solid #d8dbdf;
+   width:70%;
+   padding:3px;
    outline:none;
    text-transform: lowercase;
-   font-family: helvetica, arial, sans-serif;
+   color: rgb(27, 149, 224);
    -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased;
 }
@@ -84,7 +83,6 @@ if (isset($_GET["url"])) {
                             <div style="display: flex;justify-content: space-between;margin-top:9px">
                                 <!--<input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;;color: rgb(27, 149, 224);" class=" addiez" contenteditable="true" />-->
                                 <div class="addiez dlike_tags" contenteditable="true" id="text" placeholder="Write something with space"></div>
-                                <div class="ad_text" id="ad_text"></div>
                                 <button type="button" class="btn btn-primary dlike_share_post" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
                         </div>
