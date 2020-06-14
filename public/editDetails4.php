@@ -112,7 +112,7 @@ if (isset($_GET["url"])) {
             console.log(vtags);
             var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
             console.log(qtags);
-            var description = $('#data-desc').html();
+            var description = $('.data-desc').html();
             console.log(description);
             var post_body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
             console.log(post_body);
