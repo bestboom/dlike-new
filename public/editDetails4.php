@@ -105,7 +105,7 @@ if (isset($_GET["url"])) {
             console.log(author);
             var title = $('.data-title').html();
             console.log(title);
-            var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
+            var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/-+/g,'-').toLowerCase();
             console.log(permlink);
             //var urlImage =  $('.image_field').val();
             var added_tags = $('.dlike_tags').val();
