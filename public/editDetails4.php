@@ -108,8 +108,8 @@ if (isset($_GET["url"])) {
             var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/-+/g,'-').toLowerCase();
             console.log(permlink);
             //var urlImage =  $('.image_field').val();
-            var added_tags = $('.dlike_tags').val();
-            console.log(added_tags);
+            var tags = $('.dlike_tags').val();
+            console.log(tags);
             //var vtags = added_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
             //console.log(vtags);
             //var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
@@ -138,20 +138,19 @@ if (isset($_GET["url"])) {
             //    "category": post_category
             //};
 
-            //$(".shareme2").attr("disabled", true);
-            //$('.shareme2').html('Publishing...');
+            $(".dlike_share_post").attr("disabled", true);
+            $('.dlike_share_post').html('Publishing...');
 
-            //var datam = {
-            //    title: title,
-            //    permlink: permlink,
-            //    tags: $('.tags').val(),
-            //    meta_body: post_body,
-            //    main_body: body,
-            //    category: $('.catg').val(),
-            //    image: $('.image_field').val(),
-            //    rewards: $('.rewards').val(),
-            //    exturl:urlInput
-            //};
+            var data = {
+                author: author,
+                title: title,
+                permlink: permlink,
+                tags: tags,
+                description: description,
+                category: post_category,
+                image: urlImage,
+                exturl:urlInput
+            };
             
         } else { toastr.error('You must be login to share!'); return false; }
     });
