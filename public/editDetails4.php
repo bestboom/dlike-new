@@ -19,6 +19,49 @@ if (isset($_GET["url"])) {
 </div><!-- sub-header -->
 <style>
     .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
+    .addiez {
+   position:relative;
+   width:100%;
+   padding:30px;
+   border:1px solid #d8dbdf;
+   outline:none;
+   text-transform: lowercase;
+   font-family: helvetica, arial, sans-serif;
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+}
+.addiez::-webkit-input-placeholder {
+   /* Chrome/Opera/Safari */
+   color: rgb(0, 0, 1);
+}
+.addiez[contentEditable=true]:empty:not(:focus):before  {
+      content:attr(placeholder);
+      color: #444;
+    }
+
+.note {
+   position:relative;
+   width:100%;
+   padding:30px;
+   font-weight:300;
+   font-family: helvetica, arial, sans-serif;
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+   line-height:1.8rem;
+   font-size:13px;
+}
+.ad_text {
+   position:relative;
+   width:100%;
+   padding:10px 30px;
+   overflow:hidden;
+   font-weight:300;
+   font-family: helvetica, arial, sans-serif;
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+   line-height:1.8rem;
+   font-size:13px;
+}
 </style>
         <div class="container">
             <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
