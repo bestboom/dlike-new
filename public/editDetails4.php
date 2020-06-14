@@ -49,6 +49,7 @@ if (isset($_GET["url"])) {
         </div>
   
 <?php include('template/dlike_footer.php'); ?>
+<script src="https://unpkg.com/xregexp@3.2.0/xregexp-all.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
    window.mobilecheck = function() {
