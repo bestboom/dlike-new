@@ -101,7 +101,7 @@ if (isset($_GET["url"])) {
             }
             var author = dlike_username;
             console.log(author);
-            var title = $('#data-title').html();
+            var title = $('.data-title').html();
             console.log(title);
             var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
             console.log(permlink);
