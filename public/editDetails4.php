@@ -24,6 +24,7 @@ if (isset($_GET["url"])) {
             <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
                 <div class="modal-content" style="border:none;">
                     <div class="modal-body">
+                        <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;max-height: 340px;min-width: 100%;" alt="dlike"/>
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
@@ -78,6 +79,7 @@ if (isset($_GET["url"])) {
         if (dlike_username != null) {
             console.log(dlike_username);
             let urlInput = '<?php echo $url; ?>';
+            console.log(urlInput);
             let verifyUrl = getDomain(urlInput);
 
             if (verifyUrl.match(/cointelegraph.com/g) || verifyUrl.match(/steemit.com/g)) {
@@ -116,6 +118,8 @@ if (isset($_GET["url"])) {
             console.log(description);
             var post_body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
             console.log(post_body);
+            var urlImage =  $('.image_field').val();
+            console.log(urlImage);
             //var body = '<center><img src="'+urlImage+'" alt="Shared From DLIKE" /></center><br>'+post_body+'<br><center><br><a href="https://dlike.io/post/@' + author + '/' + permlink+'">Shared On DLIKE</a><hr><br><a href="https://dlike.io/"><img src="https://dlike.io/images/dlike-logo.jpg"></a></center>';
             //console.log(body);
             var post_category = $('.dlike_cat').val();
