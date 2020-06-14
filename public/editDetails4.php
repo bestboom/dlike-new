@@ -82,7 +82,8 @@ if (isset($_GET["url"])) {
                                 </select>
                             </div>
                             <div style="display: flex;justify-content: space-between;margin-top:9px">
-                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;;color: rgb(27, 149, 224);" class="dlike_tags addiez" contenteditable="true" />
+                                <!--<input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;;color: rgb(27, 149, 224);" class=" addiez" contenteditable="true" />-->
+                                <div class="addiez dlike_tags" contenteditable="true" id="text" placeholder="Write something with space"></div>
                                 <div class="ad_text" id="ad_text"></div>
                                 <button type="button" class="btn btn-primary dlike_share_post" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
@@ -234,7 +235,7 @@ if (isset($_GET["url"])) {
                 return false;
             }
             // tag check
-            var tags = $('.dlike_tags').val();
+            var tags = $('.dlike_tags').html();
             tags = $.trim(tags);
             tags = tags.split(' ');
 
