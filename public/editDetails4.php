@@ -251,7 +251,7 @@ if (isset($_GET["url"])) {
             var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').replace(/-+/g,'-').toLowerCase();
             console.log(permlink);
             //var urlImage =  $('.image_field').val();
-            var tags = $('.dlike_tags').val();
+            var tags = $('.dlike_tags').html();
             console.log(tags);
             //var vtags = added_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
             //console.log(vtags);
