@@ -78,7 +78,7 @@ if (isset($_GET["url"])) {
 
     $('.dlike_share_post').click(function(clickEvent) {
         if (dlike_username != null) {
-            console.log(username);
+            console.log(dlike_username);
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
