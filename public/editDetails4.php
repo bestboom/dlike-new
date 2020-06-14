@@ -27,7 +27,7 @@ if (isset($_GET["url"])) {
                         <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;max-height: 340px;min-width: 100%;" alt="dlike"/>
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
-                            <p style="margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;"><?php print $des; ?></p>
+                            <p style="margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;" class="data-desc"><?php print $des; ?></p>
                             <div style="display: flex;justify-content: space-between;">
                                 <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
                                 <select style="border:none;" name="category" class="dlike_cat">
@@ -44,13 +44,12 @@ if (isset($_GET["url"])) {
                         </div>
                     </div>
                 </div>
-            </div><!-- user-login-signup-form-wrap -->
+            </div>
         </div>
   
 <?php include('template/dlike_footer.php'); ?>
 
 <script type="text/javascript">
-    //var dlike_username  = $.cookie("dlike_username");
     function getHostName(url) {
         var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
         if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
@@ -59,7 +58,6 @@ if (isset($_GET["url"])) {
             return false;
         }
     }
-
     function getDomain(url) {
         let hostName = getHostName(url);
         let domain = hostName;
@@ -101,7 +99,56 @@ if (isset($_GET["url"])) {
                 toastr.error('Please add at least two related tags');
                 return false;
             }
+            var author = dlike_username;
+            console.log(author);
+            var title = $('#data-title').html();
+            console.log(title);
+            var permlink = title.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-').toLowerCase();
+            console.log(permlink);
+            //var urlImage =  $('.image_field').val();
+            var added_tags = $('.dlike_tags').val();
+            console.log(added_tags);
+            var vtags = added_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
+            console.log(vtags);
+            var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
+            console.log(qtags);
+            var description = $('#data-desc').html();
+            console.log(description);
+            var post_body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
+            console.log(post_body);
+            var body = '<center><img src="'+urlImage+'" alt="Shared From DLIKE" /></center><br>'+post_body+'<br><center><br><a href="https://dlike.io/post/@' + author + '/' + permlink+'">Shared On DLIKE</a><hr><br><a href="https://dlike.io/"><img src="https://dlike.io/images/dlike-logo.jpg"></a></center>';
+            console.log(body);
+            var post_category = $('.dlike_cat').val();
+            console.log(post_category);
+            //var post_tags = '["hive-116221", "dlike", '+ qtags +']';
+            //var meta_tags = JSON.parse(post_tags);
+            //var jsonMetadata = {
+            //   "tags": meta_tags,
+            //   "app": "dlike/3",
+            //   "community": "dlike",
+            //    "format": "html",
+            //    "image": urlImage,
+            //    "url": urlInput,
+            //    "type": "share",
+            //    "body": post_body,
+            //    "category": post_category
+            //};
+
+            //$(".shareme2").attr("disabled", true);
+            //$('.shareme2').html('Publishing...');
+
+            //var datam = {
+            //    title: title,
+            //    permlink: permlink,
+            //    tags: $('.tags').val(),
+            //    meta_body: post_body,
+            //    main_body: body,
+            //    category: $('.catg').val(),
+            //    image: $('.image_field').val(),
+            //    rewards: $('.rewards').val(),
+            //    exturl:urlInput
+            //};
+            
         } else { toastr.error('You must be login to share!'); return false; }
     });
-
 </script>
