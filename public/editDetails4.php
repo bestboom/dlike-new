@@ -47,16 +47,16 @@ if (isset($_GET["url"])) {
             </div><!-- user-login-signup-form-wrap -->
         </div>
   
-<?php include('template/main_footer.php'); ?>
+<?php include('template/dlike_footer.php'); ?>
 
 <script type="text/javascript">
-    var dlike_username  = $.cookie("dlike_username");
+    //var dlike_username  = $.cookie("dlike_username");
     function getHostName(url) {
         var match = url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/i);
         if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
             return match[2];
         } else {
-            return null;
+            return false;
         }
     }
 
@@ -86,13 +86,11 @@ if (isset($_GET["url"])) {
                 toastr.error('phew... Sharing from this url is not allowed');
                 return false;
             }
-
             if ($('.dlike_cat').val() == "0") {
                 $('.dlike_cat').css("border-color", "RED");
                 toastr.error('Please Select an appropriate Category');
                 return false;
             }
-
             // tag check
             var tags = $('.dlike_tags').val();
             tags = $.trim(tags);
@@ -103,9 +101,7 @@ if (isset($_GET["url"])) {
                 toastr.error('Please add at least two related tags');
                 return false;
             }
-
         } else { toastr.error('You must be login to share!'); return false; }
-        //$('form').submit();
     });
 
 </script>

@@ -28,9 +28,9 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
             </div>
         </div>
     </div>  
-<?php include('template/footer.php'); ?>
+<?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-    var dlike_username  = $.cookie("dlike_username");
+    //var dlike_username  = $.cookie("dlike_username");
     $('#dlike_share').click(function() {
             console.log(dlike_username);
             if (dlike_username != null) {
@@ -94,7 +94,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
             if (match != null && match.length > 2 && typeof match[2] === 'string' && match[2].length > 0) {
                 return match[2];
             } else {
-                return null;
+                return false;
             }
         }
 </script>
