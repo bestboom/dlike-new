@@ -9,10 +9,10 @@ require '../../includes/config.php';
 if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"]) && isset($_POST["image"])){
 
 	$author = trim(mysqli_real_escape_string($conn, $_POST['author']));
-	$url = $_POST['exturl'];
+	$url = mysqli_real_escape_string($conn, $_POST['exturl']);
 	$urlImage = mysqli_real_escape_string($conn, $_POST["image"]);
 	$title = mysqli_real_escape_string($conn, $_POST['title']);
-	$permlink = mysqli_real_escape_string($conn, $_POST['permlink'])mysqli_real_escape_string($conn, ;
+	$permlink = mysqli_real_escape_string($conn, $_POST['permlink']);
 	$category = strtolower(mysqli_real_escape_string($conn, $_POST['category']));
 	$tags = trim(strtolower(mysqli_real_escape_string($conn, $_POST['tags'])));
 	$body = $_POST['description'];
