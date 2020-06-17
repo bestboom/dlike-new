@@ -19,48 +19,6 @@ if (isset($_GET["url"])) {
 </div><!-- sub-header -->
 <style>
     .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
-    .addiez {
-   position:relative;
-   width:70%;
-   padding:3px;
-   outline:none;
-   text-transform: lowercase;
-   color: rgb(27, 149, 224);
-   -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
-}
-.addiez::-webkit-input-placeholder {
-   /* Chrome/Opera/Safari */
-   color: rgb(0, 0, 1);
-}
-.addiez[contentEditable=true]:empty:not(:focus):before  {
-      content:attr(placeholder);
-      color: #444;
-    }
-
-.note {
-   position:relative;
-   width:100%;
-   padding:30px;
-   font-weight:300;
-   font-family: helvetica, arial, sans-serif;
-   -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
-   line-height:1.8rem;
-   font-size:13px;
-}
-.ad_text {
-   position:relative;
-   width:100%;
-   padding:10px 30px;
-   overflow:hidden;
-   font-weight:300;
-   font-family: helvetica, arial, sans-serif;
-   -moz-osx-font-smoothing: grayscale;
-   -webkit-font-smoothing: antialiased;
-   line-height:1.8rem;
-   font-size:13px;
-}
 </style>
         <div class="container">
             <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
@@ -82,7 +40,6 @@ if (isset($_GET["url"])) {
                             </div>
                             <div style="display: flex;justify-content: space-between;margin-top:9px">
                                 <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;;color: rgb(27, 149, 224);" class="dlike_tags" />
-                                <!--<div class="addiez dlike_tags" contenteditable="true" id="text" placeholder="Write something with space"></div>-->
                                 <button type="button" class="btn btn-primary dlike_share_post" style="background-color: #c51d24;border-color: #c51d24;">SHARE</button>
                             </div>
                         </div>
@@ -163,6 +120,8 @@ $input.addEventListener("keypress", e => {
             //var urlImage =  $('.image_field').val();
             var tags = $('.dlike_tags').val();
             console.log(tags);
+            var post_tags = $.trim(tags).replace(/\s+/g, ' ');
+            console.log(post_tags);
             //var vtags = added_tags.replace(/([a-zA-Z0-9-]+)/g, "\"$1\"");
             //console.log(vtags);
             //var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
@@ -177,19 +136,6 @@ $input.addEventListener("keypress", e => {
             //console.log(body);
             var post_category = $('.dlike_cat').val();
             console.log(post_category);
-            //var post_tags = '["hive-116221", "dlike", '+ qtags +']';
-            //var meta_tags = JSON.parse(post_tags);
-            //var jsonMetadata = {
-            //   "tags": meta_tags,
-            //   "app": "dlike/3",
-            //   "community": "dlike",
-            //    "format": "html",
-            //    "image": urlImage,
-            //    "url": urlInput,
-            //    "type": "share",
-            //    "body": post_body,
-            //    "category": post_category
-            //};
 
             $(".dlike_share_post").attr("disabled", true);
             $('.dlike_share_post').html('Publishing...');
