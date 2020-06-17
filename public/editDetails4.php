@@ -144,12 +144,43 @@ $input.addEventListener("keypress", e => {
                 author: author,
                 title: title,
                 permlink: permlink,
-                tags: tags,
-                description: description,
+                tags: post_tags,
+                description: post_body,
                 category: post_category,
                 image: urlImage,
                 exturl:urlInput
             };
+
+            $.ajax({
+              type: "POST",
+              url: "/helper/post/submit_dlike_post.php",
+              data: data,
+              
+              success: function(data) {
+                  //console.log(data);
+                  try {
+                      var response = JSON.parse(data)
+                      if (response.error == true) {
+                          $(".dlike_share_post").attr("disabled", false);
+                          $('.dlike_share_post').html('Publish');
+                          toastr.error(response.message);
+                          return false;
+                      } else {
+                          toastr.success('Post published successfully');
+                          setTimeout(function(){
+                              window.location.href = response.redirect;
+                          }, 5000);
+                      }
+                  } catch (err) {
+                      toastr.error('Sorry. Server response is malformed.');
+                  }
+              },
+              error: function(xhr, textStatus, error) {
+                  console.log(xhr.statusText);
+                  console.log(textStatus);
+                  console.log(error);
+              }
+          });
             
         } else { toastr.error('You must be login to share!'); return false; }
     });
