@@ -15,7 +15,7 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 	$permlink = mysqli_real_escape_string($conn, $_POST['permlink']);
 	$category = strtolower(mysqli_real_escape_string($conn, $_POST['category']));
 	$tags = trim(strtolower(mysqli_real_escape_string($conn, $_POST['tags'])));
-	$body = $_POST['description'];
+	$body = mysqli_real_escape_string($conn, $_POST['description']);
 	
 
 	$redirect_url = 'https://dlike.io/post/@' . $author .'/'. $permlink;
@@ -27,17 +27,16 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 
 
 			//send success message
-			die(json_encode([
-		    	'error' => false,
-	    		'redirect' => $redirect_url, 
-	    		'message' => 'Post Published!'
-			]));
+		die(json_encode([
+	    	'error' => false,
+    		'redirect' => $redirect_url, 
+    		'message' => 'Post Published!'
+		]));
 		} else {
 			die(json_encode([
 		    	'error' => true,
-	    		'message' => 'Error in post Publishing!'	
+	    		'message' => 'Error while Publishing Post!'	
 			]));
 		}
-	} else { echo 'Something went wrong'; }	
 } else { echo 'some issue'; }
 ?>
