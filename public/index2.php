@@ -12,6 +12,7 @@
                 $imgUrl = $row_T["img_url"];
                 $post_author = $row_T["username"];
                 $author = $row_T["username"];
+                $post_time = strtotime($row_T["created_at"]); 
 
         $sql_W = "SELECT * FROM dlikeaccounts where username = '$post_author'"; 
         $result_W = $conn->query($sql_W);
@@ -28,7 +29,7 @@
                     <div class="post-author-block">
                     <div class="author-thumb"><a href="/@pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="<?php echo $row_T['username']; ?>" class="img-responsive"></a></div>
                     <div class="author-info">
-                    <h5><a href="/@"><?php echo $author; ?></a><div class="time"></div></h5> 
+                    <h5><a href="/@"><?php echo $author; ?></a><div class="time"><?php echo time_ago($post_time); ?></div></h5> 
                     </div>
                     </div>
                     <div class="post-comments post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
@@ -48,7 +49,7 @@
                     <div class="post-footer">
                     <div class="post-author-block" style="width:100%">
                     
-                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="width: 21px;height: 21px;"></a><span>| &nbsp;0 LIKES</span></div>
+                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;0 LIKES</span></div>
 
                     <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
                     </div>
