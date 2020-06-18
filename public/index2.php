@@ -10,13 +10,21 @@
         if ($result_T && $result_T->num_rows > 0) { 
             while ($row_T = $result_T->fetch_assoc()) { 
                 $imgUrl = $row_T["img_url"];
+                $post_author = $row_T["username"];
+
+        $sql_W = "SELECT * FROM dlikeaccounts where username = '$post_author'"; 
+        $result_W = $conn->query($sql_W);
+        if ($result_T && $result_T->num_rows > 0) { 
+            $profile_pic = $row_T["profile_pic"];
+            if(!empty($profile_pic)) {$user_profile_pic = $profile_pic;} else {$user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
+        }  
         ?>
             <div class="col-lg-4 col-md-6 postsMainDiv">
                 <article class="post-style-two">
                     <div class="post-contnet-wrap-top">
                     <div class="post-footer">
                     <div class="post-author-block">
-                    <div class="author-thumb"><a href="/@pillsjee"><img src="https://steemitimages.com/u/avatar" alt="img" class="img-responsive"></a></div>
+                    <div class="author-thumb"><a href="/@pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="img" class="img-responsive"></a></div>
                     <div class="author-info">
                     <h5><a href="/@"><?php echo $row_T["username"]; ?></a><div class="time"></div></h5> 
                     </div>
