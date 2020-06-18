@@ -65,3 +65,38 @@
 </div>
 <?php include('template/modals/modal.php'); ?> 
 <?php include('template/dlike_footer.php'); ?>
+<script type="text/javascript">
+        $('.latest-post-section').on("click", ".hov_me", function() {
+        //alert('called');
+        // we want to copy the 'id' from the button to the modal
+        var mypermlink = $(this).attr("data-permlink");
+        var authorname = $(this).attr("data-author");
+        var postsrec = $(this).attr("data-likes");
+        //console.log(postsrec);
+        var datat = {
+            ath: authorname,
+            plink: mypermlink
+        };
+        $.ajax({
+            type: "POST",
+            url: "/helper/verify_post.php",
+            data: datat,
+            success: function(data) {
+                try {
+                    var response = JSON.parse(data)
+                    if (response.error == true) {
+                        $('#upvotefail').modal('show');
+                    } else {
+                        $('#recomendModal').modal('show');
+                    }
+                } catch (err) {
+                    alert('Sorry. Server response is malformed.')
+                }
+            }
+        });
+
+        $("#r_author").val(authorname);
+        $("#r_permlink").val(mypermlink);
+        $("#r_likes").val(postsrec);
+    });
+</script>
