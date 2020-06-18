@@ -56,7 +56,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
         $.post(apiUrl, { url: webUrl }, function(response) {
 
             let res = JSON.parse(response);
-            window.location.replace("editDetails4.php?url=" + encodeURIComponent(res.url) + "&title=" + encodeURIComponent(res.title) + "&imgUrl=" + encodeURIComponent(res.imgUrl) + "&details=" + encodeURIComponent(res.des));
+            window.location.replace("editDlikePost.php?url=" + encodeURIComponent(res.url) + "&title=" + encodeURIComponent(res.title) + "&imgUrl=" + encodeURIComponent(res.imgUrl) + "&details=" + encodeURIComponent(res.des));
         });
     }
     function isValidURL(url) {

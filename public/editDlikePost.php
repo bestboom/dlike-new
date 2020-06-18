@@ -169,7 +169,7 @@ $input.addEventListener("keypress", e => {
                           toastr.success('Post published successfully');
                           setTimeout(function(){
                               window.location.href = response.redirect;
-                          }, 5000);
+                          }, 500);
                       }
                   } catch (err) {
                       toastr.error('Sorry. Server response is malformed.');
