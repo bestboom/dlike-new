@@ -24,16 +24,18 @@
                     <div class="post-comments post-catg"><a href="/category/"><span class="post-meta"><?php echo $row_T["ctegory"]; ?></span></a></div>
                     </div>
                     </div>
-                    <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src='.$imgUrl.'>'; ?></a></div>
+                    <div class="post-thumb img-fluid" style="width: 100%"><a href="/post/@"><?php echo '<img src='.$imgUrl.'>'; ?></a></div>
                     <div class="post-contnet-wrap">
                     <div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>
                     <h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '"><?php echo $row_T["title"]; ?></a></h4>
                     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
                     <div class="post-footer">
                     <div class="post-author-block">
-                    <div class="author-info"><i class="fas fa-dollar-sign"></i><span>&nbsp;' + $post.pending_payout_value.substr(0, 4) + '</span> <b>+</b> <span id="se_token'+newValue +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKER</b></div>
+                    
+                    <div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+newValue+'"></i></a><span>0 votes</span></div>
+
+                    <div class="author-info"><span id="se_token'+newValue +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
                     </div>
-                    <div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+newValue+'"></i></a><span>&nbsp;$post.active_votes.length + '</span>&nbsp; | &nbsp;<i class="fas fa-comments"></i>&nbsp;<span id="DlikeComments'+$post.permlink +$post.author +'">0</span></div>
                     </div>
                     </div>
                 </article>
