@@ -63,4 +63,5 @@
         </div>
     </div>  
 </div>
+<?php include('template/modals/modal.php'); ?> 
 <?php include('template/dlike_footer.php'); ?>
