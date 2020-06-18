@@ -18,8 +18,8 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 	$body = mysqli_real_escape_string($conn, $_POST['description']);
 	
 
-	$redirect_url = 'https://dlike.io/post/@' . $author .'/'. $permlink;
-
+	//$redirect_url = 'https://dlike.io/post/@' . $author .'/'. $permlink;
+	$redirect_url = 'https://dlike.io/index2.php';
 	if ($title !='') {
 
 		$addposts = "INSERT INTO dlikeposts (`username`,`title`, `permlink`, `ext_url`, `img_url`, `ctegory`, `description`, `tags`, `created_at`) VALUES ('".$author."','".$title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."', '".$body."', '".$tags."','".date("Y-m-d H:i:s")."')";

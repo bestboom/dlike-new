@@ -11,7 +11,7 @@
             while ($row_T = $result_T->fetch_assoc()) { 
                 $imgUrl = $row_T["img_url"];
         ?>
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 postsMainDiv">
                 <article class="post-style-two">
                     <div class="post-contnet-wrap-top">
                     <div class="post-footer">
@@ -32,7 +32,7 @@
                     <div class="post-footer">
                     <div class="post-author-block" style="width:100%">
                     
-                    <div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+newValue+'"></i></a><span>0 votes</span></div>
+                    <div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+newValue+'"></i></a><span>&nbsp; | &nbsp;0 LIKES</span></div>
 
                     <div class="author-info"><span id="se_token'+newValue +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
                     </div>
