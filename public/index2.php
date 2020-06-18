@@ -26,13 +26,19 @@
                     </div>
                     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src='.$imgUrl.' class="card-img-top" />'; ?></a></div>
                     <div class="post-contnet-wrap">
-                    <div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>
+                    <!--<div class="row d-flex justify-content-center hov-it">
+                    <div class="hov-item">
+                    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
+                    <span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '">
+                    <div class="hov-txt">
+                    <h5>
+                        <span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>-->
                     <h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '"><?php echo $row_T["title"]; ?></a></h4>
                     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
                     <div class="post-footer">
                     <div class="post-author-block" style="width:100%">
                     
-                    <div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><i class="fas fa-chevron-circle-up" id="vote_icon'+newValue+'"></i></a><span>&nbsp; | &nbsp;0 LIKES</span></div>
+                    <div class="post-comments"><a class="upvoting" data-toggle="modal" data-target="#upvoteModal" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><img src="./images/post/dlike-hover.png" style="width: 21px;height: 21px;"></a><span>| &nbsp;0 LIKES</span></div>
 
                     <div class="author-info"><span id="se_token'+newValue +'" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
                     </div>
