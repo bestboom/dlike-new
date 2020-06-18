@@ -24,7 +24,7 @@
                     <div class="post-comments post-catg"><a href="/category/"><span class="post-meta"><?php echo $row_T["ctegory"]; ?></span></a></div>
                     </div>
                     </div>
-                    <div class="post-thumb img-fluid" style="width: 100%"><a href="/post/@"><?php echo '<img src='.$imgUrl.'>'; ?></a></div>
+                    <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src='.$imgUrl.' style="width:100%" />'; ?></a></div>
                     <div class="post-contnet-wrap">
                     <div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>
                     <h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '"><?php echo $row_T["title"]; ?></a></h4>
