@@ -21,6 +21,10 @@
             $permlink = $row_T["permlink"];
             if(!empty($profile_pic)) {$user_profile_pic = $profile_pic;} else {$user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }  
+        $checkLikes = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
+            $resultLikes = mysqli_query($conn, $checkLikes);
+            $row_L = $resultLikes->fetch_assoc();
+            if ($resultLikes->num_rows > 0) { $postLikes = $row_L['likes'];} else {$postLikes = '0';}
         ?>
             <div class="col-lg-4 col-md-6 postsMainDiv">
                 <article class="post-style-two">
@@ -49,7 +53,7 @@
                     <div class="post-footer">
                     <div class="post-author-block" style="width:100%">
                     
-                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;0 LIKES</span></div>
+                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<?php echo $postLikes; ?> LIKES</span></div>
 
                     <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
                     </div>
