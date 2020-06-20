@@ -194,6 +194,106 @@
         $('#myRatingz').val(ratingValue);
     };
 
+    //dvd modal
+    $('.latest-post-section, #profile_page').on("click", ".hov_me", function() {
+        //alert('called');
+        // we want to copy the 'id' from the button to the modal
+        var mypermlink = $(this).attr("data-permlink");
+        var authorname = $(this).attr("data-author");
+        var postsrec = $(this).attr("data-likes");
+        //console.log(postsrec);
+        var datat = {
+            ath: authorname,
+            plink: mypermlink
+        };
+        $.ajax({
+            type: "POST",
+            url: "/helper/verify_post.php",
+            data: datat,
+            success: function(data) {
+                try {
+                    var response = JSON.parse(data)
+                    if (response.error == true) {
+                        $('#upvotefail').modal('show');
+                    } else {
+                        $('#recomendModal').modal('show');
+                    }
+                } catch (err) {
+                    alert('Sorry. Server response is malformed.')
+                }
+            }
+        });
+
+        $("#r_author").val(authorname);
+        $("#r_permlink").val(mypermlink);
+        $("#r_likes").val(postsrec);
+    });
+
+
+    // hov element
+    $('.hov-item').hover(function() {
+        $(this).find('.hov-title').fadeIn(200);
+    }, function() {
+        $(this).find('.hov-title').fadeOut(100);
+
+    });
+
+    // here start recomendations
+    $('.post-comments-mid').on("click", ".recomendation", function() {
+        var recpermlink = $(this).attr("data-permlink");
+        var recauthor = $(this).attr("data-author");
+        var reclikes = $(this).attr("data-likes");
+        $("#r_author").val(recauthor);
+        $("#r_permlink").val(recpermlink);
+        $("#r_likes").val(reclikes);
+    });
+
+    $('.recomendme').click(function() {
+        //alert('good');
+        var r_permlink = $("#r_permlink").val();
+        var r_author = $("#r_author").val();
+        var r_likes = $("#r_likes").val();
+        var newlikes = parseInt(r_likes) + 1;
+        var datavr = {
+            rec_permlink: r_permlink,
+            rec_author: r_author
+        };
+        $('#recomend-bar').hide();
+        $('#recomend-status').show();
+
+        $.ajax({
+            type: "POST",
+            url: "/helper/solve.php",
+            data: datavr,
+            success: function(data) {
+                //console.log(success);
+                try {
+                    var response = JSON.parse(data)
+                    if (response.error == true) {
+                        toastr.error('There is some issue!');
+                        $('#recomendModal').modal('hide');
+                        $('#recomend-status').hide();
+                        $('#recomend-bar').show();
+                        return false;
+                    } else {
+                        $('#up_vote').removeAttr('data-target');
+                        $('#vote_icon').addClass("not-active");
+                        toastr.success('Thanks for Recomendation!');
+                        $('#total_likes').html(newlikes);
+                        $('#recomendModal').modal('hide');
+                        $('#recomend-status').hide();
+                        $('#recomend-bar').show();
+                    }
+                } catch (err) {
+                    //console.log(err);
+                    toastr.error('Sorry. Server response is malformed.');
+                    $('#recomendModal').modal('hide');
+                    $('#recomend-status').hide();
+                    $('#recomend-bar').show();
+                }
+            },
+        });
+    });
     // here starts dlike-steem-upvote
     $('.latest-post-section, #user_posts').on("click", ".upvoting", function() {
         var votepermlink = $(this).attr("data-permlink");
