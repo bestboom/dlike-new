@@ -41,12 +41,19 @@
                     </div>
                     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src='.$imgUrl.' class="card-img-top" />'; ?></a></div>
                     <div class="post-contnet-wrap">
+                    <!--<div class="row d-flex justify-content-center hov-it">
+                    <div class="hov-item">
+                    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
+                    <span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '">
+                    <div class="hov-txt">
+                    <h5>
+                        <span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>-->
                     <h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '"><?php echo $row_T["title"]; ?></a></h4>
                     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
                     <div class="post-footer">
                     <div class="post-author-block" style="width:100%">
                     
-                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<span id="post_likes"><?php echo $postLikes; ?></span> LIKES</span></div>
+                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<?php echo $postLikes; ?> LIKES</span></div>
 
                     <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
                     </div>
@@ -134,8 +141,7 @@
                             $('#vote_icon').addClass("not-active");
                             //toastr.success('Thanks for Recomendation!');
                             toastr.success(response.message);
-                            console.log(response.data);
-                            $('#post_likes').html(response.data);
+                            $('#total_likes').html(response.data);
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide();
                             $('#recomend-bar').show();
