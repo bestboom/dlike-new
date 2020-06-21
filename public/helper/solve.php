@@ -18,7 +18,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"]))
     if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username'])
     {
 
-        if ($userval = $author)
+        if ($userval == $author)
         {
             die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));
         }
