@@ -3,7 +3,7 @@
     .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
     .hov_vote{cursor:pointer;width: 21px;height: 21px;}
     .post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
-    .post-author-block{width:100%}
+    .bottom_block{width:100%}
 </style>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
@@ -44,7 +44,7 @@ if ($result_T && $result_T->num_rows > 0)
     <div class="post-contnet-wrap">
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
-    <div class="post-footer"><div class="post-author-block">
+    <div class="post-footer"><div class="post-author-block bottom_block">
     <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <span class="post_likes"><?php echo $postLikes; ?></span>LIKES</div>
     <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
     </div></div></div>
