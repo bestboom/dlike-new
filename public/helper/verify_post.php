@@ -16,15 +16,13 @@
 		if ($result->num_rows > 0) {
 			    die(json_encode([
 			    	'error' => true,
-            		'message' => 'Sorry', 
-            		'data' => 'Already Upvoted'
+            		'message' => 'You have already recomended this share!'
             		
         		]));
 		} else { 
 			    die(json_encode([
             		'error' => false,
-            		'message' => 'Thank You', 
-            		'data' => 'Lets Upvote'
+            		'message' => 'Recommending...'
         		]));
 		}
 		$conn->close();
