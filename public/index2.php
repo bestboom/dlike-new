@@ -58,7 +58,7 @@ if ($result_T && $result_T->num_rows > 0)
         <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
         <div class="post-footer">
         <div class="post-author-block" style="width:100%">
-        <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<?php echo $postLikes; ?> LIKES</span></div>
+        <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<span id="total_likes"><?php echo $postLikes; ?></span> LIKES</span></div>
         <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
         </div>
         </div>
