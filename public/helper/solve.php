@@ -48,9 +48,16 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 						/*if ($addPostQuery === TRUE) {
 							echo "new Record added successfully"; } else { echo "new Record could not added"; }*/
 				}
+
+				$sql_C = "SELECT likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
+				$result_C = $conn->query($sql_C);
+				$row_C = $result_C->fetch_assoc();
+				$newlikes = $row_C['likes'];
+
 				die(json_encode([
                     'error' => false,
-                    'message' => 'Successfully Recommended!'
+                    'message' => 'Successfully Recommended!',
+                    'data' => $newlikes
                 ]));
 				} 
 			}

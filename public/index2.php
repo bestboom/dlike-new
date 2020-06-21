@@ -94,7 +94,8 @@
                             $('#recomendModal').modal('show');
                         }
                     } catch (err) {
-                        alert('Sorry. Server response is malformed.')
+                        //alert('Sorry. Server response is malformed.')
+                        toastr.error('Sorry. Server response is malformed.');
                     }
                 }
             });
@@ -126,11 +127,11 @@
                 url: "/helper/solve.php",
                 data: datavr,
                 success: function(data) {
-                    //console.log(success);
                     try {
                         var response = JSON.parse(data)
                         if (response.error == true) {
-                            toastr.error('There is some issue!');
+                            //toastr.error('There is some issue!');
+                            toastr.error(response.message);
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide();
                             $('#recomend-bar').show();
@@ -138,8 +139,9 @@
                         } else {
                             $('#up_vote').removeAttr('data-target');
                             $('#vote_icon').addClass("not-active");
-                            toastr.success('Thanks for Recomendation!');
-                            $('#total_likes').html(newlikes);
+                            //toastr.success('Thanks for Recomendation!');
+                            toastr.success(response.message);
+                            $('#total_likes').html(response.data);
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide();
                             $('#recomend-bar').show();
