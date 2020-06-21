@@ -59,7 +59,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"]))
                     $addPostQuery = $conn->query($addPost);
                 }
 
-                $sql_C = "SELECT likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
+                $sql_C = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
                 $result_C = $conn->query($sql_C);
                 if ($result_C && $result_C->num_rows > 0) 
                 {
