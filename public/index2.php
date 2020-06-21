@@ -41,13 +41,6 @@
                     </div>
                     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src='.$imgUrl.' class="card-img-top" />'; ?></a></div>
                     <div class="post-contnet-wrap">
-                    <!--<div class="row d-flex justify-content-center hov-it">
-                    <div class="hov-item">
-                    <img src="./images/post/dlike-hover.png" alt="img" class="img-responsive">
-                    <span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '">
-                    <div class="hov-txt">
-                    <h5>
-                        <span id="hov-num" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>-->
                     <h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '"><?php echo $row_T["title"]; ?></a></h4>
                     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
                     <div class="post-footer">
@@ -73,10 +66,16 @@
 <script type="text/javascript">
     $('.latest-post-section').on("click", ".hov_me", function() {
         if (dlike_username != null) {
+
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
             //var postsrec = $(this).attr("data-likes");
             //console.log(postsrec);
+
+            if(dlike_username == authorname) {
+                toastr.error('You can not recommend your own post');
+                return false;
+            }
             var datat = {
                 ath: authorname,
                 plink: mypermlink

@@ -12,13 +12,6 @@
 		$user_check = $_COOKIE['usertoken'];
 		$userval = $_COOKIE['dlike_username'];
 
-		if ($userval = $req_author) { 
-			die(json_encode([
-		    	'error' => true,
-	    		'message' => 'You can not recommend your own post!'
-			]));
-		}
-
 		$verifyPost = "SELECT * FROM mylikes where username = '$userval' and permlink = '$req_permlink' and author = '$req_author'";
 		$result = $conn->query($verifyPost);
 
