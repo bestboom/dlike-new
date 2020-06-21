@@ -7,25 +7,13 @@
 <div class="footer-bottom" style="padding: 25px 0 50px 0px !important;"><div class="container"><div class="footer-bottom-wrap" style="justify-content: center;font-size: 13px;"><div class="copyright-text">&copy; 2018 <a href="/">DLIKE</a>. A social sharing dApp by BlockTalk Solutions.</div></div></div></div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
-<script src="https://momentjs.com/downloads/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="/js/toaster.js"></script>
-<?php if(basename($_SERVER['PHP_SELF']) == 'welcome2.php'){ ?> 
-<script src="/js/signup.js"></script>
-<? } ?> 
+<?php if(basename($_SERVER['PHP_SELF']) == 'welcome2.php'){ ?><script src="/js/signup.js"></script><? } ?> 
 <script>
-if ($.cookie("dlike_username") != null) {
-    var dlike_username  = $.cookie("dlike_username");
-    console.log(dlike_username);
-} else {}
-    function openNav(){document.getElementById("mySidenav").style.width="250px";}
-    function closeNav(){document.getElementById("mySidenav").style.width="0";}
-    function popup(e){var t=700;var n=400;var r=(screen.width-t)/2;var i=(screen.height-n)/2;var s="width="+t+", height="+n;s+=", top="+i+", left="+r;s+=", directories=no";s+=", location=no";s+=", menubar=no";s+=", resizable=no";s+=", scrollbars=no";s+=", status=no";s+=", toolbar=no";newwin=window.open(e,"windowname5",s);if(window.focus){newwin.focus()}return false};
-    $('.subscribe').click(function(e){e.preventDefault();let subscribe_value=$("#subscribe_field").val();if($.trim($('#subscribe_field').val())==''){toastr.error('phew... Please enter Email Address');return false;} if(!isValidEmailAddress(subscribe_value)){toastr.error('phew... Not a valid Email Address');return false;} toastr.success('Thanks for subscribing');});
-    //$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
-    //$(".logout_btn").click(function(){api.revokeToken(function(e,o){o&&o.success&&($.removeCookie("username",{path:"/"}),$.removeCookie("access_token",{path:"/"}),document.location.href="/")})});
+if ($.cookie("dlike_username") != null) {var dlike_username  = $.cookie("dlike_username");console.log(dlike_username);} else {}
+function openNav(){document.getElementById("mySidenav").style.width="250px"}function closeNav(){document.getElementById("mySidenav").style.width="0"}function popup(e){var n=(screen.width-700)/2,t="width=700, height=400";return t+=", top="+(screen.height-400)/2+", left="+n,t+=", directories=no",t+=", location=no",t+=", menubar=no",t+=", resizable=no",t+=", scrollbars=no",t+=", status=no",t+=", toolbar=no",newwin=window.open(e,"windowname5",t),window.focus&&newwin.focus(),!1}$(".subscribe").click(function(e){e.preventDefault();let n=$("#subscribe_field").val();return""==$.trim($("#subscribe_field").val())?(toastr.error("phew... Please enter Email Address"),!1):isValidEmailAddress(n)?void toastr.success("Thanks for subscribing"):(toastr.error("phew... Not a valid Email Address"),!1)});
 </script>     
 </body>
 </html>
