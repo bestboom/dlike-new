@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="/css/style3.css">
 <link rel="stylesheet" href="/css/responsive.css">
 <style type="text/css">#logout_btn{padding: 8px 8px 8px 32px;text-decoration: none;font-size: 18px;color: #c5bebe;display: block;transition: .3s;font-weight: 600;cursor:pointer;}
-.top_nav{margin: 0px;}.prof_img_nav{background: #fff;margin-top: -6px;}.top_nav_li{padding-top: 4px;}</style>
+.top_nav{margin: 0px;}#prof_img_nav{background: #fff;margin-top: -6px;}.top_nav_li{padding-top: 4px;}</style>
 </head><body>
 <div id="mySidenav" class="sidenav" style="    z-index: 222222;">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
