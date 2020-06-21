@@ -1,68 +1,79 @@
-<?php include('template/header7.php');?>
-</div><!-- sub-header -->
-<div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;">
-    <div class="container">
-        <div class="row">
-        <?php
-        $sql_T = "SELECT * FROM dlikeposts ORDER BY created_at DESC";
-            $result_T = $conn->query($sql_T);
+<?php include ('template/header7.php'); ?>
+</div>
+<div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;"><div class="container"><div class="row">
+<?php
+$sql_T = "SELECT * FROM dlikeposts ORDER BY created_at DESC";
+$result_T = $conn->query($sql_T);
 
-        if ($result_T && $result_T->num_rows > 0) { 
-            while ($row_T = $result_T->fetch_assoc()) { 
-                $imgUrl = $row_T["img_url"];
-                $post_author = $row_T["username"];
-                $author = $row_T["username"];
-                $post_time = strtotime($row_T["created_at"]); 
+if ($result_T && $result_T->num_rows > 0)
+{
+    while ($row_T = $result_T->fetch_assoc())
+    {
+        $imgUrl = $row_T["img_url"];
+        $post_author = $row_T["username"];
+        $author = $row_T["username"];
+        $post_time = strtotime($row_T["created_at"]);
 
-        $sql_W = "SELECT * FROM dlikeaccounts where username = '$post_author'"; 
+        $sql_W = "SELECT * FROM dlikeaccounts where username = '$post_author'";
         $result_W = $conn->query($sql_W);
-        if ($result_T && $result_T->num_rows > 0) { 
+        if ($result_T && $result_T->num_rows > 0)
+        {
             $profile_pic = $row_T["profile_pic"];
             $permlink = $row_T["permlink"];
-            if(!empty($profile_pic)) {$user_profile_pic = $profile_pic;} else {$user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
-        }  
+            if (!empty($profile_pic))
+            {
+                $user_profile_pic = $profile_pic;
+            }
+            else
+            {
+                $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';
+            }
+        }
         $checkLikes = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
-            $resultLikes = mysqli_query($conn, $checkLikes);
-            $row_L = $resultLikes->fetch_assoc();
-            if ($resultLikes->num_rows > 0) { $postLikes = $row_L['likes'];} else {$postLikes = '0';}
-        ?>
-            <div class="col-lg-4 col-md-6 postsMainDiv">
-                <article class="post-style-two">
-                    <div class="post-contnet-wrap-top">
-                    <div class="post-footer">
-                    <div class="post-author-block">
-                    <div class="author-thumb"><a href="/@pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="<?php echo $row_T['username']; ?>" class="img-responsive"></a></div>
-                    <div class="author-info">
-                    <h5><a href="/@"><?php echo $author; ?></a><div class="time"><?php echo time_ago($post_time); ?></div></h5> 
-                    </div>
-                    </div>
-                    <div class="post-comments post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
-                    </div>
-                    </div>
-                    <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src='.$imgUrl.' class="card-img-top" />'; ?></a></div>
-                    <div class="post-contnet-wrap">
-                    <h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '"><?php echo $row_T["title"]; ?></a></h4>
-                    <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
-                    <div class="post-footer">
-                    <div class="post-author-block" style="width:100%">
-                    
-                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<?php echo $postLikes; ?> LIKES</span></div>
-
-                    <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
-                    </div>
-                    </div>
-                    </div>
-                </article>
-            </div>
-        <?php
-            }
-            }
-        ?> 
+        $resultLikes = mysqli_query($conn, $checkLikes);
+        $row_L = $resultLikes->fetch_assoc();
+        if ($resultLikes->num_rows > 0)
+        {
+            $postLikes = $row_L['likes'];
+        }
+        else
+        {
+            $postLikes = '0';
+        }
+?>
+<div class="col-lg-4 col-md-6 postsMainDiv">
+    <article class="post-style-two">
+        <div class="post-contnet-wrap-top">
+        <div class="post-footer">
+        <div class="post-author-block">
+        <div class="author-thumb"><a href="/@pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="<?php echo $row_T['username']; ?>" class="img-responsive"></a></div>
+        <div class="author-info">
+        <h5><a href="/@"><?php echo $author; ?></a><div class="time"><?php echo time_ago($post_time); ?></div></h5> 
         </div>
-    </div>  
+        </div>
+        <div class="post-comments post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
+        </div>
+        </div>
+        <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
+        <div class="post-contnet-wrap">
+        <h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '"><?php echo $row_T["title"]; ?></a></h4>
+        <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
+        <div class="post-footer">
+        <div class="post-author-block" style="width:100%">
+        
+        <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<?php echo $postLikes; ?> LIKES</span></div>
+
+        <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
+        </div>
+        </div>
+        </div>
+    </article>
 </div>
-<?php include('template/modals/modal.php'); ?> 
-<?php include('template/dlike_footer.php'); ?>
+<?php } } ?> 
+</div></div></div>
+<?php include ('template/modals/modal.php'); ?> 
+<?php include ('template/dlike_footer.php'); ?>
+
 <script type="text/javascript">
     $('.latest-post-section').on("click", ".hov_me", function() {
         if (dlike_username != null) {
