@@ -8,8 +8,9 @@
 	$req_author = stripslashes($_POST['ath']);
 	$req_permlink = stripslashes($_POST['plink']);
 	$user_check = $_COOKIE['usertoken'];
+	$userval = $_COOKIE['dlike_username'];
 
-	$verifyPost = "SELECT * FROM mylikes where userip = '$ip' and permlink = '$req_permlink' and author = '$req_author'";
+	$verifyPost = "SELECT * FROM mylikes where username = '$userval' and permlink = '$req_permlink' and author = '$req_author'";
 		$result = $conn->query($verifyPost);
 
 		if ($result->num_rows > 0) {
