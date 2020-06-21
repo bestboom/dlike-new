@@ -1,6 +1,12 @@
 <?php include ('template/header7.php'); ?>
+<style>
+    .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
+    .hov_vote{cursor:pointer;width: 21px;height: 21px;}
+    .post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
+    .post-author-block{width:100%}
+</style>
 </div>
-<div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;"><div class="container"><div class="row">
+<div class="latest-post-section"><div class="container"><div class="row">
 <?php
 $sql_T = "SELECT * FROM dlikeposts ORDER BY created_at DESC";
 $result_T = $conn->query($sql_T);
@@ -42,26 +48,19 @@ if ($result_T && $result_T->num_rows > 0)
         }
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
-    <div class="post-contnet-wrap-top">
-    <div class="post-footer">
-    <div class="post-author-block">
+    <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
     <div class="author-thumb"><a href="/@pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="<?php echo $row_T['username']; ?>" class="img-responsive"></a></div>
-    <div class="author-info"><h5><a href="/@"><?php echo $author; ?></a><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div>
-    </div>
+    <div class="author-info"><h5><a href="/@"><?php echo $author; ?></a><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
     <div class="post-comments post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
-    </div>
-    </div>
+    </div></div>
     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
     <div class="post-contnet-wrap">
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
-    <div class="post-footer">
-    <div class="post-author-block" style="width:100%">
-        <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a> | &nbsp;<span class="post_likes" style="padding-right: 3px;font-weight: bold;"><?php echo $postLikes; ?></span>LIKES</div>
-        <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
-    </div>
-    </div>
-    </div>
+    <div class="post-footer"><div class="post-author-block">
+    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <span class="post_likes"><?php echo $postLikes; ?></span>LIKES</div>
+    <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
+    </div></div></div>
 </article></div>
 <?php } } ?> 
 </div></div></div>
@@ -72,38 +71,28 @@ if ($result_T && $result_T->num_rows > 0)
 <script type="text/javascript">
     $('.latest-post-section').on("click", ".hov_me", function() {
         if (dlike_username != null) {
-
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
             if(dlike_username == authorname) {
                 toastr.error('You can not recommend your own post');
                 return false;
             }
-            var datat = {
-                ath: authorname,
-                plink: mypermlink
-            };
+            var datat = {ath: authorname, plink: mypermlink};
             $.ajax({
                 type: "POST",
                 url: "/helper/verify_post.php",
                 data: datat,
                 success: function(data) {
-                    try {
-                        var response = JSON.parse(data)
+                    try { var response = JSON.parse(data)
                         if (response.error == true) {
                             $('#upvotefail').modal('show');
-                        } else {
-                            $('#recomendModal').modal('show');
-                        }
-                    } catch (err) {
-                        toastr.error('Sorry. Server response is malformed.');
-                    }
+                        } else { $('#recomendModal').modal('show');}
+                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                 }
             });
-
             $("#r_author").val(authorname);
             $("#r_permlink").val(mypermlink);
-        } else{
+        } else {
             toastr.error('You must be login with DLIKE username!');
             return false;
         }    
@@ -113,10 +102,7 @@ if ($result_T && $result_T->num_rows > 0)
         if (dlike_username != null) {
             var r_permlink = $("#r_permlink").val();
             var r_author = $("#r_author").val();
-            var datavr = {
-                rec_permlink: r_permlink,
-                rec_author: r_author
-            };
+            var datavr = { rec_permlink: r_permlink,rec_author: r_author};
             $('#recomend-bar').hide();
             $('#recomend-status').show();
             $.ajax({
