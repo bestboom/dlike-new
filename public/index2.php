@@ -27,25 +27,12 @@ if ($result_T && $result_T->num_rows > 0)
             $profile_pic = $row_T["profile_pic"];
             $permlink = $row_T["permlink"];
             if (!empty($profile_pic))
-            {
-                $user_profile_pic = $profile_pic;
-            }
-            else
-            {
-                $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';
-            }
+            { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
         $checkLikes = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
         $resultLikes = mysqli_query($conn, $checkLikes);
         $row_L = $resultLikes->fetch_assoc();
-        if ($resultLikes->num_rows > 0)
-        {
-            $postLikes = $row_L['likes'];
-        }
-        else
-        {
-            $postLikes = '0';
-        }
+        if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
@@ -67,7 +54,6 @@ if ($result_T && $result_T->num_rows > 0)
 <div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"><?php include('template/modals/recomend.php'); ?></div></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
-
 <script type="text/javascript">
     $('.latest-post-section').on("click", ".hov_me", function() {
         if (dlike_username != null) {
@@ -92,10 +78,7 @@ if ($result_T && $result_T->num_rows > 0)
             });
             $("#r_author").val(authorname);
             $("#r_permlink").val(mypermlink);
-        } else {
-            toastr.error('You must be login with DLIKE username!');
-            return false;
-        }    
+        } else {toastr.error('You must be login with DLIKE username!');return false;}    
     });
 
     $('.recomendme').click(function() {
@@ -133,11 +116,8 @@ if ($result_T && $result_T->num_rows > 0)
                         $('#recomend-status').hide();
                         $('#recomend-bar').show();
                     }
-                },
+                }
             });
-        } else {
-            toastr.error('You must be login with DLIKE username!');
-            return false;
-        }
+        } else {toastr.error('You must be login with DLIKE username!');return false;}
     });
 </script>
