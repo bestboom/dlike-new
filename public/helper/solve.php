@@ -23,7 +23,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"])){
 		if ($resultverify->num_rows > 0) { 
 			die(json_encode([
             'error' => true,
-            'message' => 'You have already recomended this share!'
+            'message' => 'You have already recommended this share!'
              ]));
 		} else {
 			$sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink)

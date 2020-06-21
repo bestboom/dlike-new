@@ -53,7 +53,7 @@
                     <div class="post-footer">
                     <div class="post-author-block" style="width:100%">
                     
-                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<?php echo $postLikes; ?> LIKES</span></div>
+                    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" style="cursor:pointer;width: 21px;height: 21px;"></a><span>| &nbsp;<?php echo $postLikes; ?> LIKES</span></div>
 
                     <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
                     </div>
@@ -75,7 +75,7 @@
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
-            var postsrec = $(this).attr("data-likes");
+            //var postsrec = $(this).attr("data-likes");
             //console.log(postsrec);
             var datat = {
                 ath: authorname,
@@ -102,7 +102,7 @@
 
             $("#r_author").val(authorname);
             $("#r_permlink").val(mypermlink);
-            $("#r_likes").val(postsrec);
+            //$("#r_likes").val(postsrec);
         } else{
             toastr.error('You must be login with DLIKE username!');
             return false;
@@ -113,8 +113,8 @@
         if (dlike_username != null) {
             var r_permlink = $("#r_permlink").val();
             var r_author = $("#r_author").val();
-            var r_likes = $("#r_likes").val();
-            var newlikes = parseInt(r_likes) + 1;
+            //var r_likes = $("#r_likes").val();
+            //var newlikes = parseInt(r_likes) + 1;
             var datavr = {
                 rec_permlink: r_permlink,
                 rec_author: r_author
