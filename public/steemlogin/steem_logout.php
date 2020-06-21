@@ -6,6 +6,7 @@
   <script src="/js/steemconnect.js"></script>
 </head>
 <script>
+$(document).ready(function(){
   api.revokeToken(function(err_log, result_log) {
     if (result_log && result_log.success) {
       $.removeCookie('username', { path: '/' });
@@ -13,5 +14,6 @@
       document.location.href = '/';
     }
   });
+});
 </script>
 </html>
