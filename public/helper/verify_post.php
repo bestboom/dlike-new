@@ -5,25 +5,38 @@
 
 	require '../includes/config.php';
 
-	$req_author = stripslashes($_POST['ath']);
-	$req_permlink = stripslashes($_POST['plink']);
-	$user_check = $_COOKIE['usertoken'];
-	$userval = $_COOKIE['dlike_username'];
+	if (isset($_POST["ath"]) && isset($_POST["plink"])){
 
-	$verifyPost = "SELECT * FROM mylikes where username = '$userval' and permlink = '$req_permlink' and author = '$req_author'";
+		$req_author = stripslashes($_POST['ath']);
+		$req_permlink = stripslashes($_POST['plink']);
+		$user_check = $_COOKIE['usertoken'];
+		$userval = $_COOKIE['dlike_username'];
+
+		if ($userval = $req_author) { 
+			die(json_encode([
+		    	'error' => true,
+	    		'message' => 'You can not recommend your own post!'
+			]));
+		}
+
+		$verifyPost = "SELECT * FROM mylikes where username = '$userval' and permlink = '$req_permlink' and author = '$req_author'";
 		$result = $conn->query($verifyPost);
 
 		if ($result->num_rows > 0) {
 			    die(json_encode([
 			    	'error' => true,
-            		'message' => 'You have already recomended this share!'
-            		
-        		]));
+	        		'message' => 'You have already recomended this share!'
+	    		]));
 		} else { 
 			    die(json_encode([
-            		'error' => false,
-            		'message' => 'Recommending...'
-        		]));
+	        		'error' => false,
+	        		'message' => 'Recommending...'
+	    		]));
 		}
-		$conn->close();
+	} else{
+		die(json_encode([
+	    	'error' => true,
+    		'message' => 'There is some issue. Please try later!'
+		]));
+	}
 ?>
