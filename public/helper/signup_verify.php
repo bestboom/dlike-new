@@ -124,39 +124,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'acc_create2' && isset($_POS
 			 	$updateUserStatus = $conn->query($updateStatus);
 						if ($updateUserStatus === TRUE) { 
 
-							$sqlX = "INSERT INTO transactions (username, amount, reason)
-								VALUES ('".$user."', '".$signup_bonus."', '".$signup_reason."')";
-
-							$signup_reward =  mysqli_query($conn, $sqlX);
-
-							 if($refer_by !='dlike'){
+							if($refer_by !='dlike'){
 
 								$sqlR = "INSERT INTO referrals (username, refer_by, entry_time)
 									VALUES ('".$user."', '".$refer_by."', now())";
 								
-								if (mysqli_query($conn, $sqlR)) {
-								
-									$check_ref_balance = "SELECT amount FROM wallet where username = '".$refer_by."' ";
-									$result_bal = $conn->query($check_ref_balance);
-
-										if ($result_bal->num_rows > 0) {
-
-											$rowB = $result_bal->fetch_assoc();	
-											$user_bal = $rowB['amount'];
-
-											$updateBonus = "UPDATE wallet SET amount = '$user_bal' + '$referral_bonus' WHERE username = '$refer_by'";
-											$updateRefBonus = $conn->query($updateBonus);
-
-											if ($updateRefBonus === TRUE) {
-
-												$sqlW = "INSERT INTO transactions (username, amount, reason)
-													VALUES ('".$refer_by."', '".$referral_bonus."', '".$referral_reason."')";
-
-							                  	$referral_reward =  mysqli_query($conn, $sqlW);
-	
-											}
-										}
-								}
+								$add_referral = mysqli_query($conn, $sqlR);
 				            }
 				            
 				        }
