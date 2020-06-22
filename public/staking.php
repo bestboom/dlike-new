@@ -73,9 +73,9 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                     <option value="2">180 Days</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-default" id="stake_me">STAKE NOW</button>
+                            <button type="submit" class="btn btn-default" id="stake_me" disabled>STAKE NOW</button>
                         </form>
-                        <p>By staking you agree to the Terms</a></p>
+                        <p style="color: red;">New staking not available till next update</a></p>
                     </div><!-- create-account-block -->
                 </div>
             </div>
