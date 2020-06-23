@@ -33,7 +33,6 @@ if ($result_T && $result_T->num_rows > 0)
         $resultLikes = mysqli_query($conn, $checkLikes);
         $row_L = $resultLikes->fetch_assoc();
         if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-        //$post_income = $postLikes * $post_reward;
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
@@ -47,7 +46,7 @@ if ($result_T && $result_T->num_rows > 0)
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
     <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <span class="post_likes"><?php echo $postLikes; ?></span>LIKES</div>
-    <div class="author-info"><span class="dlike_tokens">0</span> <b>DLIKE</b></div>
+    <div class="author-info"><span id="dlike_tokens" data-popover="true" data-html="true" data-content="">0</span> <b>DLIKE</b></div>
     </div></div></div>
 </article></div>
 <?php } } ?> 
@@ -107,7 +106,6 @@ if ($result_T && $result_T->num_rows > 0)
                             $('#vote_icon').addClass("not-active");
                             toastr.success(response.message);
                             $('.post_likes').html(response.data);
-                            //$('.dlike_tokens').html(response.postIncome);
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide();
                             $('#recomend-bar').show();
