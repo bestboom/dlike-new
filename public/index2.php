@@ -33,7 +33,7 @@ if ($result_T && $result_T->num_rows > 0)
         $resultLikes = mysqli_query($conn, $checkLikes);
         $row_L = $resultLikes->fetch_assoc();
         if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-        $post_income = $postLikes * $post_reward;
+        //$post_income = $postLikes * $post_reward;
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
