@@ -5,7 +5,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-
+?>
+<!--
 $sql = "CREATE TABLE dlike_wallet (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
@@ -33,8 +34,7 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-?>
-<!--
+
 
 $sqlm = "CREATE TABLE dlikeposts (
 id INT(9) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 

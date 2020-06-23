@@ -82,6 +82,10 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		$sqlm = "INSERT INTO dlikeaccounts (username, email, password, refer_by, status, profile_pic, loct_ip, verify_code, verified, created_time)
 				VALUES ('".$signup_username."', '".$signup_email."', '".$hashedPW."', '".$refer_by."', '".$status."', '".$profile_pic."', '".$loct_ip."', '".$pin_number."', '".$verified."', '".date("Y-m-d H:i:s")."')";
 		if (mysqli_query($conn, $sqlm)) {
+			$amount = '0';
+			$sql_W = "INSERT INTO dlike_wallet (username, amount)
+					VALUES ('".$signup_username."', '".$amount."')";
+			$create_wallet = mysqli_query($conn, $sql_W);
 
 			$mail->isSMTP();
 		    $mail->Host = 'smtp.zoho.com';

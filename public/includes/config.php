@@ -76,4 +76,5 @@ function time_ago($timestamp)
     }
 }
 
+$post_reward = '0.35';
 ?>
