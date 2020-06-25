@@ -60,10 +60,10 @@ if ($result_T && $result_T->num_rows > 0)
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
-            var getlikespost = $(this).find(".post_likes");
-            var likesofpost = getlikespost.html();
-            var update = 1;
-            console.log(likesofpost);
+            //var getlikespost = $(this).find(".post_likes");
+            //var likesofpost = getlikespost.html();
+            var update = 101;
+            //console.log(likesofpost);
             if(dlike_username == authorname) {
                 toastr.error('You can not recommend your own post');
                 return false;
@@ -84,14 +84,14 @@ if ($result_T && $result_T->num_rows > 0)
                             return false;
                         } else {
                             toastr.success(response.message);
-                            var newlikes = parseInt(likesofpost)+parseInt(update);
-                            console.log(newlikes);
-                            $('.post_likes').html(newlikes);
+                            //var newlikes = parseInt(likesofpost)+parseInt(update);
+                            //console.log(newlikes);
+                            $('.post_likes').html(update);
                             var post_income = response.post_income;
                             console.log(post_income);
-                            var updatespostincome = newlikes * post_income;
-                            console.log(updatespostincome);
-                            $('.dlike_tokens').html(updatespostincome);
+                            //var updatespostincome = newlikes * post_income;
+                            //console.log(updatespostincome);
+                            //$('.dlike_tokens').html(updatespostincome);
                         }
                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                 }

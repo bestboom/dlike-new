@@ -5,14 +5,14 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-if (isset($_POST["authorname"]) && isset($_POST["mypermlink"]))
+if (isset($_POST["ath"]) && isset($_POST["plink"]))
 {
 
     $saved_ip = $_COOKIE['usertoken'];
     $rating = '5';
     $userval = $_COOKIE['dlike_username'];
-    $author = $_POST['authorname'];
-    $permlink = $_POST['mypermlink'];
+    $author = $_POST['ath'];
+    $permlink = $_POST['plink'];
     $newLike = '1';
 
     if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username'])
