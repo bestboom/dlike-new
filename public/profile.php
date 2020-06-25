@@ -545,6 +545,22 @@ include('template/header5.php');
 
 });
 
+//check likes
+function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+	$.ajax({
+		type: "POST",
+		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
+		dataType: 'json',
+		success: function(response) {
+			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
+			$('.hov_me').attr('data-likes', response.likes);
+			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
+		},
+		error: function() {
+			console.log('Error occured');
+		}
+	});
+};
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
 	$('.btn-follow').click(function(e) {	
 	    e.preventDefault();
