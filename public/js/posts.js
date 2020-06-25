@@ -159,6 +159,8 @@ $(document).ready(function(){
 					'\n' +
 					'<h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + $post.title + '</a></h4>\n' +
 					'\n' +
+					'<h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + $post.title + '</a></h4>\n' +
+					'\n' +
 					'<p class="post-entry post-tags">' + metatags + '</p>\n' +
 					'\n' +
 					'<div class="post-footer">\n' +
