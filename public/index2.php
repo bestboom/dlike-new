@@ -84,11 +84,11 @@ if ($result_T && $result_T->num_rows > 0)
 
     $('.recomendme').click(function() {
         if (dlike_username != null) {
+            var getpostlikes = $(this).find("#post_likes");
+            var likesofpost = parseInt(getpostlikes.html());
             var r_permlink = $("#r_permlink").val();
             var r_author = $("#r_author").val();
             var update = '1';
-            let post_likes_val = document.getElementById("post_likes");
-            var likesofpost = $(this).html();
             console.log(likesofpost);
             var datavr = { rec_permlink: r_permlink,rec_author: r_author};
             $('#recomend-bar').hide();
