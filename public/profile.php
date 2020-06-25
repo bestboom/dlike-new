@@ -602,7 +602,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
         var r_permlink = $("#r_permlink").val();
         var r_author = $("#r_author").val();
         var r_likes = $("#r_likes").val();
-        var newlikes = parseInt(r_likes) + 1;
+        var newlikes = 26;
         var datavr = {
             rec_permlink: r_permlink,
             rec_author: r_author
@@ -628,6 +628,7 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
                         $('#up_vote').removeAttr('data-target');
                         $('#vote_icon').addClass("not-active");
                         toastr.success('Thanks for Recomendation!');
+                        console.log(newlikes);
                         $('#total_likes').html(newlikes);
                         $('#recomendModal').modal('hide');
                         $('#recomend-status').hide();
