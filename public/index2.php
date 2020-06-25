@@ -60,7 +60,6 @@ if ($result_T && $result_T->num_rows > 0)
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
-            var update = '1';
             if(dlike_username == authorname) {
                 toastr.error('You can not recommend your own post');
                 return false;
@@ -87,6 +86,9 @@ if ($result_T && $result_T->num_rows > 0)
         if (dlike_username != null) {
             var r_permlink = $("#r_permlink").val();
             var r_author = $("#r_author").val();
+            var update = '1';
+            var likesofpost = $('#total_likes').html();
+            console.log(likesofpost);
             var datavr = { rec_permlink: r_permlink,rec_author: r_author};
             $('#recomend-bar').hide();
             $('#recomend-status').show();
@@ -107,8 +109,6 @@ if ($result_T && $result_T->num_rows > 0)
                             $('#up_vote').removeAttr('data-target');
                             $('#vote_icon').addClass("not-active");
                             toastr.success(response.message);
-                            var likesofpost = $('#total_likes').html();
-                            console.log(likesofpost);
                             var newlikes = likesofpost + update;
                             console.log(newlikes);
                             //$('#post_likes').html(response.data);
