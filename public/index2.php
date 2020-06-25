@@ -46,7 +46,7 @@ if ($result_T && $result_T->num_rows > 0)
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
-    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <div class="post_likes"><?php echo $postLikes; ?></div>LIKES</div>
+    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <span class="post_likes"><?php echo $postLikes; ?></span>LIKES</div>
     <div class="author-info"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div></div></div>
 </article></div>
@@ -60,7 +60,8 @@ if ($result_T && $result_T->num_rows > 0)
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
-            var likesofpost = $(".post_likes").html();
+            var getlikespost = $(this).find(".post_likes");
+            var likesofpost = getlikespost.html();
             var update = 1;
             console.log(likesofpost);
             if(dlike_username == authorname) {
