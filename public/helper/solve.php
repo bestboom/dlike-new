@@ -27,7 +27,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"]))
         $resultverify = $conn->query($verifyPost);
         if ($resultverify->num_rows > 0)
         {
-            die(json_encode(['error' => true, 'message' => 'You have already recommended this share!']));
+            die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));
         }
         else
         {

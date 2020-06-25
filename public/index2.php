@@ -51,16 +51,18 @@ if ($result_T && $result_T->num_rows > 0)
     </div></div></div>
 </article></div>
 <?php } } ?> 
-
+</div></div></div>
 <div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"><?php include('template/modals/recomend.php'); ?></div></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
-</div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
     $('.latest-post-section').on("click", ".hov_me", function() {
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
+            var likesofpost = $(".post_likes").html();
+            var update = 1;
+            console.log(likesofpost);
             if(dlike_username == authorname) {
                 toastr.error('You can not recommend your own post');
                 return false;
@@ -68,13 +70,28 @@ if ($result_T && $result_T->num_rows > 0)
             var datat = {ath: authorname, plink: mypermlink};
             $.ajax({
                 type: "POST",
-                url: "/helper/verify_post.php",
+                //url: "/helper/verify_post.php",
+                url: "/helper/solve.php",
                 data: datat,
                 success: function(data) {
                     try { var response = JSON.parse(data)
-                        if (response.error == true) {
+                        if (response.done == true) {
                             $('#upvotefail').modal('show');
-                        } else { $('#recomendModal').modal('show');}
+                            return false;
+                        } else if (response.error == true)  { 
+                            toastr.error(response.message);
+                            return false;
+                        } else {
+                            toastr.success(response.message);
+                            var newlikes = parseInt(likesofpost)+parseInt(update);
+                            console.log(newlikes);
+                            $('.post_likes').html(newlikes);
+                            var post_income = response.post_income;
+                            console.log(post_income);
+                            var updatespostincome = newlikes * post_income;
+                            console.log(updatespostincome);
+                            $('.dlike_tokens').html(updatespostincome);
+                        }
                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                 }
             });
@@ -83,12 +100,12 @@ if ($result_T && $result_T->num_rows > 0)
         } else {toastr.error('You must be login with DLIKE username!');return false;}    
     });
 
-    $('.latest-post-section').on("click", ".recomendme", function() {
-    //$('.recomendme').click(function() {
+    //$('.latest-post-section').on("click", ".recomendme", function() {
+    $('.recomendme').click(function() {
         if (dlike_username != null) {
-            var getpostlikes = $(this).find(".post_likes");
+            //var getpostlikes = $(this).find(".post_likes");
             //var likesofpost = $(".post_likes").html();
-            var likesofpost = parseInt(getpostlikes.html());
+            //var likesofpost = parseInt(getpostlikes.html());
             var r_permlink = $("#r_permlink").val();
             var r_author = $("#r_author").val();
             var update = '1';
@@ -110,17 +127,10 @@ if ($result_T && $result_T->num_rows > 0)
                             $('#recomend-bar').show();
                             return false;
                         } else {
-                            $('#up_vote').removeAttr('data-target');
+                            //$('#up_vote').removeAttr('data-target');
                             //$('#vote_icon').addClass("not-active");
                             toastr.success(response.message);
-                            var newlikes = parseInt(likesofpost)+parseInt(update);
-                            console.log(newlikes);
-                            $('.post_likes').html(newlikes);
-                            var post_income = response.post_income;
-                            console.log(post_income);
-                            var updatespostincome = newlikes * post_income;
-                            console.log(updatespostincome);
-                            $('.dlike_tokens').html(updatespostincome);
+                            
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide();
                             $('#recomend-bar').show();
