@@ -71,7 +71,7 @@ if (isset($_POST["rec_author"]) && isset($_POST["rec_permlink"]))
                 	$newlikes  = '1';
                 }
 
-                die(json_encode(['error' => false, 'message' => 'Successfully Recommended!', 'data' => $newlikes]));
+                die(json_encode(['error' => false, 'message' => 'Successfully Recommended!', 'data' => $newlikes, 'post_income' => $post_reward]));
             }
         }
     }

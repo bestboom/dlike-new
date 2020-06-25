@@ -2,7 +2,7 @@
 <style>
     .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
     .hov_vote{cursor:pointer;width: 21px;height: 21px;}
-    .post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
+    #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
     .bottom_block{width:100%}
 </style>
 </div>
@@ -46,8 +46,8 @@ if ($result_T && $result_T->num_rows > 0)
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
-    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <span id="total_likes"><?php echo $postLikes; ?></span>LIKES</div>
-    <div class="author-info"><span class=""><?php echo $post_income; ?></span> <b>DLIKE</b></div>
+    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <span id="post_likes"><?php echo $postLikes; ?></span>LIKES</div>
+    <div class="author-info"><span id="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div></div></div>
 </article></div>
 <?php } } ?> 
@@ -87,7 +87,7 @@ if ($result_T && $result_T->num_rows > 0)
             var r_permlink = $("#r_permlink").val();
             var r_author = $("#r_author").val();
             var update = '1';
-            var likesofpost = $('#total_likes').html();
+            var likesofpost = $('#post_likes').html();
             console.log(likesofpost);
             var datavr = { rec_permlink: r_permlink,rec_author: r_author};
             $('#recomend-bar').hide();
@@ -109,10 +109,14 @@ if ($result_T && $result_T->num_rows > 0)
                             $('#up_vote').removeAttr('data-target');
                             $('#vote_icon').addClass("not-active");
                             toastr.success(response.message);
-                            var newlikes = likesofpost + update;
+                            var newlikes = parseInt(likesofpost)+parseInt(update);
                             console.log(newlikes);
-                            //$('#post_likes').html(response.data);
-                            $('#total_likes').html(newlikes);
+                            $('#post_likes').html(newlikes);
+                            var post_income = response.post_income;
+                            console.log(post_income);
+                            var updatespostincome = newlikes * post_income;
+                            console.log(updatespostincome);
+                            $('#dlike_tokens').html(updatespostincome);
                             $('#recomendModal').modal('hide');
                             $('#recomend-status').hide();
                             $('#recomend-bar').show();
