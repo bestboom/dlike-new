@@ -46,14 +46,15 @@ if ($result_T && $result_T->num_rows > 0)
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
-    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <div class="post_likes">0</div>LIKES</div>
+    <div class="post-comments"><a  class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | <div class="post_likes"><?php echo $postLikes; ?></div>LIKES</div>
     <div class="author-info"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div></div></div>
 </article></div>
 <?php } } ?> 
-</div></div></div>
+
 <div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"><?php include('template/modals/recomend.php'); ?></div></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
+</div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
     $('.latest-post-section').on("click", ".hov_me", function() {
@@ -82,11 +83,12 @@ if ($result_T && $result_T->num_rows > 0)
         } else {toastr.error('You must be login with DLIKE username!');return false;}    
     });
 
-    //$('.latest-post-section').on("click", ".recomendme", function() {
-    $('.recomendme').click(function() {
+    $('.latest-post-section').on("click", ".recomendme", function() {
+    //$('.recomendme').click(function() {
         if (dlike_username != null) {
-            //var getpostlikes = $('.latest-post-section').find("#post_likes");
-            var likesofpost = $(".post_likes").html();
+            var getpostlikes = $(this).find(".post_likes");
+            //var likesofpost = $(".post_likes").html();
+            var likesofpost = parseInt(getpostlikes.html());
             var r_permlink = $("#r_permlink").val();
             var r_author = $("#r_author").val();
             var update = '1';
@@ -109,7 +111,7 @@ if ($result_T && $result_T->num_rows > 0)
                             return false;
                         } else {
                             $('#up_vote').removeAttr('data-target');
-                            $('#vote_icon').addClass("not-active");
+                            //$('#vote_icon').addClass("not-active");
                             toastr.success(response.message);
                             var newlikes = parseInt(likesofpost)+parseInt(update);
                             console.log(newlikes);
