@@ -82,7 +82,8 @@ if ($result_T && $result_T->num_rows > 0)
         } else {toastr.error('You must be login with DLIKE username!');return false;}    
     });
 
-    $('.recomendme').click(function() {
+    $('.latest-post-section').on("click", ".recomendme", function() {
+    //$('.recomendme').click(function() {
         if (dlike_username != null) {
             var getpostlikes = $(this).find("#post_likes");
             var likesofpost = parseInt(getpostlikes.html());
