@@ -46,8 +46,12 @@ if ($result_T && $result_T->num_rows > 0)
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
-    <div class="post-comments"><a class="hov_me" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"> | <span class="likes_section"><span class="post_likes"><?php echo $postLikes; ?></span>LIKES</span></div>
-    <div class="author-info tokens_section"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></div></a>
+    <div class="post-comments" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>">
+        <a class="hov_me">
+            <img src="./images/post/dlike-hover.png" class="hov_vote">
+        </a> | 
+        <span class="likes_section"><span class="post_likes"><?php echo $postLikes; ?></span>LIKES</span>
+        <span class="author-info tokens_section"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
     </div></div></div>
 </article></div>
 <?php } } ?> 
@@ -56,7 +60,7 @@ if ($result_T && $result_T->num_rows > 0)
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-    $('.latest-post-section').on("click", ".hov_me", function() {
+    $('.latest-post-section').on("click", ".post-comments", function() {
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
