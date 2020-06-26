@@ -445,8 +445,6 @@ include('template/header5.php');
 					'\n' +
 					'<div class="post-contnet-wrap">\n' +
 					'\n' +
-					'<div class="row d-flex justify-content-center hov-it"><div class="hov-item"><img src="./images/post/dlike-hover.png" alt="img" class="img-responsive"><span class="hov_me" data-toggle="modal" data-target="" data-likes="" data-permlink="' + $post.permlink + '" data-author="' + $post.author + '"><div class="hov-txt"><h5><span id="hov-num total_likes" class="commentsDiv' + currentLikesDivElement + '"></span></h5></div></span></div></div>\n' +
-                    '\n' +
 					'<h4 class="post-title"><a href="/post/@' + $post.author + '/' + $post.permlink + '">' + $post.title + '</a></h4>\n' +
 					'\n' +
 					'<p class="post-entry post-tags">' + metatags + '</p>\n' +
@@ -546,7 +544,7 @@ include('template/header5.php');
 });
 
 //check likes
-function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
+/*function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 	$.ajax({
 		type: "POST",
 		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
@@ -560,90 +558,8 @@ function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
 			console.log('Error occured');
 		}
 	});
-};
+};*/
 
-    $('.latest-post-section, #profile_page').on("click", ".hov_me", function() {
-        //alert('called');
-        // we want to copy the 'id' from the button to the modal
-        var mypermlink = $(this).attr("data-permlink");
-        var authorname = $(this).attr("data-author");
-        var postsrec = $(this).attr("data-likes");
-        //console.log(postsrec);
-        var datat = {
-            ath: authorname,
-            plink: mypermlink
-        };
-        $.ajax({
-            type: "POST",
-            url: "/helper/verify_post.php",
-            data: datat,
-            success: function(data) {
-                try {
-                    var response = JSON.parse(data)
-                    if (response.error == true) {
-                        $('#upvotefail').modal('show');
-                    } else {
-                        $('#recomendModal').modal('show');
-                    }
-                } catch (err) {
-                    alert('Sorry. Server response is malformed.')
-                }
-            }
-        });
-
-        $("#r_author").val(authorname);
-        $("#r_permlink").val(mypermlink);
-        $("#r_likes").val(postsrec);
-    });
-
-
-    $('.recomendme').click(function() {
-        //alert('good');
-        var r_permlink = $("#r_permlink").val();
-        var r_author = $("#r_author").val();
-        var r_likes = $("#r_likes").val();
-        var newlikes = 26;
-        var datavr = {
-            rec_permlink: r_permlink,
-            rec_author: r_author
-        };
-        $('#recomend-bar').hide();
-        $('#recomend-status').show();
-
-        $.ajax({
-            type: "POST",
-            url: "/helper/solve.php",
-            data: datavr,
-            success: function(data) {
-                //console.log(success);
-                try {
-                    var response = JSON.parse(data)
-                    if (response.error == true) {
-                        toastr.error('There is some issue!');
-                        $('#recomendModal').modal('hide');
-                        $('#recomend-status').hide();
-                        $('#recomend-bar').show();
-                        return false;
-                    } else {
-                        $('#up_vote').removeAttr('data-target');
-                        $('#vote_icon').addClass("not-active");
-                        toastr.success('Thanks for Recomendation!');
-                        console.log(newlikes);
-                        $('#total_likes').html(newlikes);
-                        $('#recomendModal').modal('hide');
-                        $('#recomend-status').hide();
-                        $('#recomend-bar').show();
-                    }
-                } catch (err) {
-                    //console.log(err);
-                    toastr.error('Sorry. Server response is malformed.');
-                    $('#recomendModal').modal('hide');
-                    $('#recomend-status').hide();
-                    $('#recomend-bar').show();
-                }
-            },
-        });
-    });
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
 	$('.btn-follow').click(function(e) {	
 	    e.preventDefault();
