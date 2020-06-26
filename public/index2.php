@@ -46,7 +46,7 @@ if ($result_T && $result_T->num_rows > 0)
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
-    <div class="post-comments" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>">
+    <div class="post-comments bottom_block" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>">
         <div>
             <a class="hov_me"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | 
             <span class="likes_section"><span class="post_likes"><?php echo $postLikes; ?></span>LIKES</span>
