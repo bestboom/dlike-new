@@ -46,8 +46,8 @@ if ($result_T && $result_T->num_rows > 0)
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
-    <div class="post-comments"><a class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"> | <span class="post_likes"><?php echo $postLikes; ?></span></a>LIKES</div>
-    <div class="author-info"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
+    <div class="post-comments"><a class="hov_me" data-toggle="modal" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img  =src="./images/post/dlike-hover.png" class="hov_vote"> | <span class="post_likes"><?php echo $postLikes; ?></span>LIKES</div>
+    <div class="author-info"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></a></div>
     </div></div></div>
 </article></div>
 <?php } } ?> 
@@ -62,6 +62,7 @@ if ($result_T && $result_T->num_rows > 0)
             var authorname = $(this).attr("data-author");
             var getlikespost = $(this).find(".post_likes").html();
             var likesval = $(this).find(".post_likes");
+            var tokensval = $(this).find(".dlike_tokens");
             var update = 1;
             console.log(getlikespost);
             if(dlike_username == authorname) {
@@ -92,7 +93,7 @@ if ($result_T && $result_T->num_rows > 0)
                             console.log(post_income);
                             var updatespostincome = newlikes * post_income;
                             console.log(updatespostincome);
-                            $('.dlike_tokens').html(updatespostincome);
+                            tokensval.html(updatespostincome);
                         }
                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                 }
