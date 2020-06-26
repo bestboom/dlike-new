@@ -20,7 +20,7 @@ if ($result_T && $result_T->num_rows > 0)
         $author = $row_T["username"];
         $post_time = strtotime($row_T["created_at"]);
 
-        $sql_W = "SELECT * FROM dlikeaccounts where username = '$post_author'";
+        $sql_W = "SELECT * FROM dlikeaccounts where username = '$author'";
         $result_W = $conn->query($sql_W);
         if ($result_T && $result_T->num_rows > 0)
         {
@@ -48,11 +48,11 @@ if ($result_T && $result_T->num_rows > 0)
     <div class="post-footer"><div class="post-author-block bottom_block">
     <div class="post-comments bottom_block" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>">
         <div>
-            <a class="hov_me"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | 
+            <a class="hov_me gld_me" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | 
             <span class="likes_section"><span class="post_likes"><?php echo $postLikes; ?></span>LIKES</span>
         </div>
         <div>
-            <span class="author-info tokens_section"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
+            <span class="author-info tokens_section"><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
         </div>
     </div></div></div>
 </article></div>
@@ -117,46 +117,38 @@ if ($result_T && $result_T->num_rows > 0)
         return false;
     })
     //$('.latest-post-section').on("click", ".recomendme", function() {
-    $('.recomendme').click(function() {
+    $('.gld_me').click(function() {
         if (dlike_username != null) {
-            //var getpostlikes = $(this).find(".post_likes");
-            //var likesofpost = $(".post_likes").html();
-            //var likesofpost = parseInt(getpostlikes.html());
-            var r_permlink = $("#r_permlink").val();
-            var r_author = $("#r_author").val();
-            var update = '1';
-            console.log(likesofpost);
-            var datavr = { rec_permlink: r_permlink,rec_author: r_author};
-            $('#recomend-bar').hide();
-            $('#recomend-status').show();
+            var mypermlink = $(this).attr("data-permlink");
+            var authorname = $(this).attr("data-author");
+            var update = '111';
+            var datat = {ath: authorname, plink: mypermlink};
             $.ajax({
                 type: "POST",
+                //url: "/helper/verify_post.php",
                 url: "/helper/solve.php",
-                data: datavr,
+                data: datat,
                 success: function(data) {
-                    try {
-                        var response = JSON.parse(data)
-                        if (response.error == true) {
+                    try { var response = JSON.parse(data)
+                        if (response.done == true) {
+                            $('#upvotefail').modal('show');
+                            return false;
+                        } else if (response.error == true)  { 
                             toastr.error(response.message);
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide();
-                            $('#recomend-bar').show();
                             return false;
                         } else {
-                            //$('#up_vote').removeAttr('data-target');
-                            //$('#vote_icon').addClass("not-active");
                             toastr.success(response.message);
-                            
-                            $('#recomendModal').modal('hide');
-                            $('#recomend-status').hide();
-                            $('#recomend-bar').show();
+                            //var newlikes = parseInt(getlikespost) + parseInt(update);
+                            //console.log(newlikes);
+                            $('.post_likes' + mypermlink + authorname).html(update);
+                            //likesval.html(newlikes);
+                            var post_income = response.post_income;
+                            console.log(post_income);
+                            //var updatespostincome = newlikes * post_income;
+                            //console.log(updatespostincome);
+                            tokensval.html(updatespostincome);
                         }
-                    } catch (err) {
-                        toastr.error('Sorry. Server response is malformed.');
-                        $('#recomendModal').modal('hide');
-                        $('#recomend-status').hide();
-                        $('#recomend-bar').show();
-                    }
+                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                 }
             });
         } else {toastr.error('You must be login with DLIKE username!');return false;}
