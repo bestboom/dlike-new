@@ -61,6 +61,7 @@ if ($result_T && $result_T->num_rows > 0)
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
             var getlikespost = $(this).find(".post_likes").html();
+            var likesval = $(this).find(".post_likes");
             var update = 1;
             console.log(getlikespost);
             if(dlike_username == authorname) {
@@ -86,7 +87,7 @@ if ($result_T && $result_T->num_rows > 0)
                             var newlikes = parseInt(getlikespost) + parseInt(update);
                             console.log(newlikes);
                             //$('.post_likes').html(update);
-                            $(this).find(".post_likes").html(newlikes);
+                            likesval.html(newlikes);
                             var post_income = response.post_income;
                             console.log(post_income);
                             var updatespostincome = newlikes * post_income;
@@ -100,7 +101,9 @@ if ($result_T && $result_T->num_rows > 0)
             $("#r_permlink").val(mypermlink);
         } else {toastr.error('You must be login with DLIKE username!');return false;}    
     });
-
+    $('.post_likes').on('click', function() {
+        return false;
+    })
     //$('.latest-post-section').on("click", ".recomendme", function() {
     $('.recomendme').click(function() {
         if (dlike_username != null) {
