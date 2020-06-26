@@ -87,7 +87,7 @@ if ($result_T && $result_T->num_rows > 0)
                             toastr.success(response.message);
                             //var newlikes = parseInt(getlikespost) + parseInt(update);
                             //console.log(newlikes);
-                            $('.post_likes' + mypermlink + authorname).html(update);
+                            $('.dlike_tokens' + mypermlink + authorname).html(update);
                             //likesval.html(newlikes);
                             var post_income = response.post_income;
                             console.log(post_income);
