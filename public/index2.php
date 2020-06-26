@@ -62,60 +62,7 @@ if ($result_T && $result_T->num_rows > 0)
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-    $('.latest-post-section').on("click", ".post-comments", function() {
-        if (dlike_username != null) {
-            var mypermlink = $(this).attr("data-permlink");
-            var authorname = $(this).attr("data-author");
-            var getlikespost = $(this).find(".post_likes").html();
-            var likesval = $(this).find(".post_likes");
-            var tokensval = $(this).find(".dlike_tokens");
-            var tokensvals = $(this).find(".dlike_tokens").html();
-            console.log(tokensvals);
-            var update = 1;
-            console.log(getlikespost);
-            if(dlike_username == authorname) {
-                toastr.error('You can not recommend your own post');
-                return false;
-            }
-            var datat = {ath: authorname, plink: mypermlink};
-            $.ajax({
-                type: "POST",
-                //url: "/helper/verify_post.php",
-                url: "/helper/solve.php",
-                data: datat,
-                success: function(data) {
-                    try { var response = JSON.parse(data)
-                        if (response.done == true) {
-                            $('#upvotefail').modal('show');
-                            return false;
-                        } else if (response.error == true)  { 
-                            toastr.error(response.message);
-                            return false;
-                        } else {
-                            toastr.success(response.message);
-                            var newlikes = parseInt(getlikespost) + parseInt(update);
-                            console.log(newlikes);
-                            //$('.post_likes').html(update);
-                            likesval.html(newlikes);
-                            var post_income = response.post_income;
-                            console.log(post_income);
-                            var updatespostincome = newlikes * post_income;
-                            console.log(updatespostincome);
-                            tokensval.html(updatespostincome);
-                        }
-                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                }
-            });
-            $("#r_author").val(authorname);
-            $("#r_permlink").val(mypermlink);
-        } else {toastr.error('You must be login with DLIKE username!');return false;}    
-    });
-    $('.likes_section').on('click', function() {
-        return false;
-    })
-    $('.tokens_section').on('click', function() {
-        return false;
-    })
+
     //$('.latest-post-section').on("click", ".recomendme", function() {
     $('.gld_me').click(function() {
         if (dlike_username != null) {
