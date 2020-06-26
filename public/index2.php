@@ -47,11 +47,13 @@ if ($result_T && $result_T->num_rows > 0)
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
     <div class="post-comments" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>">
-        <a class="hov_me">
-            <img src="./images/post/dlike-hover.png" class="hov_vote">
-        </a> | 
-        <span class="likes_section"><span class="post_likes"><?php echo $postLikes; ?></span>LIKES</span>
-        <span class="author-info tokens_section"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
+        <div>
+            <a class="hov_me"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | 
+            <span class="likes_section"><span class="post_likes"><?php echo $postLikes; ?></span>LIKES</span>
+        </div>
+        <div>
+            <span class="author-info tokens_section"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
+        </div>
     </div></div></div>
 </article></div>
 <?php } } ?> 
