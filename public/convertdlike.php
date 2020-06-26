@@ -4,7 +4,7 @@
 	} else {}
 
 	$curDate = date("Y-m-d H:i:s");
-
+/*
 	$check_link = "SELECT * FROM dlikepasswordreset where token = '$token' and email = '$email'";
 	$result_link = $conn->query($check_link);
 	if ($result_link->num_rows <= 0) {
@@ -15,6 +15,7 @@
   	if ($reset_date >= $curDate){
   		$errors = 'The link to reset password has expired';
   	}
+*/
 ?>
 </div>
     <div class="container">
@@ -22,7 +23,7 @@
             <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
                 <div class="modal-body">
                     <div class="share-block">
-                        <p>Reset Password</p>
+                        <p>Convert DLIKE to DLIKER</p>
                     </div>
                     <div class="user-connected-form-block" style="background: #1b1e63;">
                     <?php if (empty($errors)) { ?>
@@ -56,7 +57,7 @@
 		let reset_email = $('#reset_email_id').val();
 		let reset_pass = $('#reset_pass').val();
     	let confirm_reset_pass = $('#confirm_reset_pass').val();
-    	let email_verify_url = 'helper/email_new_pass.php';
+    	let email_verify_url = 'helper/email_new_pa.php';
 
 	    if (reset_pass == "") {
 	        toastr.error('phew... Password should not be empty');
