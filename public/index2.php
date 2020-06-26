@@ -2,7 +2,7 @@
 <style>
     .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
     .hov_vote{cursor:pointer;width: 21px;height: 21px;}
-    .post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
+    #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
     .bottom_block{width:100%}
 </style>
 </div>
@@ -39,19 +39,16 @@ if ($result_T && $result_T->num_rows > 0)
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
     <div class="author-thumb"><a href="/@pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="<?php echo $row_T['username']; ?>" class="img-responsive"></a></div>
     <div class="author-info"><h5><a href="/@"><?php echo $author; ?></a><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
-    <div class="post-comments post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
+    <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
     </div></div>
     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
     <div class="post-contnet-wrap">
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
-    <div class="post-footer"><div class="post-author-block bottom_block">
     <div class="post-comments bottom_block">
-        <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES
-        </div>
-        <div><span class="author-info tokens_section"><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
-        </div>
-    </div></div></div>
+        <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+        <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
+    </div>
 </article></div>
 <?php } } ?> 
 </div></div></div>
