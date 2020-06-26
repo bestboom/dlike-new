@@ -46,13 +46,10 @@ if ($result_T && $result_T->num_rows > 0)
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
-    <div class="post-comments bottom_block" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>">
-        <div>
-            <a class="hov_me gld_me" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"></a> | 
-            <span class="likes_section"><span class="post_likes"><?php echo $postLikes; ?></span>LIKES</span>
+    <div class="post-comments bottom_block">
+        <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES
         </div>
-        <div>
-            <span class="author-info tokens_section"><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
+        <div><span class="author-info tokens_section"><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></span>
         </div>
     </div></div></div>
 </article></div>
@@ -63,16 +60,16 @@ if ($result_T && $result_T->num_rows > 0)
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
 
-    //$('.latest-post-section').on("click", ".recomendme", function() {
-    $('.gld_me').click(function() {
+    $('.hov_vote').click(function() {
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
-            var update = '111';
+            var getpostlikes = $(".post_likes").html();
+            console.log(getpostlikes);
+            var update = '1';
             var datat = {ath: authorname, plink: mypermlink};
             $.ajax({
                 type: "POST",
-                //url: "/helper/verify_post.php",
                 url: "/helper/solve.php",
                 data: datat,
                 success: function(data) {
@@ -85,15 +82,14 @@ if ($result_T && $result_T->num_rows > 0)
                             return false;
                         } else {
                             toastr.success(response.message);
-                            //var newlikes = parseInt(getlikespost) + parseInt(update);
-                            //console.log(newlikes);
-                            $('.dlike_tokens' + mypermlink + authorname).html(update);
-                            //likesval.html(newlikes);
                             var post_income = response.post_income;
                             console.log(post_income);
-                            //var updatespostincome = newlikes * post_income;
-                            //console.log(updatespostincome);
-                            tokensval.html(updatespostincome);
+                            var newlikes = parseInt(getpostlikes) + parseInt(update);
+                            console.log(newlikes);
+                            var updatespostincome = newlikes * post_income;
+                            console.log(updatespostincome);
+                            $('.post_likes' + mypermlink + authorname).html(newlikes);
+                            $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
                         }
                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                 }
