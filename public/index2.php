@@ -4,6 +4,8 @@
     .hov_vote{cursor:pointer;width: 21px;height: 21px;}
     #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
     .bottom_block{width:100%}
+    .post-style-two .post-contnet-wrap-top{padding: 5px 10px 5px 10px;}
+    .post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
 </style>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
