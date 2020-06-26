@@ -47,7 +47,7 @@ if ($result_T && $result_T->num_rows > 0)
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-footer"><div class="post-author-block bottom_block">
     <div class="post-comments"><a class="hov_me" data-target="" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"><img src="./images/post/dlike-hover.png" class="hov_vote"> | <span class="post_likes"><?php echo $postLikes; ?></span>LIKES</div>
-    <div class="author-info"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></a></div>
+    <div class="author-info tokens_section"><span class="dlike_tokens"><?php echo $post_income; ?></span> <b>DLIKE</b></a></div>
     </div></div></div>
 </article></div>
 <?php } } ?> 
@@ -103,6 +103,9 @@ if ($result_T && $result_T->num_rows > 0)
         } else {toastr.error('You must be login with DLIKE username!');return false;}    
     });
     $('.post_likes').on('click', function() {
+        return false;
+    })
+    $('.tokens_section').on('click', function() {
         return false;
     })
     //$('.latest-post-section').on("click", ".recomendme", function() {
