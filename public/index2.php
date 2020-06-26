@@ -64,8 +64,6 @@ if ($result_T && $result_T->num_rows > 0)
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
-            var getpostlikes = $(".post_likes").html();
-            console.log(getpostlikes);
             var update = '1';
             var datat = {ath: authorname, plink: mypermlink};
             $.ajax({
@@ -82,6 +80,8 @@ if ($result_T && $result_T->num_rows > 0)
                             return false;
                         } else {
                             toastr.success(response.message);
+                            var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
+                            console.log(getpostlikes);
                             var post_income = response.post_income;
                             console.log(post_income);
                             var newlikes = parseInt(getpostlikes) + parseInt(update);
