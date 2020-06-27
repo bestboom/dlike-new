@@ -44,7 +44,7 @@ $dlike_bal    = $rowIt['amount'];
                         	<div style="font-weight:500;text-align: center;padding-top:5px;padding-bottom: 5px;color:#fff;" class="eth_tokens">Balance: <?php echo $dlike_bal; ?> DLIKE</div>
                             <div class="input-group mb-3" style="padding: 3px;">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-money"></span></div>
+                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fas fa-money-bill-alt"></span></div>
                                 </div>
                                 <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Confirm Amount to Convert" class="form-control" style="padding: 8px;" />
                             </div>
