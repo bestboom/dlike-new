@@ -1,9 +1,21 @@
 <?php include('template/header5.php'); 
-	if (isset($_GET['eth'])) {
-	     $eth = $_GET['eth'];
-	} else {}
+if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
+    die('<script>window.location.replace("https://dlike.io","_self")</script>');
+} else {
+    $user_wallet = $_COOKIE['username'];
+}
 
-	$curDate = date("Y-m-d H:i:s");
+if (isset($_GET['eth'])) {
+     $eth = $_GET['eth'];
+} else {}
+
+$curDate = date("Y-m-d H:i:s");
+
+$sqls         = "SELECT amount FROM wallet where username='$user_wallet'";
+$resultAmount = $conn->query($sqls);
+$rowIt        = $resultAmount->fetch_assoc();
+$dlike_bal    = $rowIt['amount'];
+
 /*
 	$check_link = "SELECT * FROM dlikepasswordreset where token = '$token' and email = '$email'";
 	$result_link = $conn->query($check_link);
@@ -28,21 +40,16 @@
                     <div class="user-connected-form-block" style="background: #1b1e63;">
                     <?php if (empty($errors)) { ?>
                         <form class="user-connected-from password-reset-form">
-                        	<input type="hidden" id="reset_email_id" value="<?php echo $email; ?>" />
+                        	<input type="hidden" id="user_token_bal" value="<?php echo $dlike_bal; ?>" />
                             <div class="input-group mb-3" style="padding: 3px;">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
+                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-money"></span></div>
                                 </div>
-                                <input type="password" name="reset_pass" id="reset_pass" placeholder="New Password" class="form-control" style="padding: 8px;" />
+                                <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Confirm Amount to Convert" class="form-control" style="padding: 8px;" />
                             </div>
-                            <div class="input-group mb-3" style="padding: 3px;">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
-                                </div>
-                                <input type="password" name="confirm_reset_pass" id="confirm_reset_pass" placeholder="Confirm Password" class="form-control" style="padding: 8px;" />
-                            </div>
+                            <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:blue;" class="eth_tokens">Convert ETH based DLIKE token?</div>
                             <center>
-                                <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="reset_pass_btn">Reset Password</button>
+                                <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_tok">Submit</button>
                             </center>
                         </form>
                     <? } else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; } ?>
@@ -54,27 +61,20 @@
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 	$('#reset_pass_btn').click(function() {
-		let reset_email = $('#reset_email_id').val();
-		let reset_pass = $('#reset_pass').val();
-    	let confirm_reset_pass = $('#confirm_reset_pass').val();
+		let dlk_amount = $('#dlike_convert_amount').val();
+		let dlk_bal = $('#user_token_bal').val();
     	let email_verify_url = 'helper/email_new_pa.php';
 
-	    if (reset_pass == "") {
-	        toastr.error('phew... Password should not be empty');
+	    if (dlk_amount == "") {
+	        toastr.error('phew... Please enter valid amount to withdraw');
 	        return false;
 	    }
-	    if (confirm_reset_pass == "") {
-	        toastr.error('phew... Confirm Password should not be empty');
-	        return false;
-	    }
-	    if (confirm_reset_pass !== reset_pass) {
-	        toastr.error('phew... Passwords do not match!');
+	    if (dlk_amount > dlk_bal) {
+	        toastr.error('phew... Not enough balance');
 	        return false;
 	    }
 	    var data_new_pass = {
-	    	reset_email: reset_email,
-	        reset_pass: reset_pass,
-	        confirm_reset_pass: confirm_reset_pass
+	    	dlk_amount: dlk_amount
 	    };
 	    $.ajax({
 	        type: "POST",
