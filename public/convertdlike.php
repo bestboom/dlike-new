@@ -64,17 +64,19 @@ $dlike_bal    = $rowIt['amount'];
 	$('#with_tok').click(function() {
 		let dlk_amount = $('#dlike_convert_amount').val();
 		let dlk_bal = $('#user_token_bal').val();
-    	let email_verify_url = 'helper/email_new_pa.php';
-
+		console.log(dlk_bal);
 	    if (dlk_amount == "") {
 	        toastr.error('phew... Please enter valid amount to withdraw');
 	        return false;
 	    }
+	    console.log(dlk_amount);
 	    if (dlk_amount > dlk_bal) {
 	        toastr.error('phew... Not enough balance');
 	        return false;
 	    }
-	    var data_new_pass = {
+
+    	let email_verify_url = 'helper/email_new_pa.php';
+	    var data_amt = {
 	    	dlk_amount: dlk_amount
 	    };
 	    $.ajax({
