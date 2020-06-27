@@ -41,13 +41,14 @@ $dlike_bal    = $rowIt['amount'];
                     <?php if (empty($errors)) { ?>
                         <form class="user-connected-from password-reset-form">
                         	<input type="hidden" id="user_token_bal" value="<?php echo $dlike_bal; ?>" />
+                        	<div style="font-weight:500;text-align: center;padding-top:5px;padding-bottom: 5px;color:#fff;" class="eth_tokens">Balance: <?php echo $dlike_bal; ?> DLIKE</div>
                             <div class="input-group mb-3" style="padding: 3px;">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-money"></span></div>
                                 </div>
                                 <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Confirm Amount to Convert" class="form-control" style="padding: 8px;" />
                             </div>
-                            <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:blue;" class="eth_tokens">Convert ETH based DLIKE token?</div>
+                            <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:#fff;" class="eth_tokens">Convert ETH based DLIKE token?</div>
                             <center>
                                 <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_tok">Submit</button>
                             </center>
@@ -60,7 +61,7 @@ $dlike_bal    = $rowIt['amount'];
     </div>  
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
-	$('#reset_pass_btn').click(function() {
+	$('#with_tok').click(function() {
 		let dlk_amount = $('#dlike_convert_amount').val();
 		let dlk_bal = $('#user_token_bal').val();
     	let email_verify_url = 'helper/email_new_pa.php';
