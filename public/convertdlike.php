@@ -70,7 +70,8 @@ $dlike_bal    = $rowIt['amount'];
 	        return false;
 	    }
 	    console.log(dlk_amount);
-	    if (dlk_amount > dlk_bal) {
+	    if (parseint(dlk_amount) > parseint(dlk_bal)) {
+
 	        toastr.error('phew... Not enough balance');
 	        return false;
 	    }
