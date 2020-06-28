@@ -76,14 +76,14 @@ $dlike_bal    = $rowIt['amount'];
 	        return false;
 	    }
 
-    	let email_verify_url = 'helper/email_new_pa.php';
+    	let convert_url = 'helper/converter.php';
 	    var data_amt = {
 	    	dlk_amount: dlk_amount
 	    };
 	    $.ajax({
 	        type: "POST",
-	        url: email_verify_url,
-	        data: data_new_pass,
+	        url: convert_url,
+	        data: data_amt,
 	        success: function(data) {
 	            try {
 	                var response = JSON.parse(data)
