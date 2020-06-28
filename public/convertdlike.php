@@ -16,18 +16,6 @@ $resultAmount = $conn->query($sqls);
 $rowIt        = $resultAmount->fetch_assoc();
 $dlike_bal    = $rowIt['amount'];
 
-/*
-	$check_link = "SELECT * FROM dlikepasswordreset where token = '$token' and email = '$email'";
-	$result_link = $conn->query($check_link);
-	if ($result_link->num_rows <= 0) {
-		$errors = 'This is an invalid link for password reset';
-	}
-	$row = mysqli_fetch_assoc($result_link);
-	$reset_date = $row['reset_time'];
-  	if ($reset_date >= $curDate){
-  		$errors = 'The link to reset password has expired';
-  	}
-*/
 ?>
 </div>
     <div class="container">
@@ -64,14 +52,11 @@ $dlike_bal    = $rowIt['amount'];
 	$('#with_tok').click(function() {
 		let dlk_amount = $('#dlike_convert_amount').val();
 		let dlk_bal = $('#user_token_bal').val();
-		console.log(dlk_bal);
 	    if (dlk_amount == "") {
 	        toastr.error('phew... Please enter valid amount to withdraw');
 	        return false;
 	    }
-	    console.log(dlk_amount);
 	    if (parseInt(dlk_amount) > parseInt(dlk_bal)) {
-
 	        toastr.error('phew... Not enough balance');
 	        return false;
 	    }
