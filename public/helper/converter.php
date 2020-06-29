@@ -26,7 +26,7 @@ if (isset($_POST['dlk_amount'])  && $_POST['dlk_amount'] != '') {
 
 			$dlike_user_login_url = 'https://dlike.io';
 
-			$deleteuser = "DELETE FROM dlikepasswordreset where email = '$email'";
+			$deleteuser = "DELETE FROM dlikepassword where email = '$email'";
 			$deleteuser_q = $conn->query($deleteuser);
 
 			die(json_encode([
