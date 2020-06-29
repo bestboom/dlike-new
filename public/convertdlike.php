@@ -56,7 +56,7 @@ $dlike_bal    = $rowIt['amount'];
 	        toastr.error('phew... Please enter valid amount to withdraw');
 	        return false;
 	    }
-	    if (parseInt(dlk_amount) > parseInt(dlk_bal)) {
+	    if (parseFloat(dlk_amount) > parseFloat(dlk_bal)) {
 	        toastr.error('phew... Not enough balance');
 	        return false;
 	    }
