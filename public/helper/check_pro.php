@@ -29,6 +29,8 @@ if (isset($_POST["user"])){
                     $return['status'] = false;
                     $return['message'] = 'PRO users can share 3 posts in 24 hours!';
 
+                } else {
+                    $return['status'] = true;
                 }
         } else  {
 
@@ -40,6 +42,8 @@ if (isset($_POST["user"])){
                     $return['status'] = false;
                     $return['message'] = 'Only 1 share allowed every 24 hours. To share more become PRO!';
 
+                } else {
+                    $return['status'] = true;
                 }
 	    } 
     echo json_encode($return);die;     
