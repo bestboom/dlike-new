@@ -6,8 +6,8 @@ if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
 }
 
 if (isset($_GET['eth'])) {
-     $eth = $_GET['eth'];
-} else {}
+     $eth = '1';
+} else {$eth = '0';}
 
 $curDate = date("Y-m-d H:i:s");
 
@@ -26,7 +26,8 @@ $dlike_bal    = $rowIt['amount'];
                         <p>Convert DLIKE to DLIKER</p>
                     </div>
                     <div class="user-connected-form-block" style="background: #1b1e63;">
-                    <?php if (empty($errors)) { ?>
+                    <?php if (empty($errors)) { 
+                    	if ($eth = '0') { ?>
                         <form class="user-connected-from password-reset-form">
                         	<input type="hidden" id="user_token_bal" value="<?php echo $dlike_bal; ?>" />
                         	<div style="font-weight:500;text-align: center;padding-top:5px;padding-bottom: 5px;color:#fff;" class="eth_tokens">Balance: <?php echo $dlike_bal; ?> DLIKE</div>
@@ -41,7 +42,8 @@ $dlike_bal    = $rowIt['amount'];
                                 <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_tok">Submit</button>
                             </center>
                         </form>
-                    <? } else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; } ?>
+                    <? } else { echo '<h3 style="color: #e1ec31;">This is ETH convert!</h3>'; } ?>
+                	} else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; } ?>
                     </div>
                 </div>
             </div>
@@ -85,5 +87,9 @@ $dlike_bal    = $rowIt['amount'];
 	            }
 	        }
 	    });
+	});
+
+	$('.eth_tokens').click(function() {
+		window.location.href = "https://dlike.io/convertdlike.php?tok=eth";
 	});
 </script>
