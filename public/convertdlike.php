@@ -74,7 +74,7 @@ $dlike_bal    = $rowIt['amount'];
                             </center>
                         </form>
                     <? } 
-                	} else { echo '<h3 style="color: #e1ec31;">.'$errors'.</h3>'; }
+                	} else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; }
                 	?>
                     </div>
                 </div>
