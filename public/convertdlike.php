@@ -27,8 +27,8 @@ $dlike_bal    = $rowIt['amount'];
                     </div>
                     <div class="user-connected-form-block" style="background: #1b1e63;">
                     <?php 
-                    	if ($eth == '0') { 
-                    	if (empty($errors)) { ?>
+                    	if (empty($errors)) {
+                    	if ($eth == '0') {  ?>
                         <form class="user-connected-from">
                         	<input type="hidden" id="user_token_bal" value="<?php echo $dlike_bal; ?>" />
                         	<div style="font-weight:500;text-align: center;padding-top:5px;padding-bottom: 5px;color:#fff;" class="eth_tokens">Balance: <?php echo $dlike_bal; ?> DLIKE</div>
@@ -74,7 +74,7 @@ $dlike_bal    = $rowIt['amount'];
                             </center>
                         </form>
                     <? } 
-                	} else { echo '<h3 style="color: #e1ec31;">This is ETH convert!</h3>'; }
+                	} else { echo '<h3 style="color: #e1ec31;">.'$errors'.</h3>'; }
                 	?>
                     </div>
                 </div>
