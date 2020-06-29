@@ -172,18 +172,17 @@ ClassicEditor
         }
         return domain;
     }
-
+    const $inputTags = document.querySelector(".tags");
+    const tags_check = /[a-zA-Z0-9 \/]+/;
+    $inputTags.addEventListener("keypress", e => {
+      console.log(e);
+      if (!tags_check.test(e.key)) {
+        e.preventDefault();
+      }
+    });
     $('.shareme2').click(function(clickEvent) {
         if (username != null) {
             //console.log(username);
-            const $inputTags = document.querySelector(".tags");
-            const tags_check = /[a-zA-Z0-9 \/]+/;
-            $inputTags.addEventListener("keypress", e => {
-              console.log(e);
-              if (!tags_check.test(e.key)) {
-                e.preventDefault();
-              }
-            });
             let urlInput = '<?php echo $url; ?>';
             let verifyUrl = getDomain(urlInput);
 
