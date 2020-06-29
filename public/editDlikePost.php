@@ -57,7 +57,7 @@ $input.addEventListener("keypress", e => {
   console.log(e);
   if (!tags_check.test(e.key)) {
     e.preventDefault();
-    toastr.error('phew... No characters. Only tags separated by space.');
+    toastr.error('Characters not allowed. Only tags separated by space.');
   }
 });
 </script>

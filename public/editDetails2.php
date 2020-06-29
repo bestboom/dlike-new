@@ -178,6 +178,7 @@ ClassicEditor
       console.log(e);
       if (!tags_check.test(e.key)) {
         e.preventDefault();
+        toastr.error('Characters not allowed. Only tags separated by space.');
       }
     });
     $('.shareme2').click(function(clickEvent) {
