@@ -97,7 +97,7 @@ if (isset($_GET["url"])) {
                                         <div class="form-group">
                                             <textarea class="form-control" rows="5" name="description" id="editor" placeholder="Write minimum 40 words on how this share is useful for community or anything relevant to, related to the subject matter discussed in the shared article."></textarea>
                                         </div>
-                                        <button type="button" class="btn btn-default shareme2" id="com-sbmt">Publish</button>
+                                        <button type="button" class="btn btn-default shareme2">Publish</button>
                                     </form>
                                 </div><!-- create-account-block -->
                             </div>
@@ -304,7 +304,7 @@ ClassicEditor
                                         data: datam,
                                         
                                         success: function(data) {
-                                            //console.log(data);
+                                            console.log(data);
                                             try {
                                                 var response = JSON.parse(data)
                                                 if (response.error == true) {
