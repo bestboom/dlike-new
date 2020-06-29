@@ -29,7 +29,7 @@ $dlike_bal    = $rowIt['amount'];
                     <?php 
                     	if ($eth == '0') { 
                     	if (empty($errors)) { ?>
-                        <form class="user-connected-from password-reset-form">
+                        <form class="user-connected-from">
                         	<input type="hidden" id="user_token_bal" value="<?php echo $dlike_bal; ?>" />
                         	<div style="font-weight:500;text-align: center;padding-top:5px;padding-bottom: 5px;color:#fff;" class="eth_tokens">Balance: <?php echo $dlike_bal; ?> DLIKE</div>
                             <div class="input-group mb-3" style="padding: 3px;">
@@ -43,7 +43,37 @@ $dlike_bal    = $rowIt['amount'];
                                 <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_tok">Submit</button>
                             </center>
                         </form>
-                    <? } else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; } 
+                    <? } else { ?>
+                    	<form class="user-connected-from">
+                            <div class="input-group mb-3" style="padding: 3px;">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> ETH Address</div>
+                                </div>
+                                <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Enter ETH which has DLIKE Balance" class="form-control" style="padding: 8px;" />
+                            </div>
+                            <div class="input-group mb-3" style="padding: 3px;">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;">Convert Amount</div>
+                                </div>
+                                <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Amount to conver" class="form-control" style="padding: 8px;" />
+                            </div>
+                            <div class="input-group mb-3" style="padding: 3px;">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;">Steem Username</div>
+                                </div>
+                                <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Enter steem address" class="form-control" style="padding: 8px;" />
+                            </div>
+                            <div class="input-group mb-3" style="padding: 3px;">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;">Earned By</div>
+                                </div>
+                                <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="How you earned these tokens (IEO, Bounty)" class="form-control" style="padding: 8px;" />
+                            </div>
+                            <center>
+                                <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_tok">Submit</button>
+                            </center>
+                        </form>
+                    <? } 
                 	} else { echo '<h3 style="color: #e1ec31;">This is ETH convert!</h3>'; }
                 	?>
                     </div>
