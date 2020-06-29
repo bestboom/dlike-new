@@ -42,7 +42,7 @@ $dlike_bal    = $rowIt['amount'];
                                 <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_tok">Submit</button>
                             </center>
                         </form>
-                    <? } else { echo '<h3 style="color: #e1ec31;">This is ETH convert!</h3>'; } ?>
+                    <? } else { echo '<h3 style="color: #e1ec31;">This is ETH convert!</h3>'; }
                 	} else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; } ?>
                     </div>
                 </div>
