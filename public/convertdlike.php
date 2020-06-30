@@ -49,7 +49,7 @@ $dlike_bal    = $rowIt['amount'];
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;"> ETH Address</div>
                                 </div>
-                                <input type="text" placeholder="Enter ETH which has DLIKE Balance" class="form-control" style="padding: 8px;" />
+                                <input type="text" placeholder="Enter ETH which has DLIKE Balance" class="form-control" id="eth_addr" style="padding: 8px;" />
                             </div>
                             <div class="input-group mb-3" style="padding: 3px;">
                                 <div class="input-group-prepend">
@@ -61,13 +61,13 @@ $dlike_bal    = $rowIt['amount'];
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;">Steem Username</div>
                                 </div>
-                                <input type="text" placeholder="Enter steem address" class="form-control" style="padding: 8px;" />
+                                <input type="text" placeholder="Enter steem address" class="form-control" id="steem_addr" style="padding: 8px;" />
                             </div>
                             <div class="input-group mb-3" style="padding: 3px;">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;">Earned By</div>
                                 </div>
-                                <input type="text" placeholder="How you earned tokens (IEO, Bounty)" class="form-control" style="padding: 8px;" />
+                                <input type="text" placeholder="How you earned tokens (IEO, Bounty)" class="form-control" id="earn_method" style="padding: 8px;" />
                             </div>
                             <div style="font-weight:500;text-align: left;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:#fff;" class="eth_send_addr">Send DLIKE tokens to <b>0x16ACe8800effB3E4C867144Afa658A579a445b06</b> to proceed conversion!</div>
                             <center>
@@ -126,10 +126,26 @@ $dlike_bal    = $rowIt['amount'];
 
 	$('#with_eth_tok').click(function() {
 		let eth_amount = $('#eth_convert_amount').val();
+		let eth_addr = $('#eth_addr').val();
+		let steem_addr = $('#steem_addr').val();
+		let earn_method = $('#earn_method').val();
 	    if (eth_amount == "") {
 	        toastr.error('phew... Please enter valid amount to withdraw');
 	        return false;
 	    }
+	    if (eth_addr == "") {
+	        toastr.error('phew... Please enter eth address where you hold DLIKE tokens');
+	        return false;
+	    }
+	    if (steem_addr == "") {
+	        toastr.error('phew... Please enter steem address where you want converted tokens');
+	        return false;
+	    }
+	    if (earn_method == "") {
+	        toastr.error('phew... Please enter methid of earning these tokens');
+	        return false;
+	    }
+	    console.log(eth_amount);
     	let convert_url = 'helper/converter.php';
 	    var data_eth = {action : 'eth_con',eth_amount: eth_amount};
 	    $.ajax({
