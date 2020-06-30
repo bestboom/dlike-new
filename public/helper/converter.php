@@ -54,11 +54,11 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 
 
 
-if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['dlk_amount'])  && $_POST['dlk_amount'] != '') { 
+if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['eth_amount'])  && $_POST['eth_amount'] != '') { 
 
-	$dlk_amount = trim($_POST["dlk_amount"]);
+	$eth_amount = trim($_POST["eth_amount"]);
 
-	if(!empty($dlk_amount)){
+	if(!empty($eth_amount)){
         //$errors = "Please enter valid amount to withdraw";
         $errors = "ETH test Seems working";
     }

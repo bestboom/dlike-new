@@ -55,7 +55,7 @@ $dlike_bal    = $rowIt['amount'];
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;">Convert Amount</div>
                                 </div>
-                                <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Amount to convert" class="form-control" style="padding: 8px;" />
+                                <input type="number" step="0.0001" min="0" max="10" name="eth_convert_amount" id="eth_convert_amount" placeholder="Amount to convert" class="form-control" style="padding: 8px;" />
                             </div>
                             <div class="input-group mb-3" style="padding: 3px;">
                                 <div class="input-group-prepend">
@@ -125,13 +125,13 @@ $dlike_bal    = $rowIt['amount'];
 	});
 
 	$('#with_eth_tok').click(function() {
-		let dlk_amount = $('#dlike_convert_amount').val();
-	    if (dlk_amount == "") {
+		let eth_amount = $('#eth_convert_amount').val();
+	    if (eth_amount == "") {
 	        toastr.error('phew... Please enter valid amount to withdraw');
 	        return false;
 	    }
     	let convert_url = 'helper/converter.php';
-	    var data_amt = {action : 'eth_con',dlk_amount: dlk_amount};
+	    var data_eth = {action : 'eth_con',eth_amount: eth_amount};
 	    $.ajax({
 	        type: "POST",
 	        url: convert_url,
