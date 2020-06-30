@@ -49,7 +49,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 		]));
 	}
 
-} else {die('Some error');}
+}
+ //else {die('Some error');}
 
 
 
@@ -94,6 +95,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['e
 		]));
 	}
 
-} else {die('Some error');}
+} 
+//else {die('Some error');}
 
 ?>
