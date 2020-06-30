@@ -6,7 +6,8 @@
     .bottom_block{width:100%}
     .post-style-two .post-contnet-wrap-top{padding: 5px 10px 5px 10px;}
     .post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
-    .post_bottom{padding: 10px 15px 10px;}
+    .post_bottom{padding: 10px 15px 10px !important;}
+    .col-lg-4.col-md-6.postsMainDiv > .post-style-two{margin-bottom: 40px !important;}
 </style>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">

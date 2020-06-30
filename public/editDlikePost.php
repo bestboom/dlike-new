@@ -29,7 +29,7 @@ if (isset($_GET["url"])) {
                 <div class="modal-content" style="border:none;">
                     <div class="modal-body">
                         <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
-                        <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" class="link_image" alt="dlike"/>
+                        <img class="img-fluid d-flex flex-column link_image" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
                             <p class="data-desc"><?php print $des; ?></p>
