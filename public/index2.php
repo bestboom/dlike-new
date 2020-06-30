@@ -6,6 +6,7 @@
     .bottom_block{width:100%}
     .post-style-two .post-contnet-wrap-top{padding: 5px 10px 5px 10px;}
     .post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
+    .post_bottom{padding: 10px 15px 10px;}
 </style>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
@@ -44,7 +45,7 @@ if ($result_T && $result_T->num_rows > 0)
     <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
     </div></div>
     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
-    <div class="post-contnet-wrap">
+    <div class="post-contnet-wrap post_bottom">
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
     <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
     <div class="post-comments bottom_block">

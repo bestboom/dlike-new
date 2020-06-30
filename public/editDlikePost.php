@@ -19,18 +19,22 @@ if (isset($_GET["url"])) {
 </div><!-- sub-header -->
 <style>
     .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
+    .hov_vote{margin-top: -3px;}.post-style-two .post-entry{margin-bottom: 5px;padding-bottom: 5px;}
+    .link_bottom{display: flex;justify-content: space-between;}
+    .link_image{border-radius: 20px 20px 0px 0px;max-height: 340px;min-width: 100%;}
+    .data-desc{margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;}
 </style>
         <div class="container">
             <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
                 <div class="modal-content" style="border:none;">
                     <div class="modal-body">
                         <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
-                        <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" style="border-radius: 20px 20px 0px 0px;max-height: 340px;min-width: 100%;" alt="dlike"/>
+                        <img class="img-fluid d-flex flex-column" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" class="link_image" alt="dlike"/>
                         <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
                             <p class="data-title"><?php print $title; ?></p>
-                            <p style="margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;" class="data-desc"><?php print $des; ?></p>
-                            <div style="display: flex;justify-content: space-between;">
-                                <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i>dlike.io</p>
+                            <p class="data-desc"><?php print $des; ?></p>
+                            <div class="link_bottom">
+                                <p style="margin-bottom: 1px;"><i class="fas fa-link" style="padding-right: 5px;color: #c3bbb2;font-size: 12px;"></i><span id="domain_name"></span></p>
                                 <select style="border:none;" name="category" class="dlike_cat">
                                     <option value="0">Select Category</option>
                                 <?php foreach ($categories as $category){ ?>
@@ -85,7 +89,10 @@ $input.addEventListener("keypress", e => {
         }
         return domain;
     }
-
+    let url_submitted = '<?php echo $url; ?>';
+    console.log(url_submitted);
+    let domain_name = getDomain(url_submitted);
+    $('#domain_name').html(domain_name);
     $('.dlike_share_post').click(function(clickEvent) {
         if (dlike_username != null) {
             console.log(dlike_username);
@@ -153,35 +160,29 @@ $input.addEventListener("keypress", e => {
             };
 
             $.ajax({
-              type: "POST",
-              url: "/helper/post/submit_dlike_post.php",
-              data: data,
-              
-              success: function(data) {
-                  //console.log(data);
-                  try {
-                      var response = JSON.parse(data)
-                      if (response.error == true) {
-                          $(".dlike_share_post").attr("disabled", false);
-                          $('.dlike_share_post').html('Publish');
-                          toastr.error(response.message);
-                          return false;
-                      } else {
-                          toastr.success('Post published successfully');
-                          setTimeout(function(){
-                              window.location.href = response.redirect;
-                          }, 500);
-                      }
-                  } catch (err) {
-                      toastr.error('Sorry. Server response is malformed.');
-                  }
-              },
-              error: function(xhr, textStatus, error) {
-                  console.log(xhr.statusText);
-                  console.log(textStatus);
-                  console.log(error);
-              }
-          });
+                type: "POST",
+                url: "/helper/post/submit_dlike_post.php",
+                data: data,
+                success: function(data) {
+                    //console.log(data);
+                    try {
+                        var response = JSON.parse(data)
+                        if (response.error == true) {
+                            $(".dlike_share_post").attr("disabled", false);
+                            $('.dlike_share_post').html('Publish');
+                            toastr.error(response.message);
+                            return false;
+                        } else {
+                            toastr.success('Link Shared Successfully');
+                            setTimeout(function(){
+                                window.location.href = response.redirect;
+                            }, 500);
+                        }
+                    } catch (err) {
+                        toastr.error('Sorry. Server response is malformed.');
+                    }
+                },
+            });
             
         } else { toastr.error('You must be login to share!'); return false; }
     });
