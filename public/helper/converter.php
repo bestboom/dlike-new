@@ -5,7 +5,7 @@
 
 	require '../includes/config.php';
 
-if (isset($_POST['dlike_con'])  && $_POST['action'] == 'dlike_con' && isset($_POST['dlk_amount'])  && $_POST['dlk_amount'] != '') { 
+if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST['dlk_amount'])  && $_POST['dlk_amount'] != '') { 
 
 	$dlk_amount = trim($_POST["dlk_amount"]);
 	$username = $_COOKIE['username'];
