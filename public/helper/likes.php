@@ -5,6 +5,25 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
+
+
+$sqlm = "CREATE TABLE convert_dlike (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+steem_username VARCHAR(255) NOT NULL,
+amount INT(11) NOT NULL,
+eth_add VARCHAR(255) NOT NULL,
+earned_by VARCHAR(255) NOT NULL,
+status INT(6) NOT NULL,
+req_on TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table convert_dlike created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
 ?>
 <!--
 $sql = "CREATE TABLE dlike_wallet (
