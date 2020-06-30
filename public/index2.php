@@ -1,13 +1,14 @@
 <?php include ('template/header7.php'); ?>
 <style>
     .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
-    .hov_vote{cursor:pointer;width: 21px;height: 21px;}
+    .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
     #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
     .bottom_block{width:100%}
     .post-style-two .post-contnet-wrap-top{padding: 5px 10px 5px 10px;}
     .post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
     .post_bottom{padding: 10px 15px 10px !important;}
     .col-lg-4.col-md-6.postsMainDiv > .post-style-two{margin-bottom: 40px !important;}
+    .post-tags{padding-bottom: 5px;margin-bottom: 5px;}
 </style>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
@@ -23,7 +24,8 @@ if ($result_T && $result_T->num_rows > 0)
         $post_author = $row_T["username"];
         $author = $row_T["username"];
         $post_time = strtotime($row_T["created_at"]);
-
+        $post_tags = $row_T["tags"];
+        $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
         $sql_W = "SELECT * FROM dlikeaccounts where username = '$author'";
         $result_W = $conn->query($sql_W);
         if ($result_T && $result_T->num_rows > 0)
@@ -48,7 +50,7 @@ if ($result_T && $result_T->num_rows > 0)
     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
     <div class="post-contnet-wrap post_bottom">
     <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
-    <p class="post-entry post-tags"><?php echo $row_T["tags"]; ?></p>
+    <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
     <div class="post-comments bottom_block">
         <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>

@@ -23,6 +23,7 @@ if (isset($_GET["url"])) {
     .link_bottom{display: flex;justify-content: space-between;}
     .link_image{border-radius: 20px 20px 0px 0px;max-height: 340px;min-width: 100%;}
     .data-desc{margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;}
+    .link_box{border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;}
 </style>
         <div class="container">
             <div class="user-login-signup-form-wrap" style="margin-top: 30px;margin-bottom: 40px;">
@@ -30,7 +31,7 @@ if (isset($_GET["url"])) {
                     <div class="modal-body">
                         <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
                         <img class="img-fluid d-flex flex-column link_image" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
-                        <div class="modal-info-block" style="border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;">
+                        <div class="modal-info-block link_box">
                             <p class="data-title"><?php print $title; ?></p>
                             <p class="data-desc"><?php print $des; ?></p>
                             <div class="link_bottom">
