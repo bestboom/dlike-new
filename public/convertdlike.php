@@ -135,7 +135,7 @@ $dlike_bal    = $rowIt['amount'];
 	    $.ajax({
 	        type: "POST",
 	        url: convert_url,
-	        data: data_amt,
+	        data: data_eth,
 	        success: function(data) {
 	            try {
 	                var response = JSON.parse(data)
