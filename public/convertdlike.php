@@ -69,7 +69,7 @@ $dlike_bal    = $rowIt['amount'];
                                 </div>
                                 <input type="text" placeholder="How you earned tokens (IEO, Bounty)" class="form-control" style="padding: 8px;" />
                             </div>
-                            <div style="font-weight:500;text-align: left;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:#fff;" class="eth_send_addr">Send DLIKE tokens to 131213212 to proceed conversion!</div>
+                            <div style="font-weight:500;text-align: left;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:#fff;" class="eth_send_addr">Send DLIKE tokens to <b>0x16ACe8800effB3E4C867144Afa658A579a445b06</b> to proceed conversion!</div>
                             <center>
                                 <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_eth_tok">Submit</button>
                             </center>
@@ -97,9 +97,7 @@ $dlike_bal    = $rowIt['amount'];
 	    }
 
     	let convert_url = 'helper/converter.php';
-	    var data_amt = {
-	    	dlk_amount: dlk_amount
-	    };
+	    var data_amt = {action : 'dlike_con',dlk_amount: dlk_amount};
 	    $.ajax({
 	        type: "POST",
 	        url: convert_url,
