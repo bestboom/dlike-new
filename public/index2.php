@@ -8,7 +8,7 @@
     .post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
     .post_bottom{padding: 10px 15px 10px !important;}
     .col-lg-4.col-md-6.postsMainDiv > .post-style-two{margin-bottom: 40px !important;}
-    .post-tags{padding-bottom: 5px;margin-bottom: 5px;}
+    .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
 </style>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
