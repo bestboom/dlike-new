@@ -51,4 +51,49 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 
 } else {die('Some error');}
 
+
+
+
+if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['dlk_amount'])  && $_POST['dlk_amount'] != '') { 
+
+	$dlk_amount = trim($_POST["dlk_amount"]);
+
+	if(!empty($dlk_amount)){
+        //$errors = "Please enter valid amount to withdraw";
+        $errors = "ETH test Seems working";
+    }
+
+    if (empty($errors)) {
+    	$email = mysqli_real_escape_string($conn, $dlk_amount);
+
+		$update_pass = "UPDATE dlikeaccoun SET password = '$hashedPW' WHERE email = '$email'";
+		$result_update_pass = $conn->query($update_pass);
+		if ($result_update_pass === TRUE) {
+
+			$dlike_user_login_url = 'https://dlike.io';
+
+			$deleteuser = "DELETE FROM dlikepassword where email = '$email'";
+			$deleteuser_q = $conn->query($deleteuser);
+
+			die(json_encode([
+	    	'error' => false,
+    		'message' => 'Password Updated Successful!',
+    		'redirect' => $dlike_user_login_url
+			]));
+
+		} else {
+	    die(json_encode([
+    		'error' => true,
+    		'message' => 'Some issue in password reset. Please try later!'
+		])); }
+
+    } else {
+	    die(json_encode([
+    		'error' => true,
+    		'message' => $errors
+		]));
+	}
+
+} else {die('Some error');}
+
 ?>

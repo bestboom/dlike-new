@@ -123,4 +123,34 @@ $dlike_bal    = $rowIt['amount'];
 	$('.eth_tokens').click(function() {
 		window.location.href = "https://dlike.io/convertdlike.php?tok=eth";
 	});
+
+	$('#with_eth_tok').click(function() {
+		let dlk_amount = $('#dlike_convert_amount').val();
+	    if (dlk_amount == "") {
+	        toastr.error('phew... Please enter valid amount to withdraw');
+	        return false;
+	    }
+    	let convert_url = 'helper/converter.php';
+	    var data_amt = {action : 'eth_con',dlk_amount: dlk_amount};
+	    $.ajax({
+	        type: "POST",
+	        url: convert_url,
+	        data: data_amt,
+	        success: function(data) {
+	            try {
+	                var response = JSON.parse(data)
+	                if (response.error == true) {
+	                    toastr['error'](response.message);
+	                } else {
+	                    toastr['success'](response.message);
+	                    setTimeout(function(){
+	                        window.location.href = response.redirect;
+	                    }, 1000);
+	                }
+	            } catch (err) {
+	                toastr.error('Sorry. Server response is malformed');
+	            }
+	        }
+	    });
+	});
 </script>
