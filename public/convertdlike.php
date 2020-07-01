@@ -109,9 +109,10 @@ $dlike_bal    = $rowIt['amount'];
 	                    toastr['error'](response.message);
 	                } else {
 	                    toastr['success'](response.message);
+	                    toastr['success'](response.amount);
 	                    setTimeout(function(){
-	                        window.location.href = response.redirect;
-	                    }, 1000);
+	                        window.location.href = "https://dlike.io/";
+	                    }, 300);
 	                }
 	            } catch (err) {
 	                toastr.error('Sorry. Server response is malformed');

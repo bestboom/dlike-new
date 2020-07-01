@@ -19,27 +19,30 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
     }
 
     if (empty($errors)) {
-    	$email = mysqli_real_escape_string($conn, $dlk_amount);
+    	$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
+    	$status = '0';
+    	$add_draw = "INSERT INTO convert_dlike (steem_username, amount, status, req_on)
+						VALUES ('".$username."', '".$dlike_amount."',  '".$status."', '".date("Y-m-d H:i:s")."')";
+		//$add_draw_query = $conn->query($add_draw);
+		if (mysqli_query($conn, $add_draw)) {
 
-		$update_pass = "UPDATE dlikeaccoun SET password = '$hashedPW' WHERE email = '$email'";
-		$result_update_pass = $conn->query($update_pass);
-		if ($result_update_pass === TRUE) {
+			$checkWallet = "SELECT username, amount FROM wallet WHERE username = '$username'";
+			$result = mysqli_query($conn, $checkWallet);
 
-			$dlike_user_login_url = 'https://dlike.io';
-
-			$deleteuser = "DELETE FROM dlikepassword where email = '$email'";
-			$deleteuser_q = $conn->query($deleteuser);
+				if ($result->num_rows > 0) {
+					$old_amount = $row['amount'];
+				}
 
 			die(json_encode([
 	    	'error' => false,
-    		'message' => 'Password Updated Successful!',
-    		'redirect' => $dlike_user_login_url
+    		'message' => 'Request submitted successfully!',
+    		'amount' => $old_amount
 			]));
 
 		} else {
 	    die(json_encode([
     		'error' => true,
-    		'message' => 'Some issue in password reset. Please try later!'
+    		'message' => 'Some issue in conversion. Please try later!'
 		])); }
 
     } else {

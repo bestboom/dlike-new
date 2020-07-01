@@ -6,7 +6,7 @@
     .bottom_block{width:100%}
     .post-style-two .post-contnet-wrap-top{padding: 5px 10px 5px 10px;}
     .post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
-    .post_bottom{padding: 10px 15px 10px !important;}
+    .post_bottom{padding: 15px 15px 10px !important;}
     .col-lg-4.col-md-6.postsMainDiv > .post-style-two{margin-bottom: 40px !important;}
     .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
 </style>
