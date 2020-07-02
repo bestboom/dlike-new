@@ -29,6 +29,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 			$result = mysqli_query($conn, $checkWallet);
 
 				if ($result->num_rows > 0) {
+					$row = $result->fetch_assoc();
 					$old_amount = $row['amount'];
 				}
 
