@@ -10,9 +10,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 	$dlk_amount = trim($_POST["dlk_amount"]);
 	$username = $_COOKIE['username'];
 
-	if(!empty($dlk_amount)){
-        //$errors = "Please enter valid amount to withdraw";
-        $errors = "Seems working";
+	if(empty($dlk_amount)){
+        $errors = "Please enter valid amount to withdraw";
     }
     if(empty($username)){
         $errors = "Seems You are not login";
