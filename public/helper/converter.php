@@ -20,8 +20,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
     if (empty($errors)) {
     	$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
     	$status = '0';
-    	$add_draw = "INSERT INTO convert_dlike (steem_username, amount, status, req_on)
-						VALUES ('".$username."', '".$dlike_amount."',  '".$status."', '".date("Y-m-d H:i:s")."')";
+    	$type = '0';
+    	$add_draw = "INSERT INTO convert_dlike (steem_username, amount, status, type, req_on)
+						VALUES ('".$username."', '".$dlike_amount."', '".$status."', '".$type."', '".date("Y-m-d H:i:s")."')";
 		//$add_draw_query = $conn->query($add_draw);
 		if (mysqli_query($conn, $add_draw)) {
 
@@ -78,8 +79,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['e
     	$eth_addr = mysqli_real_escape_string($conn, $eth_addr);
 
     	$status = '0';
-    	$add_eth_draw = "INSERT INTO convert_dlike (steem_username, amount, eth_add, earned_by, status, req_on)
-						VALUES ('".$steem_addr."', '".$eth_amount."', '".$eth_addr."', '".$earn_method."', '".$status."', '".date("Y-m-d H:i:s")."')";
+    	$type = '1';
+    	$add_eth_draw = "INSERT INTO convert_dlike (steem_username, amount, eth_add, earned_by, status, type, req_on)
+						VALUES ('".$steem_addr."', '".$eth_amount."', '".$eth_addr."', '".$earn_method."', '".$status."', '".$type."', '".date("Y-m-d H:i:s")."')";
 		//$add_draw_query = $conn->query($add_draw);
 		if (mysqli_query($conn, $add_eth_draw)) {
 

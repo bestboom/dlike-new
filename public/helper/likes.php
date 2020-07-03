@@ -5,8 +5,15 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
+$sql = "ALTER TABLE convert_dlike ADD type INT(6) NOT NULL AFTER status";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to convert_dlike table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
 
-
+?>
+<!--
 $sqlm = "CREATE TABLE convert_dlike (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 steem_username VARCHAR(255) NOT NULL,
@@ -24,8 +31,6 @@ if ($conn->query($sqlm) === TRUE) {
 }
 
 
-?>
-<!--
 $sql = "CREATE TABLE dlike_wallet (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 username VARCHAR(255) NOT NULL,
