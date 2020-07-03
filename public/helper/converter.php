@@ -63,10 +63,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['eth_amount'])  && $_POST['eth_amount'] != '' && isset($_POST['steem_addr'])  && $_POST['steem_addr'] != '') { 
 
 	$eth_amount = trim($_POST["eth_amount"]);
-
-	if(!empty($eth_amount)){
-        //$errors = "Please enter valid amount to withdraw";
-        $errors = "ETH test Seems working";
+	$steem_user = trim($_POST["steem_addr"]);
+	if(empty($steem_user)){
+        $errors = "Please enter steem username";
+        //$errors = "ETH test Seems working";
     }
 
     if (empty($errors)) {
