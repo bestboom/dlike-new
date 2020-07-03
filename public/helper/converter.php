@@ -60,7 +60,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
  //else {die('Some error');}
 
 
-if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['eth_amount'])  && $_POST['eth_amount'] != '') { 
+if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['eth_amount'])  && $_POST['eth_amount'] != '' && isset($_POST['steem_addr'])  && $_POST['steem_addr'] != '') { 
 
 	$eth_amount = trim($_POST["eth_amount"]);
 
@@ -70,36 +70,33 @@ if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['e
     }
 
     if (empty($errors)) {
-    	$email = mysqli_real_escape_string($conn, $dlk_amount);
+    	$eth_amount = mysqli_real_escape_string($conn, $eth_amount);
+    	$steem_addr = mysqli_real_escape_string($conn, $steem_addr);
+    	$earn_method = mysqli_real_escape_string($conn, $earn_method);
+    	$eth_addr = mysqli_real_escape_string($conn, $eth_addr);
 
-		$update_pass = "UPDATE dlikeaccoun SET password = '$hashedPW' WHERE email = '$email'";
-		$result_update_pass = $conn->query($update_pass);
-		if ($result_update_pass === TRUE) {
-
-			$dlike_user_login_url = 'https://dlike.io';
-
-			$deleteuser = "DELETE FROM dlikepassword where email = '$email'";
-			$deleteuser_q = $conn->query($deleteuser);
+    	$status = '0';
+    	$add_eth_draw = "INSERT INTO convert_dlike (steem_username, amount, eth_add, earned_by, status, req_on)
+						VALUES ('".$steem_addr."', '".$eth_amount."', '".$eth_addr."', '".$earn_method."', '".$status."', '".date("Y-m-d H:i:s")."')";
+		//$add_draw_query = $conn->query($add_draw);
+		if (mysqli_query($conn, $add_eth_draw)) {
 
 			die(json_encode([
 	    	'error' => false,
-    		'message' => 'Password Updated Successful!',
-    		'redirect' => $dlike_user_login_url
+    		'message' => 'Request submitted successfully!'
 			]));
-
-		} else {
-	    die(json_encode([
-    		'error' => true,
-    		'message' => 'Some issue in password reset. Please try later!'
-		])); }
-
+		}  else {
+		    die(json_encode([
+	    	'error' => true,
+	    	'message' => 'Some issue in conversion. Please try later!'
+			])); 
+		}
     } else {
 	    die(json_encode([
     		'error' => true,
     		'message' => $errors
 		]));
 	}
-
 } 
 //else {die('Some error');}
 

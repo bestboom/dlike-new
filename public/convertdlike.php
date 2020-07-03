@@ -147,7 +147,7 @@ $dlike_bal    = $rowIt['amount'];
 	    }
 	    console.log(eth_amount);
     	let convert_url = 'helper/converter.php';
-	    var data_eth = {action : 'eth_con',eth_amount: eth_amount};
+	    var data_eth = {action : 'eth_con',eth_amount: eth_amount,eth_addr: eth_addr,earn_method:earn_method,steem_addr:steem_addr};
 	    $.ajax({
 	        type: "POST",
 	        url: convert_url,

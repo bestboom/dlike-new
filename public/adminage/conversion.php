@@ -14,6 +14,7 @@ error_reporting(E_ALL);
 				<tr>
 					<th scope="col" class="cent_me wid_2">Username</th>
 					<th scope="col" class="cent_me wid_2">Amount</th>
+					<th scope="col" class="cent_me wid_2">ETH Add</th>
 					<th scope="col" class="cent_me wid_2">Reason</th>
 					<th scope="col" class="cent_me wid_2">Time</th>
 				</tr>
@@ -33,6 +34,9 @@ error_reporting(E_ALL);
 							</td>
 							<td class="exp-amt cent_me wid_2">
 								<span><?php echo $row_T["amount"]; ?></span>
+							</td>
+							<td class="exp-amt cent_me wid_2">
+								<span><?php echo $row_T["eth_add"]; ?></span>
 							</td>
 							<td class="exp-amt cent_me wid_2">
 								<span><?php echo $row_T["earned_by"]; ?></span>
