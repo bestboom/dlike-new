@@ -160,8 +160,8 @@ $dlike_bal    = $rowIt['amount'];
 	                } else {
 	                    toastr['success'](response.message);
 	                    setTimeout(function(){
-	                        window.location.href = response.redirect;
-	                    }, 1000);
+	                        window.location.href = "https://dlike.io/";
+	                    }, 500);
 	                }
 	            } catch (err) {
 	                toastr.error('Sorry. Server response is malformed');
