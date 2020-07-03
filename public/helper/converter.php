@@ -31,20 +31,24 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 				if ($result->num_rows > 0) {
 					$row = $result->fetch_assoc();
 					$old_amount = $row['amount'];
+
+
+					$updateWallet = "UPDATE wallet SET amount = '$old_amount' - '$dlike_amount' WHERE username = '$username'";
+					$updateWalletQuery = $conn->query($updateWallet);
+					if ($updateWalletQuery === TRUE) {
+
+						die(json_encode([
+				    	'error' => false,
+			    		'message' => 'Request submitted successfully!'
+						]));
+					}  else {
+					    die(json_encode([
+				    		'error' => true,
+				    		'message' => 'Some issue in conversion. Please try later!'
+						])); 
+					}
 				}
-
-			die(json_encode([
-	    	'error' => false,
-    		'message' => 'Request submitted successfully!',
-    		'amount' => $old_amount
-			]));
-
-		} else {
-	    die(json_encode([
-    		'error' => true,
-    		'message' => 'Some issue in conversion. Please try later!'
-		])); }
-
+		}
     } else {
 	    die(json_encode([
     		'error' => true,
@@ -54,8 +58,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 
 }
  //else {die('Some error');}
-
-
 
 
 if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['eth_amount'])  && $_POST['eth_amount'] != '') { 
