@@ -58,4 +58,4 @@ error_reporting(E_ALL);
 		</table>
 	</div>
 </div>
-<?php include('../template/footer2.php'); ?>
+<?php include('../template/footer.php'); ?>
