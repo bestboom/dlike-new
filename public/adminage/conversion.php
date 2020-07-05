@@ -33,7 +33,7 @@ error_reporting(E_ALL);
 						?>
 						<tr>
 							<td class="exp-user cent_me wid_2">
-								<span id="con_id"><?php echo $row_T["id"]; ?></span>
+								<span class="con_id"><?php echo $row_T["id"]; ?></span>
 							</td>
 							<td class="exp-user cent_me wid_2">
 								<span><?php echo $row_T["steem_username"]; ?></span>
@@ -71,7 +71,7 @@ error_reporting(E_ALL);
 <?php include('../template/footer.php'); ?>
 <script type="text/javascript">
 $('.app_con').click(function() {
-	let conv_id = $('#con_id').html();
+	let conv_id = $('.con_id').html();
 	console.log(conv_id);
 	let convert_url = '../helper/converter.php';
     var data_eth = {action : 'pay_con',conv_id: conv_id};
