@@ -90,8 +90,8 @@ $('.app_con').click(function() {
                 } else {
                     toastr['success'](response.message);
                     setTimeout(function(){
-                        window.location.href = "https://dlike.io/";
-                    }, 500);
+                        window.location.href = "https://dlike.io/adminage/conversion.php";
+                    }, 300);
                 }
             } catch (err) {
                 toastr.error('Sorry. Server response is malformed');

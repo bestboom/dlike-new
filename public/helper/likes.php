@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
+require '../includes/config.php';
 
 $id = 5604;
 
@@ -130,7 +130,7 @@ if ($conn->query($sqlw) === TRUE) {
 
 ?>
 <!--
-require '../includes/config.php';
+
 $sql = "ALTER TABLE convert_dlike ADD type INT(6) NOT NULL AFTER status";
 if ($conn->query($sql) === TRUE) {
     echo "new field added to convert_dlike table";
