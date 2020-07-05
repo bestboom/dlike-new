@@ -30,6 +30,7 @@ error_reporting(E_ALL);
 					while ($row_T = $result_T->fetch_assoc()) {
 						$start_time = strtotime($row_T["req_on"]); 
 						$type = $row_T["type"];
+						$id = $row_T["id"];
 						?>
 						<tr>
 							<td class="exp-user cent_me wid_2">
@@ -56,6 +57,7 @@ error_reporting(E_ALL);
 							</td>
 							<td class="exp-amt cent_me wid_2">
 								<?php if($type == '0'){ ?>
+								<span class="conv_id"><?php echo $id; ?></span>
 								<button type="button" class="btn btn-danger app_con">Pay</button>
 								<? } else {} ?>
 							</td>
@@ -71,7 +73,7 @@ error_reporting(E_ALL);
 <?php include('../template/footer.php'); ?>
 <script type="text/javascript">
 $('.app_con').click(function() {
-	let conv_id = $('.con_id').html();
+	let conv_id = $('.conv_id').html();
 	console.log(conv_id);
 	let convert_url = '../helper/converter.php';
     var data_eth = {action : 'pay_con',conv_id: conv_id};
