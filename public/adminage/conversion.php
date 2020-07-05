@@ -55,7 +55,7 @@ error_reporting(E_ALL);
 							<td class="exp-amt cent_me wid_2">
 								<?php echo time_ago($start_time); ?>
 							</td>
-							<td class="exp-amt cent_me wid_2">
+							<td class="exp-amt cent_me wid_2 bot_con_sec">
 								<?php if($type == '0'){ ?>
 								<span class="conv_id"><?php echo $id; ?></span>
 								<button type="button" class="btn btn-danger app_con">Pay</button>
@@ -72,7 +72,8 @@ error_reporting(E_ALL);
 </div>
 <?php include('../template/footer.php'); ?>
 <script type="text/javascript">
-$('.app_con').click(function() {
+$('.bot_con_sec').on("click", ".app_con", function() {
+//$('.app_con').click(function() {
 	let conv_id = $(this).find('.conv_id').html();
 	console.log(conv_id);
 	let convert_url = '../helper/converter.php';
