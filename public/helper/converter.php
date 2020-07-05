@@ -121,16 +121,16 @@ if (isset($_POST['action'])  && $_POST['action'] == 'pay_con' && isset($_POST['c
 			$updateConQuery = $conn->query($updateCon);
 			if ($updateConQuery === TRUE) {
 				$checkuser = "SELECT steem_username, amount FROM convert_dlike WHERE id = '$conv_id'";
-					$result = mysqli_query($conn, $checkWallet);
+					$result = mysqli_query($conn, $checkuser);
 					if ($result->num_rows > 0) {
 						$row = $result->fetch_assoc();
 						$bal_amount = $row['amount'];
 						$user = $row['steem_username'];
 						$reason = "Converted to DLIKER";
-						$sqlm = "INSERT INTO transactions (username, amount, reason)
-							VALUES ('".$user."', '".$amount."', '".$reason."')";
+						$sqlm_trx = "INSERT INTO transactions (username, amount, reason)
+							VALUES ('".$user."', '".$bal_amount."', '".$reason."')";
 
-						if (mysqli_query($conn, $sqlm)) {
+						if (mysqli_query($conn, $sqlm_trx)) {
 							die(json_encode([
 							'error' => false,
 							'message' => 'Payment upated successfully!'
