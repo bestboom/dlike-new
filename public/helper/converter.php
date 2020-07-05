@@ -111,6 +111,21 @@ if (isset($_POST['action'])  && $_POST['action'] == 'pay_con' && isset($_POST['c
         //$errors = "Please enter steem username";
         $errors = "conv test Seems working";
     }
+
+    if (empty($errors)) {
+    	$conv_id = mysqli_real_escape_string($conn, $conv_id);
+
+    	$status = '1';
+
+    	$updateCon = "UPDATE convert_dlike SET status = '$status' WHERE id = '$conv_id'";
+			$updateConQuery = $conn->query($updateCon);
+			if ($updateConQuery === TRUE) {}
+    } else {
+	    die(json_encode([
+    		'error' => true,
+    		'message' => $errors
+		]));
+	}
 }
 
 ?>

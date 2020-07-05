@@ -70,7 +70,7 @@ error_reporting(E_ALL);
 $('#app_con').click(function() {
 	let conv_id = $('#con_id').html();
 	console.log(conv_id);
-	let convert_url = 'helper/converter.php';
+	let convert_url = '../helper/converter.php';
     var data_eth = {action : 'pay_con',conv_id: conv_id};
     $.ajax({
         type: "POST",
