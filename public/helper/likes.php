@@ -4,6 +4,132 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+
+
+$id = 5604;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id2 = 5603;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id2'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+$id3 = 5605;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id3'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id4 = 5606;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id4'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id5 = 5607;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id5'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+$id6 = 5608;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id6'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id7 = 5609;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id7'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$id8 = 5610;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id8'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+$id9 = 5611;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id9'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+$id10 = 5613;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id10'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+$id11 = 5615;
+
+$sqlw = "DELETE FROM staking WHERE id = '$id11'";
+
+if ($conn->query($sqlw) === TRUE) {
+    echo "Row DELETED successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+?>
+<!--
 require '../includes/config.php';
 $sql = "ALTER TABLE convert_dlike ADD type INT(6) NOT NULL AFTER status";
 if ($conn->query($sql) === TRUE) {
@@ -12,8 +138,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating table: " . $conn->error;
 }
 
-?>
-<!--
+
 $sqlm = "CREATE TABLE convert_dlike (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 steem_username VARCHAR(255) NOT NULL,
