@@ -29,6 +29,7 @@ error_reporting(E_ALL);
 				if ($result_T && $result_T->num_rows > 0) {
 					while ($row_T = $result_T->fetch_assoc()) {
 						$start_time = strtotime($row_T["req_on"]); 
+						$type = $row_T["type"];
 						?>
 						<tr>
 							<td class="exp-user cent_me wid_2">
@@ -54,7 +55,9 @@ error_reporting(E_ALL);
 								<?php echo time_ago($start_time); ?>
 							</td>
 							<td class="exp-amt cent_me wid_2">
-								<button type="button" class="btn btn-danger" id="app_con">Pay</button>
+								<?php if($type == '0'){ ?>
+								<button type="button" class="btn btn-danger app_con">Pay</button>
+								<? } else {} ?>
 							</td>
 						</tr>
 						<?php
@@ -67,7 +70,7 @@ error_reporting(E_ALL);
 </div>
 <?php include('../template/footer.php'); ?>
 <script type="text/javascript">
-$('#app_con').click(function() {
+$('.app_con').click(function() {
 	let conv_id = $('#con_id').html();
 	console.log(conv_id);
 	let convert_url = '../helper/converter.php';
