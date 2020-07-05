@@ -104,4 +104,13 @@ if (isset($_POST['action'])  && $_POST['action'] == 'eth_con' && isset($_POST['e
 } 
 //else {die('Some error');}
 
+
+if (isset($_POST['action'])  && $_POST['action'] == 'pay_con' && isset($_POST['conv_id'])  && $_POST['conv_id'] != '') { 
+	$conv_id = trim($_POST["conv_id"]);
+	if(!empty($conv_id)){
+        //$errors = "Please enter steem username";
+        $errors = "conv test Seems working";
+    }
+}
+
 ?>

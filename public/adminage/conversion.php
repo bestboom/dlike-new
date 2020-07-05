@@ -12,6 +12,7 @@ error_reporting(E_ALL);
 		<table class="table coin-list table-hover" style="border: 1px solid #eee;">
 			<thead>
 				<tr>
+					<th scope="col" class="cent_me wid_2">ID</th>
 					<th scope="col" class="cent_me wid_2">Username</th>
 					<th scope="col" class="cent_me wid_2">Amount</th>
 					<th scope="col" class="cent_me wid_2">ETH Add</th>
@@ -31,6 +32,9 @@ error_reporting(E_ALL);
 						?>
 						<tr>
 							<td class="exp-user cent_me wid_2">
+								<span id="con_id"><?php echo $row_T["id"]; ?></span>
+							</td>
+							<td class="exp-user cent_me wid_2">
 								<span><?php echo $row_T["steem_username"]; ?></span>
 							</td>
 							<td class="exp-amt cent_me wid_2">
@@ -49,6 +53,9 @@ error_reporting(E_ALL);
 							<td class="exp-amt cent_me wid_2">
 								<?php echo time_ago($start_time); ?>
 							</td>
+							<td class="exp-amt cent_me wid_2">
+								<button type="button" class="btn btn-danger" id="app_con">Pay</button>
+							</td>
 						</tr>
 						<?php
 					}
@@ -59,3 +66,31 @@ error_reporting(E_ALL);
 	</div>
 </div>
 <?php include('../template/footer.php'); ?>
+<script type="text/javascript">
+$('#app_con').click(function() {
+	let conv_id = $('#con_id').html();
+	console.log(conv_id);
+	let convert_url = 'helper/converter.php';
+    var data_eth = {action : 'pay_con',conv_id: conv_id};
+    $.ajax({
+        type: "POST",
+        url: convert_url,
+        data: data_eth,
+        success: function(data) {
+            try {
+                var response = JSON.parse(data)
+                if (response.error == true) {
+                    toastr['error'](response.message);
+                } else {
+                    toastr['success'](response.message);
+                    setTimeout(function(){
+                        window.location.href = "https://dlike.io/";
+                    }, 500);
+                }
+            } catch (err) {
+                toastr.error('Sorry. Server response is malformed');
+            }
+        }
+    });
+});
+</script>
