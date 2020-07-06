@@ -22,6 +22,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	$signup_password = trim($_POST["signup_pass"]);
 	$refer_by = $_POST["signup_refer_by"];
 	$loct_ip = $_POST['signup_loct_ip'];
+	$company_name = 'dlike';
 
 	if(empty($signup_username)){
         $errors = "Username Shoould not be empty";
@@ -29,7 +30,27 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
     if(empty($signup_email)){
         $errors = "Email Shoould not be empty";
     }
-    if(empty($signup_password)){
+	//if(!preg_match('/^[\w-]+$/', $signup_username)) {
+	//	$errors = 'Username is not valid!';
+	//}
+	if (strlen($login_username) > 20 || strlen($login_username) < 3) {
+		$errors = 'username length must be between 3 and 20 words!';
+	}
+	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
+	if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
+		$errors = 'Username not available!';
+	}
+    $check_dlike_name = stripos($login_username, $company_name);
+    if($check_dlike_name === true){
+        $errors = "Username not available";
+    }
+	$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
+	$result_ip_address = $conn->query($check_ip_address);
+	if ($result_ip_address->num_rows > 0) {
+		$errors = 'You already have Account. New Account not allowed!';
+	}
+
+	if(empty($signup_password)){
         $errors = "Password Shoould not be empty";
     }
 	if (strlen($signup_password) > 20 || strlen($signup_password) < 5) {
@@ -37,20 +58,6 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	}
 	if (!filter_var($_POST['signup_email'], FILTER_VALIDATE_EMAIL)) {
 		$errors = 'Email is not valid!';
-	}
-	if(!preg_match('/^[\w-]+$/', $signup_username)) {
-		$errors = 'Username is not valid!';
-	}
-	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
-	if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
-		$errors = 'Username not available!';
-	}
-
-
-	$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
-	$result_ip_address = $conn->query($check_ip_address);
-	if ($result_ip_address->num_rows > 0) {
-		$errors = 'You already have Account. New Account not allowed!';
 	}
 
 	$check_email = "SELECT * FROM dlikeaccounts where email = '$signup_email'";

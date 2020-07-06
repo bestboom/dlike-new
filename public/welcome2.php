@@ -302,6 +302,19 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
 </div>
 <?php include('template/footer.php'); } ?>
 <script>
+$(document).ready(function() {
+    $.fn.regexMask = function(mask) {
+        $(this).keypress(function (event) {
+            if (!event.charCode) return true;
+            var part1 = this.value.substring(0, this.selectionStart);
+            var part2 = this.value.substring(this.selectionEnd, this.value.length);
+            if (!mask.test(part1 + String.fromCharCode(event.charCode) + part2))
+                return false;
+        });
+    };
+    var mask = new RegExp('^[A-Za-z0-9_]*$')
+    $("#username_signup_id").regexMask(mask) 
+});
 function emailLogin() {
 
     var Signin_main_section  = document.querySelector('.signin_main_block');
