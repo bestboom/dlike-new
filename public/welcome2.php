@@ -101,7 +101,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         <div class="signup_email_block">
                             <div class="contact-info-inner" style="margin-top: 10%;">
                                 <h4  style="color: #0b132d;font-weight: 700;font-size: 24px;">Signup</h4>
-                                <form name="email_signup" style="margin-top: 25px;margin-left: 16%;margin-right: 16%;width: unset;float: none;">
+                                <form name="email_signup" style="margin-top: 25px;margin-left: 16%;margin-right: 16%;width: unset;float: none;height: auto;margin-bottom: 6px;">
                                     <div class="form-group input-username">
                                         <input type="hidden" id="refer_by_email" value="<?php echo $referrer; ?>" />
                                         <input type="hidden" id="user_loc_email" value="<?php echo $thisip; ?>" />
