@@ -33,14 +33,14 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	//if(!preg_match('/^[\w-]+$/', $signup_username)) {
 	//	$errors = 'Username is not valid!';
 	//}
-	if (strlen($login_username) > 20 || strlen($login_username) < 3) {
+	if (strlen($signup_username) > 20 || strlen($signup_username) < 3) {
 		$errors = 'username length must be between 3 and 20 words!';
 	}
 	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
 	if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
 		$errors = 'Username not available!';
 	}
-    $check_dlike_name = stripos($login_username, $company_name);
+    $check_dlike_name = stripos($signup_username, $company_name);
     if($check_dlike_name === true){
         $errors = "Username not available";
     }
