@@ -38,15 +38,10 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
     if($check_dlike_name == true){
         $errors = "Username not available";
     }
+    /*
     if(empty($signup_email)){
         $errors = "Email Shoould not be empty";
     }
-	$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
-	$result_ip_address = $conn->query($check_ip_address);
-	if ($result_ip_address->num_rows > 0) {
-		$errors = 'You already have Account. New Account not allowed!';
-	}
-
 	if(empty($signup_password)){
         $errors = "Password Shoould not be empty";
     }
@@ -62,11 +57,18 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	if ($result_email->num_rows > 0) {
 		$errors = 'Email already in use!';
 	}
-
+	
 	$check_user= "SELECT * FROM dlikeaccounts where username = '$signup_username'";
 	$result_user = $conn->query($check_user);
 	if ($result_user->num_rows > 0) {
 		$errors = 'Username already taken!';
+	}
+	*/
+	
+	$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
+	$result_ip_address = $conn->query($check_ip_address);
+	if ($result_ip_address->num_rows > 0) {
+		$errors = 'You already have Account. New Account not allowed!';
 	}
 	//if(!preg_match('/^[\w-]+$/', $signup_username)) {
 	//	$errors = 'Username is not valid!';
