@@ -27,9 +27,6 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	if(empty($signup_username)){
         $errors = "Username Shoould not be empty";
     }
-    if(empty($signup_email)){
-        $errors = "Email Shoould not be empty";
-    }
 	//if(!preg_match('/^[\w-]+$/', $signup_username)) {
 	//	$errors = 'Username is not valid!';
 	//}
@@ -41,8 +38,11 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		$errors = 'Username not available!';
 	}
     $check_dlike_name = stripos($signup_username, $company_name);
-    if($check_dlike_name === true){
+    if($check_dlike_name == true){
         $errors = "Username not available";
+    }
+    if(empty($signup_email)){
+        $errors = "Email Shoould not be empty";
     }
 	$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
 	$result_ip_address = $conn->query($check_ip_address);
