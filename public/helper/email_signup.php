@@ -23,21 +23,18 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	$refer_by = $_POST["signup_refer_by"];
 	$loct_ip = $_POST['signup_loct_ip'];
 	$company_name = 'dlike';
+	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
+    $check_dlike_name = stripos($signup_username, $company_name);
 
 	if(empty($signup_username)){
         $errors = "Username Shoould not be empty";
     }
-	//if(!preg_match('/^[\w-]+$/', $signup_username)) {
-	//	$errors = 'Username is not valid!';
-	//}
 	if (strlen($signup_username) > 20 || strlen($signup_username) < 3) {
 		$errors = 'username length must be between 3 and 20 words!';
 	}
-	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
 	if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
 		$errors = 'Username not available!';
 	}
-    $check_dlike_name = stripos($signup_username, $company_name);
     if($check_dlike_name == true){
         $errors = "Username not available";
     }
@@ -71,7 +68,9 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	if ($result_user->num_rows > 0) {
 		$errors = 'Username already taken!';
 	}
-
+	//if(!preg_match('/^[\w-]+$/', $signup_username)) {
+	//	$errors = 'Username is not valid!';
+	//}
 	if (empty($errors)) {
 		$pin_number = mt_rand(100000, 999999);
 		$status = '0';

@@ -97,6 +97,7 @@ $('.dlike_share_post').click(function(clickEvent) {
         let urlInput = '<?php echo $url; ?>';
         console.log(urlInput);
         let verifyUrl = getDomain(urlInput);
+        console.log(verifyUrl);
         let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org"];
         //if (verifyUrl.match(/cointelegraph.com/g) || verifyUrl.match(/steemit.com/g)) {
         if ($.inArray(verifyUrl, restricted_urls) > -1) {
