@@ -84,6 +84,16 @@ $dlike_bal    = $rowIt['amount'];
     </div>  
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
+	var dlike_val = document.getElementById('dlike_convert_amount');
+
+	// Listen for input event on numInput.
+	dlike_val.onkeydown = function(e) {
+	    if(!((e.keyCode > 95 && e.keyCode < 106)
+	      || (e.keyCode > 47 && e.keyCode < 58) 
+	      || e.keyCode == 8)) {
+	        return false;
+	    }
+	}
 	$('#with_tok').click(function() {
 		let dlk_amount = $('#dlike_convert_amount').val();
 		let dlk_bal = $('#user_token_bal').val();
