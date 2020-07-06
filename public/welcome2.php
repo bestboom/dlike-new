@@ -45,7 +45,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                                     </div>
                                     <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:blue;" class="forgot_pass">Forgot Password</div>
-                                    <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;">LOGIN</button>
+                                    <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;"><i class="fas fa-circle-notch fa-spin login_loader" style="display:none;"></i><span id="email_login_txt">LOGIN</span></button>
                                 </form>
                             </div>
                         </div>
@@ -503,15 +503,24 @@ $('.email_signup_btn').click(function() {
 });
 
 $('.email_login_btn').click(function() {
+    $('.login_loader').show();
+    $('#email_login_txt').hide();
+    $(".email_login_btn").attr("disabled", true);
     let login_user_id = $('#login_user_id').val();
     let login_pass = $('#email_pass').val();
     let login_url = 'helper/email_login.php';
     if (login_user_id == "") {
         toastr.error('phew... Username should not be empty');
+        $('.login_loader').hide();
+        $('#email_login_txt').show();
+        $(".email_login_btn").attr("disabled", false);
         return false;
     }
     if (login_pass == "") {
         toastr.error('phew... Password should not be empty');
+        $('.login_loader').hide();
+        $('#email_login_txt').show();
+        $(".email_login_btn").attr("disabled", false);
         return false;
     }
     var data_login = {
@@ -527,6 +536,10 @@ $('.email_login_btn').click(function() {
                 var response = JSON.parse(data)
                 if (response.error == true) {
                     toastr['error'](response.message);
+                    $('.login_loader').hide();
+                    $('#email_login_txt').show();
+                    $(".email_login_btn").attr("disabled", false);
+                    return false;
                 } else {
                     toastr['success'](response.message);
                     $.cookie("dlike_username", response.dlikeuser, { expires: 7, path: '/' });
