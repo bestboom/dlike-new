@@ -125,7 +125,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" style="padding: 8px;" />
                                     </div>
                                     <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
-                                    <button class="btn btn-lime email_signup_btn" type="button" style="background-color: #1b1e63;border-color: #1b1e63;padding: 8px;width: 50%;margin-right:25%;margin-left:25%;">SIGNUP</button>
+                                    <button class="btn btn-lime email_signup_btn" type="button" style="background-color: #1b1e63;border-color: #1b1e63;padding: 8px;width: 50%;margin-right:25%;margin-left:25%;"><i class="fas fa-spinner signup_loader" style="display:none;"></i><span>SIGNUP</span></button>
                                 </form>
                             </div>
                         </div>
@@ -442,6 +442,7 @@ $('.forgot_pass').click(function() {
     resetemailpass();
 });
 $('.email_signup_btn').click(function() {
+    $('.signup_loader').show();
     let signup_username = $('#username_signup_id').val();
     //console.log(signup_username);
     let signup_email = $('#signup_email').val();
@@ -456,15 +457,18 @@ $('.email_signup_btn').click(function() {
     }
     if (signup_email == "") {
         toastr.error('phew... Email should not be empty');
+        $('.signup_loader').hide();
         return false;
     } else {
         if (!emailRegex.test(signup_email)) {
             toastr.error('phew... email address is not valid');
+            $('.signup_loader').hide();
             return false;
         }
     }
     if (signup_pass == "") {
         toastr.error('phew... Password should not be empty');
+        $('.signup_loader').hide();
         return false;
     }
 
@@ -483,8 +487,7 @@ $('.email_signup_btn').click(function() {
             try {
                 var response = JSON.parse(data)
                 if (response.error == true) {
-                    //$('#upvotefail').modal('show');
-                    //toastr.error('phew... there is some error');
+                    $('.signup_loader').hide();
                     toastr['error'](response.message);
                 } else {
                     toastr['success'](response.message);
