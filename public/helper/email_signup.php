@@ -23,22 +23,21 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	$refer_by = $_POST["signup_refer_by"];
 	$loct_ip = $_POST['signup_loct_ip'];
 	$company_name = 'dlike';
-	//$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
+	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
     $check_dlike_name = stripos($signup_username, $company_name);
 
-	//if(empty($signup_username)){
-     //   $errors = "Username Shoould not be empty";
-    //}
+	if(empty($signup_username)){
+      $errors = "Username Shoould not be empty";
+    }
 	if (strlen($signup_username) > 20 || strlen($signup_username) < 3) {
 		$errors = 'username length must be between 3 and 20 words!';
 	}
-	//if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
-	//	$errors = 'Username not available!';
-	//}
+	if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
+		$errors = 'Username not available!';
+	}
     if($check_dlike_name == true){
         $errors = "Username not available";
     }
-    /*
     if(empty($signup_email)){
         $errors = "Email Shoould not be empty";
     }
@@ -63,7 +62,6 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	if ($result_user->num_rows > 0) {
 		$errors = 'Username already taken!';
 	}
-	*/
 
 	//$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
 	//$result_ip_address = $conn->query($check_ip_address);
