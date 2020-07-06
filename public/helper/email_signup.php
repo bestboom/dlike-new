@@ -63,11 +63,11 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 		$errors = 'Username already taken!';
 	}
 
-	//$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
-	//$result_ip_address = $conn->query($check_ip_address);
-	//if ($result_ip_address->num_rows > 0) {
-	//	$errors = 'You already have Account. New Account not allowed!';
-	//}
+	$check_ip_address = "SELECT * FROM dlikeaccounts where loct_ip = '$thisip'";
+	$result_ip_address = $conn->query($check_ip_address);
+	if ($result_ip_address->num_rows > 0) {
+		$errors = 'You already have Account. New Account not allowed!';
+	}
 	//if(!preg_match('/^[\w-]+$/', $signup_username)) {
 	//	$errors = 'Username is not valid!';
 	//}

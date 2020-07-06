@@ -95,6 +95,10 @@ $dlike_bal    = $rowIt['amount'];
 	        toastr.error('phew... Not enough balance');
 	        return false;
 	    }
+	    if (parseFloat(dlk_amount) <= 0) {
+	        toastr.error('phew... Not enough balance');
+	        return false;
+	    }
 
     	let convert_url = 'helper/converter.php';
 	    var data_amt = {action : 'dlike_con',dlk_amount: dlk_amount};

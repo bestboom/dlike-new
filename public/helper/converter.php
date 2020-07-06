@@ -17,6 +17,13 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
         $errors = "Seems You are not login";
     }
 
+    $check_amount = "SELECT amount FROM wallet where username = '$username'";
+	$validate_amount = $conn->query($check_amount);
+	$row_A = $validate_amount->fetch_assoc();
+	$wallet_amount = $row_A['amount'];
+	if ($wallet_amount <= 0) {
+		$errors = 'Not enough balance';
+	}
     if (empty($errors)) {
     	$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
     	$status = '0';
