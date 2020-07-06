@@ -39,9 +39,11 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                 return false;
             }
             let verifyUrl = getDomain(url);
+            let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org"];
             if (isValidURL(url)) {
-                if (verifyUrl.match(/steemit.com/g)) {
-                    toastr.error('phew... Steem URL not allowed');
+                //if (verifyUrl.match(/steemit.com/g)) {
+                if ($.inArray(verifyUrl, restricted_urls) > -1) {
+                    toastr.error('phew... Sharing from this url is not allowed');
                     return false;
                 }
                 $('#share_plus').hide();
