@@ -24,6 +24,9 @@ if (isset($_POST['action'])  && $_POST['action'] == 'dlike_con' && isset($_POST[
 	if ($wallet_amount <= 0) {
 		$errors = 'Not enough balance';
 	}
+	if ($wallet_amount < $dlk_amount) {
+		$errors = 'Not enough balance';
+	}
     if (empty($errors)) {
     	$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
     	$status = '0';

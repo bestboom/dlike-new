@@ -5,95 +5,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-
-
-$id4 = 5560;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id4'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-
-$id5 = 5562;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id5'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-
-
-$id6 = 5565;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id6'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-
-$id7 = 5567;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id7'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-$id8 = 5569;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id8'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-
-
-$id9 = 5582;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id9'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-
-$id10 = 5585;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id10'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-$id11 = 5586;
-
-$sqlw = "DELETE FROM staking WHERE id = '$id11'";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Row DELETED successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
+$dlike_amount = '0';
+$username_k = 'kamchore';
+$updateWallet = "UPDATE wallet SET amount = '$dlike_amount' WHERE username = '$username_k'";
+    $updateWalletQuery = $conn->query($updateWallet);
 
 ?>
 <!--
