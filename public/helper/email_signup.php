@@ -24,7 +24,7 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	$loct_ip = $_POST['signup_loct_ip'];
 	$company_name = 'dlike';
 	//$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
-    //$check_dlike_name = stripos($signup_username, $company_name);
+    $check_dlike_name = stripos($signup_username, $company_name);
 
 	//if(empty($signup_username)){
      //   $errors = "Username Shoould not be empty";
@@ -35,9 +35,9 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 	//if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
 	//	$errors = 'Username not available!';
 	//}
-    //if($check_dlike_name == true){
-    //    $errors = "Username not available";
-    //}
+    if($check_dlike_name == true){
+        $errors = "Username not available";
+    }
     /*
     if(empty($signup_email)){
         $errors = "Email Shoould not be empty";
