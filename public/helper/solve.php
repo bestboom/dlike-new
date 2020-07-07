@@ -64,26 +64,43 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                         $add_cur_trx = $conn->query($sql_cur);
                     }
 
+                $check_refer_by = "SELECT refer_by FROM dlikeaccounts where username = '$author'";
+                $result_refer_by = $conn->query($check_refer_by);
+                $row_ref = $result_refer_by->fetch_assoc();
+                $referrer = $row_ref['refer_by'];
+                if(empty($referrer) ||$referrer == 'dlike') {
+
+                } else {
+                    $check_ref_bal = "SELECT amount FROM dlike_wallet where username = '$referrer'";
+                    $cur_ref_amount = $conn->query($check_ref_bal);
+                    $row_ref = $cur_ref_amount->fetch_assoc();
+                    $cur_ref = $row_ref['amount'];
+                    $update_ref_wallet = "UPDATE dlike_wallet SET amount = '$ref_bal' + '$affiliate_reward' WHERE username = '$referrer'";
+                    $update_ref_wallet_query = $conn->query($update_ref_wallet);
+                        if ($update_ref_wallet_query === TRUE) { 
+                            $type = 'c';
+                            $sql_ref = "INSERT INTO dlike_transactions (username, amount, type, reason, trx_time)
+                                VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
+                            $add_ref_trx = $conn->query($sql_ref);
+                        }
+                }
+
                 $checkPost = "SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
                 $result_post = mysqli_query($conn, $checkPost);
-
                 if ($result_post->num_rows > 0)
                 {
                     while ($row = $result_post->fetch_assoc())
                     {
                         $old_likes = $row['likes'];
-
                         $updatePost = "UPDATE postslikes SET likes = '$old_likes' + 1 WHERE author = '$author' AND permlink = '$permlink'";
                         $updatePostQuery = $conn->query($updatePost);
-                        if ($updatePostQuery === true)
-                        {
-                        }
+                        if ($updatePostQuery === true){}
                     }
                 }
                 else
                 {
                     $addPost = "INSERT INTO postslikes (author, permlink, likes, lastUpdatedDate)
-								VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', '" . date("Y-m-d H:i:s") . "')";
+					   VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', '" . date("Y-m-d H:i:s") . "')";
                     $addPostQuery = $conn->query($addPost);
                 }
 
