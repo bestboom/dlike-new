@@ -5,10 +5,14 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require '../includes/config.php';
-$dlike_amount = '0';
-$username_k = 'kamchore';
-$updateWallet = "UPDATE wallet SET amount = '$dlike_amount' WHERE username = '$username_k'";
-    $updateWalletQuery = $conn->query($updateWallet);
+
+
+$sql = "ALTER TABLE dlike_transactions ADD type VARCHAR(255) AFTER amount";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to dlike_transactions table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
 
 ?>
 <!--

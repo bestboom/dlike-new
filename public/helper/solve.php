@@ -36,6 +36,22 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
 
             if (mysqli_query($conn, $sqlm))
             {
+
+
+                $check_auth_bal = "SELECT amount FROM wallet where username = '$author'";
+                $auth_bal_amount = $conn->query($check_auth_bal);
+                $row_auth = $auth_bal_amount->fetch_assoc();
+                $auth_bal = $row_auth['amount'];
+                $update_auth_wallet = "UPDATE dlike_wallet SET amount = '$auth_bal' + '$author_reward' WHERE username = '$author'";
+                $update_auth_wallet_query = $conn->query($update_auth_wallet);
+                    if ($update_auth_wallet_query === TRUE) { 
+                        $type = 'a';
+                        $sql_auth = "INSERT INTO dlike_transactions (username, amount, type, reason, trx_time)
+                            VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
+                        $add_auth_trx = $conn->query($sql_auth);
+                    }
+
+
                 $checkPost = "SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
                 $result_post = mysqli_query($conn, $checkPost);
 
@@ -57,18 +73,6 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     $addPost = "INSERT INTO postslikes (author, permlink, likes, lastUpdatedDate)
 								VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', '" . date("Y-m-d H:i:s") . "')";
                     $addPostQuery = $conn->query($addPost);
-                }
-
-                $sql_C = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
-                $result_C = $conn->query($sql_C);
-                if ($result_C && $result_C->num_rows > 0) 
-                {
-                	$row_C = $result_C->fetch_assoc();
-                	$newlikes = $row_C['likes'];
-                }
-                else
-                {
-                	$newlikes  = '1';
                 }
 
                 die(json_encode(['error' => false, 'message' => 'Successfully Recommended!', 'data' => $newlikes, 'post_income' => $post_reward]));

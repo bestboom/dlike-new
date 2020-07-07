@@ -77,4 +77,7 @@ function time_ago($timestamp)
 }
 
 $post_reward = '0.35';
+$author_reward = '0.35';
+$curator_reward = '0.30';
+$affiliate_reward = '0.05';
 ?>
