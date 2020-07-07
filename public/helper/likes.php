@@ -7,6 +7,21 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$sqlm = "CREATE TABLE dlike_upvotes (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+curator VARCHAR(255) NOT NULL,
+author VARCHAR(255) NOT NULL,
+permlink VARCHAR(255) NOT NULL,
+ip_addr VARCHAR(255) NOT NULL,
+status INT(6) NOT NULL,
+curation_time TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table transactions created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 ?>
 <!--
