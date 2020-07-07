@@ -7,6 +7,18 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$sql = "ALTER TABLE convert_dlike ADD amount INT(30) NOT NULL AFTER steem_username";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to convert_dlike table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
+
+?>
+<!--
+
+
 $sqlm = "CREATE TABLE dlike_upvotes (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 curator VARCHAR(255) NOT NULL,
@@ -23,8 +35,7 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-?>
-<!--
+
 
 $sql = "ALTER TABLE convert_dlike ADD type INT(6) NOT NULL AFTER status";
 if ($conn->query($sql) === TRUE) {
