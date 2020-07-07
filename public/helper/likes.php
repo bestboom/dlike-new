@@ -6,12 +6,6 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$sql = "ALTER TABLE convert_dlike ALTER COLUMN amount FLOAT(12,2)";
-if ($conn->query($sql) === TRUE) {
-    echo "field changed convert_dlike table";
-} else {
-    echo "Error updating table: " . $conn->error;
-}
 
 
 ?>

@@ -37,7 +37,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
             if (mysqli_query($conn, $sqlm))
             {
 
-
+                /*
                 $check_auth_bal = "SELECT amount FROM dlike_wallet where username = '$author'";
                 $auth_bal_amount = $conn->query($check_auth_bal);
                 $row_auth = $auth_bal_amount->fetch_assoc();
@@ -64,7 +64,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                             VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
                         $add_cur_trx = $conn->query($sql_cur);
                     }
-
+                */
                 $checkPost = "SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
                 $result_post = mysqli_query($conn, $checkPost);
 
