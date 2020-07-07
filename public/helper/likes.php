@@ -6,13 +6,13 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
-$sqlw = "DELETE FROM dlikeaccounts";
-
-if ($conn->query($sqlw) === TRUE) {
-    echo "Table DELETED successfully";
+$sql = "ALTER TABLE convert_dlike ALTER COLUMN amount FLOAT(12,2)";
+if ($conn->query($sql) === TRUE) {
+    echo "field changed convert_dlike table";
 } else {
-    echo "Error deleting table: " . $conn->error;
+    echo "Error updating table: " . $conn->error;
 }
+
 
 ?>
 <!--

@@ -148,7 +148,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         </div>
                                         <input type="text" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)" class="form-control" />
                                     </div>
-                                    <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled>Verify Email</button>
+                                    <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled><i class="fas fa-circle-notch fa-spin verify_pin_loader" style="display:none;"></i><span class="verify_email_txt">Verify Email</span></button>
                                 </form>
                             </div>
                         </div>
@@ -489,6 +489,7 @@ $('.email_signup_btn').click(function() {
                 if (response.error == true) {
                     $('.signup_loader').hide();
                     toastr['error'](response.message);
+                    return false;
                 } else {
                     toastr['success'](response.message);
                     $('#my_signup_email').html(signup_email);
@@ -573,6 +574,7 @@ $('.email_reset_pass_btn').click(function() {
                 var response = JSON.parse(data)
                 if (response.error == true) {
                     toastr['error'](response.message);
+                    return false;
                 } else {
                     toastr['success'](response.message);
                     $(".email_reset_pass_btn").html('Email Sent');
@@ -597,11 +599,18 @@ inputemailpin.addEventListener('keyup', function(){
 });
 
 $('.email_verify_pin_btn').click(function() {
+    $('.verify_pin_loader').show();
+    $('.verify_email_txt').hide();
+    $(".email_verify_pin_btn").attr("disabled", true);
+    let login_user_id = $('#login_user_id').val();
     let email_pin_code = $('#email_pin_code').val();
     let user_email = $('#my_signup_email').html();
     let email_verify_url = 'helper/email_verify.php';
     if (email_pin_code == "") {
         toastr.error('phew... PIN value should not be empty');
+        $('.verify_pin_loader').hide();
+        $('.verify_email_txt').show();
+        $(".email_verify_pin_btn").attr("disabled", false);
         return false;
     }
     var data_verify = {
@@ -617,6 +626,10 @@ $('.email_verify_pin_btn').click(function() {
                 var response = JSON.parse(data)
                 if (response.error == true) {
                     toastr['error'](response.message);
+                    $('.verify_pin_loader').hide();
+                    $('.verify_email_txt').show();
+                    $(".email_verify_pin_btn").attr("disabled", false);
+                    return false;
                 } else {
                     toastr['success'](response.message);
                     setTimeout(function(){
