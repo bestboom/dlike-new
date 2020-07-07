@@ -7,12 +7,6 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$sql = "ALTER TABLE dlike_transactions ADD type VARCHAR(255) AFTER amount";
-if ($conn->query($sql) === TRUE) {
-    echo "new field added to dlike_transactions table";
-} else {
-    echo "Error updating table: " . $conn->error;
-}
 
 ?>
 <!--
