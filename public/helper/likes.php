@@ -7,14 +7,6 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$sql = "ALTER TABLE convert_dlike ADD amount INT(30) NOT NULL AFTER steem_username";
-if ($conn->query($sql) === TRUE) {
-    echo "new field added to convert_dlike table";
-} else {
-    echo "Error updating table: " . $conn->error;
-}
-
-
 ?>
 <!--
 
