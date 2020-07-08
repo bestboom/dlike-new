@@ -131,7 +131,7 @@
                                 <span><?php echo $row_T["id"]; ?></span>
                             </td>
                             <td class="exp-user cent_me wid_2">
-                                <span><?php echo $user_profile_pic; echo $row_T["username"]; ?></span>
+                                <span><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;">'. $row_T["username"]; ?></span>
                             </td>
                             <td class="exp-amt cent_me wid_2">
                                 <span><?php echo $row_T["type"]; ?></span>
