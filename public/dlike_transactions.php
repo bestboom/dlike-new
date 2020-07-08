@@ -100,7 +100,6 @@
         <table class="table coin-list table-hover" style="border: 1px solid #eee;">
             <thead>
                 <tr>
-                    <th scope="col" class="cent_me wid_2"></th>
                     <th scope="col" class="cent_me wid_2">Username</th>
                     <th scope="col" class="cent_me wid_2">Type</th>
                     <th scope="col" class="cent_me wid_2">Amount</th>
@@ -128,10 +127,7 @@
                         ?>
                         <tr>
                             <td class="exp-user cent_me wid_2">
-                                <span><?php echo $row_T["id"]; ?></span>
-                            </td>
-                            <td class="exp-user cent_me wid_2">
-                                <span><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;">'. $row_T["username"]; ?></span>
+                                <span><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;width: 32px;">'. $row_T["username"]; ?></span>
                             </td>
                             <td class="exp-amt cent_me wid_2">
                                 <span><?php echo $row_T["type"]; ?></span>
@@ -140,7 +136,7 @@
                                 <span><?php echo $row_T["amount"]; ?></span>
                             </td>
                             <td class="exp-amt cent_me wid_2">
-                                <span><?php echo $row_T["reason"]; ?></span>
+                                <span><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></span>
                             </td>
                             <td class="exp-amt cent_me wid_2">
                                 <?php echo time_ago($start_time); ?>
