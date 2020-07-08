@@ -6,6 +6,19 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sqlm = "CREATE TABLE dlike_tags (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+tag VARCHAR(255) NOT NULL,
+author VARCHAR(255) NOT NULL,
+permlink VARCHAR(255) NOT NULL,
+created_time TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table tags created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 ?>
 <!--
