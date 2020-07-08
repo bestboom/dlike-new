@@ -70,7 +70,7 @@
                             <div class="card-header-title"><h4>Latest Transactions</h4></div>
                         </div>
                         <table class="table coin-list table-hover" style="border: 1px solid #eee;">
-                        <thead>
+                        <!--<thead>
                             <tr>
                                 <th scope="col" class="cent_me wid_2">Username</th>
                                 <th scope="col" class="cent_me wid_2">Type</th>
@@ -78,7 +78,7 @@
                                 <th scope="col" class="cent_me wid_2">For</th>
                                 <th scope="col" class="cent_me wid_2">Time</th>
                             </tr>
-                        </thead>
+                        </thead>-->
                         <tbody>
                             <?php 
                             $sql_T = "SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 30";
@@ -88,7 +88,7 @@
                                     $start_time = strtotime($row_T["trx_time"]); 
                                     $dlike_user = $row_T["username"];
                                     $tx_type = $row_T["type"];
-                                    if($tx_type == 'a'){$trx_type = 'author';}elseif($tx_type == 'b'){$trx_type = 'curation';}elseif($tx_type == 'c'){$trx_type = 'affiliate';}
+                                    if($tx_type == 'a'){$trx_type = '<i class="fas fa-pen"></i>&nbsp;&nbsp;author';}elseif($tx_type == 'b'){$trx_type = '<i class="fas fa-coffee"></i>&nbsp;&nbsp;curation';}elseif($tx_type == 'c'){$trx_type = '<i class="fas fa-user"></i>&nbsp;&nbsp;affiliate';}
 
 
                                     $sql_W = "SELECT * FROM dlikeaccounts where username = '$dlike_user'";
@@ -101,19 +101,19 @@
                                     }
                                     ?>
                                     <tr>
-                                        <td class="exp-user cent_me wid_2">
+                                        <td class="exp-user wid_2" style="padding: 12px 22px;">
                                             <span style="justify-content: left;"><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;width: 32px;">'. $row_T["username"]; ?></span>
                                         </td>
-                                        <td class="exp-amt cent_me wid_2">
+                                        <td class="exp-amt wid_2" style="padding: 12px 22px;">
                                             <span><?php echo $trx_type; ?></span>
                                         </td>
-                                        <td class="exp-amt cent_me wid_2">
+                                        <td class="exp-amt wid_2" style="padding: 12px 22px;">
                                             <span><?php echo $row_T["amount"]; ?></span>
                                         </td>
-                                        <td class="exp-amt cent_me wid_2">
+                                        <td class="exp-amt wid_2" style="padding: 12px 22px;">
                                             <span><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></span>
                                         </td>
-                                        <td class="exp-amt cent_me wid_2">
+                                        <td class="exp-amt wid_2" style="padding: 12px 22px;">
                                             <?php echo time_ago($start_time); ?>
                                         </td>
                                     </tr>
