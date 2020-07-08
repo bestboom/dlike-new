@@ -102,7 +102,7 @@
                                     ?>
                                     <tr>
                                         <td class="exp-user wid_2" style="padding: 12px 22px;">
-                                            <span style="justify-content: left;"><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;width: 32px;">'. $row_T["username"]; ?></span>
+                                            <span style="justify-content: left;"><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;width: 32px;"><a href="/profile/'. $dlike_user.'">'. $dlike_user.'</a>'; ?></span>
                                         </td>
                                         <td class="exp-amt wid_2" style="padding: 12px 22px;">
                                             <span><?php echo $trx_type; ?></span>
