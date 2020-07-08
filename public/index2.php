@@ -43,8 +43,8 @@ if ($result_T && $result_T->num_rows > 0)
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
-    <div class="author-thumb"><a href="/@pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="<?php echo $row_T['username']; ?>" class="img-responsive"></a></div>
-    <div class="author-info"><h5><a href="/@"><?php echo $author; ?></a><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
+    <div class="author-thumb"><a href="/profile/pillsjee"><img src="<?php echo $user_profile_pic; ?>" alt="<?php echo $row_T['username']; ?>" class="img-responsive"></a></div>
+    <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
     <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
     </div></div>
     <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
