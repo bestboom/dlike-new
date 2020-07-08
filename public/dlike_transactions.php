@@ -69,85 +69,66 @@
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title"><h4>Latest Transactions</h4></div>
                         </div>
-                        <?php
-                        $sqlm = "SELECT username, amount FROM wallet ORDER BY amount DESC LIMIT 10";
-                        $resultWallet = $conn->query($sqlm);
-                        if ($resultWallet->num_rows > 0) {
-                            while($row = $resultWallet->fetch_assoc()) { ?>
-                                <div class="activity-block">
-                                    <div class="row my-entry">
-                                        <div class="col-sm-6">
-                                            <div class="row">
-                                                <div><img src="https://steemitimages.com/u/<?php echo $row["username"]; ?>/avatar" alt="img" class="img-responsive"></div>
-                                                <div class="exp-user"><?php echo $row["username"]; ?></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <? }
-                        } ?>
+                        <table class="table coin-list table-hover" style="border: 1px solid #eee;">
+                        <thead>
+                            <tr>
+                                <th scope="col" class="cent_me wid_2">Username</th>
+                                <th scope="col" class="cent_me wid_2">Type</th>
+                                <th scope="col" class="cent_me wid_2">Amount</th>
+                                <th scope="col" class="cent_me wid_2">For</th>
+                                <th scope="col" class="cent_me wid_2">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            $sql_T = "SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 30";
+                            $result_T = $conn->query($sql_T);
+                            if ($result_T && $result_T->num_rows > 0) {
+                                while ($row_T = $result_T->fetch_assoc()) {
+                                    $start_time = strtotime($row_T["trx_time"]); 
+                                    $dlike_user = $row_T["username"];
+                                    $tx_type = $row_T["type"];
+                                    if($tx_type == 'a'){$trx_type = 'author';}elseif($tx_type == 'b'){$trx_type = 'curation';}elseif($tx_type == 'c'){$trx_type = 'affiliate';}
+
+
+                                    $sql_W = "SELECT * FROM dlikeaccounts where username = '$dlike_user'";
+                                    $result_W = $conn->query($sql_W);
+                                    if ($result_W && $result_W->num_rows > 0)
+                                    {
+                                        $profile_pic = $row_W["profile_pic"];
+                                        if (!empty($profile_pic))
+                                        { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
+                                    }
+                                    ?>
+                                    <tr>
+                                        <td class="exp-user cent_me wid_2">
+                                            <span style="justify-content: left;"><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;width: 32px;">'. $row_T["username"]; ?></span>
+                                        </td>
+                                        <td class="exp-amt cent_me wid_2">
+                                            <span><?php echo $trx_type; ?></span>
+                                        </td>
+                                        <td class="exp-amt cent_me wid_2">
+                                            <span><?php echo $row_T["amount"]; ?></span>
+                                        </td>
+                                        <td class="exp-amt cent_me wid_2">
+                                            <span><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></span>
+                                        </td>
+                                        <td class="exp-amt cent_me wid_2">
+                                            <?php echo time_ago($start_time); ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </tbody>
+                    </table>
                     </div>
                 </div>
 
             </div>
         </div>
     </div><!-- activity-section -->
-    <br>
-    <div class="row" style="margin: 20px;">
-        <table class="table coin-list table-hover" style="border: 1px solid #eee;">
-            <thead>
-                <tr>
-                    <th scope="col" class="cent_me wid_2">Username</th>
-                    <th scope="col" class="cent_me wid_2">Type</th>
-                    <th scope="col" class="cent_me wid_2">Amount</th>
-                    <th scope="col" class="cent_me wid_2">For</th>
-                    <th scope="col" class="cent_me wid_2">Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                $sql_T = "SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 30";
-                $result_T = $conn->query($sql_T);
-                if ($result_T && $result_T->num_rows > 0) {
-                    while ($row_T = $result_T->fetch_assoc()) {
-                        $start_time = strtotime($row_T["trx_time"]); 
-                        $dlike_user = $row_T["username"];
 
-                        $sql_W = "SELECT * FROM dlikeaccounts where username = '$dlike_user'";
-                        $result_W = $conn->query($sql_W);
-                        if ($result_W && $result_W->num_rows > 0)
-                        {
-                            $profile_pic = $row_W["profile_pic"];
-                            if (!empty($profile_pic))
-                            { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
-                        }
-                        ?>
-                        <tr>
-                            <td class="exp-user cent_me wid_2">
-                                <span><?php echo '<img src="'.$user_profile_pic.'" style="padding-right:10px;width: 32px;">'. $row_T["username"]; ?></span>
-                            </td>
-                            <td class="exp-amt cent_me wid_2">
-                                <span><?php echo $row_T["type"]; ?></span>
-                            </td>
-                            <td class="exp-amt cent_me wid_2">
-                                <span><?php echo $row_T["amount"]; ?></span>
-                            </td>
-                            <td class="exp-amt cent_me wid_2">
-                                <span><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></span>
-                            </td>
-                            <td class="exp-amt cent_me wid_2">
-                                <?php echo time_ago($start_time); ?>
-                            </td>
-                        </tr>
-                        <?php
-                    }
-                }
-                ?>
-            </tbody>
-        </table>
-    </div>
 </div><!-- explorer-section -->
 <?php include('template/footer.php'); ?>
