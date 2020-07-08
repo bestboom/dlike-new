@@ -91,17 +91,18 @@
                         } ?>
                     </div>
                 </div>
+            <!--
                 <div class="col-md-6">
                     <div class="card h-100">
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <div class="card-header-title"><h4>Latest Transactions</h4></div>
                         </div>
                         <?php
-                        $sqlt = "SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 10";
+                        $sqlt = //"SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 10";
                         $result = $conn->query($sqlt);
 
-                        if ($result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) { ?>
+                        //if ($result->num_rows > 0) {
+                            //while($row = $result->fetch_assoc()) { ?>
                                 <div class="activity-block">
                                     <div class="row my-entry">
                                         <div class="col-sm-8">
@@ -122,10 +123,11 @@
                         } $conn->close(); ?>
                     </div>
                 </div>
+            -->
             </div>
         </div>
     </div><!-- activity-section -->
-
+    <br>
     <div class="row" style="margin: 20px;">
         <table class="table coin-list table-hover" style="border: 1px solid #eee;">
             <thead>
