@@ -91,39 +91,7 @@
                         } ?>
                     </div>
                 </div>
-            <!--
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-header d-flex justify-content-between align-items-center">
-                            <div class="card-header-title"><h4>Latest Transactions</h4></div>
-                        </div>
-                        <?php
-                        $sqlt = //"SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 10";
-                        $result = $conn->query($sqlt);
 
-                        //if ($result->num_rows > 0) {
-                            //while($row = $result->fetch_assoc()) { ?>
-                                <div class="activity-block">
-                                    <div class="row my-entry">
-                                        <div class="col-sm-8">
-                                            <div class="row">
-                                                <div><span class="btn btn-icon btn-exp"><span class="text-dark">Tx</span></span></div>
-                                                <div class="exp-user"><?php echo $row["username"]; ?></div>
-                                                <div class="exp-user">For <span><?php echo $row["type"]; ?></span></div>
-                                                <div class="exp-user">total <span><?php echo $row["amount"]; ?></span></div>
-                                                <div class="exp-user">on <span><?php echo $row["reason"]; ?></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="exp-amt"><span id="tk-amt"><?php echo (number_format($row["amount"])); ?></span> Dlikes</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <? }
-                        } $conn->close(); ?>
-                    </div>
-                </div>
-            -->
             </div>
         </div>
     </div><!-- activity-section -->
@@ -144,17 +112,26 @@
                 <?php 
                 $sql_T = "SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 30";
                 $result_T = $conn->query($sql_T);
-
                 if ($result_T && $result_T->num_rows > 0) {
                     while ($row_T = $result_T->fetch_assoc()) {
                         $start_time = strtotime($row_T["trx_time"]); 
+                        $dlike_user = $row_T["username"];
+
+                        $sql_W = "SELECT * FROM dlikeaccounts where username = '$dlike_user'";
+                        $result_W = $conn->query($sql_W);
+                        if ($result_W && $result_W->num_rows > 0)
+                        {
+                            $profile_pic = $row_W["profile_pic"];
+                            if (!empty($profile_pic))
+                            { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
+                        }
                         ?>
                         <tr>
                             <td class="exp-user cent_me wid_2">
                                 <span><?php echo $row_T["id"]; ?></span>
                             </td>
                             <td class="exp-user cent_me wid_2">
-                                <span><?php echo $row_T["username"]; ?></span>
+                                <span><?php echo $user_profile_pic; echo $row_T["username"]; ?></span>
                             </td>
                             <td class="exp-amt cent_me wid_2">
                                 <span><?php echo $row_T["type"]; ?></span>
