@@ -88,7 +88,7 @@
                                     $start_time = strtotime($row_T["trx_time"]); 
                                     $dlike_user = $row_T["username"];
                                     $tx_type = $row_T["type"];
-                                    if($tx_type == 'a'){$trx_type = '<i class="fas fa-pen"></i>&nbsp;&nbsp;author';}elseif($tx_type == 'b'){$trx_type = '<i class="fas fa-coffee"></i>&nbsp;&nbsp;curation';}elseif($tx_type == 'c'){$trx_type = '<i class="fas fa-user"></i>&nbsp;&nbsp;affiliate';}
+                                    if($tx_type == 'a'){$trx_type = '<i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;author';}elseif($tx_type == 'b'){$trx_type = '<i class="fas fa-coffee"></i>&nbsp;&nbsp;curation';}elseif($tx_type == 'c'){$trx_type = '<i class="fas fa-user"></i>&nbsp;&nbsp;affiliate';}
 
 
                                     $sql_W = "SELECT * FROM dlikeaccounts where username = '$dlike_user'";
