@@ -27,10 +27,10 @@ if ($sql_P && $sql_P->num_rows > 0)
 
     	$sql_T = $conn->query("SELECT * FROM dlikeposts where username='$post_author' and permlink='$permlink'");
 		$row_T = $sql_T->fetch_assoc();
-        echo $imgUrl = $row_T["img_url"];
-        echo $author = $row_T["username"];
-        echo $post_time = strtotime($row_T["created_at"]);
-        echo $post_tags = $row_T["tags"];
+        $imgUrl = $row_T["img_url"];
+        $author = $row_T["username"];
+        $post_time = strtotime($row_T["created_at"]);
+        $post_tags = $row_T["tags"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
         $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
         if ($sql_W && $sql_W->num_rows > 0);
@@ -38,7 +38,7 @@ if ($sql_P && $sql_P->num_rows > 0)
             $profile_pic = $row_W["profile_pic"];
             if (!empty($profile_pic)){ $user_profile_pic = $profile_pic; } else { $user_profile_pic='https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
-        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
+        $checkLikes = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
         $resultLikes = mysqli_query($conn, $checkLikes);
         $row_L = $resultLikes->fetch_assoc();
         if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
