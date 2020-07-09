@@ -6,48 +6,44 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
 }
 ?>
 </div>
+<?php
+$sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_user'");
+$row_B = $sql_B->fetch_assoc();
+$my_bal = (float) $row_B["amount"];
+
+$sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='dlike_user' and  DATE(trx_time) = CURDATE()");
+$row_I = $sql_I->fetch_assoc();
+$today_income = (float) $row_I["total_income"];
+?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
         <div class="row">
             <div class="offset-lg-1 col-lg-5 col-md-6">
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
-                        <div style="font-size: 1.1rem;">Total Reward Pool</div>
+                        <div style="font-size: 1.1rem;">DLIKE Wallet</div>
                         <div class="reward_amount">7,000 DLIKE</div>
                     </h3>
-                    <p style="margin-top: -20px;font-weight: 600;color: red;"><?php echo $user_status; ?></p>
-
-
-                    <p><?php  ?></p>
-
-
-
                     <form class="user-connected-from create-account-form reward_form" />
                     <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | Total Points" readonly>
-                        <span class="fas fa-star inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($total_points); ?></span>
-                    </div>
-                    <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | My Points" readonly>
-                        <span class="fas fa-bolt inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($my_points); ?></span>
-                    </div>
-                    <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | My Share" readonly>
-                        <span class="fas fa-flask inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * 100); echo("%"); ?></span>
-                    </div>
-                    <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | Estimated Reward" readonly>
+                        <input type="text" class="form-control reward_input" value=" | My Balance" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($my_points/$total_points * $total_reward); echo(" DLIKE"); ?></span>
+                        <span class="inp_text"><?php echo_formatted($my_bal); ?></span>
                     </div>
-                    <p>Time Remaining for Next Reward Pool</p>
+                    <div class="form-group reward_fileds">
+                        <input type="text" class="form-control reward_input" value=" | Income Today" readonly>
+                        <span class="fas fa-bolt inp_icon"></span>
+                        <span class="inp_text"><?php echo_formatted($today_income); ?></span>
+                    </div>
+                    <div class="form-group reward_fileds">
+                        <input type="text" class="form-control reward_input" value=" | My Affiliates" readonly>
+                        <span class="fas fa-flask inp_icon"></span>
+                        <span class="inp_text"><?php echo 'aff'; echo("%"); ?></span>
+                    </div>
+                    <p>One Withdrawal per 24 hours!</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                    <p class="DlikeComments">Rewards are updated at certain intervals.</p>
+                    <p class="DlikeComments">Max withdrawal limit 1000 DLIKE</p>
                     <div id="output"></div>
-                	</form>
                 </div><!-- create-account-block -->
             </div>
             <div class="col-lg-6  col-md-6">
