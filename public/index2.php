@@ -13,10 +13,10 @@
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
 <?php
-$sql_T = "SELECT * FROM dlikeposts ORDER BY created_at DESC";
-$result_T = $conn->query($sql_T);
+$sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
+//$result_T = $conn->query($sql_T);
 
-if ($result_T && $result_T->num_rows > 0)
+if ($sql_T && $sql_T->num_rows > 0)
 {
     while ($row_T = $result_T->fetch_assoc())
     {

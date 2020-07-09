@@ -22,9 +22,15 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 	$redirect_url = 'https://dlike.io/index2.php';
 	if ($title !='') {
 
-		$addposts = "INSERT INTO dlikeposts (`username`,`title`, `permlink`, `ext_url`, `img_url`, `ctegory`, `description`, `tags`, `created_at`) VALUES ('".$author."','".$title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."', '".$body."', '".$tags."','".date("Y-m-d H:i:s")."')";
-		$addpostsquery = $conn->query($addposts);
+		$addposts = $conn->query("INSERT INTO dlikeposts (`username`,`title`, `permlink`, `ext_url`, `img_url`, `ctegory`, `description`, `tags`, `created_at`) VALUES ('".$author."','".$title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."', '".$body."', '".$tags."','".date("Y-m-d H:i:s")."')");
+		//$addpostsquery = $conn->query($addposts);
 
+		$posts_tags = array_unique(explode(" ",$tags));
+		if(count($posts_tags)>0)  {
+			foreach($posts_tags as $p_tag) {
+				$add_tags = $conn->query("INSERT INTO dlike_tags (`tag`,`author`,`permlink`,`created_time`) VALUES ('".$p_tag."','".$author."','".$permlink."','".date("Y-m-d H:i:s")."')");
+			}
+		}
 
 			//send success message
 		die(json_encode([
