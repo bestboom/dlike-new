@@ -11,7 +11,7 @@ $sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_us
 $row_B = $sql_B->fetch_assoc();
 $my_bal = $row_B["amount"];
 
-$sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='dlike_user'");
+$sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='$dlike_user' and  DATE(trx_time) = CURDATE()");
 $row_I = $sql_I->fetch_assoc();
 $today_income = $row_I["total_income"];
 ?>
@@ -75,8 +75,8 @@ $today_income = $row_I["total_income"];
                     <thead>
                         <tr>
                             <th scope="col">From</th>
-                            <th scope="col">Of</th>
                             <th scope="col">Amount</th>
+                            <th scope="col">Of</th>
                             <th scope="col">For</th>
                             <th scope="col">Time</th>
                         </tr>
@@ -89,10 +89,11 @@ $today_income = $row_I["total_income"];
                         ?> 
                         <tr>   
                             <td><?php echo $row_T["username"]; ?></td>
-                            <td><?php echo $row_T["type"]; ?></td>
                             <td><?php echo $row_T["amount"]; ?></td>
+                            <td><?php echo $row_T["type"]; ?></td>
                             <td><?php echo $row_T["reason"]; ?></td>
-                            <td><?php echo date('Y-m-d', strtotime($row_T["start_time"])); ?></td>    
+                            <td><?php echo $entry_date; ?></td>
+                            <td><?php echo date('Y-m-d', strtotime($row_T["trx_time"])); ?></td>    
                         </tr>
                         <? } }?>
                     </tbody>
