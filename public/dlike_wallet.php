@@ -9,11 +9,11 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
 <?php
 $sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_user'");
 $row_B = $sql_B->fetch_assoc();
-$my_bal = (float) $row_B["amount"];
+$my_bal = $row_B["amount"];
 
 $sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='dlike_user' and  DATE(trx_time) = CURDATE()");
 $row_I = $sql_I->fetch_assoc();
-$today_income = (float) $row_I["total_income"];
+$today_income = $row_I["total_income"];
 ?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
@@ -28,17 +28,17 @@ $today_income = (float) $row_I["total_income"];
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Balance" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($my_bal); ?></span>
+                        <span class="inp_text"><?php echo $my_bal; ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Income Today" readonly>
                         <span class="fas fa-bolt inp_icon"></span>
-                        <span class="inp_text"><?php echo_formatted($today_income); ?></span>
+                        <span class="inp_text"><?php echo $today_income; ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Affiliates" readonly>
                         <span class="fas fa-flask inp_icon"></span>
-                        <span class="inp_text"><?php echo 'aff'; echo("%"); ?></span>
+                        <span class="inp_text"><?php echo 'aff'; ?></span>
                     </div>
                     <p>One Withdrawal per 24 hours!</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
@@ -69,34 +69,30 @@ $today_income = (float) $row_I["total_income"];
         <div class="container">
             <div class="latest-tranjections-block-inner">
                 <div class="panel-heading-block">
-                    <h5>My Stakings</h5>
+                    <h5>Transactions</h5>
                 </div>
                 <table class="table coin-list latest-tranjections-table">
                     <thead>
                         <tr>
-                            <th scope="col">Date Staked</th>
+                            <th scope="col">From</th>
+                            <th scope="col">Of</th>
                             <th scope="col">Amount</th>
-                            <th scope="col">Period</th>
-                            <th scope="col">Bonus</th>
-                            <th scope="col">Maturity Date</th>
+                            <th scope="col">For</th>
+                            <th scope="col">Time</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $sqlt = "SELECT * FROM staking where username ='$staker' ORDER BY start_time DESC";
-                        $result_t = $conn->query($sqlt);
-                            if ($result_t->num_rows > 0) {
-                                while($row_t = $result_t->fetch_assoc()) { 
-                                $period = $row_t["period"]; 
-                                if($period == "2") {$period = '180'; $bonus = '25%'; $mature = '181';}
-                                else if($period == "1") {$period = '90';$bonus = '9%'; $mature = '91';}
-                                $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
+                        <?php $sql_T = $conn->query("SELECT * FROM dlike_transactions where username ='$dlike_user' ORDER BY trx_time DESC LIMIT 30");
+                            if ($sql_T->num_rows > 0) {
+                                while($row_T = $sql_T->fetch_assoc()) { 
+                                $entry_date = date('Y-m-d', strtotime($row_T["trx_time"]));
                         ?> 
                         <tr>   
-                            <td><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></td>
-                            <td><?php echo $row_t["amount"]; ?></td>
-                            <td><?php echo $period; ?> Days</td>
-                            <td><?php echo $bonus; ?></td>
-                            <td><?php echo date('Y-m-d', strtotime($entry_date. ' + '.$mature.' days')); ?></td>    
+                            <td><?php echo $row_T["username"]; ?></td>
+                            <td><?php echo $row_T["type"]; ?></td>
+                            <td><?php echo $row_T["amount"]; ?></td>
+                            <td><?php echo $row_T["reason"]; ?></td>
+                            <td><?php echo date('Y-m-d', strtotime($row_T["start_time"])); ?></td>    
                         </tr>
                         <? } }?>
                     </tbody>
