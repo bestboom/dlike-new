@@ -33,8 +33,8 @@ if ($sql_P && $sql_P->num_rows > 0)
         echo $post_tags = $row_T["tags"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
         $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
-        if ($sql_W && $sql_W->num_rows > 0)
-        {	$row_W = $sql_W->fetch_assoc()
+        if ($sql_W && $sql_W->num_rows > 0);
+        {	$row_W = $sql_W->fetch_assoc();
             $profile_pic = $row_W["profile_pic"];
             if (!empty($profile_pic)){ $user_profile_pic = $profile_pic; } else { $user_profile_pic='https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
