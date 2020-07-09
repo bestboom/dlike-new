@@ -80,4 +80,6 @@ $post_reward = '0.35';
 $author_reward = '0.35';
 $curator_reward = '0.30';
 $affiliate_reward = '0.05';
+
+//if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {}
 ?>

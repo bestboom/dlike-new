@@ -16,27 +16,26 @@ include ('template/header7.php'); ?>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
 <?php
-echo $page_tag;
 $sql_P = $conn->query("SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC");
 
 if ($sql_P && $sql_P->num_rows > 0)
 {
     while ($row_P = $sql_P->fetch_assoc())
     {
-    	echo $post_author = $row_P["author"];
-    	echo $permlink = $row_P["permlink"];
+    	$post_author = $row_P["author"];
+    	$permlink = $row_P["permlink"];
 
     	$sql_T = $conn->query("SELECT * FROM dlikeposts where username='$post_author' and permlink='$permlink'");
 		$row_T = $sql_T->fetch_assoc();
-        $imgUrl = $row_T["img_url"];
-        $author = $row_T["username"];
-        $post_time = strtotime($row_T["created_at"]);
-        $post_tags = $row_T["tags"];
+        echo $imgUrl = $row_T["img_url"];
+        echo $author = $row_T["username"];
+        echo $post_time = strtotime($row_T["created_at"]);
+        echo $post_tags = $row_T["tags"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
         $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
         if ($sql_W && $sql_W->num_rows > 0)
-        {
-            $profile_pic = $sql_W["profile_pic"];
+        {	$row_W = $sql_W->fetch_assoc()
+            $profile_pic = $row_W["profile_pic"];
             if (!empty($profile_pic)){ $user_profile_pic = $profile_pic; } else { $user_profile_pic='https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
         $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
