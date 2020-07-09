@@ -1,6 +1,6 @@
 <?php 
 if (isset($_GET['tag'])) 
-{$page_tag = $_GET['usager'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+{$page_tag = $_GET['tag'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include ('template/header7.php'); ?>
 <style>
     .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
