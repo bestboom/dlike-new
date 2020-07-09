@@ -41,7 +41,7 @@ $today_income = $row_I["total_income"];
                         <span class="inp_text"><?php echo '0'; ?></span>
                     </div>
                     <p>One Withdrawal per 24 hours!</p>
-                    <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
+                    <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span>Withdraw</button>
                     <p class="DlikeComments">Max Daily withdrawal limit 5000 DLIKE</p>
                     <div id="output"></div>
                 </div><!-- create-account-block -->
@@ -53,7 +53,7 @@ $today_income = $row_I["total_income"];
                         <div class="queue-stats card p-3">
                             <div class="d-flex align-items-center">
                                 <span class="stamp stamp-md bg-blue mr-3">
-                                  <i class="fa fa-money"></i>
+                                  <i class="fas fa-money-bill-alt"></i>
                                 </span>
                                 <div>
                                     <h4 class="m-0">
@@ -83,7 +83,7 @@ $today_income = $row_I["total_income"];
                         <div class="queue-stats card p-3">
                             <div class="d-flex align-items-center">
                                 <span class="stamp stamp-md bg-blue mr-3">
-                                  <i class="fa fa-battery"></i>
+                                  <i class="fa fa-battery-full"></i>
                                 </span>
                                 <div>
                                     <h4 class="m-0">
@@ -124,15 +124,14 @@ $today_income = $row_I["total_income"];
                         <?php $sql_T = $conn->query("SELECT * FROM dlike_transactions where username ='$dlike_user' ORDER BY trx_time DESC LIMIT 30");
                             if ($sql_T->num_rows > 0) {
                                 while($row_T = $sql_T->fetch_assoc()) { 
-                                $entry_date = date('Y-m-d', strtotime($row_T["trx_time"]));
+                                $entry_date = strtotime($row_T["trx_time"]);
                         ?> 
                         <tr>   
                             <td><?php echo $row_T["username"]; ?></td>
                             <td><?php echo $row_T["amount"]; ?></td>
                             <td><?php echo $row_T["type"]; ?></td>
                             <td><?php echo $row_T["reason"]; ?></td>
-                            <td><?php echo $entry_date; ?></td>
-                            <td><?php echo date('Y-m-d', strtotime($row_T["trx_time"])); ?></td>    
+                            <td><?php echo time_ago($entry_date); ?></td> 
                         </tr>
                         <? } }?>
                     </tbody>
