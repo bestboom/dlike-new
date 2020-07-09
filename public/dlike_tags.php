@@ -16,14 +16,15 @@ include ('template/header7.php'); ?>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
 <?php
+echo $page_tag;
 $sql_P = $conn->query("SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC");
 
 if ($sql_P && $sql_P->num_rows > 0)
 {
     while ($row_P = $sql_P->fetch_assoc())
     {
-    	$post_author = $row_P["author"];
-    	$permlink = $row_P["permlink"];
+    	echo $post_author = $row_P["author"];
+    	echo $permlink = $row_P["permlink"];
 
     	$sql_T = $conn->query("SELECT * FROM dlikeposts where username='$post_author' and permlink='$permlink'");
 		$row_T = $sql_T->fetch_assoc();
