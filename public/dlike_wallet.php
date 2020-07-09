@@ -11,7 +11,7 @@ $sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_us
 $row_B = $sql_B->fetch_assoc();
 $my_bal = $row_B["amount"];
 
-$sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='dlike_user' and  DATE(trx_time) = DATE(now())");
+$sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='dlike_user'");
 $row_I = $sql_I->fetch_assoc();
 $today_income = $row_I["total_income"];
 ?>
