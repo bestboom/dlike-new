@@ -18,7 +18,7 @@ $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
 
 if ($sql_T && $sql_T->num_rows > 0)
 {
-    while ($row_T = $result_T->fetch_assoc())
+    while ($row_T = $sql_T->fetch_assoc())
     {
         $imgUrl = $row_T["img_url"];
         $author = $row_T["username"];
