@@ -36,12 +36,12 @@ if ($sql_P && $sql_P->num_rows > 0)
         if ($sql_W && $sql_W->num_rows > 0)
         {
             $profile_pic = $sql_W["profile_pic"];
-            if (!empty($profile_pic)){ $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
+            if (!empty($profile_pic)){ $user_profile_pic = $profile_pic; } else { $user_profile_pic='https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
         $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
-        //$resultLikes = mysqli_query($conn, $checkLikes);
-        $row_L = $checkLikes->fetch_assoc();
-        if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
+        $resultLikes = mysqli_query($conn, $checkLikes);
+        $row_L = $resultLikes->fetch_assoc();
+        if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
         $post_income = $postLikes * $post_reward;
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
