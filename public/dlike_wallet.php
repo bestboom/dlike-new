@@ -38,27 +38,66 @@ $today_income = $row_I["total_income"];
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | My Affiliates" readonly>
                         <span class="fas fa-flask inp_icon"></span>
-                        <span class="inp_text"><?php echo 'aff'; ?></span>
+                        <span class="inp_text"><?php echo '0'; ?></span>
                     </div>
                     <p>One Withdrawal per 24 hours!</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                    <p class="DlikeComments">Max withdrawal limit 1000 DLIKE</p>
+                    <p class="DlikeComments">Max Daily withdrawal limit 5000 DLIKE</p>
                     <div id="output"></div>
                 </div><!-- create-account-block -->
             </div>
             <div class="col-lg-6  col-md-6">
                 <div class="working-process">
                     <h4 class="pool_head">DLIKE REWARD POOL</h4>
-                    <p>
-                        You can earn tokens for your contributions to the DLIKE network. The more interactions on your content, the greater your share of the daily token reward pool to your OffChain wallet.
-                    </p>
+                    <div class="col-sm-12 col-lg-12" style="margin-bottom: 25px;">
+                        <div class="queue-stats card p-3">
+                            <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md bg-blue mr-3">
+                                  <i class="fa fa-money"></i>
+                                </span>
+                                <div>
+                                    <h4 class="m-0">
+                                        <small>Off-Chain Wallet Address</small>
+                                    </h4>
+                                    <small class="queue-stats-display text-muted">No posts in the Queue</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12" style="margin-bottom: 25px;">
+                        <div class="queue-stats card p-3">
+                            <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md bg-blue mr-3">
+                                  <i class="fa fa-list"></i>
+                                </span>
+                                <div>
+                                    <h4 class="m-0">
+                                        <small>My Affiliate Link</small>
+                                    </h4>
+                                    <small class="queue-stats-display text-muted">No posts in the Queue</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12" style="margin-bottom: 25px;">
+                        <div class="queue-stats card p-3">
+                            <div class="d-flex align-items-center">
+                                <span class="stamp stamp-md bg-blue mr-3">
+                                  <i class="fa fa-battery"></i>
+                                </span>
+                                <div>
+                                    <h4 class="m-0">
+                                        <small>oost Posts</small>
+                                    </h4>
+                                    <small class="queue-stats-display text-muted">No posts in the Queue</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <p style="color:#c51d24;font-weight: 600;">
                         <span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>
                         DLIKE reward pool is only available to PRO users
                     </p>
-                    <div>
-                        <img src="/images/post/dlike-reward.png" class="img-fluid" alt="">
-                    </div>
                 </div>
             </div>
         </div>
