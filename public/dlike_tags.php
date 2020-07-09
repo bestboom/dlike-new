@@ -1,4 +1,9 @@
-<?php include ('template/header7.php'); ?>
+<?php 
+if (isset($_GET['tag'])) 
+{
+	$page_tag = $_GET['usager'];
+} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+include ('template/header7.php'); ?>
 <style>
     .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
     .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
@@ -13,18 +18,23 @@
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
 <?php
-$sql_T = "SELECT * FROM dlikeposts ORDER BY created_at DESC";
-$result_T = $conn->query($sql_T);
+$sql_P = "SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC";
+$result_P = $conn->query($sql_P);
 
-if ($result_T && $result_T->num_rows > 0)
+if ($result_P && $result_P->num_rows > 0)
 {
-    while ($row_T = $result_T->fetch_assoc())
+    while ($row_P = $result_P->fetch_assoc())
     {
+    	$post_author = $row_P["author"];
+    	$permlink = $row_P["permlink"];
+
+    	$sql_T = "SELECT * FROM dlikeposts where username='$post_author' and permlink='$permlink'";
+		$result_T = $conn->query($sql_T);
+		$row_T = $result_T->fetch_assoc()
         $imgUrl = $row_T["img_url"];
         $author = $row_T["username"];
         $post_time = strtotime($row_T["created_at"]);
         $post_tags = $row_T["tags"];
-        $permlink = $row_T["permlink"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
         $sql_W = "SELECT * FROM dlikeaccounts where username = '$author'";
         $result_W = $conn->query($sql_W);
