@@ -1,8 +1,6 @@
 <?php 
 if (isset($_GET['tag'])) 
-{
-	$page_tag = $_GET['usager'];
-} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+{$page_tag = $_GET['usager'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include ('template/header7.php'); ?>
 <style>
     .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
@@ -18,29 +16,26 @@ include ('template/header7.php'); ?>
 </div>
 <div class="latest-post-section"><div class="container"><div class="row">
 <?php
-$sql_P = "SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC";
-$result_P = $conn->query($sql_P);
+$sql_P = $conn->query("SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC");
 
-if ($result_P && $result_P->num_rows > 0)
+if ($$sql_P && $$sql_P->num_rows > 0)
 {
-    while ($row_P = $result_P->fetch_assoc())
+    while ($row_P = $$sql_P->fetch_assoc())
     {
     	$post_author = $row_P["author"];
     	$permlink = $row_P["permlink"];
 
-    	$sql_T = "SELECT * FROM dlikeposts where username='$post_author' and permlink='$permlink'";
-		$result_T = $conn->query($sql_T);
-		$row_T = $result_T->fetch_assoc()
+    	$sql_T = $conn->query("SELECT * FROM dlikeposts where username='$post_author' and permlink='$permlink'");
+		$row_T = $sql_T->fetch_assoc();
         $imgUrl = $row_T["img_url"];
         $author = $row_T["username"];
         $post_time = strtotime($row_T["created_at"]);
         $post_tags = $row_T["tags"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
-        $sql_W = "SELECT * FROM dlikeaccounts where username = '$author'";
-        $result_W = $conn->query($sql_W);
-        if ($result_W && $result_W->num_rows > 0)
+        $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
+        if ($sql_W && $sql_W->num_rows > 0)
         {
-            $profile_pic = $row_W["profile_pic"];
+            $profile_pic = $sql_W["profile_pic"];
             if (!empty($profile_pic))
             { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
