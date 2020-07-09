@@ -70,14 +70,11 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     $check_ref_bal = "SELECT amount FROM dlike_wallet where username = '$referrer'";
                     $cur_ref_amount = $conn->query($check_ref_bal);
                     $row_ref = $cur_ref_amount->fetch_assoc();
-                    $cur_ref = $row_ref['amount'];
-                    $update_ref_wallet = "UPDATE dlike_wallet SET amount = '$ref_bal' + '$affiliate_reward' WHERE username = '$referrer'";
-                    $update_ref_wallet_query = $conn->query($update_ref_wallet);
-                        if ($update_ref_wallet_query === TRUE) { 
+                    $ref_bal = $row_ref['amount'];
+                    $update_ref_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$ref_bal' + '$affiliate_reward' WHERE username = '$referrer'");
+                        if ($update_ref_wallet === TRUE) { 
                             $type = 'c';
-                            $sql_ref = "INSERT INTO dlike_transactions (username, amount, type, reason, trx_time)
-                                VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
-                            $add_ref_trx = $conn->query($sql_ref);
+                            $sql_ref = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
                         }
                 }
                 

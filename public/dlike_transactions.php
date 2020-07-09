@@ -131,4 +131,4 @@
     </div><!-- activity-section -->
 
 </div><!-- explorer-section -->
-<?php include('template/footer.php'); ?>
+<?php include('template/dlike_footer.php'); ?>
