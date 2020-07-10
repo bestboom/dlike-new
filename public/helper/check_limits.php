@@ -14,7 +14,7 @@ if (isset($_POST['action']) && $_POST['action'] =='shares_limit' && isset($_POST
     $return['status'] = true;
     $return['message'] = '';
 
-    $sql_post_limit = $conn->query("SELECT * FROM steemposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR");
+    $sql_post_limit = $conn->query("SELECT * FROM dlikeposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR");
         if ($sql_post_limit->num_rows >= 5) {
 
             $return['status'] = false;
