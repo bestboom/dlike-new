@@ -48,7 +48,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                 data: { action : 'shares_limit',user: dlike_username },
                     success: function(data)  { 
                         try { var response = JSON.parse(data) 
-                            if (response.error == true) { toastr.error(response.message); return false;$('#share_plus').show();$('.share_loader').hide();}
+                            if (response.error == true) { toastr.error(response.message);$('#share_plus').show();$('.share_loader').hide();return false;}
                             else {
                                 $.ajax({
                                     url: '/helper/check_limits.php',
@@ -56,9 +56,9 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                                     data: { action : 'unique_post',newurl: input_url },
                                     success: function(data)  { 
                                         try { var response = JSON.parse(data) 
-                                            if (response.error == true) { toastr.error(response.message); return false;$('#share_plus').show();$('.share_loader').hide();} 
+                                            if (response.error == true) { toastr.error(response.message);$('#share_plus').show();$('.share_loader').hide();return false;} 
                                             else {$('#share_plus').hide();$('.share_loader').show();
-                                                fetch_data("helper/main.php", url);
+                                                fetch_data("helper/main.php", input_url);
                                             }
                                         } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                                     }
