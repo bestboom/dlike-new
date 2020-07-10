@@ -9,11 +9,6 @@ require '../includes/config.php';
 if (isset($_POST['action']) && $_POST['action'] =='shares_limit' && isset($_POST['user']) && $_POST['user'] != '') {
 //if (isset($_POST["user"])){
     $user_name = $_POST['user'];
-    //$user_name = $_GET['user'];
-    $return = array();
-    $return['status'] = true;
-    $return['message'] = '';
-
     $sql_post_limit = $conn->query("SELECT * FROM dlikeposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR");
         if ($sql_post_limit->num_rows >= 5) {
             die(json_encode(['error' => true, 'message' => 'Only 5 share allowed every 24 hours']));
