@@ -32,15 +32,15 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
 <script type="text/javascript">
     $('#dlike_share').click(function() {
         if (dlike_username != null) {
-            let url = $("#url_field").val();
-            if (url == '') {
+            let input_url = $("#url_field").val();
+            if (input_url == '') {
                 $("#url_field").css("border-color", "RED");
                 toastr.error('phew... You forgot to enter URL');
                 return false;
             }
-            let verifyUrl = getDomain(url);
+            let verifyUrl = getDomain(input_url);
             let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org"];
-            if (isValidURL(url)) {
+            if (isValidURL(input_url)) {
                 if ($.inArray(verifyUrl, restricted_urls) > -1) {
                     toastr.error('phew... Sharing from this url is not allowed');
                     return false;
@@ -59,10 +59,11 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                                     url: '/helper/check_limits.php',
                                     type: 'post',
                                     dataType: 'json',
-                                    data: { action : 'unique_post',url: url },
+                                    data: { action : 'unique_post',url: input_url },
                                     success: function(data)  { 
                                         try { var response = JSON.parse(data) 
-                                            if (response.error == true) { toastr.error(response.message); return false;} else {
+                                            if (response.error == true) { toastr.error(response.message); return false;} 
+                                            else {
                                                 $('#share_plus').hide();
                                                 $('.share_loader').show();
                                                 fetch_data("helper/main.php", url);
