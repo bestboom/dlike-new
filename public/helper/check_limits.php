@@ -16,14 +16,8 @@ if (isset($_POST['action']) && $_POST['action'] =='shares_limit' && isset($_POST
 
     $sql_post_limit = $conn->query("SELECT * FROM dlikeposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR");
         if ($sql_post_limit->num_rows >= 5) {
-
-            $return['status'] = false;
-            $return['message'] = 'Only 5 share allowed every 24 hours.';
-
-        } else {
-            $return['status'] = true;
-        }
-    echo json_encode($return);die;     
+            die(json_encode(['error' => true, 'message' => 'Only 5 share allowed every 24 hours']));
+            } else {die(json_encode(['error' => false]));}   
 }
 
 if (isset($_POST['action']) && $_POST['action'] == 'unique_post' && isset($_POST['url']) && $_POST['url'] != '') {

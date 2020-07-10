@@ -51,7 +51,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                 type: 'post',
                 dataType: 'json',
                 data: { action : 'shares_limit',user: dlike_username },
-                success: function(response) { if (response.error === true) {toastr['error'](response.data); return false;} }
+                success: function(data) { if (response.error == true)  { toastr.error(response.message); return false;} }
                 });
 
                 $.ajax({
@@ -59,7 +59,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                 type: 'post',
                 dataType: 'json',
                 data: { action : 'unique_post',url: url },
-                success: function(response) { if (response.error === true) {toastr['error'](response.data); return false;} }
+                success: function(data) { if (response.error == true)  { toastr.error(response.message); return false;} }
                 });
                 $('#share_plus').hide();
                 $('.share_loader').show();
