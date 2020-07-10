@@ -27,8 +27,8 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($check_max_likes->num_rows >= 50){die(json_encode(['error' => true, 'message' => 'You reached maximum daily likes limit']));}
 
         else {
-            $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink)
-					VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "')";
+            $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time )
+					VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', '".date("Y-m-d H:i:s")."')";
             if (mysqli_query($conn, $sqlm))
             {
 
@@ -88,13 +88,11 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     while ($row = $result_post->fetch_assoc())
                     {
                         $old_likes = $row['likes'];
-                        $updatePost = "UPDATE postslikes SET likes = '$old_likes' + 1 WHERE author = '$author' AND permlink = '$permlink'";
-                        $updatePostQuery = $conn->query($updatePost);
+                        $updatePost = $conn->query("UPDATE postslikes SET likes = '$old_likes' + 1 WHERE author = '$author' AND permlink = '$permlink'");
                     }
                 } else {
-                    $addPost = "INSERT INTO postslikes (author, permlink, likes, lastUpdatedDate)
-					       VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', '" . date("Y-m-d H:i:s") . "')";
-                    $addPostQuery = $conn->query($addPost);
+                    $addPost = $conn->query("INSERT INTO postslikes (author, permlink, likes, lastUpdatedDate)
+					       VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', '" . date("Y-m-d H:i:s") . "')");
                 }
 
                 die(json_encode(['error' => false, 'message' => 'Successfully Recommended!', 'post_income' => $post_reward]));

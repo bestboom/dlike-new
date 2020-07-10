@@ -31,8 +31,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
     $('#dlike_share').click(function() {
-        if (dlike_username != null) {
-            $('.share_loader').show();
+        if (dlike_username != null) {$('#share_plus').hide();$('.share_loader').show();
             let input_url = $("#url_field").val();
             if (input_url == '') { $("#url_field").css("border-color", "RED");toastr.error('phew... You forgot to enter URL');$('#share_plus').show();$('.share_loader').hide();return false;
             }
@@ -90,8 +89,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
             let parts = hostName.split('.').reverse();
             if (parts != null && parts.length > 1) {
                 domain = parts[1] + '.' + parts[0];
-                if (hostName.toLowerCase().indexOf('.co.uk') != -1 && parts.length > 2) {
-                    domain = parts[2] + '.' + domain;
+                if (hostName.toLowerCase().indexOf('.co.uk') != -1 && parts.length > 2) { domain = parts[2] + '.' + domain;
                 }
             }
         }
