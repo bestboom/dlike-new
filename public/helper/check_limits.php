@@ -9,8 +9,8 @@ if (isset($_POST['action']) && $_POST['action'] =='shares_limit' && isset($_POST
         } else {die(json_encode(['error' => false]));}   
 }
 
-if (isset($_POST['action']) && $_POST['action'] == 'unique_post' && isset($_POST['url']) && $_POST['url'] != '') {
-    $url = $_POST['url'];
+if (isset($_POST['action']) && $_POST['action'] == 'unique_post' && isset($_POST['newurl']) && $_POST['newurl'] != '') {
+    $url = $_POST['newurl'];
 
     $sql_unique_url = $conn->query("SELECT ext_url FROM dlikeposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 300 HOUR"); 
         if ($sql_unique_url->num_rows > 0) {
