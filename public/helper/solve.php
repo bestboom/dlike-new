@@ -24,25 +24,23 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($check_unique_like->num_rows > 0){die(json_encode(['error' => true, 'message' => 'You have already recommended this share!']));} 
 
         $check_max_likes = $conn->query("SELECT * FROM mylikes where username = '$userval' and  like_time > now() - INTERVAL 24 HOUR");
-        if ($check_max_likes->num_rows >= 50){die(json_encode(['error' => true, 'message' => 'You reached maximum daily likes limit']));}
+        if ($check_max_likes->num_rows >= 6){die(json_encode(['error' => true, 'message' => 'You reached maximum daily likes limit']));}
+
+        $check_bot_likes = $conn->query("SELECT * FROM dlike_upvotes where ip_addr = '$thisip' and  curation_time > now() - INTERVAL 24 HOUR");
+        if ($check_max_likes->num_rows >= 8){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
         else {
-            $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time )
-					VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', '".date("Y-m-d H:i:s")."')";
+            $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', '".date("Y-m-d H:i:s")."')";
             if (mysqli_query($conn, $sqlm))
             {
 
-                $check_auth_bal = "SELECT amount FROM dlike_wallet where username = '$author'";
-                $auth_bal_amount = $conn->query($check_auth_bal);
-                $row_auth = $auth_bal_amount->fetch_assoc();
+                $check_auth_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$author'");
+                $row_auth = $check_auth_bal->fetch_assoc();
                 $auth_bal = $row_auth['amount'];
-                $update_auth_wallet = "UPDATE dlike_wallet SET amount = '$auth_bal' + '$author_reward' WHERE username = '$author'";
-                $update_auth_wallet_query = $conn->query($update_auth_wallet);
-                    if ($update_auth_wallet_query === TRUE) { 
+                $update_auth_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$auth_bal' + '$author_reward' WHERE username = '$author'");
+                    if ($update_auth_wallet === TRUE) { 
                         $type = 'a';
-                        $sql_auth = "INSERT INTO dlike_transactions (username, amount, type, reason, trx_time)
-                            VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
-                        $add_auth_trx = $conn->query($sql_auth);
+                        $sql_auth = $conn->query($"INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
                     }
 
 
@@ -50,13 +48,10 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $cur_bal_amount = $conn->query($check_cur_bal);
                 $row_cur = $cur_bal_amount->fetch_assoc();
                 $cur_bal = $row_cur['amount'];
-                $update_cur_wallet = "UPDATE dlike_wallet SET amount = '$cur_bal' + '$curator_reward' WHERE username = '$userval'";
-                $update_cur_wallet_query = $conn->query($update_cur_wallet);
-                    if ($update_cur_wallet_query === TRUE) { 
+                $update_cur_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$cur_bal' + '$curator_reward' WHERE username = '$userval'");
+                    if ($update_cur_wallet === TRUE) { 
                         $type = 'b';
-                        $sql_cur = "INSERT INTO dlike_transactions (username, amount, type, reason, trx_time)
-                            VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')";
-                        $add_cur_trx = $conn->query($sql_cur);
+                        $sql_cur = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
                     }
 
                 $check_refer_by = "SELECT refer_by FROM dlikeaccounts where username = '$author'";
@@ -66,9 +61,8 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 if(empty($referrer) || $referrer == 'dlike') {
 
                 } else {
-                    $check_ref_bal = "SELECT amount FROM dlike_wallet where username = '$referrer'";
-                    $cur_ref_amount = $conn->query($check_ref_bal);
-                    $row_ref = $cur_ref_amount->fetch_assoc();
+                    $check_ref_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$referrer'");
+                    $row_ref = $check_ref_bal->fetch_assoc();
                     $ref_bal = $row_ref['amount'];
                     $update_ref_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$ref_bal' + '$affiliate_reward' WHERE username = '$referrer'");
                         if ($update_ref_wallet === TRUE) { 
@@ -76,16 +70,14 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                             $sql_ref = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
                         }
                 }
-                
 
                 $reward_status = '0';
                 $sql_upvotes = $conn->query("INSERT INTO dlike_upvotes (curator, author, permlink, ip_addr, status, curation_time) VALUES ('".$userval."', '".$author."', '".$permlink."', '".$thisip."', '".$reward_status."', '".date("Y-m-d H:i:s")."')");
 
-                $checkPost = "SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
-                $result_post = $conn->query($checkPost);
-                if ($result_post->num_rows > 0)
+                $checkPost = $conn->query("SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
+                if ($checkPost->num_rows > 0)
                 {
-                    while ($row = $result_post->fetch_assoc())
+                    while ($row = $checkPost->fetch_assoc())
                     {
                         $old_likes = $row['likes'];
                         $updatePost = $conn->query("UPDATE postslikes SET likes = '$old_likes' + 1 WHERE author = '$author' AND permlink = '$permlink'");
@@ -98,15 +90,9 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 die(json_encode(['error' => false, 'message' => 'Successfully Recommended!', 'post_income' => $post_reward]));
             }
         }
-    }
-    else
-	{
-    	die(json_encode(['error' => true, 'message' => 'You must be login with DLIKE username to recomend a share!']));
+    } else { die(json_encode(['error' => true, 'message' => 'You must be login with DLIKE username to recomend a share!']));
 	}
-}
-else
-{
-    die(json_encode(['error' => true, 'message' => 'There is some issue. Please try later!']));
+} else { die(json_encode(['error' => true, 'message' => 'There is some issue. Please try later!']));
 }
 
 ?>
