@@ -88,7 +88,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                                 </span>
                                 <div>
                                     <h4 class="m-0">
-                                        <smallB>oost Posts</small>
+                                        <small>Boost Posts</small>
                                     </h4>
                                     <small class="queue-stats-display text-muted">No posts in the Queue</small>
                                 </div>

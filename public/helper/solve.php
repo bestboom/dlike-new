@@ -27,7 +27,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($check_max_likes->num_rows >= 6){die(json_encode(['error' => true, 'message' => 'You reached maximum daily likes limit']));}
 
         $check_bot_likes = $conn->query("SELECT * FROM dlike_upvotes where ip_addr = '$thisip' and  curation_time > now() - INTERVAL 24 HOUR");
-        if ($check_bot_likes->num_rows >= 8){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
+        if ($check_bot_likes->num_rows >= 30){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
         else {
             $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', '".date("Y-m-d H:i:s")."')";
