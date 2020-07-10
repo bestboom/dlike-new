@@ -47,7 +47,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                 }
 
                 $.ajax({
-                url: '/helper/post/check_limits.php',
+                url: '/helper/check_limits.php',
                 type: 'post',
                 dataType: 'json',
                 data: { action : 'shares_limit',user: dlike_username },
@@ -55,7 +55,7 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                 });
 
                 $.ajax({
-                url: '/helper/post/check_limits.php',
+                url: '/helper/check_limits.php',
                 type: 'post',
                 dataType: 'json',
                 data: { action : 'unique_post',url: url },
