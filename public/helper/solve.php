@@ -17,17 +17,14 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
 
     if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username'])
     {
-
         if ($userval == $author)
-        {
-            die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));
-        }
+        {die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));}
 
-        $verifyPost = "SELECT * FROM mylikes where username = '$userval' and permlink = '$permlink' and author = '$author'";
-        $resultverify = $conn->query($verifyPost);
-        if ($resultverify->num_rows > 0){
-            die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));
-        } else {
+        $check_unique_like = $conn->query("SELECT * FROM mylikes where username = '$userval' and permlink = '$permlink' and author = '$author'");
+        if ($check_unique_like->num_rows > 0){die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));} 
+
+
+        else {
             $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink)
 					VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "')";
             if (mysqli_query($conn, $sqlm))

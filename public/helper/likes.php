@@ -6,6 +6,16 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+$sql = "ALTER TABLE mylikes ADD like_time TIMESTAMP";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to mylikes table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+
+?>
+<!--
 $sqlm = "CREATE TABLE dlike_tags (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 tag VARCHAR(255) NOT NULL,
@@ -20,8 +30,7 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-?>
-<!--
+
 
 
 $sqlm = "CREATE TABLE dlike_upvotes (
