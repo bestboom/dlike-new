@@ -21,8 +21,10 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         {die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));}
 
         $check_unique_like = $conn->query("SELECT * FROM mylikes where username = '$userval' and permlink = '$permlink' and author = '$author'");
-        if ($check_unique_like->num_rows > 0){die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));} 
+        if ($check_unique_like->num_rows > 0){die(json_encode(['error' => true, 'message' => 'You have already recommended this share!']));} 
 
+        $check_max_likes = $conn->query("SELECT * FROM mylikes where username = '$userval' and  like_time > now() - INTERVAL 24 HOUR");
+        if ($check_max_likes->num_rows >= 50){die(json_encode(['error' => true, 'message' => 'You reached maximum daily likes limit']));}
 
         else {
             $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink)
@@ -77,10 +79,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 
 
                 $reward_status = '0';
-                $sql_upvotes = "INSERT INTO dlike_upvotes (curator, author, permlink, ip_addr, status, curation_time)
-                    VALUES ('".$userval."', '".$author."', '".$permlink."', '".$thisip."', '".$reward_status."', '".date("Y-m-d H:i:s")."')";
-                $add_sql_upvotes = $conn->query($sql_upvotes);
-
+                $sql_upvotes = $conn->query("INSERT INTO dlike_upvotes (curator, author, permlink, ip_addr, status, curation_time) VALUES ('".$userval."', '".$author."', '".$permlink."', '".$thisip."', '".$reward_status."', '".date("Y-m-d H:i:s")."')");
 
                 $checkPost = "SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
                 $result_post = $conn->query($checkPost);
