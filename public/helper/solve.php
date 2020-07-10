@@ -27,7 +27,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($check_max_likes->num_rows >= 6){die(json_encode(['error' => true, 'message' => 'You reached maximum daily likes limit']));}
 
         $check_bot_likes = $conn->query("SELECT * FROM dlike_upvotes where ip_addr = '$thisip' and  curation_time > now() - INTERVAL 24 HOUR");
-        if ($check_max_likes->num_rows >= 8){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
+        if ($check_bot_likes->num_rows >= 8){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
         else {
             $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', '".date("Y-m-d H:i:s")."')";
@@ -38,19 +38,16 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $row_auth = $check_auth_bal->fetch_assoc();
                 $auth_bal = $row_auth['amount'];
                 $update_auth_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$auth_bal' + '$author_reward' WHERE username = '$author'");
-                    if ($update_auth_wallet === TRUE) { 
-                        $type = 'a';
-                        $sql_auth = $conn->query($"INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
+                    if ($update_auth_wallet === TRUE) { $type = 'a';
+                        $sql_auth = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
                     }
 
 
-                $check_cur_bal = "SELECT amount FROM dlike_wallet where username = '$userval'";
-                $cur_bal_amount = $conn->query($check_cur_bal);
-                $row_cur = $cur_bal_amount->fetch_assoc();
+                $check_cur_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$userval'");
+                $row_cur = $check_cur_bal->fetch_assoc();
                 $cur_bal = $row_cur['amount'];
                 $update_cur_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$cur_bal' + '$curator_reward' WHERE username = '$userval'");
-                    if ($update_cur_wallet === TRUE) { 
-                        $type = 'b';
+                    if ($update_cur_wallet === TRUE) { $type = 'b';
                         $sql_cur = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
                     }
 

@@ -14,6 +14,7 @@ $my_bal = $row_B["amount"];
 $sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='$dlike_user' and  DATE(trx_time) = CURDATE()");
 $row_I = $sql_I->fetch_assoc();
 $today_income = $row_I["total_income"];
+if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
 ?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
@@ -87,7 +88,7 @@ $today_income = $row_I["total_income"];
                                 </span>
                                 <div>
                                     <h4 class="m-0">
-                                        <small>oost Posts</small>
+                                        <smallB>oost Posts</small>
                                     </h4>
                                     <small class="queue-stats-display text-muted">No posts in the Queue</small>
                                 </div>
