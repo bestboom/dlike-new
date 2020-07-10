@@ -41,11 +41,26 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
             let verifyUrl = getDomain(url);
             let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org"];
             if (isValidURL(url)) {
-                //if (verifyUrl.match(/steemit.com/g)) {
                 if ($.inArray(verifyUrl, restricted_urls) > -1) {
                     toastr.error('phew... Sharing from this url is not allowed');
                     return false;
                 }
+
+                $.ajax({
+                url: '/helper/post/check_limits.php',
+                type: 'post',
+                dataType: 'json',
+                data: { action : 'shares_limit',user: dlike_username },
+                success: function(response) { if (response.error === true) {toastr['error'](response.data); return false;} }
+                )};
+
+                $.ajax({
+                url: '/helper/post/check_limits.php',
+                type: 'post',
+                dataType: 'json',
+                data: { action : 'unique_post',url: url },
+                success: function(response) { if (response.error === true) {toastr['error'](response.data); return false;} }
+                )};
                 $('#share_plus').hide();
                 $('.share_loader').show();
                 fetch_data("helper/main.php", url);

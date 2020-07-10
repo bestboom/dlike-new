@@ -23,7 +23,6 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 	if ($title !='') {
 
 		$addposts = $conn->query("INSERT INTO dlikeposts (`username`,`title`, `permlink`, `ext_url`, `img_url`, `ctegory`, `description`, `tags`, `created_at`) VALUES ('".$author."','".$title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."', '".$body."', '".$tags."','".date("Y-m-d H:i:s")."')");
-		//$addpostsquery = $conn->query($addposts);
 
 		$posts_tags = array_unique(explode(" ",$tags));
 		if(count($posts_tags)>0)  {
@@ -32,7 +31,6 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 			}
 		}
 
-			//send success message
 		die(json_encode([
 	    	'error' => false,
     		'redirect' => $redirect_url, 
