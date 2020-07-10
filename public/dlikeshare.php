@@ -51,27 +51,29 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
                 type: 'post',
                 dataType: 'json',
                 data: { action : 'shares_limit',user: dlike_username },
-                success: function(data)  { 
-                    try { var response = JSON.parse(data) 
-                        if (response.error == true) { toastr.error(response.message); return false;}
-                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                }
+                    success: function(data)  { 
+                        try { var response = JSON.parse(data) 
+                            if (response.error == true) { toastr.error(response.message); return false;}
+                            else {
+                                $.ajax({
+                                    url: '/helper/check_limits.php',
+                                    type: 'post',
+                                    dataType: 'json',
+                                    data: { action : 'unique_post',url: url },
+                                    success: function(data)  { 
+                                        try { var response = JSON.parse(data) 
+                                            if (response.error == true) { toastr.error(response.message); return false;} else {
+                                                $('#share_plus').hide();
+                                                $('.share_loader').show();
+                                                fetch_data("helper/main.php", url);
+                                            }
+                                        } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+                                    }
+                                 });
+                            }
+                        } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+                    }
                 });
-
-                $.ajax({
-                url: '/helper/check_limits.php',
-                type: 'post',
-                dataType: 'json',
-                data: { action : 'unique_post',url: url },
-                success: function(data)  { 
-                    try { var response = JSON.parse(data) 
-                        if (response.error == true) { toastr.error(response.message); return false;}
-                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                }
-                });
-                $('#share_plus').hide();
-                $('.share_loader').show();
-                fetch_data("helper/main.php", url);
             } else {
                 toastr.error('phew... URL is not Valid');
             }

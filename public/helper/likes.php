@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
-$sql = "ALTER TABLE mylikes ADD like_time TIMESTAMP";
+$sql = "ALTER TABLE mylikes ADD like_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP";
 if ($conn->query($sql) === TRUE) {
     echo "new field added to mylikes table";
 } else {
