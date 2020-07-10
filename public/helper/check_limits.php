@@ -26,7 +26,7 @@ if (isset($_POST['action']) && $_POST['action'] =='shares_limit' && isset($_POST
     echo json_encode($return);die;     
 }
 
-if (isset($_POST['action']) && $_POST['action'] == 'shares_limit' && isset($_POST['url']) && $_POST['url'] != '') {
+if (isset($_POST['action']) && $_POST['action'] == 'unique_post' && isset($_POST['url']) && $_POST['url'] != '') {
     $url = $_POST['url'];
 
     $sql_unique_url = $conn->query("SELECT ext_url FROM dlikeposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 300 HOUR"); 
