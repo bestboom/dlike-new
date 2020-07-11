@@ -75,11 +75,11 @@ if ($sql_T && $sql_T->num_rows > 0)
                 data: datat,
                 success: function(data) {
                     try { var response = JSON.parse(data)
-                        if (response.done == true) {$(this).removeClass('fas fa-spinner fa-spin like_loader');
+                        if (response.done == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
                             $('#upvotefail').modal('show');return false;
-                        } else if (response.error == true) {$(this).removeClass('fas fa-spinner fa-spin like_loader');
+                        } else if (response.error == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
                             toastr.error(response.message);return false;
-                        } else {$(this).removeClass('fas fa-spinner fa-spin like_loader');
+                        } else {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
                             toastr.success(response.message);
                             var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
                             var post_income = response.post_income;
