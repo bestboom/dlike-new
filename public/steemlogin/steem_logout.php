@@ -10,11 +10,11 @@
 <script>
 $(document).ready(function(){
   api.revokeToken(function(err_log, result_log) {
-    if (result_log && result_log.success) {
+    //if (result_log && result_log.success) {
       $.removeCookie('username', { path: '/' });
       $.removeCookie('access_token', { path: '/' });
       document.location.href = '/';
-    }
+    //}
   });
 });
 </script>
