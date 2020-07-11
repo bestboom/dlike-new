@@ -6,6 +6,11 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+
+?>
+<!--
+
 $sqlw = "DELETE FROM mylikes";
 
 if ($conn->query($sqlw) === TRUE) {
@@ -14,9 +19,6 @@ if ($conn->query($sqlw) === TRUE) {
     echo "Error deleting table: " . $conn->error;
 }
 
-
-?>
-<!--
 
 $sql = "ALTER TABLE mylikes ADD like_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP";
 if ($conn->query($sql) === TRUE) {

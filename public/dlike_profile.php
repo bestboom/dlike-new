@@ -5,6 +5,8 @@ if (isset($_GET['user']))
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include('template/header5.php');
 //check pro status
+
+
     $sql_T = "SELECT * FROM prousers where username='$prof_user'";
     $result_T = $conn->query($sql_T);
     if ($result_T && $result_T->num_rows > 0) 
@@ -13,6 +15,15 @@ include('template/header5.php');
     } else {$profile_user = 'Non-PRO';}
 ?>
 </div><!-- sub-header -->
+<?
+    $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$prof_user'");
+    if ($sql_U && $sql_U->num_rows > 0) 
+    {
+    	$dlike_user = $prof_user;
+    } else {$dlike_user = 'non';}
+
+    echo $dlike_user;
+?>
 	<div id="profile_miss" style="display: none;">
 		<div class="container">
 			<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	

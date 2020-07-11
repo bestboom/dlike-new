@@ -65,8 +65,6 @@ if ($sql_T && $sql_T->num_rows > 0)
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
             $(this).addClass('fas fa-spinner fa-spin like_loader');
-
-            //$('.like_icon',this).hide();$('.like_loader',this).show();
             var update = '1';
             var datat = {ath: authorname, plink: mypermlink};
             $.ajax({
@@ -75,18 +73,14 @@ if ($sql_T && $sql_T->num_rows > 0)
                 data: datat,
                 success: function(data) {
                     try { var response = JSON.parse(data)
-                        if (response.done == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
-                            $('#upvotefail').modal('show');return false;
-                        } else if (response.error == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
-                            toastr.error(response.message);return false;
+                        if (response.done == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');$('#upvotefail').modal('show');return false;
+                        } else if (response.error == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');toastr.error(response.message);return false;
                         } else {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
                             toastr.success(response.message);
                             var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
                             var post_income = response.post_income;
                             var newlikes = parseInt(getpostlikes) + parseInt(update);
-                            console.log(newlikes);
                             var updatespostincome = newlikes * post_income;
-                            console.log(updatespostincome);
                             $('.post_likes' + mypermlink + authorname).html(newlikes);
                             $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
                         }
