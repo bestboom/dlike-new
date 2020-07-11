@@ -51,21 +51,21 @@ if ($sql_T && $sql_T->num_rows > 0)
     <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
     <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
     <div class="post-comments bottom_block">
-        <div><i class="fas fa-spinner fa-spin like_loader" style="display:none;"></i><span class="like_icon"><img src="./images/post/dlike-hover.png" style="background: #111;border-radius: 50%;" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"></span> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+        <div><i class="fas fa-spinner fa-spin like_loader" style="display:none;"></i><span class="like_icon"><img src="./images/like-icon.png" style="background: #111;border-radius: 50%;" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"></span> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div>
 </article></div>
 <?php } } ?> 
 </div></div></div>
-<div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"><?php include('template/modals/recomend.php'); ?></div></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
 
     $('.hov_vote').click(function() {
-        if (dlike_username != null) {$('.like_icon').hide();$('.like_loader').show();
+        if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
+            $('.like_icon').hide();$('.like_loader').show();
             var update = '1';
             var datat = {ath: authorname, plink: mypermlink};
             $.ajax({
