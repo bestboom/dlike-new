@@ -48,7 +48,7 @@ if ($sql_T && $sql_T->num_rows > 0)
     </div></div>
     <div class="post-thumb img-fluid"><a href="/post/"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
     <div class="post-contnet-wrap post_bottom">
-    <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>';</h4>
+    <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
     <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
     <div class="post-comments bottom_block">
         <div><i class="fas fa-spinner fa-spin like_loader" style="display:none;"></i><span class="like_icon"><img src="./images/post/dlike-hover.png" style="background: #111;border-radius: 50%;" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"></span> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
