@@ -51,7 +51,7 @@ if ($sql_T && $sql_T->num_rows > 0)
     <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
     <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
     <div class="post-comments bottom_block">
-        <div><img src="./images/dlike_icon.png" style="background-color: #111;border-radius: 50%;" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+        <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div>
 </article></div>
@@ -75,11 +75,11 @@ if ($sql_T && $sql_T->num_rows > 0)
                 data: datat,
                 success: function(data) {
                     try { var response = JSON.parse(data)
-                        if (response.done == true) {$('.like_icon').show();$('.like_loader').hide();
+                        if (response.done == true) {$(this).removeClass('fas fa-spinner fa-spin like_loader');
                             $('#upvotefail').modal('show');return false;
-                        } else if (response.error == true) {$('.like_icon').show();$('.like_loader').hide();
+                        } else if (response.error == true) {$(this).removeClass('fas fa-spinner fa-spin like_loader');
                             toastr.error(response.message);return false;
-                        } else {$('.like_icon').show();$('.like_loader').hide();
+                        } else {$(this).removeClass('fas fa-spinner fa-spin like_loader');
                             toastr.success(response.message);
                             var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
                             var post_income = response.post_income;
