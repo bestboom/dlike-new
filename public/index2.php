@@ -67,7 +67,7 @@ if ($sql_T && $sql_T->num_rows > 0)
             var authorname = $(this).attr("data-author");
             var likeIcon = $(this).find(".like_icon");
             var likeLoader = $(this).find(".like_loader");
-            like_loader.show();
+            likeLoader.show();
 
             //$('.like_icon',this).hide();$('.like_loader',this).show();
             var update = '1';
