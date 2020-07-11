@@ -14,7 +14,6 @@
 <div class="latest-post-section"><div class="container"><div class="row">
 <?php
 $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
-//$result_T = $conn->query($sql_T);
 
 if ($sql_T && $sql_T->num_rows > 0)
 {
@@ -23,6 +22,7 @@ if ($sql_T && $sql_T->num_rows > 0)
         $imgUrl = $row_T["img_url"];
         $author = $row_T["username"];
         $post_time = strtotime($row_T["created_at"]);
+        $title = $row_T["title"];
         $post_tags = $row_T["tags"];
         $permlink = $row_T["permlink"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
@@ -46,12 +46,12 @@ if ($sql_T && $sql_T->num_rows > 0)
     <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
     <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
     </div></div>
-    <div class="post-thumb img-fluid"><a href="/post/@"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
+    <div class="post-thumb img-fluid"><a href="/post/"><?php echo '<img src=' . $imgUrl . ' class="card-img-top" />'; ?></a></div>
     <div class="post-contnet-wrap post_bottom">
-    <h4 class="post-title"><a href="/post/@"><?php echo $row_T["title"]; ?></a></h4>
+    <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>';</h4>
     <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
     <div class="post-comments bottom_block">
-        <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+        <div><i class="fas fa-spinner fa-spin like_loader" style="display:none;"></i><span class="like_icon"><img src="./images/post/dlike-hover.png" style="background: #111;border-radius: 50%;" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"></span> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div>
 </article></div>
@@ -63,7 +63,7 @@ if ($sql_T && $sql_T->num_rows > 0)
 <script type="text/javascript">
 
     $('.hov_vote').click(function() {
-        if (dlike_username != null) {
+        if (dlike_username != null) {$('.like_icon').hide();$('.like_loader').show();
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
             var update = '1';
@@ -74,18 +74,14 @@ if ($sql_T && $sql_T->num_rows > 0)
                 data: datat,
                 success: function(data) {
                     try { var response = JSON.parse(data)
-                        if (response.done == true) {
-                            $('#upvotefail').modal('show');
-                            return false;
-                        } else if (response.error == true)  { 
-                            toastr.error(response.message);
-                            return false;
-                        } else {
+                        if (response.done == true) {$('.like_icon').show();$('.like_loader').hide();
+                            $('#upvotefail').modal('show');return false;
+                        } else if (response.error == true) {$('.like_icon').show();$('.like_loader').hide();
+                            toastr.error(response.message);return false;
+                        } else {$('.like_icon').show();$('.like_loader').hide();
                             toastr.success(response.message);
                             var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
-                            //console.log(getpostlikes);
                             var post_income = response.post_income;
-                            console.log(post_income);
                             var newlikes = parseInt(getpostlikes) + parseInt(update);
                             console.log(newlikes);
                             var updatespostincome = newlikes * post_income;
