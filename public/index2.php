@@ -65,9 +65,9 @@ if ($sql_T && $sql_T->num_rows > 0)
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
-            var likeIcon = $(this).find(".like_icon");
-            var likeLoader = $(this).find(".like_loader");
-            likeLoader.show();
+            //var likeIcon = $(this).find(".like_icon").hide();
+            var likeLoader = $(this).find(".like_loader").show();
+            //likeLoader.show();
 
             //$('.like_icon',this).hide();$('.like_loader',this).show();
             var update = '1';
