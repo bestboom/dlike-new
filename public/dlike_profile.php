@@ -35,7 +35,7 @@ include('template/header5.php');
 			            <div class="user-connected-form-block" style="background: #1b1e63;">
 			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
 			                <div class="share-block">
-			                	<p>It seems user does nto exist on STEEM blockchian!</p>
+			                	<p><?php echo $dlike_user; ?></p>
 			            	</div>
 			            </div>
 			        </div>
