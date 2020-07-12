@@ -17,4 +17,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'unique_post' && isset($_POST
             die(json_encode(['error' => true, 'message' => 'URL already shared. Can not be shared again!']));
         } else {die(json_encode(['error' => false]));}  
 }
+
+if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['name_profile']) && $_POST['name_profile'] != '') {
+    $prof_name = $_POST['name_profile'];
+
+            die(json_encode(['error' => false, 'message' => $prof_name]));
+
+}
 ?>

@@ -211,13 +211,12 @@ $('.prof_edit_btn').click(function() {
     let p_cover_img = $('#cover_img').val();
     let p_img = $('#profile_img').val();
     let p_name = $('#profile_name').val();
-    var datap = {'profname': profname};
+    var datap = { action : 'profile',name_profile: profname };
     $.ajax({
-        type: "POST",
-        url: "/helper/profile_update.php",
+        url: '/helper/check_limits.php',
+        type: 'post',
         //data: {profname:profname, p_about:p_about, p_website:p_website, p_location:p_location, p_cover_img:p_cover_img, p_img:p_img, p_name:p_name},
         data: datap,
-        dataType: 'json',
         success: function(data) {
                 try { var response = JSON.parse(data)
             	console.log(response)
