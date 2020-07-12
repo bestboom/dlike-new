@@ -12,12 +12,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['na
 	$p_location = trim(mysqli_real_escape_string($_POST["p_location"]));
 	$p_website = trim(mysqli_real_escape_string($_POST["p_website"]));
 	$p_about = trim(mysqli_real_escape_string($_POST["p_about"]));
-	$profname = trim(mysqli_real_escape_string($_POST["name_profile"]));
+	$profname = trim($_POST["name_profile"]);
 
 	$dlike_username = $_COOKIE['dlike_username'];
 
 	if($dlike_username != $profname){
-        $errors = "Some issue in profile updating. Please Try later";
+        $errors = "aq".$dlike_username."Some issue in profile updating. Please Try later".$profname;
     }
 
     if (empty($errors)) {
