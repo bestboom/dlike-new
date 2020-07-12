@@ -1,6 +1,6 @@
 <?php include('template/header7.php'); 
 if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
-    die('<script>window.location.replace("https://dlike.io/share","_self")</script>');
+    die('<script>window.location.replace("https://dlike.io/","_self")</script>');
 } else {
     $dlike_user = $_COOKIE['dlike_username'];
 }

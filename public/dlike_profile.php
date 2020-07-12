@@ -41,16 +41,14 @@ include('template/header7.php');
 			<div class="container p-data">
 				<div class="row p_data_inner">
 					<div>
-						<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">
-							<span class="repu rounded-circle"></span>'; ?>
+						<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">'; ?>
 						</span>
-						<span class="p_data_names">
-							<span class="name"></span>
+						<span class="p_data_names"><span class="name"></span>
 							<br>
 							<span class="p_name">@<?php echo $dlikeuser; ?></span>
 						</span>
 					</div>
-					<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit">Edit Profile</button>';}else{} ?></div>
+					<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit btn-follow">Edit Profile</button>';}else{} ?></div>
 				</div>
 				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about"></span></div>'; } ?>
 				<div class="row p_data_mid">
