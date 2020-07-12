@@ -112,7 +112,7 @@ include('template/header7.php');
 													<div class="input-group-prepend">
 														<div class="input-group-text mb-deck"> Name</div>
 													</div>
-													<input type="text" class="form-control" key="name" name="profile_name" id="profiles_name" value="" />
+													<input type="text" class="form-control" key="name" name="profile_name" id="profile_name" value="" />
 												</div>
 											</div>
 										</div>
@@ -124,7 +124,7 @@ include('template/header7.php');
 													<div class="input-group-prepend">
 														<div class="input-group-text mb-deck"> Profile picture url</div>
 													</div>
-													<input type="text" class="form-control" key="profile_image" name="profile_pic" id="profile_pic" value="<?php echo $user_pro_img; ?>" />
+													<input type="text" class="form-control" key="profile_image" name="profile_img" id="profile_img" placeholder="Enter url of image"> value="<?php echo $user_pro_img; ?>" />
 												</div>
 											</div>
 										</div>
@@ -136,7 +136,7 @@ include('template/header7.php');
 													<div class="input-group-prepend">
 														<div class="input-group-text mb-deck"> Cover image url</div>
 													</div>
-													<input type="text" class="form-control" key="cover_image" name="cover_img" id="cover_img" value="">
+													<input type="text" class="form-control" key="cover_image" name="cover_img" id="cover_img" value="" placeholder="Enter url for image">
 												</div>
 											</div>
 										</div>
@@ -177,7 +177,7 @@ include('template/header7.php');
 											</div>
 										</div>
 									</div>			
-									<center><button type="button" class="btn btn-default p_edit_btn">UPDATE</button></center>
+									<center><button type="button" class="btn btn-default prof_edit_btn">UPDATE</button></center>
 								</form>
 							</div>
 			        </div>
@@ -200,6 +200,33 @@ $(document).ready(function(){
 	let profname = '<?php echo $_GET['user'];?>';
 
 
+});
+
+$('.prof_edit_btn').click(function(e) {
+	e.preventDefault();
+    $(".prof_edit_btn").attr("disabled", true);
+    let profname = '<?php echo $_GET['user'];?>';
+    let p_about = $('#profile_about').val();
+    let p_website = $('#profile_website').val();
+    let p_location = $('#profile_location').val();
+    let p_cover_img = $('#cover_img').val();
+    let p_img = $('#profile_img').val();
+    let p_name = $('#profile_name').val();
+    $.ajax({
+        type: "POST",
+        url: "/helper/profile_update.php",
+        data: {profname:profname, p_about:p_about, p_website:p_website, p_location:p_location, p_cover_img:p_cover_img, p_img:p_img, p_name:p_name},
+        success: function(data) {
+            try {var response = JSON.parse(data)
+                if (response.error == true) {
+                    toastr['error'](response.message);
+                    $(".prof_edit_btn").attr("disabled", false);
+                    return false;
+                } else {toastr['success'](response.message);
+                }
+            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+        }
+    });
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){

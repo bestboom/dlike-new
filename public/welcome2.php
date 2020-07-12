@@ -536,13 +536,9 @@ $('.email_login_btn').click(function() {
                 } else {
                     toastr['success'](response.message);
                     $.cookie("dlike_username", response.dlikeuser, { expires: 7, path: '/' });
-                    setTimeout(function(){
-                        window.location.href = response.redirect;
-                    }, 1000);
+                    setTimeout(function(){window.location.href = response.redirect;}, 700);
                 }
-            } catch (err) {
-                toastr.error('Sorry. Server response is malformed');
-            }
+            } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
     });
 });
@@ -554,13 +550,10 @@ $('.email_reset_pass_btn').click(function() {
         toastr.error('phew... Email should not be empty');
         return false;
     }
-    var data_reset = {
-        reset_email: reset_email_id
-    };
     $.ajax({
         type: "POST",
         url: reset_url,
-        data: data_reset,
+        data: { reset_email: reset_email_id },
         success: function(data) {
             try {
                 var response = JSON.parse(data)
@@ -572,9 +565,7 @@ $('.email_reset_pass_btn').click(function() {
                     $(".email_reset_pass_btn").html('Email Sent');
                     $(".email_reset_pass_btn").prop('disabled',true);
                 }
-            } catch (err) {
-                toastr.error('Sorry. Server response is malformed');
-            }
+            } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
     });
 });
@@ -607,17 +598,15 @@ $('.email_verify_pin_btn').click(function() {
         url: email_verify_url,
         data: data_verify,
         success: function(data) {
-            try {
-                var response = JSON.parse(data)
+            try {var response = JSON.parse(data)
                 if (response.error == true) {
                     toastr['error'](response.message);
                     $('.verify_pin_loader').hide();
                     $('.verify_email_txt').show();
                     $(".email_verify_pin_btn").attr("disabled", false);
                     return false;
-                } else {
-                    toastr['success'](response.message);
-                    setTimeout(function(){window.location.href = response.redirect;}, 1000);
+                } else {toastr['success'](response.message);
+                    setTimeout(function(){window.location.href = response.redirect;}, 700);
                 }
             } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
