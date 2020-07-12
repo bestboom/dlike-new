@@ -5,7 +5,7 @@
 
 	require '../includes/config.php';
 
-if (isset($_POST['profname'])  && $_POST['profname'] != '') { 
+//if (isset($_POST['profname'])  && $_POST['profname'] != '') { 
 
 	$p_name = trim(mysqli_real_escape_string($_POST["p_name"]));
 	$p_img = trim(mysqli_real_escape_string($_POST["p_img"]));
@@ -29,6 +29,6 @@ if (isset($_POST['profname'])  && $_POST['profname'] != '') {
 			    die(json_encode(['error' => true,'message' => 'Issue in updating. Please try later'])); 
 			}
     } else { die(json_encode(['error' => true,'message' => $errors]));}
-} else {die('Some error');}
+//} else {die('Some error');}
 
 ?>
