@@ -205,14 +205,12 @@ $(document).ready(function(){
 $('.prof_edit_btn').click(function() {
     $(".prof_edit_btn").attr("disabled", true);
     let profname = '<?php echo $_GET['user'];?>';
-    console.log(profname);
     let p_about = $('#profile_about').val();
     let p_website = $('#profile_website').val();
     let p_location = $('#profile_location').val();
     let p_cover_img = $('#cover_img').val();
     let p_img = $('#profile_img').val();
     let p_name = $('#profile_name').val();
-    console.log(p_name);
     $.ajax({
         type: "POST",
         url: "helper/profile_update.php",
@@ -221,11 +219,14 @@ $('.prof_edit_btn').click(function() {
             try {var response = JSON.parse(data)
             	console.log(response)
                 if (response.error == true) {
-                    toastr['error'](response.message);
-                    $(".prof_edit_btn").attr("disabled", false);
-                    return false;
+                    toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
                 } else {toastr['success'](response.message);}
-            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+            } catch (err) {toastr.error('Sorry. Server response is malformed');},
+                error: function(xhr, textStatus, error) {
+                    console.log(xhr.statusText);
+                    console.log(textStatus);
+                    console.log(error);
+                }
         }
     });
 });
