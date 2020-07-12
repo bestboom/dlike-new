@@ -221,12 +221,12 @@ $('.prof_edit_btn').click(function() {
                 if (response.error == true) {
                     toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
                 } else {toastr['success'](response.message);}
-            } catch (err) {toastr.error('Sorry. Server response is malformed');},
-                error: function(xhr, textStatus, error) {
-                    console.log(xhr.statusText);
-                    console.log(textStatus);
-                    console.log(error);
-                }
+            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+        },
+        error: function(xhr, textStatus, error) {
+            console.log(xhr.statusText);
+            console.log(textStatus);
+            console.log(error);
         }
     });
 });
