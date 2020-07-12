@@ -23,10 +23,10 @@ if (isset($_POST['profname'])  && $_POST['profname'] != '') {
 
     if (empty($errors)) {
 		$update_p = $conn->query("UPDATE dlikeaccounts SET full_name = '$p_name', profile_pic = '$p_img', profile_banner = '$p_cover_img', location = '$p_location', website = '$p_website', about = '$p_about' WHERE username = '$dlike_username'");
-			if ($update_p === TRUE) {
-	    		die(json_encode(['error' => false,'message' => 'Profile updated successfully!']));
+			if ($update_p) {
+	    		die(json_encode(['error' => false, 'message' => 'Profile updated successfully!']));
 			} else {
-			    die(json_encode(['error' => true,'message' => 'Issue in updating. Please try later'])); 
+			    die(json_encode(['error' => true, 'message' => 'Issue in updating. Please try later'])); 
 			}
     } else { die(json_encode(['error' => true,'message' => $errors]));}
 } else {die('Some error');}
