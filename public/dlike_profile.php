@@ -112,7 +112,7 @@ include('template/header7.php');
 													<div class="input-group-prepend">
 														<div class="input-group-text mb-deck"> Name</div>
 													</div>
-													<input type="text" class="form-control" key="name" name="profile_name" id="profile_name" value="" />
+													<input type="text" class="form-control" name="profile_name" id="profile_name" value="" />
 												</div>
 											</div>
 										</div>
@@ -124,7 +124,7 @@ include('template/header7.php');
 													<div class="input-group-prepend">
 														<div class="input-group-text mb-deck"> Profile picture url</div>
 													</div>
-													<input type="text" class="form-control" key="profile_image" name="profile_img" id="profile_img" placeholder="Enter url of image" value="<?php echo $user_pro_img; ?>" />
+													<input type="text" class="form-control" name="profile_img" id="profile_img" placeholder="Enter url of image" value="<?php echo $user_pro_img; ?>" />
 												</div>
 											</div>
 										</div>

@@ -6,8 +6,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['na
 
 
 
-	$p_name = trim(mysqli_real_escape_string($_POST["acc_name"]));
-	$p_img = trim(mysqli_real_escape_string($_POST["acc_img"]));
+	$p_name = trim($_POST["acc_name"]);
+	$p_img = trim($_POST["acc_img"]);
 	$p_cover_img = trim(mysqli_real_escape_string($_POST["acc_cover_img"]));
 	$p_location = trim(mysqli_real_escape_string($_POST["acc_location"]));
 	$p_website = trim(mysqli_real_escape_string($_POST["acc_website"]));
