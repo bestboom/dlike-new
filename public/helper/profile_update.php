@@ -1,13 +1,3 @@
-<!--<?php 
-//if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['name_profile']) && $_POST['name_profile'] != '') {
-    //$prof_name = $_POST['name_profile'];
-
-           // die(json_encode(['error' => false, 'message' => 'how this now?']));
-
-}
-
-?>
--->
 <?php
 
 require '../includes/config.php';
@@ -39,6 +29,4 @@ if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['na
 			}
     } else { die(json_encode(['error' => true,'message' => $errors]));}
 } 
-//else {die('Some error');}
-
 ?>
