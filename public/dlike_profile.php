@@ -3,49 +3,35 @@ if (isset($_GET['user']))
 {
 	$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-include('template/header5.php');
-//check pro status
-
-
-    $sql_T = "SELECT * FROM prousers where username='$prof_user'";
-    $result_T = $conn->query($sql_T);
-    if ($result_T && $result_T->num_rows > 0) 
-    {
-    	$profile_user = 'PRO';
-    } else {$profile_user = 'Non-PRO';}
-?>
-</div><!-- sub-header -->
-<?
+include('template/header7.php');
     $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$prof_user'");
     if ($sql_U && $sql_U->num_rows > 0) 
     {
     	$row_U = $sql_U->fetch_assoc();
         $dlikeuser = $row_U['username'];
+        $account_created = strtotime($row_U['created_time']);
     	$dlike_user = $dlikeuser;
-    } else {$dlike_user = 'non';}
-
+    } else {$dlike_user = 'none';}
     echo $dlike_user;
 ?>
-
+</div><!-- sub-header -->
+<?php if($dlike_user = 'none') { ?>
 	<div id="profile_miss" style="display: none;">
 		<div class="container">
 			<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
 			    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
 			        <div class="modal-body">
-			            <div class="share-block">
-			                <p style="font-size: 3rem;">ooops!</p>
-			            </div>
+			            <div class="share-block"><p style="font-size: 3rem;">ooops!</p></div>
 			            <div class="user-connected-form-block" style="background: #1b1e63;">
 			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
-			                <div class="share-block">
-			                	<p><?php echo $dlike_user; ?></p>
-			            	</div>
+			                <div class="share-block"><p>It seems thsi dlike user does not exist!</p></div>
 			            </div>
 			        </div>
 			    </div>
 			</div>
 		</div>
 	</div> 
+<? } else {?>
 	<div id="profile_page">
 		<div id="p_cover" class="img-fluid">
 		</div>
@@ -60,10 +46,7 @@ include('template/header5.php');
 						<span class="p_data_names">
 							<span class="name"></span>
 							<br>
-							<span class="p_name"></span>
-							<?php if($profile_user== "PRO")
-								{ echo '<span><i class="fas fa-check-circle p_pro" title="PRO User"></i></span>'; }
-							?>
+							<span class="p_name"><?php echo $dlikeuser; ?></span>
 						</span>
 					</div>
 					<div>
@@ -76,11 +59,7 @@ include('template/header5.php');
 					<span class="p_about"></span>
 				</div>
 				<div class="row p_data_mid">
-					<span class="followers"></span>
-					<span class="following"></span>
-					<span class="p_joined p_data_pad"></span>
-				</div>
-				<div class="row p_data_bot">
+					<span class="p_joined"><?php echo date('m/d/Y', $account_created); ?></span>
 					<span class="p_location"></span>
 					<span class="web_site p_data_pad"></span>
 				</div>
@@ -156,21 +135,13 @@ include('template/header5.php');
 			</div>				        
 	    </div>    
 	</div>
-<?php include('template/footer.php'); ?> 
+<? } ?>
+<?php include('template/dlike_footer.php'); ?> 
 <script>
 	$(document).ready(function(){
 		$('#loadings').delay(6000).fadeOut('slow');
 		let profname = '<?php echo $_GET['user'];?>';
 
-	//chexk if user exist
-	let Client = new dsteem.Client('https://api.steemit.com');
-	Client.database.call('get_accounts', [[profname]]).then(function (result) {
-		if (result.length<=0) {
-			$('#profile_page').hide();
-			$('#profile_miss').show();
-			return false;
-		} else {
-	//
 
 //profile details
 	$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
@@ -180,8 +151,8 @@ include('template/header5.php');
 	  	let profile_created = result["0"].created;
         let profile_name = result["0"].name;
         let acc_created = moment(profile_created).format('MM-YYYY');
-        $('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
-        $('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name);
+        //$('.p_joined').html('<i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined ' + acc_created);
+        //$('.p_name').html('<span style="font-weight:normal;padding-right:1px;">&#64;</span>' + profile_name);
         let reputation = steem.formatter.reputation(result["0"].reputation);
         $('.repu').html(reputation);
 
@@ -299,17 +270,9 @@ include('template/header5.php');
     	});
 	});
 // check if user following
-	if(username == profname) {
+	if(dlike_username == profname) {
 		$('.foll').html('Edit');
-	} else {
-	    isFollowing = username;
-	    steem.api.getFollowers(profname, username, "blog", 10, function(err, result) {
-	    
-	        let isFollow = (result.filter(followers => followers.follower == isFollowing));
-	        if(isFollow.length > 0) {isFollow = 'Following'} else {isFollow = 'Follow'}
-	        $('.foll').html(isFollow);
-	    	//console.log(isFollow)
-		});
+	} else {$('.foll').html();
 	};
 // post details		
 		let $tag, $limit, content = "#profposts";

@@ -116,9 +116,9 @@ $('.dlike_share_post').click(function(clickEvent) {
         //var description = $('.data-desc').html();
         var description = $('textarea#post_desc').val();
         console.log(description);
-        var description = $.trim(description).split(' ');
+        var post_description = $.trim(description).split(' ');
 
-        if (description.length < 5) {
+        if (post_description.length < 5) {
             $('.data-desc').css("border-color", "RED");
             toastr.error('Please add description of link (max 100 words)');
             return false;
