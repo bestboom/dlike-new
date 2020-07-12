@@ -217,24 +217,23 @@ $('.prof_edit_btn').click(function() {
         url: "/helper/profile_update.php",
         //data: {profname:profname, p_about:p_about, p_website:p_website, p_location:p_location, p_cover_img:p_cover_img, p_img:p_img, p_name:p_name},
         data: datap,
+        dataType: 'json',
         success: function(data) {
                 try { var response = JSON.parse(data)
             	console.log(response)
                 if (response.error == true) {
                     toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
                 } else {toastr['success'](response.message);}
-            } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err);console.warn(xhr.responseText);}
+            } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err);}
         },
-        error: function(xhr, textStatus, error) {
-            console.log(xhr.statusText);
-            console.log(textStatus);
-            console.log(error);
-        }
+        error: function(jqXHR, textStatus, errorThrown) {
+   		console.log(textStatus, errorThrown);
     });
 });
-	$('.btn_edit').click(function(e) {	
-	    e.preventDefault();
-	    $("#profile_edit").modal("show");
-	});
+
+$('.btn_edit').click(function(e) {	
+    e.preventDefault();
+    $("#profile_edit").modal("show");
+});
 
 </script>
