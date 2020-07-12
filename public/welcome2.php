@@ -500,7 +500,6 @@ $('.email_signup_btn').click(function() {
             }
         }
     });
-    //toastr.success('Success now submit');
 });
 
 $('.email_login_btn').click(function() {
@@ -517,21 +516,14 @@ $('.email_login_btn').click(function() {
         $(".email_login_btn").attr("disabled", false);
         return false;
     }
-    if (login_pass == "") {
-        toastr.error('phew... Password should not be empty');
-        $('.login_loader').hide();
-        $('#email_login_txt').show();
-        $(".email_login_btn").attr("disabled", false);
+    if (login_pass == "") {toastr.error('phew... Password should not be empty');
+        $('.login_loader').hide();$('#email_login_txt').show();$(".email_login_btn").attr("disabled", false);
         return false;
     }
-    var data_login = {
-        login_username: login_user_id,
-        login_pass: login_pass
-    };
     $.ajax({
         type: "POST",
         url: login_url,
-        data: data_login,
+        data: { login_username: login_user_id,login_pass: login_pass },
         success: function(data) {
             try {
                 var response = JSON.parse(data)
@@ -588,14 +580,10 @@ $('.email_reset_pass_btn').click(function() {
 });
 
 //pin verify
-var inputemailpin = document.querySelector("#email_pin_code");
+let inputemailpin = document.querySelector("#email_pin_code");
 inputemailpin.addEventListener('keyup', function(){
-    if(inputemailpin.value.length == 6) {
-        $(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',false);
-    }
-    if(inputemailpin.value.length < 6 || inputemailpin.value.length > 6) {
-        $(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',true);
-    }
+    if(inputemailpin.value.length == 6) {$(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',false);}
+    if(inputemailpin.value.length < 6 || inputemailpin.value.length > 6) {$(".signup-signup-email-verify .email_verify_pin_btn").prop('disabled',true);}
 });
 
 $('.email_verify_pin_btn').click(function() {
@@ -613,10 +601,7 @@ $('.email_verify_pin_btn').click(function() {
         $(".email_verify_pin_btn").attr("disabled", false);
         return false;
     }
-    var data_verify = {
-        email_pin_code: email_pin_code,
-        user_email: user_email
-    };
+    var data_verify = { email_pin_code: email_pin_code, user_email: user_email};
     $.ajax({
         type: "POST",
         url: email_verify_url,
@@ -632,13 +617,9 @@ $('.email_verify_pin_btn').click(function() {
                     return false;
                 } else {
                     toastr['success'](response.message);
-                    setTimeout(function(){
-                        window.location.href = response.redirect;
-                    }, 1000);
+                    setTimeout(function(){window.location.href = response.redirect;}, 1000);
                 }
-            } catch (err) {
-                toastr.error('Sorry. Server response is malformed');
-            }
+            } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
     });
 });
