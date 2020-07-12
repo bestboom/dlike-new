@@ -211,11 +211,12 @@ $('.prof_edit_btn').click(function() {
     let p_cover_img = $('#cover_img').val();
     let p_img = $('#profile_img').val();
     let p_name = $('#profile_name').val();
+    var datap = {profname: profname};
     $.ajax({
         type: "POST",
         url: "helper/profile_update.php",
         //data: {profname:profname, p_about:p_about, p_website:p_website, p_location:p_location, p_cover_img:p_cover_img, p_img:p_img, p_name:p_name},
-        var datap = {profname: profname};
+        data: datap,
         success: function(data) {
             try {var response = JSON.parse(data)
             	console.log(response)
@@ -231,76 +232,9 @@ $('.prof_edit_btn').click(function() {
         }
     });
 });
-
-	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
 	$('.btn_edit').click(function(e) {	
 	    e.preventDefault();
-	    	let profname = '<?php echo $_GET['user'];?>';
-	        var datav = {profname:profname};
+	    $("#profile_edit").modal("show");
+	});
 
-	    	$("#profile_edit").modal("show");
-	    	$('.p_edit_btn').prop("disabled",true);
-
-			let url = "https://beta.steemconnect.com/sign/profile-update?";
-			let parts=[];
-			let originalparts = [];
-
-			function output(){
-				let out = [];
-				for(let i = 0; i<Object.entries(parts).length; i++)
-  				{
-  					let entry = Object.entries(parts)[i];
-    				out.push(entry[0]+"="+entry[1]);
-  				}
-  			return out.join("&");
-			}
-
-			function validate() {
-  				$('.p_edit_btn').prop("disabled", Object.entries(parts).length <= 0);
-			}
-
-			function input(key, val, original=false)
-			{
-				if(!original)
-  				{
-    				if(val.length<=0 || originalparts[key] == val)
-    				{
-      					delete(parts[key]);
-    				}
-    				else
-    				{
-      					parts[key] = val;
-    				}
-  				}
-  				else
-  				{	
-  					if(val.length>0)
-    				{
-      					originalparts[key] = val;
-    				}
-  				}
-  
-  				validate();
-  				//$('#out').html("Output: " + url + output());
-			}
-
-  			$('.p_edit_btn').click(function(){
-    			window.open(url + output());
-    			$("#profile_edit").modal("hide");
-			});
-  
-  			$('.form-control').each(function()
-  			{ 
-    			let inp = $(this).val();
-    			input($(this).attr("key"), encodeURIComponent(inp), true);
-    
-    			$(this).on("change paste keyup", function(){ 
-    				let inp = $(this).val();
-	    			input($(this).attr("key"), encodeURIComponent(inp));
-  				});
-  			});
-
-
-	// steem upvotes  
-});
 </script>
