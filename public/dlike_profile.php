@@ -47,14 +47,14 @@ include('template/header7.php');
 						<span class="p_data_names">
 							<span class="name"></span>
 							<br>
-							<span class="p_name"><?php echo $dlikeuser; ?></span>
+							<span class="p_name">@<?php echo $dlikeuser; ?></span>
 						</span>
 					</div>
 					<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit">Edit Profile</button>';}else{} ?></div>
 				</div>
 				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about"></span></div>'; } ?>
 				<div class="row p_data_mid">
-					<span class="p_joined"><?php echo date('m/d/Y', $account_created); ?></span>
+					<span class="p_joined"><i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined: <?php echo date('F Y', $account_created); ?></span>
 					<span class="p_location"></span>
 					<span class="web_site p_data_pad"></span>
 				</div>
@@ -71,10 +71,7 @@ include('template/header7.php');
 		                            </a>
 		                        </li>
 		                        <li class="nav-item">
-		                            <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Comments</a>
-		                        </li>
-		                        <li class="nav-item">
-		                            <a class="nav-link" href="#user_replies" role="tab" data-toggle="tab">Replies</a>
+		                            <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Likes</a>
 		                        </li>
 		                        <li class="nav-item nav-item-last">
 		                        </li>
