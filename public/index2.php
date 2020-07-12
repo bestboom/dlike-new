@@ -14,7 +14,6 @@
 <div class="latest-post-section"><div class="container"><div class="row">
 <?php
 $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
-
 if ($sql_T && $sql_T->num_rows > 0)
 {
     while ($row_T = $sql_T->fetch_assoc())
@@ -26,17 +25,15 @@ if ($sql_T && $sql_T->num_rows > 0)
         $post_tags = $row_T["tags"];
         $permlink = $row_T["permlink"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
-        $sql_W = "SELECT * FROM dlikeaccounts where username = '$author'";
-        $result_W = $conn->query($sql_W);
-        if ($result_W && $result_W->num_rows > 0)
+        $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
+        if ($sql_W && $sql_W->num_rows > 0)
         {
             $profile_pic = $row_W["profile_pic"];
             if (!empty($profile_pic))
             { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
-        $checkLikes = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
-        $resultLikes = mysqli_query($conn, $checkLikes);
-        $row_L = $resultLikes->fetch_assoc();
+        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
+        $row_L = $checkLikes->fetch_assoc();
         if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
         $post_income = $postLikes * $post_reward;
 ?>
