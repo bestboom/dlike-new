@@ -227,8 +227,8 @@ $('.prof_edit_btn').click(function() {
             } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err);}
         },
         error: function(jqXHR, textStatus, errorThrown) {
-   		console.log(textStatus, errorThrown);
-    });
+   			console.log(textStatus, errorThrown);
+    	};
 });
 
 $('.btn_edit').click(function(e) {	
