@@ -226,14 +226,16 @@ $('.prof_edit_btn').click(function() {
                 } else {toastr['success'](response.message);}
             } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err);}
         },
-        error: function(jqXHR, textStatus, errorThrown) {
-   			console.log(textStatus, errorThrown);
-    	}
+        error: function(xhr, textStatus, error) {
+            console.log(xhr.statusText);
+            console.log(textStatus);
+            console.log(error);
+        }
+    });
 });
-
-$('.btn_edit').click(function(e) {	
-    e.preventDefault();
-    $("#profile_edit").modal("show");
-});
+	$('.btn_edit').click(function(e) {	
+	    e.preventDefault();
+	    $("#profile_edit").modal("show");
+	});
 
 </script>
