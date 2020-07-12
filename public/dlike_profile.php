@@ -211,19 +211,19 @@ $('.prof_edit_btn').click(function() {
     let p_cover_img = $('#cover_img').val();
     let p_img = $('#profile_img').val();
     let p_name = $('#profile_name').val();
-    var datap = {profname: profname};
+    var datap = {'profname': profname};
     $.ajax({
         type: "POST",
         url: "/helper/profile_update.php",
         //data: {profname:profname, p_about:p_about, p_website:p_website, p_location:p_location, p_cover_img:p_cover_img, p_img:p_img, p_name:p_name},
         data: datap,
         success: function(data) {
-            try {var response = JSON.parse(data)
+                try { var response = JSON.parse(data)
             	console.log(response)
                 if (response.error == true) {
                     toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
                 } else {toastr['success'](response.message);}
-            } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err);}
+            } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err);console.warn(xhr.responseText);}
         },
         error: function(xhr, textStatus, error) {
             console.log(xhr.statusText);
