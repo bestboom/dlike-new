@@ -6,24 +6,24 @@ if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['na
 
 
 
-	$p_name = trim(mysqli_real_escape_string($_POST["p_name"]));
-	$p_img = trim(mysqli_real_escape_string($_POST["p_img"]));
-	$p_cover_img = trim(mysqli_real_escape_string($_POST["p_cover_img"]));
-	$p_location = trim(mysqli_real_escape_string($_POST["p_location"]));
-	$p_website = trim(mysqli_real_escape_string($_POST["p_website"]));
-	$p_about = trim(mysqli_real_escape_string($_POST["p_about"]));
+	$p_name = trim(mysqli_real_escape_string($_POST["acc_name"]));
+	$p_img = trim(mysqli_real_escape_string($_POST["acc_img"]));
+	$p_cover_img = trim(mysqli_real_escape_string($_POST["acc_cover_img"]));
+	$p_location = trim(mysqli_real_escape_string($_POST["acc_location"]));
+	$p_website = trim(mysqli_real_escape_string($_POST["acc_website"]));
+	$p_about = trim(mysqli_real_escape_string($_POST["acc_about"]));
 	$profname = trim($_POST["name_profile"]);
 
 	$dlike_username = $_COOKIE['dlike_username'];
 
 	if($dlike_username != $profname){
-        $errors = "aq".$dlike_username."Some issue in profile updating. Please Try later".$profname;
+        $errors = "Some issue in profile updating. Please Try later";
     }
 
     if (empty($errors)) {
 		$update_p = $conn->query("UPDATE dlikeaccounts SET full_name = '$p_name', profile_pic = '$p_img', profile_banner = '$p_cover_img', location = '$p_location', website = '$p_website', about = '$p_about' WHERE username = '$dlike_username'");
 			if ($update_p) {
-	    		die(json_encode(['error' => false, 'message' => 'Profile updated successfully!']));
+	    		die(json_encode(['error' => false, 'message' => 'Profile updated successfully!'.$p_img]));
 			} else {
 			    die(json_encode(['error' => true, 'message' => 'Issue in updating. Please try later'])); 
 			}
