@@ -36,7 +36,8 @@ if (isset($_GET["url"])) {
                         <img class="img-fluid d-flex flex-column link_image" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
                         <div class="modal-info-block link_box">
                             <p class="data-title"><?php print $title; ?></p>
-                            <p class="data-desc"><?php print $des; ?></p>
+                            <!--<p class="data-desc"><?php //print $des; ?></p>-->
+                            <textarea class="data-desc" rows="2" style="width: 100%;border: none;" id="post_desc"><?php print $des; ?></textarea>
                             <div class="link_bottom">
                                 <p style="margin-bottom: 1px;"><i class="fas fa-link link_icon"></i><span id="domain_name"></span></p>
                                 <select style="border:none;" name="category" class="dlike_cat">
@@ -88,21 +89,14 @@ function getDomain(url) {
     return domain;
 }
 let url_submitted = '<?php echo $url; ?>';
-console.log(url_submitted);
 let domain_name = getDomain(url_submitted);
 $('#domain_name').html(domain_name);
 $('.dlike_share_post').click(function(clickEvent) {
     if (dlike_username != null) {
-        console.log(dlike_username);
         let urlInput = '<?php echo $url; ?>';
-        console.log(urlInput);
         let verifyUrl = getDomain(urlInput);
-        console.log(verifyUrl);
         let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org"];
-        //if (verifyUrl.match(/cointelegraph.com/g) || verifyUrl.match(/steemit.com/g)) {
-        if ($.inArray(verifyUrl, restricted_urls) > -1) {
-            toastr.error('phew... Sharing from this url is not allowed');
-            return false;
+        if ($.inArray(verifyUrl, restricted_urls) > -1) {toastr.error('phew... Sharing from this url is not allowed');return false;
         }
         if ($('.dlike_cat').val() == "0") {
             $('.dlike_cat').css("border-color", "RED");
@@ -111,12 +105,22 @@ $('.dlike_share_post').click(function(clickEvent) {
         }
         // tag check
         var tags = $('.dlike_tags').val();
-        tags = $.trim(tags);
-        tags = tags.split(' ');
+        tags = $.trim(tags).split(' ');
+        //tags = tags.split(' ');
 
         if (tags.length < 2) {
             $('.tags').css("border-color", "RED");
             toastr.error('Please add at least two related tags');
+            return false;
+        }
+        //var description = $('.data-desc').html();
+        var description = $('textarea#post_desc').val();
+        console.log(description);
+        var description = $.trim(description).split(' ');
+
+        if (description.length < 5) {
+            $('.data-desc').css("border-color", "RED");
+            toastr.error('Please add description of link (max 100 words)');
             return false;
         }
         var author = dlike_username;
@@ -134,8 +138,7 @@ $('.dlike_share_post').click(function(clickEvent) {
         //console.log(vtags);
         //var qtags = vtags.replace(/\s+/g, ', ').toLowerCase();
         //console.log(qtags);
-        var description = $('.data-desc').html();
-        console.log(description);
+        
         var post_body = description.replace(/[\u2018\u2019]/g, "'").replace(/[\u201C\u201D]/g, '"');
         console.log(post_body);
         var urlImage =  $('.image_field').val();
