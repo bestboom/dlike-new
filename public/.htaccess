@@ -37,4 +37,4 @@ RewriteRule ^help$ ./help.php
 RewriteRule ^staking$ ./staking.php
 #RewriteRule ^token$ ./token.php
 RewriteRule ^convertdlike$ ./convertdlike.php
-RewriteRule ^profile/(.*)$ ./profile.php?user=$1
+RewriteRule ^profile/(.*)$ ./dlike_profile.php?user=$1
