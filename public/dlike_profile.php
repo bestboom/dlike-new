@@ -211,7 +211,7 @@ $('.prof_edit_btn').click(function() {
     let p_cover_img = $('#cover_img').val();
     let p_img = $('#profile_img').val();
     let p_name = $('#profile_name').val();
-    var datap = { action : 'profile',name_profile: profname };
+    var datap = { action : 'profile',name_profile: profname, p_about:p_about, p_website:p_website, p_location:p_location, p_cover_img:p_cover_img, p_img:p_img, p_name:p_name };
     $.ajax({
         url: '/helper/profile_update.php',
         type: 'post',

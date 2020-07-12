@@ -1,20 +1,20 @@
-<?php 
-if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['name_profile']) && $_POST['name_profile'] != '') {
-    $prof_name = $_POST['name_profile'];
+<!--<?php 
+//if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['name_profile']) && $_POST['name_profile'] != '') {
+    //$prof_name = $_POST['name_profile'];
 
-            die(json_encode(['error' => false, 'message' => 'how this now?']));
+           // die(json_encode(['error' => false, 'message' => 'how this now?']));
 
 }
 
 ?>
-<!--
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+-->
+<?php
 
-	require '../includes/config.php';
+require '../includes/config.php';
 
-if (isset($_POST['profname'])  && $_POST['profname'] != '') { 
+if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['name_profile']) && $_POST['name_profile'] != '') {
+
+
 
 	$p_name = trim(mysqli_real_escape_string($_POST["p_name"]));
 	$p_img = trim(mysqli_real_escape_string($_POST["p_img"]));
@@ -22,7 +22,7 @@ if (isset($_POST['profname'])  && $_POST['profname'] != '') {
 	$p_location = trim(mysqli_real_escape_string($_POST["p_location"]));
 	$p_website = trim(mysqli_real_escape_string($_POST["p_website"]));
 	$p_about = trim(mysqli_real_escape_string($_POST["p_about"]));
-	$profname = trim(mysqli_real_escape_string($_POST["profname"]));
+	$profname = trim(mysqli_real_escape_string($_POST["name_profile"]));
 
 	$dlike_username = $_COOKIE['dlike_username'];
 
@@ -38,7 +38,7 @@ if (isset($_POST['profname'])  && $_POST['profname'] != '') {
 			    die(json_encode(['error' => true, 'message' => 'Issue in updating. Please try later'])); 
 			}
     } else { die(json_encode(['error' => true,'message' => $errors]));}
-} else {die('Some error');}
+} 
+//else {die('Some error');}
 
 ?>
--->
