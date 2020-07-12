@@ -19,7 +19,9 @@ include('template/header5.php');
     $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$prof_user'");
     if ($sql_U && $sql_U->num_rows > 0) 
     {
-    	$dlike_user = $prof_user;
+    	$row_U = $sql_U->fetch_assoc();
+        $dlikeuser = $row_U['username'];
+    	$dlike_user = $dlikeuser;
     } else {$dlike_user = 'non';}
 
     echo $dlike_user;
