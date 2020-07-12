@@ -215,7 +215,7 @@ $('.prof_edit_btn').click(function() {
     console.log(p_name);
     $.ajax({
         type: "POST",
-        url: "/helper/profile_update.php",
+        url: "helper/profile_update.php",
         data: {profname:profname, p_about:p_about, p_website:p_website, p_location:p_location, p_cover_img:p_cover_img, p_img:p_img, p_name:p_name},
         success: function(data) {
             try {var response = JSON.parse(data)
