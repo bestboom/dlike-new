@@ -228,7 +228,7 @@ $('.prof_edit_btn').click(function() {
         },
         error: function(jqXHR, textStatus, errorThrown) {
    			console.log(textStatus, errorThrown);
-    	};
+    	}
 });
 
 $('.btn_edit').click(function(e) {	
