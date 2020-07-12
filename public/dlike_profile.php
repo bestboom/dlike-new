@@ -9,10 +9,12 @@ include('template/header7.php');
     {
     	$row_U = $sql_U->fetch_assoc();
         $dlikeuser = $row_U['username'];
+        $account_about= $row_U['about'];
+        $user_pro_img= $row_U['profile_pic'];
         $account_created = strtotime($row_U['created_time']);
     	$dlike_user = $dlikeuser;
     } else {$dlike_user = 'none';}
-    echo $dlike_user;
+    $login_user = $_COOKIE['dlike_username'];
 ?>
 </div><!-- sub-header -->
 <?php if($dlike_user == 'none') { ?>
@@ -24,7 +26,7 @@ include('template/header7.php');
 			            <div class="share-block"><p style="font-size: 3rem;">ooops!</p></div>
 			            <div class="user-connected-form-block" style="background: #1b1e63;">
 			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
-			                <div class="share-block"><p>It seems thsi dlike user does not exist!</p></div>
+			                <div class="share-block"><p>It seems this dlike user does not exist!</p></div>
 			            </div>
 			        </div>
 			    </div>
@@ -39,9 +41,8 @@ include('template/header7.php');
 			<div class="container p-data">
 				<div class="row p_data_inner">
 					<div>
-						<span>
-							<img src="/images/post/authors/9.png" id="p_img" class="img-fluid rounded-circle">
-							<span class="repu rounded-circle"></span>
+						<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">
+							<span class="repu rounded-circle"></span>'; ?>
 						</span>
 						<span class="p_data_names">
 							<span class="name"></span>
@@ -49,15 +50,9 @@ include('template/header7.php');
 							<span class="p_name"><?php echo $dlikeuser; ?></span>
 						</span>
 					</div>
-					<div>
-						<button class="btn btn-danger btn-follow">
-							<span class="foll"></span>
-						</button>
-					</div>
+					<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit">Edit Profile</button>';}else{} ?></div>
 				</div>
-				<div class="row p_data_top">
-					<span class="p_about"></span>
-				</div>
+				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about"></span></div>'; } ?>
 				<div class="row p_data_mid">
 					<span class="p_joined"><?php echo date('m/d/Y', $account_created); ?></span>
 					<span class="p_location"></span>
@@ -129,78 +124,16 @@ $(document).ready(function(){
 	let profname = '<?php echo $_GET['user'];?>';
 
 
-//profile details
-	//$('#p_img').attr("src","https://steemitimages.com/u/"+profname+"/avatar");
-
-// check if user following
-	if(dlike_username == profname) {
-		$('.foll').html('Edit Profile');
-	} else {$('.foll').html();
-	};
-
 });
 
 	//document.querySelector(".signup-signup-phone .next.btn").addEventListener('click',function(e){
-	$('.btn-follow').click(function(e) {	
+	$('.btn_edit').click(function(e) {	
 	    e.preventDefault();
 	    	let profname = '<?php echo $_GET['user'];?>';
-	        let follower_status = $(".foll").html();
-	        console.log(follower_status);
 	        var datav = {profname:profname};
-	        if(follower_status == 'Follow'){
-	        	$('.foll').html('following...');
-	            $.ajax({
-	                url: '/helper/follow.php',
-	                type: 'post',
-	                cache : false,
-	                dataType: 'json',
-	                data: datav,
-	                success:function(response){
-	                	console.log(response);
-	                    if(response.status===true)
-	                    {
-	                        toastr['success'](response.message);
-	                        $('.foll').html('Following');
-	                        $('.btn-follow').prop("disabled",true);
-	                        $(".btn-follow").unbind('mouseenter mouseleave');
-	                    }
-	                    else{
-	                        toastr['error'](response.message);
-	                        return false;
-	                    }
-	                }
-	            });
-	        }
 
-	        if(follower_status == 'unfollow' || follower_status == 'Following'){
-	        	$('.foll').html('unfollowing...');
-	            $.ajax({
-	                url: '/helper/unfollow.php',
-	                type: 'post',
-	                cache : false,
-	                dataType: 'json',
-	                data: datav,
-	                success:function(response){
-	                	console.log(response);
-	                    if(response.status===true)
-	                    {
-	                        toastr['success'](response.message);
-	                        $('.foll').html('Follow');
-	                        $('.btn-follow').prop("disabled",true);
-	                        $(".btn-follow").unbind('mouseenter mouseleave');
-	                    }
-	                    else{
-	                        toastr['error'](response.message);
-	                        return false;
-	                    }
-	                }
-	            });
-	        }
-
-	    if(follower_status == 'Edit'){
 	    	$("#profile_edit").modal("show");
 	    	$('.p_edit_btn').prop("disabled",true);
-
 
 			let url = "https://beta.steemconnect.com/sign/profile-update?";
 			let parts=[];
@@ -261,7 +194,7 @@ $(document).ready(function(){
   				});
   			});
 
-	    }
+
 	// steem upvotes  
 });
 </script>
