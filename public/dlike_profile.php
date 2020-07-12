@@ -211,18 +211,18 @@ $('.prof_edit_btn').click(function() {
     let p_cover_img = $('#cover_img').val();
     let p_img = $('#profile_img').val();
     let p_name = $('#profile_name').val();
-    var datap = { action : 'profile',name_profile: profname, acc_about:p_about, acc_website:p_website, acc_location:p_location, acc_cover_img:p_cover_img, acc_img:p_img, acc_name:p_name };
+    //var datap = { name_profile: profname, acc_about:p_about, acc_website:p_website, acc_location:p_location, acc_cover_img:p_cover_img, acc_img:p_img, acc_name:p_name };
     $.ajax({
         url: '/helper/profile_update.php',
         type: 'post',
-        data: datap,
+        data: { name_profile: profname, acc_about:p_about, acc_website:p_website, acc_location:p_location, acc_cover_img:p_cover_img, acc_img:p_img, acc_name:p_name },
         success: function(data) {
                 try { var response = JSON.parse(data)
             	console.log(response)
                 if (response.error == true) {
                     toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
                 } else {toastr['success'](response.message);}
-            } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err);}
+            } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
     });
 });
