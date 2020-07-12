@@ -1,4 +1,13 @@
 <?php 
+if (isset($_POST['action']) && $_POST['action'] == 'profile' && isset($_POST['name_profile']) && $_POST['name_profile'] != '') {
+    $prof_name = $_POST['name_profile'];
+
+            die(json_encode(['error' => false, 'message' => 'how this now?']));
+
+}
+
+?>
+<!--
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
@@ -32,3 +41,4 @@ if (isset($_POST['profname'])  && $_POST['profname'] != '') {
 } else {die('Some error');}
 
 ?>
+-->
