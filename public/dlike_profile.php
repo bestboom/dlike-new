@@ -46,17 +46,17 @@ include('template/header7.php');
 					<div>
 						<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">'; ?>
 						</span>
-						<span class="p_data_names"><span class="name"><?php echo $account_name; ?></span>
+						<span class="p_data_names"><span class="name"><?php echo $account_name; ?></span><br>
 							<span class="p_name">@<?php echo $dlikeuser; ?></span>
 						</span>
 					</div>
 					<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit btn-follow">Edit Profile</button>';}else{} ?></div>
 				</div>
-				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about"></span></div>'; } ?>
+				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about">'.$account_about.'</span></div>'; } ?>
 				<div class="row p_data_mid">
 					<span class="p_joined"><i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined: <?php echo date('F Y', $account_created); ?></span>
-					<span class="p_location"><?php echo $account_location; ?></span>
-					<span class="web_site p_data_pad"><?php echo $account_web; ?></span>
+					<?php if(!empty($account_location)){ echo '<span class="p_location"><i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>'.$account_location.'</span>'; ?>
+					<?php if(!empty($account_location)){ echo '<span class="web_site p_data_pad"><i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>'.$account_web.'</span>'; ?>
 				</div>
 			</div>
 			<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
@@ -195,7 +195,7 @@ $('.prof_edit_btn').click(function() {
         success: function(data) {
                 try { var response = JSON.parse(data)
                 if (response.error == true) {toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
-                } else {toastr['success'](response.message);}
+                } else {$("#profile_edit").modal("hide");toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 400);}
             } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
     });
