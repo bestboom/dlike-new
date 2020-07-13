@@ -39,7 +39,7 @@ include('template/header7.php');
 	</div> 
 <? } else {?>
 	<div id="profile_page">
-		<div id="p_cover" class="img-fluid"></div>
+		<div id="p_cover" class="img-fluid"><?php if(!empty($profile_banner)){ echo '<img src="'.$profile_banner.'">'; } ?></div>
 		<div style="background: #ededed;">
 			<div class="container p-data">
 				<div class="row p_data_inner">
@@ -55,8 +55,8 @@ include('template/header7.php');
 				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about">'.$account_about.'</span></div>'; } ?>
 				<div class="row p_data_mid">
 					<span class="p_joined"><i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined: <?php echo date('F Y', $account_created); ?></span>
-					<?php if(!empty($account_location)){ echo '<span class="p_location"><i class="fas fa-map-marker-alt" style="line-height:0.1;font-weight: 600;padding-right:8px;"></i>'.$account_location.'</span>'; } ?>
-					<?php if(!empty($account_location)){ echo '<span class="web_site p_data_pad"><i class="fas fa-link" style="line-height:0.1;font-weight: 600;padding-right:8px;padding-left:12px;"></i>'.$account_web.'</span>'; } ?>
+					<?php if(!empty($account_location)){ echo '<span class="p_location" style="margin-left:10px;"><i class="fas fa-map-marker-alt"></i>'.$account_location.'</span>'; } ?>
+					<?php if(!empty($account_web)){ echo '<span class="web_site" style="margin-left:10px;"><i class="fas fa-link"></i>'.$account_web.'</span>'; } ?>
 				</div>
 			</div>
 			<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
