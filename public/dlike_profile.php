@@ -10,8 +10,12 @@ include('template/header7.php');
     	$row_U = $sql_U->fetch_assoc();
         $dlikeuser = $row_U['username'];
         $account_about= $row_U['about'];
+        $account_web= $row_U['website'];
+        $account_location= $row_U['location'];
         $user_pro_img= $row_U['profile_pic'];
         $account_created = strtotime($row_U['created_time']);
+        $account_name= $row_U['full_name'];
+        $profile_banner= $row_U['profile_banner'];
     	$dlike_user = $dlikeuser;
     } else {$dlike_user = 'none';}
     $login_user = $_COOKIE['dlike_username'];
@@ -35,16 +39,14 @@ include('template/header7.php');
 	</div> 
 <? } else {?>
 	<div id="profile_page">
-		<div id="p_cover" class="img-fluid">
-		</div>
+		<div id="p_cover" class="img-fluid"></div>
 		<div style="background: #ededed;">
 			<div class="container p-data">
 				<div class="row p_data_inner">
 					<div>
 						<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">'; ?>
 						</span>
-						<span class="p_data_names"><span class="name"></span>
-							<br>
+						<span class="p_data_names"><span class="name"><?php echo $account_name; ?></span>
 							<span class="p_name">@<?php echo $dlikeuser; ?></span>
 						</span>
 					</div>
@@ -53,8 +55,8 @@ include('template/header7.php');
 				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about"></span></div>'; } ?>
 				<div class="row p_data_mid">
 					<span class="p_joined"><i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined: <?php echo date('F Y', $account_created); ?></span>
-					<span class="p_location"></span>
-					<span class="web_site p_data_pad"></span>
+					<span class="p_location"><?php echo $account_location; ?></span>
+					<span class="web_site p_data_pad"><?php echo $account_web; ?></span>
 				</div>
 			</div>
 			<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
@@ -62,21 +64,12 @@ include('template/header7.php');
 		            <div class="new-ticker-block-wrap">
 		                <div class="ticker-head">
 		                    <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
-		                        <li class="nav-item">
-		                            <a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab"
-		                               aria-selected="true">
-		                               <h5>Posts</h5>
-		                            </a>
-		                        </li>
-		                        <li class="nav-item">
-		                            <a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Likes</a>
-		                        </li>
-		                        <li class="nav-item nav-item-last">
-		                        </li>
+		                        <li class="nav-item"><a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab" aria-selected="true"><h5>Posts</h5></a></li>
+		                        <li class="nav-item"><a class="nav-link" href="#user_comments" role="tab" data-toggle="tab">Likes</a></li>
+		                        <li class="nav-item nav-item-last"></li>
 		                    </ul>
 		                </div>
 		                <div class="market-ticker-block">
-		                    <!-- Tab panes -->
 		                    <div class="tab-content">
 		                        <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
 									<div class="container">
@@ -89,7 +82,6 @@ include('template/header7.php');
 		                        </div>
 		                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
 		                            <div id="replies_content"></div>
-		                        </div><!-- market-ticker-block -->
 		                    </div>
 		                </div>
 		            </div>
@@ -102,17 +94,13 @@ include('template/header7.php');
 			            <div class="modal-body ">
 							<div class="transfer-respond">
 								<h4>Update Profile</h4>
-								<?php echo $user_pro_img; ?>
 								<div id="prof-msg"></div>
-								<form action="" id="p_edit" method="POST">
 									<div class="row line">
 										<div class="col-md-12">
 											<div class="form-group">
 												<div class="input-group mb-3">
-													<div class="input-group-prepend">
-														<div class="input-group-text mb-deck"> Name</div>
-													</div>
-													<input type="text" class="form-control" name="profile_name" id="profile_name" value="" />
+													<div class="input-group-prepend"><div class="input-group-text mb-deck"> Name</div></div>
+													<input type="text" class="form-control" name="profile_name" id="profile_name" value="<?php echo $account_name; ?>" />
 												</div>
 											</div>
 										</div>
@@ -136,7 +124,7 @@ include('template/header7.php');
 													<div class="input-group-prepend">
 														<div class="input-group-text mb-deck"> Cover image url</div>
 													</div>
-													<input type="text" class="form-control" key="cover_image" name="cover_img" id="cover_img" value="" placeholder="Enter url for image">
+													<input type="text" class="form-control" key="cover_image" name="cover_img" id="cover_img" value="<?php echo $profile_banner; ?>" placeholder="Enter url for image">
 												</div>
 											</div>
 										</div>
@@ -148,7 +136,7 @@ include('template/header7.php');
 													<div class="input-group-prepend">
 														<div class="input-group-text mb-deck"> Location</div>
 													</div>
-													<input type="text" class="form-control" key="location" name="profile_location" id="profile_location" value="" />
+													<input type="text" class="form-control" name="profile_location" id="profile_location" value="<?php echo $account_location; ?>" />
 												</div>
 											</div>
 										</div>
@@ -157,10 +145,8 @@ include('template/header7.php');
 										<div class="col-md-12">
 											<div class="form-group">
 												<div class="input-group mb-3">
-													<div class="input-group-prepend">
-														<div class="input-group-text mb-deck"> Website</div>
-													</div>
-													<input type="text" class="form-control" key="website" name="profile_website" id="profile_website" value="" />
+													<div class="input-group-prepend"><div class="input-group-text mb-deck"> Website</div></div>
+													<input type="text" class="form-control" name="profile_website" id="profile_website" value="<?php echo $account_web; ?>" />
 												</div>
 											</div>
 										</div>
@@ -169,16 +155,13 @@ include('template/header7.php');
 										<div class="col-md-12">
 											<div class="form-group">
 												<div class="input-group mb-3">
-													<div class="input-group-prepend">
-														<div class="input-group-text mb-deck"> About</div>
-													</div>
-													<input type="text" class="form-control" key="about" name="profile_about" id="profile_about" value="" />
+													<div class="input-group-prepend"><div class="input-group-text mb-deck"> About</div></div>
+													<input type="text" class="form-control" name="profile_about" id="profile_about" value="<?php echo $account_about; ?>" />
 												</div>
 											</div>
 										</div>
 									</div>			
 									<center><button type="button" class="btn btn-default prof_edit_btn">UPDATE</button></center>
-								</form>
 							</div>
 			        </div>
 			    </div>
@@ -195,11 +178,7 @@ include('template/header7.php');
 <? } ?>
 <?php include('template/dlike_footer.php'); ?> 
 <script>
-$(document).ready(function(){
-	$('#loadings').delay(6000).fadeOut('slow');
-	let profname = '<?php echo $_GET['user'];?>';
-
-
+$(document).ready(function(){$('#loadings').delay(6000).fadeOut('slow');let profname = '<?php echo $_GET['user'];?>';
 });
 
 $('.prof_edit_btn').click(function() {
@@ -211,24 +190,15 @@ $('.prof_edit_btn').click(function() {
     let p_cover_img = $('#cover_img').val();
     let p_img = $('#profile_img').val();
     let p_name = $('#profile_name').val();
-    //var datap = { name_profile: profname, acc_about:p_about, acc_website:p_website, acc_location:p_location, acc_cover_img:p_cover_img, acc_img:p_img, acc_name:p_name };
-    $.ajax({
-        url: '/helper/profile_update.php',
-        type: 'post',
+    $.ajax({url: '/helper/profile_update.php', type: 'post',
         data: { name_profile: profname, acc_about:p_about, acc_website:p_website, acc_location:p_location, acc_cover_img:p_cover_img, acc_img:p_img, acc_name:p_name },
         success: function(data) {
                 try { var response = JSON.parse(data)
-            	console.log(response)
-                if (response.error == true) {
-                    toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
+                if (response.error == true) {toastr['error'](response.message);$(".prof_edit_btn").attr("disabled", false);return false;
                 } else {toastr['success'](response.message);}
             } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
     });
 });
-	$('.btn_edit').click(function(e) {	
-	    e.preventDefault();
-	    $("#profile_edit").modal("show");
-	});
-
+$('.btn_edit').click(function(e) {	e.preventDefault();$("#profile_edit").modal("show");});
 </script>
