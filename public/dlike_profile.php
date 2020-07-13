@@ -39,24 +39,22 @@ include('template/header7.php');
 	</div> 
 <? } else {?>
 	<div id="profile_page">
-		<div id="p_cover" class="img-fluid"><?php if(!empty($profile_banner)){ echo '<img src="'.$profile_banner.'">'; } ?></div>
+		<div id="p_cover" class="img-fluid"><?php if(!empty($profile_banner)){ echo '<img src="'.$profile_banner.'" style="width:100%;height:100%;">'; } ?></div>
 		<div style="background: #ededed;">
 			<div class="container p-data">
 				<div class="row p_data_inner">
 					<div>
-						<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">'; ?>
-						</span>
+						<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">'; ?></span>
 						<span class="p_data_names"><span class="name"><?php echo $account_name; ?></span><br>
-							<span class="p_name">@<?php echo $dlikeuser; ?></span>
-						</span>
+							<span class="p_name">@<?php echo $dlikeuser; ?></span></span>
 					</div>
 					<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit btn-follow">Edit Profile</button>';}else{} ?></div>
 				</div>
 				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about">'.$account_about.'</span></div>'; } ?>
 				<div class="row p_data_mid">
-					<span class="p_joined"><i class="fas fa-calendar-alt" style="line-height:0.1;font-weight: 00;"></i> Joined: <?php echo date('F Y', $account_created); ?></span>
-					<?php if(!empty($account_location)){ echo '<span class="p_location" style="margin-left:10px;"><i class="fas fa-map-marker-alt"></i>'.$account_location.'</span>'; } ?>
-					<?php if(!empty($account_web)){ echo '<span class="web_site" style="margin-left:10px;"><i class="fas fa-link"></i>'.$account_web.'</span>'; } ?>
+					<span class="p_joined"><i class="fas fa-calendar-alt" style="line-height:0.1;color: #191d5d;"></i> Joined <?php echo date('F Y', $account_created); ?></span>
+					<?php if(!empty($account_location)){ echo '<span class="p_location" style="margin-left:10px;"><i class="fas fa-map-marker-alt" style="color: #191d5d;padding-right:3px;"></i>'.$account_location.'</span>'; } ?>
+					<?php if(!empty($account_web)){ echo '<span class="web_site" style="margin-left:10px;"><i class="fas fa-link" style="color: #191d5d;padding-right:3px;"></i>'.$account_web.'</span>'; } ?>
 				</div>
 			</div>
 			<div class="new-ticker-block new-ticker-block-section" style="min-height:50vh;">
