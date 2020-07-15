@@ -40,9 +40,9 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                     <input type="text" class="form-control reward_input" value=" | My Affiliates" readonly>
                     <span class="fas fa-flask inp_icon"></span>
                     <span class="inp_text"><?php echo $my_affiliates; ?></span>
-                </div>
+                </div><br>
                 <p>One Withdrawal per 24 hours!</p>
-                <button type="button" class="btn btn-default withd_btn" disabled>Withdraw</button>
+                <button type="button" class="btn btn-default withd_btn">Withdraw</button>
                 <p class="DlikeComments">Max Daily withdrawal limit 5000 DLIKE</p>
                 </form>
             </div>
@@ -56,7 +56,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
-                                <small class="queue-stats-display text-muted">No posts in the Queue</small>
+                                <small class="queue-stats-display text-muted"><input type="text" class="form-control" name="offchain_add" id="offchain_add" value="" /></small>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-list"></i></span>
                             <div>
                                 <h4 class="m-0"><small>My Affiliate Link</small></h4>
-                                <small class="queue-stats-display text-muted">No posts in the Queue</small>
+                                <small class="queue-stats-display text-muted"><b><?php echo '<a href="https://dlike.io/welcome.php?ref='.$dlike_user.'">https://dlike.io/welcome.php?ref='.$dlike_user.'</a>'; ?></b></small>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-battery-full"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Boost Posts</small></h4>
-                                <small class="queue-stats-display text-muted">No posts in the Queue</small>
+                                <small class="queue-stats-display text-muted">Post boost feature will be available soon</small>
                             </div>
                     </div></div>
                 </div>
