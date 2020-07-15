@@ -111,14 +111,26 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
         </table>
     </div>
 </div></div></div>
-<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content modal-custom">
-            <?php include('template/modals/tktransfer.php'); ?>
+<div class="modal fade" id="dlike_tok_with" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
+        <div class="transfer-respond">
+            <h4>Withdraw DLIKE Tokens</h4>
+            <label><b>Balance: </b><?php echo $my_bal;; ?> DLIKE</label>
+            <div class="row line">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div>
+                            <input type="text" class="form-control" name="amt" placeholder="Enter Amount to Withdraw">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center><button type="submit" class="btn btn-default tsf_btn">Withdraw</button></center>
         </div>
-    </div>
+     </div></div></div>
 </div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-    $('.withd_btn').click(function(e) {  e.preventDefault();$("#tk_transfer").modal("show");});
+    $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
 </script>
