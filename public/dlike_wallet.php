@@ -5,6 +5,12 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
     $dlike_user = $_COOKIE['dlike_username'];
 }
 ?>
+<style type="text/css">
+    .stamp-md {min-width: 2rem;height: 2rem;line-height: 2rem;}
+    .stamp {color: #fff;background: #868e96;display: inline-block;padding: 0 .2rem;text-align: center;border-radius: 3px;font-weight: 600;}
+    .mr-3, .mx-3 {margin-right: 0.75rem !important;}
+    .bg-green {background-color: #5eba00 !important;}
+</style>
 </div>
 <?php
 $sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_user'");
@@ -56,7 +62,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
-                                <small class="queue-stats-display text-muted"><input type="text" class="form-control" name="offchain_add" id="offchain_add" value="" /></small>
+                                <small class="queue-stats-display text-muted"><input type="text" class="form-control" name="offchain_add" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /><span class="stamp stamp-md bg-green mr-3"><i class="fa fa-plus"></i></span></small>
                             </div>
                         </div>
                     </div>
@@ -67,7 +73,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-list"></i></span>
                             <div>
                                 <h4 class="m-0"><small>My Affiliate Link</small></h4>
-                                <small class="queue-stats-display text-muted"><b><?php echo '<a href="https://dlike.io/welcome.php?ref='.$dlike_user.'">https://dlike.io/welcome.php?ref='.$dlike_user.'</a>'; ?></b></small>
+                                <small class="queue-stats-display text-muted"><b><?php echo '<a href="https://dlike.io/welcome.php?ref='.$dlike_user.'" style="color: #c51d24;">https://dlike.io/welcome.php?ref='.$dlike_user.'</a>'; ?></b></small>
                             </div>
                         </div>
                     </div>
@@ -90,9 +96,8 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
         <div class="panel-heading-block"><h5>My Transactions</h5></div>
         <table class="table coin-list latest-tranjections-table">
             <thead><tr>
-                    <th scope="col">From</th>
                     <th scope="col">Amount</th>
-                    <th scope="col">Of</th>
+                    <th scope="col">Type</th>
                     <th scope="col">For</th>
                     <th scope="col">Time</th>
             </tr></thead>
@@ -100,11 +105,10 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                 <?php $sql_T = $conn->query("SELECT * FROM dlike_transactions where username ='$dlike_user' ORDER BY trx_time DESC LIMIT 30");
                     if ($sql_T->num_rows > 0) { while($row_T = $sql_T->fetch_assoc()) { 
                         $entry_date = strtotime($row_T["trx_time"]); ?> 
-                <tr>   
-                    <td><?php echo $row_T["username"]; ?></td>
+                <tr>
                     <td><?php echo $row_T["amount"]; ?></td>
                     <td><?php echo $row_T["type"]; ?></td>
-                    <td><?php echo $row_T["reason"]; ?></td>
+                    <td><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></td>
                     <td><?php echo time_ago($entry_date); ?></td> 
                 </tr><? } }?>
             </tbody>
