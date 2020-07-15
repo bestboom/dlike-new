@@ -38,10 +38,9 @@ if ($sql_P && $sql_P->num_rows > 0)
             $profile_pic = $row_W["profile_pic"];
             if (!empty($profile_pic)){ $user_profile_pic = $profile_pic; } else { $user_profile_pic='https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
         }
-        $checkLikes = "SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'";
-        $resultLikes = mysqli_query($conn, $checkLikes);
-        $row_L = $resultLikes->fetch_assoc();
-        if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
+        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
+        $row_L = $checkLikes->fetch_assoc();
+        if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
         $post_income = $postLikes * $post_reward;
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
@@ -65,35 +64,23 @@ if ($sql_P && $sql_P->num_rows > 0)
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-
     $('.hov_vote').click(function() {
         if (dlike_username != null) {
             var mypermlink = $(this).attr("data-permlink");
             var authorname = $(this).attr("data-author");
+            $(this).addClass('fas fa-spinner fa-spin like_loader');
             var update = '1';
-            var datat = {ath: authorname, plink: mypermlink};
-            $.ajax({
-                type: "POST",
-                url: "/helper/solve.php",
-                data: datat,
+            $.ajax({type: "POST", url: "/helper/solve.php", data: {ath: authorname, plink: mypermlink},
                 success: function(data) {
                     try { var response = JSON.parse(data)
-                        if (response.done == true) {
-                            $('#upvotefail').modal('show');
-                            return false;
-                        } else if (response.error == true)  { 
-                            toastr.error(response.message);
-                            return false;
-                        } else {
+                        if (response.done == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');$('#upvotefail').modal('show');return false;
+                        } else if (response.error == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');toastr.error(response.message);return false;
+                        } else {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
                             toastr.success(response.message);
                             var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
-                            //console.log(getpostlikes);
                             var post_income = response.post_income;
-                            console.log(post_income);
                             var newlikes = parseInt(getpostlikes) + parseInt(update);
-                            console.log(newlikes);
                             var updatespostincome = newlikes * post_income;
-                            console.log(updatespostincome);
                             $('.post_likes' + mypermlink + authorname).html(newlikes);
                             $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
                         }

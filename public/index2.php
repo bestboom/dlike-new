@@ -34,7 +34,7 @@ if ($sql_T && $sql_T->num_rows > 0)
         }
         $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
         $row_L = $checkLikes->fetch_assoc();
-        if ($resultLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
+        if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
         $post_income = $postLikes * $post_reward;
 ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
@@ -63,11 +63,7 @@ if ($sql_T && $sql_T->num_rows > 0)
             var authorname = $(this).attr("data-author");
             $(this).addClass('fas fa-spinner fa-spin like_loader');
             var update = '1';
-            var datat = {ath: authorname, plink: mypermlink};
-            $.ajax({
-                type: "POST",
-                url: "/helper/solve.php",
-                data: datat,
+            $.ajax({ type: "POST",url: "/helper/solve.php", data: {ath: authorname, plink: mypermlink},
                 success: function(data) {
                     try { var response = JSON.parse(data)
                         if (response.done == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');$('#upvotefail').modal('show');return false;
