@@ -62,7 +62,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
-                                <small class="queue-stats-display text-muted"><input type="text" class="form-control" name="offchain_add" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /><span class="stamp stamp-md bg-green mr-3"><i class="fa fa-plus"></i></span></small>
+                                <div><small class="queue-stats-display text-muted"><span><input type="text" class="form-control" name="offchain_add" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3"><i class="fa fa-plus"></i></span></small></div>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                     <th scope="col">Amount</th>
                     <th scope="col">Type</th>
                     <th scope="col">For</th>
-                    <th scope="col">Time</th>
+                    <th scope="col" style="float:right;">Time</th>
             </tr></thead>
             <tbody>
                 <?php $sql_T = $conn->query("SELECT * FROM dlike_transactions where username ='$dlike_user' ORDER BY trx_time DESC LIMIT 30");
@@ -109,7 +109,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                     <td><?php echo $row_T["amount"]; ?></td>
                     <td><?php echo $row_T["type"]; ?></td>
                     <td><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></td>
-                    <td><?php echo time_ago($entry_date); ?></td> 
+                    <td style="float:right;"><?php echo time_ago($entry_date); ?></td> 
                 </tr><? } }?>
             </tbody>
         </table>
