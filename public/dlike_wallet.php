@@ -9,7 +9,9 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
     .stamp-md {min-width: 2rem;height: 2rem;line-height: 2rem;}
     .stamp {color: #fff;background: #868e96;display: inline-block;padding: 0 .2rem;text-align: center;border-radius: 3px;font-weight: 600;}
     .mr-3, .mx-3 {margin-right: 0.75rem !important;}
+    .bg-orange {background-color: #fd9644 !important;}
     .bg-green {background-color: #5eba00 !important;}
+    .bg-blue {background-color: #467fcf !important;}
 </style>
 </div>
 <?php
@@ -59,10 +61,10 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                 <div class="col-sm-12 col-lg-12" style="margin-bottom: 25px;">
                     <div class="queue-stats card p-3">
                         <div class="d-flex align-items-center">
-                            <span class="stamp stamp-md bg-blue mr-3"><i class="fas fa-money-bill-alt"></i></span>
+                            <span class="stamp stamp-md bg-orange mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
-                                <div><small class="queue-stats-display text-muted"><span><input type="text" class="form-control" name="offchain_add" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3"><i class="fa fa-plus"></i></span></small></div>
+                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;"><span><input type="text" class="form-control" name="offchain_add" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus"></i></span></small>
                             </div>
                         </div>
                     </div>
@@ -80,7 +82,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                 </div>
                 <div class="col-sm-12 col-lg-12" style="margin-bottom: 25px;">
                     <div class="queue-stats card p-3"><div class="d-flex align-items-center">
-                            <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-battery-full"></i></span>
+                            <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-battery-full"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Boost Posts</small></h4>
                                 <small class="queue-stats-display text-muted">Post boost feature will be available soon</small>
