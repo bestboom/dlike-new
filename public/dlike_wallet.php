@@ -121,22 +121,70 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
     <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
         <div class="transfer-respond">
             <h4>Withdraw DLIKE Tokens</h4>
-            <label><b>Balance: </b><?php echo $my_bal;; ?> DLIKE</label>
+            <label><b>Balance: </b><span class="user_bal"><?php echo $my_bal;; ?></span> DLIKE</label>
             <div class="row line">
                 <div class="col-md-12">
                     <div class="form-group">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div>
-                            <input type="text" class="form-control" name="amt" placeholder="Enter Amount to Withdraw">
+                            <input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
                         </div>
                     </div>
                 </div>
             </div>
-            <center><button type="submit" class="btn btn-default tsf_btn">Withdraw</button></center>
+            <center><button type="submit" class="btn btn-default tok_out_btn">Withdraw</button></center>
         </div>
      </div></div></div>
 </div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
+    let withdraw_val = document.getElementById('withdraw_amount');
+    withdraw_val.onkeydown = function(e) {
+        if(!((e.keyCode > 95 && e.keyCode < 106)
+          || (e.keyCode > 47 && e.keyCode < 58) 
+          || e.keyCode == 8)) {
+            return false;
+        }
+    }
     $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
+    $('.tok_out_btn').click(function() {
+        let out_amount = $('#withdraw_amount').val();
+        let dlk_bal = $('.user_bal').html();
+        if (out_amount == "") {
+            toastr.error('phew... Please enter valid amount to withdraw');
+            return false;
+        }
+        if (parseFloat(out_amount) > parseFloat(dlk_bal)) {
+            toastr.error('phew... Not enough balance');
+            return false;
+        }
+        if (parseFloat(dlk_amount) <= 0) {
+            toastr.error('phew... Not enough balance to withdraw!');
+            return false;
+        }
+
+        let convert_url = 'helper/converterd.php';
+        var data_amt = {action : 'dlike_con',dlk_amount: dlk_amount};
+        $.ajax({
+            type: "POST",
+            url: convert_url,
+            data: data_amt,
+            success: function(data) {
+                try {
+                    var response = JSON.parse(data)
+                    if (response.error == true) {
+                        toastr['error'](response.message);
+                    } else {
+                        toastr['success'](response.message);
+                        setTimeout(function(){
+                            window.location.href = "https://dlike.io/";
+                        }, 500);
+                    }
+                } catch (err) {
+                    toastr.error('Sorry. Server response is malformed');
+                }
+            }
+        });
+    });
+
 </script>
