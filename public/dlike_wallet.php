@@ -25,6 +25,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
         <div class="offset-lg-1 col-lg-5 col-md-6">
             <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                 <h3 style="text-align: center;"><div style="font-size: 1.1rem;">DLIKE Wallet</div></h3>
+                <form class="user-connected-from create-account-form reward_form" />
                 <div class="form-group reward_fileds">
                     <input type="text" class="form-control reward_input" value=" | My Balance" readonly>
                     <span class="fas fa-database inp_icon"></span>
@@ -43,21 +44,18 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                 <p>One Withdrawal per 24 hours!</p>
                 <button type="button" class="btn btn-default withd_btn" disabled>Withdraw</button>
                 <p class="DlikeComments">Max Daily withdrawal limit 5000 DLIKE</p>
-            </div><!-- create-account-block -->
+                </form>
+            </div>
         </div>
         <div class="col-lg-6  col-md-6">
             <div class="working-process">
-                <h4 class="pool_head">DLIKE REWARD POOL</h4>
+                <h4 class="pool_head">Tools</h4>
                 <div class="col-sm-12 col-lg-12" style="margin-bottom: 25px;">
                     <div class="queue-stats card p-3">
                         <div class="d-flex align-items-center">
-                            <span class="stamp stamp-md bg-blue mr-3">
-                              <i class="fas fa-money-bill-alt"></i>
-                            </span>
+                            <span class="stamp stamp-md bg-blue mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
-                                <h4 class="m-0">
-                                    <small>Off-Chain Wallet Address</small>
-                                </h4>
+                                <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
                                 <small class="queue-stats-display text-muted">No posts in the Queue</small>
                             </div>
                         </div>
@@ -75,24 +73,14 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                     </div>
                 </div>
                 <div class="col-sm-12 col-lg-12" style="margin-bottom: 25px;">
-                    <div class="queue-stats card p-3">
-                        <div class="d-flex align-items-center">
-                            <span class="stamp stamp-md bg-blue mr-3">
-                              <i class="fa fa-battery-full"></i>
-                            </span>
+                    <div class="queue-stats card p-3"><div class="d-flex align-items-center">
+                            <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-battery-full"></i></span>
                             <div>
-                                <h4 class="m-0">
-                                    <small>Boost Posts</small>
-                                </h4>
+                                <h4 class="m-0"><small>Boost Posts</small></h4>
                                 <small class="queue-stats-display text-muted">No posts in the Queue</small>
                             </div>
-                        </div>
-                    </div>
+                    </div></div>
                 </div>
-                <p style="color:#c51d24;font-weight: 600;">
-                    <span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>
-                    DLIKE reward pool is only available to PRO users
-                </p>
             </div>
         </div>
     </div></div>
@@ -123,4 +111,14 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
         </table>
     </div>
 </div></div></div>
+<div class="modal fade" id="tk_transfer" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-custom">
+            <?php include('template/modals/tktransfer.php'); ?>
+        </div>
+    </div>
+</div>
 <?php include('template/dlike_footer.php'); ?>
+<script type="text/javascript">
+    $('.withd_btn').click(function(e) {  e.preventDefault();$("#tk_transfer").modal("show");});
+</script>
