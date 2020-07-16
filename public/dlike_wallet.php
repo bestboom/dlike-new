@@ -150,7 +150,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
     $('.tok_out_btn').click(function() {
         $(".tok_out_btn").attr("disabled", true);
         let out_amount = $('#withdraw_amount').val();
-        let dlk_bal = $('.user_bal').html();
+        let dlk_amount = $('.user_bal').html();
         if (out_amount == "") {$(".tok_out_btn").attr("disabled", false);
             toastr.error('phew... Please enter valid amount to withdraw');
             return false;
