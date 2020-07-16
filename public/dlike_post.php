@@ -16,9 +16,7 @@ if ($sql_P && $sql_P->num_rows > 0){
         <div class="container">
             <article class="post-style-two post-full-width">
                 <div class="post-thumb">
-                    <a href="#">
-                        <img src="./images/post/1.jpg" alt="img" class="img-responsive">
-                    </a>
+                    <?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive"></a>'; ?>
                 </div>
                 <div class="post-contnet-wrap">
                     <span class="post-meta"><?php echo time_ago($post_time); ?></span>
@@ -34,8 +32,7 @@ if ($sql_P && $sql_P->num_rows > 0){
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div class="author-thumb">
-                                <?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">
-                                </a>'; ?>
+                                <?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive"></a>'; ?>
                             </div>
                             <div class="author-info">
                                 <h5>
