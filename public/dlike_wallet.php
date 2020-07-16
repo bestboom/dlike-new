@@ -99,11 +99,11 @@ $offchain_address = $row_J["offchain_address"];
         </div>
     </div></div>
 </div>
-<div class="row">
+<div  lass="container"><div class="row">
 <div class="col-md-6">
 <div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
     <div class="latest-tranjections-block-inner">
-        <div class="panel-heading-block"><h5>My Transactions</h5></div>
+        <div class="panel-heading-block"><h5>Transactions</h5></div>
         <table class="table coin-list latest-tranjections-table">
             <thead><tr>
                     <th scope="col">Amount</th>
@@ -126,33 +126,29 @@ $offchain_address = $row_J["offchain_address"];
     </div>
 </div></div></div>
 </div>
-<div class="col-md-6">
-<div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
+<div class="col-md-6"><div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
     <div class="latest-tranjections-block-inner">
-        <div class="panel-heading-block"><h5>My Transactions</h5></div>
+        <div class="panel-heading-block"><h5>Withdrawals</h5></div>
         <table class="table coin-list latest-tranjections-table">
             <thead><tr>
                     <th scope="col">Amount</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">For</th>
+                    <th scope="col">Status</th>
                     <th scope="col" style="float:right;">Time</th>
             </tr></thead>
             <tbody>
-                <?php $sql_T = $conn->query("SELECT * FROM dlike_transactions where username ='$dlike_user' ORDER BY trx_time DESC LIMIT 30");
-                    if ($sql_T->num_rows > 0) { while($row_T = $sql_T->fetch_assoc()) { 
-                        $entry_date = strtotime($row_T["trx_time"]); ?> 
+                <?php $sql_P = $conn->query("SELECT * FROM dlike_withdrawals where username ='$dlike_user' ORDER BY req_on DESC LIMIT 30");
+                    if ($sql_P->num_rows > 0) { while($row_P = $sql_P->fetch_assoc()) { 
+                        $entry_date = strtotime($row_P["req_on"]); ?> 
                 <tr>
                     <td><?php echo $row_T["amount"]; ?></td>
-                    <td><?php echo $row_T["type"]; ?></td>
-                    <td><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></td>
+                    <td><?php echo $row_T["status"]; ?></td>
                     <td style="float:right;"><?php echo time_ago($entry_date); ?></td> 
                 </tr><? } }?>
             </tbody>
         </table>
     </div>
-</div></div></div>
-</div>
-</div>
+</div></div></div></div>
+</div></div>
 <div class="modal fade" id="dlike_tok_with" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
         <div class="transfer-respond">
