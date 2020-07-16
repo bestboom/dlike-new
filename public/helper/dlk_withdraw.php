@@ -8,7 +8,7 @@
 if (isset($_POST['dlk_out_amount'])  && $_POST['dlk_out_amount'] != '') { 
 
 	$dlk_amount = trim($_POST["dlk_out_amount"]);
-	$username = $_COOKIE['username'];
+	$username = $_COOKIE['dlike_username'];
 
 	if(empty($dlk_amount)){
         $errors = "Please enter valid amount to withdraw";
