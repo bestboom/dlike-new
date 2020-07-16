@@ -1,7 +1,7 @@
 <?php 
 require '../includes/config.php';
 
-if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' isset($_POST['dlk_out_amount'])  && $_POST['dlk_out_amount'] != '') { 
+if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['dlk_out_amount']) && $_POST['dlk_out_amount'] != '') { 
 
 	$dlk_amount = trim($_POST["dlk_out_amount"]);
 	$username = $_COOKIE['dlike_username'];
