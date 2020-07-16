@@ -1,4 +1,7 @@
-<?php include('template/header7.php'); 
+<?php include('template/header7.php');
+echo $link = $_GET['link'];
+echo $user = $_GET['user'];
+?>
 </div>
     <div class="latest-post-section">
         <div class="container">
