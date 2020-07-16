@@ -70,7 +70,7 @@ $offchain_address = $row_J["offchain_address"];
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
                                 <small class="row queue-stats-display text-muted" style="margin: 0px !important;">
                                     <?php if(!empty($offchain_address)){ echo $offchain_address; } else { ?>
-                                    <span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span></small> <? } ?>
+                                    <span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span> <? } ?></small>
                             </div>
                         </div>
                     </div>
