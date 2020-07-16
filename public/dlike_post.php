@@ -26,6 +26,7 @@ $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and 
 ?>
 <style type="text/css">
     .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
+    .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
 </style>
 </div>
     <div class="latest-post-section">
@@ -44,14 +45,14 @@ $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and 
                                 <span style="font-size: 13px;padding-left: 3px;"><?php echo time_ago($post_time); ?></span>
                             </div>
                         </div>
-                        <div class="post-comments"><a href="#"><?php echo ucfirst($category); ?></a></div>
+                        <div class="post-comments" style="color: #1652f0;"><a href="#"><?php echo ucfirst($category); ?></a></div>
                     </div>
                     <h4 class="post-title" style="line-height: 1.8rem;white-space: normal;font-size: 20px;margin-bottom: 18px;font-weight: 700;"><?php echo $title; ?></h4>
                     <p class="post-entry"><?php echo $description; ?></p>
-                    <p class="post-entry"><?php echo $post_hash_tags; ?></p>
+                    <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
                     <div class="post-footer">
                         <div class="post-author-block">
-                            <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+                            <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
                         </div>
                         <div class="post-comments">
                             <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
