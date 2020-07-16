@@ -99,7 +99,7 @@ $offchain_address = $row_J["offchain_address"];
         </div>
     </div></div>
 </div>
-<div  lass="container"><div class="row">
+<div class="container"><div class="row">
 <div class="col-md-6">
 <div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
     <div class="latest-tranjections-block-inner">
