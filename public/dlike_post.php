@@ -8,14 +8,19 @@ if ($sql_P && $sql_P->num_rows > 0){
     $imgUrl = $row_P["img_url"];
     $post_time = strtotime($row_P["created_at"]);
     $permlink = $row_P["permlink"];
+    $author = $row_P["username"];
     $title = $row_P["title"];
     $description = $row_P["description"];
     $category = $row_P["ctegory"];
 }
 
 $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
-    $row_W = $sql_W->fetch_assoc();
-    $profile_pic = $row_W["profile_pic"];
+    $row_W = $sql_W->fetch_assoc(); $profile_pic = $row_W["profile_pic"];
+
+$checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and permlink = '$link'");
+    $row_L = $checkLikes->fetch_assoc();
+    if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
+    $post_income = $postLikes * $post_reward;
 ?>
 </div>
     <div class="latest-post-section">
@@ -40,21 +45,28 @@ $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
                     <p class="post-entry"><?php echo $description; ?></p>
                     <div class="post-footer">
                         <div class="post-author-block">
-                            <div class="author-thumb">
-                                <?php echo '<a href="#"><img src="'.$profile_pic.'" alt="'.$user.'" class="img-responsive"></a>'; ?>
-                            </div>
-                            <div class="author-info">
-                                <h5><a href="#">@<?php echo $user; ?></a></h5>
-                                <a href="#">@<?php echo $user; ?></a>
-                            </div>
+                            <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
                         </div>
                         <div class="post-comments">
-                            <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                            <a href="#">03 Comments</a>
+                            <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
                         </div>
                     </div>
                 </div>
             </article><!-- post-style-two -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <article class="post-style-two">
