@@ -7,7 +7,19 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$sql = "CREATE TABLE dlike_withdrawals (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(255) NOT NULL,
+amount INT(30) NOT NULL,
+status INT(6) NOT NULL,
+req_on TIMESTAMP
+)";
 
+if ($conn->query($sql) === TRUE) {
+    echo "Table wallet created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 ?>
 <!--
 

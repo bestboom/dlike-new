@@ -75,7 +75,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-list"></i></span>
                             <div>
                                 <h4 class="m-0"><small>My Affiliate Link</small></h4>
-                                <small class="queue-stats-display text-muted"><b><?php echo '<a href="https://dlike.io/welcome.php?ref='.$dlike_user.'" style="color: #c51d24;">https://dlike.io/welcome.php?ref='.$dlike_user.'</a>'; ?></b></small>
+                                <small class="queue-stats-display text-muted"><b><?php echo '<a href="https://dlike.io/welcome.php?ref='.$dlike_user.'" style="color: #467fcf;">https://dlike.io/welcome.php?ref='.$dlike_user.'</a>'; ?></b></small>
                             </div>
                         </div>
                     </div>
@@ -148,37 +148,32 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
     }
     $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
     $('.tok_out_btn').click(function() {
+        $(".tok_out_btn").attr("disabled", true);
         let out_amount = $('#withdraw_amount').val();
         let dlk_bal = $('.user_bal').html();
-        if (out_amount == "") {
+        if (out_amount == "") {$(".tok_out_btn").attr("disabled", false);
             toastr.error('phew... Please enter valid amount to withdraw');
             return false;
         }
-        if (parseFloat(out_amount) > parseFloat(dlk_bal)) {
+        if (parseFloat(out_amount) > parseFloat(dlk_bal)) {$(".tok_out_btn").attr("disabled", false);
             toastr.error('phew... Not enough balance');
             return false;
         }
-        if (parseFloat(dlk_amount) <= 0) {
-            toastr.error('phew... Not enough balance to withdraw!');
+        if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');
             return false;
         }
-
-        let convert_url = 'helper/converterd.php';
-        var data_amt = {action : 'dlike_con',dlk_amount: dlk_amount};
         $.ajax({
             type: "POST",
-            url: convert_url,
-            data: data_amt,
+            url: 'helper/dlk_withdraw.php',
+            data: { dlk_out_amount: out_amount },
             success: function(data) {
                 try {
                     var response = JSON.parse(data)
-                    if (response.error == true) {
-                        toastr['error'](response.message);
-                    } else {
+                    if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
+                        toastr['error'](response.message);return false;
+                    } else {$(".tok_out_btn").attr("disabled", true);$("#dlike_tok_with").modal("hide");
                         toastr['success'](response.message);
-                        setTimeout(function(){
-                            window.location.href = "https://dlike.io/";
-                        }, 500);
+                        setTimeout(function(){window.location.reload();}, 300);
                     }
                 } catch (err) {
                     toastr.error('Sorry. Server response is malformed');
