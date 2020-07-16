@@ -28,7 +28,7 @@ $row_I = $sql_I->fetch_assoc();
 $today_income = $row_I["total_income"];
 if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
 
-$sql_J = $conn->query("SELECT * FROM dlikeaccounts where usernam='$dlike_user'");
+$sql_J = $conn->query("SELECT * FROM dlikeaccounts where username='$dlike_user'");
 $row_J = $sql_J->fetch_assoc();
 $offchain_address = $row_J["offchain_address"];
 ?>
