@@ -12,6 +12,8 @@ if ($sql_P && $sql_P->num_rows > 0){
     $title = $row_P["title"];
     $description = $row_P["description"];
     $category = $row_P["ctegory"];
+    $post_tags = $row_P["tags"];
+    $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
 }
 
 $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
@@ -22,6 +24,9 @@ $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and 
     if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
     $post_income = $postLikes * $post_reward;
 ?>
+<style type="text/css">
+    .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
+</style>
 </div>
     <div class="latest-post-section">
         <div class="container">
@@ -43,6 +48,7 @@ $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and 
                     </div>
                     <h4 class="post-title" style="line-height: 1.8rem;white-space: normal;font-size: 20px;margin-bottom: 18px;font-weight: 700;"><?php echo $title; ?></h4>
                     <p class="post-entry"><?php echo $description; ?></p>
+                    <p class="post-entry"><?php echo $post_hash_tags; ?></p>
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
@@ -323,4 +329,32 @@ $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and 
             </div>
         </div>
     </div>
+<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
+<script type="text/javascript">
+    $('.hov_vote').click(function() {
+        if (dlike_username != null) {
+            var mypermlink = $(this).attr("data-permlink");
+            var authorname = $(this).attr("data-author");
+            $(this).addClass('fas fa-spinner fa-spin like_loader');
+            var update = '1';
+            $.ajax({ type: "POST",url: "/helper/solve.php", data: {ath: authorname, plink: mypermlink},
+                success: function(data) {
+                    try { var response = JSON.parse(data)
+                        if (response.done == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');$('#upvotefail').modal('show');return false;
+                        } else if (response.error == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');toastr.error(response.message);return false;
+                        } else {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
+                            toastr.success(response.message);
+                            var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
+                            var post_income = response.post_income;
+                            var newlikes = parseInt(getpostlikes) + parseInt(update);
+                            var updatespostincome = newlikes * post_income;
+                            $('.post_likes' + mypermlink + authorname).html(newlikes);
+                            $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
+                        }
+                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+                }
+            });
+        } else {toastr.error('You must be login with DLIKE username!');return false;}
+    });
+</script>
