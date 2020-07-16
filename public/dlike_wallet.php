@@ -27,6 +27,10 @@ $sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transaction
 $row_I = $sql_I->fetch_assoc();
 $today_income = $row_I["total_income"];
 if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
+
+$sql_J = $conn->query("SELECT * FROM dlikeaccounts where usernam='$dlike_user'");
+$row_J = $sql_J->fetch_assoc();
+$offchain_address = $row_J["offchain_address"];
 ?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container"><div class="row">
@@ -64,7 +68,9 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-orange mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
-                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;"><span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span></small>
+                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;">
+                                    <?php if(!empty($offchain_address)){ echo $offchain_address; } else { ?>
+                                    <span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span></small> <? } ?>
                             </div>
                         </div>
                     </div>

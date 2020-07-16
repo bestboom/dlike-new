@@ -21,7 +21,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         {die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));}
 
         $check_unique_like = $conn->query("SELECT * FROM mylikes where username = '$userval' and permlink = '$permlink' and author = '$author'");
-        if ($check_unique_like->num_rows > 0){die(json_encode(['error' => true, 'message' => 'You have already recommended this share!']));} 
+        if ($check_unique_like->num_rows > 0){die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));} 
 
         $check_max_likes = $conn->query("SELECT * FROM mylikes where username = '$userval' and  like_time > now() - INTERVAL 24 HOUR");
         if ($check_max_likes->num_rows >= 6){die(json_encode(['error' => true, 'message' => 'You reached maximum daily likes limit']));}
