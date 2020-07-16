@@ -140,8 +140,8 @@ $offchain_address = $row_J["offchain_address"];
                     if ($sql_P->num_rows > 0) { while($row_P = $sql_P->fetch_assoc()) { 
                         $entry_date = strtotime($row_P["req_on"]); ?> 
                 <tr>
-                    <td><?php echo $row_T["amount"]; ?></td>
-                    <td><?php echo $row_T["status"]; ?></td>
+                    <td><?php echo $row_P["amount"]; ?></td>
+                    <td><?php echo $row_P["status"]; ?></td>
                     <td style="float:right;"><?php echo time_ago($entry_date); ?></td> 
                 </tr><? } }?>
             </tbody>
