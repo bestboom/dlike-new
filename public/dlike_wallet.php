@@ -155,7 +155,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
             toastr.error('phew... Please enter valid amount to withdraw');
             return false;
         }
-        if (parseFloat(out_amount) > parseFloat(dlk_bal)) {$(".tok_out_btn").attr("disabled", false);
+        if (parseFloat(out_amount) > parseFloat(dlk_amount)) {$(".tok_out_btn").attr("disabled", false);
             toastr.error('phew... Not enough balance');
             return false;
         }
