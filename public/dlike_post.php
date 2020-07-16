@@ -8,7 +8,7 @@ if ($sql_P && $sql_P->num_rows > 0){
     $imgUrl = $row_P["img_url"];
     $post_time = strtotime($row_P["created_at"]);
     $permlink = $row_P["permlink"];
-    $title = $row_T["title"];
+    $title = $row_P["title"];
 }
 ?>
 </div>
@@ -34,8 +34,7 @@ if ($sql_P && $sql_P->num_rows > 0){
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div class="author-thumb">
-                                <?php echo '<a href="#">
-                                    <img src="'.$imgUrl.'" alt="'..'" class="img-responsive">
+                                <?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">
                                 </a>'; ?>
                             </div>
                             <div class="author-info">
