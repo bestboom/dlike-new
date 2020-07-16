@@ -1,6 +1,15 @@
 <?php include('template/header7.php');
-echo $link = $_GET['link'];
-echo $user = $_GET['user'];
+$link = $_GET['link'];
+$user = $_GET['user'];
+
+$sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
+if ($sql_P && $sql_P->num_rows > 0){
+    $row_P = $sql_P->fetch_assoc();
+    $imgUrl = $row_P["img_url"];
+    $post_time = strtotime($row_P["created_at"]);
+    $permlink = $row_P["permlink"];
+    $title = $row_T["title"];
+}
 ?>
 </div>
     <div class="latest-post-section">
@@ -12,11 +21,9 @@ echo $user = $_GET['user'];
                     </a>
                 </div>
                 <div class="post-contnet-wrap">
-                    <span class="post-meta">30 NOV, 2019</span>
+                    <span class="post-meta"><?php echo time_ago($post_time); ?></span>
                     <h4 class="post-title">
-                        <a href="#">
-                            Publish what you think
-                        </a>
+                        <a href="#"><?php echo $title; ?></a>
                     </h4>
                     <p class="post-entry">
                         No third party can freeze or lose your funds! With enterprise-level 
@@ -27,9 +34,9 @@ echo $user = $_GET['user'];
                     <div class="post-footer">
                         <div class="post-author-block">
                             <div class="author-thumb">
-                                <a href="#">
-                                    <img src="./images/post/authors/1.png" alt="img" class="img-responsive">
-                                </a>
+                                <?php echo '<a href="#">
+                                    <img src="'.$imgUrl.'" alt="'..'" class="img-responsive">
+                                </a>'; ?>
                             </div>
                             <div class="author-info">
                                 <h5>
@@ -37,7 +44,7 @@ echo $user = $_GET['user'];
                                         Nayn e Castro
                                     </a>
                                 </h5>
-                                <a href="#">@excoin</a>
+                                <a href="#">@<?php echo $user; ?></a>
                             </div>
                         </div>
                         <div class="post-comments">
