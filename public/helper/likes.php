@@ -6,6 +6,14 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sql = "ALTER TABLE dlikeaccounts ADD offchain_address VARCHAR(255) NOT NULL AFTER verified";
+if ($conn->query($sql) === TRUE) {
+    echo "new field added to dlikeaccounts table";
+} else {
+    echo "Error updating table: " . $conn->error;
+}
+?>
+<!--
 
 $sql = "CREATE TABLE dlike_withdrawals (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
@@ -20,8 +28,8 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-?>
-<!--
+
+
 
 $sqlw = "DELETE FROM mylikes";
 

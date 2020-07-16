@@ -64,7 +64,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-orange mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
-                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;"><span><input type="text" class="form-control" name="offchain_add" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus"></i></span></small>
+                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;"><span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address"></i></span></small>
                             </div>
                         </div>
                     </div>
@@ -126,8 +126,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                 <div class="col-md-12">
                     <div class="form-group">
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div>
-                            <input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
+                            <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div><input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
                         </div>
                     </div>
                 </div>
@@ -140,46 +139,47 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
 <script type="text/javascript">
     let withdraw_val = document.getElementById('withdraw_amount');
     withdraw_val.onkeydown = function(e) {
-        if(!((e.keyCode > 95 && e.keyCode < 106)
-          || (e.keyCode > 47 && e.keyCode < 58) 
-          || e.keyCode == 8)) {
-            return false;
+        if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;
         }
     }
     $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
-    $('.tok_out_btn').click(function() {
-        $(".tok_out_btn").attr("disabled", true);
+    $('.tok_out_btn').click(function() {$(".tok_out_btn").attr("disabled", true);
         let out_amount = $('#withdraw_amount').val();
         let dlk_amount = $('.user_bal').html();
         if (out_amount == "") {$(".tok_out_btn").attr("disabled", false);
-            toastr.error('phew... Please enter valid amount to withdraw');
-            return false;
+            toastr.error('phew... Please enter valid amount to withdraw');return false;
         }
         if (parseFloat(out_amount) > parseFloat(dlk_amount)) {$(".tok_out_btn").attr("disabled", false);
-            toastr.error('phew... Not enough balance');
-            return false;
+            toastr.error('phew... Not enough balance');return false;
         }
-        if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');
-            return false;
+        if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');return false;
         }
-        $.ajax({
-            type: "POST",
-            url: 'helper/dlk_withdraw.php',
-            data: { dlk_out_amount: out_amount },
+        $.ajax({type: "POST",url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },
             success: function(data) {
-                try {
-                    var response = JSON.parse(data)
+                try {var response = JSON.parse(data)
                     if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
                         toastr['error'](response.message);return false;
                     } else {$(".tok_out_btn").attr("disabled", true);$("#dlike_tok_with").modal("hide");
                         toastr['success'](response.message);
                         setTimeout(function(){window.location.reload();}, 300);
                     }
-                } catch (err) {
-                    toastr.error('Sorry. Server response is malformed');
-                }
+                } catch (err) {toastr.error('Sorry. Server response is malformed');}
             }
         });
     });
-
+    $('.add_address').click(function() {
+        let offchain_add = $('.offchain_add').val();
+        if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;
+        }
+        $.ajax({type: "POST", url: 'helper/dlk_withdraw.php',data:{ action :'address',offchain_address: offchain_add },
+            success: function(data) {
+                try {
+                    var response = JSON.parse(data)
+                    if (response.error == true) {toastr['error'](response.message);return false;
+                    } else {toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
+                    }
+                } catch (err) {toastr.error('Sorry. Server response is malformed');}
+            }
+        });
+    });
 </script>
