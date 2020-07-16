@@ -25,18 +25,18 @@ $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
                     <?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive"></a>'; ?>
                 </div>
                 <div class="post-contnet-wrap">
-                    <div class="post-footer">
+                    <div class="post-footer" style="margin-bottom: 20px;">
                         <div class="post-author-block">
                             <div class="author-thumb"><?php echo '<a href="#"><img src="'.$profile_pic.'" alt="'.$user.'" class="img-responsive"></a>'; ?>
                             </div>
                             <div class="author-info">
                                 <h5 style="margin:1px;"><a href="#">@<?php echo $user; ?></a></h5>
-                                <span><?php echo time_ago($post_time); ?></span>
+                                <span style="font-size: 13px;padding-left: 3px;"><?php echo time_ago($post_time); ?></span>
                             </div>
                         </div>
                         <div class="post-comments"><a href="#"><?php echo ucfirst($category); ?></a></div>
                     </div>
-                    <h4 class="post-title" style="line-height: 1.8rem;white-space: normal;font-size: 20px;margin-bottom: 16px;"><?php echo $title; ?></h4>
+                    <h4 class="post-title" style="line-height: 1.8rem;white-space: normal;font-size: 20px;margin-bottom: 18px;font-weight: 700;"><?php echo $title; ?></h4>
                     <p class="post-entry"><?php echo $description; ?></p>
                     <div class="post-footer">
                         <div class="post-author-block">
