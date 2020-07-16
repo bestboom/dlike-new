@@ -64,7 +64,7 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                             <span class="stamp stamp-md bg-orange mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Off-Chain Wallet Address</small></h4>
-                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;"><span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address"></i></span></small>
+                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;"><span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span></small>
                             </div>
                         </div>
                     </div>
@@ -160,21 +160,17 @@ if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
                     if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
                         toastr['error'](response.message);return false;
                     } else {$(".tok_out_btn").attr("disabled", true);$("#dlike_tok_with").modal("hide");
-                        toastr['success'](response.message);
-                        setTimeout(function(){window.location.reload();}, 300);
+                        toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                     }
                 } catch (err) {toastr.error('Sorry. Server response is malformed');}
             }
         });
     });
-    $('.add_address').click(function() {
-        let offchain_add = $('.offchain_add').val();
-        if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;
-        }
+    $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
+        if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;}
         $.ajax({type: "POST", url: 'helper/dlk_withdraw.php',data:{ action :'address',offchain_address: offchain_add },
             success: function(data) {
-                try {
-                    var response = JSON.parse(data)
+                try {var response = JSON.parse(data)
                     if (response.error == true) {toastr['error'](response.message);return false;
                     } else {toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                     }

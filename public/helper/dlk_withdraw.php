@@ -16,7 +16,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($wallet_amount <= 0) {$errors = 'Not enough balance';}
 	if ($wallet_amount < $dlk_amount) {$errors = 'Not enough balance';}
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
-	//check last withdraw here
+	$check_limit = $conn->query("SELECT * FROM dlike_withdrawals where username = '$username' where DATE(req_on) = CURDATE()");
+	if ($check_limit->num_rows > 0) {$errors = 'Phew... One withdrawal allowed daily!';}
     if (empty($errors)) { $status = '0';
     	$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
     	$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, status, req_on) VALUES ('".$username."', '".$dlike_amount."', '".$status."', '".date("Y-m-d H:i:s")."')");
