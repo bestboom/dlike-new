@@ -117,9 +117,8 @@ include('template/header7.php');
 									</div>
 		                        </div>
 		                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_likes">
-		                        	<div id="cmt_content">
-		                        	
-<?php
+		                        	<div class="container">
+								    	<div class="row" style="margin-top: 30px;"><?php
 $sql_M = $conn->query("SELECT * FROM dlike_upvotes where curator = '$prof_user' ORDER BY curation_time DESC");
 if ($sql_M && $sql_M->num_rows > 0)
 {   while ($row_M = $sql_M->fetch_assoc())
@@ -150,8 +149,7 @@ if ($sql_M && $sql_M->num_rows > 0)
         $row_L = $checkLikes->fetch_assoc();
         if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
         $post_income = $postLikes * $post_reward;
-?>
-<div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
+?><div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
     <div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
     <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
@@ -162,11 +160,12 @@ if ($sql_M && $sql_M->num_rows > 0)
     <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
     <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
     <div class="post-comments bottom_block">
-        <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+        <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div>
 </article></div>
 <? } } ?>
+</div></div>
 
 		                        	</div>
 		                        </div>
