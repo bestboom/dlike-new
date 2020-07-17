@@ -10,7 +10,7 @@ if ($sql_P && $sql_P->num_rows > 0){
     $author = $row_P["username"];
     $title = $row_P["title"];
     $description = $row_P["description"];
-    $category = $row_P["ctegory"];
+    $post_category = $row_P["ctegory"];
     $post_tags = $row_P["tags"];
     $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
     $ext_url = $row_P["ext_url"];
@@ -25,7 +25,7 @@ $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and 
     $post_income = $postLikes * $post_reward;
 
 $urlData = parse_url($ext_url );
-$host = $urlData['host'];
+$host = preg_replace('/^www\./', '', $urlData['host']);
 ?>
 <style type="text/css">
     .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
@@ -37,17 +37,17 @@ $host = $urlData['host'];
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">
-                <div class="post-thumb"><?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive"></a>'; ?></div>
+                <div class="post-thumb"><?php echo '<img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">'; ?></div>
                 <div class="post-contnet-wrap">
                     <div class="post-footer" style="margin-bottom: 20px;">
                         <div class="post-author-block">
-                            <div class="author-thumb"><?php echo '<a href="#"><img src="'.$profile_pic.'" alt="'.$user.'" class="img-responsive"></a>'; ?></div>
+                            <div class="author-thumb"><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" class="img-responsive"></a>'; ?></div>
                             <div class="author-info">
-                                <h5 style="margin:1px;"><a href="#">@<?php echo $user; ?></a></h5>
+                                <h5 style="margin:1px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5>
                                 <span style="font-size: 13px;padding-left: 3px;"><?php echo time_ago($post_time); ?></span>
                             </div>
                         </div>
-                        <div class="post-comments" style="color: #1652f0;"><a href="#"><?php echo ucfirst($category); ?></a></div>
+                        <div class="post-comments" style="color: #1652f0;"><a href="#"><?php echo ucfirst($post_category); ?></a></div>
                     </div>
                     <h4 class="post-title" style="line-height: 1.8rem;white-space: normal;font-size: 20px;margin-bottom: 18px;font-weight: 700;"><?php echo $title; ?></h4>
                     <p class="post-entry"><?php echo $description; ?><br><span style="float: right;color: #1652f0;font-size: 12px;">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
@@ -64,7 +64,7 @@ $host = $urlData['host'];
             </article>
 <center><div style="font-size: 18px;font-weight: 700;padding-bottom: 15px;">More Like This</div></center>
 <div class="row"><?php
-$sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 9");
+$sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$post_category' ORDER BY created_at DESC LIMIT 9");
 if ($sql_T && $sql_T->num_rows > 0)
 {   while ($row_T = $sql_T->fetch_assoc())
     {
