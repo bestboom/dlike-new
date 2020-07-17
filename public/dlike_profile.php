@@ -127,7 +127,7 @@ if ($sql_M && $sql_M->num_rows > 0)
     	$likes_author = $row_M["author"];
         $likes_permlink = $row_M["permlink"];
 
-        $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 60");
+        $sql_T = $conn->query("SELECT * FROM dlikeposts where username='$likes_author' and permlink='$likes_permlink' ORDER BY created_at DESC LIMIT 60");
 		if ($sql_T && $sql_T->num_rows > 0)
 		{
 			$imgUrl = $row_T["img_url"];
