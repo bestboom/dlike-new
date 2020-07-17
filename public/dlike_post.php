@@ -1,6 +1,5 @@
 <?php include('template/header7.php');
-$link = $_GET['link'];
-$user = $_GET['user'];
+$link = $_GET['link'];$user = $_GET['user'];
 
 $sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
 if ($sql_P && $sql_P->num_rows > 0){
@@ -38,14 +37,11 @@ $host = $urlData['host'];
     <div class="latest-post-section">
         <div class="container">
             <article class="post-style-two post-full-width">
-                <div class="post-thumb">
-                    <?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive"></a>'; ?>
-                </div>
+                <div class="post-thumb"><?php echo '<a href="#"><img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive"></a>'; ?></div>
                 <div class="post-contnet-wrap">
                     <div class="post-footer" style="margin-bottom: 20px;">
                         <div class="post-author-block">
-                            <div class="author-thumb"><?php echo '<a href="#"><img src="'.$profile_pic.'" alt="'.$user.'" class="img-responsive"></a>'; ?>
-                            </div>
+                            <div class="author-thumb"><?php echo '<a href="#"><img src="'.$profile_pic.'" alt="'.$user.'" class="img-responsive"></a>'; ?></div>
                             <div class="author-info">
                                 <h5 style="margin:1px;"><a href="#">@<?php echo $user; ?></a></h5>
                                 <span style="font-size: 13px;padding-left: 3px;"><?php echo time_ago($post_time); ?></span>
@@ -65,9 +61,9 @@ $host = $urlData['host'];
                         </div>
                     </div>
                 </div>
-            </article><!-- post-style-two -->
-<div class="row">
-<?php
+            </article>
+<center><div style="font-size: 18px;font-weight: 700;padding-bottom: 15px;">More Like This</div></center>
+<div class="row"><?php
 $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 9");
 if ($sql_T && $sql_T->num_rows > 0)
 {   while ($row_T = $sql_T->fetch_assoc())
@@ -88,293 +84,25 @@ if ($sql_T && $sql_T->num_rows > 0)
         $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
         $row_L = $checkLikes->fetch_assoc();
         if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-        $post_income = $postLikes * $post_reward;
-?>
-        <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
-        <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
-        <div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
-        <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
-        <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
-        </div></div>
-        <div class="post-thumb img-fluid"><?php echo '<a href="/post/'.$author.'/'.$permlink.'"><img src=' . $imgUrl . ' class="card-img-top" /></a>'; ?></a></div>
-        <div class="post-contnet-wrap post_bottom">
-        <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
-        <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
-        <div class="post-comments bottom_block">
-            <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
-            <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
-        </div>
-        </article></div>
+        $post_income = $postLikes * $post_reward; ?>
+    <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
+    <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
+    <div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
+    <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
+    <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
+    </div></div>
+    <div class="post-thumb img-fluid"><?php echo '<a href="/post/'.$author.'/'.$permlink.'"><img src=' . $imgUrl . ' class="card-img-top" /></a>'; ?></a></div>
+    <div class="post-contnet-wrap post_bottom">
+    <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
+    <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
+    <div class="post-comments bottom_block">
+        <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+        <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
+    </div>
+    </article></div>
 <?php } } ?> 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <article class="post-style-two">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img src="./images/post/2.jpg" alt="img" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="post-contnet-wrap">
-                            <span class="post-meta">30 NOV, 2019</span>
-                            <h4 class="post-title">
-                                <a href="#">
-                                    Publish what you think
-                                </a>
-                            </h4>
-                            <p class="post-entry">
-                                No third party can freeze or lose your funds! With enterprise-level security 
-                                superior to most other t is a long established....
-                            </p>
-                            <div class="post-footer">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/2.png" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
-                                        </h5>
-                                        <a href="#">@excoin</a>
-                                    </div>
-                                </div>
-                                <div class="post-comments">
-                                    <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                                    <a href="#">08</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article><!-- post-style-two -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <article class="post-style-two ">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img src="./images/post/3.jpg" alt="img" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="post-contnet-wrap">
-                            <span class="post-meta">30 NOV, 2019</span>
-                            <h4 class="post-title">
-                                <a href="#">
-                                    Publish what you think
-                                </a>
-                            </h4>
-                            <p class="post-entry">
-                                No third party can freeze or lose your funds! With enterprise-level security 
-                                superior to most other t is a long established....
-                            </p>
-                            <div class="post-footer">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/3.png" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
-                                        </h5>
-                                        <a href="#">@excoin</a>
-                                    </div>
-                                </div>
-                                <div class="post-comments">
-                                    <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                                    <a href="#">15</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article><!-- post-style-two -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <article class="post-style-two">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img src="./images/post/4.jpg" alt="img" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="post-contnet-wrap">
-                            <span class="post-meta">30 NOV, 2019</span>
-                            <h4 class="post-title">
-                                <a href="#">
-                                    Publish what you think
-                                </a>
-                            </h4>
-                            <p class="post-entry">
-                                No third party can freeze or lose your funds! With enterprise-level security 
-                                superior to most other t is a long established....
-                            </p>
-                            <div class="post-footer">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/4.png" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
-                                        </h5>
-                                        <a href="#">@excoin</a>
-                                    </div>
-                                </div>
-                                <div class="post-comments">
-                                    <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                                    <a href="#">05</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article><!-- post-style-two -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <article class="post-style-two">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img src="./images/post/5.jpg" alt="img" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="post-contnet-wrap">
-                            <span class="post-meta">30 NOV, 2019</span>
-                            <h4 class="post-title">
-                                <a href="#">
-                                    Publish what you think
-                                </a>
-                            </h4>
-                            <p class="post-entry">
-                                No third party can freeze or lose your funds! With enterprise-level security 
-                                superior to most other t is a long established....
-                            </p>
-                            <div class="post-footer">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/5.png" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
-                                        </h5>
-                                        <a href="#">@excoin</a>
-                                    </div>
-                                </div>
-                                <div class="post-comments">
-                                    <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                                    <a href="#">16</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article><!-- post-style-two -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <article class="post-style-two">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img src="./images/post/6.jpg" alt="img" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="post-contnet-wrap">
-                            <span class="post-meta">30 NOV, 2019</span>
-                            <h4 class="post-title">
-                                <a href="#">
-                                    Publish what you think
-                                </a>
-                            </h4>
-                            <p class="post-entry">
-                                No third party can freeze or lose your funds! With enterprise-level security 
-                                superior to most other t is a long established....
-                            </p>
-                            <div class="post-footer">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/6.png" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
-                                        </h5>
-                                        <a href="#">@excoin</a>
-                                    </div>
-                                </div>
-                                <div class="post-comments">
-                                    <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                                    <a href="#">25</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article><!-- post-style-two -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <article class="post-style-two">
-                        <div class="post-thumb">
-                            <a href="#">
-                                <img src="./images/post/7.jpg" alt="img" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="post-contnet-wrap">
-                            <span class="post-meta">30 NOV, 2019</span>
-                            <h4 class="post-title">
-                                <a href="#">
-                                    Publish what you think
-                                </a>
-                            </h4>
-                            <p class="post-entry">
-                                No third party can freeze or lose your funds! With enterprise-level security 
-                                superior to most other t is a long established....
-                            </p>
-                            <div class="post-footer">
-                                <div class="post-author-block">
-                                    <div class="author-thumb">
-                                        <a href="#">
-                                            <img src="./images/post/authors/7.png" alt="img" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="author-info">
-                                        <h5>
-                                            <a href="#">
-                                                Nayn e Castro
-                                            </a>
-                                        </h5>
-                                        <a href="#">@excoin</a>
-                                    </div>
-                                </div>
-                                <div class="post-comments">
-                                    <img src="./images/post/cmnt-icon.png" alt="img" class="img-responsive">
-                                    <a href="#">35</a>
-                                </div>
-                            </div>
-                        </div>
-                    </article><!-- post-style-two -->
-                </div>
-            </div>
-        </div>
-    </div>
+</div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
