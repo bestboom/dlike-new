@@ -97,8 +97,7 @@ include('template/header7.php');
 										    $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
 										    $row_L = $checkLikes->fetch_assoc();
 										    if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-										    $post_income = $postLikes * $post_reward; ?>
-										<div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
+										    $post_income = $postLikes * $post_reward; ?><div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
 										<div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
 										<div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
 										<div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
@@ -118,7 +117,20 @@ include('template/header7.php');
 									</div>
 		                        </div>
 		                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_likes">
-		                        	<div id="cmt_content"></div>
+		                        	<div id="cmt_content">
+		                        	
+<?php
+$sql_T = $conn->query("SELECT * FROM dlike_upvotes where curator = '$prof_user' ORDER BY curation_time DESC");
+if ($sql_T && $sql_T->num_rows > 0)
+{   while ($row_T = $sql_T->fetch_assoc())
+    {
+    	echo $author = $row_T["author"];
+        echo $permlink = $row_T["permlink"];
+        echo '<br>';
+} }
+?>
+
+		                        	</div>
 		                        </div>
 		                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
 		                            <div id="replies_content"></div>
