@@ -14,6 +14,7 @@ if ($sql_P && $sql_P->num_rows > 0){
     $post_tags = $row_P["tags"];
     $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
     $ext_url = $row_P["ext_url"];
+    $post_id = $row_P["id"];
 }
 
 $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
@@ -64,7 +65,7 @@ $host = preg_replace('/^www\./', '', $urlData['host']);
             </article>
 <center><div style="font-size: 18px;font-weight: 700;padding-bottom: 15px;">More Like This</div></center>
 <div class="row"><?php
-$sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$post_category' ORDER BY created_at DESC LIMIT 9");
+$sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$post_category' and id != '$post_id' ORDER BY created_at DESC LIMIT 9");
 if ($sql_T && $sql_T->num_rows > 0)
 {   while ($row_T = $sql_T->fetch_assoc())
     {
