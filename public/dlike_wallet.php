@@ -116,10 +116,10 @@ $offchain_address = $row_J["offchain_address"];
                     if ($sql_T->num_rows > 0) { while($row_T = $sql_T->fetch_assoc()) { 
                         $entry_date = strtotime($row_T["trx_time"]); 
                         $tx_type = $row_T["type"];
-                        if($tx_type == 'a'){$trx_type = '<i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;author';elseif($tx_type == 'b'){$trx_type = '<i class="fas fa-coffee"></i>&nbsp;&nbsp;curation';elseif($tx_type == 'c'){$trx_type = '<i class="fas fa-user"></i>&nbsp;&nbsp;affiliate';}?> 
+                        if($tx_type == 'a'){$trx_type = 'author';}elseif($tx_type == 'b'){$trx_type = 'curation';}elseif($tx_type == 'c'){$trx_type = 'affiliate';}?> 
                 <tr>
                     <td><?php echo $row_T["amount"]; ?></td>
-                    <td><?php echo $$trx_type; ?></td>
+                    <td><?php echo $trx_type ?></td>
                     <td><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></td>
                     <td style="float:right;"><?php echo time_ago($entry_date); ?></td> 
                 </tr><? } }?>
