@@ -116,7 +116,7 @@ include('template/header7.php');
 								    	</div>
 									</div>
 		                        </div>
-		                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_likes">
+		                        <div role="tabpanel" class="tab-pane fade" id="user_likes">
 		                        	<div class="container">
 								    	<div class="row" style="margin-top: 30px;"><?php
 $sql_M = $conn->query("SELECT * FROM dlike_upvotes where curator = '$prof_user' ORDER BY curation_time DESC");

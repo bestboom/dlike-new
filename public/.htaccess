@@ -29,7 +29,7 @@ RewriteRule ^wallets/(.*)$ ./wallets.php?user=$1
 RewriteRule ^@/?(.*)$ ./profile.php?user=$1
 RewriteRule ^dliker$ ./dliker.php
 RewriteRule ^tokensale$ ./tokensale.php
-RewriteRule ^welcome$ ./welcome.php
+RewriteRule ^welcome/(.*)$ ./welcome.php?ref=$1
 RewriteRule ^tags/(.*)$ ./tags.php?tag=$1
 RewriteRule ^category/(.*)$ ./category.php?cat=$1
 RewriteRule ^post/@(.*)/(.*)$ ./post.php?user=$1&link=$2
