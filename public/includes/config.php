@@ -82,5 +82,5 @@ $curator_reward = '0.30';
 $affiliate_reward = '0.05';
 $max_withdraw_limit = '5000';
 
-//if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {}
+
 ?>

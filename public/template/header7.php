@@ -60,7 +60,7 @@
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto"><li class="nav-item top_nav_li">
-            <div class="row top_nav"><div class="col-md-3 col-2"><?php if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) { ?><button onclick="window.location.href='/<?php echo $_COOKIE['dlike_username']; ?>';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i></button>
+            <div class="row top_nav"><div class="col-md-3 col-2"><?php if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) { ?><button onclick="window.location.href='/profile/<?php echo $_COOKIE['dlike_username']; ?>';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="/images/user.png" alt="<? echo $_COOKIE['dlike_username']; ?>" title="<? echo $_COOKIE['dlike_username']; ?>" id="user_img" class="rounded-circle img-fluid prof_img_nav"></span></button>
                     <? } elseif (isset($_COOKIE['username']) || $_COOKIE['username'])  { ?><button onclick="window.location.href='/@<? echo $_COOKIE['username']; ?>';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="/images/user.png" alt="<? echo $_COOKIE['username']; ?>" title="<? echo $_COOKIE['username']; ?>" id="user_img" class="rounded-circle img-fluid prof_img_nav"></span>
                     </button><? } else { ?><button onclick="window.location.href='/welcome';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i></button><? } ?></div>
                 <div class="col-md-4 col-2"><button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i></button></div>
@@ -69,3 +69,12 @@
         </li></ul>
     </div>
 </div></nav><!-- main-nav-block -->
+
+<?php
+if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {
+    $dlk_user = $_COOKIE['dlike_username'];
+    $sql_Z = $conn->query("SELECT * FROM dlikeaccounts where username = '$dlk_user'");
+    $row_Z = $sql_Z->fetch_assoc();
+    $dlk_profile_img = $row_Z["profile_pic"];
+}
+?>
