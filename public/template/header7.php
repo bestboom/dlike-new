@@ -69,12 +69,5 @@
         </li></ul>
     </div>
 </div></nav><!-- main-nav-block -->
-
-<?php
-if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {
-    $dlk_user = $_COOKIE['dlike_username'];
-    $sql_Z = $conn->query("SELECT * FROM dlikeaccounts where username = '$dlk_user'");
-    $row_Z = $sql_Z->fetch_assoc();
-    $dlk_profile_img = $row_Z["profile_pic"];
-}
-?>
+<?php if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {
+    $dlk_user = $_COOKIE['dlike_username'];$sql_Z = $conn->query("SELECT * FROM dlikeaccounts where username = '$dlk_user'");$row_Z = $sql_Z->fetch_assoc(); $dlk_profile_img = $row_Z["profile_pic"];}?>

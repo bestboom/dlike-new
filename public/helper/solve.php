@@ -7,7 +7,6 @@ require '../includes/config.php';
 
 if (isset($_POST["ath"]) && isset($_POST["plink"]))
 {
-
     $saved_ip = $_COOKIE['usertoken'];
     $rating = '5';
     $userval = $_COOKIE['dlike_username'];
@@ -41,7 +40,6 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     if ($update_auth_wallet === TRUE) { $type = 'a';
                         $sql_auth = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
                     }
-
 
                 $check_cur_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$userval'");
                 $row_cur = $check_cur_bal->fetch_assoc();
@@ -89,7 +87,5 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         }
     } else { die(json_encode(['error' => true, 'message' => 'You must be login with DLIKE username to recomend a share!']));
 	}
-} else { die(json_encode(['error' => true, 'message' => 'There is some issue. Please try later!']));
-}
-
+} else { die(json_encode(['error' => true, 'message' => 'There is some issue. Please try later!']));}
 ?>
