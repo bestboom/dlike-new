@@ -6,14 +6,39 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sqlm = "CREATE TABLE dlike_daily_rewards (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+yesterday_upvotes INT(30) NOT NULL,
+dlike_staking VARCHAR(255) NOT NULL,
+dlike_dao VARCHAR(255) NOT NULL,
+dlike_charity VARCHAR(255) NOT NULL,
+dlike_team VARCHAR(255) NOT NULL,
+dlike_foundation VARCHAR(255) NOT NULL,
+dlike_airdrop VARCHAR(255) NOT NULL,
+data_time TIMESTAMP,
+update_time TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table transactions created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+?>
+<!--
+
+//$sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(curation_time) = SUBDATE(CURRENT_DATE(), 1)");
+
+
+
 $sql = "ALTER TABLE dlikeaccounts ADD offchain_address VARCHAR(255) NOT NULL AFTER verified";
 if ($conn->query($sql) === TRUE) {
     echo "new field added to dlikeaccounts table";
 } else {
     echo "Error updating table: " . $conn->error;
 }
-?>
-<!--
 
 $sql = "CREATE TABLE dlike_withdrawals (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
