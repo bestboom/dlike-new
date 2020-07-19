@@ -1,5 +1,12 @@
-<?php include('head.php'); 
-include('../includes/config.php'); 
+<?php
+
+$url = parse_url(getenv("NEW_DATABASE_URL"));
+$server = $url["host"]; 
+$username = $url["user"]; 
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$conn = new mysqli($server, $username, $password, $db);
 
 $sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(curation_time) = CURDATE()");
 
@@ -24,4 +31,3 @@ $sql_data = $conn->query("INSERT INTO dlike_daily_rewards (yesterday_upvotes, dl
 
 
 ?>
-</div>
