@@ -1,5 +1,4 @@
 <?php
-
 $url = parse_url(getenv("NEW_DATABASE_URL"));
 $server = $url["host"]; 
 $username = $url["user"]; 
@@ -7,6 +6,12 @@ $password = $url["pass"];
 $db = substr($url["path"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+echo $url;
 
 $sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(curation_time) = CURDATE()");
 
