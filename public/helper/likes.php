@@ -16,7 +16,7 @@ dlike_team VARCHAR(255) NOT NULL,
 dlike_foundation VARCHAR(255) NOT NULL,
 dlike_airdrop VARCHAR(255) NOT NULL,
 data_time TIMESTAMP,
-update_time TIMESTAMP
+update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 )";
 
 if ($conn->query($sqlm) === TRUE) {
