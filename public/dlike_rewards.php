@@ -1,5 +1,5 @@
 <?php  include('template/header7.php'); ?>
-
+<style type="text/css">.reward_fileds {margin-bottom: 1px!important;}</style>
 </div>
 
 
@@ -33,11 +33,11 @@ echo $yesterday_points;
                 <div class="working-process">
                     <h4 class="pool_head">DLIKE Daily Reward Pool Distribution</h4>
                     <p>
-                        You can earn tokens for your contributions to the DLIKE network. The more interactions on your content, the greater your share of the daily token reward pool to your OffChain wallet.
+                        You can earn DLIKE tokens for your contributions to the DLIKE community. The more interactions you have, more will be the earnings. DLIKE is simple proof of likes network where every like generates 1 DLIKE token. This generated token gets distributed into all sectors of DLIKE community as per following share.
                     </p>
                     <p style="color:#c51d24;font-weight: 600;">
                         <span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>
-                        DLIKE reward pool is only available to PRO users
+                        Daily staking rewards are directly paif into your wallets.
                     </p>
                     <div>
                         <img src="/images/post/dlike-reward.png" class="img-fluid" alt="">
@@ -47,10 +47,25 @@ echo $yesterday_points;
             <div class="offset-lg-1 col-lg-5 col-md-6">
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
-                        <div style="font-size: 1.1rem;">Reward Pool</div>
-                        <div class="reward_amount">Yesterday Likes: <?php echo $yesterday_points; ?></div>
+                        <div style="font-size: 1.1rem;">Reward Pool Today</div>
+                        <div class="reward_amount">Likes Till Now: <?php echo $yesterday_points; ?></div>
                     </h3>
                     <form class="user-connected-from create-account-form reward_form" />
+                     <div class="form-group reward_fileds">
+                        <input type="text" class="form-control reward_input" value=" | Authors" readonly>
+                        <span class="fas fa-star inp_icon"></span>
+                        <span class="inp_text"><?php echo $staking; ?></span>
+                    </div>
+                     <div class="form-group reward_fileds">
+                        <input type="text" class="form-control reward_input" value=" | Curators" readonly>
+                        <span class="fas fa-star inp_icon"></span>
+                        <span class="inp_text"><?php echo $staking; ?></span>
+                    </div>
+                     <div class="form-group reward_fileds">
+                        <input type="text" class="form-control reward_input" value=" | Affiliates" readonly>
+                        <span class="fas fa-star inp_icon"></span>
+                        <span class="inp_text"><?php echo $staking; ?></span>
+                    </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Staking" readonly>
                         <span class="fas fa-star inp_icon"></span>
