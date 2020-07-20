@@ -10,7 +10,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
 
     <div class="working-process-section" style="padding: 40px 0 60px;">
         <div class="container">
-            <div class="row row-cards" style="margin-bottom:40px;">
+            <div class="row row-cards" style="margin-top:40px;">
                 <div class="col-sm-6 col-lg-3">
                     <div class="queue-stats card p-3">
                         <div class="d-flex align-items-center">
@@ -72,7 +72,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 30px;">
+            <div class="row" style="margin-top: 70px;">
                 <div class="col-lg-6  col-md-6">
                     <div class="working-process">
                         <ul class="working-process-list">
@@ -112,35 +112,35 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade in active show" id="stake_dlike">
                                 <div class="container">
-                                    <div class="row" style="margin-top: 20px;">
+                                    <div class="row" style="margin-top:45px;">
                                         <div id="stake_sub" style="width: 90%;">   
                                             <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                                             <div class="form-group">
                                                 <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
                                             </div>
-                                            <button type="button" class="btn btn-primary" id="stake_me">Stake</button>
+                                            <center><button type="button" class="btn btn-primary" id="stake_me" style="width: 30%;">Stake</button></center>
                                         </div>
                             </div></div></div>
                             <div role="tabpanel" class="tab-pane fade" id="unstake_dlike">
                                 <div class="container">
-                                    <div class="row" style="margin-top: 30px;">
+                                    <div class="row" style="margin-top: 45px;">
                                         <div id="stake_sub" style="width: 90%;">   
                                             <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                                             <div class="form-group">
                                                 <input type="number" class="form-control" name="unstakemaount" id="unstakemaount" placeholder="Amount to UnStake">
                                             </div>
-                                            <button type="button" class="btn btn-primary" id="unstake_me">Stake</button>
+                                            <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Unstake</button></center>
                                         </div>
                             </div></div></div>
                             <div role="tabpanel" class="tab-pane fade" id="user_likes">
                                 <div class="container">
-                                    <div class="row" style="margin-top: 30px;">
+                                    <div class="row" style="margin-top: 45px;">
                                         <div id="stake_sub" style="width: 90%;">   
                                             <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                                             <div class="form-group">
                                                 <input type="number" class="form-control" name="unstakemaount" id="unstakemaount" placeholder="Amount to UnStake">
                                             </div>
-                                            <button type="button" class="btn btn-primary" id="unstake_me">Stake</button>
+                                            <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Claim</button></center>
                                         </div>
                             </div></div></div>
                     </div></div>
