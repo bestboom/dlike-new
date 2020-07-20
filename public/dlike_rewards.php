@@ -5,7 +5,7 @@
 
 
 <?php
-$sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE() DESC Limit 1");
+$sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
 
 if ($sql1 && $sql1->num_rows > 0) 
 { 
