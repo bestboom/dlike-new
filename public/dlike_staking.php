@@ -78,85 +78,63 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                         <ul class="working-process-list">
                             <li>
                                 <div class="working-process-step">
-                                    <h4><span>#01.</span>  What is Staking?</h4>
+                                    <h4><span>#01.</span>  DLIKE Staking</h4>
                                     <div class="process-details">
                                         <p>
-                                            Staking means to "lock up" your DLIKE tokens for a certain period of time.For locking your tokens, you earn bonus rewards.
+                                            20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among tp 200 stakers by volume. This number will gradually grow to 1000.
                                         </p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="working-process-step">
-                                    <h4><span>#02.</span>  Staking Rewards</h4>
+                                    <h4><span>#02.</span>  How to Stake?</h4>
                                     <div class="process-details">
                                         <p>
-                                            We have 2 staking options.<br>
-                                            1. Stake for <b>90 days</b> to earn <b>9% bonus</b> tokens<br>
-                                            2. Stake for <b>180 days</b> to earn <b>25% bonus</b> tokens
+                                            Simply login with Tronlink and stake the amount of tokens yo want. You agree to freeze these tokens for 7 days as rewards on staked tokens are distributed on daily basis.
                                         </p>
                                     </div>
                                 </div>
                             </li>
                         </ul>
-                    
-
-
-                         
-                        <div class="row">
-                            <div class="col-sm-12 col-md-4">
-                                <div class="btn apps-download-btn signup-btn">
-                                    <i class="fas fa-desktop"></i>
-                                    <div class="btn-content">
-                                        <span>SIGN UP ON</span>
-                                        <p>DESKTOP APP</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4">
-                                <div class="btn apps-download-btn googleplay-btn">
-                                    <img src="./images/others/20.png" alt="img">
-                                    <div class="btn-content">
-                                        <span>GET IT ON</span>
-                                        <p>Google Play</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4">
-                                <div class="btn apps-download-btn googleplay-btn">
-                                    <i class="fab fa-apple"></i>
-                                    <div class="btn-content">
-                                        <span>GET IT ON</span>
-                                        <p>App Store</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6">
-
-
-                        <div class="ticker-head">
-                            <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
-                                <li class="nav-item"><a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab" aria-selected="true"><h5>Stake</h5></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Unstake</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Claim</a></li>
-                                <li class="nav-item nav-item-last"></li>
-                            </ul>
-                        </div>
-
+                    <div class="ticker-head">
+                        <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
+                            <li class="nav-item"><a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab" aria-selected="true"><h5>Stake</h5></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Unstake</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Claim</a></li>
+                            <li class="nav-item nav-item-last"></li>
+                        </ul>
+                    </div>
+                    <div class="market-ticker-block">
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
+                                <div class="container">
+                                    <div class="row" style="margin-top: 30px;">
+                                        <h3>Stake DLIKE Tokens</h3>
+                                        <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
+                                        <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
+                                            </div>
+                                            <button type="submit" class="btn btn-default" id="stake_me" disabled>Stake</button>
+                                        </form>
+                            </div></div></div>
+                            <div role="tabpanel" class="tab-pane fade" id="user_likes">
+                                    <div class="container">
+                                        <div class="row" style="margin-top: 30px;">
+                            </div></div></div>
+                            <div role="tabpanel" class="tab-pane fade" id="user_likes">
+                                    <div class="container">
+                                        <div class="row" style="margin-top: 30px;">
+                            </div></div></div>
+                    </div></div>
 
 
                     <div class="user-connected-form-block">
-                        <h3>Stake DLIKE Tokens</h3>
-                        <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
-                        <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
-                            <div class="form-group">
-                                <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
-                            </div>
-                            <button type="submit" class="btn btn-default" id="stake_me" disabled>Stake</button>
-                        </form>
+                        
                         <h3>Claim Rewards</h3>
                         <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
                         <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
