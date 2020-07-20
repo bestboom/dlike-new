@@ -35,7 +35,7 @@ $host = preg_replace('/^www\./', '', $urlData['host']);
     #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
     .auth-time{font-size: 13px;padding-left: 3px;}
     .post-title{line-height: 1.8rem;white-space: normal !important;font-size: 20px;margin-bottom: 18px;font-weight: 700;}
-    @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}
+    @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}.post-style-two .author-thumb img{display: inline-block !important;}}
 </style>
 </div>
     <div class="latest-post-section">
