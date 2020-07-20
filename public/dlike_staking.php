@@ -116,7 +116,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                                         <div id="stake_sub" style="width: 90%;">   
                                             <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                                             <div class="form-group">
-                                                <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
+                                                <input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake">
                                             </div>
                                             <center><button type="button" class="btn btn-primary" id="stake_me" style="width: 30%;">Stake</button></center>
                                         </div>
@@ -127,18 +127,18 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                                         <div id="stake_sub" style="width: 90%;">   
                                             <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                                             <div class="form-group">
-                                                <input type="number" class="form-control" name="unstakemaount" id="unstakemaount" placeholder="Amount to UnStake">
+                                                <input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake">
                                             </div>
                                             <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Unstake</button></center>
                                         </div>
                             </div></div></div>
-                            <div role="tabpanel" class="tab-pane fade" id="user_likes">
+                            <div role="tabpanel" class="tab-pane fade" id="claim_dlike">
                                 <div class="container">
                                     <div class="row" style="margin-top: 45px;">
                                         <div id="stake_sub" style="width: 90%;">   
                                             <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                                             <div class="form-group">
-                                                <input type="number" class="form-control" name="unstakemaount" id="unstakemaount" placeholder="Amount to UnStake">
+                                                <input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim">
                                             </div>
                                             <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Claim</button></center>
                                         </div>
@@ -147,7 +147,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                 </div>
             </div>
         </div>
-    </div><!-- working-process-section -->
+    </div>
 <? if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_COOKIE['username']; ?>
     <div class="latest-tranjections-area">
         <div class="latest-tranjections-block">
