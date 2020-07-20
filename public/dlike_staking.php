@@ -17,7 +17,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
     <div class="working-process-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5  col-md-6">
+                <div class="col-lg-6  col-md-6">
                     <div class="working-process">
                         <ul class="working-process-list">
                             <li>
@@ -43,8 +43,10 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                 </div>
                             </li>
                         </ul>
-                        <ul class="download-options-list">
-                            <li>
+                        
+                         
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4">
                                 <div class="btn apps-download-btn signup-btn">
                                     <i class="fas fa-desktop"></i>
                                     <div class="btn-content">
@@ -52,8 +54,8 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                         <p>DESKTOP APP</p>
                                     </div>
                                 </div>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
                                 <div class="btn apps-download-btn googleplay-btn">
                                     <img src="./images/others/20.png" alt="img">
                                     <div class="btn-content">
@@ -61,8 +63,8 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                         <p>Google Play</p>
                                     </div>
                                 </div>
-                            </li>
-                            <li>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
                                 <div class="btn apps-download-btn googleplay-btn">
                                     <i class="fab fa-apple"></i>
                                     <div class="btn-content">
@@ -70,11 +72,11 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                                         <p>App Store</p>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="offset-lg-2 col-lg-5 col-md-6">
+                <div class="col-lg-5 col-md-6">
                     <div class="user-connected-form-block">
                         <h3>Stake DLIKE Tokens</h3>
                         <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
