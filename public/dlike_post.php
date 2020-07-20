@@ -33,6 +33,8 @@ $host = preg_replace('/^www\./', '', $urlData['host']);
     .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
     .post-style-two.post-full-width .post-contnet-wrap {padding: 30px 40px 31px 40px;}
     #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
+    .post-title{line-height: 1.8rem;white-space: normal;font-size: 20px;margin-bottom: 18px;font-weight: 700;}
+    @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}}
 </style>
 </div>
     <div class="latest-post-section">
@@ -50,7 +52,7 @@ $host = preg_replace('/^www\./', '', $urlData['host']);
                         </div>
                         <div class="post-comments" style="color: #1652f0;"><a href="#"><?php echo ucfirst($post_category); ?></a></div>
                     </div>
-                    <h4 class="post-title" style="line-height: 1.8rem;white-space: normal;font-size: 20px;margin-bottom: 18px;font-weight: 700;"><?php echo $title; ?></h4>
+                    <h4 class="post-title"><?php echo $title; ?></h4>
                     <p class="post-entry"><?php echo $description; ?><br><span style="float: right;color: #1652f0;font-size: 12px;">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
                     <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
                     <div class="post-footer">
