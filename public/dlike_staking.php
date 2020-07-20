@@ -8,14 +8,14 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
 ?>
 </div>
 
-    <div class="working-process-section">
+    <div class="working-process-section" style="padding: 40px 0 60px;">
         <div class="container">
-            <div class="row row-cards">
+            <div class="row row-cards" style="margin-bottom:40px;">
                 <div class="col-sm-6 col-lg-3">
                     <div class="queue-stats card p-3">
                         <div class="d-flex align-items-center">
                             <span class="stamp stamp-md bg-blue mr-3">
-                              <i class="fa fa-list"></i>
+                              <i class="fa fa-check"></i>
                             </span>
                             <div>
                                 <h4 class="m-0"><small>My Staking</small></h4>
@@ -28,7 +28,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                     <div class="card p-3">
                         <div class="d-flex align-items-center">
                             <span class="stamp stamp-md bg-orange mr-3">
-                              <i class="fas fa-flask inp_icon"></i>
+                              <i class="fa fa-list"></i>
                             </span>
                             <div>
                                 <h4 class="m-0"><small>Total Stakers</small></h4>
@@ -62,7 +62,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                     <div class="card p-3">
                         <div class="d-flex align-items-center">
                             <span class="stamp stamp-md bg-green mr-3">
-                              <i class="fa fa-check"></i>
+                              <i class="fa fa-star"></i>
                             </span>
                             <div>
                                 <h4 class="m-0"><small>Yesterday Distributed</small></h4>
@@ -72,7 +72,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-top: 30px;">
                 <div class="col-lg-6  col-md-6">
                     <div class="working-process">
                         <ul class="working-process-list">
@@ -135,6 +135,19 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6">
+
+
+                        <div class="ticker-head">
+                            <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
+                                <li class="nav-item"><a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab" aria-selected="true"><h5>Stake</h5></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Unstake</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Claim</a></li>
+                                <li class="nav-item nav-item-last"></li>
+                            </ul>
+                        </div>
+
+
+
                     <div class="user-connected-form-block">
                         <h3>Stake DLIKE Tokens</h3>
                         <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
