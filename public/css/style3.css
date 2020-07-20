@@ -104,7 +104,7 @@ img {
 .img-responsive {
     max-width: 100%;
     height: auto;
-    display: block; }
+    display: inline-block; }
 
 a {
     color: inherit;
