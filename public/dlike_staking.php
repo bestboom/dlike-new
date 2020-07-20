@@ -78,7 +78,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                         <ul class="working-process-list">
                             <li>
                                 <div class="working-process-step">
-                                    <h4><span>#01.</span>  DLIKE Staking</h4>
+                                    <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  DLIKE Staking</h4>
                                     <div class="process-details">
                                         <p>
                                             20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among tp 200 stakers by volume. This number will gradually grow to 1000.
@@ -88,10 +88,10 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                             </li>
                             <li>
                                 <div class="working-process-step">
-                                    <h4><span>#02.</span>  How to Stake?</h4>
+                                    <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  How to Stake?</h4>
                                     <div class="process-details">
                                         <p>
-                                            Simply login with Tronlink and stake the amount of tokens yo want. You agree to freeze these tokens for 7 days as rewards on staked tokens are distributed on daily basis.
+                                            Simply login with Tronlink and stake the amount of tokens you want. You agree to freeze these tokens for 7 days as rewards on these staked tokens are distributed on daily basis.
                                         </p>
                                     </div>
                                 </div>
@@ -102,48 +102,48 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                 <div class="col-lg-5 col-md-6">
                     <div class="ticker-head">
                         <ul class="nav nav-tabs ticker-nav prof-nav" role="tablist">
-                            <li class="nav-item"><a class="nav-link active show" href="#user_posts" role="tab" data-toggle="tab" aria-selected="true"><h5>Stake</h5></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Unstake</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#user_likes" role="tab" data-toggle="tab">Claim</a></li>
+                            <li class="nav-item"><a class="nav-link active show" href="#stake_dlike" role="tab" data-toggle="tab" aria-selected="true"><h5>Stake</h5></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#unstake_dlike" role="tab" data-toggle="tab">Unstake</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#claim_dlike" role="tab" data-toggle="tab">Claim</a></li>
                             <li class="nav-item nav-item-last"></li>
                         </ul>
                     </div>
                     <div class="market-ticker-block">
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active show" id="user_posts">
+                            <div role="tabpanel" class="tab-pane fade in active show" id="stake_dlike">
                                 <div class="container">
-                                    <div class="row" style="margin-top: 30px;">
-                                        <h3>Stake DLIKE Tokens</h3>
-                                        <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
-                                        <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div id="stake_sub" style="width: 90%;">   
+                                            <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
                                             <div class="form-group">
                                                 <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
                                             </div>
-                                            <button type="submit" class="btn btn-default" id="stake_me" disabled>Stake</button>
-                                        </form>
+                                            <button type="button" class="btn btn-primary" id="stake_me">Stake</button>
+                                        </div>
+                            </div></div></div>
+                            <div role="tabpanel" class="tab-pane fade" id="unstake_dlike">
+                                <div class="container">
+                                    <div class="row" style="margin-top: 30px;">
+                                        <div id="stake_sub" style="width: 90%;">   
+                                            <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" name="unstakemaount" id="unstakemaount" placeholder="Amount to UnStake">
+                                            </div>
+                                            <button type="button" class="btn btn-primary" id="unstake_me">Stake</button>
+                                        </div>
                             </div></div></div>
                             <div role="tabpanel" class="tab-pane fade" id="user_likes">
-                                    <div class="container">
-                                        <div class="row" style="margin-top: 30px;">
-                            </div></div></div>
-                            <div role="tabpanel" class="tab-pane fade" id="user_likes">
-                                    <div class="container">
-                                        <div class="row" style="margin-top: 30px;">
+                                <div class="container">
+                                    <div class="row" style="margin-top: 30px;">
+                                        <div id="stake_sub" style="width: 90%;">   
+                                            <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" name="unstakemaount" id="unstakemaount" placeholder="Amount to UnStake">
+                                            </div>
+                                            <button type="button" class="btn btn-primary" id="unstake_me">Stake</button>
+                                        </div>
                             </div></div></div>
                     </div></div>
-
-
-                    <div class="user-connected-form-block">
-                        
-                        <h3>Claim Rewards</h3>
-                        <form action="" class="user-connected-from create-account-form" method="POST" id="stake_sub">   
-                        <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
-                            <div class="form-group">
-                                <input type="number" class="form-control" name="stakemaount" id="stakemaount" placeholder="Amount to Stake">
-                            </div>
-                            <button type="submit" class="btn btn-default" id="stake_me" disabled>Claim</button>
-                        </form>
-                    </div><!-- create-account-block -->
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
             <div class="container">
                 <div class="latest-tranjections-block-inner">
                     <div class="panel-heading-block">
-                        <h5>My Stakings</h5>
+                        <h5>Top Stakings Accounts</h5>
                     </div>
                     <table class="table coin-list latest-tranjections-table">
                         <thead>
