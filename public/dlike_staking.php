@@ -16,36 +16,10 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
 </div>
     <div class="working-process-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6  col-md-6">
-                    <div class="working-process">
-                        <ul class="working-process-list">
-                            <li>
-                                <div class="working-process-step">
-                                    <h4><span>#01.</span>  What is Staking?</h4>
-                                    <div class="process-details">
-                                        <p>
-                                            Staking means to "lock up" your DLIKE tokens for a certain period of time.For locking your tokens, you earn bonus rewards.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="working-process-step">
-                                    <h4><span>#02.</span>  Staking Rewards</h4>
-                                    <div class="process-details">
-                                        <p>
-                                            We have 2 staking options.<br>
-                                            1. Stake for <b>90 days</b> to earn <b>9% bonus</b> tokens<br>
-                                            2. Stake for <b>180 days</b> to earn <b>25% bonus</b> tokens
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    
 
-                    <div class="row row-cards">
+
+
+<div class="row row-cards">
                     <div class="col-sm-6 col-lg-3">
                         <div class="queue-stats card p-3">
                             <div class="d-flex align-items-center">
@@ -126,6 +100,38 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
                         </div>
                     </div>
                 </div>
+
+
+            <div class="row">
+                <div class="col-lg-6  col-md-6">
+                    <div class="working-process">
+                        <ul class="working-process-list">
+                            <li>
+                                <div class="working-process-step">
+                                    <h4><span>#01.</span>  What is Staking?</h4>
+                                    <div class="process-details">
+                                        <p>
+                                            Staking means to "lock up" your DLIKE tokens for a certain period of time.For locking your tokens, you earn bonus rewards.
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="working-process-step">
+                                    <h4><span>#02.</span>  Staking Rewards</h4>
+                                    <div class="process-details">
+                                        <p>
+                                            We have 2 staking options.<br>
+                                            1. Stake for <b>90 days</b> to earn <b>9% bonus</b> tokens<br>
+                                            2. Stake for <b>180 days</b> to earn <b>25% bonus</b> tokens
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    
+
+
                          
                         <div class="row">
                             <div class="col-sm-12 col-md-4">
