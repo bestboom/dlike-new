@@ -45,7 +45,7 @@ $host = preg_replace('/^www\./', '', $urlData['host']);
                 <div class="post-contnet-wrap">
                     <div class="post-footer" style="margin-bottom: 20px;">
                         <div class="post-author-block">
-                            <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'"></a>'; ?></div>
+                            <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" style="width: 32px;"></a>'; ?></div>
                             <div class="author-info">
                                 <h5 style="margin:1px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5>
                                 <span class="auth-time"><?php echo time_ago($post_time); ?></span>
@@ -91,7 +91,7 @@ if ($sql_T && $sql_T->num_rows > 0)
         $post_income = $postLikes * $post_reward; ?>
     <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
-    <div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
+    <div><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" style="width: 32px;"></a>'; ?></div>
     <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
     <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
     </div></div>
