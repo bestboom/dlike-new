@@ -1,107 +1,77 @@
-<?php  include('template/header5.php');
+<?php  include('template/header7.php');
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_COOKIE['username']; }
+if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $staker =  $_COOKIE['dlike_username']; }
 
 ?>
-</div><!-- sub-header -->
-<div class="container" style="background: #191d5d;max-width: 100% !important;">
-    <div class="row" style="padding: 50px;">
-        <div class="col" style="text-align:center;color: #fff;">
-            <h3>DLIKE TOKENS STAKING</h3>
-        </div>
-    </div>
 </div>
+
     <div class="working-process-section">
         <div class="container">
-
-
-
-<div class="row row-cards">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="queue-stats card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md bg-blue mr-3">
-                                  <i class="fa fa-list"></i>
-                                </span>
-                                <div>
-                                    <h4 class="m-0">
-                                        <small>In QUEUE</small>
-                                    </h4>
-                                    <small class="queue-stats-display text-muted">No posts in the Queue</small>
-                                </div>
+            <div class="row row-cards">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="queue-stats card p-3">
+                        <div class="d-flex align-items-center">
+                            <span class="stamp stamp-md bg-blue mr-3">
+                              <i class="fa fa-list"></i>
+                            </span>
+                            <div>
+                                <h4 class="m-0"><small>My Staking</small></h4>
+                                <small class="queue-stats-display text-muted">No posts in the Queue</small>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md bg-orange mr-3">
-                                  <i class="fa fa-money"></i>
-                                </span>
-                                <div>
-                                    <h4 class="m-0">
-                                        <small>Vote worth</small>
-                                    </h4>
-                                    <small class="text-muted">
-                                        <span class="run-bot-voteWorth">1.063 SBD</span>
-                                    </small>
-                                </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card p-3">
+                        <div class="d-flex align-items-center">
+                            <span class="stamp stamp-md bg-orange mr-3">
+                              <i class="fas fa-flask inp_icon"></i>
+                            </span>
+                            <div>
+                                <h4 class="m-0"><small>Total Stakers</small></h4>
+                                <small class="text-muted"><span class="run-bot-voteWorth">1.063 SBD</span></small>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="bot-power card p-3">
-                            <div id="voting-power" class="d-flex align-items-center">
-                                <span class="stamp stamp-md bg-green mr-3">
-                                  <i class="fa fa-battery-half"></i>
-                                </span>
-                                <div style="width: 100%">
-                                    <h4 class="m-0">
-                                        <small>Dlike Voting Power</small>
-                                    </h4>
-                                    <div>
-                                        <div class="clearfix">
-                                            <div class="float-left">
-                                                <strong class="voting-power-display">95.23%</strong>
-                                            </div>
-                                            <div class="float-right">
-                                                <small class="text-muted"></small>
-                                            </div>
-                                        </div>
-                                        <div class="voting-power-bar progress progress-xs">
-                                            <div class="progress-bar bg-yellow" role="progressbar" style="width: 95.23%;" aria-valuenow="95.23" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="bot-power card p-3">
+                        <div id="voting-power" class="d-flex align-items-center">
+                            <span class="stamp stamp-md bg-green mr-3">
+                              <i class="fa fa-battery-half"></i>
+                            </span>
+                            <div style="width: 100%">
+                                <h4 class="m-0"><small>Staked Amount</small></h4>
+                                <div>
+                                    <div class="clearfix">
+                                        <div class="float-left">
+                                            <strong class="voting-power-display">95.23%</strong>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card p-3">
-                            <div class="d-flex align-items-center">
-                                <span class="stamp stamp-md bg-green mr-3">
-                                  <i class="fa fa-check"></i>
-                                </span>
-                                <div>
-                                    <h4 class="m-0">
-                                        <small>Last Vote</small>
-                                    </h4>
-                                    <small class="text-muted">
-                                        <span class="run-bot-lastVote">7/20/2020 1:17:34 PM</span>
-                                    </small>
-                                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card p-3">
+                        <div class="d-flex align-items-center">
+                            <span class="stamp stamp-md bg-green mr-3">
+                              <i class="fa fa-check"></i>
+                            </span>
+                            <div>
+                                <h4 class="m-0"><small>Yesterday Distributed</small></h4>
+                                <small class="text-muted"><span class="run-bot-lastVote">7/20/2020 1:17:34 PM</span></small>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
+            </div>
             <div class="row">
                 <div class="col-lg-6  col-md-6">
                     <div class="working-process">
