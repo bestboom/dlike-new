@@ -43,6 +43,16 @@ echo $yesterday_points;
     array("x" => 1484505000000 , "y" => 930)
  );
 
+
+$sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time");
+
+$data = array();
+foreach ($sqlQuery as $row) {
+    $data[] = $row;
+}
+
+echo json_encode($data);
+
 ?>
 
 <div class="working-process-section" style="padding-top: 80px;">
@@ -231,7 +241,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
         xValueType: "dateTime",
         xValueFormatString: "DD MMM",
         yValueFormatString: "#,##0 Visits",
-        dataPoints: <?php echo json_encode($dataPoints); ?>
+        dataPoints: <?php echo json_encode($data); ?>
     }]
 });
  
