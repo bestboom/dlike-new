@@ -16,12 +16,8 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                         <div class="d-flex align-items-center">
                             <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-check"></i></span>
                             <div style="width: 100%"><h4 class="m-0"><small>My Staking</small></h4>
-                                <div>
-                                    <div class="clearfix">
-                                        <div class="float-left">
-                                            <strong class="voting-power-display">205 DLIKE</strong>
-                                        </div>
-                                    </div>
+                                <div class="clearfix">
+                                    <div class="float-left"><strong class="voting-power-display">205 DLIKE</strong></div>
                                 </div>
                             </div>
                         </div>
@@ -33,12 +29,8 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                             <span class="stamp stamp-md bg-orange mr-3"><i class="fa fa-list"></i></span>
                             <div style="width: 100%">
                                 <h4 class="m-0"><small>Total Stakers</small></h4>
-                                <div>
-                                    <div class="clearfix">
-                                        <div class="float-left">
-                                            <strong class="voting-power-display">33</strong>
-                                        </div>
-                                    </div>
+                                <div class="clearfix">
+                                    <div class="float-left"><strong class="voting-power-display">33</strong></div>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +146,6 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
             </div>
         </div>
     </div>
-<? if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_COOKIE['username']; ?>
     <div class="latest-tranjections-area">
         <div class="latest-tranjections-block">
             <div class="container">
@@ -194,9 +185,8 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                 </div><!-- order-history-block-inner -->
             </div>
         </div>
-    </div>
-<? } ?>     
-<?php include('template/footer.php'); ?>
+    </div>    
+<?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
     var optionstak = {
         target: '#stak-msg',

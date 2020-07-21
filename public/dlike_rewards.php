@@ -40,7 +40,7 @@ echo $yesterday_points;
                         Daily staking rewards are directly paif into your wallets.
                     </p>
                     <div>
-                        <img src="/images/post/dlike-reward.png" class="img-fluid" alt="">
+                        <img src="/images/dlike_pool.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
