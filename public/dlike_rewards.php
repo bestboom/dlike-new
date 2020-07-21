@@ -46,12 +46,24 @@ echo $yesterday_points;
 
 $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time");
 
-$data = array();
-foreach ($sqlQuery as $row) {
-    $data[] = $row;
-}
+$jsonArray = array();
+//foreach ($sqlQuery as $row) {
+//    $data[] = $row;
+//}
 
-echo json_encode($data);
+    if ($sqlQuery->num_rows > 0) {
+      //Converting the results into an associative array
+      while($row = $sqlQuery->fetch_assoc()) {
+        $jsonArrayItem = array();
+        $jsonArrayItem['upvotes'] = $row['yesterday_upvotes'];
+        $jsonArrayItem['time'] = $row['update_time'];
+        //append the above created object into the main array.
+        array_push($jsonArray, $jsonArrayItem);
+      }
+    }
+
+//echo json_encode($data);
+ echo json_encode($jsonArray);
 
 ?>
 
@@ -241,7 +253,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
         xValueType: "dateTime",
         xValueFormatString: "DD MMM",
         yValueFormatString: "#,##0 Visits",
-        dataPoints: <?php echo json_encode($data); ?>
+        dataPoints: <?php echo json_encode($jsonArray); ?>
     }]
 });
  
