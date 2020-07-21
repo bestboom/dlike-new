@@ -54,11 +54,11 @@ $jsonArray = array();
     if ($sqlQuery->num_rows > 0) {
       //Converting the results into an associative array
       while($row = $sqlQuery->fetch_assoc()) {
-        $jsonArrayItem = array();
-        $jsonArrayItem['upvotes'] = $row['yesterday_upvotes'];
-        $jsonArrayItem['time'] = $row['update_time'];
+        //$jsonArrayItem = array();
+        $jsonArray['upvotes'] = $row['yesterday_upvotes'];
+        $jsonArray['time'] = $row['update_time'];
         //append the above created object into the main array.
-        array_push($jsonArray, $jsonArrayItem);
+        array_push($jsonArray);
       }
     }
 
