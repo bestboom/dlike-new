@@ -27,9 +27,9 @@ echo $yesterday_points;
 
 
  $dataPoints = array(
-    array("x" => 1483381800000 , "y" => 650),
-    array("x" => 1483468200000 , "y" => 700),
-    array("x" => 1483554600000 , "y" => 710),
+    array("x" => 2020-07-19 16:30:02 , "y" => 60),
+    array("x" => 2020-07-19 17:00:01 , "y" => 70),
+    array("x" => 2020-07-19 21:00:01 , "y" => 10),
     array("x" => 1483641000000 , "y" => 658),
     array("x" => 1483727400000 , "y" => 734),
     array("x" => 1483813800000 , "y" => 963),
@@ -63,7 +63,8 @@ $jsonArray = array();
     }
 
 //echo json_encode($data);
- echo json_encode($jsonArray);
+ //echo json_encode($jsonArray);
+ print_r($jsonArray);
 
 ?>
 
@@ -253,7 +254,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
         xValueType: "dateTime",
         xValueFormatString: "DD MMM",
         yValueFormatString: "#,##0 Visits",
-        dataPoints: <?php echo json_encode($jsonArray); ?>
+        dataPoints: <?php echo json_encode($dataPoints); ?>
     }]
 });
  
