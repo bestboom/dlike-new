@@ -39,7 +39,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                 <div class="col-sm-6 col-lg-3">
                     <div class="bot-power card p-3">
                         <div id="voting-power" class="d-flex align-items-center">
-                            <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-battery-half"></i></span>
+                            <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-cubes"></i></span>
                             <div style="width: 100%"><h4 class="m-0"><small>Staked Amount</small></h4>
                                 <div class="clearfix">
                                     <div class="float-left"><strong class="voting-power-display">1000 DLIKE</strong></div>
@@ -52,7 +52,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                 <div class="col-sm-6 col-lg-3">
                     <div class="card p-3">
                         <div class="d-flex align-items-center">
-                            <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-star"></i></span>
+                            <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-exchange"></i></span>
                             <div style="width: 100%"><h4 class="m-0"><small>Yesterday Distributed</small></h4>
                                 <div class="clearfix">
                                     <div class="float-left"><strong class="voting-power-display">39200 DLIKE</strong></div>
@@ -70,9 +70,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                                 <div class="working-process-step">
                                     <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  DLIKE Staking</h4>
                                     <div class="process-details">
-                                        <p>
-                                            20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among tp 200 stakers by volume. This number will gradually grow to 1000.
-                                        </p>
+                                        <p>20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among tp 200 stakers by volume. This number will gradually grow to 1000.</p>
                                     </div>
                                 </div>
                             </li>
@@ -80,9 +78,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                                 <div class="working-process-step">
                                     <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  How to Stake?</h4>
                                     <div class="process-details">
-                                        <p>
-                                            Simply login with Tronlink and stake the amount of tokens you want. You agree to freeze these tokens for 7 days as rewards on these staked tokens are distributed on daily basis.
-                                        </p>
+                                        <p>Simply login with Tronlink and stake the amount of tokens you want. You agree to freeze these tokens for 7 days as rewards on these staked tokens are distributed on daily basis.</p>
                                     </div>
                                 </div>
                             </li>
