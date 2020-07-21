@@ -41,12 +41,8 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                         <div id="voting-power" class="d-flex align-items-center">
                             <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-battery-half"></i></span>
                             <div style="width: 100%"><h4 class="m-0"><small>Staked Amount</small></h4>
-                                <div>
-                                    <div class="clearfix">
-                                        <div class="float-left">
-                                            <strong class="voting-power-display">1000 DLIKE</strong>
-                                        </div>
-                                    </div>
+                                <div class="clearfix">
+                                    <div class="float-left"><strong class="voting-power-display">1000 DLIKE</strong></div>
                                 </div>
                             </div>
                         </div>
@@ -58,12 +54,8 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                         <div class="d-flex align-items-center">
                             <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-star"></i></span>
                             <div style="width: 100%"><h4 class="m-0"><small>Yesterday Distributed</small></h4>
-                                <div>
-                                    <div class="clearfix">
-                                        <div class="float-left">
-                                            <strong class="voting-power-display">39200 DLIKE</strong>
-                                        </div>
-                                    </div>
+                                <div class="clearfix">
+                                    <div class="float-left"><strong class="voting-power-display">39200 DLIKE</strong></div>
                                 </div>
                             </div>
                         </div>

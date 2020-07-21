@@ -30,21 +30,6 @@ echo $yesterday_points;
     <div class="container">
         <div class="row">
             <div class="col-lg-6  col-md-6">
-                <div class="working-process">
-                    <h4 class="pool_head">DLIKE Daily Reward Pool Distribution</h4>
-                    <p>
-                        You can earn DLIKE tokens for your contributions to the DLIKE community. The more interactions you have, more will be the earnings. DLIKE is simple proof of likes network where every like generates 1 DLIKE token. This generated token gets distributed into all sectors of DLIKE community as per following share.
-                    </p>
-                    <p style="color:#c51d24;font-weight: 600;">
-                        <span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>
-                        Daily staking rewards are directly paif into your wallets.
-                    </p>
-                    <div>
-                        <img src="/images/dlike_pool.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="offset-lg-1 col-lg-5 col-md-6">
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
                         <div style="font-size: 1.1rem;">Reward Pool Today</div>
@@ -98,8 +83,23 @@ echo $yesterday_points;
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
-                    <p class="DlikeComments">Rewards are updated at certain intervals.</p>
+                    <!--<p class="DlikeComments">Rewards are updated at certain intervals.</p>-->
                     </form>
+                </div>
+            </div>
+            <div class="offset-lg-1 col-lg-5 col-md-6">
+                <div class="working-process">
+                    <h4 class="pool_head">DLIKE Daily Reward Pool Distribution</h4>
+                    <p>
+                        You can earn DLIKE tokens for your contributions to the DLIKE community. The more interactions you have, more will be the earnings. <br>DLIKE is simple proof of likes network where every like generates 1 DLIKE token. This generated token gets distributed into all sectors of DLIKE community as per following share.
+                    </p>
+                    <p style="color:#c51d24;font-weight: 600;">
+                        <span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>
+                        Daily staking rewards are paid daily into your accounts..
+                    </p>
+                    <div>
+                        <img src="/images/dlike_pool.jpg" class="img-fluid" alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,7 +113,7 @@ echo $yesterday_points;
                                 <span style="font-size: 0.7rem;">Each like on your posts</span>
                                 <br><span class="head_color">20+</span>
                             </p>
-                        </div><!-- features-block -->
+                        </div>
                     </div>
                     <div class="col-md-2 col-sm-3">
                         <div class="features-block-icons">
@@ -159,3 +159,30 @@ echo $yesterday_points;
     </div>
 </div><!-- working-process-section-->
 <?php include('template/dlike_footer.php'); ?>
+<script type="text/javascript">
+    var countDownDate = 0;
+    function counter() {
+        setInterval(() => {
+            var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
+            var countDownDate = new Date(date);
+            var i = 60;
+            var h = 24 - countDownDate.getHours();
+            if (h < 10) {
+                h = "0" + h;
+            }
+            var m = 59 - countDownDate.getMinutes();
+            if (m < 10) {
+                m = "0" + m;
+            }
+            var s = countDownDate.getSeconds();
+            s = i - s;
+            if (s < 10) {
+                s = "0" + s;
+            }
+            str = h + ":" + m + ":" + s;
+            i++;
+            $(".dividendCountDown").html(str);
+        }, 1000);
+    };
+    counter();
+</script>
