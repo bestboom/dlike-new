@@ -27,9 +27,9 @@ echo $yesterday_points;
 
 
  $dataPoints = array(
-    array("x" => 2020-07-19 16:30:02 , "y" => 60),
-    array("x" => 2020-07-19 17:00:01 , "y" => 70),
-    array("x" => 2020-07-19 21:00:01 , "y" => 10),
+    array("x" => 1483641000000 , "y" => 60),
+    array("x" => 1483641000000 , "y" => 70),
+    array("x" => 1483641000000 , "y" => 10),
     array("x" => 1483641000000 , "y" => 658),
     array("x" => 1483727400000 , "y" => 734),
     array("x" => 1483813800000 , "y" => 963),
@@ -65,6 +65,7 @@ $jsonArray = array();
 //echo json_encode($data);
  //echo json_encode($jsonArray);
  print_r($jsonArray);
+
 
 ?>
 
