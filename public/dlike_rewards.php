@@ -68,7 +68,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //append the above created object into the main array.
         //array_push($jsonArray, $jsonArrayit);
         //array_push($jsonArrayit['x'], $jsonArrayit['y']);
-        $data[] = [$update, $votes];
+        $data[] = [(int)$update, (int)$votes];
 
         //$arrayName = array('' => , );
       }
@@ -255,7 +255,7 @@ var chart = new Highcharts.Chart({
     },
     series: [{
         name: '',
-        data: <?php echo $thenewData; ?>
+        data: <?php echo json_encode($data); ?>
     }]
 });
 </script>
