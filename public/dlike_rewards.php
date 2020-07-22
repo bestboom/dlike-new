@@ -167,7 +167,7 @@ var chart = new Highcharts.Chart({
         }
     },
     series: [{
-        name: '',
+        name: 'Likes',
         data: <?php echo json_encode($data); ?>
     }]
 });
