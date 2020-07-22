@@ -254,6 +254,6 @@ chart.render();
     }, {
         name: 'John',
         data: [5, 7, 3]
-    }[
+    }]
 });
 </script>
