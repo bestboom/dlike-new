@@ -27,17 +27,17 @@ echo $yesterday_points;
 
 
  $dataPoints = array(
-    array("x" => 1483641000000 , "y" => 60),
-    array("x" => 1483641000000 , "y" => 70),
     array("x" => 1483641000000 , "y" => 10),
+    array("x" => 1483641000000 , "y" => 30),
+    array("x" => 1483641000000 , "y" => 90),
     array("x" => 1483641000000 , "y" => 658),
     array("x" => 1483727400000 , "y" => 734),
-    array("x" => 1483813800000 , "y" => 963),
+    array("x" => 1483813800000 , "y" => 163),
     array("x" => 1483900200000 , "y" => 847),
     array("x" => 1483986600000 , "y" => 853),
-    array("x" => 1484073000000 , "y" => 869),
+    array("x" => 1484073000000 , "y" => 269),
     array("x" => 1484159400000 , "y" => 943),
-    array("x" => 1484245800000 , "y" => 970),
+    array("x" => 1484245800000 , "y" => 70),
     array("x" => 1484332200000 , "y" => 869),
     array("x" => 1484418600000 , "y" => 890),
     array("x" => 1484505000000 , "y" => 930)
@@ -54,7 +54,8 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
     if ($sqlQuery->num_rows > 0) {
         $data = array();
         foreach ($sqlQuery as $row) {
-            $data[] = $row;
+            $data['x'] = strtotime($row['update_time']);
+            $data['y'] = = $row['yesterday_upvotes'];
         }
       //Converting the results into an associative array
       //while($row = $sqlQuery->fetch_assoc()) {
@@ -264,7 +265,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
         xValueType: "dateTime",
         xValueFormatString: "DD MMM",
         yValueFormatString: "#,##0 Visits",
-        dataPoints: <?php echo json_encode($data); ?>
+        dataPoints: <?php echo json_encode($dataPoints); ?>
     }]
 });
  
