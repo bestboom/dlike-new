@@ -46,7 +46,7 @@ echo $yesterday_points;
 
 $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time");
 
-//$jsonArrayit = array();
+$jsonArray = array();
 //foreach ($sqlQuery as $row) {
 //    $data[] = $row;
 //}
@@ -58,13 +58,13 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         $jsonArrayit['x'] = strtotime($row['update_time']);
         $jsonArrayit['y'] = $row['yesterday_upvotes'];
         //append the above created object into the main array.
-        //array_push($jsonArrayit);
+        array_push($jsonArray, $row);
       }
     }
 
 //echo json_encode($data);
  //echo json_encode($jsonArray);
- print_r($jsonArrayit);
+ print_r($jsonArray);
 
 
 ?>
