@@ -248,9 +248,8 @@ var chart = new Highcharts.Chart({
     },
     xAxis: {
         type: 'datetime',
-        dateTimeLabelFormats: { // don't display the dummy year
-            month: '%e. %b',
-            year: '%b'
+        labels: {
+          format: '{value:%m-%e}'
         },
     },
     series: [{
