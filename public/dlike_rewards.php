@@ -54,11 +54,11 @@ $jsonArray = array();
     if ($sqlQuery->num_rows > 0) {
       //Converting the results into an associative array
       while($row = $sqlQuery->fetch_assoc()) {
-        $jsonArrayit = array();
-        $jsonArrayit['y'] = $row['yesterday_upvotes'];
-        $jsonArrayit['x'] = strtotime($row['update_time']);
+        //$jsonArrayit = array();
+        $jsonArray['y'] = $row['yesterday_upvotes'];
+        $jsonArray['x'] = strtotime($row['update_time']);
         //append the above created object into the main array.
-        array_push($jsonArray, $jsonArrayit);
+        array_push($jsonArray);
       }
     }
 
@@ -68,6 +68,8 @@ $jsonArray = array();
 
 
 ?>
+https://canvasjs.com/php-charts/spline-area-chart/
+https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-mysql-charts
 
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
