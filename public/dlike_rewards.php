@@ -59,20 +59,21 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //}
       //Converting the results into an associative array
       while($row = $sqlQuery->fetch_assoc()) {
-        $update = date('m-d', strtotime($row['update_time']));
+        //$update = date('m-d', strtotime($row['update_time']));
         $votes = $row['yesterday_upvotes'];
+        $update = strtotime($row['update_time']);
         //$jsonArrayit = array();
         //$jsonArrayit['x'] = strtotime($row['update_time']);
         //$jsonArrayit['y'] = $row['yesterday_upvotes'];
         //append the above created object into the main array.
         //array_push($jsonArray, $jsonArrayit);
         //array_push($jsonArrayit['x'], $jsonArrayit['y']);
-        $data[] = [(string)$update, (string)$votes];
+        $data[] = [(int)$update, (int)$votes];
 
         //$arrayName = array('' => , );
       }
     }
-$data = str_replace('"','', (string) $data);
+//$data = str_replace('"','', (string) $data);
 echo json_encode($data);
 echo '<br>';
 echo '<br>';
