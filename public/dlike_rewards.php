@@ -16,75 +16,20 @@ if ($sql1 && $sql1->num_rows > 0)
     $team = $row1["dlike_team"];
     $charity = $row1["dlike_charity"];
     $foundation = $row1["dlike_foundation"];
-
-
 } else {
     $yesterday_points = 0;
 }
 
-echo $yesterday_points;
-
-
-
- $dataPoints = array(
-    array("x" => 1483641000000 , "y" => 10),
-    array("x" => 1483641000000 , "y" => 30),
-    array("x" => 1483641000000 , "y" => 90),
-    array("x" => 1483641000000 , "y" => 658),
-    array("x" => 1483727400000 , "y" => 734),
-    array("x" => 1483813800000 , "y" => 163),
-    array("x" => 1483900200000 , "y" => 847),
-    array("x" => 1483986600000 , "y" => 853),
-    array("x" => 1484073000000 , "y" => 269),
-    array("x" => 1484159400000 , "y" => 943),
-    array("x" => 1484245800000 , "y" => 70),
-    array("x" => 1484332200000 , "y" => 869),
-    array("x" => 1484418600000 , "y" => 890),
-    array("x" => 1484505000000 , "y" => 930)
- );
-
 
 $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time");
-
-//$jsonArray = array();
-//foreach ($sqlQuery as $row) {
-//    $data[] = $row;
-//}
-
     if ($sqlQuery->num_rows > 0) {
-        $data = array();
-        //foreach ($sqlQuery as $row) {
-        //    $data['x'] = strtotime($row['update_time']);
-        //    $data['y'] = $row['yesterday_upvotes'];
-        //}
-      //Converting the results into an associative array
+        $data = array(); = $row['yesterday_upvotes'];
       while($row = $sqlQuery->fetch_assoc()) {
-        //$update = date('m-d', strtotime($row['update_time']));
         $votes = $row['yesterday_upvotes'];
         $update = strtotime($row['update_time']) *1000;
-        //$jsonArrayit = array();
-        //$jsonArrayit['x'] = strtotime($row['update_time']);
-        //$jsonArrayit['y'] = $row['yesterday_upvotes'];
-        //append the above created object into the main array.
-        //array_push($jsonArray, $jsonArrayit);
-        //array_push($jsonArrayit['x'], $jsonArrayit['y']);
         $data[] = [(int)$update, (int)$votes];
-
-        //$arrayName = array('' => , );
       }
     }
-    $newData = json_encode($data);
-    $thenewData = str_replace('"','', (string) $newData);
-//echo json_encode($data);
-    echo $thenewData;
-echo '<br>';
-echo '<br>';
- //echo json_encode($jsonArray);
-print_r($thenewData);
-
-echo '<br>';echo '<br>';
-
-
 
 
 ?>
@@ -168,8 +113,6 @@ https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-
                 </div>
             </div>
         </div>
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-
         <br>
         <div id="highContainer" style="height: 370px; width: 100%;"></div>
     </div>
@@ -202,37 +145,6 @@ https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-
     };
     counter();
 </script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script>
-window.onload = function () {
- 
-var chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
-    theme: "light2",
-    title:{
-        text: "Site Traffic"
-    },
-    axisX: {
-        valueFormatString: "DD MMM"
-    },
-    axisY: {
-        title: "Total Number of Visits",
-        maximum: 1200
-    },
-    data: [{
-        type: "splineArea",
-        color: "#6599FF",
-        xValueType: "dateTime",
-        xValueFormatString: "DD MMM",
-        yValueFormatString: "#,##0 Visits",
-        dataPoints: <?php echo json_encode($data); ?>
-    }]
-});
- 
-chart.render();
- 
-}
-</script>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
 var chart = new Highcharts.Chart({
@@ -250,7 +162,9 @@ var chart = new Highcharts.Chart({
         type: 'datetime',
         labels: {
           format: '{value:%e. %b}'
-        },
+        },title: {
+            text: 'Date'
+        }
     },
     series: [{
         name: '',
