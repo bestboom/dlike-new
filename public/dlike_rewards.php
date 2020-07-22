@@ -249,7 +249,7 @@ var chart = new Highcharts.Chart({
     xAxis: {
         type: 'datetime',
         labels: {
-          format: '{value:%m-%e}'
+          format: '{value:%e. %b}'
         },
     },
     series: [{
