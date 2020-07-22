@@ -54,11 +54,11 @@ $jsonArray = array();
     if ($sqlQuery->num_rows > 0) {
       //Converting the results into an associative array
       while($row = $sqlQuery->fetch_assoc()) {
-        //$jsonArrayit = array();
+        $jsonArrayit = array();
         $jsonArrayit['x'] = strtotime($row['update_time']);
         $jsonArrayit['y'] = $row['yesterday_upvotes'];
         //append the above created object into the main array.
-        array_push($jsonArray, $row);
+        array_push($jsonArray, $jsonArrayit);
       }
     }
 
@@ -257,7 +257,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
         xValueType: "dateTime",
         xValueFormatString: "DD MMM",
         yValueFormatString: "#,##0 Visits",
-        dataPoints: <?php echo json_encode($dataPoints); ?>
+        dataPoints: <?php echo json_encode($jsonArray); ?>
     }]
 });
  
