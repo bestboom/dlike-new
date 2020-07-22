@@ -58,13 +58,14 @@ $jsonArray = array();
         $jsonArrayit['x'] = strtotime($row['update_time']);
         $jsonArrayit['y'] = $row['yesterday_upvotes'];
         //append the above created object into the main array.
-        array_push($jsonArray, $jsonArrayit);
+        //array_push($jsonArray, $jsonArrayit);
+        array_push($jsonArrayit['x'], $jsonArrayit['y']);
       }
     }
 
 //echo json_encode($data);
  //echo json_encode($jsonArray);
- print_r($jsonArray);
+ print_r($jsonArrayit);
 
 
 ?>
@@ -257,7 +258,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
         xValueType: "dateTime",
         xValueFormatString: "DD MMM",
         yValueFormatString: "#,##0 Visits",
-        dataPoints: <?php echo json_encode($jsonArray); ?>
+        dataPoints: <?php echo json_encode($jsonArrayit); ?>
     }]
 });
  
