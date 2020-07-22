@@ -59,9 +59,9 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //}
       //Converting the results into an associative array
       while($row = $sqlQuery->fetch_assoc()) {
-        $update = date('m-d', strtotime($row['update_time']));
+        //$update = date('m-d', strtotime($row['update_time']));
         $votes = $row['yesterday_upvotes'];
-        //$update = strtotime($row['update_time']);
+        $update = strtotime($row['update_time']);
         //$jsonArrayit = array();
         //$jsonArrayit['x'] = strtotime($row['update_time']);
         //$jsonArrayit['y'] = $row['yesterday_upvotes'];
@@ -247,7 +247,11 @@ var chart = new Highcharts.Chart({
         title: { text: 'Number of Likes'}
     },
     xAxis: {
-        type: 'datetime'
+        type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+            month: '%e. %b',
+            year: '%b'
+        },
     },
     series: [{
         name: '',
