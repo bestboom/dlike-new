@@ -72,7 +72,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //$arrayName = array('' => , );
       }
     }
-
+$data = str_replace('"','', (string) $data);
 echo json_encode($data);
 echo '<br>';
 echo '<br>';
