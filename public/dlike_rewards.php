@@ -246,6 +246,9 @@ var chart = new Highcharts.Chart({
     yAxis: {
         title: { text: 'Number of Likes'}
     },
+    xAxis: {
+        type: 'datetime'
+    },
     series: [{
         name: '',
         data: <?php echo $thenewData; ?>
