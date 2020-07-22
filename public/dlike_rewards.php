@@ -73,12 +73,14 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //$arrayName = array('' => , );
       }
     }
-//$data = str_replace('"','', (string) $data);
-echo json_encode($data);
+    $newData = json_encode($data);
+    $thenewData = str_replace('"','', (string) $newData);
+//echo json_encode($data);
+    echo $thenewData;
 echo '<br>';
 echo '<br>';
  //echo json_encode($jsonArray);
-print_r($data);
+print_r($thenewData);
 
 echo '<br>';echo '<br>';
 
@@ -243,7 +245,7 @@ var chart = new Highcharts.Chart({
     },
     series: [{
         name: 'Daily Likes',
-        data: <?php echo json_encode($data); ?>
+        data: <?php echo json_encode($thenewData); ?>
     }]
 });
 </script>
