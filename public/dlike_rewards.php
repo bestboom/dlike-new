@@ -67,7 +67,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //append the above created object into the main array.
         //array_push($jsonArray, $jsonArrayit);
         //array_push($jsonArrayit['x'], $jsonArrayit['y']);
-        $data[] = [(int)$update, (int)$votes];
+        $data[] = [$update, $votes];
 
         //$arrayName = array('' => , );
       }
@@ -233,12 +233,16 @@ chart.render();
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
 var chart = new Highcharts.Chart({
-      chart: {
-         renderTo: 'highContainer',
+    chart: {
+        renderTo: 'highContainer',
         type: 'areaspline'
-      },
-      series: [{
-         data: <?php echo json_encode($data); ?>
-      }]
+    },
+    yAxis: {
+        title: { text: 'Number of Likes'}
+    },
+    series: [{
+        name: 'Daily Likes',
+        data: <?php echo json_encode($data); ?>
+    }]
 });
 </script>
