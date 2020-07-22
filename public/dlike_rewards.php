@@ -67,7 +67,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //append the above created object into the main array.
         //array_push($jsonArray, $jsonArrayit);
         //array_push($jsonArrayit['x'], $jsonArrayit['y']);
-        $data[] = [$update, $votes]
+        $data[] = [$update, $votes];
       }
     }
 
