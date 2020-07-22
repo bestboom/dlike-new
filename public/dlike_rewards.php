@@ -59,7 +59,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //}
       //Converting the results into an associative array
       while($row = $sqlQuery->fetch_assoc()) {
-        $update = strtotime($row['update_time']);
+        $update = date('m-d', strtotime($row['update_time']));
         $votes = $row['yesterday_upvotes'];
         //$jsonArrayit = array();
         //$jsonArrayit['x'] = strtotime($row['update_time']);
@@ -234,7 +234,8 @@ chart.render();
 <script type="text/javascript">
 var chart = new Highcharts.Chart({
       chart: {
-         renderTo: 'highContainer'
+         renderTo: 'highContainer',
+        type: 'areaspline'
       },
       series: [{
          data: <?php echo json_encode($data); ?>
