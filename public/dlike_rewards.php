@@ -240,12 +240,15 @@ var chart = new Highcharts.Chart({
         renderTo: 'highContainer',
         type: 'areaspline'
     },
+    title: {
+        text: 'DLIKE Daily LIKES'
+    },
     yAxis: {
         title: { text: 'Number of Likes'}
     },
     series: [{
-        name: 'Daily Likes',
-        data: <?php echo json_encode($thenewData); ?>
+        name: '',
+        data: <?php echo $thenewData; ?>
     }]
 });
 </script>
