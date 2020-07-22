@@ -55,7 +55,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         $data = array();
         foreach ($sqlQuery as $row) {
             $data['x'] = strtotime($row['update_time']);
-            $data['y'] = = $row['yesterday_upvotes'];
+            $data['y'] = $row['yesterday_upvotes'];
         }
       //Converting the results into an associative array
       //while($row = $sqlQuery->fetch_assoc()) {
