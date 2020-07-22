@@ -23,7 +23,7 @@ if ($sql1 && $sql1->num_rows > 0)
 
 $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time");
     if ($sqlQuery->num_rows > 0) {
-        $data = array(); = $row['yesterday_upvotes'];
+        $data = array();
       while($row = $sqlQuery->fetch_assoc()) {
         $votes = $row['yesterday_upvotes'];
         $update = strtotime($row['update_time']) *1000;
