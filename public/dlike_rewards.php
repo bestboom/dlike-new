@@ -67,7 +67,9 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         //append the above created object into the main array.
         //array_push($jsonArray, $jsonArrayit);
         //array_push($jsonArrayit['x'], $jsonArrayit['y']);
-        $data[] = [$update, $votes];
+        $data[] = [(int)$update, (int)$votes];
+
+        //$arrayName = array('' => , );
       }
     }
 
@@ -166,59 +168,7 @@ https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-
         <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
         <br>
-        <div class="features-section" style="padding-top: 40px;">
-            <div class="container pool_box">
-                <div class="row">
-                    <div class="col-md-2 col-sm-3">
-                        <div class="features-block-icons">
-                            <span class="fab fa-gratipay reward_icon"></span>
-                            <p>Likes <br>
-                                <span style="font-size: 0.7rem;">Each like on your posts</span>
-                                <br><span class="head_color">20+</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-sm-3">
-                        <div class="features-block-icons">
-                            <span class="fas fa-eye reward_icon"></span>
-                            <p>Views <br><span style="font-size: 0.7rem;">For 100 views on your posts</span><br>
-                                <span class="head_color">20+</span></p>
-                            </div><!-- features-block -->
-                        </div>
-                        <div class="col-md-2 col-sm-3">
-                            <div class="features-block-icons">
-                                <span class="fas fa-comment-alt reward_icon"></span>
-                                <p>comments <br><span style="font-size: 0.7rem;">Each one on your posts</span>
-                                    <br><span class="head_color">10+</span>
-                                </p>
-                            </div><!-- features-block -->
-                        </div>
-                        <div class="col-md-2 col-sm-3">
-                            <div class="features-block-icons">
-                                <span class="fas fa-chevron-circle-up reward_icon"></span>
-                                <p>upvotes <br><span style="font-size: 0.7rem;">$1 steem upvote</span>
-                                    <br><span class="head_color">100+</span>
-                                </p>
-                            </div><!-- features-block -->
-                        </div>
-                        <div class="col-md-2 col-sm-3">
-                            <div class="features-block-icons">
-                                <span class="fas fa-users reward_icon"></span>
-                                <p>Referralss <br><span style="font-size: 0.7rem;">Each New Referral </span>
-                                    <br><span class="head_color">50+</span>
-                                </p>
-                            </div><!-- features-block -->
-                        </div>
-                        <div class="col-md-2 col-sm-3">
-                            <div class="features-block-icons">
-                                <span class="fas fa-user-plus reward_icon"></span>
-                                <p>Referral Income <br><span style="font-size: 0.7rem;">Each Post By Your Referrals</span><br/><span class="head_color">5+</span></p>
-                            </div><!-- features-block -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="highContainer" style="height: 370px; width: 100%;"></div>
     </div>
 </div><!-- working-process-section-->
 <?php include('template/dlike_footer.php'); ?>
@@ -279,4 +229,31 @@ var chart = new CanvasJS.Chart("chartContainer", {
 chart.render();
  
 }
+</script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript">
+    var chart1 = Highcharts.chart({
+    chart: {
+        renderTo: 'highcontainer',
+        type: 'bar'
+    },
+    title: {
+        text: 'Fruit Consumption'
+    },
+    xAxis: {
+        categories: ['Apples', 'Bananas', 'Oranges']
+    },
+    yAxis: {
+        title: {
+            text: 'Fruit eaten'
+        }
+    },
+    series: [{
+        name: 'Jane',
+        data: [1, 0, 4]
+    }, {
+        name: 'John',
+        data: [5, 7, 3]
+    }[
+});
 </script>
