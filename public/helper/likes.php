@@ -6,6 +6,26 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sqlm = "CREATE TABLE dlike_staking (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+user_id INT(30) NOT NULL,
+username VARCHAR(255) NOT NULL,
+amount VARCHAR(255) NOT NULL,
+tron_address VARCHAR(255) NOT NULL,
+tron_trx VARCHAR(255) NOT NULL,
+trx_time TIMESTAMP
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table transactions created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+?>
+<!--
+
 $sqlm = "CREATE TABLE dlike_daily_rewards (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 yesterday_upvotes INT(30) NOT NULL,
@@ -26,8 +46,6 @@ if ($conn->query($sqlm) === TRUE) {
 }
 
 
-?>
-<!--
 
 //$sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(curation_time) = SUBDATE(CURRENT_DATE(), 1)");
 

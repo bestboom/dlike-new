@@ -176,42 +176,6 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
     </div>    
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-    var optionstak = {
-        target: '#stak-msg',
-        url: 'helper/addstake.php',
-        success: function() {},
-    }
-$('#stake_sub').submit(function() {
-    if (username === null) {
-        toastr.error('hmm... You must be login!');
-        return false;
-    }
-
-    let stake_amt = parseInt($("#stakemaount").val());
-    let stake_period = parseInt($('.period').val());
-
-    if (!stake_amt) { 
-        $("#stakemaount").css("border-color", "RED"); 
-        toastr.error('phew... Enter Tokens Amount to Stake');
-        return false;
-    }
-
-    if (stake_amt < 500) { 
-        toastr.error('phew... Minimum Stake Amount is 500 DLIKE'); 
-        return false;
-    }
-
-    if (!stake_period) { 
-        toastr.error('phew... Select a staking period'); 
-        return false;
-    }
-
-    $(this).ajaxSubmit(optionstak);
-    return !1;
-});
-
-
-
 $('#stake_me').click(function() {
     if (dlike_username != null) {
         let stk_amt = $('#stakeamount').val();
@@ -222,6 +186,24 @@ $('#stake_me').click(function() {
                 try { var response = JSON.parse(data)
                     if (response.error == true) {toastr.error(response.message);return false;
                     } else {toastr.success(response.dlikeuser);
+                        toastr.success(response.id);gettronweb();
+                    }
+                } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+            }
+        });
+    } else {toastr.error('You must be login with DLIKE username!');return false;}
+});
+
+$('#unstake_me').click(function() {
+    if (dlike_username != null) {
+        let unstk_amt = $('#unstakeamount').val();
+        if (unstk_amt == "") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
+         
+        $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',unstake_amount: unstk_amt},
+            success: function(data) {
+                try { var response = JSON.parse(data)
+                    if (response.error == true) {toastr.error(response.message);return false;
+                    } else {toastr.success(response.amt);
                         toastr.success(response.id);gettronweb();
                     }
                 } catch (err) {toastr.error('Sorry. Server response is malformed.');}

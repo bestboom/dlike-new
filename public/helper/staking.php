@@ -28,6 +28,29 @@ if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['a
 	}
 
 }
+
+if (isset($_POST['action'])  && $_POST['action'] == 'unstaking' && isset($_POST['unstake_amount'])  && $_POST['unstake_amount'] != '') { 
+
+	$unstk_amount = trim($_POST["unstake_amount"]);
+	$username = $_COOKIE['dlike_username'];
+
+	if(empty($unstk_amount)){
+        $errors = "Please enter unstaking amount";
+    }
+    if(empty($username)){
+        $errors = "Seems You are not login";
+    }
+    $check_user = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
+	if ($check_user->num_rows > 0) {$row_C = $check_user->fetch_assoc(); $dlike_user_id=$row_C['id'];}
+	else{$errors = "User does not exist!";}
+    $check_amount = $conn->query("SELECT amount FROM dlike_staking where user_id = '$dlike_user_id'");
+	$row_A = $check_amount->fetch_assoc();$staked_amount = $row_A['amount'];
+	if ($unstk_amount > $staked_amount) {$errors = 'Not enough staked!';}
+
+    if (empty($errors)) {die(json_encode(['error' => false,'id' => $dlike_user_id,'staked_amt' => $unstk_amount]));} else {die(json_encode(['error' => true,'message' => $errors]));
+	}
+
+}
  //else {die('Some error');}
 ?>
 <!--
