@@ -209,5 +209,25 @@ $('#stake_sub').submit(function() {
     $(this).ajaxSubmit(optionstak);
     return !1;
 });
+
+
+
+$('#stake_me').click(function() {
+    if (dlike_username != null) {
+        let stk_amt = $('#stakeamount').val();
+        if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');}
+         
+        $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt},
+            success: function(data) {
+                try { var response = JSON.parse(data)
+                    if (response.error == true) {toastr.error(response.message);return false;
+                    } else {
+                        toastr.success(response.id);
+                    }
+                } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+            }
+        });
+    } else {toastr.error('You must be login with DLIKE username!');return false;}
+});
     
 </script>
