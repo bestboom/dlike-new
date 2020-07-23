@@ -1,12 +1,8 @@
 <?php  include('template/header7.php'); ?>
 <style type="text/css">.reward_fileds {margin-bottom: 1px!important;}</style>
 </div>
-
-
-
 <?php
 $sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
-
 if ($sql1 && $sql1->num_rows > 0) 
 { 
     $row1 = $sql1->fetch_assoc();
@@ -16,12 +12,9 @@ if ($sql1 && $sql1->num_rows > 0)
     $team = $row1["dlike_team"];
     $charity = $row1["dlike_charity"];
     $foundation = $row1["dlike_foundation"];
-} else {
-    $yesterday_points = 0;
-}
+} else {$yesterday_points = 0;}
 
-
-$sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time");
+$sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time DESC LIMIT 14");
     if ($sqlQuery->num_rows > 0) {
         $data = array();
       while($row = $sqlQuery->fetch_assoc()) {
@@ -30,12 +23,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_
         $data[] = [(int)$update, (int)$votes];
       }
     }
-
-
 ?>
-https://canvasjs.com/php-charts/spline-area-chart/
-https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-mysql-charts
-
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
         <div class="row">
@@ -113,8 +101,7 @@ https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-
                 </div>
             </div>
         </div>
-        <br>
-        <div id="highContainer" style="height: 370px; width: 100%;"></div>
+        <div id="highContainer" style="height: 370px; width: 100%;margin-top: 30px;"></div>
     </div>
 </div><!-- working-process-section-->
 <?php include('template/dlike_footer.php'); ?>
@@ -124,20 +111,13 @@ https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-
         setInterval(() => {
             var date = new Date().toLocaleString("en-US", { timeZone: "Europe/London"});
             var countDownDate = new Date(date);
-            var i = 60;
-            var h = 24 - countDownDate.getHours();
-            if (h < 10) {
-                h = "0" + h;
-            }
+            var i = 60; var h = 24 - countDownDate.getHours();
+            if (h < 10) {h = "0" + h;}
             var m = 59 - countDownDate.getMinutes();
-            if (m < 10) {
-                m = "0" + m;
-            }
+            if (m < 10) {m = "0" + m;}
             var s = countDownDate.getSeconds();
             s = i - s;
-            if (s < 10) {
-                s = "0" + s;
-            }
+            if (s < 10) {s = "0" + s;}
             str = h + ":" + m + ":" + s;
             i++;
             $(".dividendCountDown").html(str);
@@ -148,30 +128,11 @@ https://www.fusioncharts.com/dev/using-with-server-side-languages/tutorials/php-
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
 var chart = new Highcharts.Chart({
-    chart: {
-        renderTo: 'highContainer',
-        type: 'areaspline'
-    },
-    title: {
-        text: ''
-    },
-    yAxis: {
-        title: { text: 'Number of Likes'}
-    },
-    xAxis: {
-        type: 'datetime',
-        labels: {
-          format: '{value:%e. %b}'
-        },title: {
-            text: 'Date'
-        }
-    },
-    tooltip: {
-        xDateFormat: '%e. %b %Y'
-    },
-    series: [{
-        name: 'Likes',
-        data: <?php echo json_encode($data); ?>
-    }]
+    chart: {renderTo: 'highContainer',type: 'areaspline'},
+    title: {text: ''},
+    yAxis: {title: { text: 'Number of Likes'}},
+    xAxis: {type: 'datetime',labels: {format: '{value:%e. %b}'},title: {text: 'Date'}},
+    tooltip: {xDateFormat: '%e. %b %Y'},
+    series: [{name: 'Likes',data: <?php echo json_encode($data); ?>}]
 });
 </script>
