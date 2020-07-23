@@ -99,8 +99,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                             <div role="tabpanel" class="tab-pane fade in active show" id="stake_dlike">
                                 <div class="container">
                                     <div class="row" style="margin-top:55px;justify-content: center;">
-                                        <div id="stake_sub" style="width: 90%;">   
-                                            <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                                        <div id="stake_sub" style="width: 90%;"> 
                                             <div class="form-group">
                                                 <input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake">
                                             </div>
@@ -110,8 +109,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                             <div role="tabpanel" class="tab-pane fade" id="unstake_dlike">
                                 <div class="container">
                                     <div class="row" style="margin-top: 55px;justify-content: center;">
-                                        <div id="stake_sub" style="width: 90%;">   
-                                            <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                                        <div id="stake_sub" style="width: 90%;">
                                             <div class="form-group">
                                                 <input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake">
                                             </div>
@@ -121,12 +119,11 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                             <div role="tabpanel" class="tab-pane fade" id="claim_dlike">
                                 <div class="container">
                                     <div class="row" style="margin-top: 55px;justify-content: center;">
-                                        <div id="stake_sub" style="width: 90%;">   
-                                            <input type="hidden" name="staker" id="staking_user" value="<? echo $staker; ?>" />   
+                                        <div id="stake_sub" style="width: 90%;">
                                             <div class="form-group">
-                                                <input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim">
+                                                <input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim" readonly="readonly" value="100">
                                             </div>
-                                            <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Claim</button></center>
+                                            <center><button type="button" class="btn btn-primary" id="claim_stk_reward"style="width: 30%;">Claim</button></center>
                                         </div>
                             </div></div></div>
                     </div></div>
@@ -200,6 +197,25 @@ $('#unstake_me').click(function() {
         if (unstk_amt == "") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
          
         $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',unstake_amount: unstk_amt},
+            success: function(data) {
+                try { var response = JSON.parse(data)
+                    if (response.error == true) {toastr.error(response.message);return false;
+                    } else {toastr.success(response.amt);
+                        toastr.success(response.id);gettronweb();
+                    }
+                } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+            }
+        });
+    } else {toastr.error('You must be login with DLIKE username!');return false;}
+});
+
+
+$('#claim_stk_reward').click(function() {
+    if (dlike_username != null) {
+        let claim_amt = $('#claimeamount').val();
+        if (claim_amt == "") {toastr.error('phew... Claim amount not valid');return false;}
+         
+        $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'claim_stake',claim_amount: claim_amt},
             success: function(data) {
                 try { var response = JSON.parse(data)
                     if (response.error == true) {toastr.error(response.message);return false;

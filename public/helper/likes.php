@@ -6,6 +6,42 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sqlm = "CREATE TABLE dlike_staking_rewards (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+user_id INT(30) NOT NULL,
+username VARCHAR(255) NOT NULL,
+reward VARCHAR(255) NOT NULL
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table transactions created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+$sqlme = "CREATE TABLE dlike_staking_transactions (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+user_id INT(30) NOT NULL,
+username VARCHAR(255) NOT NULL,
+amount VARCHAR(255) NOT NULL,
+tron_address VARCHAR(255) NOT NULL,
+tron_trx VARCHAR(255) NOT NULL,
+trx_time TIMESTAMP
+)";
+
+if ($conn->query($sqlme) === TRUE) {
+    echo "Table transactions created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
+
+?>
+<!--
+
 $sqlm = "CREATE TABLE dlike_staking (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 user_id INT(30) NOT NULL,
@@ -23,8 +59,7 @@ if ($conn->query($sqlm) === TRUE) {
 }
 
 
-?>
-<!--
+
 
 $sqlm = "CREATE TABLE dlike_daily_rewards (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
