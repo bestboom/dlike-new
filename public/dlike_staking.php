@@ -221,7 +221,7 @@ $('#stake_me').click(function() {
             success: function(data) {
                 try { var response = JSON.parse(data)
                     if (response.error == true) {toastr.error(response.message);return false;
-                    } else {
+                    } else {toastr.success(response.dlikeuser);
                         toastr.success(response.id);
                     }
                 } catch (err) {toastr.error('Sorry. Server response is malformed.');}
