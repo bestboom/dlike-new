@@ -69,7 +69,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'claim_stake' && isset($_POS
 	if ($check_user->num_rows > 0) {$row_C = $check_user->fetch_assoc(); $dlike_user_id=$row_C['id'];}
 	else{$errors = "User does not exist!";}
 
-    $check_amount = $conn->query("SELECT amount FROM dlike_staking_rewards where username = '$username'");
+    $check_amount = $conn->query("SELECT reward FROM dlike_staking_rewards where username = '$username'");
     if ($check_amount->num_rows > 0) {$row_A = $check_amount->fetch_assoc();$reward_bal = $row_A['reward'];
 		if ($claim_amount > $reward_bal) {$errors = 'Not enough reward balance!';}
 	}else{$errors = 'Some issue in reward claiming. Please try later!';}
