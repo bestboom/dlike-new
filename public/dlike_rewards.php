@@ -153,7 +153,7 @@ var chart = new Highcharts.Chart({
         type: 'areaspline'
     },
     title: {
-        text: 'DLIKE Daily LIKES'
+        text: ''
     },
     yAxis: {
         title: { text: 'Number of Likes'}
@@ -165,6 +165,9 @@ var chart = new Highcharts.Chart({
         },title: {
             text: 'Date'
         }
+    },
+    tooltip: {
+        xDateFormat: '%e. %b %Y'
     },
     series: [{
         name: 'Likes',
