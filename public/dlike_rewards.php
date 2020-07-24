@@ -2,30 +2,26 @@
 <style type="text/css">.reward_fileds {margin-bottom: 1px!important;}</style>
 </div>
 <?php
-$sql1 =  $conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time) = CURDATE() order by update_time DESC");
+$sql1 =  $conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
 if ($sql1 && $sql1->num_rows > 0) 
-{   
-    $data = array();
+{ 
     $row1 = $sql1->fetch_assoc();
-    $votes = $row1["yesterday_upvotes"];
+    $yesterday_points = $row1["yesterday_upvotes"];
     $staking = $row1["dlike_staking"];
     $dao = $row1["dlike_dao"];
     $team = $row1["dlike_team"];
     $charity = $row1["dlike_charity"];
     $foundation = $row1["dlike_foundation"];
-    $update = strtotime($row['update_time']) *1000;
-    $data[] = [(int)$update, (int)$votes];
 } else {$yesterday_points = 0;}
 
-//$sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_daily_rewards ORDER BY update_time DESC LIMIT 14");
-//    if ($sqlQuery->num_rows > 0) {
-//        $data = array();
-//      while($row = $sqlQuery->fetch_assoc()) {
-//        $votes = $row['yesterday_upvotes'];
-//        $update = strtotime($row['update_time']) *1000;
-//        $data[] = [(int)$update, (int)$votes];
-//      }
-//    }
+$sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_rewards_history ORDER BY update_time DESC LIMIT 14");
+    if ($sqlQuery->num_rows > 0) {$data = array();
+      while($row = $sqlQuery->fetch_assoc()) {
+        $votes = $row['yesterday_upvotes'];
+        $update = strtotime($row['update_time']) *1000;
+        $data[] = [(int)$update, (int)$votes];
+      }
+    }
 ?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
@@ -34,7 +30,7 @@ if ($sql1 && $sql1->num_rows > 0)
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
                         <div style="font-size: 1.1rem;">Reward Pool Today</div>
-                        <div class="reward_amount">Likes Till Now: <?php echo votes; ?></div>
+                        <div class="reward_amount">Likes Till Now: <?php echo $yesterday_points; ?></div>
                     </h3>
                     <form class="user-connected-from create-account-form reward_form" />
                      <div class="form-group reward_fileds">
