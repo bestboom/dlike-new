@@ -6,13 +6,13 @@ $sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time)
 if ($sql1 && $sql1->num_rows > 0) 
 { 
     $row1 = $sql1->fetch_assoc();
-    $yesterday_points = $row1["yesterday_upvotes"];
+    $today_likes = $row1["today_upvotes"];
     $staking = $row1["dlike_staking"];
     $dao = $row1["dlike_dao"];
     $team = $row1["dlike_team"];
     $charity = $row1["dlike_charity"];
     $foundation = $row1["dlike_foundation"];
-} else {$yesterday_points = 0;}
+} else {$today_likes = 0;}
 
 $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_rewards_history ORDER BY update_time DESC LIMIT 14");
     if ($sqlQuery->num_rows > 0) {$data = array();
@@ -30,7 +30,7 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_reward
                 <div class="user-connected-form-block" style="box-shadow: 0px 0px 10px 1px #cccccc;">
                     <h3 style="text-align: center;">
                         <div style="font-size: 1.1rem;">Reward Pool Today</div>
-                        <div class="reward_amount">Likes Till Now: <?php echo $yesterday_points; ?></div>
+                        <div class="reward_amount">Likes Till Now: <?php echo $today_likes; ?></div>
                     </h3>
                     <form class="user-connected-from create-account-form reward_form" />
                      <div class="form-group reward_fileds">
