@@ -1,7 +1,8 @@
 <?php
 require '../includes/config.php';
 
-$sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(curation_time) = CURDATE()");
+//$sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(curation_time) = CURDATE()");
+$sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(curation_time) = SUBDATE(CURRENT_DATE(), 1)");
 
 $row_C = $sql_C->fetch_assoc() or die($conn->error);
 $total_upvotes = $row_C["total"]; 

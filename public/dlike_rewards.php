@@ -2,7 +2,7 @@
 <style type="text/css">.reward_fileds {margin-bottom: 1px!important;}</style>
 </div>
 <?php
-$sql1 =  $conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
+$sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
 if ($sql1 && $sql1->num_rows > 0) 
 { 
     $row1 = $sql1->fetch_assoc();
