@@ -135,3 +135,4 @@ var chart = new Highcharts.Chart({
     series: [{name: 'Likes',data: <?php echo json_encode($data); ?>}]
 });
 </script>
+https://www.studentstutorial.com/php/php-update-multiple-row
