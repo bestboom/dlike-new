@@ -71,12 +71,12 @@ if ($sql_T && $sql_T->num_rows > 0)
                             var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
                             var post_income = response.post_income;
                             var newlikes = parseInt(getpostlikes) + parseInt(update);
-                            var updatespostincome = newlikes * post_income;
+                            var updatespostincome = (newlikes * post_income).toFixed(2); 
                             $('.post_likes' + mypermlink + authorname).html(newlikes);
                             $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
                         }
                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                }
+                } var 
             });
         } else {toastr.error('You must be login with DLIKE username!');return false;}
     });

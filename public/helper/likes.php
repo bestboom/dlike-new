@@ -7,6 +7,13 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+
+?>
+<!--
+
+
+
+
 $sqlm = "CREATE TABLE dlike_daily_rewards (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 today_upvotes INT(30) NOT NULL,
@@ -24,9 +31,6 @@ if ($conn->query($sqlm) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
-?>
-<!--
 
 $sqlm = "CREATE TABLE dlike_staking_rewards (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
