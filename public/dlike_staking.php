@@ -3,11 +3,10 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $staker =  $_COOKIE['dlike_username']; }
+if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $dlike_user =  $_COOKIE['dlike_username']; }
 
 ?>
 </div>
-
     <div class="working-process-section" style="padding: 40px 0 60px;">
         <div class="container">
             <div class="row row-cards" style="margin-top:40px;">
@@ -100,9 +99,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                                 <div class="container">
                                     <div class="row" style="margin-top:55px;justify-content: center;">
                                         <div id="stake_sub" style="width: 90%;"> 
-                                            <div class="form-group">
-                                                <input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake">
-                                            </div>
+                                            <div class="form-group"><input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake"></div>
                                             <center><button type="button" class="btn btn-primary" id="stake_me" style="width: 30%;">Stake</button></center>
                                         </div>
                             </div></div></div>
@@ -110,9 +107,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                                 <div class="container">
                                     <div class="row" style="margin-top: 55px;justify-content: center;">
                                         <div id="stake_sub" style="width: 90%;">
-                                            <div class="form-group">
-                                                <input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake">
-                                            </div>
+                                            <div class="form-group"><input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake"></div>
                                             <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Unstake</button></center>
                                         </div>
                             </div></div></div>
@@ -135,9 +130,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
         <div class="latest-tranjections-block">
             <div class="container">
                 <div class="latest-tranjections-block-inner">
-                    <div class="panel-heading-block">
-                        <h5>Top Stakings Accounts</h5>
-                    </div>
+                    <div class="panel-heading-block"><h5>Top Stakings Accounts</h5></div>
                     <table class="table coin-list latest-tranjections-table">
                         <thead>
                             <tr>
@@ -148,21 +141,15 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $s
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $sqlt = "SELECT * FROM staking where username ='$staker' ORDER BY start_time DESC";
-                            $result_t = $conn->query($sqlt);
-                                if ($result_t->num_rows > 0) {
-                                    while($row_t = $result_t->fetch_assoc()) { 
-                                    $period = $row_t["period"]; 
-                                    if($period == "2") {$period = '180'; $bonus = '25%'; $mature = '181';}
-                                    else if($period == "1") {$period = '90';$bonus = '9%'; $mature = '91';}
-                                    $entry_date = date('Y-m-d', strtotime($row_t["start_time"]));
+                            <?php $sql_st = $conn->query("SELECT * FROM dlike_staking where username ='$dlike_user' ORDER BY amount DESC Limit 200");
+                                if ($sql_st->num_rows > 0) {
+                                    while($row_t = $sql_st->fetch_assoc()) {
                             ?> 
                             <tr>   
-                                <td><?php echo date('Y-m-d', strtotime($row_t["start_time"])); ?></td>
+                                <td><?php echo $row_t["username"]; ?></td>
+                                <td><?php echo $row_t["tron_address"]; ?></td>
                                 <td><?php echo $row_t["amount"]; ?></td>
-                                <td><?php echo $period; ?> Days</td>
-                                <td><?php echo $bonus; ?></td>
-                                <td><?php echo date('Y-m-d', strtotime($entry_date. ' + '.$mature.' days')); ?></td>    
+                                <td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> 
                             </tr>
                             <? } }?>
                         </tbody>
