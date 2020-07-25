@@ -1,11 +1,22 @@
 <?php  include('template/header7.php');
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $dlike_user =  $_COOKIE['dlike_username']; }
-
-?>
+if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $dlike_user =  $_COOKIE['dlike_username']; } else {$dlike_user='';}
+if($dlike_user == '') { ?>
+    <div id="profile_miss">
+        <div class="container">
+            <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">   
+                <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
+                    <div class="modal-body">
+                        <div class="share-block"><p style="font-size: 3rem;">ooops!</p></div>
+                        <div class="user-connected-form-block" style="background: #1b1e63;">
+                            <center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
+                            <div class="share-block"><p>You must login with your DLIKE username<br><b><a href="/welcome">Login</a></b></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+<? } else {?>
 </div>
     <div class="working-process-section" style="padding: 40px 0 60px;">
         <div class="container">
@@ -141,7 +152,7 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $d
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $sql_st = $conn->query("SELECT * FROM dlike_staking ORDER BY amount Limit 200");
+                            <?php $sql_st = $conn->query("SELECT * FROM dlike_staking ORDER BY amount DESC Limit 200");
                                 if ($sql_st->num_rows > 0) {
                                     while($row_t = $sql_st->fetch_assoc()) {?> 
                             <tr>   
@@ -156,7 +167,8 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $d
                 </div><!-- order-history-block-inner -->
             </div>
         </div>
-    </div>    
+    </div>  
+<? } ?>  
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
 $('#stake_me').click(function() {
