@@ -141,10 +141,9 @@ if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $d
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $sql_st = $conn->query("SELECT * FROM dlike_staking ORDER BY amount DESC Limit 200");
+                            <?php $sql_st = $conn->query("SELECT * FROM dlike_staking ORDER BY amount Limit 200");
                                 if ($sql_st->num_rows > 0) {
-                                    while($row_t = $sql_st->fetch_assoc()) {
-                            ?> 
+                                    while($row_t = $sql_st->fetch_assoc()) {?> 
                             <tr>   
                                 <td><?php echo $row_t["username"]; ?></td>
                                 <td><?php echo $row_t["tron_address"]; ?></td>
