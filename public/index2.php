@@ -76,7 +76,7 @@ if ($sql_T && $sql_T->num_rows > 0)
                             $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
                         }
                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                } var 
+                }
             });
         } else {toastr.error('You must be login with DLIKE username!');return false;}
     });
