@@ -103,6 +103,15 @@ require '../includes/config.php';
     </div>
 </div></div>
 <?php
+if(isset($_POST['SubmitButton'])){ 
+	$add_user = trim($_POST['user_acc']);
+    $add_pass = trim($_POST['acc_password']);
+    $add_email = trim($_POST['acc_email']);
+    if(empty($add_user)){$acc_errors = "Username Shoould not be empty";}
+    if(empty($add_pass)){$acc_errors = "Password Shoould not be empty";}
+    if(empty($add_email)){$acc_errors = "Email Shoould not be empty";}
+    if(empty($acc_errors)){$acc_errors = 'All good';}
+}
 
 $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
     if ($sql_U && $sql_U->num_rows > 0) 
@@ -119,27 +128,28 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
             <div class="modal-body">
                 <div class="share-block"><p>Add New Account</p></div>
                 <div class="user-connected-form-block" style="background: #1b1e63;">
-                    <form class="user-connected-from">
+                	<div class="acc_errors"><?php echo $$acc_errors; ?></div>
+                    <form class="user-connected-from" method="post" action="<?=$_SERVER['PHP_SELF'];?>">
                     	<input type="hidden" id="reset_email_id" value="<?php echo $email; ?>" />
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
                                 <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                             </div>
-                            <input type="text" name="erreset_pass" id="user_acc" placeholder="UserName" class="form-control" style="padding: 8px;" />
+                            <input type="text" name="user_acc" id="user_acc" placeholder="UserName" class="form-control" style="padding: 8px;" />
                         </div>
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
                                 <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
                             </div>
-                            <input type="password" name="pass" id="acc_password" placeholder="Password" class="form-control" style="padding: 8px;" />
+                            <input type="password" name="acc_password" id="acc_password" placeholder="Password" class="form-control" style="padding: 8px;" />
                         </div>
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
                                 <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                             </div>
-                            <input type="email" name="email" id="acc_email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
+                            <input type="email" name="acc_email" id="acc_email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
                         </div>
-                        <center><button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="add_account_btn">Add Account</button></center>
+                        <center><button type="submit" class="btn btn-default" style="width: 40%;margin-top: 15px;" name="addAccountSubmit">Add Account</button></center>
                     </form>
                 </div>
             </div>
@@ -149,7 +159,7 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
 <?php include('../template/dlike_footer.php'); ?>
 <script type="text/javascript">
 	$('.add_account').click(function() {$(".add_account_section").show();});
-	$('.add_account_btn').click(function() {
+	$('#add_account_btn').click(function() {
 		let add_user = $('#user_acc').val();
         if (add_user == "") {toastr.error('phew... User Value empty!');return false;}
         let add_pass = $('#acc_password').val();
