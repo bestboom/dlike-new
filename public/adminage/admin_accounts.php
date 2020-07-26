@@ -28,7 +28,7 @@ require '../includes/config.php';
     </div>
 </div>
 
-<div class="row row-cards">
+<div class="container"><div class="row row-cards">
     <div class="col-sm-6 col-lg-3">
         <div class="queue-stats card p-3">
             <div class="d-flex align-items-center">
@@ -108,7 +108,7 @@ require '../includes/config.php';
             </div>
         </div>
     </div>
-</div>
+</div></div>
 <?php
 
 $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
