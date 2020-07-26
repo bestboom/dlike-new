@@ -153,7 +153,7 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
             success: function(data) {
                 try { var response = JSON.parse(data)
                     if (response.error == true) {toastr.error(response.message);return false;
-                    } else {toastr.success(response.message);}
+                    } else {toastr.success(response.message);setTimeout(function(){window.location.reload();}, 400);}
                 } catch (err) {toastr.error('Sorry. Server response is malformed.');}
             }
         });

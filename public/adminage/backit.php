@@ -16,7 +16,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'add_account' && isset($_POST
 
     if(empty($acc_errors)){
     	$sqlm = "INSERT INTO dlikeaccounts (username, email, password, refer_by, status, profile_pic, verified, admin_account, created_time)VALUES ('".$add_user ."', '".$add_email."', '".$hashedPW."', 'dlike', '0', '".$profile_pic."', '1',  '1', '".date("Y-m-d H:i:s")."')";
-    	if (mysqli_query($conn, $sqlm)) {
+    	if (mysqli_query($conn, $sqlm)) {$amount = '0';
+			$sql_W = $conn->query("INSERT INTO dlike_wallet (username, amount) VALUES ('".$add_user."', '".$amount."')");
     		die(json_encode(['error' => false,'message' => 'WOW, Account created!']));} else{die(json_encode(['error' => true,'message' => 'Some issue in account creation!']));}
     }else{die(json_encode(['error' => true,'message' => $errors]));}
 }

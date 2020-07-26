@@ -53,8 +53,14 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $result_refer_by = $conn->query($check_refer_by);
                 $row_ref = $result_refer_by->fetch_assoc();
                 $referrer = $row_ref['refer_by'];
-                if(empty($referrer) || $referrer == 'dlike') {
-                    //add affiliate here
+                if(empty($referrer) || $referrer == 'dlike') { $airdroper = 'dlike_airdrop';
+                    $airdrop_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$airdroper'");
+                    $row_adrop = $airdrop_bal->fetch_assoc();$adrop_bal = $row_adrop['amount'];
+                    $update_adrop_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$adrop_bal' + '$airdrop_reward' WHERE username = '$airdroper'");
+                        if ($update_adrop_wallet === TRUE) { $link = $author'/'$permlink;
+                            $sql_ref = $conn->query("INSERT INTO dlike_airdrop_history (to, amount, reason, trx_time) VALUES ('dlike', '".$airdrop_reward."', '".$link."', '".date("Y-m-d H:i:s")."')");
+                        }
+
                 } else {
                     $check_ref_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$referrer'");
                     $row_ref = $check_ref_bal->fetch_assoc();

@@ -6,7 +6,19 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+$sqlm = "CREATE TABLE dlike_airdrop_history  (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+to VARCHAR(255) NOT NULL,
+amount float(12) NOT NULL,
+reason VARCHAR(255) NOT NULL,
+trx_time TIMESTAMP
+)";
 
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table transactions created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
 
 ?>
 <!--
