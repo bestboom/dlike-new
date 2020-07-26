@@ -31,14 +31,8 @@ function getUserIP()
         $ip = $client;
     }
     elseif(filter_var($forward, FILTER_VALIDATE_IP))
-    {
-        $ip = $forward;
-    }
-    else
-    {
-        $ip = $remote;
-    }
-
+    {$ip = $forward;}
+    else{$ip = $remote;}
     return $ip;
 }
 
@@ -57,30 +51,27 @@ $min_tip_withdraw = '3';
 function time_ago($timestamp)
 {
     $etime = time() - $timestamp;
- 
-    if ($etime < 1)
-    {
-        return 'just now';
-    }
- 
+    if ($etime < 1){return 'just now';}
     $a = array(12 * 30 * 24 * 60 * 60  =>  'year', 30 * 24 * 60 * 60 => 'month', 24 * 60 * 60 => 'day', 60 * 60 => 'hour', 60 => 'minute', 1 => 'second');
- 
     foreach ($a as $secs => $str)
-    {
-        $d = $etime / $secs;
+    {   $d = $etime / $secs;
         if ($d >= 1)
-        {
-            $r = round($d);
-            return $r . ' ' . $str . ($r > 1 ? 's' : '') . ' ago';
-        }
+        {   $r = round($d); return $r . ' ' . $str . ($r > 1 ? 's' : '') . ' ago';}
     }
 }
 
 $post_reward = '0.35';
+
 $author_reward = '0.35';
 $curator_reward = '0.30';
 $affiliate_reward = '0.05';
-$max_withdraw_limit = '5000';
+$airdrop_reward = '0.05';
+$staking_reward = '0.2';
+$charity_reward = '0.01';
+$dao_reward = '0.025';
+$team_reward = '0.04';
+$foundation_reward = '0.025';
 
+$max_withdraw_limit = '5000';
 
 ?>

@@ -22,6 +22,8 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_reward
         $data[] = [(int)$update, (int)$votes];
       }
     }
+$author_today_rewards = $today_likes * $author_reward;
+$curators_today_reward = $today_likes * $curator_reward;
 ?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
@@ -36,12 +38,12 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_reward
                      <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Authors" readonly>
                         <span class="fas fa-star inp_icon"></span>
-                        <span class="inp_text"><?php echo $staking; ?></span>
+                        <span class="inp_text"><?php echo $author_today_rewards; ?></span>
                     </div>
                      <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Curators" readonly>
                         <span class="fas fa-star inp_icon"></span>
-                        <span class="inp_text"><?php echo $staking; ?></span>
+                        <span class="inp_text"><?php echo $curators_today_reward; ?></span>
                     </div>
                      <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Affiliates" readonly>
