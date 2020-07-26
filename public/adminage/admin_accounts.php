@@ -12,7 +12,7 @@ require '../includes/config.php';
                             <i class="fe fe-home"></i> Home
                         </a>
                     </li>
-                    <li class="nav-item"><i class="fe fe-users add_account"></i> Add Account</li>
+                    <li class="nav-item nav-link add_account"><i class="fa fa-users"></i> Add Account</li>
                     <li class="nav-item">
                         <a href="./token_holders.php" class="nav-link steem-keychain-checked">
                             <i class="fa fa-heart"></i> Token Holders
@@ -128,18 +128,24 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
                     	<input type="hidden" id="reset_email_id" value="<?php echo $email; ?>" />
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
-                                <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
+                                <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                             </div>
-                            <input type="password" name="reset_pass" id="reset_pass" placeholder="New Password" class="form-control" style="padding: 8px;" />
+                            <input type="text" name="erreset_pass" id="user" placeholder="UserName" class="form-control" style="padding: 8px;" />
                         </div>
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
                                 <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
                             </div>
-                            <input type="password" name="confirm_reset_pass" id="confirm_reset_pass" placeholder="Confirm Password" class="form-control" style="padding: 8px;" />
+                            <input type="password" name="pass" id="password" placeholder="Password" class="form-control" style="padding: 8px;" />
+                        </div>
+                        <div class="input-group mb-3" style="padding: 3px;">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
+                            </div>
+                            <input type="email" name="email" id="email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
                         </div>
                         <center>
-                            <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="reset_pass_btn">Reset Password</button>
+                            <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="reset_pass_btn">Add Account</button>
                         </center>
                     </form>
                 </div>
@@ -149,5 +155,5 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
 </div> 
 <?php include('../template/dlike_footer.php'); ?>
 <script type="text/javascript">
-	$('.add_account').click(function() {$(".add_account_section").show();});
+	$('.add_account').click(function() {alert('Nav');$(".add_account_section").show();});
 </script>
