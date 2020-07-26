@@ -24,7 +24,7 @@ require '../includes/config.php';
     </div>
 </div>
 
-<div class="container" style="margin-top:40px;"><div class="row row-cards">
+<div class="container" style="margin-top:30px;margin-bottom: 30px;"><div class="row row-cards">
     <div class="col-sm-6 col-lg-3">
         <div class="queue-stats card p-3">
             <div class="d-flex align-items-center">
@@ -128,28 +128,21 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
             <div class="modal-body">
                 <div class="share-block"><p>Add New Account</p></div>
                 <div class="user-connected-form-block" style="background: #1b1e63;">
-                	<div class="acc_errors"><?php echo $$acc_errors; ?></div>
-                    <form class="user-connected-from" method="post" action="<?=$_SERVER['PHP_SELF'];?>">
+                    <form class="user-connected-from">
                     	<input type="hidden" id="reset_email_id" value="<?php echo $email; ?>" />
                         <div class="input-group mb-3" style="padding: 3px;">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
-                            </div>
+                            <div class="input-group-prepend"><div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div></div>
                             <input type="text" name="user_acc" id="user_acc" placeholder="UserName" class="form-control" style="padding: 8px;" />
                         </div>
                         <div class="input-group mb-3" style="padding: 3px;">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
-                            </div>
+                            <div class="input-group-prepend"><div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div></div>
                             <input type="password" name="acc_password" id="acc_password" placeholder="Password" class="form-control" style="padding: 8px;" />
                         </div>
                         <div class="input-group mb-3" style="padding: 3px;">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
-                            </div>
+                            <div class="input-group-prepend"><div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div></div>
                             <input type="email" name="acc_email" id="acc_email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
                         </div>
-                        <center><button type="submit" class="btn btn-default" style="width: 40%;margin-top: 15px;" name="addAccountSubmit">Add Account</button></center>
+                        <center><button type="button" class="btn btn-default add_account_btn" style="width: 40%;margin-top: 15px;">Add Account</button></center>
                     </form>
                 </div>
             </div>
@@ -159,7 +152,7 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
 <?php include('../template/dlike_footer.php'); ?>
 <script type="text/javascript">
 	$('.add_account').click(function() {$(".add_account_section").show();});
-	$('#add_account_btn').click(function() {
+	$('.add_account_btn').click(function() {
 		let add_user = $('#user_acc').val();
         if (add_user == "") {toastr.error('phew... User Value empty!');return false;}
         let add_pass = $('#acc_password').val();
