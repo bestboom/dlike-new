@@ -54,7 +54,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $row_ref = $result_refer_by->fetch_assoc();
                 $referrer = $row_ref['refer_by'];
                 if(empty($referrer) || $referrer == 'dlike') {
-
+                    //add affiliate here
                 } else {
                     $check_ref_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$referrer'");
                     $row_ref = $check_ref_bal->fetch_assoc();

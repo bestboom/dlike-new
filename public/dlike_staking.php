@@ -27,7 +27,7 @@ $sql_Y = $conn->query("SELECT * FROM dlike_rewards_history WHERE DATE(update_tim
 if ($sql_Y->num_rows > 0){$row_Y = $sql_Y->fetch_assoc();$yesterday_distribution = $row_Y["dlike_staking"];} else {$yesterday_distribution = '0';}
 
 $sql_M = $conn->query("SELECT * FROM dlike_staking where username='$dlike_user'");
-if ($sql_CM->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amount"];} else{$my_staking='0';}
+if ($sql_M->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amount"];} else{$my_staking='0';}
 
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
