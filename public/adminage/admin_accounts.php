@@ -1,4 +1,4 @@
-<?php include('template/header7.php');
+<?php include('../template/header7.php');
 require '../includes/config.php';
 ?> 
 </div>
@@ -109,4 +109,14 @@ require '../includes/config.php';
         </div>
     </div>
 </div>
-<?php include('template/dlike_footer.php'); ?>
+<?php
+
+$sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
+    if ($sql_U && $sql_U->num_rows > 0) 
+    {
+    	$row_U = $sql_U->fetch_assoc();echo $user = $row_U["username"];
+    }
+
+
+?>
+<?php include('../template/dlike_footer.php'); ?>
