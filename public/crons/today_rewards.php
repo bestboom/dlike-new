@@ -5,11 +5,11 @@ $sql_C = $conn->query("SELECT count(*) as total FROM dlike_upvotes where DATE(cu
 $row_C = $sql_C->fetch_assoc() or die($conn->error);
 $total_upvotes = $row_C["total"]; 
 
-$staking_val = $total_upvotes * $staking_percentage;
-$charity_val = $total_upvotes * $charity_percentage;
-$dao_val = $total_upvotes * $dao_percentage;
-$team_val = $total_upvotes * $team_percentage;
-$foundation_val = $total_upvotes * $foundation_percentage;
+$staking_val = $total_upvotes * $staking_reward;
+$charity_val = $total_upvotes * $charity_reward;
+$dao_val = $total_upvotes * $dao_reward;
+$team_val = $total_upvotes * $team_reward;
+$foundation_val = $total_upvotes * $foundation_reward;
 
 $sql_W = $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE()");
 
