@@ -8,8 +8,8 @@ require '../includes/config.php';
 
 $sqlm = "CREATE TABLE dlike_airdrop_history  (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-to VARCHAR(255) NOT NULL,
-amount INT(30) NOT NULL,
+to_user VARCHAR(255) NOT NULL,
+amount FLOAT(12,2) NOT NULL,
 reason VARCHAR(255) NOT NULL,
 trx_time TIMESTAMP
 )";
