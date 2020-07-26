@@ -9,10 +9,10 @@ require '../includes/config.php';
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                     <li class="nav-item">
                         <a href="./" class="nav-link steem-keychain-checked">
-                            <i class="fe fe-home"></i> Home
+                            <i class="fa fa-home"></i> Home
                         </a>
                     </li>
-                    <li class="nav-item nav-link add_account"><i class="fa fa-users"></i> Add Account</li>
+                    <li class="nav-item nav-link add_account" style="cursor: pointer;"><i class="fa fa-users"></i> Add Account</li>
                     <li class="nav-item">
                         <a href="./token_holders.php" class="nav-link steem-keychain-checked">
                             <i class="fa fa-heart"></i> Token Holders
@@ -24,7 +24,7 @@ require '../includes/config.php';
     </div>
 </div>
 
-<div class="container"><div class="row row-cards">
+<div class="container" style="margin-top:40px;"><div class="row row-cards">
     <div class="col-sm-6 col-lg-3">
         <div class="queue-stats card p-3">
             <div class="d-flex align-items-center">
@@ -78,9 +78,6 @@ require '../includes/config.php';
                                 <small class="text-muted"></small>
                             </div>
                         </div>
-                        <div class="voting-power-bar progress progress-xs">
-                            <div class="progress-bar bg-yellow" role="progressbar" style="width: 95.71%;" aria-valuenow="95.71" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -120,33 +117,29 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
     <div class="user-login-signup-form-wrap add_account_section" style="padding: 7rem 0rem; display: none;">
         <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
             <div class="modal-body">
-                <div class="share-block">
-                    <p>Add New Account</p>
-                </div>
+                <div class="share-block"><p>Add New Account</p></div>
                 <div class="user-connected-form-block" style="background: #1b1e63;">
-                    <form class="user-connected-from password-reset-form">
+                    <form class="user-connected-from">
                     	<input type="hidden" id="reset_email_id" value="<?php echo $email; ?>" />
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
                                 <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                             </div>
-                            <input type="text" name="erreset_pass" id="user" placeholder="UserName" class="form-control" style="padding: 8px;" />
+                            <input type="text" name="erreset_pass" id="user_acc" placeholder="UserName" class="form-control" style="padding: 8px;" />
                         </div>
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
                                 <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
                             </div>
-                            <input type="password" name="pass" id="password" placeholder="Password" class="form-control" style="padding: 8px;" />
+                            <input type="password" name="pass" id="acc_password" placeholder="Password" class="form-control" style="padding: 8px;" />
                         </div>
                         <div class="input-group mb-3" style="padding: 3px;">
                             <div class="input-group-prepend">
                                 <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
                             </div>
-                            <input type="email" name="email" id="email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
+                            <input type="email" name="email" id="acc_email" placeholder="Email Address" class="form-control" style="padding: 8px;" />
                         </div>
-                        <center>
-                            <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="reset_pass_btn">Add Account</button>
-                        </center>
+                        <center><button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="add_account_btn">Add Account</button></center>
                     </form>
                 </div>
             </div>
@@ -155,5 +148,14 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
 </div> 
 <?php include('../template/dlike_footer.php'); ?>
 <script type="text/javascript">
-	$('.add_account').click(function() {alert('Nav');$(".add_account_section").show();});
+	$('.add_account').click(function() {$(".add_account_section").show();});
+	$('.add_account_btn').click(function() {
+		let add_user = $('#user_acc').val();
+        if (add_user == "") {toastr.error('phew... User Value empty!');return false;}
+        let add_pass = $('#acc_password').val();
+        if (add_pass == "") {toastr.error('phew... Password Value empty!');return false;}
+        let add_email = $('#acc_email').val();
+        if (add_email == "") {toastr.error('phew... Email Value empty!');return false;}
+        {toastr.success('All seems good');return false;}
+	});
 </script>
