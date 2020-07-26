@@ -23,62 +23,48 @@ if ($sql_C->num_rows > 0){$row_C = $sql_C->fetch_assoc();
 $total_stakers = $row_C["total_stakers"]; $total_staked_amount = $row_C["total_staked_amount"];
 } else {$total_stakers = '0'; $total_staked_amount = '0';}
 
-$sql_Y = $conn->query("SELECT * FROM dlike_rewards_history WHERE  DATE(update_time) = SUBDATE(CURRENT_DATE(), 1)");
+$sql_Y = $conn->query("SELECT * FROM dlike_rewards_history WHERE DATE(update_time) = SUBDATE(CURRENT_DATE(), 1)");
 if ($sql_Y->num_rows > 0){$row_Y = $sql_Y->fetch_assoc();$yesterday_distribution = $row_Y["dlike_staking"];} else {$yesterday_distribution = '0';}
+
+$sql_M = $conn->query("SELECT * FROM dlike_staking where username='$dlike_user'");
+if ($sql_CM->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amount"];} else{$my_staking='0';}
+
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
         <div class="row row-cards" style="margin-top:40px;">
-            <div class="col-sm-6 col-lg-3">
-                <div class="queue-stats card p-3">
-                    <div class="d-flex align-items-center">
-                        <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-check"></i></span>
-                        <div style="width: 100%"><h4 class="m-0"><small>My Staking</small></h4>
-                            <div class="clearfix">
-                                <div class="float-left"><strong class="voting-power-display">205 DLIKE</strong></div>
-                            </div>
-                        </div>
+            <div class="col-sm-6 col-lg-3"><div class="queue-stats card p-3">
+                <div class="d-flex align-items-center">
+                    <span class="stamp stamp-md bg-blue mr-3"><i class="fa fa-check"></i></span>
+                    <div style="width: 100%"><h4 class="m-0"><small>My Staking</small></h4>
+                        <div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $my_staking; ?> DLIKE</strong></div></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="card p-3">
-                    <div class="d-flex align-items-center">
-                        <span class="stamp stamp-md bg-orange mr-3"><i class="fa fa-list"></i></span>
-                        <div style="width: 100%">
-                            <h4 class="m-0"><small>Total Stakers</small></h4>
-                            <div class="clearfix">
-                                <div class="float-left"><strong class="voting-power-display"><?php echo $total_stakers; ?></strong></div>
-                            </div>
-                        </div>
+            </div></div>
+            <div class="col-sm-6 col-lg-3"><div class="card p-3">
+                <div class="d-flex align-items-center">
+                    <span class="stamp stamp-md bg-orange mr-3"><i class="fa fa-list"></i></span>
+                    <div style="width: 100%"><h4 class="m-0"><small>Total Stakers</small></h4>
+                        <div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $total_stakers; ?></strong></div></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="bot-power card p-3">
-                    <div id="voting-power" class="d-flex align-items-center">
-                        <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-cubes"></i></span>
-                        <div style="width: 100%"><h4 class="m-0"><small>Staked Amount</small></h4>
-                            <div class="clearfix">
-                                <div class="float-left"><strong class="voting-power-display"><?php echo $total_staked_amount; ?> DLIKE</strong></div>
-                            </div>
-                        </div>
+            </div></div>
+            <div class="col-sm-6 col-lg-3"><div class="bot-power card p-3">
+                <div id="voting-power" class="d-flex align-items-center">
+                    <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-cubes"></i></span>
+                    <div style="width: 100%"><h4 class="m-0"><small>Staked Amount</small></h4>
+                        <div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $total_staked_amount; ?> DLIKE</strong></div></div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card p-3">
-                    <div class="d-flex align-items-center">
-                        <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-exchange"></i></span>
-                        <div style="width: 100%"><h4 class="m-0"><small>Yesterday Distributed</small></h4>
-                            <div class="clearfix">
-                                <div class="float-left"><strong class="voting-power-display"><?php echo $yesterday_distribution; ?> DLIKE</strong></div>
-                            </div>
-                        </div>
+            </div></div>
+            <div class="col-sm-6 col-lg-3"><div class="card p-3">
+                <div class="d-flex align-items-center">
+                    <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-exchange"></i></span>
+                    <div style="width: 100%"><h4 class="m-0"><small>Yesterday Distributed</small></h4>
+                        <div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $yesterday_distribution; ?> DLIKE</strong></div></div>
                     </div>
                 </div>
-            </div>
+            </div></div>
         </div>
         <div class="row" style="margin-top: 70px;">
             <div class="col-lg-6  col-md-6">
