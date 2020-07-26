@@ -12,11 +12,7 @@ require '../includes/config.php';
                             <i class="fe fe-home"></i> Home
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./delegation.php" class="nav-link steem-keychain-checked">
-                            <i class="fe fe-users"></i> Delegations
-                        </a>
-                    </li>
+                    <li class="nav-item"><i class="fe fe-users add_account"></i> Add Account</li>
                     <li class="nav-item">
                         <a href="./token_holders.php" class="nav-link steem-keychain-checked">
                             <i class="fa fa-heart"></i> Token Holders
@@ -121,7 +117,7 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
 
 ?>
 <div class="container">
-    <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">
+    <div class="user-login-signup-form-wrap add_account_section" style="padding: 7rem 0rem; display: none;">
         <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
             <div class="modal-body">
                 <div class="share-block">
@@ -152,3 +148,6 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
     </div>
 </div> 
 <?php include('../template/dlike_footer.php'); ?>
+<script type="text/javascript">
+	$('.add_account').click(function() {$(".add_account_section").show();});
+</script>
