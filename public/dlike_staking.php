@@ -17,7 +17,15 @@ if($dlike_user == '') { ?>
         </div>
     </div>
 </div> 
-<? } else {?>
+<? } else {
+$sql_C = $conn->query("SELECT count(*) as total_stakers, SUM(amount) as total_staked_amount FROM dlike_staking");
+if ($sql_C->num_rows > 0){$row_C = $sql_C->fetch_assoc();
+$total_stakers = $row_C["total_stakers"]; $total_staked_amount = $row_C["total_staked_amount"];
+} else {$total_stakers = '0'; $total_staked_amount = '0';}
+
+$sql_Y = $conn->query("SELECT * FROM dlike_rewards_history WHERE  DATE(update_time) = SUBDATE(CURRENT_DATE(), 1)");
+if ($sql_Y->num_rows > 0){$row_Y = $sql_Y->fetch_assoc();$yesterday_distribution = $row_Y["staking"];} else {$yesterday_distribution = '0';}
+?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
         <div class="row row-cards" style="margin-top:40px;">
@@ -40,7 +48,7 @@ if($dlike_user == '') { ?>
                         <div style="width: 100%">
                             <h4 class="m-0"><small>Total Stakers</small></h4>
                             <div class="clearfix">
-                                <div class="float-left"><strong class="voting-power-display">33</strong></div>
+                                <div class="float-left"><strong class="voting-power-display"><?php echo $total_stakers; ?></strong></div>
                             </div>
                         </div>
                     </div>
@@ -52,7 +60,7 @@ if($dlike_user == '') { ?>
                         <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-cubes"></i></span>
                         <div style="width: 100%"><h4 class="m-0"><small>Staked Amount</small></h4>
                             <div class="clearfix">
-                                <div class="float-left"><strong class="voting-power-display">1000 DLIKE</strong></div>
+                                <div class="float-left"><strong class="voting-power-display"><?php echo $total_staked_amount; ?> DLIKE</strong></div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +73,7 @@ if($dlike_user == '') { ?>
                         <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-exchange"></i></span>
                         <div style="width: 100%"><h4 class="m-0"><small>Yesterday Distributed</small></h4>
                             <div class="clearfix">
-                                <div class="float-left"><strong class="voting-power-display">39200 DLIKE</strong></div>
+                                <div class="float-left"><strong class="voting-power-display"><?php echo $yesterday_distribution; ?> DLIKE</strong></div>
                             </div>
                         </div>
                     </div>
@@ -76,22 +84,14 @@ if($dlike_user == '') { ?>
             <div class="col-lg-6  col-md-6">
                 <div class="working-process">
                     <ul class="working-process-list">
-                        <li>
-                            <div class="working-process-step">
+                        <li><div class="working-process-step">
                                 <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  DLIKE Staking</h4>
-                                <div class="process-details">
-                                    <p>20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among tp 200 stakers by volume. This number will gradually grow to 1000.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="working-process-step">
+                                <div class="process-details"><p>20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among tp 200 stakers by volume. This number will gradually grow to 1000.</p></div>
+                        </div></li>
+                        <li><div class="working-process-step">
                                 <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  How to Stake?</h4>
-                                <div class="process-details">
-                                    <p>Simply login with Tronlink and stake the amount of tokens you want. You agree to freeze these tokens for 7 days as rewards on these staked tokens are distributed on daily basis.</p>
-                                </div>
-                            </div>
-                        </li>
+                                <div class="process-details"><p>Simply login with Tronlink and stake the amount of tokens you want. You agree to freeze these tokens for 7 days as rewards on these staked tokens are distributed on daily basis.</p></div>
+                        </div></li>
                     </ul>
                 </div>
             </div>
@@ -107,30 +107,25 @@ if($dlike_user == '') { ?>
                 <div class="market-ticker-block" style="border: 1px solid #191d5d !important;border-top: none;padding-bottom: 50px;">
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active show" id="stake_dlike">
-                            <div class="container">
-                                <div class="row" style="margin-top:55px;justify-content: center;">
-                                    <div id="stake_sub" style="width: 90%;"> 
-                                        <div class="form-group"><input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake"></div>
-                                        <center><button type="button" class="btn btn-primary" id="stake_me" style="width: 30%;">Stake</button></center>
-                                    </div>
+                            <div class="container"><div class="row" style="margin-top:55px;justify-content: center;">
+                                <div id="stake_sub" style="width: 90%;"> 
+                                    <div class="form-group"><input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake"></div>
+                                    <center><button type="button" class="btn btn-primary" id="stake_me" style="width: 30%;">Stake</button></center>
+                                </div>
                         </div></div></div>
                         <div role="tabpanel" class="tab-pane fade" id="unstake_dlike">
-                            <div class="container">
-                                <div class="row" style="margin-top: 55px;justify-content: center;">
-                                    <div id="stake_sub" style="width: 90%;">
-                                        <div class="form-group"><input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake"></div>
-                                        <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Unstake</button></center>
-                                    </div>
+                            <div class="container"><div class="row" style="margin-top: 55px;justify-content: center;">
+                                <div id="stake_sub" style="width: 90%;">
+                                    <div class="form-group"><input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake"></div>
+                                    <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Unstake</button></center>
+                                </div>
                         </div></div></div>
                         <div role="tabpanel" class="tab-pane fade" id="claim_dlike">
-                            <div class="container">
-                                <div class="row" style="margin-top: 55px;justify-content: center;">
-                                    <div id="stake_sub" style="width: 90%;">
-                                        <div class="form-group">
-                                            <input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim" readonly="readonly" value="100">
-                                        </div>
-                                        <center><button type="button" class="btn btn-primary" id="claim_stk_reward"style="width: 30%;">Claim</button></center>
-                                    </div>
+                            <div class="container"><div class="row" style="margin-top: 55px;justify-content: center;">
+                                <div id="stake_sub" style="width: 90%;">
+                                    <div class="form-group"><input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim" readonly="readonly" value="100"></div>
+                                    <center><button type="button" class="btn btn-primary" id="claim_stk_reward"style="width: 30%;">Claim</button></center>
+                                </div>
                         </div></div></div>
                 </div></div>
             </div>
