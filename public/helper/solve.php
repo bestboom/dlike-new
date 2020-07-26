@@ -58,7 +58,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     $row_adrop = $airdrop_bal->fetch_assoc();$adrop_bal = $row_adrop['amount'];
                     $update_adrop_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$adrop_bal' + '$airdrop_reward' WHERE username = '$airdroper'");
                         if ($update_adrop_wallet === TRUE) { $link = $author.'/'.$permlink;
-                            $sql_adrop = $conn->query("INSERT INTO dlike_airdrop_history (to, amount, reason, trx_time) VALUES ('dlike', '".$airdrop_reward."', '".$link."', '".date("Y-m-d H:i:s")."')");
+                            $sql_adrop = $conn->query("INSERT INTO dlike_airdrop_history (to_user, amount, reason, trx_time) VALUES ('dlike', '".$airdrop_reward."', '".$link."', '".date("Y-m-d H:i:s")."')");
                         }
 
                 } else {

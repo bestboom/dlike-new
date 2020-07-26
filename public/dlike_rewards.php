@@ -24,6 +24,13 @@ $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_reward
     }
 $author_today_rewards = $today_likes * $author_reward;
 $curators_today_reward = $today_likes * $curator_reward;
+
+$sql_T = $conn->query("SELECT count(*) as today_aff_rewards FROM dlike_transactions WHERE type='c' and DATE(trx_time) = CURDATE()");
+    if ($sql_T->num_rows > 0){$row_T = $sql_T->fetch_assoc();$total_aff_gen = $row_T["today_aff_rewards"];}
+    else{$total_aff_gen = '0';}
+
+$affiliate_today_rewards = $total_aff_gen * $affiliate_reward;
+$airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
 ?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container">
@@ -48,7 +55,7 @@ $curators_today_reward = $today_likes * $curator_reward;
                      <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Affiliates" readonly>
                         <span class="fas fa-star inp_icon"></span>
-                        <span class="inp_text"><?php echo $staking; ?></span>
+                        <span class="inp_text"><?php echo $affiliate_today_rewards; ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Staking" readonly>
@@ -68,7 +75,7 @@ $curators_today_reward = $today_likes * $curator_reward;
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | AirDrop" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo '0'; ?></span>
+                        <span class="inp_text"><?php echo $airdrop_today_rewards; ?></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Team" readonly>

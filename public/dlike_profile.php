@@ -1,7 +1,6 @@
 <?php 
 if (isset($_GET['user'])) 
-{
-	$prof_user = $_GET['user'];
+{$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include('template/header7.php');
     $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$prof_user'");

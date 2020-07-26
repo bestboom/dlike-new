@@ -6,6 +6,12 @@ error_reporting(E_ALL);
 
 require '../includes/config.php';
 
+
+
+?>
+<!--
+
+
 $sqlm = "CREATE TABLE dlike_airdrop_history  (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 to_user VARCHAR(255) NOT NULL,
@@ -19,10 +25,6 @@ if ($conn->query($sqlm) === TRUE) {
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
-?>
-<!--
-
 
 
 

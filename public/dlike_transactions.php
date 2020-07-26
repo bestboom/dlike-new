@@ -81,10 +81,9 @@
                         </thead>-->
                         <tbody>
                             <?php 
-                            $sql_T = "SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 30";
-                            $result_T = $conn->query($sql_T);
-                            if ($result_T && $result_T->num_rows > 0) {
-                                while ($row_T = $result_T->fetch_assoc()) {
+                            $sql_T = $conn->query("SELECT * FROM dlike_transactions ORDER BY trx_time DESC LIMIT 30");
+                            if ($sql_T && $sql_T->num_rows > 0) {
+                                while ($row_T = $sql_T->fetch_assoc()) {
                                     $start_time = strtotime($row_T["trx_time"]); 
                                     $dlike_user = $row_T["username"];
                                     $tx_type = $row_T["type"];
