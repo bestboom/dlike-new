@@ -24,7 +24,7 @@ $total_stakers = $row_C["total_stakers"]; $total_staked_amount = $row_C["total_s
 } else {$total_stakers = '0'; $total_staked_amount = '0';}
 
 $sql_Y = $conn->query("SELECT * FROM dlike_rewards_history WHERE  DATE(update_time) = SUBDATE(CURRENT_DATE(), 1)");
-if ($sql_Y->num_rows > 0){$row_Y = $sql_Y->fetch_assoc();$yesterday_distribution = $row_Y["staking"];} else {$yesterday_distribution = '0';}
+if ($sql_Y->num_rows > 0){$row_Y = $sql_Y->fetch_assoc();$yesterday_distribution = $row_Y["dlike_staking"];} else {$yesterday_distribution = '0';}
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
