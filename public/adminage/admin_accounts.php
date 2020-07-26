@@ -103,16 +103,6 @@ require '../includes/config.php';
     </div>
 </div></div>
 <?php
-if(isset($_POST['SubmitButton'])){ 
-	$add_user = trim($_POST['user_acc']);
-    $add_pass = trim($_POST['acc_password']);
-    $add_email = trim($_POST['acc_email']);
-    if(empty($add_user)){$acc_errors = "Username Shoould not be empty";}
-    if(empty($add_pass)){$acc_errors = "Password Shoould not be empty";}
-    if(empty($add_email)){$acc_errors = "Email Shoould not be empty";}
-    if(empty($acc_errors)){$acc_errors = 'All good';}
-}
-
 $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
     if ($sql_U && $sql_U->num_rows > 0) 
     {
@@ -159,6 +149,13 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
         if (add_pass == "") {toastr.error('phew... Password Value empty!');return false;}
         let add_email = $('#acc_email').val();
         if (add_email == "") {toastr.error('phew... Email Value empty!');return false;}
-        {toastr.success('All seems good');return false;}
+        $.ajax({ type: "POST",url: "/adminage/backit.php", data: {action : 'add_account',user: add_user,pass: add_pass,email: add_email},
+            success: function(data) {
+                try { var response = JSON.parse(data)
+                    if (response.error == true) {toastr.error(response.message);return false;
+                    } else {toastr.success(response.message);}
+                } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+            }
+        });
 	});
 </script>
