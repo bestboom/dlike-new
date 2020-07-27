@@ -1,4 +1,4 @@
-AuthUserFile /root/public/crons/.htpasswd
+AuthUserFile /app/public/crons/.htpasswd
 AuthType Basic
 AuthName "Restricted Access"
 Require valid-user
