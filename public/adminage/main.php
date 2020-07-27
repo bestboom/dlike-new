@@ -145,8 +145,8 @@ require '../includes/config.php';
                         <tbody>
                             <?php $sql_st = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
                                 if ($sql_st->num_rows > 0) {
-                                    while($row_t = $sql_st->fetch_assoc()) {
-                                    $sql_bu = $conn->query("SELECT * FROM dlike_wallet where username='$row_t["username"];'");$row_bu = $sql_bu->fetch_assoc()?> 
+                                    while($row_t = $sql_st->fetch_assoc()) {$dlk_adm_user=$row_t["username"];
+                                    $sql_bu = $conn->query("SELECT * FROM dlike_wallet where username='$dlk_adm_user'");$row_bu = $sql_bu->fetch_assoc()?> 
                             <tr>   
                                 <td><?php echo $row_t["id"]; ?></td>
                                 <td><?php echo $row_t["username"]; ?></td>
