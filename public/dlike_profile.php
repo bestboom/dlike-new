@@ -1,23 +1,25 @@
 <?php 
-if (isset($_GET['user'])) 
-{$prof_user = $_GET['user'];
+if (isset($_GET['user'])) {$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include('template/header7.php');
-    $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$prof_user'");
-    if ($sql_U && $sql_U->num_rows > 0) 
-    {
-    	$row_U = $sql_U->fetch_assoc();
-        $dlikeuser = $row_U['username'];
-        $account_about= $row_U['about'];
-        $account_web= $row_U['website'];
-        $account_location= $row_U['location'];
-        $user_pro_img= $row_U['profile_pic'];
-        $account_created = strtotime($row_U['created_time']);
-        $account_name= $row_U['full_name'];
-        $profile_banner= $row_U['profile_banner'];
-    	$dlike_user = $dlikeuser;
-    } else {$dlike_user = 'none';}
-    $login_user = $_COOKIE['dlike_username'];
+$admin_users = array('dlike_airdrop','dlike_dao','dlike_foundation','dlike_team','dlike_charity');
+if (in_array($prof_user, $admin_users)) {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+
+$sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$prof_user'");
+if ($sql_U && $sql_U->num_rows > 0) 
+{
+	$row_U = $sql_U->fetch_assoc();
+    $dlikeuser = $row_U['username'];
+    $account_about= $row_U['about'];
+    $account_web= $row_U['website'];
+    $account_location= $row_U['location'];
+    $user_pro_img= $row_U['profile_pic'];
+    $account_created = strtotime($row_U['created_time']);
+    $account_name= $row_U['full_name'];
+    $profile_banner= $row_U['profile_banner'];
+	$dlike_user = $dlikeuser;
+} else {$dlike_user = 'none';}
+$login_user = $_COOKIE['dlike_username'];
 ?>
 <style type="text/css">
     .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
