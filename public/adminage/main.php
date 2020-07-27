@@ -128,8 +128,8 @@ require '../includes/config.php';
                 </div>
             </div>
         </div>
-    </div>
-    <div class="latest-tranjections-area">
+    </div><!--end add account-->
+    <div class="latest-tranjections-area accounts_list_section" style="display: none;">
         <div class="latest-tranjections-block">
             <div class="container">
                 <div class="latest-tranjections-block-inner">
@@ -139,15 +139,18 @@ require '../includes/config.php';
                             <tr>
                                 <th scope="col">User ID</th>
                                 <th scope="col">UserName</th>
+                                <th scope="col">UserName</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $sql_st = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
                                 if ($sql_st->num_rows > 0) {
-                                    while($row_t = $sql_st->fetch_assoc()) {?> 
+                                    while($row_t = $sql_st->fetch_assoc()) {
+                                    $sql_bu = $conn->query("SELECT * FROM dlike_wallet where username='$row_t["username"];'");$row_bu = $sql_bu->fetch_assoc()?> 
                             <tr>   
                                 <td><?php echo $row_t["id"]; ?></td>
                                 <td><?php echo $row_t["username"]; ?></td>
+                                <td><?php echo $row_bu["amount"]; ?></td>
                             </tr>
                             <? } }?>
                         </tbody>
@@ -155,11 +158,12 @@ require '../includes/config.php';
                 </div><!-- order-history-block-inner -->
             </div>
         </div>
-    </div> 
+    </div> <!--end account list-->
 </div> 
 <?php include('../template/dlike_footer.php'); ?>
 <script type="text/javascript">
 	$('.add_account').click(function() {$(".add_account_section").show();});
+    $('.accounts_list').click(function() {$(".accounts_list_section").show();});
 	$('.add_account_btn').click(function() {
 		let add_user = $('#user_acc').val();
         if (add_user == "") {toastr.error('phew... User Value empty!');return false;}
