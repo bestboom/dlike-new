@@ -12,7 +12,8 @@ require '../includes/config.php';
                             <i class="fa fa-home"></i> Home
                         </a>
                     </li>
-                    <li class="nav-item nav-link add_account" style="cursor: pointer;"><i class="fa fa-users"></i> Add Account</li>
+                    <li class="nav-item nav-link add_account" style="cursor: pointer;"><i class="fa fa-plus"></i> Add Account</li>
+                    <li class="nav-item nav-link accounts_list" style="cursor: pointer;"><i class="fa fa-users"></i> Admin Accounts</li>
                     <li class="nav-item">
                         <a href="./token_holders.php" class="nav-link steem-keychain-checked">
                             <i class="fa fa-heart"></i> Token Holders
@@ -102,16 +103,6 @@ require '../includes/config.php';
         </div>
     </div>
 </div></div>
-<?php
-$sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
-    if ($sql_U && $sql_U->num_rows > 0) 
-    {
-    	$row_U = $sql_U->fetch_assoc();echo $user = $row_U["username"];
-    }
-
-
-
-?>
 <div class="container">
     <div class="user-login-signup-form-wrap add_account_section" style="padding: 7rem 0rem; display: none;">
         <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
@@ -138,6 +129,33 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
             </div>
         </div>
     </div>
+    <div class="latest-tranjections-area">
+        <div class="latest-tranjections-block">
+            <div class="container">
+                <div class="latest-tranjections-block-inner">
+                    <div class="panel-heading-block"><h5>Top Stakings Accounts</h5></div>
+                    <table class="table coin-list latest-tranjections-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">User ID</th>
+                                <th scope="col">UserName</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $sql_st = $conn->query("SELECT * FROM dlikeaccounts where admin_account=1");
+                                if ($sql_st->num_rows > 0) {
+                                    while($row_t = $sql_st->fetch_assoc()) {?> 
+                            <tr>   
+                                <td><?php echo $row_t["id"]; ?></td>
+                                <td><?php echo $row_t["username"]; ?></td>
+                            </tr>
+                            <? } }?>
+                        </tbody>
+                    </table>
+                </div><!-- order-history-block-inner -->
+            </div>
+        </div>
+    </div> 
 </div> 
 <?php include('../template/dlike_footer.php'); ?>
 <script type="text/javascript">
