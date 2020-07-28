@@ -7,11 +7,10 @@ $t=time();
 echo($t . "<br>");
 echo(date("Y-m-d",$t));
 echo '<br>';
-echo now();
-echo '<br>';
-echo CURRENT_DATE();
-echo '<br>';
-echo CURDATE();
+$sql_C = $conn->query("SELECT DATE(curation_time) as total FROM dlike_upvotes where DATE(curation_time) = SUBDATE(CURRENT_DATE(), 1)");
+
+$row_C = $sql_C->fetch_assoc() or die($conn->error);
+echo $time = $row_C["total"]; 
 ?>
 <div class="header-menu collapse d-lg-flex p-0">
     <div class="container">
