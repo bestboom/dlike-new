@@ -73,7 +73,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 }
 
                 $reward_status = '0';
-                $sql_upvotes = $conn->query("INSERT INTO dlike_upvotes (curator, author, permlink, ip_addr, status) VALUES ('".$userval."', '".$author."', '".$permlink."', '".$thisip."', '".$reward_status."')");
+                $sql_upvotes = $conn->query("INSERT INTO dlike_upvotes (curator, author, permlink, ip_addr, status, curation_time) VALUES ('".$userval."', '".$author."', '".$permlink."', '".$thisip."', '".$reward_status."', '".date("Y-m-d H:i:s")."')");
 
                 $checkPost = $conn->query("SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
                 if ($checkPost->num_rows > 0)
