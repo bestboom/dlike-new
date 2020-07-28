@@ -14,8 +14,7 @@ $foundation_val = $total_upvotes * $foundation_reward;
 $sql_W = $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE()");
 
 if ($sql_W->num_rows > 0){
-	$date = now();
-	$update_R = $conn->query("UPDATE dlike_daily_rewards SET today_upvotes = '$total_upvotes', dlike_staking = '$staking_val', dlike_dao = '$dao_val', dlike_charity = '$charity_val', dlike_team = '$team_val', dlike_foundation = '$foundation_val', dlike_airdrop = '$airdrop_val', update_time = '$date'");
+	$update_R = $conn->query("UPDATE dlike_daily_rewards SET today_upvotes = '$total_upvotes', dlike_staking = '$staking_val', dlike_dao = '$dao_val', dlike_charity = '$charity_val', dlike_team = '$team_val', dlike_foundation = '$foundation_val', dlike_airdrop = '$airdrop_val', update_time = now()");
 } else {
 $sql_data = $conn->query("INSERT INTO dlike_daily_rewards (today_upvotes, dlike_staking, dlike_dao, dlike_charity, dlike_team, dlike_foundation, dlike_airdrop) VALUES ('".$total_upvotes."', '".$staking_val."', '".$dao_val."', '".$charity_val."', '".$team_val."', '".$foundation_val."', '".$airdrop_val."')");
 }
