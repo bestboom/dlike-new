@@ -2,33 +2,15 @@
 require '../includes/config.php';
 ?> 
 </div>
-<?php
-$t=time();
-echo($t . "<br>");
-echo(date("Y-m-d",$t));
-echo '<br>';
-$sql_C = $conn->query("SELECT DATE(curation_time) as total FROM dlike_upvotes where DATE(curation_time) = SUBDATE(CURRENT_DATE(), 1)");
-
-$row_C = $sql_C->fetch_assoc() or die($conn->error);
-echo $time = $row_C["total"]; 
-?>
 <div class="header-menu collapse d-lg-flex p-0">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                    <li class="nav-item">
-                        <a href="./" class="nav-link steem-keychain-checked">
-                            <i class="fa fa-home"></i> Home
-                        </a>
-                    </li>
+                    <li class="nav-item nav-link" style="cursor: pointer;"><i class="fa fa-home"></i> Home</li>
                     <li class="nav-item nav-link add_account" style="cursor: pointer;"><i class="fa fa-plus"></i> Add Account</li>
                     <li class="nav-item nav-link accounts_list" style="cursor: pointer;"><i class="fa fa-users"></i> Admin Accounts</li>
-                    <li class="nav-item">
-                        <a href="./token_holders.php" class="nav-link steem-keychain-checked">
-                            <i class="fa fa-heart"></i> Token Holders
-                        </a>
-                    </li>
+                    <li class="nav-item nav-link" style="cursor: pointer;"><i class="fa fa-heart"></i>Holders</li>
                 </ul>
             </div>
         </div>
@@ -43,9 +25,7 @@ echo $time = $row_C["total"];
                   <i class="fa fa-list"></i>
                 </span>
                 <div>
-                    <h4 class="m-0">
-                        <small>In QUEUE</small>
-                    </h4>
+                    <h4 class="m-0"><small>In QUEUE</small></h4>
                     <small class="queue-stats-display text-muted">No posts in the Queue</small>
                 </div>
             </div>

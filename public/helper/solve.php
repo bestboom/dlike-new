@@ -29,7 +29,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($check_bot_likes->num_rows >= 10){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
         else {
-            $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', '".date("Y-m-d H:i:s")."')";
+            $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', now())";
             if (mysqli_query($conn, $sqlm))
             {
 
@@ -38,7 +38,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $auth_bal = $row_auth['amount'];
                 $update_auth_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$auth_bal' + '$author_reward' WHERE username = '$author'");
                     if ($update_auth_wallet === TRUE) { $type = 'a';
-                        $sql_auth = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
+                        $sql_auth = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', now())");
                     }
 
                 $check_cur_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$userval'");
@@ -46,7 +46,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $cur_bal = $row_cur['amount'];
                 $update_cur_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$cur_bal' + '$curator_reward' WHERE username = '$userval'");
                     if ($update_cur_wallet === TRUE) { $type = 'b';
-                        $sql_cur = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
+                        $sql_cur = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$permlink."', now())");
                     }
 
                 $check_refer_by = "SELECT refer_by FROM dlikeaccounts where username = '$author'";
@@ -58,7 +58,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     $row_adrop = $airdrop_bal->fetch_assoc();$adrop_bal = $row_adrop['amount'];
                     $update_adrop_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$adrop_bal' + '$airdrop_reward' WHERE username = '$airdroper'");
                         if ($update_adrop_wallet === TRUE) { $link = $author.'/'.$permlink;
-                            $sql_adrop = $conn->query("INSERT INTO dlike_airdrop_history (to_user, amount, reason, trx_time) VALUES ('dlike', '".$airdrop_reward."', '".$link."', '".date("Y-m-d H:i:s")."')");
+                            $sql_adrop = $conn->query("INSERT INTO dlike_airdrop_history (to_user, amount, reason, trx_time) VALUES ('dlike', '".$airdrop_reward."', '".$link."', now())");
                         }
 
                 } else {
@@ -68,7 +68,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     $update_ref_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$ref_bal' + '$affiliate_reward' WHERE username = '$referrer'");
                         if ($update_ref_wallet === TRUE) { 
                             $type = 'c';
-                            $sql_ref = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$permlink."', '".date("Y-m-d H:i:s")."')");
+                            $sql_ref = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$permlink."', now())");
                         }
                 }
 
@@ -85,7 +85,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     }
                 } else {
                     $addPost = $conn->query("INSERT INTO postslikes (author, permlink, likes, lastUpdatedDate)
-					       VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', '" . date("Y-m-d H:i:s") . "')");
+					       VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', now())");
                 }
 
                 die(json_encode(['error' => false, 'message' => 'Successfully Recommended!', 'post_income' => $post_reward]));
