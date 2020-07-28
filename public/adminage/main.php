@@ -2,6 +2,17 @@
 require '../includes/config.php';
 ?> 
 </div>
+<?php
+$t=time();
+echo($t . "<br>");
+echo(date("Y-m-d",$t));
+echo '<br>';
+echo now();
+echo '<br>';
+echo CURRENT_DATE();
+echo '<br>';
+echo CURDATE();
+?>
 <div class="header-menu collapse d-lg-flex p-0">
     <div class="container">
         <div class="row align-items-center">
