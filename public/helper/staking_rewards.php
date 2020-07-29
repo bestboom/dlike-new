@@ -8,8 +8,8 @@ $sql_u = $conn->query("SELECT * FROM dlike_staking");
 
 //echo $count=$sql_u->num_rows;
 
-$count=mysqli_num_rows($sql_u);
-
+echo $count=mysqli_num_rows($sql_u);
+$row_u = $sql_u->fetch_assoc();
 for($i=0;$i<$count;$i++)
    {
    	echo $name=$row_u["username"][$i];
