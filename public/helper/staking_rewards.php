@@ -6,9 +6,12 @@ require '../includes/config.php';
 
 $sql_u = $conn->query("SELECT * FROM dlike_staking");
 
-$count=$sql_T->num_rows;
+echo $count=$sql_u->num_rows;
 
-echo $count;
+for($i=0;$i<$count;$i++)
+   {
+   	eccho $name=$row_u["username"][$i]
+   }
 
 
 ?>
