@@ -5,17 +5,14 @@
 require '../includes/config.php';
 
 $sql_u = $conn->query("SELECT * FROM dlike_staking");
+if ($sql_u->num_rows > 0) {
+    while($row_u = $sql_u->fetch_assoc()) {
+    	echo $users = $row_u["username"];
+    	$amount="300";
 
-//echo $count=$sql_u->num_rows;
-
-$count=mysqli_num_rows($sql_u);
-$row_u = $sql_u->fetch_assoc();
-for($i=0;$i<$count;$i++)
-   {
-   	$name=$row_u["tron_address"];
-   	$users = $name;
-   	print_r($users);
-   }
+    	$conn->query("UPDATE dlike_staking_rewards SET amount = '$amount' WHERE username = '$users'");
+	} 
+}
 
 
 ?>
