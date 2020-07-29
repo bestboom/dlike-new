@@ -340,7 +340,7 @@ if ($conn->query($sql) === TRUE) {
 */
 
 
-ALTER TABLE dlike_staking MODIFY amount float(12,2);
+ALTER TABLE dlike_staking_rewards MODIFY reward float(12,2);
 
 
 
