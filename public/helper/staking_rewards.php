@@ -13,7 +13,7 @@ $row_u = $sql_u->fetch_assoc();
 for($i=0;$i<$count;$i++)
    {
    	$name=$row_u["tron_address"];
-   	$users = $name[$i];
+   	$users = $name;
    	print_r($users);
    }
 
