@@ -74,4 +74,6 @@ $foundation_reward = '0.025';
 
 $max_withdraw_limit = '5000';
 
+$no_of_staking_rewards = '200';
+
 ?>

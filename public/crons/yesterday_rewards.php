@@ -20,5 +20,5 @@ $sql_T = $conn->query("SELECT count(*) as yesterday_aff_rewards FROM dlike_trans
 $affiliate_val = $total_aff_gen * $affiliate_reward;
 $airdrop_val = ($total_upvotes - $total_aff_gen) * $airdrop_reward;
 
-$sql_data = $conn->query("INSERT INTO dlike_rewards_history (yesterday_upvotes, dlike_staking, dlike_dao, dlike_charity, dlike_team, dlike_foundation, dlike_airdrop, update_time) VALUES ('".$total_upvotes."', '".$staking_val."', '".$dao_val."', '".$charity_val."', '".$team_val."', '".$foundation_val."', '".$airdrop_val."', now())");
+$sql_data = $conn->query("INSERT INTO dlike_rewards_history (yesterday_upvotes, dlike_staking, dlike_dao, dlike_charity, dlike_team, dlike_foundation, dlike_airdrop, data_time, update_time) VALUES ('".$total_upvotes."', '".$staking_val."', '".$dao_val."', '".$charity_val."', '".$team_val."', '".$foundation_val."', '".$airdrop_val."', '".date(subdate(NOW(), 1))."', now())");
 ?>
