@@ -6,11 +6,13 @@ require '../includes/config.php';
 
 $sql_u = $conn->query("SELECT * FROM dlike_staking");
 
-echo $count=$sql_u->num_rows;
+//echo $count=$sql_u->num_rows;
+
+$count=mysqli_num_rows($sql_u);
 
 for($i=0;$i<$count;$i++)
    {
-   	eccho $name=$row_u["username"][$i]
+   	echo $name=$row_u["username"][$i];
    }
 
 
