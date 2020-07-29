@@ -12,7 +12,7 @@ $count=mysqli_num_rows($sql_u);
 $row_u = $sql_u->fetch_assoc();
 for($i=0;$i<$count;$i++)
    {
-   	$name=$row_u["username"];
+   	$name=$row_u["tron_address"];
    	$users = $name[$i];
    	print_r($users);
    }
