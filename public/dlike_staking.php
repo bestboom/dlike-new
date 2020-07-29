@@ -23,7 +23,7 @@ if ($sql_C->num_rows > 0){$row_C = $sql_C->fetch_assoc();
 $total_stakers = $row_C["total_stakers"]; $total_staked_amount = $row_C["total_staked_amount"];
 } else {$total_stakers = '0'; $total_staked_amount = '0';}
 
-$sql_Y = $conn->query("SELECT * FROM dlike_rewards_history WHERE DATE(update_time) = SUBDATE(CURRENT_DATE(), 1)");
+$sql_Y = $conn->query("SELECT * FROM dlike_rewards_history WHERE DATE(update_time) = CURDATE()");
 if ($sql_Y->num_rows > 0){$row_Y = $sql_Y->fetch_assoc();$yesterday_distribution = $row_Y["dlike_staking"];} else {$yesterday_distribution = '0';}
 
 $sql_M = $conn->query("SELECT * FROM dlike_staking where username='$dlike_user'");
