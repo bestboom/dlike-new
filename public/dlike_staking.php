@@ -29,6 +29,8 @@ if ($sql_Y->num_rows > 0){$row_Y = $sql_Y->fetch_assoc();$yesterday_distribution
 $sql_M = $conn->query("SELECT * FROM dlike_staking where username='$dlike_user'");
 if ($sql_M->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amount"];} else{$my_staking='0';}
 
+$sql_Q = $conn->query("SELECT * FROM dlike_staking_rewards where username='$dlike_user'");
+if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["reward"];} else{$my_rewards='0';}
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
@@ -109,7 +111,7 @@ if ($sql_M->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amo
                         <div role="tabpanel" class="tab-pane fade" id="claim_dlike">
                             <div class="container"><div class="row" style="margin-top: 55px;justify-content: center;">
                                 <div id="stake_sub" style="width: 90%;">
-                                    <div class="form-group"><input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim" readonly="readonly" value="100"></div>
+                                    <div class="form-group"><input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim" readonly="readonly" value="<?php echo $my_rewards; ?>"></div>
                                     <center><button type="button" class="btn btn-primary" id="claim_stk_reward"style="width: 30%;">Claim</button></center>
                                 </div>
                         </div></div></div>
