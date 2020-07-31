@@ -341,6 +341,7 @@
         "php": "^7.4.3",
         "ext-curl": "*",
         "ext-mbstring": "*",
+        "ext-bcmath": "*",
         "ext-mysqli": "*"
     },
     "platform-dev": []
