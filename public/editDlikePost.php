@@ -95,7 +95,7 @@ $('.dlike_share_post').click(function(clickEvent) {
     if (dlike_username != null) {
         let urlInput = '<?php echo $url; ?>';
         let verifyUrl = getDomain(urlInput);
-        let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org"];
+        let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "pinterest.com", "twitter.com"];
         if ($.inArray(verifyUrl, restricted_urls) > -1) {toastr.error('phew... Sharing from this url is not allowed');return false;
         }
         if ($('.dlike_cat').val() == "0") {

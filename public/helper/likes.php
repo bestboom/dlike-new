@@ -200,7 +200,7 @@ if ($conn->query($sqlm) === TRUE) {
     echo "Error creating table: " . $conn->error;
 }
 
-11.16
+233.33
 
 
 $sql = "ALTER TABLE convert_dlike ADD type INT(6) NOT NULL AFTER status";
