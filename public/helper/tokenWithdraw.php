@@ -6,12 +6,14 @@ include_once '../includes/contract_config.php';
 
 if(isset($_POST['userwallet']) && isset($_POST['amount']) && $_POST['userwallet']!="" && $_POST['amount']!=0){
 
-      $addressValidate =  $tron->validateaddress($_POST['userwallet']);
-        if( $addressValidate['result'] == false){
-            $result = array('Message'=>'Error! '.$addressValidate['message'] ,'Response'=>'failure', 'Hash' => '-');
-            echo json_encode($result);
-            exit;
-        }
+    $addressValidate =  $tron->validateaddress($_POST['userwallet']);
+      if( $addressValidate['result'] == false){
+          die(json_encode(['error' => true,'message' => $addressValidate['message']]));
+          //$result = array('Message'=>'Error! '.$addressValidate['message'] ,'Response'=>'failure', 'Hash' => '-');
+          //echo json_encode($result);
+          //exit;
+      }
+      
     $vSendAmount=$_POST['amount']; 
     $abi = json_decode(ABI,true);
     $vAdminAddress=SIGNER;
@@ -33,7 +35,7 @@ if(isset($_POST['userwallet']) && isset($_POST['amount']) && $_POST['userwallet'
     $feeLimit = 10000000;
     $callValue = 0;
 
-      try {
+    try {
        
           $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
           $signedTransaction = $tron->signTransaction($triggerContract);
