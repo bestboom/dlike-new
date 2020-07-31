@@ -193,8 +193,11 @@ $offchain_address = $row_J["offchain_address"];
                 try {var response = JSON.parse(data)
                     if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
                         toastr['error'](response.message);return false;
-                    } else {$(".tok_out_btn").attr("disabled", true);$("#dlike_tok_with").modal("hide");
-                        toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
+                    } else {$(".tok_out_btn").attr("disabled", true);
+                    let tron_address = response.tronaddress;let trx_amt = response.amt;
+                    console.log(tron_address);console.log(trx_amt);
+                    //$("#dlike_tok_with").modal("hide");
+                    //toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                     }
                 } catch (err) {toastr.error('Sorry. Server response is malformed');}
             }
