@@ -196,7 +196,16 @@ $offchain_address = $row_J["offchain_address"];
                     } else {$(".tok_out_btn").attr("disabled", true);
                     let tron_address = response.tronaddress;let trx_amt = response.amt;
                     console.log(tron_address);console.log(trx_amt);
-                    //$("#dlike_tok_with").modal("hide");
+                    $.ajax({type: "POST", url: 'helper/tokenWithdraw.php',data:{ userwallet: tron_address, amount: trx_amt },
+                        success: function(data) {
+                            try {var response = JSON.parse(data)
+                                if (response.Response == failure) {toastr['error'](response.Message);return false;
+                                } else {toastr['success'](response.Message);setTimeout(function(){window.location.reload();}, 300);
+                                }
+                            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+                        }
+                    });
+                                //$("#dlike_tok_with").modal("hide");
                     //toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                     }
                 } catch (err) {toastr.error('Sorry. Server response is malformed');}

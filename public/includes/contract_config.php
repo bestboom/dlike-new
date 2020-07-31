@@ -1,5 +1,5 @@
 <?php
-//include_once 'vendor/autoload.php';
+include_once 'vendor/autoload.php';
 define('CONTRACT_ADDRESS','TV5wwkRvsCEj9yZmfMRJhH5xxJCWKUTsry');
 define('CONTRACT_ADDRESS_HEX','41d1b0bb8d4d17d39153f7e0c536502ec8756a86fe');
 define('EVENT_API_URL','https://api.shasta.trongrid.io/event/');

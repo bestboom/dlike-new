@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors',1);
-//include_once 'vendor/autoload.php';
+include_once 'vendor/autoload.php';
 include_once '../includes/contract_config.php';
 
 if(isset($_POST['userwallet']) && isset($_POST['amount']) && $_POST['userwallet']!="" && $_POST['amount']!=0){
