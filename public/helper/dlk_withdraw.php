@@ -20,7 +20,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($check_limit->num_rows > 0) {$errors = 'Phew... One withdrawal allowed daily!';}
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
-	if ($check_address->num_rows > 0) {$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; } else {$errors = 'Phew... You must add your tron wallet address!';}
+	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 
+	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 
     if (empty($errors)) { 
     	die(json_encode(['error' => false,'tronaddress' => $tron_address,'amt' => $dlk_amount]));
