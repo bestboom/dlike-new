@@ -199,8 +199,8 @@ $offchain_address = $row_J["offchain_address"];
                     $.ajax({type: "POST", url: 'helper/tokenWithdraw.php',data:{ userwallet: tron_address, amount: trx_amt },
                         success: function(data) {
                             try {var response = JSON.parse(data)
-                                if (response.Response == failure) {toastr['error'](response.Message);return false;
-                                } else {toastr['success'](response.Message);setTimeout(function(){window.location.reload();}, 300);
+                                if (response.error == true) {toastr['error'](response.message);return false;
+                                } else {toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                                 }
                             } catch (err) {toastr.error('Sorry. Server response is malformed');}
                         }

@@ -39,17 +39,19 @@ if(isset($_POST['userwallet']) && isset($_POST['amount']) && $_POST['userwallet'
           $signedTransaction = $tron->signTransaction($triggerContract);
           $response = $tron->sendRawTransaction($signedTransaction);
           if ($response['result'] == 1) {
-             $result = array('Message'=>'Success !','Response'=>'success', 'Hash' => $triggerContract['txID']);
-              echo json_encode($result);
+            die(json_encode(['error' => false,'message' => 'Success!', 'hash' => $triggerContract['txID']]));
+            //$result = array('Message'=>'Success !','Response'=>'success', 'Hash' => $triggerContract['txID']);
+            //echo json_encode($result);
           }
     } catch (\IEXBase\TronAPI\Exception\TronException $e) {
-        $result = array('Message'=>'Error! '.$e->getMessage(),'Response'=>'failure', 'Hash' => '-');
-        echo json_encode($result);
+      die(json_encode(['error' => true,'message' => $e->getMessage()]));
+      //$result = array('Message'=>'Error! '.$e->getMessage(),'Response'=>'failure', 'Hash' => '-');
+      //echo json_encode($result);
     }      
       
-}else{
-        $result = array('Message'=>'Error! Wallet address or amount is missing','Response'=>'failure', 'Hash' => '');
-        echo json_encode($result);
-        exit;
+}else{die(json_encode(['error' => true,'message' => 'Error! Wallet address or amount is missing']));
+      //$result = array('Message'=>'Error! Wallet address or amount is missing','Response'=>'failure', 'Hash' => '');
+      //echo json_encode($result);
+      //exit;
 }
 ?>
