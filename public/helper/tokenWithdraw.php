@@ -39,7 +39,7 @@ $wallet = $_POST['userwallet'];
     $feeLimit = 10000000;
     $callValue = 0;
 
-    try {
+    //try {
        
           $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
           $signedTransaction = $tron->signTransaction($triggerContract);
@@ -48,12 +48,12 @@ $wallet = $_POST['userwallet'];
             die(json_encode(['error' => false,'message' => 'Success!', 'hash' => $triggerContract['txID']]));
             //$result = array('Message'=>'Success !','Response'=>'success', 'Hash' => $triggerContract['txID']);
             //echo json_encode($result);
-          }
-    } catch (\IEXBase\TronAPI\Exception\TronException $e) {
-      die(json_encode(['error' => true,'message' => $e->getMessage()]));
+          } else {die(json_encode(['error' => true,'message' => 'it seems some issue in token withdraw on tron end!']));}
+    //} catch (\IEXBase\TronAPI\Exception\TronException $e) {
+      //die(json_encode(['error' => true,'message' => $e->getMessage()]));
       //$result = array('Message'=>'Error! '.$e->getMessage(),'Response'=>'failure', 'Hash' => '-');
       //echo json_encode($result);
-    }      
+    //}      
       
 }else{die(json_encode(['error' => true,'message' => 'Error! Wallet address or amount is missing']));
 //      $result = array('Message'=>'Error! Wallet address or amount is missing','Response'=>'failure', 'Hash' => '');
