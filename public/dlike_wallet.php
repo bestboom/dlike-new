@@ -202,7 +202,7 @@ $offchain_address = $row_J["offchain_address"];
                                 if (response.error == true) {toastr['error'](response.message);return false;
                                 } else {toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                                 }
-                            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+                            } catch (err) {toastr.error('Sorry. it looks Server response is malformed');}
                         }
                     });
                                 //$("#dlike_tok_with").modal("hide");
