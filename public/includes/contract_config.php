@@ -8,7 +8,7 @@ define('TRONSCAN_URL','https://shasta.tronscan.org/#/transaction/');
 define('SIGNER','TBi9uevWfsKtVUup7GDEeGDy3GHcu6UiPF');
 define('SIGNER_PK','AD3675543AFE55B1FA10B318E4E028DAD74D2105A2FCE4827B4EB2DBC3AE8A7E');
 
-$event_uel = EVENT_API_URL.'contract/'.CONTRACT_ADDRESS;
+//$event_uel = EVENT_API_URL.'contract/'.CONTRACT_ADDRESS;
 
 use IEXBase\TronAPI\Tron;
 
