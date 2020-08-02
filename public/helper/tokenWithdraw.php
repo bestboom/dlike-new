@@ -45,7 +45,8 @@ $wallet = $_POST['userwallet'];
           $signedTransaction = $tron->signTransaction($triggerContract);
           $response = $tron->sendRawTransaction($signedTransaction);
           if ($response['result'] == 1) {
-            die(json_encode(['error' => false,'message' => 'Success!', 'hash' => $triggerContract['txID']]));
+            //die(json_encode(['error' => false,'message' => 'Success!', 'hash' => $triggerContract['txID']]));
+            die(json_encode(['error' => false,'message' => 'Success!']));
             //$result = array('Message'=>'Success !','Response'=>'success', 'Hash' => $triggerContract['txID']);
             //echo json_encode($result);
           } else {die(json_encode(['error' => true,'message' => 'it seems some issue in token withdraw on tron end!']));}
