@@ -196,10 +196,10 @@ $offchain_address = $row_J["offchain_address"];
                     } else {$(".tok_out_btn").attr("disabled", true);
                     let tron_address = response.tronaddress;let trx_amt = response.amt;
                     console.log(tron_address);console.log(trx_amt);
-                    $.ajax({type: "POST", url: 'helper/tokenWithdraw.php',data:{ userwallet: tron_address, amount: trx_amt },dataType: 'json',
+                    $.ajax({type: "POST", url: 'helper/tokenWithdraw.php',data:JSON.stringify({ userwallet: tron_address, amount: trx_amt }),dataType: 'json',
                         success: function(data) {
                             try {var response = JSON.parse(data)
-                                console.log(response)
+                                //console.log(response)
                                 if (response.error == true) {toastr['error'](response.message);return false;
                                 } else {toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                                 }
