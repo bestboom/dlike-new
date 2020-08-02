@@ -201,7 +201,7 @@ $offchain_address = $row_J["offchain_address"];
                             try {var response = JSON.parse(data)
                                 console.log(response)
                                 if (response.error == true) {toastr['error'](response.message);return false;
-                                } else {toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
+                                } else {toastr['success'](response.message);toastr['success'](response.hash);setTimeout(function(){window.location.reload();}, 1300);
                                 }
                             } catch (err) {console.log(err); toastr.error('Sorry. it looks Server response is malformed');}
                         },
