@@ -4,12 +4,12 @@ ini_set('display_errors',1);
 include_once '../vendor/autoload.php';
 include_once '../includes/contract_config.php';
 
-//if(isset($_POST['userwallet']) && isset($_POST['amount']) && $_POST['userwallet']!="" && $_POST['amount']!=0){
-//$amount = $_POST['amount'];
-//$wallet = $_POST['userwallet'];
+if(isset($_POST['userwallet']) && isset($_POST['amount']) && $_POST['userwallet']!="" && $_POST['amount']!=0){
+$amount = $_POST['amount'];
+$wallet = $_POST['userwallet'];
 
-$amount = '2';
-$wallet = 'THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ';
+//$amount = '2';
+//$wallet = 'THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ';
 
     $addressValidate =  $tron->validateaddress($wallet);
       if( $addressValidate['result'] == false){
@@ -55,11 +55,11 @@ $wallet = 'THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ';
       //echo json_encode($result);
     }      
       
-//}else{die(json_encode(['error' => true,'message' => 'Error! Wallet address or amount is missing']));
+}else{die(json_encode(['error' => true,'message' => 'Error! Wallet address or amount is missing']));
 //      $result = array('Message'=>'Error! Wallet address or amount is missing','Response'=>'failure', 'Hash' => '');
 //        echo json_encode($result);
 //        exit;
-//}
+}
 
 
 ?>
