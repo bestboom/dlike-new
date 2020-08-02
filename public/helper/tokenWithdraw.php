@@ -33,10 +33,9 @@ $wallet = 'THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ';
     $contract = CONTRACT_ADDRESS;
    
     $function = 'mintToken';
+    $vSendAmount  = $vSendAmount * 1e6;
     $params= array($vHExUser, $vSendAmount);
     $address =  $vHExAddress;
-   
-
     $feeLimit = 10000000;
     $callValue = 0;
 
@@ -57,8 +56,10 @@ $wallet = 'THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ';
     }      
       
 //}else{die(json_encode(['error' => true,'message' => 'Error! Wallet address or amount is missing']));
-      //$result = array('Message'=>'Error! Wallet address or amount is missing','Response'=>'failure', 'Hash' => '');
-      //echo json_encode($result);
-      //exit;
+//      $result = array('Message'=>'Error! Wallet address or amount is missing','Response'=>'failure', 'Hash' => '');
+//        echo json_encode($result);
+//        exit;
 //}
+
+
 ?>
