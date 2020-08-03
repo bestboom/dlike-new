@@ -63,7 +63,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 
     				$status = $triggerContract['txID'];
     				$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlike_amount."',  '".$wallet."', '".$status."', '".date("Y-m-d H:i:s")."')");
-
+				}
         	die(json_encode(['error' => false,'message' => 'Success!', 'hash' => $triggerContract['txID']]));
         }else{die(json_encode(['error' => true,'message' => 'There is some issue in token withdraw. Please try Later!']));}
 
