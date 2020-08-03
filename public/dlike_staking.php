@@ -163,8 +163,9 @@ $('#stake_me').click(async function() {
             console.log(user_address)
         }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;} else {
+            $("#stake_me").attr("disabled", true);
             let stk_amt = $('#stakeamount').val();
-            if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;}
+            if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;$("#stake_me").attr("disabled", false);}
             
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
@@ -183,14 +184,14 @@ $('#stake_me').click(async function() {
                         success: function(data) {
                             try { var response = JSON.parse(data)
                                 if (response.error == true) {toastr.error(response.message);return false;
-                                } else {toastr.success(response.message);}
+                                } else {toastr.success(response.message);setTimeout(function(){window.location.reload();}, 400);}
                             } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                         }
                     });
 
                 //toastr.success('You Staked Token Successfully.');
-                } else {toastr.error('some issue in staking.');return false;}
-            }else{toastr.error('phew... Not enough amount you want to stake');return false;}
+                } else {toastr.error('some issue in staking.');return false;$("#stake_me").attr("disabled", false);}
+            }else{toastr.error('phew... Not enough amount you want to stake');return false;$("#stake_me").attr("disabled", false);}
             
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
