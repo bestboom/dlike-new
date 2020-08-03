@@ -10,7 +10,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['a
 	$username = $_COOKIE['dlike_username'];
     $wallet = trim(mysqli_real_escape_string($conn, $_POST["wallet"]));
     $trx_id = trim(mysqli_real_escape_string($conn, $_POST["trx_id"]));
-
+    $stk_amount = int($stk_amount/1000000);
 	if(empty($stk_amount)){ $errors = "Please enter staking amount";}
     if(empty($username)){$errors = "Seems You are not login";}
     if(empty($wallet)){ $errors = "Wallet address error. Please contact support";}

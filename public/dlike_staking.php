@@ -183,9 +183,7 @@ $('#stake_me').click(async function() {
                         success: function(data) {
                             try { var response = JSON.parse(data)
                                 if (response.error == true) {toastr.error(response.message);return false;
-                                } else {toastr.success(response.dlikeuser);
-                                    toastr.success(response.id);gettronweb();
-                                }
+                                } else {toastr.success(response.message);}
                             } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                         }
                     });
