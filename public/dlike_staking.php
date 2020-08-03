@@ -159,7 +159,7 @@ $('#stake_me').click(async function() {
         let user_address =false;
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             console.log(user_address)
-        }else{toastr.error('Non-Tronlink','Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
+        }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
         if(user_address==false){toastr.error('Login','Please Login to Tronlink Wallet.');return false;}
         else {
             let stk_amt = $('#stakeamount').val();
@@ -215,11 +215,5 @@ $('#claim_stk_reward').click(function() {
         });
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
-
-function gettronweb(){
-    if(window.tronWeb && window.tronWeb.ready){
-        TRON.init();
-    } else {toastr.error('You must install Tronlink');return false;}
-}
     
 </script>
