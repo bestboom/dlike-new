@@ -154,21 +154,28 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 <? } ?>  
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-$('#stake_me').click(function() {
+$('#stake_me').click(async function() {
     if (dlike_username != null) {
-        let stk_amt = $('#stakeamount').val();
-        if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;}
-         
-        $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt},
-            success: function(data) {
-                try { var response = JSON.parse(data)
-                    if (response.error == true) {toastr.error(response.message);return false;
-                    } else {toastr.success(response.dlikeuser);
-                        toastr.success(response.id);gettronweb();
-                    }
-                } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-            }
-        });
+        let user_address =false;
+        if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+            console.log(user_address)
+        }else{toastr.error('Non-Tronlink','Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
+        if(user_address==false){toastr.error('Login','Please Login to Tronlink Wallet.');return false;}
+        else {
+            let stk_amt = $('#stakeamount').val();
+            if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;}
+             
+            $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt},
+                success: function(data) {
+                    try { var response = JSON.parse(data)
+                        if (response.error == true) {toastr.error(response.message);return false;
+                        } else {toastr.success(response.dlikeuser);
+                            toastr.success(response.id);gettronweb();
+                        }
+                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+                }
+            });
+        }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 

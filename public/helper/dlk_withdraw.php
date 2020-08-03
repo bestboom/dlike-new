@@ -77,6 +77,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'address' && isset($_POST['of
 
 	if(empty($offchain_address)){$errors = "Address seems to be empty!";}
     if(empty($username)){$errors = "Seems You are not login";}
+
+    $unique_address = $conn->query("SELECT * FROM dlikeaccounts where offchain_address = '$offchain_address'");
+	if ($unique_address->num_rows > 0) {$errors = 'Phew... Address already in use by some other account!';}
     if (empty($errors)) {
 
     	$addressValidate =  $tron->validateaddress($offchain_address);
