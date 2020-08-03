@@ -17,14 +17,22 @@ if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['a
     if(empty($wallet)){ $errors = "Wallet address error. Please contact support";}
     if(empty($trx_id)){ $errors = "TRX ID error. Please contact support";}
 
-    if (empty($errors)) {$rew_amt = '0'; $type = 'staking';
+    if (empty($errors)) {$type = 'staking';
 
-        $sql_s = $conn->query("INSERT INTO dlike_staking (username, amount, tron_address, tron_trx, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', now())");
-        
-        $sql_sw = $conn->query("INSERT INTO dlike_staking_rewards (username, reward, tron_address) VALUES ('".$username."', '".$rew_amt."', '".$wallet."')");
+        $stk_account = $conn->query("SELECT * FROM dlike_staking where username='$username'");
+        if ($stk_account->num_rows > 0) {$row_stk = $stk_account->fetch_assoc();$old_amount = $row_stk['amount'];
 
-        $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
+            $updateStaking = $conn->query("UPDATE dlike_staking SET amount = '$old_amount' + '$stk_amount', tron_address = '$wallet', tron_trx='$trx_id' WHERE username='$username'");
 
+            $sql_stu = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
+
+        } else {$rew_amt = '0';
+            $sql_s = $conn->query("INSERT INTO dlike_staking (username, amount, tron_address, tron_trx, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', now())");
+            
+            $sql_sw = $conn->query("INSERT INTO dlike_staking_rewards (username, reward, tron_address) VALUES ('".$username."', '".$rew_amt."', '".$wallet."')");
+
+            $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
+        }
 	   die(json_encode(['error' => false,'message' => 'WOW! Tokens staked Successfully.']));
 		//} else {die(json_encode(['error' => true,'message' => 'Some issue in adding stake. Please contact support!'])); }
     } else {die(json_encode(['error' => true,'message' => $errors]));}
