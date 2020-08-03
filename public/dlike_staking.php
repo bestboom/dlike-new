@@ -160,21 +160,34 @@ $('#stake_me').click(async function() {
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             console.log(user_address)
         }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
-        if(user_address==false){toastr.error('Login','Please Login to Tronlink Wallet.');return false;}
-        else {
+        if(user_address==false){toastr.error('Login','Please Login to Tronlink Wallet.');return false;} else {
             let stk_amt = $('#stakeamount').val();
             if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;}
-             
-            $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt},
-                success: function(data) {
-                    try { var response = JSON.parse(data)
-                        if (response.error == true) {toastr.error(response.message);return false;
-                        } else {toastr.success(response.dlikeuser);
-                            toastr.success(response.id);gettronweb();
-                        }
-                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                }
-            });
+            
+            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            var balanceof = await myContract.balanceOf(user_address).call();
+            balanceof = window.tronWeb.toDecimal(balanceof);
+            console.log(balanceof); 
+            stk_amt = stk_amt * 1e6;
+
+            if(parseFloat(stk_amt) <=balanceof){
+                await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+                var result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+                console.log(result);
+                if(result){toastr.success('You Staked Token Successfully.');
+                } else {toastr.error('some issue in staking.');return false;}
+            }else{toastr.error('phew... Not enough amount you want to stake');return false;}
+            //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt},
+              //  success: function(data) {
+                //    try { var response = JSON.parse(data)
+                  //      if (response.error == true) {toastr.error(response.message);return false;
+                  //      } else {toastr.success(response.dlikeuser);
+                    //        toastr.success(response.id);gettronweb();
+                      //  }
+                    //} catch (err) {toastr.error('Sorry. Server response is malformed.');}
+                //}
+            //});
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
