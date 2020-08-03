@@ -163,9 +163,9 @@ $('#stake_me').click(async function() {
             console.log(user_address)
         }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;} else {
-            $("#stake_me").attr("disabled", true);
+            $("#stake_me").attr("disabled", true).html('staking...');
             let stk_amt = $('#stakeamount').val();
-            if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;$("#stake_me").attr("disabled", false);}
+            if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;$("#stake_me").attr("disabled", false).html('stake');}
             
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
@@ -190,8 +190,8 @@ $('#stake_me').click(async function() {
                     });
 
                 //toastr.success('You Staked Token Successfully.');
-                } else {toastr.error('some issue in staking.');return false;$("#stake_me").attr("disabled", false);}
-            }else{toastr.error('phew... Not enough amount you want to stake');return false;$("#stake_me").attr("disabled", false);}
+                } else {toastr.error('some issue in staking.');return false;$("#stake_me").attr("disabled", false).html('stake');}
+            }else{toastr.error('phew... Not enough amount you want to stake');return false;$("#stake_me").attr("disabled", false).html('stake');}
             
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
