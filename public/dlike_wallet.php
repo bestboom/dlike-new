@@ -100,16 +100,12 @@ $offchain_address = $row_J["offchain_address"];
     </div></div>
 </div>
 <div class="container"><div class="row">
-<div class="col-md-6">
-<div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
+<div class="col-md-6"><div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
     <div class="latest-tranjections-block-inner">
         <div class="panel-heading-block"><h5>Transactions</h5></div>
         <table class="table coin-list latest-tranjections-table">
             <thead><tr>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">For</th>
-                    <th scope="col" style="float:right;">Time</th>
+                <th scope="col">Amount</th><th scope="col">Type</th><th scope="col">For</th><th scope="col" style="float:right;">Time</th>
             </tr></thead>
             <tbody>
                 <?php $sql_T = $conn->query("SELECT * FROM dlike_transactions where username ='$dlike_user' ORDER BY trx_time DESC LIMIT 30");
@@ -126,16 +122,13 @@ $offchain_address = $row_J["offchain_address"];
             </tbody>
         </table>
     </div>
-</div></div></div>
-</div>
+</div></div></div></div>
 <div class="col-md-6"><div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
     <div class="latest-tranjections-block-inner">
         <div class="panel-heading-block"><h5>Withdrawals</h5></div>
         <table class="table coin-list latest-tranjections-table">
             <thead><tr>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Status</th>
-                    <th scope="col" style="float:right;">Time</th>
+                <th scope="col">Amount</th><th scope="col">Status</th><th scope="col" style="float:right;">Time</th>
             </tr></thead>
             <tbody>
                 <?php $sql_P = $conn->query("SELECT * FROM dlike_withdrawals where username ='$dlike_user' ORDER BY req_on DESC LIMIT 30");
@@ -143,7 +136,7 @@ $offchain_address = $row_J["offchain_address"];
                         $entry_date = strtotime($row_P["req_on"]); ?> 
                 <tr>
                     <td><?php echo $row_P["amount"]; ?></td>
-                    <td><?php echo $row_P["status"]; ?></td>
+                    <td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_P["status"].'"><i class="fas fa-globe"></i></a>'; ?></td>
                     <td style="float:right;"><?php echo time_ago($entry_date); ?></td> 
                 </tr><? } }?>
             </tbody>
@@ -156,15 +149,9 @@ $offchain_address = $row_J["offchain_address"];
         <div class="transfer-respond">
             <h4>Withdraw DLIKE Tokens</h4>
             <label><b>Balance: </b><span class="user_bal"><?php echo $my_bal;; ?></span> DLIKE</label>
-            <div class="row line">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div><input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row line"><div class="col-md-12"><div class="form-group"><div class="input-group mb-3">
+                <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div><input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
+            </div> </div></div></div>
             <center><button type="submit" class="btn btn-default tok_out_btn">Withdraw</button></center>
         </div>
      </div></div></div>
@@ -173,8 +160,7 @@ $offchain_address = $row_J["offchain_address"];
 <script type="text/javascript">
     let withdraw_val = document.getElementById('withdraw_amount');
     withdraw_val.onkeydown = function(e) {
-        if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;
-        }
+        if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;}
     }
     $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
     $('.tok_out_btn').click(function() {$(".tok_out_btn").attr("disabled", true);

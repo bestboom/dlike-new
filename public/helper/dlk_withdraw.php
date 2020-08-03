@@ -19,7 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($wallet_amount < $dlk_amount) {$errors = 'Not enough balance';}
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
 	$check_limit = $conn->query("SELECT * FROM dlike_withdrawals where username = '$username' and DATE(req_on) = CURDATE()");
-	if ($check_limit->num_rows > 4) {$errors = 'Phew... One withdrawal allowed daily!';}
+	if ($check_limit->num_rows > 0) {$errors = 'Phew... One withdrawal allowed daily!';}
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
 	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 
@@ -67,20 +67,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
         	die(json_encode(['error' => false,'message' => 'Success!', 'hash' => $triggerContract['txID']]));
         }else{die(json_encode(['error' => true,'message' => 'There is some issue in token withdraw. Please try Later!']));}
 
-    	//$status = $triggerContract['txID'];
-    	//$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
-    	//$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, status, req_on) VALUES ('".$username."', '".$dlike_amount."', '".$status."', '".date("Y-m-d H:i:s")."')");
-		//if ($add_draw) {
-			//$checkWallet = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
-				//if ($checkWallet->num_rows > 0) { $row = $checkWallet->fetch_assoc();
-				//	$old_amount = $row['amount'];
-    			//
-				//	$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$old_amount' - '$dlike_amount' WHERE username = '$username'");
-				//	if ($updateWallet === TRUE) {die(json_encode(['error' => false,'message' => 'Withdrawal Request submitted successfully!']));
-				//	}  else {die(json_encode(['error' => true,'message' => 'Some issue in withdrawal. Please try later!'])); 
-				//	}
-				//}
-		//}
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 //else {die('Some error');}
@@ -92,6 +78,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'address' && isset($_POST['of
 	if(empty($offchain_address)){$errors = "Address seems to be empty!";}
     if(empty($username)){$errors = "Seems You are not login";}
     if (empty($errors)) {
+
+    	$addressValidate =  $tron->validateaddress($offchain_address);
+		if( $addressValidate['result'] == false){die(json_encode(['error' => true,'message' => $addressValidate['message']]));}
+
 		$update_address= $conn->query("UPDATE dlikeaccounts SET offchain_address = '$offchain_address' WHERE username = '$username'");
 		if ($update_address === TRUE) {die(json_encode(['error' => false,'message' => 'Address added successfully!']));
 		}  else {die(json_encode(['error' => true,'message' => 'There is some issue. please try later!'])); }
