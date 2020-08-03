@@ -160,7 +160,7 @@ $('#stake_me').click(async function() {
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             console.log(user_address)
         }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
-        if(user_address==false){toastr.error('Login','Please Login to Tronlink Wallet.');return false;} else {
+        if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;} else {
             let stk_amt = $('#stakeamount').val();
             if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');return false;}
             
