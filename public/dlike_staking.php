@@ -131,6 +131,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                             <th scope="col">Username</th>
                             <th scope="col">Tron Address</th>
                             <th scope="col">Amount Staked</th>
+                            <th scope="col">TRX ID</th>
                             <th scope="col">Time Staked</th>
                         </tr>
                     </thead>
@@ -142,6 +143,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                             <td><?php echo $row_t["username"]; ?></td>
                             <td><?php echo $row_t["tron_address"]; ?></td>
                             <td><?php echo $row_t["amount"]; ?></td>
+                            <td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></td>
                             <td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> 
                         </tr>
                         <? } }?>
@@ -173,21 +175,25 @@ $('#stake_me').click(async function() {
 
             if(parseFloat(stk_amt) <=balanceof){
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-                var result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+                let result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                 console.log(result);
-                if(result){toastr.success('You Staked Token Successfully.');
+                if(result){
+
+                    $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
+                        success: function(data) {
+                            try { var response = JSON.parse(data)
+                                if (response.error == true) {toastr.error(response.message);return false;
+                                } else {toastr.success(response.dlikeuser);
+                                    toastr.success(response.id);gettronweb();
+                                }
+                            } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+                        }
+                    });
+
+                //toastr.success('You Staked Token Successfully.');
                 } else {toastr.error('some issue in staking.');return false;}
             }else{toastr.error('phew... Not enough amount you want to stake');return false;}
-            //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt},
-              //  success: function(data) {
-                //    try { var response = JSON.parse(data)
-                  //      if (response.error == true) {toastr.error(response.message);return false;
-                  //      } else {toastr.success(response.dlikeuser);
-                    //        toastr.success(response.id);gettronweb();
-                      //  }
-                    //} catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                //}
-            //});
+            
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });

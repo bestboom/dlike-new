@@ -6,27 +6,27 @@ require '../includes/config.php';
 
 if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['amount'])  && $_POST['amount'] != '') { 
 
-	$stk_amount = trim($_POST["amount"]);
+	$stk_amount = trim(mysqli_real_escape_string($conn, $_POST["amount"]));
 	$username = $_COOKIE['dlike_username'];
+    $wallet = trim(mysqli_real_escape_string($conn, $_POST["wallet"]));
+    $trx_id = trim(mysqli_real_escape_string($conn, $_POST["trx_id"]));
 
-	if(empty($stk_amount)){
-        $errors = "Please enter staking amount";
-    }
-    if(empty($username)){
-        $errors = "Seems You are not login";
-    }
-    if (empty($errors)) {
-    	$check_user = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
-		if ($check_user->num_rows > 0) {$row_C = $check_user->fetch_assoc(); $dlike_user_id=$row_C['id'];
-    		die(json_encode(['error' => false,'id' => $dlike_user_id,'dlikeuser' => $username]));
-		} else {die(json_encode(['error' => true,'message' => 'Seems issue in account!'])); }
-    } else {
-	    die(json_encode([
-    		'error' => true,
-    		'message' => $errors
-		]));
-	}
+	if(empty($stk_amount)){ $errors = "Please enter staking amount";}
+    if(empty($username)){$errors = "Seems You are not login";}
+    if(empty($wallet)){ $errors = "Wallet address error. Please contact support";}
+    if(empty($trx_id)){ $errors = "TRX ID error. Please contact support";}
 
+    if (empty($errors)) {$rew_amt = '0'; $type = 'staking';
+
+        $sql_s = $conn->query("INSERT INTO dlike_staking (username, amount, tron_address, tron_trx, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', now())");
+        
+        $sql_sw = $conn->query("INSERT INTO dlike_staking_rewards (username, reward, tron_address) VALUES ('".$username."', '".$rew_amt."', '".$wallet."')");
+
+        $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
+
+		if ($sql_sw) {die(json_encode(['error' => false,'message' => 'WOW! Tokens staked Successfully.']));
+		} else {die(json_encode(['error' => true,'message' => 'Some issue in adding stake. Please contact support!'])); }
+    } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 
 if (isset($_POST['action'])  && $_POST['action'] == 'unstaking' && isset($_POST['unstake_amount'])  && $_POST['unstake_amount'] != '') { 
