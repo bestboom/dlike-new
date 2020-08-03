@@ -1,5 +1,7 @@
 <?php 
 require '../includes/config.php';
+include_once '../vendor/autoload.php';
+include_once '../includes/contract_config.php';
 
 if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['dlk_out_amount']) && $_POST['dlk_out_amount'] != '') { 
 
@@ -24,7 +26,40 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 
     if (empty($errors)) { 
-    	die(json_encode(['error' => false,'tronaddress' => $tron_address,'amt' => $dlk_amount]));
+    	$amount = $dlk_amount;$wallet = $tron_address;
+    	$addressValidate =  $tron->validateaddress($tron_address);
+		if( $addressValidate['result'] == false){die(json_encode(['error' => true,'message' => $addressValidate['message']]));
+		}
+
+	    $vSendAmount=$amount; 
+	    $abi = json_decode(ABI,true);
+	    $vAdminAddress=SIGNER;
+	    $vHExAddress=$tron->address2HexString($vAdminAddress);
+	    $tron->setAddress($vAdminAddress);
+	    $tron->setPrivateKey(SIGNER_PK);
+
+	    $vUserAddress=$wallet;
+	    $vHExUser=$tron->address2HexString($vUserAddress);
+
+	    // write contract data
+	    $contract = CONTRACT_ADDRESS;
+	   
+	    $function = 'mintToken';
+	    $vSendAmount  = $vSendAmount * 1e6;
+	    $params= array($vHExUser, $vSendAmount);
+	    $address =  $vHExAddress;
+	    $feeLimit = 10000000;
+	    $callValue = 0;
+
+	    $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue,$bandwidthLimit = 0);
+        $signedTransaction = $tron->signTransaction($triggerContract);
+        $response = $tron->sendRawTransaction($signedTransaction);
+        if ($response['result'] == 1) {
+        	die(json_encode(['error' => false,'message' => 'Success!', 'hash' => $triggerContract['txID']]));
+        }else{die(json_encode(['error' => true,'message' => 'There is some issue in token withdraw. Please try Later!']));}
+
+
+    	//die(json_encode(['error' => false,'tronaddress' => $tron_address,'amt' => $dlk_amount]));
     	//$status = '0';
     	//$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
     	//$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, status, req_on) VALUES ('".$username."', '".$dlike_amount."', '".$status."', '".date("Y-m-d H:i:s")."')");

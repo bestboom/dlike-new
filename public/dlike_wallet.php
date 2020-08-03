@@ -193,26 +193,8 @@ $offchain_address = $row_J["offchain_address"];
                 try {var response = JSON.parse(data)
                     if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
                         toastr['error'](response.message);return false;
-                    } else {$(".tok_out_btn").attr("disabled", true);
-                    let tron_address = response.tronaddress;let trx_amt = response.amt;
-                    console.log(tron_address);console.log(trx_amt);
-                    $.ajax({type: "POST", url: 'helper/tokenWithdraw.php',data:{ userwallet: tron_address, amount: trx_amt },
-                        success: function(data) {
-                            try {var response = JSON.parse(data)
-                                console.log(response)
-                                if (response.error == true) {toastr['error'](response.message);return false;
-                                } else {toastr['success'](response.message);toastr['success'](response.hash);setTimeout(function(){window.location.reload();}, 1300);
-                                }
-                            } catch (err) {console.log(err); toastr.error('Sorry. it looks Server response is malformed');}
-                        },
-                          error: function(xhr, textStatus, error){
-                              console.log(xhr.statusText);
-                              console.log(textStatus);
-                              console.log(error);
-                          }
-                    });
-                                //$("#dlike_tok_with").modal("hide");
-                    //toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
+                    } else {$(".tok_out_btn").attr("disabled", true);$("#dlike_tok_with").modal("hide");
+                    toastr['success'](response.message);toastr['success'](response.hash);setTimeout(function(){window.location.reload();}, 400);
                     }
                 } catch (err) {toastr.error('Sorry. Server response is malformed');}
             }
