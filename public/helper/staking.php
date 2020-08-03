@@ -10,7 +10,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['a
 	$username = $_COOKIE['dlike_username'];
     $wallet = trim(mysqli_real_escape_string($conn, $_POST["wallet"]));
     $trx_id = trim(mysqli_real_escape_string($conn, $_POST["trx_id"]));
-    $stk_amount = int($stk_amount/1000000);
+    $tron_decimals = '1000000';
+    $stk_amount = $stk_amount/$tron_decimals;
 	if(empty($stk_amount)){ $errors = "Please enter staking amount";}
     if(empty($username)){$errors = "Seems You are not login";}
     if(empty($wallet)){ $errors = "Wallet address error. Please contact support";}
@@ -24,8 +25,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['a
 
         $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
 
-		if ($sql_sw) {die(json_encode(['error' => false,'message' => 'WOW! Tokens staked Successfully.']));
-		} else {die(json_encode(['error' => true,'message' => 'Some issue in adding stake. Please contact support!'])); }
+	   die(json_encode(['error' => false,'message' => 'WOW! Tokens staked Successfully.']));
+		//} else {die(json_encode(['error' => true,'message' => 'Some issue in adding stake. Please contact support!'])); }
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 
