@@ -190,8 +190,8 @@ $('#stake_me').click(async function() {
                     });
 
                 //toastr.success('You Staked Token Successfully.');
-                } else {toastr.error('some issue in staking.');return false;$("#stake_me").attr("disabled", false).html('stake');}
-            }else{toastr.error('phew... Not enough amount you want to stake');return false;$("#stake_me").attr("disabled", false).html('stake');}
+                } else {toastr.error('some issue in staking.');$("#stake_me").attr("disabled", false).html('stake');return false;}
+            }else{toastr.error('phew... Not enough amount you want to stake');$("#stake_me").attr("disabled", false).html('Stake');return false;}
             
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
