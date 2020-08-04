@@ -160,7 +160,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-$('#stake_me').click(function() {setTimeout(function(){window.location.reload();}, 100);});
+$('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 $('#stake_me').click(async function() {
     if (dlike_username != null) {
         let user_address =false;
