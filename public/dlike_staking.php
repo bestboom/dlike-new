@@ -155,11 +155,12 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 </div>  
 <? } ?>  
 <div class="modal fade" id="stakingStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
-<div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><span class="st_trx_link"></span></div><div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
+<div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="st_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger st_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
 
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
+$('#stake_me').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 $('#stake_me').click(async function() {
     if (dlike_username != null) {
         let user_address =false;
@@ -184,7 +185,7 @@ $('#stake_me').click(async function() {
                 console.log(result);
                 if(result){
                     $('#stakingStatus').modal('show');
-                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/" target="_blank">Check Transaction Here</a>');
+                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'result'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
                         $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                             if(status=='success'){
@@ -192,10 +193,12 @@ $('#stake_me').click(async function() {
                                 if(tx_result=='SUCCESS'){
                                     $(".st_status_message").html('Tokens Staked Successfully!');
                                     $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
+                                    setTimeout(function(){window.location.reload();}, 1000);
                                     //toastr.success('You Staked Token Successfully.');
                                 }else{
                                     $(".st_status_message").html('Something Wrong ! Try Again.');
                                     $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
+                                    setTimeout(function(){window.location.reload();}, 1000);
                                     //toastr.success('Something Wrong ! Try Again.');
                                 }
                             } 
