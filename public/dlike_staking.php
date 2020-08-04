@@ -156,7 +156,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 <? } ?>  
 <div class="modal fade" id="stakingStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<div class="modal-body "><div class="mdStatusTitle sttError"><div class="spinner-grow text-light" role="status"><span class="sr-only">Loading...</span></div></div><div class="mdStatusContent"><h3 id="alert-title-error st_status_message">Waiting For Confirmation</h3><p id="alert-content-error">Check Transaction here</p><div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
+<div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><div class="spinner-grow text-light" role="status"><span class="sr-only">Loading...</span></div></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><p id="alert-content-error">Check Transaction Here</p><div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
 
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
