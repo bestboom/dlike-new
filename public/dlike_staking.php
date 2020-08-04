@@ -154,6 +154,11 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
     </div>
 </div>  
 <? } ?>  
+<div class="modal fade" id="stakingStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
+
+<div class="modal-body "><div class="mdStatusTitle sttError"><div class="spinner-grow text-light" role="status"><span class="sr-only">Loading...</span></div></div><div class="mdStatusContent"><h3 id="alert-title-error st_status_message">Waiting For Confirmation</h3><p id="alert-content-error">Check Transaction here</p><div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
+
+</div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
 $('#stake_me').click(async function() {
@@ -179,17 +184,20 @@ $('#stake_me').click(async function() {
                 let result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                 console.log(result);
                 if(result){
+                    $('#stakingStatus').modal('show');
                     var x = setInterval(function() {
                         $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                             if(status=='success'){
                                 var tx_result = data.data[0].ret[0].contractRet;  
                                 if(tx_result=='SUCCESS'){
+                                    $("#st_status_message").html('Tokens Staked Successfully!');
                                     toastr.success('You Staked Token Successfully.');
                                 }else{
+                                    $("#st_status_message").html('Something Wrong ! Try Again.');
                                     toastr.success('Something Wrong ! Try Again.');
                                 }
                             } 
-                        });
+                        }); 
                     }, 20000);
                     //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
                       //  success: function(data) {
