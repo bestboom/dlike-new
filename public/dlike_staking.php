@@ -185,7 +185,7 @@ $('#stake_me').click(async function() {
                 console.log(result);
                 if(result){
                     $('#stakingStatus').modal('show');
-                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'result'" target="_blank">Check Transaction Here</a>');
+                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
                         $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                             if(status=='success'){
