@@ -190,15 +190,15 @@ $('#stake_me').click(async function() {
                             if(status=='success'){
                                 var tx_result = data.data[0].ret[0].contractRet;  
                                 if(tx_result=='SUCCESS'){
-                                    $("#st_status_message").html('Tokens Staked Successfully!');
+                                    $(".st_status_message").html('Tokens Staked Successfully!');
                                     toastr.success('You Staked Token Successfully.');
                                 }else{
-                                    $("#st_status_message").html('Something Wrong ! Try Again.');
+                                    $(".st_status_message").html('Something Wrong ! Try Again.');
                                     toastr.success('Something Wrong ! Try Again.');
                                 }
                             } 
                         }); 
-                    }, 20000);
+                    }, 15000);
                     //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
                       //  success: function(data) {
                         //    try { var response = JSON.parse(data)
