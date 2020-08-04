@@ -155,8 +155,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 </div>  
 <? } ?>  
 <div class="modal fade" id="stakingStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><div class="spinner-grow text-light" role="status"><span class="sr-only">Loading...</span></div></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><p id="alert-content-error">Check Transaction Here</p><div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
+<div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-circle-o-notch fa-spin"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><p id="alert-content-error st_trx_link"></p><div class="actBtn"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
 
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
@@ -185,16 +184,18 @@ $('#stake_me').click(async function() {
                 console.log(result);
                 if(result){
                     $('#stakingStatus').modal('show');
+                    $("#st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/" target="_blank">Check Transaction Here</a>');
+                    $(".iconTitle").find($(".fa")).removeClass('fa-circle-o-notch fa-spin').addClass('fa-check-circle');
                     var x = setInterval(function() {
                         $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                             if(status=='success'){
                                 var tx_result = data.data[0].ret[0].contractRet;  
                                 if(tx_result=='SUCCESS'){
                                     $(".st_status_message").html('Tokens Staked Successfully!');
-                                    toastr.success('You Staked Token Successfully.');
+                                    //toastr.success('You Staked Token Successfully.');
                                 }else{
                                     $(".st_status_message").html('Something Wrong ! Try Again.');
-                                    toastr.success('Something Wrong ! Try Again.');
+                                    //toastr.success('Something Wrong ! Try Again.');
                                 }
                             } 
                         }); 
