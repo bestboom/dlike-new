@@ -171,7 +171,8 @@ $('#stake_me').click(async function() {
             $("#stake_me").attr("disabled", true).html('staking...');
             let stk_amt = $('#stakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';console.log(stk_wallet)
             if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');$("#stake_me").attr("disabled", false).html('stake');return false;}
-            if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
+            if(stk_wallet !=""){
+            if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var balanceof = await myContract.balanceOf(user_address).call();
