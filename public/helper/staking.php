@@ -17,7 +17,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['a
     if(empty($wallet)){ $errors = "Wallet address error. Please contact support";}
     if(empty($trx_id)){ $errors = "TRX ID error. Please contact support";}
 
-    if (empty($errors)) {$type = 'staking';
+    if (empty($errors)) {$type = 'stakIn';
 
         $stk_account = $conn->query("SELECT * FROM dlike_staking where username='$username'");
         if ($stk_account->num_rows > 0) {$row_stk = $stk_account->fetch_assoc();$old_amount = $row_stk['amount'];
