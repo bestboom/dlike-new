@@ -18,6 +18,7 @@ if ($sql_U && $sql_U->num_rows > 0)
     $account_name= $row_U['full_name'];
     $profile_banner= $row_U['profile_banner'];
 	$dlike_user = $dlikeuser;
+	$verified= $row_U['verified'];
 } else {$dlike_user = 'none';}
 $login_user = $_COOKIE['dlike_username'];
 ?>
@@ -54,7 +55,10 @@ $login_user = $_COOKIE['dlike_username'];
 						<span class="p_data_names"><span class="name"><?php echo $account_name; ?></span><br>
 							<span class="p_name">@<?php echo $dlikeuser; ?></span></span>
 					</div>
-					<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit btn-follow">Edit Profile</button>';}else{} ?></div>
+					<div>
+						<?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit btn-follow">Edit Profile</button>';
+							if($verified !='1'){echo '<button class="btn btn-danger btn_edit btn-verify_email">Verify Email</button>';}
+						}else{} ?></div>
 				</div>
 				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about">'.$account_about.'</span></div>'; } ?>
 				<div class="row p_data_mid">
