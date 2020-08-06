@@ -124,25 +124,23 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
     <div class="latest-tranjections-block">
         <div class="container">
             <div class="latest-tranjections-block-inner">
-                <div class="panel-heading-block"><h5>Top Stakings Accounts</h5></div>
+                <div class="panel-heading-block"><h5>Transaction History</h5></div>
                 <table class="table coin-list latest-tranjections-table">
                     <thead>
                         <tr>
-                            <th scope="col">Username</th>
-                            <th scope="col">Tron Address</th>
                             <th scope="col">Amount Staked</th>
-                            <th scope="col">TRX ID</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Time Staked</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $sql_st = $conn->query("SELECT * FROM dlike_staking ORDER BY amount DESC Limit 200");
+                        <?php $sql_st = $conn->query("SELECT * FROM dlike_staking_transactions where username = '$dlike_user' ORDER BY amount DESC Limit 30");
                             if ($sql_st->num_rows > 0) {
                                 while($row_t = $sql_st->fetch_assoc()) {?> 
-                        <tr>   
-                            <td><?php echo $row_t["username"]; ?></td>
-                            <td><?php echo $row_t["tron_address"]; ?></td>
+                        <tr>
                             <td><?php echo $row_t["amount"]; ?></td>
+                            <td><?php echo $row_t["type"]; ?></td>
                             <td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></td>
                             <td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> 
                         </tr>
@@ -171,7 +169,7 @@ $('#stake_me').click(async function() {
             $("#stake_me").attr("disabled", true).html('staking...');
             let stk_amt = $('#stakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';
             if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');$("#stake_me").attr("disabled", false).html('stake');return false;}
-            if (stk_amt <= 0) {toastr.error('phew... Please enter the amount you want to stake');$("#stake_me").attr("disabled", false).html('stake');return false;}
+            if (stk_amt < 1) {toastr.error('phew... Stake Minimum 1 Token');$("#stake_me").attr("disabled", false).html('stake');return false;}
             if(stk_wallet !=""){
             if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
