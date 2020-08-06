@@ -36,7 +36,7 @@ $sql_SS = $conn->query("SELECT * FROM dlike_staking where username != '$dlike_us
 if ($sql_SS->num_rows > 0) {
     while($row_SS = $sql_SS->fetch_assoc()) {$addresses[]=$row_SS["tron_address"];} 
 }
-print_r($addresses);
+echo $tron_addresses =  json_encode($addresses);
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
@@ -167,6 +167,7 @@ print_r($addresses);
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 $('#stake_me').click(async function() {
     if (dlike_username != null) {
+        let tron_addresses = '<?php echo $tron_addresses;?>';console.log(tron_addresses);
         let user_address =false;
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             console.log(user_address)
