@@ -174,9 +174,10 @@ $('#stake_me').click(async function() {
             if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}}
             $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'validate_add',wallet: user_address},
                 success: function(data) {var response = JSON.parse(data)
-                    if (response.error == true) {toastr.error(response.message);return false;}
+                    if (response.error == true) {var unique_add = 'no';}else{var unique_add = '';}
                 }
             });
+            if(unique_add == 'no'){toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var balanceof = await myContract.balanceOf(user_address).call();
