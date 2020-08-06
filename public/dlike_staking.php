@@ -38,6 +38,7 @@ if ($sql_S->num_rows > 0) {
     while($row_S = $sql_S->fetch_assoc()) {$tron_addresses[]=$row_S["tron_address"];
     }
 }
+echo $tron_addresses[];
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
@@ -168,7 +169,7 @@ if ($sql_S->num_rows > 0) {
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 $('#stake_me').click(async function() {
     if (dlike_username != null) {
-        let tron_addresses = '<?php echo $tron_addresses[];?>';console.log(tron_addresses);
+        //let tron_addresses = '<?php echo $tron_addresses[];?>';console.log(tron_addresses);
         let user_address =false;
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             console.log(user_address)
