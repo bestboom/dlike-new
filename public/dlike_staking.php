@@ -173,7 +173,7 @@ $('#stake_me').click(async function() {
             if(stk_wallet !=""){
             if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}}
             $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'validate_add',wallet: user_address},
-                success: async function(data) {try { var response = JSON.parse(data)
+                success: async function(data) {try { var response = await JSON.parse(data)
                 if (response.error == true) {toastr.error(response.message);return false;
                 } else {
                     var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
