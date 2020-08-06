@@ -180,7 +180,7 @@ $('#stake_me').click(async function() {
                 if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
             }
             console.log(user_address);console.log(tron_addresses);
-            if($.inArray(user_address, tron_addresses) > -1) {toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;} else{
+            if($.inArray(user_address, tron_addresses) !== -1) {toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;} else{
                 toastr.success('Address is unique');}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
