@@ -202,11 +202,12 @@ if ($sql_M && $sql_M->num_rows > 0)
     <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
         <div class="transfer-respond">
             <h4>Verify Email Address</h4>
-            <label><b>Balance: </b><span class="user_bal"><?php echo $my_bal;; ?></span> DLIKE</label>
+            <label>Enter the confirmation code sent to Email</label>
             <div class="row line"><div class="col-md-12"><div class="form-group"><div class="input-group mb-3">
-                <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div><input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
+                <div class="input-group-prepend"><div class="input-group-text mb-deck"><span class="fa fas fa-key"></span></div></div>
+                <input type="text" name="email-pin" id="email_pinit_code" placeholder="confirmation code (6 digits)" class="form-control" />
             </div> </div></div></div>
-            <center><button type="submit" class="btn btn-default tok_out_btn">Withdraw</button></center>
+            <center><button type="submit" class="btn btn-default tok_out_btn">Submit</button></center>
         </div>
      </div></div></div>
 </div>

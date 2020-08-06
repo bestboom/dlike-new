@@ -174,7 +174,6 @@ $offchain_address = $row_J["offchain_address"];
         }
         if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');return false;
         }
-
         function doAjax() { return new Promise((resolve, reject) => {
             $.ajax({type: "POST",url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },
                 success: function(response) {resolve(response);},
@@ -184,7 +183,11 @@ $offchain_address = $row_J["offchain_address"];
         }
 
         doAjax()
-        .then(response => console.log(response))
+        .then(response => console.log(response) 
+            if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
+                toastr['error'](response.message);return false; 
+            }else{toastr['success'](response.message);}
+        )
         .catch(err => console.log(err));
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
