@@ -57,7 +57,7 @@ $login_user = $_COOKIE['dlike_username'];
 					</div>
 					<div>
 						<?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit btn-follow">Edit Profile</button>';
-							if($verified !='1'){echo '<button class="btn btn-danger btn_edit btn-verify_email">Verify Email</button>';}
+							if($verified !='1'){echo '<button class="btn btn-danger btn_verify_email">Verify Email</button>';}
 						}else{} ?></div>
 				</div>
 				<?php if(!empty($account_about)){ echo '<div class="row p_data_top"><span class="p_about">'.$account_about.'</span></div>'; } ?>
@@ -197,6 +197,19 @@ if ($sql_M && $sql_M->num_rows > 0)
 </div>				        
 </div>    
 </div>
+
+<div class="modal fade" id="email_verify" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
+        <div class="transfer-respond">
+            <h4>Verify Email Address</h4>
+            <label><b>Balance: </b><span class="user_bal"><?php echo $my_bal;; ?></span> DLIKE</label>
+            <div class="row line"><div class="col-md-12"><div class="form-group"><div class="input-group mb-3">
+                <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div><input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
+            </div> </div></div></div>
+            <center><button type="submit" class="btn btn-default tok_out_btn">Withdraw</button></center>
+        </div>
+     </div></div></div>
+</div>
 <? } ?>
 <?php include('template/dlike_footer.php'); ?> 
 <script>
@@ -223,6 +236,7 @@ $('.prof_edit_btn').click(function() {
     });
 });
 $('.btn_edit').click(function(e) {	e.preventDefault();$("#profile_edit").modal("show");});
+$('.btn_verify_email').click(function(e) {	e.preventDefault();$("#email_verify").modal("show");});
 $('.hov_vote').click(function() {
     if (dlike_username != null) {
         var mypermlink = $(this).attr("data-permlink");
