@@ -38,7 +38,6 @@ if ($sql_S->num_rows > 0) {
     while($row_S = $sql_S->fetch_assoc()) {$tron_addresses[]=$row_S["tron_address"];
     }
 }
-echo $tron_addresses[];
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
