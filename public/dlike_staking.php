@@ -173,54 +173,53 @@ $('#stake_me').click(async function() {
             if(stk_wallet !=""){
             if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}}
             $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'validate_add',wallet: user_address},
-                success: async function(data) {try { var response = await JSON.parse(data)
-                if (response.error == true) {toastr.error(response.message);return false;
-                } else {
-                    var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-                    var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                    var balanceof = await myContract.balanceOf(user_address).call();
-                    balanceof = window.tronWeb.toDecimal(balanceof);
-                    console.log(balanceof); 
-                    stk_amt = stk_amt * 1e6;
-
-                    if(parseFloat(stk_amt) <=balanceof){
-                        await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-                        let result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
-                        console.log(result);
-                        if(result){
-                            $('#stakingStatus').modal('show');
-                            $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
-                            var x = setInterval(function() {
-                                $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
-                                    if(status=='success'){
-                                        var tx_result = data.data[0].ret[0].contractRet;  
-                                        if(tx_result=='SUCCESS'){
-                                            $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
-                                            });
-                                            $(".st_status_message").html('Tokens Staked Successfully!');
-                                            $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
-                                            setTimeout(function(){window.location.reload();}, 1000);
-                                        }else{
-                                            $(".st_status_message").html('Something Wrong ! Try Again.');
-                                            $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
-                                            setTimeout(function(){window.location.reload();}, 1000);
-                                        }
-                                    } 
-                                }); 
-                            }, 15000);
-                            //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
-                              //  success: function(data) {
-                                //    try { var response = JSON.parse(data)
-                                //        if (response.error == true) {toastr.error(response.message);return false;
-                                //        } else {toastr.success(response.message);setTimeout(function(){window.location.reload();}, 400);}
-                                //    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                               // }
-                            //});
-                        //toastr.success('You Staked Token Successfully.');
-                        } else {toastr.error('some issue in staking.');$("#stake_me").attr("disabled", false).html('stake');return false;}
-                    }else{toastr.error('phew... Not enough amount you want to stake');$("#stake_me").attr("disabled", false).html('Stake');return false;}
-                }} catch (err) {toastr.error('Sorry. Server response is malformed.');}}
+                success: function(data) {var response = JSON.parse(data)
+                    if (response.error == true) {toastr.error(response.message);return false;}
+                }
             });
+            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            var balanceof = await myContract.balanceOf(user_address).call();
+            balanceof = window.tronWeb.toDecimal(balanceof);
+            console.log(balanceof); 
+            stk_amt = stk_amt * 1e6;
+
+            if(parseFloat(stk_amt) <=balanceof){
+                await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+                let result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+                console.log(result);
+                if(result){
+                    $('#stakingStatus').modal('show');
+                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                    var x = setInterval(function() {
+                        $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                            if(status=='success'){
+                                var tx_result = data.data[0].ret[0].contractRet;  
+                                if(tx_result=='SUCCESS'){
+                                    $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
+                                    });
+                                    $(".st_status_message").html('Tokens Staked Successfully!');
+                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
+                                    setTimeout(function(){window.location.reload();}, 1000);
+                                }else{
+                                    $(".st_status_message").html('Something Wrong ! Try Again.');
+                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
+                                    setTimeout(function(){window.location.reload();}, 1000);
+                                }
+                            } 
+                        }); 
+                    }, 15000);
+                    //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
+                      //  success: function(data) {
+                        //    try { var response = JSON.parse(data)
+                        //        if (response.error == true) {toastr.error(response.message);return false;
+                        //        } else {toastr.success(response.message);setTimeout(function(){window.location.reload();}, 400);}
+                        //    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+                       // }
+                    //});
+                //toastr.success('You Staked Token Successfully.');
+                } else {toastr.error('some issue in staking.');$("#stake_me").attr("disabled", false).html('stake');return false;}
+            }else{toastr.error('phew... Not enough amount you want to stake');$("#stake_me").attr("disabled", false).html('Stake');return false;}
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
