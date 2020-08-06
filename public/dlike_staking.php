@@ -180,14 +180,12 @@ $('#stake_me').click(async function() {
                 if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
             }
             console.log(user_address);console.log(tron_addresses);
-            if($.inArray(user_address, tron_addresses) !== -1) {toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;} else{
+            if(tron_addresses.includes(user_addres)) {toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;} else{
                 toastr.success('Address is unique');}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var balanceof = await myContract.balanceOf(user_address).call();
-            balanceof = window.tronWeb.toDecimal(balanceof);
-            console.log(balanceof); 
-            stk_amt = stk_amt * 1e6;
+            balanceof = window.tronWeb.toDecimal(balanceof);stk_amt = stk_amt * 1e6;
 
             if(parseFloat(stk_amt) <=balanceof){
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
