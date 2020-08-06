@@ -31,12 +31,10 @@ if ($sql_M->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amo
 
 $sql_Q = $conn->query("SELECT * FROM dlike_staking_rewards where username='$dlike_user'");
 if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["reward"];} else{$my_rewards='0';}
-$addresses = array();
-$sql_SS = $conn->query("SELECT * FROM dlike_staking where username != '$dlike_user'");
-if ($sql_SS->num_rows > 0) {
-    while($row_SS = $sql_SS->fetch_assoc()) {$addresses[]=$row_SS["tron_address"];} 
-}
-echo $tron_addresses =  json_encode($addresses);
+
+$addresses = array();$sql_SS = $conn->query("SELECT * FROM dlike_staking where username != '$dlike_user'");
+if ($sql_SS->num_rows > 0) {while($row_SS = $sql_SS->fetch_assoc()) {$addresses[]=$row_SS["tron_address"];} 
+} $tron_addresses =  json_encode($addresses);
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
@@ -167,12 +165,13 @@ echo $tron_addresses =  json_encode($addresses);
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 $('#stake_me').click(async function() {
     if (dlike_username != null) {
-        let tron_addresses = '<?php echo $tron_addresses;?>';console.log(tron_addresses);
+        let tron_addresses = '<?php echo $tron_addresses;?>';
         let user_address =false;
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             console.log(user_address)
         }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
-        if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;} else {
+        if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
+        } else {
             $("#stake_me").attr("disabled", true).html('staking...');
             let stk_amt = $('#stakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';
             if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');$("#stake_me").attr("disabled", false).html('stake');return false;}
@@ -180,6 +179,7 @@ $('#stake_me').click(async function() {
             if(stk_wallet !=""){
                 if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
             }
+            if($.inArray(user_address, tron_addresses) > -1) {toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var balanceof = await myContract.balanceOf(user_address).call();
