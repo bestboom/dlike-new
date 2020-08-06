@@ -176,6 +176,8 @@ $('#stake_me').click(async function() {
             if (stk_amt < 1) {toastr.error('phew... Stake Minimum 1 Token');$("#stake_me").attr("disabled", false).html('stake');return false;}
             if(stk_wallet !=""){
             if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}}
+
+            
             //if(unique_add == 'no'){toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
