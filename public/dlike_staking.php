@@ -32,7 +32,10 @@ if ($sql_M->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amo
 $sql_Q = $conn->query("SELECT * FROM dlike_staking_rewards where username='$dlike_user'");
 if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["reward"];} else{$my_rewards='0';}
 
-
+$sql_SS = $conn->query("SELECT * FROM dlike_staking where username != '$dlike_user'");
+if ($sql_SS->num_rows > 0) {
+    while($row_SS = $sql_SS->fetch_assoc()) {echo $row_SS["tron_address"];} 
+}
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
