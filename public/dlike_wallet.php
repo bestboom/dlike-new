@@ -184,9 +184,13 @@ $offchain_address = $row_J["offchain_address"];
 
         doAjax()
         .then(response => { console.log(response); var result = JSON.parse(response);
+            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            console.log(myContract)
             if (result.error == true) {$(".tok_out_btn").attr("disabled", false);
                 toastr['error'](result.message);return false; 
-            }else{toastr['success'](result.message);}
+            }else{
+                toastr['success'](result.message);}
         })
         .catch(err => console.log(err));
     });
