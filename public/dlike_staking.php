@@ -32,6 +32,8 @@ if ($sql_M->num_rows > 0){$row_M = $sql_M->fetch_assoc();$my_staking=$row_M["amo
 $sql_Q = $conn->query("SELECT * FROM dlike_staking_rewards where username='$dlike_user'");
 if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["reward"];} else{$my_rewards='0';}
 
+$sql_S = $conn->query("SELECT tron_address FROM dlike_staking where username != '$dlike_user'");
+if ($sql_S->num_rows > 0){$row_S = $sql_S->fetch_assoc();$tron_addresses=$row_S["tron_address"];}
 ?>
 <div class="working-process-section" style="padding: 40px 0 60px;">
     <div class="container">
@@ -162,7 +164,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 $('#stake_me').click(async function() {
     if (dlike_username != null) {
-        
+        let tron_addresses = '<?php echo $tron_addresses;?>';console.log(tron_addresses);
         let user_address =false;
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             console.log(user_address)
