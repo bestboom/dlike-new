@@ -183,11 +183,11 @@ $offchain_address = $row_J["offchain_address"];
         }
 
         doAjax()
-        .then(response => console.log(response) 
+        .then(response => { console.log(response) 
             if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
                 toastr['error'](response.message);return false; 
             }else{toastr['success'](response.message);}
-        )
+        })
         .catch(err => console.log(err));
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();

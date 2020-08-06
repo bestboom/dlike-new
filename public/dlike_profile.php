@@ -19,6 +19,7 @@ if ($sql_U && $sql_U->num_rows > 0)
     $profile_banner= $row_U['profile_banner'];
 	$dlike_user = $dlikeuser;
 	$verified= $row_U['verified'];
+	$email= $row_U['email'];
 } else {$dlike_user = 'none';}
 $login_user = $_COOKIE['dlike_username'];
 ?>
@@ -202,12 +203,12 @@ if ($sql_M && $sql_M->num_rows > 0)
     <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
         <div class="transfer-respond">
             <h4>Verify Email Address</h4>
-            <label>Enter the confirmation code sent to Email</label>
+            <label>Enter the confirmation code sent to Email <b><?php echo $email;?></b></label>
             <div class="row line"><div class="col-md-12"><div class="form-group"><div class="input-group mb-3">
                 <div class="input-group-prepend"><div class="input-group-text mb-deck"><span class="fa fas fa-key"></span></div></div>
                 <input type="text" name="email-pin" id="email_pinit_code" placeholder="confirmation code (6 digits)" class="form-control" />
             </div> </div></div></div>
-            <center><button type="submit" class="btn btn-default tok_out_btn">Submit</button></center>
+            <center><button type="submit" class="btn btn-default email_pin_btn">Submit</button></center>
         </div>
      </div></div></div>
 </div>
@@ -262,5 +263,29 @@ $('.hov_vote').click(function() {
             }
         });
     } else {toastr.error('You must be login with DLIKE username!');return false;}
+});
+
+$('.email_pin_btn').click(function() {
+    $(".email_pin_btn").attr("disabled", true);
+    let email_pin_code = $('#email_pinit_code').val();
+    //let user_email = $('#my_signup_email').html();
+    let user_email = '<?php echo $email;?>';console.log(user_email);
+    let email_verify_url = 'helper/email_verifyd.php';
+    if (email_pin_code == "") {toastr.error('phew... PIN value should not be empty');return false;}
+    var data_verify = { email_pin_code: email_pin_code, user_email: user_email};
+    $.ajax({
+        type: "POST",
+        url: email_verify_url,
+        data: data_verify,
+        success: function(data) {
+            try {var response = JSON.parse(data)
+                if (response.error == true) {
+                    toastr['error'](response.message);return false;
+                } else {toastr['success'](response.message);
+                    setTimeout(function(){window.location.href = response.redirect;}, 700);
+                }
+            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+        }
+    });
 });
 </script>
