@@ -28,6 +28,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
     if (empty($errors)) { 
     	$amount = $dlk_amount;$wallet = $tron_address;
+    	/*
     	$addressValidate =  $tron->validateaddress($tron_address);
 		if( $addressValidate['result'] == false){die(json_encode(['error' => true,'message' => $addressValidate['message']]));
 		}
@@ -67,7 +68,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 				}
         	die(json_encode(['error' => false,'message' => 'Withdraw successful!', 'hash' => $triggerContract['txID']]));
         }else{die(json_encode(['error' => true,'message' => 'There is some issue in token withdraw. Please try Later!']));}
-
+		*/
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 //else {die('Some error');}
