@@ -173,7 +173,7 @@ $('#stake_me').click(async function() {
             if(stk_wallet !=""){
             if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}}
             $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'validate_add',wallet: user_address},
-                success: async function(data) {var response = JSON.parse(data)
+                success: async function(data) {try { var response = JSON.parse(data)
                 if (response.error == true) {toastr.error(response.message);return false;
                 } else {
                     var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
@@ -219,7 +219,7 @@ $('#stake_me').click(async function() {
                         //toastr.success('You Staked Token Successfully.');
                         } else {toastr.error('some issue in staking.');$("#stake_me").attr("disabled", false).html('stake');return false;}
                     }else{toastr.error('phew... Not enough amount you want to stake');$("#stake_me").attr("disabled", false).html('Stake');return false;}
-                }}
+                }} catch (err) {toastr.error('Sorry. Server response is malformed.');}}
             });
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
