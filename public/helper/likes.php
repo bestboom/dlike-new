@@ -78,6 +78,7 @@ if ($conn->query($sqlme) === TRUE) {
 }
 
 TAy4cgiqoEDJdVYn8VKDzST598ta34F2Lh
+var stakedAmount = await myContract.checkStake(user_address).call();
 
 
 
