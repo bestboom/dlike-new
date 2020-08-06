@@ -87,4 +87,18 @@ if (isset($_POST['action'])  && $_POST['action'] == 'claim_stake' && isset($_POS
 	}
 
 }
+
+
+if (isset($_POST['action'])  && $_POST['action'] == 'validate_add' && isset($_POST['wallet'])  && $_POST['wallet'] != '') { 
+
+    $wallet = trim($_POST["wallet"]);$username = $_COOKIE['dlike_username'];
+    $check_wallet = $conn->query("SELECT * FROM dlike_staking where tron_address = '$wallet'");
+    if ($check_wallet->num_rows > 0) {$row_wall = $check_wallet->fetch_assoc(); $dlk_username=$row_wall['username'];
+        if($dlk_username != $username){
+            die(json_encode(['error' => true,'message'=>'This Tron address is being used by other user to stake!']));
+        } else {
+            die(json_encode(['error' => false,'message' => 'Address is Ok!']));
+        }
+    }
+}
 ?>
