@@ -162,26 +162,23 @@ if ($sql_SS->num_rows > 0) {while($row_SS = $sql_SS->fetch_assoc()) {$addresses[
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
+function enable_stake(){$("#stake_me").attr("disabled", false).html('stake');}
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 $('#stake_me').click(async function() {
-    if (dlike_username != null) {
-        let tron_addresses = '<?php echo $tron_addresses;?>';
+    if (dlike_username != null) { let tron_addresses = '<?php echo $tron_addresses;?>';
         let user_address =false;
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
-            console.log(user_address)
         }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
         } else {
             $("#stake_me").attr("disabled", true).html('staking...');
             let stk_amt = $('#stakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';
-            if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');$("#stake_me").attr("disabled", false).html('stake');return false;}
-            if (stk_amt < 1) {toastr.error('phew... Stake Minimum 1 Token');$("#stake_me").attr("disabled", false).html('stake');return false;}
+            if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');enable_stake();return false;}
+            if (stk_amt < 1) {toastr.error('phew... Stake Minimum 1 Token');enable_stake();return false;}
             if(stk_wallet !=""){
-                if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');$("#stake_me").attr("disabled", false).html('stake');return false;}
+                if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');enable_stake();return false;}
             }
-            console.log(user_address);console.log(tron_addresses);
-            if(tron_addresses.includes(user_address)) {toastr.error('This Tron address is being used by other user to stake!');$("#stake_me").attr("disabled", false).html('stake');return false;} else{
-                toastr.success('Address is unique');}
+            if(tron_addresses.includes(user_address)) {toastr.error('This Tron address is being used by other user to stake!');enable_stake();return false;}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var balanceof = await myContract.balanceOf(user_address).call();
@@ -199,30 +196,18 @@ $('#stake_me').click(async function() {
                             if(status=='success'){
                                 var tx_result = data.data[0].ret[0].contractRet;  
                                 if(tx_result=='SUCCESS'){
-                                    $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
-                                    });
+                                    $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},});
                                     $(".st_status_message").html('Tokens Staked Successfully!');
-                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
-                                    setTimeout(function(){window.location.reload();}, 1000);
+                                    $(".iconTitle").find($('.fa')).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();},1000);
                                 }else{
                                     $(".st_status_message").html('Something Wrong ! Try Again.');
-                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
-                                    setTimeout(function(){window.location.reload();}, 1000);
+                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();},1000);
                                 }
                             } 
                         }); 
                     }, 15000);
-                    //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
-                      //  success: function(data) {
-                        //    try { var response = JSON.parse(data)
-                        //        if (response.error == true) {toastr.error(response.message);return false;
-                        //        } else {toastr.success(response.message);setTimeout(function(){window.location.reload();}, 400);}
-                        //    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                       // }
-                    //});
-                //toastr.success('You Staked Token Successfully.');
-                } else {toastr.error('some issue in staking.');$("#stake_me").attr("disabled", false).html('stake');return false;}
-            }else{toastr.error('phew... Not enough amount you want to stake');$("#stake_me").attr("disabled", false).html('Stake');return false;}
+                } else {toastr.error('some issue in staking.');enable_stake();return false;}
+            }else{toastr.error('phew... Not enough amount you want to stake');enable_stake();return false;}
         }
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
