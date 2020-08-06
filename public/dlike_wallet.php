@@ -176,17 +176,17 @@ $offchain_address = $row_J["offchain_address"];
         }
         function doAjax() { return new Promise((resolve, reject) => {
             $.ajax({type: "POST",url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },
-                success: function(data) {resolve(response);var response = JSON.parse(data);},
+                success: function(response) {resolve(response);},
                 error: function() {reject("some errors");}
             });  
           });
         }
 
         doAjax()
-        .then(response => { console.log(response);
-            if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
-                toastr['error'](response.message);return false; 
-            }else{toastr['success'](response.message);}
+        .then(response => { console.log(response); var result = JSON.parse(response);
+            if (result.error == true) {$(".tok_out_btn").attr("disabled", false);
+                toastr['error'](result.message);return false; 
+            }else{toastr['success'](result.message);}
         })
         .catch(err => console.log(err));
     });
