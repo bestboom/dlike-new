@@ -190,17 +190,16 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                     console.log(user_address)
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
                 let my_wallet = '<?php echo $offchain_address;?>';
-                if(user_address != my_wallet) {toastr.error('You are not login with the tron address you have already added in DLIKE wallet!');return false;}
+                if(user_address != my_wallet) {toastr.error('You are trying to withdraw with a different tron which is not in your DLIKE wallet!');return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
                 } else {
-                    //var mainContractAddress = "TD2YUZKn6oQnytWEWM38sMwgABou2RYa8M";
                     var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                     var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
                     out_amount = out_amount * 1e6;
                     var result = await myContract.withdrawCommon(out_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                     console.log(result);
                     if(result){
-                        $('#withdrawStatus').modal('show');
+                        $("#dlike_tok_with").modal("hide");$('#withdrawStatus').modal('show');
                         $(".wd_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                         var x = setInterval(function() {
                             $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
