@@ -163,7 +163,7 @@ $offchain_address = $row_J["offchain_address"];
         if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;}
     }
     $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
-    $('.tok_out_btn').click(function() {$(".tok_out_btn").attr("disabled", true);
+    $('.tok_out_btn').click(async function() {$(".tok_out_btn").attr("disabled", true);
         let out_amount = $('#withdraw_amount').val();
         let dlk_amount = $('.user_bal').html();
         if (out_amount == "") {$(".tok_out_btn").attr("disabled", false);
