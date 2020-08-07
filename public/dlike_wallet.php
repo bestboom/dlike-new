@@ -190,7 +190,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                     console.log(user_address)
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
                 let my_wallet = '<?php echo $offchain_address;?>';
-                if(tron_addresses != my_wallet) {toastr.error('You are not login with the tron address you have already added in DLIKE wallet!');return false;}
+                if(user_address != my_wallet) {toastr.error('You are not login with the tron address you have already added in DLIKE wallet!');return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
                 } else {
                     //var mainContractAddress = "TD2YUZKn6oQnytWEWM38sMwgABou2RYa8M";
