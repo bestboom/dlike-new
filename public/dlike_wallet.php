@@ -176,9 +176,10 @@ $offchain_address = $row_J["offchain_address"];
         }
         if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');return false;
         }
-        async function doAjax() {return $.ajax({type: 'post',url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },datatype: 'json',});
+        function doAjax() {return $.ajax({type: 'post',url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },datatype: 'json',});
         }
-        doAjax().then(async function(data) { var response = await JSON.parse(data);
+        doAjax().then(async function(response) { //var response = JSON.parse(data);
+            console.log(response)
             if (response.error == true) {$(".tok_out_btn").attr("disabled", false);toastr['error'](response.message);return false;}
             else{ // here we do add tronlink call and proceed to
                     let user_address =false;
