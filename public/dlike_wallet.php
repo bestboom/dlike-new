@@ -176,25 +176,23 @@ $offchain_address = $row_J["offchain_address"];
         }
         function doAjax() { return new Promise(async (resolve, reject) => {
             $.ajax({type: "POST",url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },
-                success: function(response) {resolve(response);},
+                success: function(data) {resolve(data);
+                var response = JSON.parse(data)
+                if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
+                    var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+                    var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+                    console.log(myContract)
+                    toastr['error'](response.message);return false; 
+                }else{
+                    toastr['success'](response.message);}
+
+                },
                 error: function() {reject("some errors");}
             });  
           });
         }
 
-        doAjax()
-        .then(response => { console.log(response); var result = JSON.parse(response);
-            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-             console.log(myContract)
-            if (result.error == true) {$(".tok_out_btn").attr("disabled", false);
-                toastr['error'](result.message);return false; 
-            }else{
-                toastr['success'](result.message);}
-        })
-        .catch(err => console.log(err));
 
-        toastr.error('phew... You forgot to enter address');
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
         if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;}
