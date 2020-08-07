@@ -19,7 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($wallet_amount < $dlk_amount) {$errors = 'Not enough balance';}
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
 	$check_limit = $conn->query("SELECT * FROM dlike_withdrawals where username = '$username' and DATE(req_on) = CURDATE()");
-	if ($check_limit->num_rows > 0) {$errors = 'Phew... One withdrawal allowed daily!';}
+	if ($check_limit->num_rows > 5) {$errors = 'Phew... One withdrawal allowed daily!';}
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
 	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 
@@ -58,15 +58,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
         $signedTransaction = $tron->signTransaction($triggerContract);
         $response = $tron->sendRawTransaction($signedTransaction);
         if ($response['result'] == 1) {
-        	$dlike_amount = mysqli_real_escape_string($conn, $dlk_amount);
-        	$checkWallet = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
-				if ($checkWallet->num_rows > 0) { $row = $checkWallet->fetch_assoc();$old_amount = $row['amount'];
-    				
-    				$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$old_amount' - '$dlike_amount' WHERE username = '$username'");
-
-    				$status = $triggerContract['txID'];
-    				$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlike_amount."',  '".$wallet."', '".$status."', '".date("Y-m-d H:i:s")."')");
-				}
         	die(json_encode(['error' => false,'message' => 'Withdraw successful!', 'hash' => $triggerContract['txID']]));
         }else{die(json_encode(['error' => true,'message' => 'There is some issue in token withdraw. Please try Later!']));}
 		*/
@@ -109,5 +100,37 @@ if (isset($_POST['action']) && $_POST['action'] == 'paid' && isset($_POST['walle
 
 		$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlk_out_amount."',  '".$wallet."', '".$trx_id."', '".date("Y-m-d H:i:s")."')");
 	}
+}
+
+
+
+if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
+    $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
+    $amount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
+
+	    $vSendAmount=$amount; 
+	    $abi = json_decode(ABI,true);
+	    $vAdminAddress=SIGNER;
+	    $vHExAddress=$tron->address2HexString($vAdminAddress);
+	    $tron->setAddress($vAdminAddress);
+	    $tron->setPrivateKey(SIGNER_PK);
+
+	    $vUserAddress=$wallet;
+	    $vHExUser=$tron->address2HexString($vUserAddress);
+
+	    // write contract data
+	    $contract = CONTRACT_ADDRESS;
+	   
+	    $function = 'multiMintToken';
+	    $vSendAmount  = $vSendAmount * 1e6;
+	    $params= array($vHExUser, $vSendAmount);
+	    $address =  $vHExAddress;
+	    $feeLimit = 10000000;
+	    $callValue = 0;
+
+	    $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue,$bandwidthLimit = 0);
+        $signedTransaction = $tron->signTransaction($triggerContract);
+        $response = $tron->sendRawTransaction($signedTransaction);
+
 }
 ?>
