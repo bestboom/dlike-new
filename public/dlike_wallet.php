@@ -174,23 +174,14 @@ $offchain_address = $row_J["offchain_address"];
         }
         if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');return false;
         }
-        function doAjax() { return new Promise(async (resolve, reject) => {
-            $.ajax({type: "POST",url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },
-                success: function(data) {resolve(data);
-                var response = JSON.parse(data)
-                if (response.error == true) {$(".tok_out_btn").attr("disabled", false);
-                    var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-                    var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                    console.log(myContract)
-                    toastr['error'](response.message);return false; 
-                }else{
-                    toastr['success'](response.message);}
-
-                },
-                error: function() {reject("some errors");}
-            });  
-          });
+        function doAjax() {return $.ajax({type: 'post',url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },datatype: 'json',});
         }
+        doAjax.then(function(data) { var response = JSON.parse(data);
+            if (response.error == true) {$(".tok_out_btn").attr("disabled", false);toastr['error'](response.message);return false;}
+            // do success stuff
+        }).fail(function() {
+            // do fail stuff
+        });
 
 
     });
