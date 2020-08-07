@@ -182,18 +182,16 @@ $offchain_address = $row_J["offchain_address"];
           });
         }
 
-        async function doAjax(){
+        oAjax()
         .then(response => { console.log(response); var result = JSON.parse(response);
-            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-            console.log(myContract)
             if (result.error == true) {$(".tok_out_btn").attr("disabled", false);
                 toastr['error'](result.message);return false; 
             }else{
                 toastr['success'](result.message);}
         })
         .catch(err => console.log(err));
-        }
+        
+        toastr.error('phew... You forgot to enter address');
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
         if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;}
