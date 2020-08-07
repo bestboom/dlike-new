@@ -163,7 +163,9 @@ $offchain_address = $row_J["offchain_address"];
         if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;}
     }
     $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
-    $('.tok_out_btn').click(async function() {$(".tok_out_btn").attr("disabled", true);
+
+    $('.tok_out_btn').click(async function() {
+        $(".tok_out_btn").attr("disabled", true);
         let out_amount = $('#withdraw_amount').val();
         let dlk_amount = $('.user_bal').html();
         if (out_amount == "") {$(".tok_out_btn").attr("disabled", false);
@@ -179,7 +181,41 @@ $offchain_address = $row_J["offchain_address"];
         doAjax().then(function(data) { var response = JSON.parse(data);
             if (response.error == true) {$(".tok_out_btn").attr("disabled", false);toastr['error'](response.message);return false;}
             else{ // here we do add tronlink call and proceed to
-            }
+                    let user_address =false;
+                    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+                        console.log(user_address)
+                    }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
+                    if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;} else {
+                        var mainContractAddress = "TD2YUZKn6oQnytWEWM38sMwgABou2RYa8M";
+                        var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+                        var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+                        out_amount = * 1e6;
+                        var result = await myContract.withdrawCommon(out_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+                                   console.log(result);
+                         if(result){
+                            //toastr.success('You UnStaked Token Successfully.');
+                            var x = setInterval(function() {
+                        $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                            if(status=='success'){
+                                var tx_result = data.data[0].ret[0].contractRet;  
+                                if(tx_result=='SUCCESS'){
+                                    // $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: stk_amt,wallet: user_address,trx_id: result},
+                                    // });
+                                    $(".st_status_message").html('Tokens Withdraw Successfully!');
+                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
+                                    setTimeout(function(){window.location.reload();}, 1000);
+                                }else{
+                                    $(".st_status_message").html('Something Wrong ! Try Again.');
+                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
+                                    setTimeout(function(){window.location.reload();}, 1000);
+                                }
+                            } 
+                        }); 
+                    }, 15000);
+                         }
+
+                        }
+                }
         })
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
