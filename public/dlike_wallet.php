@@ -162,6 +162,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
 
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
+    function enable_draw(){$(".tok_out_btn").attr("disabled", false).html('Withdraw');}
     let withdraw_val = document.getElementById('withdraw_amount');
     withdraw_val.onkeydown = function(e) {
         if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;}
@@ -169,45 +170,41 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
     $('.withd_btn').click(function(e) {  e.preventDefault();$("#dlike_tok_with").modal("show");});
 
     $('.tok_out_btn').click(async function() {
-        $(".tok_out_btn").attr("disabled", true);
-        let out_amount = $('#withdraw_amount').val();
-        let dlk_amount = $('.user_bal').html();
-        if (out_amount == "") {$(".tok_out_btn").attr("disabled", false);
-            toastr.error('phew... Please enter valid amount to withdraw');return false;
+        $(".tok_out_btn").attr("disabled", true).html('Processing...');;
+        let out_amount = $('#withdraw_amount').val();let dlk_amount = $('.user_bal').html();
+        if (out_amount == "") {toastr.error('phew... Please enter valid amount to withdraw');enable_draw();return false;
         }
-        if (parseFloat(out_amount) > parseFloat(dlk_amount)) {$(".tok_out_btn").attr("disabled", false);
-            toastr.error('phew... Not enough balance');return false;
+        if (parseFloat(out_amount) > parseFloat(dlk_amount)) {toastr.error('phew... Not enough balance');enable_draw();return false;
         }
-        if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');return false;
+        if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){toastr.error('phew... Not a valid withdraw amount!');enable_draw();return false;
         }
         async function doAjax() {return $.ajax({type: 'post',url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },datatype: 'json',});
         }
         doAjax().then(async function(data) { var response = JSON.parse(data);
-            if (response.error == true) {$(".tok_out_btn").attr("disabled", false);toastr['error'](response.message);return false;}
-            else{ // here we do add tronlink call and proceed to
-                let user_address =false;
+            if (response.error == true) {toastr['error'](response.message);enable_draw();return false;}
+            else{ let user_address =false;
                 if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
                     console.log(user_address)
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
                 let my_wallet = '<?php echo $offchain_address;?>';
-                if(user_address != my_wallet) {toastr.error('You are trying to withdraw with a different tron which is not in your DLIKE wallet!');return false;}
+                if(user_address != my_wallet) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');enable_draw();return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
-                } else {
-                    var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-                    var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                    out_amount = out_amount * 1e6;
-                    var result = await myContract.withdrawCommon(out_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
-                    console.log(result);
+                } else { 
+                    // $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: stk_amt,wallet: user_address,trx_id: result},
+                    // });
+                    let payout_amount = out_amount * 1e6;
+                    let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+                    let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+                    let result = await myContract.withdrawCommon(payout_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){
                         $("#dlike_tok_with").modal("hide");$('#withdrawStatus').modal('show');
                         $(".wd_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                         var x = setInterval(function() {
                             $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                                 if(status=='success'){
+                                    $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});
                                     var tx_result = data.data[0].ret[0].contractRet;  
                                     if(tx_result=='SUCCESS'){
-                                        // $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: stk_amt,wallet: user_address,trx_id: result},
-                                        // });
                                         $(".wd_status_message").html('Tokens Withdraw Successfully!');
                                         $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
                                         setTimeout(function(){window.location.reload();}, 1000);

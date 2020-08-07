@@ -93,4 +93,21 @@ if (isset($_POST['action']) && $_POST['action'] == 'address' && isset($_POST['of
 		}  else {die(json_encode(['error' => true,'message' => 'There is some issue. please try later!'])); }
 	} else {die(json_encode(['error' => true,'message' => $errors]));}
 }
+
+
+
+if (isset($_POST['action']) && $_POST['action'] == 'paid' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
+    $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
+    $trx_id = trim(mysqli_real_escape_string($conn, $_POST['trx_id']));
+    $dlk_out_amount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
+    $username = $_COOKIE['dlike_username'];
+
+	$check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
+	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$old_amount = $row['amount'];
+		
+		$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$old_amount' - '$dlk_out_amount' WHERE username = '$username'");
+
+		$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlk_out_amount."',  '".$wallet."', '".$trx_id."', '".date("Y-m-d H:i:s")."')");
+	}
+}
 ?>
