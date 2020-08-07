@@ -174,7 +174,7 @@ $offchain_address = $row_J["offchain_address"];
         }
         if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');return false;
         }
-        function doAjax() { return new Promise((resolve, reject) => {
+        function doAjax() { return new Promise(async (resolve, reject) => {
             $.ajax({type: "POST",url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },
                 success: function(response) {resolve(response);},
                 error: function() {reject("some errors");}
@@ -184,6 +184,9 @@ $offchain_address = $row_J["offchain_address"];
 
         doAjax()
         .then(response => { console.log(response); var result = JSON.parse(response);
+            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+             console.log(myContract)
             if (result.error == true) {$(".tok_out_btn").attr("disabled", false);
                 toastr['error'](result.message);return false; 
             }else{
