@@ -19,7 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($wallet_amount < $dlk_amount) {$errors = 'Not enough balance';}
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
 	$check_limit = $conn->query("SELECT * FROM dlike_withdrawals where username = '$username' and DATE(req_on) = CURDATE()");
-	if ($check_limit->num_rows > 5) {$errors = 'Phew... One withdrawal allowed daily!';}
+	if ($check_limit->num_rows > 15) {$errors = 'Phew... One withdrawal allowed daily!';}
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
 	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 
@@ -106,31 +106,38 @@ if (isset($_POST['action']) && $_POST['action'] == 'paid' && isset($_POST['walle
 
 if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
     $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
-    $amount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
+    $out_amount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
 
-	    $vSendAmount=$amount; 
-	    $abi = json_decode(ABI,true);
-	    $vAdminAddress=SIGNER;
-	    $vHExAddress=$tron->address2HexString($vAdminAddress);
-	    $tron->setAddress($vAdminAddress);
-	    $tron->setPrivateKey(SIGNER_PK);
+    $username = $_COOKIE['dlike_username'];
+    $check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
+	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();
+		$bal= $row['amount'];
+		if($bal > 0){
+			$amount = $bal;
+		    $vSendAmount=$amount; 
+		    $abi = json_decode(ABI,true);
+		    $vAdminAddress=SIGNER;
+		    $vHExAddress=$tron->address2HexString($vAdminAddress);
+		    $tron->setAddress($vAdminAddress);
+		    $tron->setPrivateKey(SIGNER_PK);
 
-	    $vUserAddress=$wallet;
-	    $vHExUser=$tron->address2HexString($vUserAddress);
+		    $vUserAddress=$wallet;
+		    $vHExUser=$tron->address2HexString($vUserAddress);
 
-	    // write contract data
-	    $contract = CONTRACT_ADDRESS;
-	   
-	    $function = 'multiMintToken';
-	    $vSendAmount  = $vSendAmount * 1e6;
-	    $params= array($vHExUser, $vSendAmount);
-	    $address =  $vHExAddress;
-	    $feeLimit = 10000000;
-	    $callValue = 0;
+		    // write contract data
+		    $contract = CONTRACT_ADDRESS;
+		   
+		    $function = 'multiMintToken';
+		    $vSendAmount  = $vSendAmount * 1e6;
+		    $params= array($vHExUser, $vSendAmount);
+		    $address =  $vHExAddress;
+		    $feeLimit = 10000000;
+		    $callValue = 0;
 
-	    $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue,$bandwidthLimit = 0);
-        $signedTransaction = $tron->signTransaction($triggerContract);
-        $response = $tron->sendRawTransaction($signedTransaction);
-
+		    $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue,$bandwidthLimit = 0);
+	        $signedTransaction = $tron->signTransaction($triggerContract);
+	        $response = $tron->sendRawTransaction($signedTransaction);
+	    }
+    }
 }
 ?>
