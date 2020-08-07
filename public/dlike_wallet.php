@@ -156,6 +156,11 @@ $offchain_address = $row_J["offchain_address"];
         </div>
      </div></div></div>
 </div>
+
+<div class="modal fade" id="withdrawStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
+<div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="wd_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="st_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger wd_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
+
+
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
     let withdraw_val = document.getElementById('withdraw_amount');
