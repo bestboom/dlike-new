@@ -182,7 +182,7 @@ $offchain_address = $row_J["offchain_address"];
           });
         }
 
-        oAjax()
+        doAjax()
         .then(response => { console.log(response); var result = JSON.parse(response);
             if (result.error == true) {$(".tok_out_btn").attr("disabled", false);
                 toastr['error'](result.message);return false; 
@@ -190,7 +190,7 @@ $offchain_address = $row_J["offchain_address"];
                 toastr['success'](result.message);}
         })
         .catch(err => console.log(err));
-        
+
         toastr.error('phew... You forgot to enter address');
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
