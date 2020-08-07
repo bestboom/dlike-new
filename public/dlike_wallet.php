@@ -201,9 +201,9 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                         var x = setInterval(function() {
                             $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                                 if(status=='success'){
-                                    $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});
                                     var tx_result = data.data[0].ret[0].contractRet;  
                                     if(tx_result=='SUCCESS'){
+                                        $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});
                                         $(".wd_status_message").html('Tokens Withdraw Successfully!');
                                         $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
                                         setTimeout(function(){window.location.reload();}, 1000);
