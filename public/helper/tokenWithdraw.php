@@ -4,6 +4,37 @@ ini_set('display_errors',1);
 include_once '../vendor/autoload.php';
 include_once '../includes/contract_config.php';
 
+  $amount = '222';
+  $wallet = 'TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m';
+  $vSendAmount=$amount; 
+  $abi = json_decode(ABI,true);
+  $vAdminAddress=SIGNER;
+  $vHExAddress=$tron->address2HexString($vAdminAddress);
+  $tron->setAddress($vAdminAddress);
+  $tron->setPrivateKey(SIGNER_PK);
+
+  $vUserAddress=$wallet;
+  $vHExUser=$tron->address2HexString($vUserAddress);
+
+  // write contract data
+  $contract = CONTRACT_ADDRESS;
+ 
+  $function = 'multiMintToken';
+  $vSendAmount  = $vSendAmount * 1e6;
+  $params= array($vHExUser, $vSendAmount);
+  $address =  $vHExAddress;
+  $feeLimit = 10000000;
+  $callValue = 0;
+
+  $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue,$bandwidthLimit = 0);
+    $signedTransaction = $tron->signTransaction($triggerContract);
+    $response = $tron->sendRawTransaction($signedTransaction);
+
+    if ($response['result'] == 1) { echo 'all fine';}else{echo 'some error';}
+
+
+
+/*
 if(isset($_POST['userwallet']) && isset($_POST['amount']) && $_POST['userwallet']!="" && $_POST['amount']!=0){
 $amount = $_POST['amount'];
 $wallet = $_POST['userwallet'];
@@ -62,5 +93,5 @@ $wallet = $_POST['userwallet'];
 //        exit;
 }
 
-
+*/
 ?>
