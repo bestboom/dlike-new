@@ -189,7 +189,7 @@ $offchain_address = $row_J["offchain_address"];
                         var mainContractAddress = "TD2YUZKn6oQnytWEWM38sMwgABou2RYa8M";
                         var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                         var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                        out_amount = * 1e6;
+                        out_amount = out_amount * 1e6;
                         var result = await myContract.withdrawCommon(out_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                                    console.log(result);
                          if(result){
