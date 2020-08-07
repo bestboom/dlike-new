@@ -174,10 +174,15 @@ $offchain_address = $row_J["offchain_address"];
         }
         if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){$(".tok_out_btn").attr("disabled", false);toastr.error('phew... Not a valid withdraw amount!');return false;
         }
-
-        var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-        var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-        console.log(myContract)
+        function doAjax() {return $.ajax({type: 'post',url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },datatype: 'json',});
+        }
+        
+        doAjax().then(function(data) { var response = JSON.parse(data);
+            if (response.error == true) {$(".tok_out_btn").attr("disabled", false);toastr['error'](response.message);return false;}
+            // do success stuff
+        }).fail(function() {
+            // do fail stuff
+        });
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
         if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;}
