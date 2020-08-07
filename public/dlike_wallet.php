@@ -186,7 +186,7 @@ $offchain_address = $row_J["offchain_address"];
                         console.log(user_address)
                     }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
                     if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;} else {
-                        var mainContractAddress = "TD2YUZKn6oQnytWEWM38sMwgABou2RYa8M";
+                        //var mainContractAddress = "TD2YUZKn6oQnytWEWM38sMwgABou2RYa8M";
                         var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                         var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
                         out_amount = out_amount * 1e6;
