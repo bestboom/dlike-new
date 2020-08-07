@@ -29,8 +29,7 @@ $today_income = $row_I["total_income"];
 if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
 
 $sql_J = $conn->query("SELECT * FROM dlikeaccounts where username='$dlike_user'");
-$row_J = $sql_J->fetch_assoc();
-$offchain_address = $row_J["offchain_address"];
+$row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
 ?>
 <div class="working-process-section" style="padding-top: 80px;">
     <div class="container"><div class="row">
@@ -159,7 +158,7 @@ $offchain_address = $row_J["offchain_address"];
 
 <div class="modal fade" id="withdrawStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
 <div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="wd_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="wd_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger wd_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
-
+</div></div></div>
 
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
@@ -190,6 +189,8 @@ $offchain_address = $row_J["offchain_address"];
                 if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
                     console.log(user_address)
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
+                let my_wallet = '<?php echo $offchain_address;?>';
+                if(tron_addresses != my_wallet) {toastr.error('You are not login with the tron address you have already added in DLIKE wallet!');return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
                 } else {
                     //var mainContractAddress = "TD2YUZKn6oQnytWEWM38sMwgABou2RYa8M";
