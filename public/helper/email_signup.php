@@ -126,7 +126,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'resend_pin' && isset($_POST[
 
     if(!empty($user_email)){
     	$update_code=$conn->query("UPDATE dlikeaccounts SET verify_code='$pin_number' WHERE username='$username'");
-		if ($update_address) {
+		if ($update_code) {
 			$mail->isSMTP();
 		    $mail->Host = 'smtp.zoho.com';
 		    $mail->SMTPAuth = true;
