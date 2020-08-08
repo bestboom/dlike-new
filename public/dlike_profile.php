@@ -208,7 +208,8 @@ if ($sql_M && $sql_M->num_rows > 0)
                 <div class="input-group-prepend"><div class="input-group-text mb-deck"><span class="fa fas fa-key"></span></div></div>
                 <input type="number" name="email-pin" id="email_pinit_code" placeholder="confirmation code (6 digits)" class="form-control" />
             </div> </div></div></div>
-            <center><span class="resend_pin">Resend Verification Code</span>
+            <center>
+            	<span class="resend_pin" style="padding-bottom: 5px;font-weight: 600;cursor: pointer;">Resend Verification Code</span>
             	<br><button type="submit" class="btn btn-default email_pin_btn">Submit</button>
             </center>
         </div>
