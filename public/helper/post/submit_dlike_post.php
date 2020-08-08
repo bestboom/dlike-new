@@ -5,7 +5,6 @@ error_reporting(E_ALL);
 
 require '../../includes/config.php';
 
-
 if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"]) && isset($_POST["image"])){
 
 	$author = trim(mysqli_real_escape_string($conn, $_POST['author']));
@@ -31,15 +30,9 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 			}
 		}
 
-		die(json_encode([
-	    	'error' => false,
-    		'redirect' => $redirect_url, 
-    		'message' => 'Post Published!'
-		]));
+		die(json_encode(['error' => false,'redirect' => $redirect_url,'message' => 'Post Published!']));
 		} else {
-			die(json_encode([
-		    	'error' => true,
-	    		'message' => 'Error while Publishing Post!'	
+			die(json_encode(['error' => true,'message' => 'Some error in this link shareing!'	
 			]));
 		}
 } else { echo 'some issue'; }

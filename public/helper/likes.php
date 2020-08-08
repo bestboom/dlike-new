@@ -7,10 +7,23 @@ error_reporting(E_ALL);
 require '../includes/config.php';
 
 
+$sqlm = "CREATE TABLE dlike_trending_tags  (
+id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+tag VARCHAR(255) NOT NULL,
+count INT(16) NOT NULL
+)";
+
+if ($conn->query($sqlm) === TRUE) {
+    echo "Table transactions created successfully";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+
+
 
 ?>
 <!--
-
+select count(*), tag from dlike_tags group by tag having count(*) >1 order by count(*) DESC;
 
 $sqlm = "CREATE TABLE dlike_airdrop_history  (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,

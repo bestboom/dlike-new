@@ -11,7 +11,9 @@
     .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
 </style>
 </div>
-<div class="latest-post-section"><div class="container"><div class="row">
+<div class="latest-post-section"><div class="container">
+<div class="row"><div><span>Latest</span><span>Trending</span></div><div>STEEM Posts</div><hr></div>
+<div class="row">
 <?php
 $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
 if ($sql_T && $sql_T->num_rows > 0)
