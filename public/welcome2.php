@@ -472,17 +472,7 @@ $('.email_signup_btn').click(function() {
         return false;
     }
 
-    var data_signup = {
-        signup_username: signup_username,
-        signup_email: signup_email,
-        signup_pass: signup_pass,
-        signup_refer_by: signup_refer_by,
-        signup_loct_ip:signup_loct_ip
-    };
-    $.ajax({
-        type: "POST",
-        url: "/helper/email_signup.php",
-        data: data_signup,
+    $.ajax({type: "POST",url: "/helper/email_signup.php",data: {action :'signup',signup_username: signup_username,signup_email: signup_email,signup_pass: signup_pass,signup_refer_by: signup_refer_by,signup_loct_ip:signup_loct_ip},
         success: function(data) {
             try {
                 var response = JSON.parse(data)

@@ -15,7 +15,7 @@
 
 	$mail = new PHPMailer();
 
-if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_POST['signup_username'])  && $_POST['signup_username'] != '' && isset($_POST['signup_pass'])  && $_POST['signup_pass'] != '')
+if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_POST['signup_username'])  && $_POST['signup_username'] != '' && isset($_POST['signup_pass'])  && $_POST['signup_pass'] != '')
 {
 	$signup_username = trim($_POST["signup_username"]);
 	$signup_email = trim($_POST["signup_email"]);
@@ -110,28 +110,44 @@ if (isset($_POST['signup_email'])  && $_POST['signup_email'] != '' && isset($_PO
 			
 			$done_email = $mail->send();
 
-			if($done_email) { 
-				die(json_encode([
-			    	'error' => false,
-		    		'message' => 'Signup successful. Please verify Email!'
-				]));	
-			} else {
-			    die(json_encode([
-		    		'error' => true,
-		    		'message' => 'Email does not seem to work'
-				]));
-			}
-		} else {
-		    die(json_encode([
-	    		'error' => true,
-	    		'message' => 'There is some issue. Please Try later'
-			]));
+			if($done_email){die(json_encode(['error' => false,'message' => 'Signup successful. Please verify Email!']));	
+			} else {die(json_encode(['error' => true,'message' => 'Email does not seem to work']));}
+		} else {die(json_encode(['error' => true,'message' => 'There is some issue. Please Try later']));}
+	} else {die(json_encode(['error' => true,'message' => $errors]));} 
+} 
+//else {die('Some error');}
+
+
+
+if (isset($_POST['action']) && $_POST['action'] == 'resend_pin' && isset($_POST['user_email']) && $_POST['user_email'] != '') {
+    $user_email = trim(mysqli_real_escape_string($conn, $_POST['user_email']));
+    $username = $_COOKIE['dlike_username'];
+    $pin_number = mt_rand(100000, 999999);
+
+    if(!empty($user_email)){
+    	$update_code=$conn->query("UPDATE dlikeaccounts SET verify_code='$pin_number' WHERE username='$username'");
+		if ($update_address) {
+			$mail->isSMTP();
+		    $mail->Host = 'smtp.zoho.com';
+		    $mail->SMTPAuth = true;
+		    $mail->Username = 'verification@dlike.io';
+		    $mail->Password = getenv("EMAIL_PASS");
+		    $mail->SMTPSecure = 'tls';
+		    $mail->Port = 587;
+
+		    $mail->setFrom('verification@dlike.io', 'DLIKE');
+    		$mail->addAddress($user_email);
+
+    		$mail->isHTML(true); 
+    		$mail->Subject = 'DLIKE Email Verification';
+    		$mail->Body    = 'Welcome to DLIKE <br><br> Your Activation Code is '.$pin_number.' <br><br><br>Cheers<br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
+			
+			$done_email = $mail->send();
+
+			if($done_email){die(json_encode(['error' => false,'message' => 'Verification code sent to email!']));	
+			} else {die(json_encode(['error' => true,'message' => 'Email does not seem to work']));}
 		}
-	} else {
-	    die(json_encode([
-    		'error' => true,
-    		'message' => $errors
-		]));
-	} 
-} else {die('Some error');}
+    }
+}
+
 ?>

@@ -282,7 +282,15 @@ $('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true)
 });
 
 
-$('.resend_pin').click(function() { 
-	toastr.error('This seems to work!');
+$('.resend_pin').click(function() {$("#email_verify").modal("hide");
+    let user_email_id = '<?php echo $email;?>';
+    $.ajax({type:"POST",url:'/helper/email_signup.php',data:{action :'resend_pin',user_email: user_email_id},
+        success: function(data) {
+            try {var response = JSON.parse(data);
+                if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false);return false;
+                }else{toastr['success'](response.message);setTimeout(function(){window.location.reload ();}, 400);}
+            } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err)}
+        }
+    });
 });
 </script>
