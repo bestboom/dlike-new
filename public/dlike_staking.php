@@ -183,7 +183,7 @@ $('#stake_me').click(async function() {
             let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             let balanceof = await myContract.balanceOf(user_address).call();
-            let balanceof = window.tronWeb.toDecimal(balanceof);let stk_amt = stk_amt * 1e6;
+            balanceof = window.tronWeb.toDecimal(balanceof);stk_amt = stk_amt * 1e6;
             $(".av_bal").html('<b>Abailable Balance:<b> ' +balanceof);
             if(parseFloat(stk_amt) <=balanceof){
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));

@@ -265,25 +265,14 @@ $('.hov_vote').click(function() {
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 
-$('.email_pin_btn').click(function() {
-    $(".email_pin_btn").attr("disabled", true);
-    let email_pin_code = $('#email_pinit_code').val();
-    //let user_email = $('#my_signup_email').html();
-    let user_email = '<?php echo $email;?>';console.log(user_email);
-    let email_verify_url = 'helper/email_verifyd.php';
+$('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true);
+    let email_pin_code = $('#email_pinit_code').val();let user_email = '<?php echo $email;?>';
     if (email_pin_code == "") {toastr.error('phew... PIN value should not be empty');return false;}
-    var data_verify = { email_pin_code: email_pin_code, user_email: user_email};
-    $.ajax({
-        type: "POST",
-        url: email_verify_url,
-        data: data_verify,
+    $.ajax({type: "POST",url: 'helper/email_verify.php',data: {email_pin_code: email_pin_code, user_email: user_email},
         success: function(data) {
-            try {var response = JSON.parse(data)
-                if (response.error == true) {
-                    toastr['error'](response.message);return false;
-                } else {toastr['success'](response.message);
-                    setTimeout(function(){window.location.href = response.redirect;}, 700);
-                }
+            try {var response = JSON.parse(data);
+                if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false);return false;
+                }else{toastr['success'](response.message);$("#email_verify").modal("hide");setTimeout(function(){window.location.reload();}, 400);}
             } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
     });
