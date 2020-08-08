@@ -206,7 +206,7 @@ if ($sql_M && $sql_M->num_rows > 0)
             <label>Enter the confirmation code sent to Email <b><?php echo $email;?></b></label>
             <div class="row line"><div class="col-md-12"><div class="form-group"><div class="input-group mb-3">
                 <div class="input-group-prepend"><div class="input-group-text mb-deck"><span class="fa fas fa-key"></span></div></div>
-                <input type="text" name="email-pin" id="email_pinit_code" placeholder="confirmation code (6 digits)" class="form-control" />
+                <input type="number" name="email-pin" id="email_pinit_code" placeholder="confirmation code (6 digits)" class="form-control" />
             </div> </div></div></div>
             <center><button type="submit" class="btn btn-default email_pin_btn">Submit</button></center>
         </div>
@@ -266,14 +266,14 @@ $('.hov_vote').click(function() {
 });
 
 $('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true);
-    let email_pin_code = $('#email_pinit_code').val();let user_email = '<?php echo $email;?>';
-    if (email_pin_code == "") {toastr.error('phew... PIN value should not be empty');return false;}
-    $.ajax({type: "POST",url: 'helper/email_verify.php',data: {email_pin_code: email_pin_code, user_email: user_email},
+    let pin_code = $('#email_pinit_code').val();let user_email_id = '<?php echo $email;?>';
+    if (pin_code == "") {toastr.error('phew... PIN value should not be empty');$(".email_pin_btn").attr("disabled", false);return false;}
+    $.ajax({type:"POST",url:'helper/email_verify.php',data: {email_pin_code: pin_code, user_email: user_email_id},
         success: function(data) {
             try {var response = JSON.parse(data);
                 if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false);return false;
-                }else{toastr['success'](response.message);$("#email_verify").modal("hide");setTimeout(function(){window.location.reload();}, 400);}
-            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+                }else{toastr['success'](response.message);$("#email_verify").modal("hide");setTimeout(function(){window.location.reload ();}, 400);}
+            } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err)}
         }
     });
 });
