@@ -268,7 +268,7 @@ $('.hov_vote').click(function() {
 $('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true);
     let pin_code = $('#email_pinit_code').val();let user_email_id = '<?php echo $email;?>';
     if (pin_code == "") {toastr.error('phew... PIN value should not be empty');$(".email_pin_btn").attr("disabled", false);return false;}
-    $.ajax({type:"POST",url:'helper/email_verify.php',data: {email_pin_code: pin_code, user_email: user_email_id},
+    $.ajax({type:"POST",url:'/helper/email_verify.php',data:{email_pin_code: pin_code, user_email: user_email_id},
         success: function(data) {
             try {var response = JSON.parse(data);
                 if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false);return false;
