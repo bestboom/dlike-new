@@ -203,12 +203,14 @@ if ($sql_M && $sql_M->num_rows > 0)
     <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
         <div class="transfer-respond">
             <h4>Verify Email Address</h4>
-            <label>Enter the confirmation code sent to Email <b><?php echo $email;?></b></label>
+            <label><center>Enter the confirmation code sent to Email <b><?php echo $email;?></b></center></label>
             <div class="row line"><div class="col-md-12"><div class="form-group"><div class="input-group mb-3">
                 <div class="input-group-prepend"><div class="input-group-text mb-deck"><span class="fa fas fa-key"></span></div></div>
                 <input type="number" name="email-pin" id="email_pinit_code" placeholder="confirmation code (6 digits)" class="form-control" />
             </div> </div></div></div>
-            <center><button type="submit" class="btn btn-default email_pin_btn">Submit</button></center>
+            <center><span class="resend_pin">Resend Verification Code</span>
+            	<br><button type="submit" class="btn btn-default email_pin_btn">Submit</button>
+            </center>
         </div>
      </div></div></div>
 </div>
@@ -276,5 +278,10 @@ $('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true)
             } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err)}
         }
     });
+});
+
+
+$('.resend_pin').click(function() { 
+	toastr.error('This seems to work!');
 });
 </script>
