@@ -9,10 +9,89 @@
     .post_bottom{padding: 15px 15px 10px !important;}
     .col-lg-4.col-md-6.postsMainDiv > .post-style-two{margin-bottom: 40px !important;}
     .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
+    .main_top{margin: 5px;font-weight: 600;justify-content: space-between;color: #c51d24;}
 </style>
 </div>
 <div class="latest-post-section"><div class="container">
-<div class="row"><div><span>Latest</span><span>Trending</span></div><div>STEEM Posts</div><hr></div>
+<div class="row main_top"><div><span>Latest</span><span style="padding-left: 15px;">Trending</span></div><div>STEEM Posts</div></div>
+<hr style="margin-top: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);">
+
+
+<div class="col-lg-12 col-md-12 " style="margin-bottom: 10px">
+                    <div class="p-0">
+                        <div class="container p-0">
+                            <div class="row">
+                                <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
+                                    <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
+                                    <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
+                                    <div class="wrapper">
+                                        <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
+                                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">FAISALABAD / 26 ° C  </a>
+                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab" style="color: #579BCD !important;">Make
+                                                MSN my home page&nbsp;  | <button type="button" class="close closeBtn"
+                                                                              aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">AFRICA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">EUROPE&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">LATIN
+                                                AMERICA&nbsp;<button type="button" class="close closeBtn"
+                                                                     aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
+                                                        type="button" class="close closeBtn" aria-label="Close">
+                                                    <span aria-hidden="true"></span>
+                                                </button>
+                                            </a>
+
+                                        </nav>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div><!-- testimonial-section -->
+                </div>
+
+
+
+
+
+                
 <div class="row">
 <?php
 $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
