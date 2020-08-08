@@ -38,7 +38,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $auth_bal = $row_auth['amount'];
                 $update_auth_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$auth_bal' + '$author_reward' WHERE username = '$author'");
                     if ($update_auth_wallet === TRUE) { $type = 'a';
-                        $sql_auth = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$permlink."', now())");
+                        $sql_auth = $conn->query("INSERT INTO dlike_transactions (username, amount, type, post_author, reason, trx_time) VALUES ('".$author."', '".$author_reward."', '".$type."', '".$author."', '".$permlink."', now())");
                     }
 
                 $check_cur_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$userval'");
@@ -46,7 +46,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                 $cur_bal = $row_cur['amount'];
                 $update_cur_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$cur_bal' + '$curator_reward' WHERE username = '$userval'");
                     if ($update_cur_wallet === TRUE) { $type = 'b';
-                        $sql_cur = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$permlink."', now())");
+                        $sql_cur = $conn->query("INSERT INTO dlike_transactions (username, amount, type, post_author, reason, trx_time) VALUES ('".$userval."', '".$curator_reward."', '".$type."', '".$author."', '".$permlink."', now())");
                     }
 
                 $check_refer_by = "SELECT refer_by FROM dlikeaccounts where username = '$author'";
@@ -68,7 +68,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
                     $update_ref_wallet = $conn->query("UPDATE dlike_wallet SET amount = '$ref_bal' + '$affiliate_reward' WHERE username = '$referrer'");
                         if ($update_ref_wallet === TRUE) { 
                             $type = 'c';
-                            $sql_ref = $conn->query("INSERT INTO dlike_transactions (username, amount, type, reason, trx_time) VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$permlink."', now())");
+                            $sql_ref = $conn->query("INSERT INTO dlike_transactions (username, amount, type, post_author, reason, trx_time) VALUES ('".$referrer."', '".$affiliate_reward."', '".$type."', '".$author."', '".$permlink."', now())");
                         }
                 }
 

@@ -1,10 +1,7 @@
 <?php include('template/header7.php'); 
 if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
     die('<script>window.location.replace("https://dlike.io/","_self")</script>');
-} else {
-    $dlike_user = $_COOKIE['dlike_username'];
-}
-?>
+} else { $dlike_user = $_COOKIE['dlike_username']; } ?>
 <style type="text/css">
     .stamp-md {min-width: 2rem;height: 2rem;line-height: 2rem;}
     .stamp {color: #fff;background: #868e96;display: inline-block;padding: 0 .2rem;text-align: center;border-radius: 3px;font-weight: 600;}
@@ -20,12 +17,10 @@ $row_B = $sql_B->fetch_assoc();
 $my_bal = $row_B["amount"];
 
 $sql_A = $conn->query("SELECT count( DISTINCT(username) ) as rferrals FROM dlikeaccounts where refer_by='$dlike_user'");
-$row_A = $sql_A->fetch_assoc();
-$my_affiliates = $row_A["rferrals"];
+$row_A = $sql_A->fetch_assoc(); $my_affiliates = $row_A["rferrals"];
 
 $sql_I = $conn->query("SELECT sum(amount) as total_income FROM dlike_transactions where username='$dlike_user' and  DATE(trx_time) = CURDATE()");
-$row_I = $sql_I->fetch_assoc();
-$today_income = $row_I["total_income"];
+$row_I = $sql_I->fetch_assoc(); $today_income = $row_I["total_income"];
 if($today_income > 0) {$today_income = $today_income;}else{$today_income='0';}
 
 $sql_J = $conn->query("SELECT * FROM dlikeaccounts where username='$dlike_user'");
@@ -115,7 +110,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                 <tr>
                     <td><?php echo $row_T["amount"]; ?></td>
                     <td><?php echo $trx_type ?></td>
-                    <td><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></td>
+                    <td><?php echo '<a href="https://dlike.io/post/'.$row_T["post_author"].'/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></td>
                     <td style="float:right;"><?php echo time_ago($entry_date); ?></td> 
                 </tr><? } }?>
             </tbody>
@@ -126,13 +121,10 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
     <div class="latest-tranjections-block-inner">
         <div class="panel-heading-block"><h5>Withdrawals</h5></div>
         <table class="table coin-list latest-tranjections-table">
-            <thead><tr>
-                <th scope="col">Amount</th><th scope="col">Status</th><th scope="col" style="float:right;">Time</th>
-            </tr></thead>
+            <thead><tr> <th scope="col">Amount</th><th scope="col">Status</th><th scope="col" style="float:right;">Time</th></tr></thead>
             <tbody>
                 <?php $sql_P = $conn->query("SELECT * FROM dlike_withdrawals where username ='$dlike_user' ORDER BY req_on DESC LIMIT 30");
-                    if ($sql_P->num_rows > 0) { while($row_P = $sql_P->fetch_assoc()) { 
-                        $entry_date = strtotime($row_P["req_on"]); ?> 
+                    if ($sql_P->num_rows > 0) { while($row_P = $sql_P->fetch_assoc()) {$entry_date = strtotime($row_P["req_on"]); ?> 
                 <tr>
                     <td><?php echo $row_P["amount"]; ?></td>
                     <td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_P["status"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></td>
@@ -190,7 +182,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                 if(user_address != my_wallet) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');enable_draw();return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
                 } else { 
-                    $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'pay_user',dlk_out_amount: out_amount,wallet: user_address},});
+                    //$.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'pay_user',dlk_out_amount: out_amount,wallet: user_address},});
                     let payout_amount = out_amount * 1e6;
                     let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                     let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);

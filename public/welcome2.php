@@ -1,10 +1,6 @@
-<?php 
-if (isset($_COOKIE['username']) || $_COOKIE['username'] || isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {
-    die('<script>window.location.replace("https://dlike.io","_self")</script>');
-} else {
-include('template/header7.php');
-if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';}
-?>
+<?php if (isset($_COOKIE['username']) || $_COOKIE['username'] || isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io","_self")</script>');
+} else { include('template/header7.php');
+if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';} ?>
 </div>
 <div class="container">
     <div class="contact-info-outer welcome">
@@ -294,10 +290,9 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
 </div> 
 
 <div class="modal fade" id="copy_pass" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document"><div class="modal-content modal-custom">
-            <?php include('template/modals/password_modal.php'); ?>
-    </div></div>
-</div>
+<div class="modal-dialog" role="document"><div class="modal-content modal-custom">
+<?php include('template/modals/password_modal.php'); ?>
+</div></div></div>
 <?php include('template/footer.php'); } ?>
 <script>
 $(document).ready(function() {
