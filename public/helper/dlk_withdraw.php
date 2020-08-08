@@ -80,7 +80,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'address' && isset($_POST['of
 		if( $addressValidate['result'] == false){die(json_encode(['error' => true,'message' => 'Not a valid Tron address '.$addressValidate['message']]));}
 
 		$update_address= $conn->query("UPDATE dlikeaccounts SET offchain_address = '$offchain_address' WHERE username = '$username'");
-		if ($update_address === TRUE) {die(json_encode(['error' => false,'message' => 'Address added successfully!']));
+		if ($update_address === TRUE) {
+			$update_wallet= $conn->query("UPDATE dlike_wallet SET tron_address = '$offchain_address' WHERE username = '$username'");
+			die(json_encode(['error' => false,'message' => 'Address added successfully!']));
 		}  else {die(json_encode(['error' => true,'message' => 'There is some issue. please try later!'])); }
 	} else {die(json_encode(['error' => true,'message' => $errors]));}
 }

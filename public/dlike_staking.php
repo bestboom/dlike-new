@@ -100,7 +100,8 @@ if ($sql_SS->num_rows > 0) {while($row_SS = $sql_SS->fetch_assoc()) {$addresses[
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active show" id="stake_dlike">
                             <div class="container"><div class="row" style="margin-top:55px;justify-content: center;">
-                                <div id="stake_sub" style="width: 90%;"> 
+                                <div id="stake_sub" style="width: 90%;">
+                                    <span class="av_bal"></span> 
                                     <div class="form-group"><input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake"></div>
                                     <center><button type="button" class="btn btn-primary" id="stake_me" style="width: 30%;">Stake</button></center>
                                 </div>
@@ -179,15 +180,14 @@ $('#stake_me').click(async function() {
                 if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');enable_stake();return false;}
             }
             if(tron_addresses.includes(user_address)) {toastr.error('This Tron address is being used by other user to stake!');enable_stake();return false;}
-            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-            var balanceof = await myContract.balanceOf(user_address).call();
-            balanceof = window.tronWeb.toDecimal(balanceof);stk_amt = stk_amt * 1e6;
-
+            let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+            let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            let balanceof = await myContract.balanceOf(user_address).call();
+            let balanceof = window.tronWeb.toDecimal(balanceof);let stk_amt = stk_amt * 1e6;
+            $(".av_bal").html('<b>Abailable Balance:<b> ' +balanceof);
             if(parseFloat(stk_amt) <=balanceof){
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-                let result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
-                console.log(result);
+                let result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                 if(result){
                     $('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
