@@ -143,8 +143,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'resend_pin' && isset($_POST[
     		$mail->Body    = 'Welcome to DLIKE <br><br> Your Activation Code is '.$pin_number.' <br><br><br>Cheers<br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
 			
 			$done_email = $mail->send();
-
-			if($done_email){die(json_encode(['error' => false,'message' => 'Verification code sent to email!']));	
+			if($done_email){die(json_encode(['error' => false,'message' => 'Verification code sent to email!']));
 			} else {die(json_encode(['error' => true,'message' => 'Email does not seem to work']));}
 		}
     }

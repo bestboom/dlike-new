@@ -209,7 +209,7 @@ if ($sql_M && $sql_M->num_rows > 0)
                 <input type="number" name="email-pin" id="email_pinit_code" placeholder="confirmation code (6 digits)" class="form-control" />
             </div> </div></div></div>
             <center>
-            	<span class="resend_pin" style="padding-bottom: 5px;font-weight: 600;cursor: pointer;">Resend Verification Code</span>
+            	<span class="resend_pin" style="color: #c51d24;font-weight: 600;cursor: pointer;">Resend Verification Code</span>
             	<br><button type="submit" class="btn btn-default email_pin_btn">Submit</button>
             </center>
         </div>
@@ -282,13 +282,13 @@ $('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true)
 });
 
 
-$('.resend_pin').click(function() {$("#email_verify").modal("hide");
+$('.resend_pin').click(function() {$('.resend_pin').html("Sending...");
     let user_email_id = '<?php echo $email;?>';
     $.ajax({type:"POST",url:'/helper/email_signup.php',data:{action :'resend_pin',user_email: user_email_id},
         success: function(data) {
             try {var response = JSON.parse(data);
                 if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false);return false;
-                }else{toastr['success'](response.message);setTimeout(function(){window.location.reload ();}, 400);}
+                }else{toastr['success'](response.message);$("#email_verify").modal("hide");setTimeout(function(){window.location.reload ();}, 400);}
             } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err)}
         }
     });
