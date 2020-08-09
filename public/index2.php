@@ -18,11 +18,8 @@
 <?php
 $posttags = $conn->query("SELECT * FROM dlike_trending_tags order by count DESC Limit 10");
     if ($posttags->num_rows > 0) {
-        $trending_html = '';
-        $counter = 0; 
-        while($row = $posttags_r->fetch_assoc()) {
+        while($row = $posttags->fetch_assoc()) {
             $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tag'].'" role="tab" data-toggle="tab">'.strtoupper($row['tag']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
-            ++$counter;
         }
 } else { $trending_html = '';}
 ?>
