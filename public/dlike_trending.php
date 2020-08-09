@@ -31,11 +31,11 @@ if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
 <?php 
 $topLikes= $conn->query("SELECT * FROM postslikes Where update_time > now() - INTERVAL 24 HOUR ORDER BY likes DESC LIMIT 30");
 if ($topLikes && $topLikes->num_rows > 0){  while ($row_TL = $topLikes->fetch_assoc()){
-    $author_tl = $row_TL["author"];$permlink_tl = $row_TL["permlink"];
+    echo $author_tl = $row_TL["author"];echo $permlink_tl = $row_TL["permlink"];
     
     $sql_T = $conn->query("SELECT * FROM dlikeposts WHERE author='$author_tl' and permlink='$permlink_tl'");
     $row_T = $sql_T->fetch_assoc();
-    $imgUrl = $row_T["img_url"];$author = $row_T["username"];
+    echo $imgUrl = $row_T["img_url"];$author = $row_T["username"];
     $post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];
     $post_tags = $row_T["tags"];$permlink = $row_T["permlink"];
     $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
