@@ -17,104 +17,23 @@
 <hr style="margin-top: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);">
 <?php
 $posttags = $conn->query("SELECT * FROM dlike_trending_tags order by count DESC Limit 10");
-    if ($posttags->num_rows > 0) {
-        while($row = $posttags->fetch_assoc()) {
-            $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tag'].'" role="tab" data-toggle="tab">'.strtoupper($row['tag']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';
-        }
+if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
+    $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tag'].'" role="tab" data-toggle="tab">'.strtoupper($row['tag']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';}
 } else { $trending_html = '';}
 ?>
 <div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
-    <div class="p-0">
-        <div class="container p-0">
-            <div class="row">
-                <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
-                    <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
-                    <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
-                    <div class="wrapper">
-                        <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
-                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a>
-                            <?php echo $trending_html;?>
-                        </nav>
-                    </div>
-                </div>
+    <div class="p-0"><div class="container p-0"><div class="row">
+        <div class="w-100 p-3" style="padding: 0 !important;">
+            <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
+            <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
+            <div class="wrapper">
+                <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
+                    <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a><?php echo $trending_html;?>
+                </nav>
             </div>
         </div>
-    </div><!-- testimonial-section -->
+    </div></div></div>
 </div>
-<br>
-<div class="col-lg-12 col-md-12 " style="margin-bottom: 10px">
-                    <div class="p-0">
-                        <div class="container p-0">
-                            <div class="row">
-                                <div class="w-100 p-3" style="padding-top: 0 !important;padding-bottom: 0 !important;">
-                                    <div class="scroller scroller-left mt-2"><i class="fa fa-chevron-left"></i></div>
-                                    <div class="scroller scroller-right mt-2"><i class="fa fa-chevron-right"></i></div>
-                                    <div class="wrapper">
-                                        <nav class="nav nav-tabs list mt-2" id="myTab" role="tablist">
-                                            <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">FAISALABAD / 26 ° C  </a>
-                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab" style="color: #579BCD !important;">Make
-                                                MSN my home page&nbsp;  | <button type="button" class="close closeBtn"
-                                                                              aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-                                            <a class="nav-item nav-link" href="#tab2" role="tab" data-toggle="tab">AFRICA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-                                            <a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">ASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">EUROPE&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">LATIN
-                                                AMERICA&nbsp;<button type="button" class="close closeBtn"
-                                                                     aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AUSTRALASIA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a><a class="nav-item nav-link" href="#tab3" role="tab" data-toggle="tab">AFRICA&nbsp;<button
-                                                        type="button" class="close closeBtn" aria-label="Close">
-                                                    <span aria-hidden="true"></span>
-                                                </button>
-                                            </a>
-
-                                        </nav>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div><!-- testimonial-section -->
-</div>
-
-
-
-
 
                 
 <div class="row">
@@ -190,199 +109,47 @@ if ($sql_T && $sql_T->num_rows > 0)
 
 
 <script>
-            $(document).ready(function () {
+$(document).ready(function () {
+    var hidWidth;
+    var scrollBarWidths = 40;
 
+    var widthOfList = function(){var itemsWidth = 0;
+        $('.list a').each(function(){var itemWidth = $(this).outerWidth();itemsWidth+=itemWidth;});
+        return itemsWidth;
+    };
 
+    var widthOfHidden = function(){return (($('.wrapper').outerWidth())-widthOfList()-getLeftPosi())-scrollBarWidths;
+    };
 
-                
+    var getLeftPosi = function(){return $('.list').position().left;};
 
-                var hidWidth;
-                var scrollBarWidths = 40;
+    var reAdjust = function(){
+        if (($('.wrapper').outerWidth()) < widthOfList()) {$('.scroller-right').show().css('display', 'flex');
+        }else {//$('.scroller-right').hide();
+        }
 
-                var widthOfList = function(){
-                    var itemsWidth = 0;
-                    $('.list a').each(function(){
-                        var itemWidth = $(this).outerWidth();
-                        itemsWidth+=itemWidth;
-                    });
-                    return itemsWidth;
-                };
+        if (getLeftPosi()<0) {$('.scroller-left').show().css('display', 'flex');
+        }else {$('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');//$('.scroller-left').hide();
+        }
+    }
 
-                var widthOfHidden = function(){
-                    return (($('.wrapper').outerWidth())-widthOfList()-getLeftPosi())-scrollBarWidths;
-                };
+    reAdjust();
 
-                var getLeftPosi = function(){
-                    return $('.list').position().left;
-                };
+    $(window).on('resize',function(e){reAdjust();});
 
-                var reAdjust = function(){
-                    if (($('.wrapper').outerWidth()) < widthOfList()) {
-                        $('.scroller-right').show().css('display', 'flex');
-                    }
-                    else {
-                        //$('.scroller-right').hide();
-                    }
+    $('.scroller-right').click(function() {
+        $('.scroller-left').fadeIn('slow');
+        //$('.scroller-right').fadeOut('slow');
+        console.log(getLeftPosi());
+        if(getLeftPosi() < -672){$('.scroller-right').fadeOut('slow');}
+        $('.list').animate({left:"+="+"-112px"},'slow',function(){});
+    });
 
-                    if (getLeftPosi()<0) {
-                        $('.scroller-left').show().css('display', 'flex');
-                    }
-                    else {
-                        $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
-                        //$('.scroller-left').hide();
-                    }
-                }
+    $('.scroller-left').click(function() {
+        $('.scroller-right').fadeIn('slow');
+        $('.scroller-left').fadeOut('slow');
+        $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){});
+    });
 
-                reAdjust();
-
-                $(window).on('resize',function(e){
-                    reAdjust();
-                });
-
-                $('.scroller-right').click(function() {
-
-                    $('.scroller-left').fadeIn('slow');
-                    //$('.scroller-right').fadeOut('slow');
-                    console.log(getLeftPosi());
-                    if(getLeftPosi() < -672){
-                        $('.scroller-right').fadeOut('slow');
-                    }
-
-                    $('.list').animate({left:"+="+"-112px"},'slow',function(){
-
-                    });
-                });
-
-                $('.scroller-left').click(function() {
-
-                    $('.scroller-right').fadeIn('slow');
-                    $('.scroller-left').fadeOut('slow');
-
-                    $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){
-
-                    });
-                });
-
-
-                ////////////////
-
-                var scrollBarWidths_2 = 40;
-
-                var widthOfList_2 = function(){
-                    var itemsWidth = 0;
-                    $('.list-2 a').each(function(){
-                        var itemWidth = $(this).outerWidth();
-                        itemsWidth+=itemWidth;
-                    });
-                    return itemsWidth;
-                };
-
-                var widthOfHidden_2 = function(){
-                    return (($('.wrapper').outerWidth())-widthOfList_2()-getLeftPosi_2())-scrollBarWidths_2;
-                };
-
-                var getLeftPosi_2 = function(){
-                    return $('.list-2').position().left;
-                };
-
-                var reAdjust_2 = function(){
-                    if (($('.wrapper').outerWidth()) < widthOfList_2()) {
-                        $('.scroller-right-2').show().css('display', 'flex');
-                    }
-                    else {
-                        //$('.scroller-right-2').hide();
-                    }
-
-                    if (getLeftPosi_2()<0) {
-                        $('.scroller-left-2').show().css('display', 'flex');
-                    }
-                    else {
-                        $('.item').animate({left:"-="+getLeftPosi_2()+"px"},'slow');
-                        //$('.scroller-left').hide();
-                    }
-                }
-
-                reAdjust_2();
-
-                $(window).on('resize',function(e){
-                    reAdjust_2();
-                });
-
-                $('.scroller-right-2').click(function() {
-
-                    $('.scroller-left-2').fadeIn('slow');
-                    //$('.scroller-right-2').fadeOut('slow');
-                    console.log(getLeftPosi_2());
-                    if(getLeftPosi_2() < -672){
-                        $('.scroller-right-2').fadeOut('slow');
-                    }
-
-                    $('.list-2').animate({left:"+="+"-112px"},'slow',function(){
-
-                    });
-                });
-
-                $('.scroller-left-2').click(function() {
-
-                    $('.scroller-right-2').fadeIn('slow');
-                    $('.scroller-left-2').fadeOut('slow');
-
-                    $('.list-2').animate({left:"-="+getLeftPosi_2()+"px"},'slow',function(){
-
-                    });
-                });
-
-                $(".search_btn_hover")
-                    .on( "mouseenter", function() {
-                        $(this).css("background", "#171F24");
-                        $(".fa-user").css("color", "white");
-                    })
-                    .on("mouseleave", function () {
-                        $(this).css("background", "white");
-                        $(".fa-user").css("color", "black");
-                    });
-
-                $(".edit_btn_hover")
-                    .on( "mouseenter", function() {
-                        $(this).css("background", "#171F24");
-                        $(".fa-pencil-alt").css("color", "white");
-                    })
-                    .on("mouseleave", function () {
-                        $(this).css("background", "white");
-                        $(".fa-pencil-alt").css("color", "black");
-                    });
-                
-                $("#btn_share").click(function () {
-                    window.location.href="/share.php";
-                })
-
-                setTimeout(function () {
-
-                    $(".slick-next").hover(function () {
-                        $(this).css("background", "#303030");
-                    })
-
-                    $(".slick-prev").hover(function () {
-                        $(this).css("background", "#303030");
-                    })
-
-                    $(".testimonials-wrap")
-                        .on( "mouseenter", function() {
-                            $(this).css("opacity", "0.8");
-                        })
-                        .on("mouseleave", function () {
-                            $(this).css("opacity", "1");
-
-                            $(".slick-next").css("background", "transparent");
-                            $(".slick-prev").css("background", "transparent");
-                        });
-                }, 2000);
-
-                setInterval(function () {
-                    $(".slick-next").click();
-                }, 50000);
-
-            });
-        </script>
-
-    <script>
+});
+ </script>
