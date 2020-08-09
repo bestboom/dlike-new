@@ -30,7 +30,8 @@ if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
 <?php
 echo $currentPage = $_GET['page']; if(!$currentPage) { $currentPage = 1; } else{$currentPage = $currentPage;}
 $posts_per_page = 4;echo $offset = ($currentPage - 1) * $posts_per_page;
-$sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT '$offset.', '.$posts_per_page");
+//$sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT '$offset.', '.$posts_per_page");
+$sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 4, 5");
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     $imgUrl = $row_T["img_url"];$author = $row_T["username"];
     $post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];
