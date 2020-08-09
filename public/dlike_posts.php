@@ -29,8 +29,7 @@ if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
 <div class="row">
 <?php
 $currentPage = $_GET['page']; if(!$currentPage) { $currentPage = 1; } else{$currentPage = $currentPage;}
-$posts_per_page =10;$offset = ($currentPage - 1) * $posts_per_page;
-//$sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT '$offset.', '.$posts_per_page");
+$posts_per_page =60;$offset = ($currentPage - 1) * $posts_per_page; $next_page=$currentPage + 1;
 $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT $offset, $posts_per_page");
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     $imgUrl = $row_T["img_url"];$author = $row_T["username"];
@@ -54,12 +53,13 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
     <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
     <div class="post-comments bottom_block">
-        <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+        <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div>
 </article></div>
 <?php } } ?> 
-</div></div></div>
+</div><center><a href="/posts/<?php echo $next_page; ?>"><button class="btn btn-danger">Load More</button></a></center>
+</div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">

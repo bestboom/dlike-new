@@ -28,7 +28,7 @@ if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
 </div></div></div></div></div>
        
 <div class="row">
-<?php $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 10");
+<?php $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 60");
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     $imgUrl = $row_T["img_url"];$author = $row_T["username"];
     $post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];
@@ -56,7 +56,9 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     </div>
 </article></div>
 <?php } } ?> 
-</div></div></div>
+</div>
+<center><a href="/posts/2"><button class="btn btn-danger">Load More</button></a></center>
+</div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
 <script type="text/javascript">
