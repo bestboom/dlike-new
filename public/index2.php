@@ -186,3 +186,203 @@ if ($sql_T && $sql_T->num_rows > 0)
         } else {toastr.error('You must be login with DLIKE username!');return false;}
     });
 </script>
+
+
+
+<script>
+            $(document).ready(function () {
+
+
+
+                
+
+                var hidWidth;
+                var scrollBarWidths = 40;
+
+                var widthOfList = function(){
+                    var itemsWidth = 0;
+                    $('.list a').each(function(){
+                        var itemWidth = $(this).outerWidth();
+                        itemsWidth+=itemWidth;
+                    });
+                    return itemsWidth;
+                };
+
+                var widthOfHidden = function(){
+                    return (($('.wrapper').outerWidth())-widthOfList()-getLeftPosi())-scrollBarWidths;
+                };
+
+                var getLeftPosi = function(){
+                    return $('.list').position().left;
+                };
+
+                var reAdjust = function(){
+                    if (($('.wrapper').outerWidth()) < widthOfList()) {
+                        $('.scroller-right').show().css('display', 'flex');
+                    }
+                    else {
+                        //$('.scroller-right').hide();
+                    }
+
+                    if (getLeftPosi()<0) {
+                        $('.scroller-left').show().css('display', 'flex');
+                    }
+                    else {
+                        $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
+                        //$('.scroller-left').hide();
+                    }
+                }
+
+                reAdjust();
+
+                $(window).on('resize',function(e){
+                    reAdjust();
+                });
+
+                $('.scroller-right').click(function() {
+
+                    $('.scroller-left').fadeIn('slow');
+                    //$('.scroller-right').fadeOut('slow');
+                    console.log(getLeftPosi());
+                    if(getLeftPosi() < -672){
+                        $('.scroller-right').fadeOut('slow');
+                    }
+
+                    $('.list').animate({left:"+="+"-112px"},'slow',function(){
+
+                    });
+                });
+
+                $('.scroller-left').click(function() {
+
+                    $('.scroller-right').fadeIn('slow');
+                    $('.scroller-left').fadeOut('slow');
+
+                    $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){
+
+                    });
+                });
+
+
+                ////////////////
+
+                var scrollBarWidths_2 = 40;
+
+                var widthOfList_2 = function(){
+                    var itemsWidth = 0;
+                    $('.list-2 a').each(function(){
+                        var itemWidth = $(this).outerWidth();
+                        itemsWidth+=itemWidth;
+                    });
+                    return itemsWidth;
+                };
+
+                var widthOfHidden_2 = function(){
+                    return (($('.wrapper').outerWidth())-widthOfList_2()-getLeftPosi_2())-scrollBarWidths_2;
+                };
+
+                var getLeftPosi_2 = function(){
+                    return $('.list-2').position().left;
+                };
+
+                var reAdjust_2 = function(){
+                    if (($('.wrapper').outerWidth()) < widthOfList_2()) {
+                        $('.scroller-right-2').show().css('display', 'flex');
+                    }
+                    else {
+                        //$('.scroller-right-2').hide();
+                    }
+
+                    if (getLeftPosi_2()<0) {
+                        $('.scroller-left-2').show().css('display', 'flex');
+                    }
+                    else {
+                        $('.item').animate({left:"-="+getLeftPosi_2()+"px"},'slow');
+                        //$('.scroller-left').hide();
+                    }
+                }
+
+                reAdjust_2();
+
+                $(window).on('resize',function(e){
+                    reAdjust_2();
+                });
+
+                $('.scroller-right-2').click(function() {
+
+                    $('.scroller-left-2').fadeIn('slow');
+                    //$('.scroller-right-2').fadeOut('slow');
+                    console.log(getLeftPosi_2());
+                    if(getLeftPosi_2() < -672){
+                        $('.scroller-right-2').fadeOut('slow');
+                    }
+
+                    $('.list-2').animate({left:"+="+"-112px"},'slow',function(){
+
+                    });
+                });
+
+                $('.scroller-left-2').click(function() {
+
+                    $('.scroller-right-2').fadeIn('slow');
+                    $('.scroller-left-2').fadeOut('slow');
+
+                    $('.list-2').animate({left:"-="+getLeftPosi_2()+"px"},'slow',function(){
+
+                    });
+                });
+
+                $(".search_btn_hover")
+                    .on( "mouseenter", function() {
+                        $(this).css("background", "#171F24");
+                        $(".fa-user").css("color", "white");
+                    })
+                    .on("mouseleave", function () {
+                        $(this).css("background", "white");
+                        $(".fa-user").css("color", "black");
+                    });
+
+                $(".edit_btn_hover")
+                    .on( "mouseenter", function() {
+                        $(this).css("background", "#171F24");
+                        $(".fa-pencil-alt").css("color", "white");
+                    })
+                    .on("mouseleave", function () {
+                        $(this).css("background", "white");
+                        $(".fa-pencil-alt").css("color", "black");
+                    });
+                
+                $("#btn_share").click(function () {
+                    window.location.href="/share.php";
+                })
+
+                setTimeout(function () {
+
+                    $(".slick-next").hover(function () {
+                        $(this).css("background", "#303030");
+                    })
+
+                    $(".slick-prev").hover(function () {
+                        $(this).css("background", "#303030");
+                    })
+
+                    $(".testimonials-wrap")
+                        .on( "mouseenter", function() {
+                            $(this).css("opacity", "0.8");
+                        })
+                        .on("mouseleave", function () {
+                            $(this).css("opacity", "1");
+
+                            $(".slick-next").css("background", "transparent");
+                            $(".slick-prev").css("background", "transparent");
+                        });
+                }, 2000);
+
+                setInterval(function () {
+                    $(".slick-next").click();
+                }, 50000);
+
+            });
+        </script>
+
+    <script>
