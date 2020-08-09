@@ -28,7 +28,7 @@ if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
 </div></div></div></div></div>
        
 <div class="row">
-<?php $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
+<?php $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 10");
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     $imgUrl = $row_T["img_url"];$author = $row_T["username"];
     $post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];
