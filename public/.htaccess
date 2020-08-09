@@ -40,3 +40,4 @@ RewriteRule ^staking$ ./staking.php
 RewriteRule ^convertdlike$ ./convertdlike.php
 RewriteRule ^profile/(.*)$ ./dlike_profile.php?user=$1
 RewriteRule ^post/(.*)/(.*)$ ./dlike_post.php?user=$1&link=$2
+RewriteRule ^posts/(.*)$ ./dlike_posts.php?page=$1

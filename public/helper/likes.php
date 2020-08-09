@@ -14,6 +14,10 @@ require '../includes/config.php';
 select count(*), tag from dlike_tags group by tag having count(*) >1 order by count(*) DESC;
 
 
+
+https://stackoverflow.com/questions/26984409/bootstrap-pagination-using-php-mysql
+
+
 $sqlm = "CREATE TABLE dlike_trending_tags  (
 id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 tag VARCHAR(255) NOT NULL,
