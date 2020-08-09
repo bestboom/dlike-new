@@ -27,6 +27,9 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         $check_bot_likes = $conn->query("SELECT * FROM dlike_upvotes where ip_addr = '$thisip' and  curation_time > now() - INTERVAL 24 HOUR");
         if ($check_bot_likes->num_rows >= 10){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
+        $check_time_likes = $conn->query("SELECT like_time FROM mylikes where username = '$userval' and TIMESTAMPDIFF(SECOND, like_time, $1) <= 10");
+        if ($check_time_likes->num_rows > 0){die(json_encode(['error' => true, 'message' => 'Are you a Robot? Be patient while recomending posts to community with your Likes!']));}
+
         else {
             $sqlm = $conn->query("INSERT INTO mylikes (username, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '".$ip."', '" .$author. "', '" .$permlink. "', now())");
             if ($sqlm)

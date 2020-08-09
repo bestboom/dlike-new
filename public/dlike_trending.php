@@ -29,7 +29,7 @@ if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
        
 <div class="row">
 <?php 
-$topLikes= $conn->query("SELECT * FROM postslikes Where DATE(update_time) = SUBDATE(CURRENT_DATE(), 10) ORDER BY likes DESC LIMIT 30 ");
+$topLikes= $conn->query("SELECT * FROM postslikes Where update_time > now() - INTERVAL 24 HOUR ORDER BY likes DESC LIMIT 30");
 if ($topLikes && $topLikes->num_rows > 0){  while ($row_TL = $topLikes->fetch_assoc()){
     $author_tl = $row_TL["author"];$permlink_tl = $row_TL["permlink"];
     
@@ -44,7 +44,7 @@ if ($topLikes && $topLikes->num_rows > 0){  while ($row_TL = $topLikes->fetch_as
     if ($sql_W && $sql_W->num_rows > 0){  $row_W = $sql_W->fetch_assoc();$profile_pic = $row_W["profile_pic"];
         if (!empty($profile_pic)) { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
     }
-    
+
     $checkLikes= $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
     if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward; ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
