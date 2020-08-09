@@ -8,7 +8,6 @@ require '../includes/config.php';
 if (isset($_POST["ath"]) && isset($_POST["plink"]))
 {
     $saved_ip = $_COOKIE['usertoken'];
-    $rating = '5';
     $userval = $_COOKIE['dlike_username'];
     $author = $_POST['ath'];
     $permlink = $_POST['plink'];
@@ -29,7 +28,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($check_bot_likes->num_rows >= 10){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
         else {
-            $sqlm = $conn->query("INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', now())");
+            $sqlm = $conn->query("INSERT INTO mylikes (username, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '".$ip."', '" .$author. "', '" .$permlink. "', now())");
             if ($sqlm)
             {
                 $check_auth_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$author'");
@@ -76,15 +75,12 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
 
                 $checkPost = $conn->query("SELECT author, permlink, likes FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
                 if ($checkPost->num_rows > 0)
-                {
-                    while ($row = $checkPost->fetch_assoc())
-                    {
-                        $old_likes = $row['likes'];
+                { while ($row = $checkPost->fetch_assoc())
+                    { $old_likes = $row['likes'];
                         $updatePost = $conn->query("UPDATE postslikes SET likes = '$old_likes' + 1 WHERE author = '$author' AND permlink = '$permlink'");
                     }
                 } else {
-                    $addPost = $conn->query("INSERT INTO postslikes (author, permlink, likes, lastUpdatedDate)
-					       VALUES ('" . $author . "', '" . $permlink . "', '" . $newLike . "', now())");
+                    $addPost = $conn->query("INSERT INTO postslikes (author, permlink, likes, update_time) VALUES ('".$author."', '".$permlink."', '".$newLike."', now())");
                 }
 
                 die(json_encode(['error' => false, 'message' => 'Successfully Recommended!', 'post_income' => $post_reward]));
