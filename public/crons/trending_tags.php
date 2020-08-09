@@ -8,5 +8,5 @@ $tag_count = $row_C["count"];
 
 $sql_T = $conn->query("DELETE FROM dlike_trending_tags");
 
-$sql_data = $conn->query("INSERT INTO dlike_trending_tags (tag, count) VALUES ('".$tag_name."', '".$tag_count."');
+$sql_data=$conn->query("INSERT INTO dlike_trending_tags (tag, count) VALUES ('".$tag_name."', '".$tag_count."')");
 ?>
