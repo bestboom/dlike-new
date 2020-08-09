@@ -14,51 +14,32 @@
 </div>
 <div class="latest-post-section"><div class="container">
 <div class="row main_top"><div><span>Latest</span><span style="padding-left: 15px;">Trending</span></div><div>STEEM Posts</div></div>
-<hr style="margin-top: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);">
-<?php
-$posttags = $conn->query("SELECT * FROM dlike_trending_tags order by count DESC Limit 10");
+<hr style="margin: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);">
+<?php $posttags = $conn->query("SELECT * FROM dlike_trending_tags order by count DESC Limit 10");
 if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
-    $trending_html .= '<a class="nav-item nav-link" href="/tags/'.$row['tag'].'" role="tab" data-toggle="tab">'.strtoupper($row['tag']).'&nbsp;<button type="button" class="close closeBtn" aria-label="Close"><span aria-hidden="true"></span></button></a>';}
-} else { $trending_html = '';}
-?>
+    $trending_html .='<a class="nav-item nav-link" href="/tags/'.$row['tag'].'">'.strtoupper($row['tag']).'</a>';}
+} else { $trending_html = '';} ?>
 <div class="col-lg-12 col-md-12 " style="margin-bottom: 9px">
-    <div class="p-0"><div class="container p-0"><div class="row">
-        <div class="w-100 p-3" style="padding: 0 !important;">
-            <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
-            <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
-            <div class="wrapper">
-                <nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
-                    <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#publicChat" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a><?php echo $trending_html;?>
-                </nav>
-            </div>
-        </div>
-    </div></div></div>
-</div>
-
-                
+<div class="p-0"><div class="container p-0"><div class="row"><div class="w-100 p-3" style="padding:0 !important;">
+    <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
+    <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
+    <div class="wrapper"><nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
+    <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a><?php echo $trending_html;?></nav></div>
+</div></div></div></div></div>
+       
 <div class="row">
-<?php
-$sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
-if ($sql_T && $sql_T->num_rows > 0)
-{   while ($row_T = $sql_T->fetch_assoc())
-    {
-        $imgUrl = $row_T["img_url"];
-        $author = $row_T["username"];
-        $post_time = strtotime($row_T["created_at"]);
-        $title = $row_T["title"];
-        $post_tags = $row_T["tags"];
-        $permlink = $row_T["permlink"];
-        $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
-        $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
-        if ($sql_W && $sql_W->num_rows > 0)
-        {   $row_W = $sql_W->fetch_assoc();
-            $profile_pic = $row_W["profile_pic"];
-            if (!empty($profile_pic)) { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
-        }
-        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
-        if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-        $post_income = $postLikes * $post_reward;
-?>
+<?php $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC");
+if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
+    $imgUrl = $row_T["img_url"];$author = $row_T["username"];
+    $post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];
+    $post_tags = $row_T["tags"];$permlink = $row_T["permlink"];
+    $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
+    $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
+    if ($sql_W && $sql_W->num_rows > 0){  $row_W = $sql_W->fetch_assoc();$profile_pic = $row_W["profile_pic"];
+        if (!empty($profile_pic)) { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
+    }
+    $checkLikes= $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
+    if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward; ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
     <div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
@@ -110,108 +91,32 @@ if ($sql_T && $sql_T->num_rows > 0)
 
 <script>
 $(document).ready(function () {
-
-
-    $('.scroller-left').click(function() {
-        $('.scroller-right').fadeIn('slow');
-        $('.scroller-left').fadeOut('slow');
-        $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){});
-    });
-
-    ////////////////
-
-    var scrollBarWidths_2 = 40;
-
-    var widthOfList_2 = function(){
-        var itemsWidth = 0;
-        $('.list-2 a').each(function(){
-            var itemWidth = $(this).outerWidth();
-            itemsWidth+=itemWidth;
-        });
+    var hidWidth;var scrollBarWidths_2 = 40;
+    var widthOfList_2 = function(){var itemsWidth = 0;
+        $('.list-2 a').each(function(){var itemWidth = $(this).outerWidth();itemsWidth+=itemWidth;});
         return itemsWidth;
     };
-
-    var widthOfHidden_2 = function(){
-        return (($('.wrapper').outerWidth())-widthOfList_2()-getLeftPosi_2())-scrollBarWidths_2;
-    };
-
-    var getLeftPosi_2 = function(){
-        return $('.list-2').position().left;
-    };
-
+    var widthOfHidden_2 = function(){return (($('.wrapper').outerWidth())-widthOfList_2()-getLeftPosi_2())-scrollBarWidths_2;};
+    var getLeftPosi_2 = function(){return $('.list-2').position().left;};
     var reAdjust_2 = function(){
-        if (($('.wrapper').outerWidth()) < widthOfList_2()) {
-            $('.scroller-right-2').show().css('display', 'flex');
+        if (($('.wrapper').outerWidth()) < widthOfList_2()) {$('.scroller-right-2').show().css('display', 'flex');
+        }else {//$('.scroller-right-2').hide();
         }
-        else {
-            //$('.scroller-right-2').hide();
-        }
-
-        if (getLeftPosi_2()<0) {
-            $('.scroller-left-2').show().css('display', 'flex');
-        }
-        else {
-            $('.item').animate({left:"-="+getLeftPosi_2()+"px"},'slow');
-            //$('.scroller-left').hide();
+        if (getLeftPosi_2()<0) {$('.scroller-left-2').show().css('display', 'flex');
+        }else {$('.item').animate({left:"-="+getLeftPosi_2()+"px"},'slow');
+        //$('.scroller-left').hide();
         }
     }
-
     reAdjust_2();
-
-    $(window).on('resize',function(e){
-        reAdjust_2();
+    $(window).on('resize',function(e){reAdjust_2();});
+    $('.scroller-right-2').click(function() {$('.scroller-left-2').fadeIn('slow');
+        //$('.scroller-right-2').fadeOut('slow');console.log(getLeftPosi_2());
+        if(getLeftPosi_2() < -672){$('.scroller-right-2').fadeOut('slow');}
+        $('.list-2').animate({left:"+="+"-112px"},'slow',function(){});
     });
-
-    $('.scroller-right-2').click(function() {
-
-        $('.scroller-left-2').fadeIn('slow');
-        //$('.scroller-right-2').fadeOut('slow');
-        console.log(getLeftPosi_2());
-        if(getLeftPosi_2() < -672){
-            $('.scroller-right-2').fadeOut('slow');
-        }
-
-        $('.list-2').animate({left:"+="+"-112px"},'slow',function(){
-
-        });
-    });
-
     $('.scroller-left-2').click(function() {
-
-        $('.scroller-right-2').fadeIn('slow');
-        $('.scroller-left-2').fadeOut('slow');
-
-        $('.list-2').animate({left:"-="+getLeftPosi_2()+"px"},'slow',function(){
-
-        });
+        $('.scroller-right-2').fadeIn('slow');$('.scroller-left-2').fadeOut('slow');
+        $('.list-2').animate({left:"-="+getLeftPosi_2()+"px"},'slow',function(){});
     });
-
-
-    setTimeout(function () {
-
-        $(".slick-next").hover(function () {
-            $(this).css("background", "#303030");
-        })
-
-        $(".slick-prev").hover(function () {
-            $(this).css("background", "#303030");
-        })
-
-        $(".testimonials-wrap")
-            .on( "mouseenter", function() {
-                $(this).css("opacity", "0.8");
-            })
-            .on("mouseleave", function () {
-                $(this).css("opacity", "1");
-
-                $(".slick-next").css("background", "transparent");
-                $(".slick-prev").css("background", "transparent");
-            });
-    }, 2000);
-
-    setInterval(function () {
-        $(".slick-next").click();
-    }, 50000);
-
 });
  </script>
