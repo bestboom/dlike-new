@@ -11,4 +11,5 @@ if ($sql_C->num_rows > 0)
         $sql_data=$conn->query("INSERT INTO dlike_trending_tags (tag, count) VALUES ('".$tag_name."', '".$tag_count."')");
     }
 }
+//WHERE date > DATE_SUB(NOW(), INTERVAL 24 HOUR)
 ?>
