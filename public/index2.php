@@ -110,7 +110,6 @@ $(document).ready(function () {
     reAdjust_2();
     $(window).on('resize',function(e){reAdjust_2();});
     $('.scroller-right-2').click(function() {$('.scroller-left-2').fadeIn('slow');
-        //$('.scroller-right-2').fadeOut('slow');console.log(getLeftPosi_2());
         if(getLeftPosi_2() < -672){$('.scroller-right-2').fadeOut('slow');}
         $('.list-2').animate({left:"+="+"-112px"},'slow',function(){});
     });
@@ -120,3 +119,34 @@ $(document).ready(function () {
     });
 });
  </script>
+<script type="text/javascript">
+$(document).ready(function(){
+        windowOnScroll();
+});
+function windowOnScroll() {
+    $(window).on("scroll", function(e){
+        if ($(window).scrollTop() == $(document).height() - $(window).height()){
+            if($(".post-item").length < $("#total_count").val()) {
+                var lastId = $(".post-item:last").attr("id");
+                //getMoreData(lastId);
+            }
+        }
+    });
+}
+
+function getMoreData(lastId) {
+    $(window).off("scroll");
+    $.ajax({
+        url: '/helper/loadPosts.php?lastId=' + lastId,
+        type: "get",
+        beforeSend: function ()
+        {$('.ajax-loader').show();},
+        success: function (data) {
+            setTimeout(function() {$('.ajax-loader').hide();
+            $("#post-list").append(data);
+            windowOnScroll();
+            }, 1000);
+        }
+   });
+}
+</script>

@@ -29,10 +29,9 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($check_bot_likes->num_rows >= 10){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
         else {
-            $sqlm = "INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', now())";
-            if (mysqli_query($conn, $sqlm))
+            $sqlm = $conn->query("INSERT INTO mylikes (username, stars, userip, author, permlink, like_time ) VALUES ('" . $userval . "', '" . $rating . "', '" . $ip . "', '" . $author . "', '" . $permlink . "', now())");
+            if ($sqlm)
             {
-
                 $check_auth_bal = $conn->query("SELECT amount FROM dlike_wallet where username = '$author'");
                 $row_auth = $check_auth_bal->fetch_assoc();
                 $auth_bal = $row_auth['amount'];
