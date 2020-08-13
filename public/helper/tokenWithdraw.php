@@ -4,8 +4,8 @@ ini_set('display_errors',0);
 include_once 'vendor/autoload.php';
 include_once 'contract_config.php';
     //$wallets = array($tron->address2HexString('TXB9bvvvTWHTwVAJq4wuuMVCjYUbLhYAcz'));
-    $wallets = array("41e89ccbbd23c0d0ecf24393865a41536fafd6db3d");
-    $amounts = array("10000000");
+    $wallets = array("41452384948dd792d8f616af3fc424d6acb5978d22");
+    $amounts = array("20000000");
     $abi = json_decode(ABI,true);
 
     $vAdminAddress=SIGNER;
@@ -42,4 +42,3 @@ include_once 'contract_config.php';
     }      
 
 ?>
-
