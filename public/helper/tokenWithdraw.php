@@ -21,7 +21,7 @@ include_once '../includes/contract_config.php';
  
   $function = 'multiMintToken';
   $vSendAmount  = $vSendAmount * 1e6;
-  $params= array($vHExUser, $vSendAmount);
+  $params= array('TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m', '10000000');
   $address =  $vHExAddress;
   $feeLimit = 10000000;
   $callValue = 0;

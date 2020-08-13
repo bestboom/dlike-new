@@ -7,7 +7,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="/js/toaster.js"></script>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome2.php'){ ?><script src="/js/signup.js"></script><? } ?> 
-<?php if(basename($_SERVER['PHP_SELF']) == 'steemposts.php') { ?> <script src="/js/posts.js"></script><script src="/js/mint.js"></script>
+<?php if(basename($_SERVER['PHP_SELF']) == 'steemposts.php') { ?> <script src="/js/posts.js"></script><script src="/js/mint.js"></script><script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/steemconnect"></script><script src="https://unpkg.com/dsteem@0.10.1/dist/dsteem.js"></script><script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script><script src="/js/steemconnect.js"></script>
 <? } ?>
 <script>
 if ($.cookie("dlike_username") != null) {var dlike_username  = $.cookie("dlike_username");console.log(dlike_username);$("#user_img").attr("src", "<?php echo $dlk_profile_img; ?>").show();}
