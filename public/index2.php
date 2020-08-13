@@ -13,7 +13,7 @@
 </style>
 </div>
 <div class="latest-post-section"><div class="container">
-<div class="row main_top"><div><span><i class="fa fa-home"></i>&nbsp;Latest</span><span style="padding-left: 15px;"><i class="fa fa-bolt"></i>&nbsp;Trending</span></div><div>STEEM Posts</div></div>
+<div class="row main_top"><div><span><i class="fa fa-home"></i>&nbsp;<a href="/">Latest</a></span><span style="padding-left: 15px;"><i class="fa fa-bolt"></i>&nbsp;<a href="/trending">Trending</a></span></div><div><a href="/steemposts">STEEM Posts</a></div></div>
 <hr style="margin: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);">
 <?php $posttags = $conn->query("SELECT * FROM dlike_trending_tags order by count DESC Limit 10");
 if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
