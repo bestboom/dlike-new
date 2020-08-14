@@ -28,7 +28,39 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
     if (empty($errors)) { 
     	$amount = $dlk_amount;$wallet = $tron_address;
-    	die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+
+
+    	$wallets = array($tron->address2HexString($user_address));
+    	$amounts = array($amount);
+    	$abi = json_decode(ABI,true);
+
+    	$vAdminAddress=SIGNER;
+    	$vHExAddress=$tron->address2HexString($vAdminAddress);
+    	$tron->setAddress($vAdminAddress);
+    	$tron->setPrivateKey(SIGNER_PK);
+
+    	$contract = CONTRACT_ADDRESS;
+    	$function = 'multiMintToken';
+
+    	$params = array($wallets , $amounts );
+    	$address =  $vHExAddress;
+    	$feeLimit = 1000000000;
+    	$callValue = 0;
+
+    	try {
+       
+          $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
+          $signedTransaction = $tron->signTransaction($triggerContract);
+          $response = $tron->sendRawTransaction($signedTransaction);
+          if ($response['result'] == 1) {
+             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+          }
+	    } catch (\IEXBase\TronAPI\Exception\TronException $e) {
+	        //$result = array('Message'=>'Error! '.$e->getMessage(),'Response'=>'failure', 'Hash' => '-');
+	        //echo json_encode($result);
+	        die(json_encode(['error' => true,'message' => $e->getMessage()]));
+	    } 
+    	
     	/*
     	$addressValidate =  $tron->validateaddress($tron_address);
 		if( $addressValidate['result'] == false){die(json_encode(['error' => true,'message' => $addressValidate['message']]));
