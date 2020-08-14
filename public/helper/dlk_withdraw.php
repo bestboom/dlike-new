@@ -27,77 +27,11 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
     if (empty($errors)) { 
-    	$amount = $wallet_amount * 100000;
-    	$wallet = $tron_address;
-
-
-    	$wallets = array($tron->address2HexString($wallet));
-    	$amounts = array($amount);
-    	$abi = json_decode(ABI,true);
-
-    	$vAdminAddress=SIGNER;
-    	$vHExAddress=$tron->address2HexString($vAdminAddress);
-    	$tron->setAddress($vAdminAddress);
-    	$tron->setPrivateKey(SIGNER_PK);
-
-    	$contract = CONTRACT_ADDRESS;
-    	$function = 'multiMintToken';
-
-    	$params = array($wallets , $amounts );
-    	$address =  $vHExAddress;
-    	$feeLimit = 1000000000;
-    	$callValue = 0;
-
-    	//try {
-       
-        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
-        $signedTransaction = $tron->signTransaction($triggerContract);
-        $response = $tron->sendRawTransaction($signedTransaction);
-        if ($response['result'] == 1) {
-             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
-          }
-        else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-	    //} catch (\IEXBase\TronAPI\Exception\TronException $e) {
-	        //$result = array('Message'=>'Error! '.$e->getMessage(),'Response'=>'failure', 'Hash' => '-');
-	        //echo json_encode($result);
-	        //die(json_encode(['error' => true,'message' => $e->getMessage()]));
-	    //} 
-    	
-    	/*
-    	$addressValidate =  $tron->validateaddress($tron_address);
-		if( $addressValidate['result'] == false){die(json_encode(['error' => true,'message' => $addressValidate['message']]));
-		}
-
-	    $vSendAmount=$amount; 
-	    $abi = json_decode(ABI,true);
-	    $vAdminAddress=SIGNER;
-	    $vHExAddress=$tron->address2HexString($vAdminAddress);
-	    $tron->setAddress($vAdminAddress);
-	    $tron->setPrivateKey(SIGNER_PK);
-
-	    $vUserAddress=$wallet;
-	    $vHExUser=$tron->address2HexString($vUserAddress);
-
-	    // write contract data
-	    $contract = CONTRACT_ADDRESS;
-	   
-	    $function = 'mintToken';
-	    $vSendAmount  = $vSendAmount * 1e6;
-	    $params= array($vHExUser, $vSendAmount);
-	    $address =  $vHExAddress;
-	    $feeLimit = 10000000;
-	    $callValue = 0;
-
-	    $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue,$bandwidthLimit = 0);
-        $signedTransaction = $tron->signTransaction($triggerContract);
-        $response = $tron->sendRawTransaction($signedTransaction);
-        if ($response['result'] == 1) {
-        	die(json_encode(['error' => false,'message' => 'Withdraw successful!', 'hash' => $triggerContract['txID']]));
-        }else{die(json_encode(['error' => true,'message' => 'There is some issue in token withdraw. Please try Later!']));}
-		*/
+    	die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
-//else {die('Some error');}
+
+
 
 if (isset($_POST['action']) && $_POST['action'] == 'address' && isset($_POST['offchain_address']) && $_POST['offchain_address'] != '') {
     $offchain_address = trim(mysqli_real_escape_string($conn, $_POST['offchain_address']));
@@ -149,30 +83,35 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();
 		$bal= $row['amount'];
 		if($bal > 0){
-			$amount = $bal;
-		    $vSendAmount=$amount; 
-		    $abi = json_decode(ABI,true);
-		    $vAdminAddress=SIGNER;
-		    $vHExAddress=$tron->address2HexString($vAdminAddress);
-		    $tron->setAddress($vAdminAddress);
-		    $tron->setPrivateKey(SIGNER_PK);
 
-		    $vUserAddress=$wallet;
-		    $vHExUser=$tron->address2HexString($vUserAddress);
+			$amount = $bal * 100000;
 
-		    // write contract data
-		    $contract = CONTRACT_ADDRESS;
-		   
-		    $function = 'multiMintToken';
-		    $vSendAmount  = $vSendAmount * 1e6;
-		    $params= array($vHExUser, $vSendAmount);
-		    $address =  $vHExAddress;
-		    $feeLimit = 10000000;
-		    $callValue = 0;
+	    	$wallets = array($tron->address2HexString($wallet));
+	    	$amounts = array($amount);
+	    	$abi = json_decode(ABI,true);
 
-		    $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue,$bandwidthLimit = 0);
+	    	$vAdminAddress=SIGNER;
+	    	$vHExAddress=$tron->address2HexString($vAdminAddress);
+	    	$tron->setAddress($vAdminAddress);
+	    	$tron->setPrivateKey(SIGNER_PK);
+
+	    	$contract = CONTRACT_ADDRESS;
+	    	$function = 'multiMintToken';
+
+	    	$params = array($wallets , $amounts );
+	    	$address =  $vHExAddress;
+	    	$feeLimit = 1000000000;
+	    	$callValue = 0;
+
+	       
+	        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 	        $signedTransaction = $tron->signTransaction($triggerContract);
 	        $response = $tron->sendRawTransaction($signedTransaction);
+	        if ($response['result'] == 1) {
+	             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+	          }
+	        else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
+
 	    }
     }
 }
