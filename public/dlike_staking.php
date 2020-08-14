@@ -160,7 +160,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-//var mainContractAddress = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
+var mainContractAddress = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
 function pad(n) {
         return (n < 10 ? '0' : '') + n;
     }
@@ -190,8 +190,8 @@ function pad(n) {
                     function getCountdown(){
                         // find the amount of "seconds" between now and target
                         var current_date = new Date().getTime();
-                       // var target_date = unstakeTime * 1000;
-                        var target_date = 1597402645 * 1000;
+                        var target_date = unstakeTime * 1000;
+                        
                         if(current_date>target_date){
                             $('#unstake_claim_row').show();
                             $('#unstake_timer_row').hide();
