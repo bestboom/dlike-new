@@ -30,7 +30,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
     	$amount = $dlk_amount;$wallet = $tron_address;
 
 
-    	$wallets = array($tron->address2HexString($user_address));
+    	$wallets = array($tron->address2HexString($wallet));
     	$amounts = array($amount);
     	$abi = json_decode(ABI,true);
 
