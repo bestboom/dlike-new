@@ -293,7 +293,7 @@ $('#stake_me').click(async function() {
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 
-$('#unstake_me').click(function() {
+$('#unstake_me').click(async function() {
     var user_address =false;
       if (window.tronWeb!=undefined) {
          user_address= await window.tronWeb.defaultAddress.base58;
