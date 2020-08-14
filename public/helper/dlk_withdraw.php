@@ -27,7 +27,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
     if (empty($errors)) { 
-    	$amount = $dlk_amount;$wallet = $tron_address;
+    	$amount = $wallet_amount;$wallet = $tron_address;
 
 
     	$wallets = array($tron->address2HexString($wallet));
@@ -47,19 +47,19 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
     	$feeLimit = 1000000000;
     	$callValue = 0;
 
-    	try {
+    	//try {
        
-          $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
-          $signedTransaction = $tron->signTransaction($triggerContract);
-          $response = $tron->sendRawTransaction($signedTransaction);
-          if ($response['result'] == 1) {
+        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
+        $signedTransaction = $tron->signTransaction($triggerContract);
+        $response = $tron->sendRawTransaction($signedTransaction);
+        if ($response['result'] == 1) {
              die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
           }
-	    } catch (\IEXBase\TronAPI\Exception\TronException $e) {
+	    //} catch (\IEXBase\TronAPI\Exception\TronException $e) {
 	        //$result = array('Message'=>'Error! '.$e->getMessage(),'Response'=>'failure', 'Hash' => '-');
 	        //echo json_encode($result);
-	        die(json_encode(['error' => true,'message' => $e->getMessage()]));
-	    } 
+	        //die(json_encode(['error' => true,'message' => $e->getMessage()]));
+	    //} 
     	
     	/*
     	$addressValidate =  $tron->validateaddress($tron_address);
