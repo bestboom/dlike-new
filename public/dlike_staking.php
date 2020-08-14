@@ -160,7 +160,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-var mainContractAddress = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
+//var mainContractAddress = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
 function pad(n) {
         return (n < 10 ? '0' : '') + n;
     }
