@@ -3,9 +3,12 @@ error_reporting(E_ALL);
 ini_set('display_errors',1);
 include_once '../vendor/autoload.php';
 include_once '../includes/contract_config.php';
-    $wallets = array($tron->address2HexString('TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m', 'THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ'));
+    $user_address = 'TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m';
+    $amount = '90000000';
+    $wallets = array($tron->address2HexString($user_address));
     //$wallets = array("41452384948dd792d8f616af3fc424d6acb5978d22");
-    $amounts = array("40000000","20000000");
+    //$amounts = array("40000000");
+    $amounts = array($amount);
     $abi = json_decode(ABI,true);
 
     $vAdminAddress=SIGNER;
