@@ -27,7 +27,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
     if (empty($errors)) { 
-    	$amount = $wallet_amount;$wallet = $tron_address;
+    	$amount = $wallet_amount * 100000;
+    	$wallet = $tron_address;
 
 
     	$wallets = array($tron->address2HexString($wallet));
@@ -55,6 +56,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
         if ($response['result'] == 1) {
              die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
           }
+        else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 	    //} catch (\IEXBase\TronAPI\Exception\TronException $e) {
 	        //$result = array('Message'=>'Error! '.$e->getMessage(),'Response'=>'failure', 'Hash' => '-');
 	        //echo json_encode($result);
