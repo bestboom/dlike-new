@@ -102,12 +102,26 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                                 </div>
                         </div></div></div>
                         <div role="tabpanel" class="tab-pane fade" id="unstake_dlike">
-                            <div class="container"><div class="row" style="margin-top: 55px;justify-content: center;">
-                                <div id="stake_sub" style="width: 90%;">
-                                    <div class="form-group"><input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake"></div>
-                                    <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Unstake</button></center>
+                             <div class="container">
+                                <div id="unskae_row" class="row" style="margin-top: 55px;justify-content: center;">
+                                    <div id="stake_sub" style="width: 90%;">
+                                        <div class="form-group"><input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake"></div>
+                                        <center><button type="button" class="btn btn-primary" id="unstake_me"style="width: 30%;">Unstake</button></center>
+                                    </div>
                                 </div>
-                        </div></div></div>
+                                <div id="unstake_timer_row" class="row" style="margin-top: 55px;justify-content: center; display: none;">
+                                    <div id="stake_sub" style="width: 90%;">
+                                        <div class="form-group"><span id="unstakingAmount">0</span></div>
+                                        <div class="form-group"><span id="unstakingTimer">00 : 00 : 00</span></div>
+                                    </div>
+                                </div>
+                                <div id="unstake_claim_row" class="row" style="margin-top: 55px;justify-content: center; display: none;">
+                                    <div id="stake_sub" style="width: 90%;">
+                                         <center><button type="button" class="btn btn-primary" id="claimback_tokens"style="width: 30%;">ClaimBack Tokens</button></center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div role="tabpanel" class="tab-pane fade" id="claim_dlike">
                             <div class="container"><div class="row" style="margin-top: 55px;justify-content: center;">
                                 <div id="stake_sub" style="width: 90%;">
@@ -160,7 +174,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-//var mainContractAddress = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
+
 function pad(n) {
         return (n < 10 ? '0' : '') + n;
     }
