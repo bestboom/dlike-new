@@ -84,7 +84,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 		$bal= $row['amount'];
 		if($bal > 0){
 
-			$amount = $bal * 100000;
+			$amount = $bal * 1000000;
 
 	    	$wallets = array($tron->address2HexString($wallet));
 	    	$amounts = array($amount);
