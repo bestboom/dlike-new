@@ -223,9 +223,6 @@ function pad(n) {
                               
                         minutes = pad( parseInt(seconds_left / 60) );
                         seconds = pad( parseInt( seconds_left % 60 ) );
-                        if(days>0){
-                            hours = parseInt(hours) + 24;
-                        }
                         
                         // format countdown string + set tag value
                         if(seconds_left<=0){
