@@ -319,9 +319,11 @@ $('#claimback_tokens').click(async function() {var user_address =false;
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var unstakingAmount = await myContract.userunstakeamount(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount);
-            await new Promise((resolve, reject) => setTimeout(resolve, 400));
+            //await new Promise((resolve, reject) => setTimeout(resolve, 400));
             var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
-            if(result){toastr.success('Transaction initiated successfully!');setTimeout(function(){window.location.reload();}, 700);}
+            if(result){toastr.success('Transaction initiated successfully!');console.log(result);
+            //setTimeout(function(){window.location.reload();}, 700);
+            }
         }
     }else{toastr.error('Non-Tronlink browser detected. You should use Tronlink Wallet!');}
 });
