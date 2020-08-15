@@ -113,7 +113,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                                     <div id="stake_sub" style="width: 90%;">
                                         <div class="form-group"><b>Pending Unstake Tokens: </b><span id="unstakingAmount">0</span>DLIKE</div>
                                         <div class="form-group"><b>Availble to claim after: </b><span id="unstakingTimer">00 : 00 : 00</span></div>
-                                        <div>You can initiate new unstake once you have claimed old one!</div>
+                                        <div>You can initiate new unstake once old one is matured!</div>
                                     </div>
                                 </div>
                                 <div id="unstake_claim_row" class="row" style="margin-top: 55px;justify-content: center; display: none;">
@@ -305,16 +305,11 @@ $('#stake_me').click(async function() {
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 
-$('#unstake_me').click(async function() {
-    var user_address =false;
-      if (window.tronWeb!=undefined) {
-         user_address= await window.tronWeb.defaultAddress.base58;
-         if(user_address==false){
-             alertify.alert('Login','Please Login to Tronlink Wallet.');
-              return false;                  
-         }else{
-                 let unstk_amt = $('#unstakeamount').val();
-                 if (unstk_amt == "") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
+$('#unstake_me').click(async function() {var user_address =false;
+    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+        if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;            
+        }else{ let unstk_amt = $('#unstakeamount').val();
+            if (unstk_amt=="") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
                
                 var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                 var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
@@ -344,13 +339,11 @@ $('#unstake_me').click(async function() {
                                 }
                             } 
                         }); 
-                    }, 15000);
-                         }
+                    }, 15000);}
                 }else{
                     toastr.error('phew... Not enough amount you want to unstake');return false;
                 }
-
-         }
+        }
     }else{
         toastr.error('Non-Tronlink','Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');
     }
