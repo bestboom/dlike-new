@@ -28,41 +28,39 @@ $urlData = parse_url($ext_url );
 $host = preg_replace('/^www\./', '', $urlData['host']);
 ?>
 </div>
-    <div class="latest-post-section">
-        <div class="container">
-            <article class="post-style-two post-full-width">
-                <div class="post-thumb"><?php echo '<img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">'; ?></div>
-                <div class="post-contnet-wrap">
-                    <div class="post-footer" style="margin-bottom: 20px;">
-                        <div class="post-author-block">
-                            <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" style="width: 32px;margin-right: 5px;"></a>'; ?></div>
-                            <div class="author-info">
-                                <h5 style="margin-bottom: 0px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5>
-                                <span class="auth-time"><?php echo time_ago($post_time); ?></span>
-                            </div>
-                        </div>
-                        <div class="post-comments" style="color: #1652f0;"><a href="#"><?php echo ucfirst($post_category); ?></a></div>
-                    </div>
-                    <h4 class="post-title"><?php echo $title; ?></h4>
-                    <p class="post-entry"><?php echo $description; ?><br><span style="float: right;color: #1652f0;font-size: 12px;">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
-                    <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
-                    <div class="post-footer">
-                        <div class="post-author-block">
-                            <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
-                        </div>
-                        <div class="post-comments">
-                            <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
-                        </div>
+<div class="latest-post-section"><div class="container">
+    <article class="post-style-two post-full-width">
+        <div class="post-thumb"><?php echo '<img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">'; ?></div>
+        <div class="post-contnet-wrap">
+            <div class="post-footer" style="margin-bottom: 20px;">
+                <div class="post-author-block">
+                    <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" style="width: 32px;margin-right: 5px;"></a>'; ?></div>
+                    <div class="author-info">
+                        <h5 style="margin-bottom: 0px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5>
+                        <span class="auth-time"><?php echo time_ago($post_time); ?></span>
                     </div>
                 </div>
-            </article>
+                <div class="post-comments" style="color: #1652f0;"><a href="#"><?php echo ucfirst($post_category); ?></a></div>
+            </div>
+            <h4 class="post-title"><?php echo $title; ?></h4>
+            <p class="post-entry"><?php echo $description; ?><br><span style="float: right;color: #1652f0;font-size: 12px;">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
+            <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
+            <div class="post-footer">
+                <div class="post-author-block">
+                    <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
+                </div>
+                <div class="post-comments">
+                    <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
+                </div>
+            </div>
+        </div>
+    </article>
 <center><div style="font-size: 18px;font-weight: 700;padding-bottom: 15px;">More Like This</div></center>
 <div class="row"><?php
 $sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$post_category' and id != '$post_id' ORDER BY created_at DESC LIMIT 9");
 if ($sql_T && $sql_T->num_rows > 0)
 {   while ($row_T = $sql_T->fetch_assoc())
-    {
-        $imgUrl = $row_T["img_url"];
+    {   $imgUrl = $row_T["img_url"];
         $author = $row_T["username"];
         $post_time = strtotime($row_T["created_at"]);
         $title = $row_T["title"];
@@ -70,31 +68,10 @@ if ($sql_T && $sql_T->num_rows > 0)
         $permlink = $row_T["permlink"];
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
         $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
-        if ($sql_W && $sql_W->num_rows > 0)
-        {   $row_W = $sql_W->fetch_assoc();
-            $profile_pic = $row_W["profile_pic"];
-            if (!empty($profile_pic)) { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
-        }
-        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
-        $row_L = $checkLikes->fetch_assoc();
-        if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-        $post_income = $postLikes * $post_reward; ?>
-    <div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
-    <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
-    <div><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" style="width: 32px;margin-right: 5px;"></a>'; ?></div>
-    <div class="author-info"><h5 style="margin-bottom: 0px;"><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
-    <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
-    </div></div>
-    <div class="post-thumb img-fluid"><?php echo '<a href="/post/'.$author.'/'.$permlink.'"><img src=' . $imgUrl . ' class="card-img-top" /></a>'; ?></a></div>
-    <div class="post-contnet-wrap post_bottom">
-    <h4 class="post-title" style="white-space: nowrap !important;overflow: hidden !important;text-overflow: ellipsis !important;"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
-    <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
-    <div class="post-comments bottom_block">
-        <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
-        <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
-    </div>
-    </article></div> <?php } } ?> 
-</div>
-</div></div>
+        if ($sql_W && $sql_W->num_rows>0){$row_W=$sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
+        $checkLikes=$conn->query("SELECT * FROM postslikes WHERE author='$author' and permlink = '$permlink'");
+        if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward; ?>
+    <div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> <?php } } ?>
+</div></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
