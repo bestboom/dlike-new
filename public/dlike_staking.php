@@ -223,7 +223,7 @@ async function getUserStatus() {var user_address =false;
                 }
             } else{$('#unskae_row').hide();$('#unstake_row').show();}         
         }
-    }
+    }else{$('#unskae_row').hide();$('#unstake_row').show();} 
 }
 setTimeout(getUserStatus,1000);
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
