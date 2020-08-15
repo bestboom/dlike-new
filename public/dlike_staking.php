@@ -111,9 +111,9 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                                 </div>
                                 <div id="unstake_timer_row" class="row" style="margin-top: 55px;justify-content: center; display: none;">
                                     <div id="stake_sub" style="width: 90%;">
-                                        <div class="form-group"><b>Pending Unstake Tokens: </b><span id="unstakingAmount">0</span>DLIKE</div>
+                                        <div class="form-group"><b>Pending Unstake Tokens: </b><span id="unstakingAmount">0</span> DLIKE</div>
                                         <div class="form-group"><b>Availble to claim after: </b><span id="unstakingTimer">00 : 00 : 00</span></div>
-                                        <div>You can initiate new unstake once old one is matured!</div>
+                                        <div style="color: #c51d24;">You can initiate new unstake once old one is matured!</div>
                                     </div>
                                 </div>
                                 <div id="unstake_claim_row" class="row" style="margin-top: 55px;justify-content: center; display: none;">
