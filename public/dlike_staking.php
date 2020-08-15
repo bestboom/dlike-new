@@ -324,7 +324,8 @@ if (dlike_username != null) {
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
                     var result = await myContract.unstake(unstk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){
-                        //toastr.success('You UnStaked Token Successfully.');
+                    $('#stakingStatus').modal('show');
+                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
                     $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                         if(status=='success'){
@@ -332,11 +333,11 @@ if (dlike_username != null) {
                             if(tx_result=='SUCCESS'){
                                 $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: stk_amt,wallet: user_address,trx_id: result},
                                 });
-                                $(".st_status_message").html('Tokens Staked Successfully!');
+                                $(".st_status_message").html('UnStaking Initiated Successfully!');
                                 $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
                                 setTimeout(function(){window.location.reload();}, 1000);
                             }else{
-                                $(".st_status_message").html('Something Wrong ! Try Again.');
+                                $(".st_status_message").html('Something Wrong! Try Again.');
                                 $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
                                 setTimeout(function(){window.location.reload();}, 1000);
                             }
