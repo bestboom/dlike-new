@@ -1,35 +1,8 @@
 <?php include ('template/header7.php'); ?>
-<style>
-    .latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
-    .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
-    #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
-    .bottom_block{width:100%}
-    .post-style-two .post-contnet-wrap-top{padding: 5px 10px 5px 10px;}
-    .post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
-    .post_bottom{padding: 15px 15px 10px !important;}
-    .col-lg-4.col-md-6.postsMainDiv > .post-style-two{margin-bottom: 40px !important;}
-    .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
-    .main_top{margin: 5px;font-weight: 600;justify-content: space-between;color: #c51d24;}
-</style>
 </div>
-<div class="latest-post-section"><div class="container">
-<div class="row main_top"><div><span><i class="fa fa-home"></i>&nbsp;Latest</span><span style="padding-left: 15px;"><i class="fa fa-bolt"></i>&nbsp;Trending</span></div><div>STEEM Posts</div></div>
-<hr style="margin: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);">
-<?php $posttags = $conn->query("SELECT * FROM dlike_trending_tags order by count DESC Limit 10");
-if ($posttags->num_rows > 0) {while($row = $posttags->fetch_assoc()) {
-    $trending_html .='<a class="nav-item nav-link" href="/tags/'.$row['tag'].'">'.strtoupper($row['tag']).'</a>';}
-} else { $trending_html = '';} ?>
-<div class="col-lg-12 col-md-12 " style="margin-bottom: 14px">
-<div class="p-0"><div class="container p-0"><div class="row"><div class="w-100 p-3" style="padding:0 !important;">
-    <div class="scroller scroller-left-2 mt-2"><i class="fa fa-chevron-left"></i></div>
-    <div class="scroller scroller-right-2 mt-2"><i class="fa fa-chevron-right"></i></div>
-    <div class="wrapper"><nav class="nav nav-tabs list-2 mt-2" id="myTab" role="tablist">
-    <a class="nav-item nav-link active" id="public-chat-tab" data-toggle="tab" href="#" role="tab" aria-controls="public" aria-expanded="true" style="font-weight: 900">Trending now ></a><?php echo $trending_html;?></nav></div>
-</div></div></div></div></div>
-       
+<div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row">
-<?php 
-$topLikes= $conn->query("SELECT * FROM postslikes Where update_time > now() - INTERVAL 24 HOUR ORDER BY likes DESC LIMIT 30");
+<?php $topLikes= $conn->query("SELECT * FROM postslikes Where update_time > now() - INTERVAL 24 HOUR ORDER BY likes DESC LIMIT 30");
 if ($topLikes && $topLikes->num_rows > 0){  while ($row_TL = $topLikes->fetch_assoc()){
     $author_tl = $row_TL["author"];$permlink_tl = $row_TL["permlink"];
     
@@ -66,62 +39,3 @@ if ($topLikes && $topLikes->num_rows > 0){  while ($row_TL = $topLikes->fetch_as
 </div></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
 <?php include ('template/dlike_footer.php'); ?>
-<script type="text/javascript">
-    $('.hov_vote').click(function() {
-        if (dlike_username != null) {
-            var mypermlink = $(this).attr("data-permlink");
-            var authorname = $(this).attr("data-author");
-            $(this).addClass('fas fa-spinner fa-spin like_loader');
-            var update = '1';
-            $.ajax({ type: "POST",url: "/helper/solve.php", data: {ath: authorname, plink: mypermlink},
-                success: function(data) {
-                    try { var response = JSON.parse(data)
-                        if (response.done == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');$('#upvotefail').modal('show');return false;
-                        } else if (response.error == true) {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');toastr.error(response.message);return false;
-                        } else {$('.hov_vote').removeClass('fas fa-spinner fa-spin like_loader');
-                            toastr.success(response.message);
-                            var getpostlikes = $(".post_likes" + mypermlink + authorname).html();
-                            var post_income = response.post_income;
-                            var newlikes = parseInt(getpostlikes) + parseInt(update);
-                            var updatespostincome = (newlikes * post_income).toFixed(2); 
-                            $('.post_likes' + mypermlink + authorname).html(newlikes);
-                            $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
-                        }
-                    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                }
-            });
-        } else {toastr.error('You must be login with DLIKE username!');return false;}
-    });
-</script>
-
-
-
-<script>
-$(document).ready(function () {
-    var hidWidth;var scrollBarWidths_2 = 40;
-    var widthOfList_2 = function(){var itemsWidth = 0;
-        $('.list-2 a').each(function(){var itemWidth = $(this).outerWidth();itemsWidth+=itemWidth;});
-        return itemsWidth;
-    };
-    var widthOfHidden_2 = function(){return (($('.wrapper').outerWidth())-widthOfList_2()-getLeftPosi_2())-scrollBarWidths_2;};
-    var getLeftPosi_2 = function(){return $('.list-2').position().left;};
-    var reAdjust_2 = function(){
-        if (($('.wrapper').outerWidth()) < widthOfList_2()) {$('.scroller-right-2').show().css('display', 'flex');
-        }else {//$('.scroller-right-2').hide();
-        }
-        if (getLeftPosi_2()<0) {$('.scroller-left-2').show().css('display', 'flex');
-        }else {$('.item').animate({left:"-="+getLeftPosi_2()+"px"},'slow');
-        }
-    }
-    reAdjust_2();
-    $(window).on('resize',function(e){reAdjust_2();});
-    $('.scroller-right-2').click(function() {$('.scroller-left-2').fadeIn('slow');
-        if(getLeftPosi_2() < -672){$('.scroller-right-2').fadeOut('slow');}
-        $('.list-2').animate({left:"+="+"-112px"},'slow',function(){});
-    });
-    $('.scroller-left-2').click(function() {
-        $('.scroller-right-2').fadeIn('slow');$('.scroller-left-2').fadeOut('slow');
-        $('.list-2').animate({left:"-="+getLeftPosi_2()+"px"},'slow',function(){});
-    });
-});
- </script>

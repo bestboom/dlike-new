@@ -1,6 +1,5 @@
 <?php include('includes/config.php'); ?>
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <?php if(basename($_SERVER['PHP_SELF']) == 'post.php'){ ?><title><?php echo $og_title; ?></title>
 <meta name="description" content="<?php echo $og_description; ?>" />
 <meta property="og:url" content="<?php echo $og_url; ?>" />
@@ -38,8 +37,7 @@
 <?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username']) || isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?><br>
 <a href="/docs/dlike-paper.pdf">Whitepaper</a>
 </div>
-<div class="banner-block">
-<nav class="navbar main-nav navbar-expand-lg"><div class="container">
+<div class="banner-block"><nav class="navbar main-nav navbar-expand-lg"><div class="container">
     <a class="navbar-brand" href="/"><img class="navbar-logo" src="/images/logo.png" alt="DLIKE"/></a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,5 +51,4 @@
         </li></ul>
     </div>
 </div></nav><!-- main-nav-block -->
-<?php if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {
-    $dlk_user = $_COOKIE['dlike_username'];$sql_Z = $conn->query("SELECT * FROM dlikeaccounts where username = '$dlk_user'");$row_Z = $sql_Z->fetch_assoc(); $dlk_profile_img = $row_Z["profile_pic"];}?>
+<?php if(isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']){$dlk_user=$_COOKIE['dlike_username'];$sql_Z=$conn->query("SELECT * FROM dlikeaccounts where username = '$dlk_user'");$row_Z=$sql_Z->fetch_assoc();$dlk_profile_img=$row_Z["profile_pic"];}?>
