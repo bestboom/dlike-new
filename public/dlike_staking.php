@@ -225,7 +225,7 @@ async function getUserStatus() {var user_address =false;
         }
     }else{$('#unskae_row').hide();$('#unstake_row').show();} 
 }
-setTimeout(getUserStatus,1000);
+setTimeout(getUserStatus,600);
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 
 $('#stake_me').click(async function() {
@@ -264,7 +264,7 @@ $('#stake_me').click(async function() {
                                 }
                             } 
                         }); 
-                    }, 15000);
+                    }, 12000);
                 } else {toastr.error('some issue in staking.');enable_stake();return false;}
             }else{toastr.error('phew... Not enough amount you want to stake');enable_stake();return false;}
         }
@@ -303,7 +303,7 @@ if (dlike_username != null) {var user_address =false;
                             }
                         }
                     }); 
-                }, 15000);}
+                    }, 12000);}
             }else{toastr.error('phew... Not enough amount you want to unstake');enable_unstake();return false;}
         }
     }else{ toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
@@ -319,13 +319,25 @@ $('#claimback_tokens').click(async function() {var user_address =false;
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var unstakingAmount = await myContract.userunstakeamount(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount);
-
             var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: true, feeLimit: 15000000, callValue: 0, from: user_address });
-            if(result){
-                toastr.success('You UnStaked Token Successfully.');
+            if(result){$('#stakingStatus').modal('show');
+                $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                var x = setInterval(function() {
+                    $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                        if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
+                            if(tx_result=='SUCCESS'){
+                                $(".st_status_message").html('Tokens Claimed Successfully!');
+                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
+                            }else{
+                                $(".st_status_message").html('Something Wrong! Try Again.');
+                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
+                            }
+                        }
+                    }); 
+                }, 12000);
             }
-         }
-    }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
+        }
+    }else{toastr.error('Non-Tronlink browser detected. You should use Tronlink Wallet!');}
 });
 
 
