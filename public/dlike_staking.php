@@ -191,7 +191,7 @@ async function getUserStatus() {var user_address =false;
             if(isUnstaking==true){
                 $('#unskae_row').hide();$('#unstake_timer_row').show();
                 $('#unstakingAmount').html(unstakingAmount);
-                
+                $('.claimback_tk').html('Claim '+unstakingAmount+ ' unstaked Tokens');
                 var days, hours, minutes, seconds; // variables for time units
                 var countdown = document.getElementById("unstakingTimer"); // get tag element
                 var countdownStart = setInterval(function(){getCountdown()}, 1000);
@@ -216,8 +216,7 @@ async function getUserStatus() {var user_address =false;
                     
                     if(seconds_left<=0){clearInterval(countdownStart);
                         countdown.innerHTML = "<span>00</span> : <span>00</span> : <span>00</span>";
-                        console.log(unstakingAmount);
-                        $('#unstake_claim_row').show();$('#unstake_timer_row').hide();$('.claimback_tk').html(unstakingAmount);
+                        $('#unstake_claim_row').show();$('#unstake_timer_row').hide();
                     }else{$('#unskae_row').hide();$('#unstake_timer_row').show();  
                         countdown.innerHTML = "<span>" + days + " Day <span>" + hours + "</span> : <span>" + minutes + "</span> : <span>" + seconds + "</span>";    
                     }
