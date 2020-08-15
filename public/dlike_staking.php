@@ -121,7 +121,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                                 </div>
                                 <div id="unstake_claim_row" class="row" style="margin-top: 55px;justify-content: center; display: none;">
                                     <div id="stake_sub" style="width: 90%;">
-                                         <center><button type="button" class="btn btn-primary" id="claimback_tokens"style="width: 30%;"><span class="claimback_tk">Claim Unstaked Tokens</span></button></center>
+                                         <center><button type="button" class="btn btn-primary" id="claimback_tokens"><span class="claimback_tk">Claim Unstaked Tokens</span></button></center>
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +216,7 @@ async function getUserStatus() {var user_address =false;
                     
                     if(seconds_left<=0){clearInterval(countdownStart);
                         countdown.innerHTML = "<span>00</span> : <span>00</span> : <span>00</span>";
-                        $('#claimback_tk').html('Claim ' +unstakingAmount+ 'UnStaked Tokens');$('#unstake_claim_row').show();$('#unstake_timer_row').hide();
+                        $('.claimback_tk').html('Claim ' +unstakingAmount+ 'UnStaked Tokens');$('#unstake_claim_row').show();$('#unstake_timer_row').hide();
                     }else{$('#unskae_row').hide();$('#unstake_timer_row').show();  
                         countdown.innerHTML = "<span>" + days + " Day <span>" + hours + "</span> : <span>" + minutes + "</span> : <span>" + seconds + "</span>";    
                     }
