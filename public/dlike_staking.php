@@ -139,32 +139,30 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
     <div class="latest-tranjections-block">
         <div class="container">
             <div class="latest-tranjections-block-inner">
-                <div class="panel-heading-block"><h5>Top Stakings Accounts</h5></div>
+                <div class="panel-heading-block"><h5>Transaction History</h5></div>
                 <table class="table coin-list latest-tranjections-table">
                     <thead>
                         <tr>
-                            <th scope="col">Username</th>
-                            <th scope="col">Tron Address</th>
                             <th scope="col">Amount Staked</th>
-                            <th scope="col">TRX ID</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Time Staked</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $sql_st = $conn->query("SELECT * FROM dlike_staking ORDER BY amount DESC Limit 200");
+                        <?php $sql_st = $conn->query("SELECT * FROM dlike_staking_transactions where username = '$dlike_user' ORDER BY amount DESC Limit 30");
                             if ($sql_st->num_rows > 0) {
                                 while($row_t = $sql_st->fetch_assoc()) {?> 
-                        <tr>   
-                            <td><?php echo $row_t["username"]; ?></td>
-                            <td><?php echo $row_t["tron_address"]; ?></td>
+                        <tr>
                             <td><?php echo $row_t["amount"]; ?></td>
+                            <td><?php echo $row_t["type"]; ?></td>
                             <td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></td>
                             <td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> 
                         </tr>
                         <? } }?>
                     </tbody>
                 </table>
-            </div><!-- order-history-block-inner -->
+            </div>
         </div>
     </div>
 </div>  
@@ -308,7 +306,9 @@ $('#stake_me').click(async function() {
 
 
 
-$('#unstake_me').click(async function() {var user_address =false;
+$('#unstake_me').click(async function() {
+if (dlike_username != null) {
+    var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;console.log(user_address)
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;            
         }else{ let unstk_amt = $('#unstakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';console.log(stk_wallet);
@@ -347,6 +347,7 @@ $('#unstake_me').click(async function() {var user_address =false;
     }else{
         toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');
     }
+} else {toastr.error('You must be login with DLIKE username!');return false;}
     // if (dlike_username != null) {
     //     let unstk_amt = $('#unstakeamount').val();
     //     if (unstk_amt == "") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
