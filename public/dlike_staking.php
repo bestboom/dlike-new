@@ -314,28 +314,13 @@ if (dlike_username != null) {var user_address =false;
 $('#claimback_tokens').click(async function() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;                
-        }else{
+        }else{$('#stakingStatus').modal('show');
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var unstakingAmount = await myContract.userunstakeamount(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount);
-            var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: true, feeLimit: 15000000, callValue: 0, from: user_address });
-            if(result){$('#stakingStatus').modal('show');
-                $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
-                var x = setInterval(function() {
-                    $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
-                        if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
-                            if(tx_result=='SUCCESS'){
-                                $(".st_status_message").html('Tokens Claimed Successfully!');
-                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
-                            }else{
-                                $(".st_status_message").html('Something Wrong! Try Again.');
-                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
-                            }
-                        }
-                    }); 
-                }, 12000);
-            }
+            //var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: true, feeLimit: 15000000, callValue: 0, from: user_address });
+
         }
     }else{toastr.error('Non-Tronlink browser detected. You should use Tronlink Wallet!');}
 });
