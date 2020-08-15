@@ -216,7 +216,8 @@ async function getUserStatus() {var user_address =false;
                     
                     if(seconds_left<=0){clearInterval(countdownStart);
                         countdown.innerHTML = "<span>00</span> : <span>00</span> : <span>00</span>";
-                        $('#unstake_claim_row').show();$('#unstake_timer_row').hide();$('.claimback_tk').html('Claim ' +unstakingAmount+ 'UnStaked Tokens');
+                        console.log(unstakingAmount);
+                        $('#unstake_claim_row').show();$('#unstake_timer_row').hide();$('.claimback_tk').html(unstakingAmount);
                     }else{$('#unskae_row').hide();$('#unstake_timer_row').show();  
                         countdown.innerHTML = "<span>" + days + " Day <span>" + hours + "</span> : <span>" + minutes + "</span> : <span>" + seconds + "</span>";    
                     }
