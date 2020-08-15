@@ -314,7 +314,7 @@ if (dlike_username != null) {var user_address =false;
 $('#claimback_tokens').click(async function() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;                
-        }else{
+        }else{ $("#claimback_tokens").attr("disabled", true).html('processing...');
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var unstakingAmount = await myContract.userunstakeamount(user_address).call();
