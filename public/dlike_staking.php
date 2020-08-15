@@ -322,7 +322,7 @@ if (dlike_username != null) {
                         if(status=='success'){
                             var tx_result = data.data[0].ret[0].contractRet;  
                             if(tx_result=='SUCCESS'){
-                                $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: stk_amt,wallet: user_address,trx_id: result},});
+                                $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: unstk_amt,wallet: user_address,trx_id: result},});
                                 $(".st_status_message").html('UnStaking Initiated Successfully!');
                                 $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
                             }else{

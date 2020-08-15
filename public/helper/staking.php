@@ -44,7 +44,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'unstaking' && isset($_POST[
 	$username = $_COOKIE['dlike_username'];
     $wallet = trim(mysqli_real_escape_string($conn, $_POST["wallet"]));
     $trx_id = trim(mysqli_real_escape_string($conn, $_POST["trx_id"]));
-
+    $tron_decimals = '1000000';
+    $unstk_amount = $unstk_amount/$tron_decimals;
 	if(empty($unstk_amount)){
         $errors = "Please enter unstaking amount";
     }
