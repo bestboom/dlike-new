@@ -22,27 +22,11 @@
 <meta property="og:title" content="Dlike - Share To Get Rewarded" />
 <meta property="og:description" content="Dlike is a blockchain based dApp where you share links from your own blog articles or any useful link that is informative for community and get rewarded if community likes your links with steem upvotes." />
 <meta property="og:image" content="/images/dlike-main.jpg" />
-<? } ?><link rel="apple-touch-icon" sizes="180x180" href="https://dlike.io/images/favicons/apple-touch-icon.png?v=kPvWrWRLXe">
-<link rel="icon" type="image/png" sizes="32x32" href="https://dlike.io/images/favicons/favicon-32x32.png?v=kPvWrWRLXe">
-<link rel="icon" type="image/png" sizes="16x16" href="https://dlike.io/images/favicons/favicon-16x16.png?v=kPvWrWRLXe">
-<link rel="manifest" href="https://dlike.io/images/favicons/site.webmanifest?v=kPvWrWRLXe">
-<link rel="shortcut icon" href="https://dlike.io/images/favicons/favicon.ico?v=kPvWrWRLXe">
-<meta name="apple-mobile-web-app-title" content="DLIKE">
-<meta name="application-name" content="DLIKE">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="msapplication-config" content="https://dlike.io/images/favicons/browserconfig.xml?v=kPvWrWRLXe">
-<meta name="theme-color" content="#ffffff">
-<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
-<link rel="stylesheet" href="/assets/css/themify-icons.css">
-<link rel="stylesheet" href="/assets/css/slick.css">
-<link rel="stylesheet" href="/css/style3.css">
-<link rel="stylesheet" href="/css/responsive.css">
-<style type="text/css">#logout_btn{padding: 8px 8px 8px 32px;text-decoration: none;font-size: 18px;color: #c5bebe;display: block;transition: .3s;font-weight: 600;cursor:pointer;}
-.top_nav{margin: 0px;}.prof_img_nav{background: #fff;margin-top: -6px;}.top_nav_li{padding-top: 4px;}</style>
+<? } ?>
+<link rel="apple-touch-icon" sizes="180x180" href="https://dlike.io/images/favicons/apple-touch-icon.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="32x32" href="https://dlike.io/images/favicons/favicon-32x32.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="16x16" href="https://dlike.io/images/favicons/favicon-16x16.png?v=kPvWrWRLXe"><link rel="manifest" href="https://dlike.io/images/favicons/site.webmanifest?v=kPvWrWRLXe"><link rel="shortcut icon" href="https://dlike.io/images/favicons/favicon.ico?v=kPvWrWRLXe"><meta name="apple-mobile-web-app-title" content="DLIKE"><meta name="application-name" content="DLIKE"><meta name="msapplication-TileColor" content="#2d89ef"><meta name="msapplication-config" content="https://dlike.io/images/favicons/browserconfig.xml?v=kPvWrWRLXe"><meta name="theme-color" content="#ffffff">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
 </head><body>
-<div id="mySidenav" class="sidenav" style="    z-index: 222222;">
+<div id="mySidenav" class="sidenav" style="z-index: 222222;">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/wallet">Wallet</a>
 <a href="/dliker">DLIKER</a> <? } else {} ?>        
