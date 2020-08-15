@@ -21,22 +21,12 @@ $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
     $row_W = $sql_W->fetch_assoc(); $profile_pic = $row_W["profile_pic"];
 
 $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and permlink = '$link'");
-    $row_L = $checkLikes->fetch_assoc();
-    if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-    $post_income = $postLikes * $post_reward;
+$row_L = $checkLikes->fetch_assoc();
+if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward;
 
 $urlData = parse_url($ext_url );
 $host = preg_replace('/^www\./', '', $urlData['host']);
 ?>
-<style type="text/css">
-    .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
-    .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
-    .post-style-two.post-full-width .post-contnet-wrap {padding: 30px 40px 31px 40px;}
-    #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
-    .auth-time{font-size: 13px;padding-left: 3px;}
-    .post-title{line-height: 1.8rem;white-space: normal !important;font-size: 20px;margin-bottom: 18px;font-weight: 700;}
-    @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}
-</style>
 </div>
     <div class="latest-post-section">
         <div class="container">
@@ -103,8 +93,7 @@ if ($sql_T && $sql_T->num_rows > 0)
         <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div>
-    </article></div>
-<?php } } ?> 
+    </article></div> <?php } } ?> 
 </div>
 </div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>

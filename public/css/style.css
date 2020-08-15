@@ -1032,6 +1032,10 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .trending_hr{margin: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);}
 #logout_btn{padding: 8px 8px 8px 32px;text-decoration: none;font-size: 18px;color: #c5bebe;display: block;transition: .3s;font-weight: 600;cursor:pointer;}
 .top_nav{margin: 0px;}.prof_img_nav{background: #fff;margin-top: -6px;}.top_nav_li{padding-top: 4px;}
+.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 40px 31px 40px;}
+.auth-time{font-size: 13px;padding-left: 3px;}
+.post-title{line-height: 1.8rem;white-space: normal !important;font-size: 20px;margin-bottom: 18px;font-weight: 700;}
+@media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}
 
 
 
