@@ -1017,6 +1017,20 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .toast-info{background-color:#2f96b4}
 .toast-warning{background-color:#f89406}
 .toast-progress{position:absolute;left:0;bottom:0;height:4px;background-color:#000;opacity:.4;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);filter:alpha(opacity=40)}
+
+
+.latest-post-section{min-height:80vh;padding: 70px 0px 60px 0px;}
+.hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
+#post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
+.bottom_block{width:100%}
+.post-style-two .post-contnet-wrap-top{padding: 5px 10px 5px 10px;}
+.post-style-two .author-info h5{padding-top: 6px;line-height: 1em;}
+.post_bottom{padding: 15px 15px 10px !important;}
+.col-lg-4.col-md-6.postsMainDiv > .post-style-two{margin-bottom: 40px !important;}
+.post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
+.main_top{margin: 5px;font-weight: 600;justify-content: space-between;color: #c51d24;}
+.trending_hr{margin: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);}
+
 @media all and (max-width: 240px) {
 #toast-container > div{padding:8px 8px 8px 50px;width:11em}
 #toast-container .toast-close-button{right:-.2em;top:-.2em}
