@@ -1,5 +1,6 @@
 <?php include ('template/header7.php'); ?>
 </div>
+<div class="latest-post-section"><div class="container">
 <div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row">
 <?php $topLikes= $conn->query("SELECT * FROM postslikes Where update_time > now() - INTERVAL 24 HOUR ORDER BY likes DESC LIMIT 30");

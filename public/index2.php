@@ -28,8 +28,7 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     <div class="post-comments bottom_block">
         <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
-    </div>
-</article></div> <?php } } ?> 
+    </div></article></div> <?php } } ?> 
 </div>
 <center><a href="/posts/2"><button class="btn btn-danger">Load More</button></a></center>
 </div></div>

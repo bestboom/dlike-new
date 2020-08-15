@@ -275,7 +275,7 @@ $('#stake_me').click(async function() {
 
 $('#unstake_me').click(async function() {
 if (dlike_username != null) {var user_address =false;
-    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;console.log(user_address)
+    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;            
         }else{ $("#unstake_me").attr("disabled", true).html('unstaking...');let unstk_amt = $('#unstakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';
             if (unstk_amt=="") {toastr.error('phew... Please enter the amount you want to unstake');enable_unstake();return false;}
@@ -320,7 +320,7 @@ $('#claimback_tokens').click(async function() {var user_address =false;
             var unstakingAmount = await myContract.userunstakeamount(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount);
             await new Promise((resolve, reject) => setTimeout(resolve, 400));
-            var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: true, feeLimit: 15000000, callValue: 0, from: user_address });
+            var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
             if(result){toastr.success('Transaction initiated successfully!');setTimeout(function(){window.location.reload();}, 700);}
         }
     }else{toastr.error('Non-Tronlink browser detected. You should use Tronlink Wallet!');}
