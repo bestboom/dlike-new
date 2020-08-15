@@ -305,6 +305,8 @@ $('#stake_me').click(async function() {
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 
+
+
 $('#unstake_me').click(async function() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;            
@@ -313,7 +315,7 @@ $('#unstake_me').click(async function() {var user_address =false;
                
                 var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                 var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                var stakedAmount = await myContract.checkStake(user_address).call();
+                var stakedAmount = await myContract.userstakedamount(user_address).call();
                 stakedAmount = window.tronWeb.toDecimal(stakedAmount);
                 unstk_amt = unstk_amt * 1e6;
                 if(parseFloat(unstk_amt) <=stakedAmount){
@@ -345,7 +347,7 @@ $('#unstake_me').click(async function() {var user_address =false;
                 }
         }
     }else{
-        toastr.error('Non-Tronlink','Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');
+        toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');
     }
     // if (dlike_username != null) {
     //     let unstk_amt = $('#unstakeamount').val();
