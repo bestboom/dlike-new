@@ -173,7 +173,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 </div></div></div>
 <?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
-
+function enable_unstake(){$("#unstake_me").attr("disabled", false).html('Unstake');}
 function pad(n) {return (n < 10 ? '0' : '') + n;}
     async function getUserStatus() {
       var user_address =false;
@@ -289,15 +289,6 @@ $('#stake_me').click(async function() {
                             } 
                         }); 
                     }, 15000);
-                    //$.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},
-                      //  success: function(data) {
-                        //    try { var response = JSON.parse(data)
-                        //        if (response.error == true) {toastr.error(response.message);return false;
-                        //        } else {toastr.success(response.message);setTimeout(function(){window.location.reload();}, 400);}
-                        //    } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-                       // }
-                    //});
-                //toastr.success('You Staked Token Successfully.');
                 } else {toastr.error('some issue in staking.');$("#stake_me").attr("disabled", false).html('stake');return false;}
             }else{toastr.error('phew... Not enough amount you want to stake');$("#stake_me").attr("disabled", false).html('Stake');return false;}
         }
@@ -311,18 +302,18 @@ if (dlike_username != null) {
     var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;console.log(user_address)
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;            
-        }else{ let unstk_amt = $('#unstakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';console.log(stk_wallet);
-            if (unstk_amt=="") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
-            if(stk_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');return false;}
+        }else{ $("#unstake_me").attr("disabled", true).html('unstaking...');let unstk_amt = $('#unstakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';console.log(stk_wallet);
+            if (unstk_amt=="") {toastr.error('phew... Please enter the amount you want to unstake');enable_unstake();return false;}
+            if(stk_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');enable_unstake();return false;}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var stakedAmount = await myContract.userstakedamount(user_address).call();
             stakedAmount = window.tronWeb.toDecimal(stakedAmount);console.log(stakedAmount)
             unstk_amt = unstk_amt * 1e6; console.log(unstk_amt)
             if(parseFloat(unstk_amt) <=stakedAmount){
-                if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
+                if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');enable_unstake();return false;}
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-                    var result = await myContract.unstake(unstk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
+                    var result = await myContract.claimunstake(unstk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){
                     $('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
@@ -331,40 +322,20 @@ if (dlike_username != null) {
                         if(status=='success'){
                             var tx_result = data.data[0].ret[0].contractRet;  
                             if(tx_result=='SUCCESS'){
-                                $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: stk_amt,wallet: user_address,trx_id: result},
-                                });
+                                $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: stk_amt,wallet: user_address,trx_id: result},});
                                 $(".st_status_message").html('UnStaking Initiated Successfully!');
-                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
-                                setTimeout(function(){window.location.reload();}, 1000);
+                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
                             }else{
                                 $(".st_status_message").html('Something Wrong! Try Again.');
-                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
-                                setTimeout(function(){window.location.reload();}, 1000);
+                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
                             }
-                        } 
+                        }
                     }); 
                 }, 15000);}
             }else{toastr.error('phew... Not enough amount you want to unstake');return false;}
         }
-    }else{
-        toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');
-    }
+    }else{ toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
 } else {toastr.error('You must be login with DLIKE username!');return false;}
-    // if (dlike_username != null) {
-    //     let unstk_amt = $('#unstakeamount').val();
-    //     if (unstk_amt == "") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
-         
-    //     $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',unstake_amount: unstk_amt},
-    //         success: function(data) {
-    //             try { var response = JSON.parse(data)
-    //                 if (response.error == true) {toastr.error(response.message);return false;
-    //                 } else {toastr.success(response.amt);
-    //                     toastr.success(response.id);gettronweb();
-    //                 }
-    //             } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-    //         }
-    //     });
-    // } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 
 
