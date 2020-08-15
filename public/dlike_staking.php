@@ -313,7 +313,9 @@ $('#unstake_me').click(async function() {var user_address =false;
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;            
         }else{ let unstk_amt = $('#unstakeamount').val();let stk_wallet = '<?php echo $my_staking_wallet; ?>';console.log(stk_wallet);
             if (unstk_amt=="") {toastr.error('phew... Please enter the amount you want to unstake');return false;}
-            if(stk_wallet=""){toastr.error('Hey' +dlike_username +'! It seems you have not staked any tokens yet!');return false;}
+            if(stk_wallet=""){toastr.error('Hey' +dlike_username +'! It seems you have not staked any tokens yet!');return false;} else{
+                if (user_address != stk_wallet) {toastr.error('Hey' +dlike_username +'! You are staking with a different Tron address');return false;}
+            }
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var stakedAmount = await myContract.userstakedamount(user_address).call();
