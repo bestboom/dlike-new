@@ -143,10 +143,10 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                 <table class="table coin-list latest-tranjections-table">
                     <thead>
                         <tr>
-                            <th scope="col">Amount Staked</th>
-                            <th scope="col">Username</th>
+                            <th scope="col">Amount</th>
                             <th scope="col">Type</th>
-                            <th scope="col">Time Staked</th>
+                            <th scope="col">Trx ID</th>
+                            <th scope="col">Time</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -317,7 +317,8 @@ if (dlike_username != null) {
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var stakedAmount = await myContract.userstakedamount(user_address).call();
-            stakedAmount = window.tronWeb.toDecimal(stakedAmount);unstk_amt = unstk_amt * 1e6;
+            stakedAmount = window.tronWeb.toDecimal(stakedAmount);console.log(stakedAmount)
+            unstk_amt = unstk_amt * 1e6; console.log(unstk_amt)
             if(parseFloat(unstk_amt) <=stakedAmount){
                 if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
