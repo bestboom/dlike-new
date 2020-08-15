@@ -116,12 +116,12 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                                     <div id="stake_sub" style="width: 90%;">
                                         <div class="form-group"><b>Pending Unstake Tokens: </b><span id="unstakingAmount">0</span> DLIKE</div>
                                         <div class="form-group"><b>Availble to claim after: </b><span id="unstakingTimer">00 : 00 : 00</span></div>
-                                        <div style="color: #c51d24;">You can initiate new unstake once old one is matured!</div>
+                                        <div style="color: #c51d24;"><b>You can initiate new unstake once old one is matured!</b></div>
                                     </div>
                                 </div>
                                 <div id="unstake_claim_row" class="row" style="margin-top: 55px;justify-content: center; display: none;">
                                     <div id="stake_sub" style="width: 90%;">
-                                         <center><button type="button" class="btn btn-primary" id="claimback_tokens"style="width: 30%;">ClaimBack Tokens</button></center>
+                                         <center><button type="button" class="btn btn-primary" id="claimback_tokens"style="width: 30%;"><span class="claimback_tk">Claim Unstaked Tokens</span></button></center>
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +216,7 @@ async function getUserStatus() {var user_address =false;
                     
                     if(seconds_left<=0){clearInterval(countdownStart);
                         countdown.innerHTML = "<span>00</span> : <span>00</span> : <span>00</span>";
-                        $('#unstake_claim_row').show();$('#unstake_timer_row').hide();
+                        $('#claimback_tk').html('Claim ' +unstakingAmount+ 'UnStaked Tokens');$('#unstake_claim_row').show();$('#unstake_timer_row').hide();
                     }else{$('#unskae_row').hide();$('#unstake_timer_row').show();  
                         countdown.innerHTML = "<span>" + days + " Day <span>" + hours + "</span> : <span>" + minutes + "</span> : <span>" + seconds + "</span>";    
                     }
@@ -311,28 +311,21 @@ if (dlike_username != null) {var user_address =false;
 });
 
 
-$('#claimback_tokens').click(async function() {
-    var user_address =false;
-      if (window.tronWeb!=undefined) {
-         user_address= await window.tronWeb.defaultAddress.base58;
-         if(user_address==false){
-             alertify.alert('Login','Please Login to Tronlink Wallet.');
-              return false;                  
-         }else{
+$('#claimback_tokens').click(async function() {var user_address =false;
+    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+        if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;                
+        }else{
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var unstakingAmount = await myContract.userunstakeamount(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount);
 
             var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: true, feeLimit: 15000000, callValue: 0, from: user_address });
-                                   console.log(result);
-             if(result){
+            if(result){
                 toastr.success('You UnStaked Token Successfully.');
-             }
+            }
          }
-    }else{
-        toastr.error('Non-Tronlink','Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');
-    }
+    }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
 });
 
 
