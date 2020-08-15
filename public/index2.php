@@ -14,7 +14,7 @@
 </style>
 </div>
 <div class="latest-post-section"><div class="container">
-<div class="row main_top"><?php include('/functions/top_trending.php');?></div>
+<div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row">
 <?php $sql_T = $conn->query("SELECT * FROM dlikeposts ORDER BY created_at DESC LIMIT 60");
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
@@ -28,7 +28,7 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     }
     $checkLikes= $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
     if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward; ?>
-<div class="col-lg-4 col-md-6 postsMainDiv"><div class="post-style-two">
+<div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
     <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
     <div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
     <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
@@ -42,7 +42,7 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
         <div><img src="./images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
         <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
     </div>
-</div></div> <?php } } ?> 
+</article></div> <?php } } ?> 
 </div>
 <center><a href="/posts/2"><button class="btn btn-danger">Load More</button></a></center>
 </div></div>
@@ -50,6 +50,6 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
 <?php include ('template/dlike_footer.php'); ?>
 <script>
 $(document).ready(function () {
-var l;var r=40;var t=function(){var r=0;$(".list-2 a").l(function(){var l=$(this).outerWidth();r+=l});return r};var e=function(){return $(".wrapper").outerWidth()-t()-i()-r};var i=function(){return $(".list-2").position().left};var o=function(){if($(".wrapper").outerWidth()<t()){$(".scroller-right-2").show().t("display","flex")}else{}if(i()<0){$(".scroller-left-2").show().t("display","flex")}else{$(".item").animate({left:"-="+i()+"px"},"slow")}};o();$(window).i("resize",function(l){o()});$(".scroller-right-2").click(function(){$(".scroller-left-2").o("slow");if(i()<-672){$(".scroller-right-2").s("slow")}$(".list-2").animate({left:"+="+"-112px"},"slow",function(){})});$(".scroller-left-2").click(function(){$(".scroller-right-2").o("slow");$(".scroller-left-2").s("slow");$(".list-2").animate({left:"-="+i()+"px"},"slow",function(){})});
+var hidWidth;var scrollBarWidths_2=40;var widthOfList_2=function(){var r=0;$(".list-2 a").t(function(){var t=$(this).outerWidth();r+=t});return r};var widthOfHidden_2=function(){return $(".wrapper").outerWidth()-widthOfList_2()-getLeftPosi_2()-scrollBarWidths_2};var getLeftPosi_2=function(){return $(".list-2").position().left};var reAdjust_2=function(){if($(".wrapper").outerWidth()<widthOfList_2()){$(".scroller-right-2").show().i("display","flex")}else{}if(getLeftPosi_2()<0){$(".scroller-left-2").show().i("display","flex")}else{$(".item").animate({left:"-="+getLeftPosi_2()+"px"},"slow")}};reAdjust_2();$(window).l("resize",function(t){reAdjust_2()});$(".scroller-right-2").click(function(){$(".scroller-left-2").s("slow");if(getLeftPosi_2()<-672){$(".scroller-right-2").o("slow")}$(".list-2").animate({left:"+="+"-112px"},"slow",function(){})});$(".scroller-left-2").click(function(){$(".scroller-right-2").s("slow");$(".scroller-left-2").o("slow");$(".list-2").animate({left:"-="+getLeftPosi_2()+"px"},"slow",function(){})});
 });
  </script>
