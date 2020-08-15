@@ -10,13 +10,10 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     $post_tags = $row_T["tags"];$permlink = $row_T["permlink"];
     $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
     $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
-    if ($sql_W && $sql_W->num_rows > 0){  $row_W = $sql_W->fetch_assoc();$profile_pic = $row_W["profile_pic"];
-       if (!empty($profile_pic)) { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
-    }
+    if ($sql_W && $sql_W->num_rows > 0){$row_W = $sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
     $checkLikes= $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
     if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward; ?>
-<div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?>
-</div> <?php } } ?> 
+<div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> <?php } } ?> 
 </div>
 <center><a href="/posts/2"><button class="btn btn-danger">Load More</button></a></center>
 </div></div>
