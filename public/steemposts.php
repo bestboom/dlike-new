@@ -18,12 +18,3 @@
 </div>
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/dlike_footer.php'); ?>
-<script type="text/javascript">
-    $( document ).ready(function() {    
-        $('#loadings').delay(6000).fadeOut('slow');
-
-        //$(window).on('load',function(){
-        //    $('#dlikem_maket').modal('show');
-        //});
-    });
-</script>

@@ -266,22 +266,6 @@ $(document).ready(function(){
 	});
 });
 
-//check likes
-/* function getTotalLikes(thisAutor, thisPermlink, currentLikesDivElement){
-	$.ajax({
-		type: "POST",
-		url: '/helper/postLikes.php?author='+thisAutor+'&permlink='+thisPermlink,
-		dataType: 'json',
-		success: function(response) {
-			$('.mainDiv' + currentLikesDivElement).attr('postLikes', response.likes);
-			$('.hov_me').attr('data-likes', response.likes);
-			$('.commentsDiv' + currentLikesDivElement).html(response.likes);
-		},
-		error: function() {
-			//console.log('Error occured');
-		}
-	});
-}; */
 
 function showPostSortedByLikes() {
 	var divList = $(".postsMainDiv");
