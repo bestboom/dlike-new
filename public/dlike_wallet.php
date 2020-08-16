@@ -191,17 +191,14 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                         $(".wd_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                         var x = setInterval(function() {
                             $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
-                                if(status=='success'){
-                                    var tx_result = data.data[0].ret[0].contractRet;  
+                                if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
                                     if(tx_result=='SUCCESS'){
                                         $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});
                                         $(".wd_status_message").html('Tokens Withdraw Successfully!');
-                                        $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');
-                                        setTimeout(function(){window.location.reload();}, 1000);
+                                        $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
                                     }else{
                                         $(".wd_status_message").html('Something Wrong! Try Again.');
-                                        $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');
-                                        setTimeout(function(){window.location.reload();}, 1000);
+                                        $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
                                     }
                                 } 
                             }); 

@@ -351,7 +351,39 @@ $('#claim_stk_reward').click(async function() {
         }
         doAjax().then(async function(data) { var response = JSON.parse(data);
             if (response.error == true) {toastr['error'](response.message);return false;}
-            else{toastr.success('all is fine on this end!');}
+            else{let user_address =false;
+                if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+                }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
+                let my_wallet = '<?php echo $my_staking_wallet; ?>';
+                if(my_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');return false;}
+                if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
+                } else { 
+                    $.ajax({type: 'post',url:'helper/staking.php',data:{action : 'pay_staking_reward',claim_amount: claim_amt,wallet: user_address},});
+                    let claim_amt = claim_amt * 1e6;
+                    let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+                    let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+                    if (user_address != my_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
+                    await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+                    let result = await myContract.withdrawReward(claim_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
+                    if(result){$('#stakingStatus').modal('show');
+                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                    var x = setInterval(function() {
+                    $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                        if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
+                            if(tx_result=='SUCCESS'){
+                                $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'reward_paid',amount: claim_amt,wallet: user_address,trx_id: result},});
+                                $(".st_status_message").html('Stakign Reward Claimed Successfully!');
+                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
+                            }else{
+                                $(".st_status_message").html('Something Wrong! Try Again.');
+                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
+                            }
+                        }
+                    }); 
+                    }, 12000);}
+                }
+
+            }
         });
 
     } else {toastr.error('You must be login with DLIKE username!');return false;}
