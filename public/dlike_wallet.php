@@ -176,7 +176,6 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
             if (response.error == true) {toastr['error'](response.message);enable_draw();return false;}
             else{ let user_address =false;
                 if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
-                    console.log(user_address)
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
                 let my_wallet = '<?php echo $offchain_address;?>';
                 if(user_address != my_wallet) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');enable_draw();return false;}

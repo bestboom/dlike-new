@@ -13,13 +13,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
     if ($dlk_amount > $max_withdraw_limit) {$errors = 'Phew... Max allowed amount is 5000 DLIKE per 24 hours';}
 
     $check_amount = $conn->query("SELECT amount FROM dlike_wallet where username = '$username'");
-	$row_A = $check_amount->fetch_assoc();
-	$wallet_amount = $row_A['amount'];
+	$row_A = $check_amount->fetch_assoc(); $wallet_amount = $row_A['amount'];
 	if ($wallet_amount <= 0) {$errors = 'Not enough balance';}
 	if ($wallet_amount < $dlk_amount) {$errors = 'Not enough balance';}
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
 	$check_limit = $conn->query("SELECT * FROM dlike_withdrawals where username = '$username' and DATE(req_on) = CURDATE()");
-	if ($check_limit->num_rows > 35) {$errors = 'Phew... One withdrawal allowed daily!';}
+	if ($check_limit->num_rows > 0) {$errors = 'Phew... One withdrawal allowed daily!';}
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
 	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 

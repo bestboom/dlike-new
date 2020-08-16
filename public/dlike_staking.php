@@ -342,21 +342,18 @@ $('#claimback_tokens').click(async function() {var user_address =false;
 });
 
 
-$('#claim_stk_reward').click(function() {
+$('#claim_stk_reward').click(async function() {
     if (dlike_username != null) {
         let claim_amt = $('#claimeamount').val();
         if (claim_amt == "") {toastr.error('phew... Claim amount not valid');return false;}
          
-        $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'claim_stake',claim_amount: claim_amt},
-            success: function(data) {
-                try { var response = JSON.parse(data)
-                    if (response.error == true) {toastr.error(response.message);return false;
-                    } else {toastr.success(response.amt);
-                        toastr.success(response.id);gettronweb();
-                    }
-                } catch (err) {toastr.error('Sorry. Server response is malformed.');}
-            }
+        async function doAjax() {return $.ajax({type: 'post',url: '/helper/staking.php',data: { action : 'claim_stake',claim_amount: claim_amt },datatype: 'json',});
+        }
+        doAjax().then(async function(data) { var response = JSON.parse(data);
+            if (response.error == true) {toastr['error'](response.message);return false;}
+            else{toastr.success('all is fine on this end!');}
         });
+
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
     

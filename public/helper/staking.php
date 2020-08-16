@@ -34,11 +34,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['a
             $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$stk_amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
         }
 	   die(json_encode(['error' => false,'message' => 'WOW! Tokens staked Successfully.']));
-		//} else {die(json_encode(['error' => true,'message' => 'Some issue in adding stake. Please contact support!'])); }
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 
-if (isset($_POST['action'])  && $_POST['action'] == 'unstaking' && isset($_POST['amount'])  && $_POST['amount'] != '') { 
+if (isset($_POST['action']) && $_POST['action']=='unstaking' && isset($_POST['amount']) && $_POST['amount'] !='') { 
 
 	$unstk_amount = trim(mysqli_real_escape_string($conn, $_POST["amount"]));
 	$username = $_COOKIE['dlike_username'];
@@ -51,14 +50,12 @@ if (isset($_POST['action'])  && $_POST['action'] == 'unstaking' && isset($_POST[
     }
 
     if (empty($errors)) {$type = 'stakOut';
-
         $stk_account = $conn->query("SELECT * FROM dlike_staking where username='$username'");
-        if ($stk_account->num_rows > 0) {$row_stk = $stk_account->fetch_assoc();$old_amount = $row_stk['amount'];
+        if ($stk_account->num_rows > 0) {$row_stk=$stk_account->fetch_assoc();$old_amount = $row_stk['amount'];
 
             $updateStaking = $conn->query("UPDATE dlike_staking SET amount = '$old_amount' - '$unstk_amount', tron_address = '$wallet', tron_trx='$trx_id' WHERE username='$username'");
 
             $sql_stu = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$unstk_amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
-
         }
        die(json_encode(['error' => false,'message' => 'Tokens unStaked Successfully.']));
     } else {die(json_encode(['error' => true,'message' => $errors]));}
@@ -71,25 +68,24 @@ if (isset($_POST['action'])  && $_POST['action'] == 'claim_stake' && isset($_POS
 	$claim_amount = trim($_POST["claim_amount"]);
 	$username = $_COOKIE['dlike_username'];
 
-	if(empty($claim_amount)){
-        $errors = "Not a valid claim amount value";
-    }
-    if(empty($username)){
-        $errors = "Seems You are not login";
-    }
+	if(empty($claim_amount)){$errors = "Not a valid claim amount value";}
+    if(empty($username)){$errors = "Seems You are not login";}
 
     $check_user = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
-	if ($check_user->num_rows > 0) {$row_C = $check_user->fetch_assoc(); $dlike_user_id=$row_C['id'];}
-	else{$errors = "User does not exist!";}
+	if ($check_user->num_rows > 0) {$row_C = $check_user->fetch_assoc(); $dlike_user_id=$row_C['id'];$verified = $row_C['verified'];
+        if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
+    }else{$errors = "User does not exist!";}
 
     $check_amount = $conn->query("SELECT reward FROM dlike_staking_rewards where username = '$username'");
     if ($check_amount->num_rows > 0) {$row_A = $check_amount->fetch_assoc();$reward_bal = $row_A['reward'];
 		if ($claim_amount > $reward_bal) {$errors = 'Not enough reward balance!';}
+        if ($reward_bal <= 0) {$errors = 'Not enough balance';}
+        if ($claim_amount <= 0) {$errors = 'Not valid value';}
 	}else{$errors = 'Some issue in reward claiming. Please try later!';}
 
-    if (empty($errors)) {die(json_encode(['error' => false,'id' => $dlike_user_id,'amt' => $claim_amount]));} else {die(json_encode(['error' => true,'message' => $errors]));
-	}
 
+    if (empty($errors)) {die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+    } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 
 ?>
