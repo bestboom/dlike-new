@@ -1,20 +1,8 @@
 <?php include('template/header7.php'); 
-if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {
-    die('<script>window.location.replace("https://dlike.io/","_self")</script>');
-} else { $dlike_user = $_COOKIE['dlike_username']; } ?>
-<style type="text/css">
-    .stamp-md {min-width: 2rem;height: 2rem;line-height: 2rem;}
-    .stamp {color: #fff;background: #868e96;display: inline-block;padding: 0 .2rem;text-align: center;border-radius: 3px;font-weight: 600;}
-    .mr-3, .mx-3 {margin-right: 0.75rem !important;}
-    .bg-orange {background-color: #fd9644 !important;}
-    .bg-green {background-color: #5eba00 !important;}
-    .bg-blue {background-color: #467fcf !important;}
-</style>
-</div>
-<?php
+if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io/","_self")</script>'); } else { $dlike_user = $_COOKIE['dlike_username']; } ?>
+</div><?php
 $sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_user'");
-$row_B = $sql_B->fetch_assoc();
-$my_bal = $row_B["amount"];
+$row_B = $sql_B->fetch_assoc();$my_bal = $row_B["amount"];
 
 $sql_A = $conn->query("SELECT count( DISTINCT(username) ) as rferrals FROM dlikeaccounts where refer_by='$dlike_user'");
 $row_A = $sql_A->fetch_assoc(); $my_affiliates = $row_A["rferrals"];
