@@ -22,7 +22,7 @@ include_once '../includes/contract_config.php';
     // write contract data
     $contract = CONTRACT_ADDRESS;
    
-    $function = 'multiMintToken';
+    $function = 'multiMintstakingreward';
     //$vSendAmount  = $vSendAmount * 1e6;
     //$params= array($vHExUser, $vSendAmount);
     $params = array($wallets , $amounts );

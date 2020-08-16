@@ -111,7 +111,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
             $contract = CONTRACT_ADDRESS;
             $function = 'multiMintstakingreward';
 
-            $params = array($wallets , $amounts );
+            $params = array($wallets , $amounts);
             $address =  $vHExAddress;
             $feeLimit = 1000000000;
             $callValue = 0;
