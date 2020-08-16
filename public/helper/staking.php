@@ -1,8 +1,7 @@
 <?php 
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
 require '../includes/config.php';
+include_once '../vendor/autoload.php';
+include_once '../includes/contract_config.php';
 
 if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['amount'])  && $_POST['amount'] != '') { 
 
@@ -147,5 +146,4 @@ if (isset($_POST['action']) && $_POST['action'] == 'reward_paid' && isset($_POST
         $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
     }
 }
-
 ?>
