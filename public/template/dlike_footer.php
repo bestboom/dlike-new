@@ -8,7 +8,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="/js/toaster.js"></script><script src="/js/loader.js"></script>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome2.php'){ ?><script src="/js/signup.js"></script><? } ?><?php if(basename($_SERVER['PHP_SELF']) == 'steemposts.php') { ?> <script src="/js/posts.js"></script><script src="/js/mint.js"></script><script src="https://momentjs.com/downloads/moment.min.js"></script><script src="https://cdn.jsdelivr.net/npm/steemconnect"></script><script src="https://unpkg.com/dsteem@0.10.1/dist/dsteem.js"></script><script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script><script src="/js/steemconnect.js"></script><? } ?>
-<?php if(basename($_SERVER['PHP_SELF']) == 'index2.php' || basename($_SERVER['PHP_SELF']) == 'dlike_posts.php' || basename($_SERVER['PHP_SELF']) == 'trending.php' || basename($_SERVER['PHP_SELF']) == 'dlike_post.php' || basename($_SERVER['PHP_SELF']) == 'dlike_profile.php'){ ?><script src="/js/solve.js"></script><? } ?>
+<?php if(basename($_SERVER['PHP_SELF']) == 'index2.php' || basename($_SERVER['PHP_SELF']) == 'dlike_posts.php' || basename($_SERVER['PHP_SELF']) == 'dlike_trending.php' || basename($_SERVER['PHP_SELF']) == 'dlike_post.php' || basename($_SERVER['PHP_SELF']) == 'dlike_profile.php'){ ?><script src="/js/solve.js"></script><? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'index2.php' || basename($_SERVER['PHP_SELF']) == 'dlike_posts.php' || basename($_SERVER['PHP_SELF']) == 'trending.php'){ ?><script src="/js/trending.js"></script><? } ?>
 </body>
 </html>
