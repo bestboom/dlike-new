@@ -34,7 +34,7 @@ $(document).ready(function(){
 			//check comments
 			function getTotalcomments(t,e){steem.api.getContentReplies(t,e,function(a,n){let m=0;n.forEach(t=>{let e;t.json_metadata&&t.json_metadata.length>0&&(e=JSON.parse(t.json_metadata)),e&&"dlike"==e.community&&(m+=1)}),$("#DlikeComments"+e+t).html(m)})}
 
-			var adduserhtml = "";ar mylabel = $post.permlink +$post.author;var newValue = mylabel.replace('.', '');
+			var adduserhtml = ""; var mylabel = $post.permlink +$post.author;var newValue = mylabel.replace('.', '');
 			adduserhtml += '<a style="color:white;" class="userstatus_icon'+newValue+'"><i class="fa fa-check-circle" class="user_status'+newValue +'"></i></a>';
 
 			//start posts here
