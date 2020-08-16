@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 			//get meta tags
 			let steemTags = metadata.tags; let dlikeTags = steemTags.slice(2);
-			let metatags = dlikeTags.map(function (meta) { if (meta) return '#' + meta});
+			let metatags = dlikeTags.map(function (meta) { if (meta) return '#' + meta + ' '});
 			let category = metadata.category; let category_link = category.toLowerCase(); let exturl = metadata.url;
 
 			//Get the body
@@ -52,11 +52,11 @@ $(document).ready(function(){
 				'\n' +
 				'<div class="author-info">\n' +
 				'\n' +
-				'<h5><a href="/@' + $post.author + '">' + $post.author  + "&nbsp;" +adduserhtml +'</a><div class="time">' + activeDate + '</div></h5>\n' +
+				'<h5><a href="https://steemit.com/@' + $post.author + '" target="_blank">' + $post.author  + "&nbsp;" +adduserhtml +'</a><div class="time">' + activeDate + '</div></h5>\n' +
 				'\n' +    
 				'</div></div>\n' +
 				'\n' +
-				'<div class="post-comments post-catg"><span class="post-meta">' + category + '</span></div>\n' +
+				'<div class="post-comments post-catg"><span class="post-meta"><b>' + category + '</b></span></div>\n' +
 				'\n' +
 				'</div></div>\n' +
 				'\n' +
