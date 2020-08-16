@@ -2,21 +2,7 @@
 ?> </div>
 <?php if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $dlike_user =  $_COOKIE['dlike_username']; } else {$dlike_user='';}
 if($dlike_user == '') { ?>
-<div id="profile_miss">
-    <div class="container">
-        <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">   
-            <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
-                <div class="modal-body">
-                    <div class="share-block"><p style="font-size: 3rem;">ooops!</p></div>
-                    <div class="user-connected-form-block" style="background: #1b1e63;">
-                        <center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
-                        <div class="share-block"><p>You must login with your DLIKE username<br><b><a href="/welcome">Login</a></b></p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> 
+<div id="profile_miss"> <div class="container"> <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;"> <div class="modal-content" style="background: #1b1e63;border-radius:14px;"> <div class="modal-body"> <div class="share-block"><p style="font-size: 3rem;">ooops!</p></div> <div class="user-connected-form-block" style="background: #1b1e63;"> <center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center> <div class="share-block"><p>You must login with your DLIKE username<br><b><a href="/welcome">Login</a></b></p></div> </div> </div> </div> </div> </div></div> 
 <? } else {
 $sql_C = $conn->query("SELECT count(*) as total_stakers, SUM(amount) as total_staked_amount FROM dlike_staking");
 if ($sql_C->num_rows > 0){$row_C = $sql_C->fetch_assoc();
@@ -103,7 +89,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                         </div></div></div>
                         <div role="tabpanel" class="tab-pane fade" id="unstake_dlike">
                              <div class="container">
-                                <div id="unskae_row" class="row" style="margin-top: 55px;justify-content:center;">
+                                <div id="unskae_row" class="row" style="margin-top:55px;justify-content:center;">
                                     <div id="stake_sub" style="width: 90%;"><p>Loading...</p></div>
                                 </div>
                                 <div id="unstake_row" class="row" style="margin-top:55px;justify-content:center; display: none;">
@@ -388,5 +374,4 @@ $('#claim_stk_reward').click(async function() {
 
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
-    
 </script>
