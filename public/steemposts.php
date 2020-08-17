@@ -1,4 +1,4 @@
-<?php include('template/header5.php');?>
+<?php include('template/header7.php');?>
 </div><!-- sub-header -->
 <div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;">
     <div class="container">
@@ -17,7 +17,7 @@
     </div>
 </div>
 <?php include('template/modals/modal.php'); ?>    
-<?php include('template/footer.php'); ?>
+<?php include('template/dlike_footer.php'); ?>
 <script type="text/javascript">
     $( document ).ready(function() {    
         $('#loadings').delay(6000).fadeOut('slow');
