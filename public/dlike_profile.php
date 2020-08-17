@@ -50,7 +50,8 @@ if ($sql_U && $sql_U->num_rows > 0)
 			if ($sql_W->num_rows > 0){$row_W = $sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
 		    $checkLikes=$conn->query("SELECT * FROM postslikes WHERE author='$author' and permlink = '$permlink'");
 		    if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward; ?>
-<div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> <?php } } ?>
+<div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> 
+<?php } } ?>
 </div></div></div>
 <div role="tabpanel" class="tab-pane fade" id="user_likes"><div class="container"><div class="row" style="margin-top: 30px;">
 <?php $sql_M = $conn->query("SELECT * FROM dlike_upvotes where curator = '$prof_user' ORDER BY curation_time DESC");
@@ -67,7 +68,8 @@ if ($sql_M && $sql_M->num_rows > 0)
     	if ($sql_W && $sql_W->num_rows > 0){$row_W = $sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
         $checkLikes=$conn->query("SELECT * FROM postslikes WHERE author='$likes_author' and permlink='$likes_permlink'");
         if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';} $post_income = $postLikes * $post_reward;?>
-<div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> <?php } } ?>
+<div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> 
+<?php } } ?>
 </div></div></div>
 </div>
 <!--<div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies"><div id="replies_content"></div>-->
