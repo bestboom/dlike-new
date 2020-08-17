@@ -73,7 +73,8 @@ $team_reward = '0.04';
 $foundation_reward = '0.025';
 
 $max_withdraw_limit = '5000';
-
 $no_of_staking_rewards = '200';
+
+$tron_contract = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
 
 ?>

@@ -3,48 +3,20 @@ if (isset($_GET['user'])) {$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include('template/header7.php');
 $admin_users = array('dlike_airdrop','dlike_dao','dlike_foundation','dlike_team','dlike_charity');
-if (in_array($prof_user, $admin_users)) {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+if(in_array($prof_user, $admin_users)){die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 
 $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$prof_user'");
 if ($sql_U && $sql_U->num_rows > 0) 
-{
-	$row_U = $sql_U->fetch_assoc();
-    $dlikeuser = $row_U['username'];
-    $account_about= $row_U['about'];
-    $account_web= $row_U['website'];
-    $account_location= $row_U['location'];
-    $user_pro_img= $row_U['profile_pic'];
-    $account_created = strtotime($row_U['created_time']);
-    $account_name= $row_U['full_name'];
-    $profile_banner= $row_U['profile_banner'];
-	$dlike_user = $dlikeuser;
-	$verified= $row_U['verified'];
-	$email= $row_U['email'];
+{	$row_U = $sql_U->fetch_assoc();$dlikeuser = $row_U['username'];$account_about= $row_U['about'];
+    $account_web= $row_U['website'];$account_location= $row_U['location'];
+    $user_pro_img= $row_U['profile_pic'];$account_created = strtotime($row_U['created_time']);
+    $account_name= $row_U['full_name'];$profile_banner= $row_U['profile_banner'];
+	$dlike_user = $dlikeuser;$verified= $row_U['verified'];$email= $row_U['email'];
 } else {$dlike_user = 'none';}
-$login_user = $_COOKIE['dlike_username'];
-?>
-<style type="text/css">
-    .hov_vote{cursor:pointer;width: 21px;height: 21px;margin-top:-3px;}
-    .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
-    #post_likes{padding-right: 3px;font-weight: bold;padding-left: 3px;}
-</style>
+$login_user = $_COOKIE['dlike_username']; ?>
 </div>
 <?php if($dlike_user == 'none') { ?>
-	<div id="profile_miss">
-		<div class="container">
-			<div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">	
-			    <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
-			        <div class="modal-body">
-			            <div class="share-block"><p style="font-size: 3rem;">ooops!</p></div>
-			            <div class="user-connected-form-block" style="background: #1b1e63;">
-			            	<center><i class="fas fa-frown" style="color: #ffff008a;font-size: 4rem;"></i></center>
-			                <div class="share-block"><p>It seems this dlike user does not exist!</p></div>
-			            </div>
-			        </div>
-			    </div>
-			</div>
-		</div>
-	</div> 
+<div id="profile_miss"><div class="container"><div class="user-login-signup-form-wrap" style="padding:7rem 0"><div class="modal-content" style="background:#1b1e63;border-radius:14px"><div class="modal-body"><div class="share-block"><p style="font-size:3rem">ooops!</p></div><div class="user-connected-form-block" style="background:#1b1e63"><center><i class="fas fa-frown" style="color:#ff08a;font-size:4rem"></i></center><div class="share-block"><p>It seems this dlike user does not exist!</p></div></div></div></div></div></div></div>
 <? } else {?>
 <div id="profile_page">
 		<div id="p_cover" class="img-fluid"><?php if(!empty($profile_banner)){ echo '<img src="'.$profile_banner.'" style="width:100%;height:100%;">'; } ?></div>
@@ -103,78 +75,30 @@ $login_user = $_COOKIE['dlike_username'];
 										    $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
 										    $row_L = $checkLikes->fetch_assoc();
 										    if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-										    $post_income = $postLikes * $post_reward; ?><div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
-										<div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
-										<div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
-										<div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
-										<div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
-										</div></div>
-										<div class="post-thumb img-fluid"><?php echo '<a href="/post/'.$author.'/'.$permlink.'"><img src=' . $imgUrl . ' class="card-img-top" /></a>'; ?></a></div>
-										<div class="post-contnet-wrap post_bottom">
-										<h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
-										<p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
-										<div class="post-comments bottom_block">
-										    <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
-										    <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
-										</div>
-										</article></div>
-										<?php } } ?>
+										    $post_income = $postLikes * $post_reward; ?><div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> <?php } } ?>
 								    	</div>
 									</div>
 		                        </div>
-		                        <div role="tabpanel" class="tab-pane fade" id="user_likes">
-		                        	<div class="container">
-								    	<div class="row" style="margin-top: 30px;"><?php
-$sql_M = $conn->query("SELECT * FROM dlike_upvotes where curator = '$prof_user' ORDER BY curation_time DESC");
+<div role="tabpanel" class="tab-pane fade" id="user_likes"><div class="container"><div class="row" style="margin-top: 30px;">
+<?php $sql_M = $conn->query("SELECT * FROM dlike_upvotes where curator = '$prof_user' ORDER BY curation_time DESC");
 if ($sql_M && $sql_M->num_rows > 0)
 {   while ($row_M = $sql_M->fetch_assoc())
-    {
-    	$likes_author = $row_M["author"];
-        $likes_permlink = $row_M["permlink"];
+    {	$likes_author = $row_M["author"];$likes_permlink = $row_M["permlink"];
 
         $sql_T = $conn->query("SELECT * FROM dlikeposts where username='$likes_author' and permlink='$likes_permlink' ORDER BY created_at DESC LIMIT 60");
 		if ($sql_T && $sql_T->num_rows > 0)
-		{$row_T = $sql_T->fetch_assoc();
-			$imgUrl = $row_T["img_url"];
-	        $author = $row_T["username"];
-	        $post_time = strtotime($row_T["created_at"]);
-	        $title = $row_T["title"];
-	        $post_tags = $row_T["tags"];
-	        $permlink = $row_T["permlink"];
-	        $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
+		{	$row_T = $sql_T->fetch_assoc();
+			$imgUrl = $row_T["img_url"];$author = $row_T["username"];$post_time = strtotime($row_T["created_at"]);
+	        $title = $row_T["title"];$post_tags = $row_T["tags"];$permlink = $row_T["permlink"];$post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
 		}
+		$sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$likes_author'");
+    	if ($sql_W && $sql_W->num_rows > 0){$row_W = $sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
 
-        $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$likes_author'");
-        if ($sql_W && $sql_W->num_rows > 0)
-        {   $row_W = $sql_W->fetch_assoc();
-            $profile_pic = $row_W["profile_pic"];
-            if (!empty($profile_pic)) { $user_profile_pic = $profile_pic; } else { $user_profile_pic = 'https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';}
-        }
-
-        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$likes_author' and permlink = '$likes_permlink'");
-        $row_L = $checkLikes->fetch_assoc();
-        if ($checkLikes->num_rows > 0){$postLikes = $row_L['likes'];}else{$postLikes = '0';}
-        $post_income = $postLikes * $post_reward;
-?><div class="col-lg-4 col-md-6 postsMainDiv"><article class="post-style-two">
-    <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
-    <div class="author-thumb"><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$row_T['username'].'" class="img-responsive"></a>'; ?></div>
-    <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
-    <div class="post-catg"><a href="/category/"><span class="post-meta"><?php echo ucfirst($row_T["ctegory"]); ?></span></a></div>
-    </div></div>
-    <div class="post-thumb img-fluid"><?php echo '<a href="/post/'.$author.'/'.$permlink.'"><img src=' . $imgUrl . ' class="card-img-top" /></a>'; ?></a></div>
-    <div class="post-contnet-wrap post_bottom">
-    <h4 class="post-title"><?php echo '<a href="/post/'.$author.'/'.$permlink.'">'.$title.'</a>'; ?></h4>
-    <p class="post-entry post-tags"><?php echo $post_hash_tags; ?></p>
-    <div class="post-comments bottom_block">
-        <div><img src="/images/post/dlike-hover.png" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div>
-        <div><span class="dlike_tokens<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $post_income; ?></span> <b>DLIKE</b></div>
-    </div>
-</article></div>
-<? } } ?>
-</div></div>
-
-		                        	</div>
-		                        </div>
+        $checkLikes=$conn->query("SELECT * FROM postslikes WHERE author='$likes_author' and permlink='$likes_permlink'");
+        if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';} $post_income = $postLikes * $post_reward;?>
+<div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> <?php } } ?>
+</div></div></div>
+</div>
 		                        <div role="tabpanel" class="tab-pane fade p_tab_pad" id="user_replies">
 		                            <div id="replies_content"></div>
 		                    </div>
@@ -182,22 +106,9 @@ if ($sql_M && $sql_M->num_rows > 0)
 		            </div>
 		        </div>
 		    </div>
-<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content modal-custom">
-        <?php include('template/modals/dlike_profile_update.php'); ?>
-    	</div>
-	</div>
-</div>
-<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-custom modalStatus" role="document">
-        <div class="modal-content modal-custom">
-        	<?php include('template/modals/upvotefail.php'); ?>
-        </div>
-    </div>
-</div>				        
-</div>    
-</div>
+<div class="modal fade" id="profile_edit" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content modal-custom"><?php include('template/modals/dlike_profile_update.php'); ?></div></div></div>
+<div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>				        
+</div></div>
 
 <div class="modal fade" id="email_verify" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
