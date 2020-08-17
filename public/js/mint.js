@@ -1,5 +1,3 @@
-    $(document).ready(function() {
-    // Add me
     var optionstk = {
         target: '#add-msg',
         url: 'helper/tkad.php',
