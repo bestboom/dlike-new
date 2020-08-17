@@ -1,9 +1,10 @@
 <?php include('template/header5.php');?>
-</div>
-<div class="latest-post-section"><div class="container">
-    <div class="row main_top"><?php include('functions/top_trending.php');?></div>
-    <div class="row" id="content"></div>
-</div>  
+</div><!-- sub-header -->
+<div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;">
+    <div class="container">
+        <div class="row" id="content">
+        </div>
+    </div>  
 
     <div class="container" style="padding-top:0px;">
         <p>Dlike is a social sharing dapp (decentralized application) built on steem blockchain where you can share any news, story or tips which you consider worth sharing with community and if community likes your sharing then you get rewarded in the form of upvotes.</p>
@@ -17,3 +18,71 @@
 </div>
 <?php include('template/modals/modal.php'); ?>    
 <?php include('template/footer.php'); ?>
+<script type="text/javascript">
+    $( document ).ready(function() {    
+        $('#loadings').delay(6000).fadeOut('slow');
+
+        //$(window).on('load',function(){
+        //    $('#dlikem_maket').modal('show');
+        //});
+    });
+    var hidWidth;
+    var scrollBarWidths = 40;
+
+    var widthOfList = function(){
+        var itemsWidth = 0;
+        $('.list a').each(function(){
+            var itemWidth = $(this).outerWidth();
+            itemsWidth+=itemWidth;
+        });
+        return itemsWidth;
+    };
+
+    var widthOfHidden = function(){
+        return (($('.wrapper').outerWidth())-widthOfList()-getLeftPosi())-scrollBarWidths;
+    };
+
+    var getLeftPosi = function(){
+        return $('.list').position().left;
+    };
+
+    var reAdjust = function(){
+        if (($('.wrapper').outerWidth()) < widthOfList()) {
+            $('.scroller-right').show().css('display', 'flex');
+        }
+        else {
+            //$('.scroller-right').hide();
+        }
+
+        if (getLeftPosi()<0) {
+            $('.scroller-left').show().css('display', 'flex');
+        }
+        else {
+            $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
+            //$('.scroller-left').hide();
+        }
+    }
+
+    reAdjust();
+
+    $(window).on('resize',function(e){
+        reAdjust();
+    });
+
+    $('.scroller-right').click(function() {
+        $('.scroller-left').fadeIn('slow');
+        //$('.scroller-right').fadeOut('slow');
+        //console.log(getLeftPosi());
+        if(getLeftPosi() < -672){ $('.scroller-right').fadeOut('slow');}
+        $('.list').animate({left:"+="+"-112px"},'slow',function(){
+
+        });
+    });
+
+    $('.scroller-left').click(function() {
+        $('.scroller-right').fadeIn('slow');
+        $('.scroller-left').fadeOut('slow');
+        $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){
+        });
+    });
+</script>
