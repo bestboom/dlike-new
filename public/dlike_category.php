@@ -1,6 +1,8 @@
 <?php if (isset($_GET['cat'])) {$page_cat = $_GET['cat'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include ('template/header7.php'); ?></div>
-<div class="latest-post-section"><div class="container"><div class="row">
+<div class="latest-post-section"><div class="container">
+<div class="row main_top"><?php include('functions/top_trending.php');?></div>
+<div class="row">
 <?php $sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$page_cat' ORDER BY created_at DESC LIMIT 60");
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     $imgUrl = $row_T["img_url"];$author = $row_T["username"];

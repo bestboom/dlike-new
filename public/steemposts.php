@@ -1,4 +1,4 @@
-<?php include('template/header7.php');?>
+<?php include('template/header5.php');?>
 </div>
 <div class="latest-post-section"><div class="container">
     <div class="row main_top"><?php include('functions/top_trending.php');?></div>
