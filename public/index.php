@@ -16,10 +16,5 @@
         <p>If you are looking for any help regarding dlike platform, sharing on dlike or anything related to dlike tokens, then always feel free to reach us on dlike discord channel.</p>
     </div>
 </div>
-<?php include('template/modals/modal.php'); ?>    
+<div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"><?php include('template/modals/upvotemodal.php'); ?></div></div></div>    
 <?php include('template/footer.php'); ?>
-<script type="text/javascript">
-    $( document ).ready(function() {    
-        $('#loadings').delay(6000).fadeOut('slow');
-    });
-</script>
