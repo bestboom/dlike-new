@@ -2,7 +2,7 @@
 </div><!-- sub-header -->
 <div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;"><div class="container">
 <div class="row main_top"><?php include('functions/top_trending.php');?></div>
-<div class="row" id="contents"></div>
+<div class="row" id="content"></div>
 </div>  
     <div class="container" style="padding-top:0px;">
         <p>Dlike is a social sharing dapp (decentralized application) built on steem blockchain where you can share any news, story or tips which you consider worth sharing with community and if community likes your sharing then you get rewarded in the form of upvotes.</p>
