@@ -77,7 +77,48 @@ $(document).ready(function(){
 			'</article></div>');
     		let author = $post.author;let permlink = $post.permlink;				
     		// dliker
-			$.getJSON("https://scot-api.steem-engine.com/@"+$post.author+"/"+$post.permlink,function(e){let t=e.DLIKER.pending_token/1e3;$("#se_token"+newValue).html(t);let n=e.DLIKER.active_votes,o=e.DLIKER.vote_rshares;if(n===Array)var s=n;else s=[];if(n!==Array)s=[];0===(s=n).length&&($post.vote_info="<center><red>No Upvotes Yet!</red></center>");for(let e=0;e<s.length;e++)if(s[e].weight>0){let n=(s[e].rshares/o*t).toFixed(3),r=s[e].percent/1e4*100;r=parseInt(r);let a=s[e].voter;if(e>0&&$("#se_token"+newValue).css("cursor","pointer"),$post.vote_info+='<li style="list-style:none;"><span style="color:#c51d24;"><a> @'+a+"</a></span>&nbsp;<span>("+r+'%)</span>&nbsp;&nbsp;<span style="float:right;"><i>'+n+"</i></span></li>",16==e){let e=s.length-15;$post.vote_info+="... and "+e+" more upvotes.";break}}$("#se_token"+newValue).attr("data-content",$post.vote_info)});
+			//$.getJSON("https://scot-api.steem-engine.com/@"+$post.author+"/"+$post.permlink,function(e){let t=e.DLIKER.pending_token/1e3;$("#se_token"+newValue).html(t);let n=e.DLIKER.active_votes,o=e.DLIKER.vote_rshares;if(n===Array)var s=n;else s=[];if(n!==Array)s=[];0===(s=n).length&&($post.vote_info="<center><red>No Upvotes Yet!</red></center>");for(let e=0;e<s.length;e++)if(s[e].weight>0){let n=(s[e].rshares/o*t).toFixed(3),r=s[e].percent/1e4*100;r=parseInt(r);let a=s[e].voter;if(e>0&&$("#se_token"+newValue).css("cursor","pointer"),$post.vote_info+='<li style="list-style:none;"><span style="color:#c51d24;"><a> @'+a+"</a></span>&nbsp;<span>("+r+'%)</span>&nbsp;&nbsp;<span style="float:right;"><i>'+n+"</i></span></li>",16==e){let e=s.length-15;$post.vote_info+="... and "+e+" more upvotes.";break}}$("#se_token"+newValue).attr("data-content",$post.vote_info)});
+
+				$.getJSON('https://scot-api.steem-engine.com/@'+$post.author+'/'+$post.permlink+'', function(data) {
+	                //console.log(data.DLIKER.pending_token);
+	                let pending_token = (data.DLIKER.pending_token)/1000;
+	                $('#se_token' + newValue ).html(pending_token);
+
+	                let voters = data.DLIKER.active_votes;
+	                let netshare = data.DLIKER.vote_rshares;
+
+	                    if(voters === Array) {
+	                    	var voterList = voters;
+	                   	} else {
+	                       	var voterList = [];
+	                    }
+	                    if(!(voters === Array)) {
+	                       	var voterList = [];
+	                    }
+	                    var voterList = voters;
+	                    if (voterList.length === 0) {
+                            $post["vote_info"] = '<center><red>No Upvotes Yet!</red></center>';
+                        }
+	                for (let v = 0; v < voterList.length; v++) {
+						if(voterList[v].weight>0){
+	                        let vote_amt = ((voterList[v].rshares / netshare) * pending_token).toFixed(3);
+	                        let votePercent = ((voterList[v].percent / 10000) * 100);
+	                        votePercent = parseInt(votePercent);
+	                        let voter = voterList[v].voter;
+	                        //console.log(voter);
+	                        if (v > 0) {
+	                        	$('#se_token' + newValue ).css('cursor','pointer');
+	                        }
+	                    	$post["vote_info"] += ('<li style="list-style:none;"><span style="color:#c51d24;"><a> @' + voter + '</a></span>&nbsp;<span>(' + votePercent + '%)</span>&nbsp;&nbsp;<span style="float:right;"><i>' + vote_amt + '</i></span></li>');
+	                        if (v == 16) {
+	                            let moreV = voterList.length - 15;
+	                        $post["vote_info"] += "... and " + moreV + " more upvotes.";
+	                            break;
+	                        } 
+	                    }    
+	                }
+	                $('#se_token' + newValue ).attr("data-content", $post['vote_info']);
+	            }); 
     		//user-pro status
 			$.ajax({type:"POST",url:"/helper/getuserpoststatus.php",data:{author:author},dataType:"json",success:function(s){var t=(permlink+author).replace(".","");if("OK"==s.status){if("3"==s.setstatus){$(".userstatus_icon"+t).css({color:"red"});var e="PRO User"}$(".userstatus_icon"+t).hover(function(){toastr.success(e)})}else $(".userstatus_icon"+t).remove()}});
     		steem.api.getActiveVotes($post.author,$post.permlink,function(e,o){if(o===Array)var t=o;else t=[];t!==Array&&(t=[]);t=o;for(let e=0;e<t.length;e++)t[e].voter==username&&($("#vote_icon"+newValue).css("color","RED"),$("#vote_icon"+newValue).click(function(){return!1}),$("#vote_icon"+newValue).hover(function(){toastr.error("hmm... Already Upvoted")}))});
