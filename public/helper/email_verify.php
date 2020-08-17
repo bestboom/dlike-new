@@ -5,18 +5,18 @@
 
 	require '../includes/config.php';
 
-if (isset($_POST['email_pin_code'])  && $_POST['email_pin_code'] != '' && isset($_POST['user_email'])  && $_POST['user_email'] != '') { 
+if (isset($_POST['email_pin_code'])  && $_POST['email_pin_code'] != '') { 
 
-	$user_email = trim($_POST["user_email"]);
+	//$user_email = trim($_POST["user_email"]);
+	$username = $_COOKIE['dlike_username'];
 	$email_pin_code = trim($_POST["email_pin_code"]);
 
-	if(empty($user_email)){$errors = "We have Email missing issue";}
+	//if(empty($user_email)){$errors = "We have Email missing issue";}
     if(empty($email_pin_code)){ $errors = "PIN Should not be empty!";}
     if (empty($errors)) {
-		$check_pin = "SELECT * FROM dlikeaccounts where email = '$user_email' and verify_code = '$email_pin_code' ";
-		$result_pin = $conn->query($check_pin);
+		$check_pin = $conn->query("SELECT * FROM dlikeaccounts where username = '$username' and verify_code = '$email_pin_code' ");
 
-		if ($result_pin->num_rows > 0) {$verified = '1';
+		if ($check_pin->num_rows > 0) {$verified = '1';
 
 			$verifyuser = "UPDATE dlikeaccounts SET verified = '$verified' WHERE email = '$user_email'";
 				$updateverifyuser = $conn->query($verifyuser);

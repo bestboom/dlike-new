@@ -119,9 +119,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 
 
 
-if (isset($_POST['action']) && $_POST['action'] == 'resend_pin' && isset($_POST['user_email']) && $_POST['user_email'] != '') {
-    $user_email = trim(mysqli_real_escape_string($conn, $_POST['user_email']));
+if (isset($_POST['action']) && $_POST['action'] == 'resend_pin') {
+    //$user_email = trim(mysqli_real_escape_string($conn, $_POST['user_email']));
     $username = $_COOKIE['dlike_username'];
+    $check_user= $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
+	$row_U = $check_user->fetch_assoc();$user_email = $row_U['email'];
+
     $pin_number = mt_rand(100000, 999999);
 
     if(!empty($user_email)){
@@ -149,4 +152,20 @@ if (isset($_POST['action']) && $_POST['action'] == 'resend_pin' && isset($_POST[
     }
 }
 
+
+if (isset($_POST['action']) && $_POST['action'] == 'email_verify' && isset($_POST['email_pin_code'])  && $_POST['email_pin_code'] != '') { 
+
+	$username = $_COOKIE['dlike_username'];
+	$email_pin_code = trim($_POST["email_pin_code"]);
+    if(empty($email_pin_code)){ $errors = "PIN Should not be empty!";}
+    if (empty($errors)) {
+		$check_pin = $conn->query("SELECT * FROM dlikeaccounts where username = '$username' and verify_code = '$email_pin_code' ");
+		if ($check_pin->num_rows > 0) {$verified = '1';
+			$verifyuser = $conn->query("UPDATE dlikeaccounts SET verified = '$verified' WHERE email='$user_email'");
+				if ($verifyuser) {$dlike_user_verify_url = 'https://dlike.io';
+		    		die(json_encode(['error' => false,'message' => 'Email Verified Successfully!','redirect' => $dlike_user_verify_url]));
+				}else {die(json_encode(['error'=>true,'message'=>'There is some issue in Email Verification!']));}
+		} else {die(json_encode(['error' => true,'message' => 'Does not seems to be a valid pin code for this email!'])); }
+    } else {die(json_encode(['error' => true,'message' => $errors]));}
+}
 ?>
