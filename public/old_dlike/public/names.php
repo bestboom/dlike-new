@@ -84,7 +84,7 @@
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
 	<script src="https://unpkg.com/dsteem@^0.10.1/dist/dsteem.js"></script>
-	<script src="js/names.js"></script>
+	<script src="../js/names.js"></script>
 </body>
 
 </html>
