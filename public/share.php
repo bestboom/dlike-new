@@ -14,6 +14,7 @@ if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {die('<scri
     </div></div>
 </div></div>  
 <?php include('template/dlike_footer.php'); ?>
+<script src="/js/steemconnect.js"></script>
 <script type="text/javascript">
 $('#plus').click(function() {
     if (username != null) {$('#plus').hide();$('.loader').show();
