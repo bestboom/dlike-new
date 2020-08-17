@@ -21,11 +21,5 @@
 <script type="text/javascript">
     $( document ).ready(function() {    
         $('#loadings').delay(6000).fadeOut('slow');
-
-        //$(window).on('load',function(){
-        //    $('#dlikem_maket').modal('show');
-        //});
     });
-    
-
 </script>
