@@ -1,5 +1,5 @@
 <?php include('template/header7.php');?></div>
-<div class="latest-post-section"2><div class="container">
+<div class="latest-post-section"><div class="container">
 <div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row" id="content"></div>
 </div>  
