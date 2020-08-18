@@ -85,4 +85,32 @@ $(document).ready(function(){
 		});
 	});
 $('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
+$('.latest-post-section').on("click", ".upvoting", function() {
+    var votepermlink = $(this).attr("data-permlink");var voteauthor = $(this).attr("data-author");
+    $("#vote_author").val(voteauthor);$("#vote_permlink").val(votepermlink);
+});
+var rangeSlider = document.getElementById("rs-range-line");
+var rangeBullet = document.getElementById("rs-bullet");
+rangeSlider.addEventListener("input", showSliderValue, false);
+function showSliderValue() {rangeBullet.innerHTML = rangeSlider.value;}
+$('.upme').click(function() {
+    var upvoteValue = $('#rs-range-line').val();var upvoteValue = upvoteValue * 100;var weight = parseInt(upvoteValue);
+    var v_authorname = $("#vote_author").val();var v_permlink = $("#vote_permlink").val();var voter = username;
+    var datav = {v_permlink: v_permlink,v_author: v_authorname,vote_value: upvoteValue};
+    if (username != null) {$('#upvoting-bar').hide();$('#upvoting-status').show();
+        $.ajax({type: "POST",url: "/helper/vote.php",data: datav,
+            success: function(data) {
+                try {var response = JSON.parse(data)
+                    if (response.error == true) {toastr.error('There is some issue!');
+                        $('#upvoteModal').modal('hide');$('#upvoting-status').hide();$('#upvoting-bar').show();return false;
+                    } else {toastr.success('UpVoted Successfully!');
+                        $('#upvoteModal').modal('hide');$('#upvoting-status').hide();$('#upvoting-bar').show();
+                    }
+                } catch (err) {toastr.error('Sorry. Server response is malformed.');
+                    $('#upvoteModal').modal('hide');$('#upvoting-status').hide();$('#upvoting-bar').show();
+                }
+            }
+        }); 
+    } else { toastr.error('hmm... You must be login!');$('#upvoteModal').modal('hide');return false;};
+});
 });
