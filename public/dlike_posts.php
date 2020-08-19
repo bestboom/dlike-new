@@ -1,4 +1,4 @@
-<?php include ('template/header7.php'); ?></div>
+<?php include ('template/header.php'); ?></div>
 <div class="latest-post-section"><div class="container">
 <div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row">
@@ -17,4 +17,4 @@ if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
 <div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div> <?php } } ?>
 </div><center><a href="/posts/<?php echo $next_page; ?>"><button class="btn btn-danger">Load More</button></a></center></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
-<?php include ('template/dlike_footer.php'); ?>
+<?php include ('template/footer.php'); ?>

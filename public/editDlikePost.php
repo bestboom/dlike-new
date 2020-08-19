@@ -1,5 +1,4 @@
-<?php 
-include('template/header7.php'); 
+<?php include('template/header.php'); 
 include('functions/categories.php'); 
 if (isset($_GET["url"])) {
     $decode = function ($data) {
@@ -57,7 +56,7 @@ if (isset($_GET["url"])) {
             </div>
         </div>
   
-<?php include('template/dlike_footer.php'); ?>
+<?php include('template/footer.php'); ?>
 <script type="text/javascript">
 const $input = document.querySelector(".dlike_tags");
 const tags_check = /[a-zA-Z0-9 \/]+/;

@@ -1,5 +1,5 @@
 <?php 
-include('template/header5.php'); 
+include('template/header.php'); 
 include('functions/categories.php'); 
 if (isset($_GET["url"])) {
     $decode = function ($data) {
@@ -117,7 +117,7 @@ if (isset($_GET["url"])) {
         </div>
     </div><!-- contact-section -->
    
-<?php include('template/main_footer.php'); ?>
+<?php include('template/footer.php'); ?>
 <script type="text/javascript">
 
 let editor;

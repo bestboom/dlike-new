@@ -1,4 +1,4 @@
-<?php  include('template/header5.php');
+<?php  include('../template/header.php');
 
 
 function echo_formatted($a){
@@ -178,7 +178,7 @@ if (isset($_COOKIE['username']) || $_COOKIE['username'])
             </div>
         </div>
     </div><!-- working-process-section-->
-<?php $conn->close(); include('template/footer.php'); ?>
+<?php $conn->close(); include('../template/footer.php'); ?>
 
     <script type="text/javascript">
     var countDownDate = 0;

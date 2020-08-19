@@ -1,4 +1,4 @@
-<?php  include('template/header7.php');
+<?php  include('template/header.php');
 ?> </div>
 <?php if(isset($_COOKIE['dlike_username']) && !empty($_COOKIE['dlike_username'])) { $dlike_user =  $_COOKIE['dlike_username']; } else {$dlike_user='';}
 if($dlike_user == '') { ?>
@@ -160,7 +160,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 <div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="st_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger st_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
 
 </div></div></div>
-<?php include('template/dlike_footer.php'); ?>
+<?php include('template/footer.php'); ?>
 <script type="text/javascript">
 function enable_unstake(){$("#unstake_me").attr("disabled", false).html('Unstake');}
 function enable_stake(){$("#stake_me").attr("disabled", false).html('Stake');}

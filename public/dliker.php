@@ -4,7 +4,7 @@ if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
 } else {
     $user_name = $_COOKIE['username'];
 }
-include "./template/header5.php"; 
+include "./template/header.php"; 
 
 require_once "./lib/SteemEngine.php";
 require_once "./lib/time_string.php";
@@ -248,7 +248,7 @@ function get_recent_transactions ($account = "null") {
         </div>
     </div>
 </div>
-<?php include "./template/footer.php"; ?>
+<?php include "template/footer.php"; ?>
 <script> 
     $('.unstake_btn').click(function(clickEvent) {
         let unstake_amount = $('#unstake_amt').val();

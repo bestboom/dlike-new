@@ -1,4 +1,4 @@
-<?php  include('template/header5.php');
+<?php  include('../template/header.php');
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -124,7 +124,7 @@ if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $staker =  $_C
         </div>
     </div>
 <? } ?>     
-<?php include('template/footer.php'); ?>
+<?php include('../template/footer.php'); ?>
 <script type="text/javascript">
     var optionstak = {
         target: '#stak-msg',

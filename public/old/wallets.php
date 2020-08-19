@@ -1,4 +1,4 @@
-<?php include('template/header5.php'); 
+<?php include('../template/header.php'); 
 if (isset($_GET['user'])) {
      $user_wallet = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
@@ -78,4 +78,4 @@ $rowIt = $resultAmount->fetch_assoc();
     </div><!-- activity-section -->
           
 </div><!-- explorer-section -->
-<?php include('template/footer.php'); ?>
+<?php include('../template/footer.php'); ?>

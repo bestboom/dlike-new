@@ -1,21 +1,9 @@
-<?php include('template/header7.php'); 
-	if (isset($_GET['token']) && isset($_GET["email"])) {
-	     $token = $_GET['token'];
-	     $email = $_GET['email'];
-	} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-
+<?php include('template/header.php'); if (isset($_GET['token']) && isset($_GET["email"])) {$token = $_GET['token'];$email = $_GET['email'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 	$curDate = date("Y-m-d H:i:s");
-
-	$check_link = "SELECT * FROM dlikepasswordreset where token = '$token' and email = '$email'";
-	$result_link = $conn->query($check_link);
-	if ($result_link->num_rows <= 0) {
-		$errors = 'This is an invalid link for password reset';
-	}
-	$row = mysqli_fetch_assoc($result_link);
-	$reset_date = $row['reset_time'];
-  	if ($reset_date >= $curDate){
-  		$errors = 'The link to reset password has expired';
-  	}
+	$check_link = $conn->query"SELECT * FROM dlikepasswordreset where token = '$token' and email = '$email'");
+	if ($check_link->num_rows <= 0) {$errors = 'This is an invalid link for password reset';}
+	$row = mysqli_fetch_assoc($result_link);$reset_date = $row['reset_time'];
+  	if ($reset_date >= $curDate){$errors = 'The link to reset password has expired';}
 ?>
 </div>
     <div class="container">

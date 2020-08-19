@@ -1,5 +1,5 @@
 <?php
-include('template/header5.php');
+include('../template/header.php');
 
 if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
     die('<script>window.location.replace("https://dlike.io","_self")</script>');
@@ -569,7 +569,7 @@ if ($user_eth == '') {
     </div>
 </div>
 
-<?php include('template/footer.php'); ?>
+<?php include('../template/footer.php'); ?>
 
 <script type="text/javascript">
     if (thisuser == 'PRO') {

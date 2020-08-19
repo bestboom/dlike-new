@@ -1,4 +1,4 @@
-<?php include('template/header7.php'); 
+<?php include('template/header.php'); 
 if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io/dlikeshare","_self")</script>');} else {$steem_user = $_COOKIE['username'];}?></div>
 <div class="container"><div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">
     <div class="modal-content" style="background: #1b1e63;border-radius: 14px;"><div class="modal-body">
@@ -12,4 +12,4 @@ if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {die('<scri
         </div>
     </div></div>
 </div></div>  
-<?php include('template/dlike_footer.php'); ?>
+<?php include('template/footer.php'); ?>

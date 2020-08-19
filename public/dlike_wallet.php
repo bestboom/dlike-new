@@ -1,4 +1,4 @@
-<?php include('template/header7.php'); 
+<?php include('template/header.php'); 
 if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io/","_self")</script>'); } else { $dlike_user = $_COOKIE['dlike_username']; } ?>
 </div><?php
 $sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_user'");
@@ -140,7 +140,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
 <div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="wd_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="wd_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger wd_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
 </div></div></div>
 
-<?php include('template/dlike_footer.php'); ?>
+<?php include('template/footer.php'); ?>
 <script type="text/javascript">
     function enable_draw(){$(".tok_out_btn").attr("disabled", false).html('Withdraw');}
     let withdraw_val = document.getElementById('withdraw_amount');

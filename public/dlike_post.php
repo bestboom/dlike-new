@@ -1,4 +1,4 @@
-<?php include('template/header7.php');
+<?php include('template/header.php');
 $link = $_GET['link'];$user = $_GET['user'];
 
 $sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
@@ -65,4 +65,4 @@ if ($sql_T && $sql_T->num_rows > 0)
 <?php } } ?>
 </div></div></div>
 <div class="modal fade" id="upvotefail" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"><?php include('template/modals/upvotefail.php'); ?></div></div></div>
-<?php include ('template/dlike_footer.php'); ?>
+<?php include ('template/footer.php'); ?>

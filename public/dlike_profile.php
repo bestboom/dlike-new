@@ -1,7 +1,7 @@
 <?php 
 if (isset($_GET['user'])) {$prof_user = $_GET['user'];
 } else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-include('template/header7.php');
+include('template/header.php');
 $admin_users = array('dlike_airdrop','dlike_dao','dlike_foundation','dlike_team','dlike_charity');
 if(in_array($prof_user, $admin_users)){die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 
@@ -93,4 +93,4 @@ if ($sql_M && $sql_M->num_rows > 0)
 </div>
 <? } ?>
 <script>let dlik_profname='<?php echo $_GET['user'];?>';</script>
-<?php include('template/dlike_footer.php'); ?>
+<?php include('template/footer.php'); ?>

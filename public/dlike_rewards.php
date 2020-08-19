@@ -1,4 +1,4 @@
-<?php  include('template/header7.php'); ?>
+<?php  include('template/header.php'); ?>
 <style type="text/css">.reward_fileds {margin-bottom: 1px!important;}</style>
 </div>
 <?php
@@ -112,7 +112,7 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
         <div id="highContainer" style="height: 370px; width: 100%;margin-top: 30px;"></div>
     </div>
 </div><!-- working-process-section-->
-<?php include('template/dlike_footer.php'); ?>
+<?php include('template/footer.php'); ?>
 <script type="text/javascript">
     var countDownDate = 0;
     function counter() {
