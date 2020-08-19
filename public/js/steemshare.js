@@ -5,11 +5,11 @@ $('#plus').click(function() {
         let restricted_urls = ["dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "youtu.be", "pinterest.com", "twitter.com", "bloomberg.com"];
         if (isValidURL(input_url)) {
             if ($.inArray(verifyUrl, restricted_urls) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#plus').show();$('.loader').hide(); return false;}
-            $.ajax({url: '/helper/check_pro.php',type: 'post',data: { user: username },
+            $.ajax({url: '/helper/steem/check_pro.php',type: 'post',data: { user: username },
                 success: function(data)  { 
                     try { var response = JSON.parse(data) 
                         if (response.error == true) { toastr.error(response.message);$('#plus').show();$('.loader').hide();return false;}
-                        else { $.ajax({url: '/helper/check_share.php',type: 'post',data: { url: input_url },
+                        else { $.ajax({url: '/helper/steem/check_share.php',type: 'post',data: { url: input_url },
                                 success: function(data)  { 
                                     try { var response = JSON.parse(data) 
                                         if (response.error == true) { toastr.error(response.message);$('#plus').show();$('.loader').hide();return false;} 
