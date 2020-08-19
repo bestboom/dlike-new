@@ -30,10 +30,10 @@
 <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/wallet">Wallet</a>
 <a href="/dliker">DLIKER</a> <? } else {} ?>        
 <a href="https://dex.dlike.io">DEX</a>
-<a href="/rewards">Reward Pool</a>
-<a href="/staking">Staking</a>
-<a href="/explorer">Explorer</a>
-<a href="/help">FAQ</a>
+<a href="/old/rewards">Reward Pool</a>
+<a href="/old/staking">Staking</a>
+<a href="/old/explorer">Explorer</a>
+<a href="/about/help">FAQ</a>
 <?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username']) || isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?><br>
 <a href="/docs/dlike-paper.pdf">Whitepaper</a>
 </div>
