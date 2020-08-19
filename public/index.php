@@ -1,11 +1,8 @@
-<?php include('template/header5.php');?>
-</div><!-- sub-header -->
-<div class="latest-post-section" style="min-height:80vh;padding: 70px 0px 60px 0px;">
-    <div class="container">
-        <div class="row" id="content">
-        </div>
-    </div>  
-
+<?php include('template/header7.php');?>
+</div>
+<div class="latest-post-section"><div class="container">
+    <div class="row" id="content"></div>
+</div>  
     <div class="container" style="padding-top:0px;">
         <p>Dlike is a social sharing dapp (decentralized application) built on steem blockchain where you can share any news, story or tips which you consider worth sharing with community and if community likes your sharing then you get rewarded in the form of upvotes.</p>
         <p>Dlike has 2 types of upvotes namely STEEM and DLIKER. Steem is the native token for steem blockchain while DLIKER is the native token for Dlike platform which is built on steem-engine exchange and is independently trade-able. </p>
@@ -17,4 +14,4 @@
     </div>
 </div>
 <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"><?php include('template/modals/upvotemodal.php'); ?></div></div></div>    
-<?php include('template/footer.php'); ?>
+<?php include('template/dlike_footer.php'); ?>
