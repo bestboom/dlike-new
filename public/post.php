@@ -116,44 +116,10 @@ else
             </div>
         </div>
     </div>
-    <div class="col-lg-1 col-md-2 col-sm-4 auth_info">
-        <div class="post-tag-block"><!-- post-likes-block -->
-            <?php
-            $sqlm = "SELECT likes FROM postslikes WHERE author = '$auth' and permlink = '$link'";
-            $result_lk = $conn->query($sqlm);
-            $row = mysqli_fetch_assoc($result_lk);
-            if ($result_lk->num_rows > 0) { $likesofpost = $row["likes"]; } else { $likesofpost = '0';}
-
-            $sqlv = "SELECT * FROM mylikes where permlink = '$link' and author = '$auth' and userip = '$ip'";
-            $resultv = $conn->query($sqlv); 
-            if ($resultv->num_rows > 0) { ?>
-                <div class="post-comments-mid">
-                    <i class="fas fa-heart not-active"></i>&nbsp;&nbsp;<span id="tot_likes"><?php echo $likesofpost; ?></span> 
-                <? } else { ?>    
-                    <div class="post-comments-mid"><span class="recomendation" id="up_vote" data-toggle="modal" data-target="#recomendModal" data-permlink="<?php echo $link; ?>" data-likes="<?php echo $likesofpost; ?>" data-author="<?php echo $auth; ?>">
-                        <i class="fas fa-heart" id="vote_icon"></i></span>&nbsp;&nbsp;<span id="total_likes"><?php echo $likesofpost; ?></span> <? }?>
-                    </div>                        
-                </div><!-- post-likes-block -->
-            </div>
-            <!-- post-views-block -->
-            <div class="col-lg-1 col-md-2 col-sm-4 auth_info">
-                <div class="post-share-block">
-                    <i class="fas fa-eye"></i>&nbsp;&nbsp;<?php echo $postviews; ?>
-                </div><!-- post-views-block -->
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-5 auth_info">
-                <div class="post-share-block">
-                    <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span id="se_token" data-popover="true" data-html="true" data-content=""><span id="pending_dliker"></span></span> DLIKER
-                </div><!-- post-views-block -->
-            </div>
-            <!-- post-income-block -->
-            <div class="col-lg-3 col-md-5 col-sm-4 auth_info" style="">
-                <div class="post-share-block">
-                    <i class="far fa-money-bill-alt"></i>&nbsp;&nbsp;$<?php echo $totalpostincome; ?>&nbsp;Tip<!--+(<?php //echo $postincome; ?> USDT  <?php //echo $postincome2; ?> DSC-->
-                </div>
-            </div>
-            <!-- post-income-block -->
-        </div>
+    <div class="col-lg-4 col-md-6 col-sm-5 auth_info">
+        <div class="post-share-block">
+            <a class="up_steem"><i class="fas fa-chevron-circle-up" id="steem_vote_icon"></i></a>&nbsp;| $<span class="pending_payout">0.00</span><b> + </b><span id="se_token" data-popover="true" data-html="true" data-content=""><span id="pending_dliker"></span></span> DLIKER
+        </div><!-- post-views-block -->
     </div>
 </div>
 <div class="post-thumb-block"></div>                          
