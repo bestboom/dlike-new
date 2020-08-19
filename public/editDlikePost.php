@@ -32,5 +32,5 @@ if (isset($_GET["url"])) {
         </div></div>
     </div>
 </div></div>
-<script>let url_submitted = '<?php echo $url; ?>';let urlInput = '<?php echo $url; ?>';let restricted_urls='<?php echo $restricted_urls; ?>';</script>
+<script>let url_submitted = '<?php echo $url; ?>';let urlInput = '<?php echo $url; ?>';let restricted='<?php echo $restricted_urls; ?>';</script>
 <?php include('template/footer.php'); ?>

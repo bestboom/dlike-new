@@ -4,28 +4,20 @@ $('#dlike_share').click(function() {
         if (input_url == '') { $("#url_field").css("border-color", "RED");toastr.error('phew... You forgot to enter URL');$('#share_plus').show();$('.share_loader').hide();return false;
         }
         let verifyUrl = getDomain(input_url);
-        if (isValidURL(input_url)) {
-            if ($.inArray(verifyUrl, restricted_urls) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;
-            }
+        let restricted_urls = restricted.replace(/^'[ ]?|,$/g,'');console.log(restricted_urls);
+        if (isValidURL(input_url)) {if ($.inArray(verifyUrl, restricted_urls) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;}
 
-            $.ajax({
-            url: '/helper/check_limits.php',
-            type: 'post',
-            data: { action : 'shares_limit',user: dlike_username },
+            $.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'shares_limit',user: dlike_username },
                 success: function(data)  { 
                     try { var response = JSON.parse(data) 
                         if (response.error == true) { toastr.error(response.message);$('#share_plus').show();$('.share_loader').hide();return false;}
                         else {
-                            $.ajax({
-                                url: '/helper/check_limits.php',
-                                type: 'post',
-                                data: { action : 'unique_post',newurl: input_url },
+                            $.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'unique_post',newurl: input_url },
                                 success: function(data)  { 
                                     try { var response = JSON.parse(data) 
                                         if (response.error == true) { toastr.error(response.message);$('#share_plus').show();$('.share_loader').hide();return false;} 
                                         else {$('#share_plus').hide();$('.share_loader').show();
-                                            fetch_data("/helper/main.php", input_url);
-                                        }
+                                            fetch_data("/helper/main.php", input_url);}
                                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                                 }
                              });
@@ -37,9 +29,7 @@ $('#dlike_share').click(function() {
     } else { toastr.error('hmm... You must be login!'); return false; }
 });
 function fetch_data(apiUrl, webUrl) {
-    $.post(apiUrl, { url: webUrl }, function(response) {
-
-        let res = JSON.parse(response);
+    $.post(apiUrl, { url: webUrl }, function(response) {let res = JSON.parse(response);
         window.location.replace("editDlikePost.php?url=" + encodeURIComponent(res.url) + "&title=" + encodeURIComponent(res.title) + "&imgUrl=" + encodeURIComponent(res.imgUrl) + "&details=" + encodeURIComponent(res.des));
     });
 }
