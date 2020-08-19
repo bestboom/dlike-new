@@ -236,4 +236,3 @@ else
     post_permlink = '<?php echo $link; ?>';
     var directTime = <?=($tiptime)?>;
 </script>
-<script src="/js/post_page.js"></script>
