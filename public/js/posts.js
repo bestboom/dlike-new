@@ -40,15 +40,13 @@ $(document).ready(function(){
 			//start posts here
 			$(content).append('<div class="col-lg-4 col-md-6 postsMainDiv mainDiv'+ currentLikesDivElement +'" postLikes="0" postNumber="'+ currentPostNumber +'">\n' +
 				'\n' +
-				'<article class="post-style-two">\n' +
-				'\n' +
-				'<div class="post-contnet-wrap-top">\n' +
+				'<article class="post-style-two"><div class="post-contnet-wrap-top">\n' +
 				'\n' +
 				'<div class="post-footer">\n' +
 				'\n' +
 				'<div class="post-author-block">\n' +
 				'\n' +
-				'<div class="author-thumb"><a href="/@' + $post.author + '"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive"></a></div>\n' +
+				'<div><a href="/@' + $post.author + '"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive my_img"></a></div>\n' +
 				'\n' +
 				'<div class="author-info">\n' +
 				'\n' +
