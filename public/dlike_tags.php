@@ -1,6 +1,8 @@
 <?php if (isset($_GET['tag'])) {$page_tag = $_GET['tag'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 include ('template/header7.php'); ?></div>
-<div class="latest-post-section"><div class="container"><div class="row">
+<div class="latest-post-section"><div class="container">
+<div class="row main_top"><?php include('functions/top_trending.php');?></div>
+<div class="row">
 <?php $sql_P = $conn->query("SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC");
 if ($sql_P && $sql_P->num_rows > 0)
 {   while ($row_P = $sql_P->fetch_assoc())
@@ -12,7 +14,7 @@ if ($sql_P && $sql_P->num_rows > 0)
         $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);$category=$row_T["ctegory"];
         $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
         if ($sql_W && $sql_W->num_rows>0){$row_W=$sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
-        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
+        $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author='$author' and permlink = '$permlink'");
         if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward; ?>
 <div class="col-lg-4 col-md-6 postsMainDiv"><?php include('functions/post_data.php');?></div>
 <?php } } ?>
