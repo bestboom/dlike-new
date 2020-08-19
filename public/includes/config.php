@@ -77,4 +77,6 @@ $no_of_staking_rewards = '200';
 
 $tron_contract = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
 
+$restricted_urls = '["dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "pinterest.com", "twitter.com", "bloomberg.com"]';
+
 ?>
