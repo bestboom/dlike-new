@@ -1043,6 +1043,16 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .bg-blue {background-color: #467fcf !important;}
 .my_img{border: none;background: #fff;border-radius: 50%;max-height: 32px;width: 32px;margin-right: 9px;}
 
+.data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
+.hov_vote{margin-top: -3px;}.post-style-two .post-entry{margin-bottom: 5px;padding-bottom: 5px;}
+.link_bottom{display: flex;justify-content: space-between;}
+.link_image{border-radius: 20px 20px 0px 0px;max-height: 340px;min-width: 100%;}
+.data-desc{margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;}
+.link_box{border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;}
+.link_bottom_section{display: flex;justify-content: space-between;margin-top:9px;}
+.link_icon{padding-right: 5px;color: #c3bbb2;font-size: 12px;}
+.dlike_share_post{background-color: #c51d24;border-color: #c51d24;}
+.link_section{margin-top: 30px;margin-bottom: 40px;}
 
 
 @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}

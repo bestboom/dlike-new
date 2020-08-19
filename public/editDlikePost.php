@@ -1,33 +1,16 @@
-<?php include('template/header.php'); 
-include('functions/categories.php'); 
-if (isset($_GET["url"])) {
-    $decode = function ($data) {
-        return rawurldecode($data);
-    };
-    $url = $_GET["url"];
-    $img = $_GET["imgUrl"];
-    $title = $_GET["title"];
-    $des = $_GET["details"];
+<?php include('template/header.php');  include('functions/categories.php'); 
+if (isset($_GET["url"])) { 
+    $decode = function ($data) {return rawurldecode($data);};
+    $url = $_GET["url"]; $img = $_GET["imgUrl"]; $title = $_GET["title"];$des = $_GET["details"];
     $url = strip_tags(htmlspecialchars(trim($decode($url))));
     $img = strip_tags(htmlspecialchars(trim($decode($img))));
     $title = strip_tags(htmlspecialchars(trim($decode($title))));
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
 } else { die('Not Allowed');}
-?>
-</div><!-- sub-header -->
+?></div>
 <style>
-    .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
-    .hov_vote{margin-top: -3px;}.post-style-two .post-entry{margin-bottom: 5px;padding-bottom: 5px;}
-    .link_bottom{display: flex;justify-content: space-between;}
-    .link_image{border-radius: 20px 20px 0px 0px;max-height: 340px;min-width: 100%;}
-    .data-desc{margin-bottom: 4px;line-height: 1.5em;height: 3em;overflow: hidden;}
-    .link_box{border: 1px solid rgba(0,0,0,.2);padding: 10px;border-radius: 0px 0px 10px 10px;}
-    .link_bottom_section{display: flex;justify-content: space-between;margin-top:9px;}
-    .link_icon{padding-right: 5px;color: #c3bbb2;font-size: 12px;}
-    .dlike_share_post{background-color: #c51d24;border-color: #c51d24;}
-    .link_section{margin-top: 30px;margin-bottom: 40px;}
 </style>
-<div class="latest-post-section"><div class="container">
+<div class="latest-post-section" style="background: #fff;"><div class="container">
     <div class="user-login-signup-form-wrap link_section">
         <div class="modal-content" style="border:none;">
             <div class="modal-body">
