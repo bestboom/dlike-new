@@ -208,7 +208,6 @@ $.ajax({
         },
     });    
 });    
-
     // tip me
     var tipoptions = {
         target: '#tip-msg',
@@ -239,7 +238,7 @@ $('#tipsubmit').submit(function() {
     $(this).ajaxSubmit(tipoptions)
     return !1 
 });
-*/
+
     var sTime = new Date().getTime();
     var countDown = 595 - directTime;
 
@@ -272,7 +271,7 @@ $('#tipsubmit').submit(function() {
     $('.prouser').click(function () {
      window.open("/about/help","_self");
  });  
-
+*/
 //steem-upvote
 $('.up_steem').click(function () {
     $("#vote_author").val(post_author);
