@@ -1,5 +1,5 @@
 <?php
-require '../../includes/config.php';
+require '../includes/config.php';
 
 if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"]) && isset($_POST["image"])){
 

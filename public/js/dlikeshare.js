@@ -1,8 +1,7 @@
 $('#dlike_share').click(function() {
     if (dlike_username != null) {$('#share_plus').hide();$('.share_loader').show();
         let input_url = $("#url_field").val();
-        if (input_url == '') { $("#url_field").css("border-color", "RED");toastr.error('phew... You forgot to enter URL');$('#share_plus').show();$('.share_loader').hide();return false;
-        }
+        if (input_url == ''){ $("#url_field").css("border-color", "RED");toastr.error('phew... You forgot to enter URL');$('#share_plus').show();$('.share_loader').hide();return false;}
         let verifyUrl = getDomain(input_url);
         if (isValidURL(input_url)) {
             $.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'shares_limit',user: dlike_username,added_url: verifyUrl },
