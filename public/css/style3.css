@@ -889,12 +889,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus, select:fo
 .p_tab_pad{padding:40px 20px;}
 .foll_count{font-weight:700;font-size:16px;padding-right:2px;font-family: sans-serif;}
 #profposts{padding-top:40px;}
-.my_img{
-    border: 1px solid #eee;
-    background: #fff;
-    border-radius: 50%;
-    max-height: 20px;
-    width: 20px; }
+.my_img{border: none;background: #fff;border-radius: 50%;max-height: 32px;width: 32px;margin-right: 9px;}
 .banner-block {
     padding: 60px 0 15px 0;
     position: relative;
