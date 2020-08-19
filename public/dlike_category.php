@@ -5,7 +5,7 @@ include ('template/header7.php'); ?></div>
 <div class="row">
 <?php $sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$page_cat' ORDER BY created_at DESC LIMIT 60");
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
-    $imgUrl = $row_T["img_url"];$author = $row_T["username"];
+    $imgUrl = $row_T["img_url"];$author = $row_T["username"];$category=$row_T["ctegory"];
     $post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];
     $post_tags = $row_T["tags"];$permlink = $row_T["permlink"];
     $post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);

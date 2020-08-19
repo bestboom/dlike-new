@@ -45,7 +45,7 @@ if ($sql_U && $sql_U->num_rows > 0)
 <div role="tabpanel" class="tab-pane fade in active show" id="user_posts"><div class="container"><div class="row" style="margin-top: 30px;">
 <?php $sql_T=$conn->query("SELECT * FROM dlikeposts where username='$prof_user' ORDER BY created_at DESC LIMIT 60");
 	if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc())
-		{ $imgUrl = $row_T["img_url"];$author = $row_T["username"];$post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];$post_tags = $row_T["tags"];$permlink = $row_T["permlink"];$post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
+		{ $imgUrl = $row_T["img_url"];$author = $row_T["username"];$post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];$post_tags = $row_T["tags"];$permlink = $row_T["permlink"];$post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);$category=$row_T["ctegory"];
 		    $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
 			if ($sql_W->num_rows > 0){$row_W = $sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
 		    $checkLikes=$conn->query("SELECT * FROM postslikes WHERE author='$author' and permlink = '$permlink'");

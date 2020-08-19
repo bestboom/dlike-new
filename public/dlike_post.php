@@ -55,7 +55,7 @@ if ($sql_T && $sql_T->num_rows > 0)
 {   while ($row_T = $sql_T->fetch_assoc())
     {   $imgUrl = $row_T["img_url"];$author = $row_T["username"];
         $post_time = strtotime($row_T["created_at"]);
-        $permlink = $row_T["permlink"];$title = $row_T["title"];
+        $permlink = $row_T["permlink"];$title = $row_T["title"];$category=$row_T["ctegory"];
         $post_tags = $row_T["tags"];$post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
         $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
         if ($sql_W && $sql_W->num_rows>0){$row_W=$sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
