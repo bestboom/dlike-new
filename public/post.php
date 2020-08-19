@@ -1,11 +1,5 @@
 <?php
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-//error_reporting(E_ALL);
-
-$link = $_GET['link'];
-$user = $_GET['user'];
-$auth = str_replace('@', '', $user);
+$link = $_GET['link']; $user = $_GET['user']; $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender='';}
 
 $post_url = "https://steemapi.dlkapps.tk/get_content?author={$auth}&permlink={$link}";
@@ -104,7 +98,7 @@ else
     .main_post h1 {font-size: 30px;}
     .main_post a {text-decoration: underline;color: #c51d24;;font-weight: lighter !important;font-size:17px;}
 </style>
-<div class="container" style="padding-top: 20px;background: #fff;border: 1px solid #eee;">
+<div class="container" style="padding-top: 60px;background: #fff;border: 1px solid #eee;">
 <div class="row"><div class="col-md-12">
 <div class="container"><div class="row"><div class="col">
 <div class="blog-details-wrapper"><div class="single-post-block" style="width: 100%;max-width: 100%;">
@@ -229,10 +223,6 @@ else
 <div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"> <?php include('template/modals/recomend.php'); ?></div></div></div>
 <div class="modal fade" id="prouser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"> <?php include('template/modals/prouser.php'); ?></div></div></div>
 <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"> <?php include('template/modals/upvotemodal.php'); ?></div></div></div>
-                        
+<script type="text/javascript">let post_author = '<?php echo $auth; ?>';let post_permlink = '<?php echo $link; ?>';let directTime = <?=($tiptime)?>;
+</script>                  
 <?php include('template/footer.php'); $conn->close(); ?>
-<script type="text/javascript">
-    post_author = '<?php echo $auth; ?>';
-    post_permlink = '<?php echo $link; ?>';
-    var directTime = <?=($tiptime)?>;
-</script>
