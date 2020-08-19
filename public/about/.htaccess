@@ -1,7 +1,7 @@
 ##Force SSL 
 Options +FollowSymLinks
 #RewriteEngine On
-RewriteBase /old/
+RewriteBase /about/
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d

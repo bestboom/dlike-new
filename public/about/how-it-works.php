@@ -1,4 +1,4 @@
-<?php include('template/header5.php'); ?>
+<?php include('../template/header.php'); ?>
 </div><!-- sub-header -->
     <div class="support-details-section">
         <div class="container">
@@ -287,7 +287,7 @@
             </div>
         </div>
     </div><!-- support-details-section -->
-<?php include('template/footer.php'); ?>    
+<?php include('../template/footer.php'); ?>    
 <script type="text/javascript">
     $('.check').click(function(){
         $('.check span').addClass('liked');

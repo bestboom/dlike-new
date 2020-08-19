@@ -1,4 +1,4 @@
-<?php include('template/header5.php');?>
+<?php include('../template/header.php');?>
 </div>
 <div class="container">
 	<div class="info-sec">
@@ -86,4 +86,4 @@
 
 	</div>	
 </div>
-<?php include('template/footer.php'); ?> 
+<?php include('../template/footer.php'); ?> 

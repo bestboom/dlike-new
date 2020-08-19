@@ -46,7 +46,7 @@ $(document).ready(function(){
 				'\n' +
 				'<div class="post-author-block">\n' +
 				'\n' +
-				'<div><a href="https://steemit.com/@' + $post.author + '"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive my_img"></a></div>\n' +
+				'<div><a href="https://steemit.com/@' + $post.author + '" target="_blank"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" class="img-responsive my_img"></a></div>\n' +
 				'\n' +
 				'<div class="author-info">\n' +
 				'\n' +
@@ -109,6 +109,6 @@ $('.upme').click(function() {
                 }
             }
         }); 
-    } else { toastr.error('hmm... You must be login!');$('#upvoteModal').modal('hide');return false;};
+    } else { toastr.error('hmm... You must be login witn steem username!');$('#upvoteModal').modal('hide');return false;};
 });
 });
