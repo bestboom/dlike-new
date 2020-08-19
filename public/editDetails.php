@@ -1,5 +1,4 @@
-<?php 
-include('template/header.php'); 
+<?php include('template/header.php'); 
 include('functions/categories.php'); 
 if (isset($_GET["url"])) {
     $decode = function ($data) {
@@ -41,7 +40,7 @@ if (isset($_GET["url"])) {
         padding: 1px 8px;
     }
 </style>
-
+<div class="latest-post-section">
     <div class="contact-form-section" style="margin-top: 100px;">
         <div class="container d-flex h-100">
             <div class="contact-info-outer">
@@ -116,7 +115,7 @@ if (isset($_GET["url"])) {
             </div>
         </div>
     </div><!-- contact-section -->
-   
+</div>
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 
