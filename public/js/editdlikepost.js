@@ -16,9 +16,7 @@ $('.dlike_share_post').click(function(clickEvent) {
     if (dlike_username != null) {
         
         let verifyUrl = getDomain(urlInput);
-        let restricted_urls = restricted.replace(/^'[ ]?|,$/g,'');console.log(restricted_urls);
-        if ($.inArray(verifyUrl, restricted_urls) > -1) {toastr.error('phew... Sharing from this url is not allowed');return false;}
-        if ($('.dlike_cat').val() == "0") {$('.dlike_cat').css("border-color", "RED");toastr.error('Please Select an appropriate Category');return false;}
+        if($('.dlike_cat').val() == "0") {$('.dlike_cat').css("border-color", "RED");toastr.error('Please Select an appropriate Category');return false;}
         var tags = $('.dlike_tags').val();
         tags = $.trim(tags).split(' ');
         if (tags.length < 2) {$('.tags').css("border-color", "RED");toastr.error('Please add at least two related tags');return false;}
@@ -37,14 +35,11 @@ $('.dlike_share_post').click(function(clickEvent) {
 
         $(".dlike_share_post").attr("disabled", true);$('.dlike_share_post').html('Publishing...');
 
-        $.ajax({type: "POST",url: "/helper/post/submit_dlike_post.php",
-            data: {author: author,title: title,permlink: permlink,tags:post_tags,description:post_body,category: post_category,image:urlImage,exturl:urlInput},
+        $.ajax({type: "POST",url: "/helper/submit_dlike_post.php",data: {in_url:verifyUrl,author: author,title: title,permlink: permlink,tags:post_tags,description:post_body,category: post_category,image:urlImage,exturl:urlInput},
             success: function(data) {
-                try {
-                    var response = JSON.parse(data)
+                try {var response = JSON.parse(data)
                     if (response.error == true) {$(".dlike_share_post").attr("disabled", false);$('.dlike_share_post').html('Publish');toastr.error(response.message);return false;
-                    } else {toastr.success('Link Shared Successfully');setTimeout(function(){window.location.href = response.redirect;}, 500);
-                    }
+                    } else {toastr.success('Link Shared Successfully');setTimeout(function(){window.location.href = response.redirect;}, 500);}
                 } catch (err) {toastr.error('Sorry. Server response is malformed.');}
             },
         });

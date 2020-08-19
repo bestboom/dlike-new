@@ -5,10 +5,6 @@ $('#dlike_share').click(function() {
         }
         let verifyUrl = getDomain(input_url);
         if (isValidURL(input_url)) {
-            console.log(verifyUrl)
-            //if ($.inArray(verifyUrl, restricted) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;}
-            //if (Object.values(restricted_urls).indexOf(verifyUrl) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;}
-
             $.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'shares_limit',user: dlike_username,added_url: verifyUrl },
                 success: function(data)  { 
                     try { var response = JSON.parse(data) 

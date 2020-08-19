@@ -96,7 +96,7 @@ $('.upme').click(function() {
     var v_authorname = $("#vote_author").val();var v_permlink = $("#vote_permlink").val();var voter = username;
     var datav = {v_permlink: v_permlink,v_author: v_authorname,vote_value: upvoteValue};
     if (username != null) {$('#upvoting-bar').hide();$('#upvoting-status').show();
-        $.ajax({type: "POST",url: "/helper/vote.php",data: datav,
+        $.ajax({type: "POST",url: "/helper/steem/vote.php",data: datav,
             success: function(data) {
                 try {var response = JSON.parse(data)
                     if (response.error == true) {toastr.error('There is some issue!');

@@ -219,7 +219,7 @@ ClassicEditor
             }
 
             $.ajax({
-                url: '/helper/post/check_pro.php',
+                url: '/helper/steem/check_pro.php',
                 type: 'post',
                 dataType: 'json',
                 data: { user: username },
@@ -230,7 +230,7 @@ ClassicEditor
                             return false;
                     } else {
                         $.ajax({
-                            url: '/helper/post/check_share.php',
+                            url: '/helper/steem/check_share.php',
                             type: 'post',
                             dataType: 'json',
                             data: { url: urlInput },
@@ -307,7 +307,7 @@ ClassicEditor
                                     };
                                     $.ajax({
                                         type: "POST",
-                                        url: "/helper/post/submit_post.php",
+                                        url: "/helper/steem/submit_post.php",
                                         data: datam,
                                         
                                         success: function(data) {
