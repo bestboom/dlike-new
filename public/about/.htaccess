@@ -1,0 +1,14 @@
+##Force SSL 
+Options +FollowSymLinks
+#RewriteEngine On
+RewriteBase /old/
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^privacy$ ./privacy.php
+RewriteRule ^terms$ ./terms.php
+RewriteRule ^cookies$ ./cookies.php
+RewriteRule ^how-it-works$ ./how-it-works.php
+RewriteRule ^help$ ./help.php

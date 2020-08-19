@@ -1,0 +1,14 @@
+##Force SSL 
+Options +FollowSymLinks
+#RewriteEngine On
+RewriteBase /old/
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^explorer$ ./explorer.php
+RewriteRule ^wallet$ ./wallet.php
+RewriteRule ^wallets/(.*)$ ./wallets.php?user=$1
+RewriteRule ^rewards$ ./rewards.php
+RewriteRule ^staking$ ./staking.php
