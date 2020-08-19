@@ -27,35 +27,35 @@ if (isset($_GET["url"])) {
     .dlike_share_post{background-color: #c51d24;border-color: #c51d24;}
     .link_section{margin-top: 30px;margin-bottom: 40px;}
 </style>
-        <div class="container">
-            <div class="user-login-signup-form-wrap link_section">
-                <div class="modal-content" style="border:none;">
-                    <div class="modal-body">
-                        <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
-                        <img class="img-fluid d-flex flex-column link_image" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
-                        <div class="modal-info-block link_box">
-                            <p class="data-title"><?php print $title; ?></p>
-                            <!--<p class="data-desc"><?php //print $des; ?></p>-->
-                            <textarea class="data-desc" rows="2" style="width: 100%;border: none;" id="post_desc"><?php print $des; ?></textarea>
-                            <div class="link_bottom">
-                                <p style="margin-bottom: 1px;"><i class="fas fa-link link_icon"></i><span id="domain_name"></span></p>
-                                <select style="border:none;" name="category" class="dlike_cat">
-                                    <option value="0">Select Category</option>
-                                <?php foreach ($categories as $category){ ?>
-                                    <option value="<?php echo $category;?>"><?php echo $category;?></option>    
-                                <?php } ?>
-                                </select>
-                            </div>
-                            <div class="link_bottom_section">
-                                <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;color: rgb(27, 149, 224);" class="dlike_tags" />
-                                <button type="button" class="btn btn-primary dlike_share_post">SHARE</button>
-                            </div>
-                        </div>
+<div class="latest-post-section"><div class="container">
+    <div class="user-login-signup-form-wrap link_section">
+        <div class="modal-content" style="border:none;">
+            <div class="modal-body">
+                <input type="hidden" name="image" class="image_field" value="<?php print $img; ?>">
+                <img class="img-fluid d-flex flex-column link_image" src="<?php $imgUrl = $img != 'null' ? $img : "https://dlike.io/images/default-img.jpg"; print $imgUrl; ?>" alt="dlike"/>
+                <div class="modal-info-block link_box">
+                    <p class="data-title"><?php print $title; ?></p>
+                    <!--<p class="data-desc"><?php //print $des; ?></p>-->
+                    <textarea class="data-desc" rows="2" style="width: 100%;border: none;" id="post_desc"><?php print $des; ?></textarea>
+                    <div class="link_bottom">
+                        <p style="margin-bottom: 1px;"><i class="fas fa-link link_icon"></i><span id="domain_name"></span></p>
+                        <select style="border:none;" name="category" class="dlike_cat">
+                            <option value="0">Select Category</option>
+                        <?php foreach ($categories as $category){ ?>
+                            <option value="<?php echo $category;?>"><?php echo $category;?></option>    
+                        <?php } ?>
+                        </select>
+                    </div>
+                    <div class="link_bottom_section">
+                        <input type="text" placeholder="Tags separated by space" style="width: 60%;border: none;color: rgb(27, 149, 224);" class="dlike_tags" />
+                        <button type="button" class="btn btn-primary dlike_share_post">SHARE</button>
                     </div>
                 </div>
             </div>
         </div>
-  
+    </div>
+</div></div>
+
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 const $input = document.querySelector(".dlike_tags");
