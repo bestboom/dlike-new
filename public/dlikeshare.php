@@ -14,6 +14,5 @@ if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {die('<sc
             </div>
         </div>
     </div>
-</div></div>  
-<script>let restricted='<?php echo $restricted_urls; ?>';</script>
+</div></div>
 <?php include('template/footer.php'); ?>

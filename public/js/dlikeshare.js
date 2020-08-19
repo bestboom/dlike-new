@@ -4,17 +4,16 @@ $('#dlike_share').click(function() {
         if (input_url == '') { $("#url_field").css("border-color", "RED");toastr.error('phew... You forgot to enter URL');$('#share_plus').show();$('.share_loader').hide();return false;
         }
         let verifyUrl = getDomain(input_url);
-        let restricted_urls = restricted.replace(/^'[ ]?|,$/g,'');console.log(restricted_urls);
         if (isValidURL(input_url)) {
-            //if ($.inArray(verifyUrl, restricted_urls) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;}
-            if (Object.values(restricted_urls).indexOf(verifyUrl) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;}
+            console.log(verifyUrl)
+            //if ($.inArray(verifyUrl, restricted) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;}
+            //if (Object.values(restricted_urls).indexOf(verifyUrl) > -1) {toastr.error('phew... Sharing from this url is not allowed');$('#share_plus').show();$('.share_loader').hide(); return false;}
 
-            $.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'shares_limit',user: dlike_username },
+            $.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'shares_limit',user: dlike_username,added_url: verifyUrl },
                 success: function(data)  { 
                     try { var response = JSON.parse(data) 
                         if (response.error == true) { toastr.error(response.message);$('#share_plus').show();$('.share_loader').hide();return false;}
-                        else {
-                            $.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'unique_post',newurl: input_url },
+                        else{$.ajax({url: '/helper/check_limits.php',type: 'post',data: { action : 'unique_post',newurl: input_url },
                                 success: function(data)  { 
                                     try { var response = JSON.parse(data) 
                                         if (response.error == true) { toastr.error(response.message);$('#share_plus').show();$('.share_loader').hide();return false;} 
@@ -22,7 +21,7 @@ $('#dlike_share').click(function() {
                                             fetch_data("/helper/main.php", input_url);}
                                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                                 }
-                             });
+                            });
                         }
                     } catch (err) {toastr.error('Sorry. Server response is malformed.');}
                 }

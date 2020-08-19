@@ -9,11 +9,8 @@ $db = substr($url["path"], 1);
 
 $conn = new mysqli($server, $username, $password, $db);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
 
-//Test if it is a shared client
 
 function getUserIP()
 {
@@ -77,6 +74,6 @@ $no_of_staking_rewards = '200';
 
 $tron_contract = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
 
-$restricted_urls = '["dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "pinterest.com", "twitter.com", "bloomberg.com"]';
+$restricted_urls = array("dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "pinterest.com", "twitter.com", "bloomberg.com", "youtu.be");
 
 ?>

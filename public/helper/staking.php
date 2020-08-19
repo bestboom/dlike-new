@@ -44,9 +44,7 @@ if (isset($_POST['action']) && $_POST['action']=='unstaking' && isset($_POST['am
     $trx_id = trim(mysqli_real_escape_string($conn, $_POST["trx_id"]));
     $tron_decimals = '1000000';
     $unstk_amount = $unstk_amount/$tron_decimals;
-	if(empty($unstk_amount)){
-        $errors = "Please enter unstaking amount";
-    }
+	if(empty($unstk_amount)){$errors = "Please enter unstaking amount";}
 
     if (empty($errors)) {$type = 'stakOut';
         $stk_account = $conn->query("SELECT * FROM dlike_staking where username='$username'");
