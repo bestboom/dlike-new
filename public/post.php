@@ -161,8 +161,7 @@ else
 <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
 </div></div>
 </div></div></div>
-<div id="tip-msg"></div>
-<div class="details-post-meta-tip" style="background: #080e70;">
+
 <div class="details-post-meta-block"><div class="container"><div class="row"><div class="col"><div class="details-post-meta-block-wrap">
 <div class="post-tag-block"><h5>Post Tag</h5><div class="tags mod-tags"></div></div>
 <div class="post-share-block"><h5>Share this</h5><ul class="social-share-list"></ul></div>
@@ -179,6 +178,5 @@ else
 <div class="modal fade" id="recomendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"> <?php include('template/modals/recomend.php'); ?></div></div></div>
 <div class="modal fade" id="prouser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom"> <?php include('template/modals/prouser.php'); ?></div></div></div>
 <div class="modal fade" id="upvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog modal-sm" role="document"><div class="modal-content mybody"> <?php include('template/modals/upvotemodal.php'); ?></div></div></div>
-<script type="text/javascript">let post_author = '<?php echo $auth; ?>';let post_permlink = '<?php echo $link; ?>';let directTime = <?=($tiptime)?>;
-</script>                  
+<script type="text/javascript">let post_author = '<?php echo $auth; ?>';let post_permlink = '<?php echo $link; ?>';</script>                  
 <?php include('template/footer.php'); $conn->close(); ?>

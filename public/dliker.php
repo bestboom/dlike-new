@@ -1,9 +1,5 @@
 <?php
-if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
-    die('<script>window.location.replace("https://dlike.io","_self")</script>');
-} else {
-    $user_name = $_COOKIE['username'];
-}
+if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { die('<script>window.location.replace("https://dlike.io","_self")</script>');} else {$user_name = $_COOKIE['username'];}
 include "./template/header.php"; 
 
 require_once "./lib/SteemEngine.php";

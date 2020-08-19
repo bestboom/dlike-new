@@ -1054,6 +1054,8 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .dlike_share_post{background-color: #c51d24;border-color: #c51d24;}
 .link_section{margin-top: 30px;margin-bottom: 40px;}
 
+.catagori-section{padding-top:100px;margin-bottom:80px}
+
 
 @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}
 

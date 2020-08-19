@@ -219,7 +219,7 @@ $.ajax({
             $('.tipthnk').show();
         },
     }
-
+/*
 $('#tipsubmit').submit(function() {
     if (username == null) 
     {
@@ -239,6 +239,7 @@ $('#tipsubmit').submit(function() {
     $(this).ajaxSubmit(tipoptions)
     return !1 
 });
+*/
     var sTime = new Date().getTime();
     var countDown = 595 - directTime;
 
