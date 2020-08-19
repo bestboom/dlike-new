@@ -278,7 +278,7 @@ $('.up_steem').click(function () {
     $("#vote_permlink").val(post_permlink);
     $("#upvoteModal").modal("show");
 });   
-$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
+//$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
 $('.latest-post-section').on("click", ".upvoting", function() {
     var votepermlink = $(this).attr("data-permlink");var voteauthor = $(this).attr("data-author");
     $("#vote_author").val(voteauthor);$("#vote_permlink").val(votepermlink);

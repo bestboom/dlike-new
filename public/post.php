@@ -126,7 +126,7 @@ else
 <span class="main_post post-entry"><?php echo $body_text; ?></span>
 <p class="post_link"><a href="<?php echo $ext_link; ?>" target="_blank">Source of shared link</a></p>
 </div></div>
-</div></div></div>
+</div></div></div></div>
 
 <div class="details-post-meta-block"><div class="container"><div class="row"><div class="col"><div class="details-post-meta-block-wrap">
 <div class="post-tag-block"><h5>Post Tag</h5><div class="tags mod-tags"></div></div>
