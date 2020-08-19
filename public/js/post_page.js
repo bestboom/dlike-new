@@ -1,5 +1,4 @@
 steem.api.getContent(post_author , post_permlink, function(err, res) {
-        //console.log(res);
         res["voterlist"] = '';
         let metadata = JSON.parse(res.json_metadata);
         let img = new Image();
@@ -141,7 +140,7 @@ steem.api.getContent(post_author , post_permlink, function(err, res) {
                 $('#se_token').attr("data-content", res["voterlist"]);
             });
     });
-    //comments
+
 var refreashComments = function () {
     let comment = []    
     steem.api.getContentReplies(post_author, post_permlink, function(err, result) {
@@ -179,58 +178,41 @@ var refreashComments = function () {
         }
     });
 };
-    refreashComments();
-    //new-comment    
-    $('.comt_bt').click(function () {
-        if (username == null) 
-        {
-            toastr.error('hmm... You must be login!');
-            return false;
-        }
-        if (!$.trim($('[name="cmt_body"]').val())) {
-            toastr.error('It seems you forgot to post comment');
-            return false;  
-        }
-    $(".comt_bt").html('commenting...');    
-    let comment_body= $(".cmt").val(); 
-    //console.log(comment_body); 
-    let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);  
-    var datac = {
-            p_author: post_author,
-            p_permlink: post_permlink,
-            comt_body: comment_body,
-            cmt_permlink: permlinkD
-        };    
-    $.ajax({
-        type: "POST",
-        url: "/helper/comment.php",
-        data: datac,
-            success: function(data) {
-            console.log(data);
-            try {
-                var response = JSON.parse(data)
-                    if(response.error == false) {
-                        $(".cmt_section").html('');
-                        $(".cmt").val('');
-                        refreashComments();
-                        toastr.success('Comment posted successfully!');
-                        $(".comt_bt").html('Comment');
-                    } else { 
-                        toastr.error('There is some issue!'); 
-                        $(".comt_bt").html('Comment');
-                        return false;   
-                    }
-                } catch (err) {
-                    toastr.error('Sorry. Server response is malformed.');
-                }
-            },
-        });    
+refreashComments();
+//new-comment    
+$('.comt_bt').click(function () {
+    if (username == null) 
+    {
+        toastr.error('hmm... You must be login!');
+        return false;
+    }
+    if (!$.trim($('[name="cmt_body"]').val())) {
+        toastr.error('It seems you forgot to post comment');
+        return false;  
+    }
+$(".comt_bt").html('commenting...');    
+let comment_body= $(".cmt").val(); 
+//console.log(comment_body); 
+let permlinkD = steem.formatter.commentPermlink(post_author, post_permlink);
+$.ajax({
+    type: "POST",url: "/helper/steem/comment.php",data: {p_author: post_author,p_permlink: post_permlink,comt_body: comment_body,cmt_permlink: permlinkD},
+        success: function(data) {
+        try { var response = JSON.parse(data)
+                if(response.error == false) {
+                    $(".cmt_section").html('');
+                    $(".cmt").val('');
+                    refreashComments();toastr.success('Comment posted successfully!');
+                    $(".comt_bt").html('Comment');
+                } else {toastr.error('There is some issue!');$(".comt_bt").html('Comment');return false; }
+            } catch (err) {toastr.error('Sorry. Server response is malformed.');}
+        },
     });    
+});    
 
     // tip me
     var tipoptions = {
         target: '#tip-msg',
-        url: '/helper/addtips.php',
+        url: '/helper/steem/addtips.php',
         success: function() {
             $('#tipsubmit').hide();
             $('.tipratio').hide();
@@ -238,25 +220,25 @@ var refreashComments = function () {
         },
     }
 
-    $('#tipsubmit').submit(function() {
-        if (username == null) 
-        {
-            toastr.error('hmm... You must be login!');
-            return false;
-        }
-        if (username == post_author) 
-        {
-            toastr.error('Sorry... You cant tip your own post!');
-            return false;
-        }
-        if (thisuser !='PRO') {
-            $("#prouser").modal("show");
-            return false;
-        }
+$('#tipsubmit').submit(function() {
+    if (username == null) 
+    {
+        toastr.error('hmm... You must be login!');
+        return false;
+    }
+    if (username == post_author) 
+    {
+        toastr.error('Sorry... You cant tip your own post!');
+        return false;
+    }
+    if (thisuser !='PRO') {
+        $("#prouser").modal("show");
+        return false;
+    }
 
-        $(this).ajaxSubmit(tipoptions)
-        return !1 
-    });
+    $(this).ajaxSubmit(tipoptions)
+    return !1 
+});
     var sTime = new Date().getTime();
     var countDown = 595 - directTime;
 
@@ -287,7 +269,7 @@ var refreashComments = function () {
      location.reload(true); 
  });
     $('.prouser').click(function () {
-     window.open("/help","_self");
+     window.open("/about/help","_self");
  });  
 
 //steem-upvote
@@ -296,3 +278,32 @@ $('.up_steem').click(function () {
     $("#vote_permlink").val(post_permlink);
     $("#upvoteModal").modal("show");
 });   
+$('body').popover({ selector: '[data-popover]', trigger: 'click hover', placement: 'auto', delay: {show: 50, hide: 400}});
+$('.latest-post-section').on("click", ".upvoting", function() {
+    var votepermlink = $(this).attr("data-permlink");var voteauthor = $(this).attr("data-author");
+    $("#vote_author").val(voteauthor);$("#vote_permlink").val(votepermlink);
+});
+var rangeSlider = document.getElementById("rs-range-line");
+var rangeBullet = document.getElementById("rs-bullet");
+rangeSlider.addEventListener("input", showSliderValue, false);
+function showSliderValue() {rangeBullet.innerHTML = rangeSlider.value;}
+$('.upme').click(function() {
+    var upvoteValue = $('#rs-range-line').val();var upvoteValue = upvoteValue * 100;var weight = parseInt(upvoteValue);
+    var v_authorname = $("#vote_author").val();var v_permlink = $("#vote_permlink").val();var voter = username;
+    var datav = {v_permlink: v_permlink,v_author: v_authorname,vote_value: upvoteValue};
+    if (username != null) {$('#upvoting-bar').hide();$('#upvoting-status').show();
+        $.ajax({type: "POST",url: "/helper/steem/vote.php",data: datav,
+            success: function(data) {
+                try {var response = JSON.parse(data)
+                    if (response.error == true) {toastr.error('There is some issue!');
+                        $('#upvoteModal').modal('hide');$('#upvoting-status').hide();$('#upvoting-bar').show();return false;
+                    } else {toastr.success('UpVoted Successfully!');
+                        $('#upvoteModal').modal('hide');$('#upvoting-status').hide();$('#upvoting-bar').show();
+                    }
+                } catch (err) {toastr.error('Sorry. Server response is malformed.');
+                    $('#upvoteModal').modal('hide');$('#upvoting-status').hide();$('#upvoting-bar').show();
+                }
+            }
+        }); 
+    } else { toastr.error('hmm... You must be login witn steem username!');$('#upvoteModal').modal('hide');return false;};
+});

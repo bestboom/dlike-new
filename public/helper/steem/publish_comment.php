@@ -4,10 +4,6 @@ namespace dlike\comment;
 
 class makeComment
 {
-    /*public $postFields = [];
-    public function publish($publishOptions){
-        $this->postFields = $publishOptions;
-    }*/
     public function createComment($parent_author,$parent_permlink,$body,$json_php_array, $permlink, $beneficiaries,$max_accepted_payout)
     {
         $json_meta = json_encode($json_php_array);
@@ -39,7 +35,6 @@ class makeComment
         }
 
         $fixed_str = str_replace(str_replace("/", "\\\\\\/", $json_php_array['app']), $json_php_array['app'], json_encode($post));
-        //print($fixed_str);
         return $fixed_str;
     }
     
@@ -72,8 +67,6 @@ class makeComment
 
         if ($err) {
             return json_decode('{"error":"server_comms","error_description":"Failed to connect to the server!"}');
-        } else {
-            return json_decode($response);
-        }
+        } else {return json_decode($response);}
     }
 }
