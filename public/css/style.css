@@ -288,7 +288,7 @@ input:not([type=submit]):not([type=radio]):not([type=checkbox]):focus,select:foc
 .graph-item .graph-content h5{font-weight:700;color:#fff;margin-bottom:23px}
 .graph-item .price-change{font-weight:700}
 .graph-item .volume,.graph-item .transmoney{font-size:13px}
-.catagori-section{margin-top:100px;margin-bottom:80px}
+/*.catagori-section{margin-top:100px;margin-bottom:80px}*/
 .coins-detail{font-size:.7rem;margin-top:-12px!important;display:flex;justify-content:space-between}
 .coins-match{color:#1652f0;font-weight:700}
 .st_rewards{background:#f3faf0;padding:12px;display:flex;justify-content:space-between;border-radius:6px;border-color:#1px solid #eee}
@@ -1054,7 +1054,7 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .dlike_share_post{background-color: #c51d24;border-color: #c51d24;}
 .link_section{margin-top: 30px;margin-bottom: 40px;}
 
-.catagori-section{padding-top:100px;margin-bottom:80px}
+.catagori-section{padding-top:100px !important;margin-bottom:80px}
 
 
 @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}
