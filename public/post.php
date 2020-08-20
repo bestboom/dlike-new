@@ -105,7 +105,7 @@ else
 <?php include('promo/post_page_top_ad.php'); ?><br>
 <h1 class="post-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
 <div class="details-post-meta-block-top"><div class="container">
-<div class="row">
+<div class="row" style="justify-content: space-between;margin: 3px;">
     <div class="col-lg-3 col-md-4 col-sm-4 auth_info">
         <div class="post-author-block" style="display: flex;align-items: center;">
             <div class="author-thumb">
