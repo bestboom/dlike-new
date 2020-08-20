@@ -10,7 +10,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 
 	if(empty($dlk_amount)){$errors = "Please enter valid amount to withdraw";}
     if(empty($username)){$errors = "Seems You are not login";}
-    if ($dlk_amount > $max_withdraw_limit) {$errors = 'Phew... Max allowed amount is 5000 DLIKE per 24 hours';}
+    if ($dlk_amount > $max_withdraw_limit) {$errors = 'Phew...Max allowed amount is 5000 DLIKE per 24 hours';}
 
     $check_amount = $conn->query("SELECT amount FROM dlike_wallet where username = '$username'");
 	$row_A = $check_amount->fetch_assoc(); $wallet_amount = $row_A['amount'];
@@ -81,9 +81,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
     $check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
 	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();
 		$bal= $row['amount'];
-		if($bal > 0){
-
-			$amount = $bal * 1000000;
+		if($bal > 0){$amount = $bal * 1000000;
 
 	    	$wallets = array($tron->address2HexString($wallet));
 	    	$amounts = array($amount);
@@ -101,7 +99,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 	    	$address =  $vHExAddress;
 	    	$feeLimit = 1000000000;
 	    	$callValue = 0;
-
 	       
 	        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 	        $signedTransaction = $tron->signTransaction($triggerContract);
