@@ -158,7 +158,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
         }
         if ((parseFloat(dlk_amount) <= 0) ||  (parseFloat(out_amount) <= 0)){toastr.error('phew... Not a valid withdraw amount!');enable_draw();return false;
         }
-        async function doAjax() {return $.ajax({type: 'post',url: 'helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },datatype: 'json',});
+        async function doAjax() {return $.ajax({type: 'post',url: '/helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: out_amount },datatype: 'json',});
         }
         doAjax().then(async function(data) { var response = JSON.parse(data);
             if (response.error == true) {toastr['error'](response.message);enable_draw();return false;}
@@ -169,11 +169,11 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                 if(user_address != my_wallet) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');enable_draw();return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
                 } else { 
-                    $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'pay_user',dlk_out_amount: out_amount,wallet: user_address},});
+                    $.ajax({type: 'post',url:'/helper/dlk_withdraw.php',data:{action : 'pay_user',dlk_out_amount: out_amount,wallet: user_address},});
                     let payout_amount = out_amount * 1e6;
                     let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                     let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                    let result = await myContract.withdrawCommon(payout_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
+                    let result = await myContract.getToken(payout_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){
                         $("#dlike_tok_with").modal("hide");$('#withdrawStatus').modal('show');
                         $(".wd_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
@@ -181,7 +181,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                             $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
                                 if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
                                     if(tx_result=='SUCCESS'){
-                                        $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});
+                                        $.ajax({type: 'post',url:'/helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});
                                         $(".wd_status_message").html('Tokens Withdraw Successfully!');
                                         $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
                                     }else{
@@ -198,7 +198,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
     });
     $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
         if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;}
-        $.ajax({type: "POST", url: 'helper/dlk_withdraw.php',data:{ action :'address',offchain_address: offchain_add },
+        $.ajax({type: "POST", url: '/helper/dlk_withdraw.php',data:{ action :'address',offchain_address: offchain_add },
             success: function(data) {
                 try {var response = JSON.parse(data)
                     if (response.error == true) {toastr['error'](response.message);return false;
