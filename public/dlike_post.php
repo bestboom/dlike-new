@@ -1,5 +1,4 @@
-<?php include('template/header.php');
-$link = $_GET['link'];$user = $_GET['user'];
+<?php include('template/header.php');v$link = $_GET['link'];$user = $_GET['user'];
 
 $sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
 if ($sql_P && $sql_P->num_rows > 0){
