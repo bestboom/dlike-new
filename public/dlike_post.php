@@ -36,7 +36,7 @@ $host = preg_replace('/^www\./', '', $urlData['host']);
                     <div class="author-thumb">
                         <a href="" class="author-thumb-link"><img src="<?php echo $profile_pic; ?>" alt="img" class="mod-authThumb"></a>
                     </div>
-
+                    <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" style="width: 32px;margin-right: 5px;"></a>'; ?></div>
                     <div class="author-info"><h5 style="margin-bottom: 0px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5><span class="auth-time"><?php echo time_ago($post_time); ?></span>
                     </div>
                 </div>
