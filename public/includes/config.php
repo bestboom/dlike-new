@@ -46,14 +46,12 @@ $min_tip_withdraw = '3';
 
 //time ago
 function time_ago($timestamp)
-{
-    $etime = time() - $timestamp;
+{   $etime = time() - $timestamp;
     if ($etime < 1){return 'just now';}
     $a = array(12 * 30 * 24 * 60 * 60  =>  'year', 30 * 24 * 60 * 60 => 'month', 24 * 60 * 60 => 'day', 60 * 60 => 'hour', 60 => 'minute', 1 => 'second');
     foreach ($a as $secs => $str)
-    {   $d = $etime / $secs;
-        if ($d >= 1)
-        {   $r = round($d); return $r . ' ' . $str . ($r > 1 ? 's' : '') . ' ago';}
+    {$d = $etime / $secs;
+        if ($d >= 1){$r = round($d); return $r . ' ' . $str . ($r > 1 ? 's' : '') . ' ago';}
     }
 }
 
@@ -72,8 +70,8 @@ $foundation_reward = '0.025';
 $max_withdraw_limit = '5000';
 $no_of_staking_rewards = '200';
 
-$tron_contract = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
+//$tron_contract = "TJmBihqDr5xbDWSqV9gR5D4a4XuywNq4vM";
+$tron_contract = "TL675pEozCbUHmdZyvLkemoAWmH5wP9gFu";
 
 $restricted_urls = array("dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "pinterest.com", "twitter.com", "bloomberg.com", "youtu.be");
-
 ?>
