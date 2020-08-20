@@ -46,7 +46,7 @@ $(document).ready(function(){
 				'\n' +
 				'<div class="post-author-block">\n' +
 				'\n' +
-				'<div><a href="https://steemit.com/@' + $post.author + '" target="_blank"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" style="display: block;position: relative;width: 32px;margin-right: 9px;border-radius: 1rem;"></a></div>\n' +
+				'<div><a href="https://steemit.com/@' + $post.author + '" target="_blank"><img src="https://steemitimages.com/u/' + $post.author + '/avatar" alt="img" style="-o-object-fit: cover;object-fit: cover;display: inline-block;position: relative;width: 32px;margin-right: 9px;border-radius: 1rem;"></a></div>\n' +
 				'\n' +
 				'<div class="author-info">\n' +
 				'\n' +

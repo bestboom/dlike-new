@@ -1,6 +1,6 @@
 <article class="post-style-two">
 <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
-<div><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$author.'" style="display: block;position: relative;width: 32px;margin-right: 9px;border-radius: 50%;"></a>'; ?></div>
+<div><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$author.'" style="display: inline-block;position: relative;width: 32px;margin-right: 9px;border: 1px solid #fff;border-radius: 50%;"></a>'; ?></div>
 <div class="author-info"><h5><?php echo '<a href="/profile/'. $author.'">'. $author.'</a>'; ?><div class="time"><?php echo time_ago($post_time); ?></div></h5> </div></div>
 <div class="post-catg"><?php echo '<a href="/category/'. $category.'"><span class="post-meta">'. ucfirst($category).'</span></a>'; ?></div>
 </div></div>
