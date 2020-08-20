@@ -106,7 +106,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
             $tron->setPrivateKey(SIGNER_PK);
 
             $contract = CONTRACT_ADDRESS;
-            $function = 'multiMintstakingreward';
+            $function = 'payReward';
 
             $params = array($wallets , $amounts);
             $address =  $vHExAddress;
