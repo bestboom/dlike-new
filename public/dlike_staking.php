@@ -172,7 +172,7 @@ async function getUserStatus() {var user_address =false;
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
             var isUnstaking = await myContract.isUnstaking(user_address).call();
             var unstakeTime = window.tronWeb.toDecimal(isUnstaking[0]);isUnstaking = isUnstaking[1]; 
-            var unstakingAmount = await myContract.userunstakeamount(user_address).call();
+            var unstakingAmount = await myContract.checkUnstake(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount) / 1e6;
             if(isUnstaking==true){
                 $('#unskae_row').hide();$('#unstake_timer_row').show();
@@ -233,7 +233,7 @@ $('#stake_me').click(async function() {
 
             if(parseFloat(stk_amt) <=balanceof){
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-                let result = await myContract.stake(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+                let result = await myContract.stakeIn(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                 if(result){
                     $('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
@@ -268,12 +268,12 @@ if (dlike_username != null) {var user_address =false;
             if(stk_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');enable_unstake();return false;}
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-            var stakedAmount = await myContract.userstakedamount(user_address).call();
+            var stakedAmount = await myContract.checkStake(user_address).call();
             stakedAmount = window.tronWeb.toDecimal(stakedAmount);unstk_amt = unstk_amt * 1e6;
             if(parseFloat(unstk_amt) <=stakedAmount){
                 if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');enable_unstake();return false;}
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-                    var result = await myContract.claimunstake(unstk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+                    var result = await myContract.stakeOut(unstk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                     if(result){$('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
@@ -303,10 +303,10 @@ $('#claimback_tokens').click(async function() {var user_address =false;
         }else{ $("#claimback_tokens").attr("disabled", true).html('processing...');
             var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
             var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-            var unstakingAmount = await myContract.userunstakeamount(user_address).call();
+            var unstakingAmount = await myContract.checkUnstake(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount);
             await new Promise((resolve, reject) => setTimeout(resolve, 400));
-            var result = await myContract.unstake(unstakingAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+            var result = await myContract.claimStakeOut(unstakingAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
             if(result){$('#stakingStatus').modal('show');
                 $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                 var x = setInterval(function() {
@@ -350,7 +350,7 @@ $('#claim_stk_reward').click(async function() {
                     let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
                     if (user_address != my_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
                     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-                    let result = await myContract.withdrawReward(claim_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
+                    let result = await myContract.getReward(claim_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){$('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
