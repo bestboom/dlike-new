@@ -6,7 +6,8 @@
 if ($sql_T && $sql_T->num_rows > 0){  while ($row_T = $sql_T->fetch_assoc()){
     $imgUrl = $row_T["img_url"];$author = $row_T["username"];$category=$row_T["ctegory"];
     $post_time = strtotime($row_T["created_at"]);$title = $row_T["title"];$permlink = $row_T["permlink"];
-    $post_tags = trim($row_T["tags"]); foreach($post_tags as $tag) {echo $tags= '<a href="https://dlike.io/'.$tag.'">#'.$tag.'</a>'.' ';}
+    $post_tags = trim($row_T["tags"]); $tags = explode(" ", $post_tags);
+    foreach($tags as $tag){echo '<a href="https://dlike.io/'.$tag.'">#'.$tag.'</a>'.' ';}
     //$post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags); 
     //$tags='<a href="/tags/'.$post_hash_tags.'">'.$post_hash_tags.'</a>';
     $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$author'");
