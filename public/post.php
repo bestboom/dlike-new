@@ -1,7 +1,6 @@
 <?php
 $link = $_GET['link']; $user = $_GET['user']; $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender='';}
-
 $post_url = "https://steemapi.dlkapps.tk/get_content?author={$auth}&permlink={$link}";
 $response = file_get_contents($post_url);
 $result = json_decode($response);
@@ -102,7 +101,6 @@ else
 <div class="row"><div class="col-md-12">
 <div class="container"><div class="row"><div class="col">
 <div class="blog-details-wrapper"><div class="single-post-block" style="width: 100%;max-width: 100%;">
-<?php include('promo/post_page_top_ad.php'); ?><br>
 <h1 class="post-title"><a href="<?php echo $og_url; ?>"><?php echo $og_title; ?></a></h1>
 <div class="details-post-meta-block-top"><div class="container">
 <div class="row" style="justify-content: space-between;margin: 3px;">

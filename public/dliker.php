@@ -2,8 +2,8 @@
 if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { die('<script>window.location.replace("https://dlike.io","_self")</script>');} else {$user_name = $_COOKIE['username'];}
 include "./template/header.php"; 
 
-require_once "./lib/SteemEngine.php";
-require_once "./lib/time_string.php";
+require_once "./helper/steem/SteemEngine.php";
+require_once "./helper/steem/time_string.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
 $_STEEM_ENGINE = new SteemEngine();
 
