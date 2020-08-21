@@ -1,7 +1,7 @@
 <?php
 include_once '../vendor/autoload.php';
 //define('CONTRACT_ADDRESS','412189e1a476caa562c11641a6d7c78044cd339835');
-define('CONTRACT_ADDRESS','416eff3abef951a64a8969c26be9ea41dbea640ca3');
+define('CONTRACT_ADDRESS','414d0a5b9f6aa61964013a9f93df28c3162f14d857');
 //define('CONTRACT_ADDRESS_HEX','41d1b0bb8d4d17d39153f7e0c536502ec8756a86fe');
 define('TRONGRID_V2_EVENT_API_URL','https://v2.api.shasta.trongrid.io/event/contract/');
 define('API_URL','https://api.shasta.tronscan.org/api/');
