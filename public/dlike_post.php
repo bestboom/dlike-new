@@ -33,7 +33,7 @@ $host = preg_replace('/^www\./', '', $urlData['host']);
         <div class="post-contnet-wrap">
             <div class="post-footer" style="">
                 <div class="post-author-block">
-                    <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" style="width: 32px;height:32px;-webkit-border-radius:50% !important;-moz-border-radius:50% !important;border-radius:50% !important;margin-right:9px;"></a>'; ?></div>
+                    <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" class="img-fluid my_img"></a>'; ?></div>
                     <div class="author-info"><h5 style="margin-bottom: 0px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5><span class="auth-time"><?php echo time_ago($post_time); ?></span>
                     </div>
                 </div>
