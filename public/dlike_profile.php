@@ -61,8 +61,7 @@ if ($sql_M && $sql_M->num_rows > 0)
         $sql_T = $conn->query("SELECT * FROM dlikeposts where username='$likes_author' and permlink='$likes_permlink' ORDER BY created_at DESC LIMIT 60");
 		if ($sql_T && $sql_T->num_rows > 0)
 		{	$row_T = $sql_T->fetch_assoc();
-			$imgUrl = $row_T["img_url"];$author = $row_T["username"];$post_time = strtotime($row_T["created_at"]);
-	        $title = $row_T["title"];$post_tags = $row_T["tags"];$permlink = $row_T["permlink"];$post_hash_tags = preg_replace('/(\w+)/', '#$1', $post_tags);
+			$imgUrl = $row_T["img_url"];$author = $row_T["username"];$post_time = strtotime($row_T["created_at"]); $title = $row_T["title"];$permlink = $row_T["permlink"];$post_tags = trim($row_T["tags"]);$tags = preg_replace('/(\w+)/', '<a href="https://dlike.io/tags/$1">#$1</a>', $post_tags);
 		}
 		$sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$likes_author'");
     	if ($sql_W && $sql_W->num_rows > 0){$row_W = $sql_W->fetch_assoc();$user_profile_pic=$row_W["profile_pic"];}
