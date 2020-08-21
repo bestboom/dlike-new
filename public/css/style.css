@@ -1041,7 +1041,7 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .bg-orange {background-color: #fd9644 !important;}
 .bg-green {background-color: #5eba00 !important;}
 .bg-blue {background-color: #467fcf !important;}
-.my_img img{border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;display:block;width:32px;margin-right:9px}
+.my_img {border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;display:block;width:32px;margin-right:9px}
 
 .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
 .hov_vote{margin-top: -3px;}.post-style-two .post-entry{margin-bottom: 5px;padding-bottom: 5px;}

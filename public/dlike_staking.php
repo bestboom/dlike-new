@@ -40,16 +40,14 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
             <div class="col-sm-6 col-lg-3"><div class="bot-power card p-3">
                 <div id="voting-power" class="d-flex align-items-center">
                     <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-cubes"></i></span>
-                    <div style="width: 100%"><h4 class="m-0"><small>Staked Amount</small></h4>
-                        <div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $total_staked_amount; ?> DLIKE</strong></div></div>
+                    <div style="width: 100%"><h4 class="m-0"><small>Staked Amount</small></h4><div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $total_staked_amount; ?> DLIKE</strong></div></div>
                     </div>
                 </div>
             </div></div>
             <div class="col-sm-6 col-lg-3"><div class="card p-3">
                 <div class="d-flex align-items-center">
-                    <span class="stamp stamp-md bg-green mr-3"><i class="fa fa-exchange"></i></span>
-                    <div style="width: 100%"><h4 class="m-0"><small>Yesterday Distributed</small></h4>
-                        <div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $yesterday_distribution; ?> DLIKE</strong></div></div>
+                    <span class="stamp stamp-md bg-green mr-3"><i class="fas fa-exchange-alt"></i></span>
+                    <div style="width: 100%"><h4 class="m-0"><small>Yesterday Distributed</small></h4><div class="clearfix"><div class="float-left"><strong class="voting-power-display"><?php echo $yesterday_distribution; ?> DLIKE</strong></div></div>
                     </div>
                 </div>
             </div></div>
@@ -130,23 +128,14 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
             <div class="latest-tranjections-block-inner">
                 <div class="panel-heading-block"><h5>Transaction History</h5></div>
                 <table class="table coin-list latest-tranjections-table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Trx ID</th>
-                            <th scope="col">Time</th>
-                        </tr>
-                    </thead>
+                    <thead><tr><th scope="col">Amount</th><th scope="col">Type</th><th scope="col">Trx ID</th><th scope="col">Time</th></tr></thead>
                     <tbody>
                         <?php $sql_st = $conn->query("SELECT * FROM dlike_staking_transactions where username = '$dlike_user' ORDER BY trx_time DESC Limit 30");
                             if ($sql_st->num_rows > 0) {
                                 while($row_t = $sql_st->fetch_assoc()) {?> 
                         <tr>
-                            <td><?php echo $row_t["amount"]; ?></td>
-                            <td><?php echo $row_t["type"]; ?></td>
-                            <td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></td>
-                            <td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> 
+                            <td><?php echo $row_t["amount"]; ?></td><td><?php echo $row_t["type"]; ?></td>
+                            <td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>';?></td><td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> 
                         </tr>
                         <? } }?>
                     </tbody>
@@ -158,7 +147,6 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 <? } ?>  
 <div class="modal fade" id="stakingStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
 <div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="st_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger st_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
-
 </div></div></div>
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
@@ -183,29 +171,19 @@ async function getUserStatus() {var user_address =false;
                 var countdownStart = setInterval(function(){getCountdown()}, 1000);
                 countdownStart ;
                 function getCountdown(){
-                    var current_date = new Date().getTime();
-                    var target_date = unstakeTime * 1000;
-                    
-                    if(current_date>target_date){$('#unstake_claim_row').show();$('#unstake_timer_row').hide();
-                        $('#unskae_row').hide();clearInterval(countdownStart);return false;
-                    }
+                    var current_date = new Date().getTime();var target_date = unstakeTime * 1000;
+                    if(current_date>target_date){$('#unstake_claim_row').show();$('#unstake_timer_row').hide();$('#unskae_row').hide();clearInterval(countdownStart);return false;}
+
                     var seconds_left = (target_date - current_date) / 1000;
-                    
-                    days = pad( parseInt(seconds_left / 86400) );
-                    seconds_left = seconds_left % 86400;
-                         
-                    hours = pad( parseInt(seconds_left / 3600) );
-                    seconds_left = seconds_left % 3600;
-                          
-                    minutes = pad( parseInt(seconds_left / 60) );
-                    seconds = pad( parseInt( seconds_left % 60 ) );
+                    days = pad( parseInt(seconds_left / 86400) );seconds_left = seconds_left % 86400;
+                    hours = pad( parseInt(seconds_left / 3600) );seconds_left = seconds_left % 3600;      
+                    minutes = pad( parseInt(seconds_left / 60) );seconds = pad( parseInt(seconds_left % 60));
                     
                     if(seconds_left<=0){clearInterval(countdownStart);
                         countdown.innerHTML = "<span>00</span> : <span>00</span> : <span>00</span>";
                         $('#unstake_claim_row').show();$('#unstake_timer_row').hide();
                     }else{$('#unskae_row').hide();$('#unstake_timer_row').show();  
-                        countdown.innerHTML = "<span>" + days + " Day <span>" + hours + "</span> : <span>" + minutes + "</span> : <span>" + seconds + "</span>";    
-                    }
+                        countdown.innerHTML = "<span>" + days + " Day <span>" + hours + "</span> : <span>" + minutes + "</span> : <span>" + seconds + "</span>";    }
                 }
             } else{$('#unskae_row').hide();$('#unstake_row').show();}         
         }
@@ -244,10 +222,8 @@ $('#stake_me').click(async function() {
                                     $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},});
                                     $(".st_status_message").html('Tokens Staked Successfully!');
                                     $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
-                                }else{
-                                    $(".st_status_message").html('Something Wrong ! Try Again.');
-                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
-                                }
+                                }else{$(".st_status_message").html('Something Wrong ! Try Again.');
+                                    $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);}
                             } 
                         }); 
                     }, 12000);
@@ -283,10 +259,8 @@ if (dlike_username != null) {var user_address =false;
                                 $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: unstk_amt,wallet: user_address,trx_id: result},});
                                 $(".st_status_message").html('UnStaking Initiated Successfully!');
                                 $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
-                            }else{
-                                $(".st_status_message").html('Something Wrong! Try Again.');
-                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
-                            }
+                            }else{$(".st_status_message").html('Something Wrong! Try Again.');
+                                $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();},1000);}
                         }
                     }); 
                     }, 12000);}
@@ -315,8 +289,7 @@ $('#claimback_tokens').click(async function() {var user_address =false;
                         if(tx_result=='SUCCESS'){
                             $(".st_status_message").html('Tokens Claimed Successfully!');
                             $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
-                        }else{
-                            $(".st_status_message").html('Something Wrong! Try Again.');
+                        }else{$(".st_status_message").html('Something Wrong! Try Again.');
                             $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
                         }
                     }
@@ -360,8 +333,7 @@ $('#claim_stk_reward').click(async function() {
                                 $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'reward_paid',amount: claim_amt,wallet: user_address,trx_id: result},});
                                 $(".st_status_message").html('Stakign Reward Claimed Successfully!');
                                 $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
-                            }else{
-                                $(".st_status_message").html('Something Wrong! Try Again.');
+                            }else{$(".st_status_message").html('Something Wrong! Try Again.');
                                 $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-times-circle');setTimeout(function(){window.location.reload();}, 1000);
                             }
                         }
@@ -371,7 +343,6 @@ $('#claim_stk_reward').click(async function() {
 
             }
         });
-
     } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 </script>
