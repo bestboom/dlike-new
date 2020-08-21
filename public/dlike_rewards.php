@@ -32,7 +32,7 @@ $sql_T = $conn->query("SELECT count(*) as today_aff_rewards FROM dlike_transacti
 $affiliate_today_rewards = $total_aff_gen * $affiliate_reward;
 $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
 ?>
-<div class="working-process-section" style="padding-top: 80px;">
+<div class="working-process-section" style="padding-top: 130px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-6  col-md-6">
