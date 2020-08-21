@@ -111,8 +111,8 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
         </div>
         <div id="highContainer" style="height: 370px; width: 100%;margin-top: 30px;"></div>
     </div>
-</div><!-- working-process-section-->
-<?php include('template/footer.php'); ?>
+</div>
+<script src="http://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
     var countDownDate = 0;
     function counter() {
@@ -132,9 +132,7 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
         }, 1000);
     };
     counter();
-</script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript">
+
 var chart = new Highcharts.Chart({
     chart: {renderTo: 'highContainer',type: 'areaspline'},
     title: {text: ''},
@@ -144,4 +142,4 @@ var chart = new Highcharts.Chart({
     series: [{name: 'Likes',data: <?php echo json_encode($data); ?>}]
 });
 </script>
-https://www.studentstutorial.com/php/php-update-multiple-row
+<?php include('template/footer.php'); ?>
