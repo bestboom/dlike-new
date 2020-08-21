@@ -6,9 +6,8 @@ if ($sql_P && $sql_P->num_rows > 0){ $row_P = $sql_P->fetch_assoc();
     $imgUrl = $row_P["img_url"];$post_time = strtotime($row_P["created_at"]);
     $permlink = $row_P["permlink"];$author = $row_P["username"];$title = $row_P["title"];
     $description = $row_P["description"];$post_category = $row_P["ctegory"];
-    $post_tags = trim($row_T["tags"]);$tags = preg_replace('/(\w+)/', '<a href="https://dlike.io/tags/$1">#$1</a>', $post_tags); $ext_url = $row_P["ext_url"];$post_id = $row_P["id"];
+    $post_tags = trim($row_P["tags"]);$tags = preg_replace('/(\w+)/', '<a href="https://dlike.io/tags/$1">#$1</a>', $post_tags); $ext_url = $row_P["ext_url"];$post_id = $row_P["id"];
 }
-
 $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
 $row_W = $sql_W->fetch_assoc(); $profile_pic = $row_W["profile_pic"];
 $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and permlink = '$link'");
