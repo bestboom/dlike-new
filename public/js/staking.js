@@ -41,7 +41,6 @@ setTimeout(getUserStatus,600);
 $('.st_btn').click(function() {setTimeout(function(){window.location.reload();}, 100);});
 
 $('#stake_me').click(async function() {
-    console.log(stk_wallet);
     if (dlike_username != null) {
         let user_address =false;
         if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
@@ -162,14 +161,14 @@ $('#claim_stk_reward').click(async function() {
             else{let user_address =false;
                 if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
-                if(my_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');return false;}
+                if(stk_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
                 } else { 
                     $.ajax({type: 'post',url:'/helper/staking.php',data:{action : 'pay_staking_reward',claim_amount: claim_amt,wallet: user_address},});
                     claim_amt = claim_amt * 1e6;
                     let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                     let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                    if (user_address != my_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
+                    if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
                     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
                     let result = await myContract.getReward(claim_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){$('#stakingStatus').modal('show');
