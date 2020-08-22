@@ -57,7 +57,8 @@ $('.add_address').click(function() { let offchain_add = $('#offchain_add').val()
         success: function(data) {
             try {var response = JSON.parse(data)
                 if (response.error == true) {toastr['error'](response.message);return false;
-                } else {toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
+                } else {$(".add_address").removeClass('fa-plus').addClass('fas fa-circle-notch fa-spin');
+                    toastr['success'](response.message);setTimeout(function(){window.location.reload();}, 300);
                 }
             } catch (err) {toastr.error('Sorry. Server response is malformed');}
         }
