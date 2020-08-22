@@ -65,27 +65,25 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | DAO" readonly>
                         <span class="fas fa-bolt inp_icon"></span>
-                        <span class="inp_text"><?php echo $dao; ?> &nbsp;<i class="fa fa-user-circle-o"></i></span>
+                        <span class="inp_text"><?php echo $dao; ?> &nbsp;<i class="fas fa-user-circle"></i></span>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Charity" readonly>
                         <span class="fas fa-flask inp_icon"></span>
-                        <span class="inp_text"><?php echo $charity; ?>&nbsp;<i class="fa fa-user-circle-o"></i></span>
+                        <span class="inp_text"><?php echo $charity; ?>&nbsp;<i class="fas fa-user-circle"></i></span>
                     </div>
-                    <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | AirDrop" readonly>
-                        <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo $airdrop_today_rewards; ?>&nbsp;<i class="fa fa-user-circle-o"></i></span>
+                    <div class="form-group reward_fileds row" style="padding: 10px 0px;justify-content: space-between;margin: 1px;border-bottom: 1px solid #eee!important;">
+                        <div><span class="fas fa-database"></span><span> | Charity </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle" style="font-size: 9px;"></i></a></div>
+                        <div><span class="inp_text"><?php echo $charity; ?></span></div>
                     </div>
-                    <div class="form-group reward_fileds">
-                        <input type="text" class="form-control reward_input" value=" | Team" readonly>
-                        <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo $team; ?>&nbsp;<i class="fa fa-user-circle-o"></i></span>
+                    <div class="form-group reward_fileds row" style="padding: 10px 0px;justify-content: space-between;margin: 1px;border-bottom: 1px solid #eee!important;">
+                        <div><span class="fas fa-database"></span><span> | Team </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle" style="font-size: 9px;"></i></a></div>
+                        <div><span class="inp_text"><?php echo $team; ?></span></div>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Foundation" readonly>
                         <span class="fas fa-database inp_icon"></span>
-                        <span class="inp_text"><?php echo $foundation; ?>&nbsp;<a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target=""_blank><i class="fa fa-user-circle-o"></i></a></span>
+                        <span class="inp_text"><?php echo $foundation; ?>&nbsp;<a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target=""_blank><i class="fas fa-user-circle"></i></a></span>
                     </div>
                     <p>Time Remaining for Next Reward Pool</p>
                     <button type="button" class="btn btn-default reward_btn" disabled><span class="far fa-clock" style="font-size: 1.3rem;padding-right: 1rem;"></span><span class="dividendCountDown" style="font-size: 1.7rem;"></span></button>
