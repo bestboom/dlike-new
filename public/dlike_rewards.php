@@ -1,12 +1,4 @@
 <?php  include('template/header.php'); ?></div>
-<style type="text/css">
-    .rewards_fileds{padding: 10px 0px;justify-content: space-between;margin: 1px;border-bottom: 1px solid #eee!important;}
-    .rewards_user_icon{font-size: 9px;color: #c51d24;}
-    .rewards_type{font-size: 1rem;color:#495057;opacity: 1;}
-    #highContainer{height: 370px; width: 100%;margin-top: 30px;}
-    .dividendCountDown{font-size: 1.7rem;}.rewards_clock{font-size: 1.3rem;padding-right: 1rem;}
-    .stk_rewards_ann{color:#c51d24;font-weight:600;}.stk_ann_icon{padding-right:10px;}
-</style>
 <?php $sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
 if ($sql1 && $sql1->num_rows > 0) 
 {   $row1 = $sql1->fetch_assoc();$today_likes = $row1["today_upvotes"];$staking = $row1["dlike_staking"];$dao = $row1["dlike_dao"];$team = $row1["dlike_team"];$charity = $row1["dlike_charity"];$foundation = $row1["dlike_foundation"];
