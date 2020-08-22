@@ -8,7 +8,8 @@
 <script src="/js/toaster.js"></script><script src="/js/loader.js"></script>
 <?php if(basename($_SERVER['PHP_SELF'])=='dlikeshare.php'){ ?><script src="/js/dlikeshare.js"></script><? } ?>
 <?php if(basename($_SERVER['PHP_SELF'])=='editDlikePost.php'){?><script src="/js/editdlikepost.js"></script><? }?>
-<?php if(basename($_SERVER['PHP_SELF'])=='dlike_staking.php'){ ?><script src="/js/staking.js"></script><? } ?>
+<?php if(basename($_SERVER['PHP_SELF'])=='dlike_staking.php'){?><script src="/js/staking.js"></script><?} ?>
+<?php if(basename($_SERVER['PHP_SELF'])=='dlike_wallet.php'){?><script src="/js/wallet.js"></script><?} ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'share.php'){ ?><script src="https://cdn.jsdelivr.net/npm/steemconnect"></script><script src="/js/steemconnect.js"></script><script src="/js/steemshare.js"></script><? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'editDetails.php'){ ?><script src="https://cdn.jsdelivr.net/npm/steemconnect"></script><script src="/js/steemconnect.js"><? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'welcome2.php'){ ?><script src="/js/signup.js"></script><? } ?><?php if(basename($_SERVER['PHP_SELF']) == 'steemposts.php' || basename($_SERVER['PHP_SELF']) == 'index.php') { ?><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script><script src="/js/posts.js"></script><script src="https://momentjs.com/downloads/moment.min.js"></script><script src="https://cdn.jsdelivr.net/npm/steemconnect"></script><script src="https://unpkg.com/dsteem@0.10.1/dist/dsteem.js"></script><script src="https://cdn.jsdelivr.net/npm/steem/dist/steem.min.js"></script><script src="/js/steemconnect.js"></script><? } ?>
