@@ -15,13 +15,13 @@ $('.prof_edit_btn').click(function() {
 $('.btn_edit').click(function(e) {	e.preventDefault();$("#profile_edit").modal("show");});
 $('.btn_verify_email').click(function(e) {	e.preventDefault();$("#email_verify").modal("show");});
 
-$('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true);
+$('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true).html('Verifying...');
     let pin_code = $('#email_pinit_code').val();
-    if (pin_code == "") {toastr.error('phew... PIN value should not be empty');$(".email_pin_btn").attr("disabled", false);return false;}
+    if (pin_code == "") {toastr.error('phew... PIN value should not be empty');$(".email_pin_btn").attr("disabled", false).html('Verify');return false;}
     $.ajax({type:"POST",url:'/helper/email_signup.php',data:{action :'email_verify',email_pin_code: pin_code},
         success: function(data) {
             try {var response = JSON.parse(data);
-                if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false);return false;
+                if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false).html('Verify');return false;
                 }else{toastr['success'](response.message);$("#email_verify").modal("hide");setTimeout(function(){window.location.reload ();}, 400);}
             } catch (err) {toastr.error('Sorry. Server response is malformed');console.log(err)}
         }
