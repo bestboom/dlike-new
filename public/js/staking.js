@@ -1,5 +1,6 @@
 function enable_unstake(){$("#unstake_me").attr("disabled", false).html('Unstake');}
 function enable_stake(){$("#stake_me").attr("disabled", false).html('Stake');}
+function enable_claim(){$("#claim_stk_reward").attr("disabled", false).html('Claim');}
 function pad(n) {return (n < 10 ? '0' : '') + n;}
 async function getUserStatus() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
@@ -149,26 +150,24 @@ $('#claimback_tokens').click(async function() {var user_address =false;
 });
 
 
-$('#claim_stk_reward').click(async function() {
-    if (dlike_username != null) {
-        let claim_amt = $('#claimeamount').val();
-        if (claim_amt == "") {toastr.error('phew... Claim amount not valid');return false;}
+$('#claim_stk_reward').click(async function() {$("#claim_stk_reward").attr("disabled", true).html('claiming...');
+    if (dlike_username != null) {let claim_amt = $('#claimeamount').val();
+        if (claim_amt == "") {toastr.error('phew... Claim amount not valid');enable_claim();return false;}
          
-        async function doAjax() {return $.ajax({type: 'post',url: '/helper/staking.php',data: { action : 'claim_stake',claim_amount: claim_amt },datatype: 'json',});
-        }
+        async function doAjax() {return $.ajax({type: 'post',url: '/helper/staking.php',data: { action : 'claim_stake',claim_amount: claim_amt },datatype: 'json',});}
         doAjax().then(async function(data) { var response = JSON.parse(data);
-            if (response.error == true) {toastr['error'](response.message);return false;}
+            if (response.error == true) {toastr['error'](response.message);enable_claim();return false;}
             else{let user_address =false;
                 if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
                 if(stk_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');return false;}
-                if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
+                if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');enable_claim();return false;
                 } else { 
                     $.ajax({type: 'post',url:'/helper/staking.php',data:{action : 'pay_staking_reward',claim_amount: claim_amt,wallet: user_address},});
                     claim_amt = claim_amt * 1e6;
                     let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
                     let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-                    if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
+                    if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');enable_claim();return false;}
                     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
                     let result = await myContract.getReward(claim_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){$('#stakingStatus').modal('show');
@@ -190,5 +189,5 @@ $('#claim_stk_reward').click(async function() {
 
             }
         });
-    } else {toastr.error('You must be login with DLIKE username!');return false;}
+    } else {toastr.error('You must be login with DLIKE username!');enable_claim();return false;}
 });
