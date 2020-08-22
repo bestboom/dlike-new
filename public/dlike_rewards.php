@@ -74,11 +74,11 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
                     </div>
                     <div class="form-group reward_fileds row" style="padding: 10px 0px;justify-content: space-between;margin: 1px;border-bottom: 1px solid #eee!important;">
                         <div><span class="fas fa-database"></span><span> | Charity </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle" style="font-size: 9px;"></i></a></div>
-                        <div><span class="inp_text"><?php echo $charity; ?></span></div>
+                        <div><span><?php echo $charity; ?></span></div>
                     </div>
                     <div class="form-group reward_fileds row" style="padding: 10px 0px;justify-content: space-between;margin: 1px;border-bottom: 1px solid #eee!important;">
-                        <div><span class="fas fa-database"></span><span> | Team </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle" style="font-size: 9px;"></i></a></div>
-                        <div><span class="inp_text"><?php echo $team; ?></span></div>
+                        <div><span class="fas fa-database"></span><span style="font-size: 1rem;color:#495057;opacity: 1;"> | Team </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle" style="font-size: 9px;color: #c51d24;"></i></a></div>
+                        <div><span><?php echo $team; ?></span></div>
                     </div>
                     <div class="form-group reward_fileds">
                         <input type="text" class="form-control reward_input" value=" | Foundation" readonly>
