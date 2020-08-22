@@ -161,7 +161,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'email_verify' && isset($_POS
     if (empty($errors)) {
 		$check_pin = $conn->query("SELECT * FROM dlikeaccounts where username = '$username' and verify_code = '$email_pin_code' ");
 		if ($check_pin->num_rows > 0) {$verified = '1';
-			$verifyuser = $conn->query("UPDATE dlikeaccounts SET verified = '$verified' WHERE email='$user_email'");
+			$verifyuser = $conn->query("UPDATE dlikeaccounts SET verified = '$verified' WHERE username='$username'");
 				if ($verifyuser) {$dlike_user_verify_url = 'https://dlike.io';
 		    		die(json_encode(['error' => false,'message' => 'Email Verified Successfully!','redirect' => $dlike_user_verify_url]));
 				}else {die(json_encode(['error'=>true,'message'=>'There is some issue in Email Verification!']));}
