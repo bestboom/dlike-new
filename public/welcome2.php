@@ -474,11 +474,10 @@ $('.email_login_btn').click(function() {
         }
     });
 });
-
 $('.email_reset_pass_btn').click(function() {let reset_email_id = $('#email_reset_pass').val();
     if (reset_email_id == "") {toastr.error('phew... Email should not be empty');return false;}
     $.ajax({
-        type: "POST",url: 'helper/email_reset_pass.php',data: { reset_email: reset_email_id },
+        type: "POST",url: '/helper/email_signup.php',data:{action :'reset_pass',reset_email:reset_email_id },
         success: function(data) {
             try {var response = JSON.parse(data)
                 if (response.error == true) {toastr['error'](response.message);return false;

@@ -168,4 +168,79 @@ if (isset($_POST['action']) && $_POST['action'] == 'email_verify' && isset($_POS
 		} else {die(json_encode(['error' => true,'message' => 'Does not seems to be a valid pin code for this email!'])); }
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
+
+
+if (isset($_POST['action']) && $_POST['action'] == 'reset_pass' && isset($_POST['reset_email'])  && $_POST['reset_email'] != '') { 
+
+	$reset_email = trim($_POST["reset_email"]);
+	if(empty($reset_email)){$errors = "Email Shoould not be empty";}
+
+    $check_email = $conn->query("SELECT * FROM dlikeaccounts where email = '$reset_email'");
+	if ($check_email->num_rows <= 0) {$errors = 'Sorry, no user exists with this email';}
+
+    if (empty($errors)) {
+
+    	$key = md5(2418*3);
+		$addKey = substr(md5(uniqid(rand(),1)),3,50);
+		$token = $key . $addKey;
+
+    	$sqlm = "INSERT INTO dlikepasswordreset (email, token, reset_time)
+				VALUES ('".$reset_email."', '".$token."', '".date("Y-m-d H:i:s")."')";
+
+		if (mysqli_query($conn, $sqlm)) {
+
+			$mail->isSMTP();
+		    $mail->Host = 'smtp.zoho.com';
+		    $mail->SMTPAuth = true;
+		    $mail->Username = 'no_reply@dlike.io';
+		    $mail->Password = getenv("EMAIL_PASS");
+		    $mail->SMTPSecure = 'tls';
+		    $mail->Port = 587;
+
+		    $mail->setFrom('no_reply@dlike.io', 'DLIKE');
+    		$mail->addAddress($reset_email);
+
+    		$mail->isHTML(true); 
+    		$mail->Subject = 'DLIKE Password Reset';
+    		$mail->Body    = 'Hi, We got password reset request for your DLIKE account! <br><br> To reset password, visit <a href=\'https://dlike.io/password_reset.php?token='.$token.'&email='.$reset_email.'\'>this link</a> <br>If you did not requested please ignore this message!<br><br>DLIKE Team<br><a href="https://dlike.io">dlike.io</a>';
+			
+			$done_email = $mail->send(); 
+
+			if($done_email) {die(json_encode(['error' => false,'message' => 'Password reset instructions sent to Email!']));	
+			} else {die(json_encode(['error' => true,'message' => 'Some Issue in password reset. Please contact support']));
+			}
+		} else {die(json_encode(['error' => true,'message' => 'There is some issue. Please Try later']));}
+    } else { die(json_encode(['error' => true,'message' => $errors]));}
+}
+
+
+
+if (isset($_POST['action']) && $_POST['action'] == 'set_new_pass' && isset($_POST['reset_pass'])  && $_POST['reset_pass'] != '' && isset($_POST['confirm_reset_pass'])  && $_POST['confirm_reset_pass'] != '' && isset($_POST['reset_email'])  && $_POST['reset_email'] != '') { 
+
+	$reset_pass = trim($_POST["reset_pass"]);
+	$confirm_reset_pass = trim($_POST["confirm_reset_pass"]);
+	$reset_email = trim($_POST["reset_email"]);
+
+	if(empty($reset_pass)){$errors = "Password Shoould not be empty";}
+    if(empty($confirm_reset_pass)){$errors = "Confirm Password Shoould not be empty";}
+    if($confirm_reset_pass != $reset_pass){$errors = "Both Passwords do nto match";}
+
+    if (empty($errors)) {
+    	$email = mysqli_real_escape_string($conn, $reset_email);
+    	$newPW = mysqli_real_escape_string($conn, $reset_pass);
+		$escapedPWN = md5($newPW);
+		$hashedPW = hash('sha256', $escapedPWN);
+
+		$update_pass = "UPDATE dlikeaccounts SET password = '$hashedPW' WHERE email = '$email'";
+		$result_update_pass = $conn->query($update_pass);
+		if ($result_update_pass === TRUE) {
+			$dlike_user_login_url = 'https://dlike.io';
+			$deleteuser = "DELETE FROM dlikepasswordreset where email = '$email'";
+			$deleteuser_q = $conn->query($deleteuser);
+
+			die(json_encode(['error' => false,'message' => 'Password Updated Successful!','redirect' => $dlike_user_login_url]));
+
+		} else {die(json_encode(['error' => true,'message' => 'Some issue in password reset. Please try later!'])); }
+    } else {die(json_encode(['error' => true,'message' => $errors]));}
+}
 ?>

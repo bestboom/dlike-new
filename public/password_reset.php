@@ -10,9 +10,7 @@
         <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">
             <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
                 <div class="modal-body">
-                    <div class="share-block">
-                        <p>Reset Password</p>
-                    </div>
+                    <div class="share-block"><p>Reset Password</p></div>
                     <div class="user-connected-form-block" style="background: #1b1e63;">
                     <?php if (empty($errors)) { ?>
                         <form class="user-connected-from password-reset-form">
@@ -42,46 +40,21 @@
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
 	$('#reset_pass_btn').click(function() {
-		let reset_email = $('#reset_email_id').val();
-		let reset_pass = $('#reset_pass').val();
-    	let confirm_reset_pass = $('#confirm_reset_pass').val();
-    	let email_verify_url = 'helper/email_new_pass.php';
+		let reset_email = $('#reset_email_id').val();let reset_pass = $('#reset_pass').val();
+    	let confirm_reset_pass = $('#confirm_reset_pass').val();let email_verify_url = 'helper/email_signup.php';
 
-	    if (reset_pass == "") {
-	        toastr.error('phew... Password should not be empty');
-	        return false;
-	    }
-	    if (confirm_reset_pass == "") {
-	        toastr.error('phew... Confirm Password should not be empty');
-	        return false;
-	    }
-	    if (confirm_reset_pass !== reset_pass) {
-	        toastr.error('phew... Passwords do not match!');
-	        return false;
-	    }
-	    var data_new_pass = {
-	    	reset_email: reset_email,
-	        reset_pass: reset_pass,
-	        confirm_reset_pass: confirm_reset_pass
-	    };
-	    $.ajax({
-	        type: "POST",
-	        url: email_verify_url,
-	        data: data_new_pass,
+	    if (reset_pass == "") {toastr.error('phew... Password should not be empty');return false;}
+	    if (confirm_reset_pass == "") {toastr.error('phew... Confirm Password should not be empty');return false;}
+	    if (confirm_reset_pass !== reset_pass) {toastr.error('phew... Passwords do not match!');return false;}
+	    var data_new_pass = {action :'set_new_pass',reset_email: reset_email,reset_pass: reset_pass,confirm_reset_pass: confirm_reset_pass};
+	    $.ajax({type: "POST",url: email_verify_url,data: data_new_pass,
 	        success: function(data) {
-	            try {
-	                var response = JSON.parse(data)
-	                if (response.error == true) {
-	                    toastr['error'](response.message);
+	            try {var response = JSON.parse(data)
+	                if (response.error == true) {toastr['error'](response.message);
 	                } else {
-	                    toastr['success'](response.message);
-	                    setTimeout(function(){
-	                        window.location.href = response.redirect;
-	                    }, 1000);
+	                    toastr['success'](response.message);setTimeout(function(){window.location.href = response.redirect;}, 1000);
 	                }
-	            } catch (err) {
-	                toastr.error('Sorry. Server response is malformed');
-	            }
+	            } catch (err) {toastr.error('Sorry. Server response is malformed');}
 	        }
 	    });
 	});

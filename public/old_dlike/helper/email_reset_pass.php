@@ -18,23 +18,16 @@
 if (isset($_POST['reset_email'])  && $_POST['reset_email'] != '') { 
 
 	$reset_email = trim($_POST["reset_email"]);
+	if(empty($reset_email)){$errors = "Email Shoould not be empty";}
 
-	if(empty($reset_email)){
-        $errors = "Email Shoould not be empty";
-    }
-
-    $check_email = "SELECT * FROM dlikeaccounts where email = '$reset_email'";
-	$result_email = $conn->query($check_email);
-	if ($result_email->num_rows <= 0) {
-		$errors = 'Sorry, no user exists with this email';
-	}
+    $check_email = $conn->query("SELECT * FROM dlikeaccounts where email = '$reset_email'");
+	if ($check_email->num_rows <= 0) {$errors = 'Sorry, no user exists with this email';}
 
     if (empty($errors)) {
 
     	$key = md5(2418*3);
 		$addKey = substr(md5(uniqid(rand(),1)),3,50);
 		$token = $key . $addKey;
-    	//$token = bin2hex(random_bytes(50));
 
     	$sqlm = "INSERT INTO dlikepasswordreset (email, token, reset_time)
 				VALUES ('".$reset_email."', '".$token."', '".date("Y-m-d H:i:s")."')";
@@ -58,29 +51,10 @@ if (isset($_POST['reset_email'])  && $_POST['reset_email'] != '') {
 			
 			$done_email = $mail->send(); 
 
-			if($done_email) { 
-				die(json_encode([
-			    	'error' => false,
-		    		'message' => 'Password reset instructions sent to Email!'
-				]));	
-			} else {
-			    die(json_encode([
-		    		'error' => true,
-		    		'message' => 'Some Issue in password reset. Please contact support'
-				]));
+			if($done_email) {die(json_encode(['error' => false,'message' => 'Password reset instructions sent to Email!']));	
+			} else {die(json_encode(['error' => true,'message' => 'Some Issue in password reset. Please contact support']));
 			}
-		} else {
-		    die(json_encode([
-	    		'error' => true,
-	    		'message' => 'There is some issue. Please Try later'
-			]));
-		}
-    } else {
-	    die(json_encode([
-    		'error' => true,
-    		'message' => $errors
-		]));
-	}
+		} else {die(json_encode(['error' => true,'message' => 'There is some issue. Please Try later']));}
+    } else { die(json_encode(['error' => true,'message' => $errors]));}
 } else {die('Some error');}
-
 ?>

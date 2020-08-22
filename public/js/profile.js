@@ -18,7 +18,7 @@ $('.btn_verify_email').click(function(e) {	e.preventDefault();$("#email_verify")
 $('.email_pin_btn').click(function() {$(".email_pin_btn").attr("disabled", true);
     let pin_code = $('#email_pinit_code').val();
     if (pin_code == "") {toastr.error('phew... PIN value should not be empty');$(".email_pin_btn").attr("disabled", false);return false;}
-    $.ajax({type:"POST",url:'/helper/email_verify.php',data:{email_pin_code: pin_code},
+    $.ajax({type:"POST",url:'/helper/email_signup.php',data:{action :'email_verify',email_pin_code: pin_code},
         success: function(data) {
             try {var response = JSON.parse(data);
                 if(response.error == true){toastr['error'](response.message);$(".email_pin_btn").attr("disabled", false);return false;
