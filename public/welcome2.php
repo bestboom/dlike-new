@@ -142,7 +142,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                         <div class="input-group-prepend">
                                             <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-key"></span></div>
                                         </div>
-                                        <input type="number" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)" class="form-control" />
+                                        <input type="number" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)" style="padding: 10px;" class="form-control" />
                                     </div>
                                     <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled><i class="fas fa-circle-notch fa-spin verify_pin_loader" style="display:none;"></i><span class="verify_email_txt">Verify Email</span></button>
                                 </form>
