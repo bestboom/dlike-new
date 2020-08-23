@@ -24,7 +24,8 @@ function emailLogin() {
         signin_text_section.style.display = 'none';
         signin_email_section.style.opacity = 0;
         signin_email_section.style.top     = '50px';
-        signin_email_section.style.display = '';
+        //signin_email_section.style.display = '';
+        signin_email_section.classList.remove("not_me");
         jQuery(signin_email_section).animate({
             opacity: 1,
             top    : 0
