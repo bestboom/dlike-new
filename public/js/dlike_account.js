@@ -24,8 +24,8 @@ function emailLogin() {
         signin_text_section.style.display = 'none';
         signin_email_section.style.opacity = 0;
         signin_email_section.style.top     = '50px';
-        //signin_email_section.style.display = '';
-        signin_email_section.classList.remove("not_me");
+        signin_email_section.style.display = '';
+        //signin_email_section.classList.remove("not_me");
         jQuery(signin_email_section).animate({
             opacity: 1,
             top    : 0
@@ -77,17 +77,14 @@ function signupemailverify() {
     var Signup_main_block  = document.querySelector('.signup-signup');
     var signup_email_block = Signup_main_block.querySelector('.signup-signup-email');
     var signup_verify_block   = Signup_main_block.querySelector('.signup-signup-email-verify');
-
     jQuery(signup_email_block).animate({
         opacity: 0,
         top    : -20
     }, 300, function () {
         signup_email_block.style.display = 'none';
-
         signup_verify_block.style.opacity = 0;
         signup_verify_block.style.top     = '50px';
         signup_verify_block.style.display = '';
-
         jQuery(signup_verify_block).animate({
             opacity: 1,
             top    : 0
@@ -108,7 +105,6 @@ function resetemailpass() {
         signin_forgot_section.style.opacity = 0;
         signin_forgot_section.style.top     = '50px';
         signin_forgot_section.style.display = '';
-
         jQuery(signin_forgot_section).animate({
             opacity: 1,
             top    : 0
