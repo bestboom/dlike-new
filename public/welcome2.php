@@ -18,7 +18,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
 
                 <div class="map-block signin_email_block not_me">
                     <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
-                        <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">DLIKE Login</h4>
+                        <h4 class="dlk_log_title">DLIKE Login</h4>
                         <p class="signup-signup-description"> This is open email login (not steem blockchain).</p>
                         <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
                             <div class="input-group mb-3">
@@ -34,14 +34,14 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                             </div>
                             <div class="forgot_pass">Forgot Password</div>
-                            <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;"><i class="fas fa-circle-notch fa-spin login_loader" style="display:none;"></i><span id="email_login_txt">LOGIN</span></button>
+                            <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;"><i class="fas fa-circle-notch fa-spin login_loader not_me"></i><span id="email_login_txt">LOGIN</span></button>
                         </form>
                     </div>
                 </div>
 
                 <div class="map-block signin_forgot_block not_me">
                     <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
-                        <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Reset Password</h4>
+                        <h4 class="dlk_log_title">Reset Password</h4>
                         <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;margin-top: 40px;">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -84,7 +84,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 <div class="signup_email_block">
                     <div class="contact-info-inner" style="margin-top: 10%;">
                         <h4  style="color: #0b132d;font-weight: 700;font-size: 24px;">Signup</h4>
-                        <form name="email_signup" class="em_sign_pin">
+                        <form name="email_signup" class="em_signup">
                             <div class="form-group input-username">
                                 <input type="hidden" id="refer_by_email" value="<?php echo $referrer;?>" />
                                 <input type="hidden" id="user_loc_email" value="<?php echo $thisip;?>" />
@@ -120,14 +120,14 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                         <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Verify Email</h4>
                         <span class="signup-signup-icon"><span class="fa fa-envelope"></span></span>
                         <p class="signup-signup-description">Enter the confirmation code sent to <b><span id="my_signup_email"></span></b>.</p>
-                        <form name="email-signup-pin" style="margin-left: 15%;margin-right: 15%;margin-top: 10px;width: unset;float: none;height: auto;">
+                        <form name="email-signup-pin" class="em_sign_pin">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-key"></span></div>
                                 </div>
                                 <input type="number" name="email-pin" id="email_pin_code" placeholder="confirmation code (6 digits)" style="padding: 8px;" class="form-control" />
                             </div>
-                            <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled><i class="fas fa-circle-notch fa-spin verify_pin_loader" style="display:none;"></i><span class="verify_email_txt">Verify Email</span></button>
+                            <button class="btn btn-primary email_verify_pin_btn" type="button" style="margin-top: 15px;"  disabled><i class="fas fa-circle-notch fa-spin verify_pin_loader not_me"></i><span class="verify_email_txt">Verify Email</span></button>
                         </form>
                     </div>
                 </div>
@@ -148,7 +148,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <span class="loader fa fas fa-circle-notch fa-spin not_me"></span>
                             </div>
                             <p style="margin:0px;"><?php if($referrer !='dlike'){echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';}?></p>
-                            <button class="next btn btn-lime" disabled><i class="fas fa-spinner" style="display:none;"></i><span>Continue</span></button>
+                            <button class="next btn btn-lime" disabled><i class="fas fa-spinner not_me"></i><span>Continue</span></button>
                         </form>
                     </div>
                 </div>

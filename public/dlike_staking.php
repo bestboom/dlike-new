@@ -76,31 +76,31 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane fade in active show" id="stake_dlike">
                             <div class="container"><div class="row stk_row">
-                                <div id="stake_sub stk90"> 
+                                <div class="stake_sub stk90"> 
                                     <div class="form-group"><input type="number" class="form-control" name="stakeamount" id="stakeamount" placeholder="Amount to Stake"></div>
-                                    <center><button type="button" class="btn btn-primary" id="stake_me stk30">Stake</button></center>
+                                    <center><button type="button" class="btn btn-primary stk30" id="stake_me">Stake</button></center>
                                 </div>
                         </div></div></div>
                         <div role="tabpanel" class="tab-pane fade" id="unstake_dlike">
                              <div class="container">
                                 <div id="unskae_row" class="row stk_row">
-                                    <div id="stake_sub stk90"><p>Loading...</p></div>
+                                    <div class="stake_sub stk90"><p>Loading...</p></div>
                                 </div>
                                 <div id="unstake_row" class="row stk_row not_me">
-                                    <div id="stake_sub stk90">
+                                    <div class="stake_sub stk90">
                                         <div class="form-group"><input type="number" class="form-control" name="unstakeamount" id="unstakeamount" placeholder="Amount to UnStake"></div>
-                                        <center><button type="button" class="btn btn-primary" id="unstake_me stk30">Unstake</button></center>
+                                        <center><button type="button" class="btn btn-primary stk30" id="unstake_me">Unstake</button></center>
                                     </div>
                                 </div>
                                 <div id="unstake_timer_row" class="row stk_row not_me">
-                                    <div id="stake_sub stk90">
+                                    <div class="stake_sub stk90">
                                         <div class="form-group"><b>Pending Unstake Tokens: </b><span id="unstakingAmount">0</span> DLIKE</div>
                                         <div class="form-group"><b>Availble to claim after: </b><span id="unstakingTimer">00 : 00 : 00</span></div>
                                         <div class="site_col"><b>You can initiate new unstake once old one is matured!</b></div>
                                     </div>
                                 </div>
                                 <div id="unstake_claim_row" class="row stk_row not_me">
-                                    <div id="stake_sub stk90">
+                                    <div class="stake_sub stk90">
                                         <center><button type="button" class="btn btn-primary" id="claimback_tokens"><span class="claimback_tk">Claim Unstaked Tokens</span></button></center>
                                     </div>
                                 </div>
@@ -108,9 +108,9 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="claim_dlike">
                             <div class="container"><div class="row stk_row">
-                                <div id="stake_sub stk90">
+                                <div class="stake_sub stk90">
                                     <div class="form-group"><input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim" readonly="readonly" value="<?php echo $my_rewards; ?>"></div>
-                                    <center><button type="button" class="btn btn-primary" id="claim_stk_reward stk30">Claim</button></center>
+                                    <center><button type="button" class="btn btn-primary stk30" id="claim_stk_reward">Claim</button></center>
                                 </div>
                         </div></div></div>
                 </div></div>
