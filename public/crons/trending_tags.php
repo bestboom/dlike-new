@@ -3,7 +3,7 @@ require '../includes/config.php';
 
 $sql_T = $conn->query("DELETE FROM dlike_trending_tags");
 
-$sql_C = $conn->query("SELECT count(*) as count, tag from dlike_tags group by tag Having count(*) >1 order by count(*) DESC LIMIT 12");
+$sql_C = $conn->query("SELECT count(*) as count, tag from dlike_tags WHERE created_time > now() - INTERVAL 24 HOUR group by tag Having count(*) > 1 order by count(*) DESC LIMIT 12");
 if ($sql_C->num_rows > 0)
 {	while ($row_C = $sql_C->fetch_assoc())
     {

@@ -118,25 +118,20 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
         </div>
     </div>
 </div>
-<div class="latest-tranjections-area">
-    <div class="latest-tranjections-block">
-        <div class="container">
-            <div class="latest-tranjections-block-inner">
-                <div class="panel-heading-block"><h5>Transaction History</h5></div>
-                <table class="table coin-list latest-tranjections-table">
-                    <thead><tr><th scope="col">Amount</th><th scope="col">Type</th><th scope="col">Trx ID</th><th scope="col">Time</th></tr></thead>
-                    <tbody>
-                        <?php $sql_st = $conn->query("SELECT * FROM dlike_staking_transactions where username = '$dlike_user' ORDER BY trx_time DESC Limit 30");
-                            if ($sql_st->num_rows > 0) {
-                                while($row_t = $sql_st->fetch_assoc()) {?> 
-                                <tr><td><?php echo $row_t["amount"]; ?></td><td><?php echo $row_t["type"]; ?></td><td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>';?></td><td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> </tr>
-                        <? } }?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+<div class="latest-tranjections-area"><div class="latest-tranjections-block"><div class="container">
+    <div class="latest-tranjections-block-inner">
+        <div class="panel-heading-block"><h5>Transaction History</h5></div>
+        <table class="table coin-list latest-tranjections-table">
+            <thead><tr><th scope="col">Amount</th><th scope="col">Type</th><th scope="col">Trx ID</th><th scope="col">Time</th></tr></thead>
+            <tbody>
+            <?php $sql_st = $conn->query("SELECT * FROM dlike_staking_transactions where username = '$dlike_user' ORDER BY trx_time DESC Limit 30");
+                if ($sql_st->num_rows > 0) { while($row_t = $sql_st->fetch_assoc()) {?> 
+                    <tr><td><?php echo $row_t["amount"]; ?></td><td><?php echo $row_t["type"]; ?></td><td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>';?></td><td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> </tr>
+            <? } }?>
+            </tbody>
+        </table>
     </div>
-</div>  
+</div></div></div>  
 <? } ?>  
 <div class="modal fade" id="stakingStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
 <div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="st_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger st_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
