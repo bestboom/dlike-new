@@ -1,5 +1,4 @@
-<?php if (isset($_COOKIE['username']) || $_COOKIE['username'] || isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io","_self")</script>');
-} else { include('template/header.php');
+<?php if (isset($_COOKIE['username']) || $_COOKIE['username'] || isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io","_self")</script>'); } else { include('template/header.php');
 if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';} ?>
 </div>
 <div class="container"><div class="contact-info-outer welcome"><div class="contact-info-wrap">
@@ -17,7 +16,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                     </div>
                 </div>
 
-                <div class="map-block signin_email_block" style="display: none">
+                <div class="map-block signin_email_block not_me">
                     <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
                         <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">DLIKE Login</h4>
                         <p class="signup-signup-description"> This is open email login (not steem blockchain).</p>
@@ -34,13 +33,13 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 </div>
                                 <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                             </div>
-                            <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:blue;" class="forgot_pass">Forgot Password</div>
+                            <div class="forgot_pass">Forgot Password</div>
                             <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;"><i class="fas fa-circle-notch fa-spin login_loader" style="display:none;"></i><span id="email_login_txt">LOGIN</span></button>
                         </form>
                     </div>
                 </div>
 
-                <div class="map-block signin_forgot_block" style="display: none">
+                <div class="map-block signin_forgot_block not_me">
                     <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
                         <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Reset Password</h4>
                         <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;margin-top: 40px;">
@@ -58,7 +57,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
         </div>
         <div class="col-md-6 signup_sec signup-signup">
 
-            <div class="row signup-signup-disable" style="display: none;">
+            <div class="row signup-signup-disable not_me">
                 <div class="contact-info-block signup_block">
                     <div class="contact-info-inner signup_inner">
                         <h4>Create Account</h4>
@@ -81,11 +80,11 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 </div>
             </div>
 
-            <div class="signup-signup-email" style="display: none;">
+            <div class="signup-signup-email not_me">
                 <div class="signup_email_block">
                     <div class="contact-info-inner" style="margin-top: 10%;">
                         <h4  style="color: #0b132d;font-weight: 700;font-size: 24px;">Signup</h4>
-                        <form name="email_signup" style="margin-top: 25px;margin-left: 16%;margin-right: 16%;width: unset;float: none;height: auto;margin-bottom: 6px;">
+                        <form name="email_signup" class="em_sign_pin">
                             <div class="form-group input-username">
                                 <input type="hidden" id="refer_by_email" value="<?php echo $referrer;?>" />
                                 <input type="hidden" id="user_loc_email" value="<?php echo $thisip;?>" />
@@ -109,16 +108,16 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" style="padding: 8px;" />
                             </div>
                             <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
-                            <button class="btn btn-lime email_signup_btn" type="button" style="background-color: #1b1e63;border-color: #1b1e63;padding: 8px;width: 50%;margin-right:25%;margin-left:25%;"><i class="fas fa-circle-notch fa-spin signup_loader" style="display:none;"></i><span style="padding-left: 8px;">SIGNUP</span></button>
+                            <button class="btn btn-lime email_signup_btn" type="button"><i class="fas fa-circle-notch fa-spin signup_loader not_me"></i><span style="padding-left: 8px;">SIGNUP</span></button>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="signup-signup-email-verify" style="display: none">
+            <div class="signup-signup-email-verify not_me">
                 <div class="signup_email_block">
                     <div class="contact-info-inner" style="margin-top: 10%;">
-                        <h4  style="color: #0b132d;font-weight: 700;font-size: 24px;">Verify Email</h4>
+                        <h4 style="color: #0b132d;font-weight: 700;font-size: 24px;">Verify Email</h4>
                         <span class="signup-signup-icon"><span class="fa fa-envelope"></span></span>
                         <p class="signup-signup-description">Enter the confirmation code sent to <b><span id="my_signup_email"></span></b>.</p>
                         <form name="email-signup-pin" style="margin-left: 15%;margin-right: 15%;margin-top: 10px;width: unset;float: none;height: auto;">
@@ -134,7 +133,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 </div>
             </div>
             
-            <div class="row signup-signup-steemit" style="display: none;">
+            <div class="row signup-signup-steemit not_me">
                 <div class="contact-info-block signup_block">
                     <div class="contact-info-inner signup_inner">
                         <h4 class="sign_head">Create Account</h4>
@@ -145,8 +144,8 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 <input type="hidden" id="user_loc" value="<?php echo $thisip; ?>" />
                                 <input type="text" name="username" class="form-control" id="user_name" placeholder="username">
                                 <span class="fa fa-user"></span>
-                                <span class="message" style="display: none"></span>
-                                <span class="loader fa fas fa-circle-notch fa-spin" style="display: none"></span>
+                                <span class="message not_me"></span>
+                                <span class="loader fa fas fa-circle-notch fa-spin not_me"></span>
                             </div>
                             <p style="margin:0px;"><?php if($referrer !='dlike'){echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';}?></p>
                             <button class="next btn btn-lime" disabled><i class="fas fa-spinner" style="display:none;"></i><span>Continue</span></button>
@@ -155,7 +154,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 </div>
             </div>
 
-            <div class="signup-signup-email" style="display: none">
+            <div class="signup-signup-email not_me">
                 <div class="contact-info-block signup_block">
                     <div class="contact-info-inner signup_inner">
                         <h4>Add Email</h4>
@@ -165,7 +164,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                             <span class="input-username">
                                 <input type="email" name="email" id="email_id" placeholder="enter email address"class="form-control" />
                                 <span class="fa fas fa-envelope"></span>
-                                <span class="loader fa fas fa-circle-notch" style="display: none"></span>
+                                <span class="loader fa fas fa-circle-notch not_me"></span>
                             </span>
                             <button class="next btn btn-lime" disabled>Verify Email</button>
                         </form>
@@ -173,7 +172,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 </div>
             </div>  
 
-            <div class="signup-signup-verify" style="display: none">
+            <div class="signup-signup-verify not_me">
                 <div class="contact-info-block signup_block">
                     <div class="contact-info-inner signup_inner">
                         <h4>Verify PIN</h4>
@@ -183,7 +182,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                             <span class="input-username">
                                 <input type="text" name="pin" id="pin_code" placeholder="confirmation code (6 digits)"class="form-control" />
                                 <span class="fa fas fa-search"></span>
-                                <span class="loader fa fas fa-circle-notch" style="display: none"></span>
+                                <span class="loader fa fas fa-circle-notch not_me"></span>
                             </span>
                             <button class="next btn btn-lime" disabled>Verify PIN</button>
                         </form>
@@ -191,7 +190,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 </div>
             </div>
 
-            <div class="signup-signup-success-2" style="display: none">
+            <div class="signup-signup-success-2 not_me">
                 <div class="contact-info-block signup_block">
                     <div class="contact-info-inner signup_inner">
                         <h4>Generate Password</h4>
@@ -204,20 +203,20 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 </div>
             </div>                  
 
-            <div class="signup-signup-copy" style="display: none">
+            <div class="signup-signup-copy not_me">
                 <div class="contact-info-block signup_block">
                     <div class="contact-info-inner signup_inner">
                         <h4>Password</h4>
                         <span class="signup-signup-icon"><span class="fas fa-user"></span></span>
                         <p class="signup-signup-description" style="margin-bottom: 20px;">This is the password (private key) of your Steem account<span style="color:red;">Please keep it secured.</span></p>
-                        <p style="margin-bottom: 20px;"><span class="password_container" id="pw_contain" style="padding: 20px;border: 1px solid #92b2bb;background: #dbf3fa;"></span></p>
+                        <p style="margin-bottom: 20px;"><span class="password_container" id="pw_contain"></span></p>
                         <a id="pw_contain"  href="#" name="copy_pre"><button class="next btn btn-danger">Copy Password</button></a>
                         <button class="next btn btn-lime pass_modal">Continue</button>
                     </div>
                 </div>
             </div>
 
-            <div class="signup-signup-done" style="display: none">
+            <div class="signup-signup-done not_me">
                 <div class="contact-info-block signup_block">
                     <div class="contact-info-inner signup_inner">
                         <h4>All Done!</h4>
