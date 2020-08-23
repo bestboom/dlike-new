@@ -1,6 +1,6 @@
 <?php include('template/header.php'); if (isset($_GET['token']) && isset($_GET["email"])) {$token = $_GET['token'];$email = $_GET['email'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 	$curDate = date("Y-m-d H:i:s");
-	$check_link = $conn->query"SELECT * FROM dlikepasswordreset where token = '$token' and email = '$email'");
+	$check_link = $conn->query("SELECT * FROM dlikepasswordreset where token = '$token' and email = '$email'");
 	if ($check_link->num_rows <= 0) {$errors = 'This is an invalid link for password reset';}
 	$row = mysqli_fetch_assoc($result_link);$reset_date = $row['reset_time'];
   	if ($reset_date >= $curDate){$errors = 'The link to reset password has expired';}
@@ -41,7 +41,7 @@
 <script type="text/javascript">
 	$('#reset_pass_btn').click(function() {
 		let reset_email = $('#reset_email_id').val();let reset_pass = $('#reset_pass').val();
-    	let confirm_reset_pass = $('#confirm_reset_pass').val();let email_verify_url = 'helper/email_signup.php';
+    	let confirm_reset_pass = $('#confirm_reset_pass').val();let email_verify_url = '/helper/email_signup.php';
 
 	    if (reset_pass == "") {toastr.error('phew... Password should not be empty');return false;}
 	    if (confirm_reset_pass == "") {toastr.error('phew... Confirm Password should not be empty');return false;}
