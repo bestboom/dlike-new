@@ -25,11 +25,9 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
                                 </div>
-                                <input type="password" name="confirm_reset_pass" id="confirm_reset_pass" placeholder="Confirm Password" class="form-control" style="padding: 8px;" />
+                                <input type="password" name="confirm_reset_pass" id="confirm_reset_pass" placeholder="Confirm Password" class="form-control" style="padding:8px;" />
                             </div>
-                            <center>
-                                <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="reset_pass_btn">Reset Password</button>
-                            </center>
+                            <center><button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="reset_pass_btn">Reset Password</button></center>
                         </form>
                     <? } else { echo '<h3 style="color: #e1ec31;">'.$errors.'</h3>'; } ?>
                     </div>
@@ -42,7 +40,6 @@
 	$('#reset_pass_btn').click(function() {
 		let reset_email = $('#reset_email_id').val();let reset_pass = $('#reset_pass').val();
     	let confirm_reset_pass = $('#confirm_reset_pass').val();let email_verify_url = '/helper/email_signup.php';
-
 	    if (reset_pass == "") {toastr.error('phew... Password should not be empty');return false;}
 	    if (confirm_reset_pass == "") {toastr.error('phew... Confirm Password should not be empty');return false;}
 	    if (confirm_reset_pass !== reset_pass) {toastr.error('phew... Passwords do not match!');return false;}
@@ -51,8 +48,7 @@
 	        success: function(data) {
 	            try {var response = JSON.parse(data)
 	                if (response.error == true) {toastr['error'](response.message);
-	                } else {
-	                    toastr['success'](response.message);setTimeout(function(){window.location.href = response.redirect;}, 1000);
+	                } else {toastr['success'](response.message);setTimeout(function(){window.location.href = response.redirect;}, 1000);
 	                }
 	            } catch (err) {toastr.error('Sorry. Server response is malformed');}
 	        }

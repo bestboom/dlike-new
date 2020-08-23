@@ -2,7 +2,7 @@
 <div class="latest-post-section"><div class="container">
 <div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row">
-<?php $topLikes= $conn->query("SELECT * FROM postslikes Where update_time > now() - INTERVAL 24 HOUR ORDER BY likes DESC LIMIT 30");
+<?php $topLikes= $conn->query("SELECT * FROM postslikes Where update_time > now() - INTERVAL 24 HOUR ORDER BY likes DESC LIMIT 60");
 if ($topLikes && $topLikes->num_rows > 0){  while ($row_TL = $topLikes->fetch_assoc()){
     $author_tl = $row_TL["author"];$permlink_tl = $row_TL["permlink"];
     $sql_T = $conn->query("SELECT * FROM dlikeposts WHERE username='$author_tl' and permlink='$permlink_tl'");

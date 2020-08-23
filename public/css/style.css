@@ -795,7 +795,7 @@ sub.transmoney-value{bottom:0}
 .post-style-two{margin-bottom:60px}
 .post-style-two .dlike-hov{margin-top:-65px;margin-bottom:15px;margin-left:40%;z-index:1}
 .post-style-two .post-contnet-wrap{padding:20px 20px 16px;background-color:#fff;border:1px solid #aaabafab;border-top:none;transition:all .3s ease-in;-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;-o-transition:all .3s ease-in;-webkit-box-shadow:0 20px 45px 0 rgba(0,0,0,0.05);box-shadow:0 20px 45px 0 rgba(0,0,0,0.05)}
-.post-style-two .post-contnet-wrap-top{padding:10px 20px 8px;border:1px solid #aaabafab;border-bottom:none;transition:all .3s ease-in;-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;-o-transition:all .3s ease-in}
+.post-style-two .post-contnet-wrap-top{background:#fff;padding:10px 20px 8px;border:1px solid #aaabafab;border-bottom:none;transition:all .3s ease-in;-webkit-transition:all .3s ease-in;-moz-transition:all .3s ease-in;-ms-transition:all .3s ease-in;-o-transition:all .3s ease-in}
 .post-style-two .post-contnet-wrap:hover{-webkit-box-shadow:0 20px 45px 0 rgba(0,0,0,0.05);box-shadow:0 20px 45px 0 rgba(0,0,0,0.05)}
 .card-img-top2{width:100%;height:auto;object-fit:cover}
 .post-style-two .post-thumb{border-left:1px solid #aaabafab;border-right:1px solid #aaabafab}
@@ -1061,7 +1061,8 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 #highContainer{height: 370px; width: 100%;margin-top: 60px;}
 .dividendCountDown{font-size: 1.7rem;}.rewards_clock{font-size: 1.3rem;padding-right: 1rem;}
 .stk_rewards_ann{color:#c51d24;font-weight:600;}.stk_ann_icon{padding-right:10px;}
-
+.stk_row{margin-top: 55px;justify-content: center;}.stk100{width: 100%;}.stk_box{border: 1px solid #191d5d !important;border-top: none;padding-bottom: 50px;}
+.stk_section{padding: 40px 0 60px;}.stk90{width: 90%;}.miss_frown{color: #ffff008a;font-size: 4rem;}.site_col{color: #c51d24;}.not_me{display: none;}.miss_content{background: #1b1e63;border-radius:14px;}.stk30{width: 30%;}
 
 @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}
 
