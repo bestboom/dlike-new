@@ -1069,6 +1069,8 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .email_signup_btn{background-color: #1b1e63;border-color: #1b1e63;padding: 8px;width: 50%;margin-right:25%;margin-left:25%;}
 .em_sign_pin{margin-left: 15%;margin-right: 15%;margin-top: 10px;width: unset;float: none;height: auto;}
 .dlk_log_title{color: #0b132d;font-weight: 700;font-size: 24px;}
+.wel_log_btn{padding: 3px 9px;margin: 3px;}.wel_h_title{text-align: center;margin: 25px;margin-top: 15%;}.wel_log_section{display: flex;justify-content: flex-end;}.wel_deck{background: #b6c9fb;}
+
 @media screen and (max-width: 499px) {.post-style-two.post-full-width .post-contnet-wrap {padding: 30px 15px 31px 15px;}.post-title{font-size: 16px;}.post-style-two .post-tags {width: 100%;}.author-info{line-height: 1;}.auth-time{font-size: 11px;padding-left: 1px;}}
 
 @media all and (max-width: 240px) {

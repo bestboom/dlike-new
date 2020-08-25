@@ -9,27 +9,23 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                     <div class="contact-info-inner signin_inner">
                         <h4 class="signin_head">Existing User</h4>
                         <p>If you already have an account, login with your steem based username OR open login with email.</p>
-                        <div style="display: flex;justify-content: flex-end;">
-                            <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-default signin_btn" style="padding: 3px 9px;margin: 3px;">STEEM Login</button>
-                            <button type="button" class="btn btn-default signin_btn signin_email_btn" style="padding: 3px 9px;margin: 3px;">Email Login</button>
+                        <div class="wel_log_section">
+                            <button onclick="window.location.href='https://steemlogin.com/oauth2/authorize?client_id=dlike.app&redirect_uri=https%3A%2F%2Fdlike.io%2Fsteemlogin&scope=';" type="button" class="btn btn-default signin_btn wel_log_btn">STEEM Login</button><button type="button" class="btn btn-default signin_btn signin_email_btn wel_log_btn">Email Login</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="map-block signin_email_block" style="display:none;">
-                    <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
-                        <h4 class="dlk_log_title">DLIKE Login</h4>
+                    <div class="contact-info-inner wel_h_title"><h4 class="dlk_log_title">DLIKE Login</h4>
                         <p class="signup-signup-description"> This is open email login (not steem blockchain).</p>
-                        <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
+                        <form name="email_login_form wel_h_title">
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-user"></span></div>
-                                </div>
+                                <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"> <span class="fa fas fa-user"></span></div></div>
                                 <input type="text" name="login_user" id="login_user_id" placeholder="Username" class="form-control" />
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-lock"></span></div>
+                                    <div class="input-group-text mb-deck wel_deck"> <span class="fa fas fa-lock"></span></div>
                                 </div>
                                 <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                             </div>
@@ -40,13 +36,9 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 </div>
 
                 <div class="map-block signin_forgot_block" style="display:none;">
-                    <div class="contact-info-inner" style="text-align: center;margin: 25px;margin-top: 15%;">
-                        <h4 class="dlk_log_title">Reset Password</h4>
-                        <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;margin-top: 40px;">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text mb-deck" style="background: #b6c9fb;"> <span class="fa fas fa-envelope"></span></div>
-                                </div>
+                    <div class="contact-info-inner wel_h_title"><h4 class="dlk_log_title">Reset Password</h4>
+                        <form name="email_login_form wel_h_title"><div class="input-group mb-3">
+                            <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"><span class="fa fas fa-envelope"></span></div></div>
                                 <input type="email" name="email_reset_pass" id="email_reset_pass" placeholder="Email Address" class="form-control" />
                             </div>
                             <button class="btn btn-primary email_reset_pass_btn" type="button" style="margin-top: 15px;">Submit</button>
