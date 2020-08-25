@@ -35,7 +35,7 @@ async function getUserStatus() {var user_address =false;
                         countdown.innerHTML = "<span>" + days + " Day <span>" + hours + "</span> : <span>" + minutes + "</span> : <span>" + seconds + "</span>";    }
                 }
             } else{$('#unskae_row').hide();$('#unstake_row').show();}         
-        }
+        }else{$('#unskae_row').hide();$('#unstake_row').show();}
     }else{$('#unskae_row').hide();$('#unstake_row').show();} 
 }
 setTimeout(getUserStatus,600);
