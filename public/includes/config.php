@@ -70,7 +70,7 @@ $foundation_reward = '0.025';
 $max_withdraw_limit = '5000';
 $no_of_staking_rewards = '200';
 
-$tron_contract = "TGzZSWWLaSfLxXSAS2LhEQZeaPVJ1yZppc";
+$tron_contract = "TASCF31scBU23DSZ7RHxyLTeYpZV5szT1d";
 //$tron_contract = "TL675pEozCbUHmdZyvLkemoAWmH5wP9gFu";
 $restricted_urls = array("dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "pinterest.com", "twitter.com", "bloomberg.com", "youtu.be");
 ?>
