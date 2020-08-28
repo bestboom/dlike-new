@@ -50,6 +50,7 @@ $('#stake_me').click(async function() {
             $("#stake_me").attr("disabled", true).html('staking...');
             let stk_amt = $('#stakeamount').val();
             if (stk_amt == "") {toastr.error('phew... Please enter the amount you want to stake');enable_stake();return false;}
+            if (stk_amt < 5) {toastr.error('phew... Min 5 tokens should be staked!');enable_stake();return false;}
             if(stk_wallet !=""){
                 if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');enable_stake();return false;}
             }
