@@ -1,14 +1,10 @@
 <?php
 include_once '../vendor/autoload.php';
-//define('CONTRACT_ADDRESS','412189e1a476caa562c11641a6d7c78044cd339835');
-define('CONTRACT_ADDRESS','41051a98ecff2b0c8bbd99279737cb274fa880451a');
-//define('CONTRACT_ADDRESS_HEX','41d1b0bb8d4d17d39153f7e0c536502ec8756a86fe');
+define('CONTRACT_ADDRESS','41de19a8bdb7f6f1bf32f38e2adb6209d7c21f32c3');
 define('TRONGRID_V2_EVENT_API_URL','https://v2.api.shasta.trongrid.io/event/contract/');
 define('API_URL','https://api.shasta.tronscan.org/api/');
 define('TRONSCAN_URL','https://shasta.tronscan.org/#/transaction/');
-//define('SIGNER','TBi9uevWfsKtVUup7GDEeGDy3GHcu6UiPF');
 define('SIGNER','TK1UfiryAmyHYanpFCGp46itBtAQU9DJaM');
-//define('SIGNER_PK','AD3675543AFE55B1FA10B318E4E028DAD74D2105A2FCE4827B4EB2DBC3AE8A7E');
 define('SIGNER_PK','2487943a43897902b48f483aa4a2f8bb8dfb5029157ad7386a584c199b5ca214');
 
 //$event_uel = EVENT_API_URL.'contract/'.CONTRACT_ADDRESS;
