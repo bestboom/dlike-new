@@ -18,7 +18,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                 <div class="map-block signin_email_block" style="display:none;">
                     <div class="contact-info-inner wel_h_title"><h4 class="dlk_log_title">DLIKE Login</h4>
                         <p class="signup-signup-description"> This is open email login (not steem blockchain).</p>
-                        <form name="email_login_form wel_h_title">
+                        <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"> <span class="fa fas fa-user"></span></div></div>
                                 <input type="text" name="login_user" id="login_user_id" placeholder="Username" class="form-control" />
@@ -37,7 +37,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
 
                 <div class="map-block signin_forgot_block" style="display:none;">
                     <div class="contact-info-inner wel_h_title"><h4 class="dlk_log_title">Reset Password</h4>
-                        <form name="email_login_form wel_h_title"><div class="input-group mb-3">
+                        <form name="email_login_form" style="margin-left: 15%;margin-right: 15%;"><div class="input-group mb-3">
                             <div class="input-group-prepend"><div class="input-group-text mb-deck wel_deck"><span class="fa fas fa-envelope"></span></div></div>
                                 <input type="email" name="email_reset_pass" id="email_reset_pass" placeholder="Email Address" class="form-control" />
                             </div>
