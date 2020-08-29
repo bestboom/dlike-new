@@ -1,6 +1,6 @@
 <?php
 include_once '../vendor/autoload.php';
-define('CONTRACT_ADDRESS','41de19a8bdb7f6f1bf32f38e2adb6209d7c21f32c3');
+define('CONTRACT_ADDRESS','41a4a6fcfe457a1e26236dee0c7ffe1d94494a33a8');
 define('TRONGRID_V2_EVENT_API_URL','https://v2.api.shasta.trongrid.io/event/contract/');
 define('API_URL','https://api.shasta.tronscan.org/api/');
 define('TRONSCAN_URL','https://shasta.tronscan.org/#/transaction/');
