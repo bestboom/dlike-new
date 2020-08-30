@@ -142,12 +142,12 @@
     <div class="activity-section"><div class="container"><div class="row"><div class="col-md-12">
         <div class="card h-100">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <div class="card-header-title"><h4>Staking Transactions</h4></div>
+                <div class="card-header-title"><h4>Withdrawals</h4></div>
             </div>
             <table class="table coin-list table-hover" style="border: 1px solid #eee;">
             <tbody>
                 <?php 
-                $sql_T = $conn->query("SELECT * FROM dlike_withdrawals ORDER BY trx_time DESC LIMIT 30");
+                $sql_T = $conn->query("SELECT * FROM dlike_withdrawals ORDER BY req_on DESC LIMIT 30");
                 if ($sql_T && $sql_T->num_rows > 0) {
                     while ($row_T = $sql_T->fetch_assoc()) {
                         $start_time = strtotime($row_T["req_on"]);$dlike_user = $row_T["username"];
