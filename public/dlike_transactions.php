@@ -1,7 +1,7 @@
 <?php include('template/header.php'); ?>
 <div style="padding-top: 60px;background: #220f58;">
     <div class="col-md-12">
-        <div class="banner-content explorer-form" style="padding: 15px;">
+        <div class="container banner-content explorer-form" style="padding: 15px;">
             <form action="/wallets.php" class="subs-form">
                 <div class="input-box expl">
                     <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by dlike username" required />
@@ -128,7 +128,7 @@
                         if ($sql_W && $sql_W->num_rows > 0){$profile_pic=$row_W["profile_pic"];} ?>
                         <tr>
                             <td class="exp-user wid_2" style="padding: 12px 22px;"><span style="justify-content: left;"><?php echo '<img src="'.$profile_pic.'" style="padding-right:10px;width: 32px;"><a href="/profile/'. $dlike_user.'">'. $dlike_user.'</a>'; ?></span></td>
-                            <td class="exp-amt wid_2" style="padding: 12px 22px;"><span><?php echo $trx_type; ?></span></td>
+                            <td class="exp-amt wid_2" style="padding: 12px 22px;"><span><?php echo $tx_type; ?></span></td>
                             <td class="exp-amt wid_2" style="padding: 12px 22px;"><span><?php echo $row_T["amount"]; ?></span></td>
                             <td class="exp-amt wid_2" style="padding: 12px 22px;"><span><?php echo '<a href="https://tronscan.org/#/transaction/'.$row_T["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></span></td>
                             <td class="exp-amt wid_2" style="padding: 12px 22px;">
