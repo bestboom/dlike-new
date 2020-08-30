@@ -55,11 +55,11 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                 <ul class="working-process-list">
                     <li><div class="working-process-step">
                         <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  DLIKE Staking</h4>
-                        <div class="process-details"><p>20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among tp 200 stakers by volume. This number will gradually grow to 1000.</p></div>
+                        <div class="process-details"><p>20% reward out of every DLIKE token generated through likes on shared links is reserved for staking. This reward is distributed among top 200 staking accounts by volume. This number will gradually grow to 1000.</p></div>
                     </div></li>
                     <li><div class="working-process-step">
                         <h4><span class="fas fa-hand-point-right" style="padding-right: 10px;"></span>  How to Stake?</h4>
-                        <div class="process-details"><p>Simply login with Tronlink and stake the amount of tokens you want. You agree to freeze these tokens for 7 days as rewards on these staked tokens are distributed on daily basis.</p></div>
+                        <div class="process-details"><p>Simply login with Tronlink and stake the number of tokens you want. Rewards on these staked tokens is distributed daily. Once you want to unstake tokens power down period is 7 days.</p></div>
                     </div></li>
                 </ul>
             </div></div>
