@@ -72,4 +72,10 @@ $no_of_staking_rewards = '200';
 
 $tron_contract = "TQyos4p72bkhQq78L4oqPYQELa3GAMynwN";
 $restricted_urls = array("dlike.io", "steemit.com", "wikipedia.org", "facebook.com", "youtube.com", "pinterest.com", "twitter.com", "bloomberg.com", "youtu.be");
+$dlike_charity_acc="TCwS1TPfHvF1aL9BxvXMvp8mKcJr4fnP5x";
+$dlike_daf_acc="TWTXTvXctXP7cP379nGMeEofGHiH42tstU";
+$dlike_team_acc="TZFX4pbMV2Gb9qVrneT2z6FvRY6R7UjiZp";
+$dlike_foundation_acc="TR8e71omi84YpJJNzDSShGvbNmeWcBVGDm";
+$dlike_airdrop_acc="TPHiKY8sswCuD9wy1s6XM5C6e3R1iJnCqP";
+
 ?>

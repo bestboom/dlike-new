@@ -39,19 +39,19 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
                     <div><span class="fas fa-database"></span><span class="rewards_type"> | Staking </span></div><div><span><?php echo $staking; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
-                    <div><span class="fas fa-database"></span><span class="rewards_type"> | DAO </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a></div>
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | DAF </span><?php echo '<a href="https://tronscan.org/#/address/'.$dlike_daf_acc.'" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a>';?></div>
                     <div><span><?php echo $dao; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
-                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Charity </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a></div>
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Charity </span><?php echo '<a href="https://tronscan.org/#/address/'.$dlike_charity_acc.'" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a>';?></div>
                     <div><span><?php echo $charity; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
-                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Team </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a></div>
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Team </span><?php echo '<a href="https://tronscan.org/#/address/'.$dlike_team_acc.'" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a>';?></div>
                     <div><span><?php echo $team; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
-                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Foundation </span><a href="https://tronscan.org/#/address/TGGnB81bATA6he2ZEVeFzXU2yzmi5YZ49m" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a></div>
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Foundation </span><?php echo '<a href="https://tronscan.org/#/address/'.$dlike_foundation_acc.'" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a>';?></div>
                     <div><span><?php echo $foundation; ?></span></div>
                 </div>
                 <p>Time Remaining for Next Reward Pool</p>
