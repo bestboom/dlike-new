@@ -110,7 +110,7 @@ $dlike_bal    = $rowIt['amount'];
 	        return false;
 	    }
 
-    	let convert_url = 'helper/converter.php';
+    	let convert_url = '/helper/converter.php';
 	    var data_amt = {action : 'dlike_con',dlk_amount: dlk_amount};
 	    $.ajax({
 	        type: "POST",

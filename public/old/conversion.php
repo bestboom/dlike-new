@@ -1,4 +1,5 @@
-<?php include('header.php'); ?>
+<?php if($_COOKIE['username'] != 'dlike'){die('<script>window.location.replace("https://dlike.io","_self")</script>');};
+include('header.php'); ?>
 
 
 <div>
@@ -70,7 +71,7 @@
 $('.app_con').click(function() {
 	let conv_id = $(this).val();
 	console.log(conv_id);
-	let convert_url = '../helper/converter.php';
+	let convert_url = '/helper/converter.php';
     var data_eth = {action : 'pay_con',conv_id: conv_id};
     $.ajax({
         type: "POST",
