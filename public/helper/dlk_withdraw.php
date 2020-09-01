@@ -90,7 +90,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 	    	$vAdminAddress=SIGNER;
 	    	$vHExAddress=$tron->address2HexString($vAdminAddress);
 	    	$tron->setAddress($vAdminAddress);
-	    	$tron->setPrivateKey(SIGNER_PK);
+	    	$tron->setPrivateKey($signer_pk);
 
 	    	$contract = CONTRACT_ADDRESS;
 	    	$function = 'payToken';
