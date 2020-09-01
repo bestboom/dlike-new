@@ -1,4 +1,4 @@
-<?php include('template/header5.php'); 
+<?php include('../template/header.php'); 
 if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
     die('<script>window.location.replace("https://dlike.io","_self")</script>');
 } else {
@@ -82,7 +82,7 @@ $dlike_bal    = $rowIt['amount'];
             </div>
         </div>
     </div>  
-<?php include('template/footer.php'); ?>
+<?php include('../template/footer.php'); ?>
 <script type="text/javascript">
 	var dlike_val = document.getElementById('dlike_convert_amount');
 
@@ -160,7 +160,7 @@ $dlike_bal    = $rowIt['amount'];
 	        return false;
 	    }
 	    console.log(eth_amount);
-    	let convert_url = 'helper/converter.php';
+    	let convert_url = '/helper/converter.php';
 	    var data_eth = {action : 'eth_con',eth_amount: eth_amount,eth_addr: eth_addr,earn_method:earn_method,steem_addr:steem_addr};
 	    $.ajax({
 	        type: "POST",
