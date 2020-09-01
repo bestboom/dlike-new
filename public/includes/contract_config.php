@@ -4,14 +4,12 @@ define('CONTRACT_ADDRESS','41a4a6fcfe457a1e26236dee0c7ffe1d94494a33a8');
 define('TRONGRID_V2_EVENT_API_URL','https://v2.api.shasta.trongrid.io/event/contract/');
 define('API_URL','https://api.shasta.tronscan.org/api/');
 define('TRONSCAN_URL','https://shasta.tronscan.org/#/transaction/');
-define('SIGNER','TK1UfiryAmyHYanpFCGp46itBtAQU9DJaM');
+define('SIGNER','TJLwvVtwwHVkKNcMrmtzsr8NgyXRygMuWA');
 $signer_pk = getenv("SIGNER_PK");
-//$signer_pk = '2487943a43897902b48f483aa4a2f8bb8dfb5029157ad7386a584c199b5ca214';
 define('SIGNER_PK', $signer_pk);
 //$event_uel = EVENT_API_URL.'contract/'.CONTRACT_ADDRESS;
 
 use IEXBase\TronAPI\Tron;
-
 $fullNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.shasta.trongrid.io');
 $solidityNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.shasta.trongrid.io');
 $eventServer = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.shasta.trongrid.io');
