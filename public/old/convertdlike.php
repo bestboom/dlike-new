@@ -1,4 +1,4 @@
-<?php include('../template/header.php'); 
+<?php include('header.php'); 
 if (!isset($_COOKIE['username']) || !$_COOKIE['username']) {
     die('<script>window.location.replace("https://dlike.io","_self")</script>');
 } else {

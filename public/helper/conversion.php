@@ -1,6 +1,4 @@
-<?php include('../includes/header.php'); 
-
-?>
+<?php include('header.php'); ?>
 
 
 <div>
@@ -67,7 +65,7 @@
 		</table>
 	</div>
 </div>
-<?php include('../template/footer.php'); ?>
+<?php include('footer.php'); ?>
 <script type="text/javascript">
 $('.app_con').click(function() {
 	let conv_id = $(this).val();
