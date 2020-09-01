@@ -134,5 +134,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">    $('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/wallets/" + user_wallet;window.open(wallet_url, "_self");});</script>
+<script type="text/javascript">    $('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/explorer/" + user_wallet;window.open(wallet_url, "_self");});</script>
 <?php include('template/footer.php'); ?>

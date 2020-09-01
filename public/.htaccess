@@ -32,3 +32,4 @@ RewriteRule ^post/(.*)/(.*)$ ./dlike_post.php?user=$1&link=$2
 RewriteRule ^posts/(.*)$ ./dlike_posts.php?page=$1
 RewriteRule ^trending$ ./dlike_trending.php
 RewriteRule ^steemposts$ ./steemposts.php
+RewriteRule ^explorer/(.*)$ ./dlike_transactions.php?user=$1
