@@ -124,4 +124,5 @@
         </div>
     </div><!-- activity-section -->
 </div><!-- explorer-section -->
+<script type="text/javascript">    $('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/wallets/" + user_wallet;window.open(wallet_url, "_self");});</script>
 <?php include('footer.php'); ?>

@@ -1,58 +1,16 @@
 <?php include('template/header.php'); ?>
 <div style="padding-top: 60px;background: #220f58;">
-    <div class="col-md-12">
-        <div class="container banner-content explorer-form" style="padding: 15px;">
-            <form action="/wallets.php" class="subs-form">
-                <div class="input-box expl">
-                    <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by dlike username" required />
-                    <button type="button" class="wallet-search">Search</button>
-                </div>
-            </form>
-        </div>
-    </div>
+    <div class="col-md-12"><div class="container banner-content explorer-form" style="padding: 15px;">
+        <form action="/wallets.php" class="subs-form">
+            <div class="input-box expl">
+                <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by dlike username" required />
+                <button type="button" class="wallet-search">Search</button>
+            </div>
+        </form>
+    </div></div>
 </div>
 </div><!-- banner-block -->
 <div class="explorer-section" style="margin-bottom: 40px;">
-    <div class="support-category-section"><div class="container"><div class="row">
-        <div class="col-md-4">
-            <div class="support-category-block">
-                <h4>Max Tokens Supply</h4>
-                <h5>800M</h5>
-                <hr>
-                <h4>Available Tokens Supply</h4>
-                <h5>400M</h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <?php
-            $sql = "SELECT sum(amount) as total FROM wallet";
-            $result = $conn->query($sql);
-            while($row = $result->fetch_assoc()) { ?>
-                <div class="support-category-block">
-                    <h4>Total Distributed</h4>
-                    <h5><?php echo (number_format($row['total'])); ?></h5>
-                <? }?>
-                <hr>
-                <?php
-                $sqlu = "SELECT COUNT(username) as users FROM wallet";
-                $resultIt = $conn->query($sqlu);
-                while($row = $resultIt->fetch_assoc()) { ?>
-                    <h4>Total Token holders</h4>
-                    <h5><?php echo (number_format($row['users'])); ?></h5>
-                <? } ?>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="support-category-block">
-                <h4>Looking For Free Tokens</h4>
-                <h5>Promote Dlike</h5>
-                <h5></h5>
-                <h5>Contact With Support</h5>
-                <a class="sup-icon" href="https://discord.gg/JYSkBFk"><i class="fab fa-discord"></i></a>
-            </div>
-        </div>
-    </div></div></div>
-
     <div class="new-ticker-block new-ticker-block-section">
         <div class="container">
             <div class="new-ticker-block-wrap">
@@ -176,4 +134,5 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">    $('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/wallets/" + user_wallet;window.open(wallet_url, "_self");});</script>
 <?php include('template/footer.php'); ?>
