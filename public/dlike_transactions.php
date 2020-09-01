@@ -165,5 +165,1109 @@
         </div>
     </div></div></div></div>
 
+
+
+    <div class="new-ticker-block new-ticker-block-section">
+        <div class="container">
+            <div class="new-ticker-block-wrap">
+                <div class="ticker-head">
+                    <ul class="nav nav-tabs ticker-nav" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#favorite_ticker" role="tab" data-toggle="tab">
+                                <h5>Favorites</h5>
+                                <i class="fa fa-stroopwafel"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#BNB_markets" role="tab" data-toggle="tab">BNB Markets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#BTC_markets" role="tab" data-toggle="tab">BTC Markets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ETH_markets" role="tab" data-toggle="tab">ETH Markets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#USDT_markets" role="tab" data-toggle="tab">USDT Markets</a>
+                        </li>
+                        <li class="nav-item nav-item-last">
+                            <form action="#" method="get" class="search-form">
+                                <div class="input-box">
+                                    <input type="text" value="" required="" name="s" class="form-control" placeholder="Search...">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="market-ticker-block">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active show" id="favorite_ticker">
+                            <table class="table coin-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col">Pair</th>
+                                        <th scope="col">Last Price</th>
+                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
+                                        <th scope="col">24h High</th>
+                                        <th scope="col">24h Low</th>
+                                        <th scope="col">24h Volume</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td> POA / BTC</td>
+                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
+                                        <td><span class="color-sell">-23.80%</span></td>
+                                        <td>0.00007300</td>
+                                        <td>0.00005510</td>
+                                        <td>7,522.88586112</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ONT/BTC</td>
+                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
+                                        <td><span class="color-buy">+8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ETH/BTC</td>
+                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
+                                        <td><span class="color-buy">+2.76%</span></td>
+                                        <td>0.05723</td>
+                                        <td>0.05550</td>
+                                        <td>5,523.15018959</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>IOST/BTC</td>
+                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td&gt;
+                                        </td><td><span class="color-sell">-2.73%</span></td>
+                                        <td>0.0000051</td>
+                                        <td>0.0000046</td>
+                                        <td>5,300.71861161</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>POA / BTC</td>
+                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
+                                        <td><span class="color-buy">+2.70%</span></td>
+                                        <td>0.0000055</td>
+                                        <td>0.0000052</td>
+                                        <td>4,683.61663443</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                </tbody>
+                            </table><!-- coin-list table -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="BNB_markets">
+                            <table class="table coin-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col">Pair</th>
+                                        <th scope="col">Last Price</th>
+                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
+                                        <th scope="col">24h High</th>
+                                        <th scope="col">24h Low</th>
+                                        <th scope="col">24h Volume</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td> POA / BTC</td>
+                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
+                                        <td><span class="color-sell">-23.80%</span></td>
+                                        <td>0.00007300</td>
+                                        <td>0.00005510</td>
+                                        <td>7,522.88586112</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ONT/BTC</td>
+                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
+                                        <td><span class="color-buy">+8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ETH/BTC</td>
+                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
+                                        <td><span class="color-buy">+2.76%</span></td>
+                                        <td>0.05723</td>
+                                        <td>0.05550</td>
+                                        <td>5,523.15018959</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>IOST/BTC</td>
+                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td&gt;
+                                        </td><td><span class="color-sell">-2.73%</span></td>
+                                        <td>0.0000051</td>
+                                        <td>0.0000046</td>
+                                        <td>5,300.71861161</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>POA / BTC</td>
+                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
+                                        <td><span class="color-buy">+2.70%</span></td>
+                                        <td>0.0000055</td>
+                                        <td>0.0000052</td>
+                                        <td>4,683.61663443</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                </tbody>
+                            </table><!-- coin-list table -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="BTC_markets">
+                            <table class="table coin-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col">Pair</th>
+                                        <th scope="col">Last Price</th>
+                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
+                                        <th scope="col">24h High</th>
+                                        <th scope="col">24h Low</th>
+                                        <th scope="col">24h Volume</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td> POA / BTC</td>
+                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
+                                        <td><span class="color-sell">-23.80%</span></td>
+                                        <td>0.00007300</td>
+                                        <td>0.00005510</td>
+                                        <td>7,522.88586112</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ONT/BTC</td>
+                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
+                                        <td><span class="color-buy">+8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ETH/BTC</td>
+                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
+                                        <td><span class="color-buy">+2.76%</span></td>
+                                        <td>0.05723</td>
+                                        <td>0.05550</td>
+                                        <td>5,523.15018959</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>IOST/BTC</td>
+                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td&gt;
+                                        </td><td><span class="color-sell">-2.73%</span></td>
+                                        <td>0.0000051</td>
+                                        <td>0.0000046</td>
+                                        <td>5,300.71861161</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>POA / BTC</td>
+                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
+                                        <td><span class="color-buy">+2.70%</span></td>
+                                        <td>0.0000055</td>
+                                        <td>0.0000052</td>
+                                        <td>4,683.61663443</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                </tbody>
+                            </table><!-- coin-list table -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="ETH_markets">
+                            <table class="table coin-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col">Pair</th>
+                                        <th scope="col">Last Price</th>
+                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
+                                        <th scope="col">24h High</th>
+                                        <th scope="col">24h Low</th>
+                                        <th scope="col">24h Volume</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td> POA / BTC</td>
+                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
+                                        <td><span class="color-sell">-23.80%</span></td>
+                                        <td>0.00007300</td>
+                                        <td>0.00005510</td>
+                                        <td>7,522.88586112</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ONT/BTC</td>
+                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
+                                        <td><span class="color-buy">+8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ETH/BTC</td>
+                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
+                                        <td><span class="color-buy">+2.76%</span></td>
+                                        <td>0.05723</td>
+                                        <td>0.05550</td>
+                                        <td>5,523.15018959</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>IOST/BTC</td>
+                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td&gt;
+                                        </td><td><span class="color-sell">-2.73%</span></td>
+                                        <td>0.0000051</td>
+                                        <td>0.0000046</td>
+                                        <td>5,300.71861161</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>POA / BTC</td>
+                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
+                                        <td><span class="color-buy">+2.70%</span></td>
+                                        <td>0.0000055</td>
+                                        <td>0.0000052</td>
+                                        <td>4,683.61663443</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                </tbody>
+                            </table><!-- coin-list table -->
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="USDT_markets">
+                            <table class="table coin-list table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th scope="col">Pair</th>
+                                        <th scope="col">Last Price</th>
+                                        <th scope="col">24h Change <span class="ti-arrow-down"></span></th>
+                                        <th scope="col">24h High</th>
+                                        <th scope="col">24h Low</th>
+                                        <th scope="col">24h Volume</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td> POA / BTC</td>
+                                        <td><span class="color-buy">0.00006822 </span>/$0.48</td>
+                                        <td><span class="color-sell">-23.80%</span></td>
+                                        <td>0.00007300</td>
+                                        <td>0.00005510</td>
+                                        <td>7,522.88586112</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ONT/BTC</td>
+                                        <td><span class="color-buy">0.00050900 / $3.55</span></td>
+                                        <td><span class="color-buy">+8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ETH/BTC</td>
+                                        <td><span class="color-buy">0.05722 </span>/ $399.8</td>
+                                        <td><span class="color-buy">+2.76%</span></td>
+                                        <td>0.05723</td>
+                                        <td>0.05550</td>
+                                        <td>5,523.15018959</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>IOST/BTC</td>
+                                        <td><span class="color-sell">0.00000490  </span>/ $399.8/td&gt;
+                                        </td><td><span class="color-sell">-2.73%</span></td>
+                                        <td>0.0000051</td>
+                                        <td>0.0000046</td>
+                                        <td>5,300.71861161</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>POA / BTC</td>
+                                        <td><span class="color-sell">0.0000054 </span>/ $0.0</td>
+                                        <td><span class="color-buy">+2.70%</span></td>
+                                        <td>0.0000055</td>
+                                        <td>0.0000052</td>
+                                        <td>4,683.61663443</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>NCASH/BTC</td>
+                                        <td>0.00050900 / $3.55</td>
+                                        <td><span class="color-sell">-8.70%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>BNB/BTC</td>
+                                        <td><span class="color-sell">0.001741</span> / $12.1</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.0005700</td>
+                                        <td>0.0004910</td>
+                                        <td>5,774.97192430</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ICX/BTC</td>
+                                        <td>0.0000093 / $12.1</td>
+                                        <td><span class="color-sell">+7.59%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>XVG/BTC</td>
+                                        <td><span class="color-buy">0.0000041</span> / $0.03</td>
+                                        <td><span class="color-buy">-2.44%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="favorite-coin">
+
+                                            </div>
+                                        </td>
+                                        <td>ADA/BTC</td>
+                                        <td><span class="color-buy">0.0014589</span> / $18.29</td>
+                                        <td><span class="color-sell">+5.74%</span></td>
+                                        <td>0.00551478</td>
+                                        <td>0.00478963</td>
+                                        <td>92.76872852</td>
+                                    </tr>
+                                </tbody>
+                            </table><!-- coin-list table -->
+                        </div><!-- market-ticker-block -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div><!-- explorer-section -->
 <?php include('template/footer.php'); ?>
