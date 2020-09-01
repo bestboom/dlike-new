@@ -8,7 +8,7 @@ define('SIGNER','TK1UfiryAmyHYanpFCGp46itBtAQU9DJaM');
 
 
 $signer_pk = '2487943a43897902b48f483aa4a2f8bb8dfb5029157ad7386a584c199b5ca214';
-define('SIGNER_PK',$signer_pk);
+define('SIGNER_PK','2487943a43897902b48f483aa4a2f8bb8dfb5029157ad7386a584c199b5ca214');
 //$event_uel = EVENT_API_URL.'contract/'.CONTRACT_ADDRESS;
 
 use IEXBase\TronAPI\Tron;
