@@ -12,3 +12,4 @@ RewriteRule ^wallet$ ./wallet.php
 RewriteRule ^wallets/(.*)$ ./wallets.php?user=$1
 RewriteRule ^rewards$ ./rewards.php
 RewriteRule ^staking$ ./staking.php
+RewriteRule ^convertdlike$ ./convertdlike.php

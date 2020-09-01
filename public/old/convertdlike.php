@@ -23,7 +23,7 @@ $dlike_bal    = $rowIt['amount'];
             <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
                 <div class="modal-body">
                     <div class="share-block">
-                        <!--<p>Convert DLIKE to DLIKER</p>-->
+                        Convert DLIKE to DLIKER</p>
                     </div>
                     <div class="user-connected-form-block" style="background: #1b1e63;">
                     <?php 
@@ -38,7 +38,7 @@ $dlike_bal    = $rowIt['amount'];
                                 </div>
                                 <input type="number" step="0.0001" min="0" max="10" name="dlike_convert_amount" id="dlike_convert_amount" placeholder="Confirm Amount to Convert" class="form-control" style="padding: 8px;" />
                             </div>
-                            <div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:#fff;" class="eth_tokens">Convert ETH based DLIKE token?</div>
+                            <!--<p><div style="font-weight:700;text-align: right;padding-top:5px;padding-bottom: 5px;cursor: pointer;color:#fff;" class="eth_tokens">Convert ETH based DLIKE token?</div>-->
                             <center>
                                 <button type="button" class="btn btn-default" style="width: 40%;margin-top: 15px;" id="with_tok">Submit</button>
                             </center>
