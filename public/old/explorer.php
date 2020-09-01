@@ -1,4 +1,4 @@
-<?php include('../template/header.php'); ?>
+<?php include('header.php'); ?>
 <div class="container explorer-top">
     <div class="col-md-12">
         <div class="banner-content explorer-form">
@@ -124,4 +124,4 @@
         </div>
     </div><!-- activity-section -->
 </div><!-- explorer-section -->
-<?php include('../template/footer.php'); ?>
+<?php include('footer.php'); ?>
