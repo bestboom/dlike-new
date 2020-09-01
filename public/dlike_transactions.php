@@ -12,7 +12,7 @@
     </div>
 </div>
 </div><!-- banner-block -->
-<div class="explorer-section">
+<div class="explorer-section" style="margin-bottom: 40px;">
     <div class="support-category-section"><div class="container"><div class="row">
         <div class="col-md-4">
             <div class="support-category-block">
@@ -52,42 +52,6 @@
             </div>
         </div>
     </div></div></div>
-    <div class="activity-section"><div class="container"><div class="row">
-        <div class="col-md-12">
-            <div class="card h-100">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <div class="card-header-title"><h4>Latest Transactions</h4></div>
-                </div>
-
-            </div>
-        </div>
-    </div></div></div>
-    <div class="activity-section"><div class="container"><div class="row"><div class="col-md-12">
-        <div class="card h-100">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <div class="card-header-title"><h4>Staking Transactions</h4></div>
-            </div>
-            
-        </div>
-    </div></div></div></div>
-    <div class="activity-section"><div class="container"><div class="row"><div class="col-md-12">
-        <div class="card h-100">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <div class="card-header-title"><h4>Withdrawals</h4></div>
-            </div>
-            
-        </div>
-    </div></div></div></div>
-    <div class="activity-section"><div class="container"><div class="row"><div class="col-md-12">
-        <div class="card h-100">
-            <div class="card-header d-flex justify-content-between align-items-center">
-                <div class="card-header-title"><h4>Top Staking Accounts</h4></div>
-            </div>
-            
-        </div>
-    </div></div></div></div>
-
-
 
     <div class="new-ticker-block new-ticker-block-section">
         <div class="container">
@@ -109,16 +73,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#ETH_markets" role="tab" data-toggle="tab">Top Staking Accounts</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#USDT_markets" role="tab" data-toggle="tab">USDT Markets</a>
-                        </li>
                         <li class="nav-item nav-item-last">
-                            <form action="#" method="get" class="search-form">
-                                <div class="input-box">
-                                    <input type="text" value="" required="" name="s" class="form-control" placeholder="Search...">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </div>
-                            </form>
                         </li>
                     </ul>
                 </div>
@@ -215,13 +170,10 @@
                             </tbody>
                             </table>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="USDT_markets">
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</div><!-- explorer-section -->
+</div>
 <?php include('template/footer.php'); ?>
