@@ -1,5 +1,6 @@
-<?php include('template/header.php');
+<?php 
 $link = $_GET['link'];$user = $_GET['user'];
+include('template/header.php');
 $sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
 if ($sql_P && $sql_P->num_rows > 0){ $row_P = $sql_P->fetch_assoc();
     $imgUrl = $row_P["img_url"];$post_time = strtotime($row_P["created_at"]);
