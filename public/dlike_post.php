@@ -1,5 +1,4 @@
-<?php include('template/header.php');
-$link = $_GET['link'];$user = $_GET['user'];
+<?php $link = $_GET['link'];$user = $_GET['user'];
 
 $sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
 if ($sql_P && $sql_P->num_rows > 0){ $row_P = $sql_P->fetch_assoc();
@@ -15,6 +14,13 @@ if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = 
 
 $urlData = parse_url($ext_url );
 $host = preg_replace('/^www\./', '', $urlData['host']); 
+
+$og_title = $title;
+$og_image = $imgUrl;
+$og_description = strip_tags($description);
+$og_url = $permlink;
+
+include('template/header.php');
 ?>
 </div>
 <div class="latest-post-section"><div class="container">
