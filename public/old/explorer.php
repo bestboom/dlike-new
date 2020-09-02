@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php include('../includes/config.php'); include('header.php'); ?>
 <div class="container explorer-top">
     <div class="col-md-12">
         <div class="banner-content explorer-form">
