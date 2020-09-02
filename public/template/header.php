@@ -4,9 +4,8 @@
 </head><body>
 <div id="mySidenav" class="sidenav"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <a href="/old/rewards">Reward Pool</a><a href="/old/staking">Staking</a><a href="/old/explorer">Explorer</a><a href="/about/help">FAQ</a>
-<?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a><a href="/dliker">DLIKER</a><a href="https://dex.dlike.io">DEX</a> <? } elseif(isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { ?><a href="/wallet">Wallet</a><a href="https://justswap.org">Market</a><?} ?>  
-<?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username']) || isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?><br><a href="/docs/dlike-paper.pdf">Whitepaper</a>
-</div>
+<?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a><a href="/dliker">DLIKER</a><a href="https://dex.dlike.io">DEX</a> <? } elseif(isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { ?><a href="/wallet">Wallet</a><a href="https://justswap.org" target="_blank">Market</a><?} ?>  
+<?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username']) || isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?><br><a href="/docs/dlike-paper.pdf">Whitepaper</a></div>
 <div class="banner-block"><nav class="navbar main-nav navbar-expand-lg"><div class="container">
     <a class="navbar-brand" href="/"><img class="navbar-logo" src="/images/logo.png" alt="DLIKE"/></a>
     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>

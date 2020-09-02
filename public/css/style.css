@@ -1029,7 +1029,7 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .post-tags{padding-bottom: 5px !important;margin-bottom: 5px !important;}
 .main_top{margin: 5px;font-weight: 600;justify-content: space-between;color: #c51d24;}
 .trending_hr{margin: 0rem;border-top: 1px solid rgb(0 0 0 / 18%);}
-#logout_btn{padding: 8px 8px 8px 32px;text-decoration: none;font-size: 18px;color: #c5bebe;display: block;transition: .3s;font-weight: 600;cursor:pointer;}
+#logout_btn{padding: 8px 8px 8px 32px;text-decoration: none;font-size: 15px;color: #c5bebe;display: block;transition: .3s;font-weight: 600;cursor:pointer;}
 .top_nav{margin: 0px;}.prof_img_nav{background: #fff;margin-top: -6px;}.top_nav_li{padding-top: 4px;}
 .post-style-two.post-full-width .post-contnet-wrap {padding: 30px 40px 31px 40px;}
 .auth-time{font-size: 13px;padding-left: 3px;}
