@@ -3,11 +3,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://dlike.io/images/favicons/apple-touch-icon.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="32x32" href="https://dlike.io/images/favicons/favicon-32x32.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="16x16" href="https://dlike.io/images/favicons/favicon-16x16.png?v=kPvWrWRLXe"><link rel="manifest" href="https://dlike.io/images/favicons/site.webmanifest?v=kPvWrWRLXe"><link rel="shortcut icon" href="https://dlike.io/images/favicons/favicon.ico?v=kPvWrWRLXe"><meta name="apple-mobile-web-app-title" content="DLIKE"><meta name="application-name" content="DLIKE"><meta name="msapplication-TileColor" content="#2d89ef"><meta name="msapplication-config" content="https://dlike.io/images/favicons/browserconfig.xml?v=kPvWrWRLXe"><meta name="theme-color" content="#ffffff"><link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
 </head><body>
 <div id="mySidenav" class="sidenav"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-<?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a>
-<a href="/dliker">DLIKER</a>      
-<a href="https://dex.dlike.io">DEX</a> <? } else {} ?>  
-<a href="/old/rewards">Reward Pool</a><a href="/old/staking">Staking</a><a href="/old/explorer">Explorer</a>
-<a href="/about/help">FAQ</a>
+<a href="/old/rewards">Reward Pool</a><a href="/old/staking">Staking</a><a href="/old/explorer">Explorer</a><a href="/about/help">FAQ</a>
+<?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a><a href="/dliker">DLIKER</a><a href="https://dex.dlike.io">DEX</a> <? } elseif(isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { ?><a href="/wallet">Wallet</a><a href="https://justswap.org">Market</a><?} ?>  
 <?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username']) || isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?><br><a href="/docs/dlike-paper.pdf">Whitepaper</a>
 </div>
 <div class="banner-block"><nav class="navbar main-nav navbar-expand-lg"><div class="container">
