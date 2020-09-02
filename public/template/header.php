@@ -28,8 +28,8 @@
 <div id="mySidenav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a>
-<a href="/dliker">DLIKER</a> <? } else {} ?>        
-<a href="https://dex.dlike.io">DEX</a>
+<a href="/dliker">DLIKER</a>      
+<a href="https://dex.dlike.io">DEX</a> <? } else {} ?>  
 <a href="/old/rewards">Reward Pool</a>
 <a href="/old/staking">Staking</a>
 <a href="/old/explorer">Explorer</a>
