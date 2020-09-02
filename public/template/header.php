@@ -6,12 +6,9 @@
 <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a>
 <a href="/dliker">DLIKER</a>      
 <a href="https://dex.dlike.io">DEX</a> <? } else {} ?>  
-<a href="/old/rewards">Reward Pool</a>
-<a href="/old/staking">Staking</a>
-<a href="/old/explorer">Explorer</a>
+<a href="/old/rewards">Reward Pool</a><a href="/old/staking">Staking</a><a href="/old/explorer">Explorer</a>
 <a href="/about/help">FAQ</a>
-<?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username']) || isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?><br>
-<a href="/docs/dlike-paper.pdf">Whitepaper</a>
+<?php if (isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username']) || isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { echo '<a id="logout_btn">Logout</a>';} else { } ?><br><a href="/docs/dlike-paper.pdf">Whitepaper</a>
 </div>
 <div class="banner-block"><nav class="navbar main-nav navbar-expand-lg"><div class="container">
     <a class="navbar-brand" href="/"><img class="navbar-logo" src="/images/logo.png" alt="DLIKE"/></a>
