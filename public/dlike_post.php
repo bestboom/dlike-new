@@ -11,14 +11,10 @@ $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$user'");
 $row_W = $sql_W->fetch_assoc(); $profile_pic = $row_W["profile_pic"];
 $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and permlink = '$link'");
 if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward;
-
-$urlData = parse_url($ext_url );
-$host = preg_replace('/^www\./', '', $urlData['host']);
-
-$og_title=$title;$og_image=$imgUrl;$og_description=strip_tags($description);
+$urlData = parse_url($ext_url ); $host = preg_replace('/^www\./', '', $urlData['host']);
+$og_title=$title;$og_image=$imgUrl;$og_description=strip_tags($description);$og_url="https://dlike.io/".$author."/".$permlink;
 include('template/header.php');
-?>
-</div>
+?></div>
 <div class="latest-post-section"><div class="container">
     <article class="post-style-two post-full-width">
         <div class="post-thumb"><?php echo '<img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">'; ?></div>
