@@ -12,16 +12,9 @@
 <meta name="twitter:image" content="<?php echo $og_image; ?>">
 <meta name="twitter:domain" content="<?php echo $og_url; ?>">
 <link rel="canonical" href="<?php echo $og_url; ?>" />
-<? } else if(basename($_SERVER['PHP_SELF']) == 'profile.php'){ ?>  
-<title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title>
-<meta name="description" content="The latest links shared by <?php echo ucfirst($prof_user).' ('.$prof_user.')'; ?> on DLIKE. An informative face of internet to share and get rewarded for every like <?php echo ucfirst($prof_user); ?>.">
-<? } else { ?><title>DLIKE - Share To Get Rewarded</title>
-<meta name="description" content="DLIKE is a blockchain based social media dapp where you get rewarded for sharing. Share informative links to earn reward on every like you get from other community members.">
-<meta property="og:url" content="https://dlike.io" />
-<meta property="og:title" content="DLIKE - Share To Get Rewarded" />
-<meta property="og:description" content="DLIKE is a blockchain based social media dapp where you get rewarded for sharing. Share informative links to earn reward on every like you get from other community members." />
-<meta property="og:image" content="/images/dlike-main.jpg" />
-<? } ?>
+<? } else if(basename($_SERVER['PHP_SELF']) == 'dlike_profile.php'){ ?>  
+<title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title><meta name="description" content="The latest links shared by <?php echo ucfirst($prof_user).' ('.$prof_user.')'; ?> on DLIKE. An informative face of internet to share and get rewarded for every like <?php echo ucfirst($prof_user); ?>.">
+<? } else { ?><title>DLIKE - Share To Get Rewarded</title><meta name="description" content="DLIKE is a blockchain based social media dapp where you get rewarded for sharing. Share informative links to earn reward on every like you get from other community members."><meta property="og:url" content="https://dlike.io" /><meta property="og:title" content="DLIKE - Share To Get Rewarded" /><meta property="og:description" content="DLIKE is a blockchain based social media dapp where you get rewarded for sharing. Share informative links to earn reward on every like you get from other community members." /><meta property="og:image" content="/images/dlike-main.jpg" /><? } ?>
 <link rel="apple-touch-icon" sizes="180x180" href="https://dlike.io/images/favicons/apple-touch-icon.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="32x32" href="https://dlike.io/images/favicons/favicon-32x32.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="16x16" href="https://dlike.io/images/favicons/favicon-16x16.png?v=kPvWrWRLXe"><link rel="manifest" href="https://dlike.io/images/favicons/site.webmanifest?v=kPvWrWRLXe"><link rel="shortcut icon" href="https://dlike.io/images/favicons/favicon.ico?v=kPvWrWRLXe"><meta name="apple-mobile-web-app-title" content="DLIKE"><meta name="application-name" content="DLIKE"><meta name="msapplication-TileColor" content="#2d89ef"><meta name="msapplication-config" content="https://dlike.io/images/favicons/browserconfig.xml?v=kPvWrWRLXe"><meta name="theme-color" content="#ffffff">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
 </head><body>
