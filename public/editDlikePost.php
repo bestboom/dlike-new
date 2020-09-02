@@ -1,4 +1,4 @@
-<?php include('template/header.php');  include('functions/categories.php'); 
+<?php include('includes/config.php'); include('template/header.php');  include('functions/categories.php'); 
 if (isset($_GET["url"])) { 
     $decode = function ($data) {return rawurldecode($data);};
     $url = $_GET["url"]; $img = $_GET["imgUrl"]; $title = $_GET["title"];$des = $_GET["details"];

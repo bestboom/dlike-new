@@ -1,4 +1,4 @@
-<?php include('template/header.php');?>
+<?php include('includes/config.php'); include('template/header.php');?>
 </div>
 <div class="latest-post-section"><div class="container">
     <div class="row" id="content"></div>

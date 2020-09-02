@@ -1,6 +1,5 @@
-<?php include('template/header.php'); 
-if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io/share","_self")</script>');} else { $dlike_user = $_COOKIE['dlike_username'];} ?>
-</div>
+<?php include('includes/config.php'); include('template/header.php'); 
+if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io/share","_self")</script>');} else { $dlike_user = $_COOKIE['dlike_username'];} ?></div>
 <div class="container"><div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;">
     <div class="modal-content" style="background: #1b1e63;border-radius: 14px;">
         <div class="modal-body">

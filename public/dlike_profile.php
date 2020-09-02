@@ -1,7 +1,5 @@
-<?php 
-if (isset($_GET['user'])) {$prof_user = $_GET['user'];
-} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-include('template/header.php');
+<?php if (isset($_GET['user'])) {$prof_user = $_GET['user'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
+include('includes/config.php'); include('template/header.php');
 $admin_users = array('dlike_airdrop','dlike_dao','dlike_foundation','dlike_team','dlike_charity');
 if(in_array($prof_user, $admin_users)){die('<script>window.location.replace("https://dlike.io","_self")</script>');}
 

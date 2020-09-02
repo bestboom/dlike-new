@@ -1,8 +1,6 @@
-<?php  include('template/header.php'); ?></div>
+<?php include('includes/config.php');include('template/header.php'); ?></div>
 <?php $sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
-if ($sql1 && $sql1->num_rows > 0) 
-{   $row1 = $sql1->fetch_assoc();$today_likes = $row1["today_upvotes"];$staking = $row1["dlike_staking"];$dao = $row1["dlike_dao"];$team = $row1["dlike_team"];$charity = $row1["dlike_charity"];$foundation = $row1["dlike_foundation"];
-} else {$today_likes = 0;}
+if ($sql1 && $sql1->num_rows > 0) {   $row1 = $sql1->fetch_assoc();$today_likes = $row1["today_upvotes"];$staking = $row1["dlike_staking"];$dao = $row1["dlike_dao"];$team = $row1["dlike_team"];$charity = $row1["dlike_charity"];$foundation = $row1["dlike_foundation"];} else {$today_likes = 0;}
 
 $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_rewards_history ORDER BY update_time DESC LIMIT 14");
     if ($sqlQuery->num_rows > 0) {  $data = array();

@@ -1,4 +1,4 @@
-<?php
+<?php include('includes/config.php');
 $link = $_GET['link']; $user = $_GET['user']; $auth = str_replace('@', '', $user);
 if(isset($_COOKIE['username']) && !empty($_COOKIE['username'])) { $sender =  $_COOKIE['username']; } else {$sender='';}
 $post_url = "https://steemapi.dlkapps.tk/get_content?author={$auth}&permlink={$link}";

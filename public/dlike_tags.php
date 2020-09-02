@@ -1,5 +1,5 @@
 <?php if (isset($_GET['tag'])) {$page_tag = $_GET['tag'];} else {die('<script>window.location.replace("https://dlike.io","_self")</script>');}
-include ('template/header.php'); ?></div>
+include('includes/config.php'); include ('template/header.php'); ?></div>
 <div class="latest-post-section"><div class="container">
 <div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row">

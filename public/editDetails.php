@@ -1,4 +1,4 @@
-<?php include('template/header.php'); 
+<?php include('includes/config.php'); include('template/header.php'); 
 include('functions/categories.php'); 
 if (isset($_GET["url"])) {
     $decode = function ($data) {
@@ -12,11 +12,8 @@ if (isset($_GET["url"])) {
     $img = strip_tags(htmlspecialchars(trim($decode($img))));
     $title = strip_tags(htmlspecialchars(trim($decode($title))));
     $des = strip_tags(htmlspecialchars(trim($decode($des))));
-} else { die('Not Allowed');}
-
-?>
-</div><!-- sub-header -->
-
+} else { die('Not Allowed');} ?>
+</div>
 <script src="https://cdn.ckeditor.com/ckeditor5/12.4.0/classic/ckeditor.js"></script>
 <style>
     .ck-editor__editable {

@@ -1,5 +1,5 @@
-<?php include('template/header.php'); 
-if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io/","_self")</script>'); } else { $dlike_user = $_COOKIE['dlike_username']; } ?>
+<?php if (!isset($_COOKIE['dlike_username']) || !$_COOKIE['dlike_username']) {die('<script>window.location.replace("https://dlike.io/","_self")</script>'); } else { $dlike_user = $_COOKIE['dlike_username'];} 
+include('includes/config.php'); include('template/header.php'); ?>
 </div><?php
 $sql_B = $conn->query("SELECT amount FROM dlike_wallet where username='$dlike_user'");
 $row_B = $sql_B->fetch_assoc();$my_bal = $row_B["amount"];
