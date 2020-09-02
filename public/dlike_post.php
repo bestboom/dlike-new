@@ -1,6 +1,6 @@
 <?php 
 $link = $_GET['link'];$user = $_GET['user'];
-include('template/header.php');
+include('includes/config.php');
 $sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
 if ($sql_P && $sql_P->num_rows > 0){ $row_P = $sql_P->fetch_assoc();
     $imgUrl = $row_P["img_url"];$post_time = strtotime($row_P["created_at"]);
@@ -14,7 +14,8 @@ $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and 
 if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward;
 
 $urlData = parse_url($ext_url );
-$host = preg_replace('/^www\./', '', $urlData['host']); 
+$host = preg_replace('/^www\./', '', $urlData['host']);
+include('template/header.php');
 ?>
 </div>
 <div class="latest-post-section"><div class="container">
