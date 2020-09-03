@@ -1,4 +1,6 @@
-<?php include('includes/config.php'); include('template/header.php'); ?>
+<?php if (isset($_GET['user'])) {$ex_user = $_GET['user'];} else {$ex_user = '';}
+include('includes/config.php'); include('template/header.php');
+include('includes/config.php'); include('template/header.php'); ?>
 <div style="padding-top: 60px;background: #220f58;">
     <div class="col-md-12"><div class="container banner-content explorer-form" style="padding: 15px;">
         <form class="subs-form">
@@ -11,6 +13,7 @@
 </div>
 </div><!-- banner-block -->
 <div class="explorer-section" style="margin-bottom: 40px;"><div class="new-ticker-block new-ticker-block-section"><div class="container">
+<?php if($ex_user !=''){?> 
     <div class="new-ticker-block-wrap">
         <div class="ticker-head">
             <ul class="nav nav-tabs ticker-nav" role="tablist">
@@ -129,6 +132,7 @@
             </div>
         </div>
     </div>
+<?} else {}?>
 </div></div></div>
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">    $('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/explorer/" + user_wallet;window.open(wallet_url, "_self");});</script>
