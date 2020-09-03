@@ -1,5 +1,4 @@
 <?php if (isset($_GET['user'])) {$ex_user = $_GET['user'];} else {$ex_user = '';}
-include('includes/config.php'); include('template/header.php');
 include('includes/config.php'); include('template/header.php'); ?>
 <div style="padding-top: 60px;background: #220f58;">
     <div class="col-md-12"><div class="container banner-content explorer-form" style="padding: 15px;">
