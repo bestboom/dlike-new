@@ -54,8 +54,9 @@ $('#stake_me').click(async function() {
             if(stk_wallet !=""){
                 if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');enable_stake();return false;}
             }
-            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            //var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
+            //var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            var myContract = await tronWeb.contract().at(mainContractAddress)
             var balanceof = await myContract.balanceOf(user_address).call();
             balanceof = window.tronWeb.toDecimal(balanceof);stk_amt = stk_amt * 1e6;
 
