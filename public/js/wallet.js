@@ -31,9 +31,9 @@ $('.tok_out_btn').click(async function() {
                 let result = await myContract.getToken(payout_amount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                 if(result){
                     $("#dlike_tok_with").modal("hide");$('#withdrawStatus').modal('show');
-                    $(".wd_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                    $(".wd_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                        $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                        $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
                             if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
                                 if(tx_result=='SUCCESS'){
                                     $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});

@@ -64,9 +64,9 @@ $('#stake_me').click(async function() {
                 let result = await myContract.stakeIn(stk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                 if(result){
                     $('#stakingStatus').modal('show');
-                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                    $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                        $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                        $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
                             if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
                                 if(tx_result=='SUCCESS'){
                                     $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},});
@@ -101,9 +101,9 @@ if (dlike_username != null) {var user_address =false;
                 await new Promise((resolve, reject) => setTimeout(resolve, 1000));
                     var result = await myContract.stakeOut(unstk_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                     if(result){$('#stakingStatus').modal('show');
-                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                    $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                    $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                    $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
                         if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
                             if(tx_result=='SUCCESS'){
                                 $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: unstk_amt,wallet: user_address,trx_id: result},});
@@ -132,9 +132,9 @@ $('#claimback_tokens').click(async function() {var user_address =false;
             await new Promise((resolve, reject) => setTimeout(resolve, 400));
             var result = await myContract.claimStakeOut(unstakingAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
             if(result){$('#stakingStatus').modal('show');
-                $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                 var x = setInterval(function() {
-                $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
                     if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
                         if(tx_result=='SUCCESS'){
                             $(".st_status_message").html('Tokens Claimed Successfully!');
@@ -172,9 +172,9 @@ $('#claim_stk_reward').click(async function() {$("#claim_stk_reward").attr("disa
                     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
                     let result = await myContract.getReward(claim_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
                     if(result){$('#stakingStatus').modal('show');
-                    $(".st_trx_link").html('<a href="https://shasta.tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                    $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                    $.get("https://api.shasta.trongrid.io/v1/transactions/"+result, function(data, status){
+                    $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
                         if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
                             if(tx_result=='SUCCESS'){
                                 $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'reward_paid',amount: claim_amt,wallet: user_address,trx_id: result},});

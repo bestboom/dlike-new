@@ -1,18 +1,18 @@
 <?php
 include_once '../vendor/autoload.php';
-define('CONTRACT_ADDRESS','41a4a6fcfe457a1e26236dee0c7ffe1d94494a33a8');
-define('TRONGRID_V2_EVENT_API_URL','https://v2.api.shasta.trongrid.io/event/contract/');
-define('API_URL','https://api.shasta.tronscan.org/api/');
-define('TRONSCAN_URL','https://shasta.tronscan.org/#/transaction/');
+define('CONTRACT_ADDRESS','4154a4cb3c2fbbbf41038e0ad715558b574c9c0f34');
+define('TRONGRID_V2_EVENT_API_URL','https://v2.api.trongrid.io/event/contract/');
+define('API_URL','https://api.tronscan.org/api/');
+define('TRONSCAN_URL','https://tronscan.org/#/transaction/');
 define('SIGNER','TJLwvVtwwHVkKNcMrmtzsr8NgyXRygMuWA');
 $signer_pk = getenv("SIGNER_PK");
 define('SIGNER_PK', $signer_pk);
 //$event_uel = EVENT_API_URL.'contract/'.CONTRACT_ADDRESS;
 
 use IEXBase\TronAPI\Tron;
-$fullNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.shasta.trongrid.io');
-$solidityNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.shasta.trongrid.io');
-$eventServer = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.shasta.trongrid.io');
+$fullNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.trongrid.io');
+$solidityNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.trongrid.io');
+$eventServer = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.trongrid.io');
 
 try {$tron = new \IEXBase\TronAPI\Tron($fullNode, $solidityNode, $eventServer);
 } catch (\IEXBase\TronAPI\Exception\TronException $e) {exit($e->getMessage());}
