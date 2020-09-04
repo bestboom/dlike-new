@@ -5,8 +5,7 @@ function pad(n) {return (n < 10 ? '0' : '') + n;}
 async function getUserStatus() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address!=false){     
-            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            var myContract = await tronWeb.contract().at(mainContractAddress);
             var isUnstaking = await myContract.isUnstaking(user_address).call();
             var unstakeTime = window.tronWeb.toDecimal(isUnstaking[0]);isUnstaking = isUnstaking[1]; 
             var unstakingAmount = await myContract.checkUnstake(user_address).call();
@@ -54,9 +53,7 @@ $('#stake_me').click(async function() {
             if(stk_wallet !=""){
                 if (user_address != stk_wallet) {toastr.error('phew... You last stake is with different Tron address. Please unstake that or use same address for additional stake!');enable_stake();return false;}
             }
-            //var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-            //var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
-            var myContract = await tronWeb.contract().at(mainContractAddress)
+            var myContract = await tronWeb.contract().at(mainContractAddress);
             var balanceof = await myContract.balanceOf(user_address).call();
             balanceof = window.tronWeb.toDecimal(balanceof);stk_amt = stk_amt * 1e6;
 
@@ -93,8 +90,7 @@ if (dlike_username != null) {var user_address =false;
         }else{ $("#unstake_me").attr("disabled", true).html('unstaking...');let unstk_amt = $('#unstakeamount').val();
             if (unstk_amt=="") {toastr.error('phew... Please enter the amount you want to unstake');enable_unstake();return false;}
             if(stk_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');enable_unstake();return false;}
-            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            var myContract = await tronWeb.contract().at(mainContractAddress);
             var stakedAmount = await myContract.checkStake(user_address).call();
             stakedAmount = window.tronWeb.toDecimal(stakedAmount);unstk_amt = unstk_amt * 1e6;
             if(parseFloat(unstk_amt) <=stakedAmount){
@@ -126,8 +122,7 @@ $('#claimback_tokens').click(async function() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;                
         }else{ $("#claimback_tokens").attr("disabled", true).html('processing...');
-            var myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-            var myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+            var myContract = await tronWeb.contract().at(mainContractAddress);
             var unstakingAmount = await myContract.checkUnstake(user_address).call();
             unstakingAmount = window.tronWeb.toDecimal(unstakingAmount);
             await new Promise((resolve, reject) => setTimeout(resolve, 400));
