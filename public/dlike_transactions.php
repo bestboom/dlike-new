@@ -2,10 +2,10 @@
 include('includes/config.php'); include('template/header.php'); ?>
 <div style="padding-top: 60px;background: #220f58;">
     <div class="col-md-12"><div class="container banner-content explorer-form" style="padding: 15px;">
-        <div class="input-box expl">
+        <div class="subs-form"><div class="input-box expl">
             <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by dlike username" required />
             <button type="button" class="wallet-search">Search</button>
-        </div>
+        </div></div>
     </div></div>
 </div>
 </div><!-- banner-block -->
