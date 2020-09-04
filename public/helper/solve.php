@@ -1,16 +1,10 @@
 <?php require '../includes/config.php';
 if (isset($_POST["ath"]) && isset($_POST["plink"]))
-{
-    $saved_ip = $_COOKIE['usertoken'];
-    $userval = $_COOKIE['dlike_username'];
-    $author = $_POST['ath'];
-    $permlink = $_POST['plink'];
-    $newLike = '1';
+{   $saved_ip = $_COOKIE['usertoken'];$userval = $_COOKIE['dlike_username'];$author = $_POST['ath'];$permlink = $_POST['plink'];$newLike = '1';
 
     if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username'])
     {
-        if ($userval == $author)
-        {die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));}
+        if ($userval == $author){die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));}
 
         $check_unique_like = $conn->query("SELECT * FROM mylikes where username = '$userval' and permlink = '$permlink' and author = '$author'");
         if ($check_unique_like->num_rows > 0){die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));} 

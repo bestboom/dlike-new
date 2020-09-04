@@ -21,31 +21,7 @@ include('template/header.php');
 //$body_post = $new_body;
 //$body_text = preg_replace("/<p[^>]*>(?:\s|&nbsp;)*<\/p>/", '', $body_post);
 $body_text = preg_replace('#<p>&nbsp;</p>#i','<p></p>', $new_body);
-$views = '1'; 
-//post views
-$sqlvs = "SELECT * FROM totalpostviews where permlink = '$link' and author = '$auth'";
-$resultvs = $conn->query($sqlvs);
-if ($resultvs->num_rows > 0) {
-    $rowview = mysqli_fetch_assoc($resultvs); 
-    $postviews = $rowview["totalviews"];
 
-    $sqlvip = "SELECT * FROM postviews where permlink = '$link' and author = '$auth' and userip = '$ip'";
-    $resultvip = $conn->query($sqlvip);
-    if ($resultvip->num_rows > 0) { } else {
-        $updatePostviews = "UPDATE totalpostviews SET totalviews = '$postviews' + 1 WHERE author = '$auth' AND permlink = '$link'";
-        $updatePostview = $conn->query($updatePostviews);
-        $postviews = $postviews + '1';
-        $sqlviewup = "INSERT INTO postviews (author, permlink, views, userip, view_time)
-        VALUES ('".$auth."', '".$link."', '".$views."', '".$ip."', '".date("Y-m-d h:m:s")."')";
-        mysqli_query($conn, $sqlviewup);
-
-    }
-} else {
-    $sqlview = "INSERT INTO totalpostviews (author, permlink, totalviews)
-    VALUES ('".$auth."', '".$link."', '".$views."')";
-    mysqli_query($conn, $sqlview); 
-    $postviews = '1';  
-} 
 
 //tip total income
 $post_inc = "SELECT SUM(tip1) As post_inc, SUM(tip2) As post_inc2 FROM tiptop where permlink = '$link' and receiver = '$auth'";
@@ -54,8 +30,6 @@ if ($result_inc->num_rows > 0)
 {
     $rowinc = mysqli_fetch_assoc($result_inc);
     $postincome = number_format($rowinc["post_inc"],3);
-    //$postincome2 = number_format($rowinc["post_inc2"],3);
-    //$totalpost = $postincome + $postincome2;
     $totalpostincome = round($postincome,3);
 } else { $postincome = '0.00'; }
 

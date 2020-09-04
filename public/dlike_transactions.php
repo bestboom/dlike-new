@@ -178,4 +178,4 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$ex_user'");
 <?}?>
 </div></div></div>
 <?php include('template/footer.php'); ?>
-<script type="text/javascript">    $('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/explorer/" + user_wallet;window.open(wallet_url, "_self");});</script>
+<script type="text/javascript">$('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/explorer/" + user_wallet;window.open(wallet_url, "_self");});</script>
