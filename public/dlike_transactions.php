@@ -12,7 +12,52 @@ include('includes/config.php'); include('template/header.php'); ?>
 </div>
 </div><!-- banner-block -->
 <div class="explorer-section" style="margin-bottom: 40px;"><div class="new-ticker-block new-ticker-block-section"><div class="container">
-<?php if($ex_user !=''){?> 
+<?php if($ex_user !=''){
+$sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$ex_user'");
+    if ($sql_U && $sql_U->num_rows > 0) { ?>
+    <div class="new-ticker-block-wrap">
+        <div class="ticker-head">
+            <ul class="nav nav-tabs ticker-nav" role="tablist">
+                <li class="nav-item"><a class="nav-link active" href="#favorite_ticker" role="tab" data-toggle="tab"> <h5><?php echo $ex_user; ?> Transactions</h5><i class="fa fa-stroopwafel"></i>
+                    </a></li>
+                <li class="nav-item nav-item-last">
+                </li>
+            </ul>
+        </div>
+        <div class="market-ticker-block">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active show" id="favorite_ticker">
+                    <table class="table coin-list table-hover" style="border: 1px solid #eee;">
+                    <tbody>
+                        <?php 
+                        $sql_T = $conn->query("SELECT * FROM dlike_transactions where username='$ex_user' ORDER BY trx_time DESC LIMIT 30");
+                        if ($sql_T && $sql_T->num_rows > 0) {
+                            while ($row_T = $sql_T->fetch_assoc()) {
+                                $start_time = strtotime($row_T["trx_time"]); 
+                                $dlike_user = $row_T["username"];
+                                $tx_type = $row_T["type"];
+                                if($tx_type == 'a'){$trx_type = '<i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;author';}elseif($tx_type == 'b'){$trx_type = '<i class="fas fa-coffee"></i>&nbsp;&nbsp;curation';}elseif($tx_type == 'c'){$trx_type = '<i class="fas fa-user"></i>&nbsp;&nbsp;affiliate';}
+                                $sql_W = $conn->query("SELECT * FROM dlikeaccounts where username = '$dlike_user'");
+                                if ($sql_W && $sql_W->num_rows > 0) { $row_W=$sql_W->fetch_assoc();
+                                    $profile_pic = $row_W["profile_pic"];} ?>
+                                <tr>
+                                    <td class="exp-user wid_2 ex_pad"><span style="justify-content: left;"><?php echo '<img src="'.$profile_pic.'" class="img-fluid ex_img"><a href="/profile/'. $dlike_user.'">'. $dlike_user.'</a>'; ?></span></td>
+                                    <td class="exp-amt wid_2 ex_pad"><span><?php echo $trx_type; ?></span></td>
+                                    <td class="exp-amt wid_2 ex_pad"><span><?php echo $row_T["amount"]; ?></span></td>
+                                    <td class="exp-amt wid_2 ex_pad"><span><?php echo '<a href="https://dlike.io/post/'.$row_T["reason"].'"><i class="fas fa-globe"></i></a>'; ?></span></td>
+                                    <td class="exp-amt wid_2 ex_pad"><?php echo time_ago($start_time); ?></td>
+                                </tr>
+                            <?php }
+                        } ?>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <? }else{ ?>   <div id="profile_miss"><div class="container"><div class="user-login-signup-form-wrap" style="padding:7rem 0"><div class="modal-content" style="background:#1b1e63;border-radius:14px"><div class="modal-body"><div class="share-block"><p style="font-size:3rem">ooops!</p></div><div class="user-connected-form-block" style="background:#1b1e63"><center><i class="fas fa-frown" style="color:#ff08a;font-size:4rem"></i></center><div class="share-block"><p>It seems this dlike user does not exist!</p></div></div></div></div></div></div></div>
+    <?}?>  
+<?} else { ?>
     <div class="new-ticker-block-wrap">
         <div class="ticker-head">
             <ul class="nav nav-tabs ticker-nav" role="tablist">
@@ -36,7 +81,6 @@ include('includes/config.php'); include('template/header.php'); ?>
             </ul>
         </div>
         <div class="market-ticker-block">
-            <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade in active show" id="favorite_ticker">
                     <table class="table coin-list table-hover" style="border: 1px solid #eee;">
@@ -131,7 +175,7 @@ include('includes/config.php'); include('template/header.php'); ?>
             </div>
         </div>
     </div>
-<?} else {}?>
+<?}?>
 </div></div></div>
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">    $('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/explorer/" + user_wallet;window.open(wallet_url, "_self");});</script>
