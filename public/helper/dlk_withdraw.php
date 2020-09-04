@@ -7,7 +7,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 
 	if(empty($dlk_amount)){$errors = "Please enter valid amount to withdraw";}
     if(empty($username)){$errors = "Seems You are not login";}
-    if(!in_array($username, $admin_users)){if ($dlk_amount > $max_withdraw_limit) {$errors = 'Phew...Max allowed amount is 5000 DLIKE per 24 hours';}}
+
 
     $check_amount = $conn->query("SELECT amount FROM dlike_wallet where username = '$username'");
 	$row_A = $check_amount->fetch_assoc(); $wallet_amount = $row_A['amount'];
