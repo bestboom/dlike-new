@@ -2,12 +2,10 @@
 include('includes/config.php'); include('template/header.php'); ?>
 <div style="padding-top: 60px;background: #220f58;">
     <div class="col-md-12"><div class="container banner-content explorer-form" style="padding: 15px;">
-        <form class="subs-form">
-            <div class="input-box expl">
-                <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by dlike username" required />
-                <button type="button" class="wallet-search">Search</button>
-            </div>
-        </form>
+        <div class="input-box expl">
+            <input type="text" value="" name="user" class="form-control" id="exp_search" placeholder="Search by dlike username" required />
+            <button type="button" class="wallet-search">Search</button>
+        </div>
     </div></div>
 </div>
 </div><!-- banner-block -->
@@ -178,4 +176,4 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$ex_user'");
 <?}?>
 </div></div></div>
 <?php include('template/footer.php'); ?>
-<script type="text/javascript">$('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();let wallet_url = "https://dlike.io/explorer/" + user_wallet;window.open(wallet_url, "_self");});</script>
+<script type="text/javascript">$('.wallet-search').click(function() {let user_wallet = $('#exp_search').val();if (user_wallet == "") {toastr.error('phew... Enter valid username');return false;}let wallet_url = "https://dlike.io/explorer/" + user_wallet;window.open(wallet_url, "_self");});</script>
