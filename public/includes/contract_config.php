@@ -3,7 +3,7 @@ include_once '../vendor/autoload.php';
 define('CONTRACT_ADDRESS','4154a4cb3c2fbbbf41038e0ad715558b574c9c0f34');
 define('TRONGRID_V2_EVENT_API_URL','https://api.trongrid.io/event/contract/');
 //define('API_URL','https://api.tronscan.org/api/');
-//define('API_URL','https://api.trongrid.io/');
+define('API_URL','https://api.trongrid.io/');
 define('TRONSCAN_URL','https://tronscan.org/#/transaction/');
 define('SIGNER','TJLwvVtwwHVkKNcMrmtzsr8NgyXRygMuWA');
 $signer_pk = getenv("SIGNER_PK");
