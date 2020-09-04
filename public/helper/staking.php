@@ -1,4 +1,8 @@
-<?php if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['amount'])  && $_POST['amount'] != '') { 
+<?php 
+require '../includes/config.php';
+include_once '../vendor/autoload.php';
+include_once '../includes/contract_config.php';
+if (isset($_POST['action'])  && $_POST['action'] == 'staking' && isset($_POST['amount'])  && $_POST['amount'] != '') { 
 
 	$stk_amount = trim(mysqli_real_escape_string($conn, $_POST["amount"]));
 	$username = $_COOKIE['dlike_username'];
