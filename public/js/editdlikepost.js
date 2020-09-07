@@ -17,7 +17,8 @@ $('.dlike_share_post').click(function(clickEvent) {
         
         let verifyUrl = getDomain(urlInput);
         if($('.dlike_cat').val() == "0") {$('.dlike_cat').css("border-color", "RED");toastr.error('Please Select an appropriate Category');return false;}
-        var tags = $('.dlike_tags').val();
+        var tags = $('.dlike_tags').val();var allowed_tags_type = /^[a-zA-Z0-9]+$/;
+        if (allowed_tags_type.test(tags)) {$('.tags').css("border-color", "RED");toastr.error('Only alphanumeric tags, no Characters.');return false;}
         tags = $.trim(tags).split(' ');
         if (tags.length < 2) {$('.tags').css("border-color", "RED");toastr.error('Please add at least two related tags');return false;}
         var description = $('textarea#post_desc').val();
