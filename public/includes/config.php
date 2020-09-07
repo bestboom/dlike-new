@@ -55,7 +55,7 @@ $foundation_reward = '0.025';
 $max_withdraw_limit = '5000';
 $no_of_staking_rewards = '200';
 
-$tron_contract = "THgmBFcZCpg18r4FWkBusCBE9UaxmKMY2R";
+$tron_contract = "TMw4Er1ZVMm6Z4QnE4fqU6xzT4G43HapWb";
 
 $dlike_charity_acc="TCwS1TPfHvF1aL9BxvXMvp8mKcJr4fnP5x";
 $dlike_daf_acc="TWTXTvXctXP7cP379nGMeEofGHiH42tstU";

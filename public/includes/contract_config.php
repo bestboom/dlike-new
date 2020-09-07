@@ -1,6 +1,6 @@
 <?php
 include_once '../vendor/autoload.php';
-define('CONTRACT_ADDRESS','4154a4cb3c2fbbbf41038e0ad715558b574c9c0f34');
+define('CONTRACT_ADDRESS','4183395cf3253daf2236d5a02be6125fceb9a35b11');
 define('TRONGRID_V2_EVENT_API_URL','https://api.trongrid.io/event/contract/');
 define('API_URL','https://api.trongrid.io/');
 define('TRONSCAN_URL','https://tronscan.org/#/transaction/');
