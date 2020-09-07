@@ -14,9 +14,9 @@ if (isset($_POST['name_profile']) && $_POST['name_profile'] != '') {
 
 	$dlike_username = $_COOKIE['dlike_username'];
 
-	if($dlike_username != $profname){
-        $errors = "Some issue in profile updating. Please Try later";
-    }
+	if($dlike_username != $profname){$errors = "Some issue in profile updating. Please Try later";}
+	if(!is_array(getimagesize($p_img))){$errors = "Profile image link does not seems a valid image file!";}
+	if(!is_array(getimagesize($p_cover_img))){$errors = "Cover image link does not seems a valid image file!";}
 
     if (empty($errors)) {
 		$update_p = $conn->query("UPDATE dlikeaccounts SET full_name = '$p_name', profile_pic = '$p_img', profile_banner = '$p_cover_img', location = '$p_location', website = '$p_website', about = '$p_about' WHERE username = '$dlike_username'");
