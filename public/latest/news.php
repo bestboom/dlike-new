@@ -29,7 +29,6 @@ $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERV
 $uri = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $og_url = $uri;
 include('../template/news-header.php');
-include('../functions/main.php');
 ?></div><!-- sub-header -->
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
     <div class="row" style="padding: 25px;"><div class="col" style="text-align:center;color: #fff;"><h3>Latest <?php echo ucfirst($news_category); ?> News</h3></div></div>
