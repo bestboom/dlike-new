@@ -35,4 +35,5 @@ RewriteRule ^wallet$ ./dlike_wallet.php
 RewriteRule ^staking$ ./dlike_staking.php
 RewriteRule ^rewards$ ./dlike_rewards.php
 RewriteRule ^steemposts$ ./steemposts.php
+RewriteRule ^explorer/(.*)$ ./dlike_transactions.php
 RewriteRule ^explorer/(.*)$ ./dlike_transactions.php?user=$1
