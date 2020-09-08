@@ -25,7 +25,7 @@ include('template/header.php');
                     <div class="author-info"><h5 style="margin-bottom: 0px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5><span class="auth-time"><?php echo time_ago($post_time); ?></span>
                     </div>
                 </div>
-                <div class="post-comments" style="color: #1652f0;"><a href="#"><?php echo ucfirst($post_category); ?></a></div>
+                <div class="post-comments" style="color: #1652f0;"><?php echo '<a href="/category/'. $post_category.'">'.ucfirst($post_category).'</a>'; ?></div>
             </div>
             <h4 class="post-title"><?php echo $title; ?></h4>
             <p class="post-entry"><?php echo $description; ?><br><span style="float: right;color: #1652f0;font-size: 12px;">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
