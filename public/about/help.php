@@ -314,3 +314,4 @@
         </div>
     </div>
 <?php include('../template/footer.php'); ?>
+<script src="../js/toaster.js"></script><script src="../js/loader.js"></script>
