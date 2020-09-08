@@ -31,5 +31,8 @@ RewriteRule ^profile/(.*)$ ./dlike_profile.php?user=$1
 RewriteRule ^post/(.*)/(.*)$ ./dlike_post.php?user=$1&link=$2
 RewriteRule ^posts/(.*)$ ./dlike_posts.php?page=$1
 RewriteRule ^trending$ ./dlike_trending.php
+RewriteRule ^wallet$ ./dlike_wallet.php
+RewriteRule ^staking$ ./dlike_staking.php
+RewriteRule ^rewards$ ./dlike_rewards.php
 RewriteRule ^steemposts$ ./steemposts.php
 RewriteRule ^explorer/(.*)$ ./dlike_transactions.php?user=$1
