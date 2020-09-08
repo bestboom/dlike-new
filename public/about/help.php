@@ -1,4 +1,4 @@
-<?php  include('../template/header.php'); ?>
+<?php  include('../template/header.php'); include('../template/header.php'); ?>
 </div><!-- sub-header -->
 <div class="container" style="background: #191d5d;max-width: 100% !important;">
     <div class="row" style="padding: 50px;">

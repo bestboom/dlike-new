@@ -1,4 +1,4 @@
-<?php include('../template/header.php');?>
+<?php include('../template/header.php');include('../template/header.php'); ?>
 </div>
 <div class="container">
 	<div class="info-sec">

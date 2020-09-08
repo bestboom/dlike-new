@@ -1,4 +1,4 @@
-<?php include('../template/header.php'); ?>
+<?php include('../template/header.php');include('../template/header.php'); ?>
 </div><!-- sub-header -->
     <div class="support-details-section">
         <div class="container">
