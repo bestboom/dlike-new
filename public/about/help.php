@@ -1,6 +1,6 @@
 <?php include('../includes/config.php'); include('../template/header.php'); ?>
 </div><!-- sub-header -->
-<div class="container" style="background: #191d5d;max-width: 100% !important;">
+<div class="container" style="background: #191d5d;max-width: 100% !important;padding-top: 60px;">
     <div class="row" style="padding: 50px;">
         <div class="col" style="text-align:center;color: #fff;">
             <h3>Frequently Asked Questions</h3>
@@ -301,7 +301,7 @@
                 </div>
                 <div class="offset-lg-4 col-lg-5 offset-md-2 col-md-8">
                     <div class="qs-answer-section">
-                        <img src="./images/others/30.png" alt="img" class="img-responsive">
+                        <img src="../images/others/30.png" alt="img" class="img-responsive">
                         <h4>Don’t get Answer?</h4>
                         <span>Get in touch on social channels.</span>
                         <div class="btn-group">
