@@ -1041,8 +1041,8 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .bg-orange {background-color: #fd9644 !important;}
 .bg-green {background-color: #5eba00 !important;}
 .bg-blue {background-color: #467fcf !important;}
-.my_img {border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;display:block;width:32px;margin-right:9px;height:32px;}
-.ex_img {border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;display:inline-block;width:22px;height:22px;margin-right:9px}
+.my_img {border: 1px solid #adadad;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;display:block;width:32px;margin-right:9px;height:32px;}
+.ex_img {border: 1px solid #adadad;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;-o-border-radius:50%;display:inline-block;width:22px;height:22px;margin-right:9px}
 .ex_pad{padding: 12px 22px;}
 
 .data-title {font-weight: 500;white-space: nowrap;padding-top: 3px;padding-right: 5px;overflow: hidden;text-overflow: ellipsis;font-weight: 600;margin-bottom: 0px;}
