@@ -127,6 +127,7 @@ $('.email_signup_btn').click(function() {$('.signup_loader').show();
     let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
     if (signup_username == "") {toastr.error('phew... username should not be empty');return false;}
+    var allowed_name = /^[\w]+$/; if (!allowed_name.test(signup_username)){toastr.error('UserName can only contain alphanumeric and underscore');return false;}
     if(signup_email==""){toastr.error('phew..Email should not be empty');$('.signup_loader').hide();return false;
     } else {if (!emailRegex.test(signup_email)) {toastr.error('phew... email address is not valid'); $('.signup_loader').hide();return false;}
     }
