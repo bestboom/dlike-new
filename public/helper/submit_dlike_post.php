@@ -5,12 +5,14 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 	$url = mysqli_real_escape_string($conn, $_POST['exturl']);
 	$urlImage = mysqli_real_escape_string($conn, $_POST["image"]);
 	$title = mysqli_real_escape_string($conn, $_POST['title']);
-	$permlink = mysqli_real_escape_string($conn, $_POST['permlink']);
+	$post_permlink = mysqli_real_escape_string($conn, $_POST['permlink']);
 	$category = strtolower(mysqli_real_escape_string($conn, $_POST['category']));
 	$tags = trim(strtolower(mysqli_real_escape_string($conn, $_POST['tags'])));
 	$body = mysqli_real_escape_string($conn, $_POST['description']);
 	$verifyUrl = mysqli_real_escape_string($conn, $_POST['in_url']);
 	
+	$randomLink=substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 11);
+	if($post_permlink=="-"){$permlink = $randomLink;} else {$permlink = $post_permlink; }
 	if (in_array($verifyUrl, $restricted_urls)){die(json_encode(['error' => true, 'message' => 'phew... Sharing from this url is not allowed']));}
 	$sql_post_limit = $conn->query("SELECT * FROM dlikeposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR");if ($sql_post_limit->num_rows >= 5) {die(json_encode(['error' => true, 'message' => 'Phew ... You reached max daily share limit!']));}
 	$sql_unique_url = $conn->query("SELECT ext_url FROM dlikeposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 300 HOUR"); if ($sql_unique_url->num_rows > 0) {die(json_encode(['error' => true, 'message' => 'URL already shared. Can not be shared again!']));}
