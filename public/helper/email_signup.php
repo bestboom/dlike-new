@@ -26,15 +26,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
     $check_dlike_name = stripos($signup_username, $company_name);
 
-	if(empty($signup_username)){
-      $errors = "Username Shoould not be empty";
-    }
-	if (strlen($signup_username) > 20 || strlen($signup_username) < 3) {
-		$errors = 'username length must be between 3 and 20 words!';
-	}
-	if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {
-		$errors = 'Username not available!';
-	}
+	if(empty($signup_username)){$errors = "Username Shoould not be empty";}
+	if(strlen($signup_username) > 20 || strlen($signup_username) < 3) {$errors = 'username length must be between 3 and 20 words!';}
+	if(preg_match('/\s/',$signup_username)){$errors = "No Space Allowed in UserName";}
+	if (stripos(json_encode($not_allowed_username),$signup_username) !== false) {$errors = 'Username not available!';}
     if($check_dlike_name == true){
         $errors = "Username not available";
     }
