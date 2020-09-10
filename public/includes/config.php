@@ -63,5 +63,5 @@ $dlike_team_acc="TZFX4pbMV2Gb9qVrneT2z6FvRY6R7UjiZp";
 $dlike_foundation_acc="TR8e71omi84YpJJNzDSShGvbNmeWcBVGDm";
 $dlike_airdrop_acc="TPHiKY8sswCuD9wy1s6XM5C6e3R1iJnCqP";
 
-$restricted_urls = array("dlike.io","steemit.com","wikipedia.org","facebook.com","youtube.com", "pinterest.com","twitter.com","bloomberg.com","youtu.be", "peakd.com", "steempeak.com", "hive.blog", "blurt.world","pornhub.com","youporn.com");
+$restricted_urls = array("dlike.io","steemit.com","wikipedia.org","facebook.com","youtube.com", "pinterest.com","twitter.com","bloomberg.com","youtu.be", "peakd.com", "steempeak.com", "hive.blog", "blurt.world","pornhub.com","youporn.com","airdroprating.io");
 ?>
