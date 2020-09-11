@@ -16,7 +16,6 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 	if (in_array($verifyUrl, $restricted_urls)){die(json_encode(['error' => true, 'message' => 'phew... Sharing from this url is not allowed']));}
 	$sql_post_limit = $conn->query("SELECT * FROM dlikeposts WHERE username = '$user_name' and created_at > now() - INTERVAL 24 HOUR");if ($sql_post_limit->num_rows >= 5) {die(json_encode(['error' => true, 'message' => 'Phew ... You reached max daily share limit!']));}
 	$sql_unique_url = $conn->query("SELECT ext_url FROM dlikeposts WHERE ext_url = '$url' and created_at > now() - INTERVAL 300 HOUR"); if ($sql_unique_url->num_rows > 0) {die(json_encode(['error' => true, 'message' => 'URL already shared. Can not be shared again!']));}
-	if ($title =='null') {die(json_encode(['error' => true, 'message' => 'This post can not be shared!']));
 	$redirect_url = 'https://dlike.io/post/' . $author .'/'. $permlink;
 	if ($title !='') {
 		$addposts = $conn->query("INSERT INTO dlikeposts (`username`,`title`,`permlink`,`ext_url`,`img_url`, `ctegory`, `description`, `tags`, `created_at`) VALUES ('".$author."','".$title."', '".$permlink."', '".$url."', '".$urlImage."', '".$category."', '".$body."', '".$tags."','".date("Y-m-d H:i:s")."')");
