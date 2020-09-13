@@ -163,7 +163,8 @@ $('#claim_stk_reward').click(async function() {$("#claim_stk_reward").attr("disa
                     $.ajax({type: 'post',url:'/helper/staking.php',data:{action : 'pay_staking_reward',claim_amount: claim_amt,wallet: user_address},});
                     claim_amt = claim_amt * 1e6;
                     let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
-                    let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+                    //let myContract = await tronWeb.contract(myContractInfo.abi.entrys, mainContractAddress);
+                    var myContract = await tronWeb.contract().at(mainContractAddress);
                     if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');enable_claim();return false;}
                     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
                     let result = await myContract.getReward(claim_amt).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
