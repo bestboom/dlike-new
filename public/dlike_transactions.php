@@ -156,7 +156,7 @@ $sql_U = $conn->query("SELECT * FROM dlikeaccounts where username='$ex_user'");
                     <table class="table coin-list table-hover" style="border: 1px solid #eee;">
                     <tbody>
                         <?php 
-                        $sql_T = $conn->query("SELECT * FROM dlike_staking ORDER BY amount DESC LIMIT 200");
+                        $sql_T = $conn->query("SELECT * FROM dlike_staking where amount > 0 ORDER BY amount DESC LIMIT 200");
                         if ($sql_T && $sql_T->num_rows > 0) {
                             while ($row_T = $sql_T->fetch_assoc()) {$dlike_user = $row_T["username"];
                                 $sql_F=$conn->query("SELECT * FROM dlikeaccounts where username='$dlike_user'");
