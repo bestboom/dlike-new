@@ -125,7 +125,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
             <tbody>
             <?php $sql_st = $conn->query("SELECT * FROM dlike_staking_transactions where username = '$dlike_user' ORDER BY trx_time DESC Limit 30");
                 if ($sql_st->num_rows > 0) { while($row_t = $sql_st->fetch_assoc()) {?> 
-                    <tr><td><?php echo $row_t["amount"]; ?></td><td><?php echo $row_t["type"]; ?></td><td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>';?></td><td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> </tr>
+                    <tr><td><?php echo $row_t["amount"]; ?></td><td><?php echo $row_t["type"]; ?></td><td><?php echo '<a href="https://tronscan.org/#/transaction/'.$row_t["tron_trx"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>';?></td><td><?php echo date('Y-m-d', strtotime($row_t["trx_time"])); ?></td> </tr>
             <? } }?>
             </tbody>
         </table>

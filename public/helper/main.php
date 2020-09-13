@@ -1,8 +1,5 @@
 
-<?php 
-/*ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);*/
+<?php
 class DataGraber{
     private $title;
     private $thumbnail;
@@ -129,7 +126,7 @@ class DataGraber{
         $nodes = $doc->getElementsByTagName('title');
 
         //get and display what you need:
-        $this->title = $nodes->item(0)->nodeValue;
+        //$this->title = $nodes->item(0)->nodeValue;
         /*if (empty($this->title)||$this->title=="null"){
             preg_match('/<title>(.*)<\/title>/i',$html,$title);
             //$this->title = $title[1];
@@ -143,18 +140,24 @@ class DataGraber{
         for ($i = 0; $i < $metas->length; ++$i) {
 
             $meta = $metas->item($i);
-            if( $meta->getAttribute('name') == 'description') {
+            if( $meta->getAttribute('property') == 'og:description') {
                 $this->description = $meta->getAttribute('content');
-
-            }//<-- name
-
+            }
+            
             if( empty( $this->description ) ) {
-                if( $meta->getAttribute('property') == 'og:description') {
-                    $this->description = $meta->getAttribute('content');
-
-                }//<-- name
+                if( $meta->getAttribute('name') == 'description') {
+                    $this->description = $meta->getAttribute('content'); 
+                }
+            }
+            if( $meta->getAttribute('property') == 'og:title') {
+                    $this->title = $meta->getAttribute('content');
             }
 
+            if( empty( $this->title ) ) {
+            if( $meta->getAttribute('name') == 'title') {
+                $this->title = $meta->getAttribute('content'); 
+                }
+            }
             if($meta->getAttribute('property') == 'og:image') {
                 if(filter_var($meta->getAttribute('content'), FILTER_VALIDATE_URL)) {
                     $this->thumbnail = $meta->getAttribute('content');
