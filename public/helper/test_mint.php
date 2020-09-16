@@ -2,11 +2,14 @@
 require '../includes/config.php';
 include_once '../vendor/autoload.php';
 include_once '../includes/contract_config.php';
-echo 'no error';
+
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 
 			$wallet="THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ";
-			$amount = "9000000";
-			//$amount = $dlkamount * 1000000;
+			$dlkamount = "9";
+			$amount = $dlkamount * 1000000;
 
 	    	$wallets = array($tron->address2HexString($wallet));
 	    	$amounts = array($amount);
