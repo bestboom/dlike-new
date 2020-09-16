@@ -80,35 +80,37 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 
     $username = $_COOKIE['dlike_username'];
     $check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
-	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();
-		$bal= $row['amount'];
-		if($bal > 0){$amount = $dlkamount * 1000000;
+	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$bal= $row['amount'];
+		if($bal > 0){
+			$check_map = $conn->query("SELECT * FROM dlike_tokens_mapping WHERE username = '$username' and  update_time > now() - INTERVAL 24 HOUR");
+			if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Mapping update issue']));
+			}else{
 
-	    	$wallets = array($tron->address2HexString($wallet));
-	    	$amounts = array($amount);
-	    	$abi = json_decode(ABI,true);
+				$amount = $dlkamount * 1000000;
+		    	$wallets = array($tron->address2HexString($wallet));
+		    	$amounts = array($amount);
+		    	$abi = json_decode(ABI,true);
 
-	    	$vAdminAddress=SIGNER;
-	    	$vHExAddress=$tron->address2HexString($vAdminAddress);
-	    	$tron->setAddress($vAdminAddress);
-	    	$tron->setPrivateKey(SIGNER_PK);
+		    	$vAdminAddress=SIGNER;
+		    	$vHExAddress=$tron->address2HexString($vAdminAddress);
+		    	$tron->setAddress($vAdminAddress);
+		    	$tron->setPrivateKey(SIGNER_PK);
 
-	    	$contract = CONTRACT_ADDRESS;
-	    	$function = 'payToken';
+		    	$contract = CONTRACT_ADDRESS;
+		    	$function = 'payToken';
 
-	    	$params = array($wallets , $amounts );
-	    	$address =  $vHExAddress;
-	    	$feeLimit = 1000000000;
-	    	$callValue = 0;
-	       
-	        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
-	        $signedTransaction = $tron->signTransaction($triggerContract);
-	        $response = $tron->sendRawTransaction($signedTransaction);
-	        if ($response['result'] == 1) {$status="0";
-	        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
-	             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
-	         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-
+		    	$params = array($wallets , $amounts );
+		    	$address =  $vHExAddress;
+		    	$feeLimit = 1000000000;
+		    	$callValue = 0;
+		       
+		        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
+		        $signedTransaction = $tron->signTransaction($triggerContract);
+		        $response = $tron->sendRawTransaction($signedTransaction);
+		        if ($response['result'] == 1) {$status="0";
+		        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
+		            die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+		        }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 	    }else{die(json_encode(['error' => true,'message' => 'Seems balance issue']));}
     }else{die(json_encode(['error' => true,'message' => 'Try Later']));}
 }
