@@ -82,7 +82,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
     $check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
 	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();
 		$bal= $row['amount'];
-		if($bal > 0){$amount = $bal * 1000000;
+		if($bal > 0){$amount = $dlkamount * 1000000;
 
 	    	$wallets = array($tron->address2HexString($wallet));
 	    	$amounts = array($amount);
@@ -107,10 +107,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 	        if ($response['result'] == 1) {$status="0";
 	        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$amount."', '".$status."', now())");
 	             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
-	          }
-	        else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
+	         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 
-	    }
-    }
+	    }else{die(json_encode(['error' => true,'message' => 'Seems balance issue']));}
+    }else{die(json_encode(['error' => true,'message' => 'Try Later']));}
 }
 ?>
