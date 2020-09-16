@@ -105,7 +105,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 	        $signedTransaction = $tron->signTransaction($triggerContract);
 	        $response = $tron->sendRawTransaction($signedTransaction);
 	        if ($response['result'] == 1) { $status="0";
-	        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$amount."', '".$$status."', now())");
+	        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$amount."', '".$status."', now())");
 	             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
 	          }
 	        else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
