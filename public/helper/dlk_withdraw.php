@@ -76,13 +76,13 @@ if (isset($_POST['action']) && $_POST['action'] == 'paid' && isset($_POST['walle
 
 if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
     $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
-    $out_amount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
+    $dlkamount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
 
     $username = $_COOKIE['dlike_username'];
     $check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
 	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();
 		$bal= $row['amount'];
-		if($bal > 0){$amount = $out_amount * 1000000;
+		if($bal > 0){$amount = $dlkamount * 1000000;
 
 	    	$wallets = array($tron->address2HexString($wallet));
 	    	$amounts = array($amount);
@@ -104,7 +104,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 	        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 	        $signedTransaction = $tron->signTransaction($triggerContract);
 	        $response = $tron->sendRawTransaction($signedTransaction);
-	        if ($response['result'] == 1) { 
+	        if ($response['result'] == 1) { $status="0";
+	        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$amount."', '".$status."', now())");
 	             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
 	          }
 	        else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
