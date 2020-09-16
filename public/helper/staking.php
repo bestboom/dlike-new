@@ -121,6 +121,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
                     $sql_cur = $conn->query("INSERT INTO dlike_rewards_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$out_amount."', '".$status."', now())");
                 die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
                 }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
+            }
         }
     }
 }

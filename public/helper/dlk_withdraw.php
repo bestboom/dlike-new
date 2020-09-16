@@ -120,7 +120,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 
 		            die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
 		        }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-	    }else{die(json_encode(['error' => true,'message' => 'Seems balance issue']));}
-    }else{die(json_encode(['error' => true,'message' => 'Try Later']));}
+		    }
+	    }
+    }
 }
 ?>
