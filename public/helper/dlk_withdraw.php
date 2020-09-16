@@ -62,14 +62,18 @@ if (isset($_POST['action']) && $_POST['action'] == 'paid' && isset($_POST['walle
     $trx_id = trim(mysqli_real_escape_string($conn, $_POST['trx_id']));
     $dlk_out_amount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
     $username = $_COOKIE['dlike_username'];
+    $pay_status="1";
 
-	$check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
-	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$old_amount = $row['amount'];
+    $add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlk_out_amount."',  '".$wallet."', '".$trx_id."', '".date("Y-m-d H:i:s")."')");
+
+    $update_map = $conn->query("UPDATE dlike_tokens_mapping SET status = '$pay_status' WHERE username = '$username' and amount='$dlk_out_amount'");
+	//$check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
+	//if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$old_amount = $row['amount'];
 		
-		$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$old_amount' - '$dlk_out_amount' WHERE username = '$username'");
+		//$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$old_amount' - '$dlk_out_amount' WHERE username = '$username'");
 
-		$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlk_out_amount."',  '".$wallet."', '".$trx_id."', '".date("Y-m-d H:i:s")."')");
-	}
+		
+	//}
 }
 
 
@@ -83,7 +87,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$bal= $row['amount'];
 		if($bal > 0){
 			$check_map = $conn->query("SELECT * FROM dlike_tokens_mapping WHERE username = '$username' and  update_time > now() - INTERVAL 24 HOUR");
-			if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Mapping update issue']));
+			if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Withdraw time issue']));
 			}else{
 
 				$amount = $dlkamount * 1000000;
@@ -107,8 +111,13 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 		        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 		        $signedTransaction = $tron->signTransaction($triggerContract);
 		        $response = $tron->sendRawTransaction($signedTransaction);
-		        if ($response['result'] == 1) {$status="0";
+		        if ($response['result'] == 1) {
+
+		        	$status="0";
 		        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
+
+		        	$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$bal' - '$dlkamount' WHERE username = '$username'");
+
 		            die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
 		        }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 	    }else{die(json_encode(['error' => true,'message' => 'Seems balance issue']));}
