@@ -85,7 +85,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'claim_stake' && isset($_POS
 }
 
 
-
 if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
     $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
     $out_amount = trim(mysqli_real_escape_string($conn, $_POST['claim_amount']));
@@ -94,37 +93,37 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
     $check_Bal = $conn->query("SELECT * FROM dlike_staking_rewards WHERE username = '$username'");
     if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$bal= $row['reward'];
         if($bal > 0){
-            $amount = $bal * 1000000;
-            $wallets = array($tron->address2HexString($wallet));
-            $amounts = array($amount);
-            $abi = json_decode(ABI,true);
+            $check_map = $conn->query("SELECT * FROM dlike_rewards_mapping WHERE username = '$username' and  update_time > now() - INTERVAL 24 HOUR");
+            if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Mapping update issue']));
+            }else{
+                $amount = $bal * 1000000;
+                $wallets = array($tron->address2HexString($wallet));
+                $amounts = array($amount);
+                $abi = json_decode(ABI,true);
 
-            $vAdminAddress=SIGNER;
-            $vHExAddress=$tron->address2HexString($vAdminAddress);
-            $tron->setAddress($vAdminAddress);
-            $tron->setPrivateKey(SIGNER_PK);
+                $vAdminAddress=SIGNER;
+                $vHExAddress=$tron->address2HexString($vAdminAddress);
+                $tron->setAddress($vAdminAddress);
+                $tron->setPrivateKey(SIGNER_PK);
 
-            $contract = CONTRACT_ADDRESS;
-            $function = 'payReward';
+                $contract = CONTRACT_ADDRESS;
+                $function = 'payReward';
 
-            $params = array($wallets , $amounts);
-            $address =  $vHExAddress;
-            $feeLimit = 1000000000;
-            $callValue = 0;
+                $params = array($wallets , $amounts);
+                $address =  $vHExAddress;
+                $feeLimit = 1000000000;
+                $callValue = 0;
 
-           
-            $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
-            $signedTransaction = $tron->signTransaction($triggerContract);
-            $response = $tron->sendRawTransaction($signedTransaction);
-            if ($response['result'] == 1) {
-                 die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
-              }
-            else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-
+                $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
+                $signedTransaction = $tron->signTransaction($triggerContract);
+                $response = $tron->sendRawTransaction($signedTransaction);
+                if ($response['result'] == 1) {$status="0";
+                    $sql_cur = $conn->query("INSERT INTO dlike_rewards_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$out_amount."', '".$status."', now())");
+                die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+                }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
         }
     }
 }
-
 
 
 if (isset($_POST['action']) && $_POST['action'] == 'reward_paid' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
