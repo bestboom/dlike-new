@@ -93,9 +93,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
     $check_Bal = $conn->query("SELECT * FROM dlike_staking_rewards WHERE username = '$username'");
     if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$bal= $row['reward'];
         if($bal > 0){
-            $check_map = $conn->query("SELECT * FROM dlike_rewards_mapping WHERE username = '$username' and  update_time > now() - INTERVAL 24 HOUR");
-            if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Mapping update issue']));
-            }else{
+            //$check_map = $conn->query("SELECT * FROM dlike_rewards_mapping WHERE username = '$username' and  update_time > now() - INTERVAL 24 HOUR");
+            //if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Mapping update issue']));
+            //}else{
                 $amount = $bal * 1000000;
                 $wallets = array($tron->address2HexString($wallet));
                 $amounts = array($amount);
@@ -121,7 +121,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
                     $sql_cur = $conn->query("INSERT INTO dlike_rewards_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$out_amount."', '".$status."', now())");
                 die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
                 }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-            }
+            //}
         }
     }
 }
