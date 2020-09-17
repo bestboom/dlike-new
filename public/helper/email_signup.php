@@ -130,8 +130,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'resend_pin') {
 		    $mail->SMTPAuth = true;
 		    $mail->Username = 'emailapikey';
 		    $mail->Password = getenv("TRANMAIL_PASS");
-		    $mail->SMTPSecure = 'ssl';
-		    $mail->Port = 587;
+		    $mail->SMTPSecure = 'tls';
+		    $mail->Port = 465;
 
 		    $mail->setFrom('verification@dlike.io', 'DLIKE');
     		$mail->addAddress($user_email);
