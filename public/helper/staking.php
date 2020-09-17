@@ -93,9 +93,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
     $check_Bal = $conn->query("SELECT * FROM dlike_staking_rewards WHERE username = '$username'");
     if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$bal= $row['reward'];
         if($bal > 0){
-            //$check_map = $conn->query("SELECT * FROM dlike_rewards_mapping WHERE username = '$username' and  update_time > now() - INTERVAL 24 HOUR");
-            //if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Mapping update issue']));
-            //}else{
+            $check_map = $conn->query("SELECT * FROM dlike_rewards_mapping WHERE username = '$username' and  DATE(update_time) = CURDATE()");
+            if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Mapping update issue']));
+            }else{
                 $amount = $bal * 1000000;
                 $wallets = array($tron->address2HexString($wallet));
                 $amounts = array($amount);
@@ -119,9 +119,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset
                 $response = $tron->sendRawTransaction($signedTransaction);
                 if ($response['result'] == 1) {$status="0";
                     $sql_cur = $conn->query("INSERT INTO dlike_rewards_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$out_amount."', '".$status."', now())");
+                    $new_reward="0";
+                    $updateWallet = $conn->query("UPDATE dlike_staking_rewards SET reward = '$new_reward' WHERE username = '$username'");
+
                 die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
                 }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-            //}
+            }
         }
     }
 }
@@ -135,12 +138,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'reward_paid' && isset($_POST
     $tron_decimals = '1000000';
     $amount = $claim_amount/$tron_decimals;
     $type='Reward';
-    $check_Bal = $conn->query("SELECT * FROM dlike_staking_rewards WHERE username = '$username'");
-    if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$old_amount = $row['reward'];
-        
-        $updateWallet = $conn->query("UPDATE dlike_staking_rewards SET reward = '$old_amount' - '$amount' WHERE username = '$username'");
+    $pay_status="1";
 
-        $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
-    }
+    $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
+
+    $update_map = $conn->query("UPDATE dlike_rewards_mapping SET status = '$pay_status' WHERE username = '$username' and amount='$amount");
+
+    //$check_Bal = $conn->query("SELECT * FROM dlike_staking_rewards WHERE username = '$username'");
+    //if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$old_amount = $row['reward'];
+        
+        //$updateWallet = $conn->query("UPDATE dlike_staking_rewards SET reward = '$old_amount' - '$amount' WHERE username = '$username'");
+
+    //}
 }
 ?>
