@@ -42,7 +42,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 			if (mysqli_query($conn, $sqlm)) { 
 
 				$mail->isSMTP();
-			    $mail->Host = 'smtp.zoho.com';
+			    $mail->Host = 'smtp.transmail.com';
 			    $mail->SMTPAuth = true;
 			    $mail->Username = 'verification@dlike.io';
 			    $mail->Password = getenv("EMAIL_PASS");

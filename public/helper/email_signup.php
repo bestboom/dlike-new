@@ -126,7 +126,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'resend_pin') {
     	$update_code=$conn->query("UPDATE dlikeaccounts SET verify_code='$pin_number' WHERE username='$username'");
 		if ($update_code) {
 			$mail->isSMTP();
-		    $mail->Host = 'smtp.zoho.com';
+		    $mail->Host = 'smtp.transmail.com';
 		    $mail->SMTPAuth = true;
 		    $mail->Username = 'verification@dlike.io';
 		    $mail->Password = getenv("EMAIL_PASS");
