@@ -30,8 +30,8 @@ include_once '../includes/contract_config.php';
 	       
 	        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 	        $signedTransaction = $tron->signTransaction($triggerContract);
-	        //$response = $tron->sendRawTransaction($signedTransaction);
-	        //if ($response['result'] == 1) {
-	            //die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
-	        //}else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
+	        $response = $tron->sendRawTransaction($signedTransaction);
+	        if ($response['result'] == 1) {
+	            die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+	        }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 ?>

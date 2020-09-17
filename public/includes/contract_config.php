@@ -1,8 +1,8 @@
 <?php
 include_once '../vendor/autoload.php';
 define('CONTRACT_ADDRESS','4183395cf3253daf2236d5a02be6125fceb9a35b11');
-define('TRONGRID_V2_EVENT_API_URL','https://api.trongrid.io/event/contract/');
-define('API_URL','https://api.trongrid.io/');
+define('TRONGRID_V2_EVENT_API_URL','https://apilist.tronscan.org/api/event/contract/');
+define('API_URL','https://apilist.tronscan.org/api/');
 define('TRONSCAN_URL','https://tronscan.org/#/transaction/');
 define('SIGNER','TJLwvVtwwHVkKNcMrmtzsr8NgyXRygMuWA');
 $signer_pk = getenv("SIGNER_PK");
@@ -10,9 +10,9 @@ define('SIGNER_PK', $signer_pk);
 //$event_uel = EVENT_API_URL.'contract/'.CONTRACT_ADDRESS;
 
 use IEXBase\TronAPI\Tron;
-$fullNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.trongrid.io');
-$solidityNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.trongrid.io');
-$eventServer = new \IEXBase\TronAPI\Provider\HttpProvider('https://api.trongrid.io');
+$fullNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://apilist.tronscan.org/api/');
+$solidityNode = new \IEXBase\TronAPI\Provider\HttpProvider('https://apilist.tronscan.org/api/');
+$eventServer = new \IEXBase\TronAPI\Provider\HttpProvider('https://apilist.tronscan.org/api/');
 
 try {$tron = new \IEXBase\TronAPI\Tron($fullNode, $solidityNode, $eventServer);
 } catch (\IEXBase\TronAPI\Exception\TronException $e) {exit($e->getMessage());}
