@@ -5,7 +5,7 @@ if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"
 	
 	$new_title = strip_tags($_POST['title']);
 	$new_description = strip_tags($_POST['description']);
-	$body_description = limit_text($new_description , 250);
+	$body_description = limit_text($new_description , 50);
 
 	$author = trim(mysqli_real_escape_string($conn, $_POST['author']));
 	$url = mysqli_real_escape_string($conn, $_POST['exturl']);
