@@ -1,14 +1,20 @@
 <?php
 require '../includes/config.php';
+function limit_text($text, $limit) {if (str_word_count($text, 0) > $limit) {$words = str_word_count($text, 2);$pos   = array_keys($words);$text  = substr($text, 0, $pos[$limit]);}return $text;}
 if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"]) && isset($_POST["image"])){
+	
+	$new_title = strip_tags($_POST['title']);
+	$new_description = strip_tags($_POST['description']);
+	$body_description = limit_text($new_description , 250);
+
 	$author = trim(mysqli_real_escape_string($conn, $_POST['author']));
 	$url = mysqli_real_escape_string($conn, $_POST['exturl']);
 	$urlImage = mysqli_real_escape_string($conn, $_POST["image"]);
-	$title = mysqli_real_escape_string($conn, $_POST['title']);
+	$title = mysqli_real_escape_string($conn, $new_title);
 	$post_permlink = mysqli_real_escape_string($conn, $_POST['permlink']);
 	$category = strtolower(mysqli_real_escape_string($conn, $_POST['category']));
 	$tags = trim(strtolower(mysqli_real_escape_string($conn, $_POST['tags'])));
-	$body = mysqli_real_escape_string($conn, $_POST['description']);
+	$body = mysqli_real_escape_string($conn, $body_description);
 	$verifyUrl = mysqli_real_escape_string($conn, $_POST['in_url']);
 	
 	$randomLink=substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 11);
