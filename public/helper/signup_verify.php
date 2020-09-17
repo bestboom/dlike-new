@@ -46,7 +46,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'verify_email' && isset($_PO
 			    $mail->SMTPAuth = true;
 			    $mail->Username = 'emailapikey';
 			    $mail->Password = getenv("TRANMAIL_PASS");
-			    $mail->SMTPSecure = 'ssl';
+			    $mail->SMTPSecure = 'SSL';
 			    $mail->Port = 587;
 
 			    $mail->setFrom('verification@dlike.io', 'DLIKE');
