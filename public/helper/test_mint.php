@@ -8,7 +8,7 @@ include_once '../includes/contract_config.php';
 	error_reporting(E_ALL);
 
 			$wallet="THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ";
-			$dlkamount = "9";
+			$dlkamount = "31";
 			$amount = $dlkamount * 1000000;
 
 	    	$wallets = array($tron->address2HexString($wallet));
@@ -29,9 +29,9 @@ include_once '../includes/contract_config.php';
 	    	$callValue = 0;
 	       
 	        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
-	        $signedTransaction = $tron->signTransaction($triggerContract);
-	        $response = $tron->sendRawTransaction($signedTransaction);
-	        if ($response['result'] == 1) {
-	             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
-	         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
+	        //$signedTransaction = $tron->signTransaction($triggerContract);
+	        //$response = $tron->sendRawTransaction($signedTransaction);
+	        //if ($response['result'] == 1) {
+	            //die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+	        //}else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 ?>
