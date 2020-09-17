@@ -1,11 +1,11 @@
 <?php
 require '../includes/config.php';
-function limit_text($text, $limit) {if (str_word_count($text, 0) > $limit) {$words = str_word_count($text, 2);$pos   = array_keys($words);$text  = substr($text, 0, $pos[$limit]);}return $text;}
+function limit_text($text, $limit) {if (str_word_count($text, 0) > $limit) {$words=str_word_count($text, 2);$pos=array_keys($words);$text=substr($text, 0, $pos[$limit]);}return $text;}
 if (isset($_POST["title"]) && isset($_POST["category"]) && isset($_POST["author"]) && isset($_POST["image"])){
 	
 	$new_title = strip_tags($_POST['title']);
 	$new_description = strip_tags($_POST['description']);
-	$body_description = limit_text($new_description , 50);
+	$body_description = limit_text($new_description , 40);
 
 	$author = trim(mysqli_real_escape_string($conn, $_POST['author']));
 	$url = mysqli_real_escape_string($conn, $_POST['exturl']);

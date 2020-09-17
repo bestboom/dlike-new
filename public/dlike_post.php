@@ -1,6 +1,6 @@
 <?php $link = $_GET['link'];$user = $_GET['user'];
 include('includes/config.php');
-function limit_text($text, $limit) {if (str_word_count($text, 0) > $limit) {$words = str_word_count($text, 2);$pos   = array_keys($words);$text  = substr($text, 0, $pos[$limit]);}return $text;}
+function limit_text($text, $limit) {if (str_word_count($text, 0) > $limit) {$words=str_word_count($text, 2);$pos=array_keys($words);$text=substr($text, 0, $pos[$limit]);}return $text;}
 $sql_P = $conn->query("SELECT * FROM dlikeposts where username='$user' and  permlink='$link'");
 if ($sql_P && $sql_P->num_rows > 0){ $row_P = $sql_P->fetch_assoc();
     $imgUrl = $row_P["img_url"];$post_time = strtotime($row_P["created_at"]);
