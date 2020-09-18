@@ -20,7 +20,7 @@ if ($sql_U && $sql_U->num_rows > 0)
 	<div style="background: #ededed;"><div class="container p-data">
 		<div class="row p_data_inner">
 			<div>
-				<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle">';?></span><span class="p_data_names"><span class="name"><?php echo $account_name; ?></span><br><span class="p_name">@<?php echo $dlikeuser; ?></span></span>
+				<span><?php echo '<img src="'.$user_pro_img.'" id="p_img" class="img-fluid rounded-circle" onerror="pfImage(this)">';?></span><span class="p_data_names"><span class="name"><?php echo $account_name; ?></span><br><span class="p_name">@<?php echo $dlikeuser; ?></span></span>
 			</div>
 			<div><?php if($login_user == $prof_user){echo '<button class="btn btn-danger btn_edit btn-follow">Edit Profile</button>';
 					if($verified !='1'){echo '<button class="btn btn-danger btn_verify_email">Verify Email</button>';}
