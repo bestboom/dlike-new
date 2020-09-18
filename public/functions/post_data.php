@@ -1,3 +1,4 @@
+<?php $imgUrl=preg_replace("(^https?:)", "", $imgUrl); ?>
 <article class="post-style-two">
 <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
 <div><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$author.'"  class="img-fluid my_img"></a>'; ?></div>
