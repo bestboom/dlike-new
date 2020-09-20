@@ -1,5 +1,8 @@
 <?phpif (!isset($_COOKIE['username']) || !$_COOKIE['username']) { die('<script>window.location.replace("https://dlike.io","_self")</script>');} else {$user_name = $_COOKIE['username'];}
 include('includes/config.php'); include "template/header.php"; 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
 require_once "helper/steem/SteemEngine.php";
 require_once "helper/steem/time_string.php";
