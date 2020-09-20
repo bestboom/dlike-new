@@ -1,17 +1,11 @@
-<?phpif (!isset($_COOKIE['username']) || !$_COOKIE['username']) { die('<script>window.location.replace("https://dlike.io","_self")</script>');} else {$user_name = $_COOKIE['username'];}
+<?php if (!isset($_COOKIE['username']) || !$_COOKIE['username']) { die('<script>window.location.replace("https://dlike.io","_self")</script>');} else {$user_name = $_COOKIE['username'];}
 include('includes/config.php'); include "template/header.php"; 
-
 
 require_once "helper/steem/SteemEngine.php";
 require_once "helper/steem/time_string.php";
 use SnaddyvitchDispenser\SteemEngine\SteemEngine;
 $_STEEM_ENGINE = new SteemEngine();
 
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-    
 function getTokensToClaim($name) {
     $url="https://scot-api.steem-engine.com/@".$name."?v=".time()."000";
     $obj=json_decode(file_get_contents($url));
