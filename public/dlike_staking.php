@@ -3,7 +3,7 @@
 if($dlike_user == '') { ?>
 <div id="profile_miss"> <div class="container"> <div class="user-login-signup-form-wrap" style="padding: 7rem 0rem;"> <div class="modal-content miss_content"> <div class="modal-body"> <div class="share-block"><p style="font-size: 3rem;">ooops!</p></div> <div class="user-connected-form-block" style="background: #1b1e63;"> <center><i class="fas fa-frown miss_frown"></i></center> <div class="share-block"><p>You must login with your DLIKE username<br><b><a href="/welcome">Login</a></b></p></div> </div> </div> </div> </div> </div></div>
 <? } else {
-$sql_C=$conn->query("SELECT count(*) as total_stakers, SUM(amount) as total_staked_amount FROM dlike_staking");
+$sql_C=$conn->query("SELECT count(*) as total_stakers, SUM(amount) as total_staked_amount FROM dlike_staking where amount > 0");
 if ($sql_C->num_rows > 0){$row_C = $sql_C->fetch_assoc();
 $total_stakers = $row_C["total_stakers"]; $total_staked_amount = $row_C["total_staked_amount"];
 } else {$total_stakers = '0'; $total_staked_amount = '0';}
