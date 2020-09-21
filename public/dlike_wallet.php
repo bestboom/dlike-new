@@ -52,7 +52,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                                 <h4 class="m-0"><small>Tron Wallet Address</small></h4>
                                 <small class="row queue-stats-display text-muted" style="margin: 0px !important;">
                                     <?php if(!empty($offchain_address)){ echo $offchain_address; } else { ?>
-                                    <span><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span> <? } ?></small>
+                                    <span><a href="https://dlike.zendesk.com/hc/en-us/articles/900002726623-Which-Tron-Wallet-is-recomended-"><i class="far fa-question-circle" style="color: #c51d24;" target="_blank"></i></a><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span> <? } ?></small>
                             </div>
                         </div>
                     </div>
