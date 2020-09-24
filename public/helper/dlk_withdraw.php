@@ -64,15 +64,17 @@ if (isset($_POST['action']) && $_POST['action'] == 'paid' && isset($_POST['walle
     $username = $_COOKIE['dlike_username'];
     $pay_status="1";
 
-    $add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlk_out_amount."',  '".$wallet."', '".$trx_id."', '".date("Y-m-d H:i:s")."')");
+    
     $update_map = $conn->query("UPDATE dlike_tokens_mapping SET status = '$pay_status' WHERE username = '$username' and amount='$dlk_out_amount'");
+
+    $update_dlkw = $conn->query("UPDATE dlike_withdrawals SET status = '$trx_id' WHERE username = '$username' and amount='$dlk_out_amount'");
     
 	//$check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
 	//if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$old_amount = $row['amount'];
 		
-		//$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$old_amount' - '$dlk_out_amount' WHERE username = '$username'");
+	//$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$old_amount' - '$dlk_out_amount' WHERE username = '$username'");
     	
-
+    //$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlk_out_amount."',  '".$wallet."', '".$trx_id."', '".date("Y-m-d H:i:s")."')");
 		
 	//}
 }
@@ -118,6 +120,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 		        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
 
 		        	$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$bal' - '$dlkamount' WHERE username = '$username'");
+
+		        	$add_draw = $conn->query("INSERT INTO dlike_withdrawals (username, amount, tron_address, status, req_on) VALUES ('".$username."', '".$dlkamount."',  '".$wallet."', '".$status."', '".date("Y-m-d H:i:s")."')");
 
 		            die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
 		        }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
