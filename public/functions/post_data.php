@@ -1,4 +1,4 @@
-<?php $imgUrl=preg_replace("(^https?:)", "", $imgUrl); $user_profile_pic=preg_replace("(^https?:)", "", $user_profile_pic);
+<?php 
   if(!$imgUrl){
       $imgUrl="https://i.postimg.cc/rwbTkssy/dlike-user-profile.png";
   }
