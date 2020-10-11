@@ -1,4 +1,11 @@
-<?php $imgUrl=preg_replace("(^https?:)", "", $imgUrl); $user_profile_pic=preg_replace("(^https?:)", "", $user_profile_pic);?>
+<?php $imgUrl=preg_replace("(^https?:)", "", $imgUrl); $user_profile_pic=preg_replace("(^https?:)", "", $user_profile_pic);
+  if(!$imgUrl){
+      $imgUrl="https://i.postimg.cc/rwbTkssy/dlike-user-profile.png";
+  }
+  if(!$user_profile_pic){
+    $user_profile_pic="https://i.postimg.cc/rwbTkssy/dlike-user-profile.png";
+  }
+?>
 <article class="post-style-two">
 <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
 <div><?php echo '<a href="/profile/'. $author.'"><img src="'.$user_profile_pic.'" alt="'.$author.'"  class="img-fluid my_img"></a>'; ?></div>
