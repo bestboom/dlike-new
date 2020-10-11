@@ -10,7 +10,8 @@ if ($sql_U && $sql_U->num_rows > 0)
     $user_pro_img= $row_U['profile_pic'];$account_created = strtotime($row_U['created_time']);
     $account_name= $row_U['full_name'];$profile_banner= $row_U['profile_banner'];
 	$dlike_user = $dlikeuser;$verified= $row_U['verified'];$email= $row_U['email'];
-} else {$dlike_user = 'none';}	$login_user = $_COOKIE['dlike_username']; $user_pro_img=preg_replace("(^https?:)", "", $user_pro_img);?>
+} else {$dlike_user = 'none';}	$login_user = $_COOKIE['dlike_username']; $user_pro_img=preg_replace("(^https?:)", "", $user_pro_img);
+if(!$user_pro_img){$user_pro_img="https://i.postimg.cc/rwbTkssy/dlike-user-profile.png";}?>
 </div>
 <?php if($dlike_user == 'none') { ?>
 <div id="profile_miss"><div class="container"><div class="user-login-signup-form-wrap" style="padding:7rem 0"><div class="modal-content" style="background:#1b1e63;border-radius:14px"><div class="modal-body"><div class="share-block"><p style="font-size:3rem">ooops!</p></div><div class="user-connected-form-block" style="background:#1b1e63"><center><i class="fas fa-frown" style="color:#ff08a;font-size:4rem"></i></center><div class="share-block"><p>It seems this dlike user does not exist!</p></div></div></div></div></div></div></div>
