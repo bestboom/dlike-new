@@ -4,18 +4,16 @@ $('#logout_btn').click(function(){if ($.cookie("dlike_username")) { $.removeCook
 document.addEventListener("DOMContentLoaded", function(event) {
     document.querySelectorAll('.my_img').forEach(
         function(img){
-            console.log('avatar img is');
-            console.log(img);
             img.onerror = function(){
+                console.log('avatar');
                 this.src='https://i.postimg.cc/rwbTkssy/dlike-user-profile.png';
             };
             }
             );
             document.querySelectorAll('.card-img-top').forEach(
                 function(img){
-                    console.log('post img is');
-                    console.log(img);
                     img.onerror = function(){
+                        console.log('post');
                         this.src='https://dlike.io/images/default-img.png';
                     };
                     }
