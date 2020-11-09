@@ -139,10 +139,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'reward_paid' && isset($_POST
     $amount = $claim_amount/$tron_decimals;
     $type='Reward';
     $pay_status="1";
-
-    $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
-
     $update_map = $conn->query("UPDATE dlike_rewards_mapping SET status = '$pay_status' WHERE username = '$username' and amount='$amount");
+    $sql_st = $conn->query("INSERT INTO dlike_staking_transactions (username, amount, tron_address, tron_trx, type, trx_time) VALUES ('".$username."', '".$amount."', '".$wallet."', '".$trx_id."', '".$type."', now())");
 
     //$check_Bal = $conn->query("SELECT * FROM dlike_staking_rewards WHERE username = '$username'");
     //if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$old_amount = $row['reward'];

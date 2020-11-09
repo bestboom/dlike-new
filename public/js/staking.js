@@ -64,8 +64,9 @@ $('#stake_me').click(async function() {
                     $('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                        $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
-                            if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
+                        $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
+                            if(status=='success'){var stake_output = JSON.parse(data);
+                                var tx_result = stake_output.receipt["result"];  
                                 if(tx_result=='SUCCESS'){
                                     $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'staking',amount: stk_amt,wallet: user_address,trx_id: result},});
                                     $(".st_status_message").html('Tokens Staked Successfully!');
@@ -100,8 +101,9 @@ if (dlike_username != null) {var user_address =false;
                     if(result){$('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                    $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
-                        if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
+                    $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
+                        if(status=='success'){var unstake_output = JSON.parse(data);
+                            var tx_result = unstake_output.receipt["result"];  
                             if(tx_result=='SUCCESS'){
                                 $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'unstaking',amount: unstk_amt,wallet: user_address,trx_id: result},});
                                 $(".st_status_message").html('UnStaking Initiated Successfully!');
@@ -130,8 +132,9 @@ $('#claimback_tokens').click(async function() {var user_address =false;
             if(result){$('#stakingStatus').modal('show');
                 $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                 var x = setInterval(function() {
-                $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
-                    if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
+                $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
+                    if(status=='success'){var claimback_tokens = JSON.parse(data);
+                        var tx_result = claimback_tokens.receipt["result"];
                         if(tx_result=='SUCCESS'){
                             $(".st_status_message").html('Tokens Claimed Successfully!');
                             $(".iconTitle").find($(".fa")).removeClass('fa-spinner fa-pulse').addClass('fa-check-circle');setTimeout(function(){window.location.reload();}, 1000);
@@ -171,8 +174,9 @@ $('#claim_stk_reward').click(async function() {$("#claim_stk_reward").attr("disa
                     if(result){$('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                    $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
-                        if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
+                    $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
+                        if(status=='success'){var claim_reward = JSON.parse(data);
+                            var tx_result = claim_reward.receipt["result"];
                             if(tx_result=='SUCCESS'){
                                 $.ajax({ type: "POST",url: "/helper/staking.php", data: {action : 'reward_paid',amount: claim_amt,wallet: user_address,trx_id: result},});
                                 $(".st_status_message").html('Stakign Reward Claimed Successfully!');
