@@ -10,6 +10,8 @@ $db = substr($url["path"], 1);
 $conn = new mysqli($server, $username, $password, $db);
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
 
+$recpatch_key = getenv("RECAPTCHA_KEY");
+
 function getUserIP()
 {   if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
         $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];

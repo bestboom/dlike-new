@@ -29,6 +29,8 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                                 </div>
                                 <input type="password" name="email_pass" id="email_pass" placeholder="Password" class="form-control" />
                             </div>
+                            <div class="g-recaptcha" data-sitekey="6LdcMOEZAAAAAK_n022T2ghRkRUsw8af213RYskE" data-badge="inline" data-size="invisible" data-callback="setResponse"></div><br>
+                            <input type="hidden" id="captcha-response" name="captcha-response" />
                             <div class="forgot_pass">Forgot Password</div>
                             <button class="btn btn-primary email_login_btn" type="button" style="margin-top: 15px;"><i class="fas fa-circle-notch fa-spin login_loader" style="display:none;"></i><span id="email_login_txt">LOGIN</span></button>
                         </form>

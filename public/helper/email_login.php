@@ -1,6 +1,20 @@
 <?php 
 require '../includes/config.php';
 if (isset($_POST['login_username'])  && $_POST['login_username'] != '' && isset($_POST['login_pass'])  && $_POST['login_pass'] != '') { 
+	if(isset($_POST['captcha-response']) && !empty($_POST['captcha-response'])){       
+        $data = array(
+            'secret' => $recpatch_key,
+            'response' => $_POST['captcha-response']
+        );        
+        $verify = curl_init();
+        curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        curl_setopt($verify, CURLOPT_POST, true);
+        curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($verify);       
+        if($response != true){ $errors = "Verification failed, please try again";}
+    }else{$errors = "Verification failed, please try again";}
 	$login_username = trim($_POST["login_username"]);
 	$login_pass = trim($_POST["login_pass"]);
 	if(empty($login_username)){ $errors = "Username Shoould not be empty";}
