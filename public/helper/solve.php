@@ -7,7 +7,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         if ($userval == $author){die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));}
         $check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$userval'");
         $row_add = $check_address->fetch_assoc();$verified = $row_add['verified'];
-        if ($verified !='1'){$errors = 'Phew... You must verify your email before recomending!';}
+        if ($verified !='1'){die(json_encode(['error' => true, 'message' => 'Phew... You must verify your email before recommending!']));}
 
         $check_unique_like = $conn->query("SELECT * FROM mylikes where username = '$userval' and permlink = '$permlink' and author = '$author'");
         if ($check_unique_like->num_rows > 0){die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));} 
@@ -18,7 +18,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         $check_bot_likes = $conn->query("SELECT * FROM dlike_upvotes where ip_addr = '$thisip' and  curation_time > now() - INTERVAL 24 HOUR");
         if ($check_bot_likes->num_rows >= 30){die(json_encode(['error' => true, 'message' => 'Phew ...You can not do more likes!']));}
 
-        $check_time_likes = $conn->query("SELECT like_time FROM mylikes where username = '$userval' and TIMESTAMPDIFF(SECOND, like_time, now()) <= 17");
+        $check_time_likes = $conn->query("SELECT like_time FROM mylikes where username = '$userval' and TIMESTAMPDIFF(SECOND, like_time, now()) <= 19");
         if ($check_time_likes->num_rows > 0){die(json_encode(['error' => true, 'message' => 'Are you a Robot? Be patient while recomending posts to community with your Likes!']));}
 
         $sql_T = $conn->query("SELECT * FROM dlikeposts WHERE username='$author' and permlink='$permlink' and created_at < now() - INTERVAL 42 HOUR");
