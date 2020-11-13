@@ -133,7 +133,7 @@ $('.email_signup_btn').click(function() {$('.signup_loader').show();
     }
     if (signup_pass=="") {toastr.error('phew... Password should not be empty');$('.signup_loader').hide();return false; }
 
-    $.ajax({type: "POST",url: "/helper/email_signup.php",data: {action :'signup',signup_username: signup_username,signup_email: signup_email,signup_pass: signup_pass,signup_refer_by: signup_refer_by,signup_loct_ip:signup_loct_ip,gs_check: gs_check},
+    $.ajax({type: "POST",url: "/helper/email_signup.php",data: {action :'signup',signup_username: signup_username,signup_email: signup_email,signup_pass: signup_pass,signup_refer_by: signup_refer_by,signup_loct_ip:signup_loct_ip,gr_check: gs_check},
         success: function(data) {
             try {var response = JSON.parse(data)
                 if (response.error == true) {$('.signup_loader').hide();toastr['error'](response.message);return false;
