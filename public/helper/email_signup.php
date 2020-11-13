@@ -26,7 +26,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
     $check_dlike_name = stripos($signup_username, $company_name);
     $g_token=$_POST["gs_check"];
-
+    die(json_encode(['error' => true,'message' => $g_token]));
     $g_ip=$_SERVER['REMOTE_ADDR'];
     $url = "https://www.google.com/recaptcha/api/siteverify?";
     $g_data = array('secret' => $recpatch_key, 'response' => $g_token, 'remoteip'=> $g_ip);
