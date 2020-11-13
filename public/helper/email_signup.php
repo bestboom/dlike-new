@@ -26,7 +26,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 	$not_allowed_username = ["dlike", "dliker", "dlikedex", "fuck", "steem", "steemit"];
     $check_dlike_name = stripos($signup_username, $company_name);
     $g_token=$_POST["gs_check"];
-    
+
     $g_ip=$_SERVER['REMOTE_ADDR'];
     $url = "https://www.google.com/recaptcha/api/siteverify?";
     $g_data = array('secret' => $recpatch_key, 'response' => $g_token, 'remoteip'=> $g_ip);
@@ -34,6 +34,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
     $context  = stream_context_create($options);
     $g_result = file_get_contents($url, false, $context);
     $gs_response = json_decode($g_result);
+    die(json_encode(['error' => true,'message' => $gs_response]));
     if($gs_response->success){die(json_encode(['error' => true,'message' => 'Signup disabled!']));
 
 		if(empty($signup_username)){$errors = "Username Shoould not be empty";}
