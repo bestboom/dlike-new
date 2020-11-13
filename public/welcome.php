@@ -99,6 +99,7 @@ if (isset($_GET["ref"])){ $referrer = $_GET['ref'];} else { $referrer = 'dlike';
                             </div>
                             <input type="password" name="signup_pass" id="signup_pass" placeholder="Password" class="form-control" style="padding: 8px;" />
                         </div>
+                        <input type="hidden" id="gs_token" name="gs_token" />
                         <p style="margin: 0px;"><?php if($referrer !='dlike'){ echo 'Referred By <span style="font-weight:600;color:#1b1e63;">' .$referrer.'</span>';} ?></p>
                         <button class="btn btn-lime email_signup_btn" type="button"><i class="fas fa-circle-notch fa-spin signup_loader" style="display:none;"></i><span style="padding-left: 8px;">SIGNUP</span></button>
                     </form>
