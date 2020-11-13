@@ -37,7 +37,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 	curl_close($ch);
 	$arrResponse = json_decode($response, true);
     
-    if($arrResponse["success"] == '1'){die(json_encode(['error' => true,'message' => 'Signup disabled!']));
+    if($arrResponse["success"] == '1'){
 
 		if(empty($signup_username)){$errors = "Username Shoould not be empty";}
 		if(strlen($signup_username) > 20 || strlen($signup_username) < 3) {$errors = 'username length must be between 3 and 20 words!';}
