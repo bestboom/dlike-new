@@ -73,9 +73,15 @@ if(isset($_POST) && isset($_POST["btnSubmit"]))
     /* ======================= POST METHOD =====================*/ 
     //$url = "https://www.google.com/recaptcha/api/siteverify?";
     //$data = array('secret' => $secretKey, 'response' => $token, 'remoteip'=> $ip);
-    $url = "https://www.google.com/recaptcha/api/siteverify?".$recpatch_key."&response=".$token."&remoteip=".$g_ip;
-    $request = file_get_contents($url);
-    $g_response = json_decode($request);
+
+    $url = "https://www.google.com/recaptcha/api/siteverify?";
+    $data = array('secret' => $secretKey, 'response' => $token, 'remoteip'=> $ip);
+ 
+    // use key 'http' even if you send the request to https://...
+    $options = array('http' => array('method'  => 'POST','content' => http_build_query($data)));
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $g_response = json_decode($result);
     print_r($g_response);
     if($g_response->success)
     {
