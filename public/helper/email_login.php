@@ -9,6 +9,7 @@ if (isset($_POST['login_username'])  && $_POST['login_username'] != '' && isset(
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     $g_response = json_decode($result);
+    print_r($g_response);
     if($g_response->success){
     	$login_username = trim($_POST["login_username"]);
     	$login_pass = trim($_POST["login_pass"]);
