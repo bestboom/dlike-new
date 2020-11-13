@@ -33,8 +33,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
     $options = array('http' => array('method'  => 'POST','content' => http_build_query($data)));
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
+    die(json_encode(['error' => true,'message' => $result]));
     $gs_response = json_decode($result);
-    die(json_encode(['error' => true,'message' => $gs_response]));
+    
     if($gs_response->success){die(json_encode(['error' => true,'message' => 'Signup disabled!']));
 
 		if(empty($signup_username)){$errors = "Username Shoould not be empty";}
