@@ -81,7 +81,9 @@ if(isset($_POST) && isset($_POST["btnSubmit"]))
     $options = array('http' => array('method'  => 'POST','content' => http_build_query($data)));
     $context  = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
+    echo $result;
     $g_response = json_decode($result);
+    print_r(g_response);
     if($g_response->success)
     {
         echo '<center><h1>Validation Success!</h1></center>';
