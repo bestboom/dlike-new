@@ -83,7 +83,6 @@ if(isset($_POST) && isset($_POST["btnSubmit"]))
     $result = file_get_contents($url, false, $context);
     echo $result;
     $g_response = json_decode($result);
-    print_r(g_response);
     if($g_response->success)
     {
         echo '<center><h1>Validation Success!</h1></center>';
