@@ -120,7 +120,7 @@ $('.forgot_pass').click(function() {resetemailpass();});
 $('.email_signup_btn').click(function() {$('.signup_loader').show();
     let signup_username = $('#username_signup_id').val();
     //console.log(signup_username);
-    let signup_email = $('#signup_email').val();let gs_check = $('#gs_token').val();console.log(gs_check);
+    let signup_email = $('#signup_email').val();let gs_check = $('#gs_token').val();
     let signup_pass = $('#signup_pass').val();
     let signup_refer_by = $('#refer_by_email').val();
     let signup_loct_ip = $('#user_loc_email').val();

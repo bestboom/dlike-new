@@ -5,6 +5,9 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
     if (isset($_COOKIE['dlike_username']) || $_COOKIE['dlike_username'])
     {
         if ($userval == $author){die(json_encode(['error' => true, 'message' => 'You can not recommend your own post!']));}
+        $check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$userval'");
+        $row_add = $check_address->fetch_assoc();$verified = $row_add['verified'];
+        if ($verified !='1'){$errors = 'Phew... You must verify your email before recomending!';}
 
         $check_unique_like = $conn->query("SELECT * FROM mylikes where username = '$userval' and permlink = '$permlink' and author = '$author'");
         if ($check_unique_like->num_rows > 0){die(json_encode(['done' => true, 'message' => 'You have already recommended this share!']));} 
