@@ -3,10 +3,13 @@ require '../includes/config.php';
 if (isset($_POST['login_username'])  && $_POST['login_username'] != '' && isset($_POST['login_pass'])  && $_POST['login_pass'] != '') { 
     $token=$_POST["g_catch"]; 
     $g_ip=$_SERVER['REMOTE_ADDR'];
-    $url = "https://www.google.com/recaptcha/api/siteverify?".$recpatch_key."&response=".$token."&remoteip=".$g_ip;
-    $request = file_get_contents($url);
-    $g_response = json_decode($request);
-    //if($g_response->success){json_encode(['error' => false,'message' => $g_response]);}
+    $url = "https://www.google.com/recaptcha/api/siteverify?";
+    $data = array('secret' => $recpatch_key, 'response' => $token, 'remoteip'=> $g_ip);
+    $options = array('http' => array('method'  => 'POST','content' => http_build_query($data)));
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $g_response = json_decode($result);
+    if($g_response->success){
     	$login_username = trim($_POST["login_username"]);
     	$login_pass = trim($_POST["login_pass"]);
     	if(empty($login_username)){ $errors = "Username Shoould not be empty";}
@@ -22,6 +25,6 @@ if (isset($_POST['login_username'])  && $_POST['login_username'] != '' && isset(
         		die(json_encode(['error' => false,'message' => 'Login Successful!','redirect' => $dlike_user_login_url,'dlikeuser' => $dlike_username,'catch' => $g_response]));
     		} else {die(json_encode(['error' => true,'message' => 'Login details does not match!'])); }
         } else {die(json_encode(['error' => true,'message' => $errors]));}
-        //}else {die(json_encode(['error' => true,'message' => 'Verification failed, please try again']));}
+    }else {die(json_encode(['error' => true,'message' => 'Captcha check failed!']));}
 } else {die('Some error');}
 ?>
