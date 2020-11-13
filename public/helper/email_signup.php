@@ -34,7 +34,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
     $context  = stream_context_create($options);
     $g_result = file_get_contents($url, false, $context);
     $gs_response = json_decode($g_result);
-    if($gs_response->success){die(json_encode(['error' => true,'message' => 'Signup disabled!']));}
+    if($gs_response->success){die(json_encode(['error' => true,'message' => 'Signup disabled!']));
 
 		if(empty($signup_username)){$errors = "Username Shoould not be empty";}
 		if(strlen($signup_username) > 20 || strlen($signup_username) < 3) {$errors = 'username length must be between 3 and 20 words!';}
@@ -119,7 +119,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 				} else {die(json_encode(['error' => true,'message' => 'Email does not seem to work']));}
 			} else {die(json_encode(['error' => true,'message' => 'There is some issue. Please Try later']));}
 		} else {die(json_encode(['error' => true,'message' => $errors]));} 
-	else {die(json_encode(['error' => true,'message' => 'Captcha check failed!']));}
+	}else {die(json_encode(['error' => true,'message' => 'Captcha check failed!']));}
 } 
 //else {die('Some error');}
 
