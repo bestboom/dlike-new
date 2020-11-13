@@ -28,15 +28,16 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
     $g_token=$_POST["gr_check"];
 
     $gs_ip=$_SERVER['REMOTE_ADDR'];
-    $url = "https://www.google.com/recaptcha/api/siteverify?";
-    $data = array('secret' => $recpatch_key, 'response' => $g_token, 'remoteip'=> $gs_ip);
-    $options = array('http' => array('method'  => 'POST','content' => http_build_query($data)));
-    $context  = stream_context_create($options);
-   	$result = file_get_contents($url, false, $context);
-    die(json_encode(['error' => true,'message' => $result]));
-    //$gs_response = json_decode($result);
+    $ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL,"https://www.google.com/recaptcha/api/siteverify");
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array('secret' => $recpatch_key, 'response' => $g_token)));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$response = curl_exec($ch);
+	curl_close($ch);
+	$arrResponse = json_decode($response, true);
     
-    //if($gs_response->success){die(json_encode(['error' => true,'message' => 'Signup disabled!']));
+    if($arrResponse["success"] == '1'){die(json_encode(['error' => true,'message' => 'Signup disabled!']));
 
 		if(empty($signup_username)){$errors = "Username Shoould not be empty";}
 		if(strlen($signup_username) > 20 || strlen($signup_username) < 3) {$errors = 'username length must be between 3 and 20 words!';}
@@ -121,7 +122,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 				} else {die(json_encode(['error' => true,'message' => 'Email does not seem to work']));}
 			} else {die(json_encode(['error' => true,'message' => 'There is some issue. Please Try later']));}
 		} else {die(json_encode(['error' => true,'message' => $errors]));} 
-	//}else {die(json_encode(['error' => true,'message' => 'Captcha check failed!']));}
+	}else {die(json_encode(['error' => true,'message' => 'Captcha check failed!']));}
 } 
 //else {die('Some error');}
 
