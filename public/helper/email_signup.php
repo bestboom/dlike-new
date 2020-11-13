@@ -119,7 +119,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 				} else {die(json_encode(['error' => true,'message' => 'Email does not seem to work']));}
 			} else {die(json_encode(['error' => true,'message' => 'There is some issue. Please Try later']));}
 		} else {die(json_encode(['error' => true,'message' => $errors]));} 
-	}else {die(json_encode(['error' => true,'message' => 'Captcha check failed!']));}
+	else {die(json_encode(['error' => true,'message' => 'Captcha check failed!']));}
 } 
 //else {die('Some error');}
 
