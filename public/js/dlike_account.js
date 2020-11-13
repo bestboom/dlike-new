@@ -120,14 +120,14 @@ $('.forgot_pass').click(function() {resetemailpass();});
 $('.email_signup_btn').click(function() {$('.signup_loader').show();
     let signup_username = $('#username_signup_id').val();
     //console.log(signup_username);
-    let signup_email = $('#signup_email').val();let gs_check = $('#gs_token').val();
+    let signup_email = $('#signup_email').val();let gs_check = $('#gs_token').val();console.log(gs_check);
     let signup_pass = $('#signup_pass').val();
     let signup_refer_by = $('#refer_by_email').val();
     let signup_loct_ip = $('#user_loc_email').val();
     let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
-    if (signup_username == "") {toastr.error('phew... username should not be empty');return false;}
-    var allowed_name = /^[\w]+$/; if (!allowed_name.test(signup_username)){toastr.error('UserName can only contain alphanumeric and underscore');return false;}
+    if (signup_username == "") {toastr.error('phew... username should not be empty');$('.signup_loader').hide();return false;}
+    var allowed_name = /^[\w]+$/; if (!allowed_name.test(signup_username)){toastr.error('UserName can only contain alphanumeric and underscore');$('.signup_loader').hide();return false;}
     if(signup_email==""){toastr.error('phew..Email should not be empty');$('.signup_loader').hide();return false;
     } else {if (!emailRegex.test(signup_email)) {toastr.error('phew... email address is not valid'); $('.signup_loader').hide();return false;}
     }
