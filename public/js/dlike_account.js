@@ -157,7 +157,7 @@ $('.email_login_btn').click(function() {
             try {var response = JSON.parse(data)
                 if (response.error == true) {toastr['error'](response.message);
                     $('.login_loader').hide();$('#email_login_txt').show();$(".email_login_btn").attr("disabled", false);return false;
-                } else {toastr['success'](response.message);toastr['success'](response.catch);
+                } else {toastr['success'](response.message);
                     $.cookie("dlike_username", response.dlikeuser, { expires: 7, path: '/' });
                     setTimeout(function(){window.location.href = response.redirect;}, 500);
                 }
