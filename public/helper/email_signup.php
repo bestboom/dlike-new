@@ -29,7 +29,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'signup' && isset($_POST['sig
 
     $g_ip=$_SERVER['REMOTE_ADDR'];
     $url = "https://www.google.com/recaptcha/api/siteverify?";
-    $g_data = array('secret' => $recpatch_key, 'response' => $token, 'remoteip'=> $g_ip);
+    $g_data = array('secret' => $recpatch_key, 'response' => $g_token, 'remoteip'=> $g_ip);
     $options = array('http' => array('method'  => 'POST','content' => http_build_query($g_data)));
     $context  = stream_context_create($options);
     $g_result = file_get_contents($url, false, $context);
