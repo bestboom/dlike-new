@@ -76,7 +76,7 @@ if(isset($_POST) && isset($_POST["btnSubmit"]))
     $url = "https://www.google.com/recaptcha/api/siteverify?".$recpatch_key."&response=".$token."&remoteip=".$g_ip;
     $request = file_get_contents($url);
     $g_response = json_decode($request);
- 
+    print_r($g_response)
     if($g_response->success)
     {
         echo '<center><h1>Validation Success!</h1></center>';
