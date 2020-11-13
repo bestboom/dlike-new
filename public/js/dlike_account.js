@@ -146,13 +146,13 @@ $('.email_signup_btn').click(function() {$('.signup_loader').show();
 
 $('.email_login_btn').click(function() {
     $('.login_loader').show();$('#email_login_txt').hide();$(".email_login_btn").attr("disabled", true);
-    let login_user_id = $('#login_user_id').val();let login_pass = $('#email_pass').val();
+    let login_user_id = $('#login_user_id').val();let login_pass = $('#email_pass').val();let g_catch = $('#g-token').val();
     if (login_user_id == "") {toastr.error('phew... Username should not be empty');$('.login_loader').hide();$('#email_login_txt').show();$(".email_login_btn").attr("disabled", false);return false;
     }
     if (login_pass == "") {toastr.error('phew... Password should not be empty');
         $('.login_loader').hide();$('#email_login_txt').show();$(".email_login_btn").attr("disabled", false);
         return false;}
-    $.ajax({type: "POST",url: 'helper/email_login.php',data: { login_username: login_user_id,login_pass: login_pass },
+    $.ajax({type: "POST",url: 'helper/email_login.php',data: { login_username: login_user_id,login_pass: login_pass, g_catch: g_catch },
         success: function(data) {
             try {var response = JSON.parse(data)
                 if (response.error == true) {toastr['error'](response.message);
