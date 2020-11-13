@@ -139,7 +139,7 @@ $('.email_signup_btn').click(function() {$('.signup_loader').show();
                 if (response.error == true) {$('.signup_loader').hide();toastr['error'](response.message);return false;
                 } else {toastr['success'](response.message);$('#my_signup_email').html(signup_email);signupemailverify();
                 }
-            } catch (err) {toastr.error('Sorry. Server response is malformed');}
+            } catch (err) {toastr.error('Sorry. Server response is malformed');$('.signup_loader').hide();}
         }
     });
 });
