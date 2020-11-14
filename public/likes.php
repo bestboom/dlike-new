@@ -137,6 +137,7 @@ async function getUnclaimedTokens() {var user_address =false;
         if(user_address!=false){     
             var myContract = await tronWeb.contract().at(mainContractAddress);
             var loguser_wallet_address = $('.wallet_address').html();
+            console.log(loguser_wallet_address);
             if(user_address==loguser_wallet_address){
                 var unClaimed = await myContract.tokenBalances(user_address).call();
                 unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
