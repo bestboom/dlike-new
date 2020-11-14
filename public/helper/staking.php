@@ -84,7 +84,6 @@ if (isset($_POST['action'])  && $_POST['action'] == 'claim_stake' && isset($_POS
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 
-
 if (isset($_POST['action']) && $_POST['action'] == 'pay_staking_reward' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
     $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
     $out_amount = trim(mysqli_real_escape_string($conn, $_POST['claim_amount']));
