@@ -46,7 +46,7 @@ $('.tok_out_btn').click(async function() {
                                 }
                             } 
                         }); 
-                    }, 11000);
+                    }, 9000);
                 }
             }
         }

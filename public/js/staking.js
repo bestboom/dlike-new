@@ -186,7 +186,7 @@ $('#claim_stk_reward').click(async function() {$("#claim_stk_reward").attr("disa
                             }
                         }
                     }); 
-                    }, 12000);}
+                    }, 9000);}
                 }
 
             }
