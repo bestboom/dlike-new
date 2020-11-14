@@ -132,28 +132,25 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
 <script type="text/javascript">let my_wallet = '<?php echo $offchain_address;?>';</script>
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
-var loguser_wallet_address = $('.wallet_address').html();
-console.log(loguser_wallet_address);
 async function getUnclaimedTokens() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
-        if(user_address!=false){ 
-            console.log('this is user address');
-            console.log(user_address) 
+        if(user_address!=false){
             var myContract = await tronWeb.contract().at(mainContractAddress);
             var loguser_wallet_address = $('.wallet_address').html();
             console.log(loguser_wallet_address);
-            //if(user_address != loguser_wallet_address){}else{
-                await new Promise((resolve, reject) => setTimeout(resolve, 300));
+            //if(user_address != loguser_wallet_address){
+                await new Promise((resolve, reject) => setTimeout(resolve, 600));
                 var unClaimed = await myContract.tokenBalances(user_address).call();
                 unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
                 console.log(unClaimed);
-                if(unClaimed>5){
-                    $('.unclaimed_tokens_sec').show();
-                    $('.unclaimed_bal').html(unClaimed);
-                }
-            //}  
+                if(user_address != loguser_wallet_address){
+                    if(unClaimed>5){
+                        $('.unclaimed_tokens_sec').show();
+                        $('.unclaimed_bal').html(unClaimed);
+                    }
+                }  
         }
     }
 }
-setTimeout(getUnclaimedTokens,500);
+setTimeout(getUnclaimedTokens,300);
 </script>
