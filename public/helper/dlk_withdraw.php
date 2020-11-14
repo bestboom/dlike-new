@@ -114,7 +114,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 		        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 		        $signedTransaction = $tron->signTransaction($triggerContract);
 		        $response = $tron->sendRawTransaction($signedTransaction);
-		        //$transaction_id=$response['txid'];
 		        if ($response['result'] == 1) {
 
 		        	$status="0";
