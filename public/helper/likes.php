@@ -34,7 +34,7 @@ include_once '../includes/contract_config.php';
     print_r($response);
     if ($response['result'] == 1) {
 
-        $status="0";
+        $status="In";
         echo "start db here";echo "<br>";
         $sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
 
