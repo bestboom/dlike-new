@@ -132,6 +132,8 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
 <script type="text/javascript">let my_wallet = '<?php echo $offchain_address;?>';</script>
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
+var loguser_wallet_address = $('.wallet_address').html();
+console.log(loguser_wallet_address);
 async function getUnclaimedTokens() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address!=false){     
