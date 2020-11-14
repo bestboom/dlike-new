@@ -142,7 +142,7 @@ async function getUnclaimedTokens() {var user_address =false;
             var myContract = await tronWeb.contract().at(mainContractAddress);
             var loguser_wallet_address = $('.wallet_address').html();
             console.log(loguser_wallet_address);
-            if(user_address != loguser_wallet_address){}else{
+            //if(user_address != loguser_wallet_address){}else{
                 await new Promise((resolve, reject) => setTimeout(resolve, 300));
                 var unClaimed = await myContract.tokenBalances(user_address).call();
                 unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
@@ -151,7 +151,7 @@ async function getUnclaimedTokens() {var user_address =false;
                     $('.unclaimed_tokens_sec').show();
                     $('.unclaimed_bal').html(unClaimed);
                 }
-            }  
+            //}  
         }
     }
 }
