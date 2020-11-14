@@ -162,8 +162,8 @@ $('#claim_stk_reward').click(async function() {$("#claim_stk_reward").attr("disa
                 }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
                 if(stk_wallet==""){toastr.error('Hey ' +dlike_username +'! It seems you have not staked any tokens yet!');return false;}
                 if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');enable_claim();return false;
-                if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');enable_claim();return false;}
                 } else { 
+                    if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');enable_claim();return false;}
                     $.ajax({type: 'post',url:'/helper/staking.php',data:{action : 'pay_staking_reward',claim_amount: claim_amt,wallet: user_address},});
                     claim_amt = claim_amt * 1e6;
                     let myContractInfo = await tronWeb.trx.getContract(mainContractAddress);
