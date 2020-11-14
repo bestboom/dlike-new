@@ -143,12 +143,10 @@ async function getUnclaimedTokens() {var user_address =false;
                 var unClaimed = await myContract.tokenBalances(user_address).call();
                 unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
                 console.log(unClaimed);
-                if(user_address == loguser_wallet_address){
                     if(unClaimed>5){
                         $('.unclaimed_tokens_sec').show();
                         $('.unclaimed_bal').html(unClaimed);
                     }
-                }  
         }
     }
 }
