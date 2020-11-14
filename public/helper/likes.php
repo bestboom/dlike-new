@@ -4,9 +4,9 @@ require '../includes/config.php';
 include_once '../vendor/autoload.php';
 include_once '../includes/contract_config.php';
 
-
+    $username = "Abdul";
     $wallet = "TJgDQeww1ca3q4CE1umEk3RtRLBD3G46aN";
-    $dlkamount = "20";
+    $dlkamount = "23";
     $amount = $dlkamount * 1000000;
     $wallets = array($tron->address2HexString($wallet));
     $amounts = array($amount);
