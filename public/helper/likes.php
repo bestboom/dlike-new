@@ -32,6 +32,11 @@ include_once '../includes/contract_config.php';
 
     $response = $tron->sendRawTransaction($signedTransaction);
     print_r($response);
+    echo "<br>";
+    echo "transaction id <br>";
+    $transaction_id=$response['txid'];
+    echo $transaction_id;
+    echo "<br>";
     if ($response['result'] == 1) {
 
         $status="In";

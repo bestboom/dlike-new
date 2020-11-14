@@ -19,7 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
 	if ($dlk_amount < 5) {$errors = 'Minimum amount to withdraw is 5 DLIKE';}
 	$check_limit = $conn->query("SELECT * FROM dlike_withdrawals where username = '$username' and DATE(req_on) = CURDATE()");
-	if ($check_limit->num_rows > 2) {$errors = 'Phew... One withdrawal allowed daily!';} else{$withdraw="more than one withdrawals done!";}
+	if ($check_limit->num_rows > 0) {$errors = 'Phew... One withdrawal allowed daily!';} else{$withdraw="more than one withdrawals done!";}
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
 	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 
