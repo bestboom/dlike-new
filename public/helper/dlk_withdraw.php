@@ -19,7 +19,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
 	if ($dlk_amount < 5) {$errors = 'Minimum amount to withdraw is 5 DLIKE';}
 	$check_limit = $conn->query("SELECT * FROM dlike_withdrawals where username = '$username' and DATE(req_on) = CURDATE()");
-	if ($check_limit->num_rows > 1) {$errors = 'Phew... One withdrawal allowed daily!';} else{$withdraw="more than one withdrawals done!";}
+	if ($check_limit->num_rows > 2) {$errors = 'Phew... One withdrawal allowed daily!';} else{$withdraw="more than one withdrawals done!";}
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
 	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 
@@ -114,11 +114,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 		        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 		        $signedTransaction = $tron->signTransaction($triggerContract);
 		        $response = $tron->sendRawTransaction($signedTransaction);
-		        $transaction_id=$response['txid'];
+		        //$transaction_id=$response['txid'];
 		        if ($response['result'] == 1) {
 
 		        	$status="0";
-		        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$transaction_id."', now())");
+		        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
 
 		        	$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$bal' - '$dlkamount' WHERE username = '$username'");
 
