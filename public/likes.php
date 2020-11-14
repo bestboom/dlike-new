@@ -23,8 +23,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                 <div class="form-group reward_fileds">
                     <input type="text" class="form-control reward_input" value=" | My Balance" readonly>
                     <span class="fas fa-database inp_icon"></span>
-                    <span class="inp_text"><?php echo $my_bal; ?></span><br/>
-                    Unclaimed Tokens:<span class="inp_text unclaimed_bal" style="display: none;"></span>
+                    <span class="inp_text"><?php echo $my_bal; ?><br/><span class="inp_text unclaimed_tokens_sec" style="display: none;">Unclaimed Tokens:<span class="unclaimed_bal"></span></span></span>
                 </div>
                 <div class="form-group reward_fileds">
                     <input type="text" class="form-control reward_input" value=" | Income Today" readonly>
@@ -51,7 +50,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                             <span class="stamp stamp-md bg-orange mr-3"><i class="fas fa-money-bill-alt"></i></span>
                             <div>
                                 <h4 class="m-0"><small>Tron Wallet Address</small></h4>
-                                <small class="row queue-stats-display text-muted" style="margin: 0px !important;">
+                                <small class="row queue-stats-display text-muted wallet_address" style="margin: 0px !important;">
                                     <?php if(!empty($offchain_address)){ echo $offchain_address; } else { ?>
                                     <span><a href="https://dlike.zendesk.com/hc/en-us/articles/900002726623-Which-Tron-Wallet-is-recomended-"><i class="far fa-question-circle" style="color: #c51d24;" target="_blank"></i></a><input type="text" class="form-control" style="border:none;border-bottom: 1px solid #ccc;" id="offchain_add" value="" /></span><span class="stamp stamp-md bg-green mr-3" style="margin-left: 10px;"><i class="fa fa-plus add_address" style="cursor: pointer;"></i></span> <? } ?></small>
                             </div>
@@ -137,18 +136,18 @@ async function getUnclaimedTokens() {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address!=false){     
             var myContract = await tronWeb.contract().at(mainContractAddress);
-
-            var unClaimed = await myContract.tokenBalances(user_address).call();
-            unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
-            console.log(unClaimed);
-            if(unClaimed>5){
-                $('.unclaimed_bal').show();
-                $('.unclaimed_bal').html(unClaimed);
-            }         
+            var loguser_wallet_address = $('.wallet_address').html();
+            if(user_address==loguser_wallet_address){
+                var unClaimed = await myContract.tokenBalances(user_address).call();
+                unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
+                console.log(unClaimed);
+                if(unClaimed>5){
+                    $('.unclaimed_tokens_sec').show();
+                    $('.unclaimed_bal').html(unClaimed);
+                }
+            }  
         }
     }
 }
-
-setTimeout(getUnclaimedTokens,600);
-
+setTimeout(getUnclaimedTokens,500);
 </script>
