@@ -33,8 +33,9 @@ $('.tok_out_btn').click(async function() {
                     $("#dlike_tok_with").modal("hide");$('#withdrawStatus').modal('show');
                     $(".wd_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
-                        $.get("https://api.trongrid.io/v1/transactions/"+result, function(data, status){
-                            if(status=='success'){var tx_result = data.data[0].ret[0].contractRet;  
+                        $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
+                            if(status=='success'){var wid_data = JSON.parse(data);
+                                var tx_result = wid_data.receipt["result"]; 
                                 if(tx_result=='SUCCESS'){
                                     $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'paid',dlk_out_amount: out_amount,wallet: user_address,trx_id: result},});
                                     $(".wd_status_message").html('Tokens Withdraw Successfully!');
@@ -45,7 +46,7 @@ $('.tok_out_btn').click(async function() {
                                 }
                             } 
                         }); 
-                    }, 15000);
+                    }, 11000);
                 }
             }
         }
