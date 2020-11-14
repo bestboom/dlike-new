@@ -24,18 +24,18 @@ include_once '../includes/contract_config.php';
     $address =  $vHExAddress;
     $feeLimit = 1000000000;
     $callValue = 0;
-   
-    echo "it works before trigger";echo "<br>";
+
     $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
 
     $signedTransaction = $tron->signTransaction($triggerContract);
-    echo $signedTransaction;echo "transaction here <br>";
+    print_r($signedTransaction);echo "transaction here <br>";
 
     $response = $tron->sendRawTransaction($signedTransaction);
     print_r($response);
     if ($response['result'] == 1) {
 
         $status="0";
+        echo "start db here";echo "<br>";
         $sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
 
         echo "dataBASE entry here";
