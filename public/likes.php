@@ -136,13 +136,16 @@ setInterval(async ()=>{
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address!=false){
             var myContract = await tronWeb.contract().at(mainContractAddress);
+            var loguser_wallet_address = $('.wallet_address').html();
             var unClaimed = await myContract.tokenBalances(user_address).call();
             unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
             console.log(unClaimed);
-            if(unClaimed>5){
-                $('.unclaimed_tokens_sec').show();
-                $('.unclaimed_bal').html(unClaimed);
-            }
+            if(user_address == loguser_wallet_address){
+                if(unClaimed > 5){
+                    $('.unclaimed_tokens_sec').show();
+                    $('.unclaimed_bal').html(unClaimed);
+                }else{$('.unclaimed_tokens_sec').hide();}
+            } else {console.log('Not same user')}
         }else{console.log('Not login tronlink')}
     } else {console.log('tronlink not installed')}
 }, 3000)
