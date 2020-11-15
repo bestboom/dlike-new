@@ -146,8 +146,8 @@ setInterval(async ()=>{
                 if(unClaimed > 5){
                     $('.unclaimed_tokens_sec').show();
                     $('.unclaimed_bal').html(unClaimed);
-                }else{$('.unclaimed_tokens_sec').hide();}
-            } else {console.log('Not same user')}
+                }
+            } else {$('.unclaimed_tokens_sec').hide();console.log('Not same user')}
         }else{console.log('Not login tronlink')}
     } else {console.log('tronlink not installed')}
 }, 3000)
