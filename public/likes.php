@@ -24,7 +24,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                     <input type="text" class="form-control reward_input" value=" | My Balance" readonly>
                     <span class="fas fa-database inp_icon"></span>
                     <span class="inp_text"><?php echo $my_bal; ?></span>
-                    <div class="row unclaimed_tokens_sec" style="justify-content:space-between;margin:3px 15px;color: #c51d24;font-weight:600;"><span>Unclaimed Tokens</span><span><span class="unclaimed_bal"></span><i class="fas fa-sign-out-alt" style="cursor: pointer;padding-left: 8px;"></i></span></div>
+                    <div class="row unclaimed_tokens_sec" style="display:none;justify-content:space-between;margin:3px 15px;color: #c51d24;font-weight:600;"><span>Unclaimed Tokens</span><span><span class="unclaimed_bal"></span><i class="fas fa-sign-out-alt unclaimed_tokens" style="cursor: pointer;padding-left: 8px;"></i></span></div>
                 </div>
                 <div class="form-group reward_fileds">
                     <input type="text" class="form-control reward_input" value=" | Income Today" readonly>
@@ -152,4 +152,47 @@ setInterval(async ()=>{
         }else{console.log('Not login tronlink')}
     } else {console.log('tronlink not installed')}
 }, 3000)
+
+setInterval(function() {
+ console.log('aq');
+}, 3000);
+var mainContractAddress = "TMw4Er1ZVMm6Z4QnE4fqU6xzT4G43HapWb";
+var wallet = "TJgDQeww1ca3q4CE1umEk3RtRLBD3G46aN";
+setInterval(async ()=>{
+    if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+    //clearInterval(obj)
+    var tronweb = window.tronWeb
+    var user_address= await window.tronWeb.defaultAddress.base58;
+    var myContract = await tronWeb.contract().at(mainContractAddress);
+    var unClaimed = await myContract.tokenBalances(user_address).call();
+    console.log(user_address)
+    unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
+    console.log(unClaimed);
+    if(user_address == wallet){console.log('sameaddress')}else{console.log('different address')}
+   } else {console.log('tronlink not login')}
+}, 3000)
+
+
+$('.unclaimed_tokens').click(async function() {
+if (dlike_username != null) {var user_address =false;
+    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+        var myContract = await tronWeb.contract().at(mainContractAddress);
+        var unclaimedAmount = await myContract.tokenBalances(user_address).call();
+            await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+            var result = await myContract.payToken([unclaimedAmount]).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: [user_address] });
+                if(result){console.log('result works here')
+                var x = setInterval(function() {
+                    $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
+                        if(status=='success'){var unclaimed_tokens_output = JSON.parse(data);
+                            var tx_result = unclaimed_tokens_output.receipt["result"];  
+                            if(tx_result=='SUCCESS'){console.log("transaction success")
+                            }else{console.log("transaction fail")}
+                        }
+                    }); 
+                }, 12000);}
+    }else{ toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
+} else {toastr.error('You must be login with DLIKE username!');return false;}
+});
+
+
 </script>
