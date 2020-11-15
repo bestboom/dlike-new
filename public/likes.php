@@ -132,11 +132,11 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
 <script type="text/javascript">let my_wallet = '<?php echo $offchain_address;?>';</script>
 <?php include('template/footer.php'); ?>
 <script type="text/javascript">
+var loguser_wallet_address = $('.wallet_address').html();
 setInterval(async ()=>{
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address!=false){
             var myContract = await tronWeb.contract().at(mainContractAddress);
-            var loguser_wallet_address = $('.wallet_address').html();
             var unClaimed = await myContract.tokenBalances(user_address).call();
             unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
             console.log(unClaimed);
