@@ -23,7 +23,8 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                 <div class="form-group reward_fileds">
                     <input type="text" class="form-control reward_input" value=" | My Balance" readonly>
                     <span class="fas fa-database inp_icon"></span>
-                    <div class="row unclaimed_tokens_sec" style="justify-content:space-between;margin: 3px 15px;color: #c51d24;font-weight:600;"><span>Unclaimed Tokens</span><span class="unclaimed_bal"></span></div>
+                    <span class="inp_text"><?php echo $my_bal; ?></span>
+                    <div class="row unclaimed_tokens_sec" style="justify-content:space-between;margin:3px 15px;color: #c51d24;font-weight:600;"><span>Unclaimed Tokens</span><span class="unclaimed_bal"></span></div>
                 </div>
                 <div class="form-group reward_fileds">
                     <input type="text" class="form-control reward_input" value=" | Income Today" readonly>
@@ -146,7 +147,7 @@ setInterval(async ()=>{
                 if(unClaimed > 5){
                     $('.unclaimed_tokens_sec').show();
                     $('.unclaimed_bal').html(unClaimed);
-                }
+                }else{$('.unclaimed_tokens_sec').hide();}
             } else {$('.unclaimed_tokens_sec').hide();console.log('Not same user')}
         }else{console.log('Not login tronlink')}
     } else {console.log('tronlink not installed')}
