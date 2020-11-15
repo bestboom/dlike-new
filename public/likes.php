@@ -153,30 +153,10 @@ setInterval(async ()=>{
     } else {console.log('tronlink not installed')}
 }, 3000)
 
-setInterval(function() {
- console.log('aq');
-}, 3000);
-var mainContractAddress = "TMw4Er1ZVMm6Z4QnE4fqU6xzT4G43HapWb";
-var wallet = "TJgDQeww1ca3q4CE1umEk3RtRLBD3G46aN";
-setInterval(async ()=>{
-    if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
-    //clearInterval(obj)
-    var tronweb = window.tronWeb
-    var user_address= await window.tronWeb.defaultAddress.base58;
-    var myContract = await tronWeb.contract().at(mainContractAddress);
-    var unClaimed = await myContract.tokenBalances(user_address).call();
-    console.log(user_address)
-    unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
-    console.log(unClaimed);
-    if(user_address == wallet){console.log('sameaddress')}else{console.log('different address')}
-   } else {console.log('tronlink not login')}
-}, 3000)
-
-
 $('.unclaimed_tokens').click(async function() {
 if (dlike_username != null) {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
-        //var myContract = await tronWeb.contract().at(mainContractAddress);
+        var myContract = await tronWeb.contract().at(mainContractAddress);
         var unclaimedAmount = await myContract.tokenBalances(user_address).call();
             await new Promise((resolve, reject) => setTimeout(resolve, 1000));
             var result = await myContract.payToken([unclaimedAmount]).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: [user_address] });
