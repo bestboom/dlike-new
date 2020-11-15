@@ -140,6 +140,8 @@ setInterval(async ()=>{
             var unClaimed = await myContract.tokenBalances(user_address).call();
             unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
             console.log(unClaimed);
+            console.log(loguser_wallet_address)
+            console.log(user_address)
             if(user_address == loguser_wallet_address){
                 if(unClaimed > 5){
                     $('.unclaimed_tokens_sec').show();
