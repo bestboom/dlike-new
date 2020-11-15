@@ -176,7 +176,7 @@ setInterval(async ()=>{
 $('.unclaimed_tokens').click(async function() {
 if (dlike_username != null) {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
-        var myContract = await tronWeb.contract().at(mainContractAddress);
+        //var myContract = await tronWeb.contract().at(mainContractAddress);
         var unclaimedAmount = await myContract.tokenBalances(user_address).call();
             await new Promise((resolve, reject) => setTimeout(resolve, 1000));
             var result = await myContract.payToken([unclaimedAmount]).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: [user_address] });
