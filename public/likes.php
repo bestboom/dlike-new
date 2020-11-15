@@ -159,7 +159,7 @@ if (dlike_username != null) {var user_address =false;
         var myContract = await tronWeb.contract().at(mainContractAddress);
         var unclaimedAmount = await myContract.tokenBalances(user_address).call();
             await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-            var result = await myContract.payToken([unclaimedAmount]).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: [user_address] });
+            var result = await myContract.payToken([user_address,unclaimedAmount]).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: [user_address] });
                 if(result){console.log('result works here')
                 var x = setInterval(function() {
                     $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
