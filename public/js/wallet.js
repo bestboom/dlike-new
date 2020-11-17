@@ -67,18 +67,20 @@ $('.add_address').click(function() { let offchain_add = $('#offchain_add').val()
 });
 
 
-var loguser_wallet_address = $.trim($('.wallet_address').html());
+var loguser_wallet_address = $.trim($('.wallet_address').html());console.log(loguser_wallet_address)
 setInterval(async ()=>{
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         if(user_address!=false){
             var myContract = await tronWeb.contract().at(mainContractAddress);
             var unClaimed = await myContract.tokenBalances(user_address).call();
+            console.log(unClaimed)
             unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
             if(user_address == loguser_wallet_address){
+                console.log('same address')
                 if(unClaimed > 5){
                     $('.unclaimed_tokens_sec').show();
                     $('.unclaimed_bal').html(unClaimed);
-                }else{$('.unclaimed_tokens_sec').hide();}
+                }else{$('.unclaimed_tokens_sec').hide();console.log('not same')}
             } else {$('.unclaimed_tokens_sec').hide();}
         }
     }
