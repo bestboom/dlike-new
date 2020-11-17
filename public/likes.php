@@ -159,7 +159,7 @@ if (dlike_username != null) {var user_address =false;
         var myContract = await tronWeb.contract().at(mainContractAddress);
         var unclaimedAmount = await myContract.tokenBalances(user_address).call();
         if(user_address != loguser_wallet_address){toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
-        sync function doAjax() {return $.ajax({type: 'post',url: '/helper/dlk_withdraw.php',data: { action : 'unclaimed_tokens',unclaim_amount: unclaimedAmount,wallet: user_address },datatype: 'json',});}
+        async function doAjax() {return $.ajax({type: 'post',url: '/helper/dlk_withdraw.php',data: { action : 'unclaimed_tokens',unclaim_amount: unclaimedAmount,wallet: user_address },datatype: 'json',});}
         doAjax().then(async function(data) { var response = JSON.parse(data);
             if (response.error == true) {toastr['error'](response.message);return false;}
                 else{
