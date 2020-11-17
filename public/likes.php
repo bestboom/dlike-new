@@ -158,6 +158,22 @@ if (dlike_username != null) {var user_address =false;
     if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
         var myContract = await tronWeb.contract().at(mainContractAddress);
         var unclaimedAmount = await myContract.tokenBalances(user_address).call();
+        if(user_address != loguser_wallet_address){toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
+        sync function doAjax() {return $.ajax({type: 'post',url: '/helper/dlk_withdraw.php',data: { action : 'unclaimed_tokens',unclaim_amount: unclaimedAmount,wallet: user_address },datatype: 'json',});}
+        doAjax().then(async function(data) { var response = JSON.parse(data);
+            if (response.error == true) {toastr['error'](response.message);return false;}
+                else{
+                $('#stakingStatus').modal('show');
+                $(".st_status_message").html('Stakign Reward Claimed Successfully!');
+                setTimeout(function(){window.location.reload();}, 1000);
+            }
+        })
+    }else{ toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
+} else {toastr.error('You must be login with DLIKE username!');return false;}
+});
+
+
+/*
             await new Promise((resolve, reject) => setTimeout(resolve, 1000));
             var result = await myContract.payToken([user_address],[unclaimedAmount]).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                 if(result){console.log('result works here')
@@ -170,9 +186,5 @@ if (dlike_username != null) {var user_address =false;
                         }
                     }); 
                 }, 12000);}
-    }else{ toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
-} else {toastr.error('You must be login with DLIKE username!');return false;}
-});
-
-
+*/
 </script>
