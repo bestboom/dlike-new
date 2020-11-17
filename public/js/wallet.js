@@ -65,3 +65,47 @@ $('.add_address').click(function() { let offchain_add = $('#offchain_add').val()
         }
     });
 });
+
+
+var loguser_wallet_address = $.trim($('.wallet_address').html());
+setInterval(async ()=>{
+    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+        if(user_address!=false){
+            var myContract = await tronWeb.contract().at(mainContractAddress);
+            var unClaimed = await myContract.tokenBalances(user_address).call();
+            unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
+            if(user_address == loguser_wallet_address){
+                if(unClaimed > 5){
+                    $('.unclaimed_tokens_sec').show();
+                    $('.unclaimed_bal').html(unClaimed);
+                }else{$('.unclaimed_tokens_sec').hide();}
+            } else {$('.unclaimed_tokens_sec').hide();}
+        }
+    }
+}, 3000)
+
+$('.unclaimed_tokens').click(async function() {
+if (dlike_username != null) {var user_address =false;
+    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+        var myContract = await tronWeb.contract().at(mainContractAddress);
+        var unclaimedAmount = await myContract.tokenBalances(user_address).call();
+        if(user_address != loguser_wallet_address){toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
+            let result = await myContract.getToken(unclaimedAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
+                if(result){$('#withdrawStatus').modal('show');
+                    $(".wd_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
+                    var x = setInterval(function() {
+                        $.get("https://api.trongrid.io/wallet/gettransactioninfobyid?value="+result, function(data, status){
+                            if(status=='success'){var wid_data = JSON.parse(data);
+                                var tx_result = wid_data.receipt["result"]; 
+                                if(tx_result=='SUCCESS'){$(".wd_status_message").html('Tokens Withdraw Successfully!');
+                                    setTimeout(function(){window.location.reload();}, 1000);
+                                }else{$(".wd_status_message").html('Something Wrong! Try Again.');
+                                    setTimeout(function(){window.location.reload();}, 1000);
+                                }
+                            } 
+                        }); 
+                    }, 7000);
+                }
+    }else{ toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');}
+} else {toastr.error('You must be login with DLIKE username!');return false;}
+});

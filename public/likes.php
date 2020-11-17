@@ -140,17 +140,14 @@ setInterval(async ()=>{
             var myContract = await tronWeb.contract().at(mainContractAddress);
             var unClaimed = await myContract.tokenBalances(user_address).call();
             unClaimed = window.tronWeb.toDecimal(unClaimed) / 1e6;
-            console.log(unClaimed);
-            console.log(loguser_wallet_address)
-            console.log(user_address)
             if(user_address == loguser_wallet_address){
                 if(unClaimed > 5){
                     $('.unclaimed_tokens_sec').show();
                     $('.unclaimed_bal').html(unClaimed);
                 }else{$('.unclaimed_tokens_sec').hide();}
-            } else {$('.unclaimed_tokens_sec').hide();console.log('Not same user')}
-        }else{console.log('Not login tronlink')}
-    } else {console.log('tronlink not installed')}
+            } else {$('.unclaimed_tokens_sec').hide();}
+        }
+    }
 }, 3000)
 
 $('.unclaimed_tokens').click(async function() {
@@ -159,7 +156,7 @@ if (dlike_username != null) {var user_address =false;
         var myContract = await tronWeb.contract().at(mainContractAddress);
         var unclaimedAmount = await myContract.tokenBalances(user_address).call();
         if(user_address != loguser_wallet_address){toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
-            let result = await myContract.getToken(unclaimedAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });console.log(result);
+            let result = await myContract.getToken(unclaimedAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                 if(result){$('#withdrawStatus').modal('show');
                     $(".wd_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
                     var x = setInterval(function() {
@@ -179,8 +176,4 @@ if (dlike_username != null) {var user_address =false;
 } else {toastr.error('You must be login with DLIKE username!');return false;}
 });
 
-
-/*
-
-*/
 </script>
