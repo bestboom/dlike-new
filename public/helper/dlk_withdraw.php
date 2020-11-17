@@ -132,8 +132,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 
 
 if (isset($_POST['action']) && $_POST['action'] == 'unclaimed_tokens' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
-    $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
-    $dlkamount = trim(mysqli_real_escape_string($conn, $_POST['unclaim_amount']));
+    	$wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
+    	$dlkamount = trim(mysqli_real_escape_string($conn, $_POST['unclaim_amount']));
 
 		$amount = $dlkamount * 1000000;
     	$wallets = array($tron->address2HexString($wallet));
@@ -156,11 +156,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'unclaimed_tokens' && isset($
         $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
         $signedTransaction = $tron->signTransaction($triggerContract);
         $response = $tron->sendRawTransaction($signedTransaction);
-		if ($response['result'] == 1) {
-			die(json_encode(['error' => false,'message' => 'Transaction successful']));
-		        }else{die(json_encode(['error' => true,'message' => 'Some issue in transaction']));}
-		    }
-	    }
-    }
+		if ($response['result'] == 1) {die(json_encode(['error' => false,'message' => 'Transaction successful']));
+		}else{die(json_encode(['error' => true,'message' => 'Some issue in transaction']));}
+
 }
 ?>
