@@ -164,8 +164,8 @@ if (dlike_username != null) {var user_address =false;
         doAjax().then(async function(data) { var response = JSON.parse(data);
             if (response.error == true) {toastr['error'](response.message);return false;}
                 else{
-                $('#stakingStatus').modal('show');
-                $(".st_status_message").html('Stakign Reward Claimed Successfully!');
+                $('#withdrawStatus').modal('show');
+                $(".st_status_message").html('Tokens Claimed Successfully!');
                 setTimeout(function(){window.location.reload();}, 1000);
             }
         })
