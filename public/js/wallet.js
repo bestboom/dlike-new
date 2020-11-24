@@ -18,10 +18,10 @@ $('.tok_out_btn').click(async function() {
     }
     doAjax().then(async function(data) { var response = JSON.parse(data);
         if (response.error == true) {toastr['error'](response.message);enable_draw();return false;}
-        else{ let user_address =false;
+        else{ let user_address =false;var my_address = response.user_wallet_add;
             if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
-            if(user_address != my_wallet) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');enable_draw();return false;}
+            if(user_address != my_address) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');enable_draw();return false;}
             if(user_address==false){toastr.error('Please Login to Tronlink Wallet.');return false;
             } else { 
                 $.ajax({type: 'post',url:'helper/dlk_withdraw.php',data:{action : 'pay_user',dlk_out_amount: out_amount,wallet: user_address},});

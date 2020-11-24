@@ -12,8 +12,8 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
     if(empty($username)){$errors = "Seems You are not login";}
     if(!in_array($username, $admin_users)){if ($dlk_amount > $max_withdraw_limit) {$errors = 'Phew...Max allowed amount is 5000 DLIKE per 24 hours';}}
 
-    $check_amount = $conn->query("SELECT amount FROM dlike_wallet where username = '$username'");
-	$row_A = $check_amount->fetch_assoc(); $wallet_amount = $row_A['amount'];
+    $check_amount = $conn->query("SELECT * FROM dlike_wallet where username = '$username'");
+	$row_A = $check_amount->fetch_assoc(); $wallet_amount = $row_A['amount'];$user_wallet_add = $row_A['tron_address'];
 	if ($wallet_amount <= 0) {$errors = 'Not enough balance';}
 	if ($wallet_amount < $dlk_amount) {$errors = 'Not enough balance';}
 	if ($dlk_amount <= 0) {$errors = 'Not valid value';}
@@ -27,7 +27,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
     if (empty($errors)) { 
-    	die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+    	die(json_encode(['error' => false,'message' => 'All is fine to withdraw!','my_address' => $user_wallet_add]));
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 
