@@ -27,7 +27,7 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
     if (empty($errors)) { 
-    	die(json_encode(['error' => false,'message' => 'All is fine to withdraw!','my_address' => $user_wallet_add]));
+    	die(json_encode(['error' => false,'message' => 'All is fine to withdraw!','user_wallet_add' => $user_wallet_add]));
     } else {die(json_encode(['error' => true,'message' => $errors]));}
 }
 
