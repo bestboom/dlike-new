@@ -17,7 +17,8 @@ $('.hov_vote').click(function() {
                         var updatespostincome = (newlikes * post_income).toFixed(2); 
                         $('.post_likes' + mypermlink + authorname).html(newlikes);
                         $('.dlike_tokens' + mypermlink + authorname).html(updatespostincome);
-                        console.log(mypermlink);
+                        var new_url='https://dlike.io/'+ authorname + '/' + mypermlink;
+                        console.log(new_url);
                     }
                 } catch (err) {toastr.error('Sorry. Server response is malformed.');}
             }
