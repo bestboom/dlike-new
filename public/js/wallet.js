@@ -18,7 +18,7 @@ $('.tok_out_btn').click(async function() {
     }
     doAjax().then(async function(data) { var response = JSON.parse(data);
         if (response.error == true) {toastr['error'](response.message);enable_draw();return false;}
-        else{ let user_address =false;var my_address = response.user_wallet_add;
+        else{ let user_address =false;var my_address = response.user_wallet_add;console.log(my_address);
             if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
             }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;}
             if(user_address != my_address) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');enable_draw();return false;}
