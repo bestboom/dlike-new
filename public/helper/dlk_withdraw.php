@@ -82,12 +82,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'paid' && isset($_POST['walle
 
 
 if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['wallet']) && $_POST['wallet'] != '') {
-    $wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
+    $user_wallet = trim(mysqli_real_escape_string($conn, $_POST['wallet']));
     $dlkamount = trim(mysqli_real_escape_string($conn, $_POST['dlk_out_amount']));
 
     $username = $_COOKIE['dlike_username'];
     $check_Bal = $conn->query("SELECT * FROM dlike_wallet WHERE username = '$username'");
-	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$bal= $row['amount'];
+	if ($check_Bal->num_rows > 0) { $row = $check_Bal->fetch_assoc();$bal= $row['amount'];$wallet= $row['tron_address'];
 		if($bal > 0){
 			$check_map = $conn->query("SELECT * FROM dlike_tokens_mapping WHERE username = '$username' and  update_time > now() - INTERVAL 24 HOUR");
 			if ($check_map->num_rows > 0) { die(json_encode(['error' => true,'message' => 'Withdraw time issue']));
