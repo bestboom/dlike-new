@@ -24,7 +24,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
                     <input type="text" class="form-control reward_input" value=" | My Balance" readonly>
                     <span class="fas fa-database inp_icon"></span>
                     <span class="inp_text"><?php echo $my_bal; ?></span>
-                    <div class="row unclaimed_tokens_sec" style="display:none;justify-content:space-between;margin:3px 15px;color: #c51d24;font-weight:600;"><span>Unclaimed Tokens</span><span><span class="unclaimed_bal"></span><i class="fas fa-sign-out-alt unclaimed_tokens" style="cursor: pointer;padding-left: 8px;"></i></span></div>
+                    <!--<div class="row unclaimed_tokens_sec" style="display:none;justify-content:space-between;margin:3px 15px;color: #c51d24;font-weight:600;"><span>Unclaimed Tokens</span><span><span class="unclaimed_bal"></span><i class="fas fa-sign-out-alt unclaimed_tokens" style="cursor: pointer;padding-left: 8px;"></i></span></div>-->
                 </div>
                 <div class="form-group reward_fileds">
                     <input type="text" class="form-control reward_input" value=" | Income Today" readonly>
