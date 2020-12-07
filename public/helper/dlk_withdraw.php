@@ -23,9 +23,10 @@ if (isset($_POST['action'])  && $_POST['action'] == 'withdraw' && isset($_POST['
 
 	$check_address = $conn->query("SELECT * FROM dlikeaccounts where username = '$username'");
 	$row_add = $check_address->fetch_assoc();$tron_address = $row_add['offchain_address']; 
-	$verified = $row_add['verified'];
+	$verified = $row_add['verified'];$user_status = $row_add['status'];
 	if (empty($tron_address)){$errors = 'Phew... You must add your tron wallet address!';}
 	if ($verified !='1'){$errors = 'Phew... You must verify your email before withdrawing!';}
+	if ($user_status ='1'){$errors = 'Phew... Issue in withdrawal. Please contact support';}
     if (empty($errors)) { 
     	die(json_encode(['error' => false,'message' => 'All is fine to withdraw!','user_wallet_add' => $user_wallet_add]));
     } else {die(json_encode(['error' => true,'message' => $errors]));}
