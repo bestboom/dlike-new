@@ -20,7 +20,11 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
 
         $check_time_likes = $conn->query("SELECT like_time FROM mylikes where username = '$userval' and TIMESTAMPDIFF(SECOND, like_time, now()) <= 19");
         if ($check_time_likes->num_rows > 0){die(json_encode(['error' => true, 'message' => 'Are you a Robot? Be patient while recomending posts to community with your Likes!']));}
-
+        $checkPost_likes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
+        if ($checkPost_likes->num_rows > 0){
+            $row_likes = $checkPost_likes->fetch_assoc();$post_likes = $row_likes['likes'];
+            if ($post_likes > 193){die(json_encode(['error' => true, 'message' => 'Phew ...some issue. please contact support!']));}
+        }
         $sql_T = $conn->query("SELECT * FROM dlikeposts WHERE username='$author' and permlink='$permlink' and created_at < now() - INTERVAL 42 HOUR");
         //$count_T=$sql_T->num_rows;
         //if (empty($count)){die(json_encode(['error' => true, 'message' => 'Post Does not Exist!']));}
