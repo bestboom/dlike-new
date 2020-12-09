@@ -23,7 +23,7 @@ if (isset($_POST["ath"]) && isset($_POST["plink"]))
         $checkPost_likes = $conn->query("SELECT * FROM postslikes WHERE author = '$author' and permlink = '$permlink'");
         if ($checkPost_likes->num_rows > 0){
             $row_likes = $checkPost_likes->fetch_assoc();$post_likes = $row_likes['likes'];
-            if ($post_likes > 193){die(json_encode(['error' => true, 'message' => 'Phew ...some issue. please contact support!']));}
+            if ($post_likes > 137){die(json_encode(['error' => true, 'message' => 'Phew ...some issue. please contact support!']));}
         }
         $sql_T = $conn->query("SELECT * FROM dlikeposts WHERE username='$author' and permlink='$permlink' and created_at < now() - INTERVAL 42 HOUR");
         //$count_T=$sql_T->num_rows;
