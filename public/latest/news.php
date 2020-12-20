@@ -46,9 +46,9 @@ function validationData($data){$data = htmlspecialchars(strip_tags(nl2br(trim($d
         <div class="row" style="margin: 2px;font-size: 0.85rem;color: #c51d24;"><a href="/latest">Latest News </a> &nbsp; > &nbsp; <a href="/latest/category/<?php echo $news_category; ?>"> <?php echo ucfirst($news_category); ?></a></div>
         <h2 class="title"><?php echo $post_title;?></h2><hr style="margin-top: 1px; margin-bottom: 5px;background-color: #202020;">
         <span class="row" style="margin:0px;margin-bottom: 10px;font-size: 0.8rem;font-weight: 600;">By <?php echo $post_source; ?> | <?php echo ucfirst($news_category); ?> </span>
-        <img src="<?php echo $image;?>" style="width:100%"><br>
-        <p style="padding-top: 15px;"><?php echo $description; ?></p>
-        <p style="font-weight: bold"><a href="<?php echo $post_ext_link; ?>" target="_blank">Continue Reading <?php echo $post_title;?></a></p>
+        <img src="<?php echo $image;?>" class="story_img" style="width:100%"><br>
+        <p style="padding-top: 15px;" class="story_detail"><?php echo $description; ?></p>
+        <p style="font-weight: bold"><a href="<?php echo $post_ext_link; ?>" class="story_link" target="_blank">Continue Reading <?php echo $post_title;?></a></p>
     </div>
     <div class="col-md-4">
     	<div style="width:100%;background: #c51d24;padding: 15px;color: #fff;font-size: 1.3rem;font-weight: 600;text-align: center;">
