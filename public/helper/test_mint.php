@@ -8,7 +8,7 @@ include_once '../includes/contract_config.php';
 	error_reporting(E_ALL);
 
 			$wallet="THaN8wCALGPtUtQEKmJ1xsN1TZ4MZ69BVJ";
-			$dlkamount = "31";
+			$dlkamount = "3";
 			$amount = $dlkamount * 1000000;
 
 	    	$wallets = array($tron->address2HexString($wallet));
@@ -32,6 +32,6 @@ include_once '../includes/contract_config.php';
 	        $signedTransaction = $tron->signTransaction($triggerContract);
 	        $response = $tron->sendRawTransaction($signedTransaction);
 	        if ($response['result'] == 1) {
-	            die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
+	            die(json_encode(['error' => false,'message' => $response]));
 	        }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 ?>
