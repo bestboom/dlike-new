@@ -36,6 +36,6 @@ include_once '../includes/contract_config.php';
 	        	echo $trxid = $response['trxid'];
 	        	echo 'this is break';
 	        	echo '<br>';
-	            die(json_encode(['error' => false,'message' => $response['trxid']]));
+	            die(json_encode(['error' => false,'message' => $response]));
 	        }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
 ?>
