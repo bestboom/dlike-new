@@ -33,7 +33,7 @@ include_once '../includes/contract_config.php';
 	        $response = $tron->sendRawTransaction($signedTransaction);
 	        sleep(1);
 	        if ($response['result'] == 1) {
-	        	echo $trxid = $response['trxid'];
+	        	echo $trxid = $response['txid'];
 	        	echo 'this is break';
 	        	echo '<br>';
 	            die(json_encode(['error' => false,'message' => $response]));
