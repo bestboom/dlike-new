@@ -17,5 +17,6 @@
 <?php if(basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == 'dlike_posts.php' || basename($_SERVER['PHP_SELF']) == 'dlike_trending.php' || basename($_SERVER['PHP_SELF']) == 'dlike_post.php' || basename($_SERVER['PHP_SELF']) == 'dlike_profile.php' || basename($_SERVER['PHP_SELF']) == 'dlike_tags.php' || basename($_SERVER['PHP_SELF']) == 'dlike_category.php'){ ?><script src="/js/solve.js"></script><? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == 'dlike_posts.php' || basename($_SERVER['PHP_SELF']) == 'trending.php' || basename($_SERVER['PHP_SELF']) == 'steemposts.php'){ ?><script src="/js/trending.js"></script><? } ?>
 <?php if(basename($_SERVER['PHP_SELF']) == 'dlike_profile.php'){ ?><script src="/js/profile.js"></script><? } ?><script src="/assets/js/bootstrap.min.js"></script><script async src="https://appsha1.cointraffic.io//js/?wkey=hLMQzDKQgG"></script>
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101295866);</script><script async src="//static.getclicky.com/js"></script>
 </body>
 </html>
