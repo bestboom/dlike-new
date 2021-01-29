@@ -1,20 +1,16 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <?php if(basename($_SERVER['PHP_SELF']) == 'dlike_post.php'){ ?><title><?php echo $og_title; ?></title><meta name="description" content="<?php echo $og_description; ?>" /><meta property="og:url" content="<?php echo $og_url; ?>" /><meta property="og:title" content="<?php echo $og_title; ?>" /><meta property="og:description" content="<?php echo $og_description; ?>" /><meta property="og:image" content="<?php echo $og_image; ?>" /><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="<?php echo $og_title; ?>"><meta name="twitter:description" content="<?php echo $og_description; ?>"><meta name="twitter:image" content="<?php echo $og_image; ?>"><meta name="twitter:domain" content="<?php echo $og_url; ?>"><link rel="canonical" href="<?php echo $og_url; ?>" />
-<script type='application/ld+json'>{
-    "@context": "https://schema.org",
+<script type='application/ld+json'>{"@context": "https://schema.org",
     "@type": "NewsArticle",
     "mainEntityOfPage": {"@type": "WebPage","@id": "<?php echo $og_url; ?>"},
     "headline": "<?php echo $og_title; ?>",
     "image": ["<?php echo $og_url; ?>"],
-    "articleSection":"news",
-    "keywords": "",
+    "articleSection":"<?php echo $post_category; ?>",
     "datePublished": "<?php echo $pub_time; ?>",
     "dateCreated": "<?php echo $pub_time; ?>",
     "dateModified": "<?php echo $pub_time; ?>",
     "author": {"@type": "Person","name": "<?php echo $author; ?>"},
-    "publisher": {
-    "@type": "Organization","name": "DLIKE","logo": {"@type": "ImageObject","url":"https://dlike.io//images/logo.png"}
-    },
+    "publisher": {"@type": "Organization","name": "DLIKE","logo": {"@type": "ImageObject","url":"https://dlike.io//images/logo.png"}},
     "description": "<?php echo $og_description; ?>"
   }</script>
   <? } else if(basename($_SERVER['PHP_SELF']) == 'dlike_profile.php'){ ?>  <title><?php echo ucfirst($prof_user).' (@'.$prof_user.')'; ?> Posts Shared on DLIKE</title><meta name="description" content="The latest links shared by <?php echo ucfirst($prof_user).' ('.$prof_user.')'; ?> on DLIKE. An informative face of internet to share and get rewarded for every like <?php echo ucfirst($prof_user); ?>."><? } else if(basename($_SERVER['PHP_SELF']) == 'dlike_tags.php'){ ?>  <title><?php echo $page_tag; ?> on DLIKE - Latest #<?php echo $page_tag; ?> Posts Shared on DLIKE</title><meta name="description" content="Latest <?php echo $page_tag; ?> posts shared on DLIKE. Top #<?php echo $page_tag; ?> hashtag trending news and updates on DLIKE"><? } else if(basename($_SERVER['PHP_SELF']) == 'dlike_category.php'){ ?>  <title>Trending <?php echo ucfirst($page_cat); ?> posts on DLIKE - Latest <?php echo $page_cat; ?> Posts Shared on DLIKE</title><meta name="description" content="Latest <?php echo $page_cat; ?> posts shared on DLIKE. Top <?php echo $page_cat; ?> trending news and updates on DLIKE"><? } else if(basename($_SERVER['PHP_SELF']) == 'dlike_trending.php'){ ?>  <title>Trending posts shared on DLIKE</title><meta name="description" content="Trending posts shared on DLIKE. Get top trending news and updates on DLIKE"><? }else { ?><title>DLIKE - Share To Get Rewarded</title><meta name="description" content="DLIKE is a blockchain based social media dapp where you get rewarded for sharing. Share informative links to earn reward on every like you get from other community members."><meta property="og:url" content="https://dlike.io" /><meta property="og:title" content="DLIKE - Share To Get Rewarded" /><meta property="og:description" content="DLIKE is a blockchain based social media dapp where you get rewarded for sharing. Share informative links to earn reward on every like you get from other community members." /><meta property="og:image" content="/images/dlike-main.jpg" /><? } ?>
