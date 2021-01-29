@@ -3,27 +3,17 @@
 <script type='application/ld+json'>{
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "<?php echo $og_url; ?>"
-    },
+    "mainEntityOfPage": {"@type": "WebPage","@id": "<?php echo $og_url; ?>"},
     "headline": "<?php echo $og_title; ?>",
-    "image": [
-      "<?php echo $og_url; ?>"
-     ],
+    "image": ["<?php echo $og_url; ?>"],
     "articleSection":"news",
     "keywords": "",
-    "datePublished": "",
-    "dateCreated": "",
-    "dateModified": "",
-    "author": {"@type": "Person","name": "Ideas"},
+    "datePublished": "<?php echo $pub_time; ?>",
+    "dateCreated": "<?php echo $pub_time; ?>",
+    "dateModified": "<?php echo $pub_time; ?>",
+    "author": {"@type": "Person","name": "<?php echo $author; ?>"},
     "publisher": {
-      "@type": "Organization",
-      "name": "DLIKE",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://dlike.io//images/logo.png"
-      }
+    "@type": "Organization","name": "DLIKE","logo": {"@type": "ImageObject","url":"https://dlike.io//images/logo.png"}
     },
     "description": "<?php echo $og_description; ?>"
   }</script>
