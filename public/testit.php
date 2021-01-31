@@ -6,9 +6,9 @@ error_reporting(E_ALL);
 
 include_once 'helper/spatie/image-optimizer/src/OptimizerChainFactory.php';
 include_once 'helper/spatie/image-optimizer/src/OptimizerChain.php';
-include_once 'helper/spatie/image-optimizer/src/DummyLogger.php';
 include_once 'helper/spatie/Psr/Log/LoggerInterface.php';
-require_once("../vendor/autoload.php"); 
+include_once 'helper/spatie/image-optimizer/src/DummyLogger.php';
+//require_once("../vendor/autoload.php"); 
 
 //use Spatie\ImageOptimizer\OptimizerChainFactory;
 
