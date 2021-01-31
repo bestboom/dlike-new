@@ -10,7 +10,7 @@ include_once 'helper/spatie/Psr/Log/LoggerInterface.php';
 include_once 'helper/spatie/image-optimizer/src/DummyLogger.php';
 //require_once("../vendor/autoload.php"); 
 
-//use Spatie\ImageOptimizer\OptimizerChainFactory;
+use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 $optimizerChain = OptimizerChainFactory::create();
 
