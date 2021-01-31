@@ -13,7 +13,7 @@ $row_W = $sql_W->fetch_assoc(); $profile_pic = $row_W["profile_pic"];
 $checkLikes = $conn->query("SELECT * FROM postslikes WHERE author = '$user' and permlink = '$link'");
 if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = $row_L['likes'];}else{$postLikes = '0';}$post_income = $postLikes * $post_reward;
 $urlData = parse_url($ext_url ); $host = preg_replace('/^www\./', '', $urlData['host']);
-$og_title=strip_tags($title);$og_image=$imgUrl;$new_description=strip_tags($description);$og_description=limit_text($new_description , 30);$og_url="https://dlike.io/".$author."/".$permlink;
+$og_title=strip_tags($title);$og_image=$imgUrl;$new_description=strip_tags($description);$og_description=limit_text($new_description , 30);$og_url="https://dlike.io/post/".$author."/".$permlink;
 include('template/header.php');
 ?></div>
 <div class="latest-post-section"><div class="container">
@@ -28,7 +28,7 @@ include('template/header.php');
                 </div>
                 <div class="post-comments" style="color: #1652f0;"><?php echo '<a href="/category/'. $post_category.'">'.ucfirst($post_category).'</a>'; ?></div>
             </div>
-            <h4 class="post-title"><?php echo $title; ?></h4>
+            <h1 class="post-title"><?php echo $title; ?></h1>
             <p class="post-entry"><?php echo $description; ?><br><span style="float: right;color: #1652f0;font-size: 12px;">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
             <p class="post-entry post-tags"><?php echo $tags; ?></p>
             <div class="post-footer">
