@@ -24,7 +24,7 @@ use Spatie\ImageOptimizer\OptimizerChainFactory;
 
 
 
-echo $pathToImage = "https://aniportalimages.s3.amazonaws.com/media/details/__sized__/Palestine_covid_jan_30-thumbnail-154x87-70.jpg";
+echo $pathToImage = "images/dlike-logo.jpg";
 echo '<br>';
 echo $originalSize = filesize($pathToImage);
 
