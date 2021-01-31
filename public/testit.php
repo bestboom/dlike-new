@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 //include '../vendor/spatie/image-optimizer/src/OptimizerChainFactory.php';
-
+include_once 'helper/spatie/image-optimizer/src/Optimizers';
 include_once 'helper/spatie/image-optimizer/src/OptimizerChainFactory.php';
 include_once 'helper/spatie/image-optimizer/src/OptimizerChain.php';
 include_once 'helper/spatie/Psr/Log/LoggerInterface.php';
