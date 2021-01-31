@@ -1,5 +1,5 @@
 <?php $user_profile_pic=preg_replace("(^https?:)", "", $user_profile_pic);$imgUrl = preg_replace("/^http:/i", "https:", $imgUrl);
-if(!$user_profile_pic){$user_profile_pic="https://i.postimg.cc/rwbTkssy/dlike-user-profile.png";}
+if(!$user_profile_pic){$user_profile_pic="/images/user.png";}
 ?>
 <article class="post-style-two">
 <div class="post-contnet-wrap-top"><div class="post-footer"><div class="post-author-block">
