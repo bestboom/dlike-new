@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 require_once("../vendor/autoload.php"); 
 include 'helper/spatie/image-optimizer/src/OptimizerChainFactory.php';
 include 'helper/spatie/image-optimizer/src/OptimizerChain.php';
+include 'helper/spatie/image-optimizer/src/Optimizer.php';
 include 'helper/spatie/image-optimizer/src/Optimizers/BaseOptimizer.php';
 include 'helper/spatie/image-optimizer/src/Optimizers/Optipng.php';
 include 'helper/spatie/image-optimizer/src/Optimizers/Gifsicle.php';
