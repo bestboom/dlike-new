@@ -1121,7 +1121,7 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .post-style-two .post-title{white-space:unset;overflow:visible;text-overflow:unset}
 .post-style-two .post-title a{font-size:.9rem!important;font-weight:600!important;line-height:1.5!important}
 #content .col-lg-4.col-md-6.postsMainDiv>.post-style-two{margin-bottom:15px!important}
-.banner-block{padding:0;background:url(../images/bg/1.jpg) no-repeat center center}
+.banner-block{padding:0;/*background:url(../images/bg/1.jpg) no-repeat center center*/}
 }
 @media all and (min-width: 481px) and (max-width: 768px) {
 #toast-container > div{padding:15px 15px 15px 50px;width:25em}
@@ -1130,13 +1130,7 @@ button.toast-close-button{padding:0;cursor:pointer;background:transparent;border
 .black_word>.nav-item>.nav-link{color:#000!important}
 .testimonial-block > img{height:24.8rem;width:62.2rem}
 @media (max-width: 768px) {
-.testimonial-block > img{height:17.1rem;width:62.2rem}
-.slick-list.draggable{min-height:274px!important;margin-bottom:40px}
-#p_img{width:100px;height:100px;margin-top:-50px}
-#p_cover{height:135px!important}
-.foll_count{font-weight:700;font-size:14px;padding-right:2px;font-family:sans-serif}
-.p_data_names .name{font-size:18px}
-.p-data{font-size:85%}
+.testimonial-block > img{height:17.1rem;width:62.2rem}.slick-list.draggable{min-height:274px!important;margin-bottom:40px}#p_img{width:100px;height:100px;margin-top:-50px}#p_cover{height:135px!important}.foll_count{font-weight:700;font-size:14px;padding-right:2px;font-family:sans-serif}.p_data_names .name{font-size:18px}.p-data{font-size:85%}
 }
 .testimonial-slider button.slick-prev{left:0;z-index:2222}
 .testimonial-slider button.slick-next{right:0}
