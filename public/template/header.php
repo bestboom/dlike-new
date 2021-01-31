@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="https://dlike.io/images/favicons/apple-touch-icon.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="32x32" href="https://dlike.io/images/favicons/favicon-32x32.png?v=kPvWrWRLXe"><link rel="icon" type="image/png" sizes="16x16" href="https://dlike.io/images/favicons/favicon-16x16.png?v=kPvWrWRLXe"><link rel="manifest" href="https://dlike.io/images/favicons/site.webmanifest?v=kPvWrWRLXe"><link rel="shortcut icon" href="https://dlike.io/images/favicons/favicon.ico?v=kPvWrWRLXe"><meta name="apple-mobile-web-app-title" content="DLIKE"><meta name="application-name" content="DLIKE"><meta name="msapplication-TileColor" content="#2d89ef"><meta name="msapplication-config" content="https://dlike.io/images/favicons/browserconfig.xml?v=kPvWrWRLXe"><meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="/css/style.css"><script type='text/javascript'>
 //<![CDATA[
 function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement("link"); var o = t || window.document.getElementsByTagName("script")[0]; i.rel = "stylesheet"; i.href = e; i.media = "only x"; o.parentNode.insertBefore(i, o); setTimeout(function () { i.media = n || "all" }) }
-loadCSS("https://fonts.googleapis.com/css?family=Quicksand");loadCSS ("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css");
+loadCSS("https://fonts.googleapis.com/css?family=Quicksand");loadCSS ("/assets/css/fontsome.css");
 //]]>
 </script>
 </head><body>
