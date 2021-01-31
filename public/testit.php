@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 require_once("../vendor/autoload.php"); 
 include 'helper/spatie/image-optimizer/src/OptimizerChainFactory.php';
 include 'helper/spatie/image-optimizer/src/OptimizerChain.php';
+include 'helper/spatie/image-optimizer/src/Image.php';
 include 'helper/spatie/image-optimizer/src/Optimizer.php';
 include 'helper/spatie/image-optimizer/src/Optimizers/BaseOptimizer.php';
 include 'helper/spatie/image-optimizer/src/Optimizers/Optipng.php';
@@ -21,10 +22,22 @@ include 'helper/spatie/image-optimizer/src/DummyLogger.php';
 
 use Spatie\ImageOptimizer\OptimizerChainFactory;
 
-$optimizerChain = OptimizerChainFactory::create();
+
 
 echo $pathToImage = "https://aniportalimages.s3.amazonaws.com/media/details/__sized__/Palestine_covid_jan_30-thumbnail-154x87-70.jpg";
+echo '<br>';
+echo $originalSize = filesize($pathToImage);
 
-echo $optimizerChain->optimize($pathToImage);
+// Optimize updates the existing image
+$optimizerChain = OptimizerChainFactory::create();
+$optimizerChain->optimize($pathToImage);
+
+// Clear stat cache to get the optimized size
+clearstatcache();
+
+// Check the optimized size
+$optimizedSize = filesize($pathToImage);
+$percentChange = (1 - $optimizedSize / $originalSize) * 100;
+echo sprintf("The image is now %.2f%% smaller\n", $percentChange);
 
 ?>	
