@@ -9,6 +9,7 @@ include_once 'helper/spatie/image-optimizer/src/Optimizers/Jpegoptim.php';
 include_once 'helper/spatie/image-optimizer/src/Optimizers/Cwebp.php';
 include_once 'helper/spatie/image-optimizer/src/Optimizers/Svgo.php';
 include_once 'helper/spatie/image-optimizer/src/Optimizers/Pngquant.php';
+include_once 'helper/spatie/image-optimizer/src/Optimizers/BaseOptimizer.php';
 include_once 'helper/spatie/image-optimizer/src/OptimizerChainFactory.php';
 include_once 'helper/spatie/image-optimizer/src/OptimizerChain.php';
 include_once 'helper/spatie/Psr/Log/LoggerInterface.php';
