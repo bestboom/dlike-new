@@ -37,7 +37,7 @@ include('template/header.php');
             </div>
         </div>
     </article>
-<center><div style="font-size: 18px;font-weight: 700;padding-bottom: 15px;">More Like This</div></center>
+<div style="font-size: 18px;font-weight: 700;padding-bottom: 15px;text-align: center;">More Like This</div>
 <div class="row">
 <?php $sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$post_category' and id != '$post_id' ORDER BY created_at DESC LIMIT 9");
 if ($sql_T && $sql_T->num_rows > 0)
