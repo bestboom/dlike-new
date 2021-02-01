@@ -3,7 +3,7 @@ include('includes/config.php'); include ('template/header.php'); ?></div>
 <div class="latest-post-section"><div class="container">
 <div class="row main_top"><?php include('functions/top_trending.php');?></div>
 <div class="row">
-<?php $sql_P = $conn->query("SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC");
+<?php $sql_P = $conn->query("SELECT * FROM dlike_tags where tag='$page_tag' ORDER BY created_time DESC LIMIT 30");
 if ($sql_P && $sql_P->num_rows > 0)
 {   while ($row_P = $sql_P->fetch_assoc())
     {   $post_author = $row_P["author"];$permlink = $row_P["permlink"];
