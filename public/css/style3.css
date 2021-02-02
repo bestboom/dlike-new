@@ -219,19 +219,20 @@ button,select {
     display: none
 }
 .navbar {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: .5rem 1rem
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #c51d24;
+    z-index: 980;
+    padding: 0;
+    margin: 0;
+    border: none;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: medium;
+    border-radius: 0;
+    border-bottom: 1px solid #c51d24;
 }
 .navbar>.container,.navbar>.container-fluid {
     display: -webkit-box;
