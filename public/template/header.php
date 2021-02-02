@@ -20,7 +20,7 @@ function loadCSS(e, t, n) { "use strict"; var i = window.document.createElement(
 loadCSS("https://fonts.googleapis.com/css?family=Quicksand");
 //]]>
 </script>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/5.10.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head><body>
 <div id="mySidenav" class="sidenav"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a><a href="/dliker">DLIKER</a><a href="https://dex.dlike.io">DEX</a> <? } elseif(isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { ?><a href="/wallet">Wallet</a><a href="https://justswap.org/#/home?tokenAddress=TMw4Er1ZVMm6Z4QnE4fqU6xzT4G43HapWb&type=swap" target="_blank">Market</a><?} ?>  <a href="/rewards">Reward Pool</a><a href="/staking">Staking</a><a href="/explorer">Explorer</a><a href="https://dlike.zendesk.com/hc/en-us" target="_blank">Help</a>
