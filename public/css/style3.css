@@ -13270,104 +13270,6 @@ sub.transmoney-value {
 .post-style-two.post-full-width .post-entry {
     margin-bottom: 15px;
 }
-.hov-it {
-    margin-top: -60px;
-}
-.hov-wrap {
-    position: relative;
-    padding: 0;
-    display: block;
-}
-.hov-txt {
-    position: absolute;
-    margin: 0;
-    top: 0;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    background-color: #333;
-    text-align: center;
-    opacity: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-.hov-txt h5 {
-    position: absolute;
-    color: #fff;
-    top: 34%;
-    width: 100%;
-    font-size: 150%;
-    font-weight: 800;
-    text-align: center;
-}
-.hov-txt:hover {
-    opacity: 0.9;
-}
-.hov-title {
-    position: absolute;
-    top: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    display: none;
-    border-radius: 50%;
-    background-color: #333;
-    cursor: pointer;
-    opacity: 0.9;
-}
-.hov-title h5 {
-    position: absolute;
-    color: #fff;
-    top: 35%;
-    width: 100%;
-    font-size: 150%;
-    font-weight: 800;
-    text-align: center;
-}
-.hov-item {
-    height: auto;
-    float: left;
-    margin-bottom: 2em;
-    position: relative;
-}
-.hov-item img {
-    width: 100%;
-}
-.hov-title_in {
-    position: absolute;
-    top: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    display: none;
-    border-radius: 50%;
-    background-color: #333;
-    cursor: pointer;
-    opacity: 0.9;
-}
-.hov-title_in h5 {
-    position: absolute;
-    color: #fff;
-    top: 35%;
-    width: 100%;
-    font-size: 150%;
-    font-weight: 800;
-    text-align: center;
-}
-.hov-item_in {
-    height: auto;
-    float: left;
-    margin-bottom: 2em;
-    position: relative;
-}
-.hov-item_in img {
-    width: 100%;
-}
 .post-style-two {
     margin-bottom: 60px;
 }
@@ -14626,12 +14528,6 @@ button.toast-close-button {
     min-height: 80vh;
     padding: 100px 0px 60px 0px;
 }
-.hov_vote {
-    cursor: pointer;
-    width: 21px;
-    height: 21px;
-    margin-top: -3px;
-}
 #post_likes {
     padding-right: 3px;
     font-weight: bold;
@@ -14772,9 +14668,6 @@ button.toast-close-button {
     text-overflow: ellipsis;
     font-weight: 600;
     margin-bottom: 0px;
-}
-.hov_vote {
-    margin-top: -3px;
 }
 .post-style-two .post-entry {
     margin-bottom: 5px;
@@ -15053,9 +14946,6 @@ button.toast-close-button {
         height: 60vw !important;
         object-fit: cover !important;
     }
-    .hov-item {
-        margin-bottom: 0.5em !important;
-    }
     .post-style-two .post-title {
         white-space: unset;
         overflow: visible;
@@ -15084,9 +14974,6 @@ button.toast-close-button {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         height: 90vw !important;
-    }
-    .hov-item {
-        margin-bottom: 0.5em !important;
     }
     .post-style-two .post-title {
         white-space: unset;
