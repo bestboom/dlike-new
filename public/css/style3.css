@@ -10598,51 +10598,7 @@ textarea:focus {
     font-weight: 100;
     color: #fff;
 }
-.status {
-    padding: 30px 40px;
-    display: flex;
-    justify-content: center;
-    border-top: 2px solid #d6dce0;
-    position: relative;
-    transition: all 200ms ease-in;
-}
-.status h4 {
-    font-weight: 600;
-    color: #fff;
-    line-height: 26px;
-    text-align: center;
-}
-.status:before {
-    content: "";
-    width: 25px;
-    height: 25px;
-    background-color: #fff;
-    border-radius: 25px;
-    border: 1px solid #ddd;
-    position: absolute;
-    top: -15px;
-    left: 42%;
-    transition: all 200ms ease-in;
-}
-.li.complete .status {
-    border-top: 2px solid #66dc71;
-}
-.li.complete .status:before {
-    background-color: #66dc71;
-    border: none;
-    transition: all 200ms ease-in;
-}
-.li.complete .status h4 {
-    color: #66dc71;
-    line-height: 26px;
-    text-align: center;
-}
-.cent_me {
-    text-align: center;
-}
-.wid_2 {
-    width: 20%;
-}
+
 .token-content h2 {
     font-weight: 700;
     color: #fff;
@@ -13432,11 +13388,6 @@ a:focus {
 .activeOrderBy {
     color: #c51d24;
 }
-.dollar-pad {
-    font-weight: 600;
-    padding-left: 7px;
-    padding-right: 2px;
-}
 .blog-details-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -14527,6 +14478,12 @@ button.toast-close-button {
 .latest-post-section {
     min-height: 80vh;
     padding: 100px 0px 60px 0px;
+}
+.hov_vote {
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    margin-top: -3px;
 }
 #post_likes {
     padding-right: 3px;
