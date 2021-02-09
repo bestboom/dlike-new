@@ -37,4 +37,4 @@ RewriteRule ^rewards$ ./dlike_rewards.php
 RewriteRule ^steemposts$ ./steemposts.php
 RewriteRule ^explorer$ ./dlike_transactions.php
 RewriteRule ^explorer/(.*)$ ./dlike_transactions.php?user=$1
-RewriteRule ^sitemap\.xml$ sitemap.php [L]
+#RewriteRule ^sitemap\.xml$ sitemap.php [L]
