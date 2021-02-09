@@ -15,21 +15,21 @@ if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = 
 $urlData = parse_url($ext_url ); $host = preg_replace('/^www\./', '', $urlData['host']);
 $og_title=strip_tags($title);$og_image=$imgUrl;$new_description=strip_tags($description);$og_description=limit_text($new_description , 30);$og_url="https://dlike.io/post/".$author."/".$permlink;
 include('template/header.php');
-?></div>
+?><style>.more_posts{font-size: 18px;font-weight: 700;padding-bottom: 15px;text-align: center;}.post-comments{color: #1652f0;}.read_more{float: right;color: #1652f0;font-size: 12px;}.auth_inf{margin-bottom: 0px;}</style></div>
 <div class="latest-post-section"><div class="container">
     <article class="post-style-two post-full-width">
         <div class="post-thumb"><?php echo '<img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">'; ?></div>
         <div class="post-contnet-wrap">
-            <div class="post-footer" style="">
+            <div class="post-footer">
                 <div class="post-author-block">
                     <div><?php echo '<a href="/profile/'.$author.'"><img src="'.$profile_pic.'" alt="'.$author.'" class="img-fluid my_img"></a>'; ?></div>
-                    <div class="author-info"><h5 style="margin-bottom: 0px;"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5><span class="auth-time"><?php echo time_ago($post_time); ?></span>
+                    <div class="author-info"><h5 class="auth_inf"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5><span class="auth-time"><?php echo time_ago($post_time); ?></span>
                     </div>
                 </div>
-                <div class="post-comments" style="color: #1652f0;"><?php echo '<a href="/category/'. $post_category.'">'.ucfirst($post_category).'</a>'; ?></div>
+                <div class="post-comments"><?php echo '<a href="/category/'. $post_category.'">'.ucfirst($post_category).'</a>'; ?></div>
             </div>
             <h1 class="post-title"><?php echo $title; ?></h1>
-            <p class="post-entry"><?php echo $description; ?><br><span style="float: right;color: #1652f0;font-size: 12px;">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
+            <p class="post-entry"><?php echo $description; ?><br><span class="read_more">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
             <p class="post-entry post-tags"><?php echo $tags; ?></p>
             <div class="post-footer">
                 <div class="post-author-block"><div><img src="/images/post/dlike-hover.png" alt="DLIKE" class="hov_vote" data-permlink="<?php echo $permlink; ?>" data-author="<?php echo $author; ?>"> | <span id="post_likes" class="post_likes<?php echo $permlink; ?><?php echo $author; ?>"><?php echo $postLikes; ?></span>LIKES</div></div>
@@ -37,7 +37,7 @@ include('template/header.php');
             </div>
         </div>
     </article>
-<div style="font-size: 18px;font-weight: 700;padding-bottom: 15px;text-align: center;">More Like This</div>
+<div class="more_posts">More Like This</div>
 <div class="row">
 <?php $sql_T = $conn->query("SELECT * FROM dlikeposts where ctegory='$post_category' and id != '$post_id' ORDER BY created_at DESC LIMIT 9");
 if ($sql_T && $sql_T->num_rows > 0)
