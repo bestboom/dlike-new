@@ -15,7 +15,7 @@ if ($checkLikes->num_rows > 0){$row_L = $checkLikes->fetch_assoc();$postLikes = 
 $urlData = parse_url($ext_url ); $host = preg_replace('/^www\./', '', $urlData['host']);
 $og_title=strip_tags($title);$og_image=$imgUrl;$new_description=strip_tags($description);$og_description=limit_text($new_description , 30);$og_url="https://dlike.io/post/".$author."/".$permlink;
 include('template/header.php');
-?><style>.more_posts{font-size: 18px;font-weight: 700;padding-bottom: 15px;text-align: center;}.post-comments{color: #1652f0;}.read_more{float: right;color: #1652f0;font-size: 12px;}.auth_inf{margin-bottom: 0px;}</style></div>
+?><style>.more_posts{font-size: 18px;font-weight: 700;padding-bottom: 15px;text-align: center;}.post-com-cat{color: #1652f0;}.read_more{float: right;color: #1652f0;font-size: 12px;}.auth_inf{margin-bottom: 0px;}</style></div>
 <div class="latest-post-section"><div class="container">
     <article class="post-style-two post-full-width">
         <div class="post-thumb"><?php echo '<img src="'.$imgUrl.'" alt="'.$permlink.'" class="img-responsive">'; ?></div>
@@ -26,7 +26,7 @@ include('template/header.php');
                     <div class="author-info"><h5 class="auth_inf"><?php echo '<a href="/profile/'.$author.'">'.$author.'</a>'; ?></h5><span class="auth-time"><?php echo time_ago($post_time); ?></span>
                     </div>
                 </div>
-                <div class="post-comments"><?php echo '<a href="/category/'. $post_category.'">'.ucfirst($post_category).'</a>'; ?></div>
+                <div class="post-comments post-com-cat"><?php echo '<a href="/category/'. $post_category.'">'.ucfirst($post_category).'</a>'; ?></div>
             </div>
             <h1 class="post-title"><?php echo $title; ?></h1>
             <p class="post-entry"><?php echo $description; ?><br><span class="read_more">Read more on: <?php echo '<a href="'.$ext_url .'" target="_blank">'.$host.'</a>'; ?></span></p>
