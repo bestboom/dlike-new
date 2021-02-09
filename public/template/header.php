@@ -34,7 +34,7 @@ loadCSS("https://fonts.googleapis.com/css?family=Quicksand");loadCSS("https://cd
                     <? } elseif (isset($_COOKIE['username']) || $_COOKIE['username'])  { ?><button onclick="window.open('https://steemit.com/@<? echo $_COOKIE['username']; ?>', '_blank');" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><span class="img_profile"><img src="/images/user.png" alt="<? echo $_COOKIE['username']; ?>" title="<? echo $_COOKIE['username']; ?>" id="user_img" class="rounded-circle img-fluid prof_img_nav"></span>
                     </button><? } else { ?><button onclick="window.location.href='/welcome';" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon search_btn_hover"><i class="fas fa-user"></i></button><? } ?></div>
                 <div class="col-md-4 col-2"><button onclick="window.location.href='/share';" id="btn_share" type="button" class="btn btn-default btn-circle-it btn-lg custom_btn_icon edit_btn_hover"><i class="fa fa-pencil-alt"></i></button></div>
-                <div class="col-md-4 col-2" style="margin-top: 5px;"><span class="nav_sticks" onclick="openNav()">&#9776;</span></div>
+                <div class="col-md-4 col-2 stick_nav"><span class="nav_sticks" onclick="openNav()">&#9776;</span></div>
             </div>
         </li></ul>
     </div>
