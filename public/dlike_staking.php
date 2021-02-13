@@ -108,6 +108,7 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
                         <div role="tabpanel" class="tab-pane fade" id="claim_dlike">
                             <div class="container"><div class="row stk_row">
                                 <div class="stake_sub stk90">
+                                    <div class="row unclaimed_rewards_sec" style="display:none;justify-content:space-between;margin:3px 15px;color: #c51d24;font-weight:600;"><span>Unclaimed Reward</span><span><span class="unclaimed_rew"></span><i class="fas fa-sign-out-alt unclaimed_reward" style="cursor: pointer;padding-left: 8px;"></i></span></div>
                                     <div class="form-group"><input type="number" class="form-control" name="claimamount" id="claimeamount" placeholder="Claim" readonly="readonly" value="<?php echo $my_rewards; ?>"></div>
                                     <center><button type="button" class="btn btn-primary stk30" id="claim_stk_reward">Claim</button></center>
                                 </div>

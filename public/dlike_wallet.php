@@ -114,19 +114,6 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
     </div>
 </div></div></div></div>
 </div></div>
-<div class="modal fade" id="dlike_tok_with" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document"><div class="modal-content modal-custom"><div class="modal-body ">
-        <div class="transfer-respond">
-            <h4>Withdraw DLIKE Tokens</h4>
-            <label><b>Balance: </b><span class="user_bal"><?php echo $my_bal;; ?></span> DLIKE</label>
-            <div class="row line"><div class="col-md-12"><div class="form-group"><div class="input-group mb-3">
-                <div class="input-group-prepend"><div class="input-group-text mb-deck"> Amount</div></div><input type="text" class="form-control" name="amt" id="withdraw_amount" placeholder="Enter Amount to Withdraw">
-            </div> </div></div></div>
-            <p>Please make sure to have minimum 35K energy in your tron wallet to complete this transaction.</p>
-            <center><button type="submit" class="btn btn-default tok_out_btn">Withdraw</button></center>
-        </div>
-     </div></div></div>
-</div>
 <div class="modal fade" id="withdrawStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
 <div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="wd_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="wd_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger wd_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
 </div></div></div>
