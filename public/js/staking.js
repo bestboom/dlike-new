@@ -165,10 +165,10 @@ setInterval(async ()=>{
 
 $('.unclaimed_reward').click(async function() {
 if (dlike_username != null) {var user_address =false;
-    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;
+    if (window.tronWeb!=undefined) {user_address= await window.tronWeb.defaultAddress.base58;console.log(user_address)
+        if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
         var myContract = await tronWeb.contract().at(mainContractAddress);
         var unclaimedAmount = await myContract.rewardBlanaces(user_address).call();
-        if (user_address != stk_wallet) {toastr.error('Hey ' +dlike_username +'! You are staking with a different Tron address');return false;}
             let result = await myContract.getReward(unclaimedAmount).send({ shouldPollResponse: false, feeLimit: 15000000, callValue: 0, from: user_address });
                 if(result){$('#stakingStatus').modal('show');
                     $(".st_trx_link").html('<a href="https://tronscan.org/#/transaction/'+result+'" target="_blank">Check Transaction Here</a>');
