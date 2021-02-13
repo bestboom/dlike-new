@@ -136,5 +136,5 @@ if ($sql_Q->num_rows > 0){$row_Q = $sql_Q->fetch_assoc();$my_rewards=$row_Q["rew
 <div class="modal fade" id="stakingStatus" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-dialog-custom modalStatus" role="document"><div class="modal-content modal-custom">
 <div class="modal-body "><div class="mdStatusTitle sttError iconTitle"><i class="fa fa-spinner fa-pulse"></i></div><div class="mdStatusContent"><h3 id="alert-title-error"><span class="st_status_message">Waiting For Confirmation</span></h3><div id="alert-content-error"><b><span class="st_trx_link"></span></b></div><div class="actBtn"><button type="button" class="btn btn-danger st_btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button></div></div></div>
 </div></div></div>
-<script>let stk_wallet = '<?php echo $my_staking_wallet; ?>';</script>
+<script>let stk_wallet = '<?php echo $my_staking_wallet; ?>';console.log(stk_wallet);</script>
 <?php include('template/footer.php'); ?>
