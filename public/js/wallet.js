@@ -1,7 +1,7 @@
 function enable_draw(){$(".withd_btn").attr("disabled", false).html('Withdraw');}
 $('.withd_btn').click(async function() {
     if (dlike_username != null) {
-        $(".withd_btn").attr("disabled", true).html('Processing...');let user_bal_amt=$('.user_bal').html();console.log(user_bal_amt)
+        $(".withd_btn").attr("disabled", true).html('Processing...');let user_bal_amt=$('.user_bal_amt').html();console.log(user_bal_amt)
         if (user_bal_amt == "") {toastr.error('phew... Looks like balance issue');enable_draw();return false;}
         if (parseFloat(user_bal_amt) <= 0){toastr.error('phew... Not a valid withdraw amount!');enable_draw();return false;}
 
