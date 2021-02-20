@@ -1,8 +1,8 @@
 function enable_draw(){$(".withd_btn").attr("disabled", false).html('Withdraw');}
-let withdraw_val = document.getElementById('withdraw_amount');
-withdraw_val.onkeydown = function(e) {
-    if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;}
-}
+//let withdraw_val = document.getElementById('withdraw_amount');
+//withdraw_val.onkeydown = function(e) {
+//    if(!((e.keyCode > 95 && e.keyCode < 106) || (e.keyCode > 47 && e.keyCode < 58) || e.keyCode == 8)) {return false;}
+//}
 $('.withd_btn').click(async function() {
     if (dlike_username != null) {
         $(".withd_btn").attr("disabled", true).html('Processing...');let user_bal_amt=$('.user_bal').html();
