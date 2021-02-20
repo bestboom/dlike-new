@@ -116,8 +116,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'pay_user' && isset($_POST['w
 		        $signedTransaction = $tron->signTransaction($triggerContract);
 		        $response = $tron->sendRawTransaction($signedTransaction);
 		        if ($response['result'] == 1) {
-
-		        	$status="0";
+		        	$trxid = $response['txid'];
+		        	$status=$trxid;
 		        	$sql_cur = $conn->query("INSERT INTO dlike_tokens_mapping (username, tron_address, amount, status, update_time) VALUES ('".$username."', '".$wallet."', '".$dlkamount."', '".$status."', now())");
 
 		        	$updateWallet = $conn->query("UPDATE dlike_wallet SET amount = '$bal' - '$dlkamount' WHERE username = '$username'");
