@@ -1,7 +1,7 @@
 function enable_draw(){$(".withd_btn").attr("disabled", false).html('Withdraw');}
 $('.withd_btn').click(async function() {
     if (dlike_username != null) {
-        $(".withd_btn").attr("disabled", true).html('Processing...');let user_bal_amt=$('.user_bal').html();
+        $(".withd_btn").attr("disabled", true).html('Processing...');let user_bal_amt=$('.user_bal').html();console.log(user_bal_amt)
         if (user_bal_amt == "") {toastr.error('phew... Looks like balance issue');enable_draw();return false;}
         if (parseFloat(user_bal_amt) <= 0){toastr.error('phew... Not a valid withdraw amount!');enable_draw();return false;}
 
@@ -9,7 +9,7 @@ $('.withd_btn').click(async function() {
             if(user_address!=false){
                 async function doAjax() {return $.ajax({type: 'post',url: '/helper/dlk_withdraw.php',data: { action : 'withdraw',dlk_out_amount: user_bal_amt},datatype: 'json',});}
                 doAjax().then(async function(data) { var response = JSON.parse(data);
-                    if (response.error == true) {toastr['error'](response.message);enable_draw();return false;
+                    if (response.error == true) {console.log(response.message);toastr['error'](response.message);enable_draw();return false;
                         }else{var my_address = response.user_wallet_add;
                             if(user_address != my_address) {toastr.error('You are trying to withdraw with a different tron address which is not in your DLIKE wallet!');return false;
                                 }else { 
@@ -42,6 +42,9 @@ $('.withd_btn').click(async function() {
         }else{toastr.error('Non-Tronlink browser detected. You should consider trying Tronlink Wallet!');return false;} 
     } else {toastr.error('You must be login with DLIKE username!');enable_draw();return false;}
 });
+
+
+
 
 $('.add_address').click(function() { let offchain_add = $('#offchain_add').val();
     if (offchain_add == "") { toastr.error('phew... You forgot to enter address');return false;}
