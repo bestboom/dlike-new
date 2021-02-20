@@ -108,7 +108,7 @@ $row_J = $sql_J->fetch_assoc();$offchain_address = $row_J["offchain_address"];
             <tbody>
                 <?php $sql_P = $conn->query("SELECT * FROM dlike_withdrawals where username ='$dlike_user' ORDER BY req_on DESC LIMIT 30");
                     if ($sql_P->num_rows > 0) { while($row_P = $sql_P->fetch_assoc()) {$entry_date = strtotime($row_P["req_on"]); ?> 
-                <tr><td><?php echo $row_P["amount"]; ?></td><td><?php echo '<a href="https://shasta.tronscan.org/#/transaction/'.$row_P["status"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></td><td style="float:right;"><?php echo time_ago($entry_date); ?></td></tr><? } }?>
+                <tr><td><?php echo $row_P["amount"]; ?></td><td><?php echo '<a href="https://tronscan.org/#/transaction/'.$row_P["status"].'" target="_blank"><i class="fas fa-exchange-alt"></i></a>'; ?></td><td style="float:right;"><?php echo time_ago($entry_date); ?></td></tr><? } }?>
             </tbody>
         </table>
     </div>
