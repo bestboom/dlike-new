@@ -42,17 +42,20 @@ function time_ago($timestamp)
     }
 }
 
-$post_reward = '0.35';
+$post_reward = '0.10';
 
-$author_reward = '0.35';
-$curator_reward = '0.30';
+$author_reward = '0.10';
+$curator_reward = '0.05';
 $affiliate_reward = '0.05';
 $airdrop_reward = '0.05';
-$staking_reward = '0.2';
+$staking_reward = '0.20';
 $charity_reward = '0.01';
-$dao_reward = '0.025';
-$team_reward = '0.04';
-$foundation_reward = '0.025';
+$dao_reward = '0.03';
+$team_reward = '0.09';
+$foundation_reward = '0.06';
+$minning_reward = "0.30";
+$witness_Reward = "0.11";
+
 
 $max_withdraw_limit = '5000';
 $no_of_staking_rewards = '200';
