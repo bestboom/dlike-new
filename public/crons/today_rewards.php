@@ -18,6 +18,6 @@ $sql_W = $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time)
 if ($sql_W->num_rows > 0){
 	$update_R = $conn->query("UPDATE dlike_daily_rewards SET today_upvotes = '$total_upvotes', dlike_staking = '$staking_val', dlike_dao = '$dao_val', dlike_charity = '$charity_val', dlike_team = '$team_val', dlike_foundation = '$foundation_val', dlike_mining = '$mining_val', dlike_nodes = '$witness_val', dlike_airdrop = '$airdrop_val', update_time = now() WHERE DATE(update_time) = CURDATE()");
 } else {
-$sql_data = $conn->query("INSERT INTO dlike_daily_rewards (today_upvotes, dlike_staking, dlike_dao, dlike_charity, dlike_team, dlike_foundation, dlike_airdrop, update_time) VALUES ('".$total_upvotes."', '".$staking_val."', '".$dao_val."', '".$charity_val."', '".$team_val."', '".$foundation_val."', '".$mining_val."', '".$witness_val."', '".$airdrop_val."', now())");
+$sql_data = $conn->query("INSERT INTO dlike_daily_rewards (today_upvotes, dlike_staking, dlike_dao, dlike_charity, dlike_team, dlike_foundation, dlike_mining, dlike_nodes, dlike_airdrop, update_time) VALUES ('".$total_upvotes."', '".$staking_val."', '".$dao_val."', '".$charity_val."', '".$team_val."', '".$foundation_val."', '".$mining_val."', '".$witness_val."', '".$airdrop_val."', now())");
 }
 ?>
