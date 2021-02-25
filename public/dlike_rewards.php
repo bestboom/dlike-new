@@ -34,7 +34,13 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
                     <div><span class="fas fa-database"></span><span class="rewards_type"> | Affiliates </span></div><div><span><?php echo $affiliate_today_rewards; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | LP Mining </span></div><div><span><?php echo $staking; ?></span></div>
+                </div>
+                <div class="row rewards_fileds">
                     <div><span class="fas fa-database"></span><span class="rewards_type"> | Staking </span></div><div><span><?php echo $staking; ?></span></div>
+                </div>
+                <div class="row rewards_fileds">
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Witnesses </span></div><div><span><?php echo $staking; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
                     <div><span class="fas fa-database"></span><span class="rewards_type"> | DAF </span><?php echo '<a href="https://tronscan.org/#/address/'.$dlike_daf_acc.'" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a>';?></div>
