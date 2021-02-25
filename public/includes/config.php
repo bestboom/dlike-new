@@ -53,8 +53,8 @@ $charity_reward = '0.01';
 $dao_reward = '0.03';
 $team_reward = '0.09';
 $foundation_reward = '0.06';
-$minning_reward = "0.30";
-$witness_Reward = "0.11";
+$mining_reward = "0.30";
+$witness_reward = "0.11";
 
 
 $max_withdraw_limit = '5000';
@@ -67,6 +67,8 @@ $dlike_daf_acc="TWTXTvXctXP7cP379nGMeEofGHiH42tstU";
 $dlike_team_acc="TZFX4pbMV2Gb9qVrneT2z6FvRY6R7UjiZp";
 $dlike_foundation_acc="TR8e71omi84YpJJNzDSShGvbNmeWcBVGDm";
 $dlike_airdrop_acc="TPHiKY8sswCuD9wy1s6XM5C6e3R1iJnCqP";
+$dlike_mining_acc="TH3gbyHPCktdNBgFBzBowZK88j6S594Foj";
+$dlike_nodes_acc="TUh6mTmy63RpubXxwPiw9yXeWxdQmDobDs";
 
 $restricted_urls = array("dlike.io","steemit.com","wikipedia.org","facebook.com","youtube.com", "pinterest.com","twitter.com","bloomberg.com","youtu.be", "peakd.com", "steempeak.com", "hive.blog", "blurt.world","pornhub.com","youporn.com","airdroprating.io","playboy.com","icomarks.com","icobench.com","airdrops.io","airdropalert.com","airdropbob.com","coingecko.com","t.me","coinmarketcap.com","wshareit.com","bit.ly","ambcrypto.com","libradragon.io","apple.com","google.com","postimg.cc","postimages.org","imgur.com","amazon.com","phonearena.com","ibb.co","imgbb.com","freepik.com");
 ?>
