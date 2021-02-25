@@ -68,7 +68,7 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
             <h4 class="pool_head">DLIKE Daily Reward Pool Distribution</h4>
             <p>You can earn DLIKE tokens for your contributions to the DLIKE community. The more interactions you have, more will be the earnings. <br>DLIKE is simple proof of likes network where every like generates 1 DLIKE token. This generated token gets distributed into all sectors of DLIKE community as per following share.</p>
             <p class="stk_rewards_ann"><span class="fas fa-hand-point-right stk_ann_icon"></span>DLIKE has a daily staking reward pool for top stakers.</p>
-            <div><img src="/images/dlike_pool.jpg" class="img-fluid" alt=""></div>
+            <div style="padding-top:25px;"><img src="/images/dlike_pool.jpg" class="img-fluid" alt=""></div>
         </div></div>
     </div>
     <div id="highContainer"></div>
