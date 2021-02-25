@@ -7,9 +7,9 @@ error_reporting(E_ALL);
 
 
 
-$sql = "ALTER TABLE dlike_daily_rewards ADD dlike_mining varchar(255) NOT NULL AFTER dlike_foundation";
+$sql = "ALTER TABLE dlike_daily_rewards ADD dlike_nodes varchar(255) NOT NULL AFTER dlike_mining";
 if ($conn->query($sql) === TRUE) {
-    echo "new field dlike_mining added to wallet table";
+    echo "new field dlike_nodes added to wallet table";
 } else {
     echo "Error updating table: " . $conn->error;
 }
