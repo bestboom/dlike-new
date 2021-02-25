@@ -1,6 +1,6 @@
 <?php include('includes/config.php');include('template/header.php'); ?></div>
 <?php $sql1 =  $conn->query("SELECT * FROM dlike_daily_rewards where DATE(update_time) = CURDATE() order by update_time DESC Limit 1");
-if ($sql1 && $sql1->num_rows > 0) {   $row1 = $sql1->fetch_assoc();$today_likes = $row1["today_upvotes"];$staking = $row1["dlike_staking"];$dao = $row1["dlike_dao"];$team = $row1["dlike_team"];$charity = $row1["dlike_charity"];$foundation = $row1["dlike_foundation"];$mining = $row1["dlike_mining"];} else {$today_likes = 0;}
+if ($sql1 && $sql1->num_rows > 0) {   $row1 = $sql1->fetch_assoc();$today_likes = $row1["today_upvotes"];$staking = $row1["dlike_staking"];$dao = $row1["dlike_dao"];$team = $row1["dlike_team"];$charity = $row1["dlike_charity"];$foundation = $row1["dlike_foundation"];$mining = $row1["dlike_mining"];$witness = $row1["dlike_nodes"];} else {$today_likes = 0;}
 
 $sqlQuery = $conn->query("SELECT yesterday_upvotes,update_time FROM dlike_rewards_history ORDER BY update_time DESC LIMIT 14");
     if ($sqlQuery->num_rows > 0) {  $data = array();
@@ -34,13 +34,13 @@ $airdrop_today_rewards = ($today_likes - $total_aff_gen) * $airdrop_reward;
                     <div><span class="fas fa-database"></span><span class="rewards_type"> | Affiliates </span></div><div><span><?php echo $affiliate_today_rewards; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
-                    <div><span class="fas fa-database"></span><span class="rewards_type"> | LP Mining </span></div><div><span><?php echo $staking; ?></span></div>
-                </div>
-                <div class="row rewards_fileds">
                     <div><span class="fas fa-database"></span><span class="rewards_type"> | Staking </span></div><div><span><?php echo $staking; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
-                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Witnesses </span></div><div><span><?php echo $staking; ?></span></div>
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | LP Mining </span></div><div><span><?php echo $mining; ?></span></div>
+                </div>
+                <div class="row rewards_fileds">
+                    <div><span class="fas fa-database"></span><span class="rewards_type"> | Witnesses </span></div><div><span><?php echo $witness; ?></span></div>
                 </div>
                 <div class="row rewards_fileds">
                     <div><span class="fas fa-database"></span><span class="rewards_type"> | DAF </span><?php echo '<a href="https://tronscan.org/#/address/'.$dlike_daf_acc.'" target="_blank"><i class="fas fa-user-circle rewards_user_icon"></i></a>';?></div>

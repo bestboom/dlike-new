@@ -12,6 +12,8 @@ $charity_val = $total_upvotes * $charity_reward;
 $dao_val = $total_upvotes * $dao_reward;
 $team_val = $total_upvotes * $team_reward;
 $foundation_val = $total_upvotes * $foundation_reward;
+$mining_val = $total_upvotes * $mining_reward;
+$witness_val = $total_upvotes * $witness_reward;
 
 $sql_T = $conn->query("SELECT count(*) as yesterday_aff_rewards FROM dlike_transactions WHERE type='c' and DATE(trx_time) = SUBDATE(CURRENT_DATE(), 1)");
     if ($sql_T->num_rows > 0){$row_T = $sql_T->fetch_assoc();$total_aff_gen = $row_T["yesterday_aff_rewards"];}
@@ -20,5 +22,5 @@ $sql_T = $conn->query("SELECT count(*) as yesterday_aff_rewards FROM dlike_trans
 $affiliate_val = $total_aff_gen * $affiliate_reward;
 $airdrop_val = ($total_upvotes - $total_aff_gen) * $airdrop_reward;
 
-$sql_data = $conn->query("INSERT INTO dlike_rewards_history (yesterday_upvotes, dlike_staking, dlike_dao, dlike_charity, dlike_team, dlike_foundation, dlike_airdrop, data_time, update_time) VALUES ('".$total_upvotes."', '".$staking_val."', '".$dao_val."', '".$charity_val."', '".$team_val."', '".$foundation_val."', '".$airdrop_val."', subdate(NOW(), 1), now())");
+$sql_data = $conn->query("INSERT INTO dlike_rewards_history (yesterday_upvotes, dlike_staking, dlike_dao, dlike_charity, dlike_team, dlike_foundation, dlike_mining, dlike_nodes, dlike_airdrop, data_time, update_time) VALUES ('".$total_upvotes."', '".$staking_val."', '".$dao_val."', '".$charity_val."', '".$team_val."', '".$foundation_val."', '".$mining_val."', '".$witness_val."', '".$airdrop_val."', subdate(NOW(), 1), now())");
 ?>
