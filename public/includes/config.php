@@ -69,6 +69,7 @@ $dlike_foundation_acc="TR8e71omi84YpJJNzDSShGvbNmeWcBVGDm";
 $dlike_airdrop_acc="TPHiKY8sswCuD9wy1s6XM5C6e3R1iJnCqP";
 $dlike_mining_acc="TH3gbyHPCktdNBgFBzBowZK88j6S594Foj";
 $dlike_nodes_acc="TUh6mTmy63RpubXxwPiw9yXeWxdQmDobDs";
+$dlike_mining_aff_acc='TEj3yTEnG1spXs1Qg5BVkZTBtXvojNBoRR';
 
 $restricted_urls = array("dlike.io","steemit.com","wikipedia.org","facebook.com","youtube.com", "pinterest.com","twitter.com","bloomberg.com","youtu.be", "peakd.com", "steempeak.com", "hive.blog", "blurt.world","pornhub.com","youporn.com","airdroprating.io","playboy.com","icomarks.com","icobench.com","airdrops.io","airdropalert.com","airdropbob.com","coingecko.com","t.me","coinmarketcap.com","wshareit.com","bit.ly","ambcrypto.com","libradragon.io","apple.com","google.com","postimg.cc","postimages.org","imgur.com","amazon.com","phonearena.com","ibb.co","imgbb.com","freepik.com");
 ?>
