@@ -40,8 +40,22 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
         $response = $tron->sendRawTransaction($signedTransaction);
         if ($response['result'] == 1) {
             $trxid = $response['txid'];
-            $status=$trxid;
             $sql_cur = $conn->query("INSERT INTO dlike_mining_rewards (trx_id, amount, trx_time) VALUES ('".$trxid."', '".$mining_reward."', now())");
+
+
+            $mining_pk = getenv("MINING_PK");
+            //$miningaff_pk = getenv("MININGAFF_PK");
+
+            $lpaddress=$tron->address2HexString($dlike_mining_acc);
+            $tron->setAddress($dlike_mining_acc);
+            $tron->setPrivateKey($mining_pk);
+            $lpfunction = 'getToken';
+            $lpparams=array($lp_amount);
+
+            $triggerLPContract = $tron->triggerContract($abi,$contract,$lpfunction,$lpparams,$feeLimit,$lpaddress,$callValue ,$bandwidthLimit = 0);
+            $signedLPTransaction = $tron->signTransaction($triggerLPContract);
+            $response_lp = $tron->sendRawTransaction($signedLPTransaction);
+
 
             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
