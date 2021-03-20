@@ -55,6 +55,8 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
             $triggerLPContract = $tron->triggerContract($abi,$contract,$lpfunction,$lpparams,$feeLimit,$lpaddress,$callValue ,$bandwidthLimit = 0);
             $signedLPTransaction = $tron->signTransaction($triggerLPContract);
             $response_lp = $tron->sendRawTransaction($signedLPTransaction);
+            if ($response_lp['result'] == 1) {
+            echo $trxid = $response_lp['txid'];}else{echo $e->getMessage();}
 
 
             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
