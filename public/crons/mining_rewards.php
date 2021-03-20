@@ -42,25 +42,6 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
             $trxid = $response['txid'];
             $sql_cur = $conn->query("INSERT INTO dlike_mining_rewards (trx_id, amount, trx_time) VALUES ('".$trxid."', '".$mining_reward."', now())");
 
-
-            $mining_pk = getenv("MINING_PK");
-            //$miningaff_pk = getenv("MININGAFF_PK");
-
-            $lpaddress=$tron->address2HexString($dlike_mining_acc);
-            $tron->setAddress($dlike_mining_acc);
-            $tron->setPrivateKey($mining_pk);
-            $lpfunction = 'getToken';
-            $lpparams=array($lp_amount);
-
-            $triggerLPContract = $tron->triggerContract($abi,$contract,$lpfunction,$lpparams,$feeLimit,$lpaddress,$callValue ,$bandwidthLimit = 0);
-            $signedLPTransaction = $tron->signTransaction($triggerLPContract);
-            $response_lp = $tron->sendRawTransaction($signedLPTransaction);
-            if ($response_lp['result'] == 1) {
-            echo $trxidlp=$response_lp['txid'];}else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
     
