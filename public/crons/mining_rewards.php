@@ -57,7 +57,9 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
             $response_lp = $tron->sendRawTransaction($signedLPTransaction);
             if ($response_lp['result'] == 1) {
             echo $trxidlp=$response_lp['txid'];}else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
