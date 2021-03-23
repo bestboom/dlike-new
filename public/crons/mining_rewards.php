@@ -14,6 +14,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
 
         $lp_amount = $lp_reward * 1000000;
         $lp_aff_amount = $lp_aff_reward * 1000000;
+        $mining_amount=$mining_reward * 1000000;
 
         $defi_contract_wallet = $tron->address2HexString($defi_contract_acc);
         $lp_mining_wallet = $tron->address2HexString($dlike_mining_acc);
@@ -21,30 +22,59 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
         
         $abi = json_decode(ABI,true);
 
-        $vAdminAddress=SIGNER;
-        $vHExAddress=$tron->address2HexString($vAdminAddress);
-        $tron->setAddress($vAdminAddress);
+        $adminAddress=SIGNER;
+        $signerAddress=$tron->address2HexString($adminAddress);
+        $tron->setAddress($adminAddress);
         $tron->setPrivateKey(SIGNER_PK);
 
         $contract = CONTRACT_ADDRESS;
         $function = 'transfer';
+        $mintfunction = 'payToken';
+        $widfunction = 'getToken';
 
         $params = array($lp_mining_aff_wallet , $lp_aff_amount );
         $lpparams = array($defi_contract_wallet , $lp_amount );
-        $address =  $vHExAddress;
+        $mintparams = array($signerAddress , $mining_amount );
+        $widparams = array($mining_amount );
+
         $feeLimit = 1000000000;
         $callValue = 0;
        
-        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
+
+        $triggerContract = $tron->triggerContract($abi,$contract,$function,$params,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
         $signedTransaction = $tron->signTransaction($triggerContract);
         $response = $tron->sendRawTransaction($signedTransaction);
-        if ($response['result'] == 1) {
+        if ($response['result'] == 1) {sleep(1);
             echo $trxid = $response['txid']; echo '<br>';
 
-             $triggerLPContract = $tron->triggerContract($abi,$contract,$function,$lpparams,$feeLimit,$address,$callValue ,$bandwidthLimit = 0);
+
+             $triggerLPContract = $tron->triggerContract($abi,$contract,$function,$lpparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
             $signedLPTransaction = $tron->signTransaction($triggerLPContract);
             $response_lp = $tron->sendRawTransaction($signedLPTransaction);
-            if ($response_lp['result'] == 1) {echo $trxid_lp = $response_lp['txid'];}
+            if ($response_lp['result'] == 1) {sleep(1);
+                echo $trxid_lp = $response_lp['txid'];
+
+
+                $triggermintContract = $tron->triggerContract($abi,$contract,$mintfunction,$mintparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
+                $signedmintTransaction = $tron->signTransaction($triggermintContract);
+                $response_mint = $tron->sendRawTransaction($signedmintTransaction);
+                if ($response_mint['result'] == 1) {sleep(3);
+                    echo $trxid_mint = $response_mint['txid'];
+
+
+                    $triggerwidContract = $tron->triggerContract($abi,$contract,$widfunction,$widparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
+                    $signedwidTransaction = $tron->signTransaction($triggerwidContract);
+                    $response_wid = $tron->sendRawTransaction($signedwidTransaction);
+                    if ($response_wid['result'] == 1) {sleep(3);
+                        echo $trxid_wid = $response_wid['txid'];
+
+
+                    }
+
+                }
+
+
+            }
             //$sql_cur = $conn->query("INSERT INTO dlike_mining_rewards (trx_id, amount, trx_time) VALUES ('".$trxid."', '".$mining_reward."', now())");
 
             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
@@ -52,4 +82,4 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
     
 
     } else {die();}
-?>
+?>+-
