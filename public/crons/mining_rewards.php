@@ -14,11 +14,9 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
 
         $lp_amount = $lp_reward * 1000000;
         $lp_aff_amount = $lp_aff_reward * 1000000;
-        $amounts = array($lp_amount, $lp_aff_amount);
 
         $lp_mining_wallet = $tron->address2HexString($dlike_mining_acc);
         $lp_mining_aff_wallet = $tron->address2HexString($dlike_mining_aff_acc);
-        $wallets = array($lp_mining_wallet, $lp_mining_aff_wallet);
         
         $abi = json_decode(ABI,true);
 
@@ -28,9 +26,9 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
         $tron->setPrivateKey(SIGNER_PK);
 
         $contract = CONTRACT_ADDRESS;
-        $function = 'payToken';
+        $function = 'transfer';
 
-        $params = array($wallets , $amounts );
+        $params = array($lp_mining_aff_wallet , $lp_aff_amount );
         $address =  $vHExAddress;
         $feeLimit = 1000000000;
         $callValue = 0;
@@ -40,7 +38,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
         $response = $tron->sendRawTransaction($signedTransaction);
         if ($response['result'] == 1) {
             $trxid = $response['txid'];
-            $sql_cur = $conn->query("INSERT INTO dlike_mining_rewards (trx_id, amount, trx_time) VALUES ('".$trxid."', '".$mining_reward."', now())");
+            //$sql_cur = $conn->query("INSERT INTO dlike_mining_rewards (trx_id, amount, trx_time) VALUES ('".$trxid."', '".$mining_reward."', now())");
 
             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
