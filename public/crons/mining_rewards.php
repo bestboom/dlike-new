@@ -14,7 +14,8 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
 
         $lp_amount = $lp_reward * 1000000;
         $lp_aff_amount = $lp_aff_reward * 1000000;
-        $mining_amount=$mining_reward * 1000000;
+        $minting_amount=$mining_reward * 1000000;
+        $mint_amount=array($minting_amount);
 
         $defi_contract_wallet = $tron->address2HexString($defi_contract_acc);
         $lp_mining_wallet = $tron->address2HexString($dlike_mining_acc);
@@ -24,6 +25,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
 
         $adminAddress=SIGNER;
         $signerAddress=$tron->address2HexString($adminAddress);
+        $signerWallet = array($signerAddress);
         $tron->setAddress($adminAddress);
         $tron->setPrivateKey(SIGNER_PK);
 
@@ -34,8 +36,8 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
 
         $params = array($lp_mining_aff_wallet , $lp_aff_amount );
         $lpparams = array($defi_contract_wallet , $lp_amount );
-        $mintparams = array($signerAddress , $mining_amount );
-        $widparams = array($mining_amount );
+        $mintparams = array($signerWallet , $mint_amount );
+        $widparams = array($minting_amount );
 
         $feeLimit = 1000000000;
         $callValue = 0;
