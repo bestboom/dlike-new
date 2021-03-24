@@ -4,7 +4,7 @@ require '../includes/config.php';
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+/*
 $sql = "ALTER TABLE dlike_mining_rewards ADD to_address varchar(255) NOT NULL AFTER id";
 if ($conn->query($sql) === TRUE) {
     echo "new field added to wallet table";
@@ -21,7 +21,7 @@ if ($conn->query($sql) === TRUE) {
 }
 
 
-/*
+
 $sql = "CREATE TABLE dlike_mining_rewards (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 to_address VARCHAR(255) NOT NULL,

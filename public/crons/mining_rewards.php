@@ -47,41 +47,41 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
         $signedTransaction = $tron->signTransaction($triggerContract);
         $response = $tron->sendRawTransaction($signedTransaction);
         if ($response['result'] == 1) {sleep(1);
-            echo $trxid = $response['txid']; echo '<br>';
+            $trxid = $response['txid']; $status = "Affiliate Transfer";
+            $sql_cur = $conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$dlike_mining_aff_acc."', '".$lp_aff_reward."', '".$status."', now())");
 
 
              $triggerLPContract = $tron->triggerContract($abi,$contract,$function,$lpparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
             $signedLPTransaction = $tron->signTransaction($triggerLPContract);
             $response_lp = $tron->sendRawTransaction($signedLPTransaction);
             if ($response_lp['result'] == 1) {sleep(1);
-                echo $trxid_lp = $response_lp['txid'];
+                $trxid_lp = $response_lp['txid'];$lpstatus="DeFi Contract Transfer";
+                $sql_lp=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$defi_contract_acc."', '".$lp_reward."', '".$lpstatus."', now())");
 
 
                 $triggermintContract = $tron->triggerContract($abi,$contract,$mintfunction,$mintparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
                 $signedmintTransaction = $tron->signTransaction($triggermintContract);
                 $response_mint = $tron->sendRawTransaction($signedmintTransaction);
                 if ($response_mint['result'] == 1) {sleep(3);
-                    echo $trxid_mint = $response_mint['txid'];
+                    $trxid_mint = $response_mint['txid'];$mintstatus = "Tokens Minted";
+                    $sql_mint=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$adminAddress."', '".$mining_reward."', '".$mintstatus."', now())");
 
 
                     $triggerwidContract = $tron->triggerContract($abi,$contract,$widfunction,$widparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
                     $signedwidTransaction = $tron->signTransaction($triggerwidContract);
                     $response_wid = $tron->sendRawTransaction($signedwidTransaction);
                     if ($response_wid['result'] == 1) {sleep(3);
-                        echo $trxid_wid = $response_wid['txid'];
-
+                        $trxid_wid = $response_wid['txid'];$widstatus="Tokens Withdrawan";
+                        $sql_wid=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$adminAddress."', '".$mining_reward."', '".$widstatus."', now())");
 
                     }
 
                 }
 
-
             }
-            //$sql_cur = $conn->query("INSERT INTO dlike_mining_rewards (trx_id, amount, trx_time) VALUES ('".$trxid."', '".$mining_reward."', now())");
 
             die(json_encode(['error' => false,'message' => 'All is fine to withdraw!']));
         }else{die(json_encode(['error' => true,'message' => $e->getMessage()]));}
-    
 
     } else {die();}
 ?>+-
