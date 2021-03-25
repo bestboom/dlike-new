@@ -68,7 +68,7 @@ $dlike_team_acc="TZFX4pbMV2Gb9qVrneT2z6FvRY6R7UjiZp";
 $dlike_foundation_acc="TR8e71omi84YpJJNzDSShGvbNmeWcBVGDm";
 $dlike_airdrop_acc="TPHiKY8sswCuD9wy1s6XM5C6e3R1iJnCqP";
 $dlike_mining_acc="TH3gbyHPCktdNBgFBzBowZK88j6S594Foj";
-$defi_contract_acc="TJgDQeww1ca3q4CE1umEk3RtRLBD3G46aN";
+$defi_contract_acc="TAwWJRPrqQN5Lo5hcMkkHRE4wwJoi998SM";
 $dlike_nodes_acc="TUh6mTmy63RpubXxwPiw9yXeWxdQmDobDs";
 $dlike_mining_aff_acc='TEj3yTEnG1spXs1Qg5BVkZTBtXvojNBoRR';
 
