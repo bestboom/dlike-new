@@ -60,7 +60,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
             $response_lp = $tron->sendRawTransaction($signedLPTransaction);
             if ($response_lp['result'] == 1) {sleep(1);
                 $trxid_lp = $response_lp['txid'];$lpstatus="DeFi Contract Transfer";
-                $sql_lp=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$defi_contract_acc."', '".$lp_reward."', '".$lpstatus."', now())");
+                $sql_lp=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid_lp."', '".$defi_contract_acc."', '".$lp_reward."', '".$lpstatus."', now())");
 
 
                 $triggerNFContract = $tron->triggerContract($abilp,$nfcontract,$nffunction,$nfparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
@@ -68,7 +68,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
                 $response_nf = $tron->sendRawTransaction($signedNFTransaction);
                 if ($response_nf['result'] == 1) {sleep(1);
                     $trxid_nf = $response_nf['txid'];$nfstatus="Notify Reward Amount";
-                    $sql_nf=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$defi_contract_acc."', '".$lp_reward."', '".$nfstatus."', now())");
+                    $sql_nf=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid_nf."', '".$defi_contract_acc."', '".$lp_reward."', '".$nfstatus."', now())");
 
 
                     $triggermintContract = $tron->triggerContract($abi,$contract,$mintfunction,$mintparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
@@ -76,7 +76,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
                     $response_mint = $tron->sendRawTransaction($signedmintTransaction);
                     if ($response_mint['result'] == 1) {sleep(3);
                         $trxid_mint = $response_mint['txid'];$mintstatus = "Tokens Minted";
-                        $sql_mint=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$adminAddress."', '".$mining_reward."', '".$mintstatus."', now())");
+                        $sql_mint=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid_mint."', '".$adminAddress."', '".$mining_reward."', '".$mintstatus."', now())");
 
 
                         $triggerwidContract = $tron->triggerContract($abi,$contract,$widfunction,$widparams,$feeLimit,$signerAddress,$callValue ,$bandwidthLimit = 0);
@@ -84,7 +84,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
                         $response_wid = $tron->sendRawTransaction($signedwidTransaction);
                         if ($response_wid['result'] == 1) {sleep(3);
                             $trxid_wid = $response_wid['txid'];$widstatus="Tokens Withdrawan";
-                            $sql_wid=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid."', '".$adminAddress."', '".$mining_reward."', '".$widstatus."', now())");
+                            $sql_wid=$conn->query("INSERT INTO dlike_mining_rewards (trx_id, to_address, amount, status, trx_time) VALUES ('".$trxid_wid."', '".$adminAddress."', '".$mining_reward."', '".$widstatus."', now())");
 
                         }
 
