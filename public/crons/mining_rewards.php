@@ -31,7 +31,7 @@ $sql_D=$conn->query("SELECT * FROM dlike_rewards_history where DATE(update_time)
         $tron->setPrivateKey(SIGNER_PK);
 
         $contract = CONTRACT_ADDRESS;
-        $nfcontract="410aa5bc10d5837c78120bc1a25945a6aab227d424";
+        $nfcontract="41c22cca6597ba8e117e1a8ba655ceda22fa351080";
         $function = 'transfer';
         $mintfunction = 'payToken';
         $widfunction = 'getToken';
