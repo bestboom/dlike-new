@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-//$url = parse_url(getenv("NEW_DATABASE_URL"));
-//$server = $url["host"]; 
-//$username = $url["user"]; 
-//$password = $url["pass"];
-//$db = substr($url["path"], 1);
+$url = parse_url(getenv("NEW_DATABASE_URL"));
+$server = $url["host"]; 
+$username = $url["user"]; 
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
-$server = "localhost";
-$db = getenv("NEW_DB");
-$username = getenv("NEW_USERNAME");
-$password = getenv("NEW_PASSWORD");
+//$server = "localhost";
+//$db = getenv("NEW_DB");
+//$username = getenv("NEW_USERNAME");
+//$password = getenv("NEW_PASSWORD");
 
 $conn = new mysqli($server, $username, $password, $db);
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
