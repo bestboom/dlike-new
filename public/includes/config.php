@@ -7,11 +7,6 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-//$server = "localhost";
-//$db = getenv("NEW_DB");
-//$username = getenv("NEW_USERNAME");
-//$password = getenv("NEW_PASSWORD");
-
 $conn = new mysqli($server, $username, $password, $db);
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);} 
 
