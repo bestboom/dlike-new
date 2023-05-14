@@ -21,6 +21,7 @@ loadCSS("https://fonts.googleapis.com/css?family=Quicksand");loadCSS("https://cd
 //]]>
 </script>
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" crossorigin="anonymous"/>-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6758799291201201" crossorigin="anonymous"></script>
 </head><body>
 <div id="mySidenav" class="sidenav"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <?php if (isset($_COOKIE['username']) || !empty($_COOKIE['username'])) { ?><a href="/old/wallet">Wallet</a><a href="/dliker">DLIKER</a><a href="https://dex.dlike.io">DEX</a> <? } elseif(isset($_COOKIE['dlike_username']) || !empty($_COOKIE['dlike_username'])) { ?><a href="/wallet">Wallet</a><a href="https://justswap.org/#/home?tokenAddress=TMw4Er1ZVMm6Z4QnE4fqU6xzT4G43HapWb&type=swap" target="_blank">Market</a><?} ?>  <a href="/rewards">Reward Pool</a><a href="/staking">Staking</a><a href="/explorer">Explorer</a><a href="https://dlike.zendesk.com/hc/en-us" target="_blank">Help</a>
